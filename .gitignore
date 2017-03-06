@@ -1,0 +1,9 @@
+public
+node_modules
+*.htaccess
+*.DS_Store
+.sublime-project
+contents/css
+contents/js/*.js
+assets/rev_manifest
+rev_manifest.json
