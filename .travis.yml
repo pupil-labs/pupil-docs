@@ -5,7 +5,7 @@ os:
   - linux
 sudo: false
 script:
-  - curl -s -X POST -H "Content-Type: application/json" -H "Accept: application/json" -H "Travis-API-Version: 3" -H "Authorization: token ${TRAVIS_TOKEN}" -d '{"request":{"branch":"master"}}' https://api.travis-ci.org/repo/pupil-labs%2Fpupil-docs-website/requests
+  -  ./scripts/webhook.sh
 env:
   global:
     secure: soTSQuZqeNMgNUzaiR1ZZoHqGrTP/bwzll4KduSrMKI3vJlJluXZX3R+3RQpLJmuDo77EIG51GyIsbkCOmMFzF5NOM2eddPzSMxBNcbMcTJV1FEOYFFbW0vBhfb3MPLXnFOI6t8FeBmdIJzXf3eiRABNFmOhWSV9ZIyd7HmyiCP3GrBPXuKlxu9k/CVGD+UTafBUgf/FH4ELIfRJ06GlW5PetIEXCq4jmV8ffmdo8ZtngRqlgRBBeVs3L8hR8BtXXxqnxFvfzgyddy9K3F6jXnd8AUJMjjkoUdu69cOfnskgF5mg7V4jnxanorwuAMgw6hW3W0H4Y+ljqQh2NJO/274at+Kt9rJt7/Xu6/xbXzFJrWGMghmpUlY7nuyEdnDKsmTmZI4I2thIFTwXHLgRC8qqhiYYfhmD71EtR7M9lrHTXM5aL9sXyDC53a5lkKX9QudZXJXtES+3z6DjDfW5TPjtdFXstZ1Ev+oE+ZbAtc7b6Sg/GccPwhk2Oyd+/HpGFcTavpOW6y0wogzsCupnzxnAy0pcM73z8lEJUr7hWBv7w+VcdsKXSUaolUnrNRRrCSerbqHl84clEs/woo65DsYZd9b75ncdbp7Gy9vVRlpFQgawThDZhkyG3mir/PfiMyDQSOlcKFdbD5ZtbZZOX3fhm7es32umZtO+D01GE5U=
