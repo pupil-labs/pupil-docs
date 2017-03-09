@@ -42,13 +42,13 @@ In order to support isochronous USB transfer on Windows, you will need to instal
 1. Start ZadiG. 
  
 <p align="center"> 
-	<img width="80%" src="images/windows_driver_setup/zadig_001.jpg" title="Start ZadiG">
+	<img width="80%" src="/images/windows_driver_setup/zadig_001.jpg" title="Start ZadiG">
 </p>
 
 2. In the `Options` menu **check** `List All Devices`.
 
 <p align="center"> 
-	<img width="80%" src="images/windows_driver_setup/zadig_002.jpg" title="Zadig options menu">
+	<img width="80%" src="/images/windows_driver_setup/zadig_002.jpg" title="Zadig options menu">
 </p>
 
 3. In the `Options` menu **uncheck** `Ignore Hubs or Composite Parents`. In the dropdown list you should now see devices with the name *Pupil Cam1* followed by an ID 
@@ -58,13 +58,13 @@ Note - The number of devices depends on your headset configuration. For example,
 </aside>
 
 <p align="center"> 
-	<img width="80%" src="images/windows_driver_setup/zadig_003.jpg" title="Zadig pupil cam">
+	<img width="80%" src="/images/windows_driver_setup/zadig_003.jpg" title="Zadig pupil cam">
 </p>
 
 4. Select one of the **Pupil Cam1** devices. Select `libusbK (v3.0.7.0)` from the options list (to the right of the green arrow ➡️ ). Click `Replace Driver`.
 
 <p align="center"> 
-	<img width="80%" src="images/windows_driver_setup/zadig_004.jpg" title="Zadig replace driver">
+	<img width="80%" src="/images/windows_driver_setup/zadig_004.jpg" title="Zadig replace driver">
 </p>
 
 5. Repeat Step 4 with the other **Pupil Cam1** devices until the `Driver` field reads `libusbK (v3.0.7.0)` for all **Pupil Cam1** devices
@@ -76,5 +76,5 @@ Note - Device names will all show up with the same name in Windows - don't worry
 </aside>
 
 <p align="center"> 
-	<img width="80%" src="images/windows_driver_setup/device_manager_check.jpg" title="Windows device manager libusbK">
+	<img width="80%" src="/images/windows_driver_setup/device_manager_check.jpg" title="Windows device manager libusbK">
 </p>

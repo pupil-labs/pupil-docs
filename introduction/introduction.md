@@ -16,7 +16,7 @@ This wiki is the main source of documentation for the Pupil users getting starte
 	<div class="horizontal-divide">
 		<a href="#getting-started">
 			<div class="item-hori">
-				<img class="intro-image" src="images/icons/Pupil_Logo_wiki-03.png">
+				<img class="intro-image" src="/images/icons/Pupil_Logo_wiki-03.png">
 				<div class="img-content">
 					<div class="header">Getting Started</div>
 					Get up and running and learn the basic Pupil workflow
@@ -25,7 +25,7 @@ This wiki is the main source of documentation for the Pupil users getting starte
 		</a>
 		<a href="#pupil-hardware">
 			<div class="item-hori">
-				<img class="intro-image" src="images/icons/Pupil_Logo_wiki-01.png">
+				<img class="intro-image" src="/images/icons/Pupil_Logo_wiki-01.png">
 				<div class="img-content">
 					<div class="header">Pupil Hardware</div>
 					Get and setup your Pupil eye tracking hardware
@@ -34,7 +34,7 @@ This wiki is the main source of documentation for the Pupil users getting starte
 		</a>
 		<a href="#user-docs">
 			<div class="item-hori">
-				<img class="intro-image" src="images/icons/Pupil_Logo_wiki-04.png">
+				<img class="intro-image" src="/images/icons/Pupil_Logo_wiki-04.png">
 				<div class="img-content">
 					<div class="header">User Docs</div>
 					Learn more about Capture and Player here
@@ -43,7 +43,7 @@ This wiki is the main source of documentation for the Pupil users getting starte
 		</a>
 		<a href="#developer-docs">
 			<div class="item-hori">
-				<img class="intro-image" src="images/icons/Pupil_Logo_wiki-05.png">
+				<img class="intro-image" src="/images/icons/Pupil_Logo_wiki-05.png">
 				<div class="img-content">
 					<div class="header">Developer Docs</div>
 					Want to write code? Read the developer docs here
@@ -52,7 +52,7 @@ This wiki is the main source of documentation for the Pupil users getting starte
 		</a>
 		<a href="#community">
 			<div class="item-hori">
-				<img class="intro-image" src="images/icons/Pupil_Logo_wiki-02.png">
+				<img class="intro-image" src="/images/icons/Pupil_Logo_wiki-02.png">
 				<div class="img-content">
 					<div class="header">Community</div>
 					Connect with the Pupil community

@@ -119,8 +119,8 @@ In the `Advanced` sub-menu you can set the `sample duration` -- the number of fr
 This method is done with an operator and a subject. It is suited for midrange distances and can accommodate a wide field of view. You need markers made of concentric circles, like the two shown below.
 
 <p align="center">
-	<img width="40%" src="images/calibration-markers/manual_calibration_marker-01.png">
-	<img width="40%" src="images/calibration-markers/manual_calibration_marker-02.png">
+	<img width="40%" src="/images/calibration-markers/manual_calibration_marker-01.png">
+	<img width="40%" src="/images/calibration-markers/manual_calibration_marker-02.png">
 </p>
 
 <p align="center">

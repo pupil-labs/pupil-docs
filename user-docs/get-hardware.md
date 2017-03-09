@@ -22,7 +22,7 @@ weight = 3
 <div class="header-border-bottom"></div>
 
 <p align="center">
-	<img class="padTop--2 padBottom--2" style="max-width: 75%;" src="images/headset/pupil_w120_e120.jpg" /> 
+	<img class="padTop--2 padBottom--2" style="max-width: 75%;" src="/images/headset/pupil_w120_e120.jpg" /> 
 </p>
 
 Pupil Labs is based in Berlin and ships Pupil eye tracking headsets to individuals, universities, and corporate enterprises worldwide! 
@@ -51,7 +51,7 @@ We have created eye tracking add-ons for the current range of leading VR and AR 
 </div>
 
 <p align="center">
-	<img class="padTop--2 padBottom--2" style="max-width: 70%;" src="images/vr-ar/htcviveb.png" />
+	<img class="padTop--2 padBottom--2" style="max-width: 70%;" src="/images/vr-ar/htcviveb.png" />
 </p>
 
 Add eye tracking powers to your HTC Vive with our 120hz binocular eye tracking add-on.
@@ -73,7 +73,7 @@ Add eye tracking powers to your HTC Vive with our 120hz binocular eye tracking a
 </div>
 
 <p align="center">
-	<img class="padTop--2 padBottom--2" style="max-width: 70%;" src="images/vr-ar/oculusdk2m.png" />
+	<img class="padTop--2 padBottom--2" style="max-width: 70%;" src="/images/vr-ar/oculusdk2m.png" />
 </p>
 
 Add eye tracking powers to your Oculus Rift DK2 with our 120hz eye tracking add-ons.
@@ -100,7 +100,7 @@ If you are an individual planning on using **Pupil** [exclusively for noncommerc
 <aside class="notice">Note - This option is not for commercial use or commercial clients.</aside>
   
 <p align="center">
-	<img class="padTop--2 padBottom--2" style="max-width: 70%" src="images/headset/diy_explosion.png" />
+	<img class="padTop--2 padBottom--2" style="max-width: 70%" src="/images/headset/diy_explosion.png" />
 </p>
 
 [website]: http://pupil-labs.com/store

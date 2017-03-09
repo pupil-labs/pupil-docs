@@ -27,7 +27,7 @@ This page contains documentation and discussion on open source camera mounts, op
 We release the CAD files for the camera mounts for you to download, modify, in accordance with our [license](#license).  CAD files for the frame are not open source; [see explanation](#hardware). 
 
 <p align="center">
-	<img width="600" src="images/headset/explo_side_800_mounts.png" />
+	<img width="600" src="/images/headset/explo_side_800_mounts.png" />
 </p>
 
 <div class="content-container">

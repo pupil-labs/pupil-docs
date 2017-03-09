@@ -23,7 +23,7 @@ weight = "8"
 <div class="header-border-bottom"></div>
 
 <p align="center">
-	<img src="images/icons/ps.png" width="20%">
+	<img src="/images/icons/ps.png" width="20%">
 </p>
 
 Pupil Service is like Pupil Capture except it does not have a world video feed or GUI. It is intended to be used with VR and AR eye tracking setups. 
