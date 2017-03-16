@@ -26,9 +26,8 @@ In order to support isochronous USB transfer on Windows, you will need to instal
 </div>
 <div class="header-border-bottom"></div>
 
-1. Download and install [libusbk 3.0.7.0](https://sourceforge.net/projects/libusbk/files/libusbK-release/3.0.7.0/libusbK-3.0.7.0-setup.exe/download).
-1. Download [Zadig](http://zadig.akeo.ie/downloads/zadig_2.2.exe).
-1. Plug in your Pupil headset 
+1. Download and install [7zip](http://www.7-zip.org/download.html)
+1. Download and extract [Pupil camera driver installer](https://drive.google.com/uc?export=download&id=0Byap58sXjMVfR0p4eW5KcXpfQjg)
 
 <div class="content-container">
   <div class="header-link">
@@ -39,42 +38,26 @@ In order to support isochronous USB transfer on Windows, you will need to instal
 </div>
 <div class="header-border-bottom"></div>
 
-1. Start ZadiG. 
- 
-<p align="center"> 
-	<img width="80%" src="/images/windows_driver_setup/zadig_001.jpg" title="Start ZadiG">
-</p>
+1. Navigate to `pupil_labs_camera_drivers_windows_x64` directory
+1. Double click *`InstallDriver.exe`* - this will install drivers. Follow on screen prompts. 
+1. Open `Windows Device Manager` from `System > Device Manager`. Verify the drivers are correctly installed in `Windows Device Manager`. Your Pupil headset cameras should be listed under a new category titled: `libusbK Usb Devices`. Note: In some cases `Pupil Cam1` may show three of the same `ID` as the camera name. Don't worry - just make sure that the number of devices are the same as the number of cameras on your Pupil headset.
+1. Download the latest release of Pupil software and launch `pupil_capture.exe` to verify all cameras are accessible.
 
-2. In the `Options` menu **check** `List All Devices`.
+  <div class="header-link">
+    <a href="#install-driver">
+      <h3 id="install-driver">Troubleshooting</h3>
+    </a>
+  </div>
+</div>
+<div class="header-border-bottom"></div>
 
-<p align="center"> 
-	<img width="80%" src="/images/windows_driver_setup/zadig_002.jpg" title="Zadig options menu">
-</p>
+If you had tried to install drivers with previous driver install instructions and failed, or are not able to access cameras in Pupil Capture. Please try the following:
 
-3. In the `Options` menu **uncheck** `Ignore Hubs or Composite Parents`. In the dropdown list you should now see devices with the name *Pupil Cam1* followed by an ID 
-
-<aside class="notice">
-Note - The number of devices depends on your headset configuration. For example, if you have a binocular setup, you will see Pupil Cam1 ID2, Pupil Cam1 ID1, Pupil Cam1 ID0.
-</aside>
-
-<p align="center"> 
-	<img width="80%" src="/images/windows_driver_setup/zadig_003.jpg" title="Zadig pupil cam">
-</p>
-
-4. Select one of the **Pupil Cam1** devices. Select `libusbK (v3.0.7.0)` from the options list (to the right of the green arrow ➡️ ). Click `Replace Driver`.
-
-<p align="center"> 
-	<img width="80%" src="/images/windows_driver_setup/zadig_004.jpg" title="Zadig replace driver">
-</p>
-
-5. Repeat Step 4 with the other **Pupil Cam1** devices until the `Driver` field reads `libusbK (v3.0.7.0)` for all **Pupil Cam1** devices
-
-6. Verify the driver is correctly replaced in `Windows Device Manager`. Your Pupil headset cameras should be listed under a new category titled: `libusbK USB Devices`. 
-
-<aside class="notice">
-Note - Device names will all show up with the same name in Windows - don't worry - just make sure that the number of devices are the same as the number of cameras you have connected.
-</aside>
-
-<p align="center"> 
-	<img width="80%" src="/images/windows_driver_setup/device_manager_check.jpg" title="Windows device manager libusbK">
-</p>
+1. In `Device Manager` (`System > Device Manager`)
+1. `View > Show Hidden Devices` 
+1. Expand `libUSBK Usb Devices`
+1. For each device listed (even hidden devices) click `Uninstall` and check the box agreeing to `Delete the driver software for this device` and press `OK`
+1. Repeat for each device in libUSBK Usb Devices
+1. Unplug Pupil headset (if plugged in)
+1. Restart your computer
+1. Install drivers from step 2 in the `Install drivers for your Pupil headset` section
