@@ -8,14 +8,6 @@ weight = 3
 
 <div class="content-container">
   <div class="header-link">
-    <a href="#pupil-hardware">
-      <h2 id="pupil-hardware">Pupil Hardware</h2>
-    </a>
-  </div>
-</div>
-
-<div class="content-container">
-  <div class="header-link">
     <a href="#headset-intro">
       <h3 id="headset-intro">Introduction to the Pupil Headset</h3>
     </a>

@@ -6,16 +6,6 @@ weight = 2
 
 # Getting Started
 
-<div class="header-border-top"></div>
-<div class="content-container">
-  <div class="header-link">
-    <a href="#getting-started">
-      <h2 id="getting-started">Getting Started</h2>
-    </a>
-  </div>
-</div>
-
-
 This guide will lead you through a basic workflow using Pupil hardware and software.
 
 <p align="center">
