@@ -66,16 +66,15 @@ To install an extension open command line with admin rights and run `python -m p
 * [boost_python](http://www.lfd.uci.edu/~gohlke/pythonlibs/#boost.python): boost_python-1.59-cp35-none-win_amd64.whl
 
 For networking install:
-
 * `python -m pip install https://github.com/zeromq/pyre/archive/master.zip`
 * `python -m pip install win_inet_pton`
 
-There are some further python extensions that are specific to pupil:
+You also need to install Python libraries that are specific to Pupil. Download the `.whl` file and install with `pip`.
 
-* [PyAV](https://github.com/pupil-labs/PyAV)
-* [pyglui](https://github.com/pupil-labs/pyglui) 
-* [pyndsi](https://github.com/pupil-labs/pyndsi) 
-* [pyuvc](https://github.com/pupil-labs/pyuvc)
+* [PyAV](https://github.com/pupil-labs/PyAV/releases/latest)
+* [pyglui](https://github.com/pupil-labs/pyglui/releases/latest) 
+* [pyndsi](https://github.com/pupil-labs/pyndsi/releases/latest) 
+* [pyuvc](https://github.com/pupil-labs/pyuvc/releases/latest)
 
 ##### Setup GLFW
 
@@ -102,6 +101,7 @@ There are some further python extensions that are specific to pupil:
 * git clone --recursive https://github.com/tbennun/ceres-windows.git
 * Copy the Eigen directory to ceres-windows 
 * Copy ceres-windows\ceres-solver\config\ceres\internal\config.h to ceres-windows\ceres-solver\include\ceres\internal\
+* Open `glog\src\windows\port.cc` and comment out [L58-64](https://github.com/tbennun/glog/blob/7553b4193d856b4ba4e74cf064a5a70eb6a87cdd/src/windows/port.cc#L58-L64)
 * Open the vs2012 sln file using VS2015. Agree to upgrade the compiler and libraries
 * Build the static library versions of libglog and ceres-solver
 
@@ -129,7 +129,7 @@ There are some further python extensions that are specific to pupil:
   </div>
 </div>
 
-In order to support isochronous USB transfer on Windows, you will need to install drivers for the cameras in your Pupil headset. Follow setup steps on [this wiki page](#win-driver-setup).
+In order to support isochronous USB transfer on Windows, you will need to install drivers for the cameras in your Pupil headset. Follow setup steps on [this wiki page](https://github.com/pupil-labs/pupil/wiki/Windows-Driver-Setup).
 
 <div class="content-container">
   <div class="header-link">
@@ -163,7 +163,7 @@ run_player.bat path_to_recording
 
 * Clone PyAV to your system `git clone https://github.com/pupil-labs/PyAV.git`
 * Download and extract [ffmpeg-3.2-dev](http://ffmpeg.zeranoe.com/builds/win64/dev/ffmpeg-3.2-win64-dev.zip) 
-* Download and extract [ffmpeg-3.2-shared] (http://ffmpeg.zeranoe.com/builds/win64/shared/ffmpeg-3.2-win64-shared.zip)
+* Download and extract [ffmpeg-3.2-shared](http://ffmpeg.zeranoe.com/builds/win64/shared/ffmpeg-3.2-win64-shared.zip)
 * Copy the dlls from the ffmpeg-3.2-win64-shared\bin directory to the pupil\pupil_external\ directory
 * Open "Developer command prompt for VS2015" and cd to PyAV directory
 * Run `python setup.py clean --all build_ext --inplace --ffmpeg-dir=path\to\ffmpeg-3.2-dev -c msvc`

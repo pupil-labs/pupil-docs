@@ -61,17 +61,6 @@ Note - You may have other consumers on the same USB bus already so your milage m
 
 <div class="content-container">
   <div class="header-link">
-    <a href="#windows-opencv">
-      <h3 id="windows-opencv">Windows, OpenCV?</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
-Since this trick requires libuvc as a custom video backend it will work on mac and linux but not work on windows until somebody implements iso-transfers for libusb on windows. If you want to use the cameras with OpenCV I would suggest using [pyuvc](https://github.com/pupil-labs/pyuvc) to get frames from the cameras.
-
-<div class="content-container">
-  <div class="header-link">
     <a href="#use-more-bus">
       <h3 id="use-more-bus">Use more BUS</h3>
     </a>
@@ -92,7 +81,7 @@ If you want to not be limited by the bandwidth of a single usb bus you can use a
 
 Each camera we use is a free running capture device. Additionally each camera runs in a separate process. Instead of frame-locking the camera through special hardware we acquire timestamps for each frame. These timestamps are then used to correlate data from each camera in time and match frames based on closest proximity. 
 
-Data from each eye camera is sent via IPC to the world process. Since this involves three separate processes it can happen that data from one camera arrives earlier that another. However for each camera the frames will be ordered and timestamps are monotonically increasing. In the main process we match the available data timewise when we need. In Pupil Player we can do matching after the fact to work with perfectly sorted data from all three cameras. If you require the data to be matched over being recent I would recommend collecting data in the queue for a few more frames in world.py before dispatching them in the events dict. (I'll actually do some tests on this subject soon.)
+Data from each eye camera is sent via IPC to the world process. Since this involves three separate processes it can happen that data from one camera arrives earlier that another. However for each camera the frames will be ordered and timestamps are monotonically increasing. In the main process we match the available data timewise when we need. In Pupil Player we can do matching after the fact to work with perfectly sorted data from all three cameras. If you require the data to be matched over being recent I would recommend collecting data in the queue for a few more frames in world.py before dispatching them in the events dict. (I ll actually do some tests on this subject soon.)
 
 <div class="content-container">
   <div class="header-link">

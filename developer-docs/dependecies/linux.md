@@ -32,20 +32,33 @@ These installation instructions are tested using **Ubuntu 16.04 or higher** runn
   </div>
 </div>
 
-Let's get started! Its time for `apt-get`.  Just copy paste into the terminal and listen to your machine purr.
+Let's get started! Its time for `apt`!  Just copy paste into the terminal and listen to your machine purr.
 
 ```
-sudo apt install -y pkg-config git cmake build-essential nasm wget python-setuptools libusb-1.0-0-dev python-zmq python-dev python-pip python-opengl python-opencv python-scipy libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev ffmpeg  libglew-dev libglfw3-dev  libopencv-dev
+sudo apt install -y pkg-config git cmake build-essential nasm wget python3-setuptools libusb-1.0-0-dev  python3-dev python3-pip python3-numpy python3-scipy libglew-dev libglfw3-dev
+```
+
+> ffmpeg >= 3.2
+```
+sudo add-apt-repository ppa:jonathonf/ffmpeg-3
+sudo apt-get update
+sudo apt install libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev ffmpeg libav-tools x264 x265
 ```
 
 > OpenCV
 
 ```
+# The requisites for opencv to build python3 cv2.so library are:
+# (1) python3 interpreter found
+# (2) libpython***.so shared lib found (make sure to install python3-dev)
+# (3) numpy for python3 installed.
+# If cv2.so was not build, delete the build folder, recheck the requisites and try again.
+
 git clone https://github.com/itseez/opencv
 cd opencv
 mkdir build
 cd build
-cmake -D CMAKE_BUILD_TYPE=RELEASE ..
+cmake -D CMAKE_BUILD_TYPE=RELEASE -D BUILD_TBB=ON -D WITH_TBB=ON ..
 make -j2
 sudo make install
 sudo ldconfig
@@ -54,11 +67,12 @@ sudo ldconfig
 > Turbojpeg
 
 ```
-wget -O libjpeg-turbo.tar.gz http://sourceforge.net/projects/libjpeg-turbo/files/1.4.2/libjpeg-turbo-1.4.2.tar.gz/download
+wget -O libjpeg-turbo.tar.gz https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-1.5.1.tar.gz/download
 tar xvzf libjpeg-turbo.tar.gz
-cd libjpeg-turbo-1.4.2
-./configure --with-pic
+cd libjpeg-turbo-1.5.1
+./configure --with-pic --prefix=/usr/local
 sudo make install
+sudo ldconfig
 ```
 
 > libuvc
@@ -82,16 +96,17 @@ sudo udevadm trigger
 > Install packages with `pip`
 
 ```
-sudo pip install numexpr
-sudo pip install cython
-sudo pip install psutil
-sudo pip install pyzmq
-sudo pip install msgpack_python
-sudo pip install git+https://github.com/zeromq/pyre
-sudo pip install git+https://github.com/pupil-labs/PyAV
-sudo pip install git+https://github.com/pupil-labs/pyuvc
-sudo pip install git+https://github.com/pupil-labs/pyndsi
-sudo pip install git+https://github.com/pupil-labs/pyglui
+sudo pip3 install numexpr
+sudo pip3 install cython
+sudo pip3 install psutil
+sudo pip3 install pyzmq
+sudo pip3 install msgpack_python
+sudo pip3 install pyopengl
+sudo pip3 install git+https://github.com/zeromq/pyre
+sudo pip3 install git+https://github.com/pupil-labs/PyAV
+sudo pip3 install git+https://github.com/pupil-labs/pyuvc
+sudo pip3 install git+https://github.com/pupil-labs/pyndsi
+sudo pip3 install git+https://github.com/pupil-labs/pyglui
 ```
 
 > Finally, we install 3D eye model dependencies

@@ -18,7 +18,7 @@ We have been asked a few times about how to cite Pupil in academic research. Ple
 <div class="content-container">
   <div class="header-link">
     <a href="#cite-pupil">
-      <h3 id="cite-pupil">Papers that Cite Pupil</h3>
+      <h3 id="cite-pupil">Papers that cite Pupil</h3>
     </a>
   </div>
 </div>
