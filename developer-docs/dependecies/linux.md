@@ -1,37 +1,16 @@
 +++
 date = "2017-01-19T16:40:20+07:00"
 title = "linux"
-weight = 25
+section_weight = 4
+page_weight = 12
 +++
 
-<div class="header-border-top"></div>
-<div class="content-container">
-  <div class="header-link">
-    <a href="#dependencies-install">
-      <h2 id="dependencies-install">Dependecies Installation</h2>
-    </a>
-  </div>
-</div>
+## Dependecies Installation
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#linux">
-      <h3 id="linux">Linux</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### Linux
 These installation instructions are tested using **Ubuntu 16.04 or higher** running on many machines. Do not run Pupil on a VM unless you know what you are doing.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#linux-install-dependencies">
-      <h4 id="linux-install-dependencies">Install Dependencies</h4>
-    </a>
-  </div>
-</div>
-
+**Install Dependencies**
 Let's get started! Its time for `apt`!  Just copy paste into the terminal and listen to your machine purr.
 
 ```

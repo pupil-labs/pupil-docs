@@ -1,55 +1,27 @@
 +++
 date = "2017-01-19T15:58:51+07:00"
 title = "dev overview"
-weight = 10
+section_weight = 4
+page_weight = 0
 +++
 
 # Developer Docs
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#dev-overview">
-      <h2 id="dev-overview">Development Overview</h2>
-    </a>
-  </div>
-</div>
+## Development Overview
 
 Overview of language, code structure, and general conventions
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#language">
-      <h3 id="language">Language</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### Language
 Pupil is written in `Python`, but no "heavy lifting" is done in Python. High performance computer vision, media compression, display libraries, and custom functions are written in external libraries or c/c++ and accessed though cython. Python plays the role of "glue" that sticks all the pieces together.
 
 We also like writing code in Python because it's *quick and easy* to move from initial idea to working proof-of-concept. If proof-of-concept code is slow, optimisation and performance enhancement can happen in iterations of code.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#process-structure">
-      <h3 id="process-structure">Process Structure</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### Process Structure
 When [Pupil Capture][capture] starts, in default settings two processes are spawned:
 
 **Eye** and **World**. Both processes grab image frames from a video capture stream but they have very different tasks.  
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#eye-process">
-      <h4 id="eye-process">Eye Process</h4>
-    </a>
-  </div>
-</div>
-
+**Eye Process**
 The eye process only has one purpose - to detect the pupil and broadcast its's position.  The process breakdown looks like this:
 
 * Grabs eye camera images from eye camera video stream
@@ -60,14 +32,7 @@ The eye process only has one purpose - to detect the pupil and broadcast its's p
 Note - Pupil position refers to the position of the pupil in the eye camera space. This is different from gaze position which is what we call the mapped pupil positions in the world camera space.
 </aside>
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#world-process">
-      <h4 id="world-process">World Process</h4>
-    </a>
-  </div>
-</div>
-
+**World Process**
 This is the workhorse.
 
 * Grabs the world camera images from the world camera video stream
@@ -79,8 +44,7 @@ Most, and preferably all coordination and control happens within the World proce
 
 TBA
 
-##### Pupil Datum format
-
+**Pupil Datum format**
 The pupil detector, run by the Eye process are required to return a result in the form of a Python dictionary with *at least* the following content:
 
 ```python
@@ -98,45 +62,22 @@ The pupil detector, run by the Eye process are required to return a result in th
 
 This dictionary is sent on the IPC and read by gaze mapping plugins in the world process. Mapping from pupil position to gaze position happens here. The mapping plugin is initilized by a calibration plugin.
 
-##### Control: World -> Eye
+**Control: World -> Eye**
 Happens via notifications on the IPC.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#time-data-conventions">
-      <h3 id="time-data-conventions">Timing & Data Conventions</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### Timing & Data Conventions
 Pupil Capture is designed to work with multiple captures that free-run at different frame rates that may not be in sync. World and eye images are timestamped and any resulting artefacts (detected pupil, markers, etc) inherit the source timestamp. Any correlation of these data streams is the responsibility of the functional part that needs the data to be correlated (e.g. calibration, visualisation, analyses).
 
 For example: The pupil capture data format records the world video frames with their respective timestamps. Independent of this, the recorder also saves the detected gaze and pupil positions at their frame rate and with their timestamps. For more detail see [Data Format](#data-format).
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#git-conventions">
-      <h3 id="git-conventions">Git Conventions</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### Git Conventions
 We make changes almost daily and sometimes features will be temporarily broken in some development branches.  However, we try to keep the `master` branch as stable as possible and use other branches for feature development and experiments. Here's a breakdown of conventions we try to follow.
 
 * `tags` - We make a tag following the [semantic versioning][semver] protocol.  Check out the [releases][releases]. 
 * `master` - this branch tries to be as stable as possible - incremental and tested features will be merged into the master.  Check out the [master branch][master-branch].  
 * `branches` - branches are named after features that are being developed. These branches are experimental and what could be called 'bleeding edge.'  This means features in these branches may not be fully functional, broken, or really cool... You're certainly welcome to check them out and improve on the work!  
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#pull-requests">
-      <h4 id="pull-requests">Pull requests</h4>
-    </a>
-  </div>
-</div>
-
+### Pull requests
 If you've done something -- even if work-in-progress -- make a [pull request][pull] and write a short update to the [Pupil community](#google-group).
 
 [git-remote]: https://help.github.com/articles/configuring-a-remote-for-a-fork/

@@ -1,42 +1,21 @@
 +++
-weight = 31
 date = "2017-01-20T11:12:14+07:00"
 title = "license"
-
+section_weight = 5
+page_weight = 0
 +++
 
-<div class="header-border-top"></div>
-<div class="content-container">
-  <div class="header-link">
-    <a href="#license">
-      <h2 id="license">License</h2>
-    </a>
-  </div>
-</div>
+# License
 
 We want Pupil to proliferate! We want you to use Pupil to empower and inspire whatever you do. Be it academic research, commercial work, teaching, art, or personally motivated projects.
 
 We want you to be a member of the Pupil community and contribute as much as possible. The software is open and the hardware is modular and accessible. We encourage the modification of software in accordance to the open source license.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#software">
-      <h3 id="software">Software</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
+## Software
 
 All source code written by us is open source in accordance with the [GNU Lesser General Public License (LGPL v3.0) license][license-link]. We encourage you to change and improve the code. We require that you will share your work with the Pupil community.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#hardware">
-      <h3 id="hardware">Hardware</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
+## Hardware
 
 The camera mounts of the Pupil headset are open source for non-commercial use. We distribute CAD files for camera mounts and document the interface geometry in the [Pupil Hardware Development](#camera-mounts) so that you can use different cameras or customize for your specific needs. Again, we encourage this and are excited to see new designs, ideas, and support for other camera models.
 
@@ -49,38 +28,17 @@ We take a markup fee for every headset to finance the Pupil project. This fee su
 
 If you have ideas and suggestions for improvements on the actual frame of the headset we are happy to collaborate closely on improvements. [Contact us.](#email)
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#documentation">
-      <h3 id="documentation">Documentation</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
+## Documentation
 
 All content of the documentation written by us is open source, according to [GNU Lesser General Public License (LGPL v3.0) license][license-link].
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#using-pupil">
-      <h3 id="using-pupil">Using Pupil in Your Research and Projects</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
+## Using Pupil in Your Research and Projects
 
 You can use Pupil in your research, academic work, commercial work, art projects and personal work. We only ask you to credit us appropriately. See [Academic Citation](#academic-citation) for samples.  
 
 Pupil is developed and maintained by Pupil Labs. If you make a contribution to open source, we will include your name in our [[Contributors]] page.  For more information about the people behind the project, check out [Pupil Labs][pupil-labs].
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#using-pupil">
-      <h3 id="using-pupil">Alternate Licensing</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
+## Alternate Licensing
 
 If you would like to use Pupil outside of the [GNU Lesser General Public License (LGPL v3.0) license][license-link], contact us so we can discuss a options. Send an email to us at sales [at] pupil-labs [dot] com
 

@@ -1,19 +1,13 @@
 +++
 date = "2017-01-18T11:51:10+07:00"
 title = "Pupil Hardware"
-weight = 3
+section_weight = 2
+page_weight = 0
 +++
 
 # Pupil Hardware
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#headset-intro">
-      <h3 id="headset-intro">Introduction to the Pupil Headset</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
+## Introduction to the Pupil Headset
 
 <p align='center'>
   <img class="padTop--1" src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/basic-workflow/pupil-hardware/headset/pupil-headset.png" width="50%">
@@ -23,14 +17,7 @@ You should already be wearing the headset, with the device plugged into your com
 
 Above is an illustration of a Pupil Headset with high speed world camera and 120hz binocular eye cameras. Depending on your configuration, your headset might look different, but working principles are the same.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#additional-parts">
-      <h3 id="additional-parts">Additional parts</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
+### Additional parts
 
 <table>
   <tr>
@@ -53,14 +40,7 @@ Above is an illustration of a Pupil Headset with high speed world camera and 120
 Depending on your configuration, some additional parts may be included with your Pupil headset.
 </aside>
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#headset-adjustments">
-      <h3 id="headset-adjustments">Pupil Headset Adjustments</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
+### Pupil Headset Adjustments
 
 <table>
   <tr>
@@ -90,14 +70,7 @@ Depending on your configuration, some additional parts may be included with your
   Before you calibrate, make sure to properly adjust the headset to get optimal eye detection and world camera FOV.
 </aside>
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#focus-cameras">
-      <h3 id="focus-cameras">Focus Cameras</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
+### Focus Cameras
 
 <table>
   <tr>

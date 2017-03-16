@@ -1,44 +1,22 @@
 +++
 date = "2017-01-19T13:08:13+07:00"
 title = "pupil player"
-weight = 7
+section_weight = 3
+page_weight = 1
 +++
 
-<div class="header-border-top"></div>
-<div class="content-container">
-  <div class="header-link">
-    <a href="#pupil-player">
-      <h2 id="pupil-player">Pupil Player</h2>
-    </a>
-  </div>
-</div>
+## Pupil Player
 
 <p align="center">
   <img class="padTop--2" src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/player/player-marker-demo.png" width="85%">
 </p>
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#player-about">
-      <h3 id="player-about">About</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### About
 Pupil Player is the second tool you will use after Pupil Capture. It is a media and data visualizer at its core. You will use it to look at Pupil Capture recordings. Visualize your data and export it.
 
 Features like <a href="#marker-tracking">surface tracking</a> found in Pupil Capture are also available in Pupil Player.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#start-player">
-      <h3 id="start-player">Starting Pupil Player</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### Starting Pupil Player
 Drag the recording directory (the triple digit one) directly onto the app icon **or** launch the application and drag + drop the recording directory into Pupil Player window.
 
 <p align="center">
@@ -52,14 +30,7 @@ cd "path_to_pupil_dir/pupil_src/player"
 python main.py "path/to/recording_directory"
 ```
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#player-workflow">
-      <h4 id="player-workflow">Workflow</h4>
-    </a>
-  </div>
-</div>
-
+**Workflow**
 Pupil Player is similar to a video player. You can playback recordings and can load plugins to build visualizations.
 
 Here is an example workflow:
@@ -75,15 +46,7 @@ Here is an example workflow:
 Note - Pupil Player will <strongn>ever</strongn> remove or overwrite any of your raw data gathered during capture. All exports are isolated within a sub-directory named <code>exports</code>.
 </aside>
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#plugin-overview">
-      <h3 id="plugin-overview">Plugin Overview</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### Plugin Overview
 Pupil Player uses the same Plugin framework found in Pupil Capture to add functionality.
 
 We implement all visualizations, marker tracking, and the exporter using this structure. Very little work (often no work) needs to be done to make a Capture Plugin work for the Pupil Player and vice versa.
@@ -95,25 +58,10 @@ There are two general types of plugins:
 
 In the following sections we provide a summary of plugins currently available and in Pupil Player.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#vis-plugin-utils">
-      <h3 id="vis-plugin-utils">Visualization Plugins and Utilities</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### Visualization Plugins and Utilities
 For the sake of clarity, we will call plugins with the `Vis` prefix **visualization** plugins. These plugins are simple plugins, are mostly additive ( or *not unique*), and directly operate on the gaze positions to produce visualizations. Other plugins like `Offline Marker Detector` also produces visualizations, but will be discussed elsewhere due to the extent of its features.    
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#vis-circle">
-      <h4 id="vis-circle">Vis Circle</h4>
-    </a>
-  </div>
-</div>
-
+**Vis Circle**
 Visualize the gaze positions with a circle for each gaze position. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization.
 
 You can set the following parameters:
@@ -129,14 +77,7 @@ You can set the following parameters:
 
 Here we show an example of how you could use **2** instances of the `Vis Circle` Plugin. The first instance renders the gaze position as a filled yellow circle. The second instance renders the same gaze position as an orange stroke circle.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#vis-cross">
-      <h4 id="vis-cross">Vis Cross</h4>
-    </a>
-  </div>
-</div>
-
+**Vis Cross**
 Visualize the gaze positions with a cross for each gaze position. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization. You can set the following parameters:
 
   + `inner offset length` - the distance in pixels to offset the interior cross endpoints from the gaze position. A value of `0` will make the crosshairs intersect the gaze position.  
@@ -151,14 +92,7 @@ Visualize the gaze positions with a cross for each gaze position. This plugin is
 Here we show an example of how you could use **2** instances of the `Vis Cross` Plugin. The first instance renders the gaze position as a red cross with that extends to the boundaries of the screen. The second instance renders the gaze position as a green cross, with a heavier stroke weight.
 
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#scan-path">
-      <h4 id="scan-path">Scan Path</h4>
-    </a>
-  </div>
-</div>
-
+**Scan Path**
 This plugin enables past gaze positions to stay visible for the duration of time specified by the user. This plugin is **unique**, therefore you can only load one instance of this plugin.
 
 On its own, `Scan Path` does not render anything to the screen. It is designed to be used with other plugins. In some cases, it is even required to be enabled in order for other plugins to properly function. When used with `Vis` plugins (like `Vis Circle`, `Vis Cross`, `Vis Polyline`, or `Vis Light Points`) `Scan Path` will enable you to see both the current gaze positions and the past gaze positions for the specified duration of time.     
@@ -169,14 +103,7 @@ On its own, `Scan Path` does not render anything to the screen. It is designed t
 
 Here we show an example of `Scan Path` set with `0.4` seconds duration used with `Vis Circle`. Each green circle is a gaze position within the last `0.4` seconds of the recording.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#vis-polyline">
-      <h4 id="vis-polyline">Vis Polyline</h4>
-    </a>
-  </div>
-</div>
-
+**Vis Polyline**
 Visualize the gaze positions with a polyline for each gaze position. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization. You can set the following parameters:
 
   + `line thickness` - the thickness or width of the polyline stroke in pixels.  
@@ -188,14 +115,7 @@ Visualize the gaze positions with a polyline for each gaze position. This plugin
 
 An example showing `Vis Polyline` used with `Vis Circle` and `Scan Path`. The polyline enables one to visualize the sequence of the gaze positions over the duration specified by `Scan Path`.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#vis-lightpoints">
-      <h4 id="vis-lightpoints">Vis Light Points</h4>
-    </a>
-  </div>
-</div>
-
+**Vis Light Points**
 Visualize the gaze positions as a point of light for each gaze position. The `falloff` of the light from the gaze position is specified by the user. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization. You can set the following parameters:
 
   + `falloff` - The distance (in pixels) at which the light begins to fall off (fade to black). A very low number will result in a very dark visualization with tiny white light points. A very large number will result in a visualization of the world view with little or no emphasis of the gaze positions.  
@@ -206,27 +126,13 @@ Visualize the gaze positions as a point of light for each gaze position. The `fa
 
 Here is an example demonstrating `Vis Light Points` with a falloff of 73.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#gaze-correction">
-      <h4 id="gaze-correction">Manual Gaze Correction</h4>
-    </a>
-  </div>
-</div>
-
+**Manual Gaze Correction**
 This plugin allows one to manually offset the gaze position. The offset values are between `-1` and `1`. This plugin is **unique**, therefore you can only load one instance of this plugin. You can set the following parameters:
 
   + `x_offset` - the amount to offset the gaze position horizontally
   + `y_offset` - the amount to offset the gaze position vertically
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#eye-overlay">
-      <h4 id="eye-overlay">Eye Video Overlay</h4>
-    </a>
-  </div>
-</div>
-
+**Eye Video Overlay**
 This plugin can be used to overlay the eye video on top of the world video. Note that the eye video is not recorded by default in Pupil Capture, so if you want to use this plugin, make sure to check `record eye video` in Pupil Capture. This plugin is **unique**, therefore you can only load one instance of this plugin.
 
  You can set the following parameters:
@@ -243,27 +149,12 @@ This plugin can be used to overlay the eye video on top of the world video. Note
 
 Here is an example of the `Eye Video Overlay` with binocular eye videos.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#export">
-      <h3 id="export">Export</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### Export
 You can export data and videos by pressing `e` on your keyboard or the `e` hot key button in the Pupil Player window.
 
 All open plugins that have export capability will export when you press `e`. All exports are separated from your raw data and contained in the `exports` sub-directory. The exports directory lives within your recording directory.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#export-dir">
-      <h4 id="export-dir">Exports directory</h4>
-    </a>
-  </div>
-</div>
-
+**Exports directory**
 All exports are saved within the `exports` sub-directory within your recording directory.
 A new directory will be created within the `exports` directory named with the `start` frame and `end` frame that is specified by the trim marks.
 
@@ -271,14 +162,7 @@ A new directory will be created within the `exports` directory named with the `s
   <img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/basic-workflow/pupil-player/recording-directory/recording_folder_exports_v07.png" width="85%">
 </p>
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#export-launcher">
-      <h4 id="export-launcher">Video Export Launcher</h4>
-    </a>
-  </div>
-</div>
-
+**Video Export Launcher**
 To export a video, load the `Export Video` plugin. You can select the frame range to export by setting trim marks in the seek bar or directly in the plugin GUI.
 
 You can specify the name of the export in the GUI. Click press the `e` button or click `e` on your keyboard to start the export.
@@ -289,14 +173,7 @@ The exporter will run in the background and you can see the progress bar of the 
   <img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/player/pupil-player-export.png" width="85%">  
 </p>
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#raw-data-exporter">
-      <h4 id="raw-data-exporter">Raw Data Exporter</h4>
-    </a>
-  </div>
-</div>
-
+**Raw Data Exporter**
 To export `.csv` files of your data, load the `Raw Data Exporter` plugin. You can select the frame range to export by setting trim marks in the seek bar or directly in the plugin GUI.
 
 Click press the `e` button or click `e` on your keyboard to start the export.
@@ -305,14 +182,7 @@ Click press the `e` button or click `e` on your keyboard to start the export.
   <img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/player/player-rawexport.png" width="85%">
 </p>
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#offline-surface-tracker">
-      <h4 id="offline-surface-tracker">Offline Surface Tracker</h4>
-    </a>
-  </div>
-</div>
-
+**Offline Surface Tracker**
 This plugin is an offline version of the [Surface Tracking](#marker-tracking) plugin for Pupil Capture. You can use this plugin to detect markers in the recording, define surfaces, edit surfaces, and create and export visualizations of gaze data within the defined surfaces.
 
 <p align="center">
@@ -328,14 +198,7 @@ Here is an example workflow for using the `Offline Surface Detector` plugin to g
   + Recalculate gaze distributions - click the `(Re)calculate gaze distributions` button after specifying surface sizes. You should now see heatmaps in the Player window (if gaze positions were within your defined surfaces).
   + Export gaze and surface data - click `e` and all surface metrics reports will be exported and saved for your trim section within your `export` folder.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#fixation-dispersion">
-      <h4 id="fixation-dispersion">Fixation Detector - Dispersion Duration</h4>
-    </a>
-  </div>
-</div>
-
+**Fixation Detector - Dispersion Duration**
 This plugin detects fixation based on a dispersion threshold in terms of degrees of visual angle. This plugin is **unique**, therefore you can only load one nstance of this plugin.
 
 <p align="center">
@@ -348,28 +211,13 @@ This plugin detects fixation based on a dispersion threshold in terms of degrees
 
 Toggle `Show fixations` to show a visualization of fixations. The blue number is the number of the fixation (0 being the first fixation). You can export fixation reports for your current trim section by pressing `e` on your keyboard or the `e` hot key button in the left hand side of the window.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#batch-exporter">
-      <h4 id="batch-exporter">Batch Exporter</h4>
-    </a>
-  </div>
-</div>
-
+**Batch Exporter**
 You can use this plugin to apply visualizations to an entire directory (folder) of recordings in one batch. You need to specify the following:
 
   + `Recording source directory` - a directory (folder) that contains one or more Pupil recording folder.
   + `Recording destination directory` - an existing directory (folder) where you want to save the visualizations.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#develop-plugin">
-      <h3 id="develop-plugin">Developing your own Plugin</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### Developing your own Plugin
 To develop your own plugin see the <a href="#plugin-guide">developer guide</a>.
 
 

@@ -1,42 +1,21 @@
 +++
 date = "2017-01-19T16:33:08+07:00"
-title = "dependecies"
-weight = 26
+title = "macos"
+section_weight = 4
+page_weight = 13
 +++
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#macos">
-      <h3 id="macos">MacOS</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### MacOS
 These instructions have been tested for MacOS 10.8, 10.9, 10.10, 10.11, and 10.12. Use the linked websites and Terminal to execute the instructions.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#install-dev-tools">
-      <h4 id="install-dev-tools">Install Apple Dev Tools</h4>
-    </a>
-  </div>
-</div>
-
+**Install Apple Dev Tools**
 Trigger the install of the Command Line Tools (CLT) by typing this in your terminal and letting MacOS install the tools required:
 
 ```bash
 git
 ```
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#install-homebrew">
-      <h4 id="install-homebrew">Install Homebrew</h4>
-    </a>
-  </div>
-</div>
-
+**Install Homebrew**
 [Homebrew][brew] describes itself as "the missing package manager for OSX."  It makes development on MacOS much easier, [plus it's open source][brew-github].  Install with the ruby script.  
 
 ```
@@ -58,13 +37,7 @@ Add Homebrew installed executables and Python scripts to your path.  Add the fol
 Note - You might need to change the Python path above depending on your installed version. `brew info python3 | grep site-packages` prints the corresponding site-packages folder.
 </aside>
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#dependencies-brew">
-      <h4 id="dependencies-brew">Dependencies with <code>brew</code></h4>
-    </a>
-  </div>
-</div>
+**Dependencies with `brew`**
 
 Let's get started! Its time to put `brew` to work! Just copy paste commands into your terminal and listen to your machine purr.
 
@@ -96,14 +69,7 @@ echo /usr/local/opt/opencv3/lib/python3.6/site-packages >> /usr/local/lib/python
 
 ```
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#install-libuvc">
-      <h4 id="install-libuvc">Install <code>libuvc</code></h4>
-    </a>
-  </div>
-</div>
-
+**Install `libuvc`**
 ```
 git clone https://github.com/pupil-labs/libuvc
 cd libuvc
@@ -113,13 +79,7 @@ cmake ..
 make && make install
 ```
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#python-pip">
-      <h4 id="python-pip">Python Packages with <code>pip</code></h4>
-    </a>
-  </div>
-</div>
+**Python Packages with `pip`**
 
 PyOpenGL, ZMQ, ... 
 

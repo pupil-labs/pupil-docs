@@ -1,26 +1,13 @@
 +++
 date = "2017-01-19T15:40:13+07:00"
 title = "pupil servce"
-weight = "8"
+section_weight = 3
+page_weight = 2
 +++
 
-<div class="header-border-top"></div>
-<div class="content-container">
-  <div class="header-link">
-    <a href="#pupil-service">
-      <h2 id="pupil-service">Pupil Service</h2>
-    </a>
-  </div>
-</div>
+## Pupil Service
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#service-about">
-      <h3 id="service-about">About</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
+### About
 
 <p align="center">
 	<img src="/images/icons/ps.png" width="20%">
@@ -30,15 +17,7 @@ Pupil Service is like Pupil Capture except it does not have a world video feed o
 
 Pupil Service is designed to run in the background and to be controlled via network commands only. The service process has no GUI. The tools introduced in the [hmd-eyes project](https://github.com/pupil-labs/hmd-eyes) are made to work with Pupil Service and Pupil Capture alike.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#talk-service">
-      <h3 id="talk-service">Talking to Pupil Service</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### Talking to Pupil Service
 Code examples below demonstrate how to control Pupil Service over the network. 
 
 > Starting and stopping Pupil Service:
@@ -80,15 +59,7 @@ n = {'subject':'service_process.should_stop'}
 print send_recv_notification(n)
 ```
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#notification">
-      <h3 id="notification">Notifications</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### Notifications
 The code demonstrates how you can listen to all notification from Pupil Service. This requires a little helper script called [zmq_tools.py](https://github.com/pupil-labs/hmd-eyes/blob/master/hmd_calibration/zmq_tools.py).
 
 
@@ -107,15 +78,7 @@ while True:
     print(monitor.recv())
 ```
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#clients">
-      <h3 id="clients">Clients</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### Clients
 An example client written in Python can be found [here](https://github.com/pupil-labs/hmd-eyes/tree/master/hmd_calibration)
 
 An example client for Unity3d can be found [here](https://github.com/pupil-labs/hmd-eyes/tree/master/unity_integration_calibration)

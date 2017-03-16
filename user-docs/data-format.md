@@ -1,17 +1,11 @@
 +++
 date = "2017-01-19T15:45:05+07:00"
 title = "data format"
-weight = "9"
+section_weight = 3
+page_weight = 3
 +++
 
-<div class="header-border-top"></div>
-<div class="content-container">
-  <div class="header-link">
-    <a href="#data-format">
-      <h2 id="data-format">Data Format</h2>
-    </a>
-  </div>
-</div>
+## Data Format
 
 Every time you click record in Pupil's capture software, a new recording is started and your data is saved into a recording folder. It contains:
 
@@ -25,25 +19,10 @@ These files are stored in a newly created folder inside `your_pupil_recordings_d
 
 If you want to view the data, export videos, export raw data as `.csv` (and more) you can use [Pupil Player](#pupil-player).
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#pupil-data-format">
-      <h3 id="pupil-data-format">Pupil - Data Format</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### Pupil - Data Format
 The data format for Pupil recordings is 100% open. Sub-headings below provide details of each file and its data format.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#world-video-stream">
-      <h4 id="world-video-stream">World Video Stream</h4>
-    </a>
-  </div>
-</div>
-
+**World Video Stream**
 When using the setting `more CPU smaller file`: A `mpeg4` compressed video stream of the world view in a `.mp4` container. The video is compressed using ffmpeg's default settings. It gives a good balance between image quality and files size. The frame rate of this file is set to your capture frame rate.
 
 When using the setting `less CPU bigger file`: A raw `mjpeg` stream from the world camera world view in a `.mp4` container. The video is compressed by the camera itself. While the file size is considerably larger than above, this will allow ultra low CPU while recording. It plays with recent version of ffmpeg and vlc player. The "frame rate" setting in the Pupil Capture sidebar (Camera Settings > Sensor Settings) controls the frame rate of the videos.
@@ -66,14 +45,7 @@ status, img1 = capture.read() # extract the first frame
 status, img2 = capture.read() # second frame...
 ```
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#coordinate-systems">
-      <h4 id="coordinate-systems">Coordinate Systems</h4>
-    </a>
-  </div>
-</div>
-
+**Coordinate Systems**
 We use a normalized coordinate system with the origin `0,0` at the bottom left and `1,1` at the top right.
 
 * Normalized Space
@@ -84,14 +56,7 @@ We use a normalized coordinate system with the origin `0,0` at the bottom left a
 
   In some rare cases we use the image coordinate system. This is mainly for pixel access of the image arrays. Here a unit is one pixel, origin is "top left" and "bottom right" is the maximum x,y.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#timestamps">
-      <h4 id="timestamps">Timestamps</h4>
-    </a>
-  </div>
-</div>
-
+**Timestamps**
 All indexed data, (for example, still frames from the world camera, still frames from the eye camera, gaze and pupil coordinates, and so on) has timestamps associated to for synchronization purposes. The timestamp is derived from `CLOCK_MONOTONIC` on Linux and MacOS. 
 
 The time at which the clock starts counting is called PUPIL EPOCH. In pupil the epoch is adjustable through `Pupil Remote` and `Pupil Timesync`.
@@ -121,70 +86,27 @@ More information:
    - Depends on set-up, and it is lower when more cameras are present. (120Hz maximum based on a 5.7ms latency for
      the cameras and a 3.0ms processing latency.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#pupil-data">
-      <h4 id="pupil-data">Pupil Data</h4>
-    </a>
-  </div>
-</div>
-
+**Pupil Data**
 We store the **gaze positions**, **pupil positions**, and additional information within the `pupil_data` file. The `pupil_data` file is a pickled Python file.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#pupil-positions">
-      <h4 id="pupil-positions">Pupil Positions</h4>
-    </a>
-  </div>
-</div>
-
+**Pupil Positions**
 Coordinates of the pupil center in the eye video are called the **pupil position**, that has x,y coordinates normalized as described in the coordinate system above. This is stored within a dictionary structure within the `pupil_data` file.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#gaze-positions">
-      <h4 id="gaze-positions">Gaze Positions</h4>
-    </a>
-  </div>
-</div>
-
+**Gaze Positions**
 The **pupil position** get mapped into the world space and thus becomes the **gaze position**.  This is the current center of the subject visual attention -- or what you're looking at in the world. This is stored within a dictionary structure within the `pupil_data` file. 
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#looking-data">
-      <h3 id="looking-data">Looking at the data</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
+### Looking at the data
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#data-pupil-player">
-      <h4 id="data-pupil-player">Pupil Player</h4>
-    </a>
-  </div>
-</div>
-
+**Pupil Player**
 Head over to [Pupil Player](#pupil-player) to playback Pupil recordings, add visualizations, and export in various formats.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#access-data">
-      <h4 id="access-data">Access to raw data</h4>
-    </a>
-  </div>
-</div>
-
+**Access to raw data**
 Use the 'Raw Data Exporter' plugin to export `.csv` files that contain all the data captured with Pupil Capture.
 
 An informational file that explains all fields in the `.csv` will be exported with the `.csv` file for documentation.
 Below is a list of the data exported using `v0.7.4` of Pupil Player with a recording made from Pupil Capture `v0.7.4`.
 
-##### pupil_positions.csv
-
+**pupil_positions.csv**
 * `timestamp` - timestamp of the source image frame
 * `index` - associated_frame: closest world video frame
 * `id` - 0 or 1 for left/right eye
@@ -204,15 +126,7 @@ in 2d the pupil appears as an ellipse available in `3d c++` and `2D c++` detecto
 * `2d_ellipse_axis_b` - second axis of the pupil ellipse in pixels
 * `2d_ellipse_angle` - angle of the ellipse in degrees
 
-
-<div class="content-container">
-  <div class="header-link">
-    <a href="#3d-detector-data">
-      <h4 id="3d-detector-data">Data made available by the `3d c++` detector</h4>
-    </a>
-  </div>
-</div>
-
+**Data made available by the `3d c++` detector**
 * `diameter_3d` - diameter of the pupil scaled to mm based on anthropomorphic avg eye ball diameter and corrected for perspective.
 * `model_confidence` - confidence of the current eye model (0-1)
 * `model_id` - id of the current eye model. When a slippage is detected the model is replaced and the id changes.
@@ -235,8 +149,7 @@ in 2d the pupil appears as an ellipse available in `3d c++` and `2D c++` detecto
 * `projected_sphere_axis_b` - second axis of the 3d sphere projection.
 * `projected_sphere_angle` - angle of the 3d sphere projection. Units are degrees.
 
-##### gaze_positions.csv
-
+**gaze_positions.csv**
 * `timestamp` - timestamp of the source image frame
 * `index` - associated_frame: closest world video frame
 * `confidence` - computed confidence between 0 (not confident) -1 (confident)
@@ -260,26 +173,10 @@ in 2d the pupil appears as an ellipse available in `3d c++` and `2D c++` detecto
 * `gaze_normal1_y` - y normal of the visual axis for eye 1
 * `gaze_normal1_z` - z normal of the visual axis for eye 1
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#python-data">
-      <h3 id="python-data">Raw data with Python</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### Raw data with Python
 You can read and inspect `pupil_data` with a couple lines of python code.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#synchronization">
-      <h3 id="synchronization">synchronization</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### synchronization
 Pupil Capture software runs multiple processes. The world video feed and the eye video feeds run and record at the frame rates set by their capture devices (cameras). This allows us to be more flexible. Instead of locking everything into one frame rate, we can capture every feed at specifically set rates. But, this also means that we sometimes record world video frames with multiple gaze positions (higher eye-frame rate) or without any (no pupil detected or lower eye frame rate).
 
 In `player_methods.py` you can find a function that takes timestamped data and correlates it with  timestamps form a different source.
