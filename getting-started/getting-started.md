@@ -1,8 +1,10 @@
 +++
 date = "2017-01-19T12:24:57+07:00"
 title = "getting started"
-weight = 4
+weight = 2
 +++
+
+# Getting Started
 
 <div class="header-border-top"></div>
 <div class="content-container">
