@@ -23,7 +23,7 @@ These instructions have been tested for MacOS 10.8, 10.9, 10.10, 10.11, and 10.1
   </div>
 </div>
 
-Trigger the install of the Command Line Tolls (CLT) by typing this in your terminal and letting MacOS install the tools required:
+Trigger the install of the Command Line Tools (CLT) by typing this in your terminal and letting MacOS install the tools required:
 
 ```bash
 git
