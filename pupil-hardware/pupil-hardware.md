@@ -1,18 +1,10 @@
 +++
 date = "2017-01-18T11:51:10+07:00"
 title = "Pupil Hardware"
-weight = 2
+weight = 3
 +++
 
-# User Docs
-
-<div class="content-container">
-  <div class="header-link">
-    <a href="#pupil-hardware">
-      <h2 id="pupil-hardware">Pupil Hardware</h2>
-    </a>
-  </div>
-</div>
+# Pupil Hardware
 
 <div class="content-container">
   <div class="header-link">

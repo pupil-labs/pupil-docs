@@ -1,18 +1,10 @@
 +++
 date = "2017-01-19T12:24:57+07:00"
 title = "getting started"
-weight = 4
+weight = 2
 +++
 
-<div class="header-border-top"></div>
-<div class="content-container">
-  <div class="header-link">
-    <a href="#getting-started">
-      <h2 id="getting-started">Getting Started</h2>
-    </a>
-  </div>
-</div>
-
+# Getting Started
 
 This guide will lead you through a basic workflow using Pupil hardware and software.
 

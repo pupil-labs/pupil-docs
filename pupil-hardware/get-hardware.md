@@ -1,7 +1,7 @@
 +++
 date = "2017-01-17T12:41:37+07:00"
 title = "Getting Hardware"
-weight = 3
+weight = 4
 +++
 
 <div class="content-container">
