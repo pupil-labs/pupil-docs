@@ -1,55 +1,26 @@
 +++
 date = "2017-01-20T11:37:57+07:00"
 title = "win driver setup"
-weight = 18
-
+section_weight = 4
+page_weight = 7
 +++
 
-<div class="header-border-top"></div>
-<div class="content-container">
-  <div class="header-link">
-    <a href="#win-driver-setup">
-      <h2 id="win-driver-setup">Windows Driver Setup</h2>
-    </a>
-  </div>
-</div>
+## Windows Driver Setup
 
 In order to support isochronous USB transfer on Windows, you will need to install drivers for the cameras in your Pupil headset. 
 
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#download-driver-tools">
-      <h3 id="download-driver-tools">Download drivers and tools</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### Download drivers and tools
 1. Download and install [7zip](http://www.7-zip.org/download.html)
 1. Download and extract [Pupil camera driver installer](https://drive.google.com/uc?export=download&id=0Byap58sXjMVfR0p4eW5KcXpfQjg)
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#install-driver">
-      <h3 id="install-driver">Install drivers for your Pupil headset</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### Install drivers for your Pupil headset
 1. Navigate to `pupil_labs_camera_drivers_windows_x64` directory
 1. Double click *`InstallDriver.exe`* - this will install drivers. Follow on screen prompts. 
 1. Open `Windows Device Manager` from `System > Device Manager`. Verify the drivers are correctly installed in `Windows Device Manager`. Your Pupil headset cameras should be listed under a new category titled: `libusbK Usb Devices`. Note: In some cases `Pupil Cam1` may show three of the same `ID` as the camera name. Don't worry - just make sure that the number of devices are the same as the number of cameras on your Pupil headset.
 1. Download the latest release of Pupil software and launch `pupil_capture.exe` to verify all cameras are accessible.
 
-  <div class="header-link">
-    <a href="#install-driver">
-      <h3 id="install-driver">Troubleshooting</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
+### Troubleshooting
 
 If you had tried to install drivers with previous driver install instructions and failed, or are not able to access cameras in Pupil Capture. Please try the following:
 

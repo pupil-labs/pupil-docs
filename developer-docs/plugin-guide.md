@@ -1,35 +1,15 @@
 +++
 date = "2017-01-19T16:04:19+07:00"
 title = "plugin guide"
-weight = 17
+section_weight = 4
+page_weight = 6
 +++
 
-<div class="header-border-top"></div>
-<div class="content-container">
-  <div class="header-link">
-    <a href="#plugin-guide">
-      <h2 id="plugin-guide">Plugin Guide</h2>
-    </a>
-  </div>
-</div>
+## Plugin Guide
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#plugin-basics">
-      <h3 id="plugin-basics">Plugins Basics</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
+### Plugins Basics
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#world-process-plugin">
-      <h4 id="world-process-plugin">World Process Plugins in Pupil Capture</h4>
-    </a>
-  </div>
-</div>
-
+**World Process Plugins in Pupil Capture**
 Pupil Capture's World process can load plugins for easy integration of new features. Plugins have full access to: 
 
   + World image frame
@@ -43,24 +23,10 @@ Pupil Capture's World process can load plugins for easy integration of new featu
 
 Plugins can create their own UI elements, and even spawn their own OpenGL windows.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#pupil-player-plugin">
-      <h4 id="pupil-player-plugin">Pupil Player Plugins</h4>
-    </a>
-  </div>
-</div>
-
+**Pupil Player Plugins**
 Pupil Player uses an identical plugin structure. Little (often no work) needs to be done to use a Player Plugin in Capture and vice versa. But, it is important to keep in mind that plugins run in Pupil Capture may require more speed for real-time workflows, as opposed to plugins in Pupil Player.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#make-plugin">
-      <h4 id="make-plugin">Make your own plugin</h4>
-    </a>
-  </div>
-</div>
-
+**Make your own plugin**
 These general steps are required if you want to make your own plugin and use it within Pupil:
 
   + Fork the pupil repository (if you haven't done this already) and create a branch for your plugin. Try to make commits granular so that it can be merged easily with the official branch if so desired.
@@ -71,14 +37,7 @@ These general steps are required if you want to make your own plugin and use it 
   + Inherit from the `Plugin` class template. You can find the base class along with docs in [plugin.py](https://github.com/pupil-labs/pupil/tree/master/pupil_src/shared_modules/plugin.py). (A good example to reference while developing your plugin is [display_recent_gaze.py](https://github.com/pupil-labs/pupil/tree/master/pupil_src/shared_modules/display_recent_gaze.py))
   + Write your plugin
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#load-plugin-automatic">
-      <h4 id="load-plugin-automatic">Load your Plugin automatically</h4>
-    </a>
-  </div>
-</div>
-
+**Load your Plugin automatically**
 With Pupil v0.6 we introduce a plugin auto-loader. It works when running from either source or application bundle! There is no need to put your plugin into the directories mentioned above. Instead:
 
  + In `~/pupil_capture_settings` or `~/pupil_player_settings` (depending on the plugin application) create a folder called `plugins`
@@ -92,14 +51,7 @@ With Pupil v0.6 we introduce a plugin auto-loader. It works when running from ei
 from my_custom_plugin_code_module import My_Custom_Plugin_Class
 ```
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#load-plugin-manually">
-      <h4 id="load-plugin-manually">Load your Plugin manually</h4>
-    </a>
-  </div>
-</div>
-
+**Load your Plugin manually**
 This is the "old" way of loading plugins. This method gives more flexibility but thats about it.
 
    + Pupil Player
@@ -112,25 +64,11 @@ This is the "old" way of loading plugins. This method gives more flexibility but
    + Select your plugin from the "Open plugin" in the main window to begin using it
 
 
-##### Text below this line is currently being revised. Feel encouraged to contribute.
+**Text below this line is currently being revised. Feel encouraged to contribute.**
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#plugin-dev-walkthrough">
-      <h3 id="plugin-dev-walkthrough">Example plugin development walkthrough</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
+### Example plugin development walkthrough
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#inherit-plugin">
-      <h4 id="inherit-plugin">Inheriting from existing plugin</h4>
-    </a>
-  </div>
-</div>
-
+**Inheriting from existing plugin**
 If you want to add or extend the functionality of an existing plugin, you should be able to apply [standard inheritance principles](https://docs.python.org/2/library/functions.html#super) of Python 2.7.
 
 Things to keep in mind:
@@ -139,14 +77,7 @@ Things to keep in mind:
   - remember to close the base plugin at the `__init__` method of the inheriting plugin with `base_plugin.alive = False`. You should find the `base_plugin` inside `g_pool.plugins` ;
   - remember to dereference the base plugin at the end of the file with `del base_plugin` to avoid repetition in the user plugin list;
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#hacking-plugin">
-      <h4 id="hacking-plugin">Hacking an existing plugin</h4>
-    </a>
-  </div>
-</div>
-
+**Hacking an existing plugin**
 Another way to start plugin development, is to use an existing plugin as a template. For example, you could copy the [`vis_circle.py`](https://github.com/pupil-labs/pupil/blob/master/pupil_src/player/vis_circle.py) plugin as a starting point.
 
 renaming it to, for example, `open_cv_threshold.py`.
@@ -233,15 +164,7 @@ def update(self,frame,events):
 
 (considering the update method, describe stuff inside the `events` dictionary)
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#plugin-integration">
-      <h3 id="plugin-integration">Plugin Integration</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### Plugin Integration
 (describe PyGlui menu integration, for example, with a slider to the threshold value and illustrate how achieve persistence of the parameter)
 
 (describe how to integrate the Custom Plugin visualization into the Video Exporter)

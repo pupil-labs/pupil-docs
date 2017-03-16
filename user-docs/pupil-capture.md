@@ -1,40 +1,18 @@
 +++
 date = "2017-01-19T12:35:24+07:00"
 title = "pupil capture"
-weight = 6
+section_weight = 3
+page_weight = 0
 +++
 
 # User Docs
 
-<div class="header-border-top"></div>
-<div class="content-container">
-  <div class="header-link">
-    <a href="#pupil-capture">
-      <h2 id="pupil-capture">Pupil Capture</h2>
-    </a>
-  </div>
-</div>
+## Pupil Capture
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#capture-about">
-      <h3 id="capture-about">About</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### About
 Pupil Capture is the software used with the Pupil Headset. The software reads the video streams coming in from the world camera and the eye camera. Pupil Capture uses the video streams to detect your pupil, track your gaze, detect and track markers in your environment, record video and events, and stream data in realtime.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#capture-selection">
-      <h3 id="capture-selection">Capture Selection </h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### Capture Selection
 By default Pupil Capture will use Local USB as the capture source. If you have a Pupil headset connected to your machine you will see video displayed from your Pupil headset in the World and eye windows. If no headset is connected or Pupil Capture is unable to open capture devices it will fall back to the Test Image. Other options for capture source are described below.
 
 - Test Image - This is the fallback behavior if no capture device is found, or if you do not want to connect to any capture device.
@@ -46,51 +24,20 @@ By default Pupil Capture will use Local USB as the capture source. If you have a
 	<img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/capture/pc-cap-select.png" width="40%">
 </p>
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#calibration">
-      <h3 id="calibration">Calibration</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### Calibration
 Pupil uses two cameras. One camera records a subject's eye movements -- we call this the `eye camera`. Another camera records the subject's field of vision -- we call this the `world camera`. In order to know what someone is looking at, we must find the parameters to a function that correlates these two streams of information.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#before-calibration">
-      <h3 id="before-calibration">Before every calibration</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### Before every calibration
 Make sure that the users pupil is properly tracked. Make sure that the world camera is in focus for the distance at which you want to calibrate, and that you can see the entire area you want to calibrate within the world cameras extents (FOV).
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#calibration-methods">
-      <h3 id="calibration-methods">Calibration Methods</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### Calibration Methods
 First select the calibration method you would like to use:
 
 <p align="center">
 	<img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/capture/pc-calibrate.png" width="40%">
 </p>
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#screen-calibration">
-      <h4 id="screen-calibration">Screen Marker Calibration</h4>
-    </a>
-  </div>
-</div>
-
+**Screen Marker Calibration**
 This is the default method, and a quick method to get started. It is best suited for close range eye-tracking in a narrow field of view.
 
 <p align="center">
@@ -110,14 +57,7 @@ This is the default method, and a quick method to get started. It is best suited
 
 In the `Advanced` sub-menu you can set the `sample duration` -- the number of frames to sample the eye and marker position. You can also set parameters that are used to debug and detect the circular marker on the screen.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#manual-calibration">
-      <h4 id="manual-calibration">Manual Marker Calibration</h4>
-    </a>
-  </div>
-</div>
-
+**Manual Marker Calibration**
 This method is done with an operator and a subject. It is suited for midrange distances and can accommodate a wide field of view. You need markers made of concentric circles, like the two shown below.
 
 <p align="center">
@@ -151,14 +91,7 @@ You will notice that there are no standard controls, only an `Advanced` sub-menu
 </aside>
 
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#natural-calibration">
-      <h4 id="natural-calibration">Natural Features Calibration</h4>
-    </a>
-  </div>
-</div>
-
+**Natural Features Calibration**
 This method is for special situations and far distances. Usually not required.
 
 <p align="center">
@@ -186,29 +119,13 @@ Loading the `Show Calibration` plugin from the `General` sub-menu will show an e
 The green outline show the calibrated area. Orange shows the sampled data points. Red shows outliers. Usually large outliers are blinks, other large outliers can often be attributed to subject error (not looking at the marker). Open image in another tab to see it at full resolution.
 -->
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#calibration-accuracy">
-      <h3 id="calibration-accuracy">Notes on calibration accuracy</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### Notes on calibration accuracy
 Using screen based 9 point calibration method, you should easily be able to achieve tracking accuracy within the physiological limits (1-2 visual degrees).
 
 * Any calibration is accurate only at its depth level relative to the eye (parallax error).
 * Any calibration is only accurate inside the field of view (in the world video) you have calibrated. For example: If during your calibration you only looked at markers or natural features (depending on your calibration method) that are in the left half, you will not have good accuracy in the right half.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#recording">
-      <h3 id="recording">Recording</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### Recording
 Press `r` on your keyboard or press the blue circular `R` button in the left hand side of the world window to start recording. You will see red text with the elapsed time of recording next to the `R` button. To stop recording, press `r` on your keyboard or press the `R` button on screen.
 
 <p align="center">
@@ -217,40 +134,17 @@ Press `r` on your keyboard or press the blue circular `R` button in the left han
 
 You can set the folder or `Path to recordings` and the `Recording session name` in the `Recorder` sub-menu within the GUI. Note - you must specify an existing folder, otherwise the `Path to recordings` will revert to the default path.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#session-folder">
-      <h4 id="session-folder">What will be in the session folder?</h4>
-    </a>
-  </div>
-</div>
-
+**What will be in the session folder?**
 If you open up a session folder you will see a collection of video(s) and data files. Take a look at [Data format](#data-format) to see exactly what you get.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#open-plugin">
-      <h3 id="open-plugin">Open a plugin</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### Open a plugin
 Click on the selector "Open Plugin" and select your plugin.
 
 <p align="center">
 	<img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/capture/pc-plugin.png" width="40%">
 </p>
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#pupil-sync">
-      <h3 id="pupil-sync">Pupil Sync</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### Pupil Sync
 `pupil_sync` can help you to collect data from different devices and control an experiment with multiple actors (data generators and sensors) or use more than one Pupil device simultaneously:
 
 * Load the `Pupil Sync` plugin from the `General` sub-menu in the GUI.
@@ -264,15 +158,7 @@ For this to work your network needs to allow `UDP` transport. If the nodes do no
 	Pupil sync can easily be integrated in your own app or device. Have a look at <a href="https://github.com/pupil-labs/pupil-helpers/tree/master/pupil_sync">pupil helpers</a> to get started.
 </aside>
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#stream-data">
-      <h3 id="stream-data">Streaming Pupil Data over the network</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### Streaming Pupil Data over the network
 `Pupil Remote` is a plugin that is used to broadcast data over the network using the excellent library [Zero MQ](http://zeromq.org/).
 
 * Load the `Pupil Remote` plugin from the `General` sub-menu in the GUI (it is loaded by default).
@@ -285,15 +171,7 @@ For this to work your network needs to allow `UDP` transport. If the nodes do no
 
 * If you want to change the address, just type in the address after the `tcp://`
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#receive-data">
-      <h3 id="receive-data">Receiving Data with your own app</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### Receiving Data with your own app
 ZeroMQ has bindings to many languages. Reading the stream using python goes like so:
 
 ```python
@@ -327,26 +205,10 @@ while True:
 ```
 We have written some simple Python scripts that you can try using Pupil Server to have your gaze control a mouse. Or just print out streaming from Pupil Server. For more simple scripts, check out the [pupil-helpers repository](https://github.com/pupil-labs/pupil-helpers).
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#message-format">
-      <h3 id="message-format">Message Format for Pupil Server</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### Message Format for Pupil Server
 Messages from pupil server mirror all objects in the `events` dict that is used internally in pupil capture and player. The data is send per topic (`pupil_positions`, `gaze_positions` ...) and serialised using [json](https://docs.python.org/2/library/json.html). The example above tells it all.
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#marker-tracking">
-      <h3 id="marker-tracking">Marker Tracking</h3>
-    </a>
-  </div>
-</div>
-<div class="header-border-bottom"></div>
-
+### >Marker Tracking
 The `Marker Tracking` plugin allows you to define surfaces within your environment and track surfaces in realtime using a 5x5 square marker. We were greatly inspired by the [ArUco marker tracking library](http://www.uco.es/investiga/grupos/ava/node/26).
 
 *  Markers - We use a 5x5 square marker. This is not the same marker that is used by ArUco (they use 7x7).
@@ -361,14 +223,7 @@ See the video linked below for an introduction and workflow.
 	</div>
 </div>
 
-<div class="content-container">
-  <div class="header-link">
-    <a href="#define-surface">
-      <h4 id="define-surface">Defining Surfaces with Markers</h4>
-    </a>
-  </div>
-</div>
-
+**Defining Surfaces with Markers**
 A surface can be defined by one or more markers. Surfaces can be defined with Pupil Capture in real-time, or offline with Pupil Player. Below we provide an outline of steps.
 
 *  Generate markers with [this script](https://gist.github.com/willpatera/7908319#file-make_square_markers-py), or download the image below.
