@@ -1,11 +1,11 @@
 +++
 date = "2017-01-19T12:24:57+07:00"
-title = "player walkthrough"
+title = "player demo"
 section_weight = 1
 page_weight = 4
 +++
 
-## Pupil Player Walkthrough Videos
+## Pupil Player Demo Video
 
 <div class="content-container">
   <div class='video-container' >

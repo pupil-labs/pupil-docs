@@ -208,7 +208,7 @@ We have written some simple Python scripts that you can try using Pupil Server t
 ### Message Format for Pupil Server
 Messages from pupil server mirror all objects in the `events` dict that is used internally in pupil capture and player. The data is send per topic (`pupil_positions`, `gaze_positions` ...) and serialised using [json](https://docs.python.org/2/library/json.html). The example above tells it all.
 
-### >Marker Tracking
+### Marker Tracking
 The `Marker Tracking` plugin allows you to define surfaces within your environment and track surfaces in realtime using a 5x5 square marker. We were greatly inspired by the [ArUco marker tracking library](http://www.uco.es/investiga/grupos/ava/node/26).
 
 *  Markers - We use a 5x5 square marker. This is not the same marker that is used by ArUco (they use 7x7).

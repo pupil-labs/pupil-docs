@@ -1,11 +1,11 @@
 +++
 date = "2017-01-19T12:24:57+07:00"
-title = "player data"
+title = "Visualize and Analyze Data"
 section_weight = 1
 page_weight = 2
 +++
 
-## Playaer Data
+## Visualize and Analyze Data
 
 ### 8. Open Pupil Player
 Now that you have recorded some data, you can play back the video and visualize gaze data, marker data, and more.

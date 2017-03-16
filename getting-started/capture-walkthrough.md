@@ -5,7 +5,7 @@ section_weight = 1
 page_weight = 3
 +++
 
-## Pupil Capture Walkthrough Videos
+## Pupil Capture Demo Video
 
 If after following the getting started steps you require a walkthrough, these can be found below.
 Click the screenshots to see a **video walkthrough** of Pupil Capture and Pupil Player.
