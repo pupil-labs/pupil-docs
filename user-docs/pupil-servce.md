@@ -7,8 +7,6 @@ page_weight = 2
 
 ## Pupil Service
 
-### About
-
 <p align="center">
 	<img src="/images/icons/ps.png" width="20%">
 </p>

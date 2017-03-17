@@ -11,7 +11,6 @@ page_weight = 1
   <img class="padTop--2" src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/player/player-marker-demo.png" width="85%">
 </p>
 
-### About
 Pupil Player is the second tool you will use after Pupil Capture. It is a media and data visualizer at its core. You will use it to look at Pupil Capture recordings. Visualize your data and export it.
 
 Features like <a href="#marker-tracking">surface tracking</a> found in Pupil Capture are also available in Pupil Player.
