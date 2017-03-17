@@ -1,8 +1,7 @@
 +++
 date = "2017-01-19T16:13:49+07:00"
-title = "hardware dev"
-section_weight = 4
-page_weight = 2
+section_weight = 2
+page_weight = 5
 +++
 
 ## Pupil Hardware Development

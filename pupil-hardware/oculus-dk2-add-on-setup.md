@@ -1,14 +1,14 @@
 +++
 date = "2017-01-20T11:23:25+07:00"
 title = "oculus dk2 addon"
-section_weight = 4
-page_weight = 9
+section_weight = 2
+page_weight = 3.1
 +++
 
-### Oculus DK2
+## Oculus DK2 Setup
 This page will guide you through all steps needed to turn your Oculus DK2 into an eye tracking HMD using the Pupil Oculus DK2 eye tracking add-on cups.
 
-**Install lens in cup**
+### Install lens in cup
 
 <div class="content-container">
   <div class='video-container' >
@@ -34,13 +34,15 @@ Remove the LED ring and insert the lens into the Pupil eye tracking cup.
 
 Install the LED ring and connect the LED power supply.
 
-**Install cup in DK2**
+### Install cup in DK2
 
 <div class="content-container">
   <div class='video-container' >
 	<iframe class=feature-video src="https://www.youtube.com/embed/5LqjfgbDydM?rel=0" frameborder="0" allowfullscreen></iframe>
 	</div>
 </div>
+
+### Route cables
 
 Route the USB cables through the vent holes in the top of the Oculus DK2.
 
@@ -49,6 +51,8 @@ Route the USB cables through the vent holes in the top of the Oculus DK2.
 	<iframe class=feature-video src="https://www.youtube.com/embed/bvdxMYtzVTE?rel=0" frameborder="0" allowfullscreen></iframe>
 	</div>
 </div>
+
+### Connect cameras
 
 Connect the eye tracking cup to the USB cable. Remove the old cup and insert the eye tracking cup in the DK2.
 

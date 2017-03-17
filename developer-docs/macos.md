@@ -1,21 +1,21 @@
 +++
 date = "2017-01-19T16:33:08+07:00"
-title = "macos"
 section_weight = 4
-page_weight = 13
+page_weight = 1.2
 +++
 
-### MacOS
+## MacOS Dependencies
+
 These instructions have been tested for MacOS 10.8, 10.9, 10.10, 10.11, and 10.12. Use the linked websites and Terminal to execute the instructions.
 
-**Install Apple Dev Tools**
+### Install Apple Dev Tools
 Trigger the install of the Command Line Tools (CLT) by typing this in your terminal and letting MacOS install the tools required:
 
 ```bash
 git
 ```
 
-**Install Homebrew**
+### Install Homebrew
 [Homebrew][brew] describes itself as "the missing package manager for OSX."  It makes development on MacOS much easier, [plus it's open source][brew-github].  Install with the ruby script.  
 
 ```
@@ -37,7 +37,7 @@ Add Homebrew installed executables and Python scripts to your path.  Add the fol
 Note - You might need to change the Python path above depending on your installed version. `brew info python3 | grep site-packages` prints the corresponding site-packages folder.
 </aside>
 
-**Dependencies with `brew`**
+### Dependencies with `brew`
 
 Let's get started! Its time to put `brew` to work! Just copy paste commands into your terminal and listen to your machine purr.
 
@@ -69,7 +69,7 @@ echo /usr/local/opt/opencv3/lib/python3.6/site-packages >> /usr/local/lib/python
 
 ```
 
-**Install `libuvc`**
+### Install `libuvc`
 ```
 git clone https://github.com/pupil-labs/libuvc
 cd libuvc
@@ -79,7 +79,7 @@ cmake ..
 make && make install
 ```
 
-**Python Packages with `pip`**
+### Python Packages with `pip`
 
 PyOpenGL, ZMQ, ... 
 

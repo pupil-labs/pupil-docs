@@ -2,15 +2,15 @@
 date = "2017-01-19T16:40:20+07:00"
 title = "linux"
 section_weight = 4
-page_weight = 12
+page_weight = 1.1
 +++
 
-## Dependecies Installation
+## Linux Dependencies
 
-### Linux
 These installation instructions are tested using **Ubuntu 16.04 or higher** running on many machines. Do not run Pupil on a VM unless you know what you are doing.
 
-**Install Dependencies**
+### Install Dependencies
+
 Let's get started! Its time for `apt`!  Just copy paste into the terminal and listen to your machine purr.
 
 ```

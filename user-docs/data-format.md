@@ -176,7 +176,8 @@ in 2d the pupil appears as an ellipse available in `3d c++` and `2D c++` detecto
 ### Raw data with Python
 You can read and inspect `pupil_data` with a couple lines of python code.
 
-### synchronization
+### Synchronization
+
 Pupil Capture software runs multiple processes. The world video feed and the eye video feeds run and record at the frame rates set by their capture devices (cameras). This allows us to be more flexible. Instead of locking everything into one frame rate, we can capture every feed at specifically set rates. But, this also means that we sometimes record world video frames with multiple gaze positions (higher eye-frame rate) or without any (no pupil detected or lower eye frame rate).
 
 In `player_methods.py` you can find a function that takes timestamped data and correlates it with  timestamps form a different source.

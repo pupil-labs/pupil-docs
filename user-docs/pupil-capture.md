@@ -9,7 +9,6 @@ page_weight = 0
 
 ## Pupil Capture
 
-### About
 Pupil Capture is the software used with the Pupil Headset. The software reads the video streams coming in from the world camera and the eye camera. Pupil Capture uses the video streams to detect your pupil, track your gaze, detect and track markers in your environment, record video and events, and stream data in realtime.
 
 ### Capture Selection
@@ -20,9 +19,7 @@ By default Pupil Capture will use Local USB as the capture source. If you have a
 - Pupil Mobile - select this option When using Pupil Capture with the Pupil Mobile android application.
 - Local USB - select this option if your Pupil Headset is connected to the machine running Pupil Capture. This is the default setting. 
 
-<p align="center">
-	<img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/capture/pc-cap-select.png" width="40%">
-</p>
+<img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/capture/pc-cap-select.png" width="80%">
 
 ### Calibration
 Pupil uses two cameras. One camera records a subject's eye movements -- we call this the `eye camera`. Another camera records the subject's field of vision -- we call this the `world camera`. In order to know what someone is looking at, we must find the parameters to a function that correlates these two streams of information.

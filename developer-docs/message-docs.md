@@ -1,11 +1,10 @@
 +++
 date = "2017-01-20T11:21:30+07:00"
-title = "message docs"
 section_weight = 4
-page_weight = 11
+page_weight = 2.1
 +++
 
-### Message Documentation
+## Message Documentation
 
 `v0.8` of the Pupil software introduces a consistent naming scheme for message topics. They are used to publish and subscribe to the [`IPC Backbone`](#ipc). Pre-defined message topics are `pupil`, `gaze`, `notify`, `delayed_notify`, `logging`. Notifications sent with the `notify_all()` function of the `Plugin` class will be published automatically as `notify.<notification subject>`.
 

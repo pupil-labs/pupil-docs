@@ -2,7 +2,7 @@
 date = "2017-01-20T11:27:25+07:00"
 title = "ipc backbone"
 section_weight = 4
-page_weight = 10
+page_weight = 2
 +++
 
 ## Interprocess and Network Communication

@@ -1,8 +1,7 @@
 +++
 date = "2017-01-20T11:04:13+07:00"
-title = "fixation detector"
 section_weight = 4
-page_weight = 5
+page_weight = 4
 +++
 
 ## Fixation Detector

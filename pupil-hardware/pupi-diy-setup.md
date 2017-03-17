@@ -1,14 +1,8 @@
 +++
 date = "2017-01-20T10:54:04+07:00"
-title = "diy kit"
-section_weight = 4
-page_weight = 3
+section_weight = 2
+page_weight = 4.1
 +++
-
-## DIY Kit Guide
-
-### Intro
-Please note that this DIY Kit is for [non-commercial use only](#license). If you have questions about this please [contact Pupil Labs](#email).
 
 ### Getting all the parts
 The 3d-printed headset is the centerpiece of the Pupil mobile eye tracker. You can buy it from the Pupil Labs team through the [Pupil shapeways store](http://www.shapeways.com/shops/pupil_store). The price for the headset is part production cost and part support to the pupil development team.  This enables us to give you support and continue to work on the project. 
@@ -71,8 +65,6 @@ If you are reading this, chances are that you received one or more Pupil headset
 
 ### Customization
 The camera mounts can be replaced by custom build parts that suit your specific camera setup or other sensors. 
-Pupil hardware is designed to fit most face geometries. But, if you want to customize the headset you can use [sugru][sugru-site] an air curing silicone rubber. Using sugru, the nose rest can be custom fit (1:1 mould) to each individual.
 
 [google-group]: http://groups.google.com/group/pupil-discuss
-[sugru-site]: http://www.sugru.com
 [bom]: https://docs.google.com/spreadsheet/pub?key=0Al-zbr5hUFxPdEdJY1Z0dGRXU18yU0JxTVQ3THBOZFE&single=true&gid=0&output=html

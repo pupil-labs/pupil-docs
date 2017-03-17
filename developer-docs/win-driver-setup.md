@@ -2,7 +2,7 @@
 date = "2017-01-20T11:37:57+07:00"
 title = "win driver setup"
 section_weight = 4
-page_weight = 7
+page_weight = 1.5
 +++
 
 ## Windows Driver Setup
@@ -15,6 +15,7 @@ In order to support isochronous USB transfer on Windows, you will need to instal
 1. Download and extract [Pupil camera driver installer](https://drive.google.com/uc?export=download&id=0Byap58sXjMVfR0p4eW5KcXpfQjg)
 
 ### Install drivers for your Pupil headset
+
 1. Navigate to `pupil_labs_camera_drivers_windows_x64` directory
 1. Double click *`InstallDriver.exe`* - this will install drivers. Follow on screen prompts. 
 1. Open `Windows Device Manager` from `System > Device Manager`. Verify the drivers are correctly installed in `Windows Device Manager`. Your Pupil headset cameras should be listed under a new category titled: `libusbK Usb Devices`. Note: In some cases `Pupil Cam1` may show three of the same `ID` as the camera name. Don't worry - just make sure that the number of devices are the same as the number of cameras on your Pupil headset.

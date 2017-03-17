@@ -2,7 +2,7 @@
 date = "2017-01-19T16:04:19+07:00"
 title = "plugin guide"
 section_weight = 4
-page_weight = 6
+page_weight = 3
 +++
 
 ## Plugin Guide

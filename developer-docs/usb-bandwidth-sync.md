@@ -2,7 +2,7 @@
 title = "usb bandwidth sync"
 date = "2017-01-20T11:34:49+07:00"
 section_weight = 4
-page_weight = 4
+page_weight = 6
 +++
 
 ## USB Bandwidth And Synchronization

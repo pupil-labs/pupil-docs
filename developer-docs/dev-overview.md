@@ -78,7 +78,7 @@ We make changes almost daily and sometimes features will be temporarily broken i
 * `branches` - branches are named after features that are being developed. These branches are experimental and what could be called 'bleeding edge.'  This means features in these branches may not be fully functional, broken, or really cool... You're certainly welcome to check them out and improve on the work!  
 
 ### Pull requests
-If you've done something -- even if work-in-progress -- make a [pull request][pull] and write a short update to the [Pupil community](#google-group).
+If you've done something -- even if work-in-progress -- make a [pull request][pull] and write a short update to the Pupil Community.
 
 [git-remote]: https://help.github.com/articles/configuring-a-remote-for-a-fork/
 [semver]: http://semver.org/

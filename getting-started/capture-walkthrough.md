@@ -7,8 +7,8 @@ page_weight = 3
 
 ## Pupil Capture Demo Video
 
-If after following the getting started steps you require a walkthrough, these can be found below.
-Click the screenshots to see a **video walkthrough** of Pupil Capture and Pupil Player.
+The video below demonstrates how to setup, calibrate, and make a recording with Pupil Capture.
+
 Turn on closed captions `CC` to read annotations in the video.
 
 <div class="content-container">

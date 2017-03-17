@@ -1,28 +1,28 @@
 +++
 date = "2017-01-19T12:24:57+07:00"
-title = "capture data"
+title = "capture workflow"
 section_weight = 1
 page_weight = 1
 +++
 
-## Capture Data
+## Capture Workflow
 
-Download and install the Pupil Capture application bundle. Put on the Pupil headset and plug it into your computer. Open the Pupil Capture app. You will be presented with 2 windows – `World` and `Eye`.
+Put on the Pupil headset and plug it into your computer. Open the Pupil Capture app. You will be presented with 2 windows – `World` and `Eye`.
 
-Work through the following steps to get familiar with the Pupil workflow. You can also check out [video tutorials](#walkthrough-videos) at the end of the guide. 
+Go through the following steps to get familiar with the Pupil workflow. You can also check out [video tutorials](#walkthrough-videos) at the end of the guide. 
 
-<!-- Dive deeper in the [user guide](https://github.com/pupil-labs/pupil/wiki/User-Guide). -->
 
-### 1. Pupil Hardware
-Put on and plug in your Pupil headset. Headsets are adjustable and shipped with additional parts. For more information head over to the [Pupil Hardware](#pupil-hardware) guide.
+### 1. Put on Pupil
+Put on Pupil and plug it in. Headsets are adjustable and shipped with additional parts. For more information head over to the [Pupil Hardware](#pupil-hardware "pupil hardware") guide.
 
-### 2. Start the Pupil Capture App
-If headset is plugged in and detected, `World` and `Eye` windows will open and display the real-time video.
+### 2. Start Pupil Capture
+If your headset is plugged in and detected, the `World` and `Eye` windows will open and display real-time video.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/basic-workflow/pupil-capture/icon/pupil-capture-pointer.png" width="20%">
 </p>
 
+<!-- 
 ### 3. Intro to the UI
 Below are the two main windows we will interface with throughout the application.
 
@@ -62,13 +62,16 @@ The `Eye` window displays a real-time video of your eye. You will primarily use 
 1. **Sidebar** - the main GUI for the `World` window is a sidebar. Click the `<|` icons to expand sidebar and sub-menus and  `|||` to collapse. The sidebar is scrollable. Plugins will launch new sub-menus in the sidebar.
 1. **Pupil diameter** - Red circles are visualizations of `pupil min` and `pupil max` diameter. The Green circle is a visualization of the current apparent pupil diameter. Blue number in the center is the current apparent pupil diameter in pixels.
 
-### 4. Pupil Detection
-After focusing the eye camera, take a look at the Eye window. If the pupil is detected you will see a red circle around the edge of your pupil and a red dot at the center of your pupil.
+ -->
+
+### 3. Check pupil detection
+Take a look at the `Eye` window. If the pupil is detected you will see a red circle around the edge of your pupil and a red dot at the center of your pupil.
 
 If the algorithm's detection confidence is high, the red circle will be opaque. If confidence diminishes the circle will become more transparent.
 
 Try moving your head around a bit while looking at your eye to see that the pupil is robustly detected in various orientations.
 
+<!--  
 **Eye image mode**
 
 There are three modes that you can select from the `General` menu: Camera Image, Region of Interest (ROI), and Algorithm. Here we will discuss Camera Image and Algorithm view mode.
@@ -117,59 +120,47 @@ Switch to `Algorithm` mode so that you can see a visualization of the pupil algo
 See <a href="#pupil-capture">Pupil Capture</a> for more details about pupil detector settings and advanced options.
 </aside>
 
-### 5. Calibrate
-Pupil calibration process establishes the mapping from pupil to gaze coordinates. One or two cameras capture a subject's eye movements - Eye Camera - and another one records the subject's FOV - World Camera. In order to know what someone is looking at -- specifically where their `gaze` or fovea is regarding the word camera space -- we first need to find out how pupil and gaze positions are mapped. This is what we call calibration.
+-->
 
-Steps
-1. Go to the `World` window.
-1. In the `Calibration` sub-menu select `Screen Marker Calibration` as the method.
+
+### 4. Calibrate
+In order to know what someone is looking at, we must to establish a mapping between pupil and gaze positions. This is what we call calibration.
+
+The calibration process establishes a mapping from pupil to gaze coordinates. 
 
 **Screen Marker Calibration Method**
-<table>
-  <tr>
-    <td width="50%"><img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/basic-workflow/pupil-capture/recording-directory/record-callout.png" width="100%"></td>
-    <td width="50%"><img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/basic-workflow/pupil-hardware/calibrate/calibrate-border.png" width="100%"></td>
-  </tr>
-  <tr>
-    <td valign='top'>
-    <small>Click `c` on the world screen or press `c` on the keyboard to start calibrate.</small>
-    </td>
-    <td valign='top'>
-    <small>Follow the marker on the screen with your eyes and try to keep your head stationary</small>
-    </td>
-  </tr>  
-</table>
 
-There are other calibration methods and lots more information about how calibration works -- read more on [calibration](#calibration).
+<img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/basic-workflow/pupil-capture/recording-directory/record-callout.png" width="100%"></td>
 
-### 6. Verify Successful Calibration
-If the system has been calibrated correctly you will see a message "Calibration Successful". After calibration the red dot will point directly to the current gaze point.
+Click `c` on the world screen or press `c` on the keyboard to start calibrate.
 
-### 7. Record
-If calibration is successful, start capturing data.
+<img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/basic-workflow/pupil-hardware/calibrate/calibrate-border.png" width="100%"></td>
 
-This means that Pupil Capture will save the world video stream and all corresponding gaze data in a folder.
+Follow the marker on the screen with your eyes and try to keep your head stationary</small>
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/basic-workflow/pupil-capture-v07-world-recording.png" width="80%">
-</p>
+There are other calibration methods and lots more information how calibration works in the [user guide](#calibration "calibration").
 
-Steps
+### 5. Record
 
-  * Start recording: Press the `r` key on your keyboard or press the circular 'R' button in the left hand side of the world window.
-  * The elapsed recording time will appear next to the 'R' button.
-  * Stop recording: Press the `r` key on your keyboard or press the circular 'R' button in the left hand side of the world window.
+Start capturing data!
+
+Pupil Capture will save the world video stream and all corresponding gaze data in a folder in your user directory named `recordings`.
+
+<img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/basic-workflow/pupil-capture-v07-world-recording.png" width="100%">
+
+* Start recording: Press the `r` key on your keyboard or press the circular 'R' button in the left hand side of the world window.
+* The elapsed recording time will appear next to the 'R' button.
+* Stop recording: Press the `r` key on your keyboard or press the circular 'R' button in the left hand side of the world window.
 
 See a video demonstration of how to set recordings path, session name, and start recording -- [here](http://youtu.be/VzIXFUqv99s).
 
 **Where is the recording saved?**
+
 By default, each recording will live in its own unique data folder contained in the `recordings` folder.
 
 You can make as many recordings as you like. 
 
-<p align="center">
-    <img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/basic-workflow/pupil-capture/recording-directory/recording_folder_v07.png" width="100%">
-</p>
+<img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/basic-workflow/pupil-capture/recording-directory/recording_folder_v07.png" width="100%">
 
 The default `recordings` directory will have the following hierarchy.
 
@@ -181,6 +172,7 @@ The default `recordings` directory will have the following hierarchy.
     * ####
 
 **How recordings are saved?**
+
 Pupil capture saves the video frames in a fixed frame rate container. This means that the raw output video (world.mp4) does not show the correct duration and the correct frame rate of the recording. This information can be found in `world_timestamps.npy`, which tells you exactly where each frame belongs in time.
 
 However, if you export using Pupil Player, the video will be made such that the frames will show at the exact right time. The output video will not miss any frame of the raw video, instead, output frames are spaced out exactly as they where initially captured.

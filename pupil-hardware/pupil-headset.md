@@ -1,21 +1,20 @@
 +++
 date = "2017-01-18T11:51:10+07:00"
-title = "Pupil Hardware"
 section_weight = 2
-page_weight = 0
+page_weight = 1
 +++
 
-# Pupil Hardware
+## Pupil Mobile Eye Tracking Headset
 
-## Introduction to the Pupil Headset
-
-<p align='center'>
-  <img class="padTop--1" src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/basic-workflow/pupil-hardware/headset/pupil-headset.png" width="50%">
+<p align="center">
+  <img class="padTop--2 padBottom--2" style="max-width: 75%;" src="/images/headset/pupil_w120_e120.jpg" /> 
 </p>
 
-You should already be wearing the headset, with the device plugged into your computer via the USB cable. The clip has been specially designed to attach onto your collar which reduces cable strain and enhances movability.
+You wear Pupil like a pair of glasses. Pupil connects to a computing device via a USBA or USBC cable. The headset is designed to be lightweight and adjustable in order to accommodate a wide range of users. 
 
-Above is an illustration of a Pupil Headset with high speed world camera and 120hz binocular eye cameras. Depending on your configuration, your headset might look different, but working principles are the same.
+Above is an illustration of a monocular Pupil Headset, depending on your configuration, your headset might look different, but working principles are the same.
+
+Pupil ships with a number of additional parts. The below sections provide an overview of their use and a guide to adjusting the Pupil headset. 
 
 ### Additional parts
 

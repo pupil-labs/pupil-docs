@@ -1,24 +1,23 @@
 +++
 date = "2017-01-19T12:24:57+07:00"
-title = "Visualize and Analyze Data"
+title = "player workflow"
 section_weight = 1
 page_weight = 2
 +++
 
-## Visualize and Analyze Data
+## Player Workflow
+Use Pupil Player to visualize data recorded with Pupil Capture and export videos of visualization and datasets for further analysis. 
 
-### 8. Open Pupil Player
+### 1. Open Pupil Player
 Now that you have recorded some data, you can play back the video and visualize gaze data, marker data, and more.
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/basic-workflow/pupil-capture/icon/pupil-player-pointer.png" width="20%">
-</p>
+<img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/basic-workflow/pupil-capture/icon/pupil-player-pointer.png" width="20%">
 
 **Player Window**
+
 Let's get familiar with the Player window.
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/basic-workflow/pupil-player/pupil-player-callout.png" width="80%">
+<img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/basic-workflow/pupil-player/pupil-player-callout.png" width="100%">
 </p>
 
 The Player window is the main control center for `Pupil Player`. It displays the recorded video feed from pupil capture file.
@@ -30,6 +29,7 @@ The Player window is the main control center for `Pupil Player`. It displays the
 1. **Hot keys** - this area contains clickable buttons for plugins.
 
 **Where are Pupil Player exports saved?**
+
 Exports are saved within a dedicated folder named `exports` within the original recording folder.
 
 Each export is contained within a folder within the `exports` folder. The numbers of the export correlate to the trim marks (frame start and frame end) for the export.  
