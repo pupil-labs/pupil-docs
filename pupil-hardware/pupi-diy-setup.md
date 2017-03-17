@@ -34,7 +34,7 @@ This is by far the trickiest part. You will need some soldering experience, or w
 3. Desolder the blue LED's
 4. solder on the IR-LED's. Please take note of LED polarity! [video](http://youtu.be/O-FAXldfq94)
 
-<img class="padTop--2 padBottom--2" src="https://raw.github.com/wiki/pupil-labs/pupil/media/headset/hd-6000_pcb_text.jpg" alt="Solder Instructions">
+<img class="padTop--2 padBottom--2" src="/images/headset/hd-6000_pcb_text.jpg" alt="Solder Instructions">
 
 **Replace IR-blocking Filter on the Eye Camera**
 1. Unscrew the lens from the mount.

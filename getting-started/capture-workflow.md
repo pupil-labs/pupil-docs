@@ -19,7 +19,7 @@ Put on Pupil and plug it in. Headsets are adjustable and shipped with additional
 If your headset is plugged in and detected, the `World` and `Eye` windows will open and display real-time video.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/basic-workflow/pupil-capture/icon/pupil-capture-pointer.png" width="20%">
+  <img src="/images/pupil-capture/icon/pupil-capture-pointer.jpg" width="20%">
 </p>
 
 <!-- 
@@ -130,13 +130,13 @@ The calibration process establishes a mapping from pupil to gaze coordinates.
 
 **Screen Marker Calibration Method**
 
-<img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/basic-workflow/pupil-capture/recording-directory/record-callout.png" width="100%"></td>
+<img src="/images/pupil-capture/recording-directory/record-callout.jpg" width="100%">
 
 Click `c` on the world screen or press `c` on the keyboard to start calibrate.
 
-<img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/basic-workflow/pupil-hardware/calibrate/calibrate-border.png" width="100%"></td>
+<img src="/images/pupil-hardware/calibrate/calibrate-border.jpg" width="100%">
 
-Follow the marker on the screen with your eyes and try to keep your head stationary</small>
+Follow the marker on the screen with your eyes and try to keep your head stationary
 
 There are other calibration methods and lots more information how calibration works in the [user guide](#calibration "calibration").
 
@@ -146,7 +146,7 @@ Start capturing data!
 
 Pupil Capture will save the world video stream and all corresponding gaze data in a folder in your user directory named `recordings`.
 
-<img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/basic-workflow/pupil-capture-v07-world-recording.png" width="100%">
+<img src="/images/pupil-capture/recording/pupil-capture-v07-world-recording.jpg" width="100%">
 
 * Start recording: Press the `r` key on your keyboard or press the circular 'R' button in the left hand side of the world window.
 * The elapsed recording time will appear next to the 'R' button.
@@ -160,7 +160,7 @@ By default, each recording will live in its own unique data folder contained in 
 
 You can make as many recordings as you like. 
 
-<img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/basic-workflow/pupil-capture/recording-directory/recording_folder_v07.png" width="100%">
+<img src="/images/pupil-capture/recording/recording_folder_v07.jpg" width="100%">
 
 The default `recordings` directory will have the following hierarchy.
 
