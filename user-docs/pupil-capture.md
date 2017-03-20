@@ -21,7 +21,7 @@ By default Pupil Capture will use Local USB as the capture source. If you have a
 - Pupil Mobile - select this option When using Pupil Capture with the Pupil Mobile android application.
 - Local USB - select this option if your Pupil Headset is connected to the machine running Pupil Capture. This is the default setting. 
 
-<img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/capture/pc-cap-select.png" width="80%">
+<img src="/images/pupil-capture/ui/pc-cap-select.jpg" width="80%">
 
 ### Calibration
 Pupil uses two cameras. One camera records a subject's eye movements -- we call this the `eye camera`. Another camera records the subject's field of vision -- we call this the `world camera`. In order to know what someone is looking at, we must find the parameters to a function that correlates these two streams of information.
@@ -33,14 +33,14 @@ Make sure that the users pupil is properly tracked. Make sure that the world cam
 First select the calibration method you would like to use:
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/capture/pc-calibrate.png" width="40%">
+	<img src="/images/pupil-capture/ui/pc-calibrate.jpg" width="40%">
 </p>
 
 **Screen Marker Calibration**
 This is the default method, and a quick method to get started. It is best suited for close range eye-tracking in a narrow field of view.
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/capture/pc-screen-calib.png" width="40%">
+	<img src="/images/pupil-capture/ui/pc-screen-calib.jpg" width="40%">
 </p>
 
 1. Select `Screen Marker Calibration`
@@ -60,12 +60,12 @@ In the `Advanced` sub-menu you can set the `sample duration` -- the number of fr
 This method is done with an operator and a subject. It is suited for midrange distances and can accommodate a wide field of view. You need markers made of concentric circles, like the two shown below.
 
 <p align="center">
-	<img width="40%" src="/images/calibration-markers/manual_calibration_marker-01.png">
-	<img width="40%" src="/images/calibration-markers/manual_calibration_marker-02.png">
+	<img width="40%" src="/images/pupil-capture/calibration-markers/manual_calibration_marker-01.jpg">
+	<img width="40%" src="/images/pupil-capture/calibration-markers/manual_calibration_marker-02.jpg">
 </p>
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/capture/pc-manual-calib.png" width="40%">
+	<img src="/images/pupil-capture/ui/pc-manual-calib.jpg" width="40%">
 </p>
 
 1. Select `Manual Marker Calibration`
@@ -83,10 +83,10 @@ This method is done with an operator and a subject. It is suited for midrange di
 
 You will notice that there are no standard controls, only an `Advanced` sub-menu to control detection parameters of the marker and to debug by showing edges of the detected marker in the world view.
 
-[Download markers to print](images/calibration-markers/pupil_calibration_marker.pdf) or display on smartphone/tablet screen.
+[Download markers to print](/images/calibration-markers/pupil_calibration_marker.pdf) or display on smartphone/tablet screen.
 
 <aside class="notice">
-	Note - v2.0 Markers can be <a href="images/calibration-markers/v2.0_markers/pupil_calibration_marker.pdf">downloaded here</a>.
+	Note - v2.0 Markers can be <a href="/images/pupil-capture/calibration-markers/v2.0_markers/pupil_calibration_marker.pdf">downloaded here</a>.
 </aside>
 
 
@@ -94,7 +94,7 @@ You will notice that there are no standard controls, only an `Advanced` sub-menu
 This method is for special situations and far distances. Usually not required.
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/capture/pc-natural-calib.png" width="40%">
+	<img src="/images/pupil-capture/ui/pc-natural-calib.jpg" width="40%">
 </p>
 
 1. Select `Natural Features Calibration`
@@ -128,7 +128,7 @@ Using screen based 9 point calibration method, you should easily be able to achi
 Press `r` on your keyboard or press the blue circular `R` button in the left hand side of the world window to start recording. You will see red text with the elapsed time of recording next to the `R` button. To stop recording, press `r` on your keyboard or press the `R` button on screen.
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/capture/pc-recorder.png" width="40%">
+	<img src="/images/pupil-capture/ui/pc-recorder.jpg" width="40%">
 </p>
 
 You can set the folder or `Path to recordings` and the `Recording session name` in the `Recorder` sub-menu within the GUI. Note - you must specify an existing folder, otherwise the `Path to recordings` will revert to the default path.
@@ -140,7 +140,7 @@ If you open up a session folder you will see a collection of video(s) and data f
 Click on the selector "Open Plugin" and select your plugin.
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/capture/pc-plugin.png" width="40%">
+	<img src="/images/pupil-capture/ui/pc-plugin.jpg" width="40%">
 </p>
 
 ### Pupil Sync
@@ -165,7 +165,7 @@ For this to work your network needs to allow `UDP` transport. If the nodes do no
 * Change the address and port as desired.
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/capture/pc-pupil-remote.png" width="40%">
+	<img src="/images/pupil-capture/ui/pc-pupil-remote.jpg" width="40%">
 </p>
 
 * If you want to change the address, just type in the address after the `tcp://`
@@ -227,7 +227,7 @@ A surface can be defined by one or more markers. Surfaces can be defined with Pu
 
 *  Generate markers with [this script](https://gist.github.com/willpatera/7908319#file-make_square_markers-py), or download the image below.
 
-![All 64 Markers](http://pupil-labs.com/media/img/all_markers.png)
+<img src="/images/pupil-capture/calibration-markers/pupil_surface_markers.jpg" width="100%">
 
 <aside class="notice">
 <strong>Note</strong> - When printing markers, ensure that white space remains around the square marker. You can scale the markers to different sizes, but make sure to have a white border width of at least 1.2 x the marker grid size for marker, unless the marker is affixed onto a white (or light colored) background.
