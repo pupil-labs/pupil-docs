@@ -20,7 +20,7 @@ Features like <a href="#marker-tracking">surface tracking</a> found in Pupil Cap
 Drag the recording directory (the triple digit one) directly onto the app icon **or** launch the application and drag + drop the recording directory into Pupil Player window.
 
 <p align="center">
-    <img src="/images/pupil-capture/icon/pupil-player-pointer.png" width="20%">
+    <img src="/images/pupil-capture/icon/pupil-player-pointer.jpg" width="20%">
 </p>
 
 > Running from source?
@@ -86,7 +86,7 @@ Visualize the gaze positions with a cross for each gaze position. This plugin is
   + `color` - define the `red`, `green`, `blue` values for color.
 
 <p align="center">
-  <img src="/images/pupil-player/pupil-player-vizcross.png" width="85%">
+  <img src="/images/pupil-player/pupil-player-vizcross.jpg" width="85%">
 </p>
 
 Here we show an example of how you could use **2** instances of the `Vis Cross` Plugin. The first instance renders the gaze position as a red cross with that extends to the boundaries of the screen. The second instance renders the gaze position as a green cross, with a heavier stroke weight.

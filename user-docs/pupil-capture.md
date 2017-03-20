@@ -163,7 +163,7 @@ For this to work your network needs to allow `UDP` transport. If the nodes do no
 * Change the address and port as desired.
 
 <p align="center">
-	<img src="/images/pupil-capture/ui/pc-pupil-remote.png" width="40%">
+	<img src="/images/pupil-capture/ui/pc-pupil-remote.jpg" width="40%">
 </p>
 
 * If you want to change the address, just type in the address after the `tcp://`
@@ -225,7 +225,7 @@ A surface can be defined by one or more markers. Surfaces can be defined with Pu
 
 *  Generate markers with [this script](https://gist.github.com/willpatera/7908319#file-make_square_markers-py), or download the image below.
 
-![All 64 Markers](http://pupil-labs.com/media/img/all_markers.png)
+![All 64 Markers](http://pupil-labs.com/media/img/all_markers.jpg)
 
 <aside class="notice">
 <strong>Note</strong> - When printing markers, ensure that white space remains around the square marker. You can scale the markers to different sizes, but make sure to have a white border width of at least 1.2 x the marker grid size for marker, unless the marker is affixed onto a white (or light colored) background.
