@@ -38,7 +38,7 @@ First select the calibration method you would like to use:
 This is the default method, and a quick method to get started. It is best suited for close range eye-tracking in a narrow field of view.
 
 <p align="center">
-	<img src="images/pupil-capture/ui/pc-screen-calib.jpg" width="40%">
+	<img src="/images/pupil-capture/ui/pc-screen-calib.jpg" width="40%">
 </p>
 
 1. Select `Screen Marker Calibration`
@@ -58,8 +58,8 @@ In the `Advanced` sub-menu you can set the `sample duration` -- the number of fr
 This method is done with an operator and a subject. It is suited for midrange distances and can accommodate a wide field of view. You need markers made of concentric circles, like the two shown below.
 
 <p align="center">
-	<img width="40%" src="/images/calibration-markers/manual_calibration_marker-01.jpg">
-	<img width="40%" src="/images/calibration-markers/manual_calibration_marker-02.jpg">
+	<img width="40%" src="/images/pupil-capture/calibration-markers/manual_calibration_marker-01.jpg">
+	<img width="40%" src="/images/pupil-capture/calibration-markers/manual_calibration_marker-02.jpg">
 </p>
 
 <p align="center">
@@ -81,10 +81,10 @@ This method is done with an operator and a subject. It is suited for midrange di
 
 You will notice that there are no standard controls, only an `Advanced` sub-menu to control detection parameters of the marker and to debug by showing edges of the detected marker in the world view.
 
-[Download markers to print](images/calibration-markers/pupil_calibration_marker.pdf) or display on smartphone/tablet screen.
+[Download markers to print](/images/calibration-markers/pupil_calibration_marker.pdf) or display on smartphone/tablet screen.
 
 <aside class="notice">
-	Note - v2.0 Markers can be <a href="images/calibration-markers/v2.0_markers/pupil_calibration_marker.pdf">downloaded here</a>.
+	Note - v2.0 Markers can be <a href="/images/pupil-capture/calibration-markers/v2.0_markers/pupil_calibration_marker.pdf">downloaded here</a>.
 </aside>
 
 
@@ -225,7 +225,7 @@ A surface can be defined by one or more markers. Surfaces can be defined with Pu
 
 *  Generate markers with [this script](https://gist.github.com/willpatera/7908319#file-make_square_markers-py), or download the image below.
 
-![All 64 Markers](http://pupil-labs.com/media/img/all_markers.jpg)
+<img src="/images/pupil-capture/calibration-markers/pupil_surface_markers.jpg" width="100%">
 
 <aside class="notice">
 <strong>Note</strong> - When printing markers, ensure that white space remains around the square marker. You can scale the markers to different sizes, but make sure to have a white border width of at least 1.2 x the marker grid size for marker, unless the marker is affixed onto a white (or light colored) background.

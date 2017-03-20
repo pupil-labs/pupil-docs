@@ -19,7 +19,7 @@ Put on Pupil and plug it in. Headsets are adjustable and shipped with additional
 If your headset is plugged in and detected, the `World` and `Eye` windows will open and display real-time video.
 
 <p align="center">
-  <img src="/images/pupil-capture/icon/pupil-capture-pointer.jpg" width="20%">
+  <img src="/images/icon/pc-pointer.jpg" width="20%">
 </p>
 
 <!-- 
@@ -130,11 +130,11 @@ The calibration process establishes a mapping from pupil to gaze coordinates.
 
 **Screen Marker Calibration Method**
 
-<img src="/images/pupil-capture/recording-directory/record-callout.jpg" width="100%">
+<img src="/images/pupil-capture/recording/record-callout.jpg" width="100%">
 
 Click `c` on the world screen or press `c` on the keyboard to start calibrate.
 
-<img src="/images/pupil-hardware/calibrate/calibrate-border.jpg" width="100%">
+<img src="/images/pupil-capture/calibrate/calibrate-border.jpg" width="100%">
 
 Follow the marker on the screen with your eyes and try to keep your head stationary
 
