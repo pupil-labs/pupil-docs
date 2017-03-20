@@ -6,7 +6,7 @@ page_weight = 1
 
 ## Pupil Mobile Eye Tracking Headset
 
-<p align="center">
+> <p align="center">
   <img class="padTop--2 padBottom--2" style="max-width: 75%;" src="/images/pupil-hardware/pupil_w120_e120.jpg" /> 
 </p>
 
@@ -18,7 +18,7 @@ Pupil ships with a number of additional parts. The below sections provide an ove
 
 ### Additional parts
 
-<table>
+> <table>
   <tr>
     <td width="50%">
       <p align="center">
@@ -43,7 +43,7 @@ Depending on your configuration, some additional parts may be included with your
 
 ### Pupil Headset Adjustments
 
-<table>
+> <table>
   <tr>
     <td width="33.333%">
       <img src="/images/pupil-hardware/eyearm.gif" width="100%">
@@ -60,7 +60,7 @@ Depending on your configuration, some additional parts may be included with your
   </tr>
 </table>
 
-<div class="content-container" style="padding: 0 5em;">
+> <div class="content-container" style="padding: 0 5em;">
   <div class="flex-container flex-row-nowrap">
     <img style="max-width: 40%;" src="/images/pupil-hardware/eye-screw.jpg">
     <p>Adjust the ball joint firmness by adjusting the socket screw.</p>
@@ -73,7 +73,7 @@ Depending on your configuration, some additional parts may be included with your
 
 ### Focus Cameras
 
-<table>
+> <table>
   <tr>
     <th><p align='center'>Focus Eye Camera</p></th>
     <th><p align='center'>Focus World Camera</p></th>       

@@ -11,7 +11,7 @@ The video below demonstrates how to view a dataset recorded with Pupil Capture, 
 
 Turn on closed captions `CC` to read annotations in the video.
 
-<div class="content-container">
+> <div class="content-container">
   <div class='video-container' >
     <iframe class=feature-video src="https://www.youtube.com/embed/7vQuL29P9ow?rel=0" frameborder="0" allowfullscreen></iframe>
   </div>

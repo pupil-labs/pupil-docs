@@ -10,7 +10,7 @@ This page will guide you through all steps needed to turn your HTC Vive into an 
 
 ### Install the add-on
 
-<div class="content-container">
+> <div class="content-container">
   <div class='video-container' >
 		<iframe class=feature-video src="https://www.youtube.com/embed/HGMjJLnK2_4?list=PLi20Yl1k_57r4j0LXDfo6IYXAKTp_FIKf" frameborder="0" allowfullscreen></iframe>
 	</div>
