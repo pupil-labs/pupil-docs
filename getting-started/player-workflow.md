@@ -11,7 +11,7 @@ Use Pupil Player to visualize data recorded with Pupil Capture and export videos
 ### 1. Open Pupil Player
 Now that you have recorded some data, you can play back the video and visualize gaze data, marker data, and more.
 
-<img src="/images/icon/pp-pointer.jpg" width="20%">
+<img src="/images/icons/pp-pointer.jpg" width="20%">
 
 **Player Window**
 

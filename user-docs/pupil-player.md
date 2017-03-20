@@ -20,7 +20,7 @@ Features like <a href="#marker-tracking">surface tracking</a> found in Pupil Cap
 Drag the recording directory (the triple digit one) directly onto the app icon **or** launch the application and drag + drop the recording directory into Pupil Player window.
 
 <p align="center">
-    <img src="/images/icon/pp-pointer.jpg" width="20%">
+    <img src="/images/icons/pp-pointer.jpg" width="20%">
 </p>
 
 > Running from source?
@@ -170,7 +170,7 @@ You can specify the name of the export in the GUI. Click press the `e` button or
 The exporter will run in the background and you can see the progress bar of the export in the GUI. While exporting you can continue working with Pupil Player and even launch new exports.
 
 <p align="center">
-  <img src="/image/pupil-player/plugin/export.jpg" width="85%">  
+  <img src="/images/pupil-player/plugin/export.jpg" width="85%">  
 </p>
 
 **Raw Data Exporter**

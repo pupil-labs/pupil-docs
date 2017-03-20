@@ -19,7 +19,7 @@ Put on Pupil and plug it in. Headsets are adjustable and shipped with additional
 If your headset is plugged in and detected, the `World` and `Eye` windows will open and display real-time video.
 
 <p align="center">
-  <img src="/images/icon/pc-pointer.jpg" width="20%">
+  <img src="/images/icons/pc-pointer.jpg" width="20%">
 </p>
 
 <!-- 
