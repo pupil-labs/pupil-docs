@@ -18,7 +18,7 @@ Pupil Capture is the software used with the Pupil Headset. The software reads th
 ### Capture Selection
 
 > <p align="center">
-    <img src="/images/pupil-capture/ui/pc-cap-select.jpg" width="80%">
+    <img src="/images/pupil-capture/ui/pc-cap-select.jpg" height="100%">
   </p>
 
 By default Pupil Capture will use Local USB as the capture source. If you have a Pupil headset connected to your machine you will see video displayed from your Pupil headset in the World and eye windows. If no headset is connected or Pupil Capture is unable to open capture devices it will fall back to the Test Image. Other options for capture source are described below.
@@ -37,7 +37,7 @@ Make sure that the users pupil is properly tracked. Make sure that the world cam
 ### Calibration Methods
 
 > <p align="center">
-    <img src="/images/pupil-capture/ui/pc-calibrate.jpg" width="40%">
+    <img src="/images/pupil-capture/ui/pc-calibrate.jpg" height="100%">
   </p>
 
 First select the calibration method you would like to use:
@@ -45,7 +45,7 @@ First select the calibration method you would like to use:
 #### Screen Marker Calibration
 
 > <p align="center">
-    <img src="/images/pupil-capture/ui/pc-screen-calib.jpg" width="40%">
+    <img src="/images/pupil-capture/ui/pc-screen-calib.jpg" height="100%">
   </p>
 
 This is the default method, and a quick method to get started. It is best suited for close range eye-tracking in a narrow field of view.
@@ -66,12 +66,12 @@ In the `Advanced` sub-menu you can set the `sample duration` -- the number of fr
 #### Manual Marker Calibration
 
 >  <p align="center">
-    <img width="40%" src="/images/pupil-capture/calibration-markers/manual_calibration_marker-01.jpg">
-    <img width="40%" src="/images/pupil-capture/calibration-markers/manual_calibration_marker-02.jpg">
+    <img width="35%" src="/images/pupil-capture/calibration-markers/manual_calibration_marker-01.jpg">
+    <img width="35%" src="/images/pupil-capture/calibration-markers/manual_calibration_marker-02.jpg">
   </p>
 
 > <p align="center">
-    <img src="/images/pupil-capture/ui/pc-manual-calib.jpg" width="40%">
+    <img src="/images/pupil-capture/ui/pc-manual-calib.jpg" height="100%">
   </p>
 
 This method is done with an operator and a subject. It is suited for midrange distances and can accommodate a wide field of view. You need markers made of concentric circles, like the two shown below.
@@ -101,7 +101,7 @@ You will notice that there are no standard controls, only an `Advanced` sub-menu
 #### Natural Features Calibration
 
 > <p align="center">
-    <img src="/images/pupil-capture/ui/pc-natural-calib.jpg" width="40%">
+    <img src="/images/pupil-capture/ui/pc-natural-calib.jpg" height="100%">
   </p>
 
 This method is for special situations and far distances. Usually not required.
@@ -136,7 +136,7 @@ Using screen based 9 point calibration method, you should easily be able to achi
 ### Recording
 
 > <p align="center">
-    <img src="/images/pupil-capture/ui/pc-recorder.jpg" width="40%">
+    <img src="/images/pupil-capture/ui/pc-recorder.jpg" height="100%">
   </p>
 
 Press `r` on your keyboard or press the blue circular `R` button in the left hand side of the world window to start recording. You will see red text with the elapsed time of recording next to the `R` button. To stop recording, press `r` on your keyboard or press the `R` button on screen.
@@ -150,7 +150,7 @@ If you open up a session folder you will see a collection of video(s) and data f
 ### Open a plugin
 
 > <p align="center">
-    <img src="/images/pupil-capture/ui/pc-plugin.jpg" width="40%">
+    <img src="/images/pupil-capture/ui/pc-plugin.jpg" height="100%">
   </p>
 
 Click on the selector "Open Plugin" and select your plugin.
@@ -172,7 +172,7 @@ For this to work your network needs to allow `UDP` transport. If the nodes do no
 ### Streaming Pupil Data over the network
 
 > <p align="center">
-    <img src="/images/pupil-capture/ui/pc-pupil-remote.jpg" width="40%">
+    <img src="/images/pupil-capture/ui/pc-pupil-remote.jpg" height="100%">
   </p>
 
 `Pupil Remote` is a plugin that is used to broadcast data over the network using the excellent library [Zero MQ](http://zeromq.org/).
