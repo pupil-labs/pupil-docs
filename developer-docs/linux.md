@@ -18,6 +18,7 @@ sudo apt install -y pkg-config git cmake build-essential nasm wget python3-setup
 ```
 
 > ffmpeg >= 3.2
+
 ```
 sudo add-apt-repository ppa:jonathonf/ffmpeg-3
 sudo apt-get update

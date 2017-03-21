@@ -15,15 +15,15 @@ We have compiled a list of publications that cite Pupil in this [spreadsheet](ht
 
 ## UbiComp 2014 Paper
 
-**Title**
+#### Title
 
 Pupil: An Open Source Platform for Pervasive Eye Tracking and Mobile Gaze-based Interaction
 
-**Abstract**
+#### Abstract
 
 In this paper we present Pupil -- an accessible, affordable, and extensible open source platform for pervasive eye tracking and gaze-based interaction. Pupil comprises 1) a light-weight eye tracking headset, 2) an open source software framework for mobile eye tracking, as well as 3) a graphical user interface to playback and visualize video and gaze data. Pupil features high-resolution scene and eye cameras for monocular and binocular gaze estimation. The software and GUI are platform-independent and include state-of-the-art algorithms for real-time pupil detection and tracking, calibration, and accurate gaze estimation. Results of a performance evaluation show that Pupil can provide an average gaze estimation accuracy of 0.6 degree of visual angle (0.08 degree precision) with a processing pipeline latency of only 0.045 seconds.
 
-**Permalink to article**
+#### Permalink to article
 
 Available on dl.acm.org: [http://dl.acm.org/citation.cfm?doid=2638728.2641695](http://dl.acm.org/citation.cfm?doid=2638728.2641695)
 
@@ -51,15 +51,15 @@ Available on dl.acm.org: [http://dl.acm.org/citation.cfm?doid=2638728.2641695](h
 
 ## Pupil Technical Report
 
-**Title**
+#### Title
 
 Pupil: An Open Source Platform for Pervasive Eye Tracking and Mobile Gaze-based Interaction
 
-**Abstract**
+#### Abstract
 
 Commercial head-mounted eye trackers provide useful features to customers in industry and research but are expensive and rely on closed source hardware and software. This limits the application areas and use of mobile eye tracking to expert users and inhibits user-driven development, customization, and extension. In this paper we present Pupil -- an accessible, affordable, and extensible open source platform for mobile eye tracking and gaze-based interaction. Pupil comprises 1) a light-weight headset with high-resolution cameras, 2) an open source software framework for mobile eye tracking, as well as 3) a graphical user interface (GUI) to playback and visualize video and gaze data. Pupil features high-resolution scene and eye cameras for monocular and binocular gaze estimation. The software and GUI are platform-independent and include state-of-the-art algorithms for real-time pupil detection and tracking, calibration, and accurate gaze estimation. Results of a performance evaluation show that Pupil can provide an average gaze estimation accuracy of 0.6 degree of visual angle (0.08 degree precision) with a latency of the processing pipeline of only 0.045 seconds.
 
-**Permalink to article**
+#### Permalink to article
 
 Available on arxiv.org: [http://arxiv.org/abs/1405.0006](http://arxiv.org/abs/1405.0006)
 
@@ -81,13 +81,13 @@ Available on arxiv.org: [http://arxiv.org/abs/1405.0006](http://arxiv.org/abs/14
 
 ## MIT Thesis
 
-**Abstract**
+#### Abstract
 
 This thesis explores the nature of a human experience in space through a primary inquiry into vision. This inquiry begins by questioning the existing methods and instruments employed to capture and represent a human experience of space. While existing qualitative and quantitative methods and instruments -- from "subjective" interviews to "objective" photographic documentation -- may lead to insight in the study of a human experience in space, we argue that they are inherently limited with respect to physiological realities. As one moves about the world, one believes to see the world as continuous and fully resolved. However, this is not how human vision is currently understood to function on a physiological level. If we want to understand how humans visually construct a space, then we must examine patterns of visual attention on a physiological level. In order to inquire into patterns of visual attention in three dimensional space, we need to develop new instruments and new methods of representation. The instruments we require, directly address the physiological realities of vision, and the methods of representation seek to situate the human subject within a space of their own construction. In order to achieve this goal we have developed Pupil, a custom set of hardware and software instruments, that capture the subject's eye movements. Using Pupil, we have conducted a series of trials from proof of concept -- demonstrating the capabilities of our instruments -- to critical inquiry of the relationship between a human subject and a space. We have developed software to visualize this unique spatial experience, and have posed open questions based on the initial findings of our trials. This thesis aims to contribute to spatial design disciplines, by providing a new way to capture and represent a human experience of space.
 
 (Authors names appear in alphabetical order - equal hierarchy in authorship.)
 
-**Permalink to Thesis**
+#### Permalink to Thesis
 
 On MIT DSpace: [http://hdl.handle.net/1721.1/72626](http://hdl.handle.net/1721.1/72626)
 

@@ -8,7 +8,7 @@ page_weight = 2.1
 
 `v0.8` of the Pupil software introduces a consistent naming scheme for message topics. They are used to publish and subscribe to the [`IPC Backbone`](#ipc). Pre-defined message topics are `pupil`, `gaze`, `notify`, `delayed_notify`, `logging`. Notifications sent with the `notify_all()` function of the `Plugin` class will be published automatically as `notify.<notification subject>`.
 
-**Message Reactor and Emitter Documentation**
+#### Message Reactor and Emitter Documentation
 
 From version `v0.8` on, every actor who either reacts to or emits messages is supposed to document its behaviour. Therefore every actor should react to `notify.meta.should_doc` by emitting a message with the topic `notify.meta.doc`. The answer's payload should be a serialized dictionary with the following format:
 
@@ -22,7 +22,7 @@ From version `v0.8` on, every actor who either reacts to or emits messages is su
 
 Plugins use notifications as primary communication channel to the IPC Backbone. This makes plugins natural actors in the Pupil message scheme. To simplify the above mentioned documentation behaviour, plugins will only have to add an [docstring](https://www.python.org/dev/peps/pep-0257/) to their `on_notify()` method. It should include an list of messages to which the plugin reacts and those which the plugin emits itself. The docstring should follow [Google docstring style](http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html). The main process will automatically generate messages in the format from above using the plugin's class name as `actor` and the `on_notify()` docstring as content for the `doc` key.
 
-**Notification Overview**
+#### Notification Overview
 
 You can use the following script to get an overview over the notification handling of the currently running actors:
 

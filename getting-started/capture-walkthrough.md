@@ -7,12 +7,12 @@ page_weight = 3
 
 ## Pupil Capture Demo Video
 
+> <div class="feature-content-container">
+  	<div class='feature-video-container' >
+      <iframe class=feature-video src="https://www.youtube.com/embed/Fxll-vPFa90?rel=0" frameborder="0" allowfullscreen></iframe>
+  	</div>
+	</div>
+
 The video below demonstrates how to setup, calibrate, and make a recording with Pupil Capture.
 
 Turn on closed captions `CC` to read annotations in the video.
-
-<div class="content-container">
-  <div class='video-container' >
-      <iframe class=feature-video src="https://www.youtube.com/embed/Fxll-vPFa90?rel=0" frameborder="0" allowfullscreen></iframe>
-  </div>
-</div>

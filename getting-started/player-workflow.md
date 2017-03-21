@@ -9,15 +9,15 @@ page_weight = 2
 Use Pupil Player to visualize data recorded with Pupil Capture and export videos of visualization and datasets for further analysis. 
 
 ### 1. Open Pupil Player
+
+> <p align="center"><img src="/images/icons/svg/pp.svg" width="20%"></p>
+
 Now that you have recorded some data, you can play back the video and visualize gaze data, marker data, and more.
 
-<img src="/images/icons/pp-pointer.jpg" width="20%">
-
-**Player Window**
-
+#### Player Window
 Let's get familiar with the Player window.
 
-<img src="/images/pupil-player/pupil-player-callout.jpg" width="100%">
+> <img src="/images/pupil-player/pupil-player-callout.jpg" width="100%">
 
 The Player window is the main control center for `Pupil Player`. It displays the recorded video feed from pupil capture file.
 
@@ -27,13 +27,14 @@ The Player window is the main control center for `Pupil Player`. It displays the
 1. **Seek Bar and Trim Marks** - You can drag the playhead (large circle) to scrub through the video or `space` bar to play/pause. You can use the arrow keys to advance one frame at a time. Drag the small green circles at the end of the seek bar to set trim marks. Trim marks directly inform the section of video/data to export.
 1. **Hot keys** - this area contains clickable buttons for plugins.
 
-**Where are Pupil Player exports saved?**
+#### Where are Pupil Player exports saved?
+
+> <img src="/images/pupil-player/recording/recording_folder_exports_v07.jpg" width="100%">
 
 Exports are saved within a dedicated folder named `exports` within the original recording folder.
 
 Each export is contained within a folder within the `exports` folder. The numbers of the export correlate to the trim marks (frame start and frame end) for the export.  
 
-Below is an example of an export.
+<!-- Below is an example of an export.-->
 
-<img src="/images/pupil-player/recording/recording_folder_exports_v07.jpg" width="100%">
 
