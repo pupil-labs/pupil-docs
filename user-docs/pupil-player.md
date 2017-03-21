@@ -20,7 +20,7 @@ Features like <a href="#marker-tracking">surface tracking</a> found in Pupil Cap
 ### Starting Pupil Player
 
 > <p align="center">
-    <img src="/images/icons/pp-pointer.jpg" width="20%">
+    <img src="/images/icons/svg/pp.svg" width="20%">
   </p>
 
 Drag the recording directory (the triple digit one) directly onto the app icon **or** launch the application and drag + drop the recording directory into Pupil Player window.
