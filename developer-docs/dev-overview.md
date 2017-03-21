@@ -8,7 +8,6 @@ page_weight = 0
 # Developer Docs
 
 ## Development Overview
-
 Overview of language, code structure, and general conventions
 
 ### Language
@@ -21,7 +20,7 @@ When [Pupil Capture][capture] starts, in default settings two processes are spaw
 
 **Eye** and **World**. Both processes grab image frames from a video capture stream but they have very different tasks.  
 
-**Eye Process**
+#### Eye Process
 The eye process only has one purpose - to detect the pupil and broadcast its's position.  The process breakdown looks like this:
 
 * Grabs eye camera images from eye camera video stream
@@ -32,7 +31,7 @@ The eye process only has one purpose - to detect the pupil and broadcast its's p
 Note - Pupil position refers to the position of the pupil in the eye camera space. This is different from gaze position which is what we call the mapped pupil positions in the world camera space.
 </aside>
 
-**World Process**
+#### World Process
 This is the workhorse.
 
 * Grabs the world camera images from the world camera video stream
@@ -44,7 +43,8 @@ Most, and preferably all coordination and control happens within the World proce
 
 TBA
 
-**Pupil Datum format**
+#### Pupil Datum format
+
 The pupil detector, run by the Eye process are required to return a result in the form of a Python dictionary with *at least* the following content:
 
 ```python
@@ -62,7 +62,7 @@ The pupil detector, run by the Eye process are required to return a result in th
 
 This dictionary is sent on the IPC and read by gaze mapping plugins in the world process. Mapping from pupil position to gaze position happens here. The mapping plugin is initilized by a calibration plugin.
 
-**Control: World -> Eye**
+#### Control: World > Eye
 Happens via notifications on the IPC.
 
 ### Timing & Data Conventions

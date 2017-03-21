@@ -16,11 +16,12 @@ Go through the following steps to get familiar with the Pupil workflow. You can 
 Put on Pupil and plug it in. Headsets are adjustable and shipped with additional parts. For more information head over to the [Pupil Hardware](#pupil-hardware "pupil hardware") guide.
 
 ### 2. Start Pupil Capture
-If your headset is plugged in and detected, the `World` and `Eye` windows will open and display real-time video.
 
 > <p align="center">
-  <img src="/images/icons/pc-pointer.jpg" width="20%">
-</p>
+    <img src="/images/icons/pc-pointer.jpg" width="20%">
+  </p>
+
+If your headset is plugged in and detected, the `World` and `Eye` windows will open and display real-time video.
 
 <!-- 
 ### 3. Intro to the UI
@@ -144,9 +145,9 @@ There are other calibration methods and lots more information how calibration wo
 
 Start capturing data!
 
-Pupil Capture will save the world video stream and all corresponding gaze data in a folder in your user directory named `recordings`.
-
 > <img src="/images/pupil-capture/recording/pupil-capture-v07-world-recording.jpg" width="100%">
+
+Pupil Capture will save the world video stream and all corresponding gaze data in a folder in your user directory named `recordings`.
 
 * Start recording: Press the `r` key on your keyboard or press the circular 'R' button in the left hand side of the world window.
 * The elapsed recording time will appear next to the 'R' button.
@@ -158,9 +159,9 @@ See a video demonstration of how to set recordings path, session name, and start
 
 By default, each recording will live in its own unique data folder contained in the `recordings` folder.
 
-You can make as many recordings as you like. 
-
 > <img src="/images/pupil-capture/recording/recording_folder_v07.jpg" width="100%">
+
+You can make as many recordings as you like. 
 
 The default `recordings` directory will have the following hierarchy.
 

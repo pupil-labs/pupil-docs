@@ -12,14 +12,17 @@ page_weight = 0
 Pupil Capture is the software used with the Pupil Headset. The software reads the video streams coming in from the world camera and the eye camera. Pupil Capture uses the video streams to detect your pupil, track your gaze, detect and track markers in your environment, record video and events, and stream data in realtime.
 
 ### Capture Selection
+
+> <p align="center">
+    <img src="/images/pupil-capture/ui/pc-cap-select.jpg" width="80%">
+  </p>
+
 By default Pupil Capture will use Local USB as the capture source. If you have a Pupil headset connected to your machine you will see video displayed from your Pupil headset in the World and eye windows. If no headset is connected or Pupil Capture is unable to open capture devices it will fall back to the Test Image. Other options for capture source are described below.
 
 - Test Image - This is the fallback behavior if no capture device is found, or if you do not want to connect to any capture device.
 - Video File Source - select this option to use previously recorded videos for the capture selection. 
 - Pupil Mobile - select this option When using Pupil Capture with the Pupil Mobile android application.
 - Local USB - select this option if your Pupil Headset is connected to the machine running Pupil Capture. This is the default setting. 
-
-<img src="/images/pupil-capture/ui/pc-cap-select.jpg" width="80%">
 
 ### Calibration
 Pupil uses two cameras. One camera records a subject's eye movements -- we call this the `eye camera`. Another camera records the subject's field of vision -- we call this the `world camera`. In order to know what someone is looking at, we must find the parameters to a function that correlates these two streams of information.
@@ -28,18 +31,20 @@ Pupil uses two cameras. One camera records a subject's eye movements -- we call 
 Make sure that the users pupil is properly tracked. Make sure that the world camera is in focus for the distance at which you want to calibrate, and that you can see the entire area you want to calibrate within the world cameras extents (FOV).
 
 ### Calibration Methods
+
+> <p align="center">
+    <img src="/images/pupil-capture/ui/pc-calibrate.jpg" width="40%">
+  </p>
+
 First select the calibration method you would like to use:
 
-<p align="center">
-	<img src="/images/pupil-capture/ui/pc-calibrate.jpg" width="40%">
-</p>
+#### Screen Marker Calibration
 
-**Screen Marker Calibration**
+> <p align="center">
+    <img src="/images/pupil-capture/ui/pc-screen-calib.jpg" width="40%">
+  </p>
+
 This is the default method, and a quick method to get started. It is best suited for close range eye-tracking in a narrow field of view.
-
-<p align="center">
-	<img src="/images/pupil-capture/ui/pc-screen-calib.jpg" width="40%">
-</p>
 
 1. Select `Screen Marker Calibration`
 1. Select your `Monitor` (if more than 1 monitor)
@@ -54,17 +59,18 @@ This is the default method, and a quick method to get started. It is best suited
 
 In the `Advanced` sub-menu you can set the `sample duration` -- the number of frames to sample the eye and marker position. You can also set parameters that are used to debug and detect the circular marker on the screen.
 
-**Manual Marker Calibration**
+#### Manual Marker Calibration
+
+>  <p align="center">
+    <img width="40%" src="/images/pupil-capture/calibration-markers/manual_calibration_marker-01.jpg">
+    <img width="40%" src="/images/pupil-capture/calibration-markers/manual_calibration_marker-02.jpg">
+  </p>
+
+> <p align="center">
+    <img src="/images/pupil-capture/ui/pc-manual-calib.jpg" width="40%">
+  </p>
+
 This method is done with an operator and a subject. It is suited for midrange distances and can accommodate a wide field of view. You need markers made of concentric circles, like the two shown below.
-
-<p align="center">
-	<img width="40%" src="/images/pupil-capture/calibration-markers/manual_calibration_marker-01.jpg">
-	<img width="40%" src="/images/pupil-capture/calibration-markers/manual_calibration_marker-02.jpg">
-</p>
-
-<p align="center">
-	<img src="/images/pupil-capture/ui/pc-manual-calib.jpg" width="40%">
-</p>
 
 1. Select `Manual Marker Calibration`
 1. Press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to start calibration.
@@ -84,16 +90,17 @@ You will notice that there are no standard controls, only an `Advanced` sub-menu
 [Download markers to print](/images/calibration-markers/pupil_calibration_marker.pdf) or display on smartphone/tablet screen.
 
 <aside class="notice">
-	Note - v2.0 Markers can be <a href="/images/pupil-capture/calibration-markers/v2.0_markers/pupil_calibration_marker.pdf">downloaded here</a>.
+  Note - v2.0 Markers can be <a href="/images/pupil-capture/calibration-markers/v2.0_markers/pupil_calibration_marker.pdf">downloaded here</a>.
 </aside>
 
 
-**Natural Features Calibration**
-This method is for special situations and far distances. Usually not required.
+#### Natural Features Calibration
 
-<p align="center">
-	<img src="/images/pupil-capture/ui/pc-natural-calib.jpg" width="40%">
-</p>
+> <p align="center">
+    <img src="/images/pupil-capture/ui/pc-natural-calib.jpg" width="40%">
+  </p>
+
+This method is for special situations and far distances. Usually not required.
 
 1. Select `Natural Features Calibration`
 1. Press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to start calibration.
@@ -123,23 +130,26 @@ Using screen based 9 point calibration method, you should easily be able to achi
 * Any calibration is only accurate inside the field of view (in the world video) you have calibrated. For example: If during your calibration you only looked at markers or natural features (depending on your calibration method) that are in the left half, you will not have good accuracy in the right half.
 
 ### Recording
-Press `r` on your keyboard or press the blue circular `R` button in the left hand side of the world window to start recording. You will see red text with the elapsed time of recording next to the `R` button. To stop recording, press `r` on your keyboard or press the `R` button on screen.
 
-<p align="center">
-	<img src="/images/pupil-capture/ui/pc-recorder.jpg" width="40%">
-</p>
+> <p align="center">
+    <img src="/images/pupil-capture/ui/pc-recorder.jpg" width="40%">
+  </p>
+
+Press `r` on your keyboard or press the blue circular `R` button in the left hand side of the world window to start recording. You will see red text with the elapsed time of recording next to the `R` button. To stop recording, press `r` on your keyboard or press the `R` button on screen.
 
 You can set the folder or `Path to recordings` and the `Recording session name` in the `Recorder` sub-menu within the GUI. Note - you must specify an existing folder, otherwise the `Path to recordings` will revert to the default path.
 
 **What will be in the session folder?**
+
 If you open up a session folder you will see a collection of video(s) and data files. Take a look at [Data format](#data-format) to see exactly what you get.
 
 ### Open a plugin
-Click on the selector "Open Plugin" and select your plugin.
 
-<p align="center">
-	<img src="/images/pupil-capture/ui/pc-plugin.jpg" width="40%">
-</p>
+> <p align="center">
+    <img src="/images/pupil-capture/ui/pc-plugin.jpg" width="40%">
+  </p>
+
+Click on the selector "Open Plugin" and select your plugin.
 
 ### Pupil Sync
 `pupil_sync` can help you to collect data from different devices and control an experiment with multiple actors (data generators and sensors) or use more than one Pupil device simultaneously:
@@ -152,20 +162,20 @@ Click on the selector "Open Plugin" and select your plugin.
 For this to work your network needs to allow `UDP` transport. If the nodes do not find each other, create a local wifi network and use that instead.
 
 <aside class="notice">
-	Pupil sync can easily be integrated in your own app or device. Have a look at <a href="https://github.com/pupil-labs/pupil-helpers/tree/master/pupil_sync">pupil helpers</a> to get started.
+  Pupil sync can easily be integrated in your own app or device. Have a look at <a href="https://github.com/pupil-labs/pupil-helpers/tree/master/pupil_sync">pupil helpers</a> to get started.
 </aside>
 
 ### Streaming Pupil Data over the network
+
+> <p align="center">
+    <img src="/images/pupil-capture/ui/pc-pupil-remote.jpg" width="40%">
+  </p>
+
 `Pupil Remote` is a plugin that is used to broadcast data over the network using the excellent library [Zero MQ](http://zeromq.org/).
 
 * Load the `Pupil Remote` plugin from the `General` sub-menu in the GUI (it is loaded by default).
 * It will automatically begin broadcasting at the default `Address` specified.
 * Change the address and port as desired.
-
-<p align="center">
-	<img src="/images/pupil-capture/ui/pc-pupil-remote.jpg" width="40%">
-</p>
-
 * If you want to change the address, just type in the address after the `tcp://`
 
 ### Receiving Data with your own app
@@ -206,30 +216,28 @@ We have written some simple Python scripts that you can try using Pupil Server t
 Messages from pupil server mirror all objects in the `events` dict that is used internally in pupil capture and player. The data is send per topic (`pupil_positions`, `gaze_positions` ...) and serialised using [json](https://docs.python.org/2/library/json.html). The example above tells it all.
 
 ### Marker Tracking
+
+> <div class="content-container padBottom--2">
+    <div class='feature-video-container' >
+      <iframe class=feature-video src="https://www.youtube.com/embed/bmqDGE6a9kc?rel=0" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
 The `Marker Tracking` plugin allows you to define surfaces within your environment and track surfaces in realtime using a 5x5 square marker. We were greatly inspired by the [ArUco marker tracking library](http://www.uco.es/investiga/grupos/ava/node/26).
 
 *  Markers - We use a 5x5 square marker. This is not the same marker that is used by ArUco (they use 7x7).
 *  Using a 5x5 marker gives us 64 unique markers.
 *  Why the 5x5 grid? The 5x5 grid allows us to make smaller markers that can still be detected. Markers can be printed on paper, stickers, or displayed on the screen.
 
-See the video linked below for an introduction and workflow.
+See the video linked for an introduction and workflow.
 
-<div class="content-container padTop--2 padBottom--2">
-  <div class='video-container' >
-		<iframe class=feature-video src="https://www.youtube.com/embed/bmqDGE6a9kc?rel=0" frameborder="0" allowfullscreen></iframe>
-	</div>
-</div>
+#### Defining Surfaces with Markers
+  
+> <p align="center">
+    <img src="/images/pupil-capture/calibration-markers/pupil_surface_markers.jpg" width="70%">
+  </p>
 
-**Defining Surfaces with Markers**
 A surface can be defined by one or more markers. Surfaces can be defined with Pupil Capture in real-time, or offline with Pupil Player. Below we provide an outline of steps.
-
-*  Generate markers with [this script](https://gist.github.com/willpatera/7908319#file-make_square_markers-py), or download the image below.
-
-<img src="/images/pupil-capture/calibration-markers/pupil_surface_markers.jpg" width="100%">
-
-<aside class="notice">
-<strong>Note</strong> - When printing markers, ensure that white space remains around the square marker. You can scale the markers to different sizes, but make sure to have a white border width of at least 1.2 x the marker grid size for marker, unless the marker is affixed onto a white (or light colored) background.
-</aside>
 
 *  Define surfaces within your environment using one or more fiducial markers. Surfaces can be defined with a minimum of one marker. The maximum number of markers per surface is limited by the number of markers we can produce with a 5x5 grid.
 *  Use Pupil Capture or Pupil Player to register surfaces, name them, and edit them.
@@ -238,3 +246,10 @@ A surface can be defined by one or more markers. Surfaces can be defined with Pu
 *  We have created a window that shows registered surfaces within the world view and the gaze positions that occur within those surfaces in realtime.
 *  Streaming Surfaces with Pupil Capture - Detected surfaces as well as gaze positions relative to the surface can be streamed locally or over the network with pupil server. Check out [this video](http://youtu.be/qHmfMxGST7A) for a demonstration.
 *  Surface Metrics with Pupil Player - if you have defined surfaces, you can generate surface visibility reports or gaze count per surface. See our [blog post](http://pupil-labs.com/blog/2014/07/0392-player-release.html) for more information.
+
+
+*  Generate markers with [this script](https://gist.github.com/willpatera/7908319#file-make_square_markers-py), or download the image.
+
+<aside class="notice">
+  <strong>Note</strong> - When printing markers, ensure that white space remains around the square marker. You can scale the markers to different sizes, but make sure to have a white border width of at least 1.2 x the marker grid size for marker, unless the marker is affixed onto a white (or light colored) background.
+</aside>

@@ -7,11 +7,11 @@ page_weight = 2
 
 ## Pupil Service
 
-### About
+<!-- ### About -->
 
-<p align="center">
-	<img src="/images/icons/ps.jpg" width="20%">
-</p>
+> <p align="center">
+    <img src="/images/icons/ps.jpg" width="20%">
+  </p>
 
 Pupil Service is like Pupil Capture except it does not have a world video feed or GUI. It is intended to be used with VR and AR eye tracking setups. 
 
@@ -20,7 +20,9 @@ Pupil Service is designed to run in the background and to be controlled via netw
 ### Talking to Pupil Service
 Code examples below demonstrate how to control Pupil Service over the network. 
 
-> Starting and stopping Pupil Service:
+```
+Starting and stopping Pupil Service:
+```
 
 ```python
 import zmq, msgpack, time

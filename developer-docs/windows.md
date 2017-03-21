@@ -24,6 +24,7 @@ For discussion or questions on Windows installation head over to the [Pupil Goog
 * Install [7-zip](http://www.7-zip.org/download.html) for extraction purposes.
 
 **Visual C++ Runtime**
+
 * Install Visual Studio 2015 Community Update 3
 
 **Python (64-bit)**
@@ -47,6 +48,7 @@ To install an extension open command line with admin rights and run `python -m p
 * [boost_python](http://www.lfd.uci.edu/~gohlke/pythonlibs/#boost.python): boost_python-1.59-cp35-none-win_amd64.whl
 
 For networking install:
+
 * `python -m pip install https://github.com/zeromq/pyre/archive/master.zip`
 * `python -m pip install win_inet_pton`
 
@@ -84,6 +86,7 @@ You also need to install Python libraries that are specific to Pupil. Download t
 
 ### Install OpenCV for Windows
 [opencv-3.1.0](https://sourceforge.net/projects/opencvlibrary/files/opencv-win/3.1.0/opencv-3.1.0.exe/download)
+
 * Copy opencv3.1.0\build\x64\vc14\bin\opencv_world310.dll to the pupil\pupil_external\ directory
 
 ### Install Boost
@@ -91,14 +94,15 @@ You also need to install Python libraries that are specific to Pupil. Download t
 * Open boost_1_59_0\boost\python\detail\config.hpp
 * Change the macro definition "#define BOOST_LIB_NAME boost_python" to "#define BOOST_LIB_NAME boost_python3" and save the file
 
-**Edit the Pupil detectors and calibration cython setup files**
+#### Edit the Pupil detectors and calibration cython setup files
+
 * Edit pupil\pupil_src\capture\pupil_detectors\setup.py . In the windows section, update the paths for OpenCV, Eigen, Boost, Ceres, Glog according to your installation locations
 * Edit pupil\pupil_src\shared_modules\calibration_routines\optimization_calibration\setup.py , in the same manner as above.
 
 ### Install Drivers 
 In order to support isochronous USB transfer on Windows, you will need to install drivers for the cameras in your Pupil headset. Follow setup steps on [this wiki page](https://github.com/pupil-labs/pupil/wiki/Windows-Driver-Setup).
 
-**Run Pupil!**
+#### Run Pupil!
 > Capture
 
 ```bash

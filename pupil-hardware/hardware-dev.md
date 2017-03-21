@@ -9,23 +9,25 @@ page_weight = 5
 This page contains documentation and discussion on open source camera mounts, optics, and cameras. 
 
 ### Camera Mounts
+
+> <p align="center">
+		<img width="600" src="/images/pupil-hardware/explo_side_800_mounts.jpg" />
+	</p>
+
 We release the CAD files for the camera mounts for you to download, modify, in accordance with our [license](#license).  CAD files for the frame are not open source; [see explanation](#hardware). 
 
-<p align="center">
-	<img width="600" src="/images/pupil-hardware/explo_side_800_mounts.jpg" />
-</p>
-
 **Interface Documentation**
+
 By releasing the mounts as example geometry we automatically document the interface. You can use the CAD files to take measurements and make your own mounts. 
 
 <aside class="notice">
 Note - The tolerances may need to be changes for your material or fabrication process.
 </aside>
 
-**Compatibility**
+#### Compatibility
 The mounts are developed as part of the whole headset and carry the revision number of the headset they where designed for.
 
-**Download Camera Mount CAD Files**
+#### Download Camera Mount CAD Files
 All files are hosted in the `pupil-hardware-diy` repo [here](https://github.com/pupil-labs/pupil-hardware-diy)
 
 You can clone the latest revision

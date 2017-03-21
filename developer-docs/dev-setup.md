@@ -32,9 +32,9 @@ cd /the_folder_where_Pupil_will_live/
 git clone https://github.com/pupil-labs/pupil.git
 ```
 
-### Run Pupil Capture from Source**
+### Run Pupil Capture from Source
 
-ou're in development land now.  If you're running from the source, there will be no icon to click. So fire up the terminal, navigate to the cloned Pupil repository, and start Pupil using Python.
+You're in development land now.  If you're running from the source, there will be no icon to click. So fire up the terminal, navigate to the cloned Pupil repository, and start Pupil using Python.
 
 ```
 cd /the_folder_where_Pupil_lives/pupil_src/capture

@@ -20,13 +20,18 @@ You will need access to these tools:
 ### Prepare Webcams
 The first step is to modify the cameras so we can use them for eye-tracking.
 
-**De-case Cameras**
+#### De-case Cameras
 Take both webcams out of their casings. Follow the video guides.
 
 1. [decase Logitech C525/C512](http://vimeo.com/59844059)
 2. [decase Microsoft HD-6000](http://vimeo.com/53005603)
 
-**Solder Work on Eye Camera PCB**
+#### Solder Work on Eye Camera PCB
+
+> <p align="center">
+		<img class="padBottom--2" src="/images/pupil-hardware/hd-6000_pcb_text.jpg" alt="Solder Instructions">
+	</p>
+	
 This is by far the trickiest part. You will need some soldering experience, or work with someone that can help you for this step. In the video and photo the lens holder is removed, but you will do it with the *lens holder attached*.
 
 1. Cut off the microphone
@@ -34,9 +39,8 @@ This is by far the trickiest part. You will need some soldering experience, or w
 3. Desolder the blue LED's
 4. solder on the IR-LED's. Please take note of LED polarity! [video](http://youtu.be/O-FAXldfq94)
 
-<img class="padTop--2 padBottom--2" src="/images/pupil-hardware/hd-6000_pcb_text.jpg" alt="Solder Instructions">
+#### Replace IR-blocking Filter on the Eye Camera
 
-**Replace IR-blocking Filter on the Eye Camera**
 1. Unscrew the lens from the mount.
 2. Carefully remove the IR filter. Be very careful! The IR filter is a thin piece of coated glass and right behind it is a lens element that must stay intact and unharmed! It is necessary to remove the IR filter, so that the image sensor will be able to "see" the IR light.
 3. Using a hole punch, cut out 1 round piece of exposed film and put it where the older filter was.
@@ -48,14 +52,14 @@ This is by far the trickiest part. You will need some soldering experience, or w
 ### Assembly of the Pupil DIY Kit
 If you are reading this, chances are that you received one or more Pupil headsets -- **Awesome!** If you feel like letting us know something about the headset, print quality, good and bad, please go ahead and post your thoughts on the [Pupil Google Group][google-group].
 
-**Headset 3D print Intro & Unboxing**
+#### Headset 3D print Intro & Unboxing
 1. Get used to the material
 2. Clean out the eye-camera arm
 3. Try it on!
 
 [Pupil Headset 3D Print Unboxing Video](http://www.youtube.com/watch?v=wF_ryq6uDdo)
 
-**Camera Assembly**
+#### Camera Assembly
 1. Attach the world camera onto the mount using 4 small screws, leftover from disassembly.
 2. Clip the world camera clip onto the headset
 3. Slide the eye-cam into the mount [video guide](http://www.youtube.com/watch?v=wkV9Ye7psP4)
