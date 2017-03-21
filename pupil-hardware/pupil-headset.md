@@ -60,7 +60,7 @@ Depending on your configuration, some additional parts may be included with your
   </tr>
 </table>
 
-<div class="feature-content-container" style="padding: 0 5em;">
+<div class="content-container" style="padding: 0 5em;">
   <div class="flex-container flex-row-nowrap">
     <img style="max-width: 40%;" src="/images/pupil-hardware/eye-screw.jpg">
     <p>Adjust the ball joint firmness by adjusting the socket screw.</p>

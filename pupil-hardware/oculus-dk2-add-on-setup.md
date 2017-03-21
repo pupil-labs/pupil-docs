@@ -10,7 +10,7 @@ This page will guide you through all steps needed to turn your Oculus DK2 into a
 
 ### Install lens in cup
 
-> <div class="content-container">
+> <div class="feature-content-container">
 	  <div class='feature-video-container' >
 	  	<iframe class=feature-video src="https://www.youtube.com/embed/AVeUwAFKmAc?rel=0" frameborder="0" allowfullscreen></iframe>
 		</div>
@@ -18,7 +18,7 @@ This page will guide you through all steps needed to turn your Oculus DK2 into a
 
 Take the lens out of an existing Oculus lens cup.
 
-> <div class="content-container">
+> <div class="feature-content-container">
 	  <div class='feature-video-container' >
 			<iframe class=feature-video src="https://www.youtube.com/embed/ztT9WkDhpow?rel=0" frameborder="0" allowfullscreen></iframe>
 		</div>
@@ -26,7 +26,7 @@ Take the lens out of an existing Oculus lens cup.
 
 Remove the LED ring and insert the lens into the Pupil eye tracking cup.
 
-> <div class="content-container">
+> <div class="feature-content-container">
 	  <div class='feature-video-container' >
 			<iframe class=feature-video src="https://www.youtube.com/embed/_Y0_4LDhphY?rel=0" frameborder="0" allowfullscreen></iframe>
 		</div>
@@ -36,7 +36,7 @@ Install the LED ring and connect the LED power supply.
 
 ### Install cup in DK2
 
-> <div class="content-container">
+> <div class="feature-content-container">
 	  <div class='feature-video-container' >
 			<iframe class=feature-video src="https://www.youtube.com/embed/5LqjfgbDydM?rel=0" frameborder="0" allowfullscreen></iframe>
 		</div>
@@ -44,7 +44,7 @@ Install the LED ring and connect the LED power supply.
 
 ### Route cables
 
-> <div class="content-container">
+> <div class="feature-content-container">
 	  <div class='feature-video-container' >
 			<iframe class=feature-video src="https://www.youtube.com/embed/bvdxMYtzVTE?rel=0" frameborder="0" allowfullscreen></iframe>
 		</div>

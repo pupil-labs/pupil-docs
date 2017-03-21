@@ -221,7 +221,7 @@ Messages from pupil server mirror all objects in the `events` dict that is used 
 
 ### Marker Tracking
 
-> <div class="content-container padBottom--2">
+> <div class="feature-content-container padBottom--2">
     <div class='feature-video-container' >
       <iframe class=feature-video src="https://www.youtube.com/embed/bmqDGE6a9kc?rel=0" frameborder="0" allowfullscreen></iframe>
     </div>
