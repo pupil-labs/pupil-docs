@@ -7,21 +7,17 @@ page_weight = 1
 
 ## Pupil Player
 
-<p align="center">
-  <img class="padBottom--2" src="/images/pupil-player/plugin/offline-surface-tracker.jpg" width="85%">
-</p>
-
 <!-- ### About -->
+
+> <p align="center">
+    <img src="/images/icons/svg/pp.svg" width="20%">
+  </p>
 
 Pupil Player is the second tool you will use after Pupil Capture. It is a media and data visualizer at its core. You will use it to look at Pupil Capture recordings. Visualize your data and export it.
 
 Features like <a href="#marker-tracking">surface tracking</a> found in Pupil Capture are also available in Pupil Player.
 
 ### Starting Pupil Player
-
-> <p align="center">
-    <img src="/images/icons/svg/pp.svg" width="20%">
-  </p>
 
 Drag the recording directory (the triple digit one) directly onto the app icon **or** launch the application and drag + drop the recording directory into Pupil Player window.
 
