@@ -10,11 +10,7 @@ This page will guide you through all steps needed to turn your Oculus DK2 into a
 
 ### Install lens in cup
 
-> <div class="feature-content-container">
-	  <div class='feature-video-container' >
-	  	<iframe class=feature-video src="https://www.youtube.com/embed/AVeUwAFKmAc?rel=0" frameborder="0" allowfullscreen></iframe>
-		</div>
-	</div>
+> {{< video-youtube embed-url="https://www.youtube.com/embed/AVeUwAFKmAc" >}}
 
 Take the lens out of an existing Oculus lens cup.
 
