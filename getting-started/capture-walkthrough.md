@@ -7,11 +7,7 @@ page_weight = 3
 
 ## Pupil Capture Demo Video
 
-> <div class="feature-content-container">
-  	<div class='feature-video-container' >
-      <iframe class=feature-video src="https://www.youtube.com/embed/Fxll-vPFa90?rel=0" frameborder="0" allowfullscreen></iframe>
-  	</div>
-	</div>
+> {{< video-youtube embed-url="https://www.youtube.com/embed/Fxll-vPFa90" >}}
 
 The video below demonstrates how to setup, calibrate, and make a recording with Pupil Capture.
 

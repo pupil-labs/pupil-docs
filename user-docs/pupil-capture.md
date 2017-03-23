@@ -223,11 +223,7 @@ Messages from pupil server mirror all objects in the `events` dict that is used 
 
 ### Marker Tracking
 
-> <div class="feature-content-container padBottom--2">
-    <div class='feature-video-container' >
-      <iframe class=feature-video src="https://www.youtube.com/embed/bmqDGE6a9kc?rel=0" frameborder="0" allowfullscreen></iframe>
-    </div>
-  </div>
+> {{< video-youtube embed-url="https://www.youtube.com/embed/bmqDGE6a9kc" >}}
 
 The `Marker Tracking` plugin allows you to define surfaces within your environment and track surfaces in realtime using a 5x5 square marker. We were greatly inspired by the [ArUco marker tracking library](http://www.uco.es/investiga/grupos/ava/node/26).
 
