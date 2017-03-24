@@ -10,14 +10,14 @@ Use Pupil Player to visualize data recorded with Pupil Capture and export videos
 
 ### 1. Open Pupil Player
 
-> <p align="center"><img src="/images/icons/svg/pp.svg" width="20%"></p>
+> {{< figure-img src="/images/icons/svg/pp.svg" img-class="feature-center" width="20%" >}}
 
 Now that you have recorded some data, you can play back the video and visualize gaze data, marker data, and more.
 
 #### Player Window
 Let's get familiar with the Player window.
 
-> <img src="/images/pupil-player/pupil-player-callout.jpg" width="100%">
+> {{< figure-img src="/images/pupil-player/pupil-player-callout.jpg" img-class="feature-center" width="100%" >}}
 
 The Player window is the main control center for `Pupil Player`. It displays the recorded video feed from pupil capture file.
 
@@ -29,7 +29,7 @@ The Player window is the main control center for `Pupil Player`. It displays the
 
 #### Where are Pupil Player exports saved?
 
-> <img src="/images/pupil-player/recording/recording_folder_exports_v07.jpg" width="100%">
+> {{< figure-img src="/images/pupil-player/recording/recording_folder_exports_v07.jpg" img-class="feature-center" width="100%" >}}
 
 Exports are saved within a dedicated folder named `exports` within the original recording folder.
 

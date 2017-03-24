@@ -6,8 +6,6 @@ page_weight = 3
 
 ## Oculus Rift DK2 Add-On
 
-> <p align="center">
-	<img class="padBottom--2" style="max-width: 70%;" src="/images/vr-ar/oculusdk2m.jpg" />
-</p>
+> {{< figure-img src="/images/vr-ar/oculusdk2m.jpg" img-class="feature-center" width="70%" >}}
 
 Add eye tracking powers to your Oculus Rift DK2 with our 120hz eye tracking add-ons.

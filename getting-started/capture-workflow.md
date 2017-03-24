@@ -17,9 +17,8 @@ Put on Pupil and plug it in. Headsets are adjustable and shipped with additional
 
 ### 2. Start Pupil Capture
 
-> <p align="center">
-    <img src="/images/icons/svg/pc.svg" width="20%">
-  </p>
+> {{< figure-img src="/images/icons/svg/pc.svg" img-class="feature-center" width="20%" >}}
+
 
 If your headset is plugged in and detected, the `World` and `Eye` windows will open and display real-time video.
 
@@ -131,11 +130,11 @@ The calibration process establishes a mapping from pupil to gaze coordinates.
 
 #### Screen Marker Calibration Method
 
-> <img src="/images/pupil-capture/recording/record-callout.jpg" width="100%">
+> {{< figure-img src="/images/pupil-capture/recording/record-callout.jpg" img-class="feature-center" width="100%" >}}
 
 Click `c` on the world screen or press `c` on the keyboard to start calibrate.
 
-> <img src="/images/pupil-capture/calibrate/calibrate-border.jpg" width="100%">
+> {{< figure-img src="/images/pupil-capture/calibrate/calibrate-border.jpg" img-class="feature-center" width="100%" >}}
 
 Follow the marker on the screen with your eyes and try to keep your head stationary
 
@@ -145,7 +144,7 @@ There are other calibration methods and lots more information how calibration wo
 
 Start capturing data!
 
-> <img src="/images/pupil-capture/recording/pupil-capture-v07-world-recording.jpg" width="100%">
+> {{< figure-img src="/images/pupil-capture/recording/pupil-capture-v07-world-recording.jpg" img-class="feature-center" width="100%" >}}
 
 Pupil Capture will save the world video stream and all corresponding gaze data in a folder in your user directory named `recordings`.
 
@@ -159,7 +158,7 @@ See a video demonstration of how to set recordings path, session name, and start
 
 By default, each recording will live in its own unique data folder contained in the `recordings` folder.
 
-> <img src="/images/pupil-capture/recording/recording_folder_v07.jpg" width="100%">
+> {{< figure-img src="/images/pupil-capture/recording/recording_folder_v07.jpg" img-class="feature-center" width="100%" >}}
 
 You can make as many recordings as you like. 
 

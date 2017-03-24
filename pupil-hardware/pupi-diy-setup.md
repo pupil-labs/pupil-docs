@@ -28,9 +28,7 @@ Take both webcams out of their casings. Follow the video guides.
 
 #### Solder Work on Eye Camera PCB
 
-> <p align="center">
-		<img class="padBottom--2" src="/images/pupil-hardware/hd-6000_pcb_text.jpg" alt="Solder Instructions">
-	</p>
+> {{< figure-img src="/images/pupil-hardware/hd-6000_pcb_text.jpg" img-class="feature-center" width="70%" >}}
 	
 This is by far the trickiest part. You will need some soldering experience, or work with someone that can help you for this step. In the video and photo the lens holder is removed, but you will do it with the *lens holder attached*.
 
