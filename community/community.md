@@ -9,9 +9,7 @@ page_weight = 0
 
 ## Pupil Community
 
-<p align="center">
-  <img class="padTop--2 padBottom--2" width="30%" src="/images/icons/Pupil_Logo_wiki-02.jpg"> 
-</p>
+{{< figure-img src="/images/icons/Pupil_Logo_wiki-02.jpg" img-class="feature-center padTop--2 padBottom--2" width="30%" >}}
 
 The Pupil community is made up of amazing individuals around the world.  It is your effort and exchanges that enable us to discover novel applications for eye tracking and help us to improve the open source repository.  The Pupil community is active, growing, and thrives from your contributions.
 
