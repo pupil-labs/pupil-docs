@@ -70,9 +70,11 @@ All H1, H2, H3 headers will be automatically added to the table of contents. Ple
 Code blocks should be formatted with triple backticks. Code blocks will be moved into the right most column of the website. Here is an example:
 
 ```markdown
+
 ```python
 print("welcome to pupil docs")
 ```
+
 ``` 
 
 ### Block Quotes
@@ -86,7 +88,9 @@ Almost all images should be formatted within a blockquote `>` so that they are m
 Shortcodes are like little html templates that you can use to format content. Shortcodes have been made for frequently used markup in order to reduce the amount of html within the markdown files. Shortcodes syntax is declared like so - `{{< shortcode-name attr >}}`. Here is an example of the `figure-img` shortcode within a blockquote:
 
 ```markdown 
+
 > {{< figure-img src="/images/pupil-hardware/pupil_w120_e120.jpg" img-class="feature-center padBottom--2" width="75%" >}}
+
 ```
 
 Shortcodes are defined in the [docuapi repo](https://github.com/pupil-labs/docuapi/tree/master/layouts/shortcodes "pupil-labs/docuapi shortcodes")
