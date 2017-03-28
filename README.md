@@ -71,13 +71,13 @@ All H1, H2, H3 headers will be automatically added to the table of contents. Ple
 
 Code blocks should be formatted with triple backticks. Code blocks will be moved into the right most column of the website. Here is an example:
 
-```markdown
+````markdown
 
 ```python
 print("welcome to pupil docs")
 ```
 
-``` 
+```` 
 
 ### Block Quotes
 
