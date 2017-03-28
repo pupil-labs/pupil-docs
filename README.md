@@ -49,7 +49,8 @@ H2 heading within section 2. This heading will be used as the first sub-heading 
 ```
 
 
-```yaml
+```markdown
+
 +++
 section_weight = 2
 page_weight = 1
@@ -58,6 +59,7 @@ page_weight = 1
 ## Section 2 - Page 1
 
 H2 heading within section 2, page 1. This heading will be used as the second sub-heading within this example section. 
+
 ```
 
 
