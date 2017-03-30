@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "name": "Pupil Docs",
+  "description": "Pupil Docs",
+  "icons": {
+    "60": "/images/favicons/firefox_app_60x60.png",
+    "128": "/images/favicons/firefox_app_128x128.png",
+    "512": "/images/favicons/firefox_app_512x512.png"
+  },
+  "developer": {
+    "name": "Pupil Labs Dev Team",
+    "url": "https://github.com/pupil-labs/pupil-docs-website"
+  }
+}
