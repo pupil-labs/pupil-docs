@@ -15,21 +15,21 @@ We welcome all contributions! To edit content:
 
 We aim for the docs to be concise and readable. 
 
-All content is written in Markdown. If you're new to markdown see [this guide](https://guides.github.com/features/mastering-markdown/ "Github - Mastering Markdown"). HTML markup is also parsed, but discouraged unless absolutely needed.
+All content is written in Markdown. If you're new to Markdown see [this guide](https://guides.github.com/features/mastering-markdown/ "Github - Mastering Markdown"). HTML markup is also parsed, but discouraged unless absolutely needed.
 
-The [pupil-docs-website](https://github.com/pupil-labs/pupil-docs-website "pupil-docs-website") automatically generates the table of contents based on the headings you use in the markdown file. Special styles are applied for blockquotes `>` and code blocks ` ``` `.
+The [pupil-docs-website](https://github.com/pupil-labs/pupil-docs-website "pupil-docs-website") automatically generates the table of contents based on the headings you use in the Markdown file. Special styles are applied for blockquotes `>` and code blocks ` ``` `.
 
 Images and videos should be wrapped with a blockquote `>`. 
 
-We also have a few shortcodes that can be used in markdown that apply custom html markup. 
+We also have a few shortcodes that can be used in Markdown that apply custom html markup. 
 
 ### Content organization, hierarchy, and front matter
 
-We divide content into *sections* and *pages*. Each sections should be within its own directory. Each section shuold only have one `H1` heading. There can be any number of markdown files or "pages". All "pages" must use `H2` headings or less. 
+We divide content into *sections* and *pages*. Each section should be within its own directory. Each section should only have one `H1` heading. There can be any number of Markdown files or "pages". All "pages" must use `H2` headings or less. 
 
-Content is sorted by front matter parameters at the top of each markdown file. 
+Content is sorted by front matter parameters at the top of each Markdown file. 
 
-`section_weight` sorts the top level sections. `page_weight` sorts pages within each section. Weight are zero based and should be integers (but floats are also accepted up to first decimal place). Here is an example:
+`section_weight` sorts the top level sections. `page_weight` sorts pages within each section. Weights are zero based and should be integers (but floats are also accepted up to first decimal place). Here is an example:
 
 
 ```markdown

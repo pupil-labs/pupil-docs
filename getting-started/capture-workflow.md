@@ -13,7 +13,7 @@ Go through the following steps to get familiar with the Pupil workflow. You can 
 
 
 ### 1. Put on Pupil
-Put on Pupil and plug it in. Headsets are adjustable and shipped with additional parts. For more information head over to the [Pupil Hardware](#pupil-hardware "pupil hardware") guide.
+Put on the Pupil headset and plug it in. Headsets are adjustable and shipped with additional parts. For more information head over to the [Pupil Hardware](#pupil-hardware "pupil hardware") guide.
 
 ### 2. Start Pupil Capture
 
@@ -33,10 +33,10 @@ Let's get familiar with the `World` window.
   <img src="https://raw.githubusercontent.com/wiki/pupil-labs/pupil/media/basic-workflow/world-callout.png" width="80%">
 </p>
 
-The `World` window is the main control center for `Pupil Capture`. It  displays a real-time video feed of your field of view (FOV), camera controls for the world view, controls for plugins like calibration, recording, streaming, and more.
+The `World` window is the main control center for `Pupil Capture`. It displays a real-time video feed of your field of view (FOV), camera controls for the world view, controls for plugins like calibration, recording, streaming, and more.
 
   1. **Graphs** - this area contains performance graphs. You can monitor `CPU` and `FPS` as well as the `Confidence` of the pupil detection algorithm.  
-  1. **Sidebar** - The main GUI for the `World` window is a sidebar. Click the `<|` icons to expand sidebar and sub-menus and  `|||` to collapse. The sidebar is scrollable. Plugins will launch new sub-menus in the sidebar.
+  1. **Sidebar** - the main GUI for the `World` window is a sidebar. Click the `<|` icons to expand sidebar and sub-menus and  `|||` to collapse. The sidebar is scrollable. Plugins will launch new sub-menus in the sidebar.
   1. **Gaze dot** - the red dot shows where you are looking within the `world` FOV.
   1. **Hot keys** - this area contains clickable buttons for plugins. Letters correspond to keyboard shortcuts. Example: press the `C` key to start calibrating or press the `R` key to start/stop recording.
 
@@ -60,7 +60,7 @@ The `Eye` window displays a real-time video of your eye. You will primarily use 
 
 1. **Graph** - this area contains performance graphs. You can monitor `CPU` and `FPS`.
 1. **Sidebar** - the main GUI for the `World` window is a sidebar. Click the `<|` icons to expand sidebar and sub-menus and  `|||` to collapse. The sidebar is scrollable. Plugins will launch new sub-menus in the sidebar.
-1. **Pupil diameter** - Red circles are visualizations of `pupil min` and `pupil max` diameter. The Green circle is a visualization of the current apparent pupil diameter. Blue number in the center is the current apparent pupil diameter in pixels.
+1. **Pupil diameter** - red circles are visualizations of `pupil min` and `pupil max` diameter. The green circle is a visualization of the current apparent pupil diameter. The blue number in the center is the current apparent pupil diameter in pixels.
 
  -->
 
@@ -110,8 +110,8 @@ Switch to `Algorithm` mode so that you can see a visualization of the pupil algo
   </tr>
 </table>
 
-* In the `General` menu in the sidebar, switch the `Mode` to `Algorithm`
-  * Scroll down to the `Pupil Detector 2D` submenu
+* In the `General` menu in the sidebar, switch the `Mode` to `Algorithm`.
+  * Scroll down to the `Pupil Detector 2D` submenu.
   * Adjust `Pupil min` and `Pupil max` sliders.
   * Red circles in the bottom left visualize `Pupil min` and `Pupil max` values.
   * The green circle and value displayed at the center of the circles is the current pupil diameter. Make sure the green circle is within the two red circles.
@@ -124,9 +124,7 @@ See <a href="#pupil-capture">Pupil Capture</a> for more details about pupil dete
 
 
 ### 4. Calibrate
-In order to know what someone is looking at, we must to establish a mapping between pupil and gaze positions. This is what we call calibration.
-
-The calibration process establishes a mapping from pupil to gaze coordinates. 
+In order to know what someone is looking at, we must establish a mapping between pupil and gaze positions. This is what we call calibration.
 
 #### Screen Marker Calibration Method
 
@@ -136,7 +134,7 @@ Click `c` on the world screen or press `c` on the keyboard to start calibrate.
 
 > {{< figure-img src="/images/pupil-capture/calibrate/calibrate-border.jpg" img-class="feature-center" width="100%" >}}
 
-Follow the marker on the screen with your eyes and try to keep your head stationary
+Follow the marker on the screen with your eyes and try to keep your head stationary.
 
 There are other calibration methods and lots more information how calibration works in the [user guide](#calibration "calibration").
 
@@ -178,5 +176,5 @@ Pupil capture saves the video frames in a fixed frame rate container. This means
 However, if you export using Pupil Player, the video will be made such that the frames will show at the exact right time. The output video will not miss any frame of the raw video, instead, output frames are spaced out exactly as they where initially captured.
 
 <aside class="notice">
-Note - The real FPS during recordings may fluctuate due variations on light intensity (LUX, lumens) and other issues; it cannot be forced to be constant.
+Note - The real FPS during recordings may fluctuate due to variations on light intensity (LUX, lumens) and other issues; it cannot be forced to be constant.
 </aside>
