@@ -9,7 +9,7 @@ page_weight = 1
 
 <!-- ### About -->
 
-> {{< figure-img src="/images/icons/svg/pp.svg" img-class="feature-center" width="20%" >}}
+> {{< figure-img src="/images/icons/svg/pp.svg" class="feature-center" width="20%" >}}
 
 Pupil Player is the second tool you will use after Pupil Capture. It is a media and data visualizer at its core. You will use it to look at Pupil Capture recordings. Visualize your data and export it.
 
@@ -60,7 +60,7 @@ For the sake of clarity, we will call plugins with the `Vis` prefix **visualizat
 
 #### Vis Circle
 
-> {{< figure-img src="/images/pupil-player/plugin/vizcircle.jpg" img-class="feature-center" width="85%" >}}
+> {{< lqip-img div-class="ratio-box lazy-img ratio--100-58" src="/images/pupil-player/plugin/vizcircle-preview.jpg" small-class="img-small lazyload" data-src="/images/pupil-player/plugin/vizcircle.jpg" large-class="img-large lazyload" >}}
 
 Visualize the gaze positions with a circle for each gaze position. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization.
 
@@ -75,7 +75,7 @@ Here we show an example of how you could use **2** instances of the `Vis Circle`
 
 #### Vis Cross
 
-> {{< figure-img src="/images/pupil-player/plugin/vizcross.jpg" img-class="feature-center" width="85%" >}}
+> {{< lqip-img div-class="ratio-box lazy-img ratio--100-58" src="/images/pupil-player/plugin/vizcross-preview.jpg" small-class="img-small lazyload" data-src="/images/pupil-player/plugin/vizcross.jpg" large-class="img-large lazyload" >}}
 
 Visualize the gaze positions with a cross for each gaze position. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization. You can set the following parameters:
 
@@ -88,7 +88,7 @@ Here we show an example of how you could use **2** instances of the `Vis Cross` 
 
 #### Scan Path
 
-> {{< figure-img src="/images/pupil-player/plugin/scanpath.jpg" img-class="feature-center" width="85%" >}}
+> {{< lqip-img div-class="ratio-box lazy-img ratio--100-58" src="/images/pupil-player/plugin/scanpath-preview.jpg" small-class="img-small lazyload" data-src="/images/pupil-player/plugin/scanpath.jpg" large-class="img-large lazyload" >}}
 
 This plugin enables past gaze positions to stay visible for the duration of time specified by the user. This plugin is **unique**, therefore you can only load one instance of this plugin.
 
@@ -98,7 +98,7 @@ Here we show an example of `Scan Path` set with `0.4` seconds duration used with
 
 #### Vis Polyline
 
-> {{< figure-img src="/images/pupil-player/plugin/vizpoly.jpg" img-class="feature-center" width="85%" >}}
+> {{< lqip-img div-class="ratio-box lazy-img ratio--100-58" src="/images/pupil-player/plugin/vizpoly-preview.jpg" small-class="img-small lazyload" data-src="/images/pupil-player/plugin/vizpoly.jpg" large-class="img-large lazyload" >}}
 
 Visualize the gaze positions with a polyline for each gaze position. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization. You can set the following parameters:
 
@@ -109,7 +109,7 @@ An example showing `Vis Polyline` used with `Vis Circle` and `Scan Path`. The po
 
 #### Vis Light Points
 
-> {{< figure-img src="/images/pupil-player/plugin/vizlightpoints.jpg" img-class="feature-center" width="85%" >}}
+> {{< lqip-img div-class="ratio-box lazy-img ratio--100-58" src="/images/pupil-player/plugin/vizlightpoints-preview.jpg" small-class="img-small lazyload" data-src="/images/pupil-player/plugin/vizlightpoints.jpg" large-class="img-large lazyload" >}}
 
 Visualize the gaze positions as a point of light for each gaze position. The `falloff` of the light from the gaze position is specified by the user. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization. You can set the following parameters:
 
@@ -125,7 +125,7 @@ This plugin allows one to manually offset the gaze position. The offset values a
 
 #### Eye Video Overlay
 
-> {{< figure-img src="/images/pupil-player/plugin/eyeoverlay.jpg" img-class="feature-center" width="85%" >}}
+> {{< lqip-img div-class="ratio-box lazy-img ratio--100-58" src="/images/pupil-player/plugin/eyeoverlay-preview.jpg" small-class="img-small lazyload" data-src="/images/pupil-player/plugin/eyeoverlay.jpg" large-class="img-large lazyload" >}}
 
 Here is an example of the `Eye Video Overlay` with binocular eye videos.
 
@@ -146,7 +146,7 @@ All open plugins that have export capability will export when you press `e`. All
 
 #### Exports directory
 
-> {{< figure-img src="/images/pupil-player/recording/recording_folder_exports_v07.jpg" img-class="feature-center" width="85%" >}}
+> {{< lqip-img div-class="ratio-box lazy-img ratio--100-36" src="/images/pupil-player/recording/recording_folder_exports_v07-preview.jpg" small-class="img-small lazyload" data-src="/images/pupil-player/recording/recording_folder_exports_v07.jpg" large-class="img-large lazyload" >}}
 
 All exports are saved within the `exports` sub-directory within your recording directory.
 A new directory will be created within the `exports` directory named with the `start` frame and `end` frame that is specified by the trim marks.

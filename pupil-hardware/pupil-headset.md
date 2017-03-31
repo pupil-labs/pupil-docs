@@ -6,7 +6,7 @@ page_weight = 1
 
 ## Pupil Mobile Eye Tracking Headset
 
-> {{< figure-img src="/images/pupil-hardware/pupil_w120_e120.jpg" img-class="feature-center padBottom--2" width="75%" >}}
+> {{< lqip-img div-class="ratio-box lazy-img ratio--85-85 padBottom--2" src="/images/pupil-hardware/pupil_w120_e120.jpg" small-class="img-small lazyload" data-src="/images/pupil-hardware/pupil_w120_e120.jpg" large-class="img-large lazyload" >}}
 
 You wear Pupil like a pair of glasses. Pupil connects to a computing device via a USBA or USBC cable. The headset is designed to be lightweight and adjustable in order to accommodate a wide range of users. 
 
@@ -19,11 +19,11 @@ Pupil ships with a number of additional parts. The below sections provide an ove
 <div class="content-container">
   <div class="Grid Grid--1of2 u-textCenter">
     <div class="Grid-cell">
-      {{< figure-img src="/images/pupil-hardware/pupil-parts-1.jpg" width="100%" >}}
+      {{< lqip-img div-class="ratio-box lazy-img ratio--100-100" src="/images/pupil-hardware/pupil-parts-1-preview.jpg" small-class="img-small lazyload" data-src="/images/pupil-hardware/pupil-parts-1.jpg" large-class="img-large lazyload" >}}
       <p style="padding: 10px;">The world camera comes with two lenses. 60 degree FOV lens (shown on the left) and a wide angle 100 degree FOV lens (shown on the right).</p>
     </div>
     <div class="Grid-cell">
-     {{< figure-img src="/images/pupil-hardware/pupil-parts-3.jpg" width="100%" >}}
+      {{< lqip-img div-class="ratio-box lazy-img ratio--100-100" src="/images/pupil-hardware/pupil-parts-3-preview.jpg" small-class="img-small lazyload" data-src="/images/pupil-hardware/pupil-parts-3.jpg" large-class="img-large lazyload" >}}
       <p style="padding: 10px;">All Pupil headsets come with 2 sets of nose pads. You can swap the nose pads to customize the fit.</p>
     </div>
   </div>
@@ -52,7 +52,8 @@ Depending on your configuration, some additional parts may be included with your
   </div>
 </div>
 
-{{< figure-img src="/images/pupil-hardware/eye-screw.jpg" img-class="feature-center feature-full" width="60%" >}}
+{{< lqip-img div-class="ratio-box lazy-img ratio--65-65" src="/images/pupil-hardware/eye-screw-preview.jpg" small-class="img-small lazyload" data-src="/images/pupil-hardware/eye-screw.jpg" large-class="img-large lazyload" >}}
+
 <p style="text-align: center;">Adjust the ball joint firmness by adjusting the socket screw.</p>
 
 <aside class="notice">
@@ -65,12 +66,13 @@ Depending on your configuration, some additional parts may be included with your
   <div class="Grid Grid--1of2 u-textCenter">
     <div class="Grid-cell">
       <p align='center'><strong>Focus Eye Camera</strong></p>
-      {{< figure-img src="/images/pupil-hardware/pupil-parts-2.jpg" width="100%" >}}
+      {{< lqip-img div-class="ratio-box lazy-img ratio--100-100" src="/images/pupil-hardware/pupil-parts-2-preview.jpg" small-class="img-small lazyload" data-src="/images/pupil-hardware/pupil-parts-2.jpg" large-class="img-large lazyload" >}}
+
       <p style="padding: 10px;"><b>Very important</b> - make sure the eye camera is in focus. If you can see details of your iris, then the focus is most likely good. <b>Slide the eye camera arm</b> to adjust focus and/or use the lens adjuster tool.</p>
     </div>
     <div class="Grid-cell">
       <p align='center'><strong>Focus World Camera</strong></p>
-      {{< figure-img src="/images/pupil-hardware/pupil-parts-4.jpg" width="100%" >}}
+      {{< lqip-img div-class="ratio-box lazy-img ratio--100-100" src="/images/pupil-hardware/pupil-parts-4-preview.jpg" small-class="img-small lazyload" data-src="/images/pupil-hardware/pupil-parts-4.jpg" large-class="img-large lazyload" >}}
       <p style="padding: 10px;">Set the focus for the distance at which you will be calibrating.</p>
     </div>
   </div>
