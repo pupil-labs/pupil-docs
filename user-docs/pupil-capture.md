@@ -11,13 +11,13 @@ This section of the documentation is targeted towards users of Pupil software an
 
 ## Pupil Capture
 
-> {{< figure-img src="/images/icons/svg/pc.svg" class="feature-center" width="20%" >}}
+> {{< figure-img src="/images/icons/svg/pc.svg" img-class="feature-center" width="20%" >}}
 
 Pupil Capture is the software used with the Pupil Headset. The software reads the video streams coming in from the world camera and the eye camera. Pupil Capture uses the video streams to detect your pupil, track your gaze, detect and track markers in your environment, record video and events, and stream data in realtime.
 
 ### Capture Selection
 
-> {{< lqip-img div-class="ratio-box lazy-img ratio--90-85" src="/images/pupil-capture/ui/pc-cap-select-preview.jpg" small-class="img-small lazyload" data-src="/images/pupil-capture/ui/pc-cap-select.jpg" large-class="img-large lazyload" >}}
+> {{< lqip-img div-class="ratio-box lazy-img ratio--90-80" src="/images/pupil-capture/ui/pc-cap-select-preview.jpg" small-class="img-small lazyload" data-src="/images/pupil-capture/ui/pc-cap-select.jpg" large-class="img-large lazyload" >}}
 
 By default Pupil Capture will use Local USB as the capture source. If you have a Pupil headset connected to your machine you will see video displayed from your Pupil headset in the World and eye windows. If no headset is connected or Pupil Capture is unable to open capture devices it will fall back to the Test Image. Other options for capture source are described below.
 

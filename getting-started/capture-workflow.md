@@ -17,7 +17,7 @@ Put on Pupil and plug it in. Headsets are adjustable and shipped with additional
 
 ### 2. Start Pupil Capture
 
-> {{< figure-img src="/images/icons/svg/pc.svg" class="feature-center" width="20%" >}}
+> {{< figure-img src="/images/icons/svg/pc.svg" img-class="feature-center" width="20%" >}}
 
 <!-- 
 ### 3. Intro to the UI
@@ -127,7 +127,7 @@ The calibration process establishes a mapping from pupil to gaze coordinates.
 
 #### Screen Marker Calibration Method
 
-> {{< lqip-img div-class="ratio-box lazy-img ratio--100-58" src="/images/pupil-capture/recording/record-callout-preview.jpg" small-class="img-small lazyload" data-src="/images/pupil-capture/recording/record-callout.jpg" large-class="img-large lazyload" >}}
+> {{< lqip-img div-class="ratio-box lazy-img lazyload ratio--100-58" src="/images/pupil-capture/recording/record-callout-preview.jpg" small-class="img-small lazyload" data-src="/images/pupil-capture/recording/record-callout.jpg" large-class="img-large lazyload" >}}
 
 Click `c` on the world screen or press `c` on the keyboard to start calibrate.
 

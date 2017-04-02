@@ -9,7 +9,7 @@ page_weight = 1
 
 <!-- ### About -->
 
-> {{< figure-img src="/images/icons/svg/pp.svg" class="feature-center" width="20%" >}}
+> {{< figure-img src="/images/icons/svg/pp.svg" img-class="feature-center" width="20%" >}}
 
 Pupil Player is the second tool you will use after Pupil Capture. It is a media and data visualizer at its core. You will use it to look at Pupil Capture recordings. Visualize your data and export it.
 
@@ -153,7 +153,7 @@ A new directory will be created within the `exports` directory named with the `s
 
 #### Video Export Launcher
 
-> {{< figure-img src="/images/pupil-player/plugin/export.jpg" img-class="feature-center" width="85%" >}}
+> {{< lqip-img div-class="ratio-box lazy-img ratio--100-58" src="/images/pupil-player/plugin/export-preview.jpg" small-class="img-small lazyload" data-src="/images/pupil-player/plugin/export.jpg" large-class="img-large lazyload" >}}
 
 To export a video, load the `Export Video` plugin. You can select the frame range to export by setting trim marks in the seek bar or directly in the plugin GUI.
 
@@ -163,7 +163,7 @@ The exporter will run in the background and you can see the progress bar of the 
 
 #### Raw Data Exporter
 
-> {{< figure-img src="/images/pupil-player/plugin/rawexport.jpg" img-class="feature-center" width="85%" >}}
+> {{< lqip-img div-class="ratio-box lazy-img ratio--100-58" src="/images/pupil-player/plugin/rawexport-preview.jpg" small-class="img-small lazyload" data-src="/images/pupil-player/plugin/rawexport.jpg" large-class="img-large lazyload" >}}
 
 To export `.csv` files of your data, load the `Raw Data Exporter` plugin. You can select the frame range to export by setting trim marks in the seek bar or directly in the plugin GUI.
 
@@ -171,7 +171,7 @@ Click press the `e` button or click `e` on your keyboard to start the export.
 
 #### Offline Surface Tracker
 
-> {{< figure-img src="/images/pupil-player/plugin/offline-surface-tracker.jpg" img-class="feature-center" width="85%" >}}
+> {{< lqip-img div-class="ratio-box lazy-img ratio--100-58" src="/images/pupil-player/plugin/offline-surface-tracker-preview.jpg" small-class="img-small lazyload" data-src="/images/pupil-player/plugin/offline-surface-tracker.jpg" large-class="img-large lazyload" >}}
 
 This plugin is an offline version of the [Surface Tracking](#marker-tracking) plugin for Pupil Capture. You can use this plugin to detect markers in the recording, define surfaces, edit surfaces, and create and export visualizations of gaze data within the defined surfaces.
 
@@ -186,8 +186,9 @@ Here is an example workflow for using the `Offline Surface Detector` plugin to g
 
 #### Fixation Detector - Dispersion Duration
 
-> {{< figure-img src="/images/pupil-player/plugin/2d-fixation.jpg" img-class="feature-center" width="85%" >}}
-> {{< figure-img src="/images/pupil-player/plugin/3d-fixation.jpg" img-class="feature-center" width="85%" >}}
+> {{< lqip-img div-class="ratio-box lazy-img ratio--100-58" src="/images/pupil-player/plugin/2d-fixation-preview.jpg" small-class="img-small lazyload" data-src="/images/pupil-player/plugin/2d-fixation.jpg" large-class="img-large lazyload" >}}
+
+> {{< lqip-img div-class="ratio-box lazy-img ratio--100-58" src="/images/pupil-player/plugin/3d-fixation-preview.jpg" small-class="img-small lazyload" data-src="/images/pupil-player/plugin/3d-fixation.jpg" large-class="img-large lazyload" >}}
 
 This plugin detects fixation based on a dispersion threshold in terms of degrees of visual angle. This plugin is **unique**, therefore you can only load one nstance of this plugin.
 
