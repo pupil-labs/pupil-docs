@@ -25,7 +25,7 @@ We also have a few shortcodes that can be used in markdown that apply custom htm
 
 ### Content organization, hierarchy, and front matter
 
-We divide content into *sections* and *pages*. Each sections should be within its own directory. Each section shuold only have one `H1` heading. There can be any number of markdown files or "pages". All "pages" must use `H2` headings or less. 
+We divide content into *sections* and *pages*. Each sections should be within its own directory. Each section should only have one `H1` heading. There can be any number of markdown files or "pages". All "pages" must use `H2` headings or less. 
 
 Content is sorted by front matter parameters at the top of each markdown file. 
 
@@ -113,4 +113,4 @@ All media must be within the `content/images` directory.
 
 ## Webhook
 
-Any commit to the master branch of `pupil-docs` triggers a build of [`pupil-docs-website`](https://github.com/pupil-labs/pupil-docs-website "pupil-docs-website"). `scripts/webhook.sh` calls the travis api via `curl` request using an ecrypted token to trigger the build.
+Any commit to the master branch of `pupil-docs` triggers a build of [`pupil-docs-website`](https://github.com/pupil-labs/pupil-docs-website "pupil-docs-website"). `scripts/webhook.sh` calls the travis api via `curl` request using an encrypted token to trigger the build.
