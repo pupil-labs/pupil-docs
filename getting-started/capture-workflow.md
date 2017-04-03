@@ -7,13 +7,12 @@ page_weight = 1
 
 ## Capture Workflow
 
-Put on the Pupil headset and plug it into your computer. Open the Pupil Capture app. You will be presented with 2 windows – `World` and `Eye`.
 
 Go through the following steps to get familiar with the Pupil workflow. You can also check out [video tutorials](#walkthrough-videos) at the end of the guide. 
 
 
 ### 1. Put on Pupil
-Put on Pupil and plug it in. Headsets are adjustable and shipped with additional parts. For more information head over to the [Pupil Hardware](#pupil-hardware "pupil hardware") guide.
+Put on the Pupil headset and plug it in to your computer. Headsets are adjustable and shipped with additional parts. For more information head over to the [Pupil Hardware](#pupil-hardware "pupil hardware") guide.
 
 ### 2. Start Pupil Capture
 
