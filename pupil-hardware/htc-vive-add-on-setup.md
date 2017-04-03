@@ -20,20 +20,20 @@ This page will guide you through all steps needed to turn your HTC Vive into an 
 
 ### HTC Vive USB connection options
 
-The HTC Vive has one free USB port hidden under the top cover that hides the cable tether connection. This gives us two options to connect the pupil eye tracking addon:
+The HTC Vive has one free USB port hidden under the top cover that hides the cable tether connection. This gives us two options to connect the pupil eye tracking add-on:
 
 
 #### Connect the add-on to the free htc-vive usb port.
 This means the cameras share the VIVEs usb tether bandwidth with other usb components inside the Vive. This works but only if the following rules are observed:
 
-* Disable the HTC-Vive build-in camera in the VR settings pane to free up bandwidth for Pupil's dual VGA120 video streams.
+* Disable the HTC-Vive built-in camera in the VR settings pane to free up bandwidth for Pupil's dual VGA120 video streams.
 
 or 
 
-* Enable the HTC-Vive build-in camera and set it to 30hz. Then set the Pupil Cameras to 320x240 resolution to share the USB bus.
+* Enable the HTC-Vive built-in camera and set it to 30hz. Then set the Pupil Cameras to 320x240 resolution to share the USB bus.
 
 #### Run a separate USB lane along the tether
-If you want full frame rate and resolution for both the Vive's camera and the addon you will have to connect the Pupil add-on to a separate usb port on the host PC. We recommend this approach.
+If you want full frame rate and resolution for both the Vive's camera and the add-on you will have to connect the Pupil add-on to a separate usb port on the host PC. We recommend this approach.
 
 ### Connection and Camera
 
