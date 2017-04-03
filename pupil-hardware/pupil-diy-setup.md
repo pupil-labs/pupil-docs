@@ -33,8 +33,8 @@ Take both webcams out of their casings. Follow the video guides.
 This is by far the trickiest part. You will need some soldering experience, or work with someone that can help you for this step. In the video and photo the lens holder is removed, but you will do it with the *lens holder attached*.
 
 1. Cut off the microphone
-2. Desolder or break off the push button (Note: Some cameras don't have this button.)
-3. Desolder the blue LED's
+2. De-solder or break off the push button (Note: Some cameras don't have this button.)
+3. De-solder the blue LED's
 4. solder on the IR-LED's. Please take note of LED polarity! [video](http://youtu.be/O-FAXldfq94)
 
 #### Replace IR-blocking Filter on the Eye Camera

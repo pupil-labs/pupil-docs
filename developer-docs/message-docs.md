@@ -10,7 +10,7 @@ page_weight = 2.1
 
 #### Message Reactor and Emitter Documentation
 
-From version `v0.8` on, every actor who either reacts to or emits messages is supposed to document its behaviour. Therefore every actor should react to `notify.meta.should_doc` by emitting a message with the topic `notify.meta.doc`. The answer's payload should be a serialized dictionary with the following format:
+From version `v0.8` on, every actor who either reacts to or emits messages is supposed to document its behavior. Therefore every actor should react to `notify.meta.should_doc` by emitting a message with the topic `notify.meta.doc`. The answer's payload should be a serialized dictionary with the following format:
 
 ```
 {
@@ -20,7 +20,7 @@ From version `v0.8` on, every actor who either reacts to or emits messages is su
 }
 ```
 
-Plugins use notifications as primary communication channel to the IPC Backbone. This makes plugins natural actors in the Pupil message scheme. To simplify the above mentioned documentation behaviour, plugins will only have to add an [docstring](https://www.python.org/dev/peps/pep-0257/) to their `on_notify()` method. It should include an list of messages to which the plugin reacts and those which the plugin emits itself. The docstring should follow [Google docstring style](http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html). The main process will automatically generate messages in the format from above using the plugin's class name as `actor` and the `on_notify()` docstring as content for the `doc` key.
+Plugins use notifications as primary communication channel to the IPC Backbone. This makes plugins natural actors in the Pupil message scheme. To simplify the above mentioned documentation behavior, plugins will only have to add an [docstring](https://www.python.org/dev/peps/pep-0257/) to their `on_notify()` method. It should include an list of messages to which the plugin reacts and those which the plugin emits itself. The docstring should follow [Google docstring style](http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html). The main process will automatically generate messages in the format from above using the plugin's class name as `actor` and the `on_notify()` docstring as content for the `doc` key.
 
 #### Notification Overview
 
@@ -64,7 +64,7 @@ launcher: Starts eye processes. Hosts the IPC Backbone and Logging functions.
        ``launcher_process.should_stop``: Stops the launcher process
        ``eye_process.should_start``: Starts the eye process
     
-eye0: reads eye video and detects the pupil.
+eye0: Reads eye video and detects the pupil.
 
     Creates a window, gl context.
     Grabs images from a capture.
@@ -88,7 +88,7 @@ capture: Reads world video and runs plugins.
     Creates a window, gl context.
     Grabs images from a capture.
     Maps pupil to gaze data
-    Can run various plug-ins.
+    Can run various plugins.
 
     Reacts to notifications:
         ``set_detection_mapping_mode``

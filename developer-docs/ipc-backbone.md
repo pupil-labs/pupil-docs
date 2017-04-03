@@ -109,7 +109,7 @@ subscriber.set(zmq.SUBSCRIBE, 'logging.error') #receive logging error messages
 # you can setup multiple subscriber sockets
 # Sockets can be polled or read in different threads.
 
-# we need a serialiser 
+# we need a serializer 
 import msgpack as serializer
 
 while True:
@@ -169,7 +169,7 @@ publisher.send_multipart((topic,payload))
 A full example can be found in `shared_modules/zmq-tools.py`.
 
 ### Delivery guarantees ZMQ
-ZMQ is a great abstraction for us. Its super fast, has a multitude of language bindings and solves a lot of the nitty gritty networking problems we don't want to deal with. Our short description of ZMQ does not do ZMQ any justice, we recommend reading the [ZMQ guide](http://zguide.zeromq.org/page:all) if you have the time. Below are some insights from the guide that are relevant for our use cases.
+ZMQ is a great abstraction for us. Its super fast, has a multitude of language bindings and solves a lot of the nitty-gritty networking problems we don't want to deal with. Our short description of ZMQ does not do ZMQ any justice, we recommend reading the [ZMQ guide](http://zguide.zeromq.org/page:all) if you have the time. Below are some insights from the guide that are relevant for our use cases.
 
  - Messages are guaranteed to be delivered whole or not at all.
  - Unlike bare TCP it is ok the connect before binding. 
