@@ -7,7 +7,7 @@ page_weight = 0
 
 # User Docs
 
-This section of the documentation is targeted towards users of Pupil software and provides deeper expalation of features and methods.
+This section of the documentation is targeted towards users of Pupil software and provides deeper explanation of features and methods.
 
 ## Pupil Capture
 
@@ -144,7 +144,7 @@ Click on the selector "Open Plugin" and select your plugin.
 
 * Load the `Pupil Sync` plugin from the `General` sub-menu in the GUI.
 * Once the plugin is active it will show all other local network pupil sync nodes in the GUI
-* It will also auto-magically synchronise time up to 0.1ms.
+* It will also automatically synchronise time up to 0.1ms.
 * Furthermore actions like starting and stopping a recording on one device will be mirrored instantly on all other devices.
 
 For this to work your network needs to allow `UDP` transport. If the nodes do not find each other, create a local wifi network and use that instead.
@@ -199,7 +199,7 @@ while True:
 We have written some simple Python scripts that you can try using Pupil Server to have your gaze control a mouse. Or just print out streaming from Pupil Server. For more simple scripts, check out the [pupil-helpers repository](https://github.com/pupil-labs/pupil-helpers).
 
 ### Message Format for Pupil Server
-Messages from pupil server mirror all objects in the `events` dict that is used internally in pupil capture and player. The data is send per topic (`pupil_positions`, `gaze_positions` ...) and serialised using [json](https://docs.python.org/2/library/json.html). The example above tells it all.
+Messages from pupil server mirror all objects in the `events` dict that is used internally in pupil capture and player. The data is send per topic (`pupil_positions`, `gaze_positions` ...) and serialized using [json](https://docs.python.org/2/library/json.html). The example above tells it all.
 
 ### Marker Tracking
 
