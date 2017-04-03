@@ -56,7 +56,7 @@ There are two general types of plugins:
 In the following sections we provide a summary of plugins currently available and in Pupil Player.
 
 ### Visualization Plugins and Utilities
-For the sake of clarity, we will call plugins with the `Vis` prefix **visualization** plugins. These plugins are simple plugins, are mostly additive ( or *not unique*), and directly operate on the gaze positions to produce visualizations. Other plugins like `Offline Marker Detector` also produces visualizations, but will be discussed elsewhere due to the extent of its features.    
+For the sake of clarity, we will call plugins with the `Vis` prefix **visualization** plugins. These plugins are simple plugins, are mostly additive (or *not unique*), and directly operate on the gaze positions to produce visualizations. Other plugins like `Offline Marker Detector` also produces visualizations, but will be discussed elsewhere due to the extent of its features.    
 
 #### Vis Circle
 
@@ -189,7 +189,7 @@ Here is an example workflow for using the `Offline Surface Detector` plugin to g
 > {{< figure-img src="/images/pupil-player/plugin/2d-fixation.jpg" img-class="feature-center" width="85%" >}}
 > {{< figure-img src="/images/pupil-player/plugin/3d-fixation.jpg" img-class="feature-center" width="85%" >}}
 
-This plugin detects fixation based on a dispersion threshold in terms of degrees of visual angle. This plugin is **unique**, therefore you can only load one nstance of this plugin.
+This plugin detects fixation based on a dispersion threshold in terms of degrees of visual angle. This plugin is **unique**, therefore you can only load one instance of this plugin.
 
 Toggle `Show fixations` to show a visualization of fixations. The blue number is the number of the fixation (0 being the first fixation). You can export fixation reports for your current trim section by pressing `e` on your keyboard or the `e` hot key button in the left hand side of the window.
 
