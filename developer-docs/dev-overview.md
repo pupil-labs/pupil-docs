@@ -13,7 +13,7 @@ Overview of language, code structure, and general conventions
 ### Language
 Pupil is written in `Python`, but no "heavy lifting" is done in Python. High performance computer vision, media compression, display libraries, and custom functions are written in external libraries or c/c++ and accessed though cython. Python plays the role of "glue" that sticks all the pieces together.
 
-We also like writing code in Python because it's *quick and easy* to move from initial idea to working proof-of-concept. If proof-of-concept code is slow, optimisation and performance enhancement can happen in iterations of code.
+We also like writing code in Python because it's *quick and easy* to move from initial idea to working proof-of-concept. If proof-of-concept code is slow, optimization and performance enhancement can happen in iterations of code.
 
 ### Process Structure
 When [Pupil Capture][capture] starts, in default settings two processes are spawned:
@@ -21,7 +21,7 @@ When [Pupil Capture][capture] starts, in default settings two processes are spaw
 **Eye** and **World**. Both processes grab image frames from a video capture stream but they have very different tasks.  
 
 #### Eye Process
-The eye process only has one purpose - to detect the pupil and broadcast its's position.  The process breakdown looks like this:
+The eye process only has one purpose - to detect the pupil and broadcast its position. The process breakdown looks like this:
 
 * Grabs eye camera images from eye camera video stream
 * Find the pupil position in the image
@@ -60,13 +60,13 @@ The pupil detector, run by the Eye process are required to return a result in th
     result['confidence'] = 0
 ```
 
-This dictionary is sent on the IPC and read by gaze mapping plugins in the world process. Mapping from pupil position to gaze position happens here. The mapping plugin is initilized by a calibration plugin.
+This dictionary is sent on the IPC and read by gaze mapping plugins in the world process. Mapping from pupil position to gaze position happens here. The mapping plugin is initialized by a calibration plugin.
 
 #### Control: World > Eye
 Happens via notifications on the IPC.
 
 ### Timing & Data Conventions
-Pupil Capture is designed to work with multiple captures that free-run at different frame rates that may not be in sync. World and eye images are timestamped and any resulting artefacts (detected pupil, markers, etc) inherit the source timestamp. Any correlation of these data streams is the responsibility of the functional part that needs the data to be correlated (e.g. calibration, visualisation, analyses).
+Pupil Capture is designed to work with multiple captures that free-run at different frame rates that may not be in sync. World and eye images are timestamped and any resulting artifacts (detected pupil, markers, etc) inherit the source timestamp. Any correlation of these data streams is the responsibility of the functional part that needs the data to be correlated (e.g. calibration, visualization, analyses).
 
 For example: The pupil capture data format records the world video frames with their respective timestamps. Independent of this, the recorder also saves the detected gaze and pupil positions at their frame rate and with their timestamps. For more detail see [Data Format](#data-format).
 
