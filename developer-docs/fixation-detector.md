@@ -36,7 +36,7 @@ In Player, the fixation detectors are not loaded by default. They are activated 
 #### Data access
 All fixation detectors augment the `events` object which is passed to each plugin's `update(frame,events)` method (see the [Plugin Guide](#hacking-plugin)). They add a list of fixation dictionaries under the key `'fixations'`. The exact format of these fixations is described [below](#fixation-format).
 
-In Player, all fixations are known _a priori_ and can be referenced in all their related frames. In case of a long fixation, the detector will try to generate a single representation instead of multiple ones. In contrast, the detector in Capture will look for the shortest fixation that complies with the parameters above and add it once to `events` if it is found. The plugin will look for a new fixation afterwards. This means that a long fixation might be split into multiple fixation events. These difference in behaviour is due to the different data availabilities in Capture and Player.
+In Player, all fixations are known _a priori_ and can be referenced in all their related frames. In case of a long fixation, the detector will try to generate a single representation instead of multiple ones. In contrast, the detector in Capture will look for the shortest fixation that complies with the parameters above and add it once to `events` if it is found. The plugin will look for a new fixation afterwards. This means that a long fixation might be split into multiple fixation events. These difference in behavior is due to the different data availabilities in Capture and Player.
 
 #### Visualisation
 Use the _Vis Fixation_ Player plugin to visualise fixations. It will show a red dot during saccades and a green circle during fixations.
@@ -46,7 +46,7 @@ Use the _Vis Fixation_ Player plugin to visualise fixations. It will show a red 
 #### Capture
 Fixations are represented as Python dictionaries consisting of the following keys:
 
-- `norm_pos`: Normalised position of the fixation's centroid
+- `norm_pos`: Normalized position of the fixation's centroid
 - `base_data`: Pupil data during the fixation
 - `duration`: Exact fixation duration,
 - `dispersion`: Dispersion, in degree
