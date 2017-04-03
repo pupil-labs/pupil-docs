@@ -39,7 +39,7 @@ Note - You may have other consumers on the same USB bus already so your milage m
 ### Use more BUS
 If you want to not be limited by the bandwidth of a single usb bus you can use an alternative usb clip that will expose each camera on a separate usb connector. We'd be happy to send you this breakout board if you want. Just make sure that you also have three free USB controllers (not plugs) on your PC.
 
-### Multi Camera Synchronisation
+### Multi Camera Synchronization
 Each camera we use is a free running capture device. Additionally each camera runs in a separate process. Instead of frame-locking the camera through special hardware we acquire timestamps for each frame. These timestamps are then used to correlate data from each camera in time and match frames based on closest proximity. 
 
 Data from each eye camera is sent via IPC to the world process. Since this involves three separate processes it can happen that data from one camera arrives earlier that another. However for each camera the frames will be ordered and timestamps are monotonically increasing. In the main process we match the available data timewise when we need. In Pupil Player we can do matching after the fact to work with perfectly sorted data from all three cameras. If you require the data to be matched over being recent I would recommend collecting data in the queue for a few more frames in world.py before dispatching them in the events dict. (I ll actually do some tests on this subject soon.)
