@@ -10,7 +10,7 @@ page_weight = 1
 
 You wear Pupil like a pair of glasses. Pupil connects to a computing device via a USBA or USBC cable. The headset is designed to be lightweight and adjustable in order to accommodate a wide range of users. 
 
-Above is an illustration of a monocular Pupil Headset, depending on your configuration, your headset might look different, but working principles are the same.
+To the right is an illustration of a monocular Pupil Headset, depending on your configuration your headset might look different, but working principles are the same.
 
 Pupil ships with a number of additional parts. The below sections provide an overview of their use and a guide to adjusting the Pupil headset. 
 
