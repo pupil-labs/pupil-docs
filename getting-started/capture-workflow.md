@@ -127,11 +127,19 @@ The calibration process establishes a mapping from pupil to gaze coordinates.
 
 #### Screen Marker Calibration Method
 
-> {{< lqip-img div-class="ratio-box lazy-img lazyload ratio--100-58" src="/images/pupil-capture/recording/record-callout-preview.jpg" small-class="img-small lazyload" data-src="/images/pupil-capture/recording/record-callout.jpg" large-class="img-large lazyload" >}}
+<!-- >  <figure class="figure-container">
+      <div class="ratio-box lazy-img ratio-56">
+        <img src="/images/pupil-capture/recording/record-callout-preview.jpg" class="img-small">
+        <img data-src="/images/pupil-capture/recording/record-callout.jpg" class="img-large lazyload">
+      </div>
+  </figure>
+ -->
+
+> {{< lqip-img figure-class="figure-container" div-class="ratio-box lazy-img lazyload ratio-56" src="/images/pupil-capture/recording/record-callout-preview.jpg" small-class="img-small" data-src="/images/pupil-capture/recording/record-callout.jpg" large-class="img-large lazyload" >}}
 
 Click `c` on the world screen or press `c` on the keyboard to start calibrate.
 
-> {{< lqip-img div-class="ratio-box lazy-img ratio--100-58" src="/images/pupil-capture/calibrate/calibrate-border-preview.jpg" small-class="img-small lazyload" data-src="/images/pupil-capture/calibrate/calibrate-border.jpg" large-class="img-large lazyload" >}}
+> {{< lqip-img figure-class="figure-container" div-class="ratio-box lazy-img ratio-56" src="/images/pupil-capture/calibrate/calibrate-border-preview.jpg" small-class="img-small lazyload" data-src="/images/pupil-capture/calibrate/calibrate-border.jpg" large-class="img-large lazyload" >}}
 
 Follow the marker on the screen with your eyes and try to keep your head stationary
 
@@ -141,7 +149,7 @@ There are other calibration methods and lots more information how calibration wo
 
 Start capturing data!
 
-> {{< lqip-img div-class="ratio-box lazy-img ratio--100-58" src="/images/pupil-capture/recording/pupil-capture-v07-world-recording-preview.jpg" small-class="img-small lazyload" data-src="/images/pupil-capture/recording/pupil-capture-v07-world-recording.jpg" large-class="img-large lazyload" >}}
+> {{< lqip-img figure-class="figure-container" div-class="ratio-box lazy-img ratio-56" src="/images/pupil-capture/recording/pupil-capture-v07-world-recording-preview.jpg" small-class="img-small lazyload" data-src="/images/pupil-capture/recording/pupil-capture-v07-world-recording.jpg" large-class="img-large lazyload" >}}
 
 Pupil Capture will save the world video stream and all corresponding gaze data in a folder in your user directory named `recordings`.
 
@@ -155,7 +163,7 @@ See a video demonstration of how to set recordings path, session name, and start
 
 By default, each recording will live in its own unique data folder contained in the `recordings` folder.
 
-> {{< lqip-img div-class="ratio-box lazy-img ratio--100-40" src="/images/pupil-capture/recording/recording_folder_v07-preview.jpg" small-class="img-small lazyload" data-src="/images/pupil-capture/recording/recording_folder_v07.jpg" large-class="img-large lazyload" >}}
+> {{< lqip-img figure-class="figure-container" div-class="ratio-box lazy-img ratio-40" src="/images/pupil-capture/recording/recording_folder_v07-preview.jpg" small-class="img-small lazyload" data-src="/images/pupil-capture/recording/recording_folder_v07.jpg" large-class="img-large lazyload" >}}
 
 You can make as many recordings as you like. 
 
