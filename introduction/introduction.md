@@ -17,17 +17,19 @@ This wiki is the main source of documentation for the Pupil users getting starte
 	<div class="horizontal-divide">
 		<a href="#getting-started">
 			<div class="item-hori">
-				<img class="intro-image img-small lazyload" src="/images/icons/Pupil_Logo_wiki-03-preview.jpg">
-				<img class="intro-image img-large lazyload" data-src="/images/icons/Pupil_Logo_wiki-03.jpg">
+				<div style="overflow:hidden;">
+					<img class="intro-image img-small" src="/images/icons/Pupil_Logo_wiki-03-preview.jpg">
+					<img class="intro-image img-large lazyload" data-src="/images/icons/Pupil_Logo_wiki-03.jpg">
+				</div>
 				<div class="img-content">
-					<div class="header">Getting Started</div>
+					<p class="header">Getting Started</p>
 					Get up and running and learn the basic Pupil workflow
 				</div>
 			</div>
 		</a>
 		<a href="#pupil-hardware">
 			<div class="item-hori">
-				<img class="intro-image img-small lazyload" src="/images/icons/Pupil_Logo_wiki-01-preview.jpg">
+				<!-- <img class="intro-image img-small" src="/images/icons/Pupil_Logo_wiki-01-preview.jpg"> -->
 				<img class="intro-image img-large lazyload" data-src="/images/icons/Pupil_Logo_wiki-01.jpg">
 				<div class="img-content">
 					<div class="header">Pupil Hardware</div>
@@ -37,7 +39,7 @@ This wiki is the main source of documentation for the Pupil users getting starte
 		</a>
 		<a href="#user-docs">
 			<div class="item-hori">
-				<img class="intro-image img-small lazyload" src="/images/icons/Pupil_Logo_wiki-04-preview.jpg">
+				<!-- <img class="intro-image img-small" src="/images/icons/Pupil_Logo_wiki-04-preview.jpg"> -->
 				<img class="intro-image img-large lazyload" data-src="/images/icons/Pupil_Logo_wiki-04.jpg">
 				<div class="img-content">
 					<div class="header">User Docs</div>
@@ -47,7 +49,7 @@ This wiki is the main source of documentation for the Pupil users getting starte
 		</a>
 		<a href="#developer-docs">
 			<div class="item-hori">
-				<img class="intro-image img-small lazyload" src="/images/icons/Pupil_Logo_wiki-05-preview.jpg">
+				<!-- <img class="intro-image img-small" src="/images/icons/Pupil_Logo_wiki-05-preview.jpg"> -->
 				<img class="intro-image img-large lazyload" data-src="/images/icons/Pupil_Logo_wiki-05.jpg">
 				<div class="img-content">
 					<div class="header">Developer Docs</div>
@@ -57,7 +59,7 @@ This wiki is the main source of documentation for the Pupil users getting starte
 		</a>
 		<a href="#community">
 			<div class="item-hori">
-				<img class="intro-image img-small lazyload" src="/images/icons/Pupil_Logo_wiki-02-preview.jpg">
+				<!-- <img class="intro-image img-small" src="/images/icons/Pupil_Logo_wiki-02-preview.jpg"> -->
 				<img class="intro-image img-large lazyload" data-src="/images/icons/Pupil_Logo_wiki-02.jpg">
 				<div class="img-content">
 					<div class="header">Community</div>
