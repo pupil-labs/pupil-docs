@@ -50,7 +50,7 @@ brew install libjpeg-turbo
 brew install libusb
 brew tap homebrew/science
 brew install ffmpeg
-brew install opencv3 --with-ffmpeg --with-contrib --with-python3 --with-qt5
+brew install opencv3 --with-contrib --with-python3 --with-tbb
 brew install glew
 brew tap homebrew/versions
 brew install glfw3
