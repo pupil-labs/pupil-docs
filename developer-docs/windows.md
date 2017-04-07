@@ -100,7 +100,7 @@ You also need to install Python libraries that are specific to Pupil. Download t
 * Edit pupil\pupil_src\shared_modules\calibration_routines\optimization_calibration\setup.py , in the same manner as above.
 
 ### Install Drivers 
-In order to support isochronous USB transfer on Windows, you will need to install drivers for the cameras in your Pupil headset. Follow setup steps on [this wiki page](https://github.com/pupil-labs/pupil/wiki/Windows-Driver-Setup).
+In order to support isochronous USB transfer on Windows, you will need to install drivers for the cameras in your Pupil headset. Follow setup steps in the Windows Driver Setup section [below](#windows-driver-setup).
 
 #### Run Pupil!
 > Capture
