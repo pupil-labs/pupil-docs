@@ -38,18 +38,44 @@ These general steps are required if you want to make your own plugin and use it 
   + Write your plugin
 
 #### Load your Plugin automatically
-With Pupil v0.6 we introduce a plugin auto-loader. It works when running from either source or application bundle! There is no need to put your plugin into the directories mentioned above. Instead:
-
- + In `~/pupil_capture_settings` or `~/pupil_player_settings` (depending on the plugin application) create a folder called `plugins`
- + Move your plugin source code file into `plugins`
- + If your plugin is defined by multiple files inside a directory, move this directory into the `plugins` dir <sup>1</sup>
- + On start-up Pupil will search this folder, and import and add all user plugins into the plugin drop-down menu 
+With Pupil v0.6 we introduce a plugin auto-loader. It works when running from either source or application bundle! There is no need to put your plugin into the directories mentioned above. The next steps should be followed instead:
+ 
+ + Choose which app should run your plugin and find its `plugins` folder. This folder should be automaticly created by the correspondent app during start up in `~/pupil_capture_settings`, for Pupil Capture, and in `~/pupil_player_settings` for Pupil Player.
+ + Move your plugin/source code file into the `plugins` folder. If your plugin is defined by multiple files inside a directory, move this directory into the `plugins` folder instead <sup>1</sup>
+ + On start-up Pupil will search for this folder, will import and add all valid plugins into the plugin drop-down menu. If your plugin is a calibration plugin (i.e., it inherits from the Calibration_Plugin base class), it will appear in the calibration plugins drop-down menu.
 
 <sup>1</sup> If your plugin is contained in a directory, make sure to include an `__init__.py` file similar to this:
 
 ```python
-from my_custom_plugin_code_module import My_Custom_Plugin_Class
+from . my_custom_plugin_module import My_Custom_Plugin_Class
 ```
+
+ + If a plugin should run in both player and capture an option to avoid redundant files is to create a relative path for it like so:
+
+```python
+# base_directory
+# `~/`
+
+# Your plugin
+# `~/my_shared_pupil_plugins/
+ 
+# Player
+# `~/pupil_player_settings/plugins/my_shared_plugin/__init__.py`
+
+# Capture
+# `~/pupil_player_settings/plugins/my_shared_plugin/__init__.py`
+
+# in both __init__.py
+import os
+import sys
+from pathlib import Path
+
+base_directory = Path(__file__).parents[3]
+sys.path.append(os.path.join(base_dir,'my_shared_pupil_plugins'))
+
+```
+
+The last option also avoids redundancy of shared plugin dependencies.
 
 #### Load your Plugin manually
 This is the "old" way of loading plugins. This method gives more flexibility but thats about it.
