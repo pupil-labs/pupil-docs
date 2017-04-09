@@ -1,6 +1,8 @@
 # pupil-docs
 
-User and Developer Docs for [Pupil](https://github.com/pupil-labs/pupil)
+User and Developer Docs for [Pupil](https://github.com/pupil-labs/pupil). 
+
+This repository is markdown source only! View the docs at [docs.pupil-labs.com](https://docs.pupil-labs.com)
 
 ## Contributing
 
