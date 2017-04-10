@@ -6,6 +6,6 @@ page_weight = 2
 
 ## HTC Vive Add-On
 
-> {{< figure-img src="/images/vr-ar/htcviveb.jpg" img-class="feature-center" width="70%" >}}
+> {{< lqip-img src="/images/vr-ar/htcviveb.jpg" >}}
 
 Add eye tracking powers to your HTC Vive with our 120hz binocular eye tracking add-on.

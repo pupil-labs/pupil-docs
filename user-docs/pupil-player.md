@@ -60,7 +60,7 @@ For the sake of clarity, we will call plugins with the `Vis` prefix **visualizat
 
 #### Vis Circle
 
-> {{< figure-img src="/images/pupil-player/plugin/vizcircle.jpg" img-class="feature-center" width="85%" >}}
+> {{< lqip-img src="/images/pupil-player/plugin/vizcircle.jpg" >}}
 
 Visualize the gaze positions with a circle for each gaze position. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization.
 
@@ -75,7 +75,7 @@ Here we show an example of how you could use **2** instances of the `Vis Circle`
 
 #### Vis Cross
 
-> {{< figure-img src="/images/pupil-player/plugin/vizcross.jpg" img-class="feature-center" width="85%" >}}
+> {{< lqip-img src="/images/pupil-player/plugin/vizcross.jpg" >}}
 
 Visualize the gaze positions with a cross for each gaze position. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization. You can set the following parameters:
 
@@ -88,7 +88,7 @@ Here we show an example of how you could use **2** instances of the `Vis Cross` 
 
 #### Scan Path
 
-> {{< figure-img src="/images/pupil-player/plugin/scanpath.jpg" img-class="feature-center" width="85%" >}}
+> {{< lqip-img src="/images/pupil-player/plugin/scanpath.jpg" >}}
 
 This plugin enables past gaze positions to stay visible for the duration of time specified by the user. This plugin is **unique**, therefore you can only load one instance of this plugin.
 
@@ -98,7 +98,7 @@ Here we show an example of `Scan Path` set with `0.4` seconds duration used with
 
 #### Vis Polyline
 
-> {{< figure-img src="/images/pupil-player/plugin/vizpoly.jpg" img-class="feature-center" width="85%" >}}
+> {{< lqip-img src="/images/pupil-player/plugin/vizpoly.jpg" >}}
 
 Visualize the gaze positions with a polyline for each gaze position. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization. You can set the following parameters:
 
@@ -109,7 +109,7 @@ An example showing `Vis Polyline` used with `Vis Circle` and `Scan Path`. The po
 
 #### Vis Light Points
 
-> {{< figure-img src="/images/pupil-player/plugin/vizlightpoints.jpg" img-class="feature-center" width="85%" >}}
+> {{< lqip-img src="/images/pupil-player/plugin/vizlightpoints.jpg" >}}
 
 Visualize the gaze positions as a point of light for each gaze position. The `falloff` of the light from the gaze position is specified by the user. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization. You can set the following parameters:
 
@@ -125,7 +125,7 @@ This plugin allows one to manually offset the gaze position. The offset values a
 
 #### Eye Video Overlay
 
-> {{< figure-img src="/images/pupil-player/plugin/eyeoverlay.jpg" img-class="feature-center" width="85%" >}}
+> {{< lqip-img src="/images/pupil-player/plugin/eyeoverlay.jpg" >}}
 
 Here is an example of the `Eye Video Overlay` with binocular eye videos.
 
@@ -146,14 +146,14 @@ All open plugins that have export capability will export when you press `e`. All
 
 #### Exports directory
 
-> {{< figure-img src="/images/pupil-player/recording/recording_folder_exports_v07.jpg" img-class="feature-center" width="85%" >}}
+> {{< lqip-img src="/images/pupil-player/recording/recording_folder_exports_v07.jpg" >}}
 
 All exports are saved within the `exports` sub-directory within your recording directory.
 A new directory will be created within the `exports` directory named with the `start` frame and `end` frame that is specified by the trim marks.
 
 #### Video Export Launcher
 
-> {{< figure-img src="/images/pupil-player/plugin/export.jpg" img-class="feature-center" width="85%" >}}
+> {{< lqip-img src="/images/pupil-player/plugin/export.jpg" >}}
 
 To export a video, load the `Export Video` plugin. You can select the frame range to export by setting trim marks in the seek bar or directly in the plugin GUI.
 
@@ -163,7 +163,7 @@ The exporter will run in the background and you can see the progress bar of the 
 
 #### Raw Data Exporter
 
-> {{< figure-img src="/images/pupil-player/plugin/rawexport.jpg" img-class="feature-center" width="85%" >}}
+> {{< lqip-img src="/images/pupil-player/plugin/rawexport.jpg" >}}
 
 To export `.csv` files of your data, load the `Raw Data Exporter` plugin. You can select the frame range to export by setting trim marks in the seek bar or directly in the plugin GUI.
 
@@ -171,7 +171,7 @@ Click press the `e` button or click `e` on your keyboard to start the export.
 
 #### Offline Surface Tracker
 
-> {{< figure-img src="/images/pupil-player/plugin/offline-surface-tracker.jpg" img-class="feature-center" width="85%" >}}
+> {{< lqip-img src="/images/pupil-player/plugin/offline-surface-tracker.jpg" >}}
 
 This plugin is an offline version of the [Surface Tracking](#marker-tracking) plugin for Pupil Capture. You can use this plugin to detect markers in the recording, define surfaces, edit surfaces, and create and export visualizations of gaze data within the defined surfaces.
 
@@ -186,8 +186,9 @@ Here is an example workflow for using the `Offline Surface Detector` plugin to g
 
 #### Fixation Detector - Dispersion Duration
 
-> {{< figure-img src="/images/pupil-player/plugin/2d-fixation.jpg" img-class="feature-center" width="85%" >}}
-> {{< figure-img src="/images/pupil-player/plugin/3d-fixation.jpg" img-class="feature-center" width="85%" >}}
+> {{< lqip-img src="/images/pupil-player/plugin/2d-fixation.jpg" >}}
+
+> {{< lqip-img src="/images/pupil-player/plugin/3d-fixation.jpg" >}}
 
 This plugin detects fixation based on a dispersion threshold in terms of degrees of visual angle. This plugin is **unique**, therefore you can only load one instance of this plugin.
 

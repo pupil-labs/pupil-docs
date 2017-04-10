@@ -17,7 +17,7 @@ Now that you have recorded some data, you can play back the video and visualize 
 #### Player Window
 Let's get familiar with the Player window.
 
-> {{< figure-img src="/images/pupil-player/pupil-player-callout.jpg" img-class="feature-center" width="100%" >}}
+> {{< lqip-img src="/images/pupil-player/pupil-player-callout.jpg" >}}
 
 The Player window is the main control center for `Pupil Player`. It displays the recorded video feed from pupil capture file.
 
@@ -29,7 +29,7 @@ The Player window is the main control center for `Pupil Player`. It displays the
 
 #### Where are Pupil Player exports saved?
 
-> {{< figure-img src="/images/pupil-player/recording/recording_folder_exports_v07.jpg" img-class="feature-center" width="100%" >}}
+> {{< lqip-img src="/images/pupil-player/recording/recording_folder_exports_v07.jpg" >}}
 
 Exports are saved within a dedicated folder named `exports` within the original recording folder.
 

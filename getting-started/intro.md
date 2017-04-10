@@ -7,13 +7,13 @@ page_weight = 0
 
 # Getting Started
 
-This guide will lead you through a basic workflow using Pupil hardware and software.
+> {{< lqip-img figure-class="img-xs" src="/images/icons/Pupil_Logo_wiki-03.jpg" >}}
 
-{{< figure-img src="/images/icons/Pupil_Logo_wiki-03.jpg" img-class="feature-center" width="20%" >}}
+This guide will lead you through a basic workflow using Pupil hardware and software.
 
 Once you have a Pupil Headset all you need to do is install the Pupil apps on a computer running Linux, MacOS, or Windows. 
 
-<div class="content-container padTop--1 padBottom--1">
+<div class="content-container padTop--1 padBottom--1" style="clear:none;">
   <p align="center">
     <a href="https://github.com/pupil-labs/pupil/releases/latest">
       <button class="ui-button">Download Pupil Apps</button>
