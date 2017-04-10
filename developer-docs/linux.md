@@ -14,7 +14,7 @@ These installation instructions are tested using **Ubuntu 16.04 or higher** runn
 Let's get started! Its time for `apt`!  Just copy paste into the terminal and listen to your machine purr.
 
 ```
-sudo apt install -y pkg-config git cmake build-essential nasm wget python3-setuptools libusb-1.0-0-dev  python3-dev python3-pip python3-numpy python3-scipy libglew-dev libglfw3-dev
+sudo apt install -y pkg-config git cmake build-essential nasm wget python3-setuptools libusb-1.0-0-dev  python3-dev python3-pip python3-numpy python3-scipy libglew-dev libglfw3-dev libtbb-dev
 ```
 
 > ffmpeg >= 3.2
