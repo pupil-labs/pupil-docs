@@ -7,7 +7,7 @@ page_weight = 2
 
 ## Pupil Service
 
-> {{< figure-img src="/images/icons/svg/ps.svg" img-class="feature-center" width="20%" >}}
+> {{< figure-img src="/images/icons/svg/ps.svg" img-class="feature-center logo" width="20%" >}}
 
 Pupil Service is like Pupil Capture except it does not have a world video feed or GUI. It is intended to be used with VR and AR eye tracking setups. 
 
