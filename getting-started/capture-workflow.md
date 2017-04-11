@@ -16,7 +16,7 @@ Put on the Pupil headset and plug it in to your computer. Headsets are adjustabl
 
 ### 2. Start Pupil Capture
 
-> {{< figure-img src="/images/icons/svg/pc.svg" img-class="feature-center" width="20%" >}}
+> {{< figure-img src="/images/icons/svg/pc.svg" img-class="feature-center logo" width="20%" >}}
 
 <!-- 
 ### 3. Intro to the UI

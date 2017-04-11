@@ -9,7 +9,7 @@ page_weight = 1
 
 <!-- ### About -->
 
-> {{< figure-img src="/images/icons/svg/pp.svg" img-class="feature-center" width="20%" >}}
+> {{< figure-img src="/images/icons/svg/pp.svg" img-class="feature-center logo" width="20%" >}}
 
 Pupil Player is the second tool you will use after Pupil Capture. It is a media and data visualizer at its core. You will use it to look at Pupil Capture recordings. Visualize your data and export it.
 

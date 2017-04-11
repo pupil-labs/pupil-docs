@@ -13,7 +13,7 @@ If this is the first time hearing about the Pupil project we recommend you visit
 
 This wiki is the main source of documentation for the Pupil users getting started with their Pupil headset and developers contributing to code.
 
-<div class="content-container">
+<div class="content-container quick-nav">
 	<div class="horizontal-divide">
 		<a href="#getting-started">
 			<div class="item-hori">
