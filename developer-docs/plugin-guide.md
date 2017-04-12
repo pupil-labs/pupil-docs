@@ -42,14 +42,14 @@ With Pupil v0.6 we introduce a plugin auto-loader. It works when running from ei
 
  + In `~/pupil_capture_settings` or `~/pupil_player_settings` (depending on the plugin application) create a folder called `plugins`
  + Move your plugin source code file into `plugins`
- + If your plugin is defined by multiple files inside a directory, move this directory into the `plugins` dir <sup>1</sup>
+ + If your plugin is defined by multiple files inside a directory, move this directory into the `plugins` dir
  + On start-up Pupil will search this folder, and import and add all user plugins into the plugin drop-down menu 
-
-<sup>1</sup> If your plugin is contained in a directory, make sure to include an `__init__.py` file similar to this:
 
 ```python
 from my_custom_plugin_code_module import My_Custom_Plugin_Class
 ```
+
+> If your plugin is contained in a directory, make sure to include an `__init__.py` file
 
 #### Load your Plugin manually
 This is the "old" way of loading plugins. This method gives more flexibility but thats about it.
