@@ -48,24 +48,31 @@ If you're running Pupil from an app bundle, there is no need to modify source co
 from . my_custom_plugin_module import My_Custom_Plugin_Class
 ```
 
-Would load the `My_Custom_Plugin_Class` plugin from the `my_custom_plugin_module` directory.
+> This loads the `My_Custom_Plugin_Class` plugin from the `my_custom_plugin_module` directory.
  
  + Restart the application. For now on, Pupil will find your plugins on startup and will add all valid plugins to the plugin dropdown menu. If your plugin is a calibration plugin (i.e. it inherits from the Calibration_Plugin base class), then it will appear in the calibration drop down menu.
 
- + If you want your plugin to run in both Pupil Capture and Pupil Player, you can avoid making copies of your plugin by setting a relative path. like so:
+ + If you want your plugin to run in both Pupil Capture and Pupil Player, you can avoid making copies of your plugin by setting a relative path.
 
+```
+~/
+```
 > base_directory
-> `~/`
-> 
-> Your plugin
-> `~/my_shared_pupil_plugins/
-> 
-> Player
-> `~/pupil_player_settings/plugins/my_shared_plugin/__init__.py`
-> 
-> Capture
-> `~/pupil_player_settings/plugins/my_shared_plugin/__init__.py`
 
+```
+~/my_shared_pupil_plugins/
+```
+> Your plugin
+
+```
+~/pupil_player_settings/plugins/my_shared_plugin/__init__.py
+```
+> Player
+
+```
+~/pupil_player_settings/plugins/my_shared_plugin/__init__.py
+```
+> Capture
 
 ```python
 # in both __init__.py
@@ -75,10 +82,8 @@ from pathlib import Path
 
 base_directory = Path(__file__).parents[3]
 sys.path.append(os.path.join(base_dir,'my_shared_pupil_plugins'))
-
 ```
-
-The last option also avoids redundancy of shared plugin dependencies.
+> This option avoids redundancy of shared plugin dependencies.
 
 #### Load your Plugin manually
 This is the "old" way of loading plugins. This method gives more flexibility but thats about it.
