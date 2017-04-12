@@ -38,18 +38,47 @@ These general steps are required if you want to make your own plugin and use it 
   + Write your plugin
 
 #### Load your Plugin automatically
-With Pupil v0.6 we introduce a plugin auto-loader. It works when running from either source or application bundle! There is no need to put your plugin into the directories mentioned above. Instead:
+If you're running Pupil from an app bundle, there is no need to modify source code. You can auto-load your plugin. Just follow these steps:
 
- + In `~/pupil_capture_settings` or `~/pupil_player_settings` (depending on the plugin application) create a folder called `plugins`
- + Move your plugin source code file into `plugins`
- + If your plugin is defined by multiple files inside a directory, move this directory into the `plugins` dir
- + On start-up Pupil will search this folder, and import and add all user plugins into the plugin drop-down menu 
-
+ + Start the application that should run your plugin either Pupil Capture or Pupil Player.
+ + If you're creating a plugin for Pupil Capture, navigate to the `~/pupil_capture_settings/plugins/` directory. If you're creating a plugin for Pupil Player, navigate to `~/pupil_player_settings directory/plugins/` instead.
+ + Move your plugin source code into the `plugins` folder. If your plugin is comprised of multiple files and/or dependencies, then move all files into the plugins folder. *Note*: if your plugin is contained in a directory, make sure to include an `__init__.py` inside it. For example:
+ 
 ```python
-from my_custom_plugin_code_module import My_Custom_Plugin_Class
+from . my_custom_plugin_module import My_Custom_Plugin_Class
 ```
 
-> If your plugin is contained in a directory, make sure to include an `__init__.py` file
+Would load the `My_Custom_Plugin_Class` plugin from the `my_custom_plugin_module` directory.
+ 
+ + Restart the application. For now on, Pupil will find your plugins on startup and will add all valid plugins to the plugin dropdown menu. If your plugin is a calibration plugin (i.e. it inherits from the Calibration_Plugin base class), then it will appear in the calibration drop down menu.
+
+ + If you want your plugin to run in both Pupil Capture and Pupil Player, you can avoid making copies of your plugin by setting a relative path. like so:
+
+> base_directory
+> `~/`
+> 
+> Your plugin
+> `~/my_shared_pupil_plugins/
+> 
+> Player
+> `~/pupil_player_settings/plugins/my_shared_plugin/__init__.py`
+> 
+> Capture
+> `~/pupil_player_settings/plugins/my_shared_plugin/__init__.py`
+
+
+```python
+# in both __init__.py
+import os
+import sys
+from pathlib import Path
+
+base_directory = Path(__file__).parents[3]
+sys.path.append(os.path.join(base_dir,'my_shared_pupil_plugins'))
+
+```
+
+The last option also avoids redundancy of shared plugin dependencies.
 
 #### Load your Plugin manually
 This is the "old" way of loading plugins. This method gives more flexibility but thats about it.
