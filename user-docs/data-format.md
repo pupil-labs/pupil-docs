@@ -22,12 +22,9 @@ If you want to view the data, export videos, export raw data as `.csv` (and more
 Splitting the timestamps from the actual video file has several benefits:
 
 * Timestamps can be stored as list of floats instead of storing them in a video format specific time specification, i.e. time base / PTS combinations.
-
 * Efficient access to all timestamps. Reading a float array from file is magnitudes faster than demuxing the whole video file and converting the format specific PTS back to floats.
-
 * The video file becomes a simple list of frames. The frames' indices correspond to their timestamps' indices in the `*_timestamp.npy` file. A frame's index can simply calculated by calculating `PTS * time_base * average_rate`. This allows Pupil Player to seek by frame indices instead of using timestamps. See [`file_backend.py`](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/video_capture/file_backend.py) for more information.
-
-Summarizing, it allows us to synchronize multiple data streams using an intuitve timestamp format. With Pupil Player exported videos will have their PTS set correctly according to each frames timestamp.
+Summarizing, it allows us to synchronize multiple data streams using an intuitve timestamp format. With Pupil Player exported videos will have their PTS set correctly according to each frame's timestamp.
 
 ### Pupil - Data Format
 The data format for Pupil recordings is 100% open. Sub-headings below provide details of each file and its data format.
@@ -67,7 +64,7 @@ We use a normalized coordinate system with the origin `0,0` at the bottom left a
   In some rare cases we use the image coordinate system. This is mainly for pixel access of the image arrays. Here a unit is one pixel, origin is "top left" and "bottom right" is the maximum x,y.
 
 #### Timestamps
-All indexed data, (for example, still frames from the world camera, still frames from the eye camera, gaze and pupil coordinates, and so on) has timestamps associated to for synchronization purposes. The timestamp is derived from `CLOCK_MONOTONIC` on Linux and MacOS.
+All indexed data - still frames from the world camera, still frames from the eye camera(s), gaze coordinate, and pupil coordinates, etc. - have timestamps associated for synchronization purposes. The timestamp is derived from `CLOCK_MONOTONIC` on Linux and MacOS.
 
 The time at which the clock starts counting is called PUPIL EPOCH. In pupil the epoch is adjustable through `Pupil Remote` and `Pupil Timesync`.
 
