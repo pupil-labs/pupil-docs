@@ -15,9 +15,27 @@ Pupil Player is the second tool you will use after Pupil Capture. It is a media 
 
 Features like <a href="#marker-tracking">surface tracking</a> found in Pupil Capture are also available in Pupil Player.
 
+### Player Window
+Let's get familiar with the Player window.
+
+> {{< lqip-img src="/images/pupil-player/pp_cl_main.jpg" >}}
+
+The Player window is the main control center for `Pupil Player`. It displays the recorded video feed from pupil capture file.
+
+1. **Graphs** - This area contains performance graphs. You can monitor `CPU` and `FPS` and pupil algorithm detection confidence. These graphs are the same as in the `World` window..
+1. **Settings GUI Menu** - This is the main GUI for Pupil Player. You can use this menu primarily to launch plugins and control global settings.  
+1. **Plugin GUIs** - Each Plugin spawns its own GUI window. You can control settings of each Plugin in the GUI window. For details on all plugins see documentation on [Pupil Player](#pupil-player) in the user guide.
+1. **Hot keys** - This area contains clickable buttons for plugins.
+1. **Seek Bar and Trim Marks** - You can drag the playhead (large circle) to scrub through the video or `space` bar to play/pause. You can use the arrow keys to advance one frame at a time. Drag the small green circles at the end of the seek bar to set trim marks. Trim marks directly inform the section of video/data to export.
+
+
 ### Starting Pupil Player
 
+> {{< lqip-img src="/images/pupil-player/pp_start.jpg" >}}
+
 Drag the recording directory (the triple digit one) directly onto the app icon **or** launch the application and drag + drop the recording directory into Pupil Player window.
+
+#### Workflow
 
 ```bash
 Running from source?
@@ -25,8 +43,6 @@ Running from source?
 cd "path_to_pupil_dir/pupil_src/player"
 python main.py "path/to/recording_directory"
 ```
-
-**Workflow**
 
 Pupil Player is similar to a video player. You can playback recordings and can load plugins to build visualizations.
 

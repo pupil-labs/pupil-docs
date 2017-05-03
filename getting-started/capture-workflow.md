@@ -61,6 +61,24 @@ The `Eye` window displays a real-time video of your eye. You will primarily use 
  -->
 
 ### 3. Check pupil detection
+
+> {{< video-webm src="/videos/calibration/pupil-detection/pd" >}}
+
+> <div class="figure-container">
+  <div class="Grid Grid-row">
+    <div class="Grid-cell--1of2">
+      <div class="Grid-cell">
+        <p>Eye point to each marker to create a sampling point</p>
+      </div>
+    </div>
+    <div class="Grid-cell--1of2">
+      <div class="Grid-cell">
+        <p>Eye point to each marker to create a sampling point</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 Take a look at the `Eye` window. If the pupil is detected you will see a red circle around the edge of your pupil and a red dot at the center of your pupil.
 
 If the algorithm's detection confidence is high, the red circle will be opaque. If confidence diminishes the circle will become more transparent.
@@ -120,17 +138,22 @@ See <a href="#pupil-capture">Pupil Capture</a> for more details about pupil dete
 
 
 ### 4. Calibrate
+
+> {{< video-webm src="/videos/calibration/calibration-headset/clb-hd" >}}
+
 In order to know what someone is looking at, we must to establish a mapping between pupil and gaze positions. This is what we call calibration.
 
 The calibration process establishes a mapping from pupil to gaze coordinates. 
 
 #### Screen Marker Calibration Method
 
-> {{< lqip-img src="/images/pupil-capture/recording/record-callout.jpg" >}}
+> {{< video-webm src="/videos/calibration/calibration-screen/clb-s" >}}
+
+<!-- > {{< lqip-img src="/images/pupil-capture/recording/record-callout.jpg" >}} -->
 
 Click `c` on the world screen or press `c` on the keyboard to start calibrate.
 
-> {{< lqip-img src="/images/pupil-capture/calibrate/calibrate-border.jpg" >}}
+<!-- > {{< lqip-img src="/images/pupil-capture/calibrate/calibrate-border.jpg" >}} -->
 
 Follow the marker on the screen with your eyes and try to keep your head stationary
 
@@ -138,9 +161,11 @@ There are other calibration methods and lots more information how calibration wo
 
 ### 5. Record
 
+> {{< video-webm src="/videos/recording/rec" >}}
+
 Start capturing data!
 
-> {{< lqip-img src="/images/pupil-capture/recording/pupil-capture-v07-world-recording.jpg" >}}
+<!-- > {{< lqip-img src="/images/pupil-capture/recording/pupil-capture-v07-world-recording.jpg" >}} -->
 
 Pupil Capture will save the world video stream and all corresponding gaze data in a folder in your user directory named 
 `recordings`.
@@ -153,9 +178,9 @@ See a video demonstration of how to set recordings path, session name, and start
 
 #### Where is the recording saved?
 
-By default, each recording will live in its own unique data folder contained in the `recordings` folder.
+> {{< lqip-img src="/images/pupil-capture/recording/rec_folder.jpg" >}}
 
-> {{< lqip-img src="/images/pupil-capture/recording/recording_folder_v07.jpg" >}}
+By default, each recording will live in its own unique data folder contained in the `recordings` folder.
 
 You can make as many recordings as you like. 
 

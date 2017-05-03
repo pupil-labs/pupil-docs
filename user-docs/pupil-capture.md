@@ -15,9 +15,21 @@ This section of the documentation is targeted towards users of Pupil software an
 
 Pupil Capture is the software used with the Pupil Headset. The software reads the video streams coming in from the world camera and the eye camera. Pupil Capture uses the video streams to detect your pupil, track your gaze, detect and track markers in your environment, record video and events, and stream data in realtime.
 
+### Capture Window
+
+> {{< lqip-img src="/images/pupil-capture/pc_cl_main.jpg" >}}
+
+The Capture window is the main control center for `Pupil Capture`. It displays live video feed from pupil headset.
+
+1. **Graphs** - This area contains performance graphs. You can monitor `CPU` and `FPS` and pupil algorithm detection confidence. These graphs are the same as in the `World` window..
+1. **Settings GUI Menu** - This is the main GUI for Pupil Player. You can use this menu primarily to launch plugins and control global settings.  
+1. **Hot keys** - This area contains clickable buttons for plugins.
+
 ### Capture Selection
 
-> {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-cap-select.jpg" >}}
+> {{< video-webm src="/videos/capture-selection/pc-select" >}}
+
+<!-- > {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-cap-select.jpg" >}} -->
 
 By default Pupil Capture will use Local USB as the capture source. If you have a Pupil headset connected to your machine you will see video displayed from your Pupil headset in the World and eye windows. If no headset is connected or Pupil Capture is unable to open capture devices it will fall back to the Test Image. Other options for capture source are described below.
 
@@ -28,26 +40,27 @@ By default Pupil Capture will use Local USB as the capture source. If you have a
 
 ### Calibration
 
+> {{< video-webm src="/videos/calibration/calibration-headset/clb-hd" >}}
+
 Pupil uses two cameras. One camera records a subject's eye movements -- we call this the `eye camera`. Another camera records the subject's field of vision -- we call this the `world camera`. In order to know what someone is looking at, we must find the parameters to a function that correlates these two streams of information.
 
-> {{< video-webm src="/videos/calibration/calibration-headset/clb-hd" >}}
 
 ### Calibration Process
 
-Adjust the headset according to your comfort and to ensure a good calibration result
-
 > {{< video-webm src="/videos/calibration/calibration-mobo/clb-mobo" >}}
+
+Adjust the headset according to your comfort and to ensure a good calibration result
 
 > <div class="figure-container">
 	<div class="Grid Grid-row">
 		<div class="Grid-cell--1of2">
-			<div class="Grid-cell">
-				<p>Monocular</p>
+			<div class="Grid-cell Text-center">
+				<h4 style="margin-top: 0;">Monocular</h4>
 			</div>
 		</div>
 		<div class="Grid-cell--1of2">
-			<div class="Grid-cell">
-				<p>Binocular</p>
+			<div class="Grid-cell Text-center">
+				<h4 style="margin-top: 0;">Binocular</h4>
 			</div>
 		</div>
 	</div>
@@ -220,7 +233,9 @@ If you open up a session folder you will see a collection of video(s) and data f
 
 ### Open a plugin
 
-> {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-plugin.jpg" >}}
+> {{< video-webm src="/videos/capture-plugin/pc-plugin" >}}
+
+<!-- > {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-plugin.jpg" >}} -->
 
 Click on the selector "Open Plugin" and select your plugin.
 

@@ -75,13 +75,13 @@ Depending on your configuration, some additional parts may be included with your
 #### Focus Eye Camera
 > {{< lqip-img figure-class="img-m" src="/images/pupil-hardware/pupil-parts-2.jpg" >}}
 
-<p style="padding: 0 28px;"><b>Very important</b> - make sure the eye camera is in focus. If you can see details of your iris, then the focus is most likely good. <b>Slide the eye camera arm</b> to adjust focus and/or use the lens adjuster tool.</p>
+<p><b>Very important</b> - make sure the eye camera is in focus. If you can see details of your iris, then the focus is most likely good. <b>Slide the eye camera arm</b> to adjust focus and/or use the lens adjuster tool.</p>
 
 #### Focus World Camera
 > {{< lqip-img figure-class="img-m" src="/images/pupil-hardware/pupil-parts-4.jpg" >}}
 
 
-<p style="padding: 0 28px;">Set the focus for the distance at which you will be calibrating.</p>
+<p>Set the focus for the distance at which you will be calibrating.</p>
 
 
 
