@@ -129,7 +129,9 @@ You will notice that there are no standard controls, only an `Advanced` sub-menu
 
 #### Natural Features Calibration
 
-> {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-natural-calib.jpg" >}}
+> {{< video-webm src="/videos/calibration/calibration-natural/clb-natural" >}}
+
+<!-- > {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-natural-calib.jpg" >}} -->
 
 This method is for special situations and far distances. Usually not required.
 
@@ -233,9 +235,9 @@ If you open up a session folder you will see a collection of video(s) and data f
 
 ### Open a plugin
 
-> {{< video-webm src="/videos/capture-plugin/pc-plugin" >}}
+<!-- > {{< video-webm src="/videos/capture-plugin/pc-plugin" >}} -->
 
-<!-- > {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-plugin.jpg" >}} -->
+> {{< lqip-img src="/images/pupil-capture/pc-plugin.jpg" >}}
 
 Click on the selector "Open Plugin" and select your plugin.
 
@@ -255,7 +257,9 @@ For this to work your network needs to allow `UDP` transport. If the nodes do no
 
 ### Streaming Pupil Data over the network
 
-> {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-pupil-remote.jpg" >}}
+> {{< video-webm src="/videos/pupil-remote/pr" >}}
+
+<!-- > {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-pupil-remote.jpg" >}} -->
 
 `Pupil Remote` is a plugin that is used to broadcast data over the network using the excellent library [Zero MQ](http://zeromq.org/).
 

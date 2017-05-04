@@ -64,7 +64,7 @@ The `Eye` window displays a real-time video of your eye. You will primarily use 
 
 > {{< video-webm src="/videos/calibration/pupil-detection/pd" >}}
 
-> <div class="figure-container">
+<!-- > <div class="figure-container">
   <div class="Grid Grid-row">
     <div class="Grid-cell--1of2">
       <div class="Grid-cell">
@@ -77,7 +77,7 @@ The `Eye` window displays a real-time video of your eye. You will primarily use 
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 Take a look at the `Eye` window. If the pupil is detected you will see a red circle around the edge of your pupil and a red dot at the center of your pupil.
 
