@@ -15,9 +15,21 @@ This section of the documentation is targeted towards users of Pupil software an
 
 Pupil Capture is the software used with the Pupil Headset. The software reads the video streams coming in from the world camera and the eye camera. Pupil Capture uses the video streams to detect your pupil, track your gaze, detect and track markers in your environment, record video and events, and stream data in realtime.
 
+### Capture Window
+
+> {{< lqip-img src="/images/pupil-capture/pc_cl_main.jpg" >}}
+
+The Capture window is the main control center for `Pupil Capture`. It displays live video feed from pupil headset.
+
+1. **Graphs** - This area contains performance graphs. You can monitor `CPU` and `FPS` and pupil algorithm detection confidence. These graphs are the same as in the `World` window..
+1. **Settings GUI Menu** - This is the main GUI for Pupil Player. You can use this menu primarily to launch plugins and control global settings.  
+1. **Hot keys** - This area contains clickable buttons for plugins.
+
 ### Capture Selection
 
-> {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-cap-select.jpg" >}}
+> {{< video-webm src="/videos/capture-selection/pc-select" >}}
+
+<!-- > {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-cap-select.jpg" >}} -->
 
 By default Pupil Capture will use Local USB as the capture source. If you have a Pupil headset connected to your machine you will see video displayed from your Pupil headset in the World and eye windows. If no headset is connected or Pupil Capture is unable to open capture devices it will fall back to the Test Image. Other options for capture source are described below.
 
@@ -27,20 +39,44 @@ By default Pupil Capture will use Local USB as the capture source. If you have a
 - Local USB - select this option if your Pupil Headset is connected to the machine running Pupil Capture. This is the default setting. 
 
 ### Calibration
+
+> {{< video-webm src="/videos/calibration/calibration-headset/clb-hd" >}}
+
 Pupil uses two cameras. One camera records a subject's eye movements -- we call this the `eye camera`. Another camera records the subject's field of vision -- we call this the `world camera`. In order to know what someone is looking at, we must find the parameters to a function that correlates these two streams of information.
 
-### Before every calibration
-Make sure that the users pupil is properly tracked. Make sure that the world camera is in focus for the distance at which you want to calibrate, and that you can see the entire area you want to calibrate within the world cameras extents (FOV).
+
+### Calibration Process
+
+> {{< video-webm src="/videos/calibration/calibration-mobo/clb-mobo" >}}
+
+Adjust the headset according to your comfort and to ensure a good calibration result
+
+> <div class="figure-container">
+	<div class="Grid Grid-row">
+		<div class="Grid-cell--1of2">
+			<div class="Grid-cell Text-center">
+				<h4 style="margin-top: 0;">Monocular</h4>
+			</div>
+		</div>
+		<div class="Grid-cell--1of2">
+			<div class="Grid-cell Text-center">
+				<h4 style="margin-top: 0;">Binocular</h4>
+			</div>
+		</div>
+	</div>
+</div>
 
 ### Calibration Methods
 
-> {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-calibrate.jpg" >}}
+<!-- > {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-calibrate.jpg" >}} -->
 
-First select the calibration method you would like to use:
+<!-- First select the calibration method you would like to use: -->
 
 #### Screen Marker Calibration
 
-> {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-screen-calib.jpg" >}}
+> {{< video-webm src="/videos/calibration/calibration-screen/clb-s" >}}
+
+<!-- > {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-screen-calib.jpg" >}} -->
 
 This is the default method, and a quick method to get started. It is best suited for close range eye-tracking in a narrow field of view.
 
@@ -59,11 +95,13 @@ In the `Advanced` sub-menu you can set the `sample duration` -- the number of fr
 
 #### Manual Marker Calibration
 
-> {{< lqip-img figure-class="img-s" src="/images/pupil-capture/calibration-markers/manual_calibration_marker-01.jpg" >}}
+> {{< video-webm src="/videos/calibration/calibration-manual/clb-man" >}}
+
+<!-- > {{< lqip-img figure-class="img-s" src="/images/pupil-capture/calibration-markers/manual_calibration_marker-01.jpg" >}}
 
 > {{< lqip-img figure-class="img-s" src="/images/pupil-capture/calibration-markers/manual_calibration_marker-02.jpg" >}}
 
-> {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-manual-calib.jpg" >}}
+> {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-manual-calib.jpg" >}} -->
 
 This method is done with an operator and a subject. It is suited for midrange distances and can accommodate a wide field of view. You need markers made of concentric circles, like the two shown below.
 
@@ -91,7 +129,9 @@ You will notice that there are no standard controls, only an `Advanced` sub-menu
 
 #### Natural Features Calibration
 
-> {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-natural-calib.jpg" >}}
+> {{< video-webm src="/videos/calibration/calibration-natural/clb-natural" >}}
+
+<!-- > {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-natural-calib.jpg" >}} -->
 
 This method is for special situations and far distances. Usually not required.
 
@@ -116,6 +156,62 @@ Loading the `Show Calibration` plugin from the `General` sub-menu will show an e
 The green outline show the calibrated area. Orange shows the sampled data points. Red shows outliers. Usually large outliers are blinks, other large outliers can often be attributed to subject error (not looking at the marker). Open image in another tab to see it at full resolution.
 -->
 
+### Pupil Detection
+
+Adjust the headset according to your comfort and to ensure a good calibration result
+
+> {{< video-webm src="/videos/calibration/pupil-detection/pd" >}}
+
+> <div class="figure-container">
+	<div class="Grid Grid-row">
+		<div class="Grid-cell--1of2">
+			<div class="Grid-cell">
+				<p>Eye point to each marker to create a sampling point</p>
+			</div>
+		</div>
+		<div class="Grid-cell--1of2">
+			<div class="Grid-cell">
+				<p>Eye point to each marker to create a sampling point</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+### Before every calibration
+Make sure that the users pupil is properly tracked. Make sure that the world camera is in focus for the distance at which you want to calibrate, and that you can see the entire area you want to calibrate within the world cameras extents (FOV).
+
+> <div class="figure-container">
+	<div class="Grid Grid-row">
+		<div class="Grid-cell--1of2">
+			<div class="Grid-cell">
+				{{< lqip-img figure-class="img-m" src="/images/pupil-hardware/pupil-detect.jpg" >}}
+			</div>
+		</div>
+		<div class="Grid-cell--1of2">
+			<div class="Grid-cell">
+				{{< lqip-img figure-class="img-m" src="/images/pupil-hardware/focus.jpg" >}}
+			</div>
+		</div>
+	</div>
+</div>
+
+> <div class="figure-container">
+	<div class="Grid Grid-row">
+		<div class="Grid-cell--1of2">
+			<div class="Grid-cell">
+				<p>Eye point to each marker to create a sampling point</p>
+			</div>
+		</div>
+		<div class="Grid-cell--1of2">
+			<div class="Grid-cell">
+				<p>Eye point to each marker to create a sampling point</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
 ### Notes on calibration accuracy
 Using screen based 9 point calibration method, you should easily be able to achieve tracking accuracy within the physiological limits (1-2 visual degrees).
 
@@ -124,7 +220,10 @@ Using screen based 9 point calibration method, you should easily be able to achi
 
 ### Recording
 
-> {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-recorder.jpg" >}}
+<!-- > {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-recorder.jpg" >}} -->
+
+> {{< video-webm src="/videos/recording/rec" >}}
+
 
 Press `r` on your keyboard or press the blue circular `R` button in the left hand side of the world window to start recording. You will see red text with the elapsed time of recording next to the `R` button. To stop recording, press `r` on your keyboard or press the `R` button on screen.
 
@@ -136,7 +235,9 @@ If you open up a session folder you will see a collection of video(s) and data f
 
 ### Open a plugin
 
-> {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-plugin.jpg" >}}
+<!-- > {{< video-webm src="/videos/capture-plugin/pc-plugin" >}} -->
+
+> {{< lqip-img src="/images/pupil-capture/pc-plugin.jpg" >}}
 
 Click on the selector "Open Plugin" and select your plugin.
 
@@ -156,7 +257,9 @@ For this to work your network needs to allow `UDP` transport. If the nodes do no
 
 ### Streaming Pupil Data over the network
 
-> {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-pupil-remote.jpg" >}}
+> {{< video-webm src="/videos/pupil-remote/pr" >}}
+
+<!-- > {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-pupil-remote.jpg" >}} -->
 
 `Pupil Remote` is a plugin that is used to broadcast data over the network using the excellent library [Zero MQ](http://zeromq.org/).
 
