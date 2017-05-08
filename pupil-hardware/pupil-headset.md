@@ -56,7 +56,7 @@ Depending on your configuration, some additional parts may be included with your
       <p style="padding: 10px;">You can <b>slide</b> the eye camera arm along the track.</p>
     </div>
     <div class="Grid-cell">
-     {{< figure-img figure-class="figure-container" src="/images/pupil-hardware/eyerotate.gif" >}}
+     {{< figure-img figure-class="figure-containerf" src="/images/pupil-hardware/eyerotate.gif" >}}
       <p style="padding: 10px;">You can <b>rotate</b> the eye camera about its ball joint.</p>
     </div>
     <div class="Grid-cell">
@@ -75,13 +75,12 @@ Depending on your configuration, some additional parts may be included with your
 #### Focus Eye Camera
 > {{< lqip-img figure-class="img-m" src="/images/pupil-hardware/pupil-parts-2.jpg" >}}
 
-<p><b>Very important</b> - make sure the eye camera is in focus. If you can see details of your iris, then the focus is most likely good. <b>Slide the eye camera arm</b> to adjust focus and/or use the lens adjuster tool.</p>
+**Very important** - make sure the eye camera is in focus. If you can see details of your iris, then the focus is most likely good. **Slide the eye camera arm** to adjust focus and/or use the lens adjuster tool.
 
 #### Focus World Camera
 > {{< lqip-img figure-class="img-m" src="/images/pupil-hardware/pupil-parts-4.jpg" >}}
 
-
-<p>Set the focus for the distance at which you will be calibrating.</p>
+Set the focus for the distance at which you will be calibrating.
 
 
 
