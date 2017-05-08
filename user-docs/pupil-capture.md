@@ -49,7 +49,8 @@ Pupil uses two cameras. One camera records a subject's eye movements -- we call 
 
 > {{< video-webm src="/videos/calibration/calibration-mobo/clb-mobo" >}}
 
-Adjust the headset according to your comfort and to ensure a good calibration result
+Pupil Headset comes in a variety of configuration. Calibration involves two types of configuration, monocular and binocular.
+
 
 > <div class="figure-container">
 	<div class="Grid Grid-row">
@@ -71,6 +72,8 @@ Adjust the headset according to your comfort and to ensure a good calibration re
 <!-- > {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-calibrate.jpg" >}} -->
 
 <!-- First select the calibration method you would like to use: -->
+
+Before starting the calibration, make sure to secure the headset comfortably to ensure a good calibration result.
 
 #### Screen Marker Calibration
 
@@ -158,11 +161,11 @@ The green outline show the calibrated area. Orange shows the sampled data points
 
 ### Pupil Detection
 
-Adjust the headset according to your comfort and to ensure a good calibration result
+The eye camera constantly record and track the subject's eye movements to build a 3d eye model. To ensure a good detection, roll your eyes around while keeping the detection on the pupil for the camera.
 
 > {{< video-webm src="/videos/calibration/pupil-detection/pd" >}}
 
-> <div class="figure-container">
+<!-- > <div class="figure-container">
 	<div class="Grid Grid-row">
 		<div class="Grid-cell--1of2">
 			<div class="Grid-cell">
@@ -175,7 +178,7 @@ Adjust the headset according to your comfort and to ensure a good calibration re
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 
 ### Before every calibration
 Make sure that the users pupil is properly tracked. Make sure that the world camera is in focus for the distance at which you want to calibrate, and that you can see the entire area you want to calibrate within the world cameras extents (FOV).
@@ -198,19 +201,17 @@ Make sure that the users pupil is properly tracked. Make sure that the world cam
 > <div class="figure-container">
 	<div class="Grid Grid-row">
 		<div class="Grid-cell--1of2">
-			<div class="Grid-cell">
-				<p>Eye point to each marker to create a sampling point</p>
+			<div class="Grid-cell" style="padding:0 .5em 0 .5em;">
+				<p>Your pupil is properly detected by the eye camera</p>
 			</div>
 		</div>
 		<div class="Grid-cell--1of2">
-			<div class="Grid-cell">
-				<p>Eye point to each marker to create a sampling point</p>
+			<div class="Grid-cell" style="padding:0 .5em 0 .5em;">
+				<p>Make sure the world camera is in focus</p>
 			</div>
 		</div>
 	</div>
 </div>
-
-
 
 ### Notes on calibration accuracy
 Using screen based 9 point calibration method, you should easily be able to achieve tracking accuracy within the physiological limits (1-2 visual degrees).

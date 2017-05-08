@@ -16,6 +16,8 @@ Now that you have recorded some data, you can play back the video and visualize 
 
 #### Visualize
 
+Player comes with a number of plugins. These plugins are simple plugins, are mostly additive (or not unique), and directly operate on the gaze positions to produce visualizations.
+
 > {{< video-webm src="/videos/visualize/pp_vis" >}}
 
 <!-- Let's get familiar with the Player window. -->
