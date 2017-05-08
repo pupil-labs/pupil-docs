@@ -161,7 +161,7 @@ The green outline show the calibrated area. Orange shows the sampled data points
 
 ### Pupil Detection
 
-The eye camera constantly record and track the subject's eye movements to build a 3d eye model. To ensure a good detection, roll your eyes around while keeping the detection on the pupil for the camera.
+The eye camera constantly record and track the subject's eye movements to build a 3d eye model. To ensure a good detection, roll your eyes around while keeping the detection tracking on the pupil.
 
 > {{< video-webm src="/videos/calibration/pupil-detection/pd" >}}
 
