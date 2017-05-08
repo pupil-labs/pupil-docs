@@ -307,7 +307,9 @@ Messages from pupil server mirror all objects in the `events` dict that is used 
 
 ### Marker Tracking
 
-> {{< video-youtube embed-url="https://www.youtube.com/embed/bmqDGE6a9kc" >}}
+> {{< video-webm src="/videos/surface-tracking/srf-tracking" >}}
+
+<!-- > {{< video-youtube embed-url="https://www.youtube.com/embed/bmqDGE6a9kc" >}} -->
 
 The `Marker Tracking` plugin allows you to define surfaces within your environment and track surfaces in realtime using a 5x5 square marker. We were greatly inspired by the [ArUco marker tracking library](http://www.uco.es/investiga/grupos/ava/node/26).
 
@@ -315,7 +317,7 @@ The `Marker Tracking` plugin allows you to define surfaces within your environme
 *  Using a 5x5 marker gives us 64 unique markers.
 *  Why the 5x5 grid? The 5x5 grid allows us to make smaller markers that can still be detected. Markers can be printed on paper, stickers, or displayed on the screen.
 
-See the video linked for an introduction and workflow.
+<!-- See the video linked for an introduction and workflow. -->
 
 #### Defining Surfaces with Markers
 
