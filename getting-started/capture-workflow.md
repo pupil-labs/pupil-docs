@@ -62,7 +62,7 @@ The `Eye` window displays a real-time video of your eye. You will primarily use 
 
 ### 3. Check pupil detection
 
-> {{< video-webm src="/videos/calibration/pupil-detection/pd" >}}
+> {{< video-webm src="/videos/calibration/pupil-detection/pd.webm" >}}
 
 <!-- > <div class="figure-container">
   <div class="Grid Grid-row">
