@@ -49,7 +49,8 @@ Pupil uses two cameras. One camera records a subject's eye movements -- we call 
 
 > {{< video-webm src="/videos/calibration/calibration-mobo/clb-mobo.webm" >}}
 
-Adjust the headset according to your comfort and to ensure a good calibration result
+Pupil Headset comes in a variety of configurations.  Calibration be conducted with a monocular or binocular eye camera setup.
+
 
 > <div class="figure-container">
 	<div class="Grid Grid-row">
@@ -71,6 +72,8 @@ Adjust the headset according to your comfort and to ensure a good calibration re
 <!-- > {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-calibrate.jpg" >}} -->
 
 <!-- First select the calibration method you would like to use: -->
+
+Before starting calibration, ensure that eye(s) are robustly detected and that the headset is comfortable for the participant.
 
 #### Screen Marker Calibration
 
@@ -158,11 +161,11 @@ The green outline show the calibrated area. Orange shows the sampled data points
 
 ### Pupil Detection
 
-Adjust the headset according to your comfort and to ensure a good calibration result
+Pupil's algorithms automatically detect the participant's pupil. With the 3d detection and mapping mode, Pupil uses a 3d model of the eye(s) that constantly updates based on observations of the eye. This enables the system to compensate for movements of the headset - slippage. To build up an initial model, you can just look around your field of view.
 
 > {{< video-webm src="/videos/calibration/pupil-detection/pd.webm" >}}
 
-> <div class="figure-container">
+<!-- > <div class="figure-container">
 	<div class="Grid Grid-row">
 		<div class="Grid-cell--1of2">
 			<div class="Grid-cell">
@@ -175,7 +178,7 @@ Adjust the headset according to your comfort and to ensure a good calibration re
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 
 ### Before every calibration
 Make sure that the users pupil is properly tracked. Make sure that the world camera is in focus for the distance at which you want to calibrate, and that you can see the entire area you want to calibrate within the world cameras extents (FOV).
@@ -198,19 +201,17 @@ Make sure that the users pupil is properly tracked. Make sure that the world cam
 > <div class="figure-container">
 	<div class="Grid Grid-row">
 		<div class="Grid-cell--1of2">
-			<div class="Grid-cell">
-				<p>Eye point to each marker to create a sampling point</p>
+			<div class="Grid-cell" style="padding:0 .5em 0 .5em;">
+				<p>Your pupil is properly detected by the eye camera</p>
 			</div>
 		</div>
 		<div class="Grid-cell--1of2">
-			<div class="Grid-cell">
-				<p>Eye point to each marker to create a sampling point</p>
+			<div class="Grid-cell" style="padding:0 .5em 0 .5em;">
+				<p>Make sure the world camera is in focus</p>
 			</div>
 		</div>
 	</div>
 </div>
-
-
 
 ### Notes on calibration accuracy
 Using screen based 9 point calibration method, you should easily be able to achieve tracking accuracy within the physiological limits (1-2 visual degrees).
@@ -307,7 +308,9 @@ Messages from pupil server mirror all objects in the `events` dict that is used 
 
 ### Marker Tracking
 
-> {{< video-youtube embed-url="https://www.youtube.com/embed/bmqDGE6a9kc" >}}
+> {{< video-webm src="/videos/surface-tracking/srf-tracking" >}}
+
+<!-- > {{< video-youtube embed-url="https://www.youtube.com/embed/bmqDGE6a9kc" >}} -->
 
 The `Marker Tracking` plugin allows you to define surfaces within your environment and track surfaces in realtime using a 5x5 square marker. We were greatly inspired by the [ArUco marker tracking library](http://www.uco.es/investiga/grupos/ava/node/26).
 
@@ -315,7 +318,7 @@ The `Marker Tracking` plugin allows you to define surfaces within your environme
 *  Using a 5x5 marker gives us 64 unique markers.
 *  Why the 5x5 grid? The 5x5 grid allows us to make smaller markers that can still be detected. Markers can be printed on paper, stickers, or displayed on the screen.
 
-See the video linked for an introduction and workflow.
+<!-- See the video linked for an introduction and workflow. -->
 
 #### Defining Surfaces with Markers
 
