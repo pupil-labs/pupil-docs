@@ -308,7 +308,7 @@ Messages from pupil server mirror all objects in the `events` dict that is used 
 
 ### Marker Tracking
 
-> {{< video-webm src="/videos/surface-tracking/srf-tracking" >}}
+> {{< video-webm src="/videos/surface-tracking/srf-tracking.webm" >}}
 
 <!-- > {{< video-youtube embed-url="https://www.youtube.com/embed/bmqDGE6a9kc" >}} -->
 
