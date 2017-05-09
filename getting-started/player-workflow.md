@@ -16,7 +16,7 @@ Now that you have recorded some data, you can play back the video and visualize 
 
 #### Visualize
 
-Player comes with a number of plugins. These plugins are simple plugins, are mostly additive (or not unique), and directly operate on the gaze positions to produce visualizations.
+Player comes with a number of plugins. Plugins are classified by their use-case. Visualization plugins can be additive. This means that you can add multiple instances of a plugin to build up a visualization.
 
 > {{< video-webm src="/videos/visualize/pp_vis" >}}
 

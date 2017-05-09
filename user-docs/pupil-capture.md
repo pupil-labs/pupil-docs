@@ -49,7 +49,7 @@ Pupil uses two cameras. One camera records a subject's eye movements -- we call 
 
 > {{< video-webm src="/videos/calibration/calibration-mobo/clb-mobo" >}}
 
-Pupil Headset comes in a variety of configuration. Calibration involves two types of configuration, monocular and binocular.
+Pupil Headset comes in a variety of configurations.  Calibration be conducted with a monocular or binocular eye camera setup.
 
 
 > <div class="figure-container">
@@ -73,7 +73,7 @@ Pupil Headset comes in a variety of configuration. Calibration involves two type
 
 <!-- First select the calibration method you would like to use: -->
 
-Before starting the calibration, make sure to secure the headset comfortably to ensure a good calibration result.
+Before starting calibration, ensure that eye(s) are robustly detected and that the headset is comfortable for the participant.
 
 #### Screen Marker Calibration
 
@@ -161,7 +161,7 @@ The green outline show the calibrated area. Orange shows the sampled data points
 
 ### Pupil Detection
 
-The eye camera constantly record and track the subject's eye movements to build a 3d eye model. To ensure a good detection, roll your eyes around while keeping the detection tracking on the pupil.
+Pupil's algorithms automatically detect the participant's pupil. With the 3d detection and mapping mode, Pupil uses a 3d model of the eye(s) that constantly updates based on observations of the eye. This enables the system to compensate for movements of the headset - slippage. To build up an initial model, you can just look around your field of view.
 
 > {{< video-webm src="/videos/calibration/pupil-detection/pd" >}}
 
