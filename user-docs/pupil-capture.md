@@ -120,7 +120,7 @@ This method is done with an operator and a subject. It is suited for midrange di
 
 You will notice that there are no standard controls, only an `Advanced` sub-menu to control detection parameters of the marker and to debug by showing edges of the detected marker in the world view.
 
-[Download markers to print](/images/calibration-markers/pupil_calibration_marker.pdf) or display on smartphone/tablet screen.
+[Download markers to print](/images/pupil-capture/calibration-markers/pupil_calibration_marker.pdf) or display on smartphone/tablet screen.
 
 <aside class="notice">
   Note - v2.0 Markers can be <a href="/images/pupil-capture/calibration-markers/v2.0_markers/pupil_calibration_marker.pdf">downloaded here</a>.
