@@ -139,7 +139,7 @@ See <a href="#pupil-capture">Pupil Capture</a> for more details about pupil dete
 
 ### 4. Calibrate
 
-> {{< video-webm src="/videos/calibration/calibration-headset/clb-hd" >}}
+> {{< video-webm src="/videos/calibration/calibration-headset/clb-hd.webm" >}}
 
 In order to know what someone is looking at, we must to establish a mapping between pupil and gaze positions. This is what we call calibration.
 
@@ -147,7 +147,7 @@ The calibration process establishes a mapping from pupil to gaze coordinates.
 
 #### Screen Marker Calibration Method
 
-> {{< video-webm src="/videos/calibration/calibration-screen/clb-s" >}}
+> {{< video-webm src="/videos/calibration/calibration-screen/clb-s.webm" >}}
 
 <!-- > {{< lqip-img src="/images/pupil-capture/recording/record-callout.jpg" >}} -->
 
@@ -161,7 +161,7 @@ There are other calibration methods and lots more information how calibration wo
 
 ### 5. Record
 
-> {{< video-webm src="/videos/recording/rec" >}}
+> {{< video-webm src="/videos/recording/rec.webm" >}}
 
 Start capturing data!
 

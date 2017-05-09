@@ -16,7 +16,7 @@ Now that you have recorded some data, you can play back the video and visualize 
 
 #### Visualize
 
-> {{< video-webm src="/videos/visualize/pp_vis" >}}
+> {{< video-webm src="/videos/visualize/pp_vis.webm" >}}
 
 <!-- Let's get familiar with the Player window. -->
 
