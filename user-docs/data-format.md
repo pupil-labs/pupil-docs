@@ -19,6 +19,13 @@ These files are stored in a newly created folder inside `your_pupil_recordings_d
 
 If you want to view the data, export videos, export raw data as `.csv` (and more) you can use [Pupil Player](#pupil-player).
 
+Splitting the timestamps from the actual video file has several benefits:
+
+* Timestamps can be stored as list of floats instead of storing them in a video format specific time specification, i.e. time base / PTS combinations.
+* Efficient access to all timestamps. Reading a float array from file is magnitudes faster than demuxing the whole video file and converting the format specific PTS back to floats.
+* The video file becomes a simple list of frames. The frames' indices correspond to their timestamps' indices in the `*_timestamp.npy` file. A frame's index can simply calculated by calculating `PTS * time_base * average_rate`. This allows Pupil Player to seek by frame indices instead of using timestamps. See [`file_backend.py`](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/video_capture/file_backend.py) for more information.
+Summarizing, it allows us to synchronize multiple data streams using an intuitve timestamp format. With Pupil Player exported videos will have their PTS set correctly according to each frame's timestamp.
+
 ### Pupil - Data Format
 The data format for Pupil recordings is 100% open. Sub-headings below provide details of each file and its data format.
 
@@ -31,13 +38,13 @@ When using the setting `less CPU bigger file`: A raw `mjpeg` stream from the wor
 
 ```
 cd your_recording
-ffmpeg -i world.mp4  -pix_fmt yuv420p  world.mp4 
-ffmpeg -i eye0.mp4  -pix_fmt yuv420p  eye0.mp4 
-ffmpeg -i eye1.mp4  -pix_fmt yuv420p  eye1.mp4 
+ffmpeg -i world.mp4  -pix_fmt yuv420p  world.mp4
+ffmpeg -i eye0.mp4  -pix_fmt yuv420p  eye0.mp4
+ffmpeg -i eye1.mp4  -pix_fmt yuv420p  eye1.mp4
 ```
 
 > OpenCV has a capture module that can be used to extract still frames from the video:
-    
+
 ```python
 import cv2
 capture = cv2.VideoCapture("absolute_path_to_video/world.mp4")
@@ -57,11 +64,11 @@ We use a normalized coordinate system with the origin `0,0` at the bottom left a
   In some rare cases we use the image coordinate system. This is mainly for pixel access of the image arrays. Here a unit is one pixel, origin is "top left" and "bottom right" is the maximum x,y.
 
 #### Timestamps
-All indexed data, (for example, still frames from the world camera, still frames from the eye camera, gaze and pupil coordinates, and so on) has timestamps associated to for synchronization purposes. The timestamp is derived from `CLOCK_MONOTONIC` on Linux and MacOS. 
+All indexed data - still frames from the world camera, still frames from the eye camera(s), gaze coordinate, and pupil coordinates, etc. - have timestamps associated for synchronization purposes. The timestamp is derived from `CLOCK_MONOTONIC` on Linux and MacOS.
 
 The time at which the clock starts counting is called PUPIL EPOCH. In pupil the epoch is adjustable through `Pupil Remote` and `Pupil Timesync`.
 
-Timestamps are recorded for each sensor separately. Eye and World cameras may be capturing at very different rates (e.g. 120hz eye camera and 30hz world camera), and correlation of eye and world (and other sensors) can be done after the fact by using the timestamps. For more information on this see [Synchronization](#synchronization) below.  
+Timestamps are recorded for each sensor separately. Eye and World cameras may be capturing at very different rates (e.g. 120hz eye camera and 30hz world camera), and correlation of eye and world (and other sensors) can be done after the fact by using the timestamps. For more information on this see [Synchronization](#synchronization) below.
 
 Observations:
 
@@ -78,11 +85,11 @@ More information:
    - If wired or 'localhost', it is in the range of μs.
 - Granularity:
    - It is machine specific (depends on clock_monotonic on Linux). It is constrained by the processor cycles and
-     software. 
-   - In some machines (2 GHz processor), the result comes from clock_gettime(CLOCK_MONOTONIC, &time_record) 
-     function on Linux. This function delivers a record with nanosecond, 1 GHz, granularity. Then, PUPIL software does 
+     software.
+   - In some machines (2 GHz processor), the result comes from clock_gettime(CLOCK_MONOTONIC, &time_record)
+     function on Linux. This function delivers a record with nanosecond, 1 GHz, granularity. Then, PUPIL software does
      some math and delivers a float64.
-- Maximum Sampling Rate: 
+- Maximum Sampling Rate:
    - Depends on set-up, and it is lower when more cameras are present. (120Hz maximum based on a 5.7ms latency for
      the cameras and a 3.0ms processing latency.
 
@@ -93,7 +100,7 @@ We store the **gaze positions**, **pupil positions**, and additional information
 Coordinates of the pupil center in the eye video are called the **pupil position**, that has x,y coordinates normalized as described in the coordinate system above. This is stored within a dictionary structure within the `pupil_data` file.
 
 #### Gaze Positions
-The **pupil position** get mapped into the world space and thus becomes the **gaze position**.  This is the current center of the subject visual attention -- or what you're looking at in the world. This is stored within a dictionary structure within the `pupil_data` file. 
+The **pupil position** get mapped into the world space and thus becomes the **gaze position**.  This is the current center of the subject visual attention -- or what you're looking at in the world. This is stored within a dictionary structure within the `pupil_data` file.
 
 ### Looking at the data
 
@@ -110,7 +117,7 @@ Below is a list of the data exported using `v0.7.4` of Pupil Player with a recor
 * `timestamp` - timestamp of the source image frame
 * `index` - associated_frame: closest world video frame
 * `id` - 0 or 1 for left/right eye
-* `confidence` - is an assessment by the pupil detector on how sure we can be on this measurement. A value of `0` indicates no confidence. `1` indicates perfect confidence. In our experience useful data carries a confidence value greater than ~0.6. A `confidence` of exactly `0` means that we don't know anything. So you should ignore the position data.        
+* `confidence` - is an assessment by the pupil detector on how sure we can be on this measurement. A value of `0` indicates no confidence. `1` indicates perfect confidence. In our experience useful data carries a confidence value greater than ~0.6. A `confidence` of exactly `0` means that we don't know anything. So you should ignore the position data.
 * `norm_pos_x` - x position in the eye image frame in normalized coordinates
 * `norm_pos_x` - x position in the eye image frame in normalized coordinates
 * `norm_pos_y` - y position in the eye image frame in normalized coordinates
