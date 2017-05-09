@@ -27,7 +27,7 @@ The Capture window is the main control center for `Pupil Capture`. It displays l
 
 ### Capture Selection
 
-> {{< video-webm src="/videos/capture-selection/pc-select" >}}
+> {{< video-webm src="/videos/capture-selection/pc-select.webm" >}}
 
 <!-- > {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-cap-select.jpg" >}} -->
 
@@ -40,14 +40,14 @@ By default Pupil Capture will use Local USB as the capture source. If you have a
 
 ### Calibration
 
-> {{< video-webm src="/videos/calibration/calibration-headset/clb-hd" >}}
+> {{< video-webm src="/videos/calibration/calibration-headset/clb-hd.webm" >}}
 
 Pupil uses two cameras. One camera records a subject's eye movements -- we call this the `eye camera`. Another camera records the subject's field of vision -- we call this the `world camera`. In order to know what someone is looking at, we must find the parameters to a function that correlates these two streams of information.
 
 
 ### Calibration Process
 
-> {{< video-webm src="/videos/calibration/calibration-mobo/clb-mobo" >}}
+> {{< video-webm src="/videos/calibration/calibration-mobo/clb-mobo.webm" >}}
 
 Adjust the headset according to your comfort and to ensure a good calibration result
 
@@ -74,7 +74,7 @@ Adjust the headset according to your comfort and to ensure a good calibration re
 
 #### Screen Marker Calibration
 
-> {{< video-webm src="/videos/calibration/calibration-screen/clb-s" >}}
+> {{< video-webm src="/videos/calibration/calibration-screen/clb-s.webm" >}}
 
 <!-- > {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-screen-calib.jpg" >}} -->
 
@@ -95,7 +95,7 @@ In the `Advanced` sub-menu you can set the `sample duration` -- the number of fr
 
 #### Manual Marker Calibration
 
-> {{< video-webm src="/videos/calibration/calibration-manual/clb-man" >}}
+> {{< video-webm src="/videos/calibration/calibration-manual/clb-man.webm" >}}
 
 <!-- > {{< lqip-img figure-class="img-s" src="/images/pupil-capture/calibration-markers/manual_calibration_marker-01.jpg" >}}
 
@@ -129,7 +129,7 @@ You will notice that there are no standard controls, only an `Advanced` sub-menu
 
 #### Natural Features Calibration
 
-> {{< video-webm src="/videos/calibration/calibration-natural/clb-natural" >}}
+> {{< video-webm src="/videos/calibration/calibration-natural/clb-natural.webm" >}}
 
 <!-- > {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-natural-calib.jpg" >}} -->
 
@@ -160,7 +160,7 @@ The green outline show the calibrated area. Orange shows the sampled data points
 
 Adjust the headset according to your comfort and to ensure a good calibration result
 
-> {{< video-webm src="/videos/calibration/pupil-detection/pd" >}}
+> {{< video-webm src="/videos/calibration/pupil-detection/pd.webm" >}}
 
 > <div class="figure-container">
 	<div class="Grid Grid-row">
@@ -222,7 +222,7 @@ Using screen based 9 point calibration method, you should easily be able to achi
 
 <!-- > {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-recorder.jpg" >}} -->
 
-> {{< video-webm src="/videos/recording/rec" >}}
+> {{< video-webm src="/videos/recording/rec.webm" >}}
 
 
 Press `r` on your keyboard or press the blue circular `R` button in the left hand side of the world window to start recording. You will see red text with the elapsed time of recording next to the `R` button. To stop recording, press `r` on your keyboard or press the `R` button on screen.
@@ -257,7 +257,7 @@ For this to work your network needs to allow `UDP` transport. If the nodes do no
 
 ### Streaming Pupil Data over the network
 
-> {{< video-webm src="/videos/pupil-remote/pr" >}}
+> {{< video-webm src="/videos/pupil-remote/pr.webm" >}}
 
 <!-- > {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-pupil-remote.jpg" >}} -->
 
