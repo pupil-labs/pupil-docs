@@ -22,7 +22,7 @@ Pupil Capture is the software used with the Pupil Headset. The software reads th
 The Capture window is the main control center for `Pupil Capture`. It displays live video feed from pupil headset.
 
 1. **Graphs** - This area contains performance graphs. You can monitor `CPU` and `FPS` and pupil algorithm detection confidence. These graphs are the same as in the `World` window..
-1. **Settings GUI Menu** - This is the main GUI for Pupil Player. You can use this menu primarily to launch plugins and control global settings.  
+1. **Settings GUI Menu** - This is the main GUI for Pupil Player. You can use this menu primarily to launch plugins and control global settings.
 1. **Hot keys** - This area contains clickable buttons for plugins.
 
 ### Capture Selection
@@ -34,9 +34,9 @@ The Capture window is the main control center for `Pupil Capture`. It displays l
 By default Pupil Capture will use Local USB as the capture source. If you have a Pupil headset connected to your machine you will see video displayed from your Pupil headset in the World and eye windows. If no headset is connected or Pupil Capture is unable to open capture devices it will fall back to the Test Image. Other options for capture source are described below.
 
 - Test Image - This is the fallback behavior if no capture device is found, or if you do not want to connect to any capture device.
-- Video File Source - select this option to use previously recorded videos for the capture selection. 
+- Video File Source - select this option to use previously recorded videos for the capture selection.
 - Pupil Mobile - select this option When using Pupil Capture with the Pupil Mobile android application.
-- Local USB - select this option if your Pupil Headset is connected to the machine running Pupil Capture. This is the default setting. 
+- Local USB - select this option if your Pupil Headset is connected to the machine running Pupil Capture. This is the default setting.
 
 ### Calibration
 
@@ -340,3 +340,17 @@ A surface can be defined by one or more markers. Surfaces can be defined with Pu
 <aside class="notice">
   <strong>Note</strong> - When printing markers, ensure that white space remains around the square marker. You can scale the markers to different sizes, but make sure to have a white border width of at least 1.2 x the marker grid size for marker, unless the marker is affixed onto a white (or light colored) background.
 </aside>
+
+### Audio Capture
+The `Audio Capture` plugin provides access to a selected audio source for other plugins and writes its output to the `audio.wav` file during a recording. It also writes the Pupil Capture timestamp for each audio packet to the `audio_timestamps.npy` file. This way you can easily correlate single audio packets to their corresponding video frames. If you want to merge audio and video into a single file you will need to follow these steps:
+
+1. Open the recording in Pupil Player
+2. Make sure that the `Video Export` plugin is active
+3. Export the recording
+4. Use `ffmpeg` to mux the audio file and the *exported* video file:
+
+```
+ffmpeg -i <recording directory>/exports/<exported frame range>/world_viz.mp4 -i <recording directory>/world.wav -map 0:v:0 -map 1:a:0 -shortest muxed_post_export.mp4
+```
+
+Only the exported video contains the timestamps that are required for ffmpeg to sync audio and video correctly.
