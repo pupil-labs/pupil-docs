@@ -88,17 +88,16 @@ sys.path.append(os.path.join(base_dir,'my_shared_pupil_plugins'))
 #### Load your Plugin manually
 This is the "old" way of loading plugins. This method gives more flexibility but thats about it.
 
-   + Pupil Player
-     + Import your plugin in `player/main.py`
-     + Add your plugin to the `user_launchable_plugins` list in [`player/main.py`](https://github.com/pupil-labs/pupil/blob/master/pupil_src/player/main.py)
-   + Pupil Capture - World Process
-     + Import your plugin in `capture/world.py`
-     + Add your plugin to the `user_launchable_plugins` list in [`capture/world.py`](https://github.com/pupil-labs/pupil/blob/master/pupil_src/capture/world.py)
- 
-   + Select your plugin from the "Open plugin" in the main window to begin using it
+  + Pupil Player
+    + Import your plugin in `player/main.py`
+    + Add your plugin to the `user_launchable_plugins` list in [`player/main.py`](https://github.com/pupil-labs/pupil/blob/master/pupil_src/player/main.py)
+  + Pupil Capture - World Process
+    + Import your plugin in `capture/world.py`
+    + Add your plugin to the `user_launchable_plugins` list in [`capture/world.py`](https://github.com/pupil-labs/pupil/blob/master/pupil_src/capture/world.py)
+  + Select your plugin from the "Open plugin" in the main window to begin using it
 
 
-**Text below this line is currently being revised. Feel encouraged to contribute.**
+<!-- **Text below this line is currently being revised. Feel encouraged to contribute.** -->
 
 ### Example plugin development walkthrough
 

@@ -19,9 +19,9 @@ If you have questions, encounter any problems, or want to share progress -- writ
 Pupil is a prototype and will continue to be in active development. If you plan to make changes to Pupil, want to see how it works, [make a fork][fork], install all dependencies and run Pupil source directly with Python.
 
 ### Installing Dependencies
-* [Linux](#linux) step-by-step instructions for Ubuntu 16.04 LTS +
-* [MacOS](#macos) step-by-step instructions for MacOS 10.8+
-* [Windows](#windows) step-by-step instructions for Windows 10
+* [Linux](#linux-dependencies) step-by-step instructions for Ubuntu 16.04 LTS +
+* [MacOS](#macos-dependencies) step-by-step instructions for MacOS 10.8+
+* [Windows](#windows-dependencies) step-by-step instructions for Windows 10
 
 ### Download and Run Pupil Source Code
 

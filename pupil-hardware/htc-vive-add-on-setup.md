@@ -6,7 +6,7 @@ page_weight = 2.1
 
 ## HTC Vive Setup
 
-This page will guide you through all steps needed to turn your HTC Vive into an eye tracking HMD using a Pupil Labs eye tracking add-on.
+This section will guide you through all steps needed to turn your HTC Vive into an eye tracking HMD using a Pupil Labs eye tracking add-on.
 
 ### Install the add-on
 

@@ -41,7 +41,7 @@ This is the workhorse.
 * Records video and data.
 Most, and preferably all coordination and control happens within the World process.
 
-TBA
+<!-- TBA -->
 
 #### Pupil Datum format
 

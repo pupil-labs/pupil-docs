@@ -21,4 +21,4 @@ Once you have a Pupil Headset all you need to do is install the Pupil apps on a 
   </p>
 </div>
 
-We are always working on new features, fixing bugs, and making improvements. Make sure to visit the release page frequently to download the latest version and follow the Pupil Labs [blog](https://pupil-labs.com/blog "Pupil Labs Blog) for updates. 
+We are always working on new features, fixing bugs, and making improvements. Make sure to visit the release page frequently to download the latest version and follow the Pupil Labs [blog](https://pupil-labs.com/blog) for updates. 

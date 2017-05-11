@@ -242,10 +242,10 @@ If you open up a session folder you will see a collection of video(s) and data f
 
 Click on the selector "Open Plugin" and select your plugin.
 
-### Pupil Sync
-`pupil_sync` can help you to collect data from different devices and control an experiment with multiple actors (data generators and sensors) or use more than one Pupil device simultaneously:
+### Pupil Groups
+`Pupil Groups` can help you to collect data from different devices and control an experiment with multiple actors (data generators and sensors) or use more than one Pupil device simultaneously:
 
-* Load the `Pupil Sync` plugin from the `General` sub-menu in the GUI.
+* Load the `Pupil Groups` plugin from the `General` sub-menu in the GUI.
 * Once the plugin is active it will show all other local network pupil sync nodes in the GUI
 * It will also automatically synchronise time up to 0.1ms.
 * Furthermore actions like starting and stopping a recording on one device will be mirrored instantly on all other devices.
@@ -253,7 +253,7 @@ Click on the selector "Open Plugin" and select your plugin.
 For this to work your network needs to allow `UDP` transport. If the nodes do not find each other, create a local wifi network and use that instead.
 
 <aside class="notice">
-  Pupil sync can easily be integrated in your own app or device. Have a look at <a href="https://github.com/pupil-labs/pupil-helpers/tree/master/pupil_sync">pupil helpers</a> to get started.
+  Pupil Groups can easily be integrated in your own app or device. Have a look at <a href="https://github.com/pupil-labs/pupil-helpers/tree/master/pupil_sync">pupil helpers</a> to get started.
 </aside>
 
 ### Streaming Pupil Data over the network
@@ -306,13 +306,13 @@ We have written some simple Python scripts that you can try using Pupil Server t
 ### Message Format for Pupil Server
 Messages from pupil server mirror all objects in the `events` dict that is used internally in pupil capture and player. The data is send per topic (`pupil_positions`, `gaze_positions` ...) and serialized using [json](https://docs.python.org/2/library/json.html). The example above tells it all.
 
-### Marker Tracking
+### Surface Tracking
 
 > {{< video-webm src="/videos/surface-tracking/srf-tracking" >}}
 
 <!-- > {{< video-youtube embed-url="https://www.youtube.com/embed/bmqDGE6a9kc" >}} -->
 
-The `Marker Tracking` plugin allows you to define surfaces within your environment and track surfaces in realtime using a 5x5 square marker. We were greatly inspired by the [ArUco marker tracking library](http://www.uco.es/investiga/grupos/ava/node/26).
+The `Surface Tracker` plugin allows you to define surfaces within your environment and track surfaces in realtime using a 5x5 square marker. We were greatly inspired by the [ArUco marker tracking library](http://www.uco.es/investiga/grupos/ava/node/26).
 
 *  Markers - We use a 5x5 square marker. This is not the same marker that is used by ArUco (they use 7x7).
 *  Using a 5x5 marker gives us 64 unique markers.
