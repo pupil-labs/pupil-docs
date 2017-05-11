@@ -151,7 +151,7 @@ This plugin can be used to overlay the eye video on top of the world video. Note
 
 ### Analysis Plugins
 
-These plugins are simple unique plugins, that operate on the gaze data to produce visualizations and analysis.
+These plugins are simple unique plugins, that operate on the gaze data for analysis and visualizations.
 
 #### Manual Gaze Correction
 This plugin allows one to manually offset the gaze position. The offset values are between `-1` and `1`. This plugin is **unique**, therefore you can only load one instance of this plugin. You can set the following parameters:
