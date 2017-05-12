@@ -77,10 +77,10 @@ The default `recordings` directory will have the following hierarchy.
 
 * `recordings`
   * 2016-04-05
-	    * 001
-	    * 002
-	    * 003
-	    * ####
+    * 001
+    * 002
+    * 003
+    * ####
 
 #### How recordings are saved?
 
