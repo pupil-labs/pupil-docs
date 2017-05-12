@@ -25,7 +25,7 @@ For discussion or questions on Windows installation head over to the [Pupil Goog
 
 **Visual C++ Runtime**
 
-* Install Visual Studio Community 2017
+* Install Visual Studio 2015 Community Update 3
 
 **Python (64-bit)**
 
