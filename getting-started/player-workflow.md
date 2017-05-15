@@ -22,7 +22,7 @@ Player comes with a number of plugins. Plugins are classified by their use-case.
 
 #### Where are Pupil Player exports saved?
 
-> {{< lqip-img src="/images/pupil-player/recording/export_folder.jpg" >}}
+> {{< webp-img src="/images/pupil-player/recording/export_folder.jpg" >}}
 
 Exports are saved within a dedicated folder named `exports` within the original recording folder.
 
