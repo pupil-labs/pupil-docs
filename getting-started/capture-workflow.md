@@ -8,11 +8,11 @@ page_weight = 1
 ## Capture Workflow
 
 
-Go through the following steps to get familiar with the Pupil workflow. You can also check out [video tutorials](#walkthrough-videos) at the end of the guide. 
+Go through the following steps to get familiar with the Pupil workflow. You can also check out [video tutorials](#pupil-capture-demo-video) at the end of the guide. 
 
 
 ### 1. Put on Pupil
-Put on the Pupil headset and plug it in to your computer. Headsets are adjustable and shipped with additional parts. For more information head over to the [Pupil Hardware](#pupil-hardware "pupil hardware") guide.
+Put on the Pupil headset and plug it in to your computer. Headsets are adjustable and shipped with additional parts. For more information head over to the [Pupil Hardware](#pupil-hardware) guide.
 
 ### 2. Start Pupil Capture
 

@@ -56,7 +56,7 @@ Depending on your configuration, some additional parts may be included with your
       <p style="padding: 10px;">You can <b>slide</b> the eye camera arm along the track.</p>
     </div>
     <div class="Grid-cell">
-     {{< figure-img figure-class="figure-containerf" src="/images/pupil-hardware/eyerotate.gif" >}}
+     {{< figure-img figure-class="figure-container" src="/images/pupil-hardware/eyerotate.gif" >}}
       <p style="padding: 10px;">You can <b>rotate</b> the eye camera about its ball joint.</p>
     </div>
     <div class="Grid-cell">

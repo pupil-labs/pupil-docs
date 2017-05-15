@@ -13,7 +13,7 @@ page_weight = 1
 
 Pupil Player is the second tool you will use after Pupil Capture. It is a media and data visualizer at its core. You will use it to look at Pupil Capture recordings. Visualize your data and export it.
 
-Features like <a href="#marker-tracking">surface tracking</a> found in Pupil Capture are also available in Pupil Player.
+Features like <a href="#surface-tracking">surface tracking</a> found in Pupil Capture are also available in Pupil Player.
 
 ### Player Window
 Let's get familiar with the Player window.
@@ -71,8 +71,8 @@ There are two general types of plugins:
 
 In the following sections we provide a summary of plugins currently available and in Pupil Player.
 
-### Visualization Plugins and Utilities
-For the sake of clarity, we will call plugins with the `Vis` prefix **visualization** plugins. These plugins are simple plugins, are mostly additive (or *not unique*), and directly operate on the gaze positions to produce visualizations. Other plugins like `Offline Marker Detector` also produces visualizations, but will be discussed elsewhere due to the extent of its features.    
+### Visualization Plugins
+For the sake of clarity, we will call plugins with the `Vis` prefix **visualization** plugins. These plugins are simple plugins, are mostly additive (or *not unique*), and directly operate on the gaze positions to produce visualizations. Other plugins like `Offline Surface Tracker` also produces visualizations, but will be discussed elsewhere due to the extent of its features.    
 
 #### Vis Circle
 
@@ -102,7 +102,7 @@ Visualize the gaze positions with a cross for each gaze position. This plugin is
 
 Here we show an example of how you could use **2** instances of the `Vis Cross` Plugin. The first instance renders the gaze position as a red cross with that extends to the boundaries of the screen. The second instance renders the gaze position as a green cross, with a heavier stroke weight.
 
-#### Scan Path
+#### Vis Scan Path
 
 > {{< lqip-img src="/images/pupil-player/plugin/scanpath.jpg" >}}
 
@@ -133,13 +133,7 @@ Visualize the gaze positions as a point of light for each gaze position. The `fa
 
 Here is an example demonstrating `Vis Light Points` with a falloff of 73.
 
-#### Manual Gaze Correction
-This plugin allows one to manually offset the gaze position. The offset values are between `-1` and `1`. This plugin is **unique**, therefore you can only load one instance of this plugin. You can set the following parameters:
-
-  + `x_offset` - the amount to offset the gaze position horizontally
-  + `y_offset` - the amount to offset the gaze position vertically
-
-#### Eye Video Overlay
+#### Vis Eye Video Overlay
 
 > {{< lqip-img src="/images/pupil-player/plugin/eyeoverlay.jpg" >}}
 
@@ -154,6 +148,41 @@ This plugin can be used to overlay the eye video on top of the world video. Note
   + `move overlay` - toggle `on` and then click and drag eye video to move around in the player window. Toggle `off` when done moving the video frames.
   + `show` - show or hide eye video overlays.
   + `horiz. and vert. flip` - flip eye videos vertically or horizontally
+
+### Analysis Plugins
+
+These plugins are simple unique plugins, that operate on the gaze data for analysis and visualizations.
+
+#### Manual Gaze Correction
+This plugin allows one to manually offset the gaze position. The offset values are between `-1` and `1`. This plugin is **unique**, therefore you can only load one instance of this plugin. You can set the following parameters:
+
+  + `x_offset` - the amount to offset the gaze position horizontally
+  + `y_offset` - the amount to offset the gaze position vertically
+
+#### Offline Surface Tracker
+
+> {{< lqip-img src="/images/pupil-player/plugin/offline-surface-tracker.jpg" >}}
+
+This plugin is an offline version of the [Surface Tracking](#surface-tracking) plugin for Pupil Capture. You can use this plugin to detect markers in the recording, define surfaces, edit surfaces, and create and export visualizations of gaze data within the defined surfaces.
+
+Here is an example workflow for using the `Offline Surface Detector` plugin to generate heatmap visualizations and export surface data reports:
+
+  + Load `Offline Surface Detector` plugin - if you already have surfaces defined, the load may take a few seconds because the plugin will look through the entire video and cache the detected surfaces.
+  + Add surface - if you do not have any defined surfaces, you can click on the `Add surface` button when the markers you want to user are visible or just click the circular `A` button in the left hand side of the screen.
+  + Surface name and size - In the `Marker Detector` GUI window, define the surface name and real world size. *Note* - defining size is important as it will affect how heatmaps are rendered.
+  + Set trim marks - optional, but if you want to export data for a specific range, then you should set the trim marks.
+  + Recalculate gaze distributions - click the `(Re)calculate gaze distributions` button after specifying surface sizes. You should now see heatmaps in the Player window (if gaze positions were within your defined surfaces).
+  + Export gaze and surface data - click `e` and all surface metrics reports will be exported and saved for your trim section within your `export` folder.
+
+#### Fixation Detector - Dispersion Duration
+
+> {{< lqip-img src="/images/pupil-player/plugin/2d-fixation.jpg" >}}
+
+> {{< lqip-img src="/images/pupil-player/plugin/3d-fixation.jpg" >}}
+
+This plugin detects fixation based on a dispersion threshold in terms of degrees of visual angle. This plugin is **unique**, therefore you can only load one instance of this plugin.
+
+Toggle `Show fixations` to show a visualization of fixations. The blue number is the number of the fixation (0 being the first fixation). You can export fixation reports for your current trim section by pressing `e` on your keyboard or the `e` hot key button in the left hand side of the window.
 
 ### Export
 You can export data and videos by pressing `e` on your keyboard or the `e` hot key button in the Pupil Player window.
@@ -184,31 +213,6 @@ The exporter will run in the background and you can see the progress bar of the 
 To export `.csv` files of your data, load the `Raw Data Exporter` plugin. You can select the frame range to export by setting trim marks in the seek bar or directly in the plugin GUI.
 
 Click press the `e` button or click `e` on your keyboard to start the export.
-
-#### Offline Surface Tracker
-
-> {{< lqip-img src="/images/pupil-player/plugin/offline-surface-tracker.jpg" >}}
-
-This plugin is an offline version of the [Surface Tracking](#marker-tracking) plugin for Pupil Capture. You can use this plugin to detect markers in the recording, define surfaces, edit surfaces, and create and export visualizations of gaze data within the defined surfaces.
-
-Here is an example workflow for using the `Offline Surface Detector` plugin to generate heatmap visualizations and export surface data reports:
-
-  + Load `Offline Surface Detector` plugin - if you already have surfaces defined, the load may take a few seconds because the plugin will look through the entire video and cache the detected surfaces.
-  + Add surface - if you do not have any defined surfaces, you can click on the `Add surface` button when the markers you want to user are visible or just click the circular `A` button in the left hand side of the screen.
-  + Surface name and size - In the `Marker Detector` GUI window, define the surface name and real world size. *Note* - defining size is important as it will affect how heatmaps are rendered.
-  + Set trim marks - optional, but if you want to export data for a specific range, then you should set the trim marks.
-  + Recalculate gaze distributions - click the `(Re)calculate gaze distributions` button after specifying surface sizes. You should now see heatmaps in the Player window (if gaze positions were within your defined surfaces).
-  + Export gaze and surface data - click `e` and all surface metrics reports will be exported and saved for your trim section within your `export` folder.
-
-#### Fixation Detector - Dispersion Duration
-
-> {{< lqip-img src="/images/pupil-player/plugin/2d-fixation.jpg" >}}
-
-> {{< lqip-img src="/images/pupil-player/plugin/3d-fixation.jpg" >}}
-
-This plugin detects fixation based on a dispersion threshold in terms of degrees of visual angle. This plugin is **unique**, therefore you can only load one instance of this plugin.
-
-Toggle `Show fixations` to show a visualization of fixations. The blue number is the number of the fixation (0 being the first fixation). You can export fixation reports for your current trim section by pressing `e` on your keyboard or the `e` hot key button in the left hand side of the window.
 
 #### Batch Exporter
 You can use this plugin to apply visualizations to an entire directory (folder) of recordings in one batch. You need to specify the following:
