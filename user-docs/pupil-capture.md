@@ -64,7 +64,7 @@ Pupil uses two cameras. One camera records a subject's eye movements -- we call 
 	</div>
 </div>
 
-Pupil Headset comes in a variety of configurations.  Calibration be conducted with a monocular or binocular eye camera setup.
+Pupil Headset comes in a variety of configurations.  Calibration can be conducted with a monocular or binocular eye camera setup.
 
 ### Calibration Methods
 
