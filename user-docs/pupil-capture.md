@@ -49,9 +49,6 @@ Pupil uses two cameras. One camera records a subject's eye movements -- we call 
 
 > {{< video-webm src="/videos/calibration/calibration-mobo/clb-mobo.webm" >}}
 
-Pupil Headset comes in a variety of configurations.  Calibration be conducted with a monocular or binocular eye camera setup.
-
-
 > <div class="figure-container">
 	<div class="Grid Grid-row">
 		<div class="Grid-cell--1of2">
@@ -66,6 +63,8 @@ Pupil Headset comes in a variety of configurations.  Calibration be conducted wi
 		</div>
 	</div>
 </div>
+
+Pupil Headset comes in a variety of configurations.  Calibration can be conducted with a monocular or binocular eye camera setup.
 
 ### Calibration Methods
 
@@ -184,30 +183,17 @@ Pupil's algorithms automatically detect the participant's pupil. With the 3d det
 Make sure that the users pupil is properly tracked. Make sure that the world camera is in focus for the distance at which you want to calibrate, and that you can see the entire area you want to calibrate within the world cameras extents (FOV).
 
 > <div class="figure-container">
-	<div class="Grid Grid-row">
-		<div class="Grid-cell--1of2">
-			<div class="Grid-cell">
-				{{< lqip-img figure-class="img-m" src="/images/pupil-hardware/pupil-detect.jpg" >}}
-			</div>
-		</div>
-		<div class="Grid-cell--1of2">
-			<div class="Grid-cell">
-				{{< lqip-img figure-class="img-m" src="/images/pupil-hardware/focus.jpg" >}}
-			</div>
-		</div>
-	</div>
-</div>
-
-> <div class="figure-container">
-	<div class="Grid Grid-row">
-		<div class="Grid-cell--1of2">
-			<div class="Grid-cell" style="padding:0 .5em 0 .5em;">
-				<p>Your pupil is properly detected by the eye camera</p>
-			</div>
-		</div>
-		<div class="Grid-cell--1of2">
-			<div class="Grid-cell" style="padding:0 .5em 0 .5em;">
-				<p>Make sure the world camera is in focus</p>
+	<div class="Grid Grid--justifyCenter Grid--center Grid--alignContentCenter Feature-row">
+		<div class="Grid-cell Grid-cell--full">
+			<div class="Grid Grid--1of2 Text-center u-padBottom--2">
+				<div class="Grid-cell ">
+					{{< lqip-img figure-class="img-m" src="/images/pupil-hardware/pupil-detect.jpg" >}}
+					<p>Your pupil is properly detected by the eye camera</p>
+				</div>
+				<div class="Grid-cell">
+					{{< lqip-img figure-class="img-m" src="/images/pupil-hardware/focus.jpg" >}}
+					<p>Make sure the world camera is in focus</p>
+				</div>
 			</div>
 		</div>
 	</div>
