@@ -67,7 +67,7 @@ See a video demonstration of how to set recordings path, session name, and start
 
 #### Where is the recording saved?
 
-> {{< lqip-img src="/images/pupil-capture/recording/rec_folder.jpg" >}}
+> {{< webp-img src="/images/pupil-capture/recording/rec_folder.jpg" >}}
 
 By default, each recording will live in its own unique data folder contained in the `recordings` folder.
 
