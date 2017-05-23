@@ -38,7 +38,7 @@ Depending on your configuration, some additional parts may be included with your
 
 A lot of design and engineering thought has gone into getting the ergonomics of the headset just right. It is designed to fit snugly, securely, and comfortably. The headset and cameras can be adjusted to accommodate a wide range of users. 
 
-To ensure a robust session when the headset are in use, make sure all the cameras are in focus with a good field of view of your eyes.
+To ensure a robust eye tracking performance, make sure all the cameras are in focus with a good field of view of your eyes.
 
 #### Slide
 > {{< video-webm src="/videos/headset-adjust/eyecam-slide.webm" >}}
