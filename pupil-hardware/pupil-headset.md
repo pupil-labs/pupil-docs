@@ -58,7 +58,7 @@ The eye camera arm is connected to the eye camera via the ball joint. You can ro
 #### Screw
 > {{< video-webm src="/videos/headset-adjust/eyecam-screw.webm" >}}
 
-The ball joint controls the firmness of the eye camera. Adjust the socket screw to increase or decrease the firmness.
+You can adjust the set screw to control the movement of the eye camera about the ball joint. We recommend setting the set screw so that you can still move the eye camera by hand but not so loose that the eye camera moves when moving the head. You can also tighten the set screw to fix the eye camera in place.
 
 <aside class="notice">
   Before you calibrate, make sure to properly adjust the headset to get optimal eye detection and world camera FOV.
@@ -69,7 +69,7 @@ The ball joint controls the firmness of the eye camera. Adjust the socket screw 
 
 > {{< video-webm src="/videos/headset-adjust/eye-adjust.webm" >}}
 
-Make sure the eye camera is in focus. If you can see details of your iris, then the focus is most likely good. **Slide the eye camera arm** to adjust focus and/or use the lens adjuster tool.
+Make sure the eye camera is in focus. Twist the lens focus ring of the eye camera with your fingers or lens adjuster tool to bring the eye camera into focus.
 
 #### Focus World Camera
 
