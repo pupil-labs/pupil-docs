@@ -17,27 +17,18 @@ Pupil ships with a number of additional parts. The below sections provide an ove
 ### Additional parts
 
 #### World Camera
-> {{< lqip-img figure-class="img-m" src="/images/pupil-hardware/pupil-parts-1.jpg" >}}
 
-The world camera comes with two lenses. 60 degree FOV lens (shown on the left) and a wide angle 100 degree FOV lens (shown on the right).
+> {{< video-webm src="/videos/headset-adjust/worldcam-lens.webm" >}}
+
+The world camera comes with two lenses. 60 degree FOV lens (shown on the left) and a wide angle 100 degree FOV lens (shown on the right). 
+
+The world camera lens are interchangable, so you can swap between the two lenses provided for normal or wide angle FOV.
 
 #### Nose Pads
-> {{< lqip-img figure-class="img-m" src="/images/pupil-hardware/pupil-parts-3.jpg" >}}
+
+> {{< video-webm src="/videos/headset-adjust/nosepad.webm" >}}
 
 All Pupil headsets come with 2 sets of nose pads. You can swap the nose pads to customize the fit.
-
-<!-- <div class="content-container">
-  <div class="Grid Grid--1of2 u-textCenter">
-    <div class="Grid-cell">
-      {{< lqip-img src="/images/pupil-hardware/pupil-parts-1.jpg" >}}
-      <p style="padding: 10px;">The world camera comes with two lenses. 60 degree FOV lens (shown on the left) and a wide angle 100 degree FOV lens (shown on the right).</p>
-    </div>
-    <div class="Grid-cell">
-      {{< lqip-img src="/images/pupil-hardware/pupil-parts-3.jpg" >}}
-      <p style="padding: 10px;">All Pupil headsets come with 2 sets of nose pads. You can swap the nose pads to customize the fit.</p>
-    </div>
-  </div>
-</div> -->
 
 <aside class="notice">
 Depending on your configuration, some additional parts may be included with your Pupil headset.
@@ -45,61 +36,46 @@ Depending on your configuration, some additional parts may be included with your
 
 ### Pupil Headset Adjustments
 
-> {{< lqip-img figure-class="img-m" src="/images/pupil-hardware/eye-screw.jpg" >}}
+A lot of design and engineering thought has gone into getting the ergonomics of the headset just right. It is designed to fit snugly, securely, and comfortably. The headset and cameras can be adjusted to accommodate a wide range of users. 
 
-> <p style="text-align: center;">Adjust the ball joint firmness by adjusting the socket screw.</p>
+To ensure a robust eye tracking performance, make sure all the cameras are in focus with a good field of view of your eyes.
 
-<div class="content-container" style="clear:none;">
-  <div class="Grid Grid--1of3 u-textCenter">
-    <div class="Grid-cell">
-      {{< figure-img figure-class="figure-container" src="/images/pupil-hardware/eyearm.gif" >}}
-      <p style="padding: 10px;">You can <b>slide</b> the eye camera arm along the track.</p>
-    </div>
-    <div class="Grid-cell">
-     {{< figure-img figure-class="figure-container" src="/images/pupil-hardware/eyerotate.gif" >}}
-      <p style="padding: 10px;">You can <b>rotate</b> the eye camera about its ball joint.</p>
-    </div>
-    <div class="Grid-cell">
-      {{< figure-img figure-class="figure-container" src="/images/pupil-hardware/world.gif" >}}
-      <p style="padding: 10px;">You can <b>rotate</b> the world camera to align with your FOV.</p>
-    </div>
-  </div>
-</div>
+#### Slide
+> {{< video-webm src="/videos/headset-adjust/eyecam-slide.webm" >}}
+
+The eye camera arm slides in and out of the headset frame. You can slide the eye camera arm along the track.
+
+#### Rotate
+> {{< video-webm src="/videos/headset-adjust/worldcam-rotate.webm" >}}
+
+You can rotate the world camera up and down to align with your FOV.
+
+#### Rotate
+> {{< video-webm src="/videos/headset-adjust/eyecam-rotate.webm" >}}
+
+The eye camera arm is connected to the eye camera via the ball joint. You can rotate about its ball joint.
+
+#### Screw
+> {{< video-webm src="/videos/headset-adjust/eyecam-screw.webm" >}}
+
+You can adjust the set screw to control the movement of the eye camera about the ball joint. We recommend setting the set screw so that you can still move the eye camera by hand but not so loose that the eye camera moves when moving the head. You can also tighten the set screw to fix the eye camera in place.
 
 <aside class="notice">
   Before you calibrate, make sure to properly adjust the headset to get optimal eye detection and world camera FOV.
 </aside>
 
 ### Focus Cameras
-
 #### Focus Eye Camera
-> {{< lqip-img figure-class="img-m" src="/images/pupil-hardware/pupil-parts-2.jpg" >}}
 
-**Very important** - make sure the eye camera is in focus. If you can see details of your iris, then the focus is most likely good. **Slide the eye camera arm** to adjust focus and/or use the lens adjuster tool.
+> {{< video-webm src="/videos/headset-adjust/eye-adjust.webm" >}}
+
+Make sure the eye camera is in focus. Twist the lens focus ring of the eye camera with your fingers or lens adjuster tool to bring the eye camera into focus.
 
 #### Focus World Camera
-> {{< lqip-img figure-class="img-m" src="/images/pupil-hardware/pupil-parts-4.jpg" >}}
 
-Set the focus for the distance at which you will be calibrating.
+> {{< video-webm src="/videos/headset-adjust/worldcam-focus.webm" >}}
 
-
-
-
-<!-- <div class="content-container">
-  <div class="Grid Grid--1of2 u-textCenter">
-    <div class="Grid-cell">
-      <p align='center'><strong>Focus Eye Camera</strong></p>
-      {{< lqip-img src="/images/pupil-hardware/pupil-parts-2.jpg" data-src="/images/pupil-hardware/pupil-parts-2.jpg" >}}
-
-      <p style="padding: 10px;"><b>Very important</b> - make sure the eye camera is in focus. If you can see details of your iris, then the focus is most likely good. <b>Slide the eye camera arm</b> to adjust focus and/or use the lens adjuster tool.</p>
-    </div>
-    <div class="Grid-cell">
-      <p align='center'><strong>Focus World Camera</strong></p>
-      {{< lqip-img src="/images/pupil-hardware/pupil-parts-4.jpg" data-src="/images/pupil-hardware/pupil-parts-4.jpg" >}}
-      <p style="padding: 10px;">Set the focus for the distance at which you will be calibrating.</p>
-    </div>
-  </div>
-</div> -->
+Set the focus for the distance at which you will be calibrating by rotating the camera lens.
 
 <aside class="notice">
   It is <strong>very important</strong> that your eye camera(s) are in focus. You will not achieve optimal eye tracking performance with poorly focused cameras. Pupil cameras are focused manually using the focus tool to twist the lens of the eye camera and adjusting the focal depth.
