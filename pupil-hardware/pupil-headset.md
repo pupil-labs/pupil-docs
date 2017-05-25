@@ -40,22 +40,22 @@ A lot of design and engineering thought has gone into getting the ergonomics of 
 
 To ensure a robust eye tracking performance, make sure all the cameras are in focus with a good field of view of your eyes.
 
-#### Slide
+#### Slide Eye Camera
 > {{< video-webm src="/videos/headset-adjust/eyecam-slide.webm" >}}
 
 The eye camera arm slides in and out of the headset frame. You can slide the eye camera arm along the track.
 
-#### Rotate
+#### Rotate World Camera
 > {{< video-webm src="/videos/headset-adjust/worldcam-rotate.webm" >}}
 
 You can rotate the world camera up and down to align with your FOV.
 
-#### Rotate
+#### Rotate Eye Camera
 > {{< video-webm src="/videos/headset-adjust/eyecam-rotate.webm" >}}
 
 The eye camera arm is connected to the eye camera via the ball joint. You can rotate about its ball joint.
 
-#### Screw
+#### Ball Joint Set Screw
 > {{< video-webm src="/videos/headset-adjust/eyecam-screw.webm" >}}
 
 You can adjust the set screw to control the movement of the eye camera about the ball joint. We recommend setting the set screw so that you can still move the eye camera by hand but not so loose that the eye camera moves when moving the head. You can also tighten the set screw to fix the eye camera in place.
@@ -80,5 +80,4 @@ Set the focus for the distance at which you will be calibrating by rotating the 
 <aside class="notice">
   It is <strong>very important</strong> that your eye camera(s) are in focus. You will not achieve optimal eye tracking performance with poorly focused cameras. Pupil cameras are focused manually using the focus tool to twist the lens of the eye camera and adjusting the focal depth.
 </aside>
-
 
