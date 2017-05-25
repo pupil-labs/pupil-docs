@@ -18,7 +18,7 @@ Features like <a href="#surface-tracking">surface tracking</a> found in Pupil Ca
 ### Player Window
 Let's get familiar with the Player window.
 
-> {{< lqip-img src="/images/pupil-player/pp_cl_main.jpg" >}}
+> {{< webp-img src="/images/pupil-player/pp_cl_main.webp" >}}
 
 The Player window is the main control center for `Pupil Player`. It displays the recorded video feed from pupil capture file.
 
@@ -31,7 +31,7 @@ The Player window is the main control center for `Pupil Player`. It displays the
 
 ### Starting Pupil Player
 
-> {{< lqip-img src="/images/pupil-player/pp_start.jpg" >}}
+> {{< webp-img src="/images/pupil-player/pp_start.webp" >}}
 
 Drag the recording directory (the triple digit one) directly onto the app icon **or** launch the application and drag + drop the recording directory into Pupil Player window.
 
@@ -76,7 +76,7 @@ For the sake of clarity, we will call plugins with the `Vis` prefix **visualizat
 
 #### Vis Circle
 
-> {{< lqip-img src="/images/pupil-player/plugin/vizcircle.jpg" >}}
+> {{< webp-img src="/images/pupil-player/plugin/vizcircle.webp" >}}
 
 Visualize the gaze positions with a circle for each gaze position. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization.
 
@@ -91,7 +91,7 @@ Here we show an example of how you could use **2** instances of the `Vis Circle`
 
 #### Vis Cross
 
-> {{< lqip-img src="/images/pupil-player/plugin/vizcross.jpg" >}}
+> {{< webp-img src="/images/pupil-player/plugin/vizcross.webp" >}}
 
 Visualize the gaze positions with a cross for each gaze position. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization. You can set the following parameters:
 
@@ -104,7 +104,7 @@ Here we show an example of how you could use **2** instances of the `Vis Cross` 
 
 #### Vis Scan Path
 
-> {{< lqip-img src="/images/pupil-player/plugin/scanpath.jpg" >}}
+> {{< webp-img src="/images/pupil-player/plugin/scanpath.webp" >}}
 
 This plugin enables past gaze positions to stay visible for the duration of time specified by the user. This plugin is **unique**, therefore you can only load one instance of this plugin.
 
@@ -114,7 +114,7 @@ Here we show an example of `Scan Path` set with `0.4` seconds duration used with
 
 #### Vis Polyline
 
-> {{< lqip-img src="/images/pupil-player/plugin/vizpoly.jpg" >}}
+> {{< webp-img src="/images/pupil-player/plugin/vizpoly.webp" >}}
 
 Visualize the gaze positions with a polyline for each gaze position. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization. You can set the following parameters:
 
@@ -125,7 +125,7 @@ An example showing `Vis Polyline` used with `Vis Circle` and `Scan Path`. The po
 
 #### Vis Light Points
 
-> {{< lqip-img src="/images/pupil-player/plugin/vizlightpoints.jpg" >}}
+> {{< webp-img src="/images/pupil-player/plugin/vizlightpoints.webp" >}}
 
 Visualize the gaze positions as a point of light for each gaze position. The `falloff` of the light from the gaze position is specified by the user. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization. You can set the following parameters:
 
@@ -135,7 +135,7 @@ Here is an example demonstrating `Vis Light Points` with a falloff of 73.
 
 #### Vis Eye Video Overlay
 
-> {{< lqip-img src="/images/pupil-player/plugin/eyeoverlay.jpg" >}}
+> {{< webp-img src="/images/pupil-player/plugin/eyeoverlay.webp" >}}
 
 Here is an example of the `Eye Video Overlay` with binocular eye videos.
 
@@ -161,7 +161,7 @@ This plugin allows one to manually offset the gaze position. The offset values a
 
 #### Offline Surface Tracker
 
-> {{< lqip-img src="/images/pupil-player/plugin/offline-surface-tracker.jpg" >}}
+> {{< webp-img src="/images/pupil-player/plugin/offline-surface-tracker.webp" >}}
 
 This plugin is an offline version of the [Surface Tracking](#surface-tracking) plugin for Pupil Capture. You can use this plugin to detect markers in the recording, define surfaces, edit surfaces, and create and export visualizations of gaze data within the defined surfaces.
 
@@ -176,9 +176,9 @@ Here is an example workflow for using the `Offline Surface Detector` plugin to g
 
 #### Fixation Detector - Dispersion Duration
 
-> {{< lqip-img src="/images/pupil-player/plugin/2d-fixation.jpg" >}}
+> {{< webp-img src="/images/pupil-player/plugin/2d-fixation.webp" >}}
 
-> {{< lqip-img src="/images/pupil-player/plugin/3d-fixation.jpg" >}}
+> {{< webp-img src="/images/pupil-player/plugin/3d-fixation.webp" >}}
 
 This plugin detects fixation based on a dispersion threshold in terms of degrees of visual angle. This plugin is **unique**, therefore you can only load one instance of this plugin.
 
@@ -191,14 +191,14 @@ All open plugins that have export capability will export when you press `e`. All
 
 #### Exports directory
 
-> {{< lqip-img src="/images/pupil-player/recording/recording_folder_exports_v07.jpg" >}}
+> {{< webp-img src="/images/pupil-player/recording/recording_folder_exports_v07.webp" >}}
 
 All exports are saved within the `exports` sub-directory within your recording directory.
 A new directory will be created within the `exports` directory named with the `start` frame and `end` frame that is specified by the trim marks.
 
 #### Video Export Launcher
 
-> {{< lqip-img src="/images/pupil-player/plugin/export.jpg" >}}
+> {{< webp-img src="/images/pupil-player/plugin/export.webp" >}}
 
 To export a video, load the `Export Video` plugin. You can select the frame range to export by setting trim marks in the seek bar or directly in the plugin GUI.
 
@@ -208,7 +208,7 @@ The exporter will run in the background and you can see the progress bar of the 
 
 #### Raw Data Exporter
 
-> {{< lqip-img src="/images/pupil-player/plugin/rawexport.jpg" >}}
+> {{< webp-img src="/images/pupil-player/plugin/rawexport.webp" >}}
 
 To export `.csv` files of your data, load the `Raw Data Exporter` plugin. You can select the frame range to export by setting trim marks in the seek bar or directly in the plugin GUI.
 
