@@ -10,7 +10,7 @@ This page contains documentation and discussion on open source camera mounts, op
 
 ### Camera Mounts
 
-> {{< lqip-img src="/images/pupil-hardware/explo_side_800_mounts.jpg" >}}
+> {{< webp-img src="/images/pupil-hardware/explo_side_800_mounts.webp" >}}
 
 We release the CAD files for the camera mounts for you to download, modify, in accordance with our [license](#license).  CAD files for the frame are not open source; [see explanation](#hardware). 
 

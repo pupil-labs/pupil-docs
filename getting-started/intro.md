@@ -7,7 +7,7 @@ page_weight = 0
 
 # Getting Started
 
-> {{< lqip-img figure-class="img-xs" src="/images/icons/Pupil_Logo_wiki-03.jpg" >}}
+> {{< webp-img figure-class="img-xs" src="/images/icons/Pupil_Logo_wiki-03.webp" >}}
 
 This guide will lead you through a basic workflow using Pupil hardware and software.
 

@@ -17,7 +17,7 @@ Pupil Capture is the software used with the Pupil Headset. The software reads th
 
 ### Capture Window
 
-> {{< lqip-img src="/images/pupil-capture/pc_cl_main.jpg" >}}
+> {{< webp-img src="/images/pupil-capture/pc_cl_main.webp" >}}
 
 The Capture window is the main control center for `Pupil Capture`. It displays live video feed from pupil headset.
 
@@ -28,8 +28,6 @@ The Capture window is the main control center for `Pupil Capture`. It displays l
 ### Capture Selection
 
 > {{< video-webm src="/videos/capture-selection/pc-select.webm" >}}
-
-<!-- > {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-cap-select.jpg" >}} -->
 
 By default Pupil Capture will use Local USB as the capture source. If you have a Pupil headset connected to your machine you will see video displayed from your Pupil headset in the World and eye windows. If no headset is connected or Pupil Capture is unable to open capture devices it will fall back to the Test Image. Other options for capture source are described below.
 
@@ -68,8 +66,6 @@ Pupil Headset comes in a variety of configurations.  Calibration can be conducte
 
 ### Calibration Methods
 
-<!-- > {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-calibrate.jpg" >}} -->
-
 <!-- First select the calibration method you would like to use: -->
 
 Before starting calibration, ensure that eye(s) are robustly detected and that the headset is comfortable for the participant.
@@ -77,8 +73,6 @@ Before starting calibration, ensure that eye(s) are robustly detected and that t
 #### Screen Marker Calibration
 
 > {{< video-webm src="/videos/calibration/calibration-screen/clb-s.webm" >}}
-
-<!-- > {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-screen-calib.jpg" >}} -->
 
 This is the default method, and a quick method to get started. It is best suited for close range eye-tracking in a narrow field of view.
 
@@ -98,12 +92,6 @@ In the `Advanced` sub-menu you can set the `sample duration` -- the number of fr
 #### Manual Marker Calibration
 
 > {{< video-webm src="/videos/calibration/calibration-manual/clb-man.webm" >}}
-
-<!-- > {{< lqip-img figure-class="img-s" src="/images/pupil-capture/calibration-markers/manual_calibration_marker-01.jpg" >}}
-
-> {{< lqip-img figure-class="img-s" src="/images/pupil-capture/calibration-markers/manual_calibration_marker-02.jpg" >}}
-
-> {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-manual-calib.jpg" >}} -->
 
 This method is done with an operator and a subject. It is suited for midrange distances and can accommodate a wide field of view. You need markers made of concentric circles, like the two shown below.
 
@@ -132,8 +120,6 @@ You will notice that there are no standard controls, only an `Advanced` sub-menu
 #### Natural Features Calibration
 
 > {{< video-webm src="/videos/calibration/calibration-natural/clb-natural.webm" >}}
-
-<!-- > {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-natural-calib.jpg" >}} -->
 
 This method is for special situations and far distances. Usually not required.
 
@@ -187,11 +173,11 @@ Make sure that the users pupil is properly tracked. Make sure that the world cam
 		<div class="Grid-cell Grid-cell--full">
 			<div class="Grid Grid--1of2 Text-center u-padBottom--2">
 				<div class="Grid-cell ">
-					{{< lqip-img figure-class="img-m" src="/images/pupil-hardware/pupil-detect.jpg" >}}
+					{{< webp-img figure-class="img-m" src="/images/pupil-hardware/pupil-detect.webp" >}}
 					<p>Your pupil is properly detected by the eye camera</p>
 				</div>
 				<div class="Grid-cell">
-					{{< lqip-img figure-class="img-m" src="/images/pupil-hardware/focus.jpg" >}}
+					{{< webp-img figure-class="img-m" src="/images/pupil-hardware/focus.webp" >}}
 					<p>Make sure the world camera is in focus</p>
 				</div>
 			</div>
@@ -207,10 +193,7 @@ Using screen based 9 point calibration method, you should easily be able to achi
 
 ### Recording
 
-<!-- > {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-recorder.jpg" >}} -->
-
 > {{< video-webm src="/videos/recording/rec.webm" >}}
-
 
 Press `r` on your keyboard or press the blue circular `R` button in the left hand side of the world window to start recording. You will see red text with the elapsed time of recording next to the `R` button. To stop recording, press `r` on your keyboard or press the `R` button on screen.
 
@@ -222,9 +205,7 @@ If you open up a session folder you will see a collection of video(s) and data f
 
 ### Open a plugin
 
-<!-- > {{< video-webm src="/videos/capture-plugin/pc-plugin" >}} -->
-
-> {{< lqip-img src="/images/pupil-capture/pc-plugin.jpg" >}}
+> {{< webp-img src="/images/pupil-capture/pc-plugin.webp" >}}
 
 Click on the selector "Open Plugin" and select your plugin.
 
@@ -245,8 +226,6 @@ For this to work your network needs to allow `UDP` transport. If the nodes do no
 ### Streaming Pupil Data over the network
 
 > {{< video-webm src="/videos/pupil-remote/pr.webm" >}}
-
-<!-- > {{< lqip-img figure-class="img-m" src="/images/pupil-capture/ui/pc-pupil-remote.jpg" >}} -->
 
 `Pupil Remote` is a plugin that is used to broadcast data over the network using the excellent library [Zero MQ](http://zeromq.org/).
 
@@ -296,8 +275,6 @@ Messages from pupil server mirror all objects in the `events` dict that is used 
 
 > {{< video-webm src="/videos/surface-tracking/srf-tracking.webm" >}}
 
-<!-- > {{< video-youtube embed-url="https://www.youtube.com/embed/bmqDGE6a9kc" >}} -->
-
 The `Surface Tracker` plugin allows you to define surfaces within your environment and track surfaces in realtime using a 5x5 square marker. We were greatly inspired by the [ArUco marker tracking library](http://www.uco.es/investiga/grupos/ava/node/26).
 
 *  Markers - We use a 5x5 square marker. This is not the same marker that is used by ArUco (they use 7x7).
@@ -308,7 +285,7 @@ The `Surface Tracker` plugin allows you to define surfaces within your environme
 
 #### Defining Surfaces with Markers
 
-> {{< lqip-img figure-class="img-m" src="/images/pupil-capture/calibration-markers/pupil_surface_markers.jpg" >}}
+> {{< webp-img figure-class="img-m" src="/images/pupil-capture/calibration-markers/pupil_surface_markers.webp" >}}
 
 A surface can be defined by one or more markers. Surfaces can be defined with Pupil Capture in real-time, or offline with Pupil Player. Below we provide an outline of steps.
 
