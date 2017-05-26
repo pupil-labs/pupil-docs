@@ -5,7 +5,8 @@
   "lang": "en-US",
   "orientation": "portrait",
   "theme_color": "#38ea92",
-  "theme_color": "#38ea92",
+  "start_url": "/",
+  "background_color": "#38ea92",
   "description": "Pupil Docs - user and developer documentation for Pupil eye tracking system",
   "icons": [
     {
