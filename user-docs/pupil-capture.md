@@ -397,6 +397,24 @@ A surface can be defined by one or more markers. Surfaces can be defined with Pu
   <strong>Note</strong> - When printing markers, ensure that white space remains around the square marker. You can scale the markers to different sizes, but make sure to have a white border width of at least 1.2 x the marker grid size for marker, unless the marker is affixed onto a white (or light colored) background.
 </aside>
 
+### Blink Detection
+
+The pupil detection algorithm assigns a `confidence` value to each pupil datum. It represents
+the quality of the detection result. While the eye is closed the assigned confidence is very low.
+The `Blink Detection` plugin makes use of this fact by defining a blink as a significant
+confidence drop within a short period of time. The plugin creates a `blink` event for each pupil datum of the following format:
+
+```python
+{  # blink datum
+	'topic': 'blink',
+    'activation': <float>,
+    'timestamp': <timestamp float>,
+    'is_blink': <bool>}
+```
+
+The `activation` field denotes how strong the confidence dropped. Values bigger than `0.4` are classified as blinks.
+If this is the case the `is_blink` field is set to `True`.
+
 ### Audio Capture
 
 The `Audio Capture` plugin provides access to a selected audio source for other plugins and writes its output to the `audio.wav` file during a recording. It also writes the Pupil Capture timestamp for each audio packet to the `audio_timestamps.npy` file. This way you can easily correlate single audio packets to their corresponding video frames. If you want to merge audio and video into a single file you will need to follow these steps:
