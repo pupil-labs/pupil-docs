@@ -398,6 +398,7 @@ A surface can be defined by one or more markers. Surfaces can be defined with Pu
 </aside>
 
 ### Audio Capture
+
 The `Audio Capture` plugin provides access to a selected audio source for other plugins and writes its output to the `audio.wav` file during a recording. It also writes the Pupil Capture timestamp for each audio packet to the `audio_timestamps.npy` file. This way you can easily correlate single audio packets to their corresponding video frames. If you want to merge audio and video into a single file you will need to follow these steps:
 
 1. Open the recording in Pupil Player
@@ -410,3 +411,10 @@ ffmpeg -i <recording directory>/exports/<exported frame range>/world_viz.mp4 -i 
 ```
 
 Only the exported video contains the timestamps that are required for ffmpeg to sync audio and video correctly.
+
+### Annotations
+
+The `Annotation Capture` plugin allows you to mark timestamps with a label -- sometimes reffered to as triggers.
+These labels can be created by pressing their respective hotkey or by sending a notification with the subject `annotation`.
+This is useful to mark external events (e.g. "start of condition A") within the Pupil recording. The `Annotation Player`
+plugin is able to correlate export these events.
