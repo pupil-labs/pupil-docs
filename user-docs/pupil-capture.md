@@ -378,6 +378,13 @@ for the `pupil.` and `gaze.` topics below.
 
 See [Data format](#data-format) for a detailed explanation of the dictionary keys.
 
+### Frame Publisher
+
+The `Frame Publisher` plugin broadcasts frames from the world and eye cameras
+with help of the "IPC backbone". You can subscribe using the topic prefix `frame.`.
+
+There is a [pupil-helper example script](https://github.com/pupil-labs/pupil-helpers/blob/0df77b47cebd49a6c35b6769da483c115a626836/pupil_remote/recv_world_video_frames.py) that showcases how to receive and decode world frames.
+
 ### Pupil Time Sync
 
 If you want to record data from multiple sensors (e.g. multiple Pupil Capture instances)
