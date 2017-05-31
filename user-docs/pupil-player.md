@@ -238,6 +238,89 @@ You can use this plugin to apply visualizations to an entire directory (folder) 
   + `Recording source directory` - a directory (folder) that contains one or more Pupil recording folder.
   + `Recording destination directory` - an existing directory (folder) where you want to save the visualizations.
 
+### Data Producers
+
+Producer plugins provide data of a specific topic -- currently pupil or gaze
+data -- to other plugins. There is exactly one active plugin for each topic.
+
+* Topic: Pupil positions
+    * `Pupil from recording`
+    * `Offline pupil detection`
+
+* Topic: gaze positions
+    * `Gaze from recording`
+    * `Offline calibration`
+
+Interim results are cache in the `offline_results` directory within the recording folder.
+
+#### Pupil from recording
+
+Loads pupil positions that were calculated and saved during a Pupil Capture
+recording.
+
+#### Gaze from recording
+
+Loads gaze positions that were mapped after a successful calibration in Pupil Capture.
+
+#### Offline pupil detection
+
+Runs the pupil detection algorithm in Pupil Player. This requires an existing
+video recording of the eye(s). The plugin can run the `3d` as well as the `2d`
+detection method. At the beginning, it checks if a video file is present for
+each eye and opens eye windows accordingly (similar to Pupil Capture).
+
+<aside class="notice">
+This plugin is especially useful for local Pupil Mobile recordings since the
+app does not run the pupil detection on its own.
+</aside>
+
+The pupil detection algorithm will only run as long as the eye window is open.
+This means that you can run monocular detection by simply closing the eye window
+in which you are not interested in. Reload the plugin to reinitiate all available
+eye processes.
+
+The `Redetect` button restarts the detection procedure. This is especially useful
+when using the `3d` method, since the model that was built-up in the previous
+run can be reused for the new run. This way, you can calculate `3d` pupil positions
+at the beginning of the recording where the model usually needs to be built-up
+first.
+
+#### Offline calibration
+
+This plugin executes three tasks:
+
+1. Search calibration markers within the `world` video.
+1. Run calibration given reference and pupil positions.
+1. Map pupil to gaze positions given the calibration result.
+
+The calibration marker detection runs initially once per recording. The resulting
+reference positions are cached in the `offlne_calibration` file. `Redetect` reruns
+the detection procedure.
+
+The plugin allows you to create multiple calibration sections. Each calibration section contains two frame ranges -- the `calibration range` and the `mapping range`.
+Each frame range is of the following format `a - b` where `a` and `b` are world
+frame indices. Following the Python convention, indices are zero-based and frame `b`
+is not included. The default section's ranges are set to the maximum width.
+
+The calibration range tells the plugin which reference and pupil positions it
+should consider to run the calibration. The mapping range denotes the pupil
+positions that will be mapped after a successful calibration. The plugin will
+choose the mapping mode (`3d` or `2d`) automatically depending on which data
+it encounters.
+
+<aside class="notice">
+Note that you will have duplicated gaze positions if two mapping ranges intersect.
+</aside>
+
+Each section is represented by a colored bar above the seek bar. The thicker part
+denotes the calibration range while the thin part denotes the mapping range.
+
+<aside class="notice">
+The colored bars might intersect with the progress indicators of the offline
+surface tracker. This is only a visual bug and does not influence the functionality
+of neither plugin. We hope to get this fixed in the near future.
+</aside>
+
 ### Developing your own Plugin
 To develop your own plugin see the <a href="#plugin-guide">developer guide</a>.
 
