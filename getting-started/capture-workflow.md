@@ -76,11 +76,11 @@ You can make as many recordings as you like.
 The default `recordings` directory will have the following hierarchy.
 
 * `recordings`
-  * 2016-04-05
-    * 001
-    * 002
-    * 003
-    * ####
+	* 2016-04-05
+		* 001
+		* 002
+		* 003
+		* ####
 
 #### How recordings are saved?
 
