@@ -229,7 +229,9 @@ Click on the selector "Open Plugin" and select your plugin.
 * Once the plugin is active it will show all other local network Pupil Group nodes in the GUI
 * Furthermore actions like starting and stopping a recording on one device will be mirrored instantly on all other devices.
 
+<aside class="notice">
 For this to work your network needs to allow `UDP` transport. If the nodes do not find each other, create a local wifi network and use that instead.
+</aside>
 
 <aside class="notice">
   Pupil Groups can easily be integrated in your own app or device. Have a look at <a href="https://github.com/pupil-labs/pupil-helpers/tree/master/pupil_sync">pupil helpers</a> to get started.
@@ -363,6 +365,10 @@ that each node has to implement the same protocol version to be able to talk to
 each other.
 
 See the [pupil-helpers](https://github.com/pupil-labs/pupil-helpers/tree/master/pupil_sync) for example Python implementations.
+
+<aside class="notice">
+For this to work your network needs to allow `UDP` transport. If the nodes do not find each other, create a local wifi network and use that instead.
+</aside>
 
 ### Surface Tracking
 
