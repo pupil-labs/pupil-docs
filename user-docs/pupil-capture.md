@@ -66,6 +66,11 @@ Pupil uses two cameras. One camera records a subject's eye movements -- we call 
 ### Before every calibration
 
 Make sure that the users pupil is properly tracked. Make sure that the world camera is in focus for the distance at which you want to calibrate, and that you can see the entire area you want to calibrate within the world cameras extents (FOV).
+The equipment should be clean, e.g. no grease on the lense and no dust on the
+camera sensor. It will decrease the detection performance if this is not the case.
+
+It is also recommended to ensure that the headset does not touch the subject's
+forehead since this increases slippage considerably.
 
 > <div class="figure-container">
 	<div class="Grid Grid-row">
@@ -120,10 +125,6 @@ Pupil Headset comes in a variety of configurations.  Calibration can be conducte
 
 ### Calibration Methods
 
-<!-- First select the calibration method you would like to use: -->
-
-Before starting calibration, ensure that eye(s) are robustly detected and that the headset is comfortable for the participant.
-
 #### Screen Marker Calibration
 
 > {{< video-webm src="/videos/calibration/calibration-screen/clb-s.webm" >}}
@@ -147,11 +148,12 @@ In the `Advanced` sub-menu you can set the `sample duration` -- the number of fr
 
 > {{< video-webm src="/videos/calibration/calibration-manual/clb-man.webm" >}}
 
-This method is done with an operator and a subject. It is suited for midrange distances and can accommodate a wide field of view. You need markers made of concentric circles, like the two shown below.
+This method is done with an operator and a subject. It is suited for midrange distances and can accommodate a wide field of view. You need a calibration
+marker made of concentric circles, like the one shown in the video.
 
 1. Select `Manual Marker Calibration`
 1. Press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to start calibration.
-1. Stand in front of the subject (the person wearing the Pupil headset) at the distance you would like to calibrate. (1.5-2m)
+1. Stand in front of the subject (the person wearing the Pupil headset) at the distance you would like to calibrate.
 1. Ask the subject to follow the marker with their eyes and hold their head still.
 1. Show the marker to the subject and hold the marker still. You will hear a "click" sound when data sampling starts, and one second later a "tick" sound when data sampling stops.
 1. Move the marker to the next location and hold the marker still.
