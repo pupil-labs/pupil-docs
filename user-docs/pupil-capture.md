@@ -263,7 +263,51 @@ If you open up a session folder you will see a collection of video(s) and data f
 
 Click on the selector "Open Plugin" and select your plugin.
 
-### Pupil Groups
+#### Third-party plugins
+
+Third-party plugins can be loaded easily as well. In order for them to appear in
+the plugin list they need to be copied to the correct location, the `plugins`
+folder within your `capture_settings`.
+
+### Fixation Detection
+
+The built-in fixation detectors are dispersion-duration based.
+This means that if the pupil does not move more than a given distance (dispersion)
+in a given time period (duration) the plugin will classify the pupil positions
+during this time range as a fixation.
+
+The `Fixation Detector 3D` plugin uses the eye model's 3d orientation angle to
+calculate the dispersion. The settings allow you to set the duration in seconds
+and the maximum dispersion amount in degrees.
+
+If the plugin is loaded, fixations will reduce the amount of samples that a
+[Screen Marker or Manual Marker calibration](https://docs.pupil-labs.com/master/#calibration-methods) usually requires.
+
+### Network plugins
+
+Pupil Capture has a built-in data broadcast functionality. It is based on the network library [ZeroMQ](http://zeromq.org/)
+and follows the [`PUB-SUB` pattern](http://zguide.zeromq.org/php:chapter1#Getting-the-Message-Out). Data is published with an affiliated topic.
+Clients need to subscribe to their topic of interest to receive the respective data. To save network traffic, only data
+with at least one subscription is transferred.
+
+#### Pupil Remote
+
+> {{< video-webm src="/videos/pupil-remote/pr.webm" >}}
+
+`Pupil Remote` is the plugin that functions as entry point to the broadcast infrastructure. It also provides a high level
+interface to control Pupil Capture over the network (e.g. start/stop a recording).
+
+* Load the `Pupil Remote` plugin from the `General` sub-menu in the GUI (it is loaded by default).
+* It will automatically open a network port at the default `Address`.
+* Change the address and port as desired.
+* If you want to change the address, just type in the address after the `tcp://`
+
+<aside class="notice">
+See the developer documentation on how to access Pupil Remote from your own application.
+</aside>
+
+#### Pupil Groups
+
 `Pupil Groups` can help you to collect data from different devices and control an experiment with multiple actors (data generators and sensors) or use more than one Pupil device simultaneously:
 
 * Load the `Pupil Groups` plugin from the `General` sub-menu in the GUI.
@@ -278,22 +322,7 @@ For this to work your network needs to allow `UDP` transport. If the nodes do no
   Pupil Groups can easily be integrated in your own app or device. Have a look at <a href="https://github.com/pupil-labs/pupil-helpers/tree/master/pupil_sync">pupil helpers</a> to get started.
 </aside>
 
-### Streaming Pupil Data over the network
-
-Pupil Capture has a built-in data broadcast functionality. It is based on the network library [ZeroMQ](http://zeromq.org/)
-and follows the [`PUB-SUB` pattern](http://zguide.zeromq.org/php:chapter1#Getting-the-Message-Out). Data is published with an affiliated topic.
-Clients need to subscribe to their topic of interest to receive the respective data. To save network traffic, only data
-with at least one subscription is transferred.
-
-> {{< video-webm src="/videos/pupil-remote/pr.webm" >}}
-
-`Pupil Remote` is the plugin that functions as entry point to the broadcast infrastructure. It also provides a high level
-interface to control Pupil Capture over the network (e.g. start/stop a recording).
-
-* Load the `Pupil Remote` plugin from the `General` sub-menu in the GUI (it is loaded by default).
-* It will automatically open a network port at the default `Address`.
-* Change the address and port as desired.
-* If you want to change the address, just type in the address after the `tcp://`
+<!-- ### Streaming Pupil Data over the network
 
 Its network interface is based on the ZeroMQ [`REQ-REP` pattern](http://zguide.zeromq.org/php:chapter1#Ask-and-Ye-Shall-Receive).
 The plugin opens the "Reply" socket and waits for client connections. The Pupil Remote protocol consists mostly of single messages.
@@ -378,16 +407,9 @@ for the `pupil.` and `gaze.` topics below.
  	'topic': 'gaze'}
 ```
 
-See [Data format](#data-format) for a detailed explanation of the dictionary keys.
+See [Data format](#data-format) for a detailed explanation of the dictionary keys. -->
 
-### Frame Publisher
-
-The `Frame Publisher` plugin broadcasts frames from the world and eye cameras
-with help of the "IPC backbone". You can subscribe using the topic prefix `frame.`.
-
-There is a [pupil-helper example script](https://github.com/pupil-labs/pupil-helpers/blob/0df77b47cebd49a6c35b6769da483c115a626836/pupil_remote/recv_world_video_frames.py) that showcases how to receive and decode world frames.
-
-### Pupil Time Sync
+#### Pupil Time Sync
 
 If you want to record data from multiple sensors (e.g. multiple Pupil Capture instances)
 with different sampling rates it is important to synchronize the clock of each sensor.
@@ -405,11 +427,26 @@ Pupil Time Sync nodes only synchronize time within their respective group. Be aw
 that each node has to implement the same protocol version to be able to talk to
 each other.
 
+<aside class="notice">
 See the [pupil-helpers](https://github.com/pupil-labs/pupil-helpers/tree/master/pupil_sync) for example Python implementations.
+</aside>
 
 <aside class="notice">
 For this to work your network needs to allow `UDP` transport. If the nodes do not find each other, create a local wifi network and use that instead.
 </aside>
+
+#### Frame Publisher
+<!-- Not sure if this should be mentioned here at all -->
+The `Frame Publisher` plugin broadcasts video frames from the world and eye cameras.
+
+There is a [pupil-helper example script](https://github.com/pupil-labs/pupil-helpers/blob/0df77b47cebd49a6c35b6769da483c115a626836/pupil_remote/recv_world_video_frames.py) that showcases how to receive and decode world frames.
+
+#### Remote Recorder
+
+This plugin is able to remotely start and stop recordings on all connected
+Pupil Mobile sources. This is different to the normal recorder that creates
+a recording on the device running Pupil Capture. The `Remote Recorder` plugin
+creates recordings on the phone.
 
 ### Surface Tracking
 
