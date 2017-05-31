@@ -21,6 +21,13 @@ The communication protocol is named [NDSI](https://github.com/pupil-labs/pyndsi/
 For this to work your network needs to allow `UDP` transport. If the nodes do not find each other, create a local wifi network and use that instead.
 </aside>
 
+<aside class="warning">
+The communication protocol does not implement any access control. This means that everyone running Pupil Capture in
+your local network will be able to access, i.e. stream and record, sensors connected to the phone running Pupil Mobile!
+
+Make sure to hit "Stop background servie and terminate app" in the general Pupil Mobile settings after you are done.
+</aside>
+
 ### Download App
 
 The app is free. You can download it in the [Google Play Store](https://play.google.com/store/apps/details?id=com.pupillabs.pupilmobile).
