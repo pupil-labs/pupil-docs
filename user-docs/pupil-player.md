@@ -9,7 +9,7 @@ page_weight = 1
 
 <!-- ### About -->
 
-> {{< figure-img src="/images/icons/svg/pp.svg" img-class="feature-center logo" width="20%" >}}
+> {{< figure-img src="/images/icons/svg/pp.svg" img-class="feature-center logo" width="20%" alt="Pupil Player logo" >}}
 
 Pupil Player is the second tool you will use after Pupil Capture. It is a media and data visualizer at its core. You will use it to look at Pupil Capture recordings. Visualize your data and export it.
 
@@ -18,7 +18,7 @@ Features like <a href="#surface-tracking">surface tracking</a> found in Pupil Ca
 ### Player Window
 Let's get familiar with the Player window.
 
-> {{< webp-img src="/images/pupil-player/pp_cl_main.webp" >}}
+> {{< webp-img src="/images/pupil-player/pp_cl_main.webp" alt="Pupil Player UI call-out" >}}
 
 The Player window is the main control center for `Pupil Player`. It displays the recorded video feed from pupil capture file.
 
@@ -31,7 +31,7 @@ The Player window is the main control center for `Pupil Player`. It displays the
 
 ### Starting Pupil Player
 
-> {{< webp-img src="/images/pupil-player/pp_start.webp" >}}
+> {{< webp-img src="/images/pupil-player/pp_start.webp" alt="Starting Pupil Player" >}}
 
 Drag the recording directory (the triple digit one) directly onto the app icon **or** launch the application and drag + drop the recording directory into Pupil Player window.
 
@@ -76,7 +76,7 @@ For the sake of clarity, we will call plugins with the `Vis` prefix **visualizat
 
 #### Vis Circle
 
-> {{< webp-img src="/images/pupil-player/plugin/vizcircle.webp" >}}
+> {{< webp-img src="/images/pupil-player/plugin/vizcircle.webp" alt="Vis Circle plugin" >}}
 
 Visualize the gaze positions with a circle for each gaze position. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization.
 
@@ -91,7 +91,7 @@ Here we show an example of how you could use **2** instances of the `Vis Circle`
 
 #### Vis Cross
 
-> {{< webp-img src="/images/pupil-player/plugin/vizcross.webp" >}}
+> {{< webp-img src="/images/pupil-player/plugin/vizcross.webp" alt="Vis Cross plugin" >}}
 
 Visualize the gaze positions with a cross for each gaze position. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization. You can set the following parameters:
 
@@ -104,7 +104,7 @@ Here we show an example of how you could use **2** instances of the `Vis Cross` 
 
 #### Vis Scan Path
 
-> {{< webp-img src="/images/pupil-player/plugin/scanpath.webp" >}}
+> {{< webp-img src="/images/pupil-player/plugin/scanpath.webp" alt="Vis Scan Path plugin" >}}
 
 This plugin enables past gaze positions to stay visible for the duration of time specified by the user. This plugin is **unique**, therefore you can only load one instance of this plugin.
 
@@ -114,7 +114,7 @@ Here we show an example of `Scan Path` set with `0.4` seconds duration used with
 
 #### Vis Polyline
 
-> {{< webp-img src="/images/pupil-player/plugin/vizpoly.webp" >}}
+> {{< webp-img src="/images/pupil-player/plugin/vizpoly.webp" alt="Vis Polyline plugin" >}}
 
 Visualize the gaze positions with a polyline for each gaze position. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization. You can set the following parameters:
 
@@ -125,7 +125,7 @@ An example showing `Vis Polyline` used with `Vis Circle` and `Scan Path`. The po
 
 #### Vis Light Points
 
-> {{< webp-img src="/images/pupil-player/plugin/vizlightpoints.webp" >}}
+> {{< webp-img src="/images/pupil-player/plugin/vizlightpoints.webp" alt="Vis Light Points plugin" >}}
 
 Visualize the gaze positions as a point of light for each gaze position. The `falloff` of the light from the gaze position is specified by the user. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization. You can set the following parameters:
 
@@ -135,7 +135,7 @@ Here is an example demonstrating `Vis Light Points` with a falloff of 73.
 
 #### Vis Eye Video Overlay
 
-> {{< webp-img src="/images/pupil-player/plugin/eyeoverlay.webp" >}}
+> {{< webp-img src="/images/pupil-player/plugin/eyeoverlay.webp" alt="Vis Eye Video Overlay plugin" >}}
 
 Here is an example of the `Eye Video Overlay` with binocular eye videos.
 
@@ -161,7 +161,7 @@ This plugin allows one to manually offset the gaze position. The offset values a
 
 #### Offline Surface Tracker
 
-> {{< webp-img src="/images/pupil-player/plugin/offline-surface-tracker.webp" >}}
+> {{< webp-img src="/images/pupil-player/plugin/offline-surface-tracker.webp" alt="Offline Surface Tracker" >}}
 
 This plugin is an offline version of the [Surface Tracking](#surface-tracking) plugin for Pupil Capture. You can use this plugin to detect markers in the recording, define surfaces, edit surfaces, and create and export visualizations of gaze data within the defined surfaces.
 
@@ -176,9 +176,9 @@ Here is an example workflow for using the `Offline Surface Detector` plugin to g
 
 #### Fixation Detector - Dispersion Duration
 
-> {{< webp-img src="/images/pupil-player/plugin/2d-fixation.webp" >}}
+> {{< webp-img src="/images/pupil-player/plugin/2d-fixation.webp" alt="2D Fixation Detector" >}}
 
-> {{< webp-img src="/images/pupil-player/plugin/3d-fixation.webp" >}}
+> {{< webp-img src="/images/pupil-player/plugin/3d-fixation.webp" alt="3D Fixation Detector" >}}
 
 This plugin detects fixation based on a dispersion threshold in terms of degrees of visual angle. This plugin is **unique**, therefore you can only load one instance of this plugin.
 
@@ -191,14 +191,14 @@ All open plugins that have export capability will export when you press `e`. All
 
 #### Exports directory
 
-> {{< webp-img src="/images/pupil-player/recording/recording_folder_exports_v07.webp" >}}
+> {{< webp-img src="/images/pupil-player/recording/recording_folder_exports_v07.webp" alt="Recording folder" >}}
 
 All exports are saved within the `exports` sub-directory within your recording directory.
 A new directory will be created within the `exports` directory named with the `start` frame and `end` frame that is specified by the trim marks.
 
 #### Video Export Launcher
 
-> {{< webp-img src="/images/pupil-player/plugin/export.webp" >}}
+> {{< webp-img src="/images/pupil-player/plugin/export.webp" alt="Video Export Launcher plugin" >}}
 
 To export a video, load the `Export Video` plugin. You can select the frame range to export by setting trim marks in the seek bar or directly in the plugin GUI.
 
@@ -208,7 +208,7 @@ The exporter will run in the background and you can see the progress bar of the 
 
 #### Raw Data Exporter
 
-> {{< webp-img src="/images/pupil-player/plugin/rawexport.webp" >}}
+> {{< webp-img src="/images/pupil-player/plugin/rawexport.webp" alt="Raw Data Exporter plugin" >}}
 
 To export `.csv` files of your data, load the `Raw Data Exporter` plugin. You can select the frame range to export by setting trim marks in the seek bar or directly in the plugin GUI.
 

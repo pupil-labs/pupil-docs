@@ -16,7 +16,7 @@ Put on the Pupil headset and plug it in to your computer. Headsets are adjustabl
 
 ### 2. Start Pupil Capture
 
-> {{< figure-img src="/images/icons/svg/pc.svg" img-class="feature-center logo" width="20%" >}}
+> {{< figure-img src="/images/icons/svg/pc.svg" img-class="feature-center logo" width="20%" alt="Pupil Capture logo" >}}
 
 ### 3. Check pupil detection
 
@@ -67,7 +67,7 @@ See a video demonstration of how to set recordings path, session name, and start
 
 #### Where is the recording saved?
 
-> {{< webp-img src="/images/pupil-capture/recording/rec_folder.webp" >}}
+> {{< webp-img src="/images/pupil-capture/recording/rec_folder.webp" alt="Recording folder" >}}
 
 By default, each recording will live in its own unique data folder contained in the `recordings` folder.
 

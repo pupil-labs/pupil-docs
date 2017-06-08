@@ -6,7 +6,7 @@ page_weight = 1
 
 ## Pupil Mobile Eye Tracking Headset
 
-> {{< webp-img figure-class="img-m" src="/images/pupil-hardware/pupil_w120_e120.webp">}}
+> {{< webp-img figure-class="img-m" src="/images/pupil-hardware/pupil_w120_e120.webp" alt="Pupil headset" >}}
 
 You wear Pupil like a pair of glasses. Pupil connects to a computing device via a USBA or USBC cable. The headset is designed to be lightweight and adjustable in order to accommodate a wide range of users. 
 
