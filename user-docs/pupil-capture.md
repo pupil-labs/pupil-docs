@@ -11,13 +11,13 @@ This section of the documentation is targeted towards users of Pupil software an
 
 ## Pupil Capture
 
-> {{< figure-img src="/images/icons/svg/pc.svg" img-class="feature-center logo" width="20%" >}}
+> {{< figure-img src="/images/icons/svg/pc.svg" img-class="feature-center logo" width="20%" alt="Pupil Capture logo" >}}
 
 Pupil Capture is the software used with the Pupil Headset. The software reads the video streams coming in from the world camera and the eye camera. Pupil Capture uses the video streams to detect your pupil, track your gaze, detect and track markers in your environment, record video and events, and stream data in realtime.
 
 ### Capture Window
 
-> {{< webp-img src="/images/pupil-capture/pc_cl_main.webp" >}}
+> {{< webp-img src="/images/pupil-capture/pc_cl_main.webp" alt="Pupil Capture UI call-out" >}}
 
 The Capture window is the main control center for `Pupil Capture`. It displays live video feed from pupil headset.
 
@@ -68,33 +68,20 @@ Pupil uses two cameras. One camera records a subject's eye movements -- we call 
 Make sure that the users pupil is properly tracked. Make sure that the world camera is in focus for the distance at which you want to calibrate, and that you can see the entire area you want to calibrate within the world cameras extents (FOV).
 
 > <div class="figure-container">
-	<div class="Grid Grid-row">
-		<div class="Grid-cell--1of2">
-			<div class="Grid-cell">
-				{{< lqip-img figure-class="img-m" src="/images/pupil-hardware/pupil-detect.jpg" >}}
-			</div>
-		</div>
-		<div class="Grid-cell--1of2">
-			<div class="Grid-cell">
-				{{< lqip-img figure-class="img-m" src="/images/pupil-hardware/focus.jpg" >}}
-			</div>
-		</div>
-	</div>
-</div>
-
-> <div class="figure-container">
-	<div class="Grid Grid-row">
-		<div class="Grid-cell--1of2">
-			<div class="Grid-cell" style="padding:0 .5em 0 .5em;">
-				<p>Your pupil is properly detected by the eye camera</p>
-			</div>
-		</div>
-		<div class="Grid-cell--1of2">
-			<div class="Grid-cell" style="padding:0 .5em 0 .5em;">
-				<p>Make sure the world camera is in focus</p>
-			</div>
-		</div>
-	</div>
+    <div class="Grid Grid--justifyCenter Grid--center Grid--alignContentCenter Feature-row">
+        <div class="Grid-cell Grid-cell--full">
+            <div class="Grid Grid--1of2 Text-center u-padBottom--2">
+                <div class="Grid-cell ">
+                    {{< webp-img figure-class="img-m" src="/images/pupil-hardware/pupil-detect.webp" alt="Pupil detection" >}}
+                    <p>Your pupil is properly detected by the eye camera</p>
+                </div>
+                <div class="Grid-cell">
+                    {{< webp-img figure-class="img-m" src="/images/pupil-hardware/focus.webp" alt="World camera" >}}
+                    <p>Make sure the world camera is in focus</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 ### Calibration Process
@@ -213,7 +200,7 @@ If you open up a session folder you will see a collection of video(s) and data f
 
 ### Open a plugin
 
-> {{< webp-img src="/images/pupil-capture/pc-plugin.webp" >}}
+> {{< webp-img src="/images/pupil-capture/pc-plugin.webp" alt="Pupil Capture plugins" >}}
 
 Click on the selector "Open Plugin" and select your plugin.
 
@@ -417,7 +404,7 @@ The `Surface Tracker` plugin allows you to define surfaces within your environme
 
 #### Defining Surfaces with Markers
 
-> {{< webp-img figure-class="img-m" src="/images/pupil-capture/calibration-markers/pupil_surface_markers.webp" >}}
+> {{< webp-img figure-class="img-m" src="/images/pupil-capture/calibration-markers/pupil_surface_markers.webp" alt="Calibration markers" >}}
 
 A surface can be defined by one or more markers. Surfaces can be defined with Pupil Capture in real-time, or offline with Pupil Player. Below we provide an outline of steps.
 

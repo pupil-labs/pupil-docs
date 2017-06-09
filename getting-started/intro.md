@@ -7,7 +7,7 @@ page_weight = 0
 
 # Getting Started
 
-> {{< webp-img figure-class="img-xs" src="/images/icons/Pupil_Logo_wiki-03.webp" >}}
+> {{< webp-img figure-class="img-xs" src="/images/icons/Pupil_Logo_wiki-03.webp" alt="Getting Started logo">}}
 
 This guide will lead you through a basic workflow using Pupil hardware and software.
 

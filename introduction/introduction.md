@@ -18,7 +18,7 @@ This wiki is the main source of documentation for the Pupil users getting starte
 		<a href="#getting-started">
 			<div class="item-hori">
 				<!-- <img class="intro-image img-small" src="/images/icons/Pupil_Logo_wiki-03.jpg"> -->
-				<img class="intro-image img-small lazyload" data-src="/images/icons/Pupil_Logo_wiki-03.jpg">
+				<img class="intro-image img-small lazyload" data-src="/images/icons/Pupil_Logo_wiki-03.jpg" alt="Getting Started logo">
 				<div class="img-content">
 					<p class="header">Getting Started</p>
 					Get up and running and learn the basic Pupil workflow
@@ -28,7 +28,7 @@ This wiki is the main source of documentation for the Pupil users getting starte
 		<a href="#pupil-hardware">
 			<div class="item-hori">
 				<!-- <img class="intro-image img-small" src="/images/icons/Pupil_Logo_wiki-01.jpg"> -->
-				<img class="intro-image img-small lazyload" data-src="/images/icons/Pupil_Logo_wiki-01.jpg">
+				<img class="intro-image img-small lazyload" data-src="/images/icons/Pupil_Logo_wiki-01.jpg" alt="Pupil Hardware logo">
 				<div class="img-content">
 					<div class="header">Pupil Hardware</div>
 					Get and setup your Pupil eye tracking hardware
@@ -38,7 +38,7 @@ This wiki is the main source of documentation for the Pupil users getting starte
 		<a href="#user-docs">
 			<div class="item-hori">
 				<!-- <img class="intro-image img-small" src="/images/icons/Pupil_Logo_wiki-04.jpg"> -->
-				<img class="intro-image img-small lazyload" data-src="/images/icons/Pupil_Logo_wiki-04.jpg">
+				<img class="intro-image img-small lazyload" data-src="/images/icons/Pupil_Logo_wiki-04.jpg" alt="User Docs logo">
 				<div class="img-content">
 					<div class="header">User Docs</div>
 					Learn more about Capture and Player here
@@ -48,7 +48,7 @@ This wiki is the main source of documentation for the Pupil users getting starte
 		<a href="#developer-docs">
 			<div class="item-hori">
 				<!-- <img class="intro-image img-small" src="/images/icons/Pupil_Logo_wiki-05.jpg"> -->
-				<img class="intro-image img-small lazyload" data-src="/images/icons/Pupil_Logo_wiki-05.jpg">
+				<img class="intro-image img-small lazyload" data-src="/images/icons/Pupil_Logo_wiki-05.jpg" alt="Developer Docs logo">
 				<div class="img-content">
 					<div class="header">Developer Docs</div>
 					Want to write code? Read the developer docs here
@@ -58,7 +58,7 @@ This wiki is the main source of documentation for the Pupil users getting starte
 		<a href="#community">
 			<div class="item-hori">
 				<!-- <img class="intro-image img-small" src="/images/icons/Pupil_Logo_wiki-02.jpg"> -->
-				<img class="intro-image img-small lazyload" data-src="/images/icons/Pupil_Logo_wiki-02.jpg">
+				<img class="intro-image img-small lazyload" data-src="/images/icons/Pupil_Logo_wiki-02.jpg" alt="Community logo">
 				<div class="img-content">
 					<div class="header">Community</div>
 					Connect with the Pupil community
