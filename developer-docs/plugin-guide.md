@@ -9,15 +9,22 @@ page_weight = 3
 
 ### Plugins Basics
 
-#### World Process Plugins in Pupil Capture
-Pupil Capture's World process can load plugins for easy integration of new features. Plugins have full access to: 
+Plugins encapsulate functionality in a modular fashion. Most parts of the Pupil apps are implemented as plugins.
+They are managed within the world process event-loop. This means that the world process can load and unload plugins during runtime.
+Plugins are called regularly via callback functions (see the [Plugin API](#plugin-api) for details).
+
+We recommend to use the network (see [the IPC backbone](#the-ipc-backbone)) if you only need access to the data.
+You are only required to write a plugin if you want to interact with the Pupil apps directly, e.g. visualizations, manipulate data.
+
+#### Plugins in Pupil Capture
+Pupil Capture's World process can load plugins for easy integration of new features. Plugins have full access to:
 
   + World image frame
   + Events
     + pupil positions
     + gaze positions
     + surface events
-    + *note* other events can be added to the event queue by other plugins 
+    + *note* other events can be added to the event queue by other plugins
   + User input
   + Globally declared variables in the `g_pool`
 
@@ -25,6 +32,10 @@ Plugins can create their own UI elements, and even spawn their own OpenGL window
 
 #### Pupil Player Plugins
 Pupil Player uses an identical plugin structure. Little (often no work) needs to be done to use a Player Plugin in Capture and vice versa. But, it is important to keep in mind that plugins run in Pupil Capture may require more speed for real-time workflows, as opposed to plugins in Pupil Player.
+
+### Plugin API
+
+Plugins inherit the [`Plugin` class](https://github.com/pupil-labs/pupil/blob/v0.9.12/pupil_src/shared_modules/plugin.py#L23). It provides default functionality as well as series of callback functions that
 
 #### Make your own plugin
 These general steps are required if you want to make your own plugin and use it within Pupil:
@@ -43,13 +54,13 @@ If you're running Pupil from an app bundle, there is no need to modify source co
  + Start the application that should run your plugin either Pupil Capture or Pupil Player.
  + If you're creating a plugin for Pupil Capture, navigate to the `~/pupil_capture_settings/plugins/` directory. If you're creating a plugin for Pupil Player, navigate to `~/pupil_player_settings directory/plugins/` instead.
  + Move your plugin source code into the `plugins` folder. If your plugin is comprised of multiple files and/or dependencies, then move all files into the plugins folder. *Note*: if your plugin is contained in a directory, make sure to include an `__init__.py` inside it. For example:
- 
+
 ```python
 from . my_custom_plugin_module import My_Custom_Plugin_Class
 ```
 
 > This loads the `My_Custom_Plugin_Class` plugin from the `my_custom_plugin_module` directory.
- 
+
  + Restart the application. For now on, Pupil will find your plugins on startup and will add all valid plugins to the plugin dropdown menu. If your plugin is a calibration plugin (i.e. it inherits from the Calibration_Plugin base class), then it will appear in the calibration drop down menu.
 
  + If you want your plugin to run in both Pupil Capture and Pupil Player, you can avoid making copies of your plugin by setting a relative path.
@@ -172,29 +183,29 @@ Finally, lets implement what our new Plugin will do. Here we choose to apply an 
 ```python
 def update(self,frame,events):
    img = frame.img
-   height = img.shape[0] 
-   width = img.shape[1] 
-   
+   height = img.shape[0]
+   width = img.shape[1]
+
    blur = cv2.GaussianBlur(img,(5,5),0)
 
    edges = []
    threshold = 177
    blue, green, red = 0, 1, 2
 
-   # apply the threshold to each channel 
+   # apply the threshold to each channel
    for channel in (blur[:,:,blue], blur[:,:,green], blur[:,:,red]):
       retval, edg = cv2.threshold(channel, threshold, 255, cv2.THRESH_TOZERO)
       edges.append(edg)
-   
+
    # lets merge the channels again
    edges.append(np.zeros((height, width, 1), np.uint8))
    edges_edt = cv2.max(edges[blue], edges[green])
    edges_edt = cv2.max(edges_edt, edges[red])
    merge = [edges_edt, edges_edt, edges_edt]
-   
+
    # lets check the result
    frame.img = cv2.merge(merge)
-``` 
+```
 
 (considering the update method, describe stuff inside the `events` dictionary)
 
@@ -203,4 +214,4 @@ def update(self,frame,events):
 
 (describe how to integrate the Custom Plugin visualization into the Video Exporter)
 
-(describe how to integrate new data produced by the Custom Plugin into Pupil's data export work-flow) 
+(describe how to integrate new data produced by the Custom Plugin into Pupil's data export work-flow)
