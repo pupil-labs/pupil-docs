@@ -11,14 +11,14 @@ page_weight = 0
 Overview of language, code structure, and general conventions
 
 ### Language
-Pupil is written in `Python`, but no "heavy lifting" is done in Python. High performance computer vision, media compression, display libraries, and custom functions are written in external libraries or c/c++ and accessed though cython. Python plays the role of "glue" that sticks all the pieces together.
+Pupil is written in `Python 3`, but no "heavy lifting" is done in Python. High performance computer vision, media compression, display libraries, and custom functions are written in external libraries or c/c++ and accessed though [cython](http://cython.org/). Python plays the role of "glue" that sticks all the pieces together.
 
 We also like writing code in Python because it's *quick and easy* to move from initial idea to working proof-of-concept. If proof-of-concept code is slow, optimization and performance enhancement can happen in iterations of code.
 
 ### Process Structure
 When [Pupil Capture][capture] starts, in default settings two processes are spawned:
 
-**Eye** and **World**. Both processes grab image frames from a video capture stream but they have very different tasks.  
+**Eye** and **World**. Both processes grab image frames from a video capture stream but they have very different tasks.
 
 #### Eye Process
 The eye process only has one purpose - to detect the pupil and broadcast its position. The process breakdown looks like this:
@@ -37,11 +37,9 @@ This is the workhorse.
 * Grabs the world camera images from the world camera video stream
 * Receives pupil positions from the eye process
 * Performs calibration mapping from pupil positions to gaze positions
-* Loads plugins - to detect markers, broadcast pupil positions over the network, and more...
+* Loads plugins - to detect fixations, track surfaces, and more...
 * Records video and data.
 Most, and preferably all coordination and control happens within the World process.
-
-<!-- TBA -->
 
 #### Pupil Datum format
 
@@ -102,8 +100,7 @@ This dictionary is sent on the IPC and read by gaze mapping plugins in the world
     'projected_sphere': {  # image space, unit: pixel
         'angle': 90.0,
         'center': [0, 0],
-        'axes': [0, 0]},
-    }
+        'axes': [0, 0]}}
 ```
 
 ```python
@@ -120,9 +117,6 @@ This dictionary is sent on the IPC and read by gaze mapping plugins in the world
     'base_data': [<pupil datum>]}  # list of pupil data that was used to calculate the gaze
 ```
 
-#### Control: World > Eye
-Happens via notifications on the IPC.
-
 ### Timing & Data Conventions
 Pupil Capture is designed to work with multiple captures that free-run at different frame rates that may not be in sync. World and eye images are timestamped and any resulting artifacts (detected pupil, markers, etc) inherit the source timestamp. Any correlation of these data streams is the responsibility of the functional part that needs the data to be correlated (e.g. calibration, visualization, analyses).
 
@@ -131,9 +125,9 @@ For example: The pupil capture data format records the world video frames with t
 ### Git Conventions
 We make changes almost daily and sometimes features will be temporarily broken in some development branches.  However, we try to keep the `master` branch as stable as possible and use other branches for feature development and experiments. Here's a breakdown of conventions we try to follow.
 
-* `tags` - We make a tag following the [semantic versioning][semver] protocol.  Check out the [releases][releases]. 
-* `master` - this branch tries to be as stable as possible - incremental and tested features will be merged into the master.  Check out the [master branch][master-branch].  
-* `branches` - branches are named after features that are being developed. These branches are experimental and what could be called 'bleeding edge.'  This means features in these branches may not be fully functional, broken, or really cool... You're certainly welcome to check them out and improve on the work!  
+* `tags` - We make a tag following the [semantic versioning][semver] protocol.  Check out the [releases][releases].
+* `master` - this branch tries to be as stable as possible - incremental and tested features will be merged into the master.  Check out the [master branch][master-branch].
+* `branches` - branches are named after features that are being developed. These branches are experimental and what could be called 'bleeding edge.'  This means features in these branches may not be fully functional, broken, or really cool... You're certainly welcome to check them out and improve on the work!
 
 ### Pull requests
 If you've done something -- even if work-in-progress -- make a [pull request][pull] and write a short update to the Pupil Community.
@@ -145,7 +139,7 @@ If you've done something -- even if work-in-progress -- make a [pull request][pu
 [ctypes-pydoc]: http://docs.python.org/2/library/ctypes.html
 [cmethods]: https://github.com/pupil-labs/pupil/tree/master/pupil_src/shared_modules/c_methods
 [methods-c]: https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/c_methods/methods.c
-[capture]: https://github.com/pupil-labs/pupil/tree/master/pupil_src/capture 
+[capture]: https://github.com/pupil-labs/pupil/tree/master/pupil_src/capture
 [g-pool]: https://github.com/pupil-labs/pupil/blob/master/pupil_src/capture/main.py#L117-L119
 [0mq]: http://zeromq.org/
 [issue]: https://github.com/pupil-labs/pupil/issues
