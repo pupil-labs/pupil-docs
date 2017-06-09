@@ -213,7 +213,7 @@ within the `pupil_capture_settings` or `pupil_player_settings` folder.
 ### Fixation Detection
 
 Fixation detectors classify fixations using dispersion and duration.
-Consider: *Dispersion* is measured as the distance between pupil positions.
+*Dispersion* is measured as the distance between pupil positions.
 *Duration* is a specified period of time. The fixation detector plugin will
 classify pupil positions as fixations if they are within the dispersion for the
 duration of time specified.
@@ -229,15 +229,14 @@ If the plugin is loaded, fixations will reduce the amount of samples that a
 
 Pupil Capture has a built-in data broadcast functionality. It is based on the network library [ZeroMQ](http://zeromq.org/)
 and follows the [`PUB-SUB` pattern](http://zguide.zeromq.org/php:chapter1#Getting-the-Message-Out). Data is published with an affiliated topic.
-Clients need to subscribe to their topic of interest to receive the respective data. To save network traffic, only data
+Clients need to subscribe to their topic of interest to receive the respective data. To reduce network traffic, only data
 with at least one subscription is transferred.
 
 #### Pupil Remote
 
 > {{< video-webm src="/videos/pupil-remote/pr.webm" >}}
 
-`Pupil Remote` is the plugin that functions as entry point to the broadcast infrastructure. It also provides a high level
-interface to control Pupil Capture over the network (e.g. start/stop a recording).
+`Pupil Remote` is the plugin that functions as entry point to the broadcast infrastructure. It also provides a high level interface to control Pupil Capture over the network (e.g. start/stop a recording).
 
 * Load the `Pupil Remote` plugin from the `General` sub-menu in the GUI (it is loaded by default).
 * It will automatically open a network port at the default `Address`.
@@ -263,93 +262,6 @@ For this to work your network needs to allow `UDP` transport. If the nodes do no
 <aside class="notice">
   Pupil Groups can easily be integrated in your own app or device. Have a look at <a href="https://github.com/pupil-labs/pupil-helpers/tree/master/pupil_sync">pupil helpers</a> to get started.
 </aside>
-
-<!-- ### Streaming Pupil Data over the network
-
-Its network interface is based on the ZeroMQ [`REQ-REP` pattern](http://zguide.zeromq.org/php:chapter1#Ask-and-Ye-Shall-Receive).
-The plugin opens the "Reply" socket and waits for client connections. The Pupil Remote protocol consists mostly of single messages.
-
-> ```
-Send simple string messages to control Pupil Capture functions:
-    'R' start recording with auto generated session name
-    'R rec_name' start recording and name new session name: rec_name
-    'r' stop recording
-    'C' start currently selected calibration
-    'c' stop currently selected calibration
-    'T 1234.56' Timesync: make timestamps count form 1234.56 from now on.
-    't' get pupil capture timestamp returns a float as string.
-
-
-    # IPC Backbone communication
-    'PUB_PORT' return the current pub port of the IPC Backbone
-    'SUB_PORT' return the current sub port of the IPC Backbone
-
-Mulitpart messages conforming to pattern:
-    part1: 'notify.' part2: a msgpack serialized dict with at least key 'subject':'my_notification_subject'
-    will be forwared to the Pupil IPC Backbone.
-```
-
-The "IPC Backbone" is the name for the built-in broadcast functionality. You will need to request the `SUB_PORT`
-most frequently to be able to subscribe to the published data.
-
-See the pupil-helper [`filter_messages.py`](https://github.com/pupil-labs/pupil-helpers/blob/master/pupil_remote/filter_messages.py)
-script for an example on how to subscribe to a specific topic.
-
-
-### "IPC Backbone" Message Format
-
-All messages that are broadcasted by Pupil Capture comply with the following format:
-* Messages are at least two-part containing the topic and the payload
-* The payload is a [msgpack](http://msgpack.org/index.html) serialized dictionary
-
-The exact payload format depends on the data topic. You can find example payloads
-for the `pupil.` and `gaze.` topics below.
-
-```python
-{  # pupil datum
-	'model_birth_timestamp': -1.0,
-	'ellipse': {
-		'angle': 90.0,
-		'center': [320.0, 240.0],
-		'axes': [0.0, 0.0]},
-	'id': 0,
-	'theta': 0,
-	'timestamp': 535741.715303987,
-	'circle_3d': {
-		'normal': [0.0, -0.0, 0.0],
-		'radius': 0.0,
-		'center': [0.0, -0.0, 0.0]},
-	'diameter': 0.0,
-	'topic': 'pupil',
-	'diameter_3d': 0.0,
-	'norm_pos': [0.5, 0.5],
-	'model_confidence': 0.0,
-	'phi': 0,
-	'confidence': 0.0,
-	'sphere': {
-		'radius': 0.0,
-		'center': [0.0, -0.0, 0.0]},
-	'projected_sphere': {
-		'angle': 90.0,
-		'center': [0, 0],
-		'axes': [0, 0]},
-	'model_id': 1,
-	'method': '3d c++'}
-```
-
-```python
- {  # gaze datum
- 	'gaze_normal_3d': [-0.03966349641933964, 0.007685562866422135, 0.9991835362811073],
- 	'norm_pos': [0.5238293689178297, 0.5811187961748036],
- 	'timestamp': 536522.568094512,
- 	'eye_center_3d': [20.713998951917564, -22.466222119962115, 11.201474469783548],
- 	'gaze_point_3d': [0.8822507422478054, -18.62344068675104, 510.7932426103372],
- 	'base_data': [<pupil datum>],  # list of pupil data that was used to calculate the gaze
- 	'confidence': 1.0,
- 	'topic': 'gaze'}
-```
-
-See [Data format](#data-format) for a detailed explanation of the dictionary keys. -->
 
 #### Pupil Time Sync
 
