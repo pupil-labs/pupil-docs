@@ -31,10 +31,10 @@ Any versions of the 3D fixation detector requires the 3D pupil data since it rel
 
 In Capture, the _Fixation Detector 3D_ is loaded by default. In the future, it will be used to improve the calibration procedure.
 
-In Player, the fixation detectors are not loaded by default. They are activated like every other plugin, too. See _area 2_ in [Getting Started — Player Window](#steps-player). Depending on the length of the recording, the Player window might freeze for a short time. This is due to the detector looking for fixations in the whole recording.
+In Player, the fixation detectors are not loaded by default. They are activated like every other plugin, too. See _area 2_ in [Getting Started — Player Window](#fixation-detector-dispersion-duration). Depending on the length of the recording, the Player window might freeze for a short time. This is due to the detector looking for fixations in the whole recording.
 
 #### Data access
-All fixation detectors augment the `events` object which is passed to each plugin's `update(frame,events)` method (see the [Plugin Guide](#hacking-plugin)). They add a list of fixation dictionaries under the key `'fixations'`. The exact format of these fixations is described [below](#fixation-format).
+All fixation detectors augment the `events` object which is passed to each plugin's `update(frame,events)` method (see the [Plugin Guide](#plugin-guide)). They add a list of fixation dictionaries under the key `'fixations'`. The exact format of these fixations is described [below](#fixation-format).
 
 In Player, all fixations are known _a priori_ and can be referenced in all their related frames. In case of a long fixation, the detector will try to generate a single representation instead of multiple ones. In contrast, the detector in Capture will look for the shortest fixation that complies with the parameters above and add it once to `events` if it is found. The plugin will look for a new fixation afterwards. This means that a long fixation might be split into multiple fixation events. These difference in behavior is due to the different data availabilities in Capture and Player.
 

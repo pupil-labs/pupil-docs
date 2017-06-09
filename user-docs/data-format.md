@@ -104,7 +104,7 @@ The **pupil position** get mapped into the world space and thus becomes the **ga
 
 ### Looking at the data
 
-#### Pupil Player
+#### Data visualizer in Player
 Head over to [Pupil Player](#pupil-player) to playback Pupil recordings, add visualizations, and export in various formats.
 
 #### Access to raw data

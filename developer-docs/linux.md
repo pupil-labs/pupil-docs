@@ -9,7 +9,7 @@ page_weight = 1.1
 
 These installation instructions are tested using **Ubuntu 16.04 or higher** running on many machines. Do not run Pupil on a VM unless you know what you are doing.
 
-### Install Dependencies
+### Install Linux Dependencies
 
 Let's get started! Its time for `apt`!  Just copy paste into the terminal and listen to your machine purr.
 
