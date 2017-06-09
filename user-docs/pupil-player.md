@@ -72,7 +72,7 @@ There are two general types of plugins:
 In the following sections we provide a summary of plugins currently available and in Pupil Player.
 
 ### Visualization Plugins
-For the sake of clarity, we will call plugins with the `Vis` prefix **visualization** plugins. These plugins are simple plugins, are mostly additive (or *not unique*), and directly operate on the gaze positions to produce visualizations. Other plugins like `Offline Surface Tracker` also produces visualizations, but will be discussed elsewhere due to the extent of its features.
+We will call plugins with the `Vis` prefix **visualization** plugins. These plugins are simple plugins, are mostly additive (or *not unique*), and directly operate on the gaze positions to produce visualizations. Other plugins like `Offline Surface Tracker` also produces visualizations, but will be discussed elsewhere due to the extent of its features.
 
 #### Vis Circle
 
