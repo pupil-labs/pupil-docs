@@ -260,7 +260,7 @@ Send simple string messages to control Pupil Capture functions:
 
 #### Reading from the Backbone
 
-Subscribe to desired topics and receive all relevant messages (Meaning messages who's topic prefix matches the subscription). Be aware that the IPC Backbone can carry a lot of data. Do not subscribe to the whole stream unless you know that your code can drink from a firehose. (If it can not, you become `the snail`, see Delivery Guarantees REQREP.)
+Subscribe to desired topics and receive all relevant messages (Meaning messages who's topic prefix matches the subscription). Be aware that the IPC Backbone can carry a lot of data. Do not subscribe to the whole stream unless you know that your code can drink from a firehose. (If it can not, you become `the snail`, see Delivery Guarantees REQ-REP.)
 
 ```python
 #...continued from above
@@ -297,23 +297,9 @@ We say reliable transport because pupil remote will confirm every notification w
 
 If we listen to the backbone using our subscriber from above, we will see the message again because we had subscribed to all notifications.
 
-Pupil remote has a few additional commands that are useful:
-
-```python
-#get the current Pupil time.
-req.send('t')
-current_pupil_time = float(req.recv())
-
-#set the pupil timebase to 1000.
-req.send('T 1000')
-print req.recv()
-```
-
-Pupil remote will only forward messages of the `notify` topic. If you need to send other topics see below.
-
 #### Writing to the Backbone directly
 
-If you want to write messages other than notifications onto the IPC backbone, you can publish to the bus directly. Because this uses a PUB socket, you should read up on Delivery Guarantees PUBSUB below.
+If you want to write messages other than notifications onto the IPC backbone, you can publish to the bus directly. Because this uses a PUB socket, you should read up on Delivery Guarantees PUB-SUB below.
 
 ```python
 requester.send('PUB_PORT')
@@ -339,7 +325,7 @@ ZMQ is a great abstraction for us. Its super fast, has a multitude of language b
  - ZMQ will try to repair broken connections in the background for us.
  - It will deal with a lot of low level tcp handling so we don't have to.
 
-#### Delivery Guarantees PUBSUB
+#### Delivery Guarantees PUB-SUB
 ZMQ PUB SUB will make no guarantees for delivery. Reasons for dropped messages are:
 
  - `Async connect`: PUB sockets drop messages before are connection has been made (connections are async in the background) and topics subscribed. *1
@@ -353,8 +339,8 @@ ZMQ PUB SUB will make no guarantees for delivery. Reasons for dropped messages a
 
 3. In Pupil we pay close attention to be fast enough or to subscribe only to low volume topics. Dropping messages in this case is by design. It is better than stalling data producers or running out of memory.
 
-#### Delivery Guarantees REQREP
-When writing to the Backbone via REQREP we will get confirmations/replies for every message sent. Since REPREQ requires lockstep communication that is always initiated from the actor connecting to Pupil Capture/Service. It does not suffer the above issues.
+#### Delivery Guarantees REQ-REP
+When writing to the Backbone via REQ-REP we will get confirmations/replies for every message sent. Since REPREQ requires lockstep communication that is always initiated from the actor connecting to Pupil Capture/Service. It does not suffer the above issues.
 
 #### Delivery Guarantees in general
 We use TCP in zmq, it is generally a reliable transport. The app communicates to the IPC Backbone via localhost loopback, this is *very* reliable. I have not been able to produce a dropped message for network reasons on localhost.
