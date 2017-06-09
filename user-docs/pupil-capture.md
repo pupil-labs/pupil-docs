@@ -36,12 +36,53 @@ By default Pupil Capture will use Local USB as the capture source. If you have a
 - Pupil Mobile - select this option When using Pupil Capture with the Pupil Mobile android application.
 - Local USB - select this option if your Pupil Headset is connected to the machine running Pupil Capture. This is the default setting.
 
+### Pupil Detection
+
+Pupil's algorithms automatically detect the participant's pupil. With the 3d detection and mapping mode, Pupil uses a 3d model of the eye(s) that constantly updates based on observations of the eye. This enables the system to compensate for movements of the headset - slippage. To build up an initial model, you can just look around your field of view.
+
+> {{< video-webm src="/videos/calibration/pupil-detection/pd.webm" >}}
+
+<!-- > <div class="figure-container">
+	<div class="Grid Grid-row">
+		<div class="Grid-cell--1of2">
+			<div class="Grid-cell">
+				<p>Eye point to each marker to create a sampling point</p>
+			</div>
+		</div>
+		<div class="Grid-cell--1of2">
+			<div class="Grid-cell">
+				<p>Eye point to each marker to create a sampling point</p>
+			</div>
+		</div>
+	</div>
+</div> -->
+
 ### Calibration
 
 > {{< video-webm src="/videos/calibration/calibration-headset/clb-hd.webm" >}}
 
 Pupil uses two cameras. One camera records a subject's eye movements -- we call this the `eye camera`. Another camera records the subject's field of vision -- we call this the `world camera`. In order to know what someone is looking at, we must find the parameters to a function that correlates these two streams of information.
 
+### Before every calibration
+
+Make sure that the users pupil is properly tracked. Make sure that the world camera is in focus for the distance at which you want to calibrate, and that you can see the entire area you want to calibrate within the world cameras extents (FOV).
+
+> <div class="figure-container">
+    <div class="Grid Grid--justifyCenter Grid--center Grid--alignContentCenter Feature-row">
+        <div class="Grid-cell Grid-cell--full">
+            <div class="Grid Grid--1of2 Text-center u-padBottom--2">
+                <div class="Grid-cell ">
+                    {{< webp-img figure-class="img-m" src="/images/pupil-hardware/pupil-detect.webp" alt="Pupil detection" >}}
+                    <p>Your pupil is properly detected by the eye camera</p>
+                </div>
+                <div class="Grid-cell">
+                    {{< webp-img figure-class="img-m" src="/images/pupil-hardware/focus.webp" alt="World camera" >}}
+                    <p>Make sure the world camera is in focus</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 ### Calibration Process
 
@@ -66,10 +107,6 @@ Pupil Headset comes in a variety of configurations.  Calibration can be conducte
 
 ### Calibration Methods
 
-<!-- First select the calibration method you would like to use: -->
-
-Before starting calibration, ensure that eye(s) are robustly detected and that the headset is comfortable for the participant.
-
 #### Screen Marker Calibration
 
 > {{< video-webm src="/videos/calibration/calibration-screen/clb-s.webm" >}}
@@ -93,11 +130,12 @@ In the `Advanced` sub-menu you can set the `sample duration` -- the number of fr
 
 > {{< video-webm src="/videos/calibration/calibration-manual/clb-man.webm" >}}
 
-This method is done with an operator and a subject. It is suited for midrange distances and can accommodate a wide field of view. You need markers made of concentric circles, like the two shown below.
+This method is done with an operator and a subject. It is suited for midrange distances and can accommodate a wide field of view. The operator will use a
+printed calibration marker like the one shown in the video. [Download markers to print](/images/pupil-capture/calibration-markers/pupil_calibration_marker.pdf) or display on smartphone/tablet screen.
 
 1. Select `Manual Marker Calibration`
 1. Press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to start calibration.
-1. Stand in front of the subject (the person wearing the Pupil headset) at the distance you would like to calibrate. (1.5-2m)
+1. Stand in front of the subject (the person wearing the Pupil headset) at the distance you would like to calibrate.
 1. Ask the subject to follow the marker with their eyes and hold their head still.
 1. Show the marker to the subject and hold the marker still. You will hear a "click" sound when data sampling starts, and one second later a "tick" sound when data sampling stops.
 1. Move the marker to the next location and hold the marker still.
@@ -110,10 +148,8 @@ This method is done with an operator and a subject. It is suited for midrange di
 
 You will notice that there are no standard controls, only an `Advanced` sub-menu to control detection parameters of the marker and to debug by showing edges of the detected marker in the world view.
 
-[Download markers to print](/images/pupil-capture/calibration-markers/pupil_calibration_marker.pdf) or display on smartphone/tablet screen.
-
 <aside class="notice">
-  Note - v2.0 Markers can be <a href="/images/pupil-capture/calibration-markers/v2.0_markers/pupil_calibration_marker.pdf">downloaded here</a>.
+  Note - The deprecated v2.0 markers can be <a href="/images/pupil-capture/calibration-markers/v2.0_markers/pupil_calibration_marker.pdf">downloaded here</a>.
 </aside>
 
 
@@ -144,47 +180,6 @@ Loading the `Show Calibration` plugin from the `General` sub-menu will show an e
 The green outline show the calibrated area. Orange shows the sampled data points. Red shows outliers. Usually large outliers are blinks, other large outliers can often be attributed to subject error (not looking at the marker). Open image in another tab to see it at full resolution.
 -->
 
-### Pupil Detection
-
-Pupil's algorithms automatically detect the participant's pupil. With the 3d detection and mapping mode, Pupil uses a 3d model of the eye(s) that constantly updates based on observations of the eye. This enables the system to compensate for movements of the headset - slippage. To build up an initial model, you can just look around your field of view.
-
-> {{< video-webm src="/videos/calibration/pupil-detection/pd.webm" >}}
-
-<!-- > <div class="figure-container">
-	<div class="Grid Grid-row">
-		<div class="Grid-cell--1of2">
-			<div class="Grid-cell">
-				<p>Eye point to each marker to create a sampling point</p>
-			</div>
-		</div>
-		<div class="Grid-cell--1of2">
-			<div class="Grid-cell">
-				<p>Eye point to each marker to create a sampling point</p>
-			</div>
-		</div>
-	</div>
-</div> -->
-
-### Before every calibration
-Make sure that the users pupil is properly tracked. Make sure that the world camera is in focus for the distance at which you want to calibrate, and that you can see the entire area you want to calibrate within the world cameras extents (FOV).
-
-> <div class="figure-container">
-	<div class="Grid Grid--justifyCenter Grid--center Grid--alignContentCenter Feature-row">
-		<div class="Grid-cell Grid-cell--full">
-			<div class="Grid Grid--1of2 Text-center u-padBottom--2">
-				<div class="Grid-cell ">
-					{{< webp-img figure-class="img-m" src="/images/pupil-hardware/pupil-detect.webp" alt="Pupil detection" >}}
-					<p>Your pupil is properly detected by the eye camera</p>
-				</div>
-				<div class="Grid-cell">
-					{{< webp-img figure-class="img-m" src="/images/pupil-hardware/focus.webp" alt="World camera" >}}
-					<p>Make sure the world camera is in focus</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
 ### Notes on calibration accuracy
 Using screen based 9 point calibration method, you should easily be able to achieve tracking accuracy within the physiological limits (1-2 visual degrees).
 
@@ -209,67 +204,103 @@ If you open up a session folder you will see a collection of video(s) and data f
 
 Click on the selector "Open Plugin" and select your plugin.
 
-### Pupil Groups
+#### Third-party plugins
+
+You can easily load third party plugins. Third party plugins will appear in the
+Pupil Capture or Pupil Player plugin list. Copy the plugin to the plugins folder
+within the `pupil_capture_settings` or `pupil_player_settings` folder.
+
+### Fixation Detection
+
+Fixation detectors classify fixations using dispersion and duration.
+*Dispersion* is measured as the distance between pupil positions.
+*Duration* is a specified period of time. The fixation detector plugin will
+classify pupil positions as fixations if they are within the dispersion for the
+duration of time specified.
+
+The `Fixation Detector 3D` plugin uses the eye model's 3d orientation angle to
+calculate the dispersion. The settings allow you to set the duration in seconds
+and the maximum dispersion amount in degrees.
+
+If the plugin is loaded, fixations will reduce the amount of samples that a
+[Screen Marker or Manual Marker calibration](https://docs.pupil-labs.com/master/#calibration-methods) usually requires.
+
+### Network plugins
+
+Pupil Capture has a built-in data broadcast functionality. It is based on the network library [ZeroMQ](http://zeromq.org/)
+and follows the [`PUB-SUB` pattern](http://zguide.zeromq.org/php:chapter1#Getting-the-Message-Out). Data is published with an affiliated topic.
+Clients need to subscribe to their topic of interest to receive the respective data. To reduce network traffic, only data
+with at least one subscription is transferred.
+
+#### Pupil Remote
+
+> {{< video-webm src="/videos/pupil-remote/pr.webm" >}}
+
+`Pupil Remote` is the plugin that functions as entry point to the broadcast infrastructure. It also provides a high level interface to control Pupil Capture over the network (e.g. start/stop a recording).
+
+* Load the `Pupil Remote` plugin from the `General` sub-menu in the GUI (it is loaded by default).
+* It will automatically open a network port at the default `Address`.
+* Change the address and port as desired.
+* If you want to change the address, just type in the address after the `tcp://`
+
+<aside class="notice">
+See the developer documentation on how to access Pupil Remote from your own application.
+</aside>
+
+#### Pupil Groups
+
 `Pupil Groups` can help you to collect data from different devices and control an experiment with multiple actors (data generators and sensors) or use more than one Pupil device simultaneously:
 
 * Load the `Pupil Groups` plugin from the `General` sub-menu in the GUI.
-* Once the plugin is active it will show all other local network pupil sync nodes in the GUI
-* It will also automatically synchronise time up to 0.1ms.
+* Once the plugin is active it will show all other local network Pupil Group nodes in the GUI
 * Furthermore actions like starting and stopping a recording on one device will be mirrored instantly on all other devices.
 
+<aside class="notice">
 For this to work your network needs to allow `UDP` transport. If the nodes do not find each other, create a local wifi network and use that instead.
+</aside>
 
 <aside class="notice">
   Pupil Groups can easily be integrated in your own app or device. Have a look at <a href="https://github.com/pupil-labs/pupil-helpers/tree/master/pupil_sync">pupil helpers</a> to get started.
 </aside>
 
-### Streaming Pupil Data over the network
+#### Pupil Time Sync
 
-> {{< video-webm src="/videos/pupil-remote/pr.webm" >}}
+If you want to record data from multiple sensors (e.g. multiple Pupil Capture instances)
+with different sampling rates it is important to synchronize the clock of each sensor.
+You will not be able to reliably correlate the data without the synchronization.
 
-`Pupil Remote` is a plugin that is used to broadcast data over the network using the excellent library [Zero MQ](http://zeromq.org/).
+The [Pupil Time Sync protocol](https://github.com/pupil-labs/pupil/blob/0fbccd412a9e0ff553eb91727dd0da54d33e9637/pupil_src/shared_modules/time_sync_spec.md)
+defines how multiple nodes can find a common clock master and synchronize their time with it.
 
-* Load the `Pupil Remote` plugin from the `General` sub-menu in the GUI (it is loaded by default).
-* It will automatically begin broadcasting at the default `Address` specified.
-* Change the address and port as desired.
-* If you want to change the address, just type in the address after the `tcp://`
+The Pupil Time Sync plugin is able to act as clock master as well as clock follower.
+This means that each Pupil Capture instance can act as a clock reference for others
+as well as changing its own clock such that it is synchronized with an other reference
+clock.
 
-### Receiving Data with your own app
-ZeroMQ has bindings to many languages. Reading the stream using python goes like so:
+Pupil Time Sync nodes only synchronize time within their respective group. Be aware
+that each node has to implement the same protocol version to be able to talk to
+each other.
 
-```python
-"""
-Receive data from Pupil server broadcast over TCP
-test script to see what the stream looks like
-and for debugging
-"""
+<aside class="notice">
+See the [pupil-helpers](https://github.com/pupil-labs/pupil-helpers/tree/master/pupil_sync) for example Python implementations.
+</aside>
 
-import zmq
-import json
+<aside class="notice">
+For this to work your network needs to allow `UDP` transport. If the nodes do not find each other, create a local wifi network and use that instead.
+</aside>
 
-#network setup
-port = "5000"
-context = zmq.Context()
-socket = context.socket(zmq.SUB)
-socket.connect("tcp://127.0.0.1:"+port)
+#### Frame Publisher
+<!-- Not sure if this should be mentioned here at all -->
+The `Frame Publisher` plugin broadcasts video frames from the world and eye cameras.
 
-# recv all messages
-socket.setsockopt(zmq.SUBSCRIBE, '')
-# recv just pupil postions
-# socket.setsockopt(zmq.SUBSCRIBE, 'pupil_positions')
-# recv just gaze postions
-# socket.setsockopt(zmq.SUBSCRIBE, 'gaze_positions')
+There is a [pupil-helper example script](https://github.com/pupil-labs/pupil-helpers/blob/0df77b47cebd49a6c35b6769da483c115a626836/pupil_remote/recv_world_video_frames.py) that demonstrates how to receive and decode world frames.
 
-while True:
-    topic,msg =  socket.recv_multipart()
-    msg = json.loads(msg)
-    print  "\n\n",topic,":\n",msg
+#### Remote Recorder
 
-```
-We have written some simple Python scripts that you can try using Pupil Server to have your gaze control a mouse. Or just print out streaming from Pupil Server. For more simple scripts, check out the [pupil-helpers repository](https://github.com/pupil-labs/pupil-helpers).
-
-### Message Format for Pupil Server
-Messages from pupil server mirror all objects in the `events` dict that is used internally in pupil capture and player. The data is send per topic (`pupil_positions`, `gaze_positions` ...) and serialized using [json](https://docs.python.org/2/library/json.html). The example above tells it all.
+The [Pupil Mobile](https://docs.pupil-labs.com/#pupil-mobile) app can be controlled
+via Pupil Capture when connected. This includes changing camera and streaming
+settings. The `Remote Recorder` plugin extends this list with the possibility
+to start and stop recordings that are stored to the phone.
 
 ### Surface Tracking
 
@@ -294,7 +325,7 @@ A surface can be defined by one or more markers. Surfaces can be defined with Pu
 *  Registered surfaces are saved automatically, so that the next time you run Pupil Capture or Pupil Player, your surfaces (if they can be seen) will appear when you start the marker tracking plugin.
 *  Surfaces defined with more than 2 markers are detected even if some markers go outside the field of vision or are obscured.
 *  We have created a window that shows registered surfaces within the world view and the gaze positions that occur within those surfaces in realtime.
-*  Streaming Surfaces with Pupil Capture - Detected surfaces as well as gaze positions relative to the surface can be streamed locally or over the network with pupil server. Check out [this video](http://youtu.be/qHmfMxGST7A) for a demonstration.
+*  Streaming Surfaces with Pupil Capture - Detected surfaces as well as gaze positions relative to the surface are broadcast under the `surface` topic. Check out [this video](http://youtu.be/qHmfMxGST7A) for a demonstration.
 *  Surface Metrics with Pupil Player - if you have defined surfaces, you can generate surface visibility reports or gaze count per surface. See our [blog post](http://pupil-labs.com/blog/2014/07/0392-player-release.html) for more information.
 
 
@@ -304,7 +335,22 @@ A surface can be defined by one or more markers. Surfaces can be defined with Pu
   <strong>Note</strong> - When printing markers, ensure that white space remains around the square marker. You can scale the markers to different sizes, but make sure to have a white border width of at least 1.2 x the marker grid size for marker, unless the marker is affixed onto a white (or light colored) background.
 </aside>
 
+### Blink Detection
+
+The pupil detection algorithm assigns a `confidence` value to each pupil datum. It represents the quality of the detection result. While the eye is closed the assigned confidence is very low. The `Blink Detection` plugin makes use of this fact by defining a blink as a significant confidence drop within a short period of time. The plugin creates a `blink` event for each pupil datum of the following format:
+
+```python
+{  # blink datum
+	'topic': 'blink',
+    'activation': <float>,
+    'timestamp': <timestamp float>,
+    'is_blink': <bool>}
+```
+
+The `activation` field denotes how strong the confidence dropped. Values greater than `0.4` are classified as blinks. If this is the case the `is_blink` field is set to `True`.
+
 ### Audio Capture
+
 The `Audio Capture` plugin provides access to a selected audio source for other plugins and writes its output to the `audio.wav` file during a recording. It also writes the Pupil Capture timestamp for each audio packet to the `audio_timestamps.npy` file. This way you can easily correlate single audio packets to their corresponding video frames. If you want to merge audio and video into a single file you will need to follow these steps:
 
 1. Open the recording in Pupil Player
@@ -317,3 +363,10 @@ ffmpeg -i <recording directory>/exports/<exported frame range>/world_viz.mp4 -i 
 ```
 
 Only the exported video contains the timestamps that are required for ffmpeg to sync audio and video correctly.
+
+### Annotations
+
+The `Annotation Capture` plugin allows you to mark timestamps with a label -- sometimes reffered to as triggers.
+These labels can be created by pressing their respective hotkey or by sending a notification with the subject `annotation`.
+This is useful to mark external events (e.g. "start of condition A") within the Pupil recording. The `Annotation Player`
+plugin is able to correlate export these events.

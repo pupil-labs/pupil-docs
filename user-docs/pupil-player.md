@@ -23,7 +23,7 @@ Let's get familiar with the Player window.
 The Player window is the main control center for `Pupil Player`. It displays the recorded video feed from pupil capture file.
 
 1. **Graphs** - This area contains performance graphs. You can monitor `CPU` and `FPS` and pupil algorithm detection confidence. These graphs are the same as in the `World` window..
-1. **Settings GUI Menu** - This is the main GUI for Pupil Player. You can use this menu primarily to launch plugins and control global settings.  
+1. **Settings GUI Menu** - This is the main GUI for Pupil Player. You can use this menu primarily to launch plugins and control global settings.
 1. **Plugin GUIs** - Each Plugin spawns its own GUI window. You can control settings of each Plugin in the GUI window. For details on all plugins see documentation on [Pupil Player](#pupil-player) in the user guide.
 1. **Hot keys** - This area contains clickable buttons for plugins.
 1. **Seek Bar and Trim Marks** - You can drag the playhead (large circle) to scrub through the video or `space` bar to play/pause. You can use the arrow keys to advance one frame at a time. Drag the small green circles at the end of the seek bar to set trim marks. Trim marks directly inform the section of video/data to export.
@@ -38,7 +38,7 @@ Drag the recording directory (the triple digit one) directly onto the app icon *
 #### Workflow
 
 ```bash
-Running from source?
+# Running from source?
 
 cd "path_to_pupil_dir/pupil_src/player"
 python main.py "path/to/recording_directory"
@@ -72,7 +72,7 @@ There are two general types of plugins:
 In the following sections we provide a summary of plugins currently available and in Pupil Player.
 
 ### Visualization Plugins
-For the sake of clarity, we will call plugins with the `Vis` prefix **visualization** plugins. These plugins are simple plugins, are mostly additive (or *not unique*), and directly operate on the gaze positions to produce visualizations. Other plugins like `Offline Surface Tracker` also produces visualizations, but will be discussed elsewhere due to the extent of its features.    
+We will call plugins with the `Vis` prefix **visualization** plugins. These plugins are simple plugins, are mostly additive (or *not unique*), and directly operate on the gaze positions to produce visualizations. Other plugins like `Offline Surface Tracker` also produces visualizations, but will be discussed elsewhere due to the extent of its features.
 
 #### Vis Circle
 
@@ -83,9 +83,9 @@ Visualize the gaze positions with a circle for each gaze position. This plugin i
 You can set the following parameters:
 
   + `radius` - the radius of the circle around the gaze point.
-  + `stroke width` - the thickness or width of the stoke in pixels.  
+  + `stroke width` - the thickness or width of the stoke in pixels.
   + `fill` - toggle on for a circle with solid fill. Toggle off for a circle with only stroke.
-  + `color` - define the `red`, `green`, `blue` values for color. `Alpha` defines the opacity of the stroke and fill.  
+  + `color` - define the `red`, `green`, `blue` values for color. `Alpha` defines the opacity of the stroke and fill.
 
 Here we show an example of how you could use **2** instances of the `Vis Circle` Plugin. The first instance renders the gaze position as a filled yellow circle. The second instance renders the same gaze position as an orange stroke circle.
 
@@ -95,9 +95,9 @@ Here we show an example of how you could use **2** instances of the `Vis Circle`
 
 Visualize the gaze positions with a cross for each gaze position. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization. You can set the following parameters:
 
-  + `inner offset length` - the distance in pixels to offset the interior cross endpoints from the gaze position. A value of `0` will make the crosshairs intersect the gaze position.  
+  + `inner offset length` - the distance in pixels to offset the interior cross endpoints from the gaze position. A value of `0` will make the crosshairs intersect the gaze position.
   + `outer length` - The length of the cross lines in pixels from the gaze position. Note - equal values of `inner offset length` and `outer length` will result in a cross with no length, and therefore not rendered.
-  + `stroke width` - the thickness or width of the stoke in pixels.  
+  + `stroke width` - the thickness or width of the stoke in pixels.
   + `color` - define the `red`, `green`, `blue` values for color.
 
 Here we show an example of how you could use **2** instances of the `Vis Cross` Plugin. The first instance renders the gaze position as a red cross with that extends to the boundaries of the screen. The second instance renders the gaze position as a green cross, with a heavier stroke weight.
@@ -108,7 +108,7 @@ Here we show an example of how you could use **2** instances of the `Vis Cross` 
 
 This plugin enables past gaze positions to stay visible for the duration of time specified by the user. This plugin is **unique**, therefore you can only load one instance of this plugin.
 
-On its own, `Scan Path` does not render anything to the screen. It is designed to be used with other plugins. In some cases, it is even required to be enabled in order for other plugins to properly function. When used with `Vis` plugins (like `Vis Circle`, `Vis Cross`, `Vis Polyline`, or `Vis Light Points`) `Scan Path` will enable you to see both the current gaze positions and the past gaze positions for the specified duration of time.     
+On its own, `Scan Path` does not render anything to the screen. It is designed to be used with other plugins. In some cases, it is even required to be enabled in order for other plugins to properly function. When used with `Vis` plugins (like `Vis Circle`, `Vis Cross`, `Vis Polyline`, or `Vis Light Points`) `Scan Path` will enable you to see both the current gaze positions and the past gaze positions for the specified duration of time.
 
 Here we show an example of `Scan Path` set with `0.4` seconds duration used with `Vis Circle`. Each green circle is a gaze position within the last `0.4` seconds of the recording.
 
@@ -118,7 +118,7 @@ Here we show an example of `Scan Path` set with `0.4` seconds duration used with
 
 Visualize the gaze positions with a polyline for each gaze position. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization. You can set the following parameters:
 
-  + `line thickness` - the thickness or width of the polyline stroke in pixels.  
+  + `line thickness` - the thickness or width of the polyline stroke in pixels.
   + `color` - define the `red`, `green`, `blue` values for color.
 
 An example showing `Vis Polyline` used with `Vis Circle` and `Scan Path`. The polyline enables one to visualize the sequence of the gaze positions over the duration specified by `Scan Path`.
@@ -129,7 +129,7 @@ An example showing `Vis Polyline` used with `Vis Circle` and `Scan Path`. The po
 
 Visualize the gaze positions as a point of light for each gaze position. The `falloff` of the light from the gaze position is specified by the user. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization. You can set the following parameters:
 
-  + `falloff` - The distance (in pixels) at which the light begins to fall off (fade to black). A very low number will result in a very dark visualization with tiny white light points. A very large number will result in a visualization of the world view with little or no emphasis of the gaze positions.  
+  + `falloff` - The distance (in pixels) at which the light begins to fall off (fade to black). A very low number will result in a very dark visualization with tiny white light points. A very large number will result in a visualization of the world view with little or no emphasis of the gaze positions.
 
 Here is an example demonstrating `Vis Light Points` with a falloff of 73.
 
@@ -180,7 +180,25 @@ Here is an example workflow for using the `Offline Surface Detector` plugin to g
 
 > {{< webp-img src="/images/pupil-player/plugin/3d-fixation.webp" alt="3D Fixation Detector" >}}
 
-This plugin detects fixation based on a dispersion threshold in terms of degrees of visual angle. This plugin is **unique**, therefore you can only load one instance of this plugin.
+There two offline fixation detectors that are **unique** but exclusive to each other, therefore you can only load one instance of these plugins.
+
+* `Gaze Position 2D Fixation Detector`
+* `Pupil Angle 3D Fixation Detector`
+
+Both plugins detect fixations based on dispersion-duration. This means that if
+the pupil does not move more than a given distance (dispersion) in a given time
+period (duration) the plugin will classify the pupil positions during this time
+range as a fixation.
+
+The 2D fixation detector uses the distance to the mean gaze position as dispersion
+measure. This is a fast method but only approximates the actual dispersion and
+relies on a correct calibration.
+
+The 3D fixation detector calculates the pairwise angle between all pupil
+oberservations in the given duration and takes the maximum angle as dispersion
+measure. This requires more computational resources than the 2D fixation detector
+but calculates the correct dispersion instead of an approximation and does not
+require a calibration to calculate it.
 
 Toggle `Show fixations` to show a visualization of fixations. The blue number is the number of the fixation (0 being the first fixation). You can export fixation reports for your current trim section by pressing `e` on your keyboard or the `e` hot key button in the left hand side of the window.
 
@@ -219,6 +237,89 @@ You can use this plugin to apply visualizations to an entire directory (folder) 
 
   + `Recording source directory` - a directory (folder) that contains one or more Pupil recording folder.
   + `Recording destination directory` - an existing directory (folder) where you want to save the visualizations.
+
+### Data Producers
+
+Producer plugins provide data of a specific topic -- currently pupil or gaze
+data -- to other plugins. There is exactly one active plugin for each topic.
+
+* Topic: Pupil positions
+    * `Pupil from recording`
+    * `Offline pupil detection`
+
+* Topic: gaze positions
+    * `Gaze from recording`
+    * `Offline calibration`
+
+Interim results are cache in the `offline_results` directory within the recording folder.
+
+#### Pupil from recording
+
+Loads pupil positions that were calculated and saved during a Pupil Capture
+recording.
+
+#### Gaze from recording
+
+Loads gaze positions that were mapped after a successful calibration in Pupil Capture.
+
+#### Offline pupil detection
+
+Runs the pupil detection algorithm in Pupil Player. This requires an existing
+video recording of the eye(s). The plugin can run the `3d` as well as the `2d`
+detection method. At the beginning, it checks if a video file is present for
+each eye and opens eye windows accordingly (similar to Pupil Capture).
+
+<aside class="notice">
+This plugin is especially useful for local Pupil Mobile recordings since the
+app does not run the pupil detection on its own.
+</aside>
+
+The pupil detection algorithm will only run as long as the eye window is open.
+This means that you can run monocular detection by simply closing the eye window
+in which you are not interested in. Reload the plugin to reinitiate all available
+eye processes.
+
+The `Redetect` button restarts the detection procedure. This is especially useful
+when using the `3d` method, since the model that was built-up in the previous
+run can be reused for the new run. This way, you can calculate `3d` pupil positions
+at the beginning of the recording where the model usually needs to be built-up
+first.
+
+#### Offline calibration
+
+This plugin executes three tasks:
+
+1. Search calibration markers within the `world` video.
+1. Run calibration given reference and pupil positions.
+1. Map pupil to gaze positions given the calibration result.
+
+The calibration marker detection runs initially once per recording. The resulting
+reference positions are cached in the `offlne_calibration` file. `Redetect` reruns
+the detection procedure.
+
+The plugin allows you to create multiple calibration sections. Each calibration section contains two frame ranges -- the `calibration range` and the `mapping range`.
+Each frame range is of the following format `a - b` where `a` and `b` are world
+frame indices. Following the Python convention, indices are zero-based and frame `b`
+is not included. The default section's ranges are set to the maximum width.
+
+The calibration range tells the plugin which reference and pupil positions it
+should consider to run the calibration. The mapping range denotes the pupil
+positions that will be mapped after a successful calibration. The plugin will
+choose the mapping mode (`3d` or `2d`) automatically depending on which data
+it encounters.
+
+<aside class="notice">
+Note that you will have duplicated gaze positions if two mapping ranges intersect.
+</aside>
+
+Each section is represented by a colored bar above the seek bar. The thicker part
+denotes the calibration range while the thin part denotes the mapping range.
+
+<aside class="notice">
+The colored bars might intersect with the progress indicators of the offline
+surface tracker. This is only a visual bug and does not influence the functionality
+of neither plugin. We hope to get this fixed in the near future.
+</aside>
 
 ### Developing your own Plugin
 To develop your own plugin see the <a href="#plugin-guide">developer guide</a>.
