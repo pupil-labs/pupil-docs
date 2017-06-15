@@ -15,7 +15,7 @@ Pupil Mobile is companion app to Pupil Capture and Pupil Service. It is currentl
 
 Pupil Mobile enables you to connect your Pupil eye tracking headset to your Android device via USBC. You can preview video and other sensor streams on the Android device and stream video data over a WiFi network to other computers (clients) running Pupil Capture. Seamlessly integrated with Pupil Capture and Pupil Service.
 
-The communication protocol is named [NDSI](https://github.com/pupil-labs/pyndsi/blob/master/NDSI-CommSpecs.md), it is completely open. A reference client for Python exsits [here](https://github.com/pupil-labs/pyndsi).
+The communication protocol is named [NDSI](https://github.com/pupil-labs/pyndsi/blob/master/ndsi-commspec.md), it is completely open. A reference client for Python exsits [here](https://github.com/pupil-labs/pyndsi).
 
 ### Download App
 

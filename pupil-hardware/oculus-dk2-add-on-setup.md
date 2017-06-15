@@ -36,7 +36,7 @@ Route the USB cables through the vent holes in the top of the Oculus DK2.
 
 Connect the eye tracking cup to the USB cable. Remove the old cup and insert the eye tracking cup in the DK2.
 
-#### Connection and Camera
+#### USB and Camera IDs
 Once you plug the usb cables into your computer: 
 
 * the right eye camera will show up with the name: `Pupil Cam 1 ID0`

@@ -10,7 +10,7 @@ page_weight = 2
 This page outlines the way `Pupil Capture` and `Pupil Service` communicate via a message bus internally and how to read and write to this bus from another application on the same machine or on a remote machine.
 
 ### The IPC Backbone
-Starting with `v0.8` `Pupil Capture` and a new App called `Pupil Service` use a [ZeroMQ](http://http://zeromq.org/) PUBSUB Proxy as its messaging bus. We call it the `IPC Backbone`. The IPC Backbone runs as a thread in the main process. 
+Starting with `v0.8` `Pupil Capture` and a new App called `Pupil Service` use a [ZeroMQ](http://zeromq.org/) PUBSUB Proxy as its messaging bus. We call it the `IPC Backbone`. The IPC Backbone runs as a thread in the main process.
 
 <aside class="notice">
 Note - The main process does not do any CPU heavy work. It only run the proxy, launches other processes and does a few other light tasks.
@@ -79,7 +79,7 @@ The topic is `logging.log_level_name` (debug,info,warning,error,...). The messag
 
 ### Message Documentation
 
-`v0.8` of the Pupil software introduces a consistent naming scheme for message topics. They are used to publish and subscribe to the [`IPC Backbone`](#ipc). Pre-defined message topics are `pupil`, `gaze`, `notify`, `delayed_notify`, `logging`. Notifications sent with the `notify_all()` function of the `Plugin` class will be published automatically as `notify.<notification subject>`.
+`v0.8` of the Pupil software introduces a consistent naming scheme for message topics. They are used to publish and subscribe to the [`IPC Backbone`](#the-ipc-backbone). Pre-defined message topics are `pupil`, `gaze`, `notify`, `delayed_notify`, `logging`. Notifications sent with the `notify_all()` function of the `Plugin` class will be published automatically as `notify.<notification subject>`.
 
 #### Message Reactor and Emitter Documentation
 

@@ -116,4 +116,4 @@ Kassner, M., & Patera, W. (2012). Pupil: Constructing the space of visual attent
 
 ## Link to Repository
 
-You are also welcome to link to our code repositories: [Pupil Github Repository](github.com/pupil-labs/pupil)
+You are also welcome to link to our code repositories: [Pupil Github Repository](https://github.com/pupil-labs/pupil)

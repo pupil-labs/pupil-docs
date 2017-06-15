@@ -35,7 +35,7 @@ or
 #### Run a separate USB lane along the tether
 If you want full frame rate and resolution for both the Vive's camera and the add-on you will have to connect the Pupil add-on to a separate usb port on the host PC. We recommend this approach.
 
-### Connection and Camera
+### USB Connection and Camera IDs
 
 Once you plug the usb cables into your computer:
 

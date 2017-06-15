@@ -13,7 +13,7 @@ We develop the Windows version of Pupil using **Windows 10**.
 
 Therefore we can only debug and support issues for **Windows 10**. 
 
-### Install Dependencies
+### Install Windows Dependencies
 
 Running Pupil from source includes the installation of several dependencies. Please follow the instructions below. 
 
