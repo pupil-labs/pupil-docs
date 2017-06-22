@@ -113,7 +113,7 @@ This is the "old" way of loading plugins. This method gives more flexibility but
 ### Example plugin development walkthrough
 
 #### Inheriting from existing plugin
-If you want to add or extend the functionality of an existing plugin, you should be able to apply [standard inheritance principles](https://docs.python.org/2/library/functions.html#super) of Python 2.7.
+If you want to add or extend the functionality of an existing plugin, you should be able to apply [standard inheritance principles](https://docs.python.org/3/library/functions.html#super) of Python 3.
 
 Things to keep in mind:
 
@@ -173,45 +173,115 @@ self.order = .8
 self.uniqueness = "by_class"
 ```
 
-(uniqueness available [options](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/plugin.py))
-(describe how to safely remove unneeded parameters/attributes)
-
-Finally, lets implement what our new Plugin will do. Here we choose to apply an OpenCv threshold to the world image and give us proper feedback of the results, in real time. Good for OpenCv and related studies. It is possible by means of the `update` method:
-
-> (describe the world frame structure; maybe linking to trusted OpenCv docs)
+See [the source](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/plugin.py#L31-L34) for a list of all available uniqueness options.
+<!-- There is no reason to remove atributes (describe how to safely remove unneeded parameters/attributes)
+ -->
+Finally, lets implement what our new Plugin will do. Here we choose to apply an OpenCv threshold to the world image and give us proper feedback of the results, in real time. Good for OpenCv and related studies. It is possible by means of the `recent_events` method:
 
 ```python
-def update(self,frame,events):
-   img = frame.img
-   height = img.shape[0]
-   width = img.shape[1]
+def recent_events(self, events):
+  if 'frame' in events:
+    frame = events['frame']
+    img = frame.img
+    height = img.shape[0]
+    width = img.shape[1]
 
-   blur = cv2.GaussianBlur(img,(5,5),0)
+    blur = cv2.GaussianBlur(img,(5,5),0)
 
-   edges = []
-   threshold = 177
-   blue, green, red = 0, 1, 2
+    edges = []
+    threshold = 177
+    blue, green, red = 0, 1, 2
 
-   # apply the threshold to each channel
-   for channel in (blur[:,:,blue], blur[:,:,green], blur[:,:,red]):
+    # apply the threshold to each channel
+    for channel in (blur[:,:,blue], blur[:,:,green], blur[:,:,red]):
       retval, edg = cv2.threshold(channel, threshold, 255, cv2.THRESH_TOZERO)
       edges.append(edg)
 
-   # lets merge the channels again
-   edges.append(np.zeros((height, width, 1), np.uint8))
-   edges_edt = cv2.max(edges[blue], edges[green])
-   edges_edt = cv2.max(edges_edt, edges[red])
-   merge = [edges_edt, edges_edt, edges_edt]
+    # lets merge the channels again
+    edges.append(np.zeros((height, width, 1), np.uint8))
+    edges_edt = cv2.max(edges[blue], edges[green])
+    edges_edt = cv2.max(edges_edt, edges[red])
+    merge = [edges_edt, edges_edt, edges_edt]
 
-   # lets check the result
-   frame.img = cv2.merge(merge)
+    # lets check the result
+    frame.img = cv2.merge(merge)
 ```
 
-(considering the update method, describe stuff inside the `events` dictionary)
+`recent_events` is called everytime a new world frame is available but latest
+after a timeout of 0.05 seconds. The `events` dictionary will include the image
+frame object if it was available. It is accessible through the `frame` key.
+
+You can access the image buffer through the `img` and the `gray` attributes of the frame object. They return a BGR (`height x width x 3`) and gray scaled (`height x width`) uint8-numpy array respectively. Visualization plugins (e.g. [`vis_circle.py`](https://github.com/pupil-labs/pupil/blob/master/pupil_src/player/vis_circle.py#L47)) modify the `img` buffer such that their visualizations are visible in the Pupil Player exported video. Use OpenGL (within the `Plugin.gl_display` method) to draw visualizations within Pupil Player that are not visible in the exported video (e.g. surface heatmaps in [`Offline_Surface_Tracker`](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/offline_surface_tracker.py)). See [below](#Export-Custom-Video-Visualizations) for more information.
+
+The `events` dictionary contains other recent data, e.g. `pupil_positions`, `gaze_positions`, `fixations`, etc. Modifications to the `events` dictionary are automatically accessible by all plugins with an higher `order` than the modifying plugin.
+
+<aside class="notice">
+A gaze mapper is just a plugin with a very low order that extends the `events` dictionary with the `gaze_positions` field.
+</aside>
 
 ### Plugin Integration
-(describe PyGlui menu integration, for example, with a slider to the threshold value and illustrate how achieve persistence of the parameter)
 
-(describe how to integrate the Custom Plugin visualization into the Video Exporter)
+#### pyglui UI Elements
 
-(describe how to integrate new data produced by the Custom Plugin into Pupil's data export work-flow)
+['pyglui'](https://github.com/pupil-labs/pyglui) is an OpenGL-based UI framework that provides easy to use UI components for your plugin.
+User plugins often have at least one menu to inform the user that they are running as well as providing the possibility to close single plugins.
+
+```python
+from plugin import Plugin
+from pyglui import ui
+
+
+class Custom_Plugin(Plugin):
+    def __init__(self, g_pool, example_param=1.0):
+        super().__init__(g_pool)
+        # persistent attribute
+        self.example_param = example_param
+
+    def init_gui(self):
+        # Create a floating menu
+        self.menu = ui.Scrolling_Menu('<title>')
+
+        # create a button to close the plugin
+        def close():
+            self.alive = False
+        self.menu.append(ui.Button('Close', close))
+
+        # Create a simple info text
+        help_str = "Example info text."
+        self.menu.append(ui.Info_Text(help_str))
+
+        # Add a slider that represents the persistent value
+        self.menu.append(ui.Slider('example_param', self, min=0.0, step=0.05, max=1.0, label='Example Param'))
+
+        # add menu to ui hierarchy
+        self.g_pool.gui.append(self.menu)
+
+    def deinit_gui(self):
+        if self.menu:
+            self.g_pool.gui.remove(self.menu)
+            self.menu = None
+
+    def get_init_dict(self):
+        # all keys need to exists as keyword arguments in __init__ as well
+        return {'example_param': self.example_param}
+
+    def cleanup(self):
+        # Remove UI when the plugin is unloaded
+        self.deinit_gui()
+```
+
+<aside class="notice">
+See <a href="https://github.com/pupil-labs/pyglui/blob/master/pyglui/ui_elements.pxi">ui_elements.pxi</a> and <a href="https://github.com/pupil-labs/pyglui/blob/master/pyglui/menus.pxi">menus.pxi</a> for an overview over all existing UI elements and menu types.
+</aside>
+
+#### Export Custom Video Visualizations
+As descrbed above, plugins are able to modify the image buffers to export their visualizations. The plugins `recent_events` method is automatically called for each frame once by the video exporter process. Plugins might overwrite changes made by plugins with a lower order than themselves. OpenGL visualizations are not exported. See [`vis_circle.py`](https://github.com/pupil-labs/pupil/blob/master/pupil_src/player/vis_circle.py#L47) for an example visualization.
+
+#### Export Custom Raw Data
+Each Player plugin gets a notification with subject `should_export` thar includes the world frame indices range that will be exported and the directory where the recording will be exported to. Add the code to the right to your plugin and implement an `export_data` function. See [`fixation_detector.py`](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/fixation_detector.py#L263-L297) for an example.
+
+```python
+    def on_notify(self, notification):
+        if notification['subject'] is "should_export":
+            self.export_data(notification['range'], notification['export_dir'])
+```
