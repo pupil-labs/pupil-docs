@@ -172,7 +172,7 @@ Dynamic libs are required to be stored in `pupil\pupil_external` so that you do 
 ### FFMPEG to pupil_external
 
 - Download FFMPEG Windows shared binaries from [ffmpeg](http://ffmpeg.zeranoe.com/builds/)
-- Unzip ffmpeg to your work dir
+- Unzip ffmpeg-shared to your work dir
 - Copy the following 8 `.dll` files to `pupil_external`
     - `avcodec-57.dll`
     - `avdevice-57.dll`
