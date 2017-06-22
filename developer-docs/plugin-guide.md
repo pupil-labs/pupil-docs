@@ -281,7 +281,53 @@ As descrbed above, plugins are able to modify the image buffers to export their 
 Each Player plugin gets a notification with subject `should_export` thar includes the world frame indices range that will be exported and the directory where the recording will be exported to. Add the code to the right to your plugin and implement an `export_data` function. See [`fixation_detector.py`](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/fixation_detector.py#L263-L297) for an example.
 
 ```python
-    def on_notify(self, notification):
-        if notification['subject'] is "should_export":
-            self.export_data(notification['range'], notification['export_dir'])
+def on_notify(self, notification):
+    if notification['subject'] is "should_export":
+        self.export_data(notification['range'], notification['export_dir'])
 ```
+
+#### Background Tasks
+All plugins run within the world process. Doing heavy calculations within any of the periodically called `Plugin` methods (e.g. `recent_events`) can result in poor performance of the application. It is recommended to do any heavy calculations within a separate subprocess - (multi-threading brings its own problems in Python)[http://python-notes.curiousefficiency.org/en/latest/python3/multicore_python.html]. We created the `Task_Proxy` to simplify this procedure. It is initialized with a generator which will be executed in a subprocess. The generator's results will automatically be piped to the main thread where the plugin can fetch them.
+
+```python
+from plugin import Plugin
+from pyglui import ui
+import logging
+logger = logging.getLogger(__name__)
+
+
+def example_generator(mu=0., sigma=1., steps=100):
+    '''samples `N(\mu, \sigma^2)`'''
+    import numpy as np
+    from time import sleep
+    for i in range(steps):
+        # yield progress, datum
+        progress = (i + 1) / steps
+        value = sigma * np.random.randn() + mu
+        yield progress, value
+        sleep(np.random.rand() * .1)
+
+
+class Custom_Plugin(Plugin):
+    def __init__(self, g_pool):
+        super().__init__(g_pool)
+        self.proxy = Task_Proxy('Background', example_generator, args=(5., 3.), kwargs={'steps': 50})
+
+    def recent_events(self, events):
+        # fetch all available results
+        for progress, random_number in task.fetch():
+            logger.debug('[{:3.0f}%] {:0.2f}'.format(progress * 100, random_number))
+
+        # test if task is completed
+        if task.completed:
+            logger.debug('Task done')
+
+    def cleanup(self):
+        if not self.proxy.completed:
+            logger.debug('Cancelling task')
+            self.proxy.cancel()
+```
+
+<aside class="warning">
+Be aware that the generator should be defined outside of your plugin. If this requirement is not met the Python interpreter will try to serialize the `g_pool` attribute and this will raise an exception.
+</aside>
