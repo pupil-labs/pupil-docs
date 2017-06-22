@@ -9,16 +9,16 @@ page_weight = 1.3
 
 ### System Requirements
 
-We develop the Windows version of Pupil using **64 bit** **Windows 10**. 
+We develop the Windows version of Pupil using **64 bit** **Windows 10**.
 
-Therefore we can only debug and support issues for **Windows 10**. 
+Therefore we can only debug and support issues for **Windows 10**.
 
 ### Notes Before Starting
 
 - Work directory - We will make a directory called `work` at `C:\work` and will use this directory for all build processes and setup scripts. Whenever we refer to the `work` directory, it will refer to `C:\work`. You can change this to whatever is convenient for you, but note that all instructions and setup files refer to `C:\work`
 - Command Prompt - We will **always** be using `x64 Native Tools Command Prompt for VS 2017 Preview` as our command prompt. Make sure to only use this command prompt. Unlike unix systems, windows has many possible "terminals" or "cmd prompts". We are targeting `x64` systems and require the `x64` command prompt. You can access this cmd prompt from the Visual Studio 2017 shortcut in your Start menu.
-- 64bit - You should be using a 64 bit system and therefore all downloads, builds, and libraries should be for `x64` unless otherwise specified. 
-- Windows paths and Python - path separators in windows are a forward slash `\`. In Python, this is a special "escape" character. When specifying Windows paths in a Python string you must use `\\` instead of `\`. 
+- 64bit - You should be using a 64 bit system and therefore all downloads, builds, and libraries should be for `x64` unless otherwise specified.
+- Windows paths and Python - path separators in windows are a forward slash `\`. In Python, this is a special "escape" character. When specifying Windows paths in a Python string you must use `\\` instead of `\` or use [Python raw strings](https://docs.python.org/3/reference/lexical_analysis.html#string-and-bytes-literals), e.g. `r'\'`.
 - Help - For discussion or questions on Windows installation head over to the [Pupil Google Group][google-group]. If you run into trouble please raise an issue!
 
 ### Install Visual Studio
@@ -51,7 +51,7 @@ Install [7-zip](http://www.7-zip.org/download.html) to extract files.
 - [Download Python x64](https://www.python.org/downloads/release/python-361/)
 - Run the Python installer.
 - Check the box `Add Python to PATH`. This will add Python to your System PATH Environment Variable.
-- Check the box `Install for all users`. This will install Python to `C:\Program Files\Python36`. 
+- Check the box `Install for all users`. This will install Python to `C:\Program Files\Python36`.
 
 <aside class="notice"> Note - some build scripts may fail to start Python due to spaces in the path name. So, you may want to consider installing Python to `C:\Python36`.</aside>
 
@@ -59,8 +59,8 @@ Install [7-zip](http://www.7-zip.org/download.html) to extract files.
 To access your System Environment Variables:
 
 - Right click on the Windows icon in the system tray.
-- Select `System`. 
-- Click on `Advanced system settings`. 
+- Select `System`.
+- Click on `Advanced system settings`.
 - Click on `Environment Variables...`.
 - Click on `Path` in `System Variables` and click `Edit`.
 
@@ -84,7 +84,7 @@ Download the most recent version of the following wheels Python3.6 x64 systems.
 Open your command prompt and `Run as administrator` in the directory where the wheels are downloaded.
 
 - Install `numpy` and `scipy` before all other wheels.
-- Install all wheels with `pip install X` (where X is the name of the `.whl` file) 
+- Install all wheels with `pip install X` (where X is the name of the `.whl` file)
 - You can check that libs are installed with `python import X` statements in the command prompt where `X` is the name of the lib.
 
 ### Python Libs
@@ -109,7 +109,7 @@ Navigate to your work directory
 
 - `git clone --recursive https://github.com/tbennun/ceres-windows.git`
 - Download [Eigen 3.3.3](https://bitbucket.org/eigen/eigen/downloads/?tab=tags)
-- Unzip Eigen and rename the contained `eigen` directory to `Eigen` 
+- Unzip Eigen and rename the contained `eigen` directory to `Eigen`
 - Copy the `Eigen` directory into `ceres-windows`
 - Open `ceres-2015.sln` and with Visual Studio 2017 Preview and agree to update to 2017.
 - Set configurations to `Release` and `x64`
@@ -117,7 +117,7 @@ Navigate to your work directory
 - Right click on `ceres_static` and `Build`
 
 ### Boost
-Download and install the latest boost version for Windows x64 with version number matching your Visual Studio 2017 MSVC version. 
+Download and install the latest boost version for Windows x64 with version number matching your Visual Studio 2017 MSVC version.
 
 - For VS 2017 preview the MSVC version is 14.1
 - Download boost from [sourceforge](https://sourceforge.net/projects/boost/files/boost-binaries/1.64.0/boost_1_64_0-msvc-14.1-64.exe/download)
@@ -134,7 +134,7 @@ The prebuilt boost.python depends on `python27.dll`. The files from package boos
 
 Change user config before compiling boost.
 
-- Copy `boost\tools\build\example\user-config.jam` to `boost\tools\build\src\user-config.jam`. 
+- Copy `boost\tools\build\example\user-config.jam` to `boost\tools\build\src\user-config.jam`.
 - Uncomment and edit following lines in the `user-config.jam` file according your msvc and python version:
     - `using msvc : 14.1 ;` in section `MSVC configuration`
     - `using python : 3.6 : C:\\Python36 : C:\\Python36\\include : C:\\Python36\\libs ;` in section `Python configuration`
@@ -155,13 +155,13 @@ Add Boost libs to your system path
 - `git clone https://pupil-labs/pupil.git`
 
 ### Setup pupil_external dependencies
-Dynamic libs are required to be stored in `pupil\pupil_external` so that you do not have to add further modifications to your system PATH.  
+Dynamic libs are required to be stored in `pupil\pupil_external` so that you do not have to add further modifications to your system PATH.
 
 ### GLEW to pupil_external
 
 - Download GLEW Windows binaries from [sourceforge](http://glew.sourceforge.net/)
 - Unzip GLEW in your work dir
-- Copy `glew32.dll` to `pupil_external` 
+- Copy `glew32.dll` to `pupil_external`
 
 ### GLFW to pupil_external
 
@@ -212,14 +212,14 @@ Dynamic libs are required to be stored in `pupil\pupil_external` so that you do 
 <aside class="faq">When starting run_capture.bat, it will build module pupil_detectors. However, if you are debugging, you may want to try building explicitly. From within `pupil/pupil_src/capture/pupil_detectors` run `python setup.py build` to build the pupil_detectors.</aside>
 
 ### Start Pupil Capture with run_capture.bat
-You can double click `run_capture.bat` but the cmd prompt will close after executing the `.bat` file. It is better for development to run the `.bat` file from an already open cmd prompt. 
+You can double click `run_capture.bat` but the cmd prompt will close after executing the `.bat` file. It is better for development to run the `.bat` file from an already open cmd prompt.
 
 - Open your cmd prompt
 - Go to `pupil/pupil_src/capture`
 - run_capture.bat
 
 ### Start Pupil Player with run_player.bat
-You can double click `run_player.bat` but the cmd prompt will close after executing the `.bat` file. It is better for development to run the `.bat` file from an already open cmd prompt. 
+You can double click `run_player.bat` but the cmd prompt will close after executing the `.bat` file. It is better for development to run the `.bat` file from an already open cmd prompt.
 
 - Open your cmd prompt
 - Go to `pupil/pupil_src/player`
