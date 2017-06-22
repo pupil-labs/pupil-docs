@@ -147,7 +147,8 @@ In the `Advanced` sub-menu you can set the `sample duration` -- the number of fr
 
 > {{< video-webm src="/videos/calibration/calibration-manual/clb-man.webm" >}}
 
-This method is done with an operator and a subject. It is suited for midrange distances and can accommodate a wide field of view. You need markers made of concentric circles, like the two shown below.
+This method is done with an operator and a subject. It is suited for midrange distances and can accommodate a wide field of view. The operator will use a
+printed calibration marker like the one shown in the video. [Download markers to print](/images/pupil-capture/calibration-markers/pupil_calibration_marker.pdf) or display on smartphone/tablet screen.
 
 1. Select `Manual Marker Calibration`
 1. Press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to start calibration.
@@ -164,10 +165,8 @@ This method is done with an operator and a subject. It is suited for midrange di
 
 You will notice that there are no standard controls, only an `Advanced` sub-menu to control detection parameters of the marker and to debug by showing edges of the detected marker in the world view.
 
-[Download markers to print](/images/pupil-capture/calibration-markers/pupil_calibration_marker.pdf) or display on smartphone/tablet screen.
-
 <aside class="notice">
-  Note - v2.0 Markers can be <a href="/images/pupil-capture/calibration-markers/v2.0_markers/pupil_calibration_marker.pdf">downloaded here</a>.
+  Note - The deprecated v2.0 markers can be <a href="/images/pupil-capture/calibration-markers/v2.0_markers/pupil_calibration_marker.pdf">downloaded here</a>.
 </aside>
 
 
@@ -265,16 +264,17 @@ Click on the selector "Open Plugin" and select your plugin.
 
 #### Third-party plugins
 
-Third-party plugins can be loaded easily as well. In order for them to appear in
-the plugin list they need to be copied to the correct location, the `plugins`
-folder within your `capture_settings`.
+You can easily load third party plugins. Third party plugins will appear in the
+Pupil Capture or Pupil Player plugin list. Copy the plugin to the plugins folder
+within the `pupil_capture_settings` or `pupil_player_settings` folder.
 
 ### Fixation Detection
 
-The built-in fixation detectors are dispersion-duration based.
-This means that if the pupil does not move more than a given distance (dispersion)
-in a given time period (duration) the plugin will classify the pupil positions
-during this time range as a fixation.
+Fixation detectors classify fixations using dispersion and duration.
+Consider: *Dispersion* is measured as the distance between pupil positions.
+*Duration* is a specified period of time. The fixation detector plugin will
+classify pupil positions as fixations if they are within the dispersion for the
+duration of time specified.
 
 The `Fixation Detector 3D` plugin uses the eye model's 3d orientation angle to
 calculate the dispersion. The settings allow you to set the duration in seconds
@@ -439,14 +439,14 @@ For this to work your network needs to allow `UDP` transport. If the nodes do no
 <!-- Not sure if this should be mentioned here at all -->
 The `Frame Publisher` plugin broadcasts video frames from the world and eye cameras.
 
-There is a [pupil-helper example script](https://github.com/pupil-labs/pupil-helpers/blob/0df77b47cebd49a6c35b6769da483c115a626836/pupil_remote/recv_world_video_frames.py) that showcases how to receive and decode world frames.
+There is a [pupil-helper example script](https://github.com/pupil-labs/pupil-helpers/blob/0df77b47cebd49a6c35b6769da483c115a626836/pupil_remote/recv_world_video_frames.py) that demonstrates how to receive and decode world frames.
 
 #### Remote Recorder
 
-This plugin is able to remotely start and stop recordings on all connected
-Pupil Mobile sources. This is different to the normal recorder that creates
-a recording on the device running Pupil Capture. The `Remote Recorder` plugin
-creates recordings on the phone.
+The [Pupil Mobile](https://docs.pupil-labs.com/#pupil-mobile) app can be controlled
+via Pupil Capture when connected. This includes changing camera and streaming
+settings. The `Remote Recorder` plugin extends this list with the possibility
+to start and stop recordings that are stored to the phone.
 
 ### Surface Tracking
 
@@ -471,7 +471,7 @@ A surface can be defined by one or more markers. Surfaces can be defined with Pu
 *  Registered surfaces are saved automatically, so that the next time you run Pupil Capture or Pupil Player, your surfaces (if they can be seen) will appear when you start the marker tracking plugin.
 *  Surfaces defined with more than 2 markers are detected even if some markers go outside the field of vision or are obscured.
 *  We have created a window that shows registered surfaces within the world view and the gaze positions that occur within those surfaces in realtime.
-*  Streaming Surfaces with Pupil Capture - Detected surfaces as well as gaze positions relative to the surface are broadcasted under the `surface` topic. Check out [this video](http://youtu.be/qHmfMxGST7A) for a demonstration.
+*  Streaming Surfaces with Pupil Capture - Detected surfaces as well as gaze positions relative to the surface are broadcast under the `surface` topic. Check out [this video](http://youtu.be/qHmfMxGST7A) for a demonstration.
 *  Surface Metrics with Pupil Player - if you have defined surfaces, you can generate surface visibility reports or gaze count per surface. See our [blog post](http://pupil-labs.com/blog/2014/07/0392-player-release.html) for more information.
 
 
@@ -483,10 +483,7 @@ A surface can be defined by one or more markers. Surfaces can be defined with Pu
 
 ### Blink Detection
 
-The pupil detection algorithm assigns a `confidence` value to each pupil datum. It represents
-the quality of the detection result. While the eye is closed the assigned confidence is very low.
-The `Blink Detection` plugin makes use of this fact by defining a blink as a significant
-confidence drop within a short period of time. The plugin creates a `blink` event for each pupil datum of the following format:
+The pupil detection algorithm assigns a `confidence` value to each pupil datum. It represents the quality of the detection result. While the eye is closed the assigned confidence is very low. The `Blink Detection` plugin makes use of this fact by defining a blink as a significant confidence drop within a short period of time. The plugin creates a `blink` event for each pupil datum of the following format:
 
 ```python
 {  # blink datum
@@ -496,8 +493,7 @@ confidence drop within a short period of time. The plugin creates a `blink` even
     'is_blink': <bool>}
 ```
 
-The `activation` field denotes how strong the confidence dropped. Values bigger than `0.4` are classified as blinks.
-If this is the case the `is_blink` field is set to `True`.
+The `activation` field denotes how strong the confidence dropped. Values greater than `0.4` are classified as blinks. If this is the case the `is_blink` field is set to `True`.
 
 ### Audio Capture
 

@@ -8,11 +8,11 @@ page_weight = 1
 ## Capture Workflow
 
 
-Go through the following steps to get familiar with the Pupil workflow. You can also check out [video tutorials](#pupil-capture-demo-video) at the end of the guide. 
+Go through the following steps to get familiar with the Pupil workflow. You can also check out [video tutorials](#pupil-capture-demo-video) at the end of the guide.
 
 
 ### 1. Put on Pupil
-Put on the Pupil headset and plug it in to your computer. Headsets are adjustable and shipped with additional parts. For more information head over to the [Pupil Hardware](#pupil-hardware) guide.
+Put on the Pupil headset and plug it in to your computer. Make sure there is space between the headset frame and your forehead. Headsets are adjustable and shipped with additional parts. For more information head over to the [Pupil Hardware](#pupil-hardware) guide.
 
 ### 2. Start Pupil Capture
 
@@ -35,7 +35,7 @@ Try moving your head around a bit while looking at your eye to see that the pupi
 
 In order to know what someone is looking at, we must to establish a mapping between pupil and gaze positions. This is what we call calibration.
 
-The calibration process establishes a mapping from pupil to gaze coordinates. 
+The calibration process establishes a mapping from pupil to gaze coordinates.
 
 #### Screen Marker Calibration Method
 
@@ -56,7 +56,7 @@ There are other calibration methods and lots more information how calibration wo
 Start capturing data!
 
 
-Pupil Capture will save the world video stream and all corresponding gaze data in a folder in your user directory named 
+Pupil Capture will save the world video stream and all corresponding gaze data in a folder in your user directory named
 `recordings`.
 
 * Start recording: Press the `r` key on your keyboard or press the circular 'R' button in the left hand side of the world window.
@@ -71,7 +71,7 @@ See a video demonstration of how to set recordings path, session name, and start
 
 By default, each recording will live in its own unique data folder contained in the `recordings` folder.
 
-You can make as many recordings as you like. 
+You can make as many recordings as you like.
 
 The default `recordings` directory will have the following hierarchy.
 
