@@ -1,5 +1,5 @@
 +++
-date = "2017-01-19T16:56:14+07:00"
+date = "2017-06-22T16:56:14+07:00"
 title = "windows"
 section_weight = 4
 page_weight = 1.3
@@ -9,123 +9,196 @@ page_weight = 1.3
 
 ### System Requirements
 
-We develop the Windows version of Pupil using **Windows 10**. 
+We develop the Windows version of Pupil using **64 bit** **Windows 10**. 
 
 Therefore we can only debug and support issues for **Windows 10**. 
 
-### Install Windows Dependencies
+### Notes Before Starting
 
-Running Pupil from source includes the installation of several dependencies. Please follow the instructions below. 
+- Work directory - We will make a directory called `work` at `C:\work` and will use this directory for all build processes and setup scripts. Whenever we refer to the `work` directory, it will refer to `C:\work`. You can change this to whatever is convenient for you, but note that all instructions and setup files refer to `C:\work`
+- Command Prompt - We will **always** be using `x64 Native Tools Command Prompt for VS 2017 Preview` as our command prompt. Make sure to only use this command prompt. Unlike unix systems, windows has many possible "terminals" or "cmd prompts". We are targeting `x64` systems and require the `x64` command prompt. You can access this cmd prompt from the Visual Studio 2017 shortcut in your Start menu.
+- 64bit - You should be using a 64 bit system and therefore all downloads, builds, and libraries should be for `x64` unless otherwise specified. 
+- Windows paths and Python - path separators in windows are a forward slash `\`. In Python, this is a special "escape" character. When specifying Windows paths in a Python string you must use `\\` instead of `\`. 
+- Help - For discussion or questions on Windows installation head over to the [Pupil Google Group][google-group]. If you run into trouble please raise an issue!
 
-For discussion or questions on Windows installation head over to the [Pupil Google Group][google-group]. If you find any problems please raise an issue!
+## Install Visual Studio
 
-### Utils
+Download Visual Studio 2017 Preview version 15.3 from [visualstudio.com](https://www.visualstudio.com/vs/preview/)
+- Run the Visual Studio bootstrapper `.exe`.
+- Navigate to the `Workloads` tab
+- In the `Workloads` tab, choose `Desktop Development with C++`. This will install all runtimes and components we need for development. Here is a list of what you should see `checked` in the `Desktop development with C++` in the `Summary` view:
+  - VC++ 2017 v141 toolset (x86,x64)
+  - C++ profiling tools
+  - Windows 10 SDK (10.0.15063.0) for Desktop C++ x86 and x64
+  - Visual C++ tools for CMAKE
+  - Visual C++ ATL support
+  - MFC and ATL support (x86, x64)
+  - Standard Library Modules
+  - VC++ 2015.3 v140 toolset for desktop (x86, x64)
+- Navigate to the `Individual Components` tab
+- In the `Individual Components` tab check `Git`. This will install `git` on your system. In the Summary Panel for `Individual Components` you should see:
+  - `Git for Windows`
+- Click `Install`
 
-* Install [7-zip](http://www.7-zip.org/download.html) for extraction purposes.
+<aside class="notice">Note - You can always re-run the Visual Studio bootstrapper to modify your Visual Studio installation.</aside>
 
-**Visual C++ Runtime**
+### Install 7-Zip
+Install [7-zip](http://www.7-zip.org/download.html) to extract files.
 
-* Install Visual Studio 2015 Community Update 3
+## Install Python
+- [Download Python x64](https://www.python.org/downloads/release/python-361/)
+- Run the Python installer.
+- Check the box `Add Python to PATH`. This will add Python to your System PATH Environment Variable.
+- Check the box `Install for all users`. This will install Python to `C:\Program Files\Python36`. 
 
-**Python (64-bit)**
+<aside class="notice"> Note - some build scripts may fail to start Python due to spaces in the path name. So, you may want to consider installing Python to `C:\Python36`.</aside>
 
-* Download and install version 3.5.2: [Windows Executable installer](https://www.python.org/download/releases/3.5.2/)
-* During installation, select the tick box to add your Python installation path to the PATH environment variable
+## System Environment Variables
+To access your System Environment Variables:
+- Right click on the Windows icon in the system tray.
+- Select `System`. 
+- Click on `Advanced system settings`. 
+- Click on `Environment Variables...`.
+- Click on `Path` in `System Variables` and click `Edit`.
 
-### Python Wheels
+## Python Wheels
+Most Python extensions can be installed via **pip**. We recommend to download and install the pre-built wheel (*.whl) packages maintained by [Christoph Gohlke](http://www.lfd.uci.edu/~gohlke/pythonlibs/). (@Gohlke Thanks for creating and sharing these packages!)
 
-Python extensions can be installed via **pip**. We recommend to download and install the pre-built wheel (*.whl) packages by [Christoph Gohlke](http://www.lfd.uci.edu/~gohlke/pythonlibs/). Thanks for creating and sharing these packages!
-To install an extension open command line with admin rights and run `python -m pip install [PACKAGE_NAME.whl]`
+<aside class="notice">Note - you are using Python3.6 and a Windows 64 bit system. Therefore download wheels with `cp36‑cp36m‑win_amd64.whl` in the file name. `cp36` means C Python v3.6 and `amd64` signifies 64 bit architecture.</aside>
 
-* [SciPy](http://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy): scipy-0.18.1-cp35-cp35m-win_amd64.whl
-* [PyOpenGL](http://www.lfd.uci.edu/~gohlke/pythonlibs/#pyopengl): PyOpenGL-3.1.1-cp35-cp35m-win_amd64.whl
-* [Numpy](http://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy): numpy-1.11.2+mkl-cp35-cp35m-win_amd64.whl
-* [OpenCV](http://www.lfd.uci.edu/~gohlke/pythonlibs/#opencv): opencv_python-3.1.0-cp35-cp35m-win_amd64.whl
-* [PyZMQ](http://www.lfd.uci.edu/~gohlke/pythonlibs/#pyzmq): pyzmq-15.4.0-cp35-cp35m-win_amd64.whl
-* [Cython](http://www.lfd.uci.edu/~gohlke/pythonlibs/#cython): Cython‑0.24.1‑cp35*.whl
-* [psutil](http://www.lfd.uci.edu/~gohlke/pythonlibs/#psutil): psutil-5.0.0-cp35-cp35m-win_amd64.whl
-* [PyAudio](http://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio): PyAudio-0.2.9-cp35-none-win_amd64.whl
-* [boost_python](http://www.lfd.uci.edu/~gohlke/pythonlibs/#boost.python): boost_python-1.59-cp35-none-win_amd64.whl
+Download the most recent version of the following wheels Python3.6 x64 systems.
+- [numpy](http://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy)
+- [scipy](http://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy)
+- [boost.python](http://www.lfd.uci.edu/~gohlke/pythonlibs/#boost.python)
+- [cython](http://www.lfd.uci.edu/~gohlke/pythonlibs/#cython)
+- [opencv](http://www.lfd.uci.edu/~gohlke/pythonlibs/#opencv)
+- [pyopengl](http://www.lfd.uci.edu/~gohlke/pythonlibs/#pyopengl) (do not download pyopengl-accelerate)
+- [psutil](http://www.lfd.uci.edu/~gohlke/pythonlibs/#psutil)
+- [pyaudio](http://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio)
+- [pyzmq](http://www.lfd.uci.edu/~gohlke/pythonlibs/#pyzmq)
 
-For networking install:
+Open your command prompt and `Run as administrator` in the directory where the wheels are downloaded.
+- Install `numpy` and `scipy` before all other wheels.
+- Install all wheels with `pip install X` (where X is the name of the `.whl` file) 
+- You can check that libs are installed with `python import X` statements in the command prompt where `X` is the name of the lib.
 
-* `python -m pip install https://github.com/zeromq/pyre/archive/master.zip`
-* `python -m pip install win_inet_pton`
+## Python Libs
+Open your command prompt and install the following libs:
+- `pip install msgpack_python`
+- `pip install win_inet_pton`
+- `pip install git+https://github.com/zeromq/pyre.git`
 
-You also need to install Python libraries that are specific to Pupil. Download the `.whl` file and install with `pip`.
+## Pupil Labs Python Wheels
+Download the following Python wheels from Pupil Labs github repos.
+- [pyglui](https://github.com/pupil-labs/pyglui/releases/latest)
+- [pyav](https://github.com/pupil-labs/pyav/releases/latest)
+- [pyndsi](https://github.com/pupil-labs/pyndsi/releases/latest)
+- [pyuvc](https://github.com/pupil-labs/pyuvc/releases/latest)
 
-* [PyAV](https://github.com/pupil-labs/PyAV/releases/latest)
-* [pyglui](https://github.com/pupil-labs/pyglui/releases/latest) 
-* [pyndsi](https://github.com/pupil-labs/pyndsi/releases/latest) 
-* [pyuvc](https://github.com/pupil-labs/pyuvc/releases/latest)
+<aside class="notice">Note - if you're looking to build Pupil Labs Python libs from source, go <a href="#">here</a></aside>
 
-### Setup GLFW
-* Download [64-bit Windows binaries](http://www.glfw.org/download.html).
-* Unzip and search folder `vs-2015` or `lib-vs2015` containing `glfw3.dll`.
-* Copy glfw3.dll to `pupil\pupil_external\`.
+## Ceres for Windows
+Navigate to your work directory
+- `git clone --recursive https://github.com/tbennun/ceres-windows.git`
+- Download [Eigen 3.3.3](https://bitbucket.org/eigen/eigen/downloads/?tab=tags)
+- Unzip Eigen and rename the contained `eigen` directory to `Eigen` 
+- Copy the `Eigen` directory into `ceres-windows`
+- Open `ceres-2015.sln` and with Visual Studio 2017 Preview and agree to update to 2017.
+- Set configurations to `Release` and `x64`
+- Right click on `libglog_static` and `Build`
+- Right click on `ceres_static` and `Build`
 
-### Install Git
+## Boost
+Download and install the latest boost version for Windows x64 with version number matching your Visual Studio 2017 MSVC version. 
+- For VS 2017 preview the MSVC version is 14.1
+- Download boost from [sourceforge](https://sourceforge.net/projects/boost/files/boost-binaries/1.64.0/boost_1_64_0-msvc-14.1-64.exe/download)
+- Extract boost to work directory and name the boost dir `boost`
+- Open `boost\python\detail\config.hpp` with Visual Studio 2017 Preview
+- Change **L108** from `define BOOST_LIB_NAME boost_python` to `define BOOST_LIB_NAME boost_python3`
+- Save the file and close Visual Studio
 
-* Download and install [Git](http://git-scm.com/download/win). This enables you to download and update the Pupil source code and further extensions it needs.
-* Add the `/bin` path of Git to the PATH environment variable, e.g. `C:/Program Files (x86)/Git/bin`.
+The prebuilt boost.python depends on `python27.dll`. The files from package boost.python are built with Visual Studio 2015. One solution to this issue is to build boost from source.
+- Open your command prompt
+- cd to `C:\work\boost`
+- Run `boostrap.bat`. This will generate `b2.exe`.
 
-### Clone Pupil source code
-* Open the Git Bash and navigate to the directory you chose for pupil.
-* Run `git clone http://github.com/pupil-labs/pupil` (creates a sub-directory for pupil)
+Change user config before compiling boost.
+- Copy `boost\tools\build\example\user-config.jam` to `boost\tools\build\src\user-config.jam`. 
+- Uncomment and edit following lines in the `user-config.jam` file according your msvc and python version:
+    - `using msvc : 14.1 ;` in section `MSVC configuration`
+    - `using python : 3.6 : C:\\Python36 : C:\\Python36\\include : C:\\Python36\\libs ;` in section `Python configuration`
 
-### Download Eigen 3.2
-* Download and unzip [Eigen 3.2](http://bitbucket.org/eigen/eigen/get/3.2.10.zip)
+Build boost.python
+- Open your command prompt and navigate to your work dir
+- `b2 --with-python link=shared address-model=64`
+- The generated DLL and Lib files are in `C:\work\boost\stage`.
 
-### Install ceres-windows
-* git clone --recursive https://github.com/tbennun/ceres-windows.git
-* Copy the Eigen directory to ceres-windows 
-* Copy ceres-windows\ceres-solver\config\ceres\internal\config.h to ceres-windows\ceres-solver\include\ceres\internal\
-* Open `glog\src\windows\port.cc` and comment out [L58-64](https://github.com/tbennun/glog/blob/7553b4193d856b4ba4e74cf064a5a70eb6a87cdd/src/windows/port.cc#L58-L64)
-* Open the vs2012 sln file using VS2015. Agree to upgrade the compiler and libraries
-* Build the static library versions of libglog and ceres-solver
+Add Boost libs to your system path
+- Add `C:\work\boost\stage\lib` to your system PATH in your System Environment Variables
 
-### Install OpenCV for Windows
-[opencv-3.1.0](https://sourceforge.net/projects/opencvlibrary/files/opencv-win/3.1.0/opencv-3.1.0.exe/download)
+## Clone the Pupil Repo
+- Open a command prompt in your work dir
+- `git clone https://pupil-labs/pupil.git`
 
-* Copy opencv3.1.0\build\x64\vc14\bin\opencv_world310.dll to the pupil\pupil_external\ directory
+## Setup pupil_external dependencies
+Dynamic libs are required to be stored in `pupil\pupil_external` so that you do not have to add further modifications to your system PATH.  
 
-### Install Boost
-* Download and install [Boost-1.59](https://sourceforge.net/projects/boost/files/boost-binaries/1.59.0/boost_1_59_0-msvc-14.0-64.exe/download)
-* Open boost_1_59_0\boost\python\detail\config.hpp
-* Change the macro definition "#define BOOST_LIB_NAME boost_python" to "#define BOOST_LIB_NAME boost_python3" and save the file
+### GLEW to pupil_external
+- Download GLEW Windows binaries from [sourceforge](http://glew.sourceforge.net/)
+- Unzip GLEW in your work dir
+- Copy `glew32.dll` to `pupil_external` 
 
-#### Edit the Pupil detectors and calibration cython setup files
+### GLFW to pupil_external
+- Download GLFW Windows binaries from [glfw.org](http://www.glfw.org/download.html)
+- Unzip GLFW to your work dir
+- Copy `glfw3.dll` to `pupil_external`
 
-* Edit pupil\pupil_src\capture\pupil_detectors\setup.py . In the windows section, update the paths for OpenCV, Eigen, Boost, Ceres, Glog according to your installation locations
-* Edit pupil\pupil_src\shared_modules\calibration_routines\optimization_calibration\setup.py , in the same manner as above.
+### FFMPEG to pupil_external
+- Download FFMPEG Windows shared binaries from [ffmpeg](http://ffmpeg.zeranoe.com/builds/)
+- Unzip ffmpeg to your work dir
+- Copy the following 8 `.dll` files to `pupil_external`
+  - `avcodec-57.dll`
+  - `avdevice-57.dll`
+  - `avfilter-6.dll`
+  - `avformat-57.dll`
+  - `avutil-55.dll`
+  - `postproc-54.dll`
+  - `swresample-2.dll`
+  - `swscale-4.dll`
 
-### Install Drivers 
-In order to support isochronous USB transfer on Windows, you will need to install drivers for the cameras in your Pupil headset. Follow setup steps in the Windows Driver Setup section [below](#windows-driver-setup).
+### OpenCV to pupil_external
+- Download opencv 3.2 exe installer from [sourceforge](https://downloads.sourceforge.net/project/opencvlibrary/opencv-win/2.3.0/opencv-3.2.0-vc14.exe)
+- Unzip OpenCV to your work dir and rename dir to `opencv`
+- Copy `opencv\build\x64\vc14\bin\opencv_world320.dll` to `pupil_external`
 
-#### Run Pupil!
-> Capture
+### Modify pupil_detectors setup.py
+- Open `pupil\pupil_src\capture\pupil_detectors\setup.py`
+- Go to the `if platform.system() == 'Windows'` block
+- Check that paths for `opencv`, `Eigen`, `ceres-windows` and `boost` are correctly specified. The installed opencv lib is `opencv_world320.lib`.
+- Edit paths if necessary
+- Edit `C:\\work\\boost\\stage\\lib` if necessary
+- Save and close setup.py
 
-```bash
-cd your_pupil_path\pupil\pupil_src\capture
-run_capture.bat
-```
+<aside class="faq">When starting run_capture.bat, it will build module pupil_detectors. However, if you are debugging, you may want to try building explicitly. From within `pupil/pupil_src/capture/pupil_detectors` run `python setup.py build` to build the pupil_detectors.</aside>
 
-> Player
+### Modify optimization_calibration setup.py
+- Open `pupil\pupil_src\shared_modules\calibration_routines\optimization_calibration\setup.py`
+- Go to the `if platform.system() == 'Windows'` block
+- Check that paths for `opencv`, `Eigen`, `ceres-windows` and `boost` are correctly specified. The installed opencv lib is `opencv_world320.lib`.
+- Edit paths if necessary
+- Edit `C:\\work\\boost\\stage\\lib` if necessary
+- Save and close setup.py
 
-```bash
-cd your_pupil_path\pupil\pupil_src\player
-run_player.bat path_to_recording
-```
+<aside class="faq">When starting run_capture.bat, it will build module pupil_detectors. However, if you are debugging, you may want to try building explicitly. From within `pupil/pupil_src/capture/pupil_detectors` run `python setup.py build` to build the pupil_detectors.</aside>
 
-### Setup PyAV for wheel creation
-* Clone PyAV to your system `git clone https://github.com/pupil-labs/PyAV.git`
-* Download and extract [ffmpeg-3.2-dev](http://ffmpeg.zeranoe.com/builds/win64/dev/ffmpeg-3.2-win64-dev.zip) 
-* Download and extract [ffmpeg-3.2-shared](http://ffmpeg.zeranoe.com/builds/win64/shared/ffmpeg-3.2-win64-shared.zip)
-* Copy the dlls from the ffmpeg-3.2-win64-shared\bin directory to the pupil\pupil_external\ directory
-* Open "Developer command prompt for VS2015" and cd to PyAV directory
-* Run `python setup.py clean --all build_ext --inplace --ffmpeg-dir=path\to\ffmpeg-3.2-dev -c msvc`
-* `pip wheel .`
-* `pip install .`
+## Start Pupil Capture with run_capture.bat
+You can double click `run_capture.bat` but the cmd prompt will close after executing the `.bat` file. It is better for development to run the `.bat` file from an already open cmd prompt. 
+- Open your cmd prompt
+- Go to `pupil/pupil_src/capture`
+- run_capture.bat
 
-
-[google-group]: http://groups.google.com/group/pupil-discuss
+## Start Pupil Player with run_player.bat
+You can double click `run_player.bat` but the cmd prompt will close after executing the `.bat` file. It is better for development to run the `.bat` file from an already open cmd prompt. 
+- Open your cmd prompt
+- Go to `pupil/pupil_src/player`
+- run_player.bat
