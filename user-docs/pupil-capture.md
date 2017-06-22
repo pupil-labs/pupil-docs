@@ -36,12 +36,66 @@ By default Pupil Capture will use Local USB as the capture source. If you have a
 - Pupil Mobile - select this option When using Pupil Capture with the Pupil Mobile android application.
 - Local USB - select this option if your Pupil Headset is connected to the machine running Pupil Capture. This is the default setting.
 
+### Pupil Detection
+
+Pupil's algorithms automatically detect the participant's pupil. With the 3d detection and mapping mode, Pupil uses a 3d model of the eye(s) that constantly updates based on observations of the eye. This enables the system to compensate for movements of the headset - slippage. To build up an initial model, you can just look around your field of view.
+
+> {{< video-webm src="/videos/calibration/pupil-detection/pd.webm" >}}
+
+<!-- > <div class="figure-container">
+	<div class="Grid Grid-row">
+		<div class="Grid-cell--1of2">
+			<div class="Grid-cell">
+				<p>Eye point to each marker to create a sampling point</p>
+			</div>
+		</div>
+		<div class="Grid-cell--1of2">
+			<div class="Grid-cell">
+				<p>Eye point to each marker to create a sampling point</p>
+			</div>
+		</div>
+	</div>
+</div> -->
+
 ### Calibration
 
 > {{< video-webm src="/videos/calibration/calibration-headset/clb-hd.webm" >}}
 
 Pupil uses two cameras. One camera records a subject's eye movements -- we call this the `eye camera`. Another camera records the subject's field of vision -- we call this the `world camera`. In order to know what someone is looking at, we must find the parameters to a function that correlates these two streams of information.
 
+### Before every calibration
+
+Make sure that the users pupil is properly tracked. Make sure that the world camera is in focus for the distance at which you want to calibrate, and that you can see the entire area you want to calibrate within the world cameras extents (FOV).
+
+> <div class="figure-container">
+	<div class="Grid Grid-row">
+		<div class="Grid-cell--1of2">
+			<div class="Grid-cell">
+				{{< lqip-img figure-class="img-m" src="/images/pupil-hardware/pupil-detect.jpg" >}}
+			</div>
+		</div>
+		<div class="Grid-cell--1of2">
+			<div class="Grid-cell">
+				{{< lqip-img figure-class="img-m" src="/images/pupil-hardware/focus.jpg" >}}
+			</div>
+		</div>
+	</div>
+</div>
+
+> <div class="figure-container">
+	<div class="Grid Grid-row">
+		<div class="Grid-cell--1of2">
+			<div class="Grid-cell" style="padding:0 .5em 0 .5em;">
+				<p>Your pupil is properly detected by the eye camera</p>
+			</div>
+		</div>
+		<div class="Grid-cell--1of2">
+			<div class="Grid-cell" style="padding:0 .5em 0 .5em;">
+				<p>Make sure the world camera is in focus</p>
+			</div>
+		</div>
+	</div>
+</div>
 
 ### Calibration Process
 
