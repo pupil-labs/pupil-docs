@@ -67,6 +67,10 @@ Pupil uses two cameras. One camera records a subject's eye movements -- we call 
 
 Make sure that the users pupil is properly tracked. Make sure that the world camera is in focus for the distance at which you want to calibrate, and that you can see the entire area you want to calibrate within the world cameras extents (FOV).
 
+<aside class="faq">
+Make sure the lens and image sensor are clean. Dust on the lens or image sensor will appear as a black spot in the video. These black spots will negatively affect pupil detection and marker detection algorithms.
+</aside>
+
 > <div class="figure-container">
 	<div class="Grid Grid-row">
 		<div class="Grid-cell--1of2">
