@@ -55,7 +55,7 @@ Install [7-zip](http://www.7-zip.org/download.html) to extract files.
 
 <aside class="notice"> Note - some build scripts may fail to start Python due to spaces in the path name. So, you may want to consider installing Python to `C:\Python36`.</aside>
 
-## System Environment Variables
+### System Environment Variables
 To access your System Environment Variables:
 
 - Right click on the Windows icon in the system tray.
@@ -154,7 +154,7 @@ Add Boost libs to your system path
 - Open a command prompt in your work dir
 - `git clone https://pupil-labs/pupil.git`
 
-## Setup pupil_external dependencies
+### Setup pupil_external dependencies
 Dynamic libs are required to be stored in `pupil\pupil_external` so that you do not have to add further modifications to your system PATH.  
 
 ### GLEW to pupil_external
