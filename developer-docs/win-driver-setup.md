@@ -2,7 +2,7 @@
 date = "2017-01-20T11:37:57+07:00"
 title = "win driver setup"
 section_weight = 4
-page_weight = 1.5
+page_weight = 1.4
 +++
 
 ## Windows Driver Setup
