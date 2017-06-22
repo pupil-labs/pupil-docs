@@ -21,7 +21,7 @@ Therefore we can only debug and support issues for **Windows 10**.
 - Windows paths and Python - path separators in windows are a forward slash `\`. In Python, this is a special "escape" character. When specifying Windows paths in a Python string you must use `\\` instead of `\`. 
 - Help - For discussion or questions on Windows installation head over to the [Pupil Google Group][google-group]. If you run into trouble please raise an issue!
 
-## Install Visual Studio
+### Install Visual Studio
 
 Download Visual Studio 2017 Preview version 15.3 from [visualstudio.com](https://www.visualstudio.com/vs/preview/)
 - Run the Visual Studio bootstrapper `.exe`.
@@ -45,7 +45,7 @@ Download Visual Studio 2017 Preview version 15.3 from [visualstudio.com](https:/
 ### Install 7-Zip
 Install [7-zip](http://www.7-zip.org/download.html) to extract files.
 
-## Install Python
+### Install Python
 - [Download Python x64](https://www.python.org/downloads/release/python-361/)
 - Run the Python installer.
 - Check the box `Add Python to PATH`. This will add Python to your System PATH Environment Variable.
@@ -61,7 +61,7 @@ To access your System Environment Variables:
 - Click on `Environment Variables...`.
 - Click on `Path` in `System Variables` and click `Edit`.
 
-## Python Wheels
+### Python Wheels
 Most Python extensions can be installed via **pip**. We recommend to download and install the pre-built wheel (*.whl) packages maintained by [Christoph Gohlke](http://www.lfd.uci.edu/~gohlke/pythonlibs/). (@Gohlke Thanks for creating and sharing these packages!)
 
 <aside class="notice">Note - you are using Python3.6 and a Windows 64 bit system. Therefore download wheels with `cp36‑cp36m‑win_amd64.whl` in the file name. `cp36` means C Python v3.6 and `amd64` signifies 64 bit architecture.</aside>
@@ -82,13 +82,13 @@ Open your command prompt and `Run as administrator` in the directory where the w
 - Install all wheels with `pip install X` (where X is the name of the `.whl` file) 
 - You can check that libs are installed with `python import X` statements in the command prompt where `X` is the name of the lib.
 
-## Python Libs
+### Python Libs
 Open your command prompt and install the following libs:
 - `pip install msgpack_python`
 - `pip install win_inet_pton`
 - `pip install git+https://github.com/zeromq/pyre.git`
 
-## Pupil Labs Python Wheels
+### Pupil Labs Python Wheels
 Download the following Python wheels from Pupil Labs github repos.
 - [pyglui](https://github.com/pupil-labs/pyglui/releases/latest)
 - [pyav](https://github.com/pupil-labs/pyav/releases/latest)
@@ -97,7 +97,7 @@ Download the following Python wheels from Pupil Labs github repos.
 
 <aside class="notice">Note - if you're looking to build Pupil Labs Python libs from source, go <a href="#">here</a></aside>
 
-## Ceres for Windows
+### Ceres for Windows
 Navigate to your work directory
 - `git clone --recursive https://github.com/tbennun/ceres-windows.git`
 - Download [Eigen 3.3.3](https://bitbucket.org/eigen/eigen/downloads/?tab=tags)
@@ -108,7 +108,7 @@ Navigate to your work directory
 - Right click on `libglog_static` and `Build`
 - Right click on `ceres_static` and `Build`
 
-## Boost
+### Boost
 Download and install the latest boost version for Windows x64 with version number matching your Visual Studio 2017 MSVC version. 
 - For VS 2017 preview the MSVC version is 14.1
 - Download boost from [sourceforge](https://sourceforge.net/projects/boost/files/boost-binaries/1.64.0/boost_1_64_0-msvc-14.1-64.exe/download)
@@ -136,7 +136,7 @@ Build boost.python
 Add Boost libs to your system path
 - Add `C:\work\boost\stage\lib` to your system PATH in your System Environment Variables
 
-## Clone the Pupil Repo
+### Clone the Pupil Repo
 - Open a command prompt in your work dir
 - `git clone https://pupil-labs/pupil.git`
 
@@ -191,13 +191,13 @@ Dynamic libs are required to be stored in `pupil\pupil_external` so that you do 
 
 <aside class="faq">When starting run_capture.bat, it will build module pupil_detectors. However, if you are debugging, you may want to try building explicitly. From within `pupil/pupil_src/capture/pupil_detectors` run `python setup.py build` to build the pupil_detectors.</aside>
 
-## Start Pupil Capture with run_capture.bat
+### Start Pupil Capture with run_capture.bat
 You can double click `run_capture.bat` but the cmd prompt will close after executing the `.bat` file. It is better for development to run the `.bat` file from an already open cmd prompt. 
 - Open your cmd prompt
 - Go to `pupil/pupil_src/capture`
 - run_capture.bat
 
-## Start Pupil Player with run_player.bat
+### Start Pupil Player with run_player.bat
 You can double click `run_player.bat` but the cmd prompt will close after executing the `.bat` file. It is better for development to run the `.bat` file from an already open cmd prompt. 
 - Open your cmd prompt
 - Go to `pupil/pupil_src/player`
