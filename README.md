@@ -83,6 +83,28 @@ All block quotes will be automatically moved to the right most column of the web
 
 Almost all images should be formatted within a blockquote `>` so that they are moved to the right hand side. Check docs for examples.
 
+### Aside Tags
+
+You can add highlighted notes with a little HTML embedded in your markdown document:
+
+```html
+<aside class="notice">
+  This blue tag is for notice notes.
+</aside>
+
+<aside class="warning">
+  This red tag is for warning notes.
+</aside>
+
+<aside class="success">
+  This green tag is for success notes.
+</aside>
+
+<aside class="faq">
+   This blue grey tag is for frequently asked questions or troubleshooting notes.
+</aside>
+```
+
 ### Shortcodes
 
 Shortcodes are like little html templates that you can use to format content. Shortcodes have been made for frequently used markup in order to reduce the amount of html within the markdown files. Shortcodes syntax is declared like so - `{{< shortcode-name attr >}}`. Here is an example of the `figure-img` shortcode within a blockquote:
