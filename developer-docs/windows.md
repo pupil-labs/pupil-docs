@@ -106,6 +106,8 @@ Download the following Python wheels from Pupil Labs github repos.
 - [pyndsi](https://github.com/pupil-labs/pyndsi/releases/latest)
 - [pyuvc](https://github.com/pupil-labs/pyuvc/releases/latest)
 
+`pyuvc` requires that you download Microsoft Visual C++ 2010 Redistributable from [microsoft](https://www.microsoft.com/en-us/download/details.aspx?id=14632). The `pthreadVC2` lib, which is used by libuvc, depends on `msvcr100.dll`. 
+
 <aside class="notice">Note - if you're looking to build Pupil Labs Python libs from source, go <a href="#">here</a></aside>
 
 ### Ceres for Windows
