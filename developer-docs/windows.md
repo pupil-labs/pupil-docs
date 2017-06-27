@@ -129,7 +129,7 @@ Download and install the latest boost version for Windows x64 with version numbe
 - For VS 2017 preview the MSVC version is 14.1
 - Download boost from [sourceforge](https://sourceforge.net/projects/boost/files/boost-binaries/1.64.0/boost_1_64_0-msvc-14.1-64.exe/download)
 - Extract boost to work directory and name the boost dir `boost`
-- Open `boost\python\detail\config.hpp` with Visual Studio 2017 Preview
+- Open `C:\work\boost\boost\python\detail\config.hpp` with Visual Studio 2017 Preview
 - Change **L108** from `define BOOST_LIB_NAME boost_python` to `define BOOST_LIB_NAME boost_python3`
 - Save the file and close Visual Studio
 
@@ -141,7 +141,7 @@ The prebuilt boost.python depends on `python27.dll`. The files from package boos
 
 Change user config before compiling boost.
 
-- Copy `boost\tools\build\example\user-config.jam` to `boost\tools\build\src\user-config.jam`.
+- Copy `C:\work\boost\tools\build\example\user-config.jam` to `boost\tools\build\src\user-config.jam`.
 - Uncomment and edit following lines in the `user-config.jam` file according your msvc and python version:
     - `using msvc : 14.1 ;` in section `MSVC configuration`
     - `using python : 3.6 : C:\\Python36 : C:\\Python36\\include : C:\\Python36\\libs ;` in section `Python configuration`
@@ -149,6 +149,7 @@ Change user config before compiling boost.
 Build boost.python
 
 - Open your command prompt and navigate to your work dir
+- cd to `boost` 
 - `b2 --with-python link=shared address-model=64`
 - The generated DLL and Lib files are in `C:\work\boost\stage`.
 
