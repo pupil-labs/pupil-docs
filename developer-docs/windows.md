@@ -210,17 +210,3 @@ Dynamic libs are required to be stored in `pupil\pupil_external` so that you do 
 - Save and close setup.py
 
 <aside class="faq">When starting run_capture.bat, it will build module pupil_detectors. However, if you are debugging, you may want to try building explicitly. From within `pupil/pupil_src/capture/pupil_detectors` run `python setup.py build` to build the pupil_detectors.</aside>
-
-### Start Pupil Capture with run_capture.bat
-You can double click `run_capture.bat` but the cmd prompt will close after executing the `.bat` file. It is better for development to run the `.bat` file from an already open cmd prompt.
-
-- Open your cmd prompt
-- Go to `pupil/pupil_src/capture`
-- run_capture.bat
-
-### Start Pupil Player with run_player.bat
-You can double click `run_player.bat` but the cmd prompt will close after executing the `.bat` file. It is better for development to run the `.bat` file from an already open cmd prompt.
-
-- Open your cmd prompt
-- Go to `pupil/pupil_src/player`
-- run_player.bat
