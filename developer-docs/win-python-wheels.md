@@ -48,7 +48,7 @@ You will need both `.dll` files as well as FFMPG libs in order to build `pyav`. 
 
 - Download libjpeg-turbo v1.5.1 from [sourceforge](https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-1.5.1-vc64.exe/download)
 - Open the `.exe` file for setup and navigate to where you want install in your work dir as `libjpeg-turbo64`
-- Add `C:\work\libjpeg-turbo-VC64\bin` to your system `PATH`
+- Add `C:\work\libjpeg-turbo\bin` to your system `PATH`
 
 ### Build pyav
 
