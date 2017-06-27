@@ -46,7 +46,7 @@ Messages can have any topic chooses by the user. Below a a list of message types
 
 #### Pupil and Gaze Messages
 
-Pupil data is sent from the eye0 and eye1 process with topic `pupil.0/1`. Gaze mappers receive this data and publish messages with topic `gaze`. See the [Pupil Datum format](#pupil-datum-format) for example messages for the topics `pupil` and `gaze`.
+Pupil data is sent from the eye0 and eye1 process with the topic `pupil.0` or `pupil.1`. Gaze mappers receive this data and publish messages with topic `gaze`. See the [Pupil Datum format](#pupil-datum-format) for example messages for the topics `pupil` and `gaze`.
 
 #### Notification Message
 Pupil uses special messages called `notifications` to coordinate all activities. Notifications are dictionaries with the required field `subject`. Subjects are grouped by categories `category.command_or_statement`. Example: `recording.should_stop`
@@ -67,6 +67,22 @@ topic = 'notify'+'.'+notification['subject']
 You should use the `notification` topic for coordination with the app. All notifications on the IPC Backbone are automatically made available to all plugins in their `on_notify` callback and used in all Pupil apps.
 
 In stark contrast to gaze and pupil, the notify topic should not be used at high volume. If you find that you need to write more that 10 messages a second, its probably not a notification but another kind of data, make a custom topic instead.
+
+```python
+import zmq
+import msgpack
+
+topic = 'your_custom_topic'
+payload = {'topic': topic}
+
+# create and connect PUB socket to IPC
+pub_socket = zmq.Socket(zmq.Context(), zmq.PUB)
+pub_socket.connect(ipc_pub_url)
+
+# send payload using custom topic
+socket.send_string(topic, flags=zmq.SNDMORE)
+socket.send(msgpack.dumps(payload, use_bin_type=True))
+```
 
 #### Log Messages
 

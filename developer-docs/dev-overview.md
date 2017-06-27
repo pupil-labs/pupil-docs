@@ -41,7 +41,7 @@ This is the workhorse.
 * Records video and data.
 Most, and preferably all coordination and control happens within the World process.
 
-#### Pupil Datum format
+#### Pupil Datum Format
 
 The pupil detector, run by the Eye process are required to return a result in the form of a Python dictionary with *at least* the following content:
 
@@ -58,7 +58,7 @@ The pupil detector, run by the Eye process are required to return a result in th
     result['confidence'] = 0
 ```
 
-This dictionary is sent on the IPC and read by gaze mapping plugins in the world process. Mapping from pupil position to gaze position happens here. The mapping plugin is initialized by a calibration plugin. The [3D pupil detector](LINKREQUIRED) extends the 2D pupil datum with additional information. Below you can see the Python representation of a pupil and a gaze datum.
+This dictionary is sent on the IPC and read by gaze mapping plugins in the world process. Mapping from pupil position to gaze position happens here. The mapping plugin is initialized by a calibration plugin. The [3D pupil detector](#pupil-detection) extends the 2D pupil datum with additional information. Below you can see the Python representation of a pupil and a gaze datum.
 
 ```python
 {  # pupil datum
@@ -103,6 +103,8 @@ This dictionary is sent on the IPC and read by gaze mapping plugins in the world
         'axes': [0, 0]}}
 ```
 
+Gaza data is based on one (monocular) or two (binocolar) pupil positions. The gaze mapper is automatically setup after calibration and maps pupil positions into world camera coordinate system. The pupil data on which the gaze datum is based on can be accessed using the `base_data` key.
+
 ```python
  {  # gaze datum
     'topic': 'gaze',
@@ -125,9 +127,9 @@ For example: The pupil capture data format records the world video frames with t
 ### Git Conventions
 We make changes almost daily and sometimes features will be temporarily broken in some development branches.  However, we try to keep the `master` branch as stable as possible and use other branches for feature development and experiments. Here's a breakdown of conventions we try to follow.
 
-* `tags` - We make a tag following the [semantic versioning][semver] protocol.  Check out the [releases][releases].
-* `master` - this branch tries to be as stable as possible - incremental and tested features will be merged into the master.  Check out the [master branch][master-branch].
-* `branches` - branches are named after features that are being developed. These branches are experimental and what could be called 'bleeding edge.'  This means features in these branches may not be fully functional, broken, or really cool... You're certainly welcome to check them out and improve on the work!
+* `tags` - We make a tag following the [semantic versioning][semver] protocol. Check out the [releases][releases].
+* `master` - this branch tries to be as stable as possible - incremental and tested features will be merged into the master. Check out the [master branch][master-branch].
+* `branches` - branches are named after features that are being developed. These branches are experimental and what could be called 'bleeding edge'. This means features in these branches may not be fully functional, broken, or really cool... You're certainly welcome to check them out and improve on the work!
 
 ### Pull requests
 If you've done something -- even if work-in-progress -- make a [pull request][pull] and write a short update to the Pupil Community.
