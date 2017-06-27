@@ -41,14 +41,14 @@ In order to create wheels, you will need to install the `wheel` lib.
 
 You will need both `.dll` files as well as FFMPG libs in order to build `pyav`. You should have already downloaded FFMPEG shared binaries in the [FFMPEG to pupil_external](#ffmpeg-to-pupil_external) step above. 
 
-- Download FFMPEG Windows Dev - `ffmpeg-3.3.1-win64-dev` - from [ffmpeg]([ffmpeg](http://ffmpeg.zeranoe.com/builds/) 
+- Download FFMPEG Windows Dev - `ffmpeg-3.3.1-win64-dev` - from [ffmpeg](http://ffmpeg.zeranoe.com/builds/) 
 - Unzip ffmpeg-dev to your work dir
 
 ### Download libjpeg-turbo
 
 - Download libjpeg-turbo v1.5.1 from [sourceforge](https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-1.5.1-vc64.exe/download)
 - Open the `.exe` file for setup and navigate to where you want install in your work dir as `libjpeg-turbo64`
-- Add `C:\work\libjpeg-turbo-VC64\bin` to your system `PATH`
+- Add `C:\work\libjpeg-turbo\bin` to your system `PATH`
 
 ### Build pyav
 
