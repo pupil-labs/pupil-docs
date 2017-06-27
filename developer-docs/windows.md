@@ -174,7 +174,7 @@ Dynamic libs are required to be stored in `pupil\pupil_external` so that you do 
 
 - Download GLFW Windows binaries from [glfw.org](http://www.glfw.org/download.html)
 - Unzip GLFW to your work dir
-- Copy `glfw3.dll` to `pupil_external`
+- Copy `glfw3.dll` from `lib-vc2015` to `pupil_external`
 
 ### FFMPEG to pupil_external
 
