@@ -19,7 +19,7 @@ Therefore we can only debug and support issues for **Windows 10**.
 - Command Prompt - We will **always** be using `x64 Native Tools Command Prompt for VS 2017 Preview` as our command prompt. Make sure to only use this command prompt. Unlike unix systems, windows has many possible "terminals" or "cmd prompts". We are targeting `x64` systems and require the `x64` command prompt. You can access this cmd prompt from the Visual Studio 2017 shortcut in your Start menu.
 - 64bit - You should be using a 64 bit system and therefore all downloads, builds, and libraries should be for `x64` unless otherwise specified.
 - Windows paths and Python - path separators in windows are a forward slash `\`. In Python, this is a special "escape" character. When specifying Windows paths in a Python string you must use `\\` instead of `\` or use [Python raw strings](https://docs.python.org/3/reference/lexical_analysis.html#string-and-bytes-literals), e.g. `r'\'`.
-- Help - For discussion or questions on Windows installation head over to the [Pupil Google Group][google-group]. If you run into trouble please raise an issue!
+- Help - For discussion or questions on Windows head over to our [#pupil Discord channel](https://discord.gg/gKmmGqy). If you run into trouble please raise an [issue on github](https://github.com/pupil-labs/pupil)!
 
 ### Install Visual Studio
 
@@ -56,13 +56,17 @@ Install [7-zip](http://www.7-zip.org/download.html) to extract files.
 <aside class="notice"> Note - some build scripts may fail to start Python due to spaces in the path name. So, you may want to consider installing Python to `C:\Python36`.</aside>
 
 ### System Environment Variables
+
+You will need to check to see that Python was added to your system PATH variables. You will also need to manually add other entries to the system PATH later in the setup process.
+
 To access your System Environment Variables:
 
 - Right click on the Windows icon in the system tray.
 - Select `System`.
 - Click on `Advanced system settings`.
 - Click on `Environment Variables...`.
-- Click on `Path` in `System Variables` and click `Edit`.
+- You can click on `Path` in `System Variables` to view the variables that have been set.
+- You can `Edit` or `Add` new paths (this is needed later in the setup process).
 
 ### Python Wheels
 Most Python extensions can be installed via **pip**. We recommend to download and install the pre-built wheel (*.whl) packages maintained by [Christoph Gohlke](http://www.lfd.uci.edu/~gohlke/pythonlibs/). (@Gohlke Thanks for creating and sharing these packages!)
