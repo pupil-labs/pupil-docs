@@ -27,14 +27,13 @@ sudo apt install libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev li
 
 > OpenCV
 
-```
-# The requisites for opencv to build python3 cv2.so library are:
-# (1) python3 interpreter found
-# (2) libpython***.so shared lib found (make sure to install python3-dev)
-# (3) numpy for python3 installed.
-# If cv2.so was not build, delete the build folder, recheck the requisites and try again.
+The requisites for opencv to build python3 cv2.so library are:
+1. python3 interpreter found
+1. libpython***.so shared lib found (make sure to install python3-dev)
+1. numpy for python3 installed.
 
-git clone https://github.com/itseez/opencv
+```
+git clone https://github.com/opencv/opencv
 cd opencv
 mkdir build
 cd build
@@ -43,6 +42,21 @@ make -j2
 sudo make install
 sudo ldconfig
 ```
+
+<aside class="faq">
+Do *not* install `opencv-python` via pip if you see `ImportError: No module named 'cv2'`.
+The error appears if the above requisites were not met.
+Delete the build folder, recheck the requisites and try again.
+</aside>
+
+<aside class="faq">
+The `ImportError: */detector_2d.*.so: undefined symbol: *ellipse*InputOutputArray*RotatedRect*Scalar*`
+appears if opencv has been installed previously via `apt-get`.
+
+1. Remove all opencv installations that were installed via `apt-get`.
+1. Delete the `*.so` files as well as the `build` dirctory within the `pupil_detectors` directory.
+1. Start Pupil Capture. This shpoul trigger a recompilation of the detector modules.
+</aside>
 
 > Turbojpeg
 
@@ -69,7 +83,7 @@ make && sudo make install
 > udev rules for running libuvc as normal user
 
 ```
-echo 'SUBSYSTEM=="usb",  ENV{DEVTYPE}=="usb_device", GROUP="plugdev", MODE="0664"' | sudo tee /etc/udev/rules.d/10-libuvc.rules > /dev/null 
+echo 'SUBSYSTEM=="usb",  ENV{DEVTYPE}=="usb_device", GROUP="plugdev", MODE="0664"' | sudo tee /etc/udev/rules.d/10-libuvc.rules > /dev/null
 sudo udevadm trigger
 ```
 
@@ -103,7 +117,7 @@ sudo apt-get install libsuitesparse-dev
 git clone https://ceres-solver.googlesource.com/ceres-solver
 cd ceres-solver
 mkdir build && cd build
-cmake .. -DBUILD_SHARED_LIBS=ON 
+cmake .. -DBUILD_SHARED_LIBS=ON
 make -j3
 make test
 sudo make install
