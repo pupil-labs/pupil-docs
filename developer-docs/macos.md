@@ -16,7 +16,7 @@ git
 ```
 
 ### Install Homebrew
-[Homebrew][brew] describes itself as "the missing package manager for OSX."  It makes development on MacOS much easier, [plus it's open source][brew-github].  Install with the ruby script.  
+[Homebrew][brew] describes itself as "the missing package manager for OSX."  It makes development on MacOS much easier, [plus it's open source][brew-github].  Install with the ruby script.
 
 ```
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -50,7 +50,7 @@ brew install libjpeg-turbo
 brew install libusb
 brew tap homebrew/science
 brew install ffmpeg
-brew install opencv3 --with-contrib --with-python3 --with-tbb
+brew install opencv3 --with-contrib --with-python3 --with-tbb --without-python
 brew install glew
 brew tap homebrew/versions
 brew install glfw3
@@ -81,7 +81,7 @@ make && make install
 
 ### Python Packages with `pip`
 
-PyOpenGL, ZMQ, ... 
+PyOpenGL, ZMQ, ...
 
 ```
 pip3 install PyOpenGL
@@ -99,6 +99,6 @@ pip3 install git+https://github.com/pupil-labs/pyglui
 
 
 **That's it -- you're Done!**
- 
+
 [brew]: http://brew.sh/
 [brew-github]: https://github.com/Homebrew/homebrew
