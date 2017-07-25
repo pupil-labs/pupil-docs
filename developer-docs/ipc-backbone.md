@@ -123,29 +123,33 @@ You can use the following script to get an overview over the notification handli
 import zmq, msgpack
 from zmq_tools import Msg_Receiver
 ctx = zmq.Context()
-url = 'tcp://localhost'
+ip = 'localhost' #If you talk to a different machine use its IP.
+port = 50020 #The port defaults to 50020 but can be set in the GUI of Pupil Capture.
 
 # open Pupil Remote socket
 requester = ctx.socket(zmq.REQ)
-requester.connect('%s:%s'%(url,50020))
-requester.send('SUB_PORT')
-ipc_sub_port = requester.recv()
+requester.connect('tcp://%s:%s'%(ip,port))
+requester.send_string('SUB_PORT')
+ipc_sub_port = requester.recv_string()
 
 # setup message receiver
-sub_url = '%s:%s'%(url,ipc_sub_port)
-receiver = Msg_Receiver(ctx,sub_url,topics=('notify.meta.doc',))
+sub_url = 'tcp://%s:%s'%(ip,ipc_sub_port)
+receiver = Msg_Receiver(ctx, sub_url, topics=('notify.meta.doc',))
 
 # construct message
 topic = 'notify.meta.should_doc'
 payload = msgpack.dumps({'subject':'meta.should_doc'})
-requester.send_multipart([topic,payload])
+requester.send_string(topic, flags=zmq.SNDMORE)
+requester.send(payload)
+requester.recv_string()
 
 # wait and print responses
 while True:
+    # receiver is a Msg_Receiver, that returns a topic/payload tuple on recv()
     topic, payload = receiver.recv()
     actor = payload.get('actor')
     doc = payload.get('doc')
-    print '%s: %s'%(actor,doc)
+    print('%s: %s'%(actor,doc))
 ```
 
 > Example output for `v0.8`:
@@ -252,8 +256,8 @@ requester = ctx.socket(zmq.REQ)
 ip = 'localhost' #If you talk to a different machine use its IP.
 port = 50020 #The port defaults to 50020 but can be set in the GUI of Pupil Capture.
 requester.connect('tcp://%s:%s'%(ip,port))
-requester.send('SUB_PORT')
-sub_port = requester.recv()
+requester.send_string('SUB_PORT')
+sub_port = requester.recv_string()
 ```
 
 Pupil Remote uses the fixed port `50020` and is the entry point to the IPC backbone for external applications.
@@ -302,11 +306,14 @@ while True:
 You can send notifications to the IPC Backbone for everybody to read as well. Pupil Remote acts as an intermediary for reliable transport:
 
 ```python
+# continued from above
+import msgpack as serializer
 notification = {'subject':'recording.should_start', 'session_name':'my session'}
 topic = 'notify.' + notification['subject']
 payload = serializer.dumps(notification)
-requester.send_multipart((topic,payload))
-print requester.recv()
+requester.send_string(topic, flags=zmq.SNDMORE)
+requester.send(payload)
+print(requester.recv_string())
 ```
 
 We say reliable transport because pupil remote will confirm every notification we send with 'Notification received'. When we get this message we have a guarantee that the notification is on the IPC Backbone.
@@ -318,16 +325,19 @@ If we listen to the backbone using our subscriber from above, we will see the me
 If you want to write messages other than notifications onto the IPC backbone, you can publish to the bus directly. Because this uses a PUB socket, you should read up on Delivery Guarantees PUB-SUB below.
 
 ```python
-requester.send('PUB_PORT')
-pub_port = requester.recv()
-publisher = ctx.socket(zmq.SUB)
-publisher.connect('tcp://%s:%s'%(ip,sub_port))
-from time import sleep
+# continued from above
+from time import time, sleep
+
+requester.send_string('PUB_PORT')
+pub_port = requester.recv_string()
+publisher = ctx.socket(zmq.PUB)
+publisher.connect('tcp://%s:%s'%(ip, pub_port))
 sleep(1) # see Async connect in the paragraphs below
 notification = {'subject':'calibration.should_start'}
-topic = notification['subject']
+topic = 'notify.' + notification['subject']
 payload = serializer.dumps(notification)
-publisher.send_multipart((topic,payload))
+publisher.send_string(topic, flags=zmq.SNDMORE)
+publisher.send(payload)
 ```
 
 ### A full example
@@ -367,13 +377,15 @@ However, unreliable, congested networks (wifi with many actors.) can cause probl
 Latency is bound by the latency of the network. On the same machine we can use the loopback interface (localhost) and do a quick test to understand delay and jitter of Pupil Remote requests...
 
 ```python
+# continued from above
+ts = []
 for x in range(100):
     sleep(0.003) #simulate spaced requests as in real world
     t = time()
-    requester.send('t')
-    requester.recv()
+    requester.send_string('t')
+    requester.recv_string()
     ts.append(time()-t)
-print min(ts), sum(ts)/len(ts), max(ts)
+print(min(ts), sum(ts)/len(ts), max(ts))
 >>>0.000266075134277 0.000597472190857 0.00339102745056
 ```
 
@@ -381,13 +393,23 @@ print min(ts), sum(ts)/len(ts), max(ts)
 
 
 ```python
+# continued from above
+monitor = Msg_Receiver(ctx, sub_url, topics=('notify.pingback_test',))
+sleep(1.)
+
+ts = []
 for x in range(100):
     sleep(0.003)  #simulate spaced requests as in real world
     t = time()
-    publisher.notify({'subject':'pingback_test'}) #notify is a method of the Msg_Dispatcher class in zmq_tools.py
+    #notify is a method of the Msg_Dispatcher class in zmq_tools.py
+    notification = {'subject':'pingback_test'}
+    topic = 'notify.' + notification['subject']
+    payload = serializer.dumps(notification)
+    publisher.send_string(topic, flags=zmq.SNDMORE)
+    publisher.send(payload)
     monitor.recv()
     ts.append(time()-t)
-print min(ts), sum(ts)/len(ts) , max(ts)
+print(min(ts), sum(ts)/len(ts) , max(ts))
 >>>0.000180959701538 0.000300960540771 0.000565052032471
 ```
 
