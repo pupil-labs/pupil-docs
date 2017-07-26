@@ -55,7 +55,7 @@ appears if opencv has been installed previously via `apt-get`.
 
 1. Remove all opencv installations that were installed via `apt-get`.
 1. Delete the `*.so` files as well as the `build` dirctory within the `pupil_detectors` directory.
-1. Start Pupil Capture. This shpoul trigger a recompilation of the detector modules.
+1. Start Pupil Capture. This should trigger a recompilation of the detector modules.
 </aside>
 
 > Turbojpeg
