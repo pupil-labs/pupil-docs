@@ -1,7 +1,7 @@
 +++
 date = "2017-01-17T12:41:37+07:00"
 section_weight = 2
-page_weight = 3.3
+page_weight = 4.1
 +++
 
 ## HoloLens Setup
