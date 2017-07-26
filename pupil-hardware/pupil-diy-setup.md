@@ -1,7 +1,7 @@
 +++
 date = "2017-01-20T10:54:04+07:00"
 section_weight = 2
-page_weight = 4.1
+page_weight = 5.1
 +++
 
 ### Getting all the parts
