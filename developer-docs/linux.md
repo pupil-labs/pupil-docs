@@ -37,7 +37,7 @@ git clone https://github.com/opencv/opencv
 cd opencv
 mkdir build
 cd build
-cmake -D CMAKE_BUILD_TYPE=RELEASE -D BUILD_TBB=ON -D WITH_TBB=ON ..
+cmake -D CMAKE_BUILD_TYPE=RELEASE -D BUILD_TBB=ON -D WITH_TBB=ON -D WITH_CUDA=OFF -D PYTHON2_NUMPY_INCLUDE_DIRS='' ..
 make -j2
 sudo make install
 sudo ldconfig
