@@ -43,6 +43,13 @@ sudo make install
 sudo ldconfig
 ```
 
+<aside class="notice">
+Opencv is not able to build Python 2 and Python 3 modules at the same time.
+Opencv will build the Python 2 module by default iff requirements for both
+versions are met. Setting the Python 2 Numpy include directory to an empty
+string disables effectively the Python 2 module build.
+</aside>
+
 <aside class="faq">
 Do *not* install `opencv-python` via pip if you see `ImportError: No module named 'cv2'`.
 The error appears if the above requisites were not met.
