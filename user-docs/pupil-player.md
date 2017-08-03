@@ -171,11 +171,11 @@ This plugin tries to load the gaze positions that were created and stored during
 Starting with version `v9.13`, Pupil Player is able to calibrate and re-map pupil positions. To run the calibration, `Offline Calibration` needs a set of reference positions. There two methods to aquire these positions:
 
 1. `Circle Marker`: Automatic detection of calibration markers within the world video
-2. `Manual Features`: Manual selection of reference points by marking known gaze positions within the world video
+2. `Natural Features`: Manual selection of reference points by marking known gaze positions within the world video
 
 Data is calibrated and mapped in sections. Each section has following properties:
 
-1. `Calibration Method`: `Circle Marker` or `Manual Features`, see above
+1. `Calibration Method`: `Circle Marker` or `Natural Features`, see above
 2. `Calibration Mode`: `2d` uses polynomial regression, or `3d` uses bundle adjustment calibration
 3. `Calibration Range`: Slice of world frame indices that indicates which reference and pupil positions to use for calibration. For example, the calibration range `[500, 701]` will use all reference and pupil positions for calibration that correlate to the world timestamps with indices 500 - 700
 4. `Mapping Range`: Slice of world frame indices that indicates which pupil positions will be mapped to gaze positions.
@@ -188,7 +188,7 @@ Sections that have overlapping mapping ranges will produce duplicated gaze posit
 You can compare `2d` and `3d` mapping results by creating two sections with the same calibration and mapping ranges.
 </aside>
 
-To add reference points manually, you need to enable the `Manual feature edit mode`. Afterwards you can add markers by clicking at the corresponding place in the world video. To delete single manual features, simply click on them again while the edit mode is enabled. You can delete all manual features at once by clicking the button `Clear manual features`.
+To add reference points manually, you need to enable the `Natural feature edit mode`. Afterwards you can add markers by clicking at the corresponding place in the world video. To delete single natural features, simply click on them again while the edit mode is enabled. You can delete all natural features at once by clicking the button `Clear natural features`.
 
 Sections are visualized as horizontal lines above the seek bar. The thick lines denote calibration ranges and thin lines denote mapping ranges. The reference points that are used for each section are visualized as points behind the corresponding lines.
 
