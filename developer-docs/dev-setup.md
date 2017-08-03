@@ -37,8 +37,8 @@ git clone https://github.com/pupil-labs/pupil.git
 You're in development land now.  If you're running from the source, there will be no icon to click. So fire up the terminal, navigate to the cloned Pupil repository, and start Pupil using Python.
 
 ```
-cd /the_folder_where_Pupil_lives/pupil_src/capture
-python main.py
+cd /the_folder_where_Pupil_lives/pupil_src
+python3 main.py
 ```
 
 [release-page]: http://github.com/pupil-labs/pupil/releases

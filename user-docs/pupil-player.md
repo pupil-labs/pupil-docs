@@ -40,8 +40,8 @@ Drag the recording directory (the triple digit one) directly onto the app icon *
 ```bash
 # Running from source?
 
-cd "path_to_pupil_dir/pupil_src/player"
-python main.py "path/to/recording_directory"
+cd "path_to_pupil_dir/pupil_src"
+python3 main.py "path/to/recording_directory"
 ```
 
 Pupil Player is similar to a video player. You can playback recordings and can load plugins to build visualizations.
