@@ -151,16 +151,16 @@ This plugin can be used to overlay the eye video on top of the world video. Note
 
 ### Data Source Plugins
 
-Data source plugins provide data of a specific topic -- currently `pupil` and `gaze` positions. Plugins that provide data for a specific topic are complementary to each other, e.g. `Pupil Positions From Recording` and `Offline Pupil Detector` (see below). Complementary plugins cannot be run at the same time.
+Data source plugins provide data of a specific topic - currently `pupil` and `gaze` positions. Plugins that provide data for the same topic are exclusive. `Pupil Positions From Recording` and `Offline Pupil Detector` cannot be run at the same time.
 
 #### Pupil Positions From Recording
 
-This plugin tries to load the pupil positions that were detected and stored during a Pupil Capture recording. It is loaded by default and is complementary to the `Offline Pupil Detector`.
+This is the default Pupil detector plugin. This plugin tries to load pupil positions that were detected and stored during a Pupil Capture recording. This plugin can not be run in conjunction with `Offline Pupil Detector`.
 
 #### Offline Pupil Detector
-Starting with version `v9.13`, Pupil Player is able to run the same pupil detection algorithm as in Pupl Capture for recorded eye videos. This is especially important for Pupil Mobile recordings, since the app does not run pupil detection on the phone. The plugin tries to load the `eye0.mp4` and `eye1.mp4` videos in the current recording and runs the pupil detection in a separate process. `Offline Pupil Detector` is complementary to `Pupil Positions From Recording`.
+The `Offline Pupil Detector` plugin can be used on any dataset where eye videos were recorded. The plugin tries to load the `eye0.mp4` and `eye1.mp4` videos, and runs pupil detection algorithm in separate processes. This plugin is especially relevant for recordings made with Pupil Mobile, because Pupil Mobile does not perform any pupil detection or gaze estimation on the Android device. This plugin is available starting with Pupil Player `v0.9.13`.
 
-The `Detection Method` selector sets the detection algorithm to either `2d` or `3d` detection (see [the section on Pupil Detection](#pupil-detection) for details). The `Redetect` button restarts the detection procedure.
+The `Detection Method` selector sets the detection algorithm to either `2d` or `3d` detection (see [the section on Pupil Detection](#pupil-detection) for details). The `Redetect` button restarts the detection procedure. You can use the `Offline Pupil Detector` plugin to debug, improve, and gain insight into the pupil detection process.
 
 #### Gaze Positions From Recording
 
