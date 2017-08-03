@@ -44,8 +44,8 @@ sudo ldconfig
 ```
 
 <aside class="notice">
-OpenCv is not able to build Python 2 and Python 3 modules at the same time.
-OpenCv will build the Python 2 module by default if requirements for both
+OpenCV is not able to build Python 2 and Python 3 modules at the same time.
+OpenCV will build the Python 2 module by default if requirements for both
 versions are met. Setting the Python 2 Numpy include directory to an empty
 string effectively disables the Python 2 module build.
 </aside>
