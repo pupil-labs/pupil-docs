@@ -37,11 +37,18 @@ git clone https://github.com/opencv/opencv
 cd opencv
 mkdir build
 cd build
-cmake -D CMAKE_BUILD_TYPE=RELEASE -D BUILD_TBB=ON -D WITH_TBB=ON ..
+cmake -D CMAKE_BUILD_TYPE=RELEASE -D BUILD_TBB=ON -D WITH_TBB=ON -D WITH_CUDA=OFF -D PYTHON2_NUMPY_INCLUDE_DIRS='' ..
 make -j2
 sudo make install
 sudo ldconfig
 ```
+
+<aside class="notice">
+OpenCV is not able to build Python 2 and Python 3 modules at the same time.
+OpenCV will build the Python 2 module by default if requirements for both
+versions are met. Setting the Python 2 Numpy include directory to an empty
+string effectively disables the Python 2 module build.
+</aside>
 
 <aside class="faq">
 Do *not* install `opencv-python` via pip if you see `ImportError: No module named 'cv2'`.
