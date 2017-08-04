@@ -40,8 +40,8 @@ Drag the recording directory (the triple digit one) directly onto the app icon *
 ```bash
 # Running from source?
 
-cd "path_to_pupil_dir/pupil_src/player"
-python main.py "path/to/recording_directory"
+cd "path_to_pupil_dir/pupil_src"
+python3 main.py "path/to/recording_directory"
 ```
 
 Pupil Player is similar to a video player. You can playback recordings and can load plugins to build visualizations.
@@ -149,15 +149,54 @@ This plugin can be used to overlay the eye video on top of the world video. Note
   + `show` - show or hide eye video overlays.
   + `horiz. and vert. flip` - flip eye videos vertically or horizontally
 
+### Data Source Plugins
+Data source plugins provide data of a specific topic - currently `pupil` and `gaze` positions. Plugins that provide data for the same topic are exclusive. `Pupil Positions From Recording` and `Offline Pupil Detector` cannot be run at the same time.
+
+#### Pupil Positions From Recording
+This is the default Pupil detector plugin. This plugin tries to load pupil positions that were detected and stored during a Pupil Capture recording. This plugin can not be run in conjunction with `Offline Pupil Detector`.
+
+#### Offline Pupil Detector
+The `Offline Pupil Detector` plugin can be used on any dataset where eye videos were recorded. The plugin tries to load the `eye0.mp4` and `eye1.mp4` videos, and runs pupil detection algorithm in separate processes. This plugin is especially relevant for recordings made with Pupil Mobile, because Pupil Mobile does not perform any pupil detection or gaze estimation on the Android device. This plugin is available starting with Pupil Player `v0.9.13`.
+
+The `Detection Method` selector sets the detection algorithm to either `2d` or `3d` detection (see [the section on Pupil Detection](#pupil-detection) for details). The `Redetect` button restarts the detection procedure. You can use the `Offline Pupil Detector` plugin to debug, improve, and gain insight into the pupil detection process.
+
+#### Gaze Positions From Recording
+This is the default gaze mapping plugin. This plugin tries to load gaze positions that were created and stored during a Pupil Capture recording. This plugin can not be run in conjunction with  `Offline Calibration`.
+
+#### Offline Calibration
+This plugin is available starting with Pupil Player `v0.9.13`. The `Offline Calibration` plugin can be used on any Pupil dataset. This plugin enables you to (re)calibrate, set calibration sections, and (re)map pupil to gaze positions. To calibrate with the `Offline Calibration` plugin, you must supply a set of reference positions in the world. There two methods to acquire these positions:
+
+1. `Circle Marker`: This method tries to automatically detect [circular calibration markers](#calibration-methods) within the world video.
+2. `Natural Features`: This method enables you to select reference points by marking (clicking on) known features that correspond to gaze positions within the world video.
+
+Data is calibrated and mapped in sections. Each section has following properties:
+
+1. `Calibration Method`: `Circle Marker` or `Natural Features`, see above
+2. `Calibration Mode`: `2d` uses polynomial regression, or `3d` uses bundle adjustment calibration
+3. `Calibration Range`: Slice of world frame indices that indicates which reference and pupil positions to use for calibration. For example, the calibration range `[500, 701]` will use all reference and pupil positions for calibration that correlate to the world timestamps with indices 500 - 700
+4. `Mapping Range`: Slice of world frame indices that indicates which pupil positions will be mapped to gaze positions.
+
+<aside class="warning">
+Sections that have overlapping mapping ranges will produce duplicated gaze positions in the overlapping regions. This is intended behaviour.
+</aside>
+
+<aside class="notice">
+You can compare `2d` and `3d` mapping results by creating two sections with the same calibration and mapping ranges.
+</aside>
+
+To add reference points manually, you need to enable the `Natural feature edit mode`. Afterwards you can add markers by clicking on the corresponding location in the world video. To delete single natural features, simply click on them again while the edit mode is enabled. You can delete all natural features at once by clicking the button `Clear natural features`.
+
+Sections are visualized as horizontal lines above the seek bar. The thick lines denote calibration ranges and thin lines denote mapping ranges. The reference points that are used for each section are visualized as points behind the corresponding lines.
+
+> Offline pupil detection and gaze mapping
+> {{< video-youtube embed-url="https://www.youtube.com/watch?v=lPtwAkjNT2Q" >}}
+
+> Offline gaze mapping with natural features
+> {{< video-youtube embed-url="https://www.youtube.com/watch?v=wVOqJWel0K0" >}}
+
 ### Analysis Plugins
 
 These plugins are simple unique plugins, that operate on the gaze data for analysis and visualizations.
-
-#### Manual Gaze Correction
-This plugin allows one to manually offset the gaze position. The offset values are between `-1` and `1`. This plugin is **unique**, therefore you can only load one instance of this plugin. You can set the following parameters:
-
-  + `x_offset` - the amount to offset the gaze position horizontally
-  + `y_offset` - the amount to offset the gaze position vertically
 
 #### Offline Surface Tracker
 
