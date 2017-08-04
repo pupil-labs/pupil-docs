@@ -150,11 +150,9 @@ This plugin can be used to overlay the eye video on top of the world video. Note
   + `horiz. and vert. flip` - flip eye videos vertically or horizontally
 
 ### Data Source Plugins
-
 Data source plugins provide data of a specific topic - currently `pupil` and `gaze` positions. Plugins that provide data for the same topic are exclusive. `Pupil Positions From Recording` and `Offline Pupil Detector` cannot be run at the same time.
 
 #### Pupil Positions From Recording
-
 This is the default Pupil detector plugin. This plugin tries to load pupil positions that were detected and stored during a Pupil Capture recording. This plugin can not be run in conjunction with `Offline Pupil Detector`.
 
 #### Offline Pupil Detector
@@ -163,15 +161,13 @@ The `Offline Pupil Detector` plugin can be used on any dataset where eye videos 
 The `Detection Method` selector sets the detection algorithm to either `2d` or `3d` detection (see [the section on Pupil Detection](#pupil-detection) for details). The `Redetect` button restarts the detection procedure. You can use the `Offline Pupil Detector` plugin to debug, improve, and gain insight into the pupil detection process.
 
 #### Gaze Positions From Recording
-
-This plugin tries to load the gaze positions that were created and stored during a Pupil Capture recording. It is loaded by default and is complementary to the `Offline Calibration`.
+This is the default gaze mapping plugin. This plugin tries to load gaze positions that were created and stored during a Pupil Capture recording. This plugin can not be run in conjunction with  `Offline Calibration`.
 
 #### Offline Calibration
+This plugin is available starting with Pupil Player `v0.9.13`. The `Offline Calibration` plugin can be used on any Pupil dataset. This plugin enables you to (re)calibrate, set calibration sections, and (re)map pupil to gaze positions. To calibrate with the `Offline Calibration` plugin, you must supply a set of reference positions in the world. There two methods to acquire these positions:
 
-Starting with version `v9.13`, Pupil Player is able to calibrate and re-map pupil positions. To run the calibration, `Offline Calibration` needs a set of reference positions. There two methods to aquire these positions:
-
-1. `Circle Marker`: Automatic detection of calibration markers within the world video
-2. `Natural Features`: Manual selection of reference points by marking known gaze positions within the world video
+1. `Circle Marker`: This method tries to automatically detect [circular calibration markers](#calibration-methods) within the world video.
+2. `Natural Features`: This method enables you to select reference points by marking (clicking on) known features that correspond to gaze positions within the world video.
 
 Data is calibrated and mapped in sections. Each section has following properties:
 
@@ -188,7 +184,7 @@ Sections that have overlapping mapping ranges will produce duplicated gaze posit
 You can compare `2d` and `3d` mapping results by creating two sections with the same calibration and mapping ranges.
 </aside>
 
-To add reference points manually, you need to enable the `Natural feature edit mode`. Afterwards you can add markers by clicking at the corresponding place in the world video. To delete single natural features, simply click on them again while the edit mode is enabled. You can delete all natural features at once by clicking the button `Clear natural features`.
+To add reference points manually, you need to enable the `Natural feature edit mode`. Afterwards you can add markers by clicking on the corresponding location in the world video. To delete single natural features, simply click on them again while the edit mode is enabled. You can delete all natural features at once by clicking the button `Clear natural features`.
 
 Sections are visualized as horizontal lines above the seek bar. The thick lines denote calibration ranges and thin lines denote mapping ranges. The reference points that are used for each section are visualized as points behind the corresponding lines.
 
