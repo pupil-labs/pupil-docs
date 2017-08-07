@@ -188,11 +188,11 @@ To add reference points manually, you need to enable the `Natural feature edit m
 
 Sections are visualized as horizontal lines above the seek bar. The thick lines denote calibration ranges and thin lines denote mapping ranges. The reference points that are used for each section are visualized as points behind the corresponding lines.
 
-> Offline pupil detection and gaze mapping
-> {{< video-youtube embed-url="https://www.youtube.com/watch?v=lPtwAkjNT2Q" >}}
+> <h5 align='center'>Offline pupil detection and gaze mapping<h5>
+> {{< video-youtube embed-url="https://www.youtube.com/embed/lPtwAkjNT2Q" >}}
 
-> Offline gaze mapping with natural features
-> {{< video-youtube embed-url="https://www.youtube.com/watch?v=wVOqJWel0K0" >}}
+> <h5 align='center'>Offline gaze mapping with natural features<h5>
+> {{< video-youtube embed-url="https://www.youtube.com/embed/wVOqJWel0K0" >}}
 
 ### Analysis Plugins
 
