@@ -188,6 +188,19 @@ This method is for special situations and far distances. Usually not required.
 1. Repeat until you have covered the subjects field of view (generally about 9 points should suffice)
 1. Press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to stop calibration.
 
+#### Camera Intrinsics Estimation
+
+This method is used to calculate camera intrinsics and correct camera distortion. Currently implemented with [pinhole camera model](http://docs.opencv.org/2.4/doc/tutorials/calib3d/camera_calibration/camera_calibration.html). Usually not required.
+
+1. Select `Camera Intrinsics Estimation`
+1. Click on 'show pattern' to display the pattern
+1. Resize the pattern to fill the screen
+1. Hold the Pupil headset and position the world camera so that the pattern fills the camara FOV
+1. Press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to start calibration.
+1. Data will be sampled and displayed on the screen as a border of the calibrated pattern. (Note - Be sure to calibrate from different angles)
+1. Repeat until you have covered the screen with 10 borders.
+1. Click on `show undistorted image` to undistort the world camera.
+
 <!--
 1. Load the `Show Calibration` plugin from the `General` sub-menu to evaluate calibration quality.
 -->
