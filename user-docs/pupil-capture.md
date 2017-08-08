@@ -188,6 +188,19 @@ This method is for special situations and far distances. Usually not required.
 1. Repeat until you have covered the subjects field of view (generally about 9 points should suffice)
 1. Press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to stop calibration.
 
+#### Camera Intrinsics Estimation
+
+This calibration plugin is used to calculate camera intrinsics, which will enable one to correct cor camera distortion. Pupil Capture has built in default camera matrices for the high speed world camera and the high resolution world camera. You can re-calibrate your camera and/or calibrate a camera that is not supplied by Pupil Labs by running this calibration routine.
+
+1. Select `Camera Intrinsics Estimation`
+1. Click on 'show pattern' to display the pattern
+1. Resize the pattern to fill the screen
+1. Hold your Pupil headset and aim it at the pattern.
+1. With the world window in focus, press `c` on your keyboard or the circular `C` button in the world windows to detect and capture a pattern.
+1. Data will be sampled and displayed on the screen as a border of the calibrated pattern. (Note - make sure to move your headset at different angles and try to cover the entire FOV of the world camera for best possible calibration results)
+1. Repeat until you have captured 10 patterns.
+1. Click on `show undistorted image` to display the results of camera intrinsic estimation. This will display an undistorted view of your scene. If well calibrated, parallel lines in the real world will appear as parallel lines in the undistorted view.
+
 <!--
 1. Load the `Show Calibration` plugin from the `General` sub-menu to evaluate calibration quality.
 -->
