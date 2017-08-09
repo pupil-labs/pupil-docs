@@ -385,7 +385,14 @@ The `activation` field denotes how strong the confidence dropped. Values greater
 
 ### Audio Capture
 
-The `Audio Capture` plugin provides access to a selected audio source for other plugins and writes its output to the `audio.wav` file during a recording. It also writes the Pupil Capture timestamp for each audio packet to the `audio_timestamps.npy` file. This way you can easily correlate single audio packets to their corresponding video frames. If you want to merge audio and video into a single file you will need to follow these steps:
+The `Audio Capture` plugin provides access to a selected audio source for other plugins and writes its output to the `audio.wav` file during a recording. It also writes the Pupil Capture timestamp for each audio packet to the `audio_timestamps.npy` file. This way you can easily correlate single audio packets to their corresponding video frames. 
+
+
+<aside class="notice">
+	<strong>Note</strong> - Starting with `v0.9.13` Audio is recorded with timestamps and is merged automatically with the video when videos are exported with Pupil Player. This feature is only available in macOS and Linux at this time.
+</aside>
+
+If you want to _manually_ merge audio and video into a single file you will need to follow these steps:
 
 1. Open the recording in Pupil Player
 2. Make sure that the `Video Export` plugin is active
