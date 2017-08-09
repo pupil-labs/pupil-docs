@@ -22,7 +22,7 @@ Pupil ships with a number of additional parts. The below sections provide an ove
 
 The world camera comes with two lenses. 60 degree FOV lens (shown on the left) and a wide angle 100 degree FOV lens (shown on the right). 
 
-The world camera lens are interchangable, so you can swap between the two lenses provided for normal or wide angle FOV.
+The world camera lens are interchangeable, so you can swap between the two lenses provided for normal or wide angle FOV.
 
 #### Nose Pads
 
