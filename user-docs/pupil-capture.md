@@ -63,6 +63,27 @@ Pupil's algorithms automatically detect the participant's pupil. With the 3d det
 
 Pupil uses two cameras. One camera records a subject's eye movements -- we call this the `eye camera`. Another camera records the subject's field of vision -- we call this the `world camera`. In order to know what someone is looking at, we must find the parameters to a function that correlates these two streams of information.
 
+### Calibration Process
+
+> {{< video-webm src="/videos/calibration/calibration-mobo/clb-mobo.webm" >}}
+
+> <div class="figure-container">
+	<div class="Grid Grid-row">
+		<div class="Grid-cell--1of2">
+			<div class="Grid-cell Text-center">
+				<h4 style="margin-top: 0;">Monocular</h4>
+			</div>
+		</div>
+		<div class="Grid-cell--1of2">
+			<div class="Grid-cell Text-center">
+				<h4 style="margin-top: 0;">Binocular</h4>
+			</div>
+		</div>
+	</div>
+</div>
+
+Pupil Headset comes in a variety of configurations.  Calibration can be conducted with a monocular or binocular eye camera setup.
+
 ### Before every calibration
 
 Make sure that the users pupil is properly tracked. Make sure that the world camera is in focus for the distance at which you want to calibrate, and that you can see the entire area you want to calibrate within the world cameras extents (FOV).
@@ -100,27 +121,6 @@ Make sure the lens and image sensor are clean. Dust on the lens or image sensor 
 		</div>
 	</div>
 </div>
-
-### Calibration Process
-
-> {{< video-webm src="/videos/calibration/calibration-mobo/clb-mobo.webm" >}}
-
-> <div class="figure-container">
-	<div class="Grid Grid-row">
-		<div class="Grid-cell--1of2">
-			<div class="Grid-cell Text-center">
-				<h4 style="margin-top: 0;">Monocular</h4>
-			</div>
-		</div>
-		<div class="Grid-cell--1of2">
-			<div class="Grid-cell Text-center">
-				<h4 style="margin-top: 0;">Binocular</h4>
-			</div>
-		</div>
-	</div>
-</div>
-
-Pupil Headset comes in a variety of configurations.  Calibration can be conducted with a monocular or binocular eye camera setup.
 
 ### Calibration Methods
 
@@ -213,26 +213,6 @@ Loading the `Show Calibration` plugin from the `General` sub-menu will show an e
 
 The green outline show the calibrated area. Orange shows the sampled data points. Red shows outliers. Usually large outliers are blinks, other large outliers can often be attributed to subject error (not looking at the marker). Open image in another tab to see it at full resolution.
 -->
-
-### Before every calibration
-Make sure that the users pupil is properly tracked. Make sure that the world camera is in focus for the distance at which you want to calibrate, and that you can see the entire area you want to calibrate within the world cameras extents (FOV).
-
-> <div class="figure-container">
-	<div class="Grid Grid--justifyCenter Grid--center Grid--alignContentCenter Feature-row">
-		<div class="Grid-cell Grid-cell--full">
-			<div class="Grid Grid--1of2 Text-center u-padBottom--2">
-				<div class="Grid-cell ">
-					{{< webp-img figure-class="img-m" src="/images/pupil-hardware/pupil-detect.webp" alt="Pupil detection" >}}
-					<p>Your pupil is properly detected by the eye camera</p>
-				</div>
-				<div class="Grid-cell">
-					{{< webp-img figure-class="img-m" src="/images/pupil-hardware/focus.webp" alt="World camera" >}}
-					<p>Make sure the world camera is in focus</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
 
 ### Notes on calibration accuracy
 Using screen based 9 point calibration method, you should easily be able to achieve tracking accuracy within the physiological limits (1-2 visual degrees).
