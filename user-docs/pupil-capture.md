@@ -410,4 +410,12 @@ Only the exported video contains the timestamps that are required for ffmpeg to 
 The `Annotation Capture` plugin allows you to mark timestamps with a label -- sometimes reffered to as triggers.
 These labels can be created by pressing their respective hotkey or by sending a notification with the subject `annotation`.
 This is useful to mark external events (e.g. "start of condition A") within the Pupil recording. The `Annotation Player`
-plugin is able to correlate export these events.
+plugin is able to correlate and export these events as well as add new ones.
+
+
+#### Remote Annotations
+Aditionally you can create annotation events programatically and sent them using the ipc or by sending messages to the Pupil remote interface. An example annotatin notification is shown on the right.
+
+```
+{'subject':"annotation",'label':"Hi this is my annotation 1",'timestamp':[set a correct timestamp as float here],'duration':1.0,'source':'a test script','record':True}
+```
