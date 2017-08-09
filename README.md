@@ -152,7 +152,7 @@ Example:
 
 **`video-youtube`**
 
-Youtube videos are lazyloaded meaning requests are made only when the user wants to play the video. Make sure that the provided `embed-url` are embedded links only ie. `https://www.youtube.com/embed/wVOqJWel0K0`.
+Youtube videos are lazyloaded meaning requests are made only when the user wants to play the video. Make sure that the provided `embed-url` are embedded links only - e.g. `https://www.youtube.com/embed/wVOqJWel0K0`.
 
   - `embed-url` - required embed url string
 
