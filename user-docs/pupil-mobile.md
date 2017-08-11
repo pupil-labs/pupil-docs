@@ -7,7 +7,7 @@ page_weight = 3
 
 ## Pupil Mobile
 
-Pupil Mobile is companion app to Pupil Capture and Pupil Service. It is currently in public alpha!
+Pupil Mobile is a companion app to Pupil Capture and Pupil Service. It is currently in public alpha!
 
 ### Introducing Pupil Mobile
 
@@ -22,7 +22,7 @@ Pupil Mobile enables you to connect your Pupil eye tracking headset to your Andr
 
 > <h4 align='center'>placeholder media</h4>
 
-Pupil Mobile is automatically detected by devices on the same local WiFi network. To subscribe with Pupil Capture, in `Capture Selection`, select Pupil Mobile as the capture source.
+Pupil Mobile devices on the same local WiFi network are automatically detected by Pupil Capture. To subscribe to a Pupil Mobile device in Pupil Capture, go to `Capture Selection` and select Pupil Mobile as the capture source.
 
 #### WiFi Bandwidth & Network
 
@@ -43,7 +43,7 @@ The communication protocol is named [NDSI](https://github.com/pupil-labs/pyndsi/
 <aside class="warning">
 The communication protocol does not implement any access control. This means that everyone running Pupil Capture in your local network will be able to access, i.e. stream and record, sensors connected to the phone running Pupil Mobile!
 
-Make sure to hit "Stop background servie and terminate app" in the general Pupil Mobile settings after you are done.
+Make sure to hit "Stop background service and terminate app" in the general Pupil Mobile settings after you are done.
 </aside>
 
 ### Download App
