@@ -18,7 +18,37 @@ Put on the Pupil headset and plug it in to your computer. Make sure there is spa
 
 > {{< figure-img src="/images/icons/svg/pc.svg" img-class="feature-center logo" width="20%" alt="Pupil Capture logo" >}}
 
-### 3. Check pupil detection
+### 3. Good eye & bad eye 
+
+Before calibrating your eyes, be sure to check that your eyes are well positioned for a robust eye tracking performance. For more details check out. - [Pupil Headset Adjustments](https://docs.pupil-labs.com/#pupil-headset-adjustments)
+
+#### Good eye
+
+> {{< webp-img src="/images/pupil-capture/eye/eye_good.webp" alt="Good eye setup" >}}
+
+Here is a good example of a good eye setup. The eye is in focus and all range of the eye movements are visible within the camera's field of view.
+
+#### Bad eye
+
+#### Out of focus
+
+> {{< webp-img src="/images/pupil-capture/eye/eye_bad_01.webp" alt="Out of focus" >}}
+
+The eye here is heavily out of focus. You can twist the lens focus ring of the eye camera with your fingers or lens adjuster tool to bring the eye camera into focus.
+
+#### Camera arm too far away from eye
+
+> {{< webp-img src="/images/pupil-capture/eye/eye_bad_02.webp" alt="Camera arm too far away from eye" >}}
+
+The camera arm here is too far away from the eye. To prevent this, you can slide the camera arm along the track till your eye(s) are centered in the camera's field of view.
+
+#### Eye not centered in the frame
+
+> {{< webp-img src="/images/pupil-capture/eye/eye_bad_03.webp" alt="Eye not central to the frame" >}}
+
+The eye here is not centered in the frame. You can rotate about its ball joint to center your eye(s) into the frame.
+
+### 4. Check pupil detection
 
 > {{< video-webm src="/videos/calibration/pupil-detection/pd.webm" >}}
 
@@ -28,8 +58,7 @@ If the algorithm's detection confidence is high, the red circle will be opaque. 
 
 Try moving your head around a bit while looking at your eye to see that the pupil is robustly detected in various orientations.
 
-
-### 4. Calibrate
+### 5. Calibrate
 
 > {{< video-webm src="/videos/calibration/calibration-headset/clb-hd.webm" >}}
 
