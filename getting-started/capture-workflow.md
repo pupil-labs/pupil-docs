@@ -43,7 +43,7 @@ Before calibrating, be sure to check that your eyes are well positioned for a ro
 </aside>
  
 <aside class="warning" style="clear:none;">
-	3. Don't - The eye here is not centered in the frame and eyebrow in the frame.
+	3. Don't - The eye is not centered in the frame and eyebrow in the frame.
 </aside>
  
 <aside class="warning" style="clear:none;">
