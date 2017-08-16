@@ -7,7 +7,7 @@ page_weight = 0
 
 # User Docs
 
-This section of the documentation is targeted towards users of Pupil software and provides deeper explanation of features and methods.
+This section of the documentation is targeted towards users of Pupil software and provides a deeper explanation of features and methods.
 
 ## Pupil Capture
 
@@ -21,7 +21,7 @@ Pupil Capture is the software used with the Pupil Headset. The software reads th
 
 The Capture window is the main control center for `Pupil Capture`. It displays live video feed from pupil headset.
 
-1. **Graphs** - This area contains performance graphs. You can monitor `CPU` and `FPS` and pupil algorithm detection confidence. These graphs are the same as in the `World` window..
+1. **Graphs** - This area contains performance graphs. You can monitor `CPU` and `FPS` and pupil algorithm detection confidence. These graphs are the same as in the `World` window.
 1. **Settings GUI Menu** - This is the main GUI for Pupil Player. You can use this menu primarily to launch plugins and control global settings.
 1. **Hot keys** - This area contains clickable buttons for plugins.
 
@@ -29,11 +29,11 @@ The Capture window is the main control center for `Pupil Capture`. It displays l
 
 > {{< video-webm src="/videos/capture-selection/pc-select.webm" >}}
 
-By default Pupil Capture will use Local USB as the capture source. If you have a Pupil headset connected to your machine you will see video displayed from your Pupil headset in the World and eye windows. If no headset is connected or Pupil Capture is unable to open capture devices it will fall back to the Test Image. Other options for capture source are described below.
+By default Pupil Capture will use Local USB as the capture source. If you have a Pupil headset connected to your machine you will see the video displayed from your Pupil headset in the World and eye windows. If no headset is connected or Pupil Capture is unable to open capture devices it will fall back to the Test Image. Other options for capture source are described below.
 
 - Test Image - This is the fallback behavior if no capture device is found, or if you do not want to connect to any capture device.
 - Video File Source - select this option to use previously recorded videos for the capture selection.
-- Pupil Mobile - select this option When using Pupil Capture with the Pupil Mobile android application.
+- Pupil Mobile - select this option when using Pupil Capture with the Pupil Mobile android application.
 - Local USB - select this option if your Pupil Headset is connected to the machine running Pupil Capture. This is the default setting.
 
 ### Pupil Detection
@@ -62,6 +62,27 @@ Pupil's algorithms automatically detect the participant's pupil. With the 3d det
 > {{< video-webm src="/videos/calibration/calibration-headset/clb-hd.webm" >}}
 
 Pupil uses two cameras. One camera records a subject's eye movements -- we call this the `eye camera`. Another camera records the subject's field of vision -- we call this the `world camera`. In order to know what someone is looking at, we must find the parameters to a function that correlates these two streams of information.
+
+### Calibration Process
+
+> {{< video-webm src="/videos/calibration/calibration-mobo/clb-mobo.webm" >}}
+
+> <div class="figure-container">
+	<div class="Grid Grid-row">
+		<div class="Grid-cell--1of2">
+			<div class="Grid-cell Text-center">
+				<h4 style="margin-top: 0;">Monocular</h4>
+			</div>
+		</div>
+		<div class="Grid-cell--1of2">
+			<div class="Grid-cell Text-center">
+				<h4 style="margin-top: 0;">Binocular</h4>
+			</div>
+		</div>
+	</div>
+</div>
+
+Pupil Headset comes in a variety of configurations.  Calibration can be conducted with a monocular or binocular eye camera setup.
 
 ### Before every calibration
 
@@ -101,27 +122,6 @@ Make sure the lens and image sensor are clean. Dust on the lens or image sensor 
 	</div>
 </div>
 
-### Calibration Process
-
-> {{< video-webm src="/videos/calibration/calibration-mobo/clb-mobo.webm" >}}
-
-> <div class="figure-container">
-	<div class="Grid Grid-row">
-		<div class="Grid-cell--1of2">
-			<div class="Grid-cell Text-center">
-				<h4 style="margin-top: 0;">Monocular</h4>
-			</div>
-		</div>
-		<div class="Grid-cell--1of2">
-			<div class="Grid-cell Text-center">
-				<h4 style="margin-top: 0;">Binocular</h4>
-			</div>
-		</div>
-	</div>
-</div>
-
-Pupil Headset comes in a variety of configurations.  Calibration can be conducted with a monocular or binocular eye camera setup.
-
 ### Calibration Methods
 
 <!-- First select the calibration method you would like to use: -->
@@ -155,12 +155,12 @@ This method is done with an operator and a subject. It is suited for midrange di
 printed calibration marker like the one shown in the video. [Download markers to print](/images/pupil-capture/calibration-markers/pupil_calibration_marker.pdf) or display on smartphone/tablet screen.
 
 1. Select `Manual Marker Calibration`
-1. Press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to start calibration.
+1. Press `c` on your keyboard or click the blue circular `C` button on the left hand side of the world window to start calibration.
 1. Stand in front of the subject (the person wearing the Pupil headset) at the distance you would like to calibrate. (1.5-2m)
 1. Ask the subject to follow the marker with their eyes and hold their head still.
 1. Show the marker to the subject and hold the marker still. You will hear a "click" sound when data sampling starts, and one second later a "tick" sound when data sampling stops.
 1. Move the marker to the next location and hold the marker still.
-1. Repeat until you have covered the subjects field of view (generally about 9 points should suffice).
+1. Repeat until you have covered the subject's field of view (generally about 9 points should suffice).
 1. Show the 'stop marker' or press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to stop calibration.
 
 <!--
@@ -182,11 +182,24 @@ This method is for special situations and far distances. Usually not required.
 
 1. Select `Natural Features Calibration`
 1. Press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to start calibration.
-1. Ask the subject (the person wearing the Pupil headset) to look a point in within their field of vision. Note -- pick a salient feature in the environment.
+1. Ask the subject (the person wearing the Pupil headset) to look a point within their field of vision. Note -- pick a salient feature in the environment.
 1. Click on that point in the world window.
 1. Data will be sampled.
-1. Repeat until you have covered the subjects field of view (generally about 9 points should suffice)
+1. Repeat until you have covered the subject's field of view (generally about 9 points should suffice)
 1. Press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to stop calibration.
+
+#### Camera Intrinsics Estimation
+
+This calibration plugin is used to calculate camera intrinsics, which will enable one to correct cor camera distortion. Pupil Capture has built in, default camera matrices for the high speed world camera and the high resolution world camera. You can re-calibrate your camera and/or calibrate a camera that is not supplied by Pupil Labs by running this calibration routine.
+
+1. Select `Camera Intrinsics Estimation`
+1. Click on 'show pattern' to display the pattern
+1. Resize the pattern to fill the screen
+1. Hold your Pupil headset and aim it at the pattern.
+1. With the world window in focus, press `c` on your keyboard or the circular `C` button in the world windows to detect and capture a pattern.
+1. Data will be sampled and displayed on the screen as a border of the calibrated pattern. (Note - make sure to move your headset at different angles and try to cover the entire FOV of the world camera for best possible calibration results)
+1. Repeat until you have captured 10 patterns.
+1. Click on `show undistorted image` to display the results of camera intrinsic estimation. This will display an undistorted view of your scene. If well calibrated, parallel lines in the real world will appear as parallel lines in the undistorted view.
 
 <!--
 1. Load the `Show Calibration` plugin from the `General` sub-menu to evaluate calibration quality.
@@ -201,26 +214,6 @@ Loading the `Show Calibration` plugin from the `General` sub-menu will show an e
 The green outline show the calibrated area. Orange shows the sampled data points. Red shows outliers. Usually large outliers are blinks, other large outliers can often be attributed to subject error (not looking at the marker). Open image in another tab to see it at full resolution.
 -->
 
-### Before every calibration
-Make sure that the users pupil is properly tracked. Make sure that the world camera is in focus for the distance at which you want to calibrate, and that you can see the entire area you want to calibrate within the world cameras extents (FOV).
-
-> <div class="figure-container">
-	<div class="Grid Grid--justifyCenter Grid--center Grid--alignContentCenter Feature-row">
-		<div class="Grid-cell Grid-cell--full">
-			<div class="Grid Grid--1of2 Text-center u-padBottom--2">
-				<div class="Grid-cell ">
-					{{< webp-img figure-class="img-m" src="/images/pupil-hardware/pupil-detect.webp" alt="Pupil detection" >}}
-					<p>Your pupil is properly detected by the eye camera</p>
-				</div>
-				<div class="Grid-cell">
-					{{< webp-img figure-class="img-m" src="/images/pupil-hardware/focus.webp" alt="World camera" >}}
-					<p>Make sure the world camera is in focus</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
 ### Notes on calibration accuracy
 Using screen based 9 point calibration method, you should easily be able to achieve tracking accuracy within the physiological limits (1-2 visual degrees).
 
@@ -231,7 +224,7 @@ Using screen based 9 point calibration method, you should easily be able to achi
 
 > {{< video-webm src="/videos/recording/rec.webm" >}}
 
-Press `r` on your keyboard or press the blue circular `R` button in the left hand side of the world window to start recording. You will see red text with the elapsed time of recording next to the `R` button. To stop recording, press `r` on your keyboard or press the `R` button on screen.
+Press `r` on your keyboard or press the blue circular `R` button on the left hand side of the world window to start recording. You will see red text with the elapsed time of recording next to the `R` button. To stop recording, press `r` on your keyboard or press the `R` button on screen.
 
 You can set the folder or `Path to recordings` and the `Recording session name` in the `Recorder` sub-menu within the GUI. Note - you must specify an existing folder, otherwise the `Path to recordings` will revert to the default path.
 
@@ -277,7 +270,7 @@ with at least one subscription is transferred.
 
 > {{< video-webm src="/videos/pupil-remote/pr.webm" >}}
 
-`Pupil Remote` is the plugin that functions as entry point to the broadcast infrastructure. It also provides a high level interface to control Pupil Capture over the network (e.g. start/stop a recording).
+`Pupil Remote` is the plugin that functions as the entry point to the broadcast infrastructure. It also provides a high level interface to control Pupil Capture over the network (e.g. start/stop a recording).
 
 * Load the `Pupil Remote` plugin from the `General` sub-menu in the GUI (it is loaded by default).
 * It will automatically open a network port at the default `Address`.
@@ -294,7 +287,7 @@ See the developer documentation on how to access Pupil Remote from your own appl
 
 * Load the `Pupil Groups` plugin from the `General` sub-menu in the GUI.
 * Once the plugin is active it will show all other local network Pupil Group nodes in the GUI
-* Furthermore actions like starting and stopping a recording on one device will be mirrored instantly on all other devices.
+* Furthermore, actions like starting and stopping a recording on one device will be mirrored instantly on all other devices.
 
 <aside class="notice">
 For this to work your network needs to allow `UDP` transport. If the nodes do not find each other, create a local wifi network and use that instead.
@@ -315,7 +308,7 @@ defines how multiple nodes can find a common clock master and synchronize their 
 
 The Pupil Time Sync plugin is able to act as clock master as well as clock follower.
 This means that each Pupil Capture instance can act as a clock reference for others
-as well as changing its own clock such that it is synchronized with an other reference
+as well as changing its own clock such that it is synchronized with another reference
 clock.
 
 Pupil Time Sync nodes only synchronize time within their respective group. Be aware
@@ -341,7 +334,7 @@ There is a [pupil-helper example script](https://github.com/pupil-labs/pupil-hel
 The [Pupil Mobile](https://docs.pupil-labs.com/#pupil-mobile) app can be controlled
 via Pupil Capture when connected. This includes changing camera and streaming
 settings. The `Remote Recorder` plugin extends this list with the possibility
-to start and stop recordings that are stored to the phone.
+to start and stop recordings that are stored in the phone.
 
 ### Surface Tracking
 
@@ -392,7 +385,14 @@ The `activation` field denotes how strong the confidence dropped. Values greater
 
 ### Audio Capture
 
-The `Audio Capture` plugin provides access to a selected audio source for other plugins and writes its output to the `audio.wav` file during a recording. It also writes the Pupil Capture timestamp for each audio packet to the `audio_timestamps.npy` file. This way you can easily correlate single audio packets to their corresponding video frames. If you want to merge audio and video into a single file you will need to follow these steps:
+The `Audio Capture` plugin provides access to a selected audio source for other plugins and writes its output to the `audio.wav` file during a recording. It also writes the Pupil Capture timestamp for each audio packet to the `audio_timestamps.npy` file. This way you can easily correlate single audio packets to their corresponding video frames. 
+
+
+<aside class="notice">
+	<strong>Note</strong> - Starting with `v0.9.13` Audio is recorded with timestamps and is merged automatically with the video when videos are exported with Pupil Player. This feature is only available in macOS and Linux at this time.
+</aside>
+
+If you want to _manually_ merge audio and video into a single file you will need to follow these steps:
 
 1. Open the recording in Pupil Player
 2. Make sure that the `Video Export` plugin is active
@@ -410,4 +410,13 @@ Only the exported video contains the timestamps that are required for ffmpeg to 
 The `Annotation Capture` plugin allows you to mark timestamps with a label -- sometimes reffered to as triggers.
 These labels can be created by pressing their respective hotkey or by sending a notification with the subject `annotation`.
 This is useful to mark external events (e.g. "start of condition A") within the Pupil recording. The `Annotation Player`
-plugin is able to correlate export these events.
+plugin is able to correlate and export these events as well as add new ones.
+
+
+#### Remote Annotations
+
+You can also create annotation events programatically and send them using the IPC, or by sending messages to the Pupil Remote interface. Here is an example annotation notification.
+
+```python
+{'subject':"annotation",'label':"Hi this is my annotation 1",'timestamp':[set a correct timestamp as float here],'duration':1.0,'source':'a test script','record':True}
+```

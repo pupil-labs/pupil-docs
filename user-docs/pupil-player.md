@@ -22,9 +22,9 @@ Let's get familiar with the Player window.
 
 The Player window is the main control center for `Pupil Player`. It displays the recorded video feed from pupil capture file.
 
-1. **Graphs** - This area contains performance graphs. You can monitor `CPU` and `FPS` and pupil algorithm detection confidence. These graphs are the same as in the `World` window..
+1. **Graphs** - This area contains performance graphs. You can monitor `CPU` and `FPS` and pupil algorithm detection confidence. These graphs are the same as in the `World` window.
 1. **Settings GUI Menu** - This is the main GUI for Pupil Player. You can use this menu primarily to launch plugins and control global settings.
-1. **Plugin GUIs** - Each Plugin spawns its own GUI window. You can control settings of each Plugin in the GUI window. For details on all plugins see documentation on [Pupil Player](#pupil-player) in the user guide.
+1. **Plugin GUIs** - Each Plugin spawns its own GUI window. You can control settings of each Plugin in the GUI window. For details on all plugins, see documentation on [Pupil Player](#pupil-player) in the user guide.
 1. **Hot keys** - This area contains clickable buttons for plugins.
 1. **Seek Bar and Trim Marks** - You can drag the playhead (large circle) to scrub through the video or `space` bar to play/pause. You can use the arrow keys to advance one frame at a time. Drag the small green circles at the end of the seek bar to set trim marks. Trim marks directly inform the section of video/data to export.
 
@@ -56,7 +56,7 @@ Here is an example workflow:
   + Check out exported data in the `exports` directory within your recording directory
 
 <aside class="notice">
-Note - Pupil Player will <strongn>ever</strongn> remove or overwrite any of your raw data gathered during capture. All exports are isolated within a sub-directory named <code>exports</code>.
+Note - Pupil Player will <strong>ever</strong> remove or overwrite any of your raw data gathered during capture. All exports are isolated within a sub-directory named <code>exports</code>.
 </aside>
 
 ### Plugin Overview
@@ -67,7 +67,7 @@ We implement all visualizations, marker tracking, and the exporter using this st
 There are two general types of plugins:
 
   + **Unique** - You can only launch one instance of this plugin.
-  + **Not unique** - You can launch multiple instances of this type of plugin. For example, you can load one `Vis Circle` plugin to render the gaze position with a translucent green circle, and another `Vis Circle` plugin to render the gaze circle with a green stroke of 3 pixels thickness. You can think of these types of plugins as *additive*.
+  + **Not unique** - You can launch multiple instances of this type of plugin. For example, you can load one `Vis Circle` plugin to render the gaze position with a translucent green circle, and another `Vis Circle` plugin to render the gaze circle with a green stroke of 3 pixel thickness. You can think of these types of plugins as *additive*.
 
 In the following sections we provide a summary of plugins currently available and in Pupil Player.
 
@@ -129,7 +129,7 @@ An example showing `Vis Polyline` used with `Vis Circle` and `Scan Path`. The po
 
 Visualize the gaze positions as a point of light for each gaze position. The `falloff` of the light from the gaze position is specified by the user. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization. You can set the following parameters:
 
-  + `falloff` - The distance (in pixels) at which the light begins to fall off (fade to black). A very low number will result in a very dark visualization with tiny white light points. A very large number will result in a visualization of the world view with little or no emphasis of the gaze positions.
+  + `falloff` - The distance (in pixels) at which the light begins to fall off (fade to black). A very low number will result in a very dark visualization with tiny white light points. A very large number will result in a visualization of the world view with little or no emphasis on the gaze positions.
 
 Here is an example demonstrating `Vis Light Points` with a falloff of 73.
 
@@ -156,7 +156,7 @@ Data source plugins provide data of a specific topic - currently `pupil` and `ga
 This is the default Pupil detector plugin. This plugin tries to load pupil positions that were detected and stored during a Pupil Capture recording. This plugin can not be run in conjunction with `Offline Pupil Detector`.
 
 #### Offline Pupil Detector
-The `Offline Pupil Detector` plugin can be used on any dataset where eye videos were recorded. The plugin tries to load the `eye0.mp4` and `eye1.mp4` videos, and runs pupil detection algorithm in separate processes. This plugin is especially relevant for recordings made with Pupil Mobile, because Pupil Mobile does not perform any pupil detection or gaze estimation on the Android device. This plugin is available starting with Pupil Player `v0.9.13`.
+The `Offline Pupil Detector` plugin can be used with any dataset where eye videos were recorded. The plugin tries to load the `eye0.mp4` and `eye1.mp4` videos, and runs the pupil detection algorithm in separate processes. This plugin is especially relevant for recordings made with Pupil Mobile, because Pupil Mobile does not perform any pupil detection or gaze estimation on the Android device. This plugin is available starting with Pupil Player `v0.9.13`.
 
 The `Detection Method` selector sets the detection algorithm to either `2d` or `3d` detection (see [the section on Pupil Detection](#pupil-detection) for details). The `Redetect` button restarts the detection procedure. You can use the `Offline Pupil Detector` plugin to debug, improve, and gain insight into the pupil detection process.
 
@@ -188,11 +188,11 @@ To add reference points manually, you need to enable the `Natural feature edit m
 
 Sections are visualized as horizontal lines above the seek bar. The thick lines denote calibration ranges and thin lines denote mapping ranges. The reference points that are used for each section are visualized as points behind the corresponding lines.
 
-> Offline pupil detection and gaze mapping
-> {{< video-youtube embed-url="https://www.youtube.com/watch?v=lPtwAkjNT2Q" >}}
+> <h5 align='center'>Offline pupil detection and gaze mapping<h5>
+> {{< video-youtube embed-url="https://www.youtube.com/embed/lPtwAkjNT2Q" >}}
 
-> Offline gaze mapping with natural features
-> {{< video-youtube embed-url="https://www.youtube.com/watch?v=wVOqJWel0K0" >}}
+> <h5 align='center'>Offline gaze mapping with natural features<h5>
+> {{< video-youtube embed-url="https://www.youtube.com/embed/wVOqJWel0K0" >}}
 
 ### Analysis Plugins
 
@@ -230,12 +230,12 @@ period (duration) the plugin will classify the pupil positions during this time
 range as a fixation.
 
 The 2D fixation detector uses the distance to the mean gaze position as dispersion
-measure. This is a fast method but only approximates the actual dispersion and
+measure. This is a fast method, but only approximates the actual dispersion and
 relies on a correct calibration.
 
 The 3D fixation detector calculates the pairwise angle between all pupil
-oberservations in the given duration and takes the maximum angle as dispersion
-measure. This requires more computational resources than the 2D fixation detector
+observations in the given duration and takes the maximum angle as dispersion
+measure. This requires more computational resources than the 2D fixation detector,
 but calculates the correct dispersion instead of an approximation and does not
 require a calibration to calculate it.
 
@@ -261,7 +261,7 @@ To export a video, load the `Export Video` plugin. You can select the frame rang
 
 You can specify the name of the export in the GUI. Click press the `e` button or click `e` on your keyboard to start the export.
 
-The exporter will run in the background and you can see the progress bar of the export in the GUI. While exporting you can continue working with Pupil Player and even launch new exports.
+The exporter will run in the background and you can see the progress bar of the export in the GUI. While exporting, you can continue working with Pupil Player and even launch new exports.
 
 #### Raw Data Exporter
 

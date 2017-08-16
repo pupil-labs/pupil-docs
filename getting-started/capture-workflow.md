@@ -28,6 +28,27 @@ If the algorithm's detection confidence is high, the red circle will be opaque. 
 
 Try moving your head around a bit while looking at your eye to see that the pupil is robustly detected in various orientations.
 
+#### Good and bad eye video 
+
+Before calibrating, be sure to check that your eyes are well positioned for a robust eye tracking performance. For more details check out. - [Pupil Headset Adjustments](https://docs.pupil-labs.com/#pupil-headset-adjustments)
+
+> {{< webp-img src="/images/pupil-capture/eye/good_bad_eye.webp" alt="Good bad eye setup" >}}
+
+<aside class="success" style="clear:none;">
+	1. Do - The eye is in focus and all range of the eye movements are visible.
+</aside>
+ 
+<aside class="warning" style="clear:none;">
+	2. Don't - The camera arm here is too far away from the eye.
+</aside>
+ 
+<aside class="warning" style="clear:none;">
+	3. Don't - The eye is not centered in the frame and eyebrow in the frame.
+</aside>
+ 
+<aside class="warning" style="clear:none;">
+	4. Don't - The eye is out of focus.
+</aside>
 
 ### 4. Calibrate
 
@@ -86,7 +107,7 @@ The default `recordings` directory will have the following hierarchy.
 
 Pupil capture saves the video frames in a fixed frame rate container. This means that the raw output video (world.mp4) does not show the correct duration and the correct frame rate of the recording. This information can be found in `world_timestamps.npy`, which tells you exactly where each frame belongs in time.
 
-However, if you export using Pupil Player, the video will be made such that the frames will show at the exact right time. The output video will not miss any frame of the raw video, instead, output frames are spaced out exactly as they where initially captured.
+However, if you export using Pupil Player, the video will be made such that the frames will show at the exact right time. The output video will not miss any frame of the raw video, instead, output frames are spaced out exactly as they were initially captured.
 
 <aside class="notice">
 Note - The real FPS during recordings may fluctuate due variations on light intensity (LUX, lumens) and other issues; it cannot be forced to be constant.
