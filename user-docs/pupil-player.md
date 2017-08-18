@@ -56,7 +56,7 @@ Here is an example workflow:
   + Check out exported data in the `exports` directory within your recording directory
 
 <aside class="notice">
-Note - Pupil Player will <strong>ever</strong> remove or overwrite any of your raw data gathered during capture. All exports are isolated within a sub-directory named <code>exports</code>.
+Note - Pupil Player will <strong>never</strong> remove or overwrite any of your raw data gathered during capture. All exports are isolated within a sub-directory named <code>exports</code>.
 </aside>
 
 ### Plugin Overview
