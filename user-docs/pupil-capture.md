@@ -190,16 +190,19 @@ This method is for special situations and far distances. Usually not required.
 
 #### Camera Intrinsics Estimation
 
-This calibration plugin is used to calculate camera intrinsics, which will enable one to correct cor camera distortion. Pupil Capture has built in, default camera matrices for the high speed world camera and the high resolution world camera. You can re-calibrate your camera and/or calibrate a camera that is not supplied by Pupil Labs by running this calibration routine.
+This calibration plugin is used to calculate camera intrinsics, which will enable one to correct camera distortion. Pupil Capture has built in, default camera intrinsics models for the high speed world camera and the high resolution world camera. You can re-calibrate your camera and/or calibrate a camera that is not supplied by Pupil Labs by running this calibration routine. We support two different distortion models, radial distortion and fisheye distortion. For cameras with a FOV of 100 degrees or greater (like e.g. the high speed world camera) the fisheye distotion model usually performs better, for cameras with a smaller FOV (e.g. the high resolution world camera) we recommend the radial distortion model.
 
 1. Select `Camera Intrinsics Estimation`
+1. Select the correct 'Distortion Model'
 1. Click on 'show pattern' to display the pattern
 1. Resize the pattern to fill the screen
 1. Hold your Pupil headset and aim it at the pattern.
 1. With the world window in focus, press `c` on your keyboard or the circular `C` button in the world windows to detect and capture a pattern.
 1. Data will be sampled and displayed on the screen as a border of the calibrated pattern. (Note - make sure to move your headset at different angles and try to cover the entire FOV of the world camera for best possible calibration results)
 1. Repeat until you have captured 10 patterns.
-1. Click on `show undistorted image` to display the results of camera intrinsic estimation. This will display an undistorted view of your scene. If well calibrated, parallel lines in the real world will appear as parallel lines in the undistorted view.
+1. Click on `show undistorted image` to display the results of camera intrinsic estimation. This will display an undistorted view of your scene. If well calibrated, straight lines in the real world will appear as straight lines in the undistorted view.
+
+Note that in some rare cases the processing of the recorded patterns can fail, which would lead to a warning message in the world window. In this case just repeat the above process from step 6 and try to get a better coverage of the entire FOV of the camera.
 
 <!--
 1. Load the `Show Calibration` plugin from the `General` sub-menu to evaluate calibration quality.
