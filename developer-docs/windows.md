@@ -106,9 +106,9 @@ Download the following Python wheels from Pupil Labs github repos.
 - [pyndsi](https://github.com/pupil-labs/pyndsi/releases/latest)
 - [pyuvc](https://github.com/pupil-labs/pyuvc/releases/latest)
 
-`pyuvc` requires that you download Microsoft Visual C++ 2010 Redistributable from [microsoft](https://www.microsoft.com/en-us/download/details.aspx?id=14632). The `pthreadVC2` lib, which is used by libuvc, depends on `msvcr100.dll`. 
+`pyuvc` requires that you download Microsoft Visual C++ 2010 Redistributable from [microsoft](https://www.microsoft.com/en-us/download/details.aspx?id=14632). The `pthreadVC2` lib, which is used by libuvc, depends on `msvcr100.dll`.
 
-<aside class="notice">Note - if you're looking to build Pupil Labs Python libs from source, go <a href="#">here</a></aside>
+<aside class="notice">Note - if you're looking to build Pupil Labs Python libs from source, go <a href="#windows-pupil-labs-python-libs-from-source">here</a></aside>
 
 ### Ceres for Windows
 Navigate to your work directory
@@ -149,7 +149,7 @@ Change user config before compiling boost.
 Build boost.python
 
 - Open your command prompt and navigate to your work dir
-- cd to `boost` 
+- cd to `boost`
 - `b2 --with-python link=shared address-model=64`
 - The generated DLL and Lib files are in `C:\work\boost\stage`.
 
