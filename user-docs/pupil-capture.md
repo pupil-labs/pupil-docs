@@ -374,21 +374,22 @@ A surface can be defined by one or more markers. Surfaces can be defined with Pu
 
 ### Blink Detection
 
-The pupil detection algorithm assigns a `confidence` value to each pupil datum. It represents the quality of the detection result. While the eye is closed the assigned confidence is very low. The `Blink Detection` plugin makes use of this fact by defining a blink as a significant confidence drop within a short period of time. The plugin creates a `blink` event for each pupil datum of the following format:
+The pupil detection algorithm assigns a `confidence` value to each pupil datum. It represents the quality of the detection result. While the eye is closed the assigned confidence is very low. The `Blink Detection` plugin makes use of this fact by defining a `blink onset` as a significant confidence drop - or a `blink offset` as a significant confidence gain - within a short period of time. The plugin creates a `blink` event for each event loop iteration in the following format:
 
 ```python
 {  # blink datum
 	'topic': 'blink',
-    'activation': <float>,
+    'confidence': <float>,  # blink confidence
     'timestamp': <timestamp float>,
-    'is_blink': <bool>}
+    'base_data': [<pupil positions>, ...]
+    'type': 'onset' or 'offset'}
 ```
 
-The `activation` field denotes how strong the confidence dropped. Values greater than `0.4` are classified as blinks. If this is the case the `is_blink` field is set to `True`.
+The `Filter length` is the time window's length in which the plugin tries to find such confidence drops and gains. The plugin fires the above events if the blink confidence within the current time window exceeds the `onset` or `offset` confidence threshold. Setting both thresholds to `0` will always trigger blink events, even if the confidence is very low. This means that onsets and offsets do not appear necessarily as pairs but in waves.
 
 ### Audio Capture
 
-The `Audio Capture` plugin provides access to a selected audio source for other plugins and writes its output to the `audio.wav` file during a recording. It also writes the Pupil Capture timestamp for each audio packet to the `audio_timestamps.npy` file. This way you can easily correlate single audio packets to their corresponding video frames. 
+The `Audio Capture` plugin provides access to a selected audio source for other plugins and writes its output to the `audio.wav` file during a recording. It also writes the Pupil Capture timestamp for each audio packet to the `audio_timestamps.npy` file. This way you can easily correlate single audio packets to their corresponding video frames.
 
 
 <aside class="notice">
