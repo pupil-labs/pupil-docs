@@ -222,6 +222,7 @@ Using screen based 9 point calibration method, you should easily be able to achi
 
 * Any calibration is accurate only at its depth level relative to the eye (parallax error).
 * Any calibration is only accurate inside the field of view (in the world video) you have calibrated. For example: If during your calibration you only looked at markers or natural features (depending on your calibration method) that are in the left half, you will not have good accuracy in the right half.
+* Accuracy can be visualized using the `Accuracy Visualizer` plugin. It displays the residuals between reference points and matching gaze positions that were recorded during calibration and accuracy tests. The accuracy test can be started using the `T` button on the left or by pressing the `t` key on your keyboard.
 
 ### Recording
 
