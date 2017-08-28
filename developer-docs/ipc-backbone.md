@@ -11,7 +11,7 @@ This page outlines the way `Pupil Capture` and `Pupil Service` communicate via a
 
 ### Networking
 All networking in Pupil Capture and Service is based on the [ZeroMQ](http://http://zeromq.org/) network library.
-The following socket types are most often used in out networking schemes:
+The following socket types are most often used in our networking schemes:
 - [REQ-REP](http://zguide.zeromq.org/php:chapter3#The-Request-Reply-Mechanisms), reliable one-to-one communication
 - PUB-SUB, one-to-many communication
 
@@ -21,28 +21,28 @@ The Pupil apps use the [pyzmq](https://github.com/zeromq/pyzmq) module, a great 
 For auto-discovery of other Pupil app instances in the local network, we use [Pyre](https://github.com/zeromq/pyre).
 
 ### The IPC Backbone
-Starting with `v0.8` `Pupil Capture` and a new application called `Pupil Service` use a PUB-SUB Proxy as its messaging bus. We call it the `IPC Backbone`. The IPC Backbone runs as a thread in the main process. It is basically a big message relay station. Actors can push messages into it and subscribe to other actors' messages. Therefore, it is the backbone of all communication from, to, and within Pupil Capture and Service.
+Starting with `v0.8`, `Pupil Capture` and a new application called `Pupil Service` use a PUB-SUB Proxy as their messaging bus. We call it the `IPC Backbone`. The IPC Backbone runs as a thread in the main process. It is basically a big message relay station. Actors can push messages into it and subscribe to other actors' messages. Therefore, it is the backbone of all communication from, to, and within Pupil Capture and Service.
 
 <aside class="notice">
 Note - The main process does not do any CPU heavy work. It only runs the proxy, launches other processes and does a few other light tasks.
 </aside>
 
 #### IPC Backbone used by Pupil Capture and Service
-The IPC Backbone has a `SUB` and a `PUB` address. Both are bound to a random port on app launch and known to all components of the app. All processes and threads within the app use the IPC backbone to communicate.
- - Using a `ZMQ PUB` socket other actors in the app connect to the `pub_port` of the Backbone and publish messages to the IPC Backbone. (For important low volume msgs a PUSH socket is also supported.)
- - Using a `ZMQ SUB` socket other actors connect to the `sub_port` of the Backbone to subscribe to parts of the message stream.
+The IPC Backbone has a `SUB` and a `PUB` address. Both are bound to a random port on app launch and are known to all components of the app. All processes and threads within the app use the IPC Backbone to communicate.
+ - Using a `ZMQ PUB` socket, other actors in the app connect to the `pub_port` of the Backbone and publish messages to the IPC Backbone. (For important low volume msgs a PUSH socket is also supported.)
+ - Using a `ZMQ SUB` socket, other actors connect to the `sub_port` of the Backbone to subscribe to parts of the message stream.
 
-Example: The eye process sends pupil data onto the IPC Backbone. The gaze mappers in the world process receive this data, generate gaze data and publish it on the IPC Backbone. World, Launcher and Eye exchange control messages on the bus for coordination.
+Example: The eye process sends pupil data onto the IPC Backbone. The gaze mappers in the world process receive this data, generate gaze data and publish it on the IPC Backbone. World, Launcher, and Eye exchange control messages on the bus for coordination.
 
 ### Message Format
-Currently all messages on the IPC Backbone are multipart messages containing two messages frames:
+Currently all messages on the IPC Backbone are multipart messages containing two message frames:
 
  - `Frame 1` contains a string we call `topic`. Examples are : `pupil.0`, `logging.info`, `notify.recording.has_started`
 
  - `Frame 2` contains a [`msgpack`](http://msgpack.org/) encoded dictionary with `key`:`value` pairs. This is the actual message. We choose `msgpack` as the serializer due to its efficient format (45% smaller than `json`, 200% faster than `ujson`) and because encoders exist for almost every language.
 
 #### Message Topics
-Messages can have any topic chooses by the user. Below a a list of message types used by the Pupil apps.
+Messages can have any topic chosen by the user. Below a list of message types used by the Pupil apps.
 
 #### Pupil and Gaze Messages
 
@@ -66,7 +66,7 @@ topic = 'notify'+'.'+notification['subject']
 
 You should use the `notification` topic for coordination with the app. All notifications on the IPC Backbone are automatically made available to all plugins in their `on_notify` callback and used in all Pupil apps.
 
-In stark contrast to gaze and pupil, the notify topic should not be used at high volume. If you find that you need to write more that 10 messages a second, its probably not a notification but another kind of data, make a custom topic instead.
+In stark contrast to gaze and pupil, the notify topic should not be used at high volume. If you find that you need to write more that 10 messages a second, it is probably not a notification but another kind of data, make a custom topic instead.
 
 ```python
 import zmq
@@ -113,7 +113,7 @@ From version `v0.8` on, every actor who either reacts to or emits messages is su
 }
 ```
 
-Plugins use notifications as primary communication channel to the IPC Backbone. This makes plugins natural actors in the Pupil message scheme. To simplify the above mentioned documentation behavior, plugins will only have to add an [docstring](https://www.python.org/dev/peps/pep-0257/) to their `on_notify()` method. It should include an list of messages to which the plugin reacts and those which the plugin emits itself. The docstring should follow [Google docstring style](http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html). The main process will automatically generate messages in the format from above using the plugin's class name as `actor` and the `on_notify()` docstring as content for the `doc` key.
+Plugins use notifications as their primary communication channel to the IPC Backbone. This makes plugins natural actors in the Pupil message scheme. To simplify the above mentioned documentation behavior, plugins will only have to add a [docstring](https://www.python.org/dev/peps/pep-0257/) to their `on_notify()` method. It should include a list of messages to which the plugin reacts and of those which the plugin emits itself. The docstring should follow [Google docstring style](http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html). The main process will automatically generate messages in the format from above using the plugin's class name as `actor` and the `on_notify()` docstring as content for the `doc` key.
 
 #### Notification Overview
 
@@ -280,7 +280,7 @@ Send simple string messages to control Pupil Capture functions:
 
 #### Reading from the Backbone
 
-Subscribe to desired topics and receive all relevant messages (Meaning messages who's topic prefix matches the subscription). Be aware that the IPC Backbone can carry a lot of data. Do not subscribe to the whole stream unless you know that your code can drink from a firehose. (If it can not, you become `the snail`, see Delivery Guarantees REQ-REP.)
+Subscribe to desired topics and receive all relevant messages (i.e. messages whose topic prefix matches the subscription). Be aware that the IPC Backbone can carry a lot of data. Do not subscribe to the whole stream unless you know that your code can drink from a firehose. (If it can not, you become `the snail`, see Delivery Guarantees REQ-REP.)
 
 ```python
 #...continued from above
@@ -318,7 +318,7 @@ print(requester.recv_string())
 
 We say reliable transport because pupil remote will confirm every notification we send with 'Notification received'. When we get this message we have a guarantee that the notification is on the IPC Backbone.
 
-If we listen to the backbone using our subscriber from above, we will see the message again because we had subscribed to all notifications.
+If we listen to the backbone using our subscriber from above, we will see the message again because we have subscribed to all notifications.
 
 #### Writing to the Backbone directly
 
@@ -344,18 +344,18 @@ publisher.send(payload)
 A full example can be found in `shared_modules/zmq-tools.py`.
 
 ### Delivery guarantees ZMQ
-ZMQ is a great abstraction for us. Its super fast, has a multitude of language bindings and solves a lot of the nitty-gritty networking problems we don't want to deal with. Our short description of ZMQ does not do ZMQ any justice, we recommend reading the [ZMQ guide](http://zguide.zeromq.org/page:all) if you have the time. Below are some insights from the guide that are relevant for our use cases.
+ZMQ is a great abstraction for us. It is super fast, has a multitude of language bindings and solves a lot of the nitty-gritty networking problems we don't want to deal with. As our short description of ZMQ does not do ZMQ any justice, we recommend reading the [ZMQ guide](http://zguide.zeromq.org/page:all) if you have the time. Below are some insights from the guide that are relevant for our use cases.
 
  - Messages are guaranteed to be delivered whole or not at all.
- - Unlike bare TCP it is ok the connect before binding.
+ - Unlike bare TCP it is ok to connect before binding.
  - ZMQ will try to repair broken connections in the background for us.
  - It will deal with a lot of low level tcp handling so we don't have to.
 
 #### Delivery Guarantees PUB-SUB
 ZMQ PUB SUB will make no guarantees for delivery. Reasons for dropped messages are:
 
- - `Async connect`: PUB sockets drop messages before are connection has been made (connections are async in the background) and topics subscribed. *1
- - `The Late joiner`: SUB Sockets will only receive messages that have been sent after they connect. *2
+ - `Async connect`: PUB sockets drop messages before a connection has been made (connections are async in the background) and topics subscribed. *1
+ - `The Late joiner`: SUB sockets will only receive messages that have been sent after they connect. *2
  - `The Snail`: If SUB sockets do not consume delivered messages fast enough they start dropping them. *3
  - `fast close`: A PUB socket may loose packages if you close it right after sending. *1
 
@@ -369,9 +369,9 @@ ZMQ PUB SUB will make no guarantees for delivery. Reasons for dropped messages a
 When writing to the Backbone via REQ-REP we will get confirmations/replies for every message sent. Since REPREQ requires lockstep communication that is always initiated from the actor connecting to Pupil Capture/Service. It does not suffer the above issues.
 
 #### Delivery Guarantees in general
-We use TCP in zmq, it is generally a reliable transport. The app communicates to the IPC Backbone via localhost loopback, this is *very* reliable. I have not been able to produce a dropped message for network reasons on localhost.
+We use TCP in ZMQ, it is generally a reliable transport. The app communicates to the IPC Backbone via localhost loopback, this is *very* reliable. We have not been able to produce a dropped message for network reasons on localhost.
 
-However, unreliable, congested networks (wifi with many actors.) can cause problems when talking and listening to Pupil Capture/Service from a different machine. If using a unreliable network we will need to design our scripts and apps so that interfaces are able to deal with dropped messages.
+However, unreliable, congested networks (e.g. wifi with many actors) can cause problems when talking and listening to Pupil Capture/Service from a different machine. If using a unreliable network we will need to design our scripts and apps so that interfaces are able to deal with dropped messages.
 
 ### Latency
 Latency is bound by the latency of the network. On the same machine we can use the loopback interface (localhost) and do a quick test to understand delay and jitter of Pupil Remote requests...
