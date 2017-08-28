@@ -33,8 +33,9 @@ By default Pupil Capture will use Local USB as the capture source. If you have a
 
 - Test Image - This is the fallback behavior if no capture device is found, or if you do not want to connect to any capture device.
 - Video File Source - select this option to use previously recorded videos for the capture selection.
-- Pupil Mobile - select this option when using Pupil Capture with the Pupil Mobile android application.
+- Pupil Mobile - select this option when using Pupil Capture with the Pupil Mobile Android application.
 - Local USB - select this option if your Pupil Headset is connected to the machine running Pupil Capture. This is the default setting.
+- RealSense 3D - select this option if you are using an Intel RealSense 3D camera as your scene camera. Read more in the [RealSense 3D section](#intel-realsense-3d).
 
 ### Pupil Detection
 

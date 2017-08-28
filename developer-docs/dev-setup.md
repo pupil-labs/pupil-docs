@@ -22,6 +22,7 @@ Pupil is a prototype and will continue to be in active development. If you plan 
 * [Linux](#linux-dependencies) step-by-step instructions for Ubuntu 16.04 LTS +
 * [MacOS](#macos-dependencies) step-by-step instructions for MacOS 10.8+
 * [Windows](#windows-dependencies) step-by-step instructions for Windows 10
+* [Intel RealSense 3D](#realSense-dependencies) instructions if you want to use an Intel RealSense R200 as scene camera.
 
 ### Download and Run Pupil Source Code
 
