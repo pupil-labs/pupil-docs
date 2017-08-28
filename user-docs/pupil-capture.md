@@ -389,25 +389,13 @@ The `Filter length` is the time window's length in which the plugin tries to fin
 
 ### Audio Capture
 
-The `Audio Capture` plugin provides access to a selected audio source for other plugins and writes its output to the `audio.wav` file during a recording. It also writes the Pupil Capture timestamp for each audio packet to the `audio_timestamps.npy` file. This way you can easily correlate single audio packets to their corresponding video frames.
+The `Audio Capture` plugin provides access to a selected audio source for other plugins and writes its output to the `audio.mp4` file during a recording. It also writes the Pupil Capture timestamp for each audio packet to the `audio_timestamps.npy` file. This way you can easily correlate single audio packets to their corresponding video frames.
 
+Audio is recorded separately from the video in Pupil Capture. Audio is merged automatically with videos when videos are exported with Pupil Player.
 
 <aside class="notice">
-	<strong>Note</strong> - Starting with `v0.9.13` Audio is recorded with timestamps and is merged automatically with the video when videos are exported with Pupil Player. This feature is only available in macOS and Linux at this time.
+Audio Capture is only available in macOS and Linux at this time.
 </aside>
-
-If you want to _manually_ merge audio and video into a single file you will need to follow these steps:
-
-1. Open the recording in Pupil Player
-2. Make sure that the `Video Export` plugin is active
-3. Export the recording
-4. Use `ffmpeg` to mux the audio file and the *exported* video file:
-
-```
-ffmpeg -i <recording directory>/exports/<exported frame range>/world_viz.mp4 -i <recording directory>/world.wav -map 0:v:0 -map 1:a:0 -shortest muxed_post_export.mp4
-```
-
-Only the exported video contains the timestamps that are required for ffmpeg to sync audio and video correctly.
 
 ### Annotations
 
