@@ -391,9 +391,9 @@ The `Filter length` is the time window's length in which the plugin tries to fin
 
 The `Audio Capture` plugin provides access to a selected audio source for other plugins and writes its output to the `audio.mp4` file during a recording. It also writes the Pupil Capture timestamp for each audio packet to the `audio_timestamps.npy` file. This way you can easily correlate single audio packets to their corresponding video frames.
 
-Audio is recorded seperatly but is merged automatically with the video when videos are exported with Pupil Player.
+Audio is recorded separately from the video in Pupil Capture. Audio is merged automatically with videos when videos are exported with Pupil Player.
 
-<aside>
+<aside class="notice">
 Audio Capture is only available in macOS and Linux at this time.
 </aside>
 
