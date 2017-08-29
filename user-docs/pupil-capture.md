@@ -223,7 +223,7 @@ Using screen based 9 point calibration method, you should easily be able to achi
 
 * Any calibration is accurate only at its depth level relative to the eye (parallax error).
 * Any calibration is only accurate inside the field of view (in the world video) you have calibrated. For example: If during your calibration you only looked at markers or natural features (depending on your calibration method) that are in the left half, you will not have good accuracy in the right half.
-* Gaze Accuracy can be visualized using the `Accuracy Visualizer` plugin. Start the accuracy by pressing `T` button in the world window, or by pressing the `t` key on your keyboard. After completing the test, the plugin will display the residuals between reference points and matching gaze positions that were recorded during calibration and accuracy tests. 
+* Gaze Accuracy can be visualized using the `Accuracy Visualizer` plugin. Start the accuracy by pressing `T` button in the world window, or by pressing the `t` key on your keyboard. After completing the test, the plugin will display the residuals between reference points and matching gaze positions that were recorded during calibration and accuracy tests.
 
 ### Recording
 
@@ -373,6 +373,14 @@ A surface can be defined by one or more markers. Surfaces can be defined with Pu
 <aside class="notice">
   <strong>Note</strong> - When printing markers, ensure that white space remains around the square marker. You can scale the markers to different sizes, but make sure to have a white border width of at least 1.2 x the marker grid size for marker, unless the marker is affixed onto a white (or light colored) background.
 </aside>
+
+#### Surface Heatmaps
+
+It is possbile to dispay gaze heatmaps for each surface by selecting `Show Heatmaps` mode in the `Surface Tracker` menu.
+The surface is divided into a two dimensional grid to calculate the heatmap. The grid can be refined by setting the
+`X` and `Y` size field of each surface. The colors are normalized such that cells with the highest amount of gaze are
+displayed in red and those with the least gaze are displayed in blue. The `Gaze History Length` option for each surface
+decides how many recent gaze positions will be used to calculate the heatmap.
 
 ### Blink Detection
 
