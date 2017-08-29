@@ -257,9 +257,9 @@ Fixation detectors classify fixations using dispersion and duration.
 classify pupil positions as fixations if they are within the dispersion for the
 duration of time specified.
 
-The `Fixation Detector` plugin uses depending on availability the eye model's 3d orientation angle or
-the 2d gaze pixel postion to calculate the dispersion. The settings allow you to set the duration in seconds
-and the maximum dispersion amount in degrees and pixels for 3d and 2d data respectively.
+The `Fixation Detector` plugin uses the eye model's 3d orientation angle (if available)
+or 2d gaze pixel position to calculate dispersion. The plugin enables you to set the
+duration in seconds and the maximum dispersion in degrees for 3d data and pixels for 2d data.
 
 If the plugin is loaded, fixations will reduce the amount of samples that a
 [Screen Marker or Manual Marker calibration](https://docs.pupil-labs.com/master/#calibration-methods) usually requires.
