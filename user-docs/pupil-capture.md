@@ -43,20 +43,6 @@ Pupil's algorithms automatically detect the participant's pupil. With the 3d det
 
 > {{< video-webm src="/videos/calibration/pupil-detection/pd.webm" >}}
 
-<!-- > <div class="figure-container">
-	<div class="Grid Grid-row">
-		<div class="Grid-cell--1of2">
-			<div class="Grid-cell">
-				<p>Eye point to each marker to create a sampling point</p>
-			</div>
-		</div>
-		<div class="Grid-cell--1of2">
-			<div class="Grid-cell">
-				<p>Eye point to each marker to create a sampling point</p>
-			</div>
-		</div>
-	</div>
-</div> -->
 
 ### Calibration
 
@@ -125,8 +111,6 @@ Make sure the lens and image sensor are clean. Dust on the lens or image sensor 
 
 ### Calibration Methods
 
-<!-- First select the calibration method you would like to use: -->
-
 Before starting calibration, ensure that eye(s) are robustly detected and that the headset is comfortable for the participant.
 
 #### Screen Marker Calibration
@@ -141,11 +125,6 @@ This is the default method, and a quick method to get started. It is best suited
 1. Press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to start calibration.
 1. Follow the marker on the screen with your eyes. Try to keep your head still during calibration.
 1. The calibration window will close when calibration is complete.
-
-
-<!--
-1. Open the accuracy visualizer before calibrating to get feedback on the calibration quality. If you press 't' instead of 'c' to start the calibration, you will run an accuracy test instead.
--->
 
 
 In the `Advanced` sub-menu you can set the `sample duration` -- the number of frames to sample the eye and marker position. You can also set parameters that are used to debug and detect the circular marker on the screen.
@@ -166,9 +145,6 @@ printed calibration marker like the one shown in the video. [Download markers to
 1. Repeat until you have covered the subject's field of view (generally about 9 points should suffice).
 1. Show the 'stop marker' or press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to stop calibration.
 
-<!--
-1. Open the accuracy visualizer before calibrating to get feedback on the calibration quality. If you press 't' instead of 'c' to start the calibration, you will run an accuracy test instead.
--->
 
 You will notice that there are no standard controls, only an `Advanced` sub-menu to control detection parameters of the marker and to debug by showing edges of the detected marker in the world view.
 
@@ -190,11 +166,6 @@ This method is for special situations and far distances. Usually not required.
 1. Data will be sampled.
 1. Repeat until you have covered the subject's field of view (generally about 9 points should suffice)
 1. Press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to stop calibration.
-
-
-<!--
-1. Open the accuracy visualizer before calibrating to get feedback on the calibration quality. If you press 't' instead of 'c' to start the calibration, you will run an accuracy test instead.
--->
 
 
 ### Notes on calibration accuracy
@@ -310,7 +281,7 @@ For this to work your network needs to allow `UDP` transport. If the nodes do no
 </aside>
 
 #### Frame Publisher
-<!-- Not sure if this should be mentioned here at all -->
+
 The `Frame Publisher` plugin broadcasts video frames from the world and eye cameras.
 
 There is a [pupil-helper example script](https://github.com/pupil-labs/pupil-helpers/blob/0df77b47cebd49a6c35b6769da483c115a626836/pupil_remote/recv_world_video_frames.py) that demonstrates how to receive and decode world frames.
@@ -332,7 +303,6 @@ The `Surface Tracker` plugin allows you to define surfaces within your environme
 *  Using a 5x5 marker gives us 64 unique markers.
 *  Why the 5x5 grid? The 5x5 grid allows us to make smaller markers that can still be detected. Markers can be printed on paper, stickers, or displayed on the screen.
 
-<!-- See the video linked for an introduction and workflow. -->
 
 #### Defining Surfaces with Markers
 
