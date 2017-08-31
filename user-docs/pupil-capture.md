@@ -142,9 +142,11 @@ This is the default method, and a quick method to get started. It is best suited
 1. Follow the marker on the screen with your eyes. Try to keep your head still during calibration.
 1. The calibration window will close when calibration is complete.
 
+
 <!--
-1. Load the `Show Calibration` plugin from the `General` sub-menu to evaluate calibration quality.
+1. Open the accuracy visualizer before calibrating to get feedback on the calibration quality. If you press 't' instead of 'c' to start the calibration, you will run an accuracy test instead.
 -->
+
 
 In the `Advanced` sub-menu you can set the `sample duration` -- the number of frames to sample the eye and marker position. You can also set parameters that are used to debug and detect the circular marker on the screen.
 
@@ -165,7 +167,7 @@ printed calibration marker like the one shown in the video. [Download markers to
 1. Show the 'stop marker' or press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to stop calibration.
 
 <!--
-1. Load the `Show Calibration` plugin from the `General` sub-menu to evaluate calibration quality.
+1. Open the accuracy visualizer before calibrating to get feedback on the calibration quality. If you press 't' instead of 'c' to start the calibration, you will run an accuracy test instead.
 -->
 
 You will notice that there are no standard controls, only an `Advanced` sub-menu to control detection parameters of the marker and to debug by showing edges of the detected marker in the world view.
@@ -189,41 +191,20 @@ This method is for special situations and far distances. Usually not required.
 1. Repeat until you have covered the subject's field of view (generally about 9 points should suffice)
 1. Press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to stop calibration.
 
-#### Camera Intrinsics Estimation
-
-This calibration plugin is used to calculate camera intrinsics, which will enable one to correct camera distortion. Pupil Capture has built in, default camera intrinsics models for the high speed world camera and the high resolution world camera. You can re-calibrate your camera and/or calibrate a camera that is not supplied by Pupil Labs by running this calibration routine. We support two different distortion models, radial distortion and fisheye distortion. For cameras with a FOV of 100 degrees or greater (like e.g. the high speed world camera) the fisheye distotion model usually performs better, for cameras with a smaller FOV (e.g. the high resolution world camera) we recommend the radial distortion model.
-
-1. Select `Camera Intrinsics Estimation`
-1. Select the correct 'Distortion Model'
-1. Click on 'show pattern' to display the pattern
-1. Resize the pattern to fill the screen
-1. Hold your Pupil headset and aim it at the pattern.
-1. With the world window in focus, press `c` on your keyboard or the circular `C` button in the world windows to detect and capture a pattern.
-1. Data will be sampled and displayed on the screen as a border of the calibrated pattern. (Note - make sure to move your headset at different angles and try to cover the entire FOV of the world camera for best possible calibration results)
-1. Repeat until you have captured 10 patterns.
-1. Click on `show undistorted image` to display the results of camera intrinsic estimation. This will display an undistorted view of your scene. If well calibrated, straight lines in the real world will appear as straight lines in the undistorted view.
-
-Note that in some rare cases the processing of the recorded patterns can fail, which would lead to a warning message in the world window. In this case just repeat the above process from step 6 and try to get a better coverage of the entire FOV of the camera.
 
 <!--
-1. Load the `Show Calibration` plugin from the `General` sub-menu to evaluate calibration quality.
+1. Open the accuracy visualizer before calibrating to get feedback on the calibration quality. If you press 't' instead of 'c' to start the calibration, you will run an accuracy test instead.
 -->
 
-<!--
-## Calibration Results
-Loading the `Show Calibration` plugin from the `General` sub-menu will show an evaluation of the calibration quality. In a "good" calibration, the `Number of used samples` should be more than `180` and the `fraction of used data points` should be more that `0.75`.
-
-![Show Calibration Results](media/screenshots/v04_calibration_show_calibration_results.png)
-
-The green outline show the calibrated area. Orange shows the sampled data points. Red shows outliers. Usually large outliers are blinks, other large outliers can often be attributed to subject error (not looking at the marker). Open image in another tab to see it at full resolution.
--->
 
 ### Notes on calibration accuracy
-Using screen based 9 point calibration method, you should easily be able to achieve tracking accuracy within the physiological limits (1-2 visual degrees).
+In 2D mode, you should easily be able to achieve tracking accuracy within the physiological limits (sub 1 deg visual degrees). Using the 3d mode you should achive 2-1.5 deg of accuracy. 
 
-* Any calibration is accurate only at its depth level relative to the eye (parallax error).
+* Any monocular calibration is accurate only at its depth level relative to the eye (parallax error).
 * Any calibration is only accurate inside the field of view (in the world video) you have calibrated. For example: If during your calibration you only looked at markers or natural features (depending on your calibration method) that are in the left half, you will not have good accuracy in the right half.
-* Gaze Accuracy can be visualized using the `Accuracy Visualizer` plugin. Start the accuracy by pressing `T` button in the world window, or by pressing the `t` key on your keyboard. After completing the test, the plugin will display the residuals between reference points and matching gaze positions that were recorded during calibration and accuracy tests.
+* Calibration accuracy can be visualized with the accuracy vizualizer. If the accuray visualizer plugin in loaded it will display the residual between reference points and matching gaze positions that were recorded during calibration.
+* Gaze Prediction Accuracy can be estimated with an acuracy test. Start the accuracy by running a normal calibration procedure but with pressing `T` button in the world window. After completing the test, the plugin will display the error between reference points and matching gaze positions that were recorded during accuracy test.
+
 
 ### Recording
 
@@ -422,3 +403,20 @@ You can also create annotation events programatically and send them using the IP
 ```python
 {'subject':"annotation",'label':"Hi this is my annotation 1",'timestamp':[set a correct timestamp as float here],'duration':1.0,'source':'a test script','record':True}
 ```
+
+
+### Camera Intrinsics Estimation
+
+This plugin is used to calculate camera intrinsics, which will enable one to correct camera distortion. Pupil Capture has built in, default camera intrinsics models for the high speed world camera and the high resolution world camera. You can re-calibrate your camera and/or calibrate a camera that is not supplied by Pupil Labs by running this calibration routine. We support two different distortion models, radial distortion and fisheye distortion. For cameras with a FOV of 100 degrees or greater (like e.g. the high speed world camera) the fisheye distotion model usually performs better, for cameras with a smaller FOV (e.g. the high resolution world camera) we recommend the radial distortion model.
+
+1. Select `Camera Intrinsics Estimation`
+1. Select the correct 'Distortion Model'
+1. Click on 'show pattern' to display the pattern
+1. Resize the pattern to fill the screen
+1. Hold your Pupil headset and aim it at the pattern.
+1. With the world window in focus, press `c` on your keyboard or the circular `C` button in the world windows to detect and capture a pattern.
+1. Data will be sampled and displayed on the screen as a border of the calibrated pattern. (Note - make sure to move your headset at different angles and try to cover the entire FOV of the world camera for best possible calibration results)
+1. Repeat until you have captured 10 patterns.
+1. Click on `show undistorted image` to display the results of camera intrinsic estimation. This will display an undistorted view of your scene. If well calibrated, straight lines in the real world will appear as straight lines in the undistorted view.
+
+Note that in some rare cases the processing of the recorded patterns can fail, which would lead to a warning message in the world window. In this case just repeat the above process from step 6 and try to get a better coverage of the entire FOV of the camera.
