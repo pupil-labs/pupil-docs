@@ -202,8 +202,8 @@ In 2D mode, you should easily be able to achieve tracking accuracy within the ph
 
 * Any monocular calibration is accurate only at its depth level relative to the eye (parallax error).
 * Any calibration is only accurate inside the field of view (in the world video) you have calibrated. For example: If during your calibration you only looked at markers or natural features (depending on your calibration method) that are in the left half, you will not have good accuracy in the right half.
-* Calibration accuracy can be visualized with the accuracy vizualizer. If the accuray visualizer plugin in loaded it will display the residual between reference points and matching gaze positions that were recorded during calibration.
-* Gaze Prediction Accuracy can be estimated with an acuracy test. Start the accuracy by running a normal calibration procedure but with pressing `T` button in the world window. After completing the test, the plugin will display the error between reference points and matching gaze positions that were recorded during accuracy test.
+* Calibration accuracy can be visualized with the `Accuracy Vizualizer` plugin. If the `Accuracy Visualizer` plugin is loaded, it will display the residual between reference points and matching gaze positions that were recorded during calibration.
+* Gaze Prediction Accuracy can be estimated with an accuracy test. Start the accuracy by running a normal calibration procedure but press the `T` button in the world window and **not** the `C` button. After completing the test, the plugin will display the error between reference points and matching gaze positions that were recorded during the accuracy test.
 
 
 ### Recording
@@ -419,4 +419,6 @@ This plugin is used to calculate camera intrinsics, which will enable one to cor
 1. Repeat until you have captured 10 patterns.
 1. Click on `show undistorted image` to display the results of camera intrinsic estimation. This will display an undistorted view of your scene. If well calibrated, straight lines in the real world will appear as straight lines in the undistorted view.
 
+<aside class="notice">
 Note that in some rare cases the processing of the recorded patterns can fail, which would lead to a warning message in the world window. In this case just repeat the above process from step 6 and try to get a better coverage of the entire FOV of the camera.
+</aside>
