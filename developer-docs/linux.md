@@ -71,7 +71,7 @@ appears if opencv has been installed previously via `apt-get`.
 wget -O libjpeg-turbo.tar.gz https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-1.5.1.tar.gz/download
 tar xvzf libjpeg-turbo.tar.gz
 cd libjpeg-turbo-1.5.1
-./configure --with-pic --prefix=/usr/local
+./configure --enable-static=no --prefix=/usr/local
 sudo make install
 sudo ldconfig
 ```
