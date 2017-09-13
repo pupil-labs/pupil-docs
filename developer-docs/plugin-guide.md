@@ -291,7 +291,7 @@ def on_notify(self, notification):
 ```
 
 #### Background Tasks
-All plugins run within the world process. Doing heavy calculations within any of the periodically called `Plugin` methods (e.g. `recent_events`) can result in poor performance of the application. It is recommended to do any heavy calculations within a separate subprocess - (multi-threading brings its own problems in Python)[http://python-notes.curiousefficiency.org/en/latest/python3/multicore_python.html]. We created the `Task_Proxy` to simplify this procedure. It is initialized with a generator which will be executed in a subprocess. The generator's results will automatically be piped to the main thread where the plugin can fetch them.
+All plugins run within the world process. Doing heavy calculations within any of the periodically called `Plugin` methods (e.g. `recent_events`) can result in poor performance of the application. It is recommended to do any heavy calculations within a separate subprocess - [multi-threading brings its own problems in Python](http://python-notes.curiousefficiency.org/en/latest/python3/multicore_python.html). We created the `Task_Proxy` to simplify this procedure. It is initialized with a generator which will be executed in a subprocess. The generator's results will automatically be piped to the main thread where the plugin can fetch them.
 
 ```python
 from plugin import Plugin
