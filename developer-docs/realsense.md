@@ -18,10 +18,10 @@ All Intel RealSense cameras require [`librealsense`](https://github.com/IntelRea
 
 #### `pyrealsense`
 
-[`pyrealsense`](https://github.com/toinsson/pyrealsense) provides Python bindings for [`librealsense`](#librealsense). Run the following command in your terminal to install it.
+[`pyrealsense`](https://github.com/pupil-labs/pyrealsense) provides Python bindings for [`librealsense`](#librealsense). Run the following command in your terminal to install it.
 
 ```bash
-pip3 install  git+https://github.com/toinsson/pyrealsense
+pip3 install  git+https://github.com/pupil-labs/pyrealsense
 ```
 
 ### Usage
