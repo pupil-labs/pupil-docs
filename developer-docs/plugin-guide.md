@@ -35,7 +35,7 @@ Pupil Player uses an identical plugin structure. Little (often no work) needs to
 
 ### Plugin API
 
-Plugins inherit the [`Plugin` class](https://github.com/pupil-labs/pupil/blob/v0.9.12/pupil_src/shared_modules/plugin.py#L23). It provides default functionality as well as series of callback functions that are called by the world process. [The source](https://github.com/pupil-labs/pupil/blob/v0.9.12/pupil_src/shared_modules/plugin.py#L23) contains detailed information about the use-cases of the different callback functions.
+Plugins inherit the [`Plugin` class](https://github.com/pupil-labs/pupil/blob/568604bd06a972eeac533f74079c22459b6e929e/pupil_src/shared_modules/plugin.py#L23). It provides default functionality as well as series of callback functions that are called by the world process. [The source](https://github.com/pupil-labs/pupil/blob/568604bd06a972eeac533f74079c22459b6e929e/pupil_src/shared_modules/plugin.py#L23) contains detailed information about the use-cases of the different callback functions.
 
 <aside class="warning">
 Plugin callbacks are called regularly within the main thread. If your custom plugin uses functions that block longer than ~0,02 seconds it will lead to unresponsive ui and the framerate will drop.
