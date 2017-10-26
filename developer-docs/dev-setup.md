@@ -18,6 +18,17 @@ If you have questions, encounter any problems, or want to share progress -- writ
 ### Running Pupil from Source
 Pupil is a prototype and will continue to be in active development. If you plan to make changes to Pupil, want to see how it works, [make a fork][fork], install all dependencies and run Pupil source directly with Python.
 
+<aside class="faq">
+When is it recommended to run from source? For a lot of applications it is sufficient
+to use <a href="https://docs.pupil-labs.com/#interprocess-and-network-communication">our network api</a>.
+<a href="https://docs.pupil-labs.com/#plugins-basics">In some cases it is justified to write custom plugins</a>. Loading custom plugins
+during runtime is supported for the bundled applications as well. Be aware that the bundled
+applications only allow access to libraries that are already included in the bundle.
+Therefore, it is recommended to run from source if you develop a plugin or you
+make changes to the Pupil source code itself. This will also give you the advantage
+of receiving features and bug fixes as soon as they hit the Github repository.
+</aside>
+
 ### Installing Dependencies
 * [Linux](#linux-dependencies) step-by-step instructions for Ubuntu 16.04 LTS +
 * [MacOS](#macos-dependencies) step-by-step instructions for MacOS 10.8+
