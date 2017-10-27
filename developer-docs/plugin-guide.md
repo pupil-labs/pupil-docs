@@ -60,54 +60,13 @@ from . my_custom_plugin_module import My_Custom_Plugin_Class
 
 > This loads the `My_Custom_Plugin_Class` plugin from the `my_custom_plugin_module` directory.
 
- + Restart the application. For now on, Pupil will find your plugins on startup and will add all valid plugins to the plugin dropdown menu. If your plugin is a calibration plugin (i.e. it inherits from the Calibration_Plugin base class), then it will appear in the calibration drop down menu.
+ + Restart the application. From now on, Pupil will find your plugins on startup
+ and will add all valid plugins to the `Plugin Manager`. If your plugin is a
+ calibration plugin (i.e. it inherits from the Calibration_Plugin base class),
+ then it will appear in the calibration drop down menu.
 
  + If you want your plugin to run in both Pupil Capture and Pupil Player, you can avoid making copies of your plugin by setting a relative path.
 
-```
-~/
-```
-> base_directory
-
-```
-~/my_shared_pupil_plugins/
-```
-> Your plugin
-
-```
-~/pupil_player_settings/plugins/my_shared_plugin/__init__.py
-```
-> Player
-
-```
-~/pupil_player_settings/plugins/my_shared_plugin/__init__.py
-```
-> Capture
-
-```python
-# in both __init__.py
-import os
-import sys
-from pathlib import Path
-
-base_directory = Path(__file__).parents[3]
-sys.path.append(os.path.join(base_dir,'my_shared_pupil_plugins'))
-```
-> This option avoids redundancy of shared plugin dependencies.
-
-#### Load your Plugin manually
-This is the "old" way of loading plugins. This method gives more flexibility but thats about it.
-
-  + Pupil Player
-    + Import your plugin in `player/main.py`
-    + Add your plugin to the `user_launchable_plugins` list in [`player/main.py`](https://github.com/pupil-labs/pupil/blob/master/pupil_src/player/main.py)
-  + Pupil Capture - World Process
-    + Import your plugin in `capture/world.py`
-    + Add your plugin to the `user_launchable_plugins` list in [`capture/world.py`](https://github.com/pupil-labs/pupil/blob/master/pupil_src/capture/world.py)
-  + Select your plugin from the "Open plugin" in the main window to begin using it
-
-
-<!-- **Text below this line is currently being revised. Feel encouraged to contribute.** -->
 
 ### Example plugin development walkthrough
 
