@@ -15,6 +15,7 @@ Plugins are called regularly via callback functions (see the [Plugin API](#plugi
 
 We recommend to use the network (see [the IPC backbone](#the-ipc-backbone)) if you only need access to the data.
 You are only required to write a plugin if you want to interact with the Pupil apps directly, e.g. visualizations, manipulate data.
+In the following sections, we assume that you [run the Pupil applications from source](https://docs.pupil-labs.com/#running-pupil-from-source). We will refer to the Pupil root source folder as `$pupil_root`.
 
 #### Plugins in Pupil Capture
 Pupil Capture's World process can load plugins for easy integration of new features. Plugins have full access to:
