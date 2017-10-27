@@ -75,7 +75,7 @@ If you want to add or extend the functionality of an existing plugin, you should
 
 Things to keep in mind:
 
-- g_pool is an acronym to "global pool", a system wide container full of stuff passed to all plugins.
+- `g_pool` is an acronym to "global pool", a system wide container full of stuff passed to all plugins.
 - if the base plugin is a system (always alive) plugin:
   - remember to close the base plugin at the `__init__` method of the inheriting plugin with `base_plugin.alive = False`. You should find the `base_plugin` inside `g_pool.plugins` ;
   - remember to dereference the base plugin at the end of the file with `del base_plugin` to avoid repetition in the user plugin list;
@@ -89,12 +89,6 @@ renaming it to, for example, `open_cv_threshold.py`.
 
 ```python
 class Open_Cv_Threshold(Plugin):
-```
-
-> Rename its `super` reference:
-
-```python
-super(Open_Cv_Threshold, self).__init__(g_pool)
 ```
 
 > Describe what your new plugin will do for yourself in the future and for future generations:
@@ -190,42 +184,29 @@ from pyglui import ui
 
 
 class Custom_Plugin(Plugin):
+    icon_chr = '@'  # custom menu icon symbol
+
     def __init__(self, g_pool, example_param=1.0):
         super().__init__(g_pool)
         # persistent attribute
         self.example_param = example_param
 
-    def init_gui(self):
+    def init_ui(self):
         # Create a floating menu
-        self.menu = ui.Scrolling_Menu('<title>')
-
-        # create a button to close the plugin
-        def close():
-            self.alive = False
-        self.menu.append(ui.Button('Close', close))
-
+        self.add_menu()
+        self.menu.label = '<title>'
         # Create a simple info text
         help_str = "Example info text."
         self.menu.append(ui.Info_Text(help_str))
-
         # Add a slider that represents the persistent value
         self.menu.append(ui.Slider('example_param', self, min=0.0, step=0.05, max=1.0, label='Example Param'))
 
-        # add menu to ui hierarchy
-        self.g_pool.gui.append(self.menu)
-
-    def deinit_gui(self):
-        if self.menu:
-            self.g_pool.gui.remove(self.menu)
-            self.menu = None
+    def deinit_ui(self):
+        self.remove_menu()
 
     def get_init_dict(self):
         # all keys need to exists as keyword arguments in __init__ as well
         return {'example_param': self.example_param}
-
-    def cleanup(self):
-        # Remove UI when the plugin is unloaded
-        self.deinit_gui()
 ```
 
 <aside class="notice">
