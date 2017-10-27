@@ -36,29 +36,23 @@ Pupil Player uses an identical plugin structure. Little (often no work) needs to
 
 ### Plugin API
 
-Plugins inherit the [`Plugin` class](https://github.com/pupil-labs/pupil/blob/568604bd06a972eeac533f74079c22459b6e929e/pupil_src/shared_modules/plugin.py#L23). It provides default functionality as well as series of callback functions that are called by the world process. [The source](https://github.com/pupil-labs/pupil/blob/568604bd06a972eeac533f74079c22459b6e929e/pupil_src/shared_modules/plugin.py#L23) contains detailed information about the use-cases of the different callback functions.
+Plugins are Python classes that inherit the [`Plugin` class](https://github.com/pupil-labs/pupil/blob/568604bd06a972eeac533f74079c22459b6e929e/pupil_src/shared_modules/plugin.py#L23). It provides default functionality as well as series of callback functions that are called by the world process. [The source](https://github.com/pupil-labs/pupil/blob/568604bd06a972eeac533f74079c22459b6e929e/pupil_src/shared_modules/plugin.py#L23) contains detailed information about the use-cases of the different callback functions.
 
 <aside class="warning">
 Plugin callbacks are called regularly within the main thread. If your custom plugin uses functions that block longer than ~0,02 seconds it will lead to unresponsive ui and the framerate will drop.
 </aside>
 
-#### Make your own plugin
-These general steps are required if you want to make your own plugin and use it within Pupil:
+#### Register your plugin automatically
+Plugins are registered on application start. System plugins are [registered explicitly](https://github.com/pupil-labs/pupil/blob/618181d157bfc3e75415a305c6f89c90ac0e614f/pupil_src/launchables/world.py#L116-L139).
+This is not required for your own plugin. The applications search in the following folders for custom plugins:
+ + Pupil Capture: `$pupil_root/pupil_capture_settings/plugins/`
+ + Pupil Service: `$pupil_root/pupil_service_settings/plugins/`
+ + Pupil Player: `$pupil_root/pupil_player_settings/plugins/`
 
-  + Fork the pupil repository (if you haven't done this already) and create a branch for your plugin. Try to make commits granular so that it can be merged easily with the official branch if so desired.
-  + Create a new file
-    + In `/capture` if your plugin only interacts with Pupil Capture's World process.
-    + In `/player` if your plugin only interacts with Pupil Player.
-    + In `/shared_modules` if your plugin is used in both `Pupil Capture` and `Pupil Player`
-  + Inherit from the `Plugin` class template. You can find the base class along with docs in [plugin.py](https://github.com/pupil-labs/pupil/tree/master/pupil_src/shared_modules/plugin.py). (A good example to reference while developing your plugin is [display_recent_gaze.py](https://github.com/pupil-labs/pupil/tree/master/pupil_src/shared_modules/display_recent_gaze.py))
-  + Write your plugin
+All of these folders are created automatically on the first time you start the
+corresponding application.
 
-#### Load your Plugin automatically
-If you're running Pupil from an app bundle, there is no need to modify source code. You can auto-load your plugin. Just follow these steps:
-
- + Start the application that should run your plugin either Pupil Capture or Pupil Player.
- + If you're creating a plugin for Pupil Capture, navigate to the `~/pupil_capture_settings/plugins/` directory. If you're creating a plugin for Pupil Player, navigate to `~/pupil_player_settings directory/plugins/` instead.
- + Move your plugin source code into the `plugins` folder. If your plugin is comprised of multiple files and/or dependencies, then move all files into the plugins folder. *Note*: if your plugin is contained in a directory, make sure to include an `__init__.py` inside it. For example:
+*Note*: if your plugin is contained in a directory, make sure to include an `__init__.py` inside it. For example:
 
 ```python
 from . my_custom_plugin_module import My_Custom_Plugin_Class
