@@ -18,7 +18,7 @@ Features like <a href="#surface-tracking">surface tracking</a> found in Pupil Ca
 ### Player Window
 Let's get familiar with the Player window.
 
-> {{< webp-img src="/images/pupil-player/pp_cl_main.webp" alt="Pupil Player UI call-out" >}}
+> {{< webp-img src="/images/pupil-player/player-callout.webp" alt="Pupil Player UI call-out" >}}
 
 The Player window is the main control center for `Pupil Player`. It displays the recorded video feed from pupil capture file.
 
