@@ -17,13 +17,14 @@ Pupil Capture is the software used with the Pupil Headset. The software reads th
 
 ### Capture Window
 
-> {{< webp-img src="/images/pupil-capture/pc_cl_main.webp" alt="Pupil Capture UI call-out" >}}
+> {{< webp-img src="/images/pupil-capture/capture-callout.webp" alt="Pupil Capture UI call-out" >}}
 
 The Capture window is the main control center for `Pupil Capture`. It displays live video feed from pupil headset.
 
-1. **Graphs** - This area contains performance graphs. You can monitor `CPU` and `FPS` and pupil algorithm detection confidence. These graphs are the same as in the `World` window.
-1. **Settings GUI Menu** - This is the main GUI for Pupil Player. You can use this menu primarily to launch plugins and control global settings.
+1. **Graphs** - This area contains performance graphs. By default the graphs `CPU`, `FPS`, and pupil algorithm detection confidence will be displayed. You can control graph settings with the `System Graphs` plugin.
 1. **Hot keys** - This area contains clickable buttons for plugins.
+1. **Menu** - This area contains settings and contextual information for each plugin.
+1. **Sidebar** - This area contains clickable buttons for each plugin. System plugins are loaded in the top and user added plugins are added below the horizontal separator.
 
 ### Capture Selection
 
@@ -191,7 +192,7 @@ If you open up a session folder you will see a collection of video(s) and data f
 
 ### Open a plugin
 
-> {{< webp-img src="/images/pupil-capture/pc-plugin.webp" alt="Pupil Capture plugins" >}}
+> {{< webp-img src="/images/pupil-capture/capture-plugin.webp" alt="Pupil Capture plugins" >}}
 
 Click on the selector "Open Plugin" and select your plugin.
 
