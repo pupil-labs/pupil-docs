@@ -22,12 +22,14 @@ Let's get familiar with the Player window.
 
 The Player window is the main control center for `Pupil Player`. It displays the recorded video feed from pupil capture file.
 
-1. **Graphs** - This area contains performance graphs. You can monitor `CPU` and `FPS` and pupil algorithm detection confidence. These graphs are the same as in the `World` window.
-1. **Settings GUI Menu** - This is the main GUI for Pupil Player. You can use this menu primarily to launch plugins and control global settings.
-1. **Plugin GUIs** - Each Plugin spawns its own GUI window. You can control settings of each Plugin in the GUI window. For details on all plugins, see documentation on [Pupil Player](#pupil-player) in the user guide.
+1. **Graphs** - This area contains performance graphs. By default the graphs `CPU`, `FPS`, and pupil algorithm detection confidence will be displayed. You can control graph settings with the `System Graphs` plugin.
 1. **Hot keys** - This area contains clickable buttons for plugins.
-1. **Seek Bar and Trim Marks** - You can drag the playhead (large circle) to scrub through the video or `space` bar to play/pause. You can use the arrow keys to advance one frame at a time. Drag the small green circles at the end of the seek bar to set trim marks. Trim marks directly inform the section of video/data to export.
-
+1. **Timeline Events** - Plugins can add temporal events to this expandable panel.
+1. **Timeline** - Control the playback of the video with the play/pause button (or spacebar on your keyboard). Drag the playhead (vertical line) to the desired point in time.
+  - **Frame Stepping** - You can use the arrow keys on your keyboard or the `<<` `>>` buttons to advance one frame at a time.
+  - **Trimming** - Drag either end of the timeline to set a trim beginning and ending trim marks. The trim section marks directly inform the section of video/data to export.
+1. **Menu** - This area contains settings and contextual information for each plugin.
+1. **Sidebar** - This area contains clickable buttons for each plugin. System plugins are loaded in the top and user added plugins are added below the horizontal separator.
 
 ### Starting Pupil Player
 
