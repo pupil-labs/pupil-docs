@@ -75,7 +75,7 @@ If you want to add or extend the functionality of an existing plugin, you should
 
 Things to keep in mind:
 
-- `g_pool` is an acronym to "global pool", a system wide container full of stuff passed to all plugins.
+- `g_pool` is an abbreviation to "global pool", a system wide container full of stuff passed to all plugins.
 - if the base plugin is a system (always alive) plugin:
   - remember to close the base plugin at the `__init__` method of the inheriting plugin with `base_plugin.alive = False`. You should find the `base_plugin` inside `g_pool.plugins` ;
   - remember to dereference the base plugin at the end of the file with `del base_plugin` to avoid repetition in the user plugin list;
@@ -184,7 +184,14 @@ from pyglui import ui
 
 
 class Custom_Plugin(Plugin):
+    # Calling add_menu() will create an icon in the icon bar that represents
+    # your plugin. You can customize this icon with a symbol of your choice.
     icon_chr = '@'  # custom menu icon symbol
+
+    # The default icon font is Roboto: https://fonts.google.com/specimen/Roboto
+    # Alternatively, you can use letters from the Pupil Icon font:
+    # https://github.com/pupil-labs/pupil-icon-font
+    icon_font = 'roboto'  # or `pupil_icons` when using the Pupil Icon font
 
     def __init__(self, g_pool, example_param=1.0):
         super().__init__(g_pool)
