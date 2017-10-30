@@ -13,7 +13,7 @@ If you want to develop a plugin or to extend Pupil for your project, this is the
 
 These pages will not contain detailed documentation of code. We're working on code documentation, and when it's done we will put code documentation online at read the docs.
 
-If you have questions, encounter any problems, or want to share progress -- join us on [Discord][discord]. We will try our best to help you out, and answer questions quickly.
+If you have questions, encounter any problems, or want to share progress -- chat with us on the Pupil channel on [Discord][discord]. We will try our best to help you out, and answer questions quickly.
 
 ### Running Pupil from Source
 Pupil is a prototype and will continue to be in active development. If you plan to make changes to Pupil, want to see how it works, [make a fork][fork], install all dependencies and run Pupil source directly with Python.
@@ -53,6 +53,6 @@ cd /the_folder_where_Pupil_lives/pupil_src
 python3 main.py
 ```
 
-[release-page]: http://github.com/pupil-labs/pupil/releases
+[release-page]: https://github.com/pupil-labs/pupil/releases
 [fork]: https://github.com/pupil-labs/pupil/fork
-[discord]: http://pupil-labs.com/chat
+[discord]: https://pupil-labs.com/chat
