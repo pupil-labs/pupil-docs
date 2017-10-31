@@ -44,13 +44,13 @@ Let's get started! Its time to put `brew` to work! Just copy paste commands into
 ```
 brew tap homebrew/python
 brew install pkg-config
-brew install numpy
 brew install scipy
 brew install libjpeg-turbo
 brew install libusb
+# opencv will install ffmpeg, numpy, and opencv-contributions automatically
+# tbb is included by default with https://github.com/Homebrew/homebrew-core/pull/20101
+brew install opencv
 brew tap homebrew/science
-brew install ffmpeg
-brew install opencv3 --with-contrib --with-python3 --with-tbb --without-python
 brew install glew
 brew tap homebrew/versions
 brew install glfw3
