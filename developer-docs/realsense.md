@@ -14,7 +14,7 @@ The 3d world camera is not available for Linux bundles. This is due to <a href="
 
 #### `librealsense`
 
-All Intel RealSense cameras require [`librealsense`](https://github.com/IntelRealSense/librealsense/) to be installed. Please follow the [install instructions](https://github.com/IntelRealSense/librealsense/#table-of-contents) for your operating system.
+All Intel RealSense cameras require [`librealsense`](https://github.com/pupil-labs/librealsense/) to be installed. Please follow the [install instructions](https://github.com/pupil-labs/librealsense/#table-of-contents) for your operating system.
 
 #### `pyrealsense`
 
