@@ -28,7 +28,7 @@ The Capture window is the main control center for `Pupil Capture`. It displays l
 
 ### Capture Selection
 
-> {{< video-webm src="/videos/capture-selection/pc-select.webm" >}}
+> {{< video-webm src="/videos/backend-manager/backend-manager.webm" >}}
 
 By default Pupil Capture will use Local USB as the capture source. If you have a Pupil headset connected to your machine you will see the video displayed from your Pupil headset in the World and eye windows. If no headset is connected or Pupil Capture is unable to open capture devices it will fall back to the Test Image. Other options for capture source are described below.
 

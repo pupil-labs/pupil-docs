@@ -18,7 +18,7 @@ Pupil Mobile enables you to connect your Pupil eye tracking headset to your Andr
 
 ### Streaming To Subscribers
 
-> {{< video-webm src="/videos/capture-selection/pc-select.webm" >}}
+> {{< video-webm src="/videos/backend-manager/backend-manager.webm" >}}
 
 > <h4 align='center'>placeholder media</h4>
 
