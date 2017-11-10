@@ -33,7 +33,7 @@ of receiving features and bug fixes as soon as they hit the Github repository.
 * [Linux](#linux-dependencies) step-by-step instructions for Ubuntu 16.04 LTS +
 * [MacOS](#macos-dependencies) step-by-step instructions for MacOS 10.8+
 * [Windows](#windows-dependencies) step-by-step instructions for Windows 10
-* [Intel RealSense 3D](#realSense-dependencies) instructions if you want to use an Intel RealSense R200 as scene camera.
+* [Intel RealSense 3D](#realsense-dependencies) instructions if you want to use an Intel RealSense R200 as scene camera.
 
 ### Download and Run Pupil Source Code
 
