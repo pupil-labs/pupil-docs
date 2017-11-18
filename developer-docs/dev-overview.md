@@ -141,7 +141,7 @@ If you've done something -- even if work-in-progress -- make a [pull request][pu
 [ctypes-pydoc]: http://docs.python.org/2/library/ctypes.html
 [cmethods]: https://github.com/pupil-labs/pupil/tree/master/pupil_src/shared_modules/c_methods
 [methods-c]: https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/c_methods/methods.c
-[capture]: https://github.com/pupil-labs/pupil/tree/master/pupil_src/capture
+[capture]: https://github.com/pupil-labs/pupil/tree/master/pupil_src
 [g-pool]: https://github.com/pupil-labs/pupil/blob/master/pupil_src/capture/main.py#L117-L119
 [0mq]: http://zeromq.org/
 [issue]: https://github.com/pupil-labs/pupil/issues

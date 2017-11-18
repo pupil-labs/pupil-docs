@@ -81,7 +81,7 @@ Things to keep in mind:
   - remember to dereference the base plugin at the end of the file with `del base_plugin` to avoid repetition in the user plugin list;
 
 #### Hacking an existing plugin
-Another way to start plugin development, is to use an existing plugin as a template. For example, you could copy the [`vis_circle.py`](https://github.com/pupil-labs/pupil/blob/master/pupil_src/player/vis_circle.py) plugin as a starting point.
+Another way to start plugin development, is to use an existing plugin as a template. For example, you could copy the [`vis_circle.py`](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/vis_circle.py) plugin as a starting point.
 
 renaming it to, for example, `open_cv_threshold.py`.
 
@@ -163,7 +163,7 @@ def recent_events(self, events):
 after a timeout of 0.05 seconds. The `events` dictionary will include the image
 frame object if it was available. It is accessible through the `frame` key.
 
-You can access the image buffer through the `img` and the `gray` attributes of the frame object. They return a BGR (`height x width x 3`) and gray scaled (`height x width`) uint8-numpy array respectively. Visualization plugins (e.g. [`vis_circle.py`](https://github.com/pupil-labs/pupil/blob/master/pupil_src/player/vis_circle.py#L47)) modify the `img` buffer such that their visualizations are visible in the Pupil Player exported video. Use OpenGL (within the `Plugin.gl_display` method) to draw visualizations within Pupil Player that are not visible in the exported video (e.g. surface heatmaps in [`Offline_Surface_Tracker`](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/offline_surface_tracker.py)). See [below](#Export-Custom-Video-Visualizations) for more information.
+You can access the image buffer through the `img` and the `gray` attributes of the frame object. They return a BGR (`height x width x 3`) and gray scaled (`height x width`) uint8-numpy array respectively. Visualization plugins (e.g. [`vis_circle.py`](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/vis_circle.py#L48) modify the `img` buffer such that their visualizations are visible in the Pupil Player exported video. Use OpenGL (within the `Plugin.gl_display` method) to draw visualizations within Pupil Player that are not visible in the exported video (e.g. surface heatmaps in [`Offline_Surface_Tracker`](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/offline_surface_tracker.py). See [below](#Export-Custom-Video-Visualizations) for more information.
 
 The `events` dictionary contains other recent data, e.g. `pupil_positions`, `gaze_positions`, `fixations`, etc. Modifications to the `events` dictionary are automatically accessible by all plugins with an higher `order` than the modifying plugin.
 
