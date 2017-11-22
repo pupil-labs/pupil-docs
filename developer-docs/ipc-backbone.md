@@ -244,7 +244,7 @@ Recorder: Handles recorder notifications
 
 ```
 
-### Pupil Remote
+### Pupil Remote {#ipc-pupil-remote}
 <!-- Shorter heading such that it fits into the sidebar -->
 If you want to tap into the IPC backbone you will not only need the IP address but also the session unique port. You can get these by talking to 'Pupil Remote':
 

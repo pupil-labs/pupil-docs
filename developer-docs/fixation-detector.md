@@ -14,7 +14,7 @@ The fixation detectors in Pupil Capture and Player implement such a dispersion-b
 
 1. **Gaze Position 2D Fixation Detector** Legacy version, uses mean gaze positions as dispersion measure. Does not comply technically to the exact maximal dispersion, only approximates it.
 
-2. **Pupil Angle 3D Fixation Detector** Uses the 3D model's pupil angle as dispersion measure. Therefore, it requires the 3D pupil detection to be active [[See below](#usage)]. Calculates the maximal pairwise angle for all corresponding pupil positions. This version includes a plugin for Pupil Capture that operates in an online fashion since it does not depend on a calibrated gaze mapper.
+2. **Pupil Angle 3D Fixation Detector** Uses the 3D model's pupil angle as dispersion measure. Therefore, it requires the 3D pupil detection to be active [[See below](#fd-usage)]. Calculates the maximal pairwise angle for all corresponding pupil positions. This version includes a plugin for Pupil Capture that operates in an online fashion since it does not depend on a calibrated gaze mapper.
 
 [`[1]`](http://www.gruberpeplab.com/teaching/psych231_fall2013/documents/231_SalvucciGoldberg2000.pdf) Salvucci, D. D., & Goldberg, J. H. (2000, November). Identifying fixations and saccades in eye-tracking protocols. In Proceedings of the 2000 symposium on Eye tracking research & applications (pp. 71-78). ACM.
 
@@ -24,7 +24,7 @@ As described above, Pupils fixation detectors implement dispersion-based algorit
 1. Dispersion Threshold (spatial, degree): Maximal distance between all gaze locations during a fixation. 
 2. Duration Threshold (temporal, seconds): The minimal duration in which the dispersion threshold must not be exceeded.
 
-### Usage
+### Usage {#fd-usage}
 
 #### Activation
 Any versions of the 3D fixation detector requires the 3D pupil data since it relies on the detected pupil angle for calculations. To activate 3D pupil detection, select `3D` in Capture's _General_ settings under _Detection & Mapping Mode_. In Player, it is currently not possible to generate the required 3D data from a recording that only includes 2D detected data.

@@ -26,7 +26,7 @@ Install the LED ring and connect the LED power supply.
 
 > {{< video-youtube embed-url="https://www.youtube.com/embed/5LqjfgbDydM" >}}
 
-### Route cables
+### Route cables {#dk2-route-cables}
 
 > {{< video-youtube embed-url="https://www.youtube.com/embed/bvdxMYtzVTE" >}}
 

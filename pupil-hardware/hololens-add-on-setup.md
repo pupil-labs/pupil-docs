@@ -14,7 +14,7 @@ Snap the orange parts of the eye camera mounts into the HoloLens frame.
 
 The World camera is attached to the top of the HoloLens with tape.
 
-### Route cables
+### Route cables {#hl-route-cables}
 
 > {{< video-webm src="/videos/hololens/wire.webm" >}}
 

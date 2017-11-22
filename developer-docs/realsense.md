@@ -24,7 +24,7 @@ All Intel RealSense cameras require [`librealsense`](https://github.com/pupil-la
 pip3 install  git+https://github.com/pupil-labs/pyrealsense
 ```
 
-### Usage
+### Usage {#realsense-usage}
 
 Select `RealSense 3D` in the Capture Selection menu and activate your RealSense camera. Afterwards you should see the colored video stream of the selected camera.
 
