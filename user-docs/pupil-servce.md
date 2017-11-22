@@ -77,6 +77,4 @@ while True:
 ```
 
 ### Clients
-An example client written in Python can be found [here](https://github.com/pupil-labs/hmd-eyes/tree/master/hmd_calibration)
-
-An example client for Unity3d can be found [here](https://github.com/pupil-labs/hmd-eyes/tree/master/unity_integration_calibration)
+An example client for Unity3d can be found [here](https://github.com/pupil-labs/hmd-eyes/releases/latest)
