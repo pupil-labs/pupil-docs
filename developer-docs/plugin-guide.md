@@ -221,7 +221,7 @@ See <a href="https://github.com/pupil-labs/pyglui/blob/master/pyglui/ui_elements
 </aside>
 
 #### Export Custom Video Visualizations
-As descrbed above, plugins are able to modify the image buffers to export their visualizations. The plugins `recent_events` method is automatically called for each frame once by the video exporter process. Plugins might overwrite changes made by plugins with a lower order than themselves. OpenGL visualizations are not exported. See [`vis_circle.py`](https://github.com/pupil-labs/pupil/blob/master/pupil_src/player/vis_circle.py#L47) for an example visualization.
+As descrbed above, plugins are able to modify the image buffers to export their visualizations. The plugins `recent_events` method is automatically called for each frame once by the video exporter process. Plugins might overwrite changes made by plugins with a lower order than themselves. OpenGL visualizations are not exported. See [`vis_circle.py`](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/vis_circle.py#L39) for an example visualization.
 
 #### Export Custom Raw Data
 Each Player plugin gets a notification with subject `should_export` thar includes the world frame indices range that will be exported and the directory where the recording will be exported to. Add the code to the right to your plugin and implement an `export_data` function. See [`fixation_detector.py`](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/fixation_detector.py#L263-L297) for an example.
