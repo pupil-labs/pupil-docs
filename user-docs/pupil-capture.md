@@ -81,31 +81,14 @@ Make sure the lens and image sensor are clean. Dust on the lens or image sensor 
 </aside>
 
 > <div class="figure-container">
-	<div class="Grid Grid-row">
-		<div class="Grid-cell--1of2">
-			<div class="Grid-cell">
-				{{< lqip-img figure-class="img-m" src="/images/pupil-hardware/pupil-detect.jpg" alt="pupil detection" >}}
-			</div>
+	<div class="Grid Grid--1of2 img-row">
+		<div class="Grid-cell" style="padding-right:5px;">
+			{{< lqip-img figure-class="img-m" src="/images/pupil-hardware/pupil-detect.jpg" >}}
+			<p>Your pupil is properly detected by the eye camera</p>
 		</div>
-		<div class="Grid-cell--1of2">
-			<div class="Grid-cell">
-				{{< lqip-img figure-class="img-m" src="/images/pupil-hardware/focus.jpg" alt="pupil detection" >}}
-			</div>
-		</div>
-	</div>
-</div>
-
-> <div class="figure-container">
-	<div class="Grid Grid-row">
-		<div class="Grid-cell--1of2">
-			<div class="Grid-cell" style="padding:0 .5em 0 .5em;">
-				<p>Your pupil is properly detected by the eye camera</p>
-			</div>
-		</div>
-		<div class="Grid-cell--1of2">
-			<div class="Grid-cell" style="padding:0 .5em 0 .5em;">
-				<p>Make sure the world camera is in focus</p>
-			</div>
+		<div class="Grid-cell">
+			{{< lqip-img figure-class="img-m" src="/images/pupil-hardware/focus.jpg" >}}
+			<p>Make sure the world camera is in focus</p>
 		</div>
 	</div>
 </div>
