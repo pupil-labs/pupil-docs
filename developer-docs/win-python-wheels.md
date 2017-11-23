@@ -39,7 +39,7 @@ In order to create wheels, you will need to install the `wheel` lib.
 
 ### Download FFMPEG Dev
 
-You will need both `.dll` files as well as FFMPG libs in order to build `pyav`. You should have already downloaded FFMPEG shared binaries in the [FFMPEG to pupil_external](#ffmpeg-to-pupil_external) step above. 
+You will need both `.dll` files as well as FFMPG libs in order to build `pyav`. You should have already downloaded FFMPEG shared binaries in the [FFMPEG to pupil_external](#ffmpeg-to-pupil-external) step above. 
 
 - Download FFMPEG Windows Dev - `ffmpeg-3.3.1-win64-dev` - from [ffmpeg](http://ffmpeg.zeranoe.com/builds/) 
 - Unzip ffmpeg-dev to your work dir

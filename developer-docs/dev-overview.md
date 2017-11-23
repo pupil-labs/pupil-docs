@@ -16,9 +16,9 @@ Pupil is written in `Python 3`, but no "heavy lifting" is done in Python. High p
 We also like writing code in Python because it's *quick and easy* to move from initial idea to working proof-of-concept. If proof-of-concept code is slow, optimization and performance enhancement can happen in iterations of code.
 
 ### Process Structure
-When [Pupil Capture][capture] starts, in default settings two processes are spawned:
+When Pupil Capture starts, in default settings two processes are spawned:
 
-**Eye** and **World**. Both processes grab image frames from a video capture stream but they have very different tasks.
+**[Eye](https://github.com/pupil-labs/pupil/blob/master/pupil_src/launchables/eye.py)** and **[World](https://github.com/pupil-labs/pupil/blob/master/pupil_src/launchables/world.py)**. Both processes grab image frames from a video capture stream but they have very different tasks.
 
 #### Eye Process
 The eye process only has one purpose - to detect the pupil and broadcast its position. The process breakdown looks like this:
@@ -141,7 +141,6 @@ If you've done something -- even if work-in-progress -- make a [pull request][pu
 [ctypes-pydoc]: http://docs.python.org/2/library/ctypes.html
 [cmethods]: https://github.com/pupil-labs/pupil/tree/master/pupil_src/shared_modules/c_methods
 [methods-c]: https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/c_methods/methods.c
-[capture]: https://github.com/pupil-labs/pupil/tree/master/pupil_src/capture
 [g-pool]: https://github.com/pupil-labs/pupil/blob/master/pupil_src/capture/main.py#L117-L119
 [0mq]: http://zeromq.org/
 [issue]: https://github.com/pupil-labs/pupil/issues

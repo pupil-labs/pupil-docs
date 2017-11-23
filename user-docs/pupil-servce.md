@@ -58,7 +58,7 @@ print send_recv_notification(n)
 ```
 
 ### Notifications
-The code demonstrates how you can listen to all notification from Pupil Service. This requires a little helper script called [zmq_tools.py](https://github.com/pupil-labs/hmd-eyes/blob/master/hmd_calibration/zmq_tools.py).
+The code demonstrates how you can listen to all notification from Pupil Service. This requires a little helper script called [zmq_tools.py](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/zmq_tools.py).
 
 
 ```python
@@ -77,6 +77,4 @@ while True:
 ```
 
 ### Clients
-An example client written in Python can be found [here](https://github.com/pupil-labs/hmd-eyes/tree/master/hmd_calibration)
-
-An example client for Unity3d can be found [here](https://github.com/pupil-labs/hmd-eyes/tree/master/unity_integration_calibration)
+An example client for Unity3d can be found [here](https://github.com/pupil-labs/hmd-eyes/releases/latest)

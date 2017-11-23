@@ -23,8 +23,8 @@ The first step is to modify the cameras so we can use them for eye-tracking.
 #### De-case Cameras
 Take both webcams out of their casings. Follow the video guides.
 
-1. [decase Logitech C525/C512](http://vimeo.com/59844059)
-2. [decase Microsoft HD-6000](http://vimeo.com/53005603)
+1. [decase Logitech C525/C512](https://vimeo.com/59844059)
+2. [decase Microsoft HD-6000](https://vimeo.com/53005603)
 
 #### Solder Work on Eye Camera PCB
 

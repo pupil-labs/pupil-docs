@@ -10,7 +10,7 @@ page_weight = 2
 This page outlines the way `Pupil Capture` and `Pupil Service` communicate via a message bus internally and how to read and write to this bus from another application on the same machine or on a remote machine.
 
 ### Networking
-All networking in Pupil Capture and Service is based on the [ZeroMQ](http://http://zeromq.org/) network library.
+All networking in Pupil Capture and Service is based on the [ZeroMQ](http://zeromq.org/) network library.
 The following socket types are most often used in our networking schemes:
 - [REQ-REP](http://zguide.zeromq.org/php:chapter3#The-Request-Reply-Mechanisms), reliable one-to-one communication
 - PUB-SUB, one-to-many communication
@@ -39,7 +39,7 @@ Currently all messages on the IPC Backbone are multipart messages containing two
 
  - `Frame 1` contains a string we call `topic`. Examples are : `pupil.0`, `logging.info`, `notify.recording.has_started`
 
- - `Frame 2` contains a [`msgpack`](http://msgpack.org/) encoded dictionary with `key`:`value` pairs. This is the actual message. We choose `msgpack` as the serializer due to its efficient format (45% smaller than `json`, 200% faster than `ujson`) and because encoders exist for almost every language.
+ - `Frame 2` contains a [`msgpack`](https://msgpack.org/) encoded dictionary with `key`:`value` pairs. This is the actual message. We choose `msgpack` as the serializer due to its efficient format (45% smaller than `json`, 200% faster than `ujson`) and because encoders exist for almost every language.
 
 #### Message Topics
 Messages can have any topic chosen by the user. Below a list of message types used by the Pupil apps.
@@ -244,7 +244,7 @@ Recorder: Handles recorder notifications
 
 ```
 
-### Pupil Remote
+### Pupil Remote {#ipc-pupil-remote}
 <!-- Shorter heading such that it fits into the sidebar -->
 If you want to tap into the IPC backbone you will not only need the IP address but also the session unique port. You can get these by talking to 'Pupil Remote':
 

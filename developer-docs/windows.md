@@ -69,21 +69,21 @@ To access your System Environment Variables:
 - You can `Edit` or `Add` new paths (this is needed later in the setup process).
 
 ### Python Wheels
-Most Python extensions can be installed via **pip**. We recommend to download and install the pre-built wheel (*.whl) packages maintained by [Christoph Gohlke](http://www.lfd.uci.edu/~gohlke/pythonlibs/). (@Gohlke Thanks for creating and sharing these packages!)
+Most Python extensions can be installed via **pip**. We recommend to download and install the pre-built wheel (*.whl) packages maintained by [Christoph Gohlke](https://www.lfd.uci.edu/~gohlke/pythonlibs/). (@Gohlke Thanks for creating and sharing these packages!)
 
 <aside class="notice">Note - you are using Python3.6 and a Windows 64 bit system. Therefore download wheels with `cp36‑cp36m‑win_amd64.whl` in the file name. `cp36` means C Python v3.6 and `amd64` signifies 64 bit architecture.</aside>
 
 Download the most recent version of the following wheels Python3.6 x64 systems.
 
-- [numpy](http://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy)
-- [scipy](http://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy)
-- [boost.python](http://www.lfd.uci.edu/~gohlke/pythonlibs/#boost.python)
-- [cython](http://www.lfd.uci.edu/~gohlke/pythonlibs/#cython)
-- [opencv](http://www.lfd.uci.edu/~gohlke/pythonlibs/#opencv)
-- [pyopengl](http://www.lfd.uci.edu/~gohlke/pythonlibs/#pyopengl) (do not download pyopengl-accelerate)
-- [psutil](http://www.lfd.uci.edu/~gohlke/pythonlibs/#psutil)
-- [pyaudio](http://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio)
-- [pyzmq](http://www.lfd.uci.edu/~gohlke/pythonlibs/#pyzmq)
+- [numpy](https://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy)
+- [scipy](https://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy)
+- [boost.python](https://www.lfd.uci.edu/~gohlke/pythonlibs/#boost.python)
+- [cython](https://www.lfd.uci.edu/~gohlke/pythonlibs/#cython)
+- [opencv](https://www.lfd.uci.edu/~gohlke/pythonlibs/#opencv)
+- [pyopengl](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyopengl) (do not download pyopengl-accelerate)
+- [psutil](https://www.lfd.uci.edu/~gohlke/pythonlibs/#psutil)
+- [pyaudio](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio)
+- [pyzmq](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyzmq)
 
 Open your command prompt and `Run as administrator` in the directory where the wheels are downloaded.
 

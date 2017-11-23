@@ -84,12 +84,12 @@ Make sure the lens and image sensor are clean. Dust on the lens or image sensor 
 	<div class="Grid Grid-row">
 		<div class="Grid-cell--1of2">
 			<div class="Grid-cell">
-				{{< lqip-img figure-class="img-m" src="/images/pupil-hardware/pupil-detect.jpg" >}}
+				{{< lqip-img figure-class="img-m" src="/images/pupil-hardware/pupil-detect.jpg" alt="pupil detection" >}}
 			</div>
 		</div>
 		<div class="Grid-cell--1of2">
 			<div class="Grid-cell">
-				{{< lqip-img figure-class="img-m" src="/images/pupil-hardware/focus.jpg" >}}
+				{{< lqip-img figure-class="img-m" src="/images/pupil-hardware/focus.jpg" alt="pupil detection" >}}
 			</div>
 		</div>
 	</div>
