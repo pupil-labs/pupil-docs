@@ -83,11 +83,11 @@ Make sure the lens and image sensor are clean. Dust on the lens or image sensor 
 > <div class="figure-container">
 	<div class="Grid Grid--1of2 img-row">
 		<div class="Grid-cell" style="padding-right:5px;">
-			{{< lqip-img figure-class="img-m" src="/images/pupil-hardware/pupil-detect.jpg" >}}
+			{{< lqip-img figure-class="img-m" src="/images/pupil-hardware/pupil-detect.jpg" alt="YOur pupil is properly detected by the eye camera" >}}
 			<p>Your pupil is properly detected by the eye camera</p>
 		</div>
 		<div class="Grid-cell">
-			{{< lqip-img figure-class="img-m" src="/images/pupil-hardware/focus.jpg" >}}
+			{{< lqip-img figure-class="img-m" src="/images/pupil-hardware/focus.jpg" alt="Make sure the world camera is in focus" >}}
 			<p>Make sure the world camera is in focus</p>
 		</div>
 	</div>
