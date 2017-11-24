@@ -217,9 +217,7 @@ Here is an example workflow for using the `Offline Surface Detector` plugin to g
 
 #### Fixation Detector - Dispersion Duration
 
-> {{< webp-img src="/images/pupil-player/plugin/2d-fixation.webp" alt="2D Fixation Detector" >}}
-
-> {{< webp-img src="/images/pupil-player/plugin/3d-fixation.webp" alt="3D Fixation Detector" >}}
+> {{< webp-img src="/images/pupil-player/plugin/fixation.webp" alt="Offline Fixation Detector" >}}
 
 There two offline fixation detectors that are **unique** but exclusive to each other, therefore you can only load one instance of these plugins.
 
