@@ -110,7 +110,7 @@ def clone(self):
 > It is good to rename its menu caption as well:
 
 ```python
-self.menu = ui.Scrolling_Menu('Threshold')
+self.menu.label = 'Threshold'
 ```
 
 > Lets determine its execution order in relation to the other plugins:
