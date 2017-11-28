@@ -153,7 +153,7 @@ This method is for special situations and far distances. Usually not required.
 
 
 ### Notes on calibration accuracy
-In 2D mode, you should easily be able to achieve tracking accuracy within the physiological limits (sub 1 deg visual degrees). Using the 3d mode you should achive 2-1.5 deg of accuracy. 
+In 2D mode, you should easily be able to achieve tracking accuracy within the physiological limits (sub 1 deg visual degrees). Using the 3d mode you should achive 2-1.5 deg of accuracy.
 
 * Any monocular calibration is accurate only at its depth level relative to the eye (parallax error).
 * Any calibration is only accurate inside the field of view (in the world video) you have calibrated. For example: If during your calibration you only looked at markers or natural features (depending on your calibration method) that are in the left half, you will not have good accuracy in the right half.
@@ -185,20 +185,11 @@ You can easily load third party plugins. Third party plugins will appear in the
 Pupil Capture or Pupil Player plugin list. Copy the plugin to the plugins folder
 within the `pupil_capture_settings` or `pupil_player_settings` folder.
 
-### Fixation Detection
+### Fixation Detector {#capture-fixation-detector}
 
-Fixation detectors classify fixations using dispersion and duration.
-*Dispersion* is measured as the distance between pupil positions.
-*Duration* is a specified period of time. The fixation detector plugin will
-classify pupil positions as fixations if they are within the dispersion for the
-duration of time specified.
+The online fixation detector classifies fixations based on the [dispersion-duration principle](#fixation-detector). Fixations are used by the [screen and manual marker calibrations](#calibration-methods) to speed up the procedure. A fixation is visualized as a yellow circle around the gaze point that is shown in the Pupil Capture `world` window.
 
-The `Fixation Detector` plugin uses the eye model's 3d orientation angle (if available)
-or 2d gaze pixel position to calculate dispersion. The plugin enables you to set the
-duration in seconds and the maximum dispersion in degrees for 3d data and pixels for 2d data.
-
-If the plugin is loaded, fixations will reduce the amount of samples that a
-[Screen Marker or Manual Marker calibration](https://docs.pupil-labs.com/master/#calibration-methods) usually requires.
+You can find more information in our [dedicated fixation detector section](#fixation-detector).
 
 ### Network plugins
 
