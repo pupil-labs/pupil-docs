@@ -215,31 +215,15 @@ Here is an example workflow for using the `Offline Surface Detector` plugin to g
   + Recalculate gaze distributions - click the `(Re)calculate gaze distributions` button after specifying surface sizes. You should now see heatmaps in the Player window (if gaze positions were within your defined surfaces).
   + Export gaze and surface data - click `e` and all surface metrics reports will be exported and saved for your trim section within your `export` folder.
 
-#### Fixation Detector - Dispersion Duration
+#### Fixation Detector {#player-fixation-detector}
 
 > {{< webp-img src="/images/pupil-player/plugin/fixation.webp" alt="Offline Fixation Detector" >}}
 
-There two offline fixation detectors that are **unique** but exclusive to each other, therefore you can only load one instance of these plugins.
+The offline fixation detector calculates fixations for the whole recording. The menu gives feedback about the progress of the detection, how many fixations were found, shows and detailed information about the current fixation. Press `f` or click the `f` hot key button on the left hand side of the window to seek forward to the next fixation.
 
-* `Gaze Position 2D Fixation Detector`
-* `Pupil Angle 3D Fixation Detector`
+Toggle `Show fixations` to show a visualization of fixations. The blue number is the number of the fixation (0 being the first fixation). You can export fixation reports for your current trim section by pressing `e` on your keyboard or the `e` hot key button on the left hand side of the window.
 
-Both plugins detect fixations based on dispersion-duration. This means that if
-the pupil does not move more than a given distance (dispersion) in a given time
-period (duration) the plugin will classify the pupil positions during this time
-range as a fixation.
-
-The 2D fixation detector uses the distance to the mean gaze position as dispersion
-measure. This is a fast method, but only approximates the actual dispersion and
-relies on a correct calibration.
-
-The 3D fixation detector calculates the pairwise angle between all pupil
-observations in the given duration and takes the maximum angle as dispersion
-measure. This requires more computational resources than the 2D fixation detector,
-but calculates the correct dispersion instead of an approximation and does not
-require a calibration to calculate it.
-
-Toggle `Show fixations` to show a visualization of fixations. The blue number is the number of the fixation (0 being the first fixation). You can export fixation reports for your current trim section by pressing `e` on your keyboard or the `e` hot key button in the left hand side of the window.
+You can find more information in our [dedicated fixation detector section](#fixation-detector).
 
 ### Export
 You can export data and videos by pressing `e` on your keyboard or the `e` hot key button in the Pupil Player window.
