@@ -6,13 +6,13 @@ page_weight = 4
 
 ## Fixation Detector
 
-In [`[1]`](SalvucciGoldberg), Salvucci and Goldberg define different categories of fixation detectors. One of them describes dispersion-based algorithms:
+In Salvucci and Goldberg define different categories of fixation detectors. One of them describes dispersion-based algorithms:
 
-I-DT identifies fixations as groups of consecutive points within a particular dispersion, or maximum separation. Because fixations typically have a duration of at least 100 ms, dispersion-based identification techniques often incorporate a minimum duration threshold of 100-200 ms to help alleviate equipment variability.
+I-DT identifies fixations as groups of consecutive points within a particular dispersion, or maximum separation. Because fixations typically have a duration of at least 100 ms, dispersion-based identification techniques often incorporate a minimum duration threshold of 100-200 ms to help alleviate equipment variability.[`[1]`](#salvucci-goldberg)
 
 Pupil's fixation detectors implement such dispersion-based algorithms.
 
-[`[1]`](SalvucciGoldberg) Salvucci, D. D., & Goldberg, J. H. (2000, November). Identifying fixations and saccades in eye-tracking protocols. In Proceedings of the 2000 symposium on Eye tracking research & applications (pp. 71-78). ACM.
+> {{< footnote number="1" name="salvucci-goldberg" text="Salvucci, D. D., & Goldberg, J. H. (2000, November). Identifying fixations and saccades in eye-tracking protocols. In Proceedings of the 2000 symposium on Eye tracking research & applications (pp. 71-78). ACM." >}}
 
 ### Usage {#fd-usage}
 
