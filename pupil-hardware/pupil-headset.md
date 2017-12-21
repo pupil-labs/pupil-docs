@@ -20,9 +20,13 @@ Pupil ships with a number of additional parts. The below sections provide an ove
 
 > {{< video-webm src="/videos/headset-adjust/worldcam-lens.webm" >}}
 
-The world camera comes with two lenses. 60 degree FOV lens (shown on the left) and a wide angle 100 degree FOV lens (shown on the right). 
+The high speed 2d world camera comes with two lenses. 60 degree FOV lens (shown on the left) and a wide angle 100 degree FOV lens (shown on the right). 
 
 The world camera lens are interchangeable, so you can swap between the two lenses provided for normal or wide angle FOV.
+
+<aside class="warning">
+  If you change lenses you need to <a href="#camera-intrinsics-estimation">recalibrate the camera</a> to update intrisics. Otherwise 3d calibraiton and accuracy test will not work properly!
+</aside>
 
 #### Nose Pads
 
