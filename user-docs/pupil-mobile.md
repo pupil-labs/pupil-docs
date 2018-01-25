@@ -15,12 +15,56 @@ Pupil Mobile is a companion app to Pupil Capture and Pupil Service. It is curren
 
 Pupil Mobile enables you to connect your Pupil eye tracking headset to your Android device via USBC. You can preview video and other sensor streams on the Android device and stream video data over a WiFi network to other computers (clients) running Pupil Capture. Seamlessly integrated with Pupil Capture and Pupil Service.
 
+### Home Screen
+
+> {{< webp-img src="/images/pupil-mobile/home.webp" alt="Pupil Mobile home call-out" >}}
+
+Home screen is the main control center for `Pupil Mobile`. It displays a list of available sensors. Click any sensor for a preview.
+
+1. **Sensors** - This area contains available sensors. Pupil headset cameras along with other sensors connected to or built into the Android device like audio and IMU.
+1. **Record** - Click the Record button to save video and other sensor data locally on the Android device.
+1. **General Settings** - Main settings menu for `Pupil Mobile` app.
+
+### Sensor Preview
+
+> {{< webp-img src="/images/pupil-mobile/sensor.webp" alt="Pupil Mobile sensor call-out" >}}
+
+Preview live video feed from your Pupil headset and other available sensors. Sensor preview windows will automically close and take you back to the Home screen in order to conserve battery.
+
+1. **Sensor settings** - Settings for the sensor. For cameras you can set frame rate, exposure, white balance, and many more parameters.
+1. **Sensor name and recording status** - This displays the sensor name and a dot displaying the recording status of this sensor.
+1. **Preview stream** - A preview of sensor data.
+
+### General Settings
+
+> {{< webp-img src="/images/pupil-mobile/general-settings.webp" alt="Pupil Mobile settings call-out" >}}
+
+Main settings menu for `Pupil Mobile` app and information about the Android Device. 
+
+1. **Device name** - Text input field to name your device. This is the device name that will appear in Pupil Capture.
+1. **Save directory** - Select the location where recordings should be saved. By default recordings are saved on Android's built in storage. You can also save to an SD card, if available.
+1. **Close/Quit app** - Press this button to close the app. Pupil Mobile runs a service in the background. This enables the app to continue running even when your screen is off. Therefore, just swiping away the app view will not close the app.
+
+### Recording
+
+> {{< webp-img src="/images/pupil-mobile/recording.webp" alt="Pupil Mobile recording call-out" >}}
+
+View all the datasets that were recorded on your Android device.
+
+1. **Recording folder** - A directory containing all of your recordings.
+1. **Delete** - Permanently delete recording files from the device.
+
+### Switch views
+
+> {{< webp-img src="/images/pupil-mobile/swipe.webp" alt="Pupil Mobile swipe call-out" >}}
+
+`Pupil Mobile` is designed to for efficient navigation. Swipe left or right for quick access to other views.
+
+1. **Swipe** - Swipe left or right to switch between views. Swipe right from the home screen to go to the recording view. Swipe left from the home screen to the sensor preview views. 
 
 ### Streaming To Subscribers
 
 > {{< video-webm src="/videos/backend-manager/backend-manager.webm" >}}
-
-> <h4 align='center'>placeholder media</h4>
 
 Pupil Mobile devices on the same local WiFi network are automatically detected by Pupil Capture. To subscribe to a Pupil Mobile device in Pupil Capture, go to `Capture Selection` and select Pupil Mobile as the capture source.
 
