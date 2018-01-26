@@ -45,7 +45,7 @@ Main settings menu for `Pupil Mobile` app and information about the Android Devi
 1. **Close/Quit app** - Press this button to close the app. Pupil Mobile runs a service in the background. This enables the app to continue running even when your screen is off. Therefore, just swiping away the app view will not close the app.
 1. **Save directory** - Select the location where recordings should be saved. By default recordings are saved on Android's built in storage. You can also save to an SD card, if available.
 
-### Recording Screen {#pupil-mobile-recording-screen}
+### Recordings Screen {#pupil-mobile-recordings-screen}
 
 > {{< webp-img src="/images/pupil-mobile/recording.webp" alt="Pupil Mobile recording call-out" >}}
 
