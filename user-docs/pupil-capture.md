@@ -117,18 +117,14 @@ In the `Advanced` sub-menu you can set the `sample duration` -- the number of fr
 
 > {{< video-webm src="/videos/calibration/calibration-manual/clb-man.webm" >}}
 
-> <a href="/images/pupil-capture/calibration-markers/v0.4_markers/v0.4_marker.pdf">
-		{{< webp-img figure-class="img-s" src="/images/pupil-capture/calibration-markers/v0.4_markers/v0.4_calibration_marker_01.webp" alt="Pupil Calibration Marker v0.4" >}}
-	</a>
-
-> <a href="/images/pupil-capture/calibration-markers/v0.4_markers/v0.4_marker.pdf">
+> <a href="/images/pupil-capture/calibration-markers/v0.4_markers/v0.4_marker.v12.pdf">
 		{{< webp-img figure-class="img-s" src="/images/pupil-capture/calibration-markers/v0.4_markers/v0.4_calibration_marker_02.webp" alt="Pupil Calibration Marker v0.4" >}}
 	</a>
 
 > <h5 align="center">Pupil Calibration Marker v0.4</h5>
 
 This method is done with an operator and a subject. It is suited for midrange distances and can accommodate a wide field of view. The operator will use a
-printed calibration marker like the one shown in the video. [Download Pupil Labs Calibration Marker v0.4 to print](/images/pupil-capture/calibration-markers/v0.4_markers/v0.4_marker.pdf) or display on smartphone/tablet screen.
+printed calibration marker like the one shown in the video. [Download Pupil Labs Calibration Marker v0.4 to print](/images/pupil-capture/calibration-markers/v0.4_markers/v0.4_marker.v12.pdf) or display on smartphone/tablet screen.
 
 1. Select `Manual Marker Calibration`
 1. Press `c` on your keyboard or click the blue circular `C` button on the left hand side of the world window to start calibration.
@@ -141,6 +137,10 @@ printed calibration marker like the one shown in the video. [Download Pupil Labs
 
 
 You will notice that there are no standard controls, only an `Advanced` sub-menu to control detection parameters of the marker and to debug by showing edges of the detected marker in the world view.
+
+<aside class="faq">
+  When should I use the Pupil Calibration <strong>Stop</strong> Marker? - Use the <strong>stop</strong> marker to stop/end a calibration. You can also stop a calibration via the Pupil Capture GUI.</a>
+</aside>
 
 <aside class="notice">
   Note - The deprecated v2.0 markers can be <a href="/images/pupil-capture/calibration-markers/v2.0_markers/pupil_calibration_marker.pdf">downloaded here</a>.
