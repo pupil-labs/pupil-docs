@@ -32,7 +32,9 @@ The world camera lens are interchangeable, so you can swap between the two lense
 
 > {{< video-webm src="/videos/headset-adjust/arm-extend.webm" >}}
 
-If you need to adjust the eye cameras beyond the built in adjustment range, you can use the orange arm extenders that are shipped with your Pupil headset. The arm extender slides onto the triangular eye camera rail arm triangle rail and adds a new rail further forward and down. This extender works for all existing 120 and 200hz systems.
+If you need to adjust the eye cameras beyond the built in adjustment range, you can use the orange arm extenders that are shipped with your Pupil headset. Unplug your eye camera. Slide the existing eye camera arm off the headset. Slide the arm extender onto the triangular mount rail on the headset frame. Slide the camera onto the extended mount rail. Plug the camera back in.
+
+The eye camera arm extender works for all existing 120 and 200hz systems.
 
 <aside class="notice">
   Starting on <strong>2018-02-01</strong> the arm extender is shipped with all Pupil headset orders. If you have an older headset, you can get the extender from our <a href="https://www.shapeways.com/product/AP2XV2VNH/pupil-labs-camera-arm-extender-for-120hz-and-200h?optionId=64624597">Shapeways store</a>.
