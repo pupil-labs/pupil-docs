@@ -162,6 +162,21 @@ This method is for special situations and far distances. Usually not required.
 1. Press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to stop calibration.
 
 
+#### Single Marker Calibration
+
+Calibrate using a single marker displayed on screen. Gaze at the center of the marker and move your head in a spiral motion. You can also move your head in other patterns. This calibration method enables you to quickly sample a wide range of gaze angles and cover a large range of your FOV.
+
+1. Select Single Marker Calibration
+1. Press `c` on your keyboard or click the blue circular `C` button on the left hand side of the world window to start calibration.
+1. Look at the center of the marker on the screen.
+1. Slowly move your head while gazing at the center of the marker. We have found that a spiral pattern is an efficient way to cover a large area of the FOV.
+1. Press the `C` button on your keyboard to stop calibrating.
+
+<aside class="notice">
+  This paper introduces and evaluates this type of single marker calibration - <code>CalibMe: Fast and Unsupervised Eye Tracker Calibration for Gaze-Based Pervasive Human-Computer Interaction</code>. 
+</aside>
+
+
 ### Notes on calibration accuracy
 In 2D mode, you should easily be able to achieve tracking accuracy within the physiological limits (sub 1 deg visual degrees). Using the 3d mode you should achive 2-1.5 deg of accuracy.
 
