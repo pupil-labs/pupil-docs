@@ -97,7 +97,3 @@ If you have a 120hz eye camera, make sure the eye camera is in focus. Twist the 
 
 Set the focus for the distance at which you will be calibrating by rotating the camera lens.
 
-<aside class="notice">
-  It is <strong>very important</strong> that your eye camera(s) are in focus. You will not achieve optimal eye tracking performance with poorly focused cameras. Pupil cameras are focused manually using the focus tool to twist the lens of the eye camera and adjusting the focal depth.
-</aside>
-
