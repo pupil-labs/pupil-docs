@@ -88,7 +88,7 @@ You can adjust the set screw to control the movement of the eye camera about the
 If you have a 120hz eye camera, make sure the eye camera is in focus. Twist the lens focus ring of the eye camera with your fingers or lens adjuster tool to bring the eye camera into focus.
 
 <aside class="notice">
-200hz eye cameras <strong>do not</strong> need to be focused, and <strong>can not</strong> be focused. Only the 120hz eye cameras can adjust their focal length.
+200hz eye cameras <strong>do not</strong> need to be focused, and <strong>can not</strong> be focused.
 </aside>
 
 #### Focus World Camera
