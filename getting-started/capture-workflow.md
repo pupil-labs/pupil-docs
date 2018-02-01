@@ -35,7 +35,7 @@ Before calibrating, be sure to check that your eyes are well positioned for a ro
 > {{< webp-img src="/images/pupil-capture/eye/good_bad_eye.webp" alt="Good bad eye setup" >}}
 
 <aside class="success" style="clear:none;">
-	1. Do - The eye is in focus and all range of the eye movements are visible.
+	1. Do - The eye is in focus and all range of the eye movements are visible. (Focus is only important for 120hz eye camera. 200hz camera has fixed focus.)
 </aside>
  
 <aside class="warning" style="clear:none;">
