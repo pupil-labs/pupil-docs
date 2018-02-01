@@ -12,7 +12,7 @@ Every time you click record in Pupil's capture software, a new recording is star
 * `world.mp4` Video stream of the world view
 * `world_timestamps.npy` 1d array of timestamps for each world video frame.
 * `info.csv` a file with meta data
-* `pupil_data` pupil data serialized with MessagePack. This is used by Pupil Player.
+* `pupil_data` pupil data serialized with [MessagePack](https://msgpack.org/). This is used by Pupil Player.
 * Other files - depending on your hardware setup and plugins loaded in Pupil Capture, additional files are saved in your recording directory. More on this later.
 
 These files are stored in a newly created folder inside `your_pupil_recordings_dir/your_recording_name/ XXX` where `XXX` is an incrementing number. It will never overwrite previous recordings!
@@ -94,7 +94,7 @@ More information:
      the cameras and a 3.0ms processing latency.
 
 #### Pupil Data
-We store the **gaze positions**, **pupil positions**, and additional information within the `pupil_data` file. The `pupil_data` file is a Python dictionary serialized with MessagePack.
+We store the **gaze positions**, **pupil positions**, and additional information within the `pupil_data` file. The `pupil_data` file is a Python dictionary serialized with [MessagePack](https://msgpack.org/).
 
 #### Pupil Positions
 Coordinates of the pupil center in the eye video are called the **pupil position**, that has x,y coordinates normalized as described in the coordinate system above. This is stored within a dictionary structure within the `pupil_data` file.
