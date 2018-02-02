@@ -12,7 +12,7 @@ Every time you click record in Pupil's capture software, a new recording is star
 * `world.mp4` Video stream of the world view
 * `world_timestamps.npy` 1d array of timestamps for each world video frame.
 * `info.csv` a file with meta data
-* `pupil_data` python pickled pupil data. This is used by Pupil Player.
+* `pupil_data` pupil data serialized with [MessagePack](https://msgpack.org/). This is used by Pupil Player.
 * Other files - depending on your hardware setup and plugins loaded in Pupil Capture, additional files are saved in your recording directory. More on this later.
 
 These files are stored in a newly created folder inside `your_pupil_recordings_dir/your_recording_name/ XXX` where `XXX` is an incrementing number. It will never overwrite previous recordings!
@@ -94,7 +94,7 @@ More information:
      the cameras and a 3.0ms processing latency.
 
 #### Pupil Data
-We store the **gaze positions**, **pupil positions**, and additional information within the `pupil_data` file. The `pupil_data` file is a pickled Python file.
+We store the **gaze positions**, **pupil positions**, and additional information within the `pupil_data` file. The `pupil_data` file is a Python dictionary serialized with [MessagePack](https://msgpack.org/).
 
 #### Pupil Positions
 Coordinates of the pupil center in the eye video are called the **pupil position**, that has x,y coordinates normalized as described in the coordinate system above. This is stored within a dictionary structure within the `pupil_data` file.
@@ -118,7 +118,6 @@ Below is a list of the data exported using `v0.7.4` of Pupil Player with a recor
 * `index` - associated_frame: closest world video frame
 * `id` - 0 or 1 for left/right eye
 * `confidence` - is an assessment by the pupil detector on how sure we can be on this measurement. A value of `0` indicates no confidence. `1` indicates perfect confidence. In our experience useful data carries a confidence value greater than ~0.6. A `confidence` of exactly `0` means that we don't know anything. So you should ignore the position data.
-* `norm_pos_x` - x position in the eye image frame in normalized coordinates
 * `norm_pos_x` - x position in the eye image frame in normalized coordinates
 * `norm_pos_y` - y position in the eye image frame in normalized coordinates
 * `diameter` - diameter of the pupil in image pixels as observed in the eye image frame (is not corrected for perspective)
@@ -182,6 +181,14 @@ in 2d the pupil appears as an ellipse available in `3d c++` and `2D c++` detecto
 
 ### Raw data with Python
 You can read and inspect `pupil_data` with a couple lines of python code.
+
+```python
+import msgpack
+
+data = None
+with open("/path/to/pupil_data", "rb") as f:
+    data = msgpack.unpack(f, encoding='utf-8')
+```
 
 ### Synchronization
 
