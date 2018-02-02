@@ -120,6 +120,12 @@ In the `Advanced` sub-menu you can set the `sample duration` -- the number of fr
 
 > <h5 align="center">Pupil Calibration Marker v0.4</h5>
 
+> <a href="/images/pupil-capture/calibration-markers/v0.4_markers/v0.4_marker.v12.pdf">
+		{{< webp-img figure-class="img-s" src="/images/pupil-capture/calibration-markers/v0.4_markers/v0.4_calibration_marker_01.webp" alt="Pupil Calibration Stop Marker v0.4" >}}
+	</a>
+
+> <h5 align="center">Pupil Calibration Stop Marker v0.4</h5>
+
 This method is done with an operator and a subject. It is suited for midrange distances and can accommodate a wide field of view. The operator will use a
 printed calibration marker like the one shown in the video. [Download Pupil Labs Calibration Marker v0.4 to print](/images/pupil-capture/calibration-markers/v0.4_markers/v0.4_marker.v12.pdf) or display on smartphone/tablet screen.
 
