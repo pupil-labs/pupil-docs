@@ -47,16 +47,6 @@ This is by far the trickiest part. You will need some soldering experience, or w
 
 [Video](https://vimeo.com/59844058)
 
-### Assembly of the Pupil DIY Kit
-If you are reading this, chances are that you received one or more Pupil headsets -- **Awesome!** If you feel like letting us know something about the headset, print quality, good and bad, please go ahead and post your thoughts on the [Pupil Google Group][google-group].
-
-#### Headset 3D print Intro & Unboxing
-1. Get used to the material
-2. Clean out the eye-camera arm
-3. Try it on!
-
-[Pupil Headset 3D Print Unboxing Video](http://www.youtube.com/watch?v=wF_ryq6uDdo)
-
 #### Camera Assembly
 1. Attach the world camera onto the mount using 4 small screws, leftover from disassembly.
 2. Clip the world camera clip onto the headset
@@ -68,5 +58,4 @@ If you are reading this, chances are that you received one or more Pupil headset
 ### Customization
 The camera mounts can be replaced by custom build parts that suit your specific camera setup or other sensors. 
 
-[google-group]: http://groups.google.com/group/pupil-discuss
 [bom]: https://docs.google.com/spreadsheet/pub?key=0Al-zbr5hUFxPdEdJY1Z0dGRXU18yU0JxTVQ3THBOZFE&single=true&gid=0&output=html
