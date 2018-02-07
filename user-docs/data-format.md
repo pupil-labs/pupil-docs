@@ -185,7 +185,6 @@ You can read and inspect `pupil_data` with a couple lines of python code.
 ```python
 import msgpack
 
-data = None
 with open("/path/to/pupil_data", "rb") as f:
     data = msgpack.unpack(f, encoding='utf-8')
 ```
