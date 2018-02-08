@@ -65,5 +65,15 @@ This wiki is the main source of documentation for the Pupil users getting starte
 				</div>
 			</div>
 		</a>
+		<a href="https://discordapp.com/invite/gKmmGqy">
+			<div class="item-hori">
+				<!-- <img class="intro-image img-small" src="/images/icons/discord_logo.jpg"> -->
+				<img class="intro-image img-small lazyload" data-src="/images/icons/discord_logo.jpg" alt="Pupil Chat on Discord">
+				<div class="img-content">
+					<div class="header">Discord</div>
+					Chat with community and developers on Discord
+				</div>
+			</div>
+		</a>
 	</div>
 </div>
