@@ -65,5 +65,15 @@ This wiki is the main source of documentation for the Pupil users getting starte
 				</div>
 			</div>
 		</a>
+		<a href="https://pupil-labs.com/chat" rel="noopener">
+			<div class="item-hori">
+				<!-- <img class="intro-image img-small" src="/images/icons/discord_logo.jpg"> -->
+				<img class="intro-image img-small lazyload" data-src="/images/icons/discord_logo.jpg" alt="Pupil Chat on Discord">
+				<div class="img-content">
+					<div class="header">Discord</div>
+					Chat with the Pupil community and Pupil Labs team on Discord.
+				</div>
+			</div>
+		</a>
 	</div>
 </div>
