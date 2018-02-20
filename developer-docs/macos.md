@@ -56,7 +56,7 @@ brew tap homebrew/versions
 brew install glfw3
 # dependencies for 2d_3d c++ detector
 brew install boost
-brew install boost-python --with-python3
+brew install boost-python3
 brew install ceres-solver
 ```
 
