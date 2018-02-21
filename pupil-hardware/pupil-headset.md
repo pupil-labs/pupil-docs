@@ -37,7 +37,7 @@ If you need to adjust the eye cameras beyond the built in adjustment range, you 
 The eye camera arm extender works for all existing 120 and 200hz systems.
 
 <aside class="notice">
-  Starting on <strong>2018-02-01</strong> the arm extender is shipped with all Pupil headset orders. If you have an older headset, you can get the extender from our <a href="https://www.shapeways.com/product/AP2XV2VNH/pupil-labs-camera-arm-extender-for-120hz-and-200h?optionId=64624597">Shapeways store</a>.
+  Starting on <strong>2018-02-01</strong> the arm extender is shipped with all Pupil headset orders. If you have an older headset, you can get the extender from our <a href="http://shpws.me/PL6w">Shapeways store</a>.
 </aside>
 
 #### Nose Pads
