@@ -81,15 +81,17 @@ You can adjust the set screw to control the movement of the eye camera about the
 </aside>
 
 ### Focus Cameras
+#### No focus 200hz Eye Camera
+
+> {{< webp-img src="/images/headset-adjust/nofocus-cam.webp" alt="No focus e200hz eye camera" >}}
+
+200hz eye cameras <strong>do not</strong> need to be focused, and <strong>can not</strong> be focused. The lens of the 200hz eye camera is arrested using glue. Twisting the lens will risk breaking the mount.
+
 #### Focus 120hz Eye Camera
 
 > {{< video-webm src="/videos/headset-adjust/eye-adjust.webm" >}}
 
 If you have a 120hz eye camera, make sure the eye camera is in focus. Twist the lens focus ring of the eye camera with your fingers or lens adjuster tool to bring the eye camera into focus.
-
-<aside class="notice">
-200hz eye cameras <strong>do not</strong> need to be focused, and <strong>can not</strong> be focused. The lens of the 200hz eye camera is arrested using glue. Twisting the lens will risk breaking the mount.
-</aside>
 
 #### Focus World Camera
 
