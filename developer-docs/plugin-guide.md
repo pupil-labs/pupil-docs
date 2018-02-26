@@ -50,7 +50,7 @@ This is not required for your own plugin. The applications search in the followi
  + Pupil Player: `$pupil_root/pupil_player_settings/plugins/`
 
 All of these folders are created automatically on the first time you start the
-corresponding application.
+corresponding application. For a bundled app, you should find `$pupil_root` in your `HOME` (for Linux and MacOS) or `USER` (for Windows) directory.
 
 *Note*: if your plugin is contained in a directory, make sure to include an `__init__.py` inside it. For example:
 
