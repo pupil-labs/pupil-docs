@@ -380,6 +380,10 @@ You can also create annotation events programatically and send them using the IP
 {'subject':"annotation",'label':"Hi this is my annotation 1",'timestamp':[set a correct timestamp as float here],'duration':1.0,'source':'a test script','record':True}
 ```
 
+<aside class="notice">
+We have written an [this script](https://github.com/pupil-labs/pupil-helpers/blob/master/pupil_remote/remote_annotations.py) that sends remote annotations as a starting point for your integrations.
+</aside>
+
 
 ### Camera Intrinsics Estimation
 
