@@ -381,7 +381,7 @@ You can also create annotation events programatically and send them using the IP
 ```
 
 <aside class="notice">
-We have written an [this script](https://github.com/pupil-labs/pupil-helpers/blob/master/pupil_remote/remote_annotations.py) that sends remote annotations as a starting point for your integrations.
+<a href="https://github.com/pupil-labs/pupil-helpers/blob/master/pupil_remote/remote_annotations.py" title="remote annotation script">This script</a> demonstrates how to send remote annotations. Use this script as a starting point for your integrations.
 </aside>
 
 
