@@ -325,7 +325,7 @@ A surface can be defined by one or more markers. Surfaces can be defined with Pu
 *  Surface Metrics with Pupil Player - if you have defined surfaces, you can generate surface visibility reports or gaze count per surface. See our [blog post](http://pupil-labs.com/blog/2014/07/0392-player-release.html) for more information.
 
 
-*  Generate markers with [this script](https://gist.github.com/willpatera/7908319#file-make_square_markers-py), or download the image.
+*  Generate markers with [this script](https://github.com/pupil-labs/pupil-helpers/blob/master/make_square_markers.py), or download the image.
 
 <aside class="notice">
   <strong>Note</strong> - When printing markers, ensure that white space remains around the square marker. You can scale the markers to different sizes, but make sure to have a white border width of at least 1.2 x the marker grid size for marker, unless the marker is affixed onto a white (or light colored) background.
