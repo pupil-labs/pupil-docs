@@ -9,6 +9,9 @@ page_weight = 1.4
 
 In order to support isochronous USB transfer on Windows, you will need to install drivers for the cameras in your Pupil headset. 
 
+<aside class="notice">
+  The driver installation is done automatically when you run the Pupil Capture or Service bundle. Do not manually install drivers if you dont run Pupil from source!
+</aside>
 
 ### Download drivers and tools
 1. Download and install [7zip](http://www.7-zip.org/download.html)
