@@ -25,7 +25,7 @@ The high speed 2d world camera comes with two lenses. 60 degree FOV lens (shown 
 The world camera lens are interchangeable, so you can swap between the two lenses provided for normal or wide angle FOV.
 
 <aside class="warning">
-  If you change lenses you need to <a href="#camera-intrinsics-estimation">recalibrate the camera</a> to update intrisics. Otherwise 3d calibraiton and accuracy test will not work properly!
+  If you change lenses you need to <a href="#camera-intrinsics-estimation">recalibrate the camera</a> to update intrisics. Otherwise 3d calibration and accuracy test will not work properly!
 </aside>
 
 #### Arm Extender
