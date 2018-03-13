@@ -15,6 +15,12 @@ Pupil Player is the second tool you will use after Pupil Capture. It is a media 
 
 Features like <a href="#surface-tracking">surface tracking</a> found in Pupil Capture are also available in Pupil Player.
 
+### Starting Pupil Player
+
+> {{< webp-img src="/images/pupil-player/pp_start.webp" alt="Starting Pupil Player" >}}
+
+Drag the recording directory (the triple digit one) directly onto the app icon **or** launch the application and drag + drop the recording directory into Pupil Player window.
+
 ### Player Window
 Let's get familiar with the Player window.
 
@@ -31,11 +37,6 @@ The Player window is the main control center for `Pupil Player`. It displays the
 1. **Menu** - This area contains settings and contextual information for each plugin.
 1. **Sidebar** - This area contains clickable buttons for each plugin. System plugins are loaded in the top and user added plugins are added below the horizontal separator.
 
-### Starting Pupil Player
-
-> {{< webp-img src="/images/pupil-player/pp_start.webp" alt="Starting Pupil Player" >}}
-
-Drag the recording directory (the triple digit one) directly onto the app icon **or** launch the application and drag + drop the recording directory into Pupil Player window.
 
 #### Workflow
 
