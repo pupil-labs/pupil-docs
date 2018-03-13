@@ -15,7 +15,7 @@ Plugins are called regularly via callback functions (see the [Plugin API](#plugi
 
 We recommend to use the network (see [the IPC backbone](#the-ipc-backbone)) if you only need access to the data.
 You are only required to write a plugin if you want to interact with the Pupil apps directly, e.g. visualizations, manipulate data.
-In the following sections, we assume that you [run the Pupil applications from source](https://docs.pupil-labs.com/#running-pupil-from-source). We will refer to the Pupil root source folder as `$pupil_root`.
+In the following sections, we assume and recommend that during plugin developement you [run the Pupil applications from source](https://docs.pupil-labs.com/#running-pupil-from-source).
 
 #### Plugins in Pupil Capture
 Pupil Capture's World process can load plugins for easy integration of new features. Plugins have full access to:
@@ -43,30 +43,26 @@ Plugin callbacks are called regularly within the main thread. If your custom plu
 </aside>
 
 #### Register your plugin automatically
-Plugins are registered on application start. System plugins are [registered explicitly](https://github.com/pupil-labs/pupil/blob/618181d157bfc3e75415a305c6f89c90ac0e614f/pupil_src/launchables/world.py#L116-L139).
-This is not required for your own plugin. The applications search in the following folders for custom plugins:
- + Pupil Capture: `$pupil_root/pupil_capture_settings/plugins/`
- + Pupil Service: `$pupil_root/pupil_service_settings/plugins/`
- + Pupil Player: `$pupil_root/pupil_player_settings/plugins/`
+To add your plugin to Capture all you need to do is place the source file(s) in the plugin directory.
 
-All of these folders are created automatically on the first time you start the
-corresponding application. For a bundled app, you should find `$pupil_root` in your `HOME` (for Linux and MacOS) or `USER` (for Windows) directory.
+If you run from source:
+
+ - Pupil Capture: `[root_of_source_pupil_source_git_repo]/capture_settings/plugins/`
+ - Pupil Service: `[root_of_source_pupil_source_git_repo]/service_settings/plugins/`
+ - Pupil Player: `[root_of_source_pupil_source_git_repo]/player_settings/plugins/`
+ 
+ 
+If you want to add your plugin to a bundled version of Pupil:
+
+ - Pupil Capture: `[your_user_dir]/pupil_capture_settings/plugins/`
+ - Pupil Service: `[your_user_dir]/pupil_service_settings/plugins/`
+ - Pupil Player: `[your_user_dir]/pupil_player_settings/plugins/`
+
+[your_user_dir] is also called `HOME` (for Linux and MacOS) or `USER` (for Windows).
 
 *Note*: if your plugin is contained in a directory, make sure to include an `__init__.py` inside it. For example:
 
-```python
-from . my_custom_plugin_module import My_Custom_Plugin_Class
-```
-
-> This loads the `My_Custom_Plugin_Class` plugin from the `my_custom_plugin_module` directory.
-
- + Restart the application. From now on, Pupil will find your plugins on startup
- and will add all valid plugins to the `Plugin Manager`. If your plugin is a
- calibration plugin (i.e. it inherits from the Calibration_Plugin base class),
- then it will appear in the calibration drop down menu.
-
- + If you want your plugin to run in both Pupil Capture and Pupil Player, you can avoid making copies of your plugin by setting a relative path.
-
+When a valid plugin is found in these dirs, Pupil imports your Plugin classes and adds them to the dropdown list of launchable plugins. If your plugin is a calibration plugin (i.e. it inherits from the Calibration_Plugin base class), then it will appear in the calibration drop down menu.
 
 ### Example plugin development walkthrough
 
