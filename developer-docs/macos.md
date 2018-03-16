@@ -42,17 +42,15 @@ Note - You might need to change the Python path above depending on your installe
 Let's get started! Its time to put `brew` to work! Just copy paste commands into your terminal and listen to your machine purr.
 
 ```
-brew tap homebrew/python
 brew install pkg-config
 brew install scipy
 brew install libjpeg-turbo
 brew install libusb
+brew install portaudio
 # opencv will install ffmpeg, numpy, and opencv-contributions automatically
 # tbb is included by default with https://github.com/Homebrew/homebrew-core/pull/20101
 brew install opencv
-brew tap homebrew/science
 brew install glew
-brew tap homebrew/versions
 brew install glfw3
 # dependencies for 2d_3d c++ detector
 brew install boost
@@ -81,6 +79,7 @@ pip3 install numexpr
 pip3 install cython
 pip3 install psutil
 pip3 install msgpack_python
+pip3 install pyaudio
 pip3 install git+https://github.com/zeromq/pyre
 pip3 install git+https://github.com/pupil-labs/PyAV
 pip3 install git+https://github.com/pupil-labs/pyuvc
