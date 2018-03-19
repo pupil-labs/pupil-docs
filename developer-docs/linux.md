@@ -22,7 +22,7 @@ sudo apt install -y pkg-config git cmake build-essential nasm wget python3-setup
 ```
 sudo add-apt-repository ppa:jonathonf/ffmpeg-3
 sudo apt-get update
-sudo apt install libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev ffmpeg libav-tools x264 x265
+sudo apt install libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev ffmpeg libav-tools x264 x265 libportaudio2 portaudio19-dev
 ```
 
 > OpenCV
@@ -76,7 +76,7 @@ sudo make install
 sudo ldconfig
 ```
 
-> custom version of libusb 
+> custom version of libusb
 Required for 17.10 and with 200hz cameras only. Otherwise IGNORE!)
 
 1. Build or download fixed binary from release: https://github.com/pupil-labs/libusb/releases/tag/v1.0.21-rc6-fixes
@@ -113,6 +113,7 @@ sudo pip3 install psutil
 sudo pip3 install pyzmq
 sudo pip3 install msgpack_python
 sudo pip3 install pyopengl
+sudo pip3 install pyaudio
 sudo pip3 install git+https://github.com/zeromq/pyre
 sudo pip3 install git+https://github.com/pupil-labs/PyAV
 sudo pip3 install git+https://github.com/pupil-labs/pyuvc
