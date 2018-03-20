@@ -186,7 +186,7 @@ This method is for special situations and far distances. Usually not required.
 #### Fingertip Calibration
 
 Calibrate using your fingertip! Move your index finger into your field of view while looking at the fingertip. 
-During the calibration, we suggest that the part between fingerprint and fingernail face toward world camera.
+You can use any part of your fingertip for calibration. We have found that it is easisest to use the side of your index finger (e.g. between fingerprint and fingernail).
 
 This is a two step process: 
 (1) calibrating for skin tone of the participant
