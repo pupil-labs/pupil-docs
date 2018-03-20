@@ -236,7 +236,7 @@ All open plugins that have export capability will export when you press `e`. All
 > {{< webp-img src="/images/pupil-player/recording/recording_folder_exports_v07.webp" alt="Recording folder" >}}
 
 All exports are saved within the `exports` sub-directory within your recording directory.
-A new directory will be created within the `exports` directory named with the `start` frame and `end` frame that is specified by the trim marks.
+A new directory will be created within the `exports` directory for each export. Export directories are never overwritten and have a counter for the export. Example: the first export will be `000` and the second `001` and the third `002`.
 
 #### Video Export Launcher
 
