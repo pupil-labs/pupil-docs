@@ -201,7 +201,7 @@ This is a two step process:
 1. Move your index finger into your field of view while looking at the fingertip.
 1. Press the `C` button on your keyboard  or show the stop marker to stop calibrating.
 
-<aside class="notice">
+<aside class="warning">
 This is an experimental calibration routine. This plugin is for prototyping and experimentation only. The detection robustness is not production grade. We will put a lot more effort into this going forward but wanted to release the idea and hope for feedback!
 </aside>
 
@@ -380,11 +380,7 @@ The `Filter length` is the time window's length in which the plugin tries to fin
 
 The `Audio Capture` plugin provides access to a selected audio source for other plugins and writes its output to the `audio.mp4` file during a recording. It also writes the Pupil Capture timestamp for each audio packet to the `audio_timestamps.npy` file. This way you can easily correlate single audio packets to their corresponding video frames.
 
-Audio is recorded separately from the video in Pupil Capture. Audio is merged automatically with videos when videos are exported with Pupil Player.
-
-<aside class="notice">
-Audio Capture is only available in macOS and Linux at this time.
-</aside>
+Audio is recorded separately from the video in Pupil Capture. You can play back audio in sycn with video in Pupil Player. Audio is automatically merged with the video when you export a video using Pupil Player.
 
 ### Annotations
 
