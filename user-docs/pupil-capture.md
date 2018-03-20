@@ -160,11 +160,11 @@ Calibrate using a single marker displayed on screen or hand held marker. Gaze at
 1. Press the `C` button on your keyboard  or show the stop marker to stop calibrating.
 
 <aside class="notice">
-Make sure to not display the marker on the screen when using a printed marker. Two markers visible at once result in bad calibrations.
+If you're using a manual marker, make sure to select <code>Marker display mode > manual</code>. Also make sure that you do <strong>not</strong> display the marker on the screen when using a printed marker. Two markers visible to the world view at the same time will result in an inaccurate calibration.
 </aside>
 
 <aside class="notice">
-  This paper introduces and evaluates this type of single marker calibration - <code>CalibMe: Fast and Unsupervised Eye Tracker Calibration for Gaze-Based Pervasive Human-Computer Interaction</code>. 
+This paper introduces and evaluates this type of single marker calibration - <code>CalibMe: Fast and Unsupervised Eye Tracker Calibration for Gaze-Based Pervasive Human-Computer Interaction</code>. 
 </aside>
 
 

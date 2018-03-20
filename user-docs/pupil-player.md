@@ -40,26 +40,19 @@ The Player window is the main control center for `Pupil Player`. It displays the
 
 #### Workflow
 
-```bash
-# Running from source?
-
-cd "path_to_pupil_dir/pupil_src"
-python3 main.py "path/to/recording_directory"
-```
-
 Pupil Player is similar to a video player. You can playback recordings and can load plugins to build visualizations.
 
 Here is an example workflow:
 
   + Start Pupil Player
-  + Opening a Plugin - From the `Settings` GUI menu load the `Vis Circle` plugin.
+  + Open a Plugin - From the `Plugin Manager` GUI menu load the `Vis Circle` plugin.
   + Playback - press the play button or `space` bar on your keyboard to view the video playback with visualization overlay, or drag the playhead in the seek bar to scrub through the dataset.
-  + Set trim marks - you can drag the small circles on the ends of the seek bar. This will set the start and end frame for the exporter.
-  + Export Video & Raw Data - Load the `Video Export Launcher` plugin and the `Raw Data Exporter` plugin. Press `e` on your keyboard or the `e` button in the left hand side of the window to start the export.
+  + Set trim marks - you can drag the green rounded rectangle at the beginning and end of the seekbar to set the trim marks. This will set the start and end frame for the exporter and for other plugins.
+  + Export Video & Raw Data - From the `Plugin Manager` view, load the `Video Export Launcher` plugin and the `Raw Data Exporter` plugin. Press `e` on your keyboard or the `e` button in the left hand side of the window to start the export.
   + Check out exported data in the `exports` directory within your recording directory
 
 <aside class="notice">
-Note - Pupil Player will <strong>never</strong> remove or overwrite any of your raw data gathered during capture. All exports are isolated within a sub-directory named <code>exports</code>.
+Note - Pupil Player will <strong>never</strong> remove or overwrite any of your raw data gathered during capture. All exports are isolated within a sub-directory named <code>exports</code>. Exports will never be overwritten.
 </aside>
 
 ### Plugin Overview
