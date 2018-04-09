@@ -353,6 +353,11 @@ A surface can be defined by one or more markers. Surfaces can be defined with Pu
   <strong>Note</strong> - When printing markers, ensure that white space remains around the square marker. You can scale the markers to different sizes, but make sure to have a white border width of at least 1.2 x the marker grid size for marker, unless the marker is affixed onto a white (or light colored) background.
 </aside>
 
+#### Moving Surface Definitions
+
+The surfaces are saved in a file is called `surface_definitions`. This file is in every `pupil_capture_settings` directory and in every recording directory. You can copy&paste this file to move definitions from one session or recording to another.
+
+
 #### Surface Heatmaps
 
 It is possbile to dispay gaze heatmaps for each surface by selecting `Show Heatmaps` mode in the `Surface Tracker` menu.
