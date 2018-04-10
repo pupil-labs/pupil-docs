@@ -12,9 +12,14 @@ Add eye tracking powers to your HTC Vive with our 120hz binocular eye tracking a
 
 This section will guide you through all steps needed to turn your HTC Vive into an eye tracking HMD using a Pupil Labs eye tracking add-on.
 
-### Install the add-on
+### Install the Vive add-on
 
 > {{< video-youtube embed-url="https://www.youtube.com/embed/HGMjJLnK2_4?list=PLi20Yl1k_57r4j0LXDfo6IYXAKTp_FIKf" >}}
+
+### Install the Vive PRO add-on
+
+> {{< video-youtube embed-url="https://www.youtube.com/embed/ZRdWlmxBH30" >}}
+
 
 ### A detailed look
 
