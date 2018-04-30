@@ -328,7 +328,7 @@ to start and stop recordings that are stored in the phone.
 The `Surface Tracker` plugin allows you to define surfaces within your environment and track surfaces in realtime using a 5x5 square marker. We were greatly inspired by the [ArUco marker tracking library](http://www.uco.es/investiga/grupos/ava/node/26).
 
 *  Markers - We use a 5x5 square marker. This is not the same marker that is used by ArUco (they use 7x7).
-*  Using a 5x5 marker gives us 64 unique markers.
+*  Using a 5x5 marker gives us 63 unique markers.
 *  Why the 5x5 grid? The 5x5 grid allows us to make smaller markers that can still be detected. Markers can be printed on paper, stickers, or displayed on the screen.
 
 
@@ -347,7 +347,7 @@ A surface can be defined by one or more markers. Surfaces can be defined with Pu
 *  Surface Metrics with Pupil Player - if you have defined surfaces, you can generate surface visibility reports or gaze count per surface. See our [blog post](http://pupil-labs.com/blog/2014/07/0392-player-release.html) for more information.
 
 
-*  Generate markers with [this script](https://github.com/pupil-labs/pupil-helpers/blob/master/make_square_markers.py), or download the image.
+*  Generate markers with [this script](https://github.com/pupil-labs/pupil-helpers/blob/master/markers_stickersheet/make_square_markers.py), or download the image.
 
 <aside class="notice">
   <strong>Note</strong> - When printing markers, ensure that white space remains around the square marker. You can scale the markers to different sizes, but make sure to have a white border width of at least 1.2 x the marker grid size for marker, unless the marker is affixed onto a white (or light colored) background.
