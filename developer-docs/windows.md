@@ -219,3 +219,7 @@ Dynamic libs are required to be stored in `pupil\pupil_external` so that you do 
 - Save and close setup.py
 
 <aside class="faq">When starting run_capture.bat, it will build module pupil_detectors. However, if you are debugging, you may want to try building explicitly. From within `pupil/pupil_src/capture/pupil_detectors` run `python setup.py build` to build the pupil_detectors.</aside>
+
+### Start the application
+
+To start either of the applications -- Capture, Player, or Service -- you need to execute the respective `run_*.bat` file, i.e. `run_capture.bat`, `run_player.bat`, or `run_service.bat`.
