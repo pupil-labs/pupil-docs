@@ -21,8 +21,7 @@ The Pupil apps use the [pyzmq](https://github.com/zeromq/pyzmq) module, a great 
 For auto-discovery of other Pupil app instances in the local network, we use [Pyre](https://github.com/zeromq/pyre).
 
 ### The IPC Backbone
-Starting with `v0.8`, `Pupil Capture` and a new application called `Pupil Service` use a PUB-SUB Proxy as their messaging bus. We call it the `IPC Backbone`. The IPC Backbone runs as a thread in the main process. It is basically a big message relay station. Actors can push messages into it and subscribe to other actors' messages. Therefore, it is the backbone of all communication from, to, and within Pupil Capture and Service.
-
+Pupil Capture/Service/Player use a PUB-SUB Proxy as their messaging bus. We call it the `IPC Backbone`. The IPC Backbone runs as a thread in the main process. It is basically a big message relay station. Actors can push messages into it and subscribe to other actors' messages. Therefore, it is the backbone of all communication from, to, and within Pupil apps.
 <aside class="notice">
 Note - The main process does not do any CPU heavy work. It only runs the proxy, launches other processes and does a few other light tasks.
 </aside>
@@ -99,11 +98,11 @@ The topic is `logging.log_level_name` (debug,info,warning,error,...). The messag
 
 ### Message Documentation
 
-`v0.8` of the Pupil software introduces a consistent naming scheme for message topics. They are used to publish and subscribe to the [`IPC Backbone`](#the-ipc-backbone). Pre-defined message topics are `pupil`, `gaze`, `notify`, `delayed_notify`, `logging`. Notifications sent with the `notify_all()` function of the `Plugin` class will be published automatically as `notify.<notification subject>`.
+Pupil software uses introduces a consistent naming scheme for message topics. They are used to publish and subscribe to the [`IPC Backbone`](#the-ipc-backbone). Pre-defined message topics are `pupil`, `gaze`, `notify`, `delayed_notify`, `logging`. Notifications sent with the `notify_all()` function of the `Plugin` class will be published automatically as `notify.<notification subject>`.
 
 #### Message Reactor and Emitter Documentation
 
-From version `v0.8` on, every actor who either reacts to or emits messages is supposed to document its behavior. Therefore every actor should react to `notify.meta.should_doc` by emitting a message with the topic `notify.meta.doc`. The answer's payload should be a serialized dictionary with the following format:
+Every actor who either reacts to or emits messages is supposed to document its behavior. Therefore every actor should react to `notify.meta.should_doc` by emitting a message with the topic `notify.meta.doc`. The answer's payload should be a serialized dictionary with the following format:
 
 ```
 {
