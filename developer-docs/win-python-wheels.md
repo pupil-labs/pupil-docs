@@ -62,7 +62,7 @@ You will need both `.dll` files as well as FFMPG libs in order to build `pyav`. 
     - swresample
     - swscale
 - Open a cmd prompt
-- `python setup.py clean --all build_ext --inplace --ffmpeg-dir=C:\work\ffmpeg-3.3.1-dev -c msvc`
+- `python setup.py clean --all build_ext --inplace --ffmpeg-dir=C:\work\ffmpeg-4.0-win64-dev -c msvc`
   - replace the ffmpeg-dir with the location of your ffmpeg-dev dir
 - You can create a wheel from within this directory with `pip wheel .`
 

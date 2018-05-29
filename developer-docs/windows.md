@@ -180,17 +180,17 @@ Dynamic libs are required to be stored in `pupil\pupil_external` so that you do 
 
 ### FFMPEG to pupil_external
 
-- Download FFMPEG Windows shared binaries from [ffmpeg](http://ffmpeg.zeranoe.com/builds/)
+- Download FFMPEG v4.0 Windows shared binaries from [ffmpeg](http://ffmpeg.zeranoe.com/builds/)
 - Unzip ffmpeg-shared to your work dir
 - Copy the following 8 `.dll` files to `pupil_external`
-    - `avcodec-57.dll`
-    - `avdevice-57.dll`
-    - `avfilter-6.dll`
-    - `avformat-57.dll`
-    - `avutil-55.dll`
-    - `postproc-54.dll`
-    - `swresample-2.dll`
-    - `swscale-4.dll`
+    - `avcodec-58.dll`
+    - `avdevice-58.dll`
+    - `avfilter-7.dll`
+    - `avformat-58.dll`
+    - `avutil-56.dll`
+    - `postproc-55.dll`
+    - `swresample-3.dll`
+    - `swscale-5.dll`
 
 ### OpenCV to pupil_external
 
