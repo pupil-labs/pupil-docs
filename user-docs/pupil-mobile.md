@@ -7,7 +7,7 @@ page_weight = 3
 
 ## Pupil Mobile
 
-Pupil Mobile is a companion app to Pupil Capture and Pupil Service. It is currently in public alpha!
+Pupil Mobile is a companion app to Pupil Capture and Pupil Service. It is currently in public beta.
 
 ### Introducing Pupil Mobile
 
@@ -96,9 +96,14 @@ The app is free. You can download it in the [Google Play Store](https://play.goo
 
 ### Supported Hardware
 
-- Google Nexus 6p
-- Goolge Nexus 5x
+- MotoZ2 Play
+- Google Nexus 6p, Nexus 5x
+- OnePlus 3, 3T, 5, 5T
 - potentially other USB-C phones (untested)
+
+<aside class="notice">
+Note - You may need to <strong>enable</strong> USB OTG on some devices in order to allow data transfer and power to your Pupil Headset from your Android device.
+</aside>
 
 ### Bug & Feature
 
