@@ -164,7 +164,7 @@ Add Boost libs to your system path
 - `git clone https://github.com/pupil-labs/pupil.git`
 
 ### Setup pupil_external dependencies
-Dynamic libs are required to be stored in `pupil\pupil_external` so that you do not have to add further modifications to your system PATH.
+The following steps require you to store dynamic libaries in the `pupil_external` folder of the cloned repository so that you do not have to add further modifications to your system PATH.
 
 ### GLEW to pupil_external
 
