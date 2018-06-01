@@ -207,7 +207,7 @@ Dynamic libs are required to be stored in `pupil\pupil_external` so that you do 
 - Edit `C:\\work\\boost\\stage\\lib` if necessary
 - Save and close setup.py
 
-<aside class="faq">When starting run_capture.bat, it will build module pupil_detectors. However, if you are debugging, you may want to try building explicitly. From within `pupil/pupil_src/capture/pupil_detectors` run `python setup.py build` to build the pupil_detectors.</aside>
+<aside class="faq">When starting run_capture.bat, it will build the pupil_detectors module. However, if you are debugging, you may want to try building explicitly. From within `pupil/pupil_src/shared_modules/pupil_detectors` run `python setup.py build` to build the pupil_detectors.</aside>
 
 ### Modify optimization_calibration setup.py
 
@@ -218,7 +218,7 @@ Dynamic libs are required to be stored in `pupil\pupil_external` so that you do 
 - Edit `C:\\work\\boost\\stage\\lib` if necessary
 - Save and close setup.py
 
-<aside class="faq">When starting run_capture.bat, it will build module pupil_detectors. However, if you are debugging, you may want to try building explicitly. From within `pupil/pupil_src/capture/pupil_detectors` run `python setup.py build` to build the pupil_detectors.</aside>
+<aside class="faq">When starting run_capture.bat, it will build the optimization_calibration module. However, if you are debugging, you may want to try building explicitly. From within `pupil/pupil_src/shared_modules/calibration_routines/optimization_calibration` run `python setup.py build` to build the optimization_calibration module.</aside>
 
 ### Start the application
 
