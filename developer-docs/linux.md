@@ -111,7 +111,7 @@ sudo pip3 install numexpr
 sudo pip3 install cython
 sudo pip3 install psutil
 sudo pip3 install pyzmq
-sudo pip3 install msgpack_python
+sudo pip3 install msgpack
 sudo pip3 install pyopengl
 sudo pip3 install pyaudio
 sudo pip3 install git+https://github.com/zeromq/pyre
