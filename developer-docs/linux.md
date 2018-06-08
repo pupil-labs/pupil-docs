@@ -27,6 +27,9 @@ sudo apt install libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev li
 
 > OpenCV
 
+We require a version of OpenCV that is >= 3.0. In **Ubuntu 18.04** it can simply be installed with the following command:
+```sudo apt install python3-opencv libopencv-dev```
+In older versions of Ubuntu it needs to be compiled from source.
 The requisites for opencv to build python3 cv2.so library are:
 1. python3 interpreter found
 1. libpython***.so shared lib found (make sure to install python3-dev)
@@ -122,11 +125,16 @@ sudo pip3 install git+https://github.com/pupil-labs/pyglui
 ```
 
 > Finally, we install 3D eye model dependencies
-
+First install 
 ```bash
 sudo apt-get install libboost-dev
 sudo apt-get install libboost-python-dev
 sudo apt-get install libgoogle-glog-dev libatlas-base-dev libeigen3-dev
+```
+Next we need to install the Ceres library. In **Ubuntu 18.04** this can be done via
+```sudo apt install libceres-dev```
+In older versions we need to compile from source:
+```bash
 # sudo apt-get install software-properties-common if add-apt-repository is not found
 sudo add-apt-repository ppa:bzindovic/suitesparse-bugfix-1319687
 sudo apt-get update
