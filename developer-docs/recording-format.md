@@ -62,3 +62,15 @@ Allowed video file names are:
 An audio file is only recognized in Pupil Player's playback plugin if the file is named `audio.mp4`.
 
 ### `pldata` Files
+These files contain a sequence of independently msgpack-encoded messages. Each message consists of two frames:
+1. frame: The payload's topic as a string, e.g. `"pupil.0"`
+2. frame: The payload, e.g. a pupil datum, encoded as msgpack
+
+For clarification: The second frame is encoded twice!
+
+Pupil Player decodes the messages into [`file_methods.Serialized_Dict`](https://github.com/pupil-labs/pupil/blob/315188dcfba9bef02a5b1d9a3770929d7510ae2f/pupil_src/shared_modules/file_methods.py#L209)s. Each `Serialized_Dict` instance holds the serialized second frame and is responsible for decoding it on demand. The class is designed such that there is a maximum number of decoded frames at the same time. This prevents Pupil Player from using excessive amounts of memory.
+
+You can use [`file_methods.PLData_Writer`](https://github.com/pupil-labs/pupil/blob/315188dcfba9bef02a5b1d9a3770929d7510ae2f/pupil_src/shared_modules/file_methods.py#L138) and [`file_methods.load_pldata_file()`](https://github.com/pupil-labs/pupil/blob/315188dcfba9bef02a5b1d9a3770929d7510ae2f/pupil_src/shared_modules/file_methods.py#L111) to read and write `pldata` files.
+
+### Other Files
+Files without file extention, e.g. the deprecated `pupil_data` file, and files with a `.meta` extention are msgpack-encoded dictionaries. They can be read and written using [`file_methods.load_object()` and `file_methods.save_object()`](https://github.com/pupil-labs/pupil/blob/315188dcfba9bef02a5b1d9a3770929d7510ae2f/pupil_src/shared_modules/file_methods.py#L57-L87) and do *not* have a corresponding timestamps file.
