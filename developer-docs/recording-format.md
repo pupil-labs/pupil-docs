@@ -9,7 +9,7 @@ page_weight = 4
 
 ### Required Files
 
-> Example `info.csv` fil
+> Example `info.csv` file
 ```csv
 key,value
 Recording Name,2018_07_19
@@ -25,19 +25,19 @@ Data Format Version,1.8
 System Info,"User: name, Platform: Linux, ..."
 ```
 
-Each recording requires two things:
+Each recording requires three files:
 1. An `info.csv` file that includes two columns -- `key` and `value`.
-2. At least one video file and its corresponding timestamps. See the [*Video Files*](#video-files) section below for details.
+2. At least one video file and its corresponding timestamp file. See the [*Video Files*](#video-files) section below for details.
 
-Each row of the `info.csv` file corresponds to a key-value-pair. At least two pairs are required:
-1. `Recording Name`
-2. `Data Format Version`
+A minimum requirement of two key, value pairs are required. Example:
+1. `Recording Name,<name>`
+2. `Data Format Version,<version>`
 
 ### Data Files
 
 #### Timestamp Files
-Each data file has a corresponding timestamps file. They need to follow this *strict* naming:
-Given that a media file is named `<name>.<ext>` then its timestamps file has to be named `<name>_timestamps.npy`.
+Timestamp files must follow this strict naming convention:
+Given that a data file is named `<name>.<ext>` then its timestamps file has to be named `<name>_timestamps.npy`.
 
 Timestamp files are saved in the [NPY binary format](https://docs.scipy.org/doc/numpy/neps/npy-format.html). You can use [`numpy.load()`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.load.html#numpy.load) to access the timestamps in Python.
 
@@ -59,6 +59,6 @@ Allowed video file names are:
 - `eye1`: Left eye video
 
 ### Audio File
-Audio is only recognized by the playback plugin if the file is named `audio.mp4`.
+An audio file is only recognized in Pupil Player's playback plugin if the file is named `audio.mp4`.
 
 ### `pldata` Files
