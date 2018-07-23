@@ -94,7 +94,7 @@ More information:
      the cameras and a 3.0ms processing latency.
 
 #### Pupil Data
-We store the **gaze positions**, **pupil positions**, and additional information within the `pupil_data` file. The `pupil_data` file is a Python dictionary serialized with [MessagePack](https://msgpack.org/).
+We store the **gaze positions**, **pupil positions**, and additional information within `*.pldata` files. See the developer docs for details.
 
 #### Pupil Positions
 Coordinates of the pupil center in the eye video are called the **pupil position**, that has x,y coordinates normalized as described in the coordinate system above. This is stored within a dictionary structure within the `pupil_data` file.
