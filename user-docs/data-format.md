@@ -7,50 +7,7 @@ page_weight = 4
 
 ## Data Format
 
-Every time you click record in Pupil's capture software, a new recording is started and your data is saved into a recording folder. It contains:
-
-* `world.mp4` Video stream of the world view
-* `world_timestamps.npy` 1d array of timestamps for each world video frame.
-* `info.csv` a file with meta data
-* `pupil_data` pupil data serialized with [MessagePack](https://msgpack.org/). This is used by Pupil Player.
-* Other files - depending on your hardware setup and plugins loaded in Pupil Capture, additional files are saved in your recording directory. More on this later.
-
-These files are stored in a newly created folder inside `your_pupil_recordings_dir/your_recording_name/ XXX` where `XXX` is an incrementing number. It will never overwrite previous recordings!
-
-If you want to view the data, export videos, export raw data as `.csv` (and more) you can use [Pupil Player](#pupil-player).
-
-Splitting the timestamps from the actual video file has several benefits:
-
-* Timestamps can be stored as list of floats instead of storing them in a video format specific time specification, i.e. time base / PTS combinations.
-* Efficient access to all timestamps. Reading a float array from file is magnitudes faster than demuxing the whole video file and converting the format specific PTS back to floats.
-* The video file becomes a simple list of frames. The frames' indices correspond to their timestamps' indices in the `*_timestamp.npy` file. A frame's index can simply calculated by calculating `PTS * time_base * average_rate`. This allows Pupil Player to seek by frame indices instead of using timestamps. See [`file_backend.py`](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/video_capture/file_backend.py) for more information.
-Summarizing, it allows us to synchronize multiple data streams using an intuitve timestamp format. With Pupil Player exported videos will have their PTS set correctly according to each frame's timestamp.
-
-### Pupil - Data Format
-The data format for Pupil recordings is 100% open. Sub-headings below provide details of each file and its data format.
-
-#### World Video Stream
-When using the setting `more CPU smaller file`: A `mpeg4` compressed video stream of the world view in a `.mp4` container. The video is compressed using ffmpeg's default settings. It gives a good balance between image quality and files size. The frame rate of this file is set to your capture frame rate.
-
-When using the setting `less CPU bigger file`: A raw `mjpeg` stream from the world camera world view in a `.mp4` container. The video is compressed by the camera itself. While the file size is considerably larger than above, this will allow ultra low CPU while recording. It plays with recent version of ffmpeg and vlc player. The "frame rate" setting in the Pupil Capture sidebar (Camera Settings > Sensor Settings) controls the frame rate of the videos.
-
-> You can compress the videos afterwards using ffmpeg like so:
-
-```
-cd your_recording
-ffmpeg -i world.mp4  -pix_fmt yuv420p  world.mp4
-ffmpeg -i eye0.mp4  -pix_fmt yuv420p  eye0.mp4
-ffmpeg -i eye1.mp4  -pix_fmt yuv420p  eye1.mp4
-```
-
-> OpenCV has a capture module that can be used to extract still frames from the video:
-
-```python
-import cv2
-capture = cv2.VideoCapture("absolute_path_to_video/world.mp4")
-status, img1 = capture.read() # extract the first frame
-status, img2 = capture.read() # second frame...
-```
+The data format for Pupil recordings is 100% open. In this section we will first describe how we handle high level concepts like coordinate systems, timestamps and synchronization and then describe in detail the data format present in Pupil recordings.
 
 #### Coordinate Systems
 We use a normalized coordinate system with the origin `0,0` at the bottom left and `1,1` at the top right.
@@ -93,103 +50,7 @@ More information:
    - Depends on set-up, and it is lower when more cameras are present. (120Hz maximum based on a 5.7ms latency for
      the cameras and a 3.0ms processing latency.
 
-#### Pupil Data
-We store the **gaze positions**, **pupil positions**, and additional information within `*.pldata` files. See the developer docs for details.
-
-#### Pupil Positions
-Coordinates of the pupil center in the eye video are called the **pupil position**, that has x,y coordinates normalized as described in the coordinate system above. This is stored within a dictionary structure within the `pupil_data` file.
-
-#### Gaze Positions
-The **pupil position** get mapped into the world space and thus becomes the **gaze position**.  This is the current center of the subject visual attention -- or what you're looking at in the world. This is stored within a dictionary structure within the `pupil_data` file.
-
-### Looking at the data
-
-#### Data Visualizer in Player
-Head over to [Pupil Player](#pupil-player) to playback Pupil recordings, add visualizations, and export in various formats.
-
-#### Access to raw data
-Use the 'Raw Data Exporter' plugin to export `.csv` files that contain all the data captured with Pupil Capture.
-
-An informational file that explains all fields in the `.csv` will be exported with the `.csv` file for documentation.
-Below is a list of the data exported using `v0.7.4` of Pupil Player with a recording made from Pupil Capture `v0.7.4`.
-
-#### pupil_positions.csv
-* `timestamp` - timestamp of the source image frame
-* `index` - associated_frame: closest world video frame
-* `id` - 0 or 1 for left/right eye
-* `confidence` - is an assessment by the pupil detector on how sure we can be on this measurement. A value of `0` indicates no confidence. `1` indicates perfect confidence. In our experience useful data carries a confidence value greater than ~0.6. A `confidence` of exactly `0` means that we don't know anything. So you should ignore the position data.
-* `norm_pos_x` - x position in the eye image frame in normalized coordinates
-* `norm_pos_y` - y position in the eye image frame in normalized coordinates
-* `diameter` - diameter of the pupil in image pixels as observed in the eye image frame (is not corrected for perspective)
-* `method` - string that indicates what detector was used to detect the pupil
-
-optional fields depending on detector
-in 2d the pupil appears as an ellipse available in `3d c++` and `2D c++` detector
-
-* `2d_ellipse_center_x` - x center of the pupil in image pixels
-* `2d_ellipse_center_y` - y center of the pupil in image pixels
-* `2d_ellipse_axis_a` - first axis of the pupil ellipse in pixels
-* `2d_ellipse_axis_b` - second axis of the pupil ellipse in pixels
-* `2d_ellipse_angle` - angle of the ellipse in degrees
-
-#### Data made available by the `3d c++` detector
-* `diameter_3d` - diameter of the pupil scaled to mm based on anthropomorphic avg eye ball diameter and corrected for perspective.
-* `model_confidence` - confidence of the current eye model (0-1)
-* `model_id` - id of the current eye model. When a slippage is detected the model is replaced and the id changes.
-* `sphere_center_x` - x pos of the eyeball sphere is eye pinhole camera 3d space units are scaled to mm.
-* `sphere_center_y` - y pos of the eye ball sphere
-* `sphere_center_z` - z pos of the eye ball sphere
-* `sphere_radius` - radius of the eyeball. This is always 12mm (the anthropomorphic avg.) We need to make this assumption because of the `single camera scale ambiguity`.
-* `circle_3d_center_x` - x center of the pupil as 3d circle in eye pinhole camera 3d space units are mm.
-* `circle_3d_center_y` - y center of the pupil as 3d circle
-* `circle_3d_center_z` - z center of the pupil as 3d circle
-* `circle_3d_normal_x` - x normal of the pupil as 3d circle. Indicates the direction that the pupil points at in 3d space.
-* `circle_3d_normal_y` - y normal of the pupil as 3d circle
-* `circle_3d_normal_z` - z normal of the pupil as 3d circle
-* `circle_3d_radius` - radius of the pupil as 3d circle. Same as `diameter_3d`
-* `theta` - circle_3d_normal described in spherical coordinates
-* `phi` - circle_3d_normal described in spherical coordinates
-* `projected_sphere_center_x` - x center of the 3d sphere projected back onto the eye image frame. Units are in image pixels.
-* `projected_sphere_center_y` - y center of the 3d sphere projected back onto the eye image frame
-* `projected_sphere_axis_a` - first axis of the 3d sphere projection.
-* `projected_sphere_axis_b` - second axis of the 3d sphere projection.
-* `projected_sphere_angle` - angle of the 3d sphere projection. Units are degrees.
-
-#### gaze_positions.csv
-* `timestamp` - timestamp of the source image frame
-* `index` - associated_frame: closest world video frame
-* `confidence` - computed confidence between 0 (not confident) -1 (confident)
-* `norm_pos_x` - x position in the world image frame in normalized coordinates
-* `norm_pos_y` - y position in the world image frame in normalized coordinates
-* `base_data` - "timestamp-id timestamp-id ..." of pupil data that this gaze position is computed from
-#data made available by the 3d vector gaze mappers
-* `gaze_point_3d_x` - x position of the 3d gaze point (the point the subject looks at) in the world camera coordinate system
-* `gaze_point_3d_y` - y position of the 3d gaze point
-* `gaze_point_3d_z` - z position of the 3d gaze point
-* `eye_center0_3d_x` - x center of eye-ball 0 in the world camera coordinate system (of camera 0 for binocular systems or any eye camera for monocular system)
-* `eye_center0_3d_y` - y center of eye-ball 0
-* `eye_center0_3d_z` - z center of eye-ball 0
-* `gaze_normal0_x` - x normal of the visual axis for eye 0 in the world camera coordinate system (of eye 0 for binocular systems or any eye for monocular system). The visual axis goes through the eye ball center and the object thats looked at.
-* `gaze_normal0_y` - y normal of the visual axis for eye 0
-* `gaze_normal0_z` - z normal of the visual axis for eye 0
-* `eye_center1_3d_x` - x center of eye-ball 1 in the world camera coordinate system (not available for monocular setups.)
-* `eye_center1_3d_y` - y center of eye-ball 1
-* `eye_center1_3d_z` - z center of eye-ball 1
-* `gaze_normal1_x` - x normal of the visual axis for eye 1 in the world camera coordinate system (not available for monocular setups.). The visual axis goes through the eye ball center and the object thats looked at.
-* `gaze_normal1_y` - y normal of the visual axis for eye 1
-* `gaze_normal1_z` - z normal of the visual axis for eye 1
-
-### Raw data with Python
-You can read and inspect `pupil_data` with a couple lines of python code.
-
-```python
-import msgpack
-
-with open("/path/to/pupil_data", "rb") as f:
-    data = msgpack.unpack(f, encoding='utf-8')
-```
-
-### Synchronization
+#### Synchronization
 
 Pupil Capture software runs multiple processes. The world video feed and the eye video feeds run and record at the frame rates set by their capture devices (cameras). This allows us to be more flexible. Instead of locking everything into one frame rate, we can capture every feed at specifically set rates. But, this also means that we sometimes record world video frames with multiple gaze positions (higher eye-frame rate) or without any (no pupil detected or lower eye frame rate).
 
@@ -237,4 +98,119 @@ def correlate_data(data,timestamps):
             frame_idx+=1
 
     return data_by_frame
+```
+
+
+### Detailed Data Format
+
+Every time you click record in Pupil Capture or Pupil Mobile, a new recording is started and your data is saved into a recording folder. You can use [Pupil Player](#pupil-player) to playback Pupil recordings, add visualizations, and export in various formats. 
+
+#### Access to raw data
+Note that the raw data before processing with Pupil Player is not immediately readible from other software (the raw data format is documented in the [developer docs](#recording-format)). Use the 'Raw Data Exporter' plugin in Pupil Player to export `.csv` files that contain all the data captured with Pupil Capture. Exported files will be written to a subfolder of the recording folder called `exports`.
+
+The following files will be created by default in an export:
+
+- export_info.csv - Meta information on the export containing e.g. the export date or the dta format version.
+- pupil_positions.csv - A list of all pupil datums. See below for more infotmation.
+- gaze_positions.csv - A list of all gaze datums. See below for more infotmation.
+- pupil_gaze_positions_info.txt - Contains documentation on the contents of pupil_positions.csv and gaze_positions.csv
+- world_viz.mp4 - The exported section of world camera video.
+
+If you are using additional plugins in Pupil Player, these might create other files. Please check the documentation of the respective plugin for the used data format.
+
+
+#### pupil_positions.csv
+This file contains all exported pupil datums. Each datum will have at least the following keys:
+
+* `timestamp` - timestamp of the source image frame
+* `index` - associated_frame: closest world video frame
+* `id` - 0 or 1 for left/right eye
+* `confidence` - is an assessment by the pupil detector on how sure we can be on this measurement. A value of `0` indicates no confidence. `1` indicates perfect confidence. In our experience useful data carries a confidence value greater than ~0.6. A `confidence` of exactly `0` means that we don't know anything. So you should ignore the position data.
+* `norm_pos_x` - x position in the eye image frame in normalized coordinates
+* `norm_pos_y` - y position in the eye image frame in normalized coordinates
+* `diameter` - diameter of the pupil in image pixels as observed in the eye image frame (is not corrected for perspective)
+* `method` - string that indicates what detector was used to detect the pupil
+
+Depending on the used gaze mapping mode, each datum may have additional keys. When using the **2D gaze mapping** mode the following keys will be added:
+
+* `2d_ellipse_center_x` - x center of the pupil in image pixels
+* `2d_ellipse_center_y` - y center of the pupil in image pixels
+* `2d_ellipse_axis_a` - first axis of the pupil ellipse in pixels
+* `2d_ellipse_axis_b` - second axis of the pupil ellipse in pixels
+* `2d_ellipse_angle` - angle of the ellipse in degrees
+
+When using the **3D gaze mapping** mode the following keys will *additionally* be added:
+
+* `diameter_3d` - diameter of the pupil scaled to mm based on anthropomorphic avg eye ball diameter and corrected for perspective.
+* `model_confidence` - confidence of the current eye model (0-1)
+* `model_id` - id of the current eye model. When a slippage is detected the model is replaced and the id changes.
+* `sphere_center_x` - x pos of the eyeball sphere is eye pinhole camera 3d space units are scaled to mm.
+* `sphere_center_y` - y pos of the eye ball sphere
+* `sphere_center_z` - z pos of the eye ball sphere
+* `sphere_radius` - radius of the eyeball. This is always 12mm (the anthropomorphic avg.) We need to make this assumption because of the `single camera scale ambiguity`.
+* `circle_3d_center_x` - x center of the pupil as 3d circle in eye pinhole camera 3d space units are mm.
+* `circle_3d_center_y` - y center of the pupil as 3d circle
+* `circle_3d_center_z` - z center of the pupil as 3d circle
+* `circle_3d_normal_x` - x normal of the pupil as 3d circle. Indicates the direction that the pupil points at in 3d space.
+* `circle_3d_normal_y` - y normal of the pupil as 3d circle
+* `circle_3d_normal_z` - z normal of the pupil as 3d circle
+* `circle_3d_radius` - radius of the pupil as 3d circle. Same as `diameter_3d`
+* `theta` - circle_3d_normal described in spherical coordinates
+* `phi` - circle_3d_normal described in spherical coordinates
+* `projected_sphere_center_x` - x center of the 3d sphere projected back onto the eye image frame. Units are in image pixels.
+* `projected_sphere_center_y` - y center of the 3d sphere projected back onto the eye image frame
+* `projected_sphere_axis_a` - first axis of the 3d sphere projection.
+* `projected_sphere_axis_b` - second axis of the 3d sphere projection.
+* `projected_sphere_angle` - angle of the 3d sphere projection. Units are degrees.
+
+#### gaze_positions.csv
+This file contains a list of all exported gaze datums. Each datum contains the following keys:
+
+* `timestamp` - timestamp of the source image frame
+* `index` - associated_frame: closest world video frame
+* `confidence` - computed confidence between 0 (not confident) -1 (confident)
+* `norm_pos_x` - x position in the world image frame in normalized coordinates
+* `norm_pos_y` - y position in the world image frame in normalized coordinates
+* `base_data` - "timestamp-id timestamp-id ..." of pupil data that this gaze position is computed from
+
+When using the **3D gaze mapping** mode the following keys will additionally be available:
+
+* `gaze_point_3d_x` - x position of the 3d gaze point (the point the subject looks at) in the world camera coordinate system
+* `gaze_point_3d_y` - y position of the 3d gaze point
+* `gaze_point_3d_z` - z position of the 3d gaze point
+* `eye_center0_3d_x` - x center of eye-ball 0 in the world camera coordinate system (of camera 0 for binocular systems or any eye camera for monocular system)
+* `eye_center0_3d_y` - y center of eye-ball 0
+* `eye_center0_3d_z` - z center of eye-ball 0
+* `gaze_normal0_x` - x normal of the visual axis for eye 0 in the world camera coordinate system (of eye 0 for binocular systems or any eye for monocular system). The visual axis goes through the eye ball center and the object thats looked at.
+* `gaze_normal0_y` - y normal of the visual axis for eye 0
+* `gaze_normal0_z` - z normal of the visual axis for eye 0
+* `eye_center1_3d_x` - x center of eye-ball 1 in the world camera coordinate system (not available for monocular setups.)
+* `eye_center1_3d_y` - y center of eye-ball 1
+* `eye_center1_3d_z` - z center of eye-ball 1
+* `gaze_normal1_x` - x normal of the visual axis for eye 1 in the world camera coordinate system (not available for monocular setups.). The visual axis goes through the eye ball center and the object thats looked at.
+* `gaze_normal1_y` - y normal of the visual axis for eye 1
+* `gaze_normal1_z` - z normal of the visual axis for eye 1
+
+
+#### World Video Stream
+When using the setting `more CPU smaller file`: A `mpeg4` compressed video stream of the world view in a `.mp4` container. The video is compressed using ffmpeg's default settings. It gives a good balance between image quality and files size. The frame rate of this file is set to your capture frame rate.
+
+When using the setting `less CPU bigger file`: A raw `mjpeg` stream from the world camera world view in a `.mp4` container. The video is compressed by the camera itself. While the file size is considerably larger than above, this will allow ultra low CPU while recording. It plays with recent version of ffmpeg and vlc player. The "frame rate" setting in the Pupil Capture sidebar (Camera Settings > Sensor Settings) controls the frame rate of the videos.
+
+> You can compress the videos afterwards using ffmpeg like so:
+
+```
+cd your_recording
+ffmpeg -i world.mp4  -pix_fmt yuv420p  world_compressed.mp4; mv world_compressed.mp4 world.mp4 
+ffmpeg -i eye0.mp4  -pix_fmt yuv420p  eye0_compressed.mp4; mv eye0_compressed.mp4 eye0.mp4
+ffmpeg -i eye1.mp4  -pix_fmt yuv420p  eye1_compressed.mp4; mv eye1_compressed.mp4 eye1.mp4
+```
+
+> OpenCV has a capture module that can be used to extract still frames from the video:
+
+```python
+import cv2
+capture = cv2.VideoCapture("absolute_path_to_video/world.mp4")
+status, img1 = capture.read() # extract the first frame
+status, img2 = capture.read() # second frame...
 ```
