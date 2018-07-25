@@ -201,9 +201,9 @@ When using the setting `less CPU bigger file`: A raw `mjpeg` stream from the wor
 
 ```
 cd your_recording
-ffmpeg -i world.mp4  -pix_fmt yuv420p  world.mp4
-ffmpeg -i eye0.mp4  -pix_fmt yuv420p  eye0.mp4
-ffmpeg -i eye1.mp4  -pix_fmt yuv420p  eye1.mp4
+ffmpeg -i world.mp4  -pix_fmt yuv420p  world_compressed.mp4; mv world_compressed.mp4 world.mp4 
+ffmpeg -i eye0.mp4  -pix_fmt yuv420p  eye0_compressed.mp4; mv eye0_compressed.mp4 eye0.mp4
+ffmpeg -i eye1.mp4  -pix_fmt yuv420p  eye1_compressed.mp4; mv eye1_compressed.mp4 eye1.mp4
 ```
 
 > OpenCV has a capture module that can be used to extract still frames from the video:
