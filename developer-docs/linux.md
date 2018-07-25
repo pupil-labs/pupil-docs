@@ -168,7 +168,7 @@ sudo ldconfig
 
 > (Optional) Install PyTorch + CUDA and cuDNN. 
 
-> **Version 1: No GPU acceleration**: Install PyTorch via pip
+> **Version 1: Without GPU acceleration**: Install PyTorch via pip
 
 ```bash
 pip3 install http://download.pytorch.org/whl/cpu/torch-0.4.0-cp36-cp36m-linux_x86_64.whl 
@@ -176,16 +176,18 @@ pip3 install torchvision
 ```
 
 Some bleeding edge features require the deep learning library PyTorch. 
-For GPU acceleration CUDA and cuDNN are also required. Without GPU acceleration some of the features will probably not 
+Without GPU acceleration some of the features will probably not 
 run in real-time.
 
 
-> **Version 2: No GPU acceleration**: Install PyTorch via pip
+> **Version 2: With GPU acceleration**: Install PyTorch via pip
 
 ```bash
 pip3 install http://download.pytorch.org/whl/cu90/torch-0.4.0-cp36-cp36m-linux_x86_64.whl 
 pip3 install torchvision
 ```
+
+For GPU acceleration CUDA and cuDNN are also required.
 
 ```bash
 sudo dpkg -i cuda-repo-ubuntu1604-9-0-local_9.0.176-1_amd64.deb
