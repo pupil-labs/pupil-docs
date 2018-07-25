@@ -9,7 +9,6 @@ page_weight = 4
 
 ### Required Files
 
-> Example `info.csv` file
 ```csv
 key,value
 Recording Name,2018_07_19
@@ -26,10 +25,10 @@ System Info,"User: name, Platform: Linux, ..."
 ```
 
 Each recording requires three files:
-1. An `info.csv` file that includes two columns -- `key` and `value`.
+1. An `info.csv` file that includes two columns -- `key` and `value`. (See left for eaxample)
 2. At least one video file and its corresponding timestamp file. See the [*Video Files*](#video-files) section below for details.
 
-A minimum requirement of two key, value pairs are required. Example:
+A minimum requirement of two key, value pairs are required in the `info.csv` file.
 1. `Recording Name,<name>`
 2. `Data Format Version,<version>`
 
