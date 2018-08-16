@@ -43,9 +43,9 @@ If some problems arise with trying to install the drivers for your DIY eye camer
 
 1. Unplug Pupil Headset from your computer and keep unplugged until the last step
 1. Open Device Manager
-    i. Click View > Show Hidden Devices
-    i. Expand the `libUSBK devices` category and expand the `Imaging Devices` category within the Device Manager (sometimes a camera may be under the `Cameras` category)
-    i. Uninstall and delete drivers for all Pupil Cam 1 ID0, Pupil Cam 1 ID1, and Pupil Cam 1 ID2 devices within both libUSBK and Imaging Devices Category
+    1. Click View > Show Hidden Devices
+    1. Expand the `libUSBK devices` category and expand the `Imaging Devices` category within the Device Manager (sometimes a camera may be under the `Cameras` category)
+    1. Uninstall and delete drivers for all Pupil Cam 1 ID0, Pupil Cam 1 ID1, and Pupil Cam 1 ID2 devices within both libUSBK and Imaging Devices Category
 1. Restart Computer
 1. Start the latest version of Pupil Capture (ensure that you have admin privileges on your machine)
     i. General Menu > Restart with default settings
