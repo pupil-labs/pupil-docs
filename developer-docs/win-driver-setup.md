@@ -36,3 +36,19 @@ If you had tried to install drivers with previous driver install instructions an
 1. Unplug Pupil headset (if plugged in)
 1. Restart your computer
 1. Install drivers from step 2 in the `Install drivers for your Pupil headset` section
+
+### Manual Installation of DIY Camera Drivers
+
+If some problems arise with trying to install the drivers for your DIY eye camera's or a DIY world camera, or if you are installing them for the first time, you can try following these instruction first:
+
+1. Unplug Pupil Headset from your computer and keep unplugged until the last step
+1. Open Device Manager
+    i. Click View > Show Hidden Devices
+    i. Expand the `libUSBK devices` category and expand the `Imaging Devices` category within the Device Manager (sometimes a camera may be under the `Cameras` category)
+    i. Uninstall and delete drivers for all Pupil Cam 1 ID0, Pupil Cam 1 ID1, and Pupil Cam 1 ID2 devices within both libUSBK and Imaging Devices Category
+1. Restart Computer
+1. Start the latest version of Pupil Capture (ensure that you have admin privileges on your machine)
+    i. General Menu > Restart with default settings
+1. Plug in Pupil Headset after Pupil Capture relaunches - Please wait, drivers should install automatically. You may need to close/cancel automatic Windows driver installation
+
+If the above doesn't work, uninstall all drivers by following steps 1 to 3. Then follow steps 1-7 from here (step 8 should not be needed): https://github.com/pupil-labs/pyuvc/blob/master/WINDOWS_USER.md

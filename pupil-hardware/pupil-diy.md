@@ -64,6 +64,9 @@ This is by far the trickiest part. You will need some soldering experience, or w
 6. Attach USB extension cable(s)
 
 ### Customization
-The camera mounts can be replaced by custom build parts that suit your specific camera setup or other sensors. 
+The camera mounts can be replaced by custom build parts that suit your specific camera setup or other sensors.
+
+### Driver Installation
+The drivers for these DIY cameras can be installed by following the instructions [here](https://docs.pupil-labs.com/#manual-installation-of-diy-camera-drivers).
 
 [bom]: https://docs.google.com/spreadsheet/pub?key=0Al-zbr5hUFxPdEdJY1Z0dGRXU18yU0JxTVQ3THBOZFE&single=true&gid=0&output=html
