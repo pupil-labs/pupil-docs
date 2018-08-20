@@ -39,7 +39,7 @@ If you had tried to install drivers with previous driver install instructions an
 
 ### Manual Installation of DIY Camera Drivers
 
-If some problems arise with trying to install the drivers for your DIY eye camera's or a DIY world camera, or if you are installing them for the first time, you can try following these instruction first:
+If any issues arrise when trying to install drivers for your DIY eye or world cameras, or if you are installing them for the first time, you can try following these instructions:
 
 1. Unplug Pupil Headset from your computer and keep unplugged until the last step
 1. Open Device Manager
@@ -51,4 +51,4 @@ If some problems arise with trying to install the drivers for your DIY eye camer
     i. General Menu > Restart with default settings
 1. Plug in Pupil Headset after Pupil Capture relaunches - Please wait, drivers should install automatically. You may need to close/cancel automatic Windows driver installation
 
-If the above doesn't work, uninstall all drivers by following steps 1 to 3. Then follow steps 1-7 from here (step 8 should not be needed): https://github.com/pupil-labs/pyuvc/blob/master/WINDOWS_USER.md
+If the above doesn't work, uninstall all drivers by following steps 1 to 3. You can then try install `libusbK` drivers with Zadig as outlined in steps 1-7 in the [pyuvc docs](https://github.com/pupil-labs/pyuvc/blob/master/WINDOWS_USER.md)
