@@ -115,6 +115,5 @@ Please check out existing issues or open a new issue at [Pupil Mobile repository
 
 #### I want to use this for my experiments in the field
 
-Feel free to do so, but do not rely on the app to work all the time! Many features and environments are still untested. If you have trouble, please open an issue. The Pupil Labs development team will not be able to provide support via video or email for issues related to the Pupil Mobile Android App.
-
+Feel free to do so, but do not rely on the app to work all the time! Many features and environments are still untested. If you have trouble, please open an issue. 
 
