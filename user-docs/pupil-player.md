@@ -217,7 +217,7 @@ The different reported metrics are:
 
   + `surface_visibility.csv` - Overview of how many world camera frames each surface was contained in.
   + `surface_gaze_distribution.csv` - Overview of how many gaze samples have been collected on each individual surface and outside of surfaces.
-  + `surface_events.csv` - List of gaze-enter and gaze-exit events for all surfaces.
+  + `surface_events.csv` - List of image-enter and image-exit events for all surfaces.
 
 Further the following metrics are reported for every individual surface. 
 Each surface has a name, which can be manually set as described above. 
