@@ -37,7 +37,7 @@ Note - You may have other consumers on the same USB bus already so your milage m
 </aside>
 
 ### Use more BUS
-If you want to not be limited by the bandwidth of a single usb bus you can use an alternative usb clip that will expose each camera on a separate usb connector. We'd be happy to send you this breakout board if you want. Just make sure that you also have three free USB controllers (not plugs) on your PC.
+If you want to not be limited by the bandwidth of a single usb bus, you can mod the hardware and expose every camera directly. Just make sure that you also have three free USB controllers (not plugs) on your PC.
 
 ### Multi Camera Synchronization
 Each camera we use is a free running capture device. Additionally each camera runs in a separate process. Instead of frame-locking the camera through special hardware we acquire timestamps for each frame. These timestamps are then used to correlate data from each camera in time and match frames based on closest proximity. 
