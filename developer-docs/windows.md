@@ -84,6 +84,9 @@ Download the most recent version of the following wheels Python3.6 x64 systems.
 - [psutil](https://www.lfd.uci.edu/~gohlke/pythonlibs/#psutil)
 - [pyaudio](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio)
 - [pyzmq](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyzmq)
+- [pytorch](https://pytorch.org/get-started/locally/)
+    - For pytorch, select these options: Stable, Windows, Pip, Python 3.6, 9.0.
+    - You will be provided with two commands. Run them in the order given to install this wheel.
 
 Open your command prompt and `Run as administrator` in the directory where the wheels are downloaded.
 
