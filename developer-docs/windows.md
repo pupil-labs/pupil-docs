@@ -201,6 +201,12 @@ The following steps require you to store dynamic libaries in the `pupil_external
 - Unzip OpenCV to your work dir and rename dir to `opencv`
 - Copy `opencv\build\x64\vc14\bin\opencv_world320.dll` to `pupil_external`
 
+### Include pupil_external in PATH variable
+
+- Follow the instructions under the System Environment Variables section above to add a new environment variable to PATH
+- Add the following folder: `C:\work\pupil\pupil_external`
+- Restart your computer so that the PATH variable is refreshed
+
 ### Modify pupil_detectors setup.py
 
 - Open `pupil\pupil_src\capture\pupil_detectors\setup.py`
@@ -225,4 +231,4 @@ The following steps require you to store dynamic libaries in the `pupil_external
 
 ### Start the application
 
-To start either of the applications -- Capture, Player, or Service -- you need to execute the respective `run_*.bat` file, i.e. `run_capture.bat`, `run_player.bat`, or `run_service.bat`.
+To start either of the applications -- Capture, Player, or Service -- you need to execute the respective `run_*.bat` file, i.e. `run_capture.bat`, `run_player.bat`, or `run_service.bat`. You can also run `main.py` directly from your IDE, or with the commands `python main.py capture`, `python main.py player`, or `python main.py service`.
