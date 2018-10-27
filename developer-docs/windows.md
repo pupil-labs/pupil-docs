@@ -116,7 +116,7 @@ Navigate to your work directory
 
 - `git clone --recursive https://github.com/tbennun/ceres-windows.git`
 - Download [Eigen 3.3.3](https://bitbucket.org/eigen/eigen/downloads/?tab=tags)
-- Unzip Eigen and rename the contained `eigen` directory to `Eigen`
+- Unzip Eigen and rename the extracted `eigen-eigen-67e894c6cd8f` directory to `Eigen`
 - Copy the `Eigen` directory into `ceres-windows`
 - Copy `C:\work\ceres-windows\ceres-solver\config\ceres\internal\config.h` to `C:\work\ceres-windows\ceres-solver\include\ceres\internal`
 - Open `ceres-2015.sln` and with Visual Studio 2017 and agree to update to 2017.
