@@ -16,14 +16,14 @@ Therefore we can only debug and support issues for **Windows 10**.
 ### Notes Before Starting
 
 - Work directory - We will make a directory called `work` at `C:\work` and will use this directory for all build processes and setup scripts. Whenever we refer to the `work` directory, it will refer to `C:\work`. You can change this to whatever is convenient for you, but note that all instructions and setup files refer to `C:\work`
-- Command Prompt - We will **always** be using `x64 Native Tools Command Prompt for VS 2017 Preview` as our command prompt. Make sure to only use this command prompt. Unlike unix systems, windows has many possible "terminals" or "cmd prompts". We are targeting `x64` systems and require the `x64` command prompt. You can access this cmd prompt from the Visual Studio 2017 shortcut in your Start menu.
+- Command Prompt - We will **always** be using `x64 Native Tools Command Prompt for VS 2017` as our command prompt. Make sure to only use this command prompt. Unlike unix systems, windows has many possible "terminals" or "cmd prompts". We are targeting `x64` systems and require the `x64` command prompt. You can access this cmd prompt from the Visual Studio 2017 shortcut in your Start menu.
 - 64bit - You should be using a 64 bit system and therefore all downloads, builds, and libraries should be for `x64` unless otherwise specified.
 - Windows paths and Python - path separators in windows are a forward slash `\`. In Python, this is a special "escape" character. When specifying Windows paths in a Python string you must use `\\` instead of `\` or use [Python raw strings](https://docs.python.org/3/reference/lexical_analysis.html#string-and-bytes-literals), e.g. `r'\'`.
 - Help - For discussion or questions on Windows head over to our [#pupil Discord channel](https://discord.gg/gKmmGqy). If you run into trouble please raise an [issue on github](https://github.com/pupil-labs/pupil)!
 
 ### Install Visual Studio
 
-Download Visual Studio 2017 Preview version 15.3 from [visualstudio.com](https://www.visualstudio.com/vs/preview/)
+Download Visual Studio 2017 Community version 15.8 from [visualstudio.com](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community)
 
 - Run the Visual Studio bootstrapper `.exe`.
 - Navigate to the `Workloads` tab
@@ -119,7 +119,7 @@ Navigate to your work directory
 - Unzip Eigen and rename the contained `eigen` directory to `Eigen`
 - Copy the `Eigen` directory into `ceres-windows`
 - Copy `C:\work\ceres-windows\ceres-solver\config\ceres\internal\config.h` to `C:\work\ceres-windows\ceres-solver\include\ceres\internal`
-- Open `ceres-2015.sln` and with Visual Studio 2017 Preview and agree to update to 2017.
+- Open `ceres-2015.sln` and with Visual Studio 2017 and agree to update to 2017.
 - Set configurations to `Release` and `x64`
 - Right click on `libglog_static` and `Build`
 - Right click on `ceres_static` and `Build`
@@ -127,10 +127,10 @@ Navigate to your work directory
 ### Boost
 Download and install the latest boost version for Windows x64 with version number matching your Visual Studio 2017 MSVC version.
 
-- For VS 2017 preview the MSVC version is 14.1
+- For VS 2017 the MSVC version supported by boost is 14.1
 - Download boost from [sourceforge](https://sourceforge.net/projects/boost/files/boost-binaries/1.64.0/boost_1_64_0-msvc-14.1-64.exe/download)
 - Extract boost to work directory and name the boost dir `boost`
-- Open `C:\work\boost\boost\python\detail\config.hpp` with Visual Studio 2017 Preview
+- Open `C:\work\boost\boost\python\detail\config.hpp` with Visual Studio 2017
 - Change **L108** from `define BOOST_LIB_NAME boost_python` to `define BOOST_LIB_NAME boost_python3`
 - Save the file and close Visual Studio
 
