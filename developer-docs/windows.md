@@ -97,6 +97,7 @@ Open your command prompt and install the following libs:
 - `pip install msgpack`
 - `pip install win_inet_pton`
 - `pip install pyaudio`
+- `pip install cysignals`
 - `pip install git+https://github.com/zeromq/pyre.git`
 
 ### Pupil Labs Python Wheels

@@ -119,6 +119,7 @@ sudo pip3 install pyzmq
 sudo pip3 install msgpack
 sudo pip3 install pyopengl
 sudo pip3 install pyaudio
+sudo pip3 install cysignals
 sudo pip3 install git+https://github.com/zeromq/pyre
 sudo pip3 install git+https://github.com/pupil-labs/PyAV
 sudo pip3 install git+https://github.com/pupil-labs/pyuvc
