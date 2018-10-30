@@ -298,7 +298,7 @@ that each node has to implement the same protocol version to be able to talk to
 each other.
 
 <aside class="notice">
-See the [pupil-helpers](https://github.com/pupil-labs/pupil-helpers/tree/master/pupil_sync) for example Python implementations.
+See the <a href="https://github.com/pupil-labs/pupil-helpers/tree/master/pupil_sync">pupil-helpers</a> for example Python implementations.
 </aside>
 
 <aside class="notice">
