@@ -100,8 +100,9 @@ Open your command prompt and install the following libs:
 - `pip install msgpack`
 - `pip install win_inet_pton`
 - `pip install pyaudio`
-- `pip install cysignals`
 - `pip install git+https://github.com/zeromq/pyre.git`
+
+Note - `cysignals` is a dependency on macOS and Linux but not Windows.
 
 ### Pupil Labs Python Wheels
 Download the following Python wheels from Pupil Labs github repos.
