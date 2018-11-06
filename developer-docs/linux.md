@@ -81,15 +81,14 @@ sudo make install
 sudo ldconfig
 ```
 
-> custom version of libusb
+custom version of libusb
 Required for 17.10 and with 200hz cameras only. Otherwise IGNORE!)
 
 1. Build or download fixed binary from release: https://github.com/pupil-labs/libusb/releases/tag/v1.0.21-rc6-fixes
 1. Replace system libusb-1.0.so.0 with this binary.
 
-```
-sudo cp '~/path to your fixed binary/libusb-1.0.so.0' '/lib/x86_64-linux-gnu/libusb-1.0.so.0'
-```
+`sudo cp '~/path to your fixed binary/libusb-1.0.so.0' '/lib/x86_64-linux-gnu/libusb-1.0.so.0'`
+
 
 > libuvc
 
