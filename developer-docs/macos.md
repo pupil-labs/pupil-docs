@@ -81,6 +81,7 @@ pip3 install psutil
 pip3 install msgpack
 pip3 install pyaudio
 pip3 install cysignals
+pip3 install torch torchvision
 pip3 install git+https://github.com/zeromq/pyre
 pip3 install git+https://github.com/pupil-labs/PyAV
 pip3 install git+https://github.com/pupil-labs/pyuvc
