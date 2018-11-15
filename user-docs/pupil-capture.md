@@ -320,48 +320,86 @@ to start and stop recordings that are stored in the phone.
 
 ### Surface Tracking
 
-> {{< video-webm src="/videos/surface-tracking/srf-tracking.webm" >}}
+The `Surface Tracker` plugin allows you to define planar surfaces within your environment to track areas of interest (AOI).
+Surfaces are defined using square markers. 
 
-The `Surface Tracker` plugin allows you to define surfaces within your environment and track surfaces in realtime using a 5x5 square marker. We were greatly inspired by the [ArUco marker tracking library](http://www.uco.es/investiga/grupos/ava/node/26).
-
-*  Markers - We use a 5x5 square marker. This is not the same marker that is used by ArUco (they use 7x7).
-*  Using a 5x5 marker gives us 63 unique markers.
-*  Why the 5x5 grid? The 5x5 grid allows us to make smaller markers that can still be detected. Markers can be printed on paper, stickers, or displayed on the screen.
-
-
-#### Defining Surfaces with Markers
+#### Markers
 
 > {{< webp-img figure-class="img-m" src="/images/pupil-capture/calibration-markers/pupil_surface_markers.webp" alt="Calibration markers" >}}
 
-A surface can be defined by one or more markers. Surfaces can be defined with Pupil Capture in real-time, or offline with Pupil Player. Below we provide an outline of steps.
-
-*  Define surfaces within your environment using one or more fiducial markers. Surfaces can be defined with a minimum of one marker. The maximum number of markers per surface is limited by the number of markers we can produce with a 5x5 grid.
-*  Use Pupil Capture or Pupil Player to register surfaces, name them, and edit them.
-*  Registered surfaces are saved automatically, so that the next time you run Pupil Capture or Pupil Player, your surfaces (if they can be seen) will appear when you start the marker tracking plugin.
-*  Surfaces defined with more than 2 markers are detected even if some markers go outside the field of vision or are obscured.
-*  We have created a window that shows registered surfaces within the world view and the gaze positions that occur within those surfaces in realtime.
-*  Streaming Surfaces with Pupil Capture - Detected surfaces as well as gaze positions relative to the surface are broadcast under the `surface` topic. Check out [this video](http://youtu.be/qHmfMxGST7A) for a demonstration.
-*  Surface Metrics with Pupil Player - if you have defined surfaces, you can generate surface visibility reports or gaze count per surface. See our [blog post](http://pupil-labs.com/blog/2014/07/0392-player-release.html) for more information.
-
-
-*  Generate markers with [this script](https://github.com/pupil-labs/pupil-helpers/blob/master/markers_stickersheet/make_square_markers.py), or download the image.
+You can generate markers with [this script](https://github.com/pupil-labs/pupil-helpers/blob/master/markers_stickersheet/make_square_markers.py), or download the image on the right.
+Markers can be printed on paper, stickers, or displayed on a screen.
 
 <aside class="notice">
-  <strong>Note</strong> - When printing markers, ensure that white space remains around the square marker. You can scale the markers to different sizes, but make sure to have a white border width of at least 1.2 x the marker grid size for marker, unless the marker is affixed onto a white (or light colored) background.
+  <strong>Note</strong> - When displaying or printing markers, ensure that a white border remains around the marker! 
+  The border should be at least 1.2 times as wide as the grid size of the marker. 
+  One way to achieve this is to present the marker on a white (or very light colored) background with sufficient padding.
 </aside>
 
-#### Moving Surface Definitions
+The design of our markers was greatly inspired by the [ArUco marker tracking library](http://www.uco.es/investiga/grupos/ava/node/26).
+However our markers use 5x5 grid instead of the 7x7 grid ArUco uses. 
+This allows us to make smaller markers that can still be detected well.
+The 5x5 design allows for a total of 63 unique markers.  
 
-The surfaces are saved in a file is called `surface_definitions`. This file is in every `pupil_capture_settings` directory and in every recording directory. You can copy&paste this file to move definitions from one session or recording to another.
+
+#### Preparing your Environment
+
+A surface can be based on one or more markers.
+The markers need to be placed in close proximity or within your desired AOI.
+If your AOI is for example a computer monitor, you could display your markers in the corners of the screen or place them somewhere on the bezel.
+If your AOI is a magazine page you could place the markers in the corners of the page or anywhere else on the page where they are not occluding.
+When placing your markers please follow the following rules:
+
+*   All markers of a surface need to lie within the same plane.
+*   An individual marker can be part of multiple surfaces.
+*   The used markers need to be unique, i.e. you may not use multiple instances of the same marker in your environment.
+*   Using more markers to define a surface yields greater robustness in the tracking of that surface.
+*   Surfaces defined with more than 2 markers are detected even if some markers lie outside of the camera image or are obscured.
 
 
-#### Surface Heatmaps
+#### Defining a Surface 
 
-It is possbile to dispay gaze heatmaps for each surface by selecting `Show Heatmaps` mode in the `Surface Tracker` menu.
-The surface is divided into a two dimensional grid to calculate the heatmap. The grid can be refined by setting the
-`X` and `Y` size field of each surface. The colors are normalized such that cells with the highest amount of gaze are
-displayed in red and those with the least gaze are displayed in blue. The `Gaze History Length` option for each surface
-decides how many recent gaze positions will be used to calculate the heatmap.
+> {{< video-webm src="/videos/surface-tracking/srf-tracking.webm" >}}
+
+Surfaces can be defined with Pupil Capture in real-time, or offline with Pupil Player. 
+In both cases the necessary steps are as follows:
+
+*   Prepare your environment as described above.
+*   Turn on the `Surface Tracker` plugin .
+*   Make sure the camera is pointing at your AOI and the markers are well detected.
+    In the offline case seek to a frame that contains a good view of your desired AOI.
+*   Add a new surface by clicking the `Add surface` button.
+*   Give your surface a name.
+*   Click the `edit surface` button and move the corners of your surface into the desired position.
+    In the online case this is much easier if you freeze the video by clicking the `Freeze Scene` button.
+*   If markers have been erroneously added or left out, click the `add/remove markers` button and afterwards onto the according marker to add/remove them from your surface.
+
+
+#### Reusing Surface Definitions
+
+Your surfaces are automatically saved in a file called `surface_definitions` in the `pupil_capture_settings` directory. 
+If you restart Pupil Capture or the Surface Tracker plugin, your surface definitions from previous sessions will be loaded.
+Further the `surface_definitions` file is copied into each recording folder as well, so you have access to your surface definitions in Pupil Player. 
+You can copy&paste this file to move definitions from one session or recording to another.
+
+
+#### Gaze Heatmaps for Surfaces
+
+It is possible to display gaze heatmaps for each surface by enabling `Show Heatmap` in the `Surface Tracker` menu.
+Two heatmap modes are supported:
+*   `Gaze within each surface`: Visualizes the distribution of gaze points the lie within each surface. 
+*   `Gaze across different surfaces`: Color codes the surfaces to visualize the amount of time spend gazing on each surface in relation to other surfaces.
+
+The smoothness of the heatmap in `Gaze within each surface` mode can be set using the `Heatmap Smoothness` slider, which will effectively change the bin size of the underlying histogram.
+In the online case the heatmap is computed over the most recent data.
+The exact time window to consider can be set using the `Gaze History Length` field.
+
+#### Further Functionality
+
+*   You can click the `Open Surface in Window` button to open a view of the surface in a separate window. 
+    Gaze positions on the surface will be visualized in this window in real-time.
+*   Streaming Surfaces with Pupil Capture - Detected surfaces as well as gaze positions relative to the surface are broadcast under the `surface` topic. Check out [this video](http://youtu.be/qHmfMxGST7A) for a demonstration.
+*   Surface Metrics with Pupil Player - if you have defined surfaces, you can generate surface visibility reports or gaze count per surface. See our [blog post](http://pupil-labs.com/blog/2014/07/0392-player-release.html) for more information.
 
 ### Blink Detection
 
