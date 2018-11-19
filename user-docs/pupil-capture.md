@@ -203,7 +203,7 @@ The position of the fingertip is then found out by a fingertip detector, adapted
 
 
 ### Notes on calibration accuracy
-In 2D mode, you should easily be able to achieve tracking accuracy within the physiological limits (sub 1 deg visual degrees). Using the 3d mode you should achive 1.5-2.5 deg of accuracy.
+In 2D mode, you should easily be able to achieve tracking accuracy within the physiological limits (sub 1 deg visual degrees). Using the 3d mode you should achieve 1.5-2.5 deg of accuracy.
 
 * Any monocular calibration is accurate only at its depth level relative to the eye (parallax error).
 * Any calibration is only accurate inside the field of view (in the world video) you have calibrated. For example: If during your calibration you only looked at markers or natural features (depending on your calibration method) that are in the left half, you will not have good accuracy in the right half.
@@ -357,7 +357,7 @@ The surfaces are saved in a file is called `surface_definitions`. This file is i
 
 #### Surface Heatmaps
 
-It is possbile to dispay gaze heatmaps for each surface by selecting `Show Heatmaps` mode in the `Surface Tracker` menu.
+It is possbile to display gaze heatmaps for each surface by selecting `Show Heatmaps` mode in the `Surface Tracker` menu.
 The surface is divided into a two dimensional grid to calculate the heatmap. The grid can be refined by setting the
 `X` and `Y` size field of each surface. The colors are normalized such that cells with the highest amount of gaze are
 displayed in red and those with the least gaze are displayed in blue. The `Gaze History Length` option for each surface
@@ -382,11 +382,11 @@ The `Filter length` is the time window's length in which the plugin tries to fin
 
 The `Audio Capture` plugin provides access to a selected audio source for other plugins and writes its output to the `audio.mp4` file during a recording. It also writes the Pupil Capture timestamp for each audio packet to the `audio_timestamps.npy` file. This way you can easily correlate single audio packets to their corresponding video frames.
 
-Audio is recorded separately from the video in Pupil Capture. You can play back audio in sycn with video in Pupil Player. Audio is automatically merged with the video when you export a video using Pupil Player.
+Audio is recorded separately from the video in Pupil Capture. You can play back audio in sync with video in Pupil Player. Audio is automatically merged with the video when you export a video using Pupil Player.
 
 ### Annotations
 
-The `Annotation Capture` plugin allows you to mark timestamps with a label -- sometimes reffered to as triggers.
+The `Annotation Capture` plugin allows you to mark timestamps with a label -- sometimes referred to as triggers.
 These labels can be created by pressing their respective hotkey or by sending a notification with the subject `annotation`.
 This is useful to mark external events (e.g. "start of condition A") within the Pupil recording. The `Annotation Player`
 plugin is able to correlate and export these events as well as add new ones.
@@ -394,7 +394,7 @@ plugin is able to correlate and export these events as well as add new ones.
 
 #### Remote Annotations
 
-You can also create annotation events programatically and send them using the IPC, or by sending messages to the Pupil Remote interface. Here is an example annotation notification.
+You can also create annotation events programmatically and send them using the IPC, or by sending messages to the Pupil Remote interface. Here is an example annotation notification.
 
 ```python
 {'subject':"annotation",'label':"Hi this is my annotation 1",'timestamp':[set a correct timestamp as float here],'duration':1.0,'source':'a test script','record':True}
@@ -407,7 +407,7 @@ You can also create annotation events programatically and send them using the IP
 
 ### Camera Intrinsics Estimation
 
-This plugin is used to calculate camera intrinsics, which will enable one to correct camera distortion. Pupil Capture has built in, default camera intrinsics models for the high speed world camera and the high resolution world camera. You can re-calibrate your camera and/or calibrate a camera that is not supplied by Pupil Labs by running this calibration routine. We support two different distortion models, radial distortion and fisheye distortion. For cameras with a FOV of 100 degrees or greater (like e.g. the high speed world camera) the fisheye distotion model usually performs better, for cameras with a smaller FOV (e.g. the high resolution world camera) we recommend the radial distortion model.
+This plugin is used to calculate camera intrinsics, which will enable one to correct camera distortion. Pupil Capture has built in, default camera intrinsics models for the high speed world camera and the high resolution world camera. You can re-calibrate your camera and/or calibrate a camera that is not supplied by Pupil Labs by running this calibration routine. We support two different distortion models, radial distortion and fisheye distortion. For cameras with a FOV of 100 degrees or greater (like e.g. the high speed world camera) the fisheye distortion model usually performs better, for cameras with a smaller FOV (e.g. the high resolution world camera) we recommend the radial distortion model.
 
 1. Select `Camera Intrinsics Estimation`
 1. Select the correct 'Distortion Model'
