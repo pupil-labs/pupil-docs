@@ -103,7 +103,7 @@ This dictionary is sent on the IPC and read by gaze mapping plugins in the world
         'axes': [0, 0]}}
 ```
 
-Gaza data is based on one (monocular) or two (binocolar) pupil positions. The gaze mapper is automatically setup after calibration and maps pupil positions into world camera coordinate system. The pupil data on which the gaze datum is based on can be accessed using the `base_data` key.
+Gaza data is based on one (monocular) or two (binocular) pupil positions. The gaze mapper is automatically setup after calibration and maps pupil positions into world camera coordinate system. The pupil data on which the gaze datum is based on can be accessed using the `base_data` key.
 
 ```python
  {  # gaze datum

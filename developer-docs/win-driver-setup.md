@@ -39,7 +39,7 @@ If you had tried to install drivers with previous driver install instructions an
 
 ### Manual Installation of DIY Camera Drivers
 
-If any issues arrise when trying to install drivers for your DIY eye or world cameras, or if you are installing them for the first time, you can try following these instructions:
+If any issues arise when trying to install drivers for your DIY eye or world cameras, or if you are installing them for the first time, you can try following these instructions:
 
 1. Unplug Pupil Headset from your computer and keep unplugged until the last step
 1. Open Device Manager

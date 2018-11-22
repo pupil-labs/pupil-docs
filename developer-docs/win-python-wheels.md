@@ -7,7 +7,7 @@ page_weight = 1.5
 
 ## Windows Pupil Labs Python libs from Source
 
-This section is for Pupil core develpers who want to build `pyav`, `pyndsi`, `pyglui`, and `pyuvc` from source and create Python wheels. 
+This section is for Pupil core developers who want to build `pyav`, `pyndsi`, `pyglui`, and `pyuvc` from source and create Python wheels. 
 
 If you just want to run Pupil from source, go back to the [Windows Dependencies](#windows-dependencies) section and install the prebuilt wheels. 
 

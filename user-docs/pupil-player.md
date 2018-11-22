@@ -224,7 +224,7 @@ Each surface has a name, which can be manually set as described above.
 This name is augmented by an automatically generated numerical identifier.
   
   + `heatmap_<surface_name>_<surface_id>.png` - Heatmap of gaze positions on the surface aggregated over the entire export.
-  + `fixations_on_surface_<surface_name>_<surface_id>.csv` - A list of fixations that have occured on the surface. 
+  + `fixations_on_surface_<surface_name>_<surface_id>.csv` - A list of fixations that have occurred on the surface. 
   + `gaze_positions_on_surface_<surface_name>_<surface_id>.csv` - A list of gaze datums on the surface. 
   The values include the gaze point in two different coordinates systems.
   `x_norm` and `y_norm` are coordinates between 0 and 1, where `(0,0)` is the bottom left corner of the surface and `(1,1)` is the top right corner.
