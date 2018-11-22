@@ -248,40 +248,55 @@ Toggle `Show fixations` to show a visualization of fixations. The blue number is
 You can find more information in our [dedicated fixation detector section](#fixation-detector).
 
 ### Export
+
 You can export data and videos by pressing `e` on your keyboard or the `e` hot key button in the Pupil Player window.
 
-All open plugins that have export capability will export when you press `e`. All exports are separated from your raw data and contained in the `exports` sub-directory. The exports directory lives within your recording directory.
+All open plugins that have export capability will export when you press `e`.
+Exports are separated from your raw data and contained in the `exports` sub-directory.
+The exports directory lives within your recording directory.
 
-#### Exports directory
+Active video exporters will run in the background and you can see the progress bar of the export in the GUI. While exporting, you can continue working with Pupil Player and even launch new exports. Each video export creates at least one `mp4` and its respective file timestamp file. See the [Data Format](#data-format) section for details.
 
-> {{< webp-img src="/images/pupil-player/recording/recording_folder_exports_v07.webp" alt="Recording folder" >}}
+#### Export Directory
 
-All exports are saved within the `exports` sub-directory within your recording directory.
-A new directory will be created within the `exports` directory for each export. Export directories are never overwritten and have a counter for the export. Example: the first export will be `000` and the second `001` and the third `002`.
+> {{< webp-img src="/images/pupil-player/recording/recording\_folder\_exports_v07.webp" alt="Recording folder" >}}
 
-#### Video Export Launcher
+Every export creates a new folder within the `exports` sub-directory of your recording. All data from the export is saved to this folder.
+
+#### Export Handling
+
+You can select the frame range to export by setting trim marks in the seek bar or directly in the `General Settings` menu.
+
+Longer running exports, e.g. video exports, go through three phases: Queued, Running, and Completed.
+Export tasks can be cancelled while being queued or running.
+Completed tasks are kept in the list for reference.
+
+#### World Video Exporter
+
+<!-- TODO: UPDATE SCREENSHOT -->
 
 > {{< webp-img src="/images/pupil-player/plugin/export.webp" alt="Video Export Launcher plugin" >}}
 
-To export a video, load the `Export Video` plugin. You can select the frame range to export by setting trim marks in the seek bar or directly in the plugin GUI.
+The `World Video Exporter` is loaded by default.
 
-You can specify the name of the export in the GUI. Click press the `e` button or click `e` on your keyboard to start the export.
+The export saves the world video as shown in Player, including all currently active visualizations (see the \[Visualization Plugins\](#visualization-plugins) section).
 
-The exporter will run in the background and you can see the progress bar of the export in the GUI. While exporting, you can continue working with Pupil Player and even launch new exports.
+#### Eye Video Exporter
+
+The `Eye Video Exporter` needs to be loaded explicitly through the Plugin Manager.
+It includes the option to render the 2d pupil detection result into the exported video.
+
+#### iMotions Exporter
+
+The iMotions Exporter creates data that can be used with <https://imotions.com/>.
+
+Specifically, it undistorts the world video images using the camera intrinsics. Gaze data is also undistorted and exported to the `gaze.tlv` file.
 
 #### Raw Data Exporter
 
 > {{< webp-img src="/images/pupil-player/plugin/rawexport.webp" alt="Raw Data Exporter plugin" >}}
 
-To export `.csv` files of your data, load the `Raw Data Exporter` plugin. You can select the frame range to export by setting trim marks in the seek bar or directly in the plugin GUI.
-
-Click press the `e` button or click `e` on your keyboard to start the export.
-
-#### Batch Exporter
-You can use this plugin to apply visualizations to an entire directory (folder) of recordings in one batch. You need to specify the following:
-
-  + `Recording source directory` - a directory (folder) that contains one or more Pupil recording folder.
-  + `Recording destination directory` - an existing directory (folder) where you want to save the visualizations.
+The `Raw Data Exporter` export pupil and gaze data tp `.csv` files and is active bu default.
 
 ### Developing your own Plugin
 To develop your own plugin see the <a href="#plugin-guide">developer guide</a>.
