@@ -34,7 +34,7 @@ Click any sensor for a preview.
 > {{< webp-img src="/images/pupil-mobile/sensor.webp" alt="Pupil Mobile sensor call-out" >}}
 
 Preview live video feed from your Pupil headset and other available sensors.
-Sensor preview windows will automically close and take you back to the Home screen in order to conserve battery.
+Sensor preview windows will automatically close and take you back to the Home screen in order to conserve battery.
 
 1. **Sensor settings** - Settings for the sensor. For cameras you can set frame rate, exposure, white balance, and many more parameters.
 1. **Sensor name and recording status** - This displays the sensor name and a dot displaying the recording status of this sensor.

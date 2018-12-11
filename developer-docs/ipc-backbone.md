@@ -360,7 +360,7 @@ ZMQ PUB SUB will make no guarantees for delivery. Reasons for dropped messages a
 
 1. In Pupil we prevent this by using a `PUSH` socket as intermediary for notifications. See `shared_modules/zmq_tools.py`.
 
-2. Caching all massages in the sender or proxy is not an option. This is not really considered a problem of the transport.
+2. Caching all messages in the sender or proxy is not an option. This is not really considered a problem of the transport.
 
 3. In Pupil we pay close attention to be fast enough or to subscribe only to low volume topics. Dropping messages in this case is by design. It is better than stalling data producers or running out of memory.
 

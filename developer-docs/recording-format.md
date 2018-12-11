@@ -25,7 +25,7 @@ System Info,"User: name, Platform: Linux, ..."
 ```
 
 Each recording requires three files:
-1. An `info.csv` file that includes two columns -- `key` and `value`. (See left for eaxample)
+1. An `info.csv` file that includes two columns -- `key` and `value`. (See left for example)
 2. At least one video file and its corresponding timestamp file. See the [*Video Files*](#video-files) section below for details.
 
 A minimum requirement of two key, value pairs are required in the `info.csv` file.
