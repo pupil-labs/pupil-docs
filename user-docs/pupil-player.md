@@ -259,7 +259,7 @@ Active video exporters will run in the background and you can see the progress b
 
 #### Export Directory
 
-> {{< webp-img src="/images/pupil-player/recording/recording\_folder\_exports_v07.webp" alt="Recording folder" >}}
+> {{< webp-img src="/images/pupil-player/recording/recording_folder_exports_v07.webp" alt="Recording folder" >}}
 
 Every export creates a new folder within the `exports` sub-directory of your recording. All data from the export is saved to this folder.
 
