@@ -43,13 +43,12 @@ Let's get started! Its time to put `brew` to work! Just copy paste commands into
 
 ```
 brew install pkg-config
-brew install scipy
 brew install libjpeg-turbo
 brew install libusb
 brew install portaudio
 # opencv will install ffmpeg, numpy, and opencv-contributions automatically
 # tbb is included by default with https://github.com/Homebrew/homebrew-core/pull/20101
-brew install opencv
+brew install opencv@3
 brew install glew
 brew install glfw3
 # dependencies for 2d_3d c++ detector
@@ -58,6 +57,13 @@ brew install boost-python3
 brew install ceres-solver
 ```
 
+<aside class="notice">
+Note - You might need to run
+
+    ln -s /usr/local/opt/opencv@3/ /usr/local/opt/opencv
+when you got `Reason: image not found` error.
+</aside>
+
 ### Install `libuvc`
 ```
 git clone https://github.com/pupil-labs/libuvc
@@ -65,6 +71,7 @@ cd libuvc
 mkdir build
 cd build
 cmake ..
+make LIBRARY_PATH=/usr/local/lib
 make && make install
 ```
 
@@ -77,8 +84,11 @@ pip3 install PyOpenGL
 pip3 install pyzmq
 pip3 install numexpr
 pip3 install cython
+pip3 install scipy
+pip3 install torch torchvision
 pip3 install psutil
-pip3 install msgpack
+pip3 install msgpack==0.5.6
+pip3 install opencv-contrib-python==3.4.5.20
 pip3 install pyaudio
 pip3 install cysignals
 pip3 install git+https://github.com/zeromq/pyre
