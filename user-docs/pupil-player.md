@@ -145,27 +145,38 @@ This plugin can be used to overlay the eye video on top of the world video. Note
   + `show` - show or hide eye video overlays.
   + `horiz. and vert. flip` - flip eye videos vertically or horizontally
 
-### Data Source Plugins
-Data source plugins provide data of a specific topic - currently `pupil` and `gaze` positions. Plugins that provide data for the same topic are exclusive. `Pupil Positions From Recording` and `Offline Pupil Detector` cannot be run at the same time.
+### Pupil Data And Post-hoc Detection
 
-#### Pupil Positions From Recording
-This is the default Pupil detector plugin. This plugin tries to load pupil positions that were detected and stored during a Pupil Capture recording. This plugin can not be run in conjunction with `Offline Pupil Detector`.
+By default, Player starts with the `Pupil From Recording` plugin that tries to load pupil positions that were detected and stored during a Pupil Capture recording.
+Alternatively, one can run the pupil detection post-hoc.
 
 #### Offline Pupil Detector
-The `Offline Pupil Detector` plugin can be used with any dataset where eye videos were recorded. The plugin tries to load the `eye0.mp4` and `eye1.mp4` videos, and runs the pupil detection algorithm in separate processes. This plugin is especially relevant for recordings made with Pupil Mobile, because Pupil Mobile does not perform any pupil detection or gaze estimation on the Android device. This plugin is available starting with Pupil Player `v0.9.13`.
+The `Offline Pupil Detector` plugin can be used with any dataset where eye videos were recorded. 
+The plugin tries to load the eye videos, and runs the pupil detection algorithm in separate processes.
+This plugin is especially relevant for recordings made with Pupil Mobile, because Pupil Mobile does not perform any pupil detection or gaze estimation on the Android device.
+This plugin is available starting with Pupil Player `v0.9.13`.
 
-The `Detection Method` selector sets the detection algorithm to either `2d` or `3d` detection (see [the section on Pupil Detection](#pupil-detection) for details). The `Redetect` button restarts the detection procedure. You can use the `Offline Pupil Detector` plugin to debug, improve, and gain insight into the pupil detection process.
+The `Detection Method` selector sets the detection algorithm to either `2d` or `3d` detection (see [the section on Pupil Detection](#pupil-detection) for details).
+The `Redetect` button restarts the detection procedure.
+You can use the `Offline Pupil Detector` plugin to debug, improve, and gain insight into the pupil detection process.
 
-#### Gaze Positions From Recording
-This is the default gaze mapping plugin. This plugin tries to load gaze positions that were created and stored during a Pupil Capture recording. This plugin can not be run in conjunction with  `Offline Calibration`.
+### Gaze Data And Post-hoc Calibration
+By default, Player starts with the `Gaze From Recording` plugin that tries to load gaze positions that were detected and stored during a Pupil Capture recording.
+Alternatively, one can run the calibration process post-hoc.
 
 #### Offline Calibration
-This plugin is available starting with Pupil Player `v0.9.13`. The `Offline Calibration` plugin can be used on any Pupil dataset. This plugin enables you to (re)calibrate, set calibration sections, and (re)map pupil to gaze positions. To calibrate with the `Offline Calibration` plugin, you must supply a set of reference positions in the world. There two methods to acquire these positions:
+The `Offline Calibration` plugin enables you to calibrate, map, and validate gaze post-hoc and is available starting with Pupil Player `v0.9.13`.
+It can be used on any Pupil dataset.
 
-1. `Circle Marker`: This method tries to automatically detect [circular calibration markers](#calibration-methods) within the world video.
-2. `Natural Features`: This method enables you to select reference points by marking (clicking on) known features that correspond to gaze positions within the world video.
+The workflow is separated into three steps, each with its own submenu: Reference Locations, Calibrations, and Gaze Mappers.
 
-Data is calibrated and mapped in sections. Each section has following properties:
+Reference locations are points within the recording that are known to have been fixated by the subject.
+They can either be automatically detected or manually annotated:
+
+1. `Detect Circle Markers in Recording`: This button starts the automatic detection of [circular calibration markers](#calibration-methods) within the world video. The progress is visualized in the plugin's timeline.
+2. `Manual Edit Mode`: When this option is enabled, you can add new locations as well as correct and delete existing ones. There can only be one location per world frame.
+
+Calibrations ae organized in sections. Each section has following properties:
 
 1. `Calibration Method`: `Circle Marker` or `Natural Features`, see above
 2. `Calibration Mode`: `2d` uses polynomial regression, or `3d` uses bundle adjustment calibration
