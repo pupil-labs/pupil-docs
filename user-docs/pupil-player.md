@@ -176,30 +176,47 @@ They can either be automatically detected or manually annotated:
 1. `Detect Circle Markers in Recording`: This button starts the automatic detection of [circular calibration markers](#calibration-methods) within the world video. The progress is visualized in the plugin's timeline.
 2. `Manual Edit Mode`: When this option is enabled, you can add new locations as well as correct and delete existing ones. There can only be one location per world frame.
 
-Calibrations ae organized in sections. Each section has following properties:
+As in Capture, one can have more than one calibration per recording.
+A calibration on its own does not result in gaze data, yet.
+It rather contains the required parameters to map pupil to gaze data.
+Each has the following properties:
 
-1. `Calibration Method`: `Circle Marker` or `Natural Features`, see above
-2. `Calibration Mode`: `2d` uses polynomial regression, or `3d` uses bundle adjustment calibration
-3. `Calibration Range`: Slice of world frame indices that indicates which reference and pupil positions to use for calibration. For example, the calibration range `[500, 701]` will use all reference and pupil positions for calibration that correlate to the world timestamps with indices 500 - 700
-4. `Mapping Range`: Slice of world frame indices that indicates which pupil positions will be mapped to gaze positions.
+- `Name`: Used to correctly select a calibration for each gaze mapper (see below).
+- `Mapping Method`: `2d` uses polynomial regression, or `3d` uses bundle adjustment calibration
+- `Reference Range`: Time range that indicates which reference locations to use.
+
+Calibrations are stored as `plcal` files in the recording's `calibration` subfolder.
+You can copy and apply them to recordings that do not include reference locations.
+See the instructional video below for details.
+
+In order to apply a calibration to pupil data, one needs a gaze mapper.
+Each gaze mapper has the following properties:
+
+- `Calibration`: One of the previously created or imported calibrations (see screencast)
+- `Mapping Range`: Time range in which pupil data will be mapped to gaze data.
+- `Manual Correction`: Apply a fixed offset to your gaze mapping.
+- `Validation`: You can validate the accuracy and precision of the mapped gaze by comparing it to reference locations in the selected `Validation Range`. It uses the same methodology as the [`Accuracy Visualizer`](#notes-on-calibration-accuracy).
 
 <aside class="warning">
-Sections that have overlapping mapping ranges will produce duplicated gaze positions in the overlapping regions. This is intended behaviour.
+Overlapping mapping ranges result in multiple gaze points per gaze datum.
+This can be temporarly disabled by turning off the according gaze mapper's `Activate Gaze` option.
 </aside>
 
 <aside class="notice">
-You can compare `2d` and `3d` mapping results by creating two sections with the same calibration and mapping ranges.
+You can compare `2d` and `3d` mapping results by creating two calibrations and gaze mappers with the same calibration and mapping ranges.
 </aside>
 
-To add reference points manually, you need to enable the `Natural feature edit mode`. Afterwards you can add markers by clicking on the corresponding location in the world video. To delete single natural features, simply click on them again while the edit mode is enabled. You can delete all natural features at once by clicking the button `Clear natural features`.
+> <h5 align='center'>Offline (post-hoc) Pupil Detection and Gaze Mapping<h5>
+> {{< video-youtube embed-url="https://www.youtube.com/embed/_Jnxi1OMMTc" >}}
 
-Sections are visualized as horizontal lines above the seek bar. The thick lines denote calibration ranges and thin lines denote mapping ranges. The reference points that are used for each section are visualized as points behind the corresponding lines.
+> <h5 align='center'>Offline (post-hoc) Gaze Mapping With Manual Reference Locations<h5>
+> {{< video-youtube embed-url="https://www.youtube.com/embed/mWyDQHhm7-w" >}}
 
-> <h5 align='center'>Offline pupil detection and gaze mapping<h5>
-> {{< video-youtube embed-url="https://www.youtube.com/embed/lPtwAkjNT2Q" >}}
+> <h5 align='center'>Use Offline (post-hoc) Calibration For Another Recording<h5>
+> {{< video-youtube embed-url="https://www.youtube.com/embed/eEl3sswsTms" >}}
 
-> <h5 align='center'>Offline gaze mapping with natural features<h5>
-> {{< video-youtube embed-url="https://www.youtube.com/embed/wVOqJWel0K0" >}}
+> <h5 align='center'>Offline (post-hoc) Gaze Mapping Validation<h5>
+> {{< video-youtube embed-url="https://www.youtube.com/embed/aPLnqu26tWI" >}}
 
 ### Analysis Plugins
 
