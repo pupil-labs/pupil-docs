@@ -178,7 +178,7 @@ They can either be automatically detected or manually annotated:
 
 As in Capture, one can have more than one calibration per recording.
 A calibration on its own does not result in gaze data.
-It rather contains the required parameters to map pupil to gaze data.
+Rather, it contains the required parameters to map pupil to gaze data.
 Each has the following properties:
 
 - `Name`: Used to correctly select a calibration for each gaze mapper (see below).
