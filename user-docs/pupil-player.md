@@ -177,7 +177,7 @@ They can either be automatically detected or manually annotated:
 2. `Manual Edit Mode`: When this option is enabled, you can add new locations as well as correct and delete existing ones. There can only be one location per world frame.
 
 As in Capture, one can have more than one calibration per recording.
-A calibration on its own does not result in gaze data, yet.
+A calibration on its own does not result in gaze data.
 It rather contains the required parameters to map pupil to gaze data.
 Each has the following properties:
 
