@@ -162,7 +162,7 @@ You can use the `Offline Pupil Detector` plugin to debug, improve, and gain insi
 
 ### Gaze Data And Post-hoc Calibration
 By default, Player starts with the `Gaze From Recording` plugin that tries to load gaze positions that were detected and stored during a Pupil Capture recording.
-Alternatively, one can run the calibration process post-hoc.
+Alternatively, one can run the gaze mapping process post-hoc.
 
 #### Offline Calibration
 The `Offline Calibration` plugin enables you to calibrate, map, and validate gaze post-hoc and is available starting with Pupil Player `v0.9.13`.
@@ -170,7 +170,7 @@ It can be used on any Pupil dataset.
 
 The workflow is separated into three steps, each with its own submenu: Reference Locations, Calibrations, and Gaze Mappers.
 
-Reference locations are points within the recording that are known to have been fixated by the subject.
+Reference locations are points within the recorded world video that are known to have been fixated on by the participant/subject.
 They can either be automatically detected or manually annotated:
 
 1. `Detect Circle Markers in Recording`: This button starts the automatic detection of [circular calibration markers](#calibration-methods) within the world video. The progress is visualized in the plugin's timeline.
@@ -182,7 +182,7 @@ Rather, it contains the required parameters to map pupil to gaze data.
 Each has the following properties:
 
 - `Name`: Used to correctly select a calibration for each gaze mapper (see below).
-- `Mapping Method`: `2d` uses polynomial regression, or `3d` uses bundle adjustment calibration
+- `Mapping Method`: `2d` uses polynomial regression, or `3d` uses bundle adjustment calibration.
 - `Reference Range`: Time range that indicates which reference locations to use.
 
 Calibrations are stored as `plcal` files in the recording's `calibration` subfolder.
