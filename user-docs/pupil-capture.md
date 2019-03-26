@@ -227,7 +227,9 @@ If you open up a session folder you will see a collection of video(s) and data f
 
 > {{< webp-img src="/images/pupil-capture/capture-plugin.webp" alt="Pupil Capture plugins" >}}
 
-Click on the selector "Open Plugin" and select your plugin.
+Open the `Plugin Manager` menu on the right.
+It lists all available plugins.
+Click the button next to the plugin's name to turn on or off the plugin.
 
 #### Third-party plugins
 
