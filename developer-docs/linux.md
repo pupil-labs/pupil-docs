@@ -171,7 +171,7 @@ sudo ldconfig
 > **Version 1: Without GPU acceleration**: Install PyTorch via pip
 
 ```bash
-pip3 install http://download.pytorch.org/whl/cpu/torch-0.4.0-cp36-cp36m-linux_x86_64.whl 
+pip3 install pip3 install https://download.pytorch.org/whl/cpu/torch-1.0.1.post2-cp36-cp36m-linux_x86_64.whl
 pip3 install torchvision
 ```
 
@@ -183,42 +183,10 @@ run in real-time.
 > **Version 2: With GPU acceleration**: Install PyTorch via pip
 
 ```bash
-pip3 install http://download.pytorch.org/whl/cu90/torch-0.4.0-cp36-cp36m-linux_x86_64.whl 
-pip3 install torchvision
+pip3 install torch torchvision
 ```
 
-For GPU acceleration CUDA and cuDNN are also required.
+Please refer to the following links on how to install CUDA and cuDNN:
 
-```bash
-sudo dpkg -i cuda-repo-ubuntu1604-9-0-local_9.0.176-1_amd64.deb
-sudo apt-key add /var/cuda-repo-9-0-local/7fa2af80.pub
-sudo apt-get update
-sudo apt-get install -y cuda libcupti-dev
-``` 
-
-Download CUDA 9.0 from https://developer.nvidia.com/cuda-90-download-archive?target_os=Linux
-Choose the choose the **deb (local)** file for your architecture. We have tested the setup with the 16.04 version.
-Install it via
-
-```bash
-echo "
-# Setting up CUDA
-export CUDA_ROOT=/usr/local/cuda
-export LD_LIBRARY_PATH=\${LD_LIBRARY_PATH}:\${CUDA_ROOT}/lib64:\${CUDA_ROOT}/extras/CUPTI/lib64
-export PATH=\${CUDA_ROOT}/bin:\${PATH}
-" | sudo tee /etc/profile.d/cuda_env.sh 
-```
-
-Add CUDA files to the appropriate path variables
-
-```bash
-tar -xvf cudnn-9.0-linux-x64-v7.tgz
-cd cuda
-sudo cp -P include/cudnn.h /usr/include
-sudo cp -P lib64/libcudnn* /usr/lib/x86_64-linux-gnu/
-sudo chmod a+r /usr/lib/x86_64-linux-gnu/libcudnn*
-```
-
-Download cuDNN 7.1 from https://developer.nvidia.com/cudnn
-The download requires you to register as a developer at Nvidia. This registration is free. Download the version for 
-CUDA 9.0, specifically download the **Library for Linux**.
+- CUDA https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#ubuntu-installation
+- cuDNN: https://docs.nvidia.com/deeplearning/sdk/cudnn-install/index.html
