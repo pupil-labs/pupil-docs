@@ -124,6 +124,8 @@ sudo pip3 install git+https://github.com/pupil-labs/PyAV
 sudo pip3 install git+https://github.com/pupil-labs/pyuvc
 sudo pip3 install git+https://github.com/pupil-labs/pyndsi
 sudo pip3 install git+https://github.com/pupil-labs/pyglui
+sudo pip3 install git+https://github.com/pupil-labs/nslr
+sudo pip3 install git+https://github.com/pupil-labs/nslr-hmm
 ```
 
 > 3D eye model dependencies
