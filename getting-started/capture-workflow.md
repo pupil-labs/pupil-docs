@@ -50,6 +50,27 @@ Before calibrating, be sure to check that your eyes are well positioned for a ro
 	4. Don't - The eye is out of focus.
 </aside>
 
+#### Settings Finetuning
+
+As a first step it is recommended to set the resolution, as some parameters are resolution dependent. 
+For stable and fast tracking we recommend 192x192 (or 320x240 depending on your hardware). 
+
+Pupil Capture offers the `Algorithm Mode` under `General Settings`. 
+The algorithm display mode overlays a visualization of the pupil detection parameters on top of the eye video, which helps a lot during fine tuning most parameters.
+ 
+**UVC Source / Sensor Settings**
+
+* `Resolution`: 192x192 or 320x240 (depending on hardware)
+* `Absolute Exposure Time`: Make sure that there is a high contrast between the pupil and its surrounding. In order to do so, you might need to increase brightness of the images. Start by testing one of these `Absolute Exposure Time` values: 64, 94, 124.
+
+**Pupil Detector 2D/3D**
+
+* `Pupil Min/Max` : Change to `Algorithm Mode`. The bottom left circles (2 red, 1 green) represent the min, max and the current pupil sizes. Set the min and max values such that they include the current pupil size at all times in *all* poses.
+Keep in mind that these values are defined in pixels and are therefore resolution dependent.
+* `Intensity Range` : Defines the minimum "darkness" of a pixel to be considered as the pupil.
+In `Algorithm Mode`, the considered pixels are visualized in blue. Try to minimize the range in a way that the pupil is always fully covered while having as little leakage as possible outside of the pupil.
+Be aware that this is dependent on the brightness and therefore has a strong interaction with `UVC Source/Sensor Settings/Absolute Exposure Time`.
+
 ### 4. Calibrate
 
 > {{< video-webm src="/videos/calibration/calibration-headset/clb-hd.webm" >}}
