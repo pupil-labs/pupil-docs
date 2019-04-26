@@ -19,15 +19,21 @@ sudo apt install -y pkg-config git cmake build-essential nasm wget python3-setup
 
 > ffmpeg >= 3.2
 
+**Ubuntu 18.04**
+```
+sudo apt install -y libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev ffmpeg x264 x265 libportaudio2 portaudio19-dev
+```
+
+**Ubuntu <= 17.10**
 ```
 sudo add-apt-repository ppa:jonathonf/ffmpeg-3
 sudo apt-get update
-sudo apt install libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev ffmpeg libav-tools x264 x265 libportaudio2 portaudio19-dev
+sudo apt install -y libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev ffmpeg libav-tools x264 x265 libportaudio2 portaudio19-dev
 ```
 
 > OpenCV
 
-We require a version of OpenCV that is >= 3.0. In **Ubuntu 18.04** it can simply be installed with `sudo apt install python3-opencv libopencv-dev`
+We require a version of OpenCV that is >= 3.0. In **Ubuntu 18.04** it can simply be installed with `sudo apt install -y python3-opencv libopencv-dev`
 
 In older versions of Ubuntu it needs to be compiled from source.
 
@@ -115,7 +121,7 @@ sudo pip3 install numexpr
 sudo pip3 install cython
 sudo pip3 install psutil
 sudo pip3 install pyzmq
-sudo pip3 install msgpack
+sudo pip3 install msgpack==0.5.6
 sudo pip3 install pyopengl
 sudo pip3 install pyaudio
 sudo pip3 install cysignals
@@ -130,9 +136,9 @@ sudo pip3 install git+https://github.com/pupil-labs/pyglui
 First install 
 
 ```bash
-sudo apt-get install libboost-dev
-sudo apt-get install libboost-python-dev
-sudo apt-get install libgoogle-glog-dev libatlas-base-dev libeigen3-dev
+sudo apt-get install -y libboost-dev
+sudo apt-get install -y libboost-python-dev
+sudo apt-get install -y libgoogle-glog-dev libatlas-base-dev libeigen3-dev
 ```
 
 > Ceres
@@ -140,7 +146,7 @@ sudo apt-get install libgoogle-glog-dev libatlas-base-dev libeigen3-dev
 > **Ubuntu 18.04**
 
 ```bash
-sudo apt install libceres-dev
+sudo apt install -y libceres-dev
 ```
 
 Next we need to install the Ceres library. In **Ubuntu 18.04** Ceres is available as a package in the repositories.
