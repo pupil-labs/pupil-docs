@@ -38,7 +38,7 @@ By default Pupil Capture will use Local USB as the capture source. If you have a
 - Local USB - select this option if your Pupil Headset is connected to the machine running Pupil Capture. This is the default setting.
 - RealSense 3D - select this option if you are using an Intel RealSense 3D camera as your scene camera. Read more in the [RealSense 3D section](#intel-realsense-3d).
 
-After switching to a different capture source, you can click the `Start with default devices` button to automatically start the capture for the world and eye windows with corresponding cameras. Or, you can individually indicate which source to use from every capture window.
+After switching to a different capture source, you can click the `Start with default devices` button. This will automatically select the correct sensor and start capturing for corresponding world and eye windows. Or, you can manually select the capture source to use from the world and eye windows.
 
 ### Pupil Detection
 
