@@ -82,7 +82,7 @@ Pupil Capture will save the world video stream and all corresponding gaze data i
 
 * Start recording: Press the `r` key on your keyboard or press the circular `R` button in the left hand side of the world window.
 * The elapsed recording time will appear next to the `R` button.
-* Stop recording: Press the `r` key on your keyboard or press the circular`R`' button in the left hand side of the world window.
+* Stop recording: Press the `r` key on your keyboard or press the circular `R` button in the left hand side of the world window.
 
 See a video demonstration of how to set recordings path, session name, and start recording -- [here](http://youtu.be/VzIXFUqv99s).
 
