@@ -24,7 +24,7 @@ sudo apt install -y pkg-config git cmake build-essential nasm wget python3-setup
 sudo apt install -y libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev ffmpeg x264 x265 libportaudio2 portaudio19-dev
 ```
 
-**<= Ubuntu 17.10**
+**Ubuntu <= 17.10**
 ```
 sudo add-apt-repository ppa:jonathonf/ffmpeg-3
 sudo apt-get update
