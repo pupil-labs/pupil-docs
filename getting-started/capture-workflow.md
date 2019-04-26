@@ -52,7 +52,7 @@ Before calibrating, be sure to check that your eyes are well positioned for a ro
 
 #### Settings Finetuning
 
-As a first step it is recommended to set the resolution, as some parameters are resolution dependent. 
+As a first step it is recommended to check the eye camera resolution, as some parameters are resolution dependent. 
 For stable and fast tracking we recommend 192x192 (or 320x240 depending on your hardware). 
 
 Pupil Capture offers the `Algorithm Mode` under `General Settings`. 
