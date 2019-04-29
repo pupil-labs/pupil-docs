@@ -44,12 +44,12 @@ Pupil's algorithms automatically detect the participant's pupil. With the 3d det
 
 > {{< video-webm src="/videos/calibration/pupil-detection/pd.webm" >}}
 
-#### Settings Finetuning
+#### Fine-tuning Pupil Detection
 
-As a first step it is recommended to check the eye camera resolution, as some parameters are resolution dependent. 
-For robust and fast pupil detection and tracking we recommend using the default resolution settings. For 200hz eye cameras the default resolution is set to 192x192 pixels. If you have an older 120hz eye camera, the default is 320x240 pixels.
+As a first step it is recommended to check the eye camera resolution as some parameters are resolution dependent. 
+For fast and robust pupil detection and tracking we recommend using the default resolution settings. For 200hz eye cameras the default resolution is set to 192x192 pixels. If you have an older 120hz eye camera, the default is 320x240 pixels.
 
-In Pupil Capture you can view a visualization of the pupil detection Algorithm in the eye windows. For fine-tuning switch to this mode: `General Settings > Algorithm Mode`. 
+In Pupil Capture you can view a visualization of the pupil detection algorithm in the eye windows. For fine-tuning switch to this mode: `General Settings > Algorithm Mode`. 
  
 **Sensor Settings**
 
@@ -59,12 +59,13 @@ In Pupil Capture you can view a visualization of the pupil detection Algorithm i
 **Pupil Detector 2D/3D**
 
 * `Pupil Min/Max` : Change to `General > Algorithm Mode`. The two red circles represent the min and max pupil size settings. The green circle visualizes the current apparent pupil size. Set the min and max values so the green circle (current pupil size) is within the min/max range for _all_ eye movements.
-<aside class="notice">
-Keep in mind that pupil size values are defined in pixels and are therefore resolution dependent.
-</aside>
 * `Intensity Range` : Defines the minimum "darkness" of a pixel to be considered as the pupil.
 The pixels considered for pupil detection are visualized in blue within the `Algorithm Mode`. Try to minimize the range so that the pupil is always fully covered while having as little leakage as possible outside of the pupil.
 Be aware that this is dependent on the brightness and therefore has a strong interaction with `UVC Source/Sensor Settings/Absolute Exposure Time`.
+
+<aside class="notice">
+Keep in mind that pupil size values are defined in pixels and are therefore dependent on the resolution settings of your sensor.
+</aside>
 
 ### Calibration
 
