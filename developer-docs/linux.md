@@ -108,6 +108,18 @@ echo 'SUBSYSTEM=="usb",  ENV{DEVTYPE}=="usb_device", GROUP="plugdev", MODE="0664
 sudo udevadm trigger
 ```
 
+### Install `apriltag`
+```
+git clone https://github.com/swatbotics/apriltag.git
+cd apriltag
+mkdir build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release
+make -j4
+sudo make install
+sudo ldconfig
+```
+
 > Install packages with `pip`
 
 ```
