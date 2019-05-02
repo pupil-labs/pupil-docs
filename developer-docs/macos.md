@@ -68,6 +68,17 @@ cmake ..
 make && make install
 ```
 
+### Install `apriltag`
+```
+git clone https://github.com/swatbotics/apriltag.git
+cd apriltag
+mkdir build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release
+make -j4
+sudo make install
+```
+
 ### Python Packages with `pip`
 
 PyOpenGL, ZMQ, ...
