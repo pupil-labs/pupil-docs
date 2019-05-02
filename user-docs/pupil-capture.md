@@ -40,9 +40,9 @@ By default Pupil Capture will use Local USB as the capture source. If you have a
 
 ### Pupil Detection
 
-Pupil's algorithms automatically detect the participant's pupil. With the 3d detection and mapping mode, Pupil uses a 3d model of the eye(s) that constantly updates based on observations of the eye. This enables the system to compensate for movements of the headset - slippage. To build up an initial model, you can just look around your field of view.
-
 > {{< video-webm src="/videos/calibration/pupil-detection/pd.webm" >}}
+
+Pupil's algorithms automatically detect the participant's pupil. With the 3d detection and mapping mode, Pupil uses a 3d model of the eye(s) that constantly updates based on observations of the eye. This enables the system to compensate for movements of the headset - slippage. To build up an initial model, you can just look around your field of view.
 
 #### Fine-tuning Pupil Detection
 
