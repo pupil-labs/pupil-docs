@@ -216,3 +216,8 @@ When using the setting `more CPU smaller file`: A `mpeg4` compressed video strea
 
 When using the setting `less CPU bigger file`: A raw `mjpeg` stream from the world camera world view in a `.mp4` container. The video is compressed by the camera itself. While the file size is considerably larger than above, this will allow ultra low CPU while recording. It plays with recent version of ffmpeg and vlc player. The "frame rate" setting in the Pupil Capture sidebar (Camera Settings > Sensor Settings) controls the frame rate of the videos.
 
+
+#### head_pose_tacker_model.csv and head_pose_tacker_poses.csv
+
+- `head_pose_tacker_model.csv`: A list of all markers on which the 3d model is based on and the 3d locations of their vertices
+- `head_pose_tacker_poses.csv`: The headset's pose (rotation and translation) within the 3d model coordinate system for each recorded world frame
