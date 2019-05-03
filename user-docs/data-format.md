@@ -220,4 +220,6 @@ When using the setting `less CPU bigger file`: A raw `mjpeg` stream from the wor
 #### head_pose_tacker_model.csv and head_pose_tacker_poses.csv
 
 - `head_pose_tacker_model.csv`: A list of all markers used to generate the 3d model and the 3d locations of the marker vertices.
-- `head_pose_tacker_poses.csv`: The headset's pose (rotation and translation) within the 3d model coordinate system for each recorded world frame
+- `head_pose_tacker_poses.csv`: The headset's pose (rotation and translation) within the 3d model coordinate system for each recorded world frame.
+
+By default, the location of the first marker occurance will be used as the origin of the 3d model's coordinate system. In the plugin's menu, you can change the marker that is being used as the origin.
