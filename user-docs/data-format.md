@@ -219,5 +219,5 @@ When using the setting `less CPU bigger file`: A raw `mjpeg` stream from the wor
 
 #### head_pose_tacker_model.csv and head_pose_tacker_poses.csv
 
-- `head_pose_tacker_model.csv`: A list of all markers on which the 3d model is based on and the 3d locations of their vertices
+- `head_pose_tacker_model.csv`: A list of all markers used to generate the 3d model and the 3d locations of the marker vertices.
 - `head_pose_tacker_poses.csv`: The headset's pose (rotation and translation) within the 3d model coordinate system for each recorded world frame

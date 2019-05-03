@@ -282,7 +282,7 @@ You can find more information in our [dedicated fixation detector section](#fixa
 
 This plugin uses fiducial markers ([apriltag](https://april.eecs.umich.edu/software/apriltag.html)) to build a 3d model of the environment and track the headset's pose within it.
 
-See the [detailed data format section](#detailed-data-format) on information about the exported data.
+See the [detailed data format section](#detailed-data-format) for more information about the exported data.
 
 ### Export
 
