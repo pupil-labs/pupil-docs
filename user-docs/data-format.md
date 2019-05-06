@@ -193,9 +193,6 @@ When using the **3D gaze mapping** mode the following keys will additionally be 
 
 
 #### World Video Stream
-When using the setting `more CPU smaller file`: A `mpeg4` compressed video stream of the world view in a `.mp4` container. The video is compressed using ffmpeg's default settings. It gives a good balance between image quality and files size. The frame rate of this file is set to your capture frame rate.
-
-When using the setting `less CPU bigger file`: A raw `mjpeg` stream from the world camera world view in a `.mp4` container. The video is compressed by the camera itself. While the file size is considerably larger than above, this will allow ultra low CPU while recording. It plays with recent version of ffmpeg and vlc player. The "frame rate" setting in the Pupil Capture sidebar (Camera Settings > Sensor Settings) controls the frame rate of the videos.
 
 > You can compress the videos afterwards using ffmpeg like so:
 
@@ -214,3 +211,15 @@ capture = cv2.VideoCapture("absolute_path_to_video/world.mp4")
 status, img1 = capture.read() # extract the first frame
 status, img2 = capture.read() # second frame...
 ```
+
+When using the setting `more CPU smaller file`: A `mpeg4` compressed video stream of the world view will be created in an `.mp4` container. The video is compressed using ffmpeg's default settings. It gives a good balance between image quality and files size. The frame rate of this file is set to your capture frame rate.
+
+When using the setting `less CPU bigger file`: A raw `mjpeg` stream from the world camera world view will be created in an `.mp4` container. The video is compressed by the camera itself. While the file size is considerably larger than above, this will allow ultra low CPU while recording. It plays with recent version of ffmpeg and vlc player. The "frame rate" setting in the Pupil Capture sidebar (Camera Settings > Sensor Settings) controls the frame rate of the videos.
+
+
+#### head_pose_tacker_model.csv and head_pose_tacker_poses.csv
+
+- `head_pose_tacker_model.csv`: A list of all markers used to generate the 3d model and the 3d locations of the marker vertices.
+- `head_pose_tacker_poses.csv`: The headset's pose (rotation and translation) within the 3d model coordinate system for each recorded world frame.
+
+By default, the location of the first marker occurance will be used as the origin of the 3d model's coordinate system. In the plugin's menu, you can change the marker that is being used as the origin.

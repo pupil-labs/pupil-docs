@@ -275,6 +275,15 @@ Toggle `Show fixations` to show a visualization of fixations. The blue number is
 
 You can find more information in our [dedicated fixation detector section](#fixation-detector).
 
+#### Head Pose Tracking
+
+> <h5 align='center'>Head Pose Tracker Tutorial<h5>
+> {{< video-youtube embed-url="https://www.youtube.com/embed/9x9h98tywFI" >}}
+
+This plugin uses fiducial markers ([apriltag](https://april.eecs.umich.edu/software/apriltag.html)) to build a 3d model of the environment and track the headset's pose within it.
+
+See the [detailed data format section](#detailed-data-format) for more information about the exported data.
+
 ### Export
 
 You can export data and videos by pressing `e` on your keyboard or the `e` hot key button in the Pupil Player window.
