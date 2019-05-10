@@ -147,6 +147,18 @@ This plugin can be used to overlay the eye video on top of the world video. Note
 
 ### Pupil Data And Post-hoc Detection
 
+> <h5 align='center'>Offline (post-hoc) Pupil Detection and Gaze Mapping<h5>
+> {{< video-youtube embed-url="https://www.youtube.com/embed/_Jnxi1OMMTc" >}}
+
+> <h5 align='center'>Offline (post-hoc) Gaze Mapping With Manual Reference Locations<h5>
+> {{< video-youtube embed-url="https://www.youtube.com/embed/mWyDQHhm7-w" >}}
+
+> <h5 align='center'>Use Offline (post-hoc) Calibration For Another Recording<h5>
+> {{< video-youtube embed-url="https://www.youtube.com/embed/eEl3sswsTms" >}}
+
+> <h5 align='center'>Offline (post-hoc) Gaze Mapping Validation<h5>
+> {{< video-youtube embed-url="https://www.youtube.com/embed/aPLnqu26tWI" >}}
+  
 By default, Player starts with the `Pupil From Recording` plugin that tries to load pupil positions that were detected and stored during a Pupil Capture recording.
 Alternatively, one can run the pupil detection post-hoc.
 
@@ -205,18 +217,6 @@ This can be temporarly disabled by turning off the according gaze mapper's `Acti
 <aside class="notice">
 You can compare `2d` and `3d` mapping results by creating two calibrations and gaze mappers with the same calibration and mapping ranges.
 </aside>
-
-> <h5 align='center'>Offline (post-hoc) Pupil Detection and Gaze Mapping<h5>
-> {{< video-youtube embed-url="https://www.youtube.com/embed/_Jnxi1OMMTc" >}}
-
-> <h5 align='center'>Offline (post-hoc) Gaze Mapping With Manual Reference Locations<h5>
-> {{< video-youtube embed-url="https://www.youtube.com/embed/mWyDQHhm7-w" >}}
-
-> <h5 align='center'>Use Offline (post-hoc) Calibration For Another Recording<h5>
-> {{< video-youtube embed-url="https://www.youtube.com/embed/eEl3sswsTms" >}}
-
-> <h5 align='center'>Offline (post-hoc) Gaze Mapping Validation<h5>
-> {{< video-youtube embed-url="https://www.youtube.com/embed/aPLnqu26tWI" >}}
 
 ### Analysis Plugins
 
