@@ -19,6 +19,10 @@ We use a normalized coordinate system with the origin `0,0` at the bottom left a
 * Image Coordinate System
 
   In some rare cases we use the image coordinate system. This is mainly for pixel access of the image arrays. Here a unit is one pixel, origin is "top left" and "bottom right" is the maximum x,y.
+  
+* Camera Coordinate System
+
+  Some of the raw data (such as the estimate of the 3D gaze point) is specified in the three-dimensional world camera coordinate system. The origin of this coordinate system is in the projection center located behind the midpoint of the 2D image plane. The z-axis points forward along the optical axis while the x-axis points to the right and the y-axis downwards.
 
 #### Timestamps
 All indexed data - still frames from the world camera, still frames from the eye camera(s), gaze coordinate, and pupil coordinates, etc. - have timestamps associated for synchronization purposes. The timestamp is derived from `CLOCK_MONOTONIC` on Linux and MacOS.
