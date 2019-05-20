@@ -7,43 +7,49 @@ page_weight = 1.1
 
 ## Linux Dependencies
 
-These installation instructions are tested using **Ubuntu 16.04 or higher** running on many machines. Do not run Pupil on a VM unless you know what you are doing.
+These installation instructions are tested using **Ubuntu 16.04 or higher** running on many machines. Do not run Pupil on a VM unless you know what you are doing. We recommend using `18.04 LTS`. 
 
 ### Install Linux Dependencies
 
 Let's get started! Its time for `apt`!  Just copy paste into the terminal and listen to your machine purr.
 
+#### Ubuntu 18.04
+
 ```
 sudo apt install -y pkg-config git cmake build-essential nasm wget python3-setuptools libusb-1.0-0-dev  python3-dev python3-pip python3-numpy python3-scipy libglew-dev libglfw3-dev libtbb-dev
 ```
 
-> ffmpeg >= 3.2
+> install ffmpeg >= 3.2
 
-**Ubuntu 18.04**
 ```
 sudo apt install -y libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev ffmpeg x264 x265 libportaudio2 portaudio19-dev
 ```
 
-**Ubuntu <= 17.10**
+> install OpenCV >= 3.
+
+```
+sudo apt install -y python3-opencv libopencv-dev`
+```
+
+#### Ubuntu <= 17.10
+If you're using Ubuntu <= 17.10, you will need to install OpenCV from source, and install ffmpeg-3 from a different ppa. 
+
+> install ffmpeg3 from jonathonf's ppa
+
 ```
 sudo add-apt-repository ppa:jonathonf/ffmpeg-3
 sudo apt-get update
 sudo apt install -y libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev ffmpeg libav-tools x264 x265 libportaudio2 portaudio19-dev
 ```
 
-> OpenCV
+> install OpenCV from source
 
-We require a version of OpenCV that is >= 3.0. In **Ubuntu 18.04** it can simply be installed with `sudo apt install -y python3-opencv libopencv-dev`
+> The requisites for opencv to build python3 cv2.so library are:
+> 1. python3 interpreter found
+> 2. libpython***.so shared lib found (make sure to install python3-dev)
+> 3. numpy for python3 installed.
 
-In older versions of Ubuntu it needs to be compiled from source.
-
-The requisites for opencv to build python3 cv2.so library are:
-
-1. python3 interpreter found
-1. libpython***.so shared lib found (make sure to install python3-dev)
-1. numpy for python3 installed.
-
-```bash
+```
 git clone https://github.com/opencv/opencv
 cd opencv
 mkdir build
