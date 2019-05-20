@@ -14,6 +14,7 @@ These installation instructions are tested using **Ubuntu 16.04 or higher** runn
 Let's get started! Its time for `apt`!  Just copy paste into the terminal and listen to your machine purr.
 
 #### Ubuntu 18.04
+Install dependencies with apt-get. 
 
 ```
 sudo apt install -y pkg-config git cmake build-essential nasm wget python3-setuptools libusb-1.0-0-dev  python3-dev python3-pip python3-numpy python3-scipy libglew-dev libglfw3-dev libtbb-dev
@@ -31,7 +32,7 @@ sudo apt install -y libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev
 sudo apt install -y python3-opencv libopencv-dev`
 ```
 
-#### Ubuntu <= 17.10
+#### Ubuntu 17.10 or lower
 If you're using Ubuntu <= 17.10, you will need to install OpenCV from source, and install ffmpeg-3 from a different ppa. 
 
 > install ffmpeg3 from jonathonf's ppa
@@ -45,8 +46,11 @@ sudo apt install -y libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev
 > install OpenCV from source
 
 > The requisites for opencv to build python3 cv2.so library are:
+
 > 1. python3 interpreter found
+
 > 2. libpython***.so shared lib found (make sure to install python3-dev)
+
 > 3. numpy for python3 installed.
 
 ```
