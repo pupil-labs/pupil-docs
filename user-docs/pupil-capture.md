@@ -397,7 +397,7 @@ In both cases the necessary steps are as follows:
 *   Add a new surface by clicking the `Add surface` button.
 *   Give your surface a name.
 *   Click the `edit surface` button and move the corners of your surface into the desired position.
-    In the online case this is much easier if you freeze the video by clicking the `Freeze Scene` button.
+    In the real-time case (using Pupil Capture) this is much easier if you freeze the video by clicking the `Freeze Scene` button.
 *   If markers have been erroneously added or left out, click the `add/remove markers` button and afterwards onto the according marker to add/remove them from your surface.
 
 
