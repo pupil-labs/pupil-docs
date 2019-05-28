@@ -413,8 +413,9 @@ You can copy&paste this file to move definitions from one session or recording t
 
 It is possible to display gaze heatmaps for each surface by enabling `Show Heatmap` in the `Surface Tracker` menu.
 Two heatmap modes are supported:
-*   `Gaze within each surface`: Visualizes the distribution of gaze points the lie within each surface. 
+*   `Gaze within each surface`: Visualizes the distribution of gaze points that lie within each surface. 
 *   `Gaze across different surfaces`: Color codes the surfaces to visualize the amount of time spend gazing on each surface in relation to other surfaces.
+Red color stands for a lot of gaze points or time spend, while blue color stands for few gaze points or little time spend. 
 
 The smoothness of the heatmap in `Gaze within each surface` mode can be set using the `Heatmap Smoothness` slider, which will effectively change the bin size of the underlying histogram.
 In the online case the heatmap is computed over the most recent data.
