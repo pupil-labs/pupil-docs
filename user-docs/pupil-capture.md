@@ -387,7 +387,7 @@ When placing your markers please follow the following rules:
 
 > {{< video-webm src="/videos/surface-tracking/srf-tracking.webm" >}}
 
-Surfaces can be defined with Pupil Capture in real-time, or offline with Pupil Player. 
+Surfaces can be defined with Pupil Capture in real-time, or post-hoc with Pupil Player. 
 In both cases the necessary steps are as follows:
 
 *   Prepare your environment as described above.
