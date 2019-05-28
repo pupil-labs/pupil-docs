@@ -406,7 +406,7 @@ In both cases the necessary steps are as follows:
 Your surfaces are automatically saved in a file called `surface_definitions` in the `pupil_capture_settings` directory. 
 If you restart Pupil Capture or the Surface Tracker plugin, your surface definitions from previous sessions will be loaded.
 The `surface_definitions` file is copied into each recording folder as well, so you will have access to your surface definitions in Pupil Player. 
-You can copy&paste this file to move definitions from one session or recording to another.
+You can copy & paste this file to move definitions from one session or recording to another.
 
 
 #### Gaze Heatmaps for Surfaces
