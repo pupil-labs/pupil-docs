@@ -393,7 +393,7 @@ In both cases the necessary steps are as follows:
 *   Prepare your environment as described above.
 *   Turn on the `Surface Tracker` plugin .
 *   Make sure the camera is pointing at your AOI and the markers are well detected.
-    In the offline case seek to a frame that contains a good view of your desired AOI.
+    In the post-hoc case (using Pupil Player) seek to a frame that contains a good view of your desired AOI.
 *   Add a new surface by clicking the `Add surface` button.
 *   Give your surface a name.
 *   Click the `edit surface` button and move the corners of your surface into the desired position.
