@@ -376,7 +376,7 @@ If your AOI is for example a computer monitor, you could display your markers in
 If your AOI is a magazine page you could place the markers in the corners of the page or anywhere else on the page where they are not occluding.
 When placing your markers please follow the following rules:
 
-*   All markers of a surface need to lie within the same plane.
+*   All markers of a surface need to lie within the same two dimensional plane.
 *   An individual marker can be part of multiple surfaces.
 *   The used markers need to be unique, i.e. you may not use multiple instances of the same marker in your environment.
 *   Using more markers to define a surface yields greater robustness in the tracking of that surface.
