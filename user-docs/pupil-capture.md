@@ -411,7 +411,7 @@ You can copy & paste this file to move definitions from one session or recording
 
 #### Gaze Heatmaps for Surfaces
 
-It is possible to display gaze heatmaps for each surface by enabling `Show Heatmap` in the `Surface Tracker` menu.
+You can display gaze heatmaps for each surface by enabling `Show Heatmap` in the `Surface Tracker` menu.
 Two heatmap modes are supported:
 *   `Gaze within each surface`: Visualizes the distribution of gaze points that lie within each surface. 
 *   `Gaze across different surfaces`: Color codes the surfaces to visualize the amount of time spend gazing on each surface in relation to other surfaces.
