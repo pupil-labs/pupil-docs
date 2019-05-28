@@ -25,7 +25,7 @@ System Info,"User: name, Platform: Linux, ..."
 ```
 
 Each recording requires three files:
-1. An `info.csv` file that includes two columns -- `key` and `value`. (See left for eaxample)
+1. An `info.csv` file that includes two columns -- `key` and `value`. (See left for example)
 2. At least one video file and its corresponding timestamp file. See the [*Video Files*](#video-files) section below for details.
 
 A minimum requirement of two key, value pairs are required in the `info.csv` file.
@@ -46,6 +46,7 @@ A datum and its timestamp have the same index within their respective files, i.e
 Video files are only recognized if they comply with the following constraints:
 
 Allowed video file extentions are:
+
 - `.mp4`
 - `.mkv`
 - `.avi`
@@ -53,9 +54,23 @@ Allowed video file extentions are:
 - `.mjpeg`
 
 Allowed video file names are:
+
 - `world`: Scene video
 - `eye0`: Right eye video
 - `eye1`: Left eye video
+
+The video files should look like:
+
+- `world.mp4`, `eye0.mjpeg`, `eye1.mjpeg`
+
+We also support multiple parts of video files as input. For instance:
+
+- `world.mp4`, `world_001.mp4`
+- `eye0.mjpeg`, `eye0_001.mjpeg`
+
+And their corresponding timestamp files should follow the pattern:
+
+- `world_timestamps.npy`, `world_001_timestamps.npy`
 
 ### Audio File
 An audio file is only recognized in Pupil Player's playback plugin if the file is named `audio.mp4`.

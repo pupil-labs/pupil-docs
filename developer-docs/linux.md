@@ -7,37 +7,53 @@ page_weight = 1.1
 
 ## Linux Dependencies
 
-These installation instructions are tested using **Ubuntu 16.04 or higher** running on many machines. Do not run Pupil on a VM unless you know what you are doing.
+These installation instructions are tested using **Ubuntu 16.04 or higher** running on many machines. Do not run Pupil on a VM unless you know what you are doing. We recommend using `18.04 LTS`. 
 
 ### Install Linux Dependencies
 
 Let's get started! Its time for `apt`!  Just copy paste into the terminal and listen to your machine purr.
 
+#### Ubuntu 18.04
+Install dependencies with apt-get. 
+
 ```
 sudo apt install -y pkg-config git cmake build-essential nasm wget python3-setuptools libusb-1.0-0-dev  python3-dev python3-pip python3-numpy python3-scipy libglew-dev libglfw3-dev libtbb-dev
 ```
 
-> ffmpeg >= 3.2
+> install ffmpeg >= 3.2
+
+```
+sudo apt install -y libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev ffmpeg x264 x265 libportaudio2 portaudio19-dev
+```
+
+> install OpenCV >= 3.
+
+```
+sudo apt install -y python3-opencv libopencv-dev`
+```
+
+#### Ubuntu 17.10 or lower
+If you're using Ubuntu <= 17.10, you will need to install OpenCV from source, and install ffmpeg-3 from a different ppa. 
+
+> install ffmpeg3 from jonathonf's ppa
 
 ```
 sudo add-apt-repository ppa:jonathonf/ffmpeg-3
 sudo apt-get update
-sudo apt install libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev ffmpeg libav-tools x264 x265 libportaudio2 portaudio19-dev
+sudo apt install -y libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev ffmpeg libav-tools x264 x265 libportaudio2 portaudio19-dev
 ```
 
-> OpenCV
+> install OpenCV from source
 
-We require a version of OpenCV that is >= 3.0. In **Ubuntu 18.04** it can simply be installed with `sudo apt install python3-opencv libopencv-dev`
+> The requisites for opencv to build python3 cv2.so library are:
 
-In older versions of Ubuntu it needs to be compiled from source.
+> 1. python3 interpreter found
 
-The requisites for opencv to build python3 cv2.so library are:
+> 2. libpython***.so shared lib found (make sure to install python3-dev)
 
-1. python3 interpreter found
-1. libpython***.so shared lib found (make sure to install python3-dev)
-1. numpy for python3 installed.
+> 3. numpy for python3 installed.
 
-```bash
+```
 git clone https://github.com/opencv/opencv
 cd opencv
 mkdir build
@@ -108,6 +124,18 @@ echo 'SUBSYSTEM=="usb",  ENV{DEVTYPE}=="usb_device", GROUP="plugdev", MODE="0664
 sudo udevadm trigger
 ```
 
+### Install `apriltag`
+```
+git clone https://github.com/swatbotics/apriltag.git
+cd apriltag
+mkdir build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release
+make -j4
+sudo make install
+sudo ldconfig
+```
+
 > Install packages with `pip`
 
 ```
@@ -115,7 +143,7 @@ sudo pip3 install numexpr
 sudo pip3 install cython
 sudo pip3 install psutil
 sudo pip3 install pyzmq
-sudo pip3 install msgpack
+sudo pip3 install msgpack==0.5.6
 sudo pip3 install pyopengl
 sudo pip3 install pyaudio
 sudo pip3 install cysignals
@@ -130,9 +158,9 @@ sudo pip3 install git+https://github.com/pupil-labs/pyglui
 First install 
 
 ```bash
-sudo apt-get install libboost-dev
-sudo apt-get install libboost-python-dev
-sudo apt-get install libgoogle-glog-dev libatlas-base-dev libeigen3-dev
+sudo apt-get install -y libboost-dev
+sudo apt-get install -y libboost-python-dev
+sudo apt-get install -y libgoogle-glog-dev libatlas-base-dev libeigen3-dev
 ```
 
 > Ceres
@@ -140,7 +168,7 @@ sudo apt-get install libgoogle-glog-dev libatlas-base-dev libeigen3-dev
 > **Ubuntu 18.04**
 
 ```bash
-sudo apt install libceres-dev
+sudo apt install -y libceres-dev
 ```
 
 Next we need to install the Ceres library. In **Ubuntu 18.04** Ceres is available as a package in the repositories.
@@ -171,7 +199,7 @@ sudo ldconfig
 > **Version 1: Without GPU acceleration**: Install PyTorch via pip
 
 ```bash
-pip3 install http://download.pytorch.org/whl/cpu/torch-0.4.0-cp36-cp36m-linux_x86_64.whl 
+pip3 install pip3 install https://download.pytorch.org/whl/cpu/torch-1.0.1.post2-cp36-cp36m-linux_x86_64.whl
 pip3 install torchvision
 ```
 
@@ -183,42 +211,10 @@ run in real-time.
 > **Version 2: With GPU acceleration**: Install PyTorch via pip
 
 ```bash
-pip3 install http://download.pytorch.org/whl/cu90/torch-0.4.0-cp36-cp36m-linux_x86_64.whl 
-pip3 install torchvision
+pip3 install torch torchvision
 ```
 
-For GPU acceleration CUDA and cuDNN are also required.
+Please refer to the following links on how to install CUDA and cuDNN:
 
-```bash
-sudo dpkg -i cuda-repo-ubuntu1604-9-0-local_9.0.176-1_amd64.deb
-sudo apt-key add /var/cuda-repo-9-0-local/7fa2af80.pub
-sudo apt-get update
-sudo apt-get install -y cuda libcupti-dev
-``` 
-
-Download CUDA 9.0 from https://developer.nvidia.com/cuda-90-download-archive?target_os=Linux
-Choose the choose the **deb (local)** file for your architecture. We have tested the setup with the 16.04 version.
-Install it via
-
-```bash
-echo "
-# Setting up CUDA
-export CUDA_ROOT=/usr/local/cuda
-export LD_LIBRARY_PATH=\${LD_LIBRARY_PATH}:\${CUDA_ROOT}/lib64:\${CUDA_ROOT}/extras/CUPTI/lib64
-export PATH=\${CUDA_ROOT}/bin:\${PATH}
-" | sudo tee /etc/profile.d/cuda_env.sh 
-```
-
-Add CUDA files to the appropriate path variables
-
-```bash
-tar -xvf cudnn-9.0-linux-x64-v7.tgz
-cd cuda
-sudo cp -P include/cudnn.h /usr/include
-sudo cp -P lib64/libcudnn* /usr/lib/x86_64-linux-gnu/
-sudo chmod a+r /usr/lib/x86_64-linux-gnu/libcudnn*
-```
-
-Download cuDNN 7.1 from https://developer.nvidia.com/cudnn
-The download requires you to register as a developer at Nvidia. This registration is free. Download the version for 
-CUDA 9.0, specifically download the **Library for Linux**.
+- CUDA https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#ubuntu-installation
+- cuDNN: https://docs.nvidia.com/deeplearning/sdk/cudnn-install/index.html

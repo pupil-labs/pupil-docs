@@ -38,12 +38,36 @@ By default Pupil Capture will use Local USB as the capture source. If you have a
 - Local USB - select this option if your Pupil Headset is connected to the machine running Pupil Capture. This is the default setting.
 - RealSense 3D - select this option if you are using an Intel RealSense 3D camera as your scene camera. Read more in the [RealSense 3D section](#intel-realsense-3d).
 
-### Pupil Detection
+After switching to a different capture source, you can click the `Start with default devices` button. This will automatically select the correct sensor and start capturing for corresponding world and eye windows. Or, you can manually select the capture source to use from the world and eye windows.
 
-Pupil's algorithms automatically detect the participant's pupil. With the 3d detection and mapping mode, Pupil uses a 3d model of the eye(s) that constantly updates based on observations of the eye. This enables the system to compensate for movements of the headset - slippage. To build up an initial model, you can just look around your field of view.
+### Pupil Detection
 
 > {{< video-webm src="/videos/calibration/pupil-detection/pd.webm" >}}
 
+Pupil's algorithms automatically detect the participant's pupil. With the 3d detection and mapping mode, Pupil uses a 3d model of the eye(s) that constantly updates based on observations of the eye. This enables the system to compensate for movements of the headset - slippage. To build up an initial model, you can just look around your field of view.
+
+#### Fine-tuning Pupil Detection
+
+As a first step it is recommended to check the eye camera resolution as some parameters are resolution dependent. 
+For fast and robust pupil detection and tracking we recommend using the default resolution settings. For 200hz eye cameras the default resolution is set to 192x192 pixels. If you have an older 120hz eye camera, the default is 320x240 pixels.
+
+In Pupil Capture you can view a visualization of the pupil detection algorithm in the eye windows. For fine-tuning switch to this mode: `General Settings > Algorithm Mode`. 
+ 
+**Sensor Settings**
+
+* `Resolution`: 192x192 for 200hz eye cameras. 320x240 for 120hz eye cameras.
+* `Absolute Exposure Time`: Make sure that there is a high contrast between the pupil and its surrounding. In order to do so, you might need to increase brightness of the images. Start by testing one of these `Absolute Exposure Time` values: 64, 94, 124.
+
+**Pupil Detector 2D/3D**
+
+* `Pupil Min/Max` : Change to `General > Algorithm Mode`. The two red circles represent the min and max pupil size settings. The green circle visualizes the current apparent pupil size. Set the min and max values so the green circle (current pupil size) is within the min/max range for _all_ eye movements.
+* `Intensity Range` : Defines the minimum "darkness" of a pixel to be considered as the pupil.
+The pixels considered for pupil detection are visualized in blue within the `Algorithm Mode`. Try to minimize the range so that the pupil is always fully covered while having as little leakage as possible outside of the pupil.
+Be aware that this is dependent on the brightness and therefore has a strong interaction with `UVC Source/Sensor Settings/Absolute Exposure Time`.
+
+<aside class="notice">
+Keep in mind that pupil size values are defined in pixels and are therefore dependent on the resolution settings of your sensor.
+</aside>
 
 ### Calibration
 
@@ -203,7 +227,7 @@ The position of the fingertip is then found out by a fingertip detector, adapted
 
 
 ### Notes on calibration accuracy
-In 2D mode, you should easily be able to achieve tracking accuracy within the physiological limits (sub 1 deg visual degrees). Using the 3d mode you should achive 1.5-2.5 deg of accuracy.
+In 2D mode, you should easily be able to achieve tracking accuracy within the physiological limits (sub 1 deg visual degrees). Using the 3d mode you should achieve 1.5-2.5 deg of accuracy.
 
 * Any monocular calibration is accurate only at its depth level relative to the eye (parallax error).
 * Any calibration is only accurate inside the field of view (in the world video) you have calibrated. For example: If during your calibration you only looked at markers or natural features (depending on your calibration method) that are in the left half, you will not have good accuracy in the right half.
@@ -227,7 +251,9 @@ If you open up a session folder you will see a collection of video(s) and data f
 
 > {{< webp-img src="/images/pupil-capture/capture-plugin.webp" alt="Pupil Capture plugins" >}}
 
-Click on the selector "Open Plugin" and select your plugin.
+Open the `Plugin Manager` menu on the right.
+It lists all available plugins.
+Click the button next to the plugin's name to turn on or off the plugin.
 
 #### Third-party plugins
 
@@ -420,11 +446,11 @@ The `Filter length` is the time window's length in which the plugin tries to fin
 
 The `Audio Capture` plugin provides access to a selected audio source for other plugins and writes its output to the `audio.mp4` file during a recording. It also writes the Pupil Capture timestamp for each audio packet to the `audio_timestamps.npy` file. This way you can easily correlate single audio packets to their corresponding video frames.
 
-Audio is recorded separately from the video in Pupil Capture. You can play back audio in sycn with video in Pupil Player. Audio is automatically merged with the video when you export a video using Pupil Player.
+Audio is recorded separately from the video in Pupil Capture. You can play back audio in sync with video in Pupil Player. Audio is automatically merged with the video when you export a video using Pupil Player.
 
 ### Annotations
 
-The `Annotation Capture` plugin allows you to mark timestamps with a label -- sometimes reffered to as triggers.
+The `Annotation Capture` plugin allows you to mark timestamps with a label -- sometimes referred to as triggers.
 These labels can be created by pressing their respective hotkey or by sending a notification with the subject `annotation`.
 This is useful to mark external events (e.g. "start of condition A") within the Pupil recording. The `Annotation Player`
 plugin is able to correlate and export these events as well as add new ones.
@@ -432,7 +458,7 @@ plugin is able to correlate and export these events as well as add new ones.
 
 #### Remote Annotations
 
-You can also create annotation events programatically and send them using the IPC, or by sending messages to the Pupil Remote interface. Here is an example annotation notification.
+You can also create annotation events programmatically and send them using the IPC, or by sending messages to the Pupil Remote interface. Here is an example annotation notification.
 
 ```python
 {'subject':"annotation",'label':"Hi this is my annotation 1",'timestamp':[set a correct timestamp as float here],'duration':1.0,'source':'a test script','record':True}
@@ -445,7 +471,7 @@ You can also create annotation events programatically and send them using the IP
 
 ### Camera Intrinsics Estimation
 
-This plugin is used to calculate camera intrinsics, which will enable one to correct camera distortion. Pupil Capture has built in, default camera intrinsics models for the high speed world camera and the high resolution world camera. You can re-calibrate your camera and/or calibrate a camera that is not supplied by Pupil Labs by running this calibration routine. We support two different distortion models, radial distortion and fisheye distortion. For cameras with a FOV of 100 degrees or greater (like e.g. the high speed world camera) the fisheye distotion model usually performs better, for cameras with a smaller FOV (e.g. the high resolution world camera) we recommend the radial distortion model.
+This plugin is used to calculate camera intrinsics, which will enable one to correct camera distortion. Pupil Capture has built in, default camera intrinsics models for the high speed world camera and the high resolution world camera. You can re-calibrate your camera and/or calibrate a camera that is not supplied by Pupil Labs by running this calibration routine. We support two different distortion models, radial distortion and fisheye distortion. For cameras with a FOV of 100 degrees or greater (like e.g. the high speed world camera) the fisheye distortion model usually performs better, for cameras with a smaller FOV (e.g. the high resolution world camera) we recommend the radial distortion model.
 
 1. Select `Camera Intrinsics Estimation`
 1. Select the correct 'Distortion Model'
