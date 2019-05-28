@@ -374,7 +374,7 @@ A surface can be based on one or more markers.
 The markers need to be placed in close proximity or within your desired AOI.
 If your AOI is for example a computer monitor, you could display your markers in the corners of the screen or place them somewhere on the bezel.
 If your AOI is a magazine page you could place the markers in the corners of the page or anywhere else on the page where they are not occluding.
-When placing your markers please follow the following rules:
+When placing your markers please follow the guidelines:
 
 *   All markers of a surface need to lie within the same two dimensional plane.
 *   An individual marker can be part of multiple surfaces.
