@@ -101,6 +101,8 @@ Open your command prompt and install the following libs:
 - `pip install win_inet_pton`
 - `pip install pyaudio`
 - `pip install git+https://github.com/zeromq/pyre.git`
+- `pip install git+https://github.com/pupil-labs/nslr.git`
+- `pip install git+https://github.com/pupil-labs/nslr-hmm.git`
 
 Note - `cysignals` is a dependency on macOS and Linux but not Windows.
 

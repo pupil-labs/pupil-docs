@@ -26,6 +26,8 @@ git clone --recursive https://github.com/pupil-labs/pyndsi.git
 git clone --recursive https://github.com/pupil-labs/pyuvc.git
 git clone https://github.com/pupil-labs/libusb.git
 git clone https://github.com/pupil-labs/libuvc.git
+git clone https://github.com/pupil-labs/nslr.git
+git clone https://github.com/pupil-labs/nslr-hmm.git
 ```
 
 <aside class="notice">Note - `libusb` and `libuvc` are dependencies of pyuvc and must be built prior to building pyuvc</aside>
@@ -71,6 +73,13 @@ You will need both `.dll` files as well as FFMPG libs in order to build `pyav`. 
 - Open a cmd prompt
 - `python setup.py install`
 - You can create a wheel from within this directory with `pip wheel .`
+
+
+### nslr-hmm from source
+
+- Open a cmd prompt
+- From inside the cloned `nslr` repository run: `python setup.py install`
+- From inside the cloned `nslr-hmm` repository run: `python setup.py install`
 
 ### pyndsi from source
 

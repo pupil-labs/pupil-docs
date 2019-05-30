@@ -98,6 +98,8 @@ pip3 install git+https://github.com/pupil-labs/PyAV
 pip3 install git+https://github.com/pupil-labs/pyuvc
 pip3 install git+https://github.com/pupil-labs/pyndsi
 pip3 install git+https://github.com/pupil-labs/pyglui
+pip3 install git+https://github.com/pupil-labs/nslr
+pip3 install git+https://github.com/pupil-labs/nslr-hmm
 ```
 
 
