@@ -32,7 +32,21 @@ If 3d pupil data is available the eye movement will be classified based on the p
 
 #### Capture
 
-Eye movement detection results are exported to `eye_movement_by_segment.csv`, with the following format:
+Real-time eye movement detection publishes notifications with the following structure:
+
+- `id`: Identifier uniquely identifying the segment within a detection session
+- `topic`: `eye_movement.fixation`, `eye_movement.saccade`, `eye_movement.pso` or `eye_movement.smooth_pursuit`
+- `base_type`: `pupil` or `gaze`
+- `segment_class`: `fixation`, `saccade`, `pso` or `smooth_pursuit`
+- `timestamp`: Timestamp of the eye movement segment.
+- `start_frame_index`: Index of the first segment frame, in the frame buffer.
+- `end_frame_index`: Index **after** the last segment frame, in the frame buffer.
+- `start_frame_timestamp`: Timestamp of the first frame, in the frame buffer.
+- `end_frame_timestamp`: Timestamp of the last frame, in the frame buffer.
+
+#### Player
+
+Offline eye movement detection results are exported to `eye_movement_by_segment.csv`, with the following format:
 
 - `id`: Identifier uniquely identifying the segment within a detection session
 - `base_type`: `pupil` or `gaze`
@@ -48,20 +62,6 @@ Eye movement detection results are exported to `eye_movement_by_segment.csv`, wi
 - `gaze_point_3d_x`: Mean 3d gaze point's `x` coordinate, only available if `"pupil"` `base_type` was used
 - `gaze_point_3d_y`: Mean 3d gaze point's `y` coordinate, only available if `"pupil"` `base_type` was used
 - `gaze_point_3d_z`: Mean 3d gaze point's `z` coordinate, only available if `"pupil"` `base_type` was used
-
-#### Player
-
-Real-time eye movement detection publishes notifications with the following structure:
-
-- `id`: Identifier uniquely identifying the segment within a detection session
-- `topic`: `eye_movement.fixation`, `eye_movement.saccade`, `eye_movement.pso` or `eye_movement.smooth_pursuit`
-- `base_type`: `pupil` or `gaze`
-- `segment_class`: `fixation`, `saccade`, `pso` or `smooth_pursuit`
-- `timestamp`: Timestamp of the eye movement segment.
-- `start_frame_index`: Index of the first segment frame, in the frame buffer.
-- `end_frame_index`: Index **after** the last segment frame, in the frame buffer.
-- `start_frame_timestamp`: Timestamp of the first frame, in the frame buffer.
-- `end_frame_timestamp`: Timestamp of the last frame, in the frame buffer.
 
 
 
