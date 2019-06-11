@@ -4,7 +4,7 @@ section_weight = 4
 page_weight = 5
 +++
 
-## Eye Movement Detector
+## Eye Movement Detector {#eye-movement-detector-main}
 
 Eye movement classification detector based on segmented linear regression.
 
