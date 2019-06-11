@@ -252,7 +252,6 @@ Each surface has a name, which can be manually set as described above.
 This name is augmented by an automatically generated numerical identifier.
   
   + `heatmap_<surface_name>_<surface_id>.png` - Heatmap of gaze positions on the surface aggregated over the entire export.
-  + `fixations_on_surface_<surface_name>_<surface_id>.csv` - A list of fixations that have occurred on the surface. 
   + `gaze_positions_on_surface_<surface_name>_<surface_id>.csv` - A list of gaze datums on the surface. 
   The values include the gaze point in two different coordinates systems.
   `x_norm` and `y_norm` are coordinates between 0 and 1, where `(0,0)` is the bottom left corner of the surface and `(1,1)` is the top right corner.
@@ -265,15 +264,9 @@ This name is augmented by an automatically generated numerical identifier.
   
   
 
-#### Fixation Detector {#player-fixation-detector}
+#### Eye Movement Detector {#eye-movement-detector-player}
 
-> {{< webp-img src="/images/pupil-player/plugin/fixation.webp" alt="Offline Fixation Detector" >}}
-
-The offline fixation detector calculates fixations for the whole recording. The menu gives feedback about the progress of the detection, how many fixations were found, shows and detailed information about the current fixation. Press `f` or click the `f` hot key button on the left hand side of the window to seek forward to the next fixation.
-
-Toggle `Show fixations` to show a visualization of fixations. The blue number is the number of the fixation (0 being the first fixation). You can export fixation reports for your current trim section by pressing `e` on your keyboard or the `e` hot key button on the left hand side of the window.
-
-You can find more information in our [dedicated fixation detector section](#fixation-detector).
+You can find more information in our [dedicated eye movement detector section](#eye-movement-detector-main).
 
 #### Head Pose Tracking
 

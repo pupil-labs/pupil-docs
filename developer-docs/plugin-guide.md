@@ -161,7 +161,7 @@ frame object if it was available. It is accessible through the `frame` key.
 
 You can access the image buffer through the `img` and the `gray` attributes of the frame object. They return a BGR (`height x width x 3`) and gray scaled (`height x width`) uint8-numpy array respectively. Visualization plugins (e.g. [`vis_circle.py`](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/vis_circle.py#L48) modify the `img` buffer such that their visualizations are visible in the Pupil Player exported video. Use OpenGL (within the `Plugin.gl_display` method) to draw visualizations within Pupil Player that are not visible in the exported video (e.g. surface heatmaps in [`Offline_Surface_Tracker`](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/offline_surface_tracker.py). See [below](#Export-Custom-Video-Visualizations) for more information.
 
-The `events` dictionary contains other recent data, e.g. `pupil_positions`, `gaze_positions`, `fixations`, etc. Modifications to the `events` dictionary are automatically accessible by all plugins with an higher `order` than the modifying plugin.
+The `events` dictionary contains other recent data, e.g. `pupil`, `gaze`, etc. Modifications to the `events` dictionary are automatically accessible by all plugins with an higher `order` than the modifying plugin.
 
 <aside class="notice">
 A gaze mapper is just a plugin with a very low order that extends the `events` dictionary with the `gaze_positions` field.
@@ -220,7 +220,7 @@ See <a href="https://github.com/pupil-labs/pyglui/blob/master/pyglui/ui_elements
 As descrbed above, plugins are able to modify the image buffers to export their visualizations. The plugins `recent_events` method is automatically called for each frame once by the video exporter process. Plugins might overwrite changes made by plugins with a lower order than themselves. OpenGL visualizations are not exported. See [`vis_circle.py`](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/vis_circle.py#L39) for an example visualization.
 
 #### Export Custom Raw Data
-Each Player plugin gets a notification with subject `should_export` thar includes the world frame indices range that will be exported and the directory where the recording will be exported to. Add the code to the right to your plugin and implement an `export_data` function. See [`fixation_detector.py`](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/fixation_detector.py#L263-L297) for an example.
+Each Player plugin gets a notification with subject `should_export` thar includes the world frame indices range that will be exported and the directory where the recording will be exported to. Add the code to the right to your plugin and implement an `export_data` function. See [`blink_detection.py`](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/blink_detection.py#L258) for an example.
 
 ```python
 def on_notify(self, notification):
