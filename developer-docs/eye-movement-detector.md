@@ -26,7 +26,7 @@ To see how to receive real-time eye movement classification notifications, pleas
 
 This plugin detects eye movement within a given duration window. Since the detector is able to process the entire frame buffer, the classified eye movement segments do not overlap.
 
-### Eye Movement Format
+### Eye Movement Format {#eye-movement-detector-format}
 
 If 3d pupil data is available the eye movement will be classified based on the positional angle of the eye. These eye movement segments have their `base_type` field set to `"pupil"`. If no 3d pupil data is available the plugin will assume that the gaze data is calibrated and classify the eye movement in visual angle within the coordinate system of the world camera. These eye movement segments will have their `base_type` field set to `"gaze"`.
 
