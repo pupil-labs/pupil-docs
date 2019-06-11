@@ -10,9 +10,9 @@ Eye movement classification detector based on segmented linear regression.
 
 Event identification is based on segmentation that simultaneously denoises the signal and determines event boundaries. The full gaze position time-series is segmented into an approximately optimal piecewise linear function in O(n) time. Gaze feature parameters for classification into fixations, saccades, smooth pursuits and post-saccadic oscillations are derived from human labeling in a data-driven manner.[`[1]`](#nslr-hmm-paper)
 
-More details about this approach can be found [here](nslr-hmm-paper).
+More details about this approach can be found [here][nslr-hmm-paper].
 
-The open source implementation can be found [here](nslr-hmm-repo).
+The open source implementation can be found [here][nslr-hmm-repo].
 
 ### Usage {#fd-usage}
 
@@ -20,7 +20,7 @@ The open source implementation can be found [here](nslr-hmm-repo).
 
 This plugin detects eye movement from the last `max_sample_count` frames (defaults to `1000`). For every new frame, the frame buffer is re-classified and the last eye movement segment detection is published. This might result in a series of updates to an already published segment.
 
-To see how to receive real-time eye movement classification notifications, please see [this script](eye-movement-helper-py).
+To see how to receive real-time eye movement classification notifications, please see [this script][eye-movement-helper-py].
 
 #### Offline Eye Movement Detector
 
