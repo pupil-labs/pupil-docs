@@ -14,7 +14,7 @@ More details about this approach can be found [here][nslr-hmm-paper].
 
 The open source implementation can be found [here][nslr-hmm-repo].
 
-### Usage {#fd-usage}
+### Usage {#em-usage}
 
 #### Online Eye Movement Detector
 
