@@ -251,16 +251,15 @@ Further the following metrics are reported for every individual surface.
 Each surface has a name, which can be manually set as described above. 
 This name is augmented by an automatically generated numerical identifier.
   
-  + `heatmap_<surface_name>_<surface_id>.png` - Heatmap of gaze positions on the surface aggregated over the entire export.
-  + `fixations_on_surface_<surface_name>_<surface_id>.csv` - A list of fixations that have occurred on the surface. 
-  + `gaze_positions_on_surface_<surface_name>_<surface_id>.csv` - A list of gaze datums on the surface. 
+  + `heatmap_<surface_name>.png` - Heatmap of gaze positions on the surface aggregated over the entire export.
+  + `gaze_positions_on_surface_<surface_name>.csv` - A list of gaze datums on the surface. 
   The values include the gaze point in two different coordinates systems.
   `x_norm` and `y_norm` are coordinates between 0 and 1, where `(0,0)` is the bottom left corner of the surface and `(1,1)` is the top right corner.
   `x_scaled` and `y_scaled` contain the same coordinates but scaled with the size defined for the surface.
-  + `srf_positons_<surface_name>_<surface_id>` - List of surface positions in 3D. 
+  + `surf_positions_<surface_name>` - List of surface positions in 3D. 
   The position is given as the 3D pose of the surface in relation to the current position of the scene camera.
-  `m_to_screen` is a matrix transforming coordinates from the camera coordinate system to the surface coordinate system.
-  `m_from_screen` is the inverse of `m_to_screen`.  
+  `img_to_surf_trans` is a matrix transforming coordinates from the camera coordinate system to the surface coordinate system.
+  `surf_to_img_trans` is the inverse of `img_to_surf_trans`.  
   
   
   
