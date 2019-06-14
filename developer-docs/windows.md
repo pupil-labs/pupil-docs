@@ -213,7 +213,7 @@ The following steps require you to store dynamic libraries in the `pupil_externa
 
 ### Modify pupil_detectors setup.py
 
-- Open `pupil\pupil_src\capture\pupil_detectors\setup.py`
+- Open `pupil\pupil_src\shared_modules\pupil_detectors\setup.py`
 - Go to the `if platform.system() == 'Windows'` block
 - Check that paths for `opencv`, `Eigen`, `ceres-windows` and `boost` are correctly specified. The installed opencv lib is `opencv_world320.lib`.
 - Edit paths if necessary
@@ -221,6 +221,9 @@ The following steps require you to store dynamic libraries in the `pupil_externa
 - Save and close setup.py
 
 <aside class="faq">When starting run_capture.bat, it will build the pupil_detectors module. However, if you are debugging, you may want to try building explicitly. From within `pupil/pupil_src/shared_modules/pupil_detectors` run `python setup.py build` to build the pupil_detectors.</aside>
+
+\
+In case you are using Visual Studio 2017 with v15.8 or v15.9 update, you may encounter an error regarding _ENABLE_EXTENDED_ALIGNED_STORAGE while building. Please refer to the fix [here](https://github.com/pupil-labs/pupil/issues/1331#issuecomment-430418074).
 
 ### Modify optimization_calibration setup.py
 
