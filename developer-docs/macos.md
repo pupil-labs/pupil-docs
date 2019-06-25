@@ -60,7 +60,7 @@ brew install ceres-solver
 
 ### Install `libuvc`
 ```
-git clone https://github.com/pupil-labs/libuvc
+git clone --single-branch --branch build_fix_mac https://github.com/pupil-labs/libuvc
 cd libuvc
 mkdir build
 cd build
@@ -102,6 +102,11 @@ pip3 install git+https://github.com/pupil-labs/nslr
 pip3 install git+https://github.com/pupil-labs/nslr-hmm
 ```
 
+<aside class="notice">
+Note - Installing pyglui might fail on newer versions of macOS due to missing
+OpenGL headers. In this case, you need to install Xcode which comes with the
+required header files.
+</aside>
 
 **That's it -- you're Done!**
 
