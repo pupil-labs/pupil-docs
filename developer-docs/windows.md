@@ -97,7 +97,7 @@ Open your command prompt and `Run as administrator` in the directory where the w
 ### Python Libs
 Open your command prompt and install the following libs:
 
-- `pip install msgpack`
+- `pip install msgpack==0.5.6`
 - `pip install win_inet_pton`
 - `pip install pyaudio`
 - `pip install git+https://github.com/zeromq/pyre.git`
