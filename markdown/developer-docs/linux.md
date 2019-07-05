@@ -20,7 +20,7 @@ Install dependencies with apt-get.
 sudo apt install -y pkg-config git cmake build-essential nasm wget python3-setuptools libusb-1.0-0-dev  python3-dev python3-pip python3-numpy python3-scipy libglew-dev libglfw3-dev libtbb-dev
 ```
 
-> install ffmpeg >= 3.2
+install ffmpeg >= 3.2
 
 ```
 sudo apt install -y libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev ffmpeg x264 x265 libportaudio2 portaudio19-dev
@@ -35,7 +35,7 @@ sudo apt install -y python3-opencv libopencv-dev`
 #### Ubuntu 17.10 or lower
 If you're using Ubuntu <= 17.10, you will need to install OpenCV from source, and install ffmpeg-3 from a different ppa.
 
-> install ffmpeg3 from jonathonf's ppa
+install ffmpeg3 from jonathonf's ppa
 
 ```
 sudo add-apt-repository ppa:jonathonf/ffmpeg-3
@@ -43,15 +43,15 @@ sudo apt-get update
 sudo apt install -y libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev ffmpeg libav-tools x264 x265 libportaudio2 portaudio19-dev
 ```
 
-> install OpenCV from source
+install OpenCV from source
 
-> The requisites for opencv to build python3 cv2.so library are:
+The requisites for opencv to build python3 cv2.so library are:
 
-> 1. python3 interpreter found
+1. python3 interpreter found
 
-> 2. libpython***.so shared lib found (make sure to install python3-dev)
+2. libpython***.so shared lib found (make sure to install python3-dev)
 
-> 3. numpy for python3 installed.
+3. numpy for python3 installed.
 
 ```
 git clone https://github.com/opencv/opencv
@@ -106,7 +106,7 @@ Required for 17.10 and with 200hz cameras only. Otherwise IGNORE!)
 `sudo cp '~/path to your fixed binary/libusb-1.0.so.0' '/lib/x86_64-linux-gnu/libusb-1.0.so.0'`
 
 
-> libuvc
+libuvc
 
 ```
 git clone https://github.com/pupil-labs/libuvc
@@ -117,7 +117,7 @@ cmake ..
 make && sudo make install
 ```
 
-> udev rules for running libuvc as normal user
+udev rules for running libuvc as normal user
 
 ```
 echo 'SUBSYSTEM=="usb",  ENV{DEVTYPE}=="usb_device", GROUP="plugdev", MODE="0664"' | sudo tee /etc/udev/rules.d/10-libuvc.rules > /dev/null
@@ -136,7 +136,7 @@ sudo make install
 sudo ldconfig
 ```
 
-> Install packages with `pip`
+Install packages with `pip`
 
 ```
 sudo pip3 install numexpr
@@ -156,7 +156,7 @@ sudo pip3 install git+https://github.com/pupil-labs/nslr
 sudo pip3 install git+https://github.com/pupil-labs/nslr-hmm
 ```
 
-> 3D eye model dependencies
+3D eye model dependencies
 First install
 
 ```bash
@@ -165,9 +165,9 @@ sudo apt-get install -y libboost-python-dev
 sudo apt-get install -y libgoogle-glog-dev libatlas-base-dev libeigen3-dev
 ```
 
-> Ceres
+Ceres
 
-> **Ubuntu 18.04**
+**Ubuntu 18.04**
 
 ```bash
 sudo apt install -y libceres-dev
@@ -177,7 +177,7 @@ Next we need to install the Ceres library. In **Ubuntu 18.04** Ceres is availabl
 In older versions it has to be compiled from source. Choose the correct command on the right depending on your version
 of Ubuntu!
 
-> **Ubuntu <= 17.10**
+**Ubuntu <= 17.10**
 
 ```bash
 # sudo apt-get install software-properties-common if add-apt-repository is not found

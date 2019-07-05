@@ -147,16 +147,16 @@ This plugin can be used to overlay the eye video on top of the world video. Note
 
 ### Pupil Data And Post-hoc Detection
 
-> <h5 align='center'>Offline (post-hoc) Pupil Detection and Gaze Mapping<h5>
+<h5 align='center'>Offline (post-hoc) Pupil Detection and Gaze Mapping<h5>
 <iframe src="https://www.youtube.com/embed/_Jnxi1OMMTc" ></iframe>
 
-> <h5 align='center'>Offline (post-hoc) Gaze Mapping With Manual Reference Locations<h5>
+<h5 align='center'>Offline (post-hoc) Gaze Mapping With Manual Reference Locations<h5>
 <iframe src="https://www.youtube.com/embed/mWyDQHhm7-w" ></iframe>
 
-> <h5 align='center'>Use Offline (post-hoc) Calibration For Another Recording<h5>
+<h5 align='center'>Use Offline (post-hoc) Calibration For Another Recording<h5>
 <iframe src="https://www.youtube.com/embed/eEl3sswsTms" ></iframe>
 
-> <h5 align='center'>Offline (post-hoc) Gaze Mapping Validation<h5>
+<h5 align='center'>Offline (post-hoc) Gaze Mapping Validation<h5>
 <iframe src="https://www.youtube.com/embed/aPLnqu26tWI" ></iframe>
 
 By default, Player starts with the `Pupil From Recording` plugin that tries to load pupil positions that were detected and stored during a Pupil Capture recording.
@@ -276,7 +276,7 @@ You can find more information in our [dedicated fixation detector section](#fixa
 
 #### Head Pose Tracking
 
-> <h5 align='center'>Head Pose Tracker Tutorial<h5>
+<h5 align='center'>Head Pose Tracker Tutorial<h5>
 <iframe src="https://www.youtube.com/embed/9x9h98tywFI" ></iframe>
 
 This plugin uses fiducial markers ([apriltag](https://april.eecs.umich.edu/software/apriltag.html)) to build a 3d model of the environment and track the headset's pose within it.

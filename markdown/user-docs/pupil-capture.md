@@ -79,7 +79,7 @@ Pupil uses two cameras. One camera records a subject's eye movements -- we call 
 
 <iframe src="/videos/calibration/calibration-mobo/clb-mobo.webm" ></iframe>
 
-> <div class="figure-container">
+<div class="figure-container">
 	<div class="Grid Grid-row">
 		<div class="Grid-cell--1of2">
 			<div class="Grid-cell Text-center">
@@ -101,7 +101,7 @@ Pupil Headset comes in a variety of configurations.  Calibration can be conducte
 Make sure that the users pupil is properly tracked. Make sure that the world camera is in focus for the distance at which you want to calibrate, and that you can see the entire area you want to calibrate within the world cameras extents (FOV).
 
 
-> <div class="figure-container">
+<div class="figure-container">
 	<div class="Grid Grid--1of2 img-row">
 		<div class="Grid-cell" style="padding-right:5px;">
 			{{< lqip-img class="img-m" src="/images/pupil-hardware/pupil-detect.jpg" alt="YOur pupil is properly detected by the eye camera" >
@@ -138,17 +138,17 @@ In the `Advanced` sub-menu you can set the `sample duration` -- the number of fr
 
 <iframe src="/videos/calibration/calibration-manual/clb-man.webm" ></iframe>
 
-> <a href="/images/pupil-capture/calibration-markers/v0.4_markers/v0.4_marker.v12.pdf">
+<a href="/images/pupil-capture/calibration-markers/v0.4_markers/v0.4_marker.v12.pdf">
 		{{< webp-img class="img-s" src="/images/pupil-capture/calibration-markers/v0.4_markers/v0.4_calibration_marker_02.webp" alt="Pupil Calibration Marker v0.4" >
 	</a>
 
-> <h5 align="center">Pupil Calibration Marker v0.4</h5>
+<h5 align="center">Pupil Calibration Marker v0.4</h5>
 
-> <a href="/images/pupil-capture/calibration-markers/v0.4_markers/v0.4_marker.v12.pdf">
+<a href="/images/pupil-capture/calibration-markers/v0.4_markers/v0.4_marker.v12.pdf">
 		{{< webp-img class="img-s" src="/images/pupil-capture/calibration-markers/v0.4_markers/v0.4_calibration_marker_01.webp" alt="Pupil Calibration Stop Marker v0.4" >
 	</a>
 
-> <h5 align="center">Pupil Calibration Stop Marker v0.4</h5>
+<h5 align="center">Pupil Calibration Stop Marker v0.4</h5>
 
 This method is done with an operator and a subject. It is suited for midrange distances and can accommodate a wide field of view. The operator will use a
 printed calibration marker like the one shown in the video. [Download Pupil Labs Calibration Marker v0.4 to print](/images/pupil-capture/calibration-markers/v0.4_markers/v0.4_marker.v12.pdf) or display on smartphone/tablet screen.
