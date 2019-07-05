@@ -27,7 +27,7 @@ In this paper we present Pupil -- an accessible, affordable, and extensible open
 
 Available on dl.acm.org: [http://dl.acm.org/citation.cfm?doid=2638728.2641695](http://dl.acm.org/citation.cfm?doid=2638728.2641695)
 
-> BibTeX Style Citation
+BibTeX Style Citation
 
 ```
 @inproceedings{Kassner:2014:POS:2638728.2641695,
@@ -63,7 +63,7 @@ Commercial head-mounted eye trackers provide useful features to customers in ind
 
 Available on arxiv.org: [http://arxiv.org/abs/1405.0006](http://arxiv.org/abs/1405.0006)
 
-> BibTeX Style Citation
+BibTeX Style Citation
 
 ```
 @article{KassnerPateraBulling:2014,
@@ -91,7 +91,7 @@ This thesis explores the nature of a human experience in space through a primary
 
 On MIT DSpace: [http://hdl.handle.net/1721.1/72626](http://hdl.handle.net/1721.1/72626)
 
-> BibTeX Style Citation
+BibTeX Style Citation
 
 ```
 @mastersthesis{Kassner:Patera:2012,
@@ -102,13 +102,13 @@ On MIT DSpace: [http://hdl.handle.net/1721.1/72626](http://hdl.handle.net/1721.1
   url={http://hdl.handle.net/1721.1/72626}
 }
 ```
-> Chicago Style Citation
+Chicago Style Citation
 
 ```
 Moritz Kassner, William Patera, Pupil: Constructing the Space of Visual Attention, SMArchS Master Thesis, (Cambridge: Massachusetts Institute of Technology, 2012).
 ```
 
-> APA Style Citation
+APA Style Citation
 
 ```
 Kassner, M., & Patera, W. (2012). Pupil: Constructing the space of visual attention (Unpublished master’s thesis). Massachusetts Institute of Technology, Cambridge, MA. Available from http://hdl.handle.net/1721.1/72626

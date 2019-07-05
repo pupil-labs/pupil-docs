@@ -81,13 +81,13 @@ Another way to start plugin development, is to use an existing plugin as a templ
 
 renaming it to, for example, `open_cv_threshold.py`.
 
-> Now you could give a new name to the class name:
+Now you could give a new name to the class name:
 
 ```python
 class Open_Cv_Threshold(Plugin):
 ```
 
-> Describe what your new plugin will do for yourself in the future and for future generations:
+Describe what your new plugin will do for yourself in the future and for future generations:
 
 ```python
 class Open_Cv_Threshold(Plugin):
@@ -96,26 +96,26 @@ class Open_Cv_Threshold(Plugin):
 """
 ```
 
-> Rename its reference in the persistence method:
+Rename its reference in the persistence method:
 
 ```python
 def clone(self):
     return Open_Cv_Threshold(**self.get_init_dict())
 ```
 
-> It is good to rename its menu caption as well:
+It is good to rename its menu caption as well:
 
 ```python
 self.menu.label = 'Threshold'
 ```
 
-> Lets determine its execution order in relation to the other plugins:
+Lets determine its execution order in relation to the other plugins:
 
 ```python
 self.order = .8
 ```
 
-> You can allow or disallow multiple instances of the Custom Plugin through the `uniqueness` attribute:
+You can allow or disallow multiple instances of the Custom Plugin through the `uniqueness` attribute:
 
 ```python
 self.uniqueness = "by_class"

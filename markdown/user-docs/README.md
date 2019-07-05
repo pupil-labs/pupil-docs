@@ -198,7 +198,7 @@ When using the **3D gaze mapping** mode the following keys will additionally be 
 
 #### World Video Stream
 
-> You can compress the videos afterwards using ffmpeg like so:
+You can compress the videos afterwards using ffmpeg like so:
 
 ```
 cd your_recording
@@ -207,7 +207,7 @@ ffmpeg -i eye0.mp4  -pix_fmt yuv420p  eye0_compressed.mp4; mv eye0_compressed.mp
 ffmpeg -i eye1.mp4  -pix_fmt yuv420p  eye1_compressed.mp4; mv eye1_compressed.mp4 eye1.mp4
 ```
 
-> OpenCV has a capture module that can be used to extract still frames from the video:
+OpenCV has a capture module that can be used to extract still frames from the video:
 
 ```python
 import cv2

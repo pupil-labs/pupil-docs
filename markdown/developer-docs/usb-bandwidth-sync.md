@@ -13,7 +13,7 @@ The Pupil headset uses 2-3 cameras that are electrically- and firmware wise iden
 ### JPEG size estimation and custom video backends
 However, the actual size of each image depends on the complexity of the content  (JPEGs of images with more features will be bigger) and implementation details of the camera firmware. Because the cameras use isochronous usb transfers, we need to allocate bandwidth during stream initialization. Here we need to make an estimate on how much bandwidth we believe the camera will require. If we are too conservative we require more bandwidth for 3 cameras than is available and initialization will fail. If we allocate to little, we risk that image transport will fail during capture. According to the UVC specs the amount of bandwidth that is required must be read from the camera usb descriptor and usually this estimate is super conservative. This is why with the normal drivers you can never run more that one camera at decent resolutions on a single usb bus.
 
-> With our version of libuvc and pyuvc we ignore the cameras request and estimate the bandwidth ourselves like this:
+With our version of libuvc and pyuvc we ignore the cameras request and estimate the bandwidth ourselves like this:
 
 ```c
 //the proper way: ask the camera

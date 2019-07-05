@@ -151,7 +151,7 @@ while True:
     print('%s: %s'%(actor,doc))
 ```
 
-> Example output for `v0.8`:
+Example output for `v0.8`:
 
 ```
 launcher: Starts eye processes. Hosts the IPC Backbone and Logging functions.

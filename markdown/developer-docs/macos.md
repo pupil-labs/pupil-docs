@@ -22,7 +22,7 @@ git
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-> Install Homebrew `Python >=3.6`
+Install Homebrew `Python >=3.6`
 
 ```
 brew install python3

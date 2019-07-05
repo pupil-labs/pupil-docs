@@ -26,7 +26,7 @@ install ffmpeg >= 3.2
 sudo apt install -y libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev ffmpeg x264 x265 libportaudio2 portaudio19-dev
 ```
 
-> install OpenCV >= 3.
+install OpenCV >= 3.
 
 ```
 sudo apt install -y python3-opencv libopencv-dev`
@@ -86,7 +86,7 @@ appears if opencv has been installed previously via `apt-get`.
 1. Start Pupil Capture. This should trigger a recompilation of the detector modules.
 </aside>
 
-> Turbojpeg
+Turbojpeg
 
 ```
 wget -O libjpeg-turbo.tar.gz https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-1.5.1.tar.gz/download
@@ -196,9 +196,9 @@ sudo sh -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/ceres.conf'
 sudo ldconfig
 ```
 
-> (Optional) Install PyTorch + CUDA and cuDNN.
+(Optional) Install PyTorch + CUDA and cuDNN.
 
-> **Version 1: Without GPU acceleration**: Install PyTorch via pip
+**Version 1: Without GPU acceleration**: Install PyTorch via pip
 
 ```bash
 pip3 install pip3 install https://download.pytorch.org/whl/cpu/torch-1.0.1.post2-cp36-cp36m-linux_x86_64.whl
@@ -210,7 +210,7 @@ Without GPU acceleration some of the features will probably not
 run in real-time.
 
 
-> **Version 2: With GPU acceleration**: Install PyTorch via pip
+**Version 2: With GPU acceleration**: Install PyTorch via pip
 
 ```bash
 pip3 install torch torchvision
