@@ -14,16 +14,16 @@ This section will guide you through all steps needed to turn your HTC Vive into 
 
 ### Install the Vive add-on
 
-<video src="https://www.youtube.com/embed/HGMjJLnK2_4?list=PLi20Yl1k_57r4j0LXDfo6IYXAKTp_FIKf" >
+<iframe src="https://www.youtube.com/embed/HGMjJLnK2_4?list=PLi20Yl1k_57r4j0LXDfo6IYXAKTp_FIKf" ></iframe>
 
 ### Install the Vive PRO add-on
 
-<video src="https://www.youtube.com/embed/ZRdWlmxBH30" >
+<iframe src="https://www.youtube.com/embed/ZRdWlmxBH30" ></iframe>
 
 
 ### A detailed look
 
-<video src="https://www.youtube.com/embed/nIzuwHagIXQ?list=PLi20Yl1k_57q0YALGi-ybQ5-wMjrZ022i" >
+<iframe src="https://www.youtube.com/embed/nIzuwHagIXQ?list=PLi20Yl1k_57q0YALGi-ybQ5-wMjrZ022i" ></iframe>
 
 ... at the engagement process between the eye tracking ring the the lens holding geometry. **Do not follow these steps.** Just have a look to get a feeling for the snap-in part to the guide above.
 

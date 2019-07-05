@@ -10,5 +10,5 @@ page_weight = 4
 
 Add eye tracking powers to your HoloLens with our 200hz eye tracking add-ons. Follow the instructions in the video to install your add-on.
 
-<video src="https://www.youtube.com/embed/nvNjlKp9-co" >
+<iframe src="https://www.youtube.com/embed/nvNjlKp9-co" ></iframe>
 

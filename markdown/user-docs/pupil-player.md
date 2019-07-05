@@ -9,7 +9,7 @@ page_weight = 1
 
 <!-- ### About -->
 
-<img src="/images/icons/svg/pp.svg" img-class="feature-center logo" width="20%" alt="Pupil Player logo" >
+<img src="/images/icons/svg/pp.svg" class="feature-center logo" width="20%" alt="Pupil Player logo" >
 
 Pupil Player is the second tool you will use after Pupil Capture. It is a media and data visualizer at its core. You will use it to look at Pupil Capture recordings. Visualize your data and export it.
 
@@ -148,16 +148,16 @@ This plugin can be used to overlay the eye video on top of the world video. Note
 ### Pupil Data And Post-hoc Detection
 
 > <h5 align='center'>Offline (post-hoc) Pupil Detection and Gaze Mapping<h5>
-<video src="https://www.youtube.com/embed/_Jnxi1OMMTc" >
+<iframe src="https://www.youtube.com/embed/_Jnxi1OMMTc" ></iframe>
 
 > <h5 align='center'>Offline (post-hoc) Gaze Mapping With Manual Reference Locations<h5>
-<video src="https://www.youtube.com/embed/mWyDQHhm7-w" >
+<iframe src="https://www.youtube.com/embed/mWyDQHhm7-w" ></iframe>
 
 > <h5 align='center'>Use Offline (post-hoc) Calibration For Another Recording<h5>
-<video src="https://www.youtube.com/embed/eEl3sswsTms" >
+<iframe src="https://www.youtube.com/embed/eEl3sswsTms" ></iframe>
 
 > <h5 align='center'>Offline (post-hoc) Gaze Mapping Validation<h5>
-<video src="https://www.youtube.com/embed/aPLnqu26tWI" >
+<iframe src="https://www.youtube.com/embed/aPLnqu26tWI" ></iframe>
 
 By default, Player starts with the `Pupil From Recording` plugin that tries to load pupil positions that were detected and stored during a Pupil Capture recording.
 Alternatively, one can run the pupil detection post-hoc.
@@ -277,7 +277,7 @@ You can find more information in our [dedicated fixation detector section](#fixa
 #### Head Pose Tracking
 
 > <h5 align='center'>Head Pose Tracker Tutorial<h5>
-<video src="https://www.youtube.com/embed/9x9h98tywFI" >
+<iframe src="https://www.youtube.com/embed/9x9h98tywFI" ></iframe>
 
 This plugin uses fiducial markers ([apriltag](https://april.eecs.umich.edu/software/apriltag.html)) to build a 3d model of the environment and track the headset's pose within it.
 

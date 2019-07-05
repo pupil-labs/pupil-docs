@@ -18,7 +18,7 @@ Pupil ships with a number of additional parts. The below sections provide an ove
 
 #### World Camera
 
-<video src="/videos/headset-adjust/worldcam-lens.webm" >
+<iframe src="/videos/headset-adjust/worldcam-lens.webm" ></iframe>
 
 The high speed 2d world camera comes with two lenses. 60 degree FOV lens (shown on the left) and a wide angle 100 degree FOV lens (shown on the right).
 
@@ -30,7 +30,7 @@ The world camera lens are interchangeable, so you can swap between the two lense
 
 #### Arm Extender
 
-<video src="/videos/headset-adjust/arm-extend.webm" >
+<iframe src="/videos/headset-adjust/arm-extend.webm" ></iframe>
 
 If you need to adjust the eye cameras beyond the built in adjustment range, you can use the orange arm extenders that are shipped with your Pupil headset. Unplug your eye camera. Slide the existing eye camera arm off the headset. Slide the arm extender onto the triangular mount rail on the headset frame. Slide the camera onto the extended mount rail. Plug the camera back in.
 
@@ -42,7 +42,7 @@ The eye camera arm extender works for all existing 120 and 200hz systems.
 
 #### Nose Pads
 
-<video src="/videos/headset-adjust/nosepad.webm" >
+<iframe src="/videos/headset-adjust/nosepad.webm" ></iframe>
 
 All Pupil headsets come with 2 sets of nose pads. You can swap the nose pads to customize the fit.
 
@@ -57,22 +57,22 @@ A lot of design and engineering thought has gone into getting the ergonomics of 
 To ensure a robust eye tracking performance, make sure all the cameras are in focus with a good field of view of your eyes.
 
 #### Slide Eye Camera
-<video src="/videos/headset-adjust/eyecam-slide.webm" >
+<iframe src="/videos/headset-adjust/eyecam-slide.webm" ></iframe>
 
 The eye camera arm slides in and out of the headset frame. You can slide the eye camera arm along the track.
 
 #### Rotate World Camera
-<video src="/videos/headset-adjust/worldcam-rotate.webm" >
+<iframe src="/videos/headset-adjust/worldcam-rotate.webm" ></iframe>
 
 You can rotate the world camera up and down to align with your FOV.
 
 #### Rotate Eye Camera
-<video src="/videos/headset-adjust/eyecam-rotate.webm" >
+<iframe src="/videos/headset-adjust/eyecam-rotate.webm" ></iframe>
 
 The eye camera arm is connected to the eye camera via the ball joint. You can rotate about its ball joint.
 
 #### Ball Joint Set Screw
-<video src="/videos/headset-adjust/eyecam-screw.webm" >
+<iframe src="/videos/headset-adjust/eyecam-screw.webm" ></iframe>
 
 You can adjust the set screw to control the movement of the eye camera about the ball joint. We recommend setting the set screw so that you can still move the eye camera by hand but not so loose that the eye camera moves when moving the head. You can also tighten the set screw to fix the eye camera in place.
 
@@ -89,13 +89,13 @@ You can adjust the set screw to control the movement of the eye camera about the
 
 #### Focus 120hz Eye Camera
 
-<video src="/videos/headset-adjust/eye-adjust.webm" >
+<iframe src="/videos/headset-adjust/eye-adjust.webm" ></iframe>
 
 If you have a 120hz eye camera, make sure the eye camera is in focus. Twist the lens focus ring of the eye camera with your fingers or lens adjuster tool to bring the eye camera into focus.
 
 #### Focus World Camera
 
-<video src="/videos/headset-adjust/worldcam-focus.webm" >
+<iframe src="/videos/headset-adjust/worldcam-focus.webm" ></iframe>
 
 Set the focus for the distance at which you will be calibrating by rotating the camera lens.
 

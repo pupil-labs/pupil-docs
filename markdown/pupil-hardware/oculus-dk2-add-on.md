@@ -14,25 +14,25 @@ This page will guide you through all steps needed to turn your Oculus DK2 into a
 
 ### Install lens in cup
 
-<video src="https://www.youtube.com/embed/AVeUwAFKmAc" >
+<iframe src="https://www.youtube.com/embed/AVeUwAFKmAc" ></iframe>
 
 Take the lens out of an existing Oculus lens cup.
 
-<video src="https://www.youtube.com/embed/ztT9WkDhpow" >
+<iframe src="https://www.youtube.com/embed/ztT9WkDhpow" ></iframe>
 
 Remove the LED ring and insert the lens into the Pupil eye tracking cup.
 
-<video src="https://www.youtube.com/embed/_Y0_4LDhphY" >
+<iframe src="https://www.youtube.com/embed/_Y0_4LDhphY" ></iframe>
 
 Install the LED ring and connect the LED power supply.
 
 ### Install cup in DK2
 
-<video src="https://www.youtube.com/embed/5LqjfgbDydM" >
+<iframe src="https://www.youtube.com/embed/5LqjfgbDydM" ></iframe>
 
 ### Route cables {#dk2-route-cables}
 
-<video src="https://www.youtube.com/embed/bvdxMYtzVTE" >
+<iframe src="https://www.youtube.com/embed/bvdxMYtzVTE" ></iframe>
 
 Route the USB cables through the vent holes in the top of the Oculus DK2.
 
