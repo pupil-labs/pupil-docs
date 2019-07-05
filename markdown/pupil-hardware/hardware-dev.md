@@ -6,17 +6,17 @@ page_weight = 6
 
 ## Pupil Hardware Development
 
-This page contains documentation and discussion on open source camera mounts, optics, and cameras. 
+This page contains documentation and discussion on open source camera mounts, optics, and cameras.
 
 ### Camera Mounts
 
-> {{< webp-img src="/images/pupil-hardware/explo_side_800_mounts.webp" alt="Headset camera mounts" >}}
+<img src="/images/pupil-hardware/explo_side_800_mounts.webp" alt="Headset camera mounts" >
 
-We release the CAD files for the camera mounts for you to download, modify, in accordance with our [license](#license).  CAD files for the frame are not open source; [see explanation](#hardware). 
+We release the CAD files for the camera mounts for you to download, modify, in accordance with our [license](#license).  CAD files for the frame are not open source; [see explanation](#hardware).
 
 **Interface Documentation**
 
-By releasing the mounts as example geometry we automatically document the interface. You can use the CAD files to take measurements and make your own mounts. 
+By releasing the mounts as example geometry we automatically document the interface. You can use the CAD files to take measurements and make your own mounts.
 
 <aside class="notice">
 Note - The tolerances may need to be changed for your material or fabrication process.
@@ -37,6 +37,6 @@ git clone https://github.com/pupil-labs/pupil-hardware-diy.git
 Or, if you want an older version, just checkout an older version.  In this example, we checkout `rev006` rev006 with the git version id of `6ad49c6066d5`
 
 ```
-git clone https://github.com/pupil-labs/pupil-hardware-diy.git 
+git clone https://github.com/pupil-labs/pupil-hardware-diy.git
 git checkout 6ad49c6066d5
-```  
+```

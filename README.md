@@ -112,12 +112,12 @@ Shortcodes are like little html templates that you can use to format content. Sh
 Here is an example of the `webp-img` shortcode within a blockquote:
 
 ```markdown
-> {{< webp-img src="/images/pupil-player/recording/export_folder.webp" alt="Export folder" >}}
+<img src="/images/pupil-player/recording/export_folder.webp" alt="Export folder" >}}
 ```
 Here is an example of the `video-webm` shortcode within a blockquote:
 
 ```markdown
-> {{< video-webm src="/videos/calibration/pupil-detection/pd.webm" >}}
+<video src="/videos/calibration/pupil-detection/pd.webm" >}}
 ```
 
 Shortcodes are defined in the [docuapi repo](https://github.com/pupil-labs/docuapi/tree/master/layouts/shortcodes "pupil-labs/docuapi shortcodes")
@@ -134,7 +134,7 @@ This shortcode is only used for `.svg` images only.
 
 Example:
 ```markdown
-> {{< figure-img src="/image/dir/img-name.jpg" img-class="class-name" width="100%" alt="short image description" >}}
+<img src="/image/dir/img-name.jpg" img-class="class-name" width="100%" alt="short image description" >}}
 ```
 
 **`webp-img`**
@@ -147,7 +147,7 @@ This shortcode is used for all raster images as `.webp` images with `.jpg` as th
 
 Example:
 ```markdown
-> {{< webp-img src="/image/dir/img-name.webp" figure-class="class-name" alt="short image description" >}}
+<img src="/image/dir/img-name.webp" figure-class="class-name" alt="short image description" >}}
 ```
 
 **`video-youtube`**
@@ -158,7 +158,7 @@ Youtube videos are lazyloaded meaning requests are made only when the user wants
 
 Example:
 ```markdown
-> {{< video-youtube embed-url="/youtube/video/embed/url" >}}
+<video embed-url="/youtube/video/embed/url" >}}
 ```
 
 **`video-webm`**
@@ -169,7 +169,7 @@ All videos and animations are `.webm` videos with `.mp4` as the fallback video, 
 
 Example:
 ```markdown
-> {{< video-webm src="/videos/dir/video-name.webm" >}}
+<video src="/videos/dir/video-name.webm" >}}
 ```
 
 You can contribute a shortcode as a PR to the Pupil Labs [docuapi repo](https://github.com/pupil-labs/docuapi "pupil-labs/docuapi")
@@ -186,7 +186,7 @@ All videos/animations must be within the `content/videos` directory.
 - Videos/animations should have both `.webm` and `.mp4` versions.
 - Including image posters in `.webp` and `.jpg` versions.
 
-Webp images can be created with `webp:make:img` and `webp:make:vid` gulp tasks specified in the `gulpfile.js` located in the [pupil docs website repo](https://github.com/pupiil-labs/pupl-docs-website "pupil-docs-website")  
+Webp images can be created with `webp:make:img` and `webp:make:vid` gulp tasks specified in the `gulpfile.js` located in the [pupil docs website repo](https://github.com/pupiil-labs/pupl-docs-website "pupil-docs-website")
 
 ## Webhook
 

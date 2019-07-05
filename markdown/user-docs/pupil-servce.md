@@ -7,14 +7,14 @@ page_weight = 2
 
 ## Pupil Service
 
-> {{< figure-img src="/images/icons/svg/ps.svg" img-class="feature-center logo" width="20%" alt="Pupil Service logo" >}}
+<img src="/images/icons/svg/ps.svg" img-class="feature-center logo" width="20%" alt="Pupil Service logo" >
 
-Pupil Service is like Pupil Capture except it does not have a world video feed or GUI. It is intended to be used with VR and AR eye tracking setups. 
+Pupil Service is like Pupil Capture except it does not have a world video feed or GUI. It is intended to be used with VR and AR eye tracking setups.
 
 Pupil Service is designed to run in the background and to be controlled via network commands only. The service process has no GUI. The tools introduced in the [hmd-eyes project](https://github.com/pupil-labs/hmd-eyes) are made to work with Pupil Service and Pupil Capture alike.
 
 ### Talking to Pupil Service
-Code examples below demonstrate how to control Pupil Service over the network. 
+Code examples below demonstrate how to control Pupil Service over the network.
 
 ```
 Starting and stopping Pupil Service:

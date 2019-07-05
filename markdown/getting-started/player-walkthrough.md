@@ -7,7 +7,7 @@ page_weight = 4
 
 ## Pupil Player Demo Video
 
-> {{< video-youtube embed-url="https://www.youtube.com/embed/7vQuL29P9ow" >}}
+<video src="https://www.youtube.com/embed/7vQuL29P9ow" >
 
 The video below demonstrates how to view a dataset recorded with Pupil Capture, make and export visualizations.
 

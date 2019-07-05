@@ -11,13 +11,13 @@ This section of the documentation is targeted towards users of Pupil software an
 
 ## Pupil Capture
 
-> {{< figure-img src="/images/icons/svg/pc.svg" img-class="feature-center logo" width="20%" alt="Pupil Capture logo" >}}
+<img src="/images/icons/svg/pc.svg" img-class="feature-center logo" width="20%" alt="Pupil Capture logo" >
 
 Pupil Capture is the software used with the Pupil Headset. The software reads the video streams coming in from the world camera and the eye camera. Pupil Capture uses the video streams to detect your pupil, track your gaze, detect and track markers in your environment, record video and events, and stream data in realtime.
 
 ### Capture Window
 
-> {{< webp-img src="/images/pupil-capture/capture-callout.webp" alt="Pupil Capture UI call-out" >}}
+<img src="/images/pupil-capture/capture-callout.webp" alt="Pupil Capture UI call-out" >
 
 The Capture window is the main control center for `Pupil Capture`. It displays live video feed from pupil headset.
 
@@ -28,7 +28,7 @@ The Capture window is the main control center for `Pupil Capture`. It displays l
 
 ### Capture Selection
 
-> {{< video-webm src="/videos/backend-manager/backend-manager.webm" >}}
+<video src="/videos/backend-manager/backend-manager.webm" >
 
 By default Pupil Capture will use Local USB as the capture source. If you have a Pupil headset connected to your machine you will see the video displayed from your Pupil headset in the World and eye windows. If no headset is connected or Pupil Capture is unable to open capture devices it will fall back to the Test Image. Other options for capture source are described below.
 
@@ -42,17 +42,17 @@ After switching to a different capture source, you can click the `Start with def
 
 ### Pupil Detection
 
-> {{< video-webm src="/videos/calibration/pupil-detection/pd.webm" >}}
+<video src="/videos/calibration/pupil-detection/pd.webm" >
 
 Pupil's algorithms automatically detect the participant's pupil. With the 3d detection and mapping mode, Pupil uses a 3d model of the eye(s) that constantly updates based on observations of the eye. This enables the system to compensate for movements of the headset - slippage. To build up an initial model, you can just look around your field of view.
 
 #### Fine-tuning Pupil Detection
 
-As a first step it is recommended to check the eye camera resolution as some parameters are resolution dependent. 
+As a first step it is recommended to check the eye camera resolution as some parameters are resolution dependent.
 For fast and robust pupil detection and tracking we recommend using the default resolution settings. For 200hz eye cameras the default resolution is set to 192x192 pixels. If you have an older 120hz eye camera, the default is 320x240 pixels.
 
-In Pupil Capture you can view a visualization of the pupil detection algorithm in the eye windows. For fine-tuning switch to this mode: `General Settings > Algorithm Mode`. 
- 
+In Pupil Capture you can view a visualization of the pupil detection algorithm in the eye windows. For fine-tuning switch to this mode: `General Settings > Algorithm Mode`.
+
 **Sensor Settings**
 
 * `Resolution`: 192x192 for 200hz eye cameras. 320x240 for 120hz eye cameras.
@@ -71,13 +71,13 @@ Keep in mind that pupil size values are defined in pixels and are therefore depe
 
 ### Calibration
 
-> {{< video-webm src="/videos/calibration/calibration-headset/clb-hd.webm" >}}
+<video src="/videos/calibration/calibration-headset/clb-hd.webm" >
 
 Pupil uses two cameras. One camera records a subject's eye movements -- we call this the `eye camera`. Another camera records the subject's field of vision -- we call this the `world camera`. In order to know what someone is looking at, we must find the parameters to a function that correlates these two streams of information.
 
 ### Calibration Process
 
-> {{< video-webm src="/videos/calibration/calibration-mobo/clb-mobo.webm" >}}
+<video src="/videos/calibration/calibration-mobo/clb-mobo.webm" >
 
 > <div class="figure-container">
 	<div class="Grid Grid-row">
@@ -104,11 +104,11 @@ Make sure that the users pupil is properly tracked. Make sure that the world cam
 > <div class="figure-container">
 	<div class="Grid Grid--1of2 img-row">
 		<div class="Grid-cell" style="padding-right:5px;">
-			{{< lqip-img figure-class="img-m" src="/images/pupil-hardware/pupil-detect.jpg" alt="YOur pupil is properly detected by the eye camera" >}}
+			{{< lqip-img class="img-m" src="/images/pupil-hardware/pupil-detect.jpg" alt="YOur pupil is properly detected by the eye camera" >
 			<p>Your pupil is properly detected by the eye camera</p>
 		</div>
 		<div class="Grid-cell">
-			{{< lqip-img figure-class="img-m" src="/images/pupil-hardware/focus.jpg" alt="Make sure the world camera is in focus" >}}
+			{{< lqip-img class="img-m" src="/images/pupil-hardware/focus.jpg" alt="Make sure the world camera is in focus" >
 			<p>Make sure the world camera is in focus</p>
 		</div>
 	</div>
@@ -120,7 +120,7 @@ Before starting calibration, ensure that eye(s) are robustly detected and that t
 
 #### Screen Marker Calibration
 
-> {{< video-webm src="/videos/calibration/calibration-screen/clb-s.webm" >}}
+<video src="/videos/calibration/calibration-screen/clb-s.webm" >
 
 This is the default method, and a quick method to get started. It is best suited for close range eye-tracking in a narrow field of view.
 
@@ -136,16 +136,16 @@ In the `Advanced` sub-menu you can set the `sample duration` -- the number of fr
 
 #### Manual Marker Calibration
 
-> {{< video-webm src="/videos/calibration/calibration-manual/clb-man.webm" >}}
+<video src="/videos/calibration/calibration-manual/clb-man.webm" >
 
 > <a href="/images/pupil-capture/calibration-markers/v0.4_markers/v0.4_marker.v12.pdf">
-		{{< webp-img figure-class="img-s" src="/images/pupil-capture/calibration-markers/v0.4_markers/v0.4_calibration_marker_02.webp" alt="Pupil Calibration Marker v0.4" >}}
+		{{< webp-img class="img-s" src="/images/pupil-capture/calibration-markers/v0.4_markers/v0.4_calibration_marker_02.webp" alt="Pupil Calibration Marker v0.4" >
 	</a>
 
 > <h5 align="center">Pupil Calibration Marker v0.4</h5>
 
 > <a href="/images/pupil-capture/calibration-markers/v0.4_markers/v0.4_marker.v12.pdf">
-		{{< webp-img figure-class="img-s" src="/images/pupil-capture/calibration-markers/v0.4_markers/v0.4_calibration_marker_01.webp" alt="Pupil Calibration Stop Marker v0.4" >}}
+		{{< webp-img class="img-s" src="/images/pupil-capture/calibration-markers/v0.4_markers/v0.4_calibration_marker_01.webp" alt="Pupil Calibration Stop Marker v0.4" >
 	</a>
 
 > <h5 align="center">Pupil Calibration Stop Marker v0.4</h5>
@@ -188,13 +188,13 @@ If you're using a manual marker, make sure to select <code>Marker display mode >
 </aside>
 
 <aside class="notice">
-This paper introduces and evaluates this type of single marker calibration - <code>CalibMe: Fast and Unsupervised Eye Tracker Calibration for Gaze-Based Pervasive Human-Computer Interaction</code>. 
+This paper introduces and evaluates this type of single marker calibration - <code>CalibMe: Fast and Unsupervised Eye Tracker Calibration for Gaze-Based Pervasive Human-Computer Interaction</code>.
 </aside>
 
 
 #### Natural Features Calibration
 
-> {{< video-webm src="/videos/calibration/calibration-natural/clb-natural.webm" >}}
+<video src="/videos/calibration/calibration-natural/clb-natural.webm" >
 
 This method is for special situations and far distances. Usually not required.
 
@@ -209,7 +209,7 @@ This method is for special situations and far distances. Usually not required.
 
 #### Fingertip Calibration
 
-Calibrate using your fingertip! We have found that the easiest way to calibrate with your fingertip is as follows: 
+Calibrate using your fingertip! We have found that the easiest way to calibrate with your fingertip is as follows:
 
 1. Select `Fingertip Calibration`
 1. Press `c` on your keyboard or click the blue circular `C` button on the left hand side of the world window to start calibration.
@@ -219,7 +219,7 @@ Calibrate using your fingertip! We have found that the easiest way to calibrate 
 
 This calibration method enables you to quickly sample a wide range of gaze angles and cover a large range of your FOV within 10 seconds.
 
-A Convolutional neural network (CNN) is implemented for the fingertip detection: 
+A Convolutional neural network (CNN) is implemented for the fingertip detection:
 
 First, a hand detector, based on [MobileNet](https://arxiv.org/pdf/1704.04861.pdf) and [SSD](https://arxiv.org/pdf/1512.02325.pdf), searches for a hand in the image.
 
@@ -237,7 +237,7 @@ In 2D mode, you should easily be able to achieve tracking accuracy within the ph
 
 ### Recording
 
-> {{< video-webm src="/videos/recording/rec.webm" >}}
+<video src="/videos/recording/rec.webm" >
 
 Press `r` on your keyboard or press the blue circular `R` button on the left hand side of the world window to start recording. You will see red text with the elapsed time of recording next to the `R` button. To stop recording, press `r` on your keyboard or press the `R` button on screen.
 
@@ -249,7 +249,7 @@ If you open up a session folder you will see a collection of video(s) and data f
 
 ### Open a plugin
 
-> {{< webp-img src="/images/pupil-capture/capture-plugin.webp" alt="Pupil Capture plugins" >}}
+<img src="/images/pupil-capture/capture-plugin.webp" alt="Pupil Capture plugins" >
 
 Open the `Plugin Manager` menu on the right.
 It lists all available plugins.
@@ -276,7 +276,7 @@ with at least one subscription is transferred.
 
 #### Pupil Remote
 
-> {{< video-webm src="/videos/pupil-remote/pr.webm" >}}
+<video src="/videos/pupil-remote/pr.webm" >
 
 `Pupil Remote` is the plugin that functions as the entry point to the broadcast infrastructure. It also provides a high level interface to control Pupil Capture over the network (e.g. start/stop a recording).
 
@@ -347,25 +347,25 @@ to start and stop recordings that are stored in the phone.
 ### Surface Tracking
 
 The `Surface Tracker` plugin allows you to define planar surfaces within your environment to track areas of interest (AOI).
-Surfaces are defined using square markers. 
+Surfaces are defined using square markers.
 
 #### Markers
 
-> {{< webp-img figure-class="img-m" src="/images/pupil-capture/calibration-markers/pupil_surface_markers.webp" alt="Calibration markers" >}}
+<img class="img-m" src="/images/pupil-capture/calibration-markers/pupil_surface_markers.webp" alt="Calibration markers" >
 
 You can generate markers with [this script](https://github.com/pupil-labs/pupil-helpers/blob/master/markers_stickersheet/make_square_markers.py), or download the image on the right.
 Markers can be printed on paper, stickers, or displayed on a screen.
 
 <aside class="notice">
-  <strong>Note</strong> - When displaying or printing markers, ensure that a white border remains around the marker! 
-  The border should be at least 1.2 times as wide as the grid size of the marker. 
+  <strong>Note</strong> - When displaying or printing markers, ensure that a white border remains around the marker!
+  The border should be at least 1.2 times as wide as the grid size of the marker.
   One way to achieve this is to present the marker on a white (or very light colored) background with sufficient padding.
 </aside>
 
 The design of our markers was greatly inspired by the [ArUco marker tracking library](http://www.uco.es/investiga/grupos/ava/node/26).
-However our markers use 5x5 grid instead of the 7x7 grid ArUco uses. 
+However our markers use 5x5 grid instead of the 7x7 grid ArUco uses.
 This allows us to make smaller markers that can still be detected well.
-The 5x5 design allows for a total of 63 unique markers.  
+The 5x5 design allows for a total of 63 unique markers.
 
 
 #### Preparing your Environment
@@ -383,11 +383,11 @@ When placing your markers please follow the guidelines:
 *   Surfaces defined with more than 2 markers are detected even if some markers lie outside of the camera image or are obscured.
 
 
-#### Defining a Surface 
+#### Defining a Surface
 
-> {{< video-webm src="/videos/surface-tracking/srf-tracking.webm" >}}
+<video src="/videos/surface-tracking/srf-tracking.webm" >
 
-Surfaces can be defined with Pupil Capture in real-time, or post-hoc with Pupil Player. 
+Surfaces can be defined with Pupil Capture in real-time, or post-hoc with Pupil Player.
 In both cases the necessary steps are as follows:
 
 *   Prepare your environment as described above.
@@ -403,9 +403,9 @@ In both cases the necessary steps are as follows:
 
 #### Reusing Surface Definitions
 
-Your surfaces are automatically saved in a file called `surface_definitions` in the `pupil_capture_settings` directory. 
+Your surfaces are automatically saved in a file called `surface_definitions` in the `pupil_capture_settings` directory.
 If you restart Pupil Capture or the Surface Tracker plugin, your surface definitions from previous sessions will be loaded.
-The `surface_definitions` file is copied into each recording folder as well, so you will have access to your surface definitions in Pupil Player. 
+The `surface_definitions` file is copied into each recording folder as well, so you will have access to your surface definitions in Pupil Player.
 You can copy & paste this file to move definitions from one session or recording to another.
 
 
@@ -413,9 +413,9 @@ You can copy & paste this file to move definitions from one session or recording
 
 You can display gaze heatmaps for each surface by enabling `Show Heatmap` in the `Surface Tracker` menu.
 Two heatmap modes are supported:
-*   `Gaze within each surface`: Visualizes the distribution of gaze points that lie within each surface. 
+*   `Gaze within each surface`: Visualizes the distribution of gaze points that lie within each surface.
 *   `Gaze across different surfaces`: Color codes the surfaces to visualize the amount of time spend gazing on each surface in relation to other surfaces.
-Red color represents a lot of gaze points or time spent. Blue color represents few gaze points or little time spent. 
+Red color represents a lot of gaze points or time spent. Blue color represents few gaze points or little time spent.
 
 The smoothness of the heatmap in `Gaze within each surface` mode can be set using the `Heatmap Smoothness` slider, which will effectively change the bin size of the underlying histogram.
 In the online case the heatmap is computed over the most recent data.
@@ -423,7 +423,7 @@ The exact time window to consider can be set using the `Gaze History Length` fie
 
 #### Further Functionality
 
-*   You can click the `Open Surface in Window` button to open a view of the surface in a separate window. 
+*   You can click the `Open Surface in Window` button to open a view of the surface in a separate window.
     Gaze positions on the surface will be visualized in this window in real-time.
 *   Streaming Surfaces with Pupil Capture - Detected surfaces as well as gaze positions relative to the surface are broadcast under the `surface` topic. Check out [this video](http://youtu.be/qHmfMxGST7A) for a demonstration.
 *   Surface Metrics with Pupil Player - if you have defined surfaces, you can generate surface visibility reports or gaze count per surface. See our [blog post](http://pupil-labs.com/blog/2014/07/0392-player-release.html) for more information.

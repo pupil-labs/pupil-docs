@@ -9,11 +9,11 @@ page_weight = 0
 
 ## Pupil Community
 
-> {{< webp-img figure-class="img-xs" src="/images/icons/Pupil_Logo_wiki-02.webp" alt="Pupil Community logo" >}}
+<img class="img-xs" src="/images/icons/Pupil_Logo_wiki-02.webp" alt="Pupil Community logo" >
 
 The Pupil community is made up of amazing individuals around the world.  It is your effort and exchanges that enable us to discover novel applications for eye tracking and help us to improve the open source repository.  The Pupil community is active, growing, and thrives from your contributions.
 
-Connect with the community, share ideas, solve problems and help make Pupil awesome! 
+Connect with the community, share ideas, solve problems and help make Pupil awesome!
 
 ### Contribute!
 
@@ -21,7 +21,7 @@ Connect with the community, share ideas, solve problems and help make Pupil awes
 
 ### Github
 
-* Find a bug?  [Raise an issue][issue] in the GitHub project (`pupil-labs/pupil`).  
+* Find a bug?  [Raise an issue][issue] in the GitHub project (`pupil-labs/pupil`).
 * Have you made a new feature, improvement, edit, something cool that you want to share? Send us a [pull request][pull].  We check on the regular.  If we merge your feature(s) you'll be credited in the Pupil [[Contributors]] page.
 
 ### Discord

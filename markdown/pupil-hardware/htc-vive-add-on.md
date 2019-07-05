@@ -6,7 +6,7 @@ page_weight = 2
 
 ## HTC Vive Add-On
 
-> {{< webp-img src="/images/vr-ar/htcviveb.webp" alt="HTC Vive binocular add-on" >}}
+<img src="/images/vr-ar/htcviveb.webp" alt="HTC Vive binocular add-on" >
 
 Add eye tracking powers to your HTC Vive with our 120hz binocular eye tracking add-on.
 
@@ -14,16 +14,16 @@ This section will guide you through all steps needed to turn your HTC Vive into 
 
 ### Install the Vive add-on
 
-> {{< video-youtube embed-url="https://www.youtube.com/embed/HGMjJLnK2_4?list=PLi20Yl1k_57r4j0LXDfo6IYXAKTp_FIKf" >}}
+<video src="https://www.youtube.com/embed/HGMjJLnK2_4?list=PLi20Yl1k_57r4j0LXDfo6IYXAKTp_FIKf" >
 
 ### Install the Vive PRO add-on
 
-> {{< video-youtube embed-url="https://www.youtube.com/embed/ZRdWlmxBH30" >}}
+<video src="https://www.youtube.com/embed/ZRdWlmxBH30" >
 
 
 ### A detailed look
 
-> {{< video-youtube embed-url="https://www.youtube.com/embed/nIzuwHagIXQ?list=PLi20Yl1k_57q0YALGi-ybQ5-wMjrZ022i" >}}
+<video src="https://www.youtube.com/embed/nIzuwHagIXQ?list=PLi20Yl1k_57q0YALGi-ybQ5-wMjrZ022i" >
 
 ... at the engagement process between the eye tracking ring the the lens holding geometry. **Do not follow these steps.** Just have a look to get a feeling for the snap-in part to the guide above.
 
@@ -37,7 +37,7 @@ This means the cameras share the VIVEs usb tether bandwidth with other usb compo
 
 * Disable the HTC-Vive built-in camera in the VR settings pane to free up bandwidth for Pupil's dual VGA120 video streams.
 
-or 
+or
 
 * Enable the HTC-Vive built-in camera and set it to 30hz. Then set the Pupil Cameras to 320x240 resolution to share the USB bus.
 

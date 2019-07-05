@@ -12,7 +12,7 @@ I-DT identifies fixations as groups of consecutive points within a particular di
 
 Pupil's fixation detectors implement such dispersion-based algorithms.
 
-> {{< footnote number="1" name="salvucci-goldberg" text="Salvucci, D. D., & Goldberg, J. H. (2000, November). Identifying fixations and saccades in eye-tracking protocols. In Proceedings of the 2000 symposium on Eye tracking research & applications (pp. 71-78). ACM." >}}
+> {{< footnote number="1" name="salvucci-goldberg" text="Salvucci, D. D., & Goldberg, J. H. (2000, November). Identifying fixations and saccades in eye-tracking protocols. In Proceedings of the 2000 symposium on Eye tracking research & applications (pp. 71-78). ACM." >
 
 ### Usage {#fd-usage}
 

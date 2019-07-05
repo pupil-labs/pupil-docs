@@ -6,14 +6,14 @@ page_weight = 5
 
 ## DIY
 
-> {{< webp-img src="/images/pupil-hardware/diy_explosion.webp" alt="DIY Pupil headset" >}}
+<img src="/images/pupil-hardware/diy_explosion.webp" alt="DIY Pupil headset" >
 
-If you are an individual planning on using **Pupil** [exclusively for noncommercial purposes](#license), and are not afraid of SMD soldering and hacking -- then, buy the parts, modify the cameras, and assemble a Pupil DIY headset. We have made a guide to help you and a [shopping list](https://docs.google.com/spreadsheet/pub?key=0Al-zbr5hUFxPdEdJY1Z0dGRXU18yU0JxTVQ3THBOZFE&single=true&gid=0&output=html). 
-  
+If you are an individual planning on using **Pupil** [exclusively for noncommercial purposes](#license), and are not afraid of SMD soldering and hacking -- then, buy the parts, modify the cameras, and assemble a Pupil DIY headset. We have made a guide to help you and a [shopping list](https://docs.google.com/spreadsheet/pub?key=0Al-zbr5hUFxPdEdJY1Z0dGRXU18yU0JxTVQ3THBOZFE&single=true&gid=0&output=html).
+
 <aside class="notice">Note - The Pupil DIY Kit is not for commercial use or commercial clients.</aside>
 
 ### Getting all the parts
-The 3d-printed headset is the centerpiece of the Pupil mobile eye tracker. You can buy it from the Pupil Labs team through the [Pupil shapeways store](http://www.shapeways.com/shops/pupil_store). The price for the headset is part production cost and part support to the pupil development team.  This enables us to give you support and continue to work on the project. 
+The 3d-printed headset is the centerpiece of the Pupil mobile eye tracker. You can buy it from the Pupil Labs team through the [Pupil shapeways store](http://www.shapeways.com/shops/pupil_store). The price for the headset is part production cost and part support to the pupil development team.  This enables us to give you support and continue to work on the project.
 
 All other parts of the Pupil DIY kit have been specifically selected with availability and affordability in mind. See the [Bill of Materials][bom] to learn what else you will need to get.
 
@@ -36,8 +36,8 @@ Take both webcams out of their casings. Follow the video guides.
 
 #### Solder Work on Eye Camera PCB
 
-> {{< webp-img src="/images/pupil-hardware/hd-6000_pcb_text.webp" alt="Microsoft HD-6000 PCB" >}}
-	
+<img src="/images/pupil-hardware/hd-6000_pcb_text.webp" alt="Microsoft HD-6000 PCB" >
+
 This is by far the trickiest part. You will need some soldering experience, or work with someone that can help you for this step. In the video and photo the lens holder is removed, but you will do it with the *lens holder attached*.
 
 1. Cut off the microphone
