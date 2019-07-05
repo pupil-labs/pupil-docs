@@ -1,8 +1,8 @@
-+++
+---
 title = "realsense"
 section_weight = 4
 page_weight = 1.6
-+++
+---
 
 ## Intel RealSense 3D
 

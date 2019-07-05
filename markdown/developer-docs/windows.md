@@ -1,9 +1,9 @@
-+++
+---
 date = "2017-06-22T16:56:14+07:00"
 title = "windows"
 section_weight = 4
 page_weight = 1.3
-+++
+---
 
 ## Windows Dependencies
 

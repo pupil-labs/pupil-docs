@@ -1,9 +1,9 @@
-+++
+---
 date = "2017-05-24T15:45:05+07:00"
 title = "data format"
 section_weight = 3
 page_weight = 3
-+++
+---
 
 ## Pupil Mobile
 

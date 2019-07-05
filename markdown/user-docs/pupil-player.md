@@ -1,9 +1,9 @@
-+++
+---
 date = "2017-01-19T13:08:13+07:00"
 title = "pupil player"
 section_weight = 3
 page_weight = 1
-+++
+---
 
 ## Pupil Player
 

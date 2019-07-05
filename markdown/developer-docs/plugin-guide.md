@@ -1,9 +1,9 @@
-+++
+---
 date = "2017-01-19T16:04:19+07:00"
 title = "plugin guide"
 section_weight = 4
 page_weight = 3
-+++
+---
 
 ## Plugin Guide
 
@@ -50,8 +50,8 @@ If you run from source:
  - Pupil Capture: `[root_of_source_pupil_source_git_repo]/capture_settings/plugins/`
  - Pupil Service: `[root_of_source_pupil_source_git_repo]/service_settings/plugins/`
  - Pupil Player: `[root_of_source_pupil_source_git_repo]/player_settings/plugins/`
- 
- 
+
+
 If you want to add your plugin to a bundled version of Pupil:
 
  - Pupil Capture: `[your_user_dir]/pupil_capture_settings/plugins/`

@@ -1,20 +1,20 @@
-+++
+---
 date = "2017-01-19T16:40:20+07:00"
 title = "linux"
 section_weight = 4
 page_weight = 1.1
-+++
+---
 
 ## Linux Dependencies
 
-These installation instructions are tested using **Ubuntu 16.04 or higher** running on many machines. Do not run Pupil on a VM unless you know what you are doing. We recommend using `18.04 LTS`. 
+These installation instructions are tested using **Ubuntu 16.04 or higher** running on many machines. Do not run Pupil on a VM unless you know what you are doing. We recommend using `18.04 LTS`.
 
 ### Install Linux Dependencies
 
 Let's get started! Its time for `apt`!  Just copy paste into the terminal and listen to your machine purr.
 
 #### Ubuntu 18.04
-Install dependencies with apt-get. 
+Install dependencies with apt-get.
 
 ```
 sudo apt install -y pkg-config git cmake build-essential nasm wget python3-setuptools libusb-1.0-0-dev  python3-dev python3-pip python3-numpy python3-scipy libglew-dev libglfw3-dev libtbb-dev
@@ -33,7 +33,7 @@ sudo apt install -y python3-opencv libopencv-dev`
 ```
 
 #### Ubuntu 17.10 or lower
-If you're using Ubuntu <= 17.10, you will need to install OpenCV from source, and install ffmpeg-3 from a different ppa. 
+If you're using Ubuntu <= 17.10, you will need to install OpenCV from source, and install ffmpeg-3 from a different ppa.
 
 > install ffmpeg3 from jonathonf's ppa
 
@@ -157,7 +157,7 @@ sudo pip3 install git+https://github.com/pupil-labs/nslr-hmm
 ```
 
 > 3D eye model dependencies
-First install 
+First install
 
 ```bash
 sudo apt-get install -y libboost-dev
@@ -174,7 +174,7 @@ sudo apt install -y libceres-dev
 ```
 
 Next we need to install the Ceres library. In **Ubuntu 18.04** Ceres is available as a package in the repositories.
-In older versions it has to be compiled from source. Choose the correct command on the right depending on your version 
+In older versions it has to be compiled from source. Choose the correct command on the right depending on your version
 of Ubuntu!
 
 > **Ubuntu <= 17.10**
@@ -196,7 +196,7 @@ sudo sh -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/ceres.conf'
 sudo ldconfig
 ```
 
-> (Optional) Install PyTorch + CUDA and cuDNN. 
+> (Optional) Install PyTorch + CUDA and cuDNN.
 
 > **Version 1: Without GPU acceleration**: Install PyTorch via pip
 
@@ -205,8 +205,8 @@ pip3 install pip3 install https://download.pytorch.org/whl/cpu/torch-1.0.1.post2
 pip3 install torchvision
 ```
 
-Some bleeding edge features require the deep learning library PyTorch. 
-Without GPU acceleration some of the features will probably not 
+Some bleeding edge features require the deep learning library PyTorch.
+Without GPU acceleration some of the features will probably not
 run in real-time.
 
 

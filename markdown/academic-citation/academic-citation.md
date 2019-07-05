@@ -1,9 +1,9 @@
-+++
+---
 date = "2017-01-19T16:22:44+07:00"
 title = "academic citation"
 section_weight = 6
 page_weight = 0
-+++
+---
 
 # Academic Citation
 

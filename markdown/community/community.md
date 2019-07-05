@@ -1,9 +1,9 @@
-+++
+---
 date = "2017-01-19T16:18:15+07:00"
 title = "community"
 section_weight = 5
 page_weight = 0
-+++
+---
 
 # Community
 

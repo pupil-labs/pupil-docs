@@ -1,9 +1,9 @@
-+++
+---
 date = "2017-01-19T12:24:57+07:00"
 title = "player workflow"
 section_weight = 1
 page_weight = 2
-+++
+---
 
 ## Player Workflow
 Use Pupil Player to visualize data recorded with Pupil Capture and export videos of visualization and datasets for further analysis.

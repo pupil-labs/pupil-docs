@@ -1,19 +1,19 @@
-+++
+---
 date = "2017-01-20T11:37:57+07:00"
 title = "win driver setup"
 section_weight = 4
 page_weight = 1.5
-+++
+---
 
 ## Windows Pupil Labs Python libs from Source
 
-This section is for Pupil core developers who want to build `pyav`, `pyndsi`, `pyglui`, and `pyuvc` from source and create Python wheels. 
+This section is for Pupil core developers who want to build `pyav`, `pyndsi`, `pyglui`, and `pyuvc` from source and create Python wheels.
 
-If you just want to run Pupil from source, go back to the [Windows Dependencies](#windows-dependencies) section and install the prebuilt wheels. 
+If you just want to run Pupil from source, go back to the [Windows Dependencies](#windows-dependencies) section and install the prebuilt wheels.
 
-This section assumes that you have a Windows development environment set up and all dependencies installed as specified in the [Windows Dependencies](#windows-dependencies) section. 
+This section assumes that you have a Windows development environment set up and all dependencies installed as specified in the [Windows Dependencies](#windows-dependencies) section.
 
-Please also see the [Notes Before Starting](#notes-before-starting) section for a clarification of terms. 
+Please also see the [Notes Before Starting](#notes-before-starting) section for a clarification of terms.
 
 ### Clone Pupil Labs Python libs
 
@@ -41,9 +41,9 @@ In order to create wheels, you will need to install the `wheel` lib.
 
 ### Download FFMPEG Dev
 
-You will need both `.dll` files as well as FFMPG libs in order to build `pyav`. You should have already downloaded FFMPEG shared binaries in the [FFMPEG to pupil_external](#ffmpeg-to-pupil-external) step above. 
+You will need both `.dll` files as well as FFMPG libs in order to build `pyav`. You should have already downloaded FFMPEG shared binaries in the [FFMPEG to pupil_external](#ffmpeg-to-pupil-external) step above.
 
-- Download FFMPEG Windows Dev - `ffmpeg-4.0-win64-dev` - from [ffmpeg](http://ffmpeg.zeranoe.com/builds/) 
+- Download FFMPEG Windows Dev - `ffmpeg-4.0-win64-dev` - from [ffmpeg](http://ffmpeg.zeranoe.com/builds/)
 - Unzip ffmpeg-dev to your work dir
 
 ### Download libjpeg-turbo
@@ -85,7 +85,7 @@ You will need both `.dll` files as well as FFMPG libs in order to build `pyav`. 
 
 - Open a cmd prompt
 - make sure paths to ffmpeg and libjpeg-turbo are correctly specified in setup.py
-- `python setup.py install` 
+- `python setup.py install`
 - You can create a wheel from within this directory with `pip wheel .`
 
 ### libusb
@@ -102,7 +102,7 @@ You will need both `.dll` files as well as FFMPG libs in order to build `pyav`. 
 - Download CMAKE from [cmake.org](https://cmake.org/download/)
 - Install CMAKE. Make sure to check the box to add CMAKE to your PATH
 - Download POSIX Threads for Windows from [sourceforge](https://sourceforge.net/projects/pthreads4w/) **Note** this is a 32 bit lib, but that is OK! Move PThreads to your work dir.
-- Download Microsoft Visual C++ 2010 Redistributable from [microsoft](https://www.microsoft.com/en-us/download/details.aspx?id=14632). The `pthreadVC2` lib depends on `msvcr100.dll`. 
+- Download Microsoft Visual C++ 2010 Redistributable from [microsoft](https://www.microsoft.com/en-us/download/details.aspx?id=14632). The `pthreadVC2` lib depends on `msvcr100.dll`.
 - Open CMAKE GUI
 - Set source code directory to libuvc repo
 - Set binary directory to `libuvc/bin`

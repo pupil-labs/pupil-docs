@@ -1,9 +1,9 @@
-+++
+---
 date = "2018-07-19T17:45:00+01:00"
 title = "recording format"
 section_weight = 4
 page_weight = 4
-+++
+---
 
 ## Recording Format
 

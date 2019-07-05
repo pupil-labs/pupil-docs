@@ -1,9 +1,9 @@
-+++
+---
 date = "2017-01-19T15:45:05+07:00"
 title = "data format"
 section_weight = 3
 page_weight = 4
-+++
+---
 
 ## Data Format
 
@@ -19,7 +19,7 @@ We use a normalized coordinate system with the origin `0,0` at the bottom left a
 * Image Coordinate System
 
   In some rare cases we use the image coordinate system. This is mainly for pixel access of the image arrays. Here a unit is one pixel, origin is "top left" and "bottom right" is the maximum x,y.
-  
+
 * Camera Coordinate System
 
   Some of the raw data (such as the estimate of the 3D gaze point) is specified in the three-dimensional world camera coordinate system. The origin of this coordinate system is in the projection center located behind the midpoint of the 2D image plane. The z-axis points forward along the optical axis while the x-axis points to the right and the y-axis downwards.
@@ -107,7 +107,7 @@ def correlate_data(data,timestamps):
 
 ### Detailed Data Format
 
-Every time you click record in Pupil Capture or Pupil Mobile, a new recording is started and your data is saved into a recording folder. You can use [Pupil Player](#pupil-player) to playback Pupil recordings, add visualizations, and export in various formats. 
+Every time you click record in Pupil Capture or Pupil Mobile, a new recording is started and your data is saved into a recording folder. You can use [Pupil Player](#pupil-player) to playback Pupil recordings, add visualizations, and export in various formats.
 
 #### Access to raw data
 Note that the raw data before processing with Pupil Player is not immediately readible from other software (the raw data format is documented in the [developer docs](#recording-format)). Use the 'Raw Data Exporter' plugin in Pupil Player to export `.csv` files that contain all the data captured with Pupil Capture. Exported files will be written to a subfolder of the recording folder called `exports`.
@@ -202,7 +202,7 @@ When using the **3D gaze mapping** mode the following keys will additionally be 
 
 ```
 cd your_recording
-ffmpeg -i world.mp4  -pix_fmt yuv420p  world_compressed.mp4; mv world_compressed.mp4 world.mp4 
+ffmpeg -i world.mp4  -pix_fmt yuv420p  world_compressed.mp4; mv world_compressed.mp4 world.mp4
 ffmpeg -i eye0.mp4  -pix_fmt yuv420p  eye0_compressed.mp4; mv eye0_compressed.mp4 eye0.mp4
 ffmpeg -i eye1.mp4  -pix_fmt yuv420p  eye1_compressed.mp4; mv eye1_compressed.mp4 eye1.mp4
 ```

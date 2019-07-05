@@ -1,9 +1,9 @@
-+++
+---
 date = "2017-01-19T15:47:28+07:00"
 title = "dev setup"
 section_weight = 4
 page_weight = 1
-+++
+---
 
 ## Developer Setup
 

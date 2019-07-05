@@ -1,20 +1,20 @@
-+++
+---
 date = "2017-01-20T11:37:57+07:00"
 title = "win driver setup"
 section_weight = 4
 page_weight = 1.4
-+++
+---
 
 ## Windows Driver Setup
 
-In order to support isochronous USB transfer on Windows, you will need to install drivers for the cameras in your Pupil headset. 
+In order to support isochronous USB transfer on Windows, you will need to install drivers for the cameras in your Pupil headset.
 
 <aside class="notice">
   The driver installation is done automatically when you run the Pupil Capture or Service bundle. Do not manually install drivers if you dont run Pupil from source!
 </aside>
 
 ### Download drivers and tools
-1. Download [Pupil camera driver installer from the Pupil github repo](https://github.com/pupil-labs/pupil/raw/master/pupil_external/PupilDrvInst.exe) - alternatively you could 
+1. Download [Pupil camera driver installer from the Pupil github repo](https://github.com/pupil-labs/pupil/raw/master/pupil_external/PupilDrvInst.exe) - alternatively you could
 
 ### Install drivers for your Pupil headset
 
@@ -27,7 +27,7 @@ In order to support isochronous USB transfer on Windows, you will need to instal
 If you had tried to install drivers with previous driver install instructions and failed, or are not able to access cameras in Pupil Capture. Please try the following:
 
 1. In `Device Manager` (`System > Device Manager`)
-1. `View > Show Hidden Devices` 
+1. `View > Show Hidden Devices`
 1. Expand `libUSBK Usb Devices`
 1. For each device listed (even hidden devices) click `Uninstall` and check the box agreeing to `Delete the driver software for this device` and press `OK`
 1. Repeat for each device in libUSBK Usb Devices

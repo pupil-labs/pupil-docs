@@ -1,9 +1,9 @@
-+++
+---
 date = "2017-01-19T15:40:13+07:00"
 title = "pupil servce"
 section_weight = 3
 page_weight = 2
-+++
+---
 
 ## Pupil Service
 

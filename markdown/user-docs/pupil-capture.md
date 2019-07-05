@@ -1,9 +1,9 @@
-+++
+---
 date = "2017-01-19T12:35:24+07:00"
 title = "pupil capture"
 section_weight = 3
 page_weight = 0
-+++
+---
 
 # User Docs
 

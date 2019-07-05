@@ -1,9 +1,9 @@
-+++
+---
 date = "2017-01-20T11:12:14+07:00"
 title = "license"
 section_weight = 5
 page_weight = 0
-+++
+---
 
 # License
 
@@ -34,7 +34,7 @@ All content of the documentation written by us is open source, according to [GNU
 
 ## Using Pupil in Your Research and Projects
 
-You can use Pupil in your research, academic work, commercial work, art projects and personal work. We only ask you to credit us appropriately. See [Academic Citation](#academic-citation) for samples.  
+You can use Pupil in your research, academic work, commercial work, art projects and personal work. We only ask you to credit us appropriately. See [Academic Citation](#academic-citation) for samples.
 
 Pupil is developed and maintained by Pupil Labs. If you make a contribution to open source, we will include your name in our [[Contributors]] page.  For more information about the people behind the project, check out [Pupil Labs][pupil-labs].
 
