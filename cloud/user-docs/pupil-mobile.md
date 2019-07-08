@@ -19,7 +19,7 @@ Seamlessly integrated with Pupil Capture and Pupil Service.
 
 ### Home Screen {#pupil-mobile-home-screen}
 
-<img src="/images/pupil-mobile/home.webp" alt="Pupil Mobile home call-out" >
+<img src="../../images/pupil-mobile/home.webp" alt="Pupil Mobile home call-out" >
 
 Home screen is the main control center for `Pupil Mobile`.
 It displays a list of available sensors.
@@ -31,7 +31,7 @@ Click any sensor for a preview.
 
 ### Sensor Preview {#pupil-mobile-sensor-preview}
 
-<img src="/images/pupil-mobile/sensor.webp" alt="Pupil Mobile sensor call-out" >
+<img src="../../images/pupil-mobile/sensor.webp" alt="Pupil Mobile sensor call-out" >
 
 Preview live video feed from your Pupil headset and other available sensors.
 Sensor preview windows will automatically close and take you back to the Home screen in order to conserve battery.
@@ -42,7 +42,7 @@ Sensor preview windows will automatically close and take you back to the Home sc
 
 ### General Settings {#pupil-mobile-general-settings}
 
-<img src="/images/pupil-mobile/general-settings.webp" alt="Pupil Mobile settings call-out" >
+<img src="../../images/pupil-mobile/general-settings.webp" alt="Pupil Mobile settings call-out" >
 
 Main settings menu for `Pupil Mobile` app and information about the Android Device.
 
@@ -52,7 +52,7 @@ Main settings menu for `Pupil Mobile` app and information about the Android Devi
 
 ### Recordings Screen {#pupil-mobile-recordings-screen}
 
-<img src="/images/pupil-mobile/recording.webp" alt="Pupil Mobile recording call-out" >
+<img src="../../images/pupil-mobile/recording.webp" alt="Pupil Mobile recording call-out" >
 
 View all the datasets that were recorded on your Android device.
 
@@ -63,7 +63,7 @@ See the [`Transfer Recordings`](#pupil-mobile-transfer-recordings) section below
 
 ### Switch Views {#pupil-mobile-switch-views}
 
-<img src="/images/pupil-mobile/swipe.webp" alt="Pupil Mobile swipe call-out" >
+<img src="../../images/pupil-mobile/swipe.webp" alt="Pupil Mobile swipe call-out" >
 
 `Pupil Mobile` is designed to for efficient navigation.
 Swipe left or right for quick access to other views.
@@ -72,7 +72,7 @@ Swipe left or right for quick access to other views.
 
 ### Streaming To Subscribers
 
-<video src="/videos/backend-manager/backend-manager.webm" ></iframe>
+<video src="../../videos/backend-manager/backend-manager.webm" ></iframe>
 
 Pupil Mobile devices on the same local WiFi network are automatically detected by Pupil Capture. To subscribe to a Pupil Mobile device in Pupil Capture, go to `Capture Selection` and select Pupil Mobile as the capture source.
 

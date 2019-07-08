@@ -6,7 +6,7 @@ page_weight = 3
 
 ## Oculus Rift DK2 Add-On
 
-<img src="/images/vr-ar/oculusdk2m.webp" alt="Oculus Rift DK2 add-on" >
+<img src="../../images/vr-ar/oculusdk2m.webp" alt="Oculus Rift DK2 add-on" >
 
 Add eye tracking powers to your Oculus Rift DK2 with our 120hz eye tracking add-ons.
 

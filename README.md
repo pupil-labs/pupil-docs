@@ -112,12 +112,12 @@ Shortcodes are like little html templates that you can use to format content. Sh
 Here is an example of the `webp-img` shortcode within a blockquote:
 
 ```markdown
-<img src="/images/pupil-player/recording/export_folder.webp" alt="Export folder" >}}
+<img src="../../images/pupil-player/recording/export_folder.webp" alt="Export folder" >}}
 ```
 Here is an example of the `video-webm` shortcode within a blockquote:
 
 ```markdown
-<video src="/videos/calibration/pupil-detection/pd.webm" >}}
+<video src="../../videos/calibration/pupil-detection/pd.webm" >}}
 ```
 
 Shortcodes are defined in the [docuapi repo](https://github.com/pupil-labs/docuapi/tree/master/layouts/shortcodes "pupil-labs/docuapi shortcodes")
@@ -169,7 +169,7 @@ All videos and animations are `.webm` videos with `.mp4` as the fallback video, 
 
 Example:
 ```markdown
-<video src="/videos/dir/video-name.webm" >}}
+<video src="../../videos/dir/video-name.webm" >}}
 ```
 
 You can contribute a shortcode as a PR to the Pupil Labs [docuapi repo](https://github.com/pupil-labs/docuapi "pupil-labs/docuapi")
