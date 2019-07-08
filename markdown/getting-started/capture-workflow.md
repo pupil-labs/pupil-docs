@@ -20,7 +20,7 @@ Put on the Pupil headset and plug it in to your computer. Make sure there is spa
 
 ### 3. Check pupil detection
 
-<iframe src="/videos/calibration/pupil-detection/pd.webm" ></iframe>
+<video src="/videos/calibration/pupil-detection/pd.webm" ></iframe>
 
 Take a look at the `Eye` window. If the pupil is detected you will see a red circle around the edge of your pupil and a red dot at the center of your pupil.
 
@@ -52,7 +52,7 @@ Before calibrating, be sure to check that your eyes are well positioned for a ro
 
 ### 4. Calibrate
 
-<iframe src="/videos/calibration/calibration-headset/clb-hd.webm" ></iframe>
+<video src="/videos/calibration/calibration-headset/clb-hd.webm" ></iframe>
 
 In order to know what someone is looking at, we must to establish a mapping between pupil and gaze positions. This is what we call calibration.
 
@@ -60,7 +60,7 @@ The calibration process establishes a mapping from pupil to gaze coordinates.
 
 #### Screen Marker Calibration Method
 
-<iframe src="/videos/calibration/calibration-screen/clb-s.webm" ></iframe>
+<video src="/videos/calibration/calibration-screen/clb-s.webm" ></iframe>
 
 
 Click `c` on the world screen or press `c` on the keyboard to start calibrate.
@@ -72,7 +72,7 @@ There are other calibration methods and lots more information how calibration wo
 
 ### 5. Record
 
-<iframe src="/videos/recording/rec.webm" ></iframe>
+<video src="/videos/recording/rec.webm" ></iframe>
 
 Start capturing data!
 

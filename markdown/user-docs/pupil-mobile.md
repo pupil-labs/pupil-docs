@@ -72,7 +72,7 @@ Swipe left or right for quick access to other views.
 
 ### Streaming To Subscribers
 
-<iframe src="/videos/backend-manager/backend-manager.webm" ></iframe>
+<video src="/videos/backend-manager/backend-manager.webm" ></iframe>
 
 Pupil Mobile devices on the same local WiFi network are automatically detected by Pupil Capture. To subscribe to a Pupil Mobile device in Pupil Capture, go to `Capture Selection` and select Pupil Mobile as the capture source.
 

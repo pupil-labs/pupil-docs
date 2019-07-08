@@ -18,7 +18,7 @@ Now that you have recorded some data, you can play back the video and visualize 
 
 Player comes with a number of plugins. Plugins are classified by their use-case. Visualization plugins can be additive. This means that you can add multiple instances of a plugin to build up a visualization.
 
-<iframe src="/videos/visualize/pp_vis.webm" ></iframe>
+<video src="/videos/visualize/pp_vis.webm" ></iframe>
 
 #### Where are Pupil Player exports saved?
 
