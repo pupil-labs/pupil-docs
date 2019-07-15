@@ -53,10 +53,6 @@ For fast and robust pupil detection and tracking we recommend using the default 
 
 In Pupil Capture you can view a visualization of the pupil detection algorithm in the eye windows. For fine-tuning switch to this mode: `General Settings > Algorithm Mode`. 
  
-**Sensor Settings**
-
-* `Resolution`: 192x192 for 200hz eye cameras. 320x240 for 120hz eye cameras.
-* `Absolute Exposure Time`: Make sure that there is a high contrast between the pupil and its surrounding. In order to do so, you might need to increase brightness of the images. Start by testing one of these `Absolute Exposure Time` values: 64, 94, 124.
 
 **Pupil Detector 2D/3D**
 
