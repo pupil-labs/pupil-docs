@@ -15,7 +15,7 @@ Therefore we can only debug and support issues for **Windows 10**.
 
 ### Notes Before Starting
 
-- Work directory - We will make a directory called `work` at `C:\work` and will use this directory for all build processes and setup scripts. Whenever we refer to the `work` directory, it will refer to `C:\work`. You can change this to whatever is convenient for you, but note that all instructions and setup files refer to `C:\work`
+- Work directory - We will make a directory called `work` at `C:\work` and will use this directory for all build processes and setup scripts. Whenever we refer to the `work` directory, it will refer to `C:\work`. You can change this to whatever is convenient for you, but note that all instructions and setup files refer to `C:\work`, **therefore you are highly encouraged to also put everything into `C:\work` or you will have to rewrite code!** An alternative would be to create a symbolic link from `C:\work` to whatever work directory you have.
 - Command Prompt - We will **always** be using `x64 Native Tools Command Prompt for VS 2017` as our command prompt. Make sure to only use this command prompt. Unlike unix systems, windows has many possible "terminals" or "cmd prompts". We are targeting `x64` systems and require the `x64` command prompt. You can access this cmd prompt from the Visual Studio 2017 shortcut in your Start menu.
 - 64bit - You should be using a 64 bit system and therefore all downloads, builds, and libraries should be for `x64` unless otherwise specified.
 - Windows paths and Python - path separators in windows are a forward slash `\`. In Python, this is a special "escape" character. When specifying Windows paths in a Python string you must use `\\` instead of `\` or use [Python raw strings](https://docs.python.org/3/reference/lexical_analysis.html#string-and-bytes-literals), e.g. `r'\'`.
@@ -48,7 +48,9 @@ Install [7-zip](http://www.7-zip.org/download.html) to extract files.
 
 ### Install Python
 
-- [Download Python x64](https://www.python.org/downloads/release/python-361/)
+<aside class="notice">Note - Currently our build process does not yet support Python 3.7 as pyaudio does not yet have prebuild wheels for windows available for Python 3.7. You are thus highly encouraged to use the latest stable version of Python 3.6.</aside>
+
+- [Download Python 3.6 x64](https://www.python.org/downloads/release/python-368/)
 - Run the Python installer.
 - Check the box `Add Python to PATH`. This will add Python to your System PATH Environment Variable.
 - Check the box `Install for all users`. This will install Python to `C:\Program Files\Python36`.
@@ -68,43 +70,33 @@ To access your System Environment Variables:
 - You can click on `Path` in `System Variables` to view the variables that have been set.
 - You can `Edit` or `Add` new paths (this is needed later in the setup process).
 
-### Python Wheels
-Most Python extensions can be installed via **pip**. We recommend to download and install the pre-built wheel (*.whl) packages maintained by [Christoph Gohlke](https://www.lfd.uci.edu/~gohlke/pythonlibs/). (@Gohlke Thanks for creating and sharing these packages!)
-
-<aside class="notice">Note - you are using Python3.6 and a Windows 64 bit system. Therefore download wheels with `cp36‑cp36m‑win_amd64.whl` in the file name. `cp36` means C Python v3.6 and `amd64` signifies 64 bit architecture.</aside>
-
-Download the most recent version of the following wheels Python3.6 x64 systems.
-
-- [numpy](https://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy)
-- [scipy](https://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy)
-- [boost.python](https://www.lfd.uci.edu/~gohlke/pythonlibs/#boost.python)
-- [cython](https://www.lfd.uci.edu/~gohlke/pythonlibs/#cython)
-- [opencv](https://www.lfd.uci.edu/~gohlke/pythonlibs/#opencv)
-- [pyopengl](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyopengl) (do not download pyopengl-accelerate)
-- [psutil](https://www.lfd.uci.edu/~gohlke/pythonlibs/#psutil)
-- [pyaudio](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio)
-- [pyzmq](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyzmq)
-- [pytorch](https://pytorch.org/get-started/locally/)
-    - For pytorch, select these options: Stable, Windows, Pip, Python 3.6, 9.0.
-    - You will be provided with two commands. Run them in the order given to install this wheel.
-
-Open your command prompt and `Run as administrator` in the directory where the wheels are downloaded.
-
-- Install `numpy` and `scipy` before all other wheels.
-- Install all wheels with `pip install X` (where X is the name of the `.whl` file)
-- You can check that libs are installed with `python import X` statements in the command prompt where `X` is the name of the lib.
-
 ### Python Libs
 Open your command prompt and install the following libs:
 
-- `pip install msgpack==0.5.6`
-- `pip install win_inet_pton`
-- `pip install pyaudio`
-- `pip install git+https://github.com/zeromq/pyre.git`
-- `pip install git+https://github.com/pupil-labs/nslr.git`
-- `pip install git+https://github.com/pupil-labs/nslr-hmm.git`
+```
+pip install numpy
+pip install scipy
+pip install cython
+pip install opencv-python==3.x
+pip install pyopengl
+pip install psutil
+pip install pyaudio
+pip install pyzmq
+pip install msgpack==0.5.6
+pip install win_inet_pton
+pip install git+https://github.com/zeromq/pyre.git
+pip install git+https://github.com/pupil-labs/nslr.git
+pip install git+https://github.com/pupil-labs/nslr-hmm.git
+```
 
-Note - `cysignals` is a dependency on macOS and Linux but not Windows.
+Now install pytorch.
+- Open the pytorch website for local installation: https://pytorch.org/get-started/locally/
+- Select options: Stable, Windows, Pip, Python 3.6, CUDA 9.0.
+- You will be provided with two commands. Run them in the order given to install the wheels.
+
+<aside class="notice">Note - `cysignals` is a dependency on macOS and Linux but not Windows.</aside>
+
+<aside class="notice">Previously the installation of some of the packages was more difficult on Windows as you had to manually download pre-built wheels from the well-known repository of Christoph Gohlke (https://www.lfd.uci.edu/~gohlke/pythonlibs/). This is no longer required, as all our dependencies provide their own pre-built binaries for Windows over pip now.</aside>
 
 ### Pupil Labs Python Wheels
 Download the following Python wheels from Pupil Labs github repos.
@@ -115,6 +107,11 @@ Download the following Python wheels from Pupil Labs github repos.
 - [pyuvc](https://github.com/pupil-labs/pyuvc/releases/latest)
 
 `pyuvc` requires that you download Microsoft Visual C++ 2010 Redistributable from [microsoft](https://www.microsoft.com/en-us/download/details.aspx?id=14632). The `pthreadVC2` lib, which is used by libuvc, depends on `msvcr100.dll`.
+
+Open your command prompt and `Run as administrator` in the directory where the wheels are downloaded.
+
+- Install all wheels with `pip install X` (where X is the name of the `.whl` file)
+- You can check that libs are installed with `python import X` statements in the command prompt where `X` is the name of the lib.
 
 <aside class="notice">Note - if you're looking to build Pupil Labs Python libs from source, go <a href="#windows-pupil-labs-python-libs-from-source">here</a></aside>
 
