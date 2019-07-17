@@ -29,7 +29,7 @@ sudo apt install -y libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev
 > install OpenCV >= 3.
 
 ```
-sudo apt install -y python3-opencv libopencv-dev`
+sudo apt install -y python3-opencv libopencv-dev
 ```
 
 #### Ubuntu 17.10 or lower
@@ -201,7 +201,7 @@ sudo ldconfig
 > **Version 1: Without GPU acceleration**: Install PyTorch via pip
 
 ```bash
-pip3 install pip3 install https://download.pytorch.org/whl/cpu/torch-1.0.1.post2-cp36-cp36m-linux_x86_64.whl
+pip3 install https://download.pytorch.org/whl/cpu/torch-1.0.1.post2-cp36-cp36m-linux_x86_64.whl
 pip3 install torchvision
 ```
 
