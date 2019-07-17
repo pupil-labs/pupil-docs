@@ -48,7 +48,9 @@ Install [7-zip](http://www.7-zip.org/download.html) to extract files.
 
 ### Install Python
 
-- [Download Python x64](https://www.python.org/downloads/release/python-361/)
+<aside class="notice">Note - Currently our build process does not yet support Python 3.7 as pyaudio does not yet have prebuild wheels for windows available for Python 3.7. You are thus highly encouraged to use the latest stable version of Python 3.6.</aside>
+
+- [Download Python 3.6 x64](https://www.python.org/downloads/release/python-368/)
 - Run the Python installer.
 - Check the box `Add Python to PATH`. This will add Python to your System PATH Environment Variable.
 - Check the box `Install for all users`. This will install Python to `C:\Program Files\Python36`.
