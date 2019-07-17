@@ -29,7 +29,7 @@ sudo apt install -y libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev
 > install OpenCV >= 3.
 
 ```
-sudo apt install -y python3-opencv libopencv-dev`
+sudo apt install -y python3-opencv libopencv-dev
 ```
 
 #### Ubuntu 17.10 or lower
