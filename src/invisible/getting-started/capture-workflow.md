@@ -16,11 +16,11 @@ Put on the Pupil headset and plug it in to your computer. Make sure there is spa
 
 ### 2. Start Pupil Capture
 
-<img src="../../images/videos/icons/svg/pc.svg" class="feature-center logo" width="20%" alt="Pupil Capture logo" >
+<!-- <img src="../../images/videos/icons/svg/pc.svg" class="feature-center logo" width="20%" alt="Pupil Capture logo" > -->
 
 ### 3. Check pupil detection
 
-<video src="../../assets/videos/calibration/pupil-detection/pd.webm" ></iframe>
+<!-- <video src="../../assets/videos/calibration/pupil-detection/pd.webm" ></iframe> -->
 
 Take a look at the `Eye` window. If the pupil is detected you will see a red circle around the edge of your pupil and a red dot at the center of your pupil.
 
@@ -32,7 +32,7 @@ Try moving your head around a bit while looking at your eye to see that the pupi
 
 Before calibrating, be sure to check that your eyes are well positioned for a robust eye tracking performance. For more details check out. - [Pupil Headset Adjustments](https://docs.pupil-labs.com/#pupil-headset-adjustments)
 
-<img src="../../images/videos/pupil-capture/eye/good_bad_eye.webp" alt="Good bad eye setup" >
+<!-- <img src="../../images/videos/pupil-capture/eye/good_bad_eye.webp" alt="Good bad eye setup" > -->
 
 <aside class="success" style="clear:none;">
 	1. Do - The eye is in focus and all range of the eye movements are visible. (Focus is only important for 120hz eye camera. 200hz camera has fixed focus.)
@@ -52,7 +52,7 @@ Before calibrating, be sure to check that your eyes are well positioned for a ro
 
 ### 4. Calibrate
 
-<video src="../../assets/videos/calibration/calibration-headset/clb-hd.webm" ></iframe>
+<!-- <video src="../../assets/videos/calibration/calibration-headset/clb-hd.webm" ></iframe> -->
 
 In order to know what someone is looking at, we must to establish a mapping between pupil and gaze positions. This is what we call calibration.
 
@@ -60,7 +60,7 @@ The calibration process establishes a mapping from pupil to gaze coordinates.
 
 #### Screen Marker Calibration Method
 
-<video src="../../assets/videos/calibration/calibration-screen/clb-s.webm" ></iframe>
+<!-- <video src="../../assets/videos/calibration/calibration-screen/clb-s.webm" ></iframe> -->
 
 
 Click `c` on the world screen or press `c` on the keyboard to start calibrate.
@@ -72,7 +72,7 @@ There are other calibration methods and lots more information how calibration wo
 
 ### 5. Record
 
-<video src="../../assets/videos/recording/rec.webm" ></iframe>
+<!-- <video src="../../assets/videos/recording/rec.webm" ></iframe> -->
 
 Start capturing data!
 
@@ -88,7 +88,7 @@ See a video demonstration of how to set recordings path, session name, and start
 
 #### Where is the recording saved?
 
-<img src="../../images/videos/pupil-capture/recording/rec_folder.webp" alt="Recording folder" >
+<!-- <img src="../../images/videos/pupil-capture/recording/rec_folder.webp" alt="Recording folder" > -->
 
 By default, each recording will live in its own unique data folder contained in the `recordings` folder.
 

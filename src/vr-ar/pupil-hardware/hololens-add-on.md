@@ -6,7 +6,7 @@ page_weight = 4
 
 ## HoloLens Add-On
 
-<img src="../../images/videos/vr-ar/hololens_e200.webp" alt="HoloLens add-on" >
+<!-- <img src="../../images/videos/vr-ar/hololens_e200.webp" alt="HoloLens add-on" > -->
 
 Add eye tracking powers to your HoloLens with our 200hz eye tracking add-ons. Follow the instructions in the video to install your add-on.
 
