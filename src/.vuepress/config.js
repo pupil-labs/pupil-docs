@@ -6,8 +6,8 @@ module.exports = {
   themeConfig: {
     displayAllHeaders: true,
     lastUpdated: "Last Updated",
-    sidebar:{
-      '/invisible/':[
+    sidebar: {
+      '/invisible/': [
         '',
         {
           title: 'Getting Started',
@@ -38,30 +38,27 @@ module.exports = {
           ]
         },
       ],
-      '/core/':[
+      '/core/': [
         '',
       ],
-      '/vr-ar/':[
+      '/vr-ar/': [
         '',
       ],
-      '/cloud/':[
+      '/cloud/': [
         '',
       ],
-      '/developer/':[
+      '/developer/': [
         '',
       ],
     },
     sidebarDepth: 3,
-    displayAllHeaders: true,
-
-    lastUpdated: 'Last Updated',
     repo: 'https://github.com/pupil-labs/pupil-docs-website',
     repoLabel: 'See on Github',
     docsRepo: 'https://github.com/pupil-labs/pupil-docs',
     docsDir: 'src',
     docsBranch: 'vuepress-refactor',
     editLinks: true,
-    editLinkText: 'Edit this page!'
+    editLinkText: 'Edit this page!',
   },
 
   plugins: [
@@ -78,12 +75,13 @@ module.exports = {
       }
     ],
 
-    [
-      "@vuepress/google-analytics",
-      {
-        ga: "UA-40856943-2"
-      }
-    ]
+
+    // [
+    //   "@vuepress/google-analytics",
+    //   {
+    //     ga: "UA-40856943-2"
+    //   }
+    // ]
   ],
   chainWebpack: config => {
     config.module
