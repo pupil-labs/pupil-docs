@@ -1,7 +1,7 @@
 <template lang="pug">
 
   div
-    v-toolbar#desktop_toolbar(
+    v-toolbar.elevation-1(
       app
       fixed
       clipped-left
