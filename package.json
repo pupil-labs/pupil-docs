@@ -1,6 +1,5 @@
 {
   "devDependencies": {
-    "vuepress": "^1.0.2",
     "css-loader": "^2.1.1",
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
@@ -8,16 +7,13 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2"
   },
-
   "scripts": {
     "dev": "vuepress dev src",
     "build": "vuepress build src"
   },
-
   "dependencies": {
     "vuepress": "^1.0.2",
     "vuetify": "^1.5.14",
     "vuetify-loader": "^1.2.2"
   }
-
 }
