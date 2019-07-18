@@ -1,0 +1,39 @@
+$pl-not-black =      #0D122A
+$pl-dark-gray =      #263238
+$pl-gray =           #455A64
+$pl-light-grey =     #90A4AE
+$sclera-gray =       #ECEFF1
+$sclera-white =      #FAFAFA
+$iris-green =        #06A125
+$iris-light-green =  #7ECC80
+$iris-blue =         #039BE5
+$iris-light-blue =   #68C3EF
+$iris-dark-blue =    #283593
+$retina-red =        #F44336
+$macula-pink =       #FF9E80
+
+$colors := {
+  pl-not-black: #0D122A
+  pl-dark-gray: #263238
+  pl-gray: #455A64
+  pl-light-grey: #90A4AE
+  sclera-gray: #ECEFF1
+  sclera-white: #FAFAFA
+  iris-green: #06A125
+  iris-light-green: #7ECC80
+  iris-blue: #039BE5
+  iris-light-blue: #68C3EF
+  iris-dark-blue: #283593
+  link-blue: #1263cc
+  retina-red: #F44336
+  macula-pink: #FF9E80
+  pd-grey: #ebeff2
+}
+
+for cl, i in $colors
+  {'.' + cl}
+    color: i !important
+
+for cl, i in $colors
+  {'.bg-' + cl}
+    background-color: i
