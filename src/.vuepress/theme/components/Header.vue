@@ -1,61 +1,59 @@
 <template lang="pug">
 
-  div.toolbar_container(class="navbar")
-
-
+  div
     v-toolbar#desktop_toolbar(
       app
       fixed
-      extended
       clipped-left
     )
       SidebarButton(@toggle-sidebar="$emit('toggle-sidebar')")
-      v-spacer
-
-      a(href="https://pupil-labs.com/")
+      router-link(to="/")
         img(
-          :src="$withBase('/website_content/pl_logo_med_dark.svg')"
+          :src="$withBase('/pl_logo.svg')"
         )
-
-      v-spacer
-
-      SearchBox
-      // AlgoliaSearchBox(:options="algolia")
-
-      template(v-slot:extension)
-        v-toolbar-items(style="width:100%; ")
-          v-container(style="padding-left:0; padding-right:0;  ")
-            v-layout(row justify-center fill-height)
-              template(xs4 v-for="item in docs_menu")
-                v-btn.btn_submenu(
-                  :class="{'text-capitalize': item.title != 'vr/ar', 'text-uppercase': item.title == 'vr/ar' }"
-                  fill-height
-                  flat
-                  :key="item.title"
-                  :to="item.link"
-                  :ripple="false"
-                  color="white"
-                  style="padding-left:0; padding-right:0; margin-left:-20px; color:white;"
-                ) {{ item.title }}
-                v-spacer
-
-
+    div.pageLinks
+      div.fill-height.d-flex.justify-center
+        template(v-for="item in docs_menu")
+          v-btn.fill-height(
+            flat
+            :key="item.title"
+            :to="item.link"
+            :class="{'text-capitalize': item.title != 'vr/ar', 'text-uppercase': item.title == 'vr/ar' }"
+            style="margin:0;"
+          ) {{ item.title }}
+      //- SearchBox
 
 </template>
 
 <script>
-import SidebarButton from '@theme/components/SidebarButton.vue'
-import AlgoliaSearchBox from '@AlgoliaSearchBox'
-import SearchBox from '@SearchBox'
+import SidebarButton from "@theme/components/SidebarButton.vue";
+import AlgoliaSearchBox from "@AlgoliaSearchBox";
+import SearchBox from "@SearchBox";
 
 export default {
   data() {
     return {
       main_menu: [
-        { icon: "product", title: "products", link: "https://pupil-labs.com/products/" },
-        { icon: "learn", title: "learn", href: "https://pupil-labs.com/learn/" },
-        { icon: "about", title: "about", link: "https://pupil-labs.com/about/" },
-        { icon: "career", title: "careers", link: "https://pupil-labs.com/careers/" },
+        {
+          icon: "product",
+          title: "products",
+          link: "https://pupil-labs.com/products/"
+        },
+        {
+          icon: "learn",
+          title: "learn",
+          href: "https://pupil-labs.com/learn/"
+        },
+        {
+          icon: "about",
+          title: "about",
+          link: "https://pupil-labs.com/about/"
+        },
+        {
+          icon: "career",
+          title: "careers",
+          link: "https://pupil-labs.com/careers/"
+        },
         { icon: "news", title: "news", link: "https://pupil-labs.com/news/" }
       ],
 
@@ -80,33 +78,30 @@ export default {
     SearchBox
   },
 
-  watch: {
-
-  },
+  watch: {},
 
   computed: {
-    algolia () {
-      return this.$themeLocaleConfig.algolia || this.$site.themeConfig.algolia || {}
-    },
+    algolia() {
+      return (
+        this.$themeLocaleConfig.algolia || this.$site.themeConfig.algolia || {}
+      );
+    }
   },
 
-  methods: {
-
-  }
-
-
-
-
-
+  methods: {}
 };
 </script>
 
 <style lang="stylus">
-
-
-.navbar
-  padding $navbar-vertical-padding $navbar-horizontal-padding
-
+.pageLinks {
+  z-index: 4;
+  position: absolute;
+  left: 0;
+  right: 0
+  max-width: 800px
+  margin: auto;
+  height:64px;
+}
 
 .dot_transition {
   transition: background-color 0.25s cubic-bezier(0.25, 0.8, 0.5, 1);
@@ -135,20 +130,6 @@ export default {
     border-radius: 50%;
     top: calc(50% - 4px);
     transition: opacity 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
-  }
-}
-
-.v-btn--active {
-  font-weight: bold;
-
-  &:before {
-    content: '';
-    background-color: #263238 !important;
-    opacity: 1;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    top: calc(50% - 4px);
   }
 }
 
