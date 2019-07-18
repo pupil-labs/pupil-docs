@@ -1,23 +1,44 @@
-<template>
-  <aside class="sidebar">
-    <NavLinks/>
-    <slot name="top"/>
-    <SidebarLinks :depth="0" :items="items"/>
-    <slot name="bottom"/>
-  </aside>
+<template lang="pug">
+
+  aside.sidebar
+    v-layout(justify-center).pt-4
+      SearchBox
+    NavLinks
+    slot(name="top")
+    SidebarLinks(
+      :depth="0"
+      :items="items"
+    )
+    slot(name="bottom")
+
 </template>
 
 <script>
-import SidebarLinks from '@theme/components/SidebarLinks.vue'
-import NavLinks from '@theme/components/NavLinks.vue'
+import SidebarLinks from "@theme/components/SidebarLinks.vue";
+import NavLinks from "@theme/components/NavLinks.vue";
+import AlgoliaSearchBox from "@AlgoliaSearchBox";
+import SearchBox from "@SearchBox";
 
 export default {
-  name: 'Sidebar',
+  name: "Sidebar",
 
-  components: { SidebarLinks, NavLinks },
+  components: {
+    SidebarLinks,
+    NavLinks,
+    AlgoliaSearchBox,
+    SearchBox
+  },
 
-  props: ['items']
-}
+  props: ["items"],
+
+  computed: {
+    algolia() {
+      return (
+        this.$themeLocaleConfig.algolia || this.$site.themeConfig.algolia || {}
+      );
+    }
+  }
+};
 </script>
 
 <style lang="stylus">
