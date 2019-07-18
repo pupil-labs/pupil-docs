@@ -1,4 +1,3 @@
-public
 node_modules
 *.htaccess
 *.DS_Store
@@ -41,7 +40,6 @@ screen.min.css
 main.min.css
 
 # ignore build directories
-public
 config-tags.toml
 dist
 
