@@ -128,40 +128,6 @@ Navigate to your work directory
 - Right click on `libglog_static` and `Build`
 - Right click on `ceres_static` and `Build`
 
-### Boost
-Download and install the latest boost version for Windows x64 with version number matching your Visual Studio 2017 MSVC version.
-
-- For VS 2017 the MSVC version supported by boost is 14.1
-- Download boost from [sourceforge](https://sourceforge.net/projects/boost/files/boost-binaries/1.64.0/boost_1_64_0-msvc-14.1-64.exe/download)
-- Extract boost to work directory and name the boost dir `boost`
-- Open `C:\work\boost\boost\python\detail\config.hpp` with Visual Studio 2017
-- Change **L108** from `define BOOST_LIB_NAME boost_python` to `define BOOST_LIB_NAME boost_python3`
-- Save the file and close Visual Studio
-
-The prebuilt boost.python depends on `python27.dll`. The files from package boost.python are built with Visual Studio 2015. One solution to this issue is to build boost from source.
-
-- Open your command prompt
-- cd to `C:\work\boost`
-- Run `boostrap.bat`. This will generate `b2.exe`.
-
-Change user config before compiling boost.
-
-- Copy `C:\work\boost\tools\build\example\user-config.jam` to `boost\tools\build\src\user-config.jam`.
-- Uncomment and edit following lines in the `user-config.jam` file according your msvc and python version:
-    - `using msvc : 14.1 ;` in section `MSVC configuration`
-    - `using python : 3.6 : C:\\Python36 : C:\\Python36\\include : C:\\Python36\\libs ;` in section `Python configuration`
-
-Build boost.python
-
-- Open your command prompt and navigate to your work dir
-- cd to `boost`
-- `b2 --with-python link=shared address-model=64`
-- The generated DLL and Lib files are in `C:\work\boost\stage`.
-
-Add Boost libs to your system path
-
-- Add `C:\work\boost\stage\lib` to your system PATH in your System Environment Variables
-
 ### Clone the Pupil Repo
 
 - Open a command prompt in your work dir
@@ -212,9 +178,8 @@ The following steps require you to store dynamic libraries in the `pupil_externa
 
 - Open `pupil\pupil_src\shared_modules\pupil_detectors\setup.py`
 - Go to the `if platform.system() == 'Windows'` block
-- Check that paths for `opencv`, `Eigen`, `ceres-windows` and `boost` are correctly specified. The installed opencv lib is `opencv_world320.lib`.
+- Check that paths for `opencv`, `Eigen` and `ceres-windows` are correctly specified. The installed opencv lib is `opencv_world320.lib`.
 - Edit paths if necessary
-- Edit `C:\\work\\boost\\stage\\lib` if necessary
 - Save and close setup.py
 
 <aside class="faq">When starting run_capture.bat, it will build the pupil_detectors module. However, if you are debugging, you may want to try building explicitly. From within `pupil/pupil_src/shared_modules/pupil_detectors` run `python setup.py build` to build the pupil_detectors.</aside>
@@ -226,9 +191,8 @@ In case you are using Visual Studio 2017 with v15.8 or v15.9 update, you may enc
 
 - Open `pupil\pupil_src\shared_modules\calibration_routines\optimization_calibration\setup.py`
 - Go to the `if platform.system() == 'Windows'` block
-- Check that paths for `opencv`, `Eigen`, `ceres-windows` and `boost` are correctly specified. The installed opencv lib is `opencv_world320.lib`.
+- Check that paths for `opencv`, `Eigen` and `ceres-windows` are correctly specified. The installed opencv lib is `opencv_world320.lib`.
 - Edit paths if necessary
-- Edit `C:\\work\\boost\\stage\\lib` if necessary
 - Save and close setup.py
 
 <aside class="faq">When starting run_capture.bat, it will build the optimization_calibration module. However, if you are debugging, you may want to try building explicitly. From within `pupil/pupil_src/shared_modules/calibration_routines/optimization_calibration` run `python setup.py build` to build the optimization_calibration module.</aside>

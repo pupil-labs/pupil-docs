@@ -53,8 +53,6 @@ brew install opencv
 brew install glew
 brew install glfw3
 # dependencies for 2d_3d c++ detector
-brew install boost
-brew install boost-python3
 brew install ceres-solver
 ```
 
