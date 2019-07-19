@@ -160,8 +160,6 @@ sudo pip3 install git+https://github.com/pupil-labs/nslr-hmm
 First install 
 
 ```bash
-sudo apt-get install -y libboost-dev
-sudo apt-get install -y libboost-python-dev
 sudo apt-get install -y libgoogle-glog-dev libatlas-base-dev libeigen3-dev
 ```
 
