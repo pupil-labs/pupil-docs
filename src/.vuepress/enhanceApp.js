@@ -85,6 +85,9 @@ export default ({ Vue }) => {
       VCarouselItem,
       VDialog,
       VProgressCircular
+    },
+    theme: {
+      primary: "#1263CC"
     }
   });
 };
