@@ -1,26 +1,46 @@
 <template lang="pug">
 
   div
+
     v-toolbar.elevation-1(
       app
       fixed
       clipped-left
+      height="60px"
     )
-      SidebarButton(@toggle-sidebar="$emit('toggle-sidebar')")
-      router-link(to="/")
+      SidebarButton(
+        v-if="!$page.frontmatter.home"
+        @toggle-sidebar="$emit('toggle-sidebar')"
+      )
+      router-link.pl-logo(to="/")
         img(
           :src="$withBase('/pl_logo.svg')"
         )
-    div.pageLinks
-      div.fill-height.d-flex.justify-center
-        template(v-for="item in docs_menu")
-          v-btn.fill-height(
-            flat
-            :key="item.title"
-            :to="item.link"
-            :class="{'text-capitalize': item.title != 'vr/ar', 'text-uppercase': item.title == 'vr/ar' }"
-            style="margin:0;"
-          ) {{ item.title }}
+
+      template(v-slot:extension)
+        div.fill-height.d-flex.justify-center.align-center(style="width:100%;")
+          template(v-for="item in docs_menu")
+            v-btn.ma-0(
+              dark
+              flat
+              round
+              :key="item.title"
+              :to="item.link"
+              :class="{'text-capitalize': item.title != 'vr/ar', 'text-uppercase': item.title == 'vr/ar' }"
+              style="max-width:110px;"
+            ) {{ item.title }}
+
+    //- div.pageLinks.hidden-md-and-down
+    //-   div.fill-height.d-flex.justify-center
+    //-     template(v-for="item in docs_menu")
+    //-       v-btn.fill-height(
+    //-         flat
+    //-         :key="item.title"
+    //-         :to="item.link"
+    //-         :class="{'text-capitalize': item.title != 'vr/ar', 'text-uppercase': item.title == 'vr/ar' }"
+    //-         style="margin:0;"
+    //-       ) {{ item.title }}
+
 
 </template>
 
@@ -53,6 +73,6 @@ export default {
   right: 0
   max-width: 800px
   margin: auto;
-  height:64px;
+  height:60px;
 }
 </style>
