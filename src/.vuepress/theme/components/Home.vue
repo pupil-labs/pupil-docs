@@ -34,10 +34,10 @@
         style="background:linear-gradient(135deg, rgba(40,53,147,1) 0%, rgba(3,155,229,1) 100%);"
       )
         v-layout(row wrap justify-center align-center)
-          v-flex(xs12 sm6).pa-4
+          v-flex(xs12 sm6 order-xs2 order-sm1).pa-4
             v-container
               Content(slot-key="cloud")
-          v-flex(xs12 sm6)
+          v-flex(xs12 sm6 order-xs1 order-sm2)
             v-img(
               max-height="370px"
               :src="$withBase('/illustrations/companion_screens.png')"
@@ -46,10 +46,10 @@
     v-container
       v-card.bg-pl-dark-gray(dark)
         v-layout(row wrap justify-center align-center)
-          v-flex(xs12 sm6).pa-4
+          v-flex(xs12 sm6 order-xs2 order-sm1).pa-4
             v-container
               Content(slot-key="dev")
-          v-flex(xs12 sm6).pt-4
+          v-flex(xs12 sm6 order-xs1 order-sm2).pt-4
             v-img(
               :src="$withBase('/illustrations/web_analyze_cropped.svg')"
             )
