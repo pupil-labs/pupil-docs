@@ -149,10 +149,13 @@
                 target="__blank"
               ).bg-link-blue.mr-0 Chat
 
+    Footer
+
 </template>
 
 <script>
 import NavLink from "@theme/components/NavLink.vue";
+import Footer from "@theme/components/Footer.vue";
 
 export default {
   data() {
@@ -182,7 +185,7 @@ export default {
       ]
     };
   },
-  components: { NavLink },
+  components: { NavLink, Footer },
   computed: {
     data() {
       return this.$page.frontmatter;

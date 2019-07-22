@@ -19,8 +19,6 @@
       <slot name="page-top" slot="top" />
       <slot name="page-bottom" slot="bottom" />
     </Page>
-
-    <Footer></Footer>
   </div>
 </template>
 
@@ -30,11 +28,10 @@ import Navbar from "@theme/components/Navbar.vue";
 import Page from "@theme/components/Page.vue";
 import Sidebar from "@theme/components/Sidebar.vue";
 import Header from "@theme/components/Header.vue";
-import Footer from "@theme/components/Footer.vue";
 import { resolveSidebarItems } from "../util";
 
 export default {
-  components: { Home, Page, Sidebar, Navbar, Header, Footer },
+  components: { Home, Page, Sidebar, Navbar, Header },
 
   data() {
     return {
