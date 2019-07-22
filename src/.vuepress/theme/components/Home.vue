@@ -138,7 +138,7 @@
                 contain
                 height="52px"
                 width="52px"
-                :src="$withBase('/icons/discord.svg')"
+                :src="$withBase('/icons/discord_dark.svg')"
               ).mr-4
               h2.pa-0 Chat with the Pupil Community and Pupil Labs team on Discord.
           v-flex(xs12 sm6)
