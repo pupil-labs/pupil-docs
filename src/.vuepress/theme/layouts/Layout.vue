@@ -15,23 +15,24 @@
 
     <Home v-if="$page.frontmatter.home" />
 
-    <Page v-else :sidebar-items="sidebarItems">
-      <slot name="page-top" slot="top" />
-      <slot name="page-bottom" slot="bottom" />
-    </Page>
+    <v-content v-else>
+      <Page :sidebar-items="sidebarItems">
+        <slot name="page-top" slot="top" />
+        <slot name="page-bottom" slot="bottom" />
+      </Page>
+    </v-content>
   </div>
 </template>
 
 <script>
 import Home from "@theme/components/Home.vue";
-import Navbar from "@theme/components/Navbar.vue";
 import Page from "@theme/components/Page.vue";
 import Sidebar from "@theme/components/Sidebar.vue";
 import Header from "@theme/components/Header.vue";
 import { resolveSidebarItems } from "../util";
 
 export default {
-  components: { Home, Page, Sidebar, Navbar, Header },
+  components: { Home, Page, Sidebar, Header },
 
   data() {
     return {
@@ -40,21 +41,6 @@ export default {
   },
 
   computed: {
-    shouldShowNavbar() {
-      const { themeConfig } = this.$site;
-      const { frontmatter } = this.$page;
-      if (frontmatter.navbar === false || themeConfig.navbar === false) {
-        return false;
-      }
-      return (
-        this.$title ||
-        themeConfig.logo ||
-        themeConfig.repo ||
-        themeConfig.nav ||
-        this.$themeLocaleConfig.nav
-      );
-    },
-
     shouldShowSidebar() {
       const { frontmatter } = this.$page;
       return (
