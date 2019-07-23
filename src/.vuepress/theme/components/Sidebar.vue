@@ -3,7 +3,7 @@
   aside.sidebar
     div(style="padding-top:120px;")
       v-layout(justify-center).py-4
-        SearchBox
+        Search
         //- AlgoliaSearchBox
       NavLinks
       slot(name="top")
@@ -18,8 +18,8 @@
 <script>
 import SidebarLinks from "@theme/components/SidebarLinks.vue";
 import NavLinks from "@theme/components/NavLinks.vue";
+import Search from "@theme/components/Search.vue";
 import AlgoliaSearchBox from "@AlgoliaSearchBox";
-import SearchBox from "@SearchBox";
 
 export default {
   name: "Sidebar",
@@ -28,7 +28,7 @@ export default {
     SidebarLinks,
     NavLinks,
     AlgoliaSearchBox,
-    SearchBox
+    Search
   },
 
   props: ["items"],
