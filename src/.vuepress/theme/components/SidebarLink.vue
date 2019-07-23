@@ -81,7 +81,7 @@ function renderChildren(h, children, path, route, maxDepth, depth = 1) {
   if (!children || depth > maxDepth) return null;
   return h(
     "ul",
-    { class: "sidebar-sub-headers" },
+    { class: `sidebar-sub-headers  depth--${depth}` },
     children.map(c => {
       const active = isActive(route, path + "#" + c.slug);
       return h("li", { class: "sidebar-sub-header" }, [
