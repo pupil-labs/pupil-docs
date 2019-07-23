@@ -81,7 +81,7 @@ function renderChildren(h, children, path, route, maxDepth, depth = 1) {
   if (!children || depth > maxDepth) return null;
   return h(
     "ul",
-    { class: `sidebar-sub-headers  depth--${depth}` },
+    { class: `sidebar-sub-headers depth--${depth}` },
     children.map(c => {
       const active = isActive(route, path + "#" + c.slug);
       return h("li", { class: "sidebar-sub-header" }, [
@@ -116,12 +116,12 @@ function renderExternal(h, to, text) {
   font-size 0.95em
 
 a.sidebar-link
-  font-size 1em
+  font-size 18px
   font-weight 400
   display inline-block
   color $textColor
   border-left 0.25rem solid transparent
-  padding 0.35rem 1rem 0.35rem 1.25rem
+  padding 8px 16px
   line-height 1.4
   width: 100%
   box-sizing: border-box
@@ -139,4 +139,24 @@ a.sidebar-link
     border-left none
     &.active
       font-weight 500
+
+.sidebar-group
+  .sidebar-link
+    font-size 14px
+
+.sidebar-sub-headers
+  &.depth--2
+    border-left 1px solid rgba(189,189,189,.4)
+    margin-left 2em
+    margin-top 1em
+    margin-bottom 1em
+    padding 0
+
+  .sidebar-sub-header
+    &:first-child
+      padding-top 0
+
+.sidebar-sub-header
+  padding 8px 0
+
 </style>
