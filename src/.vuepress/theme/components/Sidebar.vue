@@ -1,15 +1,17 @@
 <template lang="pug">
 
   aside.sidebar
-    v-layout(justify-center).pt-4
-      SearchBox
-    NavLinks
-    slot(name="top")
-    SidebarLinks(
-      :depth="0"
-      :items="items"
-    )
-    slot(name="bottom")
+    div(style="padding-top:120px;")
+      v-layout(justify-center).py-4
+        SearchBox
+        //- AlgoliaSearchBox
+      NavLinks
+      slot(name="top")
+      SidebarLinks(
+        :depth="0"
+        :items="items"
+      )
+      slot(name="bottom")
 
 </template>
 
