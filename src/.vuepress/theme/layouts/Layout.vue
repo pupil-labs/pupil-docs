@@ -1,5 +1,5 @@
 <template>
-  <div
+  <v-app
     class="theme-container"
     :class="pageClasses"
     @touchstart="onTouchStart"
@@ -21,7 +21,7 @@
         <slot name="page-bottom" slot="bottom" />
       </Page>
     </v-content>
-  </div>
+  </v-app>
 </template>
 
 <script>
