@@ -18,24 +18,6 @@ module.exports = {
             'getting-started/player-workflow',
           ]
         },
-        // {
-        //   title: 'Hardware',
-        //   children: [
-        //     ['pupil-hardware/', 'Overview'],
-        //     'pupil-hardware/hardware-dev',
-        //     'pupil-hardware/hololens-add-on',
-        //     'pupil-hardware/htc-vive-add-on',
-        //     'pupil-hardware/oculus-dk2-add-on',
-        //     'pupil-hardware/pupil-diy',
-        //     'pupil-hardware/pupil-headset',
-        //   ]
-        // },
-        // {
-        //   title: 'License',
-        //   children: [
-        //     ['license/', 'Overview'],
-        //   ]
-        // },
       ],
       '/core/': [
         '',
