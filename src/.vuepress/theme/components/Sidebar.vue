@@ -71,5 +71,7 @@ export default {
     & > li:not(:first-child)
       margin-top .75rem
 
-
+.sidebar-group-items
+  li
+    padding-bottom 8px
 </style>
