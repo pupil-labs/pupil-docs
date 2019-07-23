@@ -99,6 +99,7 @@ This means that everyone running Pupil Capture in your local network will be abl
 i.e. stream and record, sensors connected to the phone running Pupil Mobile!
 
 Make sure to hit "Stop background service and terminate app" in the general Pupil Mobile settings after you are done.
+
 </aside>
 
 ### Transfer Recordings {#pupil-mobile-transfer-recordings}
@@ -165,4 +166,3 @@ Please check out existing issues or open a new issue at [Pupil Mobile repository
 #### I want to use this for my experiments in the field
 
 Feel free to do so, but do not rely on the app to work all the time! Many features and environments are still untested. If you have trouble, please open an issue.
-
