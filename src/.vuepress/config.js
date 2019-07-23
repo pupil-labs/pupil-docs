@@ -32,7 +32,7 @@ module.exports = {
         '',
       ],
     },
-    sidebarDepth: 3,
+    sidebarDepth: 2,
     repo: 'https://github.com/pupil-labs/pupil-docs-website',
     repoLabel: 'See on Github',
     docsRepo: 'https://github.com/pupil-labs/pupil-docs',
