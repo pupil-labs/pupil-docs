@@ -15,12 +15,10 @@
 
     <Home v-if="$page.frontmatter.home" />
 
-    <v-content v-else>
-      <Page :sidebar-items="sidebarItems">
-        <slot name="page-top" slot="top" />
-        <slot name="page-bottom" slot="bottom" />
-      </Page>
-    </v-content>
+    <Page v-else :sidebar-items="sidebarItems">
+      <slot name="page-top" slot="top" />
+      <slot name="page-bottom" slot="bottom" />
+    </Page>
   </v-app>
 </template>
 
