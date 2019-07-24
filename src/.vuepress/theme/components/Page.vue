@@ -208,9 +208,7 @@ function flatten(items, res) {
   .next
     float right
 
-// @media (max-width: $MQNarrow)
-
-@media (max-width: $MQMobile)
+@media (max-width: $MQNarrow)
   .page
     padding-left unset !important
   .page-edit
