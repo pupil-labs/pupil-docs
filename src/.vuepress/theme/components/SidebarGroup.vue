@@ -23,10 +23,15 @@
       <span class="arrow" v-if="collapsable" :class="open ? 'down' : 'right'"></span>
     </router-link>
 
-    <p v-else class="sidebar-heading" :class="{ open }" @click="$emit('toggle')">
-      <span :class="{'active sidebar-link': groupHeadActive() }">{{ item.title }}</span>
+    <a
+      v-else
+      class="sidebar-heading"
+      :class="{ open, 'sidebar-link active': groupHeadActive() }"
+      @click="$emit('toggle')"
+    >
+      <span>{{ item.title }}</span>
       <span class="arrow" v-if="collapsable" :class="open ? 'down' : 'right'"></span>
-    </p>
+    </a>
 
     <DropdownTransition>
       <SidebarLinks
