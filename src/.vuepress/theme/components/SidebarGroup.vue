@@ -25,11 +25,11 @@
 
     <a
       v-else
-      class="sidebar-heading"
-      :class="{ open, 'sidebar-link active': groupHeadActive() }"
+      class="sidebar-heading sidebar-link justify-space-between"
+      :class="{ open, 'active': groupHeadActive() }"
       @click="$emit('toggle')"
     >
-      <span>{{ item.title }}</span>
+      {{ item.title }}
       <span class="arrow" v-if="collapsable" :class="open ? 'down' : 'right'"></span>
     </a>
 
@@ -108,20 +108,16 @@ export default {
   color $textColor
   transition color .15s ease
   cursor pointer
-  font-size 18px
-  font-weight bold
+  font-size 18px !important
+  font-weight 400
   // text-transform uppercase
-  padding 8px 16px
+  padding 8px 16px !important
   width 100%
   box-sizing border-box
   margin 0
   border-left 0.25rem solid transparent
   &.open, &:hover
     color inherit
-  .arrow
-    position relative
-    top -0.12em
-    left 0.5em
   &.clickable
     &.active
       font-weight 600
@@ -129,6 +125,8 @@ export default {
       border-left-color $accentColor
     &:hover
       color $accentColor
+  &.active
+    font-weight 600
 
 .sidebar-group-items
   transition height .1s ease-out
