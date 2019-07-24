@@ -77,6 +77,17 @@ function renderLink(h, to, text, active) {
   );
 }
 
+function renderI(h, depth) {
+  if (depth == 1) {
+    console.log(depth);
+    return h("i", {
+      class: {
+        "side-nav__progress-bar": true
+      }
+    });
+  }
+}
+
 function renderChildren(h, children, path, route, maxDepth, depth = 1) {
   if (!children || depth > maxDepth) return null;
   return h(
@@ -85,6 +96,7 @@ function renderChildren(h, children, path, route, maxDepth, depth = 1) {
     children.map(c => {
       const active = isActive(route, path + "#" + c.slug);
       return h("li", { class: "sidebar-sub-header" }, [
+        renderI(h, depth),
         renderLink(h, path + "#" + c.slug, c.title, active),
         renderChildren(h, c.children, path, route, maxDepth, depth + 1)
       ]);
@@ -112,51 +124,52 @@ function renderExternal(h, to, text) {
 
 <style lang="stylus">
 .sidebar .sidebar-sub-headers
-  padding-left 1rem
+  // padding-left 1rem
   font-size 0.95em
+
+.sidebar-sub-header
+  position relative
+
+.sidebar-group-items
+  a
+    border-left unset !important
 
 a.sidebar-link
   font-size 18px
   font-weight 400
-  display inline-block
-  color $textColor
+  display flex
+  align-items center
+  color #455A64
   border-left 0.25rem solid transparent
   padding 8px 16px
   line-height 1.4
   width: 100%
   box-sizing: border-box
+  min-height 42px
   &:hover
-    color $accentColor
+    color #0D122A
+    background-color #ECEFF1
   &.active
     font-weight 600
-    color $accentColor
-    border-left-color $accentColor
+    color #0D122A
+    border-left-color  #0D122A
   .sidebar-group &
-    padding-left 2rem
+    padding-left 40px
   .sidebar-sub-headers &
-    padding-top 0.25rem
-    padding-bottom 0.25rem
-    border-left none
-    &.active
-      font-weight 500
+    padding-left 64px
+  // .depth--2 &
+  //   padding-left 72px
 
 .sidebar-group
   .sidebar-link
     font-size 14px
 
-.sidebar-sub-headers
-  &.depth--2
-    border-left 1px solid rgba(189,189,189,.4)
-    margin-left 2em
-    margin-top 1em
-    margin-bottom 1em
-    padding 0
-
-  .sidebar-sub-header
-    &:first-child
-      padding-top 0
-
-.sidebar-sub-header
-  padding 8px 0
-
+.side-nav__progress-bar
+    background: rgba(189,189,189,.4)
+    bottom: 13px
+    display: block
+    left: 50px
+    position: absolute
+    top: 13px
+    width: 2px
 </style>
