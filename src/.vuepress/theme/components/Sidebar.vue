@@ -49,8 +49,6 @@ export default {
     padding 0
     margin 0
     list-style-type none
-  a
-    display inline-block
   .nav-links
     display none
     border-bottom 1px solid $borderColor
@@ -70,8 +68,4 @@ export default {
       font-weight bold
     & > li:not(:first-child)
       margin-top .75rem
-
-.sidebar-group-items
-  li
-    padding-bottom 8px
 </style>
