@@ -24,7 +24,7 @@
     </router-link>
 
     <p v-else class="sidebar-heading" :class="{ open }" @click="$emit('toggle')">
-      <span>{{ item.title }}</span>
+      <span :class="{'active sidebar-link': groupHeadActive() }">{{ item.title }}</span>
       <span class="arrow" v-if="collapsable" :class="open ? 'down' : 'right'"></span>
     </p>
 
@@ -52,7 +52,23 @@ export default {
   beforeCreate() {
     this.$options.components.SidebarLinks = require("./SidebarLinks.vue").default;
   },
-  methods: { isActive }
+  methods: {
+    isActive,
+    groupHeadActive() {
+      let title = this.item.title.toLowerCase();
+      let subroute = this.$page.path
+        .split("/")
+        .slice(2, 3)
+        .pop()
+        .split("-")
+        .join(" ");
+      if (subroute == title) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
 };
 </script>
 
