@@ -79,7 +79,6 @@ function renderLink(h, to, text, active) {
 
 function renderI(h, depth) {
   if (depth == 1) {
-    console.log(depth);
     return h("i", {
       class: {
         "side-nav__progress-bar": true
