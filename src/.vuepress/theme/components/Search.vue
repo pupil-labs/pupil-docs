@@ -200,7 +200,7 @@ export default {
       border-color $accentColor
   .suggestions
     background #fff
-    width 296px
+    width 100%
     position absolute
     top 1.5rem
     border 1px solid darken($borderColor, 10%)
@@ -228,40 +228,13 @@ export default {
       a
         color $accentColor
 
-@media (max-width: $MQNarrow)
-  .search-box
-    input
-      cursor pointer
-      width 0
-      border-color transparent
-      position relative
-      &:focus
-        cursor text
-        left 0
-        width 10rem
-
 // Match IE11
 @media all and (-ms-high-contrast: none)
   .search-box input
     height 2rem
 
-@media (max-width: $MQNarrow) and (min-width: $MQMobile)
-  .search-box
-    .suggestions
-      left 0
-
 @media (max-width: $MQMobile)
   .search-box
-    margin-right 0
     input
       left 1rem
-    .suggestions
-      right 0
-
-@media (max-width: $MQMobileNarrow)
-  .search-box
-    .suggestions
-      width calc(100vw - 4rem)
-    input:focus
-      width 8rem
 </style>
