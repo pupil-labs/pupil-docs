@@ -20,7 +20,7 @@
       template(v-slot:extension)
         div.fill-height.d-flex.justify-center.align-center(style="width:100%;")
           template(v-for="item in docs_menu")
-            v-btn.ma-0(
+            v-btn.my-0(
               dark
               flat
               round
