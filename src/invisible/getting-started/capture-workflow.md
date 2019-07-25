@@ -1,12 +1,12 @@
 ---
 date: 2017-01-19T12:24:57+07:00
-title: Capture workflow
 section_weight: 1
 page_weight: 1
 ---
 
-## Steps
+# Capture Workflow
 
+## Steps
 
 Go through the following steps to get familiar with the Pupil workflow. You can also check out [video tutorials](#pupil-capture-demo-video) at the end of the guide.
 
