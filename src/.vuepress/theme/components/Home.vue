@@ -133,7 +133,7 @@
       v-container
         v-layout(row wrap).py-2
           v-flex(xs12 sm6)
-            v-layout(row)
+            v-layout(row align-center)
               v-img(
                 contain
                 height="52px"
