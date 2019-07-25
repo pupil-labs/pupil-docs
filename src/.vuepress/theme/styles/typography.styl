@@ -78,6 +78,7 @@ a.header-anchor
 
 a
   font-weight 500
+  color $accentColor
   text-decoration none
 
 p a code
@@ -106,3 +107,10 @@ code, kbd, .line-number
 .sidebar-links
   .sidebar-link
     font-family: "AtlasGrotesk"
+
+.home
+  h1, h2, h3, h4, h5, h6
+    &:hover .header-anchor
+      opacity: 0
+
+    border-bottom unset
