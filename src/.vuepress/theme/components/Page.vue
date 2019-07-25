@@ -174,6 +174,7 @@ function flatten(items, res) {
   padding 120px 0 0 330px !important
   padding-bottom 2rem
   display block
+  background-color white
 
 .page-edit
   @extend $wrapper
@@ -197,8 +198,8 @@ function flatten(items, res) {
 
 .page-nav
   @extend $wrapper
-  padding-top 1rem
-  padding-bottom 0
+  padding-top 24px
+  padding-bottom 24px
   .inner
     min-height 2rem
     margin-top 0
