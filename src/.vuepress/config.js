@@ -3,6 +3,9 @@ module.exports = {
   title: "Pupil Labs",
   description: "Pupil Labs - We build state of the art eye tracking hardware and software. \
                 We work hard to bring research ideas out of the lab and into the real world.",
+  head: [
+    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Material+Icons' }]
+  ],
   themeConfig: {
     displayAllHeaders: true,
     lastUpdated: "Last Updated",
