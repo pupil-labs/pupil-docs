@@ -12,18 +12,11 @@ module.exports = {
     sidebar: {
       '/invisible/': [
         '',
-        {
-          title: 'Getting Started',
-          children: [
-            'getting-started/capture-walkthrough',
-            'getting-started/capture-workflow',
-            'getting-started/player-walkthrough',
-            'getting-started/player-workflow',
-          ]
-        },
+        'getting-started'
       ],
       '/core/': [
         '',
+        'getting-started'
       ],
       '/vr-ar/': [
         '',
@@ -35,7 +28,7 @@ module.exports = {
         '',
       ],
     },
-    sidebarDepth: 2,
+    sidebarDepth: 1,
     repo: 'https://github.com/pupil-labs/pupil-docs-website',
     repoLabel: 'See on Github',
     docsRepo: 'https://github.com/pupil-labs/pupil-docs',
@@ -67,6 +60,13 @@ module.exports = {
     //   }
     // ]
   ],
+
+  markdown: {
+    toc: {
+      includeLevel: [3]
+    }
+  },
+
   chainWebpack: config => {
     config.module
       .rule("pug")
