@@ -2,7 +2,7 @@
 
   aside.sidebar
     div(style="padding-top:120px;")
-      v-layout(justify-center).py-4
+      v-layout(justify-center).pt-4
         Search
         //- AlgoliaSearchBox
       NavLinks
