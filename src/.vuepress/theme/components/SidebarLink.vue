@@ -140,8 +140,8 @@ a.sidebar-link
   display flex
   align-items center
   color #455A64
-  border-left 0.25rem solid transparent
-  padding 8px 16px
+  // border-left 0.25rem solid transparent
+  padding 8px 24px
   line-height 1.4
   width: 100%
   box-sizing: border-box
