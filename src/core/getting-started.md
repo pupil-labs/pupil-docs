@@ -20,11 +20,35 @@ To improve Pupil detection, move your head around while looking at afixed positi
 Headsets are adjustable and are shipped with additional parts. For more information, head over to the [Pupil Core Hardware guide] on how to adjust your headset.
 
 ## 4. Calibration
-
 Before calibrating, be sure to check that your eys are well positioned for a robust eye tracking performance.
 
-## 5. Record
+In order to know what someone is looking at, we must establish a mapping between pupil and gaze positions. This is what we call calibration.
 
-## 6. Export
+## 5. Begin Recording
+
+**Start capturing data!**
+
+Pupil Capture will save the world video stream and all the corresponding gaze data in a folder in our user directory named `recordings`.
+
+**Start/Stop recording**: Press the `r` key on your keyboard or press the circular `R` button on the left hand side of the world window. The elapsed recording time will appear next to the `R` button.
+
+See a video demo of how to set recordings path, session name and start recording [here]().
+
+## 6. Playback recording
+
+Your default saved recording location will be located :
+
+The default recordings directory will have the following hierarchy:
+
+```
+recordings
+  2016-04-05
+    001
+    002
+    003
+    ###
+```
+
+By default, each recording will live in its own unique data folder contained in the recordings folder.
 
 <v-divider></v-divider>
