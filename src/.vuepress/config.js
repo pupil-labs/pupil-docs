@@ -16,7 +16,8 @@ module.exports = {
       ],
       '/core/': [
         '',
-        'getting-started'
+        'getting-started',
+        'hardware'
       ],
       '/vr-ar/': [
         '',
