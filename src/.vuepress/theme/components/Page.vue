@@ -2,6 +2,16 @@
   <v-content class="page">
     <slot name="top" />
 
+    <div
+      v-if="haveTitle"
+      style="display:flex;flex-direction:column;float:right;padding:60px 60px 24px;position:sticky;top:120px;"
+    >
+      <p>Contents</p>
+      <template v-for="head in $page.headers">
+        <a v-if="head.level == '3'" :href="`#${head.slug}`">{{ head.title }}</a>
+      </template>
+    </div>
+
     <Content class="theme-default-content" />
 
     <footer class="page-edit">
@@ -106,6 +116,18 @@ export default {
         this.$site.themeConfig.editLinkText ||
         `Edit this page`
       );
+    },
+
+    haveTitle() {
+      if (this.$page.headers) {
+        let pageHeaders = this.$page.headers;
+        for (let i = 0; i < pageHeaders.length; i++) {
+          const headers = pageHeaders[i];
+          if (headers.level == 3) {
+            return true;
+          }
+        }
+      }
     }
   },
 
