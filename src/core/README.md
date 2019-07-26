@@ -1,79 +1,35 @@
----
-date = "2017-01-20T11:31:37+07:00"
-title = "Pupil"
-section_weight = 0
-page_weight = 0
----
-
 # Introduction
 
-Welcome to Pupil - the open source head mounted mobile eye tracking platform.
+## Anatomy
+![Pupil Core anatomy](../media/core/anatomy.jpg)
 
-If this is the first time hearing about the Pupil project we recommend you visit the [Pupil Labs website](https://pupil-labs.com).
+1. Eye camera and IR emmiters
+1. Ball joint
+1. Camera arm slider
+1. Scene camera
+1. Pivot joint
+1. USB-C port with clip
 
-This wiki is the main source of documentation for the Pupil users getting started with their Pupil headset and developers contributing to code.
+<v-divider class="mt-4"></v-divider>
 
-<div class="content-container quick-nav">
-	<div class="horizontal-divide">
-		<a href="#getting-started">
-			<div class="item-hori">
-				<!-- <img class="intro-image img-small" src="../../images/videos/icons/Pupil_Logo_wiki-03.jpg"> -->
-				<img class="intro-image img-small lazyload" data-src="../../images/videos/icons/Pupil_Logo_wiki-03.jpg" alt="Getting Started logo">
-				<div class="img-content">
-					<p class="header">Getting Started</p>
-					Get up and running and learn the basic Pupil workflow
-				</div>
-			</div>
-		</a>
-		<a href="#pupil-hardware">
-			<div class="item-hori">
-				<!-- <img class="intro-image img-small" src="../../images/videos/icons/Pupil_Logo_wiki-01.jpg"> -->
-				<img class="intro-image img-small lazyload" data-src="../../images/videos/icons/Pupil_Logo_wiki-01.jpg" alt="Pupil Hardware logo">
-				<div class="img-content">
-					<div class="header">Pupil Hardware</div>
-					Get and setup your Pupil eye tracking hardware
-				</div>
-			</div>
-		</a>
-		<a href="#user-docs">
-			<div class="item-hori">
-				<!-- <img class="intro-image img-small" src="../../images/videos/icons/Pupil_Logo_wiki-04.jpg"> -->
-				<img class="intro-image img-small lazyload" data-src="../../images/videos/icons/Pupil_Logo_wiki-04.jpg" alt="User Docs logo">
-				<div class="img-content">
-					<div class="header">User Docs</div>
-					Learn more about Capture and Player here
-				</div>
-			</div>
-		</a>
-		<a href="#developer-docs">
-			<div class="item-hori">
-				<!-- <img class="intro-image img-small" src="../../images/videos/icons/Pupil_Logo_wiki-05.jpg"> -->
-				<img class="intro-image img-small lazyload" data-src="../../images/videos/icons/Pupil_Logo_wiki-05.jpg" alt="Developer Docs logo">
-				<div class="img-content">
-					<div class="header">Developer Docs</div>
-					Want to write code? Read the developer docs here
-				</div>
-			</div>
-		</a>
-		<a href="#community">
-			<div class="item-hori">
-				<!-- <img class="intro-image img-small" src="../../images/videos/icons/Pupil_Logo_wiki-02.jpg"> -->
-				<img class="intro-image img-small lazyload" data-src="../../images/videos/icons/Pupil_Logo_wiki-02.jpg" alt="Community logo">
-				<div class="img-content">
-					<div class="header">Community</div>
-					Connect with the Pupil community
-				</div>
-			</div>
-		</a>
-		<a href="https://pupil-labs.com/chat" rel="noopener">
-			<div class="item-hori">
-				<!-- <img class="intro-image img-small" src="../../images/videos/icons/discord_logo.jpg"> -->
-				<img class="intro-image img-small lazyload" data-src="../../images/videos/icons/discord_logo.jpg" alt="Pupil Chat on Discord">
-				<div class="img-content">
-					<div class="header">Discord</div>
-					Chat with the Pupil community and Pupil Labs team on Discord.
-				</div>
-			</div>
-		</a>
-	</div>
-</div>
+## Included in the box
+
+1. Pupil Core device
+1. Rubber nose/head piece
+1. USB-C Cable (2m)
+1. USB-C to USB-A Cable (2m)
+
+<v-divider class="mt-4"></v-divider>
+
+## Download Software
+
+This guide will lead you through a basic workflow using Pupil Hardware and software.
+
+Once you have Pupil Core, all you need to do is [download](https://github.com/pupil-labs/pupil/releases/latest) and install the Pupil apps on a computer running MacOS, Windows 10 or Linux.
+
+We are always workin on new features, fixing bugs and making improvements. Make sure to check on the release page for the latest version and follow our blog and Discord chat for updates.
+
+::: warning
+<v-icon large color="warning">error_outline</v-icon>
+If you are running Pupil on Windows 10, please start Pupil Capture as administrator to install drivers. If you have difficulty installing drivers, please see the Windows driver troubleshooting section.
+:::
