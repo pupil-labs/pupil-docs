@@ -41,6 +41,9 @@ module.exports = {
 
   plugins: [
     [
+      "@vuepress/medium-zoom"
+    ],
+    [
       "@vuepress/last-updated",
       {
         transformer: (timestamp, lang) => {
@@ -52,8 +55,6 @@ module.exports = {
         }
       }
     ],
-
-
     // [
     //   "@vuepress/google-analytics",
     //   {
