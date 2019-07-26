@@ -164,11 +164,11 @@ a.sidebar-link
     font-size 14px
 
 .side-nav__progress-bar
-    background: rgba(189,189,189,.4)
-    bottom: 13px
     display: block
-    left: 50px
     position: absolute
-    top: 13px
+    top: 0
+    bottom: 0
+    left: 50px
     width: 2px
+    background: rgba(189,189,189,.4)
 </style>
