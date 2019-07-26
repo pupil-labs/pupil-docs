@@ -13,6 +13,7 @@ import Vuetify, {
   VForm,
   VImg,
   VDivider,
+  VIcon,
 } from 'vuetify/lib';
 
 export default ({ Vue }) => {
@@ -32,6 +33,7 @@ export default ({ Vue }) => {
       VForm,
       VImg,
       VDivider,
+      VIcon,
     },
     theme: {
       primary: "#1263CC"
