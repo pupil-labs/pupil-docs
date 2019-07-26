@@ -36,5 +36,6 @@ Once you have Pupil Core, all you need to do is [download](https://github.com/pu
 We are always workin on new features, fixing bugs and making improvements. Make sure to check on the release page for the latest version and follow our blog and Discord chat for updates.
 
 ::: warning
+<v-icon large color="warning">error_outline</v-icon>
 If you are running Pupil on Windows 10, please start Pupil Capture as administrator to install drivers. If you have difficulty installing drivers, please see the Windows driver troubleshooting section.
 :::
