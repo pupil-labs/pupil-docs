@@ -5,7 +5,6 @@
       v-layout(justify-center).py-4
         Search
         //- AlgoliaSearchBox
-      v-divider.mb-4
       NavLinks
       slot(name="top")
       SidebarLinks(
