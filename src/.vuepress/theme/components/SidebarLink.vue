@@ -77,10 +77,11 @@ function renderLink(h, to, text, active) {
   );
 }
 
-function renderI(h, depth) {
+function renderI(h, depth, active) {
   if (depth == 1) {
     return h("i", {
       class: {
+        active,
         "side-nav__progress-bar": true
       }
     });
@@ -95,7 +96,7 @@ function renderChildren(h, children, path, route, maxDepth, depth = 1) {
     children.map(c => {
       const active = isActive(route, path + "#" + c.slug);
       return h("li", { class: "sidebar-sub-header" }, [
-        renderI(h, depth),
+        renderI(h, depth, active),
         renderLink(h, path + "#" + c.slug, c.title, active),
         renderChildren(h, c.children, path, route, maxDepth, depth + 1)
       ]);
@@ -155,7 +156,8 @@ a.sidebar-link
   .sidebar-group &
     padding-left 40px
   .sidebar-sub-headers &
-    padding-left 64px
+    padding-left 60px
+    border-left  unset
   // .depth--2 &
   //   padding-left 72px
 
@@ -168,7 +170,10 @@ a.sidebar-link
     position: absolute
     top: 0
     bottom: 0
-    left: 50px
+    left: 24px
     width: 2px
     background: rgba(189,189,189,.4)
+
+    &.active
+      background-color #0D122A
 </style>
