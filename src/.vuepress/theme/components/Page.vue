@@ -26,7 +26,7 @@
       </div>
     </footer>
 
-    <div class="page-nav" v-if="prev || next">
+    <div class="page-nav pb-5 my-4" v-if="prev || next">
       <v-layout>
         <v-btn class="ml-0" round color="primary" v-if="prev" :to="prev.path">
           <v-icon left dark>arrow_back</v-icon>
