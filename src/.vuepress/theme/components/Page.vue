@@ -17,16 +17,17 @@
     </footer>
 
     <div class="page-nav" v-if="prev || next">
-      <p class="inner">
-        <span v-if="prev" class="prev">
-          ←
-          <router-link v-if="prev" class="prev" :to="prev.path">{{ prev.title || prev.path }}</router-link>
-        </span>
-
-        <span v-if="next" class="next">
-          <router-link v-if="next" :to="next.path">{{ next.title || next.path }}</router-link>→
-        </span>
-      </p>
+      <v-layout>
+        <v-btn class="ml-0" round color="primary" v-if="prev" :to="prev.path">
+          <v-icon left dark>arrow_back</v-icon>
+          {{ prev.title || prev.path }}
+        </v-btn>
+        <v-spacer></v-spacer>
+        <v-btn class="mr-0" round color="primary" v-if="next" :to="next.path">
+          {{ next.title || next.path }}
+          <v-icon right dark>arrow_forward</v-icon>
+        </v-btn>
+      </v-layout>
     </div>
 
     <slot name="bottom" />
