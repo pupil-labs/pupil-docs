@@ -158,22 +158,23 @@ a.sidebar-link
   .sidebar-sub-headers &
     padding-left 60px
     border-left  unset
-  // .depth--2 &
-  //   padding-left 72px
+  .depth--2 &
+    padding-left 80px
 
 .sidebar-group
   .sidebar-link
     font-size 14px
 
 .side-nav__progress-bar
-    display: block
-    position: absolute
-    top: 0
-    bottom: 0
-    left: 24px
-    width: 2px
-    background: rgba(189,189,189,.4)
+  display: block
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 24px
+  width: 2px
+  height: 42px
+  background: rgba(189,189,189,.4)
 
-    &.active
-      background-color #0D122A
+  &.active
+    background-color #0D122A
 </style>
