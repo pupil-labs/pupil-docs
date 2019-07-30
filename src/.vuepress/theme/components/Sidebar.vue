@@ -1,15 +1,13 @@
 <template lang="pug">
 
   aside.sidebar
-    v-layout(column)
+    v-list
       template(v-for="item in docs_menu")
-        v-btn(
-          flat
-          :key="item.title"
-          :to="item.link"
-          :class="{'text-capitalize': item.title != 'vr/ar', 'text-uppercase': item.title == 'vr/ar' }"
-          style="margin:0;"
-        ) {{ item.title }}
+        v-list-tile(:to="item.link")
+          v-list-tile-title(
+            :class="{'text-capitalize': item.title != 'vr/ar', 'text-uppercase': item.title == 'vr/ar' }"
+          )
+            | {{ item.title }}
 
     v-divider(v-if="!$page.frontmatter.home")
 
