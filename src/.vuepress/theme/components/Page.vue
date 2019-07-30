@@ -194,7 +194,7 @@ function flatten(items, res) {
 @require '../styles/wrapper.styl'
 
 .page
-  padding 120px 0 0 330px !important
+  padding 60px 0 0 330px !important
   padding-bottom 2rem
   display block
   background-color white
