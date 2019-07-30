@@ -2,7 +2,7 @@
   <v-content class="page">
     <slot name="top" />
 
-    <div
+    <!-- <div
       v-if="haveTitle"
       style="display:flex;flex-direction:column;float:right;padding:60px 60px 24px;position:sticky;top:120px;"
     >
@@ -10,7 +10,7 @@
       <template v-for="head in $page.headers">
         <a v-if="head.level == '3'" :href="`#${head.slug}`">{{ head.title }}</a>
       </template>
-    </div>
+    </div>-->
 
     <Content class="theme-default-content" />
 
