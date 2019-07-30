@@ -15,6 +15,9 @@ import Vuetify, {
   VImg,
   VDivider,
   VIcon,
+  VList,
+  VListTile,
+  VListTileTitle
 } from 'vuetify/lib';
 
 export default ({ Vue }) => {
@@ -36,6 +39,9 @@ export default ({ Vue }) => {
       VImg,
       VDivider,
       VIcon,
+      VList,
+      VListTile,
+      VListTileTitle
     },
     theme: {
       primary: "#1263CC"
