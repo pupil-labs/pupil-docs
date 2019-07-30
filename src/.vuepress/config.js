@@ -29,7 +29,7 @@ module.exports = {
         '',
       ],
     },
-    sidebarDepth: 1,
+    sidebarDepth: 2,
     repo: 'https://github.com/pupil-labs/pupil-docs-website',
     repoLabel: 'See on Github',
     docsRepo: 'https://github.com/pupil-labs/pupil-docs',
@@ -62,12 +62,6 @@ module.exports = {
     //   }
     // ]
   ],
-
-  markdown: {
-    toc: {
-      includeLevel: [3]
-    }
-  },
 
   chainWebpack: config => {
     config.module
