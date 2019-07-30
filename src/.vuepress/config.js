@@ -36,7 +36,7 @@ module.exports = {
     docsDir: 'src',
     docsBranch: 'vuepress-refactor',
     editLinks: true,
-    editLinkText: 'Edit this page!',
+    editLinkText: 'Edit this page',
   },
 
   plugins: [
