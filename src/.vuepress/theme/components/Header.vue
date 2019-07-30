@@ -11,7 +11,7 @@
       router-link.align-center.d-flex(to="/")
         img(:src="$withBase('/pl_logo.svg')")
       v-spacer
-      v-toolbar-items.hidden-md-and-down
+      v-toolbar-items.hidden-sm-and-down
         template(v-for="item in docs_menu")
           v-btn(
             flat
