@@ -20,18 +20,14 @@
 .sidebar-button
   cursor pointer
   display none
-  width 1.25rem
-  height 1.25rem
-  position absolute
   padding 0.6rem
-  top 0.6rem
-  left 1rem
   .icon
     display block
-    width 1.25rem
-    height 1.25rem
+    width 24px
+    height 24px
 
 @media (max-width: $MQNarrow)
   .sidebar-button
     display block
+    margin-right 24px
 </style>
