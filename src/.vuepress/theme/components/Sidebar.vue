@@ -1,7 +1,7 @@
 <template lang="pug">
 
   aside.sidebar
-    v-list
+    v-list.hidden-md-and-up
       template(v-for="item in docs_menu")
         v-list-tile(:to="item.link")
           v-list-tile-title(
