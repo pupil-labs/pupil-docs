@@ -82,7 +82,7 @@ export default {
       font-size 1.1em
       padding 0.5rem 0 0.5rem 1.5rem
   & > .sidebar-links
-    padding 1.5rem 0
+    padding-bottom 24px
     & > li > a.sidebar-link
       font-size 1.1em
       line-height 1.7
