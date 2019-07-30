@@ -1,9 +1,21 @@
 <template lang="pug">
 
   aside.sidebar
-    div(style="padding-top:120px;")
+    div(style="padding-top:60px;")
+      v-layout(column)
+        template(v-for="item in docs_menu")
+          v-btn(
+            flat
+            :key="item.title"
+            :to="item.link"
+            :class="{'text-capitalize': item.title != 'vr/ar', 'text-uppercase': item.title == 'vr/ar' }"
+            style="margin:0;"
+          ) {{ item.title }}
+
+      v-divider(v-if="!$page.frontmatter.home")
+
       v-layout(justify-center).pt-4
-        Search
+        Search(v-if="!$page.frontmatter.home")
         //- AlgoliaSearchBox
       NavLinks
       slot(name="top")
@@ -24,6 +36,18 @@ import AlgoliaSearchBox from "@AlgoliaSearchBox";
 export default {
   name: "Sidebar",
 
+  data() {
+    return {
+      docs_menu: [
+        { icon: "invisible", title: "invisible", link: "/invisible/" },
+        { icon: "core", title: "core", link: "/core/" },
+        { icon: "vr-ar", title: "vr/ar", link: "/vr-ar/" },
+        { icon: "cloud", title: "cloud", link: "/cloud/" },
+        { icon: "developer", title: "developer", link: "/developer/" }
+      ]
+    };
+  },
+
   components: {
     SidebarLinks,
     NavLinks,
@@ -39,6 +63,10 @@ export default {
         this.$themeLocaleConfig.algolia || this.$site.themeConfig.algolia || {}
       );
     }
+  },
+
+  mounted() {
+    console.log(this.$page);
   }
 };
 </script>
