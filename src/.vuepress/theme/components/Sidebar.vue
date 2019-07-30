@@ -60,10 +60,6 @@ export default {
         this.$themeLocaleConfig.algolia || this.$site.themeConfig.algolia || {}
       );
     }
-  },
-
-  mounted() {
-    console.log(this.$page);
   }
 };
 </script>
