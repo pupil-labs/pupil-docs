@@ -1,29 +1,28 @@
 <template lang="pug">
 
   aside.sidebar
-    div(style="padding-top:60px;")
-      v-layout(column)
-        template(v-for="item in docs_menu")
-          v-btn(
-            flat
-            :key="item.title"
-            :to="item.link"
-            :class="{'text-capitalize': item.title != 'vr/ar', 'text-uppercase': item.title == 'vr/ar' }"
-            style="margin:0;"
-          ) {{ item.title }}
+    v-layout(column)
+      template(v-for="item in docs_menu")
+        v-btn(
+          flat
+          :key="item.title"
+          :to="item.link"
+          :class="{'text-capitalize': item.title != 'vr/ar', 'text-uppercase': item.title == 'vr/ar' }"
+          style="margin:0;"
+        ) {{ item.title }}
 
-      v-divider(v-if="!$page.frontmatter.home")
+    v-divider(v-if="!$page.frontmatter.home")
 
-      v-layout(justify-center).pt-4
-        Search(v-if="!$page.frontmatter.home")
-        //- AlgoliaSearchBox
-      NavLinks
-      slot(name="top")
-      SidebarLinks(
-        :depth="0"
-        :items="items"
-      )
-      slot(name="bottom")
+    v-layout(justify-center).pt-4
+      Search(v-if="!$page.frontmatter.home")
+      //- AlgoliaSearchBox
+    NavLinks
+    slot(name="top")
+    SidebarLinks(
+      :depth="0"
+      :items="items"
+    )
+    slot(name="bottom")
 
 </template>
 
