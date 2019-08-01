@@ -33,6 +33,8 @@ sudo apt install -y python3-opencv libopencv-dev
 ```
 
 #### Ubuntu 17.10 or lower
+Pupil requires Python 3.6 or higher. Please check this [resource](https://askubuntu.com/questions/865554/how-do-i-install-python-3-6-using-apt-get) on how to install Python 3.6 on your version of Ubuntu.
+
 If you're using Ubuntu <= 17.10, you will need to install OpenCV from source, and install ffmpeg-3 from a different ppa. 
 
 > install ffmpeg3 from jonathonf's ppa

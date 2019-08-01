@@ -6,7 +6,7 @@ page_weight = 1.2
 
 ## MacOS Dependencies
 
-These instructions have been tested for MacOS 10.8, 10.9, 10.10, 10.11, and 10.12. Use the linked websites and Terminal to execute the instructions.
+These instructions have been tested for MacOS 10.8, 10.9, 10.10, 10.11, 10.12, 10.13, and 10.14. Use the linked websites and Terminal to execute the instructions.
 
 ### Install Apple Dev Tools
 Trigger the install of the Command Line Tools (CLT) by typing this in your terminal and letting MacOS install the tools required:
