@@ -43,7 +43,6 @@ Let's get started! Its time to put `brew` to work! Just copy paste commands into
 
 ```
 brew install pkg-config
-brew install scipy
 brew install libjpeg-turbo
 brew install libusb
 brew install portaudio
@@ -82,6 +81,7 @@ sudo make install
 PyOpenGL, ZMQ, ...
 
 ```
+pip3 install scipy
 pip3 install PyOpenGL
 pip3 install pyzmq
 pip3 install numexpr
