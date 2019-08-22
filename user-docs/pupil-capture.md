@@ -342,27 +342,40 @@ to start and stop recordings that are stored in the phone.
 
 ### Surface Tracking
 
-The `Surface Tracker` plugin allows you to define planar surfaces within your environment to track areas of interest (AOI).
-Surfaces are defined using square markers. 
+The `Surface Tracker` plugin allows you to define planar surfaces within your environment to track areas of interest (AOI). Surfaces are defined with [Apriltag Markers](https://april.eecs.umich.edu/software/apriltag.html).
+
+<aside class="notice">
+  <strong>Note</strong> - The legacy surface system used simple square markers, which are way less robust to detect.
+  For all new projects we strongly recommend using Apriltags.
+  You can find more information on the legacy markers below.
+</aside>
+
 
 #### Markers
 
-> {{< webp-img figure-class="img-m" src="/images/pupil-capture/calibration-markers/pupil_surface_markers.webp" alt="Calibration markers" >}}
+There are many different apriltag types, currently we only support apritags of type **tag36h11**, which is the recommended set. There are 587 distinct markers in the set, so it should be sufficient for most use cases.
 
-You can generate markers with [this script](https://github.com/pupil-labs/pupil-helpers/blob/master/markers_stickersheet/make_square_markers.py), or download the image on the right.
+You can find images of all markers in the [original Apriltag GitHub repository](https://github.com/AprilRobotics/apriltag-imgs/tree/master/tag36h11), but you will have to upscale them, as they are scaled to minimal size. We have two pages of markers prepared for easy use on the right, that you can just download to get started.
 Markers can be printed on paper, stickers, or displayed on a screen.
 
+> <div class="figure-container">
+	<div class="Grid Grid--1of2 img-row">
+		<div class="Grid-cell" style="padding-right:5px;">
+			{{< lqip-img figure-class="img-m" src="/images/pupil-capture/calibration-markers/apriltags_tag36h11_0-23.jpg" alt="Apriltags tag36h11 0-23" >}}
+			<p>Apriltags tag36h11 0-23</p>
+		</div>
+		<div class="Grid-cell">
+			{{< lqip-img figure-class="img-m" src="/images/pupil-capture/calibration-markers/apriltags_tag36h11_24-47.jpg" alt="Apriltags tag36h11 24-47" >}}
+			<p>Apriltags tag36h11 24-47</p>
+		</div>
+	</div>
+</div>
+
 <aside class="notice">
-  <strong>Note</strong> - When displaying or printing markers, ensure that a white border remains around the marker! 
-  The border should be at least 1.2 times as wide as the grid size of the marker. 
+  <strong>Note</strong> - When displaying or printing markers, ensure that a small white border remains around the marker! 
+  The border should be around as wide as a cell of the grid size of the marker. 
   One way to achieve this is to present the marker on a white (or very light colored) background with sufficient padding.
 </aside>
-
-The design of our markers was greatly inspired by the [ArUco marker tracking library](http://www.uco.es/investiga/grupos/ava/node/26).
-However our markers use 5x5 grid instead of the 7x7 grid ArUco uses. 
-This allows us to make smaller markers that can still be detected well.
-The 5x5 design allows for a total of 63 unique markers.  
-
 
 #### Preparing your Environment
 
@@ -423,6 +436,22 @@ The exact time window to consider can be set using the `Gaze History Length` fie
     Gaze positions on the surface will be visualized in this window in real-time.
 *   Streaming Surfaces with Pupil Capture - Detected surfaces as well as gaze positions relative to the surface are broadcast under the `surface` topic. Check out [this video](http://youtu.be/qHmfMxGST7A) for a demonstration.
 *   Surface Metrics with Pupil Player - if you have defined surfaces, you can generate surface visibility reports or gaze count per surface. See our [blog post](http://pupil-labs.com/blog/2014/07/0392-player-release.html) for more information.
+
+#### Legacy Markers
+
+The legacy surface system used simple square markers, which are way less robust to detect.
+For all new projects we strongly recommend using Apriltags!
+
+<aside class="warning">
+  <strong>Note</strong> - The legacy marker system had a problem in pupil player, where marker detection could be non-unique if the marker detection process was not started from the beginning of the recording or was discontinued while detecting by seeking in the recording. When working with legacy markers, you are strongly recommended to always only enable the offline surface detection in pupil player when the seek position is at frame 0 and to not seek in the video as long as the surface detection is still running, in order to avoid any data inconsistencies!
+</aside>
+
+If you still need to use legacy markers, you can generate them with [this script](https://github.com/pupil-labs/pupil-helpers/blob/master/markers_stickersheet/make_square_markers.py), or download [this image](/images/pupil-capture/calibration-markers/pupil_surface_markers.webp).
+
+The design of our markers was greatly inspired by the [ArUco marker tracking library](http://www.uco.es/investiga/grupos/ava/node/26).
+However our markers used 5x5 grid instead of the 7x7 grid ArUco uses. 
+This allowed us to make smaller markers that can still be detected well.
+The 5x5 design allowed for a total of 63 unique markers.  
 
 ### Blink Detection
 
