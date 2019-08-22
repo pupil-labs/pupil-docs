@@ -443,7 +443,7 @@ The legacy surface system used simple square markers, which are way less robust 
 For all new projects we strongly recommend using Apriltags!
 
 <aside class="warning">
-  <strong>Note</strong> - The legacy marker system had a problem in pupil player, where marker detection could be non-unique if the marker detection process was not started from the beginning of the recording or was discontinued while detecting by seeking in the recording. When working with legacy markers, you are strongly recommended to always only enable the offline surface detection in pupil player when the seek position is at frame 0 and to not seek in the video as long as the surface detection is still running, in order to avoid any data inconsistencies!
+  <strong>Note</strong> - The legacy marker system has a problem in Pupil Player, where marker detection could be non-unique if the marker detection process was not started from the beginning of the recording or was discontinued while detecting by seeking in the recording. When working with legacy markers, you are strongly recommended to always only enable the offline surface detection in Pupil Player when the seek position is at frame 0 and to not seek in the video as long as the surface detection is still running, in order to avoid any data inconsistencies!
 </aside>
 
 If you still need to use legacy markers, you can generate them with [this script](https://github.com/pupil-labs/pupil-helpers/blob/master/markers_stickersheet/make_square_markers.py), or download [this image](/images/pupil-capture/calibration-markers/pupil_surface_markers.webp).
