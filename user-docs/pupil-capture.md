@@ -373,7 +373,7 @@ Markers can be printed on paper, stickers, or displayed on a screen.
 
 <aside class="notice">
   <strong>Note</strong> - When displaying or printing markers, ensure that a small white border remains around the marker! 
-  The border should be around as wide as a cell of the grid size of the marker. 
+  The border should be around as wide as one grid cell of the marker. 
   One way to achieve this is to present the marker on a white (or very light colored) background with sufficient padding.
 </aside>
 
