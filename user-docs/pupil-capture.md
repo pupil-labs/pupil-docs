@@ -345,7 +345,7 @@ to start and stop recordings that are stored in the phone.
 The `Surface Tracker` plugin allows you to define planar surfaces within your environment to track areas of interest (AOI). Surfaces are defined with [Apriltag Markers](https://april.eecs.umich.edu/software/apriltag.html).
 
 <aside class="notice">
-  <strong>Note</strong> - The legacy surface system used simple square markers, which are way less robust to detect.
+  <strong>Note</strong> - The legacy surface tracker used simple square markers, which are less robust to detect.
   For all new projects we strongly recommend using Apriltags.
   You can find more information on the legacy markers below.
 </aside>
