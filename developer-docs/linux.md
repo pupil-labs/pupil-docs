@@ -126,18 +126,6 @@ echo 'SUBSYSTEM=="usb",  ENV{DEVTYPE}=="usb_device", GROUP="plugdev", MODE="0664
 sudo udevadm trigger
 ```
 
-### Install `apriltag`
-```
-git clone https://github.com/swatbotics/apriltag.git
-cd apriltag
-mkdir build
-cd build
-cmake .. -DCMAKE_BUILD_TYPE=Release
-make -j4
-sudo make install
-sudo ldconfig
-```
-
 > Install packages with `pip`
 
 ```
@@ -149,6 +137,7 @@ sudo pip3 install msgpack==0.5.6
 sudo pip3 install pyopengl
 sudo pip3 install pyaudio
 sudo pip3 install cysignals
+sudo pip3 install pupil-apriltags
 sudo pip3 install git+https://github.com/zeromq/pyre
 sudo pip3 install git+https://github.com/pupil-labs/PyAV
 sudo pip3 install git+https://github.com/pupil-labs/pyuvc
