@@ -65,17 +65,6 @@ cmake ..
 make && make install
 ```
 
-### Install `apriltag`
-```
-git clone https://github.com/swatbotics/apriltag.git
-cd apriltag
-mkdir build
-cd build
-cmake .. -DCMAKE_BUILD_TYPE=Release
-make -j4
-sudo make install
-```
-
 ### Python Packages with `pip`
 
 PyOpenGL, ZMQ, ...
@@ -91,6 +80,7 @@ pip3 install msgpack==0.5.6
 pip3 install pyaudio
 pip3 install cysignals
 pip3 install torch torchvision
+pip3 install pupil-apriltags
 pip3 install git+https://github.com/zeromq/pyre
 pip3 install git+https://github.com/pupil-labs/PyAV
 pip3 install git+https://github.com/pupil-labs/pyuvc
