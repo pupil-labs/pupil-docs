@@ -439,7 +439,7 @@ The exact time window to consider can be set using the `Gaze History Length` fie
 
 #### Legacy Markers
 
-The legacy surface system used simple square markers, which are way less robust to detect.
+The legacy surface system used simple square markers, which are less robust to detect.
 For all new projects we strongly recommend using Apriltags!
 
 <aside class="warning">
