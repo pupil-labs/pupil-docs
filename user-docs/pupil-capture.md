@@ -355,7 +355,7 @@ The `Surface Tracker` plugin allows you to define planar surfaces within your en
 
 There are many different apriltag types, currently we only support apritags of type **tag36h11**, which is the recommended set. There are 587 distinct markers in the set, so it should be sufficient for most use cases.
 
-You can find images of all markers in the [original Apriltag GitHub repository](https://github.com/AprilRobotics/apriltag-imgs/tree/master/tag36h11), but you will have to upscale them, as they are scaled to minimal size. We have two pages of markers prepared for easy use on the right, that you can just download to get started.
+You can find images of all markers in the [original Apriltag GitHub repository](https://github.com/AprilRobotics/apriltag-imgs/tree/master/tag36h11). The tag images are very small in the apriltags repo. Therefore you will need to scale them up before use. We have two pages of markers prepared convenience on the right, that you can download to get started.
 Markers can be printed on paper, stickers, or displayed on a screen.
 
 > <div class="figure-container">
