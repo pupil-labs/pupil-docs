@@ -342,27 +342,40 @@ to start and stop recordings that are stored in the phone.
 
 ### Surface Tracking
 
-The `Surface Tracker` plugin allows you to define planar surfaces within your environment to track areas of interest (AOI).
-Surfaces are defined using square markers. 
+The `Surface Tracker` plugin allows you to define planar surfaces within your environment to track areas of interest (AOI). Surfaces are defined with [Apriltag Markers](https://april.eecs.umich.edu/software/apriltag.html).
+
+<aside class="notice">
+  <strong>Note</strong> - The legacy surface tracker used simple square markers, which are less robust to detect.
+  For all new projects we strongly recommend using Apriltags.
+  You can find more information on the legacy markers below.
+</aside>
+
 
 #### Markers
 
-> {{< webp-img figure-class="img-m" src="/images/pupil-capture/calibration-markers/pupil_surface_markers.webp" alt="Calibration markers" >}}
+There are many different apriltag types, currently we only support apritags of type **tag36h11**, which is the recommended set. There are 587 distinct markers in the set, so it should be sufficient for most use cases.
 
-You can generate markers with [this script](https://github.com/pupil-labs/pupil-helpers/blob/master/markers_stickersheet/make_square_markers.py), or download the image on the right.
+You can find images of all markers in the [original Apriltag GitHub repository](https://github.com/AprilRobotics/apriltag-imgs/tree/master/tag36h11). The tag images are very small in the apriltags repo. Therefore you will need to scale them up before use. We have two pages of markers prepared convenience on the right, that you can download to get started.
 Markers can be printed on paper, stickers, or displayed on a screen.
 
+> <div class="figure-container">
+	<div class="Grid Grid--1of2 img-row">
+		<div class="Grid-cell" style="padding-right:5px;">
+			{{< lqip-img figure-class="img-m" src="/images/pupil-capture/calibration-markers/apriltags_tag36h11_0-23.jpg" alt="Apriltags tag36h11 0-23" >}}
+			<p>Apriltags tag36h11 0-23</p>
+		</div>
+		<div class="Grid-cell">
+			{{< lqip-img figure-class="img-m" src="/images/pupil-capture/calibration-markers/apriltags_tag36h11_24-47.jpg" alt="Apriltags tag36h11 24-47" >}}
+			<p>Apriltags tag36h11 24-47</p>
+		</div>
+	</div>
+</div>
+
 <aside class="notice">
-  <strong>Note</strong> - When displaying or printing markers, ensure that a white border remains around the marker! 
-  The border should be at least 1.2 times as wide as the grid size of the marker. 
+  <strong>Note</strong> - When displaying or printing markers, ensure that a small white border remains around the marker! 
+  The border should be around as wide as one grid cell of the marker. 
   One way to achieve this is to present the marker on a white (or very light colored) background with sufficient padding.
 </aside>
-
-The design of our markers was greatly inspired by the [ArUco marker tracking library](http://www.uco.es/investiga/grupos/ava/node/26).
-However our markers use 5x5 grid instead of the 7x7 grid ArUco uses. 
-This allows us to make smaller markers that can still be detected well.
-The 5x5 design allows for a total of 63 unique markers.  
-
 
 #### Preparing your Environment
 
@@ -424,6 +437,22 @@ The exact time window to consider can be set using the `Gaze History Length` fie
 *   Streaming Surfaces with Pupil Capture - Detected surfaces as well as gaze positions relative to the surface are broadcast under the `surface` topic. Check out [this video](http://youtu.be/qHmfMxGST7A) for a demonstration.
 *   Surface Metrics with Pupil Player - if you have defined surfaces, you can generate surface visibility reports or gaze count per surface. See our [blog post](http://pupil-labs.com/blog/2014/07/0392-player-release.html) for more information.
 
+#### Legacy Markers
+
+The legacy surface system used simple square markers, which are less robust to detect.
+For all new projects we strongly recommend using Apriltags!
+
+<aside class="warning">
+  <strong>Note</strong> - When working with legacy markers in Pupil Player, you are strongly recommended to only enable the offline surface detection in Pupil Player when the seek position is at frame 0 and not to seek in the video as long as the surface detection is still running. Explanation: There is a bug in the legacy marker tracking system in Pupil Player. Marker detection could be non-unique if the marker detection process was not started from the beginning of the recording or was discontinued while detecting by seeking in the recording. 
+</aside>
+
+If you still need to use legacy markers, you can generate them with [this script](https://github.com/pupil-labs/pupil-helpers/blob/master/markers_stickersheet/make_square_markers.py), or download [this image](/images/pupil-capture/calibration-markers/pupil_surface_markers.webp).
+
+The design of our markers was greatly inspired by the [ArUco marker tracking library](http://www.uco.es/investiga/grupos/ava/node/26).
+However our markers used 5x5 grid instead of the 7x7 grid ArUco uses. 
+This allowed us to make smaller markers that can still be detected well.
+The 5x5 design allowed for a total of 63 unique markers.  
+
 ### Blink Detection
 
 The pupil detection algorithm assigns a `confidence` value to each pupil datum. It represents the quality of the detection result. While the eye is closed the assigned confidence is very low. The `Blink Detection` plugin makes use of this fact by defining a `blink onset` as a significant confidence drop - or a `blink offset` as a significant confidence gain - within a short period of time. The plugin creates a `blink` event for each event loop iteration in the following format:
@@ -471,14 +500,14 @@ You can also create annotation events programmatically and send them using the I
 This plugin is used to calculate camera intrinsics, which will enable one to correct camera distortion. Pupil Capture has built in, default camera intrinsics models for the high speed world camera and the high resolution world camera. You can re-calibrate your camera and/or calibrate a camera that is not supplied by Pupil Labs by running this calibration routine. We support two different distortion models, radial distortion and fisheye distortion. For cameras with a FOV of 100 degrees or greater (like e.g. the high speed world camera) the fisheye distortion model usually performs better, for cameras with a smaller FOV (e.g. the high resolution world camera) we recommend the radial distortion model.
 
 1. Select `Camera Intrinsics Estimation`
-1. Select the correct 'Distortion Model'
-1. Click on 'show pattern' to display the pattern
-1. Resize the pattern to fill the screen
-1. Hold your Pupil headset and aim it at the pattern.
-1. With the world window in focus, press `c` on your keyboard or the circular `C` button in the world windows to detect and capture a pattern.
-1. Data will be sampled and displayed on the screen as a border of the calibrated pattern. (Note - make sure to move your headset at different angles and try to cover the entire FOV of the world camera for best possible calibration results)
-1. Repeat until you have captured 10 patterns.
-1. Click on `show undistorted image` to display the results of camera intrinsic estimation. This will display an undistorted view of your scene. If well calibrated, straight lines in the real world will appear as straight lines in the undistorted view.
+2. Select the correct 'Distortion Model'
+3. Click on 'show pattern' to display the pattern
+4. Resize the pattern to fill the screen
+5. Hold your Pupil headset and aim it at the pattern.
+6. With the world window in focus, press `c` on your keyboard or the circular `C` button in the world windows to detect and capture a pattern.
+7. Data will be sampled and displayed on the screen as a border of the calibrated pattern. (Note - make sure to move your headset at different angles and try to cover the entire FOV of the world camera for best possible calibration results)
+8. Repeat until you have captured 10 patterns.
+9. Click on `show undistorted image` to display the results of camera intrinsic estimation. This will display an undistorted view of your scene. If well calibrated, straight lines in the real world will appear as straight lines in the undistorted view.
 
 <aside class="notice">
 Note that in some rare cases the processing of the recorded patterns can fail, which would lead to a warning message in the world window. In this case just repeat the above process from step 6 and try to get a better coverage of the entire FOV of the camera.
