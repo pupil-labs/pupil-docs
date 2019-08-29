@@ -20,6 +20,9 @@ This section will guide you through all steps needed to turn your HTC Vive into 
 
 > {{< video-youtube embed-url="https://www.youtube.com/embed/ZRdWlmxBH30" >}}
 
+### Install the 200Hz Vive and Vive Pro add-on
+
+> {{< video-youtube embed-url="https://www.youtube.com/embed/eVsNdQL7VEI" >}}
 
 ### A detailed look
 
