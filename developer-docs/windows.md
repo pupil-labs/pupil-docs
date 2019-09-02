@@ -164,9 +164,9 @@ The following steps require you to store dynamic libraries in the `pupil_externa
 
 ### OpenCV to pupil_external
 
-- Download opencv 3.2 exe installer from [sourceforge](https://downloads.sourceforge.net/project/opencvlibrary/opencv-win/2.3.0/opencv-3.2.0-vc14.exe)
+- Download opencv 3.4.5 exe installer from [sourceforge](https://sourceforge.net/projects/opencvlibrary/files/3.4.5/opencv-3.4.5-vc14_vc15.exe/download)
 - Unzip OpenCV to your work dir and rename dir to `opencv`
-- Copy `opencv\build\x64\vc14\bin\opencv_world320.dll` to `pupil_external`
+- Copy `opencv\build\x64\vc14\bin\opencv_world345.dll` to `pupil_external`
 
 ### Include pupil_external in PATH variable
 
@@ -178,7 +178,7 @@ The following steps require you to store dynamic libraries in the `pupil_externa
 
 - Open `pupil\pupil_src\shared_modules\pupil_detectors\setup.py`
 - Go to the `if platform.system() == 'Windows'` block
-- Check that paths for `opencv`, `Eigen` and `ceres-windows` are correctly specified. The installed opencv lib is `opencv_world320.lib`.
+- Check that paths for `opencv`, `Eigen` and `ceres-windows` are correctly specified. The installed opencv lib is `opencv_world345.lib`.
 - Edit paths if necessary
 - Save and close setup.py
 
@@ -191,7 +191,7 @@ In case you are using Visual Studio 2017 with v15.8 or v15.9 update, you may enc
 
 - Open `pupil\pupil_src\shared_modules\calibration_routines\optimization_calibration\setup.py`
 - Go to the `if platform.system() == 'Windows'` block
-- Check that paths for `opencv`, `Eigen` and `ceres-windows` are correctly specified. The installed opencv lib is `opencv_world320.lib`.
+- Check that paths for `opencv`, `Eigen` and `ceres-windows` are correctly specified. The installed opencv lib is `opencv_world345.lib`.
 - Edit paths if necessary
 - Save and close setup.py
 
