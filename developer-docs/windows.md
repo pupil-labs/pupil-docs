@@ -77,7 +77,7 @@ Open your command prompt and install the following libs:
 pip install numpy
 pip install scipy
 pip install cython
-pip install opencv-python==3.x
+pip install opencv-python==3.*
 pip install pyopengl
 pip install psutil
 pip install pyaudio
