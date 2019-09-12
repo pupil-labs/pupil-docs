@@ -149,6 +149,7 @@ sudo pip3 install msgpack==0.5.6
 sudo pip3 install pyopengl
 sudo pip3 install pyaudio
 sudo pip3 install cysignals
+sudo pip3 install packaging
 sudo pip3 install git+https://github.com/zeromq/pyre
 sudo pip3 install git+https://github.com/pupil-labs/PyAV
 sudo pip3 install git+https://github.com/pupil-labs/pyuvc

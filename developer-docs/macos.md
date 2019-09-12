@@ -91,6 +91,7 @@ pip3 install msgpack==0.5.6
 pip3 install pyaudio
 pip3 install cysignals
 pip3 install torch torchvision
+pip3 install packaging
 pip3 install git+https://github.com/zeromq/pyre
 pip3 install git+https://github.com/pupil-labs/PyAV
 pip3 install git+https://github.com/pupil-labs/pyuvc
