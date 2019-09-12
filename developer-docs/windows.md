@@ -84,6 +84,7 @@ pip install pyaudio
 pip install pyzmq
 pip install msgpack==0.5.6
 pip install win_inet_pton
+pip install packaging
 pip install git+https://github.com/zeromq/pyre.git
 pip install git+https://github.com/pupil-labs/nslr.git
 pip install git+https://github.com/pupil-labs/nslr-hmm.git
