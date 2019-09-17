@@ -1,7 +1,6 @@
 ---
 date: "2017-01-20T11:31:37+07:00"
 title: "Get Started!"
-subtitle: "The main source of documentation for the Pupil users getting started with their Pupil headset and developers contributing to code."
 section_weight: 0
 page_weight: 0
 home: true
@@ -19,23 +18,20 @@ featured_products: [
     alt: "Pupil Core headset"
   },
   {
-    title: "VR/AR Add-On",
+    title: "VR/AR Add-Ons",
     link: "/vr-ar/",
     src: "/vr-ar/vive_explode_grey.jpg",
     alt: "HTC Vive 200Hz Binocular add-on"
   },
+  {
+    title: "Pupil Cloud",
+    link: "/cloud/",
+    src: "/illustrations/companion_screens.png",
+    alt: "Pupil Cloud platform"
+  }
 ]
 ---
 
-<!-- ![](./assets/invisible/pi_companion.jpg) -->
-
-::: slot cloud
-# Cloud Documentation
-
-Dive deep into the Pupil Cloud platform.
-
-<v-btn round light to="/cloud/" class="link-blue ml-0"> Read documentation </v-btn>
-:::
 
 ::: slot dev
 # Developer Documentation
