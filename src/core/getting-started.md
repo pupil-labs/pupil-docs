@@ -6,37 +6,50 @@ Go through the following steps to get familiar with the Pupil workflow. You can 
 <!-- ## Quick Start -->
 
 ## 1. Put on Pupil Core
-Put on Pupil Core headset and plug it in to your computer
+Put on Pupil Core headset and plug it in to your computer.
 
-## 2. Start Pupil Capture
-Start Pupil Capture aon your computer. Once the program has initalized, a world video and eye video window will appear.
+ Make sure there is space between the headset frame and your forehead.
+ Headsets are adjustable and shipped with additional parts. For more information head over to the Pupil Hardware guide.
+
+## 2. Launch Pupil Capture
+Start Pupil Capture on your computer. Once the program has initalized, a world video and eye video window will appear.
 
 ## 3. Check Pupil Detection
 Take a look at the eye window. If the pupil is detected you will see a red circle around the edge of your pupil and a red dot at the center of your pupil.
 If the detection is good, the confidence levels will be high and the red circle will be opaque. If the detection is poor, then the confidence levels will be low and the red circle will be translucent.
 
-To improve Pupil detection, move your head around while looking at afixed position. Check the Pupil detection visualiztion and confidence levels.
+To improve Pupil detection, move your head around while looking at a fixed position. Check the Pupil detection visualiztion and confidence levels.
 
 Headsets are adjustable and are shipped with additional parts. For more information, head over to the [Pupil Core Hardware guide] on how to adjust your headset.
 
+1. Do - The eye is in focus and all range of the eye movements are visible. (Focus is only important for 120hz eye camera. 200hz camera has fixed focus.)
+2. Don't - The camera arm here is too far away from the eye.
+3. Don't - The eye is not centered in the frame and eyebrow in the frame.
+4. Don't - The eye is out of focus.
+
 ## 4. Calibration
-Before calibrating, be sure to check that your eys are well positioned for a robust eye tracking performance.
+In order to know what someone is looking at, we must establish a mapping between pupil and gaze positions. This is what we call calibration. The calibration process establishes a mapping from pupil to gaze coordinates.
 
-In order to know what someone is looking at, we must establish a mapping between pupil and gaze positions. This is what we call calibration.
+#### Screen Marker Calibration Method
+Click `c` on the world screen or press `c` on the keyboard to start calibrate.
 
-## 5. Begin Recording
+Follow the marker on the screen with your eyes and try to keep your head stationary.
+
+## 5. Start Recording
 
 **Start capturing data!**
 
-Pupil Capture will save the world video stream and all the corresponding gaze data in a folder in our user directory named `recordings`.
+Pupil Capture will save the world video strea. and all the corresponding gaze data in a folder in our user directory named `recordings`.
 
-**Start/Stop recording**: Press the `r` key on your keyboard or press the circular `R` button on the left hand side of the world window. The elapsed recording time will appear next to the `R` button.
+**Start/Stop recording**: Press the `r` key o. your keyboard or press the circular `R` button on the left hand side of the world window. The elapsed recording time will appear next to the `R` button.
 
 See a video demo of how to set recordings path, session name and start recording [here]().
 
-## 6. Playback recording
+## 6 Locate Saved Recording
 
-Your default saved recording location will be located :
+By default, each recording will live in its own unique data folder contained in the recordings folder.
+
+You can make as many recordings as you like.
 
 The default recordings directory will have the following hierarchy:
 
@@ -44,9 +57,21 @@ The default recordings directory will have the following hierarchy:
 recordings
   2016-04-05
     001
-    002
+    002.
     003
     ###
 ```
 
-By default, each recording will live in its own unique data folder contained in the recordings folder.
+## 7. Visualize in Pupil Player
+
+Launch Pupil Player.
+Then drag and drop the recording folder (e.g 001) onto the Pupil Player window.
+
+Player comes with a number of plugins. Plugins are classified by their use-case. Visualization plugins can be additive. This means that you can add multiple instances of a plugin to build up a visualization.
+
+## 8. Export Video
+
+Export videos of visualization and datasets for further analysis.
+
+Exports are saved within a dedicated folder named exports within the original recording folder.
+Each export is contained within a folder within the exports folder. The numbers of the export correlate to the trim marks (frame start and frame end) for the export.
