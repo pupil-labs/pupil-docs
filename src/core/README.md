@@ -1,35 +1,77 @@
-# Introduction
+# Getting Started
+Go through the following steps to get familiar with the Pupil workflow. You can also check out [video tutorials]() at the end of this guide.
 
-## Anatomy
-![Pupil Core anatomy](../media/core/anatomy.jpg)
+<v-divider></v-divider>
 
-1. Eye camera and IR emmiters
-1. Ball joint
-1. Camera arm slider
-1. Scene camera
-1. Pivot joint
-1. USB-C port with clip
+<!-- ## Quick Start -->
 
-<v-divider class="mt-4"></v-divider>
+## 1. Put on Pupil Core
+Put on Pupil Core headset and plug it in to your computer.
 
-## Included in the box
+ Make sure there is space between the headset frame and your forehead.
+ Headsets are adjustable and shipped with additional parts. For more information head over to the Pupil Hardware guide.
 
-1. Pupil Core device
-1. Rubber nose/head piece
-1. USB-C Cable (2m)
-1. USB-C to USB-A Cable (2m)
+## 2. Launch Pupil Capture
+Start Pupil Capture on your computer. Once the program has initalized, a world video and eye video window will appear.
 
-<v-divider class="mt-4"></v-divider>
+## 3. Check Pupil Detection
+Take a look at the eye window. If the pupil is detected you will see a red circle around the edge of your pupil and a red dot at the center of your pupil.
+If the detection is good, the confidence levels will be high and the red circle will be opaque. If the detection is poor, then the confidence levels will be low and the red circle will be translucent.
 
-## Download Software
+To improve Pupil detection, move your head around while looking at a fixed position. Check the Pupil detection visualiztion and confidence levels.
 
-This guide will lead you through a basic workflow using Pupil Hardware and software.
+Headsets are adjustable and are shipped with additional parts. For more information, head over to the [Pupil Core Hardware guide] on how to adjust your headset.
 
-Once you have Pupil Core, all you need to do is [download](https://github.com/pupil-labs/pupil/releases/latest) and install the Pupil apps on a computer running MacOS, Windows 10 or Linux.
+1. Do - The eye is in focus and all range of the eye movements are visible. (Focus is only important for 120hz eye camera. 200hz camera has fixed focus.)
+2. Don't - The camera arm here is too far away from the eye.
+3. Don't - The eye is not centered in the frame and eyebrow in the frame.
+4. Don't - The eye is out of focus.
 
-We are always workin on new features, fixing bugs and making improvements. Make sure to check on the release page for the latest version and follow our blog and Discord chat for updates.
+## 4. Calibration
+In order to know what someone is looking at, we must establish a mapping between pupil and gaze positions. This is what we call calibration. The calibration process establishes a mapping from pupil to gaze coordinates.
 
-::: warning
-<v-icon large color="warning">error_outline</v-icon>
-If you are running Pupil on Windows 10, please start Pupil Capture as administrator to install drivers. If you have difficulty installing drivers, please see the Windows driver troubleshooting section.
-:::
+#### Screen Marker Calibration Method
+Click `c` on the world screen or press `c` on the keyboard to start calibrate.
+
+Follow the marker on the screen with your eyes and try to keep your head stationary.
+
+## 5. Start Recording
+
+**Start capturing data!**
+
+Pupil Capture will save the world video strea. and all the corresponding gaze data in a folder in our user directory named `recordings`.
+
+**Start/Stop recording**: Press the `r` key o. your keyboard or press the circular `R` button on the left hand side of the world window. The elapsed recording time will appear next to the `R` button.
+
+See a video demo of how to set recordings path, session name and start recording [here]().
+
+## 6 Locate Saved Recording
+
+By default, each recording will live in its own unique data folder contained in the recordings folder.
+
+You can make as many recordings as you like.
+
+The default recordings directory will have the following hierarchy:
+
+```
+recordings
+  2016-04-05
+    001
+    002.
+    003
+    ###
+```
+
+## 7. Visualize in Pupil Player
+
+Launch Pupil Player.
+Then drag and drop the recording folder (e.g 001) onto the Pupil Player window.
+
+Player comes with a number of plugins. Plugins are classified by their use-case. Visualization plugins can be additive. This means that you can add multiple instances of a plugin to build up a visualization.
+
+## 8. Export Video
+
+Export videos of visualization and datasets for further analysis.
+
+Exports are saved within a dedicated folder named exports within the original recording folder.
+Each export is contained within a folder within the exports folder. The numbers of the export correlate to the trim marks (frame start and frame end) for the export.
