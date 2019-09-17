@@ -50,5 +50,3 @@ recordings
 ```
 
 By default, each recording will live in its own unique data folder contained in the recordings folder.
-
-<v-divider></v-divider>

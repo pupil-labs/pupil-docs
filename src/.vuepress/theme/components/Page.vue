@@ -14,6 +14,10 @@
 
     <Content class="theme-default-content" />
 
+    <div class="theme-default-content" style="padding:0 2.5rem;">
+      <v-divider></v-divider>
+    </div>
+
     <footer class="page-edit">
       <div class="edit-link" v-if="editLink">
         <a :href="editLink" target="_blank" rel="noopener noreferrer">{{ editLinkText }}</a>
