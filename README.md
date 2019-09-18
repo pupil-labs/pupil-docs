@@ -1,4 +1,6 @@
 # Pupil Docs
+Pupil Docs website built with Vuepress.
+
 User and Developer Docs for [Pupil](https://github.com/pupil-labs/pupil).
 
 View the docs at [docs.pupil-labs.com](https://docs.pupil-labs.com)
@@ -15,7 +17,8 @@ We welcome all contributions! To edit content:
 
 ## Download
 For this project we use Yarn for dependency management.
-[Yarn](https://yarnpkg.com/en/docs/install)
+
+Download and install [Yarn](https://yarnpkg.com/en/docs/install).
 
 ## Install
 Fork or clone this repository and run the following command to install the dependencies.
@@ -60,6 +63,7 @@ yarn build
 ```
 
 ## Page routing
+In the root dir are where all the page routes are located.
 
 | Relative Path | Page Routing |
 |---|---|
