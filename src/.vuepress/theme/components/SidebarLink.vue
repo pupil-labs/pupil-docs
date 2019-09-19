@@ -78,7 +78,7 @@ function renderLink(h, to, text, active) {
 }
 
 function renderI(h, depth, active) {
-  if (depth == 1) {
+  if (depth >= 1) {
     return h("i", {
       class: {
         active,
@@ -153,13 +153,28 @@ a.sidebar-link
     font-weight 600
     color #0D122A
     border-left-color  #0D122A
-  .sidebar-group &
-    padding-left 40px
+  // .sidebar-group &
+  //   padding-left 40px
   .sidebar-sub-headers &
-    padding-left 60px
-    border-left  unset
-  .depth--2 &
-    padding-left 80px
+    padding-left 52px
+    border-left unset
+
+.sidebar-group-items
+  .sidebar-link
+    padding-left 32px
+  .sidebar-sub-headers
+    .sidebar-link
+      padding-left 48px
+    .depth--2
+      .sidebar-link
+        padding-left 64px
+
+  .depth--1
+    .side-nav__progress-bar
+      height 42px
+  .depth--2
+    .side-nav__progress-bar
+      height unset
 
 .side-nav__progress-bar
   display: block
@@ -168,7 +183,6 @@ a.sidebar-link
   bottom: 0
   left: 30px
   width: 2px
-  height: 42px
   background: rgba(189,189,189,.4)
 
   &.active
@@ -176,9 +190,15 @@ a.sidebar-link
 
 .sidebar-group
   .sidebar-link
-    font-size 14px
+    font-weight bold
+  .sidebar-group-items
+    .sidebar-link
+      font-weight 400
+      font-size 16px
+      &.active
+        font-weight bold
 
   .side-nav__progress-bar
-    left: 40px
+    left: 32px
 
 </style>

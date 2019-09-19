@@ -108,16 +108,14 @@ export default {
   color $textColor
   transition color .15s ease
   cursor pointer
-  font-size 18px !important
-  font-weight 400
   // text-transform uppercase
-  padding 8px 16px !important
+  // padding 8px 16px !important
   width 100%
   box-sizing border-box
   margin 0
   border-left 0.25rem solid transparent
   &.open, &:hover
-    color inherit
+    // color inherit
   &.clickable
     &.active
       font-weight 600
