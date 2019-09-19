@@ -7,7 +7,7 @@ module.exports = {
     ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Material+Icons' }]
   ],
   themeConfig: {
-    displayAllHeaders: true,
+    displayAllHeaders: false,
     lastUpdated: "Last Updated",
     sidebar: {
       '/invisible/': [
@@ -15,40 +15,17 @@ module.exports = {
         'getting-started'
       ],
       '/core/': [
-        {
-          title: 'Getting Started',
-          collapsable: true,
-          sidebarDepth: 1,
-          children: [
-            'getting-started/',
-          ]
-        },
-        {
-          title: 'Hardware',
-          collapsable: true,
-          sidebarDepth: 1,
-          children: [
-            'user-guide/',
-          ]
-        },
+        '',
+        'user-guide/',
         {
           title: 'Software',
-          collapsable: true,
-          sidebarDepth: 1,
           children: [
             'software/pupil-capture',
             'software/pupil-player',
-            'software/pupil-service',
+            'software/pupil-service'
           ]
         },
-        {
-          title: 'DIY',
-          collapsable: true,
-          sidebarDepth: 1,
-          children: [
-            'diy/',
-          ]
-        },
+        'diy/'
 
       ],
       '/vr-ar/': [
@@ -75,10 +52,9 @@ module.exports = {
     [
       "@vuepress/medium-zoom",
       {
-        selector: '.theme-default-content img',
         options: {
-          margin: 24,
-          background: '#000000'
+          margin: 100,
+          background: '#fafafa'
         }
       }
     ],
