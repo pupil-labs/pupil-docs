@@ -1,8 +1,9 @@
 # User Guide
+You wear Pupil like a pair of glasses. Pupil connects to a computing device via a USB-A or USB-C cable. The headset is designed to be lightweight and adjustable in order to accommodate a wide range of users.
 
-You wear Pupil like a pair of glasses. Pupil connects to a computing device via a USBA or USBC cable. The headset is designed to be lightweight and adjustable in order to accommodate a wide range of users.
-
-The illustration of a monocular Pupil Headset shown below, depending on your configuration your headset might look different, but working principles are the same.
+<div class="pb-4">
+  <img src="../../media/core/w120_e200b.png" width="100%" style="display:flex;margin:0 auto;">
+</div>
 
 Pupil ships with a number of additional parts. The below sections provide an overview of their use and a guide to adjusting the Pupil headset.
 
@@ -19,6 +20,10 @@ Pupil ships with a number of additional parts. The below sections provide an ove
 #### World Camera
 The high speed 2d world camera comes with two lenses.
 60 degree FOV lens (shown on the left) and a wide angle 100 degree FOV lens (shown on the right).
+
+<video width="100%" controls class="mb-5">
+  <source src="../../media/core/worldcam-lens.mp4" type="video/mp4">
+</video>
 
 The world camera lens are interchangeable, so you can swap between the two lenses provided for normal or wide angle FOV.
 
