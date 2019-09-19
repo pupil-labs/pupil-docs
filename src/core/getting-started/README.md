@@ -1,4 +1,4 @@
-# Getting Started
+# Steps
 Go through the following steps to get familiar with the Pupil workflow. You can also check out [video tutorials]() at the end of this guide.
 
 <v-divider></v-divider>

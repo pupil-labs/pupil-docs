@@ -1,6 +1,4 @@
-# User Guide
-
-## Pupil Core
+# Pupil Core
 
 You wear Pupil like a pair of glasses. Pupil connects to a computing device via a USBA or USBC cable. The headset is designed to be lightweight and adjustable in order to accommodate a wide range of users.
 
