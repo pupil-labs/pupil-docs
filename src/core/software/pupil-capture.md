@@ -95,6 +95,10 @@ Before starting calibration, ensure that eye(s) are robustly detected and that t
 #### Screen Marker Calibration
 This is the default method, and a quick method to get started. It is best suited for close range eye-tracking in a narrow field of view.
 
+<video width="100%" controls class="mb-5">
+  <source src="../../media/core/clb-s.mp4" type="video/mp4">
+</video>
+
 1. Select `Screen Marker Calibration`
 1. Select your `Monitor` (if more than 1 monitor)
 1. Toggle `Use fullscreen` to use the entire extents of your monitor (recommended). You can adjust the scale of the pattern for a larger or smaller calibration target.
@@ -107,6 +111,21 @@ In the `Advanced` sub-menu you can set the `sample duration` -- the number of fr
 #### Manual Marker Calibration
 This method is done with an operator and a subject. It is suited for midrange distances and can accommodate a wide field of view. The operator will use a
 printed calibration marker like the one shown in the video. [Download Pupil Labs Calibration Marker v0.4 to print](/images/pupil-capture/calibration-markers/v0.4_markers/v0.4_marker.v12.pdf) or display on smartphone/tablet screen.
+
+<video width="100%" controls class="mb-5">
+  <source src="../../media/core/clb-man.mp4" type="video/mp4">
+</video>
+
+<div style="display:flex;" class="pb-4">
+    <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
+        <img src="../../media/core/v0.4_calib_marker_02.jpg" height="300px" width="300px">
+        <p>Pupil Calibration Marker v0.4</p>
+    </div>
+    <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
+        <img src="../../media/core/v0.4_calib_marker_01.jpg" height="300px" width="300px">
+        <p>Pupil Calibration Stop Marker v0.4</p>
+    </div>
+</div>
 
 1. Select `Manual Marker Calibration`
 1. Press `c` on your keyboard or click the blue circular `C` button on the left hand side of the world window to start calibration.
@@ -151,6 +170,10 @@ This paper introduces and evaluates this type of single marker calibration - <co
 #### Natural Features Calibration
 This method is for special situations and far distances. Usually not required.
 
+<video width="100%" controls class="mb-5">
+  <source src="../../media/core/clb-natural.mp4" type="video/mp4">
+</video>
+
 1. Select `Natural Features Calibration`
 1. Press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to start calibration.
 1. Ask the subject (the person wearing the Pupil headset) to look a point within their field of vision. Note -- pick a salient feature in the environment.
@@ -186,8 +209,11 @@ In 2D mode, you should easily be able to achieve tracking accuracy within the ph
 * Calibration accuracy can be visualized with the `Accuracy Visualizer` plugin. If the `Accuracy Visualizer` plugin is loaded, it will display the residual between reference points and matching gaze positions that were recorded during calibration.
 * Gaze Prediction Accuracy can be estimated with an accuracy test. Start the accuracy by running a normal calibration procedure but press the `T` button in the world window and **not** the `C` button. After completing the test, the plugin will display the error between reference points and matching gaze positions that were recorded during the accuracy test.
 
-
 ## Recording
+<video width="100%" controls class="mb-5">
+  <source src="../../media/core/rec.mp4" type="video/mp4">
+</video>
+
 Press `r` on your keyboard or press the blue circular `R` button on the left hand side of the world window to start recording. You will see red text with the elapsed time of recording next to the `R` button. To stop recording, press `r` on your keyboard or press the `R` button on screen.
 
 You can set the folder or `Path to recordings` and the `Recording session name` in the `Recorder` sub-menu within the GUI. Note - you must specify an existing folder, otherwise the `Path to recordings` will revert to the default path.
@@ -197,6 +223,11 @@ If you open up a session folder you will see a collection of video(s) and data f
 
 ## Plugins
 Open the `Plugin Manager` menu on the right.
+
+<div class="pb-4">
+  <img src="../../media/core/capture-plugin.jpg" width="100%" style="display:flex;margin:0 auto;">
+</div>
+
 It lists all available plugins.
 Click the button next to the plugin's name to turn on or off the plugin.
 
@@ -218,6 +249,10 @@ with at least one subscription is transferred.
 
 #### Pupil Remote
 `Pupil Remote` is the plugin that functions as the entry point to the broadcast infrastructure. It also provides a high level interface to control Pupil Capture over the network (e.g. start/stop a recording).
+
+<video width="100%" controls class="mb-5">
+  <source src="../../media/core/pr.mp4" type="video/mp4">
+</video>
 
 * Load the `Pupil Remote` plugin from the `General` sub-menu in the GUI (it is loaded by default).
 * It will automatically open a network port at the default `Address`.
@@ -296,6 +331,17 @@ You can find more information on the legacy markers below.
 
 #### Markers
 There are many different apriltag types, currently we only support apritags of type **tag36h11**, which is the recommended set. There are 587 distinct markers in the set, so it should be sufficient for most use cases.
+
+<div style="display:flex;" class="pb-4">
+    <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
+        <img src="../../media/core/apriltags_tag36h11_0-23.jpg" width="60%" style="padding-bottom:16px;">
+        <p>Apriltags tag36h11 0-23</p>
+    </div>
+    <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
+        <img src="../../media/core/apriltags_tag36h11_24-47.jpg" width="60%" style="padding-bottom:16px;">
+        <p>Apriltags tag36h11 24-47</p>
+    </div>
+</div>
 
 You can find images of all markers in the [original Apriltag GitHub repository](https://github.com/AprilRobotics/apriltag-imgs/tree/master/tag36h11). The tag images are very small in the apriltags repo. Therefore you will need to scale them up before use. We have two pages of markers prepared convenience on the right, that you can download to get started.
 Markers can be printed on paper, stickers, or displayed on a screen.
