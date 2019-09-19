@@ -31,7 +31,7 @@ export default {
     return {
       docs_menu: [
         { icon: "invisible", title: "invisible", link: "/invisible/" },
-        { icon: "core", title: "core", link: "/core/" },
+        { icon: "core", title: "core", link: "/core/getting-started" },
         { icon: "vr-ar", title: "vr/ar", link: "/vr-ar/" },
         { icon: "cloud", title: "cloud", link: "/cloud/" },
         { icon: "developer", title: "developer", link: "/developer/" }
