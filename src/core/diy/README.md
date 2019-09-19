@@ -1,4 +1,4 @@
-# Do it Yourself
+# DIY
 
 If you are an individual planning on using Pupil exclusively for noncommercial purposes, and are not afraid of SMD soldering and hacking – then, buy the parts, modify the cameras, and assemble a Pupil DIY headset. We have made a guide to help you and a shopping list.
 
