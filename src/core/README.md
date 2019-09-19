@@ -1,4 +1,4 @@
-# Steps
+# Getting Started
 Go through the following steps to get familiar with the Pupil workflow. You can also check out [video tutorials]() at the end of this guide.
 
 <v-divider></v-divider>
@@ -7,6 +7,8 @@ Go through the following steps to get familiar with the Pupil workflow. You can 
 
 ## 1. Put on Pupil Core
 Put on Pupil Core headset and plug it in to your computer.
+
+<pc-icon/>
 
  Make sure there is space between the headset frame and your forehead.
  Headsets are adjustable and shipped with additional parts. For more information head over to the Pupil Hardware guide.
