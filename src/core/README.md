@@ -8,21 +8,30 @@ Go through the following steps to get familiar with the Pupil workflow. You can 
 ## 1. Put on Pupil Core
 Put on Pupil Core headset and plug it in to your computer.
 
-<pc-icon/>
-
  Make sure there is space between the headset frame and your forehead.
  Headsets are adjustable and shipped with additional parts. For more information head over to the Pupil Hardware guide.
 
 ## 2. Launch Pupil Capture
+
+<pc-icon/>
+
 Start Pupil Capture on your computer. Once the program has initalized, a world video and eye video window will appear.
 
 ## 3. Check Pupil Detection
-Take a look at the eye window. If the pupil is detected you will see a red circle around the edge of your pupil and a red dot at the center of your pupil.
-If the detection is good, the confidence levels will be high and the red circle will be opaque. If the detection is poor, then the confidence levels will be low and the red circle will be translucent.
-
 To improve Pupil detection, move your head around while looking at a fixed position. Check the Pupil detection visualiztion and confidence levels.
 
-Headsets are adjustable and are shipped with additional parts. For more information, head over to the [Pupil Core Hardware guide] on how to adjust your headset.
+<video width="100%" controls class="mb-4">
+  <source src="../media/core/pd.mp4" type="video/mp4">
+</video>
+
+Take a look at the eye window.
+
+If the pupil is detected you will see a red circle around the edge of your pupil and a red dot at the center of your pupil.
+If the detection is good, the confidence levels will be high and the red circle will be opaque. If the detection is poor, then the confidence levels will be low and the red circle will be translucent.
+
+<div class="pb-4">
+  <img src="../media/core/good_bad_eye.jpg" width="60%" style="display:flex;margin:0 auto;">
+</div>
 
 1. Do - The eye is in focus and all range of the eye movements are visible. (Focus is only important for 120hz eye camera. 200hz camera has fixed focus.)
 2. Don't - The camera arm here is too far away from the eye.
