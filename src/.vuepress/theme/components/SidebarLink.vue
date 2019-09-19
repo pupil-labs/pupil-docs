@@ -140,7 +140,7 @@ a.sidebar-link
   display flex
   align-items center
   color #455A64
-  // border-left 0.25rem solid transparent
+  border-left 0.25rem solid transparent
   padding 8px 24px
   line-height 1.4
   width: 100%
@@ -161,20 +161,24 @@ a.sidebar-link
   .depth--2 &
     padding-left 80px
 
-.sidebar-group
-  .sidebar-link
-    font-size 14px
-
 .side-nav__progress-bar
   display: block
   position: absolute
   top: 0
   bottom: 0
-  left: 24px
+  left: 30px
   width: 2px
   height: 42px
   background: rgba(189,189,189,.4)
 
   &.active
     background-color #0D122A
+
+.sidebar-group
+  .sidebar-link
+    font-size 14px
+
+  .side-nav__progress-bar
+    left: 40px
+
 </style>
