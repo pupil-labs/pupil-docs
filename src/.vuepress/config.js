@@ -7,7 +7,7 @@ module.exports = {
     ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Material+Icons' }]
   ],
   themeConfig: {
-    displayAllHeaders: true,
+    displayAllHeaders: false,
     lastUpdated: "Last Updated",
     sidebar: {
       '/invisible/': [
@@ -16,8 +16,17 @@ module.exports = {
       ],
       '/core/': [
         '',
-        'getting-started',
-        'hardware'
+        'user-guide/',
+        {
+          title: 'Software',
+          children: [
+            'software/pupil-capture',
+            'software/pupil-player',
+            'software/pupil-service'
+          ]
+        },
+        'diy/'
+
       ],
       '/vr-ar/': [
         '',
@@ -41,7 +50,13 @@ module.exports = {
 
   plugins: [
     [
-      "@vuepress/medium-zoom"
+      "@vuepress/medium-zoom",
+      {
+        options: {
+          margin: 100,
+          background: '#fafafa'
+        }
+      }
     ],
     [
       "@vuepress/last-updated",
@@ -74,6 +89,4 @@ module.exports = {
   configureWebpack: {
     plugins: [new VuetifyLoaderPlugin()]
   },
-
-
-}
+};

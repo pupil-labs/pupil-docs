@@ -188,7 +188,7 @@ export default {
     display inline-block
     border 1px solid darken($borderColor, 10%)
     border-radius 2rem
-    font-size 0.9rem
+    font-size 12px
     line-height 2rem
     padding 0 0.5rem 0 2rem
     outline none
@@ -202,9 +202,10 @@ export default {
     background #fff
     width 100%
     position absolute
-    top 1.5rem
+    top 40px
     border 1px solid darken($borderColor, 10%)
     border-radius 6px
+    box-shadow 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12)
     padding 0.4rem
     list-style-type none
     z-index 3
@@ -217,16 +218,17 @@ export default {
     cursor pointer
     a
       white-space normal
-      color lighten($textColor, 35%)
+      color #455a64
       .page-title
-        font-weight 600
+        font-weight 400
+        font-size 12px
       .header
-        font-size 0.9em
+        font-size 12px
         margin-left 0.25em
     &.focused
       background-color #f3f4f5
       a
-        color $accentColor
+        color #1263cc
 
 // Match IE11
 @media all and (-ms-high-contrast: none)

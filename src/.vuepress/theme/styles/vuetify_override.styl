@@ -13,12 +13,17 @@
   .toolbar_container
     max-width 1200px
 
-
-
 @import '~vuetify/src/stylus/app.styl'
-
-code
-  box-shadow: unset
 
 .right
   float: unset !important
+
+ul, ol
+  padding 0 0 24px 20px
+
+code
+  box-shadow: unset
+  font-weight 400
+
+  &:before, &:after
+    content ''
