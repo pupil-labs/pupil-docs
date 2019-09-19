@@ -15,9 +15,41 @@ module.exports = {
         'getting-started'
       ],
       '/core/': [
-        '',
-        'user-guide',
-        'diy'
+        {
+          title: 'Getting Started',
+          collapsable: true,
+          sidebarDepth: 1,
+          children: [
+            'getting-started/',
+          ]
+        },
+        {
+          title: 'Hardware',
+          collapsable: true,
+          sidebarDepth: 1,
+          children: [
+            'user-guide/',
+          ]
+        },
+        {
+          title: 'Software',
+          collapsable: true,
+          sidebarDepth: 1,
+          children: [
+            'software/pupil-capture',
+            'software/pupil-player',
+            'software/pupil-service',
+          ]
+        },
+        {
+          title: 'DIY',
+          collapsable: true,
+          sidebarDepth: 1,
+          children: [
+            'diy/',
+          ]
+        },
+
       ],
       '/vr-ar/': [
         '',
@@ -41,7 +73,14 @@ module.exports = {
 
   plugins: [
     [
-      "@vuepress/medium-zoom"
+      "@vuepress/medium-zoom",
+      {
+        selector: '.theme-default-content img',
+        options: {
+          margin: 24,
+          background: '#000000'
+        }
+      }
     ],
     [
       "@vuepress/last-updated",
@@ -74,6 +113,4 @@ module.exports = {
   configureWebpack: {
     plugins: [new VuetifyLoaderPlugin()]
   },
-
-
-}
+};
