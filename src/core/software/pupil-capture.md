@@ -371,6 +371,10 @@ When placing your markers please follow the guidelines:
 Surfaces can be defined with Pupil Capture in real-time, or post-hoc with Pupil Player.
 In both cases the necessary steps are as follows:
 
+<video width="100%" controls class="mb-5">
+  <source src="../../media/core/srf-tracking.mp4" type="video/mp4">
+</video>
+
 *   Prepare your environment as described above.
 *   Turn on the `Surface Tracker` plugin .
 *   Make sure the camera is pointing at your AOI and the markers are well detected.
