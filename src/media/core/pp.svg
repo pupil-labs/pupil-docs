@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="272px" height="272px" viewBox="0 0 272 272" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>pp-03</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="78.9520334%" y1="50%" x2="0%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#A1DEF0" offset="0%"></stop>
+            <stop stop-color="#38EA92" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="pp-03">
+            <g id="pp-iris-+-pp=pupil-copy-2" transform="translate(17.000000, 11.000000)">
+                <path d="M87.350746,237.868321 C39.3066411,264.985687 0.197818548,242.086832 0.197818548,186.98187 L0.197818548,63.1746183 C0.197818548,8.06965649 39.3773589,-14.9532443 87.5046048,12.0124046 L200.632923,75.4503817 C248.762081,102.416031 248.881536,146.666031 200.838387,173.783397 L87.350746,237.868321 L87.350746,237.868321 Z" id="pp-iris" fill="url(#linearGradient-1)"></path>
+                <path d="M64.6407944,199.189885 C55.3968387,199.189885 46.0687863,192.375954 46.0687863,177.15458 L46.0687863,73.0019084 C46.0687863,57.754771 55.428375,50.9293893 64.7048226,50.9293893 C68.9392863,50.9293893 73.3371653,52.245229 77.779004,54.8396947 L165.988875,106.377863 C173.766871,110.923664 178.232601,117.640267 178.244069,124.805344 C178.256492,131.971374 173.810831,138.700382 166.050992,143.26813 L77.7560685,195.237595 C73.2998952,197.858779 68.8876815,199.189885 64.6407944,199.189885 L64.6407944,199.189885 Z" id="pp-pupil" stroke="#FFFFFF" stroke-width="12" fill="#080707"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -20,7 +20,7 @@ Start Pupil Capture on your computer. Once the program has initalized, a world v
 ## 3. Check Pupil Detection
 To improve Pupil detection, move your head around while looking at a fixed position. Check the Pupil detection visualiztion and confidence levels.
 
-<video width="100%" controls class="mb-4">
+<video width="100%" controls class="mb-5">
   <source src="../media/core/pd.mp4" type="video/mp4">
 </video>
 
@@ -41,10 +41,17 @@ If the detection is good, the confidence levels will be high and the red circle 
 ## 4. Calibration
 In order to know what someone is looking at, we must establish a mapping between pupil and gaze positions. This is what we call calibration. The calibration process establishes a mapping from pupil to gaze coordinates.
 
+<video width="100%" controls class="mb-5">
+  <source src="../media/core/clb-hd.mp4" type="video/mp4">
+</video>
+
 #### Screen Marker Calibration Method
 Click `c` on the world screen or press `c` on the keyboard to start calibrate.
-
 Follow the marker on the screen with your eyes and try to keep your head stationary.
+
+<video width="100%" controls class="mb-5">
+  <source src="../media/core/clb-s.mp4" type="video/mp4">
+</video>
 
 ## 5. Start Recording
 
@@ -54,12 +61,15 @@ Pupil Capture will save the world video strea. and all the corresponding gaze da
 
 **Start/Stop recording**: Press the `r` key o. your keyboard or press the circular `R` button on the left hand side of the world window. The elapsed recording time will appear next to the `R` button.
 
+<video width="100%" controls class="mb-5">
+  <source src="../media/core/rec.mp4" type="video/mp4">
+</video>
+
 See a video demo of how to set recordings path, session name and start recording [here]().
 
 ## 6 Locate Saved Recording
 
 By default, each recording will live in its own unique data folder contained in the recordings folder.
-
 You can make as many recordings as you like.
 
 The default recordings directory will have the following hierarchy:
@@ -74,15 +84,17 @@ recordings
 ```
 
 ## 7. Visualize in Pupil Player
-
 Launch Pupil Player.
 Then drag and drop the recording folder (e.g 001) onto the Pupil Player window.
+
+<div class="pb-4">
+  <img src="../media/core/pp.svg" width="100px" style="display:flex;margin:0 auto;">
+</div>
 
 Player comes with a number of plugins. Plugins are classified by their use-case. Visualization plugins can be additive. This means that you can add multiple instances of a plugin to build up a visualization.
 
 ## 8. Export Video
-
-Export videos of visualization and datasets for further analysis.
+You can export data and videos by pressing `e` on your keyboard or the `e` hot key button in the Pupil Player window.
 
 Exports are saved within a dedicated folder named exports within the original recording folder.
 Each export is contained within a folder within the exports folder. The numbers of the export correlate to the trim marks (frame start and frame end) for the export.
