@@ -1,8 +1,16 @@
 # Pupil Capture
 Pupil Capture is the software used with the Pupil Headset. The software reads the video streams coming in from the world camera and the eye camera. Pupil Capture uses the video streams to detect your pupil, track your gaze, detect and track markers in your environment, record video and events, and stream data in realtime.
 
+<div class="pb-4">
+  <img src="../../media/core/pc.svg" width="100px" style="display:flex;margin:0 auto;">
+</div>
+
 ## Capture Window
 The Capture window is the main control center for `Pupil Capture`. It displays live video feed from pupil headset.
+
+<div class="pb-4">
+  <img src="../../media/core/capture-callout.jpg" width="100%" style="display:flex;margin:0 auto;">
+</div>
 
 1. **Graphs** - This area contains performance graphs. By default the graphs `CPU`, `FPS`, and pupil algorithm detection confidence will be displayed. You can control graph settings with the `System Graphs` plugin.
 1. **Hot keys** - This area contains clickable buttons for plugins.
@@ -11,6 +19,10 @@ The Capture window is the main control center for `Pupil Capture`. It displays l
 
 ## Capture Selection
 By default Pupil Capture will use Local USB as the capture source. If you have a Pupil headset connected to your machine you will see the video displayed from your Pupil headset in the World and eye windows. If no headset is connected or Pupil Capture is unable to open capture devices it will fall back to the Test Image. Other options for capture source are described below.
+
+<video width="100%" controls class="mb-5">
+  <source src="../../media/core/backend-manager.mp4" type="video/mp4">
+</video>
 
 - Test Image - This is the fallback behavior if no capture device is found, or if you do not want to connect to any capture device.
 - Video File Source - select this option to use previously recorded videos for the capture selection.
@@ -22,6 +34,10 @@ After switching to a different capture source, you can click the `Start with def
 
 ## Pupil Detection
 Pupil's algorithms automatically detect the participant's pupil. With the 3d detection and mapping mode, Pupil uses a 3d model of the eye(s) that constantly updates based on observations of the eye. This enables the system to compensate for movements of the headset - slippage. To build up an initial model, you can just look around your field of view.
+
+<video width="100%" controls class="mb-5">
+  <source src="../../media/core/pd.mp4" type="video/mp4">
+</video>
 
 #### Fine-tuning Pupil Detection
 As a first step it is recommended to check the eye camera resolution as some parameters are resolution dependent.
@@ -43,11 +59,35 @@ Keep in mind that pupil size values are defined in pixels and are therefore depe
 ## Calibration
 Pupil uses two cameras. One camera records a subject's eye movements -- we call this the `eye camera`. Another camera records the subject's field of vision -- we call this the `world camera`. In order to know what someone is looking at, we must find the parameters to a function that correlates these two streams of information.
 
+<video width="100%" controls class="mb-5">
+  <source src="../../media/core/clb-hd.mp4" type="video/mp4">
+</video>
+
 ### Calibration Process
 Pupil Headset comes in a variety of configurations.  Calibration can be conducted with a monocular or binocular eye camera setup.
 
+<video width="100%" controls class="mb-5">
+  <source src="../../media/core/clb-mobo.mp4" type="video/mp4">
+</video>
+
+<div style="display:flex;" class="pb-4">
+    <p style="flex-grow:1;display:flex;justify-content:center;">Monocular</p>
+    <p style="flex-grow:1;display:flex;justify-content:center;">Binocualar</p>
+</div>
+
 ### Before every calibration
 Make sure that the users pupil is properly tracked. Make sure that the world camera is in focus for the distance at which you want to calibrate, and that you can see the entire area you want to calibrate within the world cameras extents (FOV).
+
+<div style="display:flex;" class="pb-4">
+    <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
+        <img src="../../media/core/pupil-detect.jpg" height="300px" width="300px">
+        <p>Your Pupil is properly detected by the camera.</p>
+    </div>
+    <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
+        <img src="../../media/core/focus.jpg" height="300px" width="300px">
+        <p>Make sure the world camera is in focus.</p>
+    </div>
+</div>
 
 ### Calibration Methods
 Before starting calibration, ensure that eye(s) are robustly detected and that the headset is comfortable for the participant.

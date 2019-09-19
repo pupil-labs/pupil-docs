@@ -13,7 +13,9 @@ Put on Pupil Core headset and plug it in to your computer.
 
 ## 2. Launch Pupil Capture
 
-<pc-icon/>
+<div class="pb-4">
+  <img src="../media/core/pc.svg" width="100px" style="display:flex;margin:0 auto;">
+</div>
 
 Start Pupil Capture on your computer. Once the program has initalized, a world video and eye video window will appear.
 
