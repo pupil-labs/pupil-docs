@@ -48,10 +48,13 @@ yarn build
 │   │   ├── components
 │   │   ├── theme
 │   │   │   └── layouts
-│   │   ├── public
+│   │   ├── public (static)
 │   │   │   └── imgs/videos
 │   │   ├── config.js
 │   │   └── enhanceApp.js
+│   │
+│   ├── media (processed by webpack)
+│   │   └── imgs/videos
 │   │
 │   ├── core
 │   │   ├── user-guide.md
@@ -71,12 +74,25 @@ In the root dir are where all the page routes are located.
 | `/core/README.md` | `/core/` |
 
 ## Images & media
-All images/videos/animations must be within the `src/.vuepress/public` directory.
 
-- Raster graphics should be `.webp` and `.jpg`.
+#### Relative URLs
+All Markdown files are compiled into Vue components and processed by webpack, so you can and should prefer referencing any asset using relative URLs:
+
+```markdown
+![An image](./image.png)
+```
+
+#### Public files
+Sometimes you may need to provide static assets that are not directly referenced in any of your Markdown or theme components - for example, favicons and PWA icons. In such cases, you can put them inside `src/.vuepress/public` and they will be copied to the root of the generated directory.
+
+#### Asset formats
+
+- Raster graphics should be and `.jpg`.
 - Vector graphics should be `.svg`.
-- Videos/animations should have both `.webm` and `.mp4` versions.
-- Including image posters in `.webp` and `.jpg` versions.
+- Videos/animations should be `.mp4` versions.
+- Including image posters as `.jpg` versions.
+
+Note - `webm` and `webp` will be implemented in future iterations.
 
 ## Style Guide
 We aim for the docs to be concise and readable.
