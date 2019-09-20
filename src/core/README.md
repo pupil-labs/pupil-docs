@@ -14,7 +14,7 @@ Put on Pupil Core headset and plug it in to your computer.
 ## 2. Launch Pupil Capture
 
 <div class="pb-4">
-  <img src="../media/core/pc.svg" width="100px" style="display:flex;margin:0 auto;">
+  <img src="../media/core/icons/pc.png" width="100px" style="display:flex;margin:0 auto;">
 </div>
 
 Start Pupil Capture on your computer. Once the program has initalized, a world video and eye video window will appear.
@@ -90,7 +90,7 @@ Launch Pupil Player.
 Then drag and drop the recording folder (e.g 001) onto the Pupil Player window.
 
 <div class="pb-4">
-  <img src="../media/core/pp.svg" width="100px" style="display:flex;margin:0 auto;">
+  <img src="../media/core/icons/pp.svg" width="100px" style="display:flex;margin:0 auto;">
 </div>
 
 Player comes with a number of plugins. Plugins are classified by their use-case. Visualization plugins can be additive. This means that you can add multiple instances of a plugin to build up a visualization.
