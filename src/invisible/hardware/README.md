@@ -1,6 +1,10 @@
 # Hardware
 
 ## Whats in the box
+
+<v-img :src="$withBase('/invisible/pi_companion.jpg')"></v-img>
+<!-- annotate this image with the below captions -->
+
 - Pupil Invisible glasses
 - Companion Device
 - Connector Cable: USB-C to USB-C cable to connect your Pupil Invisible glasses to your Companion Device
@@ -10,9 +14,7 @@
 
 
 ## Pupil Invisible glasses
-<!-- todo - replace or annotate this image with the below captions -->
-<v-img :src="$withBase('/invisible/pi_companion.jpg')"></v-img>
-
+<!-- annotate this image with the below captions -->
 
 1. Eye cameras
 2. Scene camera: Can be easily detatched/attached.
@@ -51,6 +53,5 @@ Hold the glasses with arms of the frame facing away from you.
 2. press on the lens with your thumb or fingers on the top corner closes to the nose pad. 
 
 ::: tip
-<v-icon large color="info">error_outline</v-icon>
-You will hear a pop sound when the lens is removed or inserted. Don't worry - the frame and lenses are durable!
+You will hear a _pop_ sound when the lens is removed or inserted. Don't worry - the frame and lenses are durable!
 :::
