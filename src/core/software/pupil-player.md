@@ -5,20 +5,26 @@ Pupil Player is the second tool you will use after Pupil Capture. It is a media 
   <img src="../../media/core/icons/pp.png" width="100px" style="display:flex;margin:0 auto;">
 </div>
 
-## Starting Pupil Player
-Drag the recording directory (the triple digit one) directly onto the app icon **or** launch the application and drag + drop the recording directory into Pupil Player window.
+## Load a recording
+Drag the recording folder (the triple digit one) directly onto the app icon **or** launch the application and drag + drop the recording folder into the Pupil Player window.
+
+<div class="pb-4">
+  <img src="../../media/core/imgs/pp-start.jpg" style="display:flex;margin:0 auto;">
+</div>
 
 ## Player Window
-Let's get familiar with the Player window.
+Let's get familiar with the Player window. The Player window is the main control center for `Pupil Player`. It displays the recorded video feed from pupil capture file.
 
-The Player window is the main control center for `Pupil Player`. It displays the recorded video feed from pupil capture file.
+<div class="pb-4">
+  <img src="../../media/core/imgs/pp-callout.jpg" style="display:flex;margin:0 auto;">
+</div>
 
 1. **Graphs** - This area contains performance graphs. By default the graphs `CPU`, `FPS`, and pupil algorithm detection confidence will be displayed. You can control graph settings with the `System Graphs` plugin.
 1. **Hot keys** - This area contains clickable buttons for plugins.
 1. **Timeline Events** - Plugins can add temporal events to this expandable panel.
 1. **Timeline** - Control the playback of the video with the play/pause button (or spacebar on your keyboard). Drag the playhead (vertical line) to the desired point in time.
-  - **Frame Stepping** - You can use the arrow keys on your keyboard or the `<<` `>>` buttons to advance one frame at a time.
-  - **Trimming** - Drag either end of the timeline to set a trim beginning and ending trim marks. The trim section marks directly inform the section of video/data to export.
+    - **Frame Stepping** - You can use the arrow keys on your keyboard or the `<<` `>>` buttons to advance one frame at a time.
+    - **Trimming** - Drag either end of the timeline to set a trim beginning and ending trim marks. The trim section marks directly inform the section of video/data to export.
 1. **Menu** - This area contains settings and contextual information for each plugin.
 1. **Sidebar** - This area contains clickable buttons for each plugin. System plugins are loaded in the top and user added plugins are added below the horizontal separator.
 
@@ -51,11 +57,15 @@ There are two general types of plugins:
 
 In the following sections we provide a summary of plugins currently available and in Pupil Player.
 
-#### Visualization Plugins
+### Visualization Plugins
 We will call plugins with the `Vis` prefix **visualization** plugins. These plugins are simple plugins, are mostly additive (or *not unique*), and directly operate on the gaze positions to produce visualizations. Other plugins like `Offline Surface Tracker` also produces visualizations, but will be discussed elsewhere due to the extent of its features.
 
 #### Vis Circle
 Visualize the gaze positions with a circle for each gaze position. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization.
+
+<div class="pb-4">
+  <img src="../../media/core/imgs/vis-circle.jpg" style="display:flex;margin:0 auto;">
+</div>
 
 You can set the following parameters:
 
@@ -69,6 +79,10 @@ Here we show an example of how you could use **2** instances of the `Vis Circle`
 #### Vis Cross
 Visualize the gaze positions with a cross for each gaze position. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization. You can set the following parameters:
 
+<div class="pb-4">
+  <img src="../../media/core/imgs/vis-cross.jpg" style="display:flex;margin:0 auto;">
+</div>
+
   + `inner offset length` - the distance in pixels to offset the interior cross endpoints from the gaze position. A value of `0` will make the crosshairs intersect the gaze position.
   + `outer length` - The length of the cross lines in pixels from the gaze position. Note - equal values of `inner offset length` and `outer length` will result in a cross with no length, and therefore not rendered.
   + `stroke width` - the thickness or width of the stoke in pixels.
@@ -79,12 +93,22 @@ Here we show an example of how you could use **2** instances of the `Vis Cross` 
 #### Vis Scan Path
 This plugin enables past gaze positions to stay visible for the duration of time specified by the user. This plugin is **unique**, therefore you can only load one instance of this plugin.
 
+<div class="pb-4">
+  <img src="../../media/core/imgs/vis-scanpath.jpg" style="display:flex;margin:0 auto;">
+</div>
+
 On its own, `Scan Path` does not render anything to the screen. It is designed to be used with other plugins. In some cases, it is even required to be enabled in order for other plugins to properly function. When used with `Vis` plugins (like `Vis Circle`, `Vis Cross`, `Vis Polyline`, or `Vis Light Points`) `Scan Path` will enable you to see both the current gaze positions and the past gaze positions for the specified duration of time.
 
 Here we show an example of `Scan Path` set with `0.4` seconds duration used with `Vis Circle`. Each green circle is a gaze position within the last `0.4` seconds of the recording.
 
 #### Vis Polyline
-Visualize the gaze positions with a polyline for each gaze position. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization. You can set the following parameters:
+Visualize the gaze positions with a polyline for each gaze position.
+
+<div class="pb-4">
+  <img src="../../media/core/imgs/vis-polyline.jpg" style="display:flex;margin:0 auto;">
+</div>
+
+This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization. You can set the following parameters:
 
   + `line thickness` - the thickness or width of the polyline stroke in pixels.
   + `color` - define the `red`, `green`, `blue` values for color.
