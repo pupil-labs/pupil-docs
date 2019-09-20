@@ -1,8 +1,5 @@
 ---
-date: "2017-01-20T11:31:37+07:00"
 title: "Get Started!"
-section_weight: 0
-page_weight: 0
 home: true
 featured_products: [
   {
@@ -32,17 +29,10 @@ featured_products: [
 ]
 ---
 
-
 ::: slot dev
 # Developer Documentation
 
 Overview of language, code structure and general conventions.
 
 <v-btn round dark to="/developer/" class="bg-link-blue ml-0"> Read documentation </v-btn>
-:::
-
-::: slot discover
-# Discover
-
-See what projects the Pupil community is up to and working on. Follow up on the most recent research citation and gain a better insight of how our tools are being implemented.
 :::
