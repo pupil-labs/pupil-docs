@@ -1,6 +1,7 @@
 # Invisible Companion App
 Get familiar with Pupil Invisible Companion app!
 
+## Home View
 <v-img 
 :src="require('../../media/invisible/invisible-companion-app/invisible-companion-intro.jpg')"
 ></v-img>
