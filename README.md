@@ -74,7 +74,8 @@ In the root dir are where all the page routes are located.
 | `/core/README.md` | `/core/` |
 
 ## Images & media
-Assets that will be used in .md files are put in `src/media` and assets that are used in .vue files are put in `src/.vuepress/public`.
+- `src/media` - This is where most people will be adding images, videos, etc. For all assets that will be used in .md files.
+- `src/.vuepress/public` - Primarily for those who are developing the theme. For assets that are used in .vue files.
 
 #### Relative URLs
 All Markdown files are compiled into Vue components and processed by webpack, so you can and should prefer referencing any asset using relative URLs:
