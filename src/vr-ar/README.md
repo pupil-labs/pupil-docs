@@ -1,11 +1,6 @@
----
-date = "2017-01-17T12:41:37+07:00"
-section_weight = 2
-page_weight = 0
----
+# Introduction
+Pupil Labs makes add-ons virtual and mixed reality headsets. We currenly make add-ons for HTC Vive, Hololens and Oculus Rift.
 
-# Pupil Hardware
+Each add-on guide outlines the steps to get your eye tracking add-on up and running.
 
-Pupil Labs is based in Berlin and ships Pupil eye tracking headsets and VR/AR eye tracking add-ons to individuals, universities, and corporate enterprises worldwide!
-
-Go to the [Pupil store](https://pupil-labs.com/store "Pupil Labs Store") for prices, versions, and specs.
+<v-img :src="require('../media/vr-ar/imgs/vive.jpg')"></v-img>

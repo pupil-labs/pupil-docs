@@ -40,6 +40,10 @@ module.exports = {
       ],
       '/vr-ar/': [
         '',
+        'vive',
+        'hololens',
+        'rift',
+        'bt300',
       ],
       '/cloud/': [
         '',
