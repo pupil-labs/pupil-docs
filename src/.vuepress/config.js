@@ -12,7 +12,16 @@ module.exports = {
     sidebar: {
       '/invisible/': [
         '',
-        'getting-started'
+        'hardware/',
+        {
+          title: 'User Guide',
+          children: [
+            'user-guide/intro',
+            'user-guide/invisible-companion-app',
+            'user-guide/analysis',
+            'user-guide/troubleshooting'
+          ]          
+        }
       ],
       '/core/': [
         '',
