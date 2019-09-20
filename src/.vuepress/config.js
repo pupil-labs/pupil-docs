@@ -20,7 +20,7 @@ module.exports = {
             'user-guide/invisible-companion-app',
             'user-guide/analysis',
             'user-guide/troubleshooting'
-          ]          
+          ]
         }
       ],
       '/core/': [
@@ -31,7 +31,8 @@ module.exports = {
           children: [
             'software/pupil-capture',
             'software/pupil-player',
-            'software/pupil-service'
+            'software/pupil-service',
+            'software/pupil-mobile'
           ]
         },
         'diy/'
