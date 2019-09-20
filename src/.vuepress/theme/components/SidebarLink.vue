@@ -156,8 +156,10 @@ a.sidebar-link
   // .sidebar-group &
   //   padding-left 40px
   .sidebar-sub-headers &
-    padding-left 52px
+    padding-left 48px
     border-left unset
+  .depth--2 &
+    padding-left 64px
 
 .sidebar-group-items
   .sidebar-link
