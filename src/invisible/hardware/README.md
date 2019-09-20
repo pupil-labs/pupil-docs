@@ -2,7 +2,7 @@
 
 ## Whats in the box
 
-<v-img :src="$withBase('/invisible/pi_companion.jpg')"></v-img>
+<v-img :src="require('../../media/invisible/pi_companion.jpg')"></v-img>
 <!-- annotate this image with the below captions -->
 
 - Pupil Invisible glasses
