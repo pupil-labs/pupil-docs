@@ -2,14 +2,14 @@
 Pupil Capture is the software used with the Pupil Headset. The software reads the video streams coming in from the world camera and the eye camera. Pupil Capture uses the video streams to detect your pupil, track your gaze, detect and track markers in your environment, record video and events, and stream data in realtime.
 
 <div class="pb-4">
-  <img src="../../media/core/icons/pc.png" width="100px" style="display:flex;margin:0 auto;">
+  <img src="../../media/core/icons/pc.png" style="display:flex;margin:0 auto;width:100px;">
 </div>
 
 ## Capture Window
 The Capture window is the main control center for `Pupil Capture`. It displays live video feed from pupil headset.
 
 <div class="pb-4">
-  <img src="../../media/core/imgs/capture-callout.jpg" width="100%" style="display:flex;margin:0 auto;">
+  <img src="../../media/core/imgs/capture-callout.jpg" style="display:flex;margin:0 auto;">
 </div>
 
 1. **Graphs** - This area contains performance graphs. By default the graphs `CPU`, `FPS`, and pupil algorithm detection confidence will be displayed. You can control graph settings with the `System Graphs` plugin.
@@ -80,11 +80,11 @@ Make sure that the users pupil is properly tracked. Make sure that the world cam
 
 <div style="display:flex;" class="pb-4">
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <img src="../../media/core/imgs/pupil-detect.jpg" height="300px" width="300px">
+        <img src="../../media/core/imgs/pupil-detect.jpg" style="width:300px;height:300px;">
         <p>Your Pupil is properly detected by the camera.</p>
     </div>
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <img src="../../media/core/imgs/focus.jpg" height="300px" width="300px">
+        <img src="../../media/core/imgs/focus.jpg" style="width:300px;height:300px;">
         <p>Make sure the world camera is in focus.</p>
     </div>
 </div>
@@ -118,11 +118,11 @@ printed calibration marker like the one shown in the video. [Download Pupil Labs
 
 <div style="display:flex;" class="pb-4">
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <img src="../../media/core/imgs/v0.4_calib_marker_02.jpg" height="300px" width="300px">
+        <img src="../../media/core/imgs/v0.4_calib_marker_02.jpg" style="width:300px;height:300px;">
         <p>Pupil Calibration Marker v0.4</p>
     </div>
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <img src="../../media/core/imgs/v0.4_calib_marker_01.jpg" height="300px" width="300px">
+        <img src="../../media/core/imgs/v0.4_calib_marker_01.jpg" style="width:300px;height:300px;">
         <p>Pupil Calibration Stop Marker v0.4</p>
     </div>
 </div>
@@ -225,7 +225,7 @@ If you open up a session folder you will see a collection of video(s) and data f
 Open the `Plugin Manager` menu on the right.
 
 <div class="pb-4">
-  <img src="../../media/core/imgs//capture-plugin.jpg" width="100%" style="display:flex;margin:0 auto;">
+  <img src="../../media/core/imgs//capture-plugin.jpg" style="display:flex;margin:0 auto;width:100%;">
 </div>
 
 It lists all available plugins.
@@ -334,11 +334,11 @@ There are many different apriltag types, currently we only support apritags of t
 
 <div style="display:flex;" class="pb-4">
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <img src="../../media/core/imgs/apriltags_tag36h11_0-23.jpg" width="60%" style="padding-bottom:16px;">
+        <img src="../../media/core/imgs/apriltags_tag36h11_0-23.jpg" style="padding-bottom:16px;width:60%;">
         <p>Apriltags tag36h11 0-23</p>
     </div>
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <img src="../../media/core/imgs/apriltags_tag36h11_24-47.jpg" width="60%" style="padding-bottom:16px;">
+        <img src="../../media/core/imgs/apriltags_tag36h11_24-47.jpg" style="padding-bottom:16px;width:60%;">
         <p>Apriltags tag36h11 24-47</p>
     </div>
 </div>

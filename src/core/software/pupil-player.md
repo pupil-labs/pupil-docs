@@ -2,23 +2,29 @@
 Pupil Player is the second tool you will use after Pupil Capture. It is a media and data visualizer at its core. You will use it to look at Pupil Capture recordings. Visualize your data and export it.
 
 <div class="pb-4">
-  <img src="../../media/core/icons/pp.png" width="100px" style="display:flex;margin:0 auto;">
+  <img src="../../media/core/icons/pp.png" style="display:flex;margin:0 auto;width:100px;">
 </div>
 
-## Starting Pupil Player
-Drag the recording directory (the triple digit one) directly onto the app icon **or** launch the application and drag + drop the recording directory into Pupil Player window.
+## Load a recording
+Drag the recording folder (the triple digit one) directly onto the app icon **or** launch the application and drag + drop the recording folder into the Pupil Player window.
+
+<div class="pb-4">
+  <img src="../../media/core/imgs/pp-start.jpg" style="display:flex;margin:0 auto;">
+</div>
 
 ## Player Window
-Let's get familiar with the Player window.
+Let's get familiar with the Player window. The Player window is the main control center for `Pupil Player`. It displays the recorded video feed from pupil capture file.
 
-The Player window is the main control center for `Pupil Player`. It displays the recorded video feed from pupil capture file.
+<div class="pb-4">
+  <img src="../../media/core/imgs/pp-callout.jpg" style="display:flex;margin:0 auto;">
+</div>
 
 1. **Graphs** - This area contains performance graphs. By default the graphs `CPU`, `FPS`, and pupil algorithm detection confidence will be displayed. You can control graph settings with the `System Graphs` plugin.
 1. **Hot keys** - This area contains clickable buttons for plugins.
 1. **Timeline Events** - Plugins can add temporal events to this expandable panel.
 1. **Timeline** - Control the playback of the video with the play/pause button (or spacebar on your keyboard). Drag the playhead (vertical line) to the desired point in time.
-  - **Frame Stepping** - You can use the arrow keys on your keyboard or the `<<` `>>` buttons to advance one frame at a time.
-  - **Trimming** - Drag either end of the timeline to set a trim beginning and ending trim marks. The trim section marks directly inform the section of video/data to export.
+    - **Frame Stepping** - You can use the arrow keys on your keyboard or the `<<` `>>` buttons to advance one frame at a time.
+    - **Trimming** - Drag either end of the timeline to set a trim beginning and ending trim marks. The trim section marks directly inform the section of video/data to export.
 1. **Menu** - This area contains settings and contextual information for each plugin.
 1. **Sidebar** - This area contains clickable buttons for each plugin. System plugins are loaded in the top and user added plugins are added below the horizontal separator.
 
@@ -51,11 +57,15 @@ There are two general types of plugins:
 
 In the following sections we provide a summary of plugins currently available and in Pupil Player.
 
-#### Visualization Plugins
+### Visualization Plugins
 We will call plugins with the `Vis` prefix **visualization** plugins. These plugins are simple plugins, are mostly additive (or *not unique*), and directly operate on the gaze positions to produce visualizations. Other plugins like `Offline Surface Tracker` also produces visualizations, but will be discussed elsewhere due to the extent of its features.
 
 #### Vis Circle
 Visualize the gaze positions with a circle for each gaze position. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization.
+
+<div class="pb-4">
+  <img src="../../media/core/imgs/vis-circle.jpg" style="display:flex;margin:0 auto;">
+</div>
 
 You can set the following parameters:
 
@@ -69,6 +79,10 @@ Here we show an example of how you could use **2** instances of the `Vis Circle`
 #### Vis Cross
 Visualize the gaze positions with a cross for each gaze position. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization. You can set the following parameters:
 
+<div class="pb-4">
+  <img src="../../media/core/imgs/vis-cross.jpg" style="display:flex;margin:0 auto;">
+</div>
+
   + `inner offset length` - the distance in pixels to offset the interior cross endpoints from the gaze position. A value of `0` will make the crosshairs intersect the gaze position.
   + `outer length` - The length of the cross lines in pixels from the gaze position. Note - equal values of `inner offset length` and `outer length` will result in a cross with no length, and therefore not rendered.
   + `stroke width` - the thickness or width of the stoke in pixels.
@@ -79,12 +93,22 @@ Here we show an example of how you could use **2** instances of the `Vis Cross` 
 #### Vis Scan Path
 This plugin enables past gaze positions to stay visible for the duration of time specified by the user. This plugin is **unique**, therefore you can only load one instance of this plugin.
 
+<div class="pb-4">
+  <img src="../../media/core/imgs/vis-scanpath.jpg" style="display:flex;margin:0 auto;">
+</div>
+
 On its own, `Scan Path` does not render anything to the screen. It is designed to be used with other plugins. In some cases, it is even required to be enabled in order for other plugins to properly function. When used with `Vis` plugins (like `Vis Circle`, `Vis Cross`, `Vis Polyline`, or `Vis Light Points`) `Scan Path` will enable you to see both the current gaze positions and the past gaze positions for the specified duration of time.
 
 Here we show an example of `Scan Path` set with `0.4` seconds duration used with `Vis Circle`. Each green circle is a gaze position within the last `0.4` seconds of the recording.
 
 #### Vis Polyline
-Visualize the gaze positions with a polyline for each gaze position. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization. You can set the following parameters:
+Visualize the gaze positions with a polyline for each gaze position.
+
+<div class="pb-4">
+  <img src="../../media/core/imgs/vis-polyline.jpg" style="display:flex;margin:0 auto;">
+</div>
+
+This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization. You can set the following parameters:
 
   + `line thickness` - the thickness or width of the polyline stroke in pixels.
   + `color` - define the `red`, `green`, `blue` values for color.
@@ -92,7 +116,13 @@ Visualize the gaze positions with a polyline for each gaze position. This plugin
 An example showing `Vis Polyline` used with `Vis Circle` and `Scan Path`. The polyline enables one to visualize the sequence of the gaze positions over the duration specified by `Scan Path`.
 
 #### Vis Light Points
-Visualize the gaze positions as a point of light for each gaze position. The `falloff` of the light from the gaze position is specified by the user. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization. You can set the following parameters:
+Visualize the gaze positions as a point of light for each gaze position. The `falloff` of the light from the gaze position is specified by the user.
+
+<div class="pb-4">
+  <img src="../../media/core/imgs/vis-lightpoints.jpg" style="display:flex;margin:0 auto;">
+</div>
+
+This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization. You can set the following parameters:
 
   + `falloff` - The distance (in pixels) at which the light begins to fall off (fade to black). A very low number will result in a very dark visualization with tiny white light points. A very large number will result in a visualization of the world view with little or no emphasis on the gaze positions.
 
@@ -101,9 +131,13 @@ Here is an example demonstrating `Vis Light Points` with a falloff of 73.
 #### Vis Eye Video Overlay
 Here is an example of the `Eye Video Overlay` with binocular eye videos.
 
-This plugin can be used to overlay the eye video on top of the world video. Note that the eye video is not recorded by default in Pupil Capture, so if you want to use this plugin, make sure to check `record eye video` in Pupil Capture. This plugin is **unique**, therefore you can only load one instance of this plugin.
+<div class="pb-4">
+  <img src="../../media/core/imgs/vis-eyeoverlay.jpg" style="display:flex;margin:0 auto;">
+</div>
 
- You can set the following parameters:
+This plugin can be used to overlay the eye video on top of the world video. Note that the eye video is not recorded by default in Pupil Capture so if you want to use this plugin, make sure to check `record eye video` in Pupil Capture.
+
+This plugin is **unique**, therefore you can only load one instance of this plugin. You can set the following parameters:
 
   + `opacity` - the opacity of the overlay eye video image. `1.0` is opaque and `0.0` is transparent.
   + `video scale` - use the slider to increase or decrease the size of the eye videos.
@@ -114,6 +148,18 @@ This plugin can be used to overlay the eye video on top of the world video. Note
 ### Pupil Data And Post-hoc Detection
 By default, Player starts with the `Pupil From Recording` plugin that tries to load pupil positions that were detected and stored during a Pupil Capture recording.
 Alternatively, one can run the pupil detection post-hoc.
+
+**Offline (post-hoc) Pupil Detection and Gaze Mapping**
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/_Jnxi1OMMTc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+**Offline (post-hoc) Gaze Mapping With Manual Reference Locations**
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/mWyDQHhm7-w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+**Use Offline (post-hoc) Calibration For Another Recording**
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/eEl3sswsTms" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+**Offline (post-hoc) Gaze Mapping Validation**
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/aPLnqu26tWI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 #### Offline Pupil Detector
 The `Offline Pupil Detector` plugin can be used with any dataset where eye videos were recorded.
@@ -180,6 +226,10 @@ These plugins are simple unique plugins, that operate on the gaze data for analy
 This plugin is an offline version of the [Surface Tracking](#surface-tracking) plugin for Pupil Capture.
 You can use this plugin to detect markers in the recording, define surfaces, edit surfaces, and create and export visualizations of gaze data within the defined surfaces.
 
+<div class="pb-4">
+  <img src="../../media/core/imgs/offline-srf-tracker.jpg" style="display:flex;margin:0 auto;">
+</div>
+
 Here is an example workflow for using the `Offline Surface Detector` plugin to generate heatmap visualizations and export surface data reports:
 
   + Load `Offline Surface Detector` plugin - if you already have surfaces defined, the load may take a few seconds because the plugin will look through the entire video and cache the detected surfaces.
@@ -216,12 +266,19 @@ This name is augmented by an automatically generated numerical identifier.
 #### Fixation Detector
 The offline fixation detector calculates fixations for the whole recording. The menu gives feedback about the progress of the detection, how many fixations were found, shows and detailed information about the current fixation. Press `f` or click the `f` hot key button on the left hand side of the window to seek forward to the next fixation.
 
+<div class="pb-4">
+  <img src="../../media/core/imgs/pg-fixation.jpg" style="display:flex;margin:0 auto;">
+</div>
+
 Toggle `Show fixations` to show a visualization of fixations. The blue number is the number of the fixation (0 being the first fixation). You can export fixation reports for your current trim section by pressing `e` on your keyboard or the `e` hot key button on the left hand side of the window.
 
 You can find more information in our [dedicated fixation detector section](#fixation-detector).
 
 #### Head Pose Tracking
 This plugin uses fiducial markers ([apriltag](https://april.eecs.umich.edu/software/apriltag.html)) to build a 3d model of the environment and track the headset's pose within it.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/9x9h98tywFI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 See the [surface tracking section](#surface-tracking) for images of the markers to download.
 
 See the [detailed data format section](#detailed-data-format) for more information about the exported data.
@@ -238,6 +295,8 @@ Active video exporters will run in the background and you can see the progress b
 #### Export Directory
 Every export creates a new folder within the `exports` sub-directory of your recording. All data from the export is saved to this folder.
 
+<!-- export dir img -->
+
 #### Export Handling
 You can select the frame range to export by setting trim marks in the seek bar or directly in the `General Settings` menu.
 
@@ -247,6 +306,10 @@ Completed tasks are kept in the list for reference.
 
 #### World Video Exporter
 The `World Video Exporter` is loaded by default.
+
+<div class="pb-4">
+  <img src="../../media/core/imgs/export.jpg" style="display:flex;margin:0 auto;">
+</div>
 
 The export saves the world video as shown in Player, including all currently active visualizations (see the \[Visualization Plugins\](#visualization-plugins) section).
 
@@ -261,6 +324,10 @@ Specifically, it undistorts the world video images using the camera intrinsics. 
 
 #### Raw Data Exporter
 The `Raw Data Exporter` export pupil and gaze data tp `.csv` files and is active bu default.
+
+<div class="pb-4">
+  <img src="../../media/core/imgs/raw-export.jpg" style="display:flex;margin:0 auto;">
+</div>
 
 ## Developing your own Plugin
 To develop your own plugin see the <a href="#plugin-guide">developer guide</a>.
