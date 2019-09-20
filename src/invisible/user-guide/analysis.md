@@ -9,8 +9,3 @@ Pupil Player is our open-source analysis software originally created for ==Pupil
 
 ## Third Party Tools
 You can also use Pupil Player to export Pupil Invisible recordings to a list of compatible third-party software, which includes iMotions and Blickshift. You can also export the raw data to CSV format and use it in your own custom software.
-
-
-# Recording format?
-<!-- Do we want to document this at all or are people supposed to export with Pupil Player to access the data for now? -->
-
