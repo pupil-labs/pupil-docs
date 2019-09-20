@@ -5,7 +5,7 @@
       v-container
         v-container
           v-layout(column justify-center align-center)
-            h1 {{ data.title }}
+            h1.pb-0 {{ data.title }}
             div(style="max-width:500px;margin:auto;text-align:center;")
               p {{ data.subtitle }}
 
@@ -29,7 +29,7 @@
               p {{ product.title }}
 
 
-    v-container
+    v-container.mb-4
       v-card.bg-pl-dark-gray(dark)
         v-layout(row wrap justify-center align-center)
           v-flex(xs12 sm6 order-xs2 order-sm1).pa-4
@@ -40,10 +40,10 @@
               :src="$withBase('/illustrations/web_analyze_cropped.svg')"
             )
 
-    v-container
-      v-layout(justify-center align-center text-xs-center)
-        div(style="max-width:550px;")
-          Content(slot-key="discover")
+    //- v-container
+    //-   v-layout(justify-center align-center text-xs-center)
+    //-     div(style="max-width:550px;")
+    //-       Content(slot-key="discover")
 
     div.bg-sclera-gray
       v-container
