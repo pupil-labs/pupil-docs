@@ -2,14 +2,14 @@
 Pupil Capture is the software used with the Pupil Headset. The software reads the video streams coming in from the world camera and the eye camera. Pupil Capture uses the video streams to detect your pupil, track your gaze, detect and track markers in your environment, record video and events, and stream data in realtime.
 
 <div class="pb-4">
-  <img src="../../media/core/icons/pc.svg" width="100px" style="display:flex;margin:0 auto;">
+  <img src="../../media/core/icons/pc.png" width="100px" style="display:flex;margin:0 auto;">
 </div>
 
 ## Capture Window
 The Capture window is the main control center for `Pupil Capture`. It displays live video feed from pupil headset.
 
 <div class="pb-4">
-  <img src="../../media/core/capture-callout.jpg" width="100%" style="display:flex;margin:0 auto;">
+  <img src="../../media/core/imgs/capture-callout.jpg" width="100%" style="display:flex;margin:0 auto;">
 </div>
 
 1. **Graphs** - This area contains performance graphs. By default the graphs `CPU`, `FPS`, and pupil algorithm detection confidence will be displayed. You can control graph settings with the `System Graphs` plugin.
@@ -21,7 +21,7 @@ The Capture window is the main control center for `Pupil Capture`. It displays l
 By default Pupil Capture will use Local USB as the capture source. If you have a Pupil headset connected to your machine you will see the video displayed from your Pupil headset in the World and eye windows. If no headset is connected or Pupil Capture is unable to open capture devices it will fall back to the Test Image. Other options for capture source are described below.
 
 <video width="100%" controls class="mb-5">
-  <source src="../../media/core/backend-manager.mp4" type="video/mp4">
+  <source src="../../media/core/videos/backend-manager.mp4" type="video/mp4">
 </video>
 
 - Test Image - This is the fallback behavior if no capture device is found, or if you do not want to connect to any capture device.
@@ -36,7 +36,7 @@ After switching to a different capture source, you can click the `Start with def
 Pupil's algorithms automatically detect the participant's pupil. With the 3d detection and mapping mode, Pupil uses a 3d model of the eye(s) that constantly updates based on observations of the eye. This enables the system to compensate for movements of the headset - slippage. To build up an initial model, you can just look around your field of view.
 
 <video width="100%" controls class="mb-5">
-  <source src="../../media/core/pd.mp4" type="video/mp4">
+  <source src="../../media/core/videos/pd.mp4" type="video/mp4">
 </video>
 
 #### Fine-tuning Pupil Detection
@@ -60,14 +60,14 @@ Keep in mind that pupil size values are defined in pixels and are therefore depe
 Pupil uses two cameras. One camera records a subject's eye movements -- we call this the `eye camera`. Another camera records the subject's field of vision -- we call this the `world camera`. In order to know what someone is looking at, we must find the parameters to a function that correlates these two streams of information.
 
 <video width="100%" controls class="mb-5">
-  <source src="../../media/core/clb-hd.mp4" type="video/mp4">
+  <source src="../../media/core/videos/clb-hd.mp4" type="video/mp4">
 </video>
 
 ### Calibration Process
 Pupil Headset comes in a variety of configurations.  Calibration can be conducted with a monocular or binocular eye camera setup.
 
 <video width="100%" controls class="mb-5">
-  <source src="../../media/core/clb-mobo.mp4" type="video/mp4">
+  <source src="../../media/core/videos/clb-mobo.mp4" type="video/mp4">
 </video>
 
 <div style="display:flex;" class="pb-4">
@@ -80,11 +80,11 @@ Make sure that the users pupil is properly tracked. Make sure that the world cam
 
 <div style="display:flex;" class="pb-4">
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <img src="../../media/core/pupil-detect.jpg" height="300px" width="300px">
+        <img src="../../media/core/imgs/pupil-detect.jpg" height="300px" width="300px">
         <p>Your Pupil is properly detected by the camera.</p>
     </div>
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <img src="../../media/core/focus.jpg" height="300px" width="300px">
+        <img src="../../media/core/imgs/focus.jpg" height="300px" width="300px">
         <p>Make sure the world camera is in focus.</p>
     </div>
 </div>
@@ -96,7 +96,7 @@ Before starting calibration, ensure that eye(s) are robustly detected and that t
 This is the default method, and a quick method to get started. It is best suited for close range eye-tracking in a narrow field of view.
 
 <video width="100%" controls class="mb-5">
-  <source src="../../media/core/clb-s.mp4" type="video/mp4">
+  <source src="../../media/core/videos/clb-s.mp4" type="video/mp4">
 </video>
 
 1. Select `Screen Marker Calibration`
@@ -113,16 +113,16 @@ This method is done with an operator and a subject. It is suited for midrange di
 printed calibration marker like the one shown in the video. [Download Pupil Labs Calibration Marker v0.4 to print](/images/pupil-capture/calibration-markers/v0.4_markers/v0.4_marker.v12.pdf) or display on smartphone/tablet screen.
 
 <video width="100%" controls class="mb-5">
-  <source src="../../media/core/clb-man.mp4" type="video/mp4">
+  <source src="../../media/core/videos/clb-man.mp4" type="video/mp4">
 </video>
 
 <div style="display:flex;" class="pb-4">
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <img src="../../media/core/v0.4_calib_marker_02.jpg" height="300px" width="300px">
+        <img src="../../media/core/imgs/v0.4_calib_marker_02.jpg" height="300px" width="300px">
         <p>Pupil Calibration Marker v0.4</p>
     </div>
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <img src="../../media/core/v0.4_calib_marker_01.jpg" height="300px" width="300px">
+        <img src="../../media/core/imgs/v0.4_calib_marker_01.jpg" height="300px" width="300px">
         <p>Pupil Calibration Stop Marker v0.4</p>
     </div>
 </div>
@@ -171,7 +171,7 @@ This paper introduces and evaluates this type of single marker calibration - <co
 This method is for special situations and far distances. Usually not required.
 
 <video width="100%" controls class="mb-5">
-  <source src="../../media/core/clb-natural.mp4" type="video/mp4">
+  <source src="../../media/core/videos/clb-natural.mp4" type="video/mp4">
 </video>
 
 1. Select `Natural Features Calibration`
@@ -211,7 +211,7 @@ In 2D mode, you should easily be able to achieve tracking accuracy within the ph
 
 ## Recording
 <video width="100%" controls class="mb-5">
-  <source src="../../media/core/rec.mp4" type="video/mp4">
+  <source src="../../media/core/videos/rec.mp4" type="video/mp4">
 </video>
 
 Press `r` on your keyboard or press the blue circular `R` button on the left hand side of the world window to start recording. You will see red text with the elapsed time of recording next to the `R` button. To stop recording, press `r` on your keyboard or press the `R` button on screen.
@@ -225,7 +225,7 @@ If you open up a session folder you will see a collection of video(s) and data f
 Open the `Plugin Manager` menu on the right.
 
 <div class="pb-4">
-  <img src="../../media/core/capture-plugin.jpg" width="100%" style="display:flex;margin:0 auto;">
+  <img src="../../media/core/imgs//capture-plugin.jpg" width="100%" style="display:flex;margin:0 auto;">
 </div>
 
 It lists all available plugins.
@@ -251,7 +251,7 @@ with at least one subscription is transferred.
 `Pupil Remote` is the plugin that functions as the entry point to the broadcast infrastructure. It also provides a high level interface to control Pupil Capture over the network (e.g. start/stop a recording).
 
 <video width="100%" controls class="mb-5">
-  <source src="../../media/core/pr.mp4" type="video/mp4">
+  <source src="../../media/core/videos/pr.mp4" type="video/mp4">
 </video>
 
 * Load the `Pupil Remote` plugin from the `General` sub-menu in the GUI (it is loaded by default).
@@ -334,11 +334,11 @@ There are many different apriltag types, currently we only support apritags of t
 
 <div style="display:flex;" class="pb-4">
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <img src="../../media/core/apriltags_tag36h11_0-23.jpg" width="60%" style="padding-bottom:16px;">
+        <img src="../../media/core/imgs/apriltags_tag36h11_0-23.jpg" width="60%" style="padding-bottom:16px;">
         <p>Apriltags tag36h11 0-23</p>
     </div>
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <img src="../../media/core/apriltags_tag36h11_24-47.jpg" width="60%" style="padding-bottom:16px;">
+        <img src="../../media/core/imgs/apriltags_tag36h11_24-47.jpg" width="60%" style="padding-bottom:16px;">
         <p>Apriltags tag36h11 24-47</p>
     </div>
 </div>
@@ -372,7 +372,7 @@ Surfaces can be defined with Pupil Capture in real-time, or post-hoc with Pupil 
 In both cases the necessary steps are as follows:
 
 <video width="100%" controls class="mb-5">
-  <source src="../../media/core/srf-tracking.mp4" type="video/mp4">
+  <source src="../../media/core/videos/srf-tracking.mp4" type="video/mp4">
 </video>
 
 *   Prepare your environment as described above.

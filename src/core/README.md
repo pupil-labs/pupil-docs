@@ -23,7 +23,7 @@ Start Pupil Capture on your computer. Once the program has initalized, a world v
 To improve Pupil detection, move your head around while looking at a fixed position. Check the Pupil detection visualiztion and confidence levels.
 
 <video width="100%" controls class="mb-5">
-  <source src="../media/core/pd.mp4" type="video/mp4">
+  <source src="../media/core/videos/pd.mp4" type="video/mp4">
 </video>
 
 Take a look at the eye window.
@@ -32,7 +32,7 @@ If the pupil is detected you will see a red circle around the edge of your pupil
 If the detection is good, the confidence levels will be high and the red circle will be opaque. If the detection is poor, then the confidence levels will be low and the red circle will be translucent.
 
 <div class="pb-4">
-  <img src="../media/core/good_bad_eye.jpg" width="60%" style="display:flex;margin:0 auto;">
+  <img src="../media/core/imgs/good_bad_eye.jpg" width="60%" style="display:flex;margin:0 auto;">
 </div>
 
 1. Do - The eye is in focus and all range of the eye movements are visible. (Focus is only important for 120hz eye camera. 200hz camera has fixed focus.)
@@ -44,7 +44,7 @@ If the detection is good, the confidence levels will be high and the red circle 
 In order to know what someone is looking at, we must establish a mapping between pupil and gaze positions. This is what we call calibration. The calibration process establishes a mapping from pupil to gaze coordinates.
 
 <video width="100%" controls class="mb-5">
-  <source src="../media/core/clb-hd.mp4" type="video/mp4">
+  <source src="../media/core/videos/clb-hd.mp4" type="video/mp4">
 </video>
 
 #### Screen Marker Calibration Method
@@ -52,7 +52,7 @@ Click `c` on the world screen or press `c` on the keyboard to start calibrate.
 Follow the marker on the screen with your eyes and try to keep your head stationary.
 
 <video width="100%" controls class="mb-5">
-  <source src="../media/core/clb-s.mp4" type="video/mp4">
+  <source src="../media/core/videos/clb-s.mp4" type="video/mp4">
 </video>
 
 ## 5. Start Recording
@@ -64,7 +64,7 @@ Pupil Capture will save the world video strea. and all the corresponding gaze da
 **Start/Stop recording**: Press the `r` key o. your keyboard or press the circular `R` button on the left hand side of the world window. The elapsed recording time will appear next to the `R` button.
 
 <video width="100%" controls class="mb-5">
-  <source src="../media/core/rec.mp4" type="video/mp4">
+  <source src="../media/core/videos/rec.mp4" type="video/mp4">
 </video>
 
 See a video demo of how to set recordings path, session name and start recording [here]().
@@ -90,7 +90,7 @@ Launch Pupil Player.
 Then drag and drop the recording folder (e.g 001) onto the Pupil Player window.
 
 <div class="pb-4">
-  <img src="../media/core/icons/pp.svg" width="100px" style="display:flex;margin:0 auto;">
+  <img src="../media/core/icons/pp.png" width="100px" style="display:flex;margin:0 auto;">
 </div>
 
 Player comes with a number of plugins. Plugins are classified by their use-case. Visualization plugins can be additive. This means that you can add multiple instances of a plugin to build up a visualization.

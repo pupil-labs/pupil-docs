@@ -1,6 +1,6 @@
 # Pupil Service
 
-<ps-icon/>
+
 
 Pupil Service is like Pupil Capture except it does not have a world video feed or GUI. It is intended to be used with VR and AR eye tracking setups.
 

@@ -2,7 +2,7 @@
 You wear Pupil like a pair of glasses. Pupil connects to a computing device via a USB-A or USB-C cable. The headset is designed to be lightweight and adjustable in order to accommodate a wide range of users.
 
 <div class="pb-4">
-  <img src="../../media/core/w120_e200b.png" width="100%" style="display:flex;margin:0 auto;">
+  <img src="../../media/core/imgs/w120_e200b.png" width="100%" style="display:flex;margin:0 auto;">
 </div>
 
 Pupil ships with a number of additional parts. The below sections provide an overview of their use and a guide to adjusting the Pupil headset.
@@ -24,7 +24,7 @@ The high speed 2d world camera comes with two lenses.
 The world camera lens are interchangeable, so you can swap between the two lenses provided for normal or wide angle FOV.
 
 <video width="100%" controls class="mb-5">
-  <source src="../../media/core/worldcam-lens.mp4" type="video/mp4">
+  <source src="../../media/core/videos/worldcam-lens.mp4" type="video/mp4">
 </video>
 
 ::: warning
@@ -37,7 +37,7 @@ If you need to adjust the eye cameras beyond the built in adjustment range,
 you can use the orange arm extenders that are shipped with your Pupil headset.
 
 <video width="100%" controls class="mb-5">
-  <source src="../../media/core/arm-extend.mp4" type="video/mp4">
+  <source src="../../media/core/videos/arm-extend.mp4" type="video/mp4">
 </video>
 
 1. Unplug your eye camera.
@@ -57,7 +57,7 @@ Starting on 2018-02-01 the arm extender is shipped with all Pupil headset orders
 All Pupil headsets come with 2 sets of nose pads. You can swap the nose pads to customize the fit.
 
 <video width="100%" controls class="mb-5">
-  <source src="../../media/core/nosepad.mp4" type="video/mp4">
+  <source src="../../media/core/videos/nosepad.mp4" type="video/mp4">
 </video>
 
 ::: tip
@@ -71,21 +71,21 @@ Depending on your configuration, some additional parts may be included with your
 The eye camera arm slides in and out of the headset frame. You can slide the eye camera arm along the track.
 
 <video width="100%" controls class="mb-5">
-  <source src="../../media/core/eyecam-slide.mp4" type="video/mp4">
+  <source src="../../media/core/videos/eyecam-slide.mp4" type="video/mp4">
 </video>
 
 #### Rotate World Camera
 You can rotate the world camera up and down to align with your FOV.
 
 <video width="100%" controls class="mb-5">
-  <source src="../../media/core/worldcam-rotate.mp4" type="video/mp4">
+  <source src="../../media/core/videos/worldcam-rotate.mp4" type="video/mp4">
 </video>
 
 #### Rotate Eye Camera
 The eye camera arm is connected to the eye camera via the ball joint. You can rotate about its ball joint.
 
 <video width="100%" controls class="mb-5">
-  <source src="../../media/core/eyecam-rotate.mp4" type="video/mp4">
+  <source src="../../media/core/videos/eyecam-rotate.mp4" type="video/mp4">
 </video>
 
 #### Ball Joint Set Screw
@@ -94,7 +94,7 @@ We recommend setting the set screw so that you can still move the eye camera by 
 You can also tighten the set screw to fix the eye camera in place.
 
 <video width="100%" controls class="mb-5">
-  <source src="../../media/core/eyecam-screw.mp4" type="video/mp4">
+  <source src="../../media/core/videos/eyecam-screw.mp4" type="video/mp4">
 </video>
 
 ::: tip
@@ -108,19 +108,19 @@ Before you calibrate, make sure to properly adjust the headset to get optimal ey
 Set the focus for the distance at which you will be calibrating by rotating the camera lens.
 
 <video width="100%" controls class="mb-5">
-  <source src="../../media/core/worldcam-focus.mp4" type="video/mp4">
+  <source src="../../media/core/videos/worldcam-focus.mp4" type="video/mp4">
 </video>
 
 #### No Focus 200Hz Eye Camera
 200hz eye cameras do not need to be focused, and can not be focused. The lens of the 200hz eye camera is arrested using glue. Twisting the lens will risk breaking the mount.
 
 <div class="pb-4">
-  <img src="../../media/core/e200.jpg" width="100%" style="display:flex;margin:0 auto;">
+  <img src="../../media/core/imgs/e200.jpg" width="100%" style="display:flex;margin:0 auto;">
 </div>
 
 #### Focus 120hz Eye Camera
 If you have a 120hz eye camera, make sure the eye camera is in focus. Twist the lens focus ring of the eye camera with your fingers or lens adjuster tool to bring the eye camera into focus.
 
 <video width="100%" controls class="mb-5">
-  <source src="../../media/core/eye-adjust.mp4" type="video/mp4">
+  <source src="../../media/core/videos/eye-adjust.mp4" type="video/mp4">
 </video>
