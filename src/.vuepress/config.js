@@ -88,6 +88,12 @@ module.exports = {
         }
       }
     ],
+    [
+      "sitemap",
+      {
+        hostname : "https://docs.pupil-labs.com"
+      }
+    ]
     // [
     //   "@vuepress/google-analytics",
     //   {
