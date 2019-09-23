@@ -60,6 +60,10 @@ module.exports = {
     docsBranch: 'vuepress-refactor',
     editLinks: true,
     editLinkText: 'Edit this page',
+    // algolia: {
+    //   apiKey: ''
+    //   indexName: ''
+    // }
   },
 
   plugins: [
