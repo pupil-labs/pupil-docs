@@ -13,7 +13,7 @@
 
     v-layout(justify-center).pt-4
       Search(v-if="!$page.frontmatter.home")
-      //- AlgoliaSearchBox
+      //- AlgoliaSearchBox(v-if="!$page.frontmatter.home" :options="algolia")
     NavLinks
     slot(name="top")
     SidebarLinks(
@@ -28,7 +28,7 @@
 import SidebarLinks from "@theme/components/SidebarLinks.vue";
 import NavLinks from "@theme/components/NavLinks.vue";
 import Search from "@theme/components/Search.vue";
-import AlgoliaSearchBox from "@AlgoliaSearchBox";
+import AlgoliaSearchBox from "@theme/components/AlgoliaSearchBox";
 
 export default {
   name: "Sidebar",
