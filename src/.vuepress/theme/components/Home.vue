@@ -23,7 +23,7 @@
             v-img(
               height="250px"
               :alt="product.alt"
-              :src="$withBase(product.src)"
+              :src="require(`../../../media/${product.src}`)"
             )
             v-container
               p {{ product.title }}
@@ -37,7 +37,7 @@
               Content(slot-key="dev")
           v-flex(xs12 sm6 order-xs1 order-sm2).pt-4
             v-img(
-              :src="$withBase('/illustrations/web_analyze_cropped.svg')"
+              :src="require('../../../media/illustrations/web_analyze_cropped.svg')"
             )
 
     //- v-container
