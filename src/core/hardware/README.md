@@ -1,11 +1,15 @@
 # Hardware
-You wear Pupil like a pair of glasses. Pupil connects to a computing device via a USB-A or USB-C cable. The headset is designed to be lightweight and adjustable in order to accommodate a wide range of users.
+You wear Pupil Core headset like a pair of glasses. The headset is designed to be lightweight and adjustable in order to accommodate a wide range of users. There are a number of configurations, so your headset might not look exactly like the picture below. 
 
 <div class="pb-4">
-  <img src="../../media/core/imgs/w120_e200b.png" width="100%" style="display:flex;margin:0 auto;">
+  <img src="../../media/core/imgs/core_hardware_intro.jpg" width="100%" style="display:flex;margin:0 auto;">
 </div>
 
-Pupil ships with a number of additional parts. The below sections provide an overview of their use and a guide to adjusting the Pupil headset.
+**Terminology**
+1. World camera
+2. Nose support
+3. Eye camera(s)
+4. USB-C connector clip
 
 ## What's in the box
 

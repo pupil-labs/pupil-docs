@@ -25,9 +25,9 @@ module.exports = {
       ],
       '/core/': [
         '',
-        'user-guide/',
+        'hardware/',
         {
-          title: 'Software',
+          title: 'User Guide',
           children: [
             'software/pupil-capture',
             'software/pupil-player',
