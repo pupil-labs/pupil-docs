@@ -9,7 +9,7 @@
     )
       SidebarButton(@toggle-sidebar="$emit('toggle-sidebar')")
       router-link.align-center.d-flex(to="/")
-        img(:src="$withBase('/pl_logo.svg')")
+        img(:src="$withBase('/logos/pl_logo.svg')")
       v-spacer
       v-toolbar-items.hidden-sm-and-down
         template(v-for="item in docs_menu")
