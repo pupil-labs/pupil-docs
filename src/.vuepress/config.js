@@ -51,6 +51,9 @@ module.exports = {
       ],
       '/developer/': [
         '',
+        'core/',
+        'invisible/',
+        'vr-ar/'
       ],
     },
     sidebarDepth: 2,
