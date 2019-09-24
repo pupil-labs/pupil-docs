@@ -21,6 +21,8 @@
 
 ## Pupil Invisible glasses
 
+Learn more about the features of your Pupil Invisible glasses.
+
 <div style="display:flex;justify-content:center;">
   <v-img
     :src="require('../../media/invisible/pi-callout.jpg')"
@@ -43,7 +45,7 @@ Pupil Invisible Glasses contain cameras and sensitive electronic components, do 
 - Scene camera and eye camera lenses can be carefully cleaned with the provided microfiber cloth if dust is visible.
 - The nose pads can be cleaned with an alcohol based disinfectant applied on a damp cloth
 
-# Changing Lenses
+## Changing Lenses
 You can easily change the lenses of your Pupil Invisible glasses.
 
 <!-- todo insert video -->
@@ -77,4 +79,4 @@ You will hear a _pop_ sound when the lens is removed or inserted. Don't worry - 
 
 Hold the glasses with arms of the frame facing away from you.
 1. Slot the lens in the groove on the side furthest from the nose pad.
-2. press on the lens with your thumb or fingers on the top corner closes to the nose pad.
+2. Press on the lens with your thumb or fingers on the top corner closes to the nose pad.
