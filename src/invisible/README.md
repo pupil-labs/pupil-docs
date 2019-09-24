@@ -6,7 +6,7 @@ Using your Pupil Invisible for the first time? Follow the steps below to get up 
 
 ## 1. Set up your new Companion Device.
 
-The Companion Device included in your Pupil Invisible box is a new device. It has never been turned on, so it wil require setup.
+The Companion Device included in your Pupil Invisible box is a new device. It has never been turned on, so it will require setup.
     
 Create a new Google account or use an existing Google account during setup.
 
@@ -15,11 +15,11 @@ Create a new Google account or use an existing Google account during setup.
 * Launch the Google Play Store app. It is already installed by default on your Companion Device.
 * Search for **Pupil Invisible Companion** in the Google Play Store and click install.
 * Start the Pupil Invisible Companion App.
-* First time users will need to Sign Up for a Pupil Cloud account. You can Sign Up by using your Google account, or by creating an account with email address and password. Read more about [Pupil Cloud](/cloud/ "Pupil Cloud documentation").
+* First-time users will need to Sign Up for a Pupil Cloud account. You can Sign Up by using your Google account, or by creating an account with email address and password. Read more about [Pupil Cloud](/cloud/ "Pupil Cloud documentation").
 * Follow in-app setup steps.
 
 ::: danger
-**OnePlus 6** Companion Device? Make sure you enable USB On-the-go (USB OTG). Make sure you enable Application lock. See [Invisible Companion docs](/invisible/user-guide/invisible-companion-app.html#oneplus-6-companion-device-setup) for instructions.
+**OnePlus 6** Companion Device? Make sure you enable USB On-the-go (USB OTG). Make sure you enable the application lock. See [Invisible Companion docs](/invisible/user-guide/invisible-companion-app.html#oneplus-6-companion-device-setup) for instructions.
 :::
 
 
