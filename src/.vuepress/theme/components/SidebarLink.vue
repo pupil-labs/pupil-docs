@@ -145,7 +145,7 @@ a.sidebar-link
   line-height 1.4
   width: 100%
   box-sizing: border-box
-  min-height 42px
+  min-height 24px
   &:hover
     color #0D122A
     background-color #ECEFF1
