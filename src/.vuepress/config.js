@@ -25,14 +25,15 @@ module.exports = {
       ],
       '/core/': [
         '',
-        'user-guide/',
+        'hardware/',
         {
-          title: 'Software',
+          title: 'User Guide',
           children: [
             'software/pupil-capture',
             'software/pupil-player',
             'software/pupil-service',
-            'software/pupil-mobile'
+            'software/pupil-mobile',
+            'software/recording-format'
           ]
         },
         'diy/'
