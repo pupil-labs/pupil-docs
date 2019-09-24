@@ -57,86 +57,125 @@ respective timestamps. Independent of this, the recorder also saves the detected
 and pupil positions at their frame rate and with their timestamps. For more detail about
 the stored data, see the [recording format](#recording-format) section.
 
+The Pupil Core software uses simple key-value structures to represent single data points.
+Key-value structures can easily be serialized and nearly all programming languages have
+an implementation for them,
+e.g. [`dict()`](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict) in Python.
+
+Each data point should have at least two keys:
+- `topic`: Identifies the type of the object. It is recommended to specify subtypes,
+separated by a `.`, e.g.:
+    - General gaze topic: `gaze`
+    - 3d gaze topic: `gaze.3d`
+    - Binoculr gaze topic: `gaze.3d.01.`
+- `timestamp`: [Pupil time](#) at which the datum was generated.
+
+**TODO: Add link to `Pupil time` terminology entry**
+
+Each data point should be uniquely identifiable by its `topic` and `timestamp`.
+
+Below you can find a [pupil](#pupil-datum-format) and [gaze](#gaze-datum-format) datum
+as a more detailed example.
+
 #### Pupil Datum Format
 
-The pupil detector, run by the Eye process are required to return a result in the form of a Python dictionary with *at least* the following content:
+The pupil detector generates `pupil` data from `eye` images. Additionally, to the `pupil`
+topic and the `timestamp` (inherited from the eye image), the detector adds further
+fields, most importantly:
 
-```python
-    result = {}
-    result['timestamp'] = frame.timestamp
-    result['norm_pos'] = (x,y) # pupil center in normalized coordinates
-    result['confidence'] = # a value between 1 (very certain) and 0 (not certain, nothing found)
-    result['whatever_else_you_want'] = # you can add other things to this dict
+- `norm_pos`: Pupil location in normalised eye coordinates, and
+- `confidence`: Value indicating quality of the measurement
 
-    # if no pupil was detected
-    result = {}
-    result['timestamp'] = frame.timestamp
-    result['confidence'] = 0.0
-```
-
-This dictionary is sent on the IPC and read by gaze mapping plugins in the world process. Mapping from pupil position to gaze position happens here. The mapping plugin is initialized by a calibration plugin. The [3D pupil detector](#pupil-detection) extends the 2D pupil datum with additional information. Below you can see the Python representation of a pupil and a gaze datum.
+By default, the Pupil Core software uses the
+[3d detector](/core/software/pupil-capture.html#pupil-detection) for pupil detection.
+Since it is an extension of the 2d detector, its data contains keys that were
+inherited from the 2d detection, as well as 3d detector specific keys. Below you can
+see the Python representation of a 3d pupil datum:.
 
 ```python
 {  # pupil datum
-    'topic': 'pupil',
-    'method': '3d c++',
-    'norm_pos': [0.5, 0.5],  # norm space, [0, 1]
-    'diameter': 0.0,  # 2D image space, unit: pixel
-    'timestamp': 535741.715303987,  # time, unit: seconds
-    'confidence': 0.0,  # [0, 1]
+'topic': 'pupil.0',
+'method': '3d c++',
+'norm_pos': [0.5, 0.5],  # norm space, [0, 1]
+'diameter': 0.0,  # 2D image space, unit: pixel
+'timestamp': 535741.715303987,  # time, unit: seconds
+'confidence': 0.0,  # [0, 1]
 
-    # 2D ellipse of the pupil in image coordinates
-    'ellipse': {  # image space, unit: pixel
-        'angle': 90.0,  # unit: degrees
-        'center': [320.0, 240.0],
-        'axes': [0.0, 0.0]},
-    'id': 0,  # eye id, 0 or 1
+# 2D ellipse of the pupil in image coordinates
+'ellipse': {  # image space, unit: pixel
+    'angle': 90.0,  # unit: degrees
+    'center': [320.0, 240.0],
+    'axes': [0.0, 0.0]},
+'id': 0,  # eye id, 0 or 1
 
-    # 3D model data
-    'model_birth_timestamp': -1.0,  # -1 means that the model is building up and has not finished fitting
-    'model_confidence': 0.0,
-    'model_id': 1
+## 3D model data
+# -1 means that the model is building up and has not finished fitting
+'model_birth_timestamp': -1.0,
+'model_confidence': 0.0,
+'model_id': 1
 
-    # pupil polar coordinates on 3D eye model. The model assumes a fixed
-    # eye ball size. Therefore there is no `radius` key
-    'theta': 0,
-    'phi': 0,
+# pupil polar coordinates on 3D eye model. The model assumes a fixed
+# eye ball size. Therefore there is no `radius` key
+'theta': 0,
+'phi': 0,
 
-    # 3D pupil ellipse
-    'circle_3d': {  # 3D space, unit: mm
-        'normal': [0.0, -0.0, 0.0],
-        'radius': 0.0,
-        'center': [0.0, -0.0, 0.0]},
-    'diameter_3d': 0.0,  # 3D space, unit: mm
+# 3D pupil ellipse
+'circle_3d': {  # 3D space, unit: mm
+    'normal': [0.0, -0.0, 0.0],
+    'radius': 0.0,
+    'center': [0.0, -0.0, 0.0]},
+'diameter_3d': 0.0,  # 3D space, unit: mm
 
-    # 3D eye ball sphere
-    'sphere': {  # 3D space, unit: mm
-        'radius': 0.0,
-        'center': [0.0, -0.0, 0.0]},
-    'projected_sphere': {  # image space, unit: pixel
-        'angle': 90.0,
-        'center': [0, 0],
-        'axes': [0, 0]}}
+# 3D eye ball sphere
+'sphere': {  # 3D space, unit: mm
+    'radius': 0.0,
+    'center': [0.0, -0.0, 0.0]},
+'projected_sphere': {  # image space, unit: pixel
+    'angle': 90.0,
+    'center': [0, 0],
+    'axes': [0, 0]}}
 ```
 
 #### Gaze Datum Format
 
-Gaza data is based on one (monocular) or two (binocular) pupil positions. The gaze mapper is automatically setup after calibration and maps pupil positions into world camera coordinate system. The pupil data on which the gaze datum is based on can be accessed using the `base_data` key.
+Gaza data is based on one (monocular) or two (binocular) pupil positions. The gaze
+mapper is automatically setup after calibration and maps pupil positions into world
+camera coordinate system. The pupil data on which the gaze datum is based on can be
+accessed using the `base_data` key.
 
 ```python
- {  # gaze datum
-    'topic': 'gaze',
+ {  # monocular gaze datum
+    'topic': 'gaze.3d.1.',
     'confidence': 1.0,  # [0, 1]
-    'norm_pos': [0.5238293689178297, 0.5811187961748036],  # norm space, [0, 1]
-    'timestamp': 536522.568094512,  # time, unit: seconds
+    'norm_pos': [x, y],  # norm space, [0, 1]
+    'timestamp': ts,  # time, unit: seconds
 
     # 3D space, unit: mm
-    'gaze_normal_3d': [-0.03966349641933964, 0.007685562866422135, 0.9991835362811073],
-    'eye_center_3d': [20.713998951917564, -22.466222119962115, 11.201474469783548],
-    'gaze_point_3d': [0.8822507422478054, -18.62344068675104, 510.7932426103372],
+    'gaze_normal_3d': [x, y, z],
+    'eye_center_3d': [x, y, z],
+    'gaze_point_3d': [x, y, z],
     'base_data': [<pupil datum>]}  # list of pupil data that was used to calculate the gaze
 ```
 
+```python
+ {  # binocular gaze datum
+    'topic': 'gaze.3d.01.',
+    'confidence': 1.0,  # [0, 1]
+    'norm_pos': [x, y],  # norm space, [0, 1]
+    'timestamp': ts,  # time, unit: seconds
+
+    # 3D space, unit: mm
+    'gaze_normals_3d': {
+        0: [x, y, z],
+        1: [x, y, z],
+    },
+    'eye_centers_3d': {
+        0: [x, y, z],
+        1: [x, y, z],
+    },
+    'gaze_point_3d': [x, y, z],
+    'base_data': [<pupil datum>]}  # list of pupil data that was used to calculate the gaze
+```
 
 <!-- this is a horizontal divider -->
 <v-divider></v-divider>
