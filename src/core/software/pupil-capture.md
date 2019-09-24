@@ -1,30 +1,33 @@
 # Pupil Capture
-Pupil Capture is the software used with the Pupil Headset. The software reads the video streams coming in from the world camera and the eye camera. Pupil Capture uses the video streams to detect your pupil, track your gaze, detect and track markers in your environment, record video and events, and stream data in realtime.
+Pupil Capture is the software used with your Pupil Core Headset. The software reads the video streams coming in from the world camera and the eye camera(s). Pupil Capture uses the video streams to detect your pupil, track your gaze, detect and track markers in your environment, record video and events, and stream data in realtime.
 
 <div class="pb-4">
   <img src="../../media/core/icons/pc.png" style="display:flex;margin:0 auto;width:100px;">
 </div>
 
-## Capture Window
-The Capture window is the main control center for `Pupil Capture`. It displays live video feed from pupil headset.
+## World Window
+The World window is the main control center for Pupil Capture. It displays a live world camera video feed from your Pupil Core headset.
 
 <div class="pb-4">
   <img src="../../media/core/imgs/capture-callout.jpg" style="display:flex;margin:0 auto;">
 </div>
 
-1. **Graphs** - This area contains performance graphs. By default the graphs `CPU`, `FPS`, and pupil algorithm detection confidence will be displayed. You can control graph settings with the `System Graphs` plugin.
-1. **Hot keys** - This area contains clickable buttons for plugins.
-1. **Menu** - This area contains settings and contextual information for each plugin.
-1. **Sidebar** - This area contains clickable buttons for each plugin. System plugins are loaded in the top and user added plugins are added below the horizontal separator.
+1. Graphs: This area contains performance graphs. By default the graphs `CPU`, `FPS`, and pupil algorithm detection confidence will be displayed. You can control graph settings with the System Graphs plugin.
+1. Hot keys: This area contains clickable buttons for plugins.
+1. Menu: This area contains settings and contextual information for each plugin.
+1. Sidebar: This area contains clickable buttons for each plugin. System plugins are loaded in the top and user added plugins are added below a horizontal separator.
 
 ## Capture Selection
-By default Pupil Capture will use Local USB as the capture source. If you have a Pupil headset connected to your machine you will see the video displayed from your Pupil headset in the World and eye windows. If no headset is connected or Pupil Capture is unable to open capture devices it will fall back to the Test Image. Other options for capture source are described below.
+By default Pupil Capture will use Local USB as the capture source. If you have a Pupil Core headset connected to your computer you will see videos displayed from your Pupil Core headset in the World and Eye windows. 
+
+If no headset is connected or Pupil Capture is unable to open capture devices it will fall back to Ghost capture and display a gray screen. Other options for capture source are described below.
 
 <video width="100%" controls class="mb-5">
   <source src="../../media/core/videos/backend-manager.mp4" type="video/mp4">
 </video>
 
-- Test Image - This is the fallback behavior if no capture device is found, or if you do not want to connect to any capture device.
+- Ghost Capture - This is default gray screen that is displayed if no capture device is found. 
+- Test Image - A fake source that displays the current frame number, resolution, and size of the "fake" video being generated.
 - Video File Source - select this option to use previously recorded videos for the capture selection.
 - Pupil Mobile - select this option when using Pupil Capture with the Pupil Mobile Android application.
 - Local USB - select this option if your Pupil Headset is connected to the machine running Pupil Capture. This is the default setting.
@@ -39,17 +42,17 @@ Pupil's algorithms automatically detect the participant's pupil. With the 3d det
   <source src="../../media/core/videos/pd.mp4" type="video/mp4">
 </video>
 
-#### Fine-tuning Pupil Detection
+### Fine-tuning Pupil Detection
 As a first step it is recommended to check the eye camera resolution as some parameters are resolution dependent.
-For fast and robust pupil detection and tracking we recommend using the default resolution settings. For 200hz eye cameras the default resolution is set to 192x192 pixels. If you have an older 120hz eye camera, the default is 320x240 pixels.
+
+For fast and robust pupil detection and tracking we recommend using the default resolution settings. For 200Hz eye cameras the default resolution is set to 192x192 pixels. If you have an older 120Hz eye camera, the default is 320x240 pixels.
 
 In Pupil Capture you can view a visualization of the pupil detection algorithm in the eye windows. For fine-tuning switch to this mode: `General Settings > Algorithm Mode`.
 
-#### Pupil Detector 2D/3D
+### Pupil Detector 2D/3D
+
 * `Pupil Min/Max` : Change to `General > Algorithm Mode`. The two red circles represent the min and max pupil size settings. The green circle visualizes the current apparent pupil size. Set the min and max values so the green circle (current pupil size) is within the min/max range for _all_ eye movements.
-* `Intensity Range` : Defines the minimum "darkness" of a pixel to be considered as the pupil.
-The pixels considered for pupil detection are visualized in blue within the `Algorithm Mode`. Try to minimize the range so that the pupil is always fully covered while having as little leakage as possible outside of the pupil.
-Be aware that this is dependent on the brightness and therefore has a strong interaction with `UVC Source/Sensor Settings/Absolute Exposure Time`.
+* `Intensity Range` : Defines the minimum "darkness" of a pixel to be considered as the pupil. The pixels considered for pupil detection are visualized in blue within the `Algorithm Mode`. Try to minimize the range so that the pupil is always fully covered while having as little leakage as possible outside of the pupil. Be aware that this is dependent on the brightness and therefore has a strong interaction with `UVC Source/Sensor Settings/Absolute Exposure Time`.
 
 ::: tip
 <v-icon large color="info">info_outline</v-icon>
@@ -57,14 +60,14 @@ Keep in mind that pupil size values are defined in pixels and are therefore depe
 :::
 
 ## Calibration
-Pupil uses two cameras. One camera records a subject's eye movements -- we call this the `eye camera`. Another camera records the subject's field of vision -- we call this the `world camera`. In order to know what someone is looking at, we must find the parameters to a function that correlates these two streams of information.
+Pupil uses two cameras. One camera records a participant's eye movements - we call this the `eye camera`. Another camera records the subject's field of vision -we call this the `world camera`. In order to know what someone is looking at, we must find the parameters to a function that correlates these two streams of information.
 
 <video width="100%" controls class="mb-5">
   <source src="../../media/core/videos/clb-hd.mp4" type="video/mp4">
 </video>
 
 ### Calibration Process
-Pupil Headset comes in a variety of configurations.  Calibration can be conducted with a monocular or binocular eye camera setup.
+Pupil Core headsets comes in a variety of configurations. Calibration can be conducted with a monocular or binocular eye camera setup.
 
 <video width="100%" controls class="mb-5">
   <source src="../../media/core/videos/clb-mobo.mp4" type="video/mp4">
@@ -75,8 +78,9 @@ Pupil Headset comes in a variety of configurations.  Calibration can be conducte
     <p style="flex-grow:1;display:flex;justify-content:center;">Binocualar</p>
 </div>
 
-### Before every calibration
-Make sure that the users pupil is properly tracked. Make sure that the world camera is in focus for the distance at which you want to calibrate, and that you can see the entire area you want to calibrate within the world cameras extents (FOV).
+### Before Every Calibration
+
+Make sure that the users pupil is properly detected and tracked. Make sure that the world camera is in focus for the distance at which you want to calibrate, and that you can see the entire area you want to calibrate within the world cameras extents (FOV).
 
 <div style="display:flex;" class="pb-4">
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
@@ -93,7 +97,7 @@ Make sure that the users pupil is properly tracked. Make sure that the world cam
 Before starting calibration, ensure that eye(s) are robustly detected and that the headset is comfortable for the participant.
 
 #### Screen Marker Calibration
-This is the default method, and a quick method to get started. It is best suited for close range eye-tracking in a narrow field of view.
+This is the default method, and a quick way to get started. It is best suited for close range eye-tracking in a narrow field of view.
 
 <video width="100%" controls class="mb-5">
   <source src="../../media/core/videos/clb-s.mp4" type="video/mp4">
@@ -106,11 +110,12 @@ This is the default method, and a quick method to get started. It is best suited
 1. Follow the marker on the screen with your eyes. Try to keep your head still during calibration.
 1. The calibration window will close when calibration is complete.
 
-In the `Advanced` sub-menu you can set the `sample duration` -- the number of frames to sample the eye and marker position. You can also set parameters that are used to debug and detect the circular marker on the screen.
+In the `Advanced` sub-menu you can set the `sample duration` - the number of frames to sample the eye and marker position. You can also set parameters that are used to debug and detect the circular marker on the screen.
 
 #### Manual Marker Calibration
-This method is done with an operator and a subject. It is suited for midrange distances and can accommodate a wide field of view. The operator will use a
-printed calibration marker like the one shown in the video. [Download Pupil Labs Calibration Marker v0.4 to print](/images/pupil-capture/calibration-markers/v0.4_markers/v0.4_marker.v12.pdf) or display on smartphone/tablet screen.
+
+This method is done with an operator and a subject. It is suited for midrange distances and can accommodate a wide field of view. The operator will use a printed calibration marker like the one shown in the video. 
+
 
 <video width="100%" controls class="mb-5">
   <source src="../../media/core/videos/clb-man.mp4" type="video/mp4">
@@ -126,6 +131,8 @@ printed calibration marker like the one shown in the video. [Download Pupil Labs
         <p>Pupil Calibration Stop Marker v0.4</p>
     </div>
 </div>
+
+<a href="../../media/core/pdfs/v0.4_marker.pdf" alt="Pupil Labs calibration marker v4.0" target="_blank" rel="noopener">Download Pupil Labs Calibration Marker v0.4</a> to print or display on smartphone/tablet screen.
 
 1. Select `Manual Marker Calibration`
 1. Press `c` on your keyboard or click the blue circular `C` button on the left hand side of the world window to start calibration.
