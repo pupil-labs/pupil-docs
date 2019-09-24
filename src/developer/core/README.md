@@ -13,7 +13,10 @@ There are various ways to interact with the Pupil Core documentation as a develo
 each fulfilling a different purpose. You can find an overview below. Please read it
 carefully in order to find the best approach for your use case.
 
-Afterwards, please familiarize yourself with our terminology and timing conventions.
+Afterwards, please familiarize yourself with our [terminology](#) and
+[timing conventions](#timing-data-conventions).
+
+**TODO: Add link to terminology**
 
 Feel free to contact our `#pupil-software-dev`
 channel on [Discord](https://pupil-labs.com/chat) if you have any questions.
@@ -27,7 +30,7 @@ The API can be used with any programming language that supports
 [zeromq](https://zeromq.org/) and [msgpack](https://msgpack.org/).
 
 ##### Extending Pupil Core Functionality
-The Pupil Core software was desgined with extendibility in mind. It provides a simple
+The Pupil Core software was desgined with extendability in mind. It provides a simple
 yet powerful [Plugin API](#plugin-api) which is used by nearly all existing Pupil Core
 components. Plugins are most useful when you need access to data that is not provided
 via the [Network API](#network-api), e.g.
@@ -42,10 +45,8 @@ Please be aware, that most use cases can be satisfied with one of the approaches
 which work perfectly fine with the
 [pre-built application bundles](https://github.com/pupil-labs/pupil/releases).
 
-### Terminology
-
 ### Timing & Data Conventions
-Pupil Capture is designed to work with multiple captures that free-run at different
+Pupil Capture is designed to work with multiple cameras that free-run at different
 frame rates that may not be in sync. World and eye images are timestamped and any
 resulting artifacts (detected pupil, markers, etc) inherit the source timestamp. Any
 correlation of these data streams is the responsibility of the functional part that
@@ -53,8 +54,8 @@ needs the data to be correlated (e.g. calibration, visualization, analyses).
 
 For example: The Pupil Capture data format records the world video frames with their
 respective timestamps. Independent of this, the recorder also saves the detected gaze
-and pupil positions at their frame rate and with their timestamps. For more detail see
-[Data Format](#data-format).
+and pupil positions at their frame rate and with their timestamps. For more detail about
+the stored data, see the [recording format](#recording-format) section.
 
 #### Pupil Datum Format
 
@@ -70,7 +71,7 @@ The pupil detector, run by the Eye process are required to return a result in th
     # if no pupil was detected
     result = {}
     result['timestamp'] = frame.timestamp
-    result['confidence'] = 0
+    result['confidence'] = 0.0
 ```
 
 This dictionary is sent on the IPC and read by gaze mapping plugins in the world process. Mapping from pupil position to gaze position happens here. The mapping plugin is initialized by a calibration plugin. The [3D pupil detector](#pupil-detection) extends the 2D pupil datum with additional information. Below you can see the Python representation of a pupil and a gaze datum.
@@ -117,6 +118,8 @@ This dictionary is sent on the IPC and read by gaze mapping plugins in the world
         'center': [0, 0],
         'axes': [0, 0]}}
 ```
+
+#### Gaze Datum Format
 
 Gaza data is based on one (monocular) or two (binocular) pupil positions. The gaze mapper is automatically setup after calibration and maps pupil positions into world camera coordinate system. The pupil data on which the gaze datum is based on can be accessed using the `base_data` key.
 
