@@ -32,7 +32,8 @@ module.exports = {
             'software/pupil-capture',
             'software/pupil-player',
             'software/pupil-service',
-            'software/pupil-mobile'
+            'software/pupil-mobile',
+            'software/recording-format'
           ]
         },
         'diy/'

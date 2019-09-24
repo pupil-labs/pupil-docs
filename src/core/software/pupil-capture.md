@@ -12,10 +12,10 @@ The World window is the main control center for Pupil Capture. It displays a liv
   <img src="../../media/core/imgs/capture-callout.jpg" style="display:flex;margin:0 auto;">
 </div>
 
-1. Graphs: This area contains performance graphs. By default the graphs `CPU`, `FPS`, and pupil algorithm detection confidence will be displayed. You can control graph settings with the System Graphs plugin.
-1. Hot keys: This area contains clickable buttons for plugins.
-1. Menu: This area contains settings and contextual information for each plugin.
-1. Sidebar: This area contains clickable buttons for each plugin. System plugins are loaded in the top and user added plugins are added below a horizontal separator.
+1. **Graphs**: This area contains performance graphs. By default the graphs `CPU`, `FPS`, and pupil algorithm detection confidence will be displayed. You can control graph settings with the System Graphs plugin.
+1. **Hot keys**: This area contains clickable buttons for plugins.
+1. **Menu**: This area contains settings and contextual information for each plugin.
+1. **Sidebar**: This area contains clickable buttons for each plugin. System plugins are loaded in the top and user added plugins are added below a horizontal separator.
 
 ## Capture Selection
 By default Pupil Capture will use Local USB as the capture source. If you have a Pupil Core headset connected to your computer you will see videos displayed from your Pupil Core headset in the World and Eye windows. 
@@ -132,7 +132,12 @@ This method is done with an operator and a subject. It is suited for midrange di
     </div>
 </div>
 
-<a href="../../media/core/pdfs/v0.4_marker.pdf" alt="Pupil Labs calibration marker v4.0" target="_blank" rel="noopener">Download Pupil Labs Calibration Marker v0.4</a> to print or display on smartphone/tablet screen.
+::: tip
+<v-icon large color="info">info_outline</v-icon>
+Make sure to always use the **v0.4 marker design** for best detection performance!
+:::
+
+<a :href="$withBase('/pdfs/v0.4_marker.pdf')" alt="Pupil Labs calibration marker v4.0" target="_blank" rel="noopener">Download Pupil Labs Calibration Marker v0.4</a> to print or display on smartphone/tablet screen.
 
 1. Select `Manual Marker Calibration`
 1. Press `c` on your keyboard or click the blue circular `C` button on the left hand side of the world window to start calibration.
@@ -150,10 +155,7 @@ You will notice that there are no standard controls, only an `Advanced` sub-menu
 When should I use the Pupil Calibration <strong>Stop</strong> Marker? - Use the <strong>stop</strong> marker to stop/end a calibration. You can also stop a calibration via the Pupil Capture GUI.</a>
 :::
 
-::: tip
-<v-icon large color="info">info_outline</v-icon>
-Make sure to always use the v0.4 marker design for best detection performance!
-:::
+
 
 #### Single Marker Calibration
 Calibrate using a single marker displayed on screen or hand held marker. Gaze at the center of the marker and move your head in a spiral motion. You can also move your head in other patterns. This calibration method enables you to quickly sample a wide range of gaze angles and cover a large range of your FOV.
@@ -171,7 +173,7 @@ If you're using a manual marker, make sure to select <code>Marker display mode >
 
 ::: tip
 <v-icon large color="info">info_outline</v-icon>
-This paper introduces and evaluates this type of single marker calibration - <code>CalibMe: Fast and Unsupervised Eye Tracker Calibration for Gaze-Based Pervasive Human-Computer Interaction</code>.
+This paper introduces and evaluates this type of single marker calibration - <code>CalibMe: Fast and Unsupervised Eye Tracker Calibration for Gaze-Based Pervasive Human-Computer Interaction</code>
 :::
 
 #### Natural Features Calibration
@@ -183,7 +185,7 @@ This method is for special situations and far distances. Usually not required.
 
 1. Select `Natural Features Calibration`
 1. Press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to start calibration.
-1. Ask the subject (the person wearing the Pupil headset) to look a point within their field of vision. Note -- pick a salient feature in the environment.
+1. Ask the subject (the person wearing the Pupil headset) to look a point within their field of vision. Note: pick a salient feature in the environment.
 1. Click on that point in the world window.
 1. Data will be sampled.
 1. Repeat until you have covered the subject's field of view (generally about 9 points should suffice)
@@ -191,7 +193,7 @@ This method is for special situations and far distances. Usually not required.
 
 
 #### Fingertip Calibration
-Calibrate using your fingertip! We have found that the easiest way to calibrate with your fingertip is as follows:
+Calibrate using your fingertip! Note: This is an experimental calibration method. We have found that the easiest way to calibrate with your fingertip is as follows:
 
 1. Select `Fingertip Calibration`
 1. Press `c` on your keyboard or click the blue circular `C` button on the left hand side of the world window to start calibration.
@@ -205,10 +207,11 @@ A Convolutional neural network (CNN) is implemented for the fingertip detection:
 
 First, a hand detector, based on [MobileNet](https://arxiv.org/pdf/1704.04861.pdf) and [SSD](https://arxiv.org/pdf/1512.02325.pdf), searches for a hand in the image.
 
-The position of the fingertip is then found out by a fingertip detector, adapted from [YOLSE](http://openaccess.thecvf.com/content_ICCV_2017_workshops/papers/w11/Wu_YOLSE_Egocentric_Fingertip_ICCV_2017_paper.pdf) and [Unet](https://arxiv.org/pdf/1505.04597.pdf).
+The position of the fingertip is then found out by a fingertip detector, adapted from [YOLSE](http://openaccess.thecvf.com/content_ICCV_2017_workshops/papers/w11/Wu_YOLSE_Egocentric_Fingertip_ICCV_2017_paper.pdf) and [Unet](https://arxiv.org/pdf/1505.04597.pdf)
 
 
 ### Notes on calibration accuracy
+
 In 2D mode, you should easily be able to achieve tracking accuracy within the physiological limits (sub 1 deg visual degrees). Using the 3d mode you should achieve 1.5-2.5 deg of accuracy.
 
 * Any monocular calibration is accurate only at its depth level relative to the eye (parallax error).
@@ -223,10 +226,14 @@ In 2D mode, you should easily be able to achieve tracking accuracy within the ph
 
 Press `r` on your keyboard or press the blue circular `R` button on the left hand side of the world window to start recording. You will see red text with the elapsed time of recording next to the `R` button. To stop recording, press `r` on your keyboard or press the `R` button on screen.
 
-You can set the folder or `Path to recordings` and the `Recording session name` in the `Recorder` sub-menu within the GUI. Note - you must specify an existing folder, otherwise the `Path to recordings` will revert to the default path.
+You can change recording settings in the `Recorder` plugin menu. Set the folder where recordings are saved under `Path to recordings`. Set the recording name in `Recording session name`.
 
-#### What will be in the session folder?
-If you open up a session folder you will see a collection of video(s) and data files. Take a look at [Data format](#data-format) to see exactly what you get.
+::: tip
+Note - you must specify an existing folder, otherwise the `Path to recordings` will revert to the default path.
+:::
+
+### Recording files
+If you open up a recording session folder you will see a collection of video(s) and data files. Take a look at [Recording format](/core/software/recording-format.html) for an overview.
 
 ## Plugins
 Open the `Plugin Manager` menu on the right.
@@ -238,17 +245,17 @@ Open the `Plugin Manager` menu on the right.
 It lists all available plugins.
 Click the button next to the plugin's name to turn on or off the plugin.
 
-#### Third-party plugins
+### Third-party plugins
 You can easily load third party plugins. Third party plugins will appear in the
 Pupil Capture or Pupil Player plugin list. Copy the plugin to the plugins folder
 within the `pupil_capture_settings` or `pupil_player_settings` folder.
 
-#### Fixation Detector
+### Fixation Detector
 The online fixation detector classifies fixations based on the [dispersion-duration principle](#fixation-detector). Fixations are used by the [screen and manual marker calibrations](#calibration-methods) to speed up the procedure. A fixation is visualized as a yellow circle around the gaze point that is shown in the Pupil Capture `world` window.
 
 You can find more information in our [dedicated fixation detector section](#fixation-detector).
 
-#### Network plugins
+### Network plugins
 Pupil Capture has a built-in data broadcast functionality. It is based on the network library [ZeroMQ](http://zeromq.org/)
 and follows the [`PUB-SUB` pattern](http://zguide.zeromq.org/php:chapter1#Getting-the-Message-Out). Data is published with an affiliated topic.
 Clients need to subscribe to their topic of interest to receive the respective data. To reduce network traffic, only data
@@ -326,7 +333,7 @@ via Pupil Capture when connected. This includes changing camera and streaming
 settings. The `Remote Recorder` plugin extends this list with the possibility
 to start and stop recordings that are stored in the phone.
 
-#### Surface Tracking
+### Surface Tracking
 The `Surface Tracker` plugin allows you to define planar surfaces within your environment to track areas of interest (AOI). Surfaces are defined with [Apriltag Markers](https://april.eecs.umich.edu/software/apriltag.html).
 
 ::: tip
@@ -395,7 +402,9 @@ In both cases the necessary steps are as follows:
 
 #### Reusing Surface Definitions
 Your surfaces are automatically saved in a file called `surface_definitions` in the `pupil_capture_settings` directory.
+
 If you restart Pupil Capture or the Surface Tracker plugin, your surface definitions from previous sessions will be loaded.
+
 The `surface_definitions` file is copied into each recording folder as well, so you will have access to your surface definitions in Pupil Player.
 You can copy & paste this file to move definitions from one session or recording to another.
 
@@ -403,8 +412,8 @@ You can copy & paste this file to move definitions from one session or recording
 #### Gaze Heatmaps for Surfaces
 You can display gaze heatmaps for each surface by enabling `Show Heatmap` in the `Surface Tracker` menu.
 Two heatmap modes are supported:
-*   `Gaze within each surface`: Visualizes the distribution of gaze points that lie within each surface.
-*   `Gaze across different surfaces`: Color codes the surfaces to visualize the amount of time spend gazing on each surface in relation to other surfaces.
+* `Gaze within each surface`: Visualizes the distribution of gaze points that lie within each surface.
+* `Gaze across different surfaces`: Color codes the surfaces to visualize the amount of time spend gazing on each surface in relation to other surfaces.
 Red color represents a lot of gaze points or time spent. Blue color represents few gaze points or little time spent.
 
 The smoothness of the heatmap in `Gaze within each surface` mode can be set using the `Heatmap Smoothness` slider, which will effectively change the bin size of the underlying histogram.
@@ -412,10 +421,9 @@ In the online case the heatmap is computed over the most recent data.
 The exact time window to consider can be set using the `Gaze History Length` field.
 
 #### Further Functionality
-*   You can click the `Open Surface in Window` button to open a view of the surface in a separate window.
-    Gaze positions on the surface will be visualized in this window in real-time.
-*   Streaming Surfaces with Pupil Capture - Detected surfaces as well as gaze positions relative to the surface are broadcast under the `surface` topic. Check out [this video](http://youtu.be/qHmfMxGST7A) for a demonstration.
-*   Surface Metrics with Pupil Player - if you have defined surfaces, you can generate surface visibility reports or gaze count per surface. See our [blog post](http://pupil-labs.com/blog/2014/07/0392-player-release.html) for more information.
+* You can click the `Open Surface in Window` button to open a view of the surface in a separate window. Gaze positions on the surface will be visualized in this window in real-time.
+* Streaming Surfaces with Pupil Capture - Detected surfaces as well as gaze positions relative to the surface are broadcast under the `surface` topic. Check out [this video](http://youtu.be/qHmfMxGST7A) for a demonstration.
+* Surface Metrics with Pupil Player - if you have defined surfaces, you can generate surface visibility reports or gaze count per surface. See our [blog post](http://pupil-labs.com/blog/2014/07/0392-player-release.html) for more information.
 
 #### Legacy Markers
 The legacy surface system used simple square markers, which are less robust to detect.
@@ -433,7 +441,7 @@ However our markers used 5x5 grid instead of the 7x7 grid ArUco uses.
 This allowed us to make smaller markers that can still be detected well.
 The 5x5 design allowed for a total of 63 unique markers.
 
-#### Blink Detection
+### Blink Detection
 The pupil detection algorithm assigns a `confidence` value to each pupil datum. It represents the quality of the detection result. While the eye is closed the assigned confidence is very low. The `Blink Detection` plugin makes use of this fact by defining a `blink onset` as a significant confidence drop - or a `blink offset` as a significant confidence gain - within a short period of time. The plugin creates a `blink` event for each event loop iteration in the following format:
 
 ```python
@@ -447,12 +455,12 @@ The pupil detection algorithm assigns a `confidence` value to each pupil datum. 
 
 The `Filter length` is the time window's length in which the plugin tries to find such confidence drops and gains. The plugin fires the above events if the blink confidence within the current time window exceeds the `onset` or `offset` confidence threshold. Setting both thresholds to `0` will always trigger blink events, even if the confidence is very low. This means that onsets and offsets do not appear necessarily as pairs but in waves.
 
-#### Audio Capture
+### Audio Capture
 The `Audio Capture` plugin provides access to a selected audio source for other plugins and writes its output to the `audio.mp4` file during a recording. It also writes the Pupil Capture timestamp for each audio packet to the `audio_timestamps.npy` file. This way you can easily correlate single audio packets to their corresponding video frames.
 
 Audio is recorded separately from the video in Pupil Capture. You can play back audio in sync with video in Pupil Player. Audio is automatically merged with the video when you export a video using Pupil Player.
 
-#### Annotations
+### Annotations
 The `Annotation Capture` plugin allows you to mark timestamps with a label -- sometimes referred to as triggers.
 These labels can be created by pressing their respective hotkey or by sending a notification with the subject `annotation`.
 This is useful to mark external events (e.g. "start of condition A") within the Pupil recording. The `Annotation Player`
@@ -471,7 +479,7 @@ You can also create annotation events programmatically and send them using the I
 <a href="https://github.com/pupil-labs/pupil-helpers/blob/master/pupil_remote/remote_annotations.py" title="remote annotation script">This script</a> demonstrates how to send remote annotations. Use this script as a starting point for your integrations.
 :::
 
-#### Camera Intrinsics Estimation
+### Camera Intrinsics Estimation
 This plugin is used to calculate camera intrinsics, which will enable one to correct camera distortion. Pupil Capture has built in, default camera intrinsics models for the high speed world camera and the high resolution world camera. You can re-calibrate your camera and/or calibrate a camera that is not supplied by Pupil Labs by running this calibration routine. We support two different distortion models, radial distortion and fisheye distortion. For cameras with a FOV of 100 degrees or greater (like e.g. the high speed world camera) the fisheye distortion model usually performs better, for cameras with a smaller FOV (e.g. the high resolution world camera) we recommend the radial distortion model.
 
 1. Select `Camera Intrinsics Estimation`

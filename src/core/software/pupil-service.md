@@ -5,7 +5,7 @@ Pupil Service is like Pupil Capture except it does not have a world video feed o
   <img src="../../media/core/icons/ps.png"style="display:flex;margin:0 auto;width:100px;">
 </div>
 
-Pupil Service is designed to run in the background and to be controlled via network commands only. The service process has no GUI. The tools introduced in the [hmd-eyes project](https://github.com/pupil-labs/hmd-eyes) are made to work with Pupil Service and Pupil Capture alike.
+Pupil Service is designed to run in the background and to be controlled via network commands only. The tools introduced in the [hmd-eyes project](https://github.com/pupil-labs/hmd-eyes) are made to work with Pupil Service and Pupil Capture alike.
 
 ## Talking to Pupil Service
 Code examples below demonstrate how to control Pupil Service over the network.

@@ -13,32 +13,33 @@ Drag the recording folder (the triple digit one) directly onto the app icon **or
 </div>
 
 ## Player Window
-Let's get familiar with the Player window. The Player window is the main control center for `Pupil Player`. It displays the recorded video feed from pupil capture file.
+The Player window is the main control center for `Pupil Player`. It displays video and data recorded by [Pupil Capture](/core/software/pupil-capture), [Pupil Mobile](/core/software/pupil-mobile/), or [Pupil Invisible](/invisible/).
 
 <div class="pb-4">
   <img src="../../media/core/imgs/pp-callout.jpg" style="display:flex;margin:0 auto;">
 </div>
 
-1. **Graphs** - This area contains performance graphs. By default the graphs `CPU`, `FPS`, and pupil algorithm detection confidence will be displayed. You can control graph settings with the `System Graphs` plugin.
-1. **Hot keys** - This area contains clickable buttons for plugins.
-1. **Timeline Events** - Plugins can add temporal events to this expandable panel.
-1. **Timeline** - Control the playback of the video with the play/pause button (or spacebar on your keyboard). Drag the playhead (vertical line) to the desired point in time.
-    - **Frame Stepping** - You can use the arrow keys on your keyboard or the `<<` `>>` buttons to advance one frame at a time.
-    - **Trimming** - Drag either end of the timeline to set a trim beginning and ending trim marks. The trim section marks directly inform the section of video/data to export.
-1. **Menu** - This area contains settings and contextual information for each plugin.
-1. **Sidebar** - This area contains clickable buttons for each plugin. System plugins are loaded in the top and user added plugins are added below the horizontal separator.
+1. **Graphs**: This area contains performance graphs. By default the graphs `CPU`, `FPS`, and pupil algorithm detection confidence will be displayed. You can control graph settings with the `System Graphs` plugin.
+1. **Hot keys**: This area contains clickable buttons for plugins.
+1. **Timeline Events**: Plugins can add temporal events to this expandable panel.
+1. **Timeline**: Control the playback of the video with the play/pause button (or spacebar on your keyboard). Drag the playhead (vertical line) to the desired point in time.
+    - **Trimming**: Drag either end of the timeline to set a trim beginning and ending trim marks. The trim section marks directly inform the section of video/data to export.
+    - **Frame Stepping**: You can use the arrow keys on your keyboard or the `<<` `>>` buttons to advance one frame at a time.
+1. **Menu**: This area contains settings and contextual information for each plugin.
+1. **Sidebar**: This area contains clickable buttons for each plugin. System plugins are loaded in the top and user added plugins are added below the horizontal separator.
 
 ## Workflow
+
 Pupil Player is similar to a video player. You can playback recordings and can load plugins to build visualizations.
 
 Here is an example workflow:
 
-  + Start Pupil Player
-  + Open a Plugin - From the `Plugin Manager` GUI menu load the `Vis Circle` plugin.
-  + Playback - press the play button or `space` bar on your keyboard to view the video playback with visualization overlay, or drag the playhead in the seek bar to scrub through the dataset.
-  + Set trim marks - you can drag the green rounded rectangle at the beginning and end of the seekbar to set the trim marks. This will set the start and end frame for the exporter and for other plugins.
-  + Export Video & Raw Data - From the `Plugin Manager` view, load the `Video Export Launcher` plugin and the `Raw Data Exporter` plugin. Press `e` on your keyboard or the `e` button in the left hand side of the window to start the export.
-  + Check out exported data in the `exports` directory within your recording directory
+- Start Pupil Player
+- Open a Plugin - From the `Plugin Manager` GUI menu load the `Vis Circle` plugin.
+- Playback - press the play button or `space` bar on your keyboard to view the video playback with visualization overlay, or drag the playhead in the seek bar to scrub through the dataset.
+- Set trim marks - you can drag the green rounded rectangle at the beginning and end of the seekbar to set the trim marks. This will set the start and end frame for the exporter and for other plugins.
+- Export Video & Raw Data - From the `Plugin Manager` view, load the `Video Export Launcher` plugin and the `Raw Data Exporter` plugin. Press `e` on your keyboard or the `e` button in the left hand side of the window to start the export.
+- Check out exported data in the `exports` directory within your recording directory
 
 ::: tip
 <v-icon large color="info">info_outline</v-icon>
@@ -48,12 +49,12 @@ Pupil Player will <strong>never</strong> remove or overwrite any of your raw dat
 ## Plugins
 Pupil Player uses the same Plugin framework found in Pupil Capture to add functionality.
 
-We implement all visualizations, marker tracking, and the exporter using this structure. Very little work (often no work) needs to be done to make a Capture Plugin work for the Pupil Player and vice versa.
+Visualizations, marker tracking, and the exporter are all implemented using this structure. Very little work (often no work) needs to be done to make a Capture Plugin work for the Pupil Player and vice versa.
 
 There are two general types of plugins:
 
-  + **Unique** - You can only launch one instance of this plugin.
-  + **Not unique** - You can launch multiple instances of this type of plugin. For example, you can load one `Vis Circle` plugin to render the gaze position with a translucent green circle, and another `Vis Circle` plugin to render the gaze circle with a green stroke of 3 pixel thickness. You can think of these types of plugins as *additive*.
+- **Unique**: You can only launch one instance of this plugin.
+- **Not unique**: You can launch multiple instances of this type of plugin. For example, you can load one `Vis Circle` plugin to render the gaze position with a translucent green circle, and another `Vis Circle` plugin to render the gaze circle with a green stroke of 3 pixel thickness. You can think of these types of plugins as _additive_.
 
 In the following sections we provide a summary of plugins currently available and in Pupil Player.
 
@@ -145,6 +146,71 @@ This plugin is **unique**, therefore you can only load one instance of this plug
   + `show` - show or hide eye video overlays.
   + `horiz. and vert. flip` - flip eye videos vertically or horizontally
 
+
+### Analysis Plugins
+These plugins are simple unique plugins, that operate on the gaze data for analysis and visualizations.
+
+#### Offline Surface Tracker
+This plugin is an offline version of the [Surface Tracking](#surface-tracking) plugin for Pupil Capture.
+You can use this plugin to detect markers in the recording, define surfaces, edit surfaces, and create and export visualizations of gaze data within the defined surfaces.
+
+<div class="pb-4">
+  <img src="../../media/core/imgs/offline-srf-tracker.jpg" style="display:flex;margin:0 auto;">
+</div>
+
+Here is an example workflow for using the `Offline Surface Detector` plugin to generate heatmap visualizations and export surface data reports:
+
+  + Load `Offline Surface Detector` plugin - if you already have surfaces defined, the load may take a few seconds because the plugin will look through the entire video and cache the detected surfaces.
+  + Add surface - if you do not have any defined surfaces, you can click on the `Add surface` button when the markers you want to user are visible or just click the circular `A` button in the left hand side of the screen.
+  + Surface name and size - In the `Marker Detector` GUI window, define the surface name and real world size.
+  *Note* - defining size is important as it will affect how heatmaps are rendered.
+  + Set trim marks - optional, but if you want to export data for a specific range, then you should set the trim marks.
+  + Recalculate gaze distributions - click the `(Re)calculate gaze distributions` button after specifying surface sizes.
+  You should now see heatmaps in the Player window (if gaze positions were within your defined surfaces).
+  + Export gaze and surface data - click `e` and all surface metrics reports will be exported and saved for your trim section within your `export` folder.
+
+All files generated by the `Offline Surface Detector` will be located in the subfolder `surfaces`.
+The different reported metrics are:
+
+  + `surface_visibility.csv` - Overview of how many world camera frames each surface was contained in.
+  + `surface_gaze_distribution.csv` - Overview of how many gaze samples have been collected on each individual surface and outside of surfaces.
+  + `surface_events.csv` - List of image-enter and image-exit events for all surfaces.
+
+Further the following metrics are reported for every individual surface.
+Each surface has a name, which can be manually set as described above.
+This name is augmented by an automatically generated numerical identifier.
+
+  + `heatmap_<surface_name>.png` - Heatmap of gaze positions on the surface aggregated over the entire export.
+  + `gaze_positions_on_surface_<surface_name>.csv` - A list of gaze datums on the surface.
+  The values include the gaze point in two different coordinates systems.
+  `x_norm` and `y_norm` are coordinates between 0 and 1, where `(0,0)` is the bottom left corner of the surface and `(1,1)` is the top right corner.
+  `x_scaled` and `y_scaled` contain the same coordinates but scaled with the size defined for the surface.
+  + `surf_positions_<surface_name>` - List of surface positions in 3D.
+  The position is given as the 3D pose of the surface in relation to the current position of the scene camera.
+  `img_to_surf_trans` is a matrix transforming coordinates from the camera coordinate system to the surface coordinate system.
+  `surf_to_img_trans` is the inverse of `img_to_surf_trans`.
+
+
+#### Fixation Detector
+The offline fixation detector calculates fixations for the whole recording. The menu gives feedback about the progress of the detection, how many fixations were found, shows and detailed information about the current fixation. Press `f` or click the `f` hot key button on the left hand side of the window to seek forward to the next fixation.
+
+<div class="pb-4">
+  <img src="../../media/core/imgs/pg-fixation.jpg" style="display:flex;margin:0 auto;">
+</div>
+
+Toggle `Show fixations` to show a visualization of fixations. The blue number is the number of the fixation (0 being the first fixation). You can export fixation reports for your current trim section by pressing `e` on your keyboard or the `e` hot key button on the left hand side of the window.
+
+You can find more information in our [dedicated fixation detector section](#fixation-detector).
+
+#### Head Pose Tracking
+This plugin uses fiducial markers ([apriltag](https://april.eecs.umich.edu/software/apriltag.html)) to build a 3d model of the environment and track the headset's pose within it.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/9x9h98tywFI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+See the [surface tracking section](#surface-tracking) for images of the markers to download.
+
+See the [detailed data format section](#detailed-data-format) for more information about the exported data.
+
 ### Pupil Data And Post-hoc Detection
 By default, Player starts with the `Pupil From Recording` plugin that tries to load pupil positions that were detected and stored during a Pupil Capture recording.
 Alternatively, one can run the pupil detection post-hoc.
@@ -219,69 +285,8 @@ This can be temporarly disabled by turning off the according gaze mapper's `Acti
 You can compare `2d` and `3d` mapping results by creating two calibrations and gaze mappers with the same calibration and mapping ranges.
 :::
 
-### Analysis Plugins
-These plugins are simple unique plugins, that operate on the gaze data for analysis and visualizations.
-
-#### Offline Surface Tracker
-This plugin is an offline version of the [Surface Tracking](#surface-tracking) plugin for Pupil Capture.
-You can use this plugin to detect markers in the recording, define surfaces, edit surfaces, and create and export visualizations of gaze data within the defined surfaces.
-
-<div class="pb-4">
-  <img src="../../media/core/imgs/offline-srf-tracker.jpg" style="display:flex;margin:0 auto;">
-</div>
-
-Here is an example workflow for using the `Offline Surface Detector` plugin to generate heatmap visualizations and export surface data reports:
-
-  + Load `Offline Surface Detector` plugin - if you already have surfaces defined, the load may take a few seconds because the plugin will look through the entire video and cache the detected surfaces.
-  + Add surface - if you do not have any defined surfaces, you can click on the `Add surface` button when the markers you want to user are visible or just click the circular `A` button in the left hand side of the screen.
-  + Surface name and size - In the `Marker Detector` GUI window, define the surface name and real world size.
-  *Note* - defining size is important as it will affect how heatmaps are rendered.
-  + Set trim marks - optional, but if you want to export data for a specific range, then you should set the trim marks.
-  + Recalculate gaze distributions - click the `(Re)calculate gaze distributions` button after specifying surface sizes.
-  You should now see heatmaps in the Player window (if gaze positions were within your defined surfaces).
-  + Export gaze and surface data - click `e` and all surface metrics reports will be exported and saved for your trim section within your `export` folder.
-
-All files generated by the `Offline Surface Detector` will be located in the subfolder `surfaces`.
-The different reported metrics are:
-
-  + `surface_visibility.csv` - Overview of how many world camera frames each surface was contained in.
-  + `surface_gaze_distribution.csv` - Overview of how many gaze samples have been collected on each individual surface and outside of surfaces.
-  + `surface_events.csv` - List of image-enter and image-exit events for all surfaces.
-
-Further the following metrics are reported for every individual surface.
-Each surface has a name, which can be manually set as described above.
-This name is augmented by an automatically generated numerical identifier.
-
-  + `heatmap_<surface_name>.png` - Heatmap of gaze positions on the surface aggregated over the entire export.
-  + `gaze_positions_on_surface_<surface_name>.csv` - A list of gaze datums on the surface.
-  The values include the gaze point in two different coordinates systems.
-  `x_norm` and `y_norm` are coordinates between 0 and 1, where `(0,0)` is the bottom left corner of the surface and `(1,1)` is the top right corner.
-  `x_scaled` and `y_scaled` contain the same coordinates but scaled with the size defined for the surface.
-  + `surf_positions_<surface_name>` - List of surface positions in 3D.
-  The position is given as the 3D pose of the surface in relation to the current position of the scene camera.
-  `img_to_surf_trans` is a matrix transforming coordinates from the camera coordinate system to the surface coordinate system.
-  `surf_to_img_trans` is the inverse of `img_to_surf_trans`.
-
-
-#### Fixation Detector
-The offline fixation detector calculates fixations for the whole recording. The menu gives feedback about the progress of the detection, how many fixations were found, shows and detailed information about the current fixation. Press `f` or click the `f` hot key button on the left hand side of the window to seek forward to the next fixation.
-
-<div class="pb-4">
-  <img src="../../media/core/imgs/pg-fixation.jpg" style="display:flex;margin:0 auto;">
-</div>
-
-Toggle `Show fixations` to show a visualization of fixations. The blue number is the number of the fixation (0 being the first fixation). You can export fixation reports for your current trim section by pressing `e` on your keyboard or the `e` hot key button on the left hand side of the window.
-
-You can find more information in our [dedicated fixation detector section](#fixation-detector).
-
-#### Head Pose Tracking
-This plugin uses fiducial markers ([apriltag](https://april.eecs.umich.edu/software/apriltag.html)) to build a 3d model of the environment and track the headset's pose within it.
-
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/9x9h98tywFI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-See the [surface tracking section](#surface-tracking) for images of the markers to download.
-
-See the [detailed data format section](#detailed-data-format) for more information about the exported data.
+### Developing your own Plugin
+To develop your own plugin see the [developer guide](/developer).
 
 ## Export
 You can export data and videos by pressing `e` on your keyboard or the `e` hot key button in the Pupil Player window.
@@ -292,19 +297,19 @@ The exports directory lives within your recording directory.
 
 Active video exporters will run in the background and you can see the progress bar of the export in the GUI. While exporting, you can continue working with Pupil Player and even launch new exports. Each video export creates at least one `mp4` and its respective file timestamp file. See the [Data Format](#data-format) section for details.
 
-#### Export Directory
+### Export Directory
 Every export creates a new folder within the `exports` sub-directory of your recording. All data from the export is saved to this folder.
 
 <!-- export dir img -->
 
-#### Export Handling
+### Export Handling
 You can select the frame range to export by setting trim marks in the seek bar or directly in the `General Settings` menu.
 
 Longer running exports, e.g. video exports, go through three phases: Queued, Running, and Completed.
 Export tasks can be cancelled while being queued or running.
 Completed tasks are kept in the list for reference.
 
-#### World Video Exporter
+### World Video Exporter
 The `World Video Exporter` is loaded by default.
 
 <div class="pb-4">
@@ -313,21 +318,18 @@ The `World Video Exporter` is loaded by default.
 
 The export saves the world video as shown in Player, including all currently active visualizations (see the \[Visualization Plugins\](#visualization-plugins) section).
 
-#### Eye Video Exporter
+### Eye Video Exporter
 The `Eye Video Exporter` needs to be loaded explicitly through the Plugin Manager.
 It includes the option to render the 2d pupil detection result into the exported video.
 
-#### iMotions Exporter
+### iMotions Exporter
 The iMotions Exporter creates data that can be used with <https://imotions.com/>.
 
 Specifically, it undistorts the world video images using the camera intrinsics. Gaze data is also undistorted and exported to the `gaze.tlv` file.
 
-#### Raw Data Exporter
+### Raw Data Exporter
 The `Raw Data Exporter` export pupil and gaze data tp `.csv` files and is active bu default.
 
 <div class="pb-4">
   <img src="../../media/core/imgs/raw-export.jpg" style="display:flex;margin:0 auto;">
 </div>
-
-## Developing your own Plugin
-To develop your own plugin see the <a href="#plugin-guide">developer guide</a>.
