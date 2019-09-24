@@ -44,7 +44,7 @@ module.exports = {
         'vive',
         'hololens',
         'rift',
-        'bt300',
+        // 'bt300',
       ],
       '/cloud/': [
         '',
@@ -92,7 +92,7 @@ module.exports = {
     [
       "sitemap",
       {
-        hostname : "https://docs.pupil-labs.com"
+        hostname: "https://docs.pupil-labs.com"
       }
     ]
     // [
