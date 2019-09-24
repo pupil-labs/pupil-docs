@@ -13,38 +13,6 @@ Pupil Core source code is available on [Github](https://github.com/pupil-labs/pu
 Follow the setup instructions for your OS on the Pupil Core [Github repo](https://github.com/pupil-labs/pupil)
 
 ## Overview
-Overview of language, code structure, and general conventions
-
-### Language
-Pupil is written in `Python 3`, but no "heavy lifting" is done in Python. High performance computer vision, media compression, display libraries, and custom functions are written in external libraries or c/c++ and accessed though [cython](http://cython.org/). Python plays the role of "glue" that sticks all the pieces together.
-
-We also like writing code in Python because it's *quick and easy* to move from initial idea to working proof-of-concept. If proof-of-concept code is slow, optimization and performance enhancement can happen in iterations of code.
-
-### Process Structure
-When Pupil Capture starts, in default settings two processes are spawned:
-
-**[Eye](https://github.com/pupil-labs/pupil/blob/master/pupil_src/launchables/eye.py)** and **[World](https://github.com/pupil-labs/pupil/blob/master/pupil_src/launchables/world.py)**. Both processes grab image frames from a video capture stream but they have very different tasks.
-
-### Eye Process
-The eye process only has one purpose - to detect the pupil and broadcast its position. The process breakdown looks like this:
-
-* Grabs eye camera images from eye camera video stream
-* Find the pupil position in the image
-* Broadcast/stream the detected pupil position.
-
-<aside class="notice">
-Note - Pupil position refers to the position of the pupil in the eye camera space. This is different from gaze position which is what we call the mapped pupil positions in the world camera space.
-</aside>
-
-### World Process
-This is the workhorse.
-
-* Grabs the world camera images from the world camera video stream
-* Receives pupil positions from the eye process
-* Performs calibration mapping from pupil positions to gaze positions
-* Loads plugins - to detect fixations, track surfaces, and more...
-* Records video and data.
-Most, and preferably all coordination and control happens within the World process.
 
 ### Pupil Datum Format
 
@@ -641,3 +609,35 @@ Files without file extention, e.g. the deprecated `pupil_data` file, and files w
 
 ## Plugin API
 
+Overview of language, code structure, and general conventions
+
+### Language
+Pupil is written in `Python 3`, but no "heavy lifting" is done in Python. High performance computer vision, media compression, display libraries, and custom functions are written in external libraries or c/c++ and accessed though [cython](http://cython.org/). Python plays the role of "glue" that sticks all the pieces together.
+
+We also like writing code in Python because it's *quick and easy* to move from initial idea to working proof-of-concept. If proof-of-concept code is slow, optimization and performance enhancement can happen in iterations of code.
+
+### Process Structure
+When Pupil Capture starts, in default settings two processes are spawned:
+
+**[Eye](https://github.com/pupil-labs/pupil/blob/master/pupil_src/launchables/eye.py)** and **[World](https://github.com/pupil-labs/pupil/blob/master/pupil_src/launchables/world.py)**. Both processes grab image frames from a video capture stream but they have very different tasks.
+
+### Eye Process
+The eye process only has one purpose - to detect the pupil and broadcast its position. The process breakdown looks like this:
+
+* Grabs eye camera images from eye camera video stream
+* Find the pupil position in the image
+* Broadcast/stream the detected pupil position.
+
+<aside class="notice">
+Note - Pupil position refers to the position of the pupil in the eye camera space. This is different from gaze position which is what we call the mapped pupil positions in the world camera space.
+</aside>
+
+### World Process
+This is the workhorse.
+
+* Grabs the world camera images from the world camera video stream
+* Receives pupil positions from the eye process
+* Performs calibration mapping from pupil positions to gaze positions
+* Loads plugins - to detect fixations, track surfaces, and more...
+* Records video and data.
+Most, and preferably all coordination and control happens within the World process.
