@@ -34,7 +34,7 @@ Learn more about the features of your Pupil Invisible glasses.
 
 1. **Scene camera**: Can be easily attached/detached via magnetic connector.
 2. **Eye cameras**
-3. **Lenses**: Ships with clear plano lenses in the glasses frame. You can easily turn your glasses into shades. See [#changing-lenses] for more info.
+3. **Lenses**: Ships with clear plano lenses in the glasses frame. You can easily turn your glasses into shades. See [changing lenses](#changing-lenses) for more info.
 4. **USB-C port**: Plug in USB-C cable here to connect to the Companion Device
 5. **Serial number**: 5 character serial number inset into the left arm. 
 
