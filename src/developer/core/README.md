@@ -556,7 +556,7 @@ You can send a message anywhere in the app. Don't send something that crashes an
 
 ## Recording Format
 
-### Required Files
+### Meta Files
 
 ```csv
 key,value
@@ -581,9 +581,7 @@ A minimum requirement of two key, value pairs are required in the `info.csv` fil
 1. `Recording Name,<name>`
 2. `Data Format Version,<version>`
 
-### Data Files
-
-#### Timestamp Files
+### Timestamp Files
 Timestamp files must follow this strict naming convention:
 Given that a data file is named `<name>.<ext>` then its timestamps file has to be named `<name>_timestamps.npy`.
 
@@ -591,7 +589,7 @@ Timestamp files are saved in the [NPY binary format](https://docs.scipy.org/doc/
 
 A datum and its timestamp have the same index within their respective files, i.e. the `i`th timestamp in `world_timestamps.npy` belongs to the `i`th video frame in `world.mp4`.
 
-#### Video Files
+### Video Files
 Video files are only recognized if they comply with the following constraints:
 
 Allowed video file extentions are:
