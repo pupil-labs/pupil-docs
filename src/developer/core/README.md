@@ -541,9 +541,9 @@ print(min(ts), sum(ts)/len(ts) , max(ts))
 ```
 
 #### Throughput
-During a test we have run dual 120fps eye tracking with a dummy gaze mapper that turned every pupil datum into a gaze datum. This is effectively 480 messages/sec. The main process running the `IPC backbone proxi` showed a cpu load of `3%` on a MacBook Air (late 2012).
+During a test we have run dual 120fps eye tracking with a dummy gaze mapper that turned every pupil datum into a gaze datum. This is effectively 480 messages/sec. The main process running the `IPC backbone proxy` showed a cpu load of `3%` on a MacBook Air (late 2012).
 
-Artificially increasing the pupil messages by a factor 100 increases the message load to  24.000 pupil messages/sec. At this rate the gaze mapper cannot keep up but the `IPC backbone proxi` runs at only `38%` cpu load.
+Artificially increasing the pupil messages by a factor 100 increases the message load to  24.000 pupil messages/sec. At this rate the gaze mapper cannot keep up but the `IPC backbone proxy` runs at only `38%` cpu load.
 
 It appears ZMQ is indeed highly optimized for speed.
 
