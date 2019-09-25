@@ -122,7 +122,7 @@ accessed using the `base_data` key.
     'gaze_normal_3d': [x, y, z],
     'eye_center_3d': [x, y, z],
     'gaze_point_3d': [x, y, z],
-    'base_data': [<pupil datum>] # list of pupil data used to calculate gaze
+    'base_data': [<pupil datum>]  # list of pupil data used to calculate gaze
 } 
 ```
 
@@ -143,7 +143,7 @@ accessed using the `base_data` key.
         1: [x, y, z],
     },
     'gaze_point_3d': [x, y, z],
-    'base_data': [<pupil datum>] # list of pupil data used to calculate gaze
+    'base_data': [<pupil datum>]  # list of pupil data used to calculate gaze
 }
 ```
 
@@ -230,8 +230,8 @@ ctx = zmq.Context()
 # The REQ talks to Pupil remote and receives the session unique IPC SUB PORT
 requester = ctx.socket(zmq.REQ)
 
-ip = 'localhost' #If you talk to a different machine use its IP.
-port = 50020 #The port defaults to 50020. Set in Pupil Capture GUI.
+ip = 'localhost'  # If you talk to a different machine use its IP.
+port = 50020  # The port defaults to 50020. Set in Pupil Capture GUI.
 
 requester.connect('tcp://%s:%s'%(ip,port))
 requester.send_string('SUB_PORT')
@@ -362,8 +362,8 @@ firehose. (If it can not, you become `the snail`, see [Delivery Guarantees PUB-S
 # Assumes `sub_port` to be set to the current subscription port
 subscriber = ctx.socket(zmq.SUB)
 subscriber.connect('tcp://%s:%s'%(ip, sub_port))
-subscriber.set(zmq.SUBSCRIBE, 'notify.') #receive all notification messages
-subscriber.set(zmq.SUBSCRIBE, 'logging.error') #receive logging error messages
+subscriber.set(zmq.SUBSCRIBE, 'notify.')  # receive all notification messages
+subscriber.set(zmq.SUBSCRIBE, 'logging.error')  #receive logging error messages
 # subscriber.set(zmq.SUBSCRIBE, '')  #r eceive everything (don't do this)
 # you can setup multiple subscriber sockets
 # Sockets can be polled or read in different threads.
@@ -414,7 +414,7 @@ requester.send_string('PUB_PORT')
 pub_port = requester.recv_string()
 publisher = ctx.socket(zmq.PUB)
 publisher.connect('tcp://%s:%s'%(ip, pub_port))
-sleep(1) # see Async connect in the paragraphs below
+sleep(1)  # see Async connect in the paragraphs below
 notification = {'subject':'calibration.should_start'}
 topic = 'notify.' + notification['subject']
 payload = serializer.dumps(notification)
