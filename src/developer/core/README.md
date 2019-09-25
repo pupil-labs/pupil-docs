@@ -703,3 +703,9 @@ Most, and preferably all coordination and control happens within the World proce
 ## Running From Source
 
 Follow the setup instructions for your OS on the Pupil Core [Github repo](https://github.com/pupil-labs/pupil)
+
+::: warning
+<v-icon large color="warning">info_outline</v-icon>
+When running from source, the [user settings](#installation) are not placed in the user's
+home directory but in the root directory of the cloned repository.
+:::
