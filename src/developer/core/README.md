@@ -632,24 +632,29 @@ You can use [`file_methods.PLData_Writer`](https://github.com/pupil-labs/pupil/b
 ### Other Files
 Files without file extention, e.g. the deprecated `pupil_data` file, and files with a `.meta` extention are msgpack-encoded dictionaries. They can be read and written using [`file_methods.load_object()` and `file_methods.save_object()`](https://github.com/pupil-labs/pupil/blob/315188dcfba9bef02a5b1d9a3770929d7510ae2f/pupil_src/shared_modules/file_methods.py#L57-L87) and do *not* have a corresponding timestamps file.
 
-<!-- this is a horizontal divider -->
 <v-divider></v-divider>
 
 ## Plugin API
 
-Overview of language, code structure, and general conventions
+### Introduction
 
-### Language
+Plugins for the Pupil Core software have multiple advantages. For the user, they make it
+easy to turn features on and off as required. For the developer, it increases maintainability
+through separation. Additionally, plugins can be loaded at runtime, extending Pupil's
+functionality by sharing a simple Python file. See our [pupil-community](https://github.com/pupil-labs/pupil-community#plugins)
+repository for a list of third-party plugins.
+
+#### Language
 Pupil is written in `Python 3`, but no "heavy lifting" is done in Python. High performance computer vision, media compression, display libraries, and custom functions are written in external libraries or c/c++ and accessed though [cython](http://cython.org/). Python plays the role of "glue" that sticks all the pieces together.
 
 We also like writing code in Python because it's *quick and easy* to move from initial idea to working proof-of-concept. If proof-of-concept code is slow, optimization and performance enhancement can happen in iterations of code.
 
-### Process Structure
+#### Process Structure
 When Pupil Capture starts, in default settings two processes are spawned:
 
 **[Eye](https://github.com/pupil-labs/pupil/blob/master/pupil_src/launchables/eye.py)** and **[World](https://github.com/pupil-labs/pupil/blob/master/pupil_src/launchables/world.py)**. Both processes grab image frames from a video capture stream but they have very different tasks.
 
-### Eye Process
+#### Eye Process
 The eye process only has one purpose - to detect the pupil and broadcast its position. The process breakdown looks like this:
 
 * Grabs eye camera images from eye camera video stream
@@ -658,7 +663,7 @@ The eye process only has one purpose - to detect the pupil and broadcast its pos
 
 See the [terminology section](/developer/core/terminology) for the difference between pupil and gaze data.
 
-### World Process
+#### World Process
 This is the workhorse.
 
 * Grabs the world camera images from the world camera video stream
