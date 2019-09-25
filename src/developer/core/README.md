@@ -556,30 +556,24 @@ It appears ZMQ is indeed highly optimized for speed.
 
 ## Recording Format
 
+This section outlines the Pupil Player recording format. We recommend reading it
+thourougly if you want to develop software that creates recordings on its own,
+or processes existing recordings without having to open them in Pupil Player.
+
 ### Meta Files
 
-```csv
-key,value
-Recording Name,2018_07_19
-Start Date,19.07.2018
-Start Time,14:56:21
-Start Time (System),1532004981.666572
-Start Time (Synced),701730.897108953
-Duration Time,00:00:13
-World Camera Frames,402
-World Camera Resolution,1280x720
-Capture Software Version,1.7.159
-Data Format Version,1.8
-System Info,"User: name, Platform: Linux, ..."
-```
+Meta files are essential for Pupil Player. Without them, Pupil Player is not able to
+recognize a directory as a Pupil Recording. 
 
-Each recording requires three files:
-1. An `info.csv` file that includes two columns -- `key` and `value`. (See left for example)
-2. At least one video file and its corresponding timestamp file. See the [*Video Files*](#video-files) section below for details.
+The [Pupil Player Recording Format 2.0](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/pupil_recording/README.md)—introduced in version `v1.16`—requires the meta info file to be named `info.player.json`.
+See its [specification](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/pupil_recording/README.md) for details.
 
-A minimum requirement of two key, value pairs are required in the `info.csv` file.
-1. `Recording Name,<name>`
-2. `Data Format Version,<version>`
+::: tip
+<v-icon large color="info">info_outline</v-icon>
+Pupil Mobile and Pupil Invisible recordings have their own meta file definitions:
+`info.csv` and `info.json`. When opened in Pupil Player, the meta info file
+will be transformed the Pupil Player Recording Format 2.0.
+:::
 
 ### Timestamp Files
 Timestamp files must follow this strict naming convention:
@@ -612,15 +606,17 @@ The video files should look like:
 
 We also support multiple parts of video files as input. For instance:
 
-- `world.mp4`, `world_001.mp4`
+- `world.mp4`, `world_001.mp4`, `world_002.mp4`, ...
 - `eye0.mjpeg`, `eye0_001.mjpeg`
 
 And their corresponding timestamp files should follow the pattern:
 
-- `world_timestamps.npy`, `world_001_timestamps.npy`
+- `world_timestamps.npy`, `world_001_timestamps.npy`, `world_002_timestamps.npy`, ...
 
 ### Audio File
-An audio file is only recognized in Pupil Player's playback plugin if the file is named `audio.mp4`.
+An audio file is only recognized in Pupil Player's playback plugin if the file is named
+`audio.mp4` and there is a corresponding `audio_timestamps.npy` file containing the
+correct audio timestamps.
 
 ### `pldata` Files
 These files contain a sequence of independently msgpack-encoded messages. Each message consists of two frames:
