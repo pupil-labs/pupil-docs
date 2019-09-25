@@ -700,6 +700,20 @@ This is the workhorse.
 * Records video and data.
 Most, and preferably all coordination and control happens within the World process.
 
+### API Reference
+
+All plugins are required to be subclasses from the root [Plugin class](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/plugin.py#L25-L167). It is available during runtime:
+```py
+from plugin import Plugin
+
+class MyCustomPlugin(Plugin):
+    pass
+```
+
+TODO: Add further api calls
+
+TODO: Add example
+
 ## Running From Source
 
 Follow the setup instructions for your OS on the Pupil Core [Github repo](https://github.com/pupil-labs/pupil)
