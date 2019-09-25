@@ -466,25 +466,22 @@ insights from the guide that are relevant for our use cases.
  - It will deal with a lot of low level tcp handling so we don't have to.
 
 #### Delivery Guarantees PUB-SUB
-<!-- todo @ppr - formatting below is confusing, please update. -->
 
-ZMQ PUB SUB will make no guarantees for delivery. Reasons for dropped messages are:
+ZMQ PUB SUB will make no guarantees for delivery. Reasons for not receiving messages are:
 
- - `Async connect`: PUB sockets drop messages before a connection has been made
- (connections are async in the background) and topics subscribed. *1
- - `The Late joiner`: SUB sockets will only receive messages that have been sent after they connect. *2
- - `The Snail`: If SUB sockets do not consume delivered messages fast enough they start dropping them. *3
- - `Fast close`: A PUB socket may loose packages if you close it right after sending. *1
+ - `Async Connect`/`The Late joiner`: PUB sockets drop messages before a connection has
+ been established and topics subscribed. ZMQ connects asynchronously in the background.
+ - `The Snail`: If SUB sockets do not consume delivered messages fast enough they start dropping them.
+ - `Fast close`: A PUB socket may loose packages if you close it right after sending. 
 
-1. In Pupil we prevent this by using a `PUSH` socket as intermediary for notifications.
-See `shared_modules/zmq_tools.py`.
+For more information see [ZMQ Guide Chapter 5 - Advanced Pub-Sub Patterns](http://zguide.zeromq.org/php:chapter5).
 
-2. Caching all messages in the sender or proxy is not an option. This is not really
-considered a problem of the transport.
-
-3. In Pupil we pay close attention to be fast enough or to subscribe only to low volume
-topics. Dropping messages in this case is by design. It is better than stalling data
-producers or running out of memory.
+:::tip
+<v-icon large color="info">info_outline</v-icon>
+In order to avoid accidentally dropping notifications in Pupil, we use a `PUSH` instead
+of an `PUB` socket. It acts as an intermediary for notifications and guarantees that any
+notification sent to the IPC Backbone, is processed and published by it.
+:::
 
 #### Delivery Guarantees REQ-REP
 When writing to the Backbone via REQ-REP we will get confirmations/replies for every
