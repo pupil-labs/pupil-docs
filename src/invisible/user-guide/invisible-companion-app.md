@@ -16,18 +16,18 @@ Get familiar with Pupil Invisible Companion app!
 4. **Active wearer**: The currently selected wearer.
 5. **Active template**: Click this button to fill out the fields of the active template.
 6. **Menu**: Main app naviagation. Access recordings, wearers, templates, settings.
-7. **Info**: Press this button to see information about remaining recording time, glasses and scene camera info, and name of your Companion Device.
+7. **Info**: Press this button to see information about remaining recording time, glasses and scene camera info, and the name of your Companion Device.
 8. **Record**: Press this button to start or stop a recording.
 9. **Preview**: Press this button to see a real-time preview of your scene video with gaze overlay.
 
 
 ## Pupil Cloud Sign Up
 
-First time users will need to Sign Up for a Pupil Cloud account. You can Sign Up by using your Google account, or by creating an account with email address and password.
+First-time users will need to Sign Up for a Pupil Cloud account. You can Sign Up by using your Google account, or by creating an account with email address and password.
 
 ### Automatic uploads to Pupil Cloud
 
-Your purchase of Pupil Invisible includes a free membership to [Pupil Cloud](/cloud). Pupil Cloud enables you to privately and securely upload your recordings from your Companion Device to cloud storage. Usage of this feature is **optional**. You can turn this feature on/off during setup, or at any later time in the app settings. Learn more about [Pupil Cloud](/cloud).
+Your purchase of Pupil Invisible includes a free membership to [Pupil Cloud](/cloud). Pupil Cloud enables you to privately and securely upload your recordings from your Companion Device to cloud storage. The usage of this feature is **optional**. You can turn this feature on/off during setup, or at any later time in the app settings. Learn more about [Pupil Cloud](/cloud).
 
 
 ## OnePlus 6 Companion Device Setup
@@ -43,7 +43,7 @@ Check out the video for a demonstration of how to add OTG to quick settings and 
 
 ### Enable Application Lock
 
-Lock Pupil Invisible Companion App to the overview to ensure tha app keeps running even when your screen is off.
+Lock Pupil Invisible Companion App to the overview to ensure the app keeps running even when your screen is off.
     
 Check out the video to see how to lock the app.
 
