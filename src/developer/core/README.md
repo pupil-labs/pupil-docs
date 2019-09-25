@@ -16,6 +16,7 @@ There are a number of ways you can interact with Pupil Core as a developer.
 - **Modify source code**: Can't do what you need to do with the network based API or plugin? Then get ready to dive into the inner workings of Pupil, set up dependencies, and [run from source](#running-from-source)!
 
 ::: tip
+<v-icon large color="info">info_outline</v-icon>
 In most cases you can simply [download Pupil Core app bundles](https://github.com/pupil-labs/pupil/releases/latest) and extend the functionality via API or Plugin. 
 :::
 
