@@ -638,11 +638,31 @@ Files without file extention, e.g. the deprecated `pupil_data` file, and files w
 
 ### Introduction
 
-Plugins for the Pupil Core software have multiple advantages. For the user, they make it
+In Pupil Core, plugins are distributed as Python files that are loaded and executed at
+runtime. To be recognized as such, they need to be installed in the [correct place](#installation)
+and implement the [Plugin API](#development).
+
+The usage of plugins has multiple advantages. For the user, they make it
 easy to turn features on and off as required. For the developer, it increases maintainability
-through separation. Additionally, plugins can be loaded at runtime, extending Pupil's
-functionality by sharing a simple Python file. See our [pupil-community](https://github.com/pupil-labs/pupil-community#plugins)
-repository for a list of third-party plugins.
+through separation.
+
+Plugins can also be loaded at runtime, extending Pupil's functionality by sharing a
+simple Python file. See our [pupil-community](https://github.com/pupil-labs/pupil-community#plugins)
+repository for a list of third-party plugins. See below [on how to install them](#installation).
+
+### Installation
+
+Each Pupil Core software creates its own user directory. It is directly placed in your
+user's home directory and follows this naming convention: `pupil_<name>_settings`, e.g.
+`pupil_capture_settings`.
+
+Each user directory has a `plugins` subdirectory into which the plugin files need to be
+placed. The Pupil Core software will attempt to load the files during the next launch.
+
+If the plugin was installed correctly, it should appear in the [Plugin Manager](/core/software/pupil-capture.html#plugins)
+of the corresponding Pupil Core software. Check the log file (`~/pupil_<name>_settings/<name>.log`) for errors if this is not the case.
+
+### Development
 
 #### Language
 Pupil is written in `Python 3`, but no "heavy lifting" is done in Python. High performance computer vision, media compression, display libraries, and custom functions are written in external libraries or c/c++ and accessed though [cython](http://cython.org/). Python plays the role of "glue" that sticks all the pieces together.
