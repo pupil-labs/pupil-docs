@@ -466,18 +466,9 @@ These labels can be created by pressing their respective hotkey or by sending a 
 This is useful to mark external events (e.g. "start of condition A") within the Pupil recording. The `Annotation Player`
 plugin is able to correlate and export these events as well as add new ones.
 
-
-#### Remote Annotations
-You can also create annotation events programmatically and send them using the IPC, or by sending messages to the Pupil Remote interface. Here is an example annotation notification.
-
-```python
-{'subject':"annotation",'label':"Hi this is my annotation 1",'timestamp':[set a correct timestamp as float here],'duration':1.0,'source':'a test script','record':True}
-```
-
-::: tip
-<v-icon large color="info">info_outline</v-icon>
-<a href="https://github.com/pupil-labs/pupil-helpers/blob/master/pupil_remote/remote_annotations.py" title="remote annotation script">This script</a> demonstrates how to send remote annotations. Use this script as a starting point for your integrations.
-:::
+You can also create [remote annotation](/developer/core/#remote-annotations) events
+programmatically and send them to Pupil Capture via the
+[Pupil Core Network API](/developer/core/#network-api).
 
 ### Camera Intrinsics Estimation
 This plugin is used to calculate camera intrinsics, which will enable one to correct camera distortion. Pupil Capture has built in, default camera intrinsics models for the high speed world camera and the high resolution world camera. You can re-calibrate your camera and/or calibrate a camera that is not supplied by Pupil Labs by running this calibration routine. We support two different distortion models, radial distortion and fisheye distortion. For cameras with a FOV of 100 degrees or greater (like e.g. the high speed world camera) the fisheye distortion model usually performs better, for cameras with a smaller FOV (e.g. the high resolution world camera) we recommend the radial distortion model.
