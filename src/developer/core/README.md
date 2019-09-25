@@ -21,7 +21,7 @@ In most cases you can simply [download Pupil Core app bundles](https://github.co
 :::
 
 ### Terminology
-There are a lot of new terms that are specific to eye and to Pupil Core. We have compiled a small list in the [terminology section](developer/core/terminology).
+There are a lot of new terms that are specific to eye and to Pupil Core. We have compiled a small list in the [terminology section](/developer/core/terminology).
 
 
 ## Timing & Data Conventions
@@ -656,9 +656,7 @@ The eye process only has one purpose - to detect the pupil and broadcast its pos
 * Find the pupil position in the image
 * Broadcast/stream the detected pupil position.
 
-<aside class="notice">
-Note - Pupil position refers to the position of the pupil in the eye camera space. This is different from gaze position which is what we call the mapped pupil positions in the world camera space.
-</aside>
+See the [terminology section](/developer/core/terminology) for the difference between pupil and gaze data.
 
 ### World Process
 This is the workhorse.
