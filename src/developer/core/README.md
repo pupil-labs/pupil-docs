@@ -662,6 +662,13 @@ placed. The Pupil Core software will attempt to load the files during the next l
 If the plugin was installed correctly, it should appear in the [Plugin Manager](/core/software/pupil-capture.html#plugins)
 of the corresponding Pupil Core software. Check the log file (`~/pupil_<name>_settings/<name>.log`) for errors if this is not the case.
 
+::: warning
+<v-icon large color="warning">info_outline</v-icon>
+The bundled applications use their own isolated Python environment, i.e. the plugin will
+not recognize your local `pip` installation! Any additional dependencies need to be
+installed into the `plugins` folder, next to the plugin.
+:::
+
 ### Development
 
 #### Language
