@@ -1,3 +1,7 @@
+---
+permalink: /core/software/pupil-player
+---
+
 # Pupil Player
 Pupil Player is the second tool you will use after Pupil Capture. It is a media and data visualizer at its core. You will use it to look at Pupil Capture recordings. Visualize your data and export it.
 

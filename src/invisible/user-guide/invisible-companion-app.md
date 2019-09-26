@@ -1,3 +1,7 @@
+---
+permalink: /invisible/user-guide/invisible-companion-app
+---
+
 # Invisible Companion App
 Get familiar with Pupil Invisible Companion app!
 

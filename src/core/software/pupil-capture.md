@@ -1,3 +1,7 @@
+---
+permalink: /core/software/pupil-capture
+---
+
 # Pupil Capture
 Pupil Capture is the software used with your Pupil Core Headset. The software reads the video streams coming in from the world camera and the eye camera(s). Pupil Capture uses the video streams to detect your pupil, track your gaze, detect and track markers in your environment, record video and events, and stream data in realtime.
 
@@ -233,7 +237,7 @@ Note - you must specify an existing folder, otherwise the `Path to recordings` w
 :::
 
 ### Recording files
-If you open up a recording session folder you will see a collection of video(s) and data files. Take a look at [Recording format](/core/software/recording-format.html) for an overview.
+If you open up a recording session folder you will see a collection of video(s) and data files. Take a look at [Recording format](/core/software/recording-format) for an overview.
 
 ## Plugins
 Open the `Plugin Manager` menu on the right.
@@ -423,7 +427,7 @@ The exact time window to consider can be set using the `Gaze History Length` fie
 #### Further Functionality
 * You can click the `Open Surface in Window` button to open a view of the surface in a separate window. Gaze positions on the surface will be visualized in this window in real-time.
 * Streaming Surfaces with Pupil Capture - Detected surfaces as well as gaze positions relative to the surface are broadcast under the `surface` topic. Check out [this video](http://youtu.be/qHmfMxGST7A) for a demonstration.
-* Surface Metrics with Pupil Player - if you have defined surfaces, you can generate surface visibility reports or gaze count per surface. See our [blog post](http://pupil-labs.com/blog/2014/07/0392-player-release.html) for more information.
+* Surface Metrics with Pupil Player - if you have defined surfaces, you can generate surface visibility reports or gaze count per surface. See our [blog post](https://pupil-labs.com/news/0392-release) for more information.
 
 #### Legacy Markers
 The legacy surface system used simple square markers, which are less robust to detect.
@@ -466,9 +470,9 @@ These labels can be created by pressing their respective hotkey or by sending a 
 This is useful to mark external events (e.g. "start of condition A") within the Pupil recording. The `Annotation Player`
 plugin is able to correlate and export these events as well as add new ones.
 
-You can also create [remote annotation](/developer/core/#remote-annotations) events
+You can also create [remote annotation](/developer/core/network-api/#remote-annotations) events
 programmatically and send them to Pupil Capture via the
-[Pupil Core Network API](/developer/core/#network-api).
+[Pupil Core Network API](/developer/core/network-api).
 
 ### Camera Intrinsics Estimation
 This plugin is used to calculate camera intrinsics, which will enable one to correct camera distortion. Pupil Capture has built in, default camera intrinsics models for the high speed world camera and the high resolution world camera. You can re-calibrate your camera and/or calibrate a camera that is not supplied by Pupil Labs by running this calibration routine. We support two different distortion models, radial distortion and fisheye distortion. For cameras with a FOV of 100 degrees or greater (like e.g. the high speed world camera) the fisheye distortion model usually performs better, for cameras with a smaller FOV (e.g. the high resolution world camera) we recommend the radial distortion model.

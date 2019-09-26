@@ -1,3 +1,8 @@
+---
+permalink: /invisible/user-guide/intro
+---
+
+
 # Introduction
 In this section, we will introduce a few key terms/concepts that are essential to Pupil Invisible: wearers, recordings, templates
 

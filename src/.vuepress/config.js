@@ -51,7 +51,16 @@ module.exports = {
       ],
       '/developer/': [
         '',
-        'core/',
+        {
+          title: 'Core',
+          children: [
+            'core/overview',
+            'core/network-api',
+            'core/recording-format',
+            'core/plugin-api',
+            'core/terminology',
+          ]
+        },
         'invisible/',
         'vr-ar/'
       ],

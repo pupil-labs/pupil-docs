@@ -73,6 +73,15 @@ In the root dir are where all the page routes are located.
 | `/README.md` | `/` |
 | `/core/README.md` | `/core/` |
 
+For pages that are _not_ README.md, please add frontmatter with a permalink. This enables us to have "clean" URLs without `.html` and makes linking within docs easier. Example for /core/software/pupil-capture.md - add the below front-matter:
+
+```md
+---
+permalink: /core/software/pupil-capture
+---
+```
+
+
 ## Images & media
 - `src/media` - This is where most people will be adding images, videos, etc. For all assets that will be used in .md files.
 - `src/.vuepress/public` - Primarily for those who are developing the theme. For assets that are used in .vue files.
@@ -104,7 +113,7 @@ All content is written in Markdown. If you're new to Markdown see [this guide](h
 ### Table of contents
 All H1, H2, H3 headers will be automatically added to the table of contents.
 
-Please only use H1-H4 headings (e.g. don't use H5).
+Please only use H1-H4 headings. If you find yourself needing more nesting, you should re-think your content. _Don't use H5_.
 
 ### Code blocks
 VuePress uses Prism to highlight language syntax in Markdown code blocks, using coloured text.

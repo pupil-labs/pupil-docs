@@ -91,6 +91,3 @@ Or, if you want an older version, just checkout an older version. In this exampl
 git clone https://github.com/pupil-labs/pupil-hardware-diy.git
 git checkout 6ad49c6066d5
 ```
-
-## Windows Driver Installation
-If you are using Windows, you will need to install drivers for your cameras. Please refer to the instructions here.

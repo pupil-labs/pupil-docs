@@ -1,3 +1,8 @@
+---
+permalink: /vr-ar/oculus-rift-dk2
+---
+
+
 # Oculus Rift DK2 Add-On
 Add eye tracking powers to your Oculus Rift DK2 with our 120hz eye tracking add-ons.
 This page will guide you through all steps needed to turn your Oculus DK2 into an eye tracking HMD using the Pupil Oculus DK2 eye tracking add-on cups.

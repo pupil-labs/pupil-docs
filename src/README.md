@@ -1,6 +1,7 @@
 ---
 title: "Get Started!"
 home: true
+subtitle: "Welcome to Pupil Labs documentation. Get up and running with your Pupil Labs eye tracking tools. Read user guides, developer docs, connect with us via chat!"
 featured_products: [
   {
     title: "Pupil Invisible",

@@ -1,3 +1,7 @@
+---
+permalink: /core/software/pupil-mobile
+---
+
 # Pupil Mobile
 Pupil Mobile is a companion app to Pupil Capture and Pupil Service. It is currently in public beta.
 

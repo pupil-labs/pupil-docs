@@ -1,3 +1,8 @@
+---
+permalink: /vr-ar/hololens
+---
+
+
 # HoloLens Add-On
 Add eye tracking powers to your HoloLens with our 200hz eye tracking add-ons. Follow the instructions in the video to install your add-on.
 
