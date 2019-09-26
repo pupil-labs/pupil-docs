@@ -25,7 +25,7 @@ In most cases you can simply [download Pupil Core app bundles](https://github.co
 :::
 
 ## Terminology
-There are a lot of new terms that are specific to eye and to Pupil Core. We have compiled a small list in the [terminology section](/developer/core/terminology).
+There are a lot of new terms that are specific to eye and to Pupil Core. We have compiled a small list in the [terminology section](/core/terminology).
 
 
 ## Timing & Data Conventions
