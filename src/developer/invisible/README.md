@@ -2,12 +2,18 @@
 
 Welcome to Pupil Invisible developer docs!
 
-<!-- this is a horizontal divider -->
 <v-divider></v-divider>
 
 ## Recording Format
 
-<!-- this is a horizontal divider -->
+Similar to [Pupil Capture](/developer/core/recording-format/), the Pupil Invisible Companion
+stores its data files in pairs: Each data file has a corresponding timestamp file. This
+is required to correlate the different data source after-the-effect in Pupil Cloud or
+Pupil Player.
+
+You can find details to the specification of the Pupil Invisible Companion app recording
+format in this [document](https://docs.google.com/spreadsheets/d/1e1Xc1FoQiyf_ZHkSUnVdkVjdIanOdzP0dgJdJgt0QZg/edit?usp=sharing).
+
 <v-divider></v-divider>
 
 ## Network API
