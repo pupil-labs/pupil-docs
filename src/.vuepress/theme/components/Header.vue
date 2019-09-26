@@ -8,7 +8,7 @@
       height="60px"
     )
       SidebarButton(@toggle-sidebar="$emit('toggle-sidebar')")
-      router-link.align-center.d-flex(to="/")
+      a.align-center.d-flex(href="https://pupil-labs.com" target="_blank" rel="noopener")
         img(:src="$withBase('/logos/pl_logo.svg')")
       v-spacer
       v-toolbar-items.hidden-sm-and-down
@@ -30,10 +30,11 @@ export default {
   data() {
     return {
       docs_menu: [
+        { icon: "home", title: "home", "link": "/" },
         { icon: "invisible", title: "invisible", link: "/invisible/" },
         { icon: "core", title: "core", link: "/core/" },
         { icon: "vr-ar", title: "vr/ar", link: "/vr-ar/" },
-        { icon: "cloud", title: "cloud", link: "/cloud/" },
+        // { icon: "cloud", title: "cloud", link: "/cloud/" },
         { icon: "developer", title: "developer", link: "/developer/" }
       ]
     };
