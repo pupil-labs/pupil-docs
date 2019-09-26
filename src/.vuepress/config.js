@@ -47,9 +47,9 @@ module.exports = {
         'rift',
         // 'bt300',
       ],
-      '/cloud/': [
-        '',
-      ],
+      // '/cloud/': [
+      //   '',
+      // ],
       '/developer/': [
         '',
         {
