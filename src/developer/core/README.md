@@ -16,6 +16,7 @@ There are a number of ways you can interact with Pupil Core as a developer.
 - **Modify source code**: Can't do what you need to do with the network based API or plugin? Then get ready to dive into the inner workings of Pupil, set up dependencies, and [run from source](#running-from-source)!
 
 ::: tip
+<v-icon large color="info">info_outline</v-icon>
 In most cases you can simply [download Pupil Core app bundles](https://github.com/pupil-labs/pupil/releases/latest) and extend the functionality via API or Plugin. 
 :::
 
@@ -121,7 +122,7 @@ accessed using the `base_data` key.
     'gaze_normal_3d': [x, y, z],
     'eye_center_3d': [x, y, z],
     'gaze_point_3d': [x, y, z],
-    'base_data': [<pupil datum>] # list of pupil data used to calculate gaze
+    'base_data': [<pupil datum>]  # list of pupil data used to calculate gaze
 } 
 ```
 
@@ -142,7 +143,7 @@ accessed using the `base_data` key.
         1: [x, y, z],
     },
     'gaze_point_3d': [x, y, z],
-    'base_data': [<pupil datum>] # list of pupil data used to calculate gaze
+    'base_data': [<pupil datum>]  # list of pupil data used to calculate gaze
 }
 ```
 
@@ -229,8 +230,8 @@ ctx = zmq.Context()
 # The REQ talks to Pupil remote and receives the session unique IPC SUB PORT
 requester = ctx.socket(zmq.REQ)
 
-ip = 'localhost' #If you talk to a different machine use its IP.
-port = 50020 #The port defaults to 50020. Set in Pupil Capture GUI.
+ip = 'localhost'  # If you talk to a different machine use its IP.
+port = 50020  # The port defaults to 50020. Set in Pupil Capture GUI.
 
 requester.connect('tcp://%s:%s'%(ip,port))
 requester.send_string('SUB_PORT')
@@ -361,8 +362,8 @@ firehose. (If it can not, you become `the snail`, see [Delivery Guarantees PUB-S
 # Assumes `sub_port` to be set to the current subscription port
 subscriber = ctx.socket(zmq.SUB)
 subscriber.connect('tcp://%s:%s'%(ip, sub_port))
-subscriber.set(zmq.SUBSCRIBE, 'notify.') #receive all notification messages
-subscriber.set(zmq.SUBSCRIBE, 'logging.error') #receive logging error messages
+subscriber.set(zmq.SUBSCRIBE, 'notify.')  # receive all notification messages
+subscriber.set(zmq.SUBSCRIBE, 'logging.error')  #receive logging error messages
 # subscriber.set(zmq.SUBSCRIBE, '')  #r eceive everything (don't do this)
 # you can setup multiple subscriber sockets
 # Sockets can be polled or read in different threads.
@@ -413,7 +414,7 @@ requester.send_string('PUB_PORT')
 pub_port = requester.recv_string()
 publisher = ctx.socket(zmq.PUB)
 publisher.connect('tcp://%s:%s'%(ip, pub_port))
-sleep(1) # see Async connect in the paragraphs below
+sleep(1)  # see Async connect in the paragraphs below
 notification = {'subject':'calibration.should_start'}
 topic = 'notify.' + notification['subject']
 payload = serializer.dumps(notification)
@@ -465,25 +466,22 @@ insights from the guide that are relevant for our use cases.
  - It will deal with a lot of low level tcp handling so we don't have to.
 
 #### Delivery Guarantees PUB-SUB
-<!-- todo @ppr - formatting below is confusing, please update. -->
 
-ZMQ PUB SUB will make no guarantees for delivery. Reasons for dropped messages are:
+ZMQ PUB SUB will make no guarantees for delivery. Reasons for not receiving messages are:
 
- - `Async connect`: PUB sockets drop messages before a connection has been made
- (connections are async in the background) and topics subscribed. *1
- - `The Late joiner`: SUB sockets will only receive messages that have been sent after they connect. *2
- - `The Snail`: If SUB sockets do not consume delivered messages fast enough they start dropping them. *3
- - `Fast close`: A PUB socket may loose packages if you close it right after sending. *1
+ - `Async Connect`/`The Late joiner`: PUB sockets drop messages before a connection has
+ been established and topics subscribed. ZMQ connects asynchronously in the background.
+ - `The Snail`: If SUB sockets do not consume delivered messages fast enough they start dropping them.
+ - `Fast close`: A PUB socket may loose packages if you close it right after sending. 
 
-1. In Pupil we prevent this by using a `PUSH` socket as intermediary for notifications.
-See `shared_modules/zmq_tools.py`.
+For more information see [ZMQ Guide Chapter 5 - Advanced Pub-Sub Patterns](http://zguide.zeromq.org/php:chapter5).
 
-2. Caching all messages in the sender or proxy is not an option. This is not really
-considered a problem of the transport.
-
-3. In Pupil we pay close attention to be fast enough or to subscribe only to low volume
-topics. Dropping messages in this case is by design. It is better than stalling data
-producers or running out of memory.
+:::tip
+<v-icon large color="info">info_outline</v-icon>
+In order to avoid accidentally dropping notifications in Pupil, we use a `PUSH` instead
+of an `PUB` socket. It acts as an intermediary for notifications and guarantees that any
+notification sent to the IPC Backbone, is processed and published by it.
+:::
 
 #### Delivery Guarantees REQ-REP
 When writing to the Backbone via REQ-REP we will get confirmations/replies for every

@@ -268,7 +268,7 @@ with at least one subscription is transferred.
   <source src="../../media/core/videos/pr.mp4" type="video/mp4">
 </video>
 
-* Load the `Pupil Remote` plugin from the `General` sub-menu in the GUI (it is loaded by default).
+* Load the `Pupil Remote` plugin from the `Plugin Manager` sub-menu in the GUI (it is loaded by default).
 * It will automatically open a network port at the default `Address`.
 * Change the address and port as desired.
 * If you want to change the address, just type in the address after the `tcp://`
