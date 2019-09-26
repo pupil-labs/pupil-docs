@@ -332,7 +332,7 @@ The iMotions Exporter creates data that can be used with <https://imotions.com/>
 Specifically, it undistorts the world video images using the camera intrinsics. Gaze data is also undistorted and exported to the `gaze.tlv` file.
 
 ### Raw Data Exporter
-The `Raw Data Exporter` export pupil and gaze data tp `.csv` files and is active bu default.
+The `Raw Data Exporter` export pupil and gaze data tp `.csv` files and is active by default.
 
 <div class="pb-4">
   <img src="../../media/core/imgs/raw-export.jpg" style="display:flex;margin:0 auto;">
