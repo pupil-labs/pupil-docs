@@ -4,7 +4,7 @@ permalink: /developer/core/network-api
 
 # Network API
 
-There are two different stages to the Pupil Core Network API:
+There are two different ways that you can interact with the Pupil Core Network API:
 1. **Pupil Remote**: Simple text-based API to remote control Pupil Core software.
 2. **IPC Backbone**: [msgpack](https://msgpack.org/) based API with access to realtime data.
 
