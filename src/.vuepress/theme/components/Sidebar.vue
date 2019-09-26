@@ -36,10 +36,11 @@ export default {
   data() {
     return {
       docs_menu: [
+        { icon: "home", title: "home", link: "/" },
         { icon: "invisible", title: "invisible", link: "/invisible/" },
         { icon: "core", title: "core", link: "/core/" },
         { icon: "vr-ar", title: "vr/ar", link: "/vr-ar/" },
-        { icon: "cloud", title: "cloud", link: "/cloud/" },
+        // { icon: "cloud", title: "cloud", link: "/cloud/" },
         { icon: "developer", title: "developer", link: "/developer/" }
       ]
     };
