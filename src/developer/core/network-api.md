@@ -18,15 +18,41 @@ as well as to access the second Network API stage (IPC backbone). It uses ZeroMQ
 [REQ-REP](http://zguide.zeromq.org/page:all#Ask-and-Ye-Shall-Receive) pattern for
 reliable one-to-one communication.
 
+This is how you connect to Pupil Remote using [pymzq](https://pyzmq.readthedocs.io/):
+```py
+import zmq
+
+ctx = zmq.Context()
+socket = zmq.Socket(ctx, zmq.REQ)
+socket.connect('tcp://127.0.0.1:50020')
+```
+
 :::tip
 <v-icon large color="info">info_outline</v-icon>
 Pupil Remote accepts requests via a `REP` socket, by default on port `50020`.
 Alternatively, you can provide a custom port via the `--port` application argument.
 :::
 
-To talk to Pupil Remote, open a `REQ` socket, connect to the specified port. Afterwards,
-you can send simple text messages to control Pupil Capture and Pupil Service functions:
+After opening the `REQ` socket, you can send simple text messages to control Pupil
+Capture and Pupil Service functions:
 
+```py
+# start recording
+socket.send_string('R')
+print(socket.recv_string())
+
+sleep(5)
+socket.send_string('r')
+print(socket.recv_string())
+```
+
+::: warning
+<v-icon large color="warning">info_outline</v-icon>
+For every message that you send to Pupil Remote, you need to receive the response. If
+you do not call `recv()`, Pupil Capture might become unresponsive!
+:::
+
+This is an overview over all available Pupil Remote commands:
 ```py
 'R'  # start recording with auto generated session name
 'R rec_name'  # start recording named "rec_name" 
@@ -41,12 +67,6 @@ you can send simple text messages to control Pupil Capture and Pupil Service fun
 'PUB_PORT'  # return the current pub port of the IPC Backbone
 'SUB_PORT'  # return the current sub port of the IPC Backbone
 ```
-
-::: warning
-<v-icon large color="warning">info_outline</v-icon>
-For every message that you send to Pupil Remote, you need to receive the response. If
-you do not call `recv()`, Pupil Capture might become unresponsive!
-:::
 
 ::: tip
 <v-icon large color="info">info_outline</v-icon>
