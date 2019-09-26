@@ -21,7 +21,7 @@ In most cases you can simply [download Pupil Core app bundles](https://github.co
 :::
 
 ### Terminology
-There are a lot of new terms that are specific to eye and to Pupil Core. We have compiled a small list in the [terminology section](developer/core/terminology).
+There are a lot of new terms that are specific to eye and to Pupil Core. We have compiled a small list in the [terminology section](/developer/core/terminology).
 
 
 ## Timing & Data Conventions
@@ -632,35 +632,65 @@ You can use [`file_methods.PLData_Writer`](https://github.com/pupil-labs/pupil/b
 ### Other Files
 Files without file extention, e.g. the deprecated `pupil_data` file, and files with a `.meta` extention are msgpack-encoded dictionaries. They can be read and written using [`file_methods.load_object()` and `file_methods.save_object()`](https://github.com/pupil-labs/pupil/blob/315188dcfba9bef02a5b1d9a3770929d7510ae2f/pupil_src/shared_modules/file_methods.py#L57-L87) and do *not* have a corresponding timestamps file.
 
-<!-- this is a horizontal divider -->
 <v-divider></v-divider>
 
 ## Plugin API
 
-Overview of language, code structure, and general conventions
+### Introduction
 
-### Language
+In Pupil Core, plugins are distributed as Python files that are loaded and executed at
+runtime. To be recognized as such, they need to be installed in the [correct place](#installation)
+and implement the [Plugin API](#development).
+
+The usage of plugins has multiple advantages. For the user, they make it
+easy to turn features on and off as required. For the developer, it increases maintainability
+through separation.
+
+Plugins can also be loaded at runtime, extending Pupil's functionality by sharing a
+simple Python file. See our [pupil-community](https://github.com/pupil-labs/pupil-community#plugins)
+repository for a list of third-party plugins. See below [on how to install them](#installation).
+
+### Installation
+
+Each Pupil Core software creates its own user directory. It is directly placed in your
+user's home directory and follows this naming convention: `pupil_<name>_settings`, e.g.
+`pupil_capture_settings`.
+
+Each user directory has a `plugins` subdirectory into which the plugin files need to be
+placed. The Pupil Core software will attempt to load the files during the next launch.
+
+If the plugin was installed correctly, it should appear in the [Plugin Manager](/core/software/pupil-capture.html#plugins)
+of the corresponding Pupil Core software. Check the log file (`~/pupil_<name>_settings/<name>.log`) for errors if this is not the case.
+
+::: warning
+<v-icon large color="warning">info_outline</v-icon>
+The bundled applications use their own isolated Python environment, i.e. the plugin will
+not recognize your local `pip` installation! Any additional dependencies need to be
+installed into the `plugins` folder, next to the plugin.
+:::
+
+### Development
+
+#### Language
 Pupil is written in `Python 3`, but no "heavy lifting" is done in Python. High performance computer vision, media compression, display libraries, and custom functions are written in external libraries or c/c++ and accessed though [cython](http://cython.org/). Python plays the role of "glue" that sticks all the pieces together.
 
 We also like writing code in Python because it's *quick and easy* to move from initial idea to working proof-of-concept. If proof-of-concept code is slow, optimization and performance enhancement can happen in iterations of code.
 
-### Process Structure
+#### Process Structure
 When Pupil Capture starts, in default settings two processes are spawned:
 
 **[Eye](https://github.com/pupil-labs/pupil/blob/master/pupil_src/launchables/eye.py)** and **[World](https://github.com/pupil-labs/pupil/blob/master/pupil_src/launchables/world.py)**. Both processes grab image frames from a video capture stream but they have very different tasks.
 
-### Eye Process
+#### Eye Process
 The eye process only has one purpose - to detect the pupil and broadcast its position. The process breakdown looks like this:
 
 * Grabs eye camera images from eye camera video stream
 * Find the pupil position in the image
 * Broadcast/stream the detected pupil position.
 
-<aside class="notice">
-Note - Pupil position refers to the position of the pupil in the eye camera space. This is different from gaze position which is what we call the mapped pupil positions in the world camera space.
-</aside>
+See the [terminology section](/developer/core/terminology) for the difference between pupil and gaze data.
 
-### World Process
+#### World Process
 This is the workhorse.
 
 * Grabs the world camera images from the world camera video stream
@@ -670,6 +700,26 @@ This is the workhorse.
 * Records video and data.
 Most, and preferably all coordination and control happens within the World process.
 
+### API Reference
+
+All plugins are required to be subclasses from the root [Plugin class](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/plugin.py#L25-L167). It is available during runtime:
+```py
+from plugin import Plugin
+
+class MyCustomPlugin(Plugin):
+    pass
+```
+
+TODO: Add further api calls
+
+TODO: Add example
+
 ## Running From Source
 
 Follow the setup instructions for your OS on the Pupil Core [Github repo](https://github.com/pupil-labs/pupil)
+
+::: warning
+<v-icon large color="warning">info_outline</v-icon>
+When running from source, the [user settings](#installation) are not placed in the user's
+home directory but in the root directory of the cloned repository.
+:::
