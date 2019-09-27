@@ -4,7 +4,7 @@ permalink: /core/software/recording-format
 
 # Recording Format
 
-Each recording will have a number of files. The exact number and names depend on which
+Each recording contains a number of files. The exact number and names depend on which
 Pupil Core headset is connected and which features are enabled during the recording.
 
 ## Pupil Core 
@@ -41,7 +41,7 @@ gaze.pldata
 annotation_timestamps.npy
 annotation.pldata
 
-## Audio Capture (optional)
+# Audio Capture (optional)
 audio_timestamps.npy
 audio.mp4
 
@@ -49,11 +49,11 @@ audio.mp4
 blinks_timestamps.npy
 blinks.pldata
 
-## Fixation Detector (optional)
+# Fixation Detector (optional)
 fixations_timestamps.npy
 fixations.pldata
 
-## Surface Tracker (optional)
+# Surface Tracker (optional)
 surface_definitions
 surface_definitions_v01
 
