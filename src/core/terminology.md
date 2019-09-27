@@ -15,7 +15,7 @@ in combination with other terms:
 - **World Coordinate System**: Refers to the [_Coordinate System_](#coordinate-system) of the _world camera_.
 
 ## Eye
-The term `eye` is always used in combination with a different term that sppecifies the context:
+The term `eye` is always used in combination with a different term that specifies the context:
 
 - **Eye ID**: `0` or `1`; identifies the right and left eyes.
 - **Eye Camera**: Physical camera capturing the subject's eye. There can be one or two
@@ -64,7 +64,7 @@ the gaze for future pupil data.
 
 ## Timing
 
-The Pupil Core software uses timestamps with 64-bit floating point values. Their unit is
+Pupil Core software uses timestamps with 64-bit floating point values. Their unit is
 _seconds_. Pupil Core differentiates between to clocks:
 
 - _System Time_: Returns devices current date time (not precise).
