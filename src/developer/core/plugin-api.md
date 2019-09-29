@@ -77,7 +77,3 @@ from plugin import Plugin
 class MyCustomPlugin(Plugin):
     pass
 ```
-
-TODO: Add further api calls
-
-TODO: Add example
