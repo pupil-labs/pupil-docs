@@ -1,11 +1,11 @@
-branches:
-  only:
-    - master
-os:
-  - linux
-sudo: false
+language: node_js
+node_js:
+  - lts/*
+install:
+  - npm install -g vuepress
 script:
-  - "/bin/bash ./scripts/webhook.sh"
-env:
-  global:
-    secure: Sf5VnnnScfqKZWBfzEFFnVSIgC9tUovUndZj6gG60NZ/9fEMhMMZT8rJTDtcLi7SZsew8zVZ3PNX5ZdtXQBF5P4OzQdC5rTpjeqWFSwdD/wR6KpMh89TbR3nJ2beBnaLgn2HhVekGyrPItLtc1IHjAQZq+TQ4pPMhX8rMXntHeLRMH6k4z6SOrwWoa6XeOyGRuE8aoe/VNQ01weoTF41/XcA8L2fs9eG0RweY3sGVO4yE8XUaZYutGW2bVwP5c5CRgFda44w/Pg163bEAegelKd0+CY6QDfD/S6+VXvhy2MiPaAYEREP9l0hX+OzZaAD18Ew9AhBJFYN+zB3NhUBn0BunLr/+v72Tyzs/egtAu70JZekJXhA1StAgStWHfIdwpAlyw/JTAaqDGvrX5GLj7ccL9u/qowU7L/KhUXKluv//Qd0tSat9PCX3FRMNv2eDu0S9Sn/8CI3etN1D7Nb1ObcCEwvkmLZMbxjfz78n5o7lOykjFj8hLvyYjlcEDI7nJxnEU6y+fTFg8QsuxD+TQEf2E8EzbKA85Du01BCQ/NHMk734AxLpPKeSZxo4IsEEP9Hy5XrqbPBZB7TsOc080U11dmBcw8DmK1rful//wEtTth4P7UQVNuF0FPpvSnVHPICbb43p7iId9rCZpdnuYmQiQdvzlZwZhjtV6fJQ5E=
+  - yarn build
+  - echo $TRAVIS_COMMIT > dist/gitcommit.txt
+  - du -h src/.vuepress/dist
+# deploy:
+cache: yarn
