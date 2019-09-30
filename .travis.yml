@@ -2,7 +2,8 @@ language: node_js
 node_js:
   - lts/*
 install:
-  - npm install -g vuepress
+  - yarn global add vuepress
+  - yarn
 script:
   - yarn build
   - echo $TRAVIS_COMMIT > dist/gitcommit.txt
