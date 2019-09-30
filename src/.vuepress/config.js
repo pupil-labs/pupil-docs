@@ -73,22 +73,22 @@ module.exports = {
     docsBranch: 'vuepress-refactor',
     editLinks: true,
     editLinkText: 'Edit this page',
-    // algolia: {
-    //   apiKey: ''
-    //   indexName: ''
-    // }
+    algolia: {
+      apiKey: 'a46ad8b3e5154fd970cd0ffeedb52562',
+      indexName: 'pupil-labs'
+    }
   },
 
   plugins: [
-    [
-      "@vuepress/medium-zoom",
-      {
-        options: {
-          margin: 100,
-          background: '#fafafa'
-        }
-      }
-    ],
+    // [
+    //   "@vuepress/medium-zoom",
+    //   {
+    //     options: {
+    //       margin: 100,
+    //       background: '#fafafa'
+    //     }
+    //   }
+    // ],
     [
       "@vuepress/last-updated",
       {
@@ -106,13 +106,13 @@ module.exports = {
       {
         hostname: "https://docs.pupil-labs.com"
       }
+    ],
+    [
+      "@vuepress/google-analytics",
+      {
+        ga: "UA-40856943-3"
+      }
     ]
-    // [
-    //   "@vuepress/google-analytics",
-    //   {
-    //     ga: "UA-40856943-2"
-    //   }
-    // ]
   ],
 
   chainWebpack: config => {
