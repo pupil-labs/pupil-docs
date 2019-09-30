@@ -38,7 +38,8 @@ module.exports = {
             'software/pupil-service',
             'software/pupil-mobile',
             'software/recording-format',
-            'terminology'
+            'terminology',
+            'academic-citation',
           ]
         },
         'diy/'
