@@ -11,7 +11,7 @@ install:
 stages:
   - build
   - name: production
-  if: branch = master
+    if: branch = master
 
 jobs:
   include:
