@@ -39,5 +39,5 @@ If you run into any problems check out [troubleshooting](/invisible/user-guide/t
 <v-divider></v-divider>
 
 ## Chat with us
-If you have questions or feedback we invite you to chat with our team and other members of the Pupil Invisible community on ==[Discord](invite-link/)==!
+If you have questions or feedback we invite you to chat with our team and other members of the Pupil Invisible community on [Discord](https://pupil-labs.com/chat/ "Pupil Labs chat server on Discord")!
 

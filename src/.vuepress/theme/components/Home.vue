@@ -63,6 +63,7 @@
                 dark
                 round
                 target="__blank"
+                href="https://pupil-labs.com/chat/"
               ).bg-link-blue.mr-0 Chat
 
     Footer

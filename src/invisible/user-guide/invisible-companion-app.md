@@ -33,8 +33,13 @@ First-time users will need to Sign Up for a Pupil Cloud account. You can Sign Up
 
 Your purchase of Pupil Invisible includes a free membership to [Pupil Cloud](/cloud). Pupil Cloud enables you to privately and securely upload your recordings from your Companion Device to cloud storage. The usage of this feature is **optional**. You can turn this feature on/off during setup, or at any later time in the app settings. Learn more about [Pupil Cloud](/cloud).
 
+<v-divider></v-divider>
 
 ## OnePlus 6 Companion Device Setup
+
+::: warning
+The information in this section is only required for OnePlus Companion Devices.
+:::
 
 ### Enable OTG
 USB On-The-Go (OTG) must be enabled for Invisible Glasses to connect to your Companion Device. 
