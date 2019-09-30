@@ -39,6 +39,30 @@ If no headset is connected or Pupil Capture is unable to open capture devices it
 
 After switching to a different capture source, you can click the `Start with default devices` button. This will automatically select the correct sensor and start capturing for corresponding world and eye windows. Or, you can manually select the capture source to use from the world and eye windows.
 
+## Troubleshooting
+
+### Windows
+
+If you had tried to install drivers with previous driver install instructions and failed, or are not able to access cameras in Pupil Capture. Please try the following:
+
+1. In `Device Manager` (`System > Device Manager`)
+1. `View > Show Hidden Devices` 
+1. Expand `libUSBK Usb Devices`
+1. For each device listed (even hidden devices) click `Uninstall` and check the box agreeing to `Delete the driver software for this device` and press `OK`
+1. Repeat for each device in libUSBK Usb Devices
+1. Unplug Pupil headset (if plugged in)
+1. Restart your computer
+1. Install drivers from step 2 in the `Install drivers for your Pupil headset` section
+
+### Linux
+
+If the cameras are listed as `unknown` and you are not able to access cameras in Pupil Capture. Please try the following:
+1. Shut down Pupil Capture if it is still running.
+1. Add your user to the `plugdev` group by executing the following command in the terminal:
+```sh
+sudo usermod -a -G plugdev $USER
+```
+
 ## Pupil Detection
 Pupil's algorithms automatically detect the participant's pupil. With the 3d detection and mapping mode, Pupil uses a 3d model of the eye(s) that constantly updates based on observations of the eye. This enables the system to compensate for movements of the headset - slippage. To build up an initial model, you can just look around your field of view.
 
