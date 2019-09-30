@@ -13,8 +13,9 @@ script:
   - du -h src/.vuepress/dist
 after_success:
   - echo "Deploying to production"
-  - chmod 600 ./docs_deploy_key
-  - rsync -hrvz --delete -e 'ssh -i ./docs_deploy_key -o "StrictHostKeyChecking no"' src/.vuepress/dist/gitcommit.txt ${SERVER_USER}@${SERVER_IP}:~/domains/docs.pupil-labs.com/html
+  - cp ./docs_deploy_key id_rsa
+  - chmod 600 id_rsa
+  - rsync -hrvz --delete -e 'ssh -i id_rsa -o "StrictHostKeyChecking no"' src/.vuepress/dist/gitcommit.txt ${SERVER_USER}@${SERVER_IP}:~/domains/docs.pupil-labs.com/html
   - echo "Production deployed"
 env:
   global:
