@@ -14,9 +14,9 @@ through separation.
 
 Plugins can also be loaded at runtime, extending Pupil's functionality by sharing a
 simple Python file. See our [pupil-community](https://github.com/pupil-labs/pupil-community#plugins)
-repository for a list of third-party plugins. See below [on how to install them](#installation).
+repository for a list of third-party plugins. See below [on how to add them](#adding-a-plugin).
 
-## Installation
+## Adding A Plugin
 
 Each Pupil Core software creates its own user directory. It is directly placed in your
 user's home directory and follows this naming convention: `pupil_<name>_settings`, e.g.
@@ -37,8 +37,10 @@ installed into the `plugins` folder, next to the plugin.
 
 ## Development
 
+For the plugin development process, we recommend to [run from source](/developer/core/overview/#running-from-source).
+
 ### Language
-Pupil is written in `Python 3`, but no "heavy lifting" is done in Python. High performance computer vision, media compression, display libraries, and custom functions are written in external libraries or c/c++ and accessed though [cython](http://cython.org/). Python plays the role of "glue" that sticks all the pieces together.
+Pupil is written in `Python 3.6`, but no "heavy lifting" is done in Python. High performance computer vision, media compression, display libraries, and custom functions are written in external libraries or c/c++ and accessed though [cython](http://cython.org/). Python plays the role of "glue" that sticks all the pieces together.
 
 We also like writing code in Python because it's *quick and easy* to move from initial idea to working proof-of-concept. If proof-of-concept code is slow, optimization and performance enhancement can happen in iterations of code.
 
@@ -75,7 +77,3 @@ from plugin import Plugin
 class MyCustomPlugin(Plugin):
     pass
 ```
-
-TODO: Add further api calls
-
-TODO: Add example

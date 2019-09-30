@@ -59,7 +59,6 @@ module.exports = {
             'core/network-api',
             'core/recording-format',
             'core/plugin-api',
-            'core/terminology',
           ]
         },
         'invisible/',
