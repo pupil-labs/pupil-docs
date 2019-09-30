@@ -14,7 +14,7 @@ script:
 after_success:
   - echo "Deploying to production"
   - chmod 600 ./docs_deploy_key
-  - rsync -hrvz --delete -e 'ssh -i ./docs_deploy_key -o "StrictHostKeyChecking no"' src/.vuepress/dist/gitcommit.txt {SERVER_USER}@${SERVER_IP}:~/domains/docs.pupil-labs.com/html
+  - rsync -hrvz --delete -e 'ssh -i ./docs_deploy_key -o "StrictHostKeyChecking no"' src/.vuepress/dist/gitcommit.txt ${SERVER_USER}@${SERVER_IP}:~/domains/docs.pupil-labs.com/html
   - echo "Production deployed"
 env:
   global:
