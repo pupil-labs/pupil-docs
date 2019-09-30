@@ -6,7 +6,7 @@ install:
   - yarn
 script:
   - yarn build
-  - echo $TRAVIS_COMMIT > dist/gitcommit.txt
+  - echo $TRAVIS_COMMIT > src/.vuepress/dist/gitcommit.txt
   - du -h src/.vuepress/dist
 # deploy:
 cache: yarn
