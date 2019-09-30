@@ -4,7 +4,11 @@ module.exports = {
   description: "Pupil Labs - We build state of the art eye tracking hardware and software. \
                 We work hard to bring research ideas out of the lab and into the real world.",
   head: [
-    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Material+Icons' }]
+    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Material+Icons' }],
+    ['link', { rel: 'manifest', href: '/manifest.json' }],
+    ['link', { rel: "apple-touch-icon", type: "image/x-icon", href: "/favicons/apple-touch-icon.png" }],
+    ['link', { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicons/favicon-32x32.png" }],
+    ['link', {rel: "icon", type: "image/png", sizes: "16x16", href: "/favicons/favicon-16x16.png" }]
   ],
   themeConfig: {
     displayAllHeaders: false,
