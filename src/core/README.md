@@ -30,7 +30,7 @@ Start Pupil Capture on your computer. Once the program has initalized, a world v
 ## 3. Check Pupil Detection
 Everything depends on capturing good raw videos of the eyes. 
 
-You will need to [physically adjust](core/hardware/#headset-adjustments "Pupil Core headset adjustments") the eye cameras on your Pupil Core headset to get good images of the eyes. 
+You will need to [physically adjust](/core/hardware/#headset-adjustments "Pupil Core headset adjustments") the eye cameras on your Pupil Core headset to get good images of the eyes. 
 
 Take a look at the eye window(s).
 
