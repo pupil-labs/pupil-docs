@@ -84,7 +84,7 @@ Capture and Pupil Service. It uses ZeroMQ's [PUB-SUB](http://zguide.zeromq.org/p
 pattern for one-to-many communication.
 
 If you want to tap into the IPC Backbone you will need both the IP address and the session's unique port.
-the session's unique port. You can request them from `Pupil Remote`:
+ You can request them from `Pupil Remote`:
 
 ```python
 import zmq
