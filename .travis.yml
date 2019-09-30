@@ -1,11 +1,34 @@
-branches:
-  only:
-    - master
-os:
-  - linux
-sudo: false
-script:
-  - "/bin/bash ./scripts/webhook.sh"
-env:
-  global:
-    secure: Sf5VnnnScfqKZWBfzEFFnVSIgC9tUovUndZj6gG60NZ/9fEMhMMZT8rJTDtcLi7SZsew8zVZ3PNX5ZdtXQBF5P4OzQdC5rTpjeqWFSwdD/wR6KpMh89TbR3nJ2beBnaLgn2HhVekGyrPItLtc1IHjAQZq+TQ4pPMhX8rMXntHeLRMH6k4z6SOrwWoa6XeOyGRuE8aoe/VNQ01weoTF41/XcA8L2fs9eG0RweY3sGVO4yE8XUaZYutGW2bVwP5c5CRgFda44w/Pg163bEAegelKd0+CY6QDfD/S6+VXvhy2MiPaAYEREP9l0hX+OzZaAD18Ew9AhBJFYN+zB3NhUBn0BunLr/+v72Tyzs/egtAu70JZekJXhA1StAgStWHfIdwpAlyw/JTAaqDGvrX5GLj7ccL9u/qowU7L/KhUXKluv//Qd0tSat9PCX3FRMNv2eDu0S9Sn/8CI3etN1D7Nb1ObcCEwvkmLZMbxjfz78n5o7lOykjFj8hLvyYjlcEDI7nJxnEU6y+fTFg8QsuxD+TQEf2E8EzbKA85Du01BCQ/NHMk734AxLpPKeSZxo4IsEEP9Hy5XrqbPBZB7TsOc080U11dmBcw8DmK1rful//wEtTth4P7UQVNuF0FPpvSnVHPICbb43p7iId9rCZpdnuYmQiQdvzlZwZhjtV6fJQ5E=
+language: node_js
+node_js:
+  - lts/*
+before_install:
+  - openssl aes-256-cbc -K $encrypted_deaba444d90d_key -iv $encrypted_deaba444d90d_iv 
+    -in docs_deploy_key.enc -out ./docs_deploy_key -d
+install:
+  - yarn global add vuepress
+  - yarn
+
+stages:
+  - build
+  - name: production
+    if: branch = master
+
+jobs:
+  include:
+    - stage: build
+      script:
+        - yarn build
+        - echo $TRAVIS_COMMIT > src/.vuepress/dist/gitcommit.txt
+        - du -ah src/.vuepress/dist
+    - stage: production
+      script:
+        - echo "Deploying to production"
+        - eval "$(ssh-agent -s)"
+        - chmod 600 ./docs_deploy_key
+        - echo -e "Host $SERVER_IP\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+        - ssh-add ./docs_deploy_key
+        - rsync -hrvz --delete -e 'ssh -i ./docs_deploy_key -o "StrictHostKeyChecking no"' src/.vuepress/dist ${SERVER_USER}@${SERVER_IP}:~/domains/docs.pupil-labs.com/html
+        - echo "Production deployed"
+
+cache: yarn
+

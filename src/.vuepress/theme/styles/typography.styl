@@ -1,0 +1,129 @@
+body
+  font-family "AtlasGrotesk", sans-serif
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+  font-size 16px
+  color #2c3e50
+
+h1, h2, h3, h4
+  font-family "PxGrotesk", sans-serif
+  font-weight 600
+
+h5, h6, p, li, .body-2, .caption--1
+  font-family:  "AtlasGrotesk", sans-serif
+  font-weight 400
+
+h1, h2, h3, h4, h5, h6
+  &:hover .header-anchor
+    opacity: 1
+
+h1
+  font-size 36px
+  line-height 42px
+  padding-bottom 24px
+  letter-spacing: 1px
+
+  &.font-size-xl
+    font-size 42px
+
+h2
+  font-size 24px
+  padding-bottom 24px
+
+  &.product-name
+    font-size 22px
+
+// subtitle 1
+h3
+  font-size 22px
+  padding-bottom 26px
+
+// subtitle 2
+h4
+  font-size 18px
+  padding-bottom 24px
+  line-height 22px
+
+
+ul, ol
+  line-height 24px
+  font-size 16px
+
+// body--1
+p
+  font-size 16px
+  line-height 24px
+  margin-bottom 0 !important
+  padding-bottom 24px
+  &:only-child
+    padding-bottom 0
+
+.body--2
+  font-weight 200
+  font-size 16px
+  color #263238
+
+.caption--1
+  font-weight 400
+  font-size 12px
+
+a.header-anchor
+  font-size 0.85em
+  float left
+  margin-left -0.87em
+  padding-right 0.23em
+  margin-top 0.125em
+  opacity 0
+  &:hover
+    text-decoration none
+
+a
+  font-weight 500
+  color $accentColor
+  text-decoration none
+
+p a code
+  font-weight 400
+  color $accentColor
+
+button
+  font-family 14px
+  font-weight 600
+
+code, kbd, .line-number
+  font-family source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace
+
+.v-btn
+  font-weight bold
+
+.page
+  h1
+    margin-top: -60px !important
+    padding-top: 80px !important
+
+  h2, h3
+    margin-top: -60px !important
+    padding-top: 80px !important
+
+  h4,h5,h6
+    margin-top: -60px !important
+    padding-top: 80px !important
+
+.search-box
+  input
+    font-family: "AtlasGrotesk"
+
+.sidebar-links
+  .sidebar-link
+    font-family: "AtlasGrotesk"
+
+.home
+  h1, h2, h3, h4, h5, h6
+    &:hover .header-anchor
+      opacity: 0
+
+    border-bottom unset
+
+.sidebar-sub-headers.depth--1
+  a.sidebar-link
+    font-size 14px

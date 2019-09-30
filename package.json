@@ -1,0 +1,21 @@
+{
+  "devDependencies": {
+    "@vuepress/plugin-medium-zoom": "1.1.0",
+    "css-loader": "^3.2.0",
+    "pug": "^2.0.3",
+    "pug-plain-loader": "^1.0.0",
+    "style-loader": "^1.0.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2"
+  },
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "dependencies": {
+    "vuepress": "1.1.0",
+    "vuepress-plugin-sitemap": "^2.1.2",
+    "vuetify": "1.5.18",
+    "vuetify-loader": "^1.2.2"
+  }
+}
