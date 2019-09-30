@@ -8,5 +8,15 @@ script:
   - yarn build
   - echo $TRAVIS_COMMIT > src/.vuepress/dist/gitcommit.txt
   - du -h src/.vuepress/dist
-# deploy:
+after_success:
+  - echo "Deploying to production"
+  - cp ${SSH_PRIVATE_KEY} id_rsa
+  - chmod 600 id_rsa
+  # - rsync -hrvz --delete -e 'ssh -i id_rsa -o "StrictHostKeyChecking no"' src/.vuepress/dist/ {SERVER_USER}@${SERVER_IP}:~/domains/docs.pupil-labs.com/html
+  - rsync -hrvz --delete -e 'ssh -i id_rsa -o "StrictHostKeyChecking no"' src/.vuepress/dist/gitcommit.txt {SERVER_USER}@${SERVER_IP}:~/domains/docs.pupil-labs.com/html
+  - echo "Production deployed"
+env:
+  global:
+    secure: PrdMN7WzqdfawLWynFKKKXlWEv6hL0d9dd9h/NfTBsGDYVIBjPyOr7IcbFvkzxxx+4YphfL42wBKS6qoXzsn+tRZnanbkAYlSl7v7NHjdI8wsxlKAzz3s1CtdeItng1ZYQ6ypgg9UCzvy2FYmzvXQqEvs5Tw/+hQGj2BXdOdGpBRcDB4N+B9xipKFlvcYJqDh23di+gYLTKkyzhKv58slZftCCS9ECjkU7kFxy98OGUDiRO+olSpTSpgr07bC/hnD+PGhAmmZWYxSAj/ZTjrJp1tTDWJioYzWgMyE3/i2BfZOXIthq6TbaA+nBpIKrTbg7NJzmXq9bc67WnPEGoMvui1WASEB1eq2ZvJokLwJU7Suq4wjEhIAuwmkzz6aKfQeTWbuZ+kuvvFyF0wgze3AtmZivmTeT00nDCmmyS6zBmxQz//w3iIpvT6HCAvqYTLSH7rdhxMp+exgIVHYKNYdAA1OdTkCWexPW7IvA8K6xKsGjvlqQ4W2fY+RQa0r6eEFFjhG8u+cK0BqdmkgThwCiFbmVCiBysYykbUSgTyiA2hAixUFeOvgPC3H3qk6gH09Cg4BCj+Nif3tgjaqOFivCGLq98lTDwcIHyYOcZTAtrKOBh8MWMUs6xjszy6xEdz49LuyrKcTMKZvEXgj9LKLG7lhMsQDHuPM4QmpLt5vjo=
+    secure: MHKCWV26A8kzeaYqgRGlG3/9wRoYzYxpmaEPZSOOrfBmCRWpm3C5NGpHjQexSM55mTp5rZNDLPnLwpk2hGcNBy+uU9Ixlc2QxVru++SZQqCEORgqSpbA6JKNFtPT0yUswj0jttutup0TdaDcXLa9zmPEhKii+9hPaMaHOyHH3T0gh3EtjMFIO5lFsDxrLMF9FAFQcXhgdlt3rqu293yI9f4S5+b3LMhYgt2LDFBdIoOACmbV9Xc1qp5uFLTbcquPbAtddLmyjkDcZePAPTOE/m2fNVDX+DkXloxPukmCxtyU7qHVvpH9iqNnlohUSZbbEoJ4VG3bCvKKBWbmcW47UGI8KiehrtqHUOPq3mORfvEfTfhwZpfoo8tuT5tgXx5GFey5yx89GcWnREOn0So2AfmCJzW9fK01NBftM+RJXAb4siNIb/Qik7foFxE02Ogo+asC/Vv/Xf7at2d7RCc0Uvfh31ua8bnr3AxOifPKvrbmOpkUREPumnnaT4QqqZbG3sDL0dRcjXdE9h1EbjbDHf8MbuNUCwPX6gMfYh43LUcEWWFypuSzAdIcrDyo2JavgjrejkI1s7SEb8PjqCIRfCkWDr0s2EsSYq5CzsKpXV2PQNj3pddntsSs9+Ey3e8CvOPYgUCLcuxu+eErP/ij679WAlGAZdfjhAxASsxqiqQ=
 cache: yarn
