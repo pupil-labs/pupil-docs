@@ -7,7 +7,7 @@ permalink: /invisible/user-guide/analysis
 There are different options available for analyzing recordings made with Pupil Invisible. You can use Pupil Cloud, our open-source analysis tool Pupil Player, or export recordings to other third-party tools including your own custom software.
 
 ## Pupil Cloud
-Pupil Cloud is a new a new service. Currently, you can use it for data collection and storage. In the very near future we will add enrichment and analysis tools. These updates will be added on a rolling basis.
+Pupil Cloud is a new service. Currently, you can use it for data collection and storage. In the very near future we will add enrichment and analysis tools. These updates will be added on a rolling basis.
 
 ## Pupil Player
 [Pupil Player](/core/software/pupil-player/) is our open-source analysis software originally created for [Pupil Core](/core "Pupil Core user docs"). You can use Pupil Player to open, playback, visualize, and analyze recording made with Pupil Invisible. 
