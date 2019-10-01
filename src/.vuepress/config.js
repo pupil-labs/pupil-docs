@@ -78,6 +78,7 @@ module.exports = {
     docsBranch: 'vuepress-refactor',
     editLinks: true,
     editLinkText: 'Edit this page',
+    search: false,
     algolia: {
       apiKey: 'a46ad8b3e5154fd970cd0ffeedb52562',
       indexName: 'pupil-labs'
