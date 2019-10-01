@@ -32,7 +32,10 @@ Always use the Connector Cable that came with your Pupil Invisible! If you are u
     
 ## 4. Record!
 
-That's it, you are ready to record! Just hit the big red button on the Companion App's homes creen to start. You can play back any recording you have made from recordings view or in [Pupil Cloud](/cloud "Pupil Cloud documentation"). 
+That's it, you are ready to record! Just hit the big red button on the
+Companion App's home screen to start. You can play back any recording
+you have made from recordings view or in
+[Pupil Cloud](/cloud "Pupil Cloud documentation").
 
 If you run into any problems check out [troubleshooting](/invisible/user-guide/troubleshooting).
 

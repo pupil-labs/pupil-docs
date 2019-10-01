@@ -79,4 +79,5 @@ You will hear a _pop_ sound when the lens is removed or inserted. Don't worry - 
 
 Hold the glasses with arms of the frame facing away from you.
 1. Slot the lens in the groove on the side furthest from the nose pad.
-2. Press on the lens with your thumb or fingers on the top corner closes to the nose pad.
+2. Press on the lens with your thumb or fingers on the top corner
+   closest to the nose pad.
