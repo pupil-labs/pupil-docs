@@ -27,7 +27,7 @@ Get familiar with Pupil Invisible Companion app!
 
 ## Pupil Cloud Sign Up
 
-First-time users can Sign Up for a Pupil Cloud account. You can
+First time users need to Sign Up for a Pupil Cloud account. You can
 Sign Up by using your Google account, or by creating an account with
 email address and password.
 
