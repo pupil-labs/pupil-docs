@@ -15,6 +15,6 @@
     ],
     "theme_color": "#eceff1",
     "background_color": "#eceff1",
-    "start_url": "https://pupil-labs.com",
+    "start_url": "https://docs.pupil-labs.com",
     "display": "standalone"
 }
