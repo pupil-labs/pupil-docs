@@ -23,5 +23,6 @@ Templates are designed to be flexible and powerful. Some example use cases inclu
 - **Recording Structure**: If the recordings you want to make happen in a pre-defined structure, e.g. different recording phases or one recording per week, you can set up a template to note down the according phase or week for each recording.
 - **Documenting the unplanned**: In practice, it often happens that something does not go quite as planned. Maybe your subject did not correctly understand the instructions or something in your experiment workflow did not function properly. Using templates you can immediately note down what happened and flag recordings that will require further inspection. This will be saved as part of the recording, so you do not have to keep a separate list of notes.
 
-Read more about the [template editor](/cloud/user-guide/template-editor) in the Pupil Cloud docs.
-
+<!-- Bring back template editor when we have docs online -->
+<!-- Read more about the [template editor](/cloud/user-guide/template-editor) in the Pupil Cloud docs.
+ -->
