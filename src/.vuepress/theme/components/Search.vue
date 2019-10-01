@@ -197,7 +197,7 @@ export default {
     background-size 1rem
     &:focus
       cursor auto
-      border-color $accentColor
+      border-color #0D122A
   .suggestions
     background #fff
     width 100%
@@ -226,9 +226,9 @@ export default {
         font-size 12px
         margin-left 0.25em
     &.focused
-      background-color #f3f4f5
+      background-color #455A64
       a
-        color #1263cc
+        color #455A64
 
 // Match IE11
 @media all and (-ms-high-contrast: none)

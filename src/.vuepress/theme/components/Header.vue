@@ -11,6 +11,7 @@
       a.align-center.d-flex(href="https://pupil-labs.com" target="_blank" rel="noopener")
         img(:src="$withBase('/logos/pl_logo.svg')")
       v-spacer
+      AlgoliaSearchBox(:options="algolia")
       v-toolbar-items.hidden-sm-and-down
         template(v-for="item in docs_menu")
           v-btn(
@@ -25,6 +26,8 @@
 
 <script>
 import SidebarButton from "@theme/components/SidebarButton.vue";
+import Search from "@theme/components/Search.vue";
+import AlgoliaSearchBox from "@theme/components/AlgoliaSearchBox.vue";
 
 export default {
   data() {
@@ -40,7 +43,16 @@ export default {
     };
   },
   components: {
-    SidebarButton
+    SidebarButton,
+    Search,
+    AlgoliaSearchBox
+  },
+  computed: {
+    algolia() {
+      return (
+        this.$themeLocaleConfig.algolia || this.$site.themeConfig.algolia || {}
+      );
+    }
   }
 };
 </script>
