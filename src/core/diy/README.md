@@ -14,7 +14,7 @@ You can buy it from the Pupil Labs team through the Pupil shapeways store.
 The price for the headset is part production cost and part support to the pupil development team. This enables us to give you support and continue to work on the project.
 
 All other parts of the Pupil DIY kit have been specifically selected with availability and affordability in mind.
-See the Bill of Materials to learn what else you will need to get.
+See the [Bill of Materials](https://docs.google.com/a/pupil-labs.com/spreadsheets/d/1NRv2WixyXNINiq1WQQVs5upn20jakKyEl1R8NObrTgU/pub?single=true&gid=0&output=html "Pupil Core DIY - bill of materials spreadsheet") to learn what else you will need to get.
 
 ## Tools
 You will need access to these tools:
