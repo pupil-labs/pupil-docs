@@ -95,7 +95,7 @@ export default {
       &:before
         border-color #999
       [class*=ds-dataset-]
-        border none
+        border 0
         padding 0
       .ds-suggestions
         margin-top 0
@@ -104,13 +104,13 @@ export default {
     .algolia-docsearch-suggestion--highlight
       color #2c815b
     .algolia-docsearch-suggestion
-      border-color $borderColor
+      border 0
       padding 0
       .algolia-docsearch-suggestion--category-header
         padding 5px 10px
         margin-top 0
-        background $accentColor
-        color #fff
+        background #ECEFF1
+        color #0D122A
         font-weight 600
         .algolia-docsearch-suggestion--highlight
           background rgba(255, 255, 255, 0.6)
@@ -123,8 +123,8 @@ export default {
       .algolia-docsearch-suggestion--subcategory-column
         vertical-align top
         padding 5px 7px 5px 5px
-        border-color $borderColor
-        background #f1f3f5
+        border 0
+        background #fff
         &:after
           display none
       .algolia-docsearch-suggestion--subcategory-column-text
