@@ -65,47 +65,54 @@ inherited from the 2d detection, as well as 3d detector specific keys. Below you
 see the Python representation of a 3d pupil datum:
 
 ```python
-{  # pupil datum
-'topic': 'pupil.0',
-'method': '3d c++',
-'norm_pos': [0.5, 0.5],  # norm space, [0, 1]
-'diameter': 0.0,  # 2D image space, unit: pixel
-'timestamp': 535741.715303987,  # time, unit: seconds
-'confidence': 0.0,  # [0, 1]
+{
+    # pupil datum
+    'topic': 'pupil.0',
+    'method': '3d c++',
+    'norm_pos': [0.5, 0.5],  # norm space, [0, 1]
+    'diameter': 0.0,  # 2D image space, unit: pixel
+    'timestamp': 535741.715303987,  # time, unit: seconds
+    'confidence': 0.0,  # [0, 1]
+    
+    # 2D ellipse of the pupil in image coordinates
+    'ellipse': {  # image space, unit: pixel
+        'angle': 90.0,  # unit: degrees
+        'center': [320.0, 240.0],
+        'axes': [0.0, 0.0],
+    },
+    'id': 0,  # eye id, 0 or 1
+    
+    ## 3D model data
+    # -1 means that the model is building up and has not finished fitting
+    'model_birth_timestamp': -1.0,
+    'model_confidence': 0.0,
+    'model_id': 1,
+    
+    # pupil polar coordinates on 3D eye model. The model assumes a fixed
+    # eye ball size. Therefore there is no `radius` key
+    'theta': 0,
+    'phi': 0,
+    
+    # 3D pupil ellipse
+    'circle_3d': {  # 3D space, unit: mm
+        'normal': [0.0, -0.0, 0.0],
+        'radius': 0.0,
+        'center': [0.0, -0.0, 0.0],
+    },
+    'diameter_3d': 0.0,  # 3D space, unit: mm
+    
+    # 3D eye ball sphere
+    'sphere': {  # 3D space, unit: mm
+        'radius': 0.0,
+        'center': [0.0, -0.0, 0.0],
+    },
+    'projected_sphere': {  # image space, unit: pixel
+        'angle': 90.0,
+        'center': [0, 0],
+        'axes': [0, 0],
+    },
+}
 
-# 2D ellipse of the pupil in image coordinates
-'ellipse': {  # image space, unit: pixel
-    'angle': 90.0,  # unit: degrees
-    'center': [320.0, 240.0],
-    'axes': [0.0, 0.0]},
-'id': 0,  # eye id, 0 or 1
-
-## 3D model data
-# -1 means that the model is building up and has not finished fitting
-'model_birth_timestamp': -1.0,
-'model_confidence': 0.0,
-'model_id': 1
-
-# pupil polar coordinates on 3D eye model. The model assumes a fixed
-# eye ball size. Therefore there is no `radius` key
-'theta': 0,
-'phi': 0,
-
-# 3D pupil ellipse
-'circle_3d': {  # 3D space, unit: mm
-    'normal': [0.0, -0.0, 0.0],
-    'radius': 0.0,
-    'center': [0.0, -0.0, 0.0]},
-'diameter_3d': 0.0,  # 3D space, unit: mm
-
-# 3D eye ball sphere
-'sphere': {  # 3D space, unit: mm
-    'radius': 0.0,
-    'center': [0.0, -0.0, 0.0]},
-'projected_sphere': {  # image space, unit: pixel
-    'angle': 90.0,
-    'center': [0, 0],
-    'axes': [0, 0]}}
 ```
 
 ### Gaze Datum Format
@@ -116,7 +123,8 @@ camera coordinate system. The pupil data on which the gaze datum is based on can
 accessed using the `base_data` key.
 
 ```python
- {  # monocular gaze datum
+{
+    # monocular gaze datum
     'topic': 'gaze.3d.1.',
     'confidence': 1.0,  # [0, 1]
     'norm_pos': [x, y],  # norm space, [0, 1]
@@ -131,7 +139,8 @@ accessed using the `base_data` key.
 ```
 
 ```python
- {  # binocular gaze datum
+{
+    # binocular gaze datum
     'topic': 'gaze.3d.01.',
     'confidence': 1.0,  # [0, 1]
     'norm_pos': [x, y],  # norm space, [0, 1]
