@@ -5,7 +5,7 @@
       :key="i"
       :id="`${item.title.split(' ').join('-').toLowerCase()}`"
     >
-      <v-divider v-if="i > 1" class="my-3"></v-divider>
+      <v-divider v-if="i > 0" class="my-3"></v-divider>
       <SidebarGroup
         v-if="item.type === 'group'"
         :item="item"
