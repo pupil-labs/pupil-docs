@@ -45,3 +45,6 @@ dist
 
 # ignore temp dir
 tmp
+
+# ignore yarn error log
+yarn-error.log
