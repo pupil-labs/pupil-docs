@@ -75,7 +75,7 @@ module.exports = {
     repoLabel: 'See on Github',
     docsRepo: 'https://github.com/pupil-labs/pupil-docs',
     docsDir: 'src',
-    docsBranch: 'vuepress-refactor',
+    docsBranch: 'master',
     editLinks: true,
     editLinkText: 'Edit this page',
     search: false,
