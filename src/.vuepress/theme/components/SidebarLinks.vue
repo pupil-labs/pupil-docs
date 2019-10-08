@@ -4,6 +4,7 @@
       v-for="(item, i) in items"
       :key="i"
       :id="`${item.title.split(' ').join('-').toLowerCase()}`"
+      :style="i === 0 ? 'margin-top: 16px;' : '' "
     >
       <v-divider v-if="i > 0" class="my-3"></v-divider>
       <SidebarGroup
