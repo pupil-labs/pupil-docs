@@ -405,3 +405,23 @@ The fields below are _not_ available for Pupil Invisible recordings:
 * `gaze_normal1_x` - x normal of the visual axis for eye 1 in the world camera coordinate system (not available for monocular setups.). The visual axis goes through the eye ball center and the object thats looked at.
 * `gaze_normal1_y` - y normal of the visual axis for eye 1
 * `gaze_normal1_z` - z normal of the visual axis for eye 1
+
+### Annotation Export
+
+The `Annotation Player` plugin loads any annotations generated during the recording, as
+well as allows you to add annotations after the effect in Pupil Player. On export, the
+plugin writes the annotation data to `annotations.csv`. It includes at least the
+following keys:
+
+- `index`: World frame index during which the annotation started or happened
+- `timestamp`: Start time or timestamp of the annotation in Pupil time
+- `label`: Annotation label
+- `duration`: Duration of the annotation
+
+::: tip
+<v-icon large color="info">info_outline</v-icon>
+Any custom field encountered in the annotations will be exported as an additional column.
+Their values will be converted to strings using Python's string representation. Therefore,
+it is recommended to use primitive types (strings, integers, floats) as value types for
+custom fields.
+:::

@@ -200,22 +200,27 @@ incoming messages. Alternatively, you can use remote annotations.
 
 ### Remote Annotations
 You can also create [annotation](/core/software/pupil-capture/#annotations) events
-programmatically and send them using the IPC, or by sending messages to the Pupil Remote interface. Here is an example annotation notification.
+programmatically and send them using the IPC, or by sending messages to the Pupil Remote
+interface. Here is an example annotation.
 
 ```python
 {
-    'subject': "annotation",
+    'topic': "annotation",
     'label': "Hi this is my annotation 1",
     'timestamp': <pupil time>,
     'duration': 1.0,
-    'source': 'a test script',
-    'record': True
 }
 ```
 
 ::: tip
 <v-icon large color="info">info_outline</v-icon>
-<a href="https://github.com/pupil-labs/pupil-helpers/blob/master/pupil_remote/remote_annotations.py" title="remote annotation script">This script</a> demonstrates how to send remote annotations. Use this script as a starting point for your integrations.
+You can add custom fields to your annotation which will be included in the
+[csv export](/core/software/pupil-player/#annotation-export).
+:::
+
+::: tip
+<v-icon large color="info">info_outline</v-icon>
+<a href="https://github.com/pupil-labs/pupil-helpers/blob/master/python/remote_annotations.py" title="remote annotation script">This script</a> demonstrates how to send remote annotations. Use this script as a starting point for your integrations.
 :::
 
 ### Log Messages
