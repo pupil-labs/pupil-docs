@@ -204,7 +204,7 @@ The offline fixation detector calculates fixations for the whole recording. The 
 
 Toggle `Show fixations` to show a visualization of fixations. The blue number is the number of the fixation (0 being the first fixation). You can export fixation reports for your current trim section by pressing `e` on your keyboard or the `e` hot key button on the left hand side of the window.
 
-You can find more information in our [dedicated fixation detector section](#fixation-detector).
+You can find more information in our [dedicated fixation detector section](/core/software/pupil-capture/#fixation-detector).
 
 #### Head Pose Tracking
 This plugin uses fiducial markers ([apriltag](https://april.eecs.umich.edu/software/apriltag.html)) to build a 3d model of the environment and track the headset's pose within it.
@@ -236,7 +236,7 @@ The plugin tries to load the eye videos, and runs the pupil detection algorithm 
 This plugin is especially relevant for recordings made with Pupil Mobile, because Pupil Mobile does not perform any pupil detection or gaze estimation on the Android device.
 This plugin is available starting with Pupil Player `v0.9.13`.
 
-The `Detection Method` selector sets the detection algorithm to either `2d` or `3d` detection (see [the section on Pupil Detection](#pupil-detection) for details).
+The `Detection Method` selector sets the detection algorithm to either `2d` or `3d` detection (see [the section on Pupil Detection](/core/software/pupil-capture/#pupil-detector-2d-3d "Pupil Capture pupil detection 2d vs 3d mode") for details).
 The `Redetect` button restarts the detection procedure.
 You can use the `Offline Pupil Detector` plugin to debug, improve, and gain insight into the pupil detection process.
 
@@ -253,7 +253,7 @@ The workflow is separated into three steps, each with its own submenu: Reference
 Reference locations are points within the recorded world video that are known to have been fixated on by the participant/subject.
 They can either be automatically detected or manually annotated:
 
-1. `Detect Circle Markers in Recording`: This button starts the automatic detection of [circular calibration markers](#calibration-methods) within the world video. The progress is visualized in the plugin's timeline.
+1. `Detect Circle Markers in Recording`: This button starts the automatic detection of [circular calibration markers](/core/software/pupil-capture/#calibration-marker "Pupil circular calibration marker documentation") within the world video. The progress is visualized in the plugin's timeline.
 2. `Manual Edit Mode`: When this option is enabled, you can add new locations as well as correct and delete existing ones. There can only be one location per world frame.
 
 As in Capture, one can have more than one calibration per recording.
@@ -275,7 +275,7 @@ Each gaze mapper has the following properties:
 - `Calibration`: One of the previously created or imported calibrations (see screencast)
 - `Mapping Range`: Time range in which pupil data will be mapped to gaze data.
 - `Manual Correction`: Apply a fixed offset to your gaze mapping.
-- `Validation`: You can validate the accuracy and precision of the mapped gaze by comparing it to reference locations in the selected `Validation Range`. It uses the same methodology as the [`Accuracy Visualizer`](#notes-on-calibration-accuracy).
+- `Validation`: You can validate the accuracy and precision of the mapped gaze by comparing it to reference locations in the selected `Validation Range`. It uses the same methodology as the [`Accuracy Visualizer`](/core/software/pupil-capture/#notes-on-calibration-accuracy "Notes on calibration accuracy").
 
 ::: warning
 <v-icon large color="warning">error_outline</v-icon>
@@ -289,7 +289,7 @@ You can compare `2d` and `3d` mapping results by creating two calibrations and g
 :::
 
 ### Developing your own Plugin
-To develop your own plugin see the [developer guide](/developer).
+To develop your own plugin see the [developer guide](/developer/core/ "Pupil Core developer documentation").
 
 ## Export
 You can export data and videos by pressing `e` on your keyboard or the `e` hot key button in the Pupil Player window.
@@ -298,12 +298,11 @@ All open plugins that have export capability will export when you press `e`.
 Exports are separated from your raw data and contained in the `exports` sub-directory.
 The exports directory lives within your recording directory.
 
-Active video exporters will run in the background and you can see the progress bar of the export in the GUI. While exporting, you can continue working with Pupil Player and even launch new exports. Each video export creates at least one `mp4` and its respective file timestamp file. See the [Data Format](#data-format) section for details.
+Active video exporters will run in the background and you can see the progress bar of the export in the GUI. While exporting, you can continue working with Pupil Player and even launch new exports. Each video export creates at least one `mp4` and its respective file timestamp file. See the [Data Format](/developer/core/recording-format/ "Pupil Core recording format") section for details.
 
 ### Export Directory
 Every export creates a new folder within the `exports` sub-directory of your recording. All data from the export is saved to this folder.
 
-<!-- export dir img -->
 
 ### Export Handling
 You can select the frame range to export by setting trim marks in the seek bar or directly in the `General Settings` menu.
@@ -319,14 +318,14 @@ The `World Video Exporter` is loaded by default.
   <img src="../../media/core/imgs/export.jpg" style="display:flex;margin:0 auto;">
 </div>
 
-The export saves the world video as shown in Player, including all currently active visualizations (see the \[Visualization Plugins\](#visualization-plugins) section).
+The export saves the world video as shown in Player, including all currently active visualizations (see the [Visualization Plugins](#visualization-plugins "Pupil Player visualization plugins documentation") section).
 
 ### Eye Video Exporter
 The `Eye Video Exporter` needs to be loaded explicitly through the Plugin Manager.
 It includes the option to render the 2d pupil detection result into the exported video.
 
 ### iMotions Exporter
-The iMotions Exporter creates data that can be used with <https://imotions.com/>.
+The iMotions Exporter creates data that can be used with [https://imotions.com/](https://imotions.com/ "iMotions website").
 
 Specifically, it undistorts the world video images using the camera intrinsics. Gaze data is also undistorted and exported to the `gaze.tlv` file.
 

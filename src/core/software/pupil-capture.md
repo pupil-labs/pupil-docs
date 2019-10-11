@@ -138,14 +138,16 @@ This is the default method, and a quick way to get started. It is best suited fo
 
 In the `Advanced` sub-menu you can set the `sample duration` - the number of frames to sample the eye and marker position. You can also set parameters that are used to debug and detect the circular marker on the screen.
 
-#### Manual Marker Calibration
+#### Calibration Marker
 
-This method is done with an operator and a subject. It is suited for midrange distances and can accommodate a wide field of view. The operator will use a printed calibration marker like the one shown in the video. 
+If you're not going to be doing calibration on screen with the `Screen Marker Calibration` method, then you will need to download the Pupil's Circular Calibration Marker. This marker can be automatically detected by Pupil software in the world scene video. 
 
+In most use cases you will only need to use the `Pupil Calibration Marker`. The `Stop Marker` is used if you want to be able to conclude a calibration sequence by showing this marker.  
 
-<video width="100%" controls class="mb-5">
-  <source src="../../media/core/videos/clb-man.mp4" type="video/mp4">
-</video>
+::: tip
+<v-icon large color="info">info_outline</v-icon>
+Make sure to always use the **v0.4 marker design** for best detection performance!
+:::
 
 <div style="display:flex;" class="pb-4">
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
@@ -158,12 +160,19 @@ This method is done with an operator and a subject. It is suited for midrange di
     </div>
 </div>
 
-::: tip
-<v-icon large color="info">info_outline</v-icon>
-Make sure to always use the **v0.4 marker design** for best detection performance!
-:::
-
 <a :href="$withBase('/pdfs/v0.4_marker.pdf')" alt="Pupil Labs calibration marker v4.0" target="_blank" rel="noopener">Download Pupil Labs Calibration Marker v0.4</a> to print or display on smartphone/tablet screen.
+
+
+
+#### Manual Marker Calibration
+
+This method is done with an operator and a subject. It is suited for midrange distances and can accommodate a wide field of view. The operator will use a printed calibration marker like the one shown in the video. 
+
+
+<video width="100%" controls class="mb-5">
+  <source src="../../media/core/videos/clb-man.mp4" type="video/mp4">
+</video>
+
 
 1. Select `Manual Marker Calibration`
 1. Press `c` on your keyboard or click the blue circular `C` button on the left hand side of the world window to start calibration.
