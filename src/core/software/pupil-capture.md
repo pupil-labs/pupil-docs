@@ -471,13 +471,15 @@ The `Audio Capture` plugin provides access to a selected audio source for other 
 Audio is recorded separately from the video in Pupil Capture. You can play back audio in sync with video in Pupil Player. Audio is automatically merged with the video when you export a video using Pupil Player.
 
 ### Annotations
-The `Annotation Capture` plugin allows you to mark timestamps with a label -- sometimes referred to as triggers.
-These labels can be created by pressing their respective hotkey or by sending a notification with the subject `annotation`.
-This is useful to mark external events (e.g. "start of condition A") within the Pupil recording. The `Annotation Player`
-plugin is able to correlate and export these events as well as add new ones.
+The `Annotation Capture` plugin allows you to mark timestamps with a label -- sometimes
+referred to as triggers. These labels can be created by pressing their respective hotkey
+or by sending a message with the topic `annotation`. This is useful to mark external
+events (e.g. "start of condition A") within the Pupil recording. The `Annotation Player`
+plugin is able to correlate and [export these events](/core/software/pupil-player/#annotation-export)
+as well as add new ones.
 
-You can also create [remote annotation](/developer/core/network-api/#remote-annotations) events
-programmatically and send them to Pupil Capture via the
+You can also create [remote annotation](/developer/core/network-api/#remote-annotations)
+events programmatically and send them to Pupil Capture via the
 [Pupil Core Network API](/developer/core/network-api).
 
 ### Camera Intrinsics Estimation
