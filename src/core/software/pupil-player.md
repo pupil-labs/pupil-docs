@@ -155,7 +155,7 @@ This plugin is **unique**, therefore you can only load one instance of this plug
 These plugins are simple unique plugins, that operate on the gaze data for analysis and visualizations.
 
 #### Offline Surface Tracker
-This plugin is an offline version of the [Surface Tracking](#surface-tracking) plugin for Pupil Capture.
+This plugin is an offline version of the [Surface Tracking](/core/software/pupil-capture/#surface-tracking) plugin for Pupil Capture.
 You can use this plugin to detect markers in the recording, define surfaces, edit surfaces, and create and export visualizations of gaze data within the defined surfaces.
 
 <div class="pb-4">
@@ -211,9 +211,8 @@ This plugin uses fiducial markers ([apriltag](https://april.eecs.umich.edu/softw
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/9x9h98tywFI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-See the [surface tracking section](#surface-tracking) for images of the markers to download.
+See the [surface tracking section](/core/software/pupil-capture/#surface-tracking) for images of the markers to download.
 
-See the [detailed data format section](#detailed-data-format) for more information about the exported data.
 
 ### Pupil Data And Post-hoc Detection
 By default, Player starts with the `Pupil From Recording` plugin that tries to load pupil positions that were detected and stored during a Pupil Capture recording.
