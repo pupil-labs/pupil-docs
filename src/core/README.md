@@ -115,4 +115,4 @@ You can export videos and data by pressing `e` on your keyboard or the down arro
 
 Exports are saved within a dedicated folder named exports within the original recording folder.
 
-Read more about the [data format](/user-guide/data-format)
+Read more about the [recording format](/core/software/recording-format/#pupil-core "Pupil Core recording format")
