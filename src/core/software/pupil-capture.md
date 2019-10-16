@@ -381,19 +381,21 @@ You can find more information on the legacy markers below.
 #### Markers
 There are many different apriltag types, currently we only support apritags of type **tag36h11**, which is the recommended set. There are 587 distinct markers in the set, so it should be sufficient for most use cases.
 
+You can download all markers from the [AprilTags repository](https://github.com/AprilRobotics/apriltag-imgs/tree/master/tag36h11 "April Tags Github Repository"). We have prepared some tags in the below two images for your convenience:
+
 <div style="display:flex;" class="pb-4">
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
         <img src="../../media/core/imgs/apriltags_tag36h11_0-23.jpg" style="padding-bottom:16px;width:60%;">
-        <p>Apriltags tag36h11 0-23</p>
+        <p><a :href="../../media/core/imgs/apriltags_tag36h11_0-23.jpg">Apriltags tag36h11 0-23</a></p>
     </div>
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
         <img src="../../media/core/imgs/apriltags_tag36h11_24-47.jpg" style="padding-bottom:16px;width:60%;">
-        <p>Apriltags tag36h11 24-47</p>
+        <p><a :href="../../media/core/imgs/apriltags_tag36h11_24-47.jpg">Apriltags tag36h11 24-47</a></p>
     </div>
 </div>
 
 
-Markers can be printed on paper, stickers, or displayed on a screen.
+Markers can be printed on paper, stickers, or displayed on a screen. 
 
 
 #### Preparing your Environment
