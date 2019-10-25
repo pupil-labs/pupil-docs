@@ -16,6 +16,8 @@ Drag the recording folder (the triple digit one) directly onto the app icon **or
   <img src="../../media/core/imgs/pp-start.jpg" style="display:flex;margin:0 auto;">
 </div>
 
+Don't have a recording yet? [Download a sample recording](https://drive.google.com/file/d/1nLbsrD0p5pEqQqa3V5J_lCmrGC1z4dsx/view?usp=sharing "Download sample recording to use in Pupil Player").
+
 ## Player Window
 The Player window is the main control center for `Pupil Player`. It displays video and data recorded by [Pupil Capture](/core/software/pupil-capture), [Pupil Mobile](/core/software/pupil-mobile/), or [Pupil Invisible](/invisible/).
 
