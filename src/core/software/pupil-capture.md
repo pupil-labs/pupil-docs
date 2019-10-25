@@ -379,9 +379,19 @@ You can find more information on the legacy markers below.
 :::
 
 #### Markers
-There are many different apriltag types, currently we only support apritags of type **tag36h11**, which is the recommended set. There are 587 distinct markers in the set, so it should be sufficient for most use cases.
+There are many different Apriltag types, currently we support 7 families listed below. You can click on the links to download the markers from the [AprilTags repository](https://github.com/AprilRobotics/apriltag-imgs/tree/master/ "April Tags Github Repository"). For your convenience we have also prepared some tags from the **tag36h11** family in the two images below.
 
-You can download all markers from the [AprilTags repository](https://github.com/AprilRobotics/apriltag-imgs/tree/master/tag36h11 "April Tags Github Repository"). We have prepared some tags in the below two images for your convenience:
+Supported Apriltag families:
+
+* [tag25h9](https://github.com/AprilRobotics/apriltag-imgs/tree/master/tag25h9)
+* [**tag36h11 (default)**](https://github.com/AprilRobotics/apriltag-imgs/tree/master/tag36h11)
+* [tagCircle21h7](https://github.com/AprilRobotics/apriltag-imgs/tree/master/tagCircle21h7)
+* [tagCircle49h12](https://github.com/AprilRobotics/apriltag-imgs/tree/master/tagCircle49h12)
+* [tagCustom48h12](https://github.com/AprilRobotics/apriltag-imgs/tree/master/tagCustom48h12)
+* [tagStandard41h12](https://github.com/AprilRobotics/apriltag-imgs/tree/master/tagStandard41h12)
+* [tagStandard52h13](https://github.com/AprilRobotics/apriltag-imgs/tree/master/tagStandard52h13)
+
+Apriltags ready to use:
 
 <div style="display:flex;" class="pb-4">
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
@@ -450,6 +460,9 @@ Red color represents a lot of gaze points or time spent. Blue color represents f
 The smoothness of the heatmap in `Gaze within each surface` mode can be set using the `Heatmap Smoothness` slider, which will effectively change the bin size of the underlying histogram.
 In the online case the heatmap is computed over the most recent data.
 The exact time window to consider can be set using the `Gaze History Length` field.
+
+#### Performance Settings
+The detector for Apriltag Markers offers two parameters `Use high resolution` and `Sharpen image` that are turned on by default. If you are experiencing high CPU load you can try turning off those settings. This will result in less CPU load but also decreases the detection rate.
 
 #### Further Functionality
 * You can click the `Open Surface in Window` button to open a view of the surface in a separate window. Gaze positions on the surface will be visualized in this window in real-time.
