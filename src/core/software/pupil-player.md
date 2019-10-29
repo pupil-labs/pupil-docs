@@ -221,16 +221,16 @@ By default, Player starts with the `Pupil From Recording` plugin that tries to l
 Alternatively, one can run the pupil detection post-hoc.
 
 **Offline (post-hoc) Pupil Detection and Gaze Mapping**
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/_Jnxi1OMMTc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/_Jnxi1OMMTc?cc_load_policy=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 **Offline (post-hoc) Gaze Mapping With Manual Reference Locations**
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/mWyDQHhm7-w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/mWyDQHhm7-w?cc_load_policy=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 **Use Offline (post-hoc) Calibration For Another Recording**
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/eEl3sswsTms" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/eEl3sswsTms?cc_load_policy=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 **Offline (post-hoc) Gaze Mapping Validation**
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/aPLnqu26tWI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/aPLnqu26tWI?cc_load_policy=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 #### Offline Pupil Detector
 The `Offline Pupil Detector` plugin can be used with any dataset where eye videos were recorded.
