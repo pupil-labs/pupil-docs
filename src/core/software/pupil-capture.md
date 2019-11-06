@@ -35,7 +35,8 @@ If no headset is connected or Pupil Capture is unable to open capture devices it
 - Video File Source - select this option to use previously recorded videos for the capture selection.
 - Pupil Mobile - select this option when using Pupil Capture with the Pupil Mobile Android application.
 - Local USB - select this option if your Pupil Headset is connected to the machine running Pupil Capture. This is the default setting.
-- RealSense 3D - select this option if you are using an Intel RealSense 3D camera as your scene camera. Read more in the [RealSense 3D section](#intel-realsense-3d).
+- RealSense 3D - select this option if you are using an Intel RealSense 3D camera as your scene camera. Read more in the [section on Intel RealSense Support on GitHub](https://github.com/pupil-labs/pupil#intel-realsense-3d-support).
+
 
 After switching to a different capture source, you can click the `Start with default devices` button. This will automatically select the correct sensor and start capturing for corresponding world and eye windows. Or, you can manually select the capture source to use from the world and eye windows.
 
