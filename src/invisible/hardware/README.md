@@ -89,8 +89,6 @@ Hold the glasses with arms of the frame facing away from you.
 
 The sports strap is an accessory that can be purchased to if you want to use Pupil Invisible while playing sports or in other dynamic activities. The sports strap can be adjusted to fit most wearers by pulling the two tabs. 
 
-Simply clip the strap connector onto the arms of your Pupil Invisible glasses. Make sure the cable is on the top arms and that the open side of the clip faces towards the interior of the glasses. See the image below for reference. 
-
 <div style="display:flex;justify-content:center;">
   <v-img
     :src="require('../../media/invisible/pi-strap.jpg')"
@@ -98,3 +96,5 @@ Simply clip the strap connector onto the arms of your Pupil Invisible glasses. M
   >
   </v-img>
 </div>
+
+Clip the strap connector onto the arms of your Pupil Invisible glasses. The cable should be on top of the glasses arms. The open side of the clip should be on the inside of the glasses frame. See the image for reference. 
