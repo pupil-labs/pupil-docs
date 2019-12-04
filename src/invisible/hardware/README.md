@@ -84,3 +84,17 @@ Hold the glasses with arms of the frame facing away from you.
 1. Slot the lens in the groove on the side furthest from the nose pad.
 2. Press on the lens with your thumb or fingers on the top corner
    closest to the nose pad.
+
+## Sports Strap
+
+The sports strap is an accessory that can be purchased to if you want to use Pupil Invisible while playing sports or in other dynamic activities. The sports strap can be adjusted to fit most wearers by pulling the two tabs. 
+
+Simply clip the strap connector onto the arms of your Pupil Invisible glasses. Make sure the cable is on the top arms and that the open side of the clip faces towards the interior of the glasses. See the image below for reference. 
+
+<div style="display:flex;justify-content:center;">
+  <v-img
+    :src="require('../../media/invisible/pi-strap.jpg')"
+    max-width=80%
+  >
+  </v-img>
+</div>
