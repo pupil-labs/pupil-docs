@@ -228,24 +228,6 @@ This method is for special situations and far distances. Usually not required.
 1. Press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to stop calibration.
 
 
-#### Fingertip Calibration
-Calibrate using your fingertip! Note: This is an experimental calibration method. We have found that the easiest way to calibrate with your fingertip is as follows:
-
-1. Select `Fingertip Calibration`
-1. Press `c` on your keyboard or click the blue circular `C` button on the left hand side of the world window to start calibration.
-1. Extend your arm and hold your index finger still at the center of the field of view of the world camera.
-1. Move your head for example horizontally and then vertically while gazing at your index finger fingernail.
-1. Show five fingers or press `c` on your keyboard or click the blue circular `C` button on the left hand side of the world window to stop calibration.
-
-This calibration method enables you to quickly sample a wide range of gaze angles and cover a large range of your FOV within 10 seconds.
-
-A Convolutional neural network (CNN) is implemented for the fingertip detection:
-
-First, a hand detector, based on [MobileNet](https://arxiv.org/pdf/1704.04861.pdf) and [SSD](https://arxiv.org/pdf/1512.02325.pdf), searches for a hand in the image.
-
-The position of the fingertip is then found out by a fingertip detector, adapted from [YOLSE](http://openaccess.thecvf.com/content_ICCV_2017_workshops/papers/w11/Wu_YOLSE_Egocentric_Fingertip_ICCV_2017_paper.pdf) and [Unet](https://arxiv.org/pdf/1505.04597.pdf)
-
-
 ### Notes on calibration accuracy
 
 In 2D mode, you should easily be able to achieve tracking accuracy within the physiological limits (sub 1 deg visual degrees). Using the 3d mode you should achieve 1.5-2.5 deg of accuracy.
