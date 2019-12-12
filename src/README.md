@@ -24,7 +24,7 @@ featured_products: [
   {
     title: "Pupil Cloud",
     link: "/cloud/",
-    src: "invisible/companion_screens.png",
+    src: "cloud/cloud_oneplus.jpg",
     alt: "Pupil Cloud platform"
   }
 ]
