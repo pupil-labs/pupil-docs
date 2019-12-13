@@ -128,3 +128,29 @@ The Pupil Core software provides default camera intrinsics for all official Pupi
 cameras. It is recommended to run the [Camera Intrinsics Estimation](/core/software/pupil-capture/#camera-intrinsics-estimation)
 for your Pupil Core _world_ camera after receiving it. Each camera is slightly different
 and running the estimation locally will result in slightly more precise gaze mapping.
+
+## Fixations
+
+Salvucci and Goldberg define different categories of fixation detectors. One of them describes dispersion-based algorithms:
+
+> I-DT identifies fixations as groups of consecutive points within a particular dispersion, or maximum separation. Because fixations typically have a duration of at least 100 ms, dispersion-based identification techniques often incorporate a minimum duration threshold of 100-200 ms to help alleviate equipment variability.
+> 
+> *--- Salvucci, D. D., & Goldberg, J. H. (2000, November). Identifying fixations and saccades in eye-tracking protocols. In Proceedings of the 2000 symposium on Eye tracking research & applications (pp. 71-78). ACM.*
+
+Pupil’s fixation detectors implement such dispersion-based algorithms. The exact procdure differs depending on whether fixations are detected in an online or offline context:
+
+### Online Fixation Detection
+
+In Pupil Capture, fixations are detected based on a dispersion threshold in terms of degrees of visual angle with a minimum duration. Fixation are published as soon as they comply with the constraints (dispersion and duration). This might result in a series of overlapping fixations.
+
+- **Maximum Dispersion (spatial, degree):** Maximum distance between all gaze locations during a fixation.
+- **Minimum Duration (temporal, milliseconds):** The minimum duration in which the dispersion threshold must not be exceeded.
+- **Confidence Threshold:** Data with a lower confidence than this threshold is not considered during fixation detection.
+
+### Offline Fixation Detection
+
+In Pupil Player, fixations are detected based on a dispersion threshold in terms of degrees of visual angle within a given duration window. The length of classified fixations are maximized within the duration window, e.g. instead of creating two consecutive fixations of length 300 ms it creates a single fixation with length 600 ms. Fixations do not overlap.
+
+- **Maximum Dispersion (spatial, degree):** Maximum distance between all gaze locations during a fixation.
+- **Minimum Duration (temporal, milliseconds):** The minimum duration in which the dispersion threshold must not be exceeded.
+- **Maximum Duration (temporal, milliseconds):** The maximum duration in which the dispersion threshold must not be exceeded.
