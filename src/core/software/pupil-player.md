@@ -425,3 +425,21 @@ Their values will be converted to strings using Python's string representation. 
 it is recommended to use primitive types (strings, integers, floats) as value types for
 custom fields.
 :::
+
+### Fixation Export
+
+Fixations are exported to `fixations.csv`, containing the following fields:
+
+* `start_timestamp` - Timestamp of the first related gaze datum
+* `duration` - Exact fixation duration, in milliseconds
+* `start_frame_index` - Index of the first related frame
+* `end_frame_index` - Index of the last related frame
+* `norm_pos_x` - Normalized x position of the fixation’s centroid
+* `norm_pos_y` - Normalized y position of the fixation’s centroid
+* `dispersion` - Dispersion, in degrees
+* `confidence` - Average pupil confidence
+* `method` - `2d gaze` or `3d gaze`
+* `gaze_point_3d_x` - x position of mean 3d gaze point, only available if `gaze 3d` method was used
+* `gaze_point_3d_y` - y position of mean 3d gaze point, only available if `gaze 3d` method was used
+* `gaze_point_3d_z` - z position of mean 3d gaze point, only available if `gaze 3d` method was used
+* `base_data` - Gaze data that the fixation is based on
