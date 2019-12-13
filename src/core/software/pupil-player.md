@@ -198,7 +198,7 @@ This name is augmented by an automatically generated numerical identifier.
 
 
 #### Fixation Detector
-The offline fixation detector calculates fixations for the whole recording. The menu gives feedback about the progress of the detection, how many fixations were found, shows and detailed information about the current fixation. Press `f` or click the `f` hot key button on the left hand side of the window to seek forward to the next fixation.
+The offline fixation detector calculates fixations for the whole recording. The menu gives feedback about the progress of the detection, how many fixations were found and shows detailed information about the current fixation. Press `f` or click the `f` hot key button on the left hand side of the window to seek forward to the next fixation.
 
 <div class="pb-4">
   <img src="../../media/core/imgs/pg-fixation.jpg" style="display:flex;margin:0 auto;">
