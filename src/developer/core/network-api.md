@@ -133,11 +133,11 @@ See the [data conventions](/developer/core/overview/#timing-data-conventions) an
 ## IPC Backbone Message Format
 All messages on the IPC Backbone are multipart messages containing (at least) two message frames:
 
- - `Frame 1` contains the [topic](/developer/core/overview/#timing-data-conventions) string, e.g. `pupil.0`, `logging.info`,
+ - `Frame 1` contains the [topic](#ipc-backbone-message-format) string, e.g. `pupil.0`, `logging.info`,
 `notify.recording.has_started`
 
  - `Frame 2` contains a [`msgpack`](https://msgpack.org/) encoded key-value mapping.
-This is the actual [message](#timing-data-conventions). We choose `msgpack` as the
+This is the actual [message](#ipc-backbone-message-format). We choose `msgpack` as the
 serializer due to its efficient format (45% smaller than `json`, 200% faster than
 `ujson`) and because encoders exist for almost every language.
 
@@ -148,7 +148,7 @@ Messages can have any topic chosen by the user. See topics below for a list of m
 
 Pupil data is sent from the eye0 and eye1 process with the topic `pupil.0` or `pupil.1`.
 Gaze mappers receive this data and publish messages with topic `gaze`. See the
-[Timing & Data Conventions](#pupil-datum-format) section for example messages for the
+[Timing & Data Conventions](/developer/core/overview/#pupil-datum-format) section for example messages for the
 `pupil` and `gaze` topics.
 
 ### Notification Message
@@ -195,7 +195,7 @@ pub_socket.send_string(topic, flags=zmq.SNDMORE)
 pub_socket.send(msgpack.dumps(payload, use_bin_type=True))
 ```
 
-The script above requires you to implement a custom [Plugin](#plugin-api) to process the
+The script above requires you to implement a custom [Plugin](/developer/core/plugin-api/) to process the
 incoming messages. Alternatively, you can use remote annotations.
 
 ### Fixation Messages
