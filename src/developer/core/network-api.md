@@ -200,7 +200,7 @@ incoming messages. Alternatively, you can use remote annotations.
 
 ### Fixation Messages
 
-The fixation detectors (online in Pupil Player and offline in Pupil Capture) publish the following notification:
+The Online Fixation Detector in Pupil Capture publishes the following notification:
 
 ```python
 {

@@ -432,8 +432,8 @@ Fixations are exported to `fixations.csv`, containing the following fields:
 
 * `start_timestamp` - Timestamp of the first related gaze datum
 * `duration` - Exact fixation duration, in milliseconds
-* `start_frame_index` - Index of the first related frame
-* `end_frame_index` - Index of the last related frame
+* `start_frame_index` - Index of the first related world frame
+* `end_frame_index` - Index of the last related world frame
 * `norm_pos_x` - Normalized x position of the fixation’s centroid
 * `norm_pos_y` - Normalized y position of the fixation’s centroid
 * `dispersion` - Dispersion, in degrees
