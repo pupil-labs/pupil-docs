@@ -269,9 +269,9 @@ Pupil Capture or Pupil Player plugin list. Copy the plugin to the plugins folder
 within the `pupil_capture_settings` or `pupil_player_settings` folder.
 
 ### Fixation Detector
-The online fixation detector classifies fixations based on the [dispersion-duration principle](#fixation-detector). Fixations are used by the [screen and manual marker calibrations](#calibration-methods) to speed up the procedure. A fixation is visualized as a yellow circle around the gaze point that is shown in the Pupil Capture `world` window.
+The online fixation detector classifies fixations based on the dispersion-duration principle. A fixation is visualized as a yellow circle around the gaze point that is shown in the Pupil Capture `world` window.
 
-You can find more information in our [dedicated fixation detector section](#fixation-detector).
+You can find more information in our [dedicated fixation detection section](core/terminology/#fixations).
 
 ### Network plugins
 Pupil Capture has a built-in data broadcast functionality. It is based on the network library [ZeroMQ](http://zeromq.org/)

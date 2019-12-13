@@ -206,7 +206,7 @@ The offline fixation detector calculates fixations for the whole recording. The 
 
 Toggle `Show fixations` to show a visualization of fixations. The blue number is the number of the fixation (0 being the first fixation). You can export fixation reports for your current trim section by pressing `e` on your keyboard or the `e` hot key button on the left hand side of the window.
 
-You can find more information in our [dedicated fixation detector section](/core/software/pupil-capture/#fixation-detector).
+You can find more information in our [dedicated fixation detection section](core/terminology/#fixations).
 
 #### Head Pose Tracking
 This plugin uses fiducial markers ([apriltag](https://april.eecs.umich.edu/software/apriltag.html)) to build a 3d model of the environment and track the headset's pose within it.
