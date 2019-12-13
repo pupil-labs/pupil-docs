@@ -198,6 +198,42 @@ pub_socket.send(msgpack.dumps(payload, use_bin_type=True))
 The script above requires you to implement a custom [Plugin](#plugin-api) to process the
 incoming messages. Alternatively, you can use remote annotations.
 
+### Fixation Messages
+
+The fixation detectors (online in Pupil Player and offline in Pupil Capture) publish the following notification:
+
+```python
+{
+    'topic': 'fixation',
+    'start_timestamp': 534.5628765  # Timestamp of the first related gaze datum
+    'duration': 219.61850000002414  # Exact fixation duration, in milliseconds
+    'norm_pos_x': 0.4086194786082147  # Normalized x position of the fixation’s centroid
+    'norm_pos_y': 0.5458605572970497  # Normalized y position of the fixation’s centroid
+    'dispersion': 1.1102585185279166  # Dispersion, in degrees
+    'confidence': 0.9907119103981579  # Average pupil confidence
+    'method': '2d gaze'  # Which calibration method was used
+    'base_data': "545.53418 545.5361829999999 545.53817 ..."  # Timestamps of all data of the fixation
+}
+```
+
+When `method` is set to `3d gaze`, it will also contain the gaze point position:
+```python
+    # ...
+    'gaze_point_3d_x': -258.140474196683  # x position of mean 3d gaze point
+    'gaze_point_3d_y': 5.005121102396152  # y position of mean 3d gaze point
+    'gaze_point_3d_z': 463.9099936463522  # z position of mean 3d gaze point
+    # ...
+```
+
+The Offline Fixation Detector in Pupil Player additionally includes the following keys:
+```python
+    # ...
+    'start_frame_index': 679  # Index of the first related frame
+    'end_frame_index': 685  # Index of the last related frame
+    # ...
+```
+
+
 ### Remote Annotations
 You can also create [annotation](/core/software/pupil-capture/#annotations) events
 programmatically and send them using the IPC, or by sending messages to the Pupil Remote
