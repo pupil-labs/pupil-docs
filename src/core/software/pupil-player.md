@@ -198,7 +198,7 @@ This name is augmented by an automatically generated numerical identifier.
 
 
 #### Fixation Detector
-The offline fixation detector calculates fixations for the whole recording. The menu gives feedback about the progress of the detection, how many fixations were found, shows and detailed information about the current fixation. Press `f` or click the `f` hot key button on the left hand side of the window to seek forward to the next fixation.
+The offline fixation detector calculates fixations for the whole recording. The menu gives feedback about the progress of the detection, how many fixations were found, and shows detailed information about the current fixation. Press `f` or click the `f` hot key button on the left hand side of the window to seek forward to the next fixation.
 
 <div class="pb-4">
   <img src="../../media/core/imgs/pg-fixation.jpg" style="display:flex;margin:0 auto;">
@@ -206,7 +206,7 @@ The offline fixation detector calculates fixations for the whole recording. The 
 
 Toggle `Show fixations` to show a visualization of fixations. The blue number is the number of the fixation (0 being the first fixation). You can export fixation reports for your current trim section by pressing `e` on your keyboard or the `e` hot key button on the left hand side of the window.
 
-You can find more information in our [dedicated fixation detector section](/core/software/pupil-capture/#fixation-detector).
+You can find more information in our [dedicated fixation detection section](/core/terminology/#fixations "Pupil Core terminology - fixations").
 
 #### Head Pose Tracking
 This plugin uses fiducial markers ([apriltag](https://april.eecs.umich.edu/software/apriltag.html)) to build a 3d model of the environment and track the headset's pose within it.
@@ -425,3 +425,21 @@ Their values will be converted to strings using Python's string representation. 
 it is recommended to use primitive types (strings, integers, floats) as value types for
 custom fields.
 :::
+
+### Fixation Export
+
+Fixations are exported to `fixations.csv`, containing the following fields:
+
+* `start_timestamp` - Timestamp of the first related gaze datum
+* `duration` - Exact fixation duration, in milliseconds
+* `start_frame_index` - Index of the first related world frame
+* `end_frame_index` - Index of the last related world frame
+* `norm_pos_x` - Normalized x position of the fixation’s centroid
+* `norm_pos_y` - Normalized y position of the fixation’s centroid
+* `dispersion` - Dispersion, in degrees
+* `confidence` - Average pupil confidence
+* `method` - `2d gaze` or `3d gaze`
+* `gaze_point_3d_x` - x position of mean 3d gaze point, only available if `gaze 3d` method was used
+* `gaze_point_3d_y` - y position of mean 3d gaze point, only available if `gaze 3d` method was used
+* `gaze_point_3d_z` - z position of mean 3d gaze point, only available if `gaze 3d` method was used
+* `base_data` - Gaze data that the fixation is based on
