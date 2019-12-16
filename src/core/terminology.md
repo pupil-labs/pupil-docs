@@ -137,11 +137,11 @@ Salvucci and Goldberg define different categories of fixation detectors. One of 
 > 
 > *--- Salvucci, D. D., & Goldberg, J. H. (2000, November). Identifying fixations and saccades in eye-tracking protocols. In Proceedings of the 2000 symposium on Eye tracking research & applications (pp. 71-78). ACM.*
 
-Pupil’s fixation detectors implement such dispersion-based algorithms. The exact procdure differs depending on whether fixations are detected in an online or offline context:
+Pupil Core's fixation detectors implement a dispersion-based method. The exact procedure differs depending on whether fixations are detected in an online or offline context:
 
 ### Online Fixation Detection
 
-In Pupil Capture, fixations are detected based on a dispersion threshold in terms of degrees of visual angle with a minimum duration. Fixation are published as soon as they comply with the constraints (dispersion and duration). This might result in a series of overlapping fixations.
+In Pupil Capture, fixations are detected based on a dispersion threshold in terms of degrees of visual angle with a minimum duration. Fixations are published as soon as they comply with the constraints (dispersion and duration). This might result in a series of overlapping fixations.
 
 - **Maximum Dispersion (spatial, degree):** Maximum distance between all gaze locations during a fixation.
 - **Minimum Duration (temporal, milliseconds):** The minimum duration in which the dispersion threshold must not be exceeded.

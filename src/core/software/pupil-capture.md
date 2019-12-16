@@ -271,7 +271,7 @@ within the `pupil_capture_settings` or `pupil_player_settings` folder.
 ### Fixation Detector
 The online fixation detector classifies fixations based on the dispersion-duration principle. A fixation is visualized as a yellow circle around the gaze point that is shown in the Pupil Capture `world` window.
 
-You can find more information in our [dedicated fixation detection section](core/terminology/#fixations).
+You can find more information in our [dedicated fixation detection section](/core/terminology/#fixations "Pupil Core terminology - fixations").
 
 ### Network plugins
 Pupil Capture has a built-in data broadcast functionality. It is based on the network library [ZeroMQ](http://zeromq.org/)
