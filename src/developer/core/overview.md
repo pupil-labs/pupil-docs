@@ -48,7 +48,7 @@ Each data point should have at least two keys `topic` and `timestamp`. Each data
 
 1. `topic`: Identifies the type of the object. We recommend that you specify subtypes,
 separated by a `.`
-2. `timestamp`: [Pupil time](/developer/core/terminology#pupil-time) at which the datum was generated.
+2. `timestamp`: [Pupil time](/core/terminology/#pupil-time) at which the datum was generated.
 
 ### Pupil Datum Format
 
