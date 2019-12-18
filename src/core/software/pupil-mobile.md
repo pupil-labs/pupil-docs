@@ -110,7 +110,7 @@ There are two different methods to archive that:
 #### SD card File Transfer
 This method requires
 
-1. that you set the `Save directory` to `SD card` in the [main settings](#pupil-mobile-general-settings)
+1. that you set the `Save directory` to `SD card` in the [general settings](#general-settings)
 1. a SD card reader that can be connected to your computer
 
 Once you finished the recording, remove the sd card from your phone,
