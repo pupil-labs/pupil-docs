@@ -59,7 +59,7 @@ View all the datasets that were recorded on your Android device.
 1. **Recording folder** - A directory containing all of your recordings.
 1. **Delete** - Permanently delete recording files from the device.
 
-See the [`Transfer Recordings`](#pupil-mobile-transfer-recordings) section below on how to transfer recordings from your phone to your computer.
+See the [`Transfer Recordings`](#transfer-recordings "Pupil Mobile transfer recordings from mobile device to pc") section below on how to transfer recordings from your phone to your computer.
 
 ## Switch Views
 Pupil Mobile is designed to for efficient navigation.
