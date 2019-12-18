@@ -56,7 +56,7 @@ The eye process only has one purpose - to detect the pupil and broadcast its pos
 * Find the pupil position in the image
 * Broadcast/stream the detected pupil position.
 
-See the [terminology section](/developer/core/terminology) for the difference between pupil and gaze data.
+See the [terminology section](/core/terminology "Pupil Core - terminology") for the difference between pupil and gaze data.
 
 ### World Process
 This is the workhorse.
