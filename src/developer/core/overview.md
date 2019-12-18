@@ -38,7 +38,7 @@ needs the data to be correlated (e.g. calibration, visualization, analyses).
 Example: Pupil Capture data format records the world video frames with their
 respective timestamps. Independent of this, the recorder saves the detected gaze
 and pupil positions at their own frame rate and with their timestamps. For details about
-the stored data, see the [recording format](#recording-format) section.
+the stored data, see the [recording format](/core/software/recording-format "Pupil Core recording format") section.
 
 Pupil Core software uses simple key-value structures to represent single data points.
 Key-value structures can easily be serialized and nearly all programming languages have
