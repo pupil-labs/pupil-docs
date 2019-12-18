@@ -27,9 +27,9 @@ Make sure there is space between the headset frame and your forehead. Headsets a
 
 Start Pupil Capture on your computer. Once the program has initalized, a world video and eye video window will appear.
 
-::: tip
-<v-icon large color="info">info_outline</v-icon>
-Windows 10 users - start Pupil Capture as **administrator**. This is required for camera drivers to be installed. 
+::: warning
+<v-icon large color="warning">info_outline</v-icon>
+Windows 10 users - start Pupil Capture as **administrator**. This is required for camera drivers to be installed. Having trouble with drivers? See [Windows 10 troubleshooting](/core/software/pupil-capture/#troubleshooting "Pupil Core software troubleshooting").
 :::
 
 ## 3. Check Pupil Detection

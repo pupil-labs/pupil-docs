@@ -44,16 +44,16 @@ After switching to a different capture source, you can click the `Start with def
 
 ### Windows
 
-If you had tried to install drivers with previous driver install instructions and failed, or are not able to access cameras in Pupil Capture. Please try the following:
+Videos do not appear in Pupil Capture. This could mean that drivers were not automatically installed when you run Pupil Capture as **administrator**. You should first try to run Pupil Capture as **administrator** (right click `pupil_capture.exe` > Run as administrator). If that does not work, follow the troubleshooting steps below:
 
 1. In `Device Manager` (`System > Device Manager`)
 1. `View > Show Hidden Devices` 
-1. Expand `libUSBK Usb Devices`
-1. For each device listed (even hidden devices) click `Uninstall` and check the box agreeing to `Delete the driver software for this device` and press `OK`
-1. Repeat for each device in libUSBK Usb Devices
-1. Unplug Pupil headset (if plugged in)
-1. Restart your computer
-1. Install drivers from step 2 in the `Install drivers for your Pupil headset` section
+1. Expand `libUSBK Usb Devices`, `Cameras`, and `Imaging Devices` categories. 
+1. For each **Pupil Cam** device (even hidden devices) click `Uninstall` and check the box agreeing to `Delete the driver software for this device` and press `OK`
+1. Unplug Pupil headset (if plugged in) and plug back in. 
+1. Right click on `pupil_capture.exe` > Run as administrator. This should install drivers automatically. 
+
+Still having trouble? [Chat with us.](https://pupil-labs.com/chat "Pupil Labs chat on DiscordApp") 
 
 ### Linux
 
