@@ -291,7 +291,7 @@ You can compare `2d` and `3d` mapping results by creating two calibrations and g
 :::
 
 ### Developing your own Plugin
-To develop your own plugin see the [developer guide](/developer/core/ "Pupil Core developer documentation").
+To develop your own plugin see the [developer guide](/developer/core/overview "Pupil Core developer documentation").
 
 ## Export
 You can export data and videos by pressing `e` on your keyboard or the `e` hot key button in the Pupil Player window.
