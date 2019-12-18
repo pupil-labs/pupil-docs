@@ -5,7 +5,7 @@ permalink: /developer/core/plugin-api
 # Plugin API
 
 In Pupil Core, plugins are distributed as Python files that are loaded and executed at
-runtime. To be recognized as such, they need to be installed in the [correct place](#installation)
+runtime. To be recognized as such, they need to be installed in the [correct place](#adding-a-plugin)
 and implement the [Plugin API](#development).
 
 The usage of plugins has multiple advantages. For the user, they make it
