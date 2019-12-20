@@ -1,14 +1,23 @@
 # Getting Started
 Welcome to Pupil Core! The first thing you need to do is download the latest Pupil Core software.
 
-<v-btn
-large
-round
-color="primary"
-href="https://github.com/pupil-labs/pupil/releases/latest"
-class="mb-4"
->Download Pupil Core Software
-</v-btn>
+
+<v-menu offset-y
+  class="mb-4">
+  <template v-slot:activator="{ on }">
+    <v-btn
+      large
+      color="primary"
+      dark
+      v-on="on"
+    >
+      Download Pupil Core Software
+    </v-btn>
+  </template>
+  <DownloadLinks/>
+</v-menu>
+
+
 
 Follow the steps below to get up and running and become familiar with the workflow.
 
@@ -33,9 +42,9 @@ Windows 10 users - start Pupil Capture as **administrator**. This is required fo
 :::
 
 ## 3. Check Pupil Detection
-Everything depends on capturing good raw videos of the eyes. 
+Everything depends on capturing good raw videos of the eyes.
 
-You will need to [physically adjust](/core/hardware/#headset-adjustments "Pupil Core headset adjustments") the eye cameras on your Pupil Core headset to get good images of the eyes. 
+You will need to [physically adjust](/core/hardware/#headset-adjustments "Pupil Core headset adjustments") the eye cameras on your Pupil Core headset to get good images of the eyes.
 
 Take a look at the eye window(s).
 
@@ -51,9 +60,9 @@ If the pupil is detected you will see a red circle around the edge of your pupil
 4. :x: Don't - The eye is out of focus.
 
 
-Check the world window. 
+Check the world window.
 
-You will see confidence graphs in the top for each eye. 1.0 = high confidence pupil detection. 0.0 = no confidence. 
+You will see confidence graphs in the top for each eye. 1.0 = high confidence pupil detection. 0.0 = no confidence.
 
 ::: tip
 Tip - move your head around while looking at a fixed position. This enables you to check that your pupil is visible in the video even at extreme angles.
