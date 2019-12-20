@@ -18,7 +18,8 @@ import Vuetify, {
   VIcon,
   VList,
   VListTile,
-  VListTileTitle
+  VListTileTitle,
+  VMenu,
 } from 'vuetify/lib';
 
 export default ({ Vue, router, options }) => {
@@ -43,7 +44,8 @@ export default ({ Vue, router, options }) => {
       VIcon,
       VList,
       VListTile,
-      VListTileTitle
+      VListTileTitle,
+      VMenu,
     },
     theme: {
       primary: "#1263CC"
