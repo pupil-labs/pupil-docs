@@ -1,23 +1,7 @@
 # Getting Started
 Welcome to Pupil Core! The first thing you need to do is download the latest Pupil Core software.
 
-
-<v-menu offset-y
-  class="mb-4">
-  <template v-slot:activator="{ on }">
-    <v-btn
-      large
-      color="primary"
-      dark
-      v-on="on"
-    >
-      Download Pupil Core Software
-    </v-btn>
-  </template>
-  <DownloadLinks/>
-</v-menu>
-
-
+<DownloadLinks/>
 
 Follow the steps below to get up and running and become familiar with the workflow.
 

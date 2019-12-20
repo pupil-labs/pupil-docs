@@ -2,37 +2,50 @@
 
 <template>
 
-  <v-list
-    style="padding:0">
-    <div
-      style="margin:0;padding:0">
+  <v-menu offset-y
+    class="mb-4">
+    <template v-slot:activator="{ on }">
       <v-btn
-        style="width:100%; margin:0;padding:0"
-        color="none"
-        :href="url_windows"
-        >Windows (64 bit)
+        large
+        color="primary"
+        dark
+        v-on="on"
+      >
+        Download Pupil Core Software
       </v-btn>
-    </div>
-    <div
-      style="margin:0;padding:0">
-      <v-btn
-        style="width:100%; margin:0;padding:0"
-        color="none"
-        :href="url_linux"
-        >Linux (64 bit)
-      </v-btn>
-    </div>
-    <div
-      style="margin:0;padding:0">
-      <v-btn
-        style="width:100%; margin:0;padding:0"
-        color="none"
-        :href="url_mac"
-        >MacOs (64 bit)
-      </v-btn>
-    </div>
-  </v-list>
+    </template>
 
+    <v-list
+      style="padding:0">
+      <div
+        style="margin:0;padding:0">
+        <v-btn
+          style="width:100%; margin:0;padding:0"
+          color="none"
+          :href="url_windows"
+          >Windows (64 bit)
+        </v-btn>
+      </div>
+      <div
+        style="margin:0;padding:0">
+        <v-btn
+          style="width:100%; margin:0;padding:0"
+          color="none"
+          :href="url_linux"
+          >Linux (64 bit)
+        </v-btn>
+      </div>
+      <div
+        style="margin:0;padding:0">
+        <v-btn
+          style="width:100%; margin:0;padding:0"
+          color="none"
+          :href="url_mac"
+          >MacOs (64 bit)
+        </v-btn>
+      </div>
+    </v-list>
+  </v-menu>
 </template>
 
 <script>
