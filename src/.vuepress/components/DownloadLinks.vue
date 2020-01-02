@@ -23,8 +23,17 @@
         <v-btn
           style="width:100%; margin:0;padding:0"
           color="none"
+          :href="url_mac"
+          >macOS
+        </v-btn>
+      </div>
+      <div
+        style="margin:0;padding:0">
+        <v-btn
+          style="width:100%; margin:0;padding:0"
+          color="none"
           :href="url_windows"
-          >Windows (64 bit)
+          >Windows 10
         </v-btn>
       </div>
       <div
@@ -33,16 +42,7 @@
           style="width:100%; margin:0;padding:0"
           color="none"
           :href="url_linux"
-          >Linux (64 bit)
-        </v-btn>
-      </div>
-      <div
-        style="margin:0;padding:0">
-        <v-btn
-          style="width:100%; margin:0;padding:0"
-          color="none"
-          :href="url_mac"
-          >MacOs (64 bit)
+          >Linux
         </v-btn>
       </div>
     </v-list>
