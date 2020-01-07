@@ -10,8 +10,8 @@
       SidebarButton(@toggle-sidebar="$emit('toggle-sidebar')")
       a.align-center.d-flex(href="https://pupil-labs.com" target="_blank" rel="noopener")
         img(:src="$withBase('/logos/pl_logo.svg')")
-      v-spacer
       AlgoliaSearchBox(:options="algolia")
+      v-spacer
       v-toolbar-items.hidden-sm-and-down
         template(v-for="item in docs_menu")
           v-btn(
@@ -33,7 +33,7 @@ export default {
   data() {
     return {
       docs_menu: [
-        { icon: "home", title: "home", "link": "/" },
+        { icon: "home", title: "home", link: "/" },
         { icon: "invisible", title: "invisible", link: "/invisible/" },
         { icon: "core", title: "core", link: "/core/" },
         { icon: "vr-ar", title: "vr/ar", link: "/vr-ar/" },
