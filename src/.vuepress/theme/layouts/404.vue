@@ -13,12 +13,14 @@
           <v-btn dark round block to="/" color="primary" class="ma-0">Go Home</v-btn>
         </div>
       </v-container>
+      <Footer></Footer>
     </v-content>
   </v-app>
 </template>
 
 <script>
 import Header from "@theme/components/Header.vue";
+import Footer from "@theme/components/Footer.vue";
 
 export default {
   data() {
@@ -32,7 +34,8 @@ export default {
     };
   },
   components: {
-    Header
+    Header,
+    Footer
   },
   methods: {
     toggleSidebar(to) {
