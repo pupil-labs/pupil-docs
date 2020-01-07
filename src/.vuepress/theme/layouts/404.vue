@@ -1,26 +1,46 @@
 <template>
-  <div class="theme-container">
-    <div class="theme-default-content">
-      <h1>404</h1>
-      <blockquote>{{ getMsg() }}</blockquote>
-      <router-link to="/">Take me home.</router-link>
-    </div>
-  </div>
+  <v-app>
+    <Header ref="header" @toggle-sidebar="toggleSidebar"></Header>
+    <v-content>
+      <v-container justify-center align-center fill-height style="display:flex;">
+        <div>
+          <div class="pb-4">
+            <h1 style="font-size:144px;line-height:144px;">404</h1>
+            <h2 class="pb-1">Oops!</h2>
+            <h2>Something’s missing.</h2>
+            <blockquote>{{ getMsg() }}</blockquote>
+          </div>
+          <v-btn dark round block to="/" color="primary" class="ma-0">Go Home</v-btn>
+        </div>
+      </v-container>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
-const msgs = [
-  `There's nothing here.`,
-  `How did we get here?`,
-  `That's a Four-Oh-Four.`,
-  `Looks like we've got some broken links.`
-]
+import Header from "@theme/components/Header.vue";
 
 export default {
+  data() {
+    return {
+      msgs: [
+        `There's nothing here.`,
+        `How did we get here?`,
+        `That's a Four-Oh-Four.`,
+        `This is not the page you are looking for.`
+      ]
+    };
+  },
+  components: {
+    Header
+  },
   methods: {
-    getMsg () {
-      return msgs[Math.floor(Math.random() * msgs.length)]
+    toggleSidebar(to) {
+      this.isSidebarOpen = typeof to === "boolean" ? to : !this.isSidebarOpen;
+    },
+    getMsg() {
+      return this.msgs[Math.floor(Math.random() * this.msgs.length)];
     }
   }
-}
+};
 </script>
