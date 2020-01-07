@@ -17,8 +17,7 @@
           <div class="pb-4">
             <h1 style="font-size:144px;line-height:144px;">404</h1>
             <h2 class="pb-1">Oops!</h2>
-            <h2>Something’s missing.</h2>
-            <blockquote>{{ getMsg() }}</blockquote>
+            <h2>{{ getMsg() }}</h2>
           </div>
           <v-btn dark round block to="/" color="primary" class="ma-0">Go Home</v-btn>
         </div>
