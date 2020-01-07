@@ -83,6 +83,7 @@ export default {
   & > span
     vertical-align middle
   .algolia-autocomplete
+    width 100%
     line-height normal
     .ds-dropdown-menu
       background-color #fff
@@ -102,7 +103,7 @@ export default {
       .ds-suggestion
         border-bottom 1px solid $borderColor
     .algolia-docsearch-suggestion--highlight
-      color #2c815b
+      color salmon
     .algolia-docsearch-suggestion
       border 0
       padding 0
