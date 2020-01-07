@@ -10,8 +10,8 @@
       SidebarButton(@toggle-sidebar="$emit('toggle-sidebar')")
       a.align-center.d-flex(href="https://pupil-labs.com" target="_blank" rel="noopener")
         img(:src="$withBase('/logos/pl_logo.svg')")
-      AlgoliaSearchBox(:options="algolia")
       v-spacer
+      AlgoliaSearchBox(:options="algolia")
       v-toolbar-items.hidden-sm-and-down
         template(v-for="item in docs_menu")
           v-btn(
