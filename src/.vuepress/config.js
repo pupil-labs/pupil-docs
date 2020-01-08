@@ -8,7 +8,7 @@ module.exports = {
     ['link', { rel: 'manifest', href: '/manifest.json' }],
     ['link', { rel: "apple-touch-icon", type: "image/x-icon", href: "/favicons/apple-touch-icon.png" }],
     ['link', { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicons/favicon-32x32.png" }],
-    ['link', {rel: "icon", type: "image/png", sizes: "16x16", href: "/favicons/favicon-16x16.png" }]
+    ['link', { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicons/favicon-16x16.png" }]
   ],
   themeConfig: {
     displayAllHeaders: false,
@@ -87,15 +87,7 @@ module.exports = {
   },
 
   plugins: [
-    // [
-    //   "@vuepress/medium-zoom",
-    //   {
-    //     options: {
-    //       margin: 100,
-    //       background: '#fafafa'
-    //     }
-    //   }
-    // ],
+    ["@vuepress/pwa"],
     [
       "@vuepress/last-updated",
       {
