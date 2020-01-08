@@ -11,21 +11,15 @@ This section will guide you through all steps needed to turn your HTC Vive into 
 
 ## Install the Vive add-on
 
-<div style="display:flex;justify-content:center;">
-  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/HGMjJLnK2_4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+<Youtube src="HGMjJLnK2_4"/>
 
 ## Install the Vive Pro add-on
 
-<div style="display:flex;justify-content:center;">
-  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ZRdWlmxBH30" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+<Youtube src="ZRdWlmxBH30"/>
 
 ## Install the 200Hz Vive and Vive Pro add-on
 
-<div style="display:flex;justify-content:center;">
-  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/eVsNdQL7VEI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+<Youtube src="eVsNdQL7VEI"/>
 
 ## A detailed look
 Detailed look at the engagement process between the eye tracking ring the the lens holding geometry.
@@ -44,7 +38,7 @@ This works but only if the following rules are observed:
 
 or
 
-- Enable the HTC-Vive built-in camera and set it to 30hz. 
+- Enable the HTC-Vive built-in camera and set it to 30hz.
 
 #### Run a separate USB lane along the tether
 If you want full frame rate and resolution for both the Vive’s camera and the add-on you will have to connect the Pupil add-on to a separate usb port on the host PC.

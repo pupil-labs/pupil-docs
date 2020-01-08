@@ -52,16 +52,7 @@ You can easily change the lenses of your Pupil Invisible glasses.
 
 ### Removing Lenses
 
-<div style="display:flex;justify-content:center;" class="pb-4">
-  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ZaUoyuBEOJo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-<!-- <div style="display:flex;justify-content:center;">
-  <v-img
-    :src="require('../../media/invisible/remove-lenses.jpg')"
-    max-width=50%
-  >
-  </v-img>
-</div> -->
+<Youtube src="ZaUoyuBEOJo"/>
 
 Hold the glasses with arms of the frame facing towards you. Push out from the inside of the frame on the lens surface with your thumb placed close to the nose pad.
 
@@ -72,18 +63,8 @@ You will hear a _pop_ sound when the lens is removed or inserted. Don't worry - 
 
 ### Inserting Lenses
 
-<div style="display:flex;justify-content:center;" class="pb-4">
-  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Y8hG8t5xiPM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+<Youtube src="Y8hG8t5xiPM"/>
 
-<!-- <div style="display:flex;justify-content:center;">
-  <v-img
-    :src="require('../../media/invisible/insert-lenses.jpg')"
-    max-width=50%
-  >
-  </v-img>
-</div>
- -->
 Hold the glasses with arms of the frame facing away from you.
 1. Slot the lens in the groove on the side furthest from the nose pad.
 2. Press on the lens with your thumb or fingers on the top corner
