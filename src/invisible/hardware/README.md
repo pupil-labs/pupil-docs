@@ -13,7 +13,7 @@
 
 1. **Pupil Invisible glasses**
 2. **Connector Cable**: USB-C to USB-C cable to connect your Pupil Invisible glasses to your Companion Device
-3. **Lenses**: Clear plano lenses installed in Pupil Invisible glasses. Additional shaded lenses in the case. 
+3. **Lenses**: Clear plano lenses installed in Pupil Invisible glasses. Additional shaded lenses in the case.
 4. **Companion Device**
 5. **Charging Cable and Socket Adapter**: Use to charge your Companion Device
 6. **Microfiber Cleaning Cloth**
@@ -36,7 +36,7 @@ Learn more about the features of your Pupil Invisible glasses.
 2. **Eye cameras**
 3. **Lenses**: Ships with clear plano lenses in the glasses frame. You can easily turn your glasses into shades. See [changing lenses](#changing-lenses) for more info.
 4. **USB-C port**: Plug in USB-C cable here to connect to the Companion Device
-5. **Serial number**: 5 character serial number inset into the left arm. 
+5. **Serial number**: 5 character serial number inset into the left arm.
 
 ## Care Instructions
 Pupil Invisible Glasses contain cameras and sensitive electronic components, do not rinse or wet-clean.
@@ -52,7 +52,9 @@ You can easily change the lenses of your Pupil Invisible glasses.
 
 ### Removing Lenses
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ZaUoyuBEOJo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div style="display:flex;justify-content:center;" class="pb-4">
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ZaUoyuBEOJo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 <!-- <div style="display:flex;justify-content:center;">
   <v-img
     :src="require('../../media/invisible/remove-lenses.jpg')"
@@ -70,7 +72,9 @@ You will hear a _pop_ sound when the lens is removed or inserted. Don't worry - 
 
 ### Inserting Lenses
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Y8hG8t5xiPM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div style="display:flex;justify-content:center;" class="pb-4">
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Y8hG8t5xiPM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 <!-- <div style="display:flex;justify-content:center;">
   <v-img
@@ -87,7 +91,7 @@ Hold the glasses with arms of the frame facing away from you.
 
 ## Sports Strap
 
-The sports strap is an accessory that can be purchased to if you want to use Pupil Invisible while playing sports or in other dynamic activities. The sports strap can be adjusted to fit most wearers by pulling the two tabs. 
+The sports strap is an accessory that can be purchased to if you want to use Pupil Invisible while playing sports or in other dynamic activities. The sports strap can be adjusted to fit most wearers by pulling the two tabs.
 
 <div style="display:flex;justify-content:center;">
   <v-img
@@ -97,4 +101,4 @@ The sports strap is an accessory that can be purchased to if you want to use Pup
   </v-img>
 </div>
 
-Clip the strap connector onto the arms of your Pupil Invisible glasses. The cable should be on top of the glasses arms. The open side of the clip should be on the inside of the glasses frame. See the image for reference. 
+Clip the strap connector onto the arms of your Pupil Invisible glasses. The cable should be on top of the glasses arms. The open side of the clip should be on the inside of the glasses frame. See the image for reference.
