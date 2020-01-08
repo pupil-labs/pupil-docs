@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "@vuepress/plugin-google-analytics": "^1.1.0",
+    "@vuepress/plugin-pwa": "^1.2.0",
     "css-loader": "^3.2.0",
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
