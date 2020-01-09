@@ -68,10 +68,10 @@ yarn build
 ## Page routing
 In the root dir are where all the page routes are located.
 
-| Relative Path | Page Routing |
-|---|---|
-| `/README.md` | `/` |
-| `/core/README.md` | `/core/` |
+| Relative Path     | Page Routing |
+| ----------------- | ------------ |
+| `/README.md`      | `/`          |
+| `/core/README.md` | `/core/`     |
 
 For pages that are _not_ README.md, please add frontmatter with a permalink. This enables us to have "clean" URLs without `.html` and makes linking within docs easier. Example for /core/software/pupil-capture.md - add the below front-matter:
 
@@ -150,4 +150,17 @@ Text.
 <v-icon large color="warning">error_outline</v-icon>
 Text.
 :::
+```
+
+### Youtube videos
+Use Youtube component to quickly add videos to markdown files.
+
+Just copy and paste the unique video ID to the src prop of the component like so.
+
+```
+https://www.youtube.com/watch?v=HGMjJLnK2_4
+```
+
+```md
+<Youtube src="HGMjJLnK2_4"/>
 ```
