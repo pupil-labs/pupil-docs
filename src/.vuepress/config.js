@@ -6,9 +6,10 @@ module.exports = {
   head: [
     ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Material+Icons' }],
     ['link', { rel: 'manifest', href: '/manifest.json' }],
+    ['meta', { name: 'theme-color', content: '#eceff1' }],
     ['link', { rel: "apple-touch-icon", type: "image/x-icon", href: "/favicons/apple-touch-icon.png" }],
     ['link', { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicons/favicon-32x32.png" }],
-    ['link', {rel: "icon", type: "image/png", sizes: "16x16", href: "/favicons/favicon-16x16.png" }]
+    ['link', { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicons/favicon-16x16.png" }]
   ],
   themeConfig: {
     displayAllHeaders: false,
@@ -87,15 +88,13 @@ module.exports = {
   },
 
   plugins: [
-    // [
-    //   "@vuepress/medium-zoom",
-    //   {
-    //     options: {
-    //       margin: 100,
-    //       background: '#fafafa'
-    //     }
-    //   }
-    // ],
+    [
+      "@vuepress/pwa",
+      {
+        serviceWorker: true,
+        popupComponent: 'div'
+      }
+    ],
     [
       "@vuepress/last-updated",
       {
