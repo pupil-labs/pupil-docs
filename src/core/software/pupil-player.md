@@ -97,17 +97,6 @@ Visualize the gaze positions with a cross for each gaze position. This plugin is
 
 Here we show an example of how you could use **2** instances of the `Vis Cross` Plugin. The first instance renders the gaze position as a red cross with that extends to the boundaries of the screen. The second instance renders the gaze position as a green cross, with a heavier stroke weight.
 
-#### Vis Scan Path
-This plugin enables past gaze positions to stay visible for the duration of time specified by the user. This plugin is **unique**, therefore you can only load one instance of this plugin.
-
-<div class="pb-4">
-  <img src="../../media/core/imgs/vis-scanpath.jpg" style="display:flex;margin:0 auto;">
-</div>
-
-On its own, `Scan Path` does not render anything to the screen. It is designed to be used with other plugins. In some cases, it is even required to be enabled in order for other plugins to properly function. When used with `Vis` plugins (like `Vis Circle`, `Vis Cross`, `Vis Polyline`, or `Vis Light Points`) `Scan Path` will enable you to see both the current gaze positions and the past gaze positions for the specified duration of time.
-
-Here we show an example of `Scan Path` set with `0.4` seconds duration used with `Vis Circle`. Each green circle is a gaze position within the last `0.4` seconds of the recording.
-
 #### Vis Polyline
 Visualize the gaze positions with a polyline for each gaze position.
 
@@ -120,7 +109,7 @@ This plugin is **not unique**, therefore you can add multiple instances of the p
   + `line thickness` - the thickness or width of the polyline stroke in pixels.
   + `color` - define the `red`, `green`, `blue` values for color.
 
-An example showing `Vis Polyline` used with `Vis Circle` and `Scan Path`. The polyline enables one to visualize the sequence of the gaze positions over the duration specified by `Scan Path`.
+An example showing `Vis Polyline` used with `Vis Circle`. The polyline enables one to visualize the sequence of the gaze positions over a single world frame.
 
 #### Vis Light Points
 Visualize the gaze positions as a point of light for each gaze position. The `falloff` of the light from the gaze position is specified by the user.
