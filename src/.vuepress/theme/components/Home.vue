@@ -5,7 +5,7 @@
       v-container
         v-container
           v-layout(column justify-center align-center)
-            h1.pb-0 {{ data.title }}
+            h1.pb-4 {{ data.title }}
             div(style="max-width:500px;margin:auto;text-align:center;")
               p {{ data.subtitle }}
 
