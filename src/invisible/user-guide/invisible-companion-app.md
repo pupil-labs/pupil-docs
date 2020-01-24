@@ -65,3 +65,13 @@ Check out the video to see how to lock the app.
      <source src="../../media/invisible/invisible-companion-app/videos/app_lock_oneplus6.mp4" type="video/mp4">
    </video>
 </div>
+
+### Time synchronization
+
+The Pupil Invisible Companion App runs its own clock as the source for all data timestamps it generates. To start this clock the App samples the phone’s NTP (Network Time Protocol) synchronized UTC clock.
+
+If more that one device is used and the data is required to be synchronised, make sure all devices have recently been connected to the internet and automatic time setting is active in the operating system settings.
+
+Pupil Monitor will warn you if a device is not in sync.
+
+More info in the technical implementation and quality of NTP synchronisation can be found in the developer docs.

@@ -138,6 +138,20 @@ except:
 <!-- A more sophisticated example that also shows how to receive events from the PI companion can be found in the PI time sync section of the docs. -->
 
 
+
+## Time Synchronization
+
+The Pupil Invisible Companion App runs its own clock as the source for all data timestamps it generates. To create this clock the App samples the phone’s NTP (Network Time Protocol) synchronised UTC clock (Android Framework's `System.currentTimeMillis() * 1e6`) once at the beginning of the first sensor stream initialization. From then onward until no more sensors are streaming, this app clock is used, the unit used is nanoseconds.
+
+Unlike the phones wall clock, this App clock is guaranteed to be monotonic, it also has a higher resolution. We can utilize the benefits of the initial NTP synchronization to make Pupil Invisible synchronisable with other devices that also follow NTP.
+
+To check sync quality:
+1) Send a notification without timestamp to the companion app.
+2) Measure the round-trip-time till reception of the echo.
+3) Compare the timestamp in the echo with your target time while taking into account the round-trip-time
+
+More info regarding sync can be found in this sync test report: [Time sync report](https://docs.google.com/document/d/16JpIUUXNQvJ74FqfVJI6PAUUAV2nrbcCpdYamrJif_M/edit#)
+
 ## Pupil Invisible Monitor
 
 This is a stand alone desktop app that connects to Pupil Invisible using the Network API
