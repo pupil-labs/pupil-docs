@@ -100,11 +100,11 @@ There are three coordinate systems for each camera:
     - bounds:
         - `x: [0, <image width>], y: [0, <image height>]`
     - example: `image shape: (800, 400), location: (400, 200)` (image center)
-- **2D Normalised Space**:
+- **2D Normalized Space**:
     - origin: bottom left
     - unit: image width/height
     - includes lens distortion
-    - equivalent to _2d image space_, normalised
+    - equivalent to _2d image space_, normalized
     - bounds:
         - `x: [0, 1], y: [0, 1]`
     - example: `(0.5, 0.5)` (image center)

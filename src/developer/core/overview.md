@@ -55,7 +55,7 @@ separated by a `.`
 The pupil detector generates `pupil` data from `eye` images. In addition to the `pupil`
 topic and the `timestamp` (inherited from the eye image), the pupil detector adds fields most importantly:
 
-- `norm_pos`: Pupil location in normalised eye coordinates, and
+- `norm_pos`: Pupil location in normalized eye coordinates, and
 - `confidence`: Value indicating quality of the measurement
 
 By default, the Pupil Core software uses the
