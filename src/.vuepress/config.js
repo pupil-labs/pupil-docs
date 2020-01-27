@@ -40,6 +40,7 @@ module.exports = {
             'software/pupil-mobile',
             'software/recording-format',
             'terminology',
+            'best-practices',
             'academic-citation',
           ]
         },
