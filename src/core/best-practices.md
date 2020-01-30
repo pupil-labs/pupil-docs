@@ -35,13 +35,13 @@ The 3D pipeline will adapt itself over time to compensate for slippage errors. T
 
 ## Record Everything
 You do not have to make fixed decisions for an experiment, as Pupil Player allows for running pupil detection and gaze mapping again with different settings in an offline mode. In order for this to work best, you should record all the data that is needed to run different offline algorithms. Here are the steps to include in your recording:
-1. Start the recording.
-1. Ask the participant to slowly look around with the eyes for a couple of seconds to sample different gaze angles. This will allow the 3D model to stabilize at the start. Do this even if you are not using the 3D pipeline to allow for comparison in offline mode.
+1. Start recording in Pupil Capture.
+1. Ask the participant to slowly look around while keeping the head stable for a couple of seconds to sample different gaze angles. This will allow the 3D model to stabilize at the start. Do this even if you are not using the 3D pipeline to allow for comparison in offline mode.
 1. Perform a calibration.
 1. Perform a validation. If the error is too high, restart the block.
 1. Perform your experiment.
 1. Perform another validation. This can give you an estimate of how much slippage error you accumulated during the experiment. If you are recording multiple blocks with a non-fixed calibration setup, you can also re-use the calibration session of the following block as post-validation for the previous block.
-1. Now you can stop the recording.
+1. Stop recording.
 
 
 ## Participants
