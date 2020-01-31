@@ -246,6 +246,33 @@ if __name__ == "__main__":
 
 More info regarding sync can be found in the [time synchronization test report](https://docs.google.com/document/d/16JpIUUXNQvJ74FqfVJI6PAUUAV2nrbcCpdYamrJif_M/edit# "Time synchronization report on google docs")
 
+## Coordinate Systems
+
+Pupil Invsible gaze and IMU sensor data is measured in relationship to the Pupil Invisible glasses frame. The two different coordinate systems for each sensor stream are defined as shown below:
+
+### Gaze coordinate system
+
+<div style="display:flex;justify-content:center;" class="pb-4">
+  <v-img
+    :src="require('../../media/invisible/pi-gaze-coordinate-diagram.jpg')"
+    max-width=80%
+  >
+  </v-img>
+</div>
+
+Origin is top left of the scene camera frame. Scene camera frame width is 1088 px. Scene camera frame height is 1080 px.
+
+### IMU coordinate system
+
+<div style="display:flex;justify-content:center;" class="pb-4">
+  <v-img
+    :src="require('../../media/invisible/pi-imu-diagram.jpg')"
+    max-width=80%
+  >
+  </v-img>
+</div>
+
+
 ## Pupil Invisible Monitor
 
 This is a stand alone desktop app that connects to Pupil Invisible using the Network API
