@@ -74,4 +74,4 @@ If more that one device is used and the data is required to be synchronised, mak
 
 Pupil Monitor will warn you if a device is not in sync.
 
-More info in the technical implementation and quality of NTP synchronisation can be found in the developer docs.
+More info in the technical implementation and quality of NTP synchronisation can be found in the [Pupil Invisible developer docs](/developer/invisible/#time-synchronization "Pupil Invisible developer docs - time synchronization").

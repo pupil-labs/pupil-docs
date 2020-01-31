@@ -23,6 +23,7 @@ module.exports = {
           children: [
             'user-guide/intro',
             'user-guide/invisible-companion-app',
+            'user-guide/invisible-monitor',
             'user-guide/analysis',
             'user-guide/troubleshooting'
           ]
