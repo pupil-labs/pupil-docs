@@ -3,7 +3,7 @@ permalink: /core/best-practices
 ---
 
 # Best Practices
-*Tips for conducting eye-tracking experiments with Pupil Core.*
+*Tips for conducting eye tracking experiments with the Pupil Core eye tracking platform.*
 
 
 ## Calibrating
