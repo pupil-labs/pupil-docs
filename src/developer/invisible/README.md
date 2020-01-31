@@ -135,8 +135,115 @@ except:
     node.stop()
 ```
 
-<!-- A more sophisticated example that also shows how to receive events from the PI companion can be found in the PI time sync section of the docs. -->
+A more sophisticated example that also shows how to receive events from the PI companion can be found in the [PI time sync](##-time-synchronization) section of the docs.
 
+
+## Time Synchronization
+
+The Pupil Invisible Companion App runs its own clock as the source for all data timestamps it generates. To create this clock the App samples the phone’s NTP (Network Time Protocol) synchronised UTC clock (Android Framework's `System.currentTimeMillis() * 1e6`) once at the beginning of the first sensor stream initialization. From then onward until no more sensors are streaming, this app clock is used, the unit used is nanoseconds.
+
+Unlike the phones wall clock, this App clock is guaranteed to be monotonic, it also has a higher resolution. We can utilize the benefits of the initial NTP synchronization to make Pupil Invisible synchronisable with other devices that also follow NTP.
+
+**To check sync quality:**
+1) Send a notification without timestamp to the companion app.
+2) Measure the round-trip-time till reception of the echo.
+3) Compare the timestamp in the echo with your target time while taking into account the round-trip-time.
+
+
+```py
+import time
+import uuid
+import json
+
+# https://github.com/pupil-labs/pyndsi/
+import ndsi  # Main requirement
+
+EVENT_TYPE = "event"  # Type of sensors that we are interested in
+SENSORS = {}  # Will store connected sensors
+
+timestamps_sent = {}
+
+
+def main():
+    # Start auto-discovery of Pupil Invisible Companion devices
+    network = ndsi.Network(formats={ndsi.DataFormat.V4}, callbacks=(on_network_event,))
+    network.start()
+
+    try:
+        # Event loop, runs until interrupted
+        while network.running:
+            # Check for recently connected/disconnected devices
+            if network.has_events:
+                network.handle_event()
+
+            # Iterate over all connected devices
+            for event_sensor in SENSORS.values():
+                # Fetch recent sensor configuration changes,
+                # required for pyndsi internals
+                while event_sensor.has_notifications:
+                    event_sensor.handle_notification()
+
+                sent_time_ping(network, event_sensor)  # Send <<time>> event
+                recv_time_echo(event_sensor)  # wait for echo, calculate time offset
+
+    # Catch interruption and disconnect gracefully
+    except (KeyboardInterrupt, SystemExit):
+        network.stop()
+
+
+def sent_time_ping(network, event_sensor):
+    if (
+        event_sensor not in timestamps_sent
+        and "streaming" in event_sensor.controls
+        and event_sensor.controls["streaming"]["value"]
+    ):
+        timestamps_sent[event_sensor] = time.time()
+        network.whisper(
+            uuid.UUID(event_sensor.host_uuid),
+            (json.dumps({"name": "<<time>>"})).encode(),
+        )
+
+
+def recv_time_echo(event_sensor):
+    for event in event_sensor.fetch_data():
+        if event.label == "<<time>>":
+            event_time_send = timestamps_sent[event_sensor]
+            event_time_received = time.time()
+            event_time_phone = event.timestamp
+
+            roundtrip = event_time_received - event_time_send
+            time_diff = (event_time_received + event_time_send) / 2 - event_time_phone
+
+            host_name = event_sensor.host_name
+            print(f"[{host_name}] Round trip time: {roundtrip} seconds")
+            print(f"[{host_name}] Estimated time difference: {time_diff} seconds")
+
+
+def on_network_event(network, event):
+    # Handle event sensor attachment
+    if event["subject"] == "attach" and event["sensor_type"] == EVENT_TYPE:
+        # Create new sensor, start data streaming,
+        # and request current configuration
+        sensor = network.sensor(event["sensor_uuid"])
+        sensor.set_control_value("streaming", True)
+        sensor.refresh_controls()
+
+        # Save sensor s.t. we can fetch data from it in main()
+        SENSORS[event["sensor_uuid"]] = sensor
+        print(f"Added sensor {sensor}...")
+
+    # Handle event sensor detachment
+    if event["subject"] == "detach" and event["sensor_uuid"] in SENSORS:
+        # Known sensor has disconnected, remove from list
+        SENSORS[event["sensor_uuid"]].unlink()
+        del SENSORS[event["sensor_uuid"]]
+        print(f"Removed sensor {event['sensor_uuid']}...")
+
+
+if __name__ == "__main__":
+    main()  # Execute example
+```
+More info regarding sync can be found in this sync test report: [Time sync report](https://docs.google.com/document/d/16JpIUUXNQvJ74FqfVJI6PAUUAV2nrbcCpdYamrJif_M/edit#)
 
 ## Pupil Invisible Monitor
 
