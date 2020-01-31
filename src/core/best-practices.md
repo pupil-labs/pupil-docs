@@ -47,6 +47,6 @@ We recommend starting to record prior to calibration. This is valuable because i
 ## Participants
 The less movement you participants will exhibit during an experiment, the more accurate your results will be. This includes movements of head, but also of facial muscles. In order to minimiza unnecessary movement, you should:
 - Make sure the participant is in a comfortable position that they can maintain during the experiment.
-- Make sure the participant can read all instructions comfortable and does not need to squint.
+- Make sure the participant can comfortably read all instructions and does not need to squint.
 - Ask your participant to keep a relaxed facial expression during the experiment.
 - Ask your participant to not touch the headset (e.g. by scratching their head). If they need to interrupt the block, they should ask and you will need to restart the block and recalibrate.
