@@ -22,7 +22,7 @@ The World window is the main control center for Pupil Capture. It displays a liv
 1. **Sidebar**: This area contains clickable buttons for each plugin. System plugins are loaded in the top and user added plugins are added below a horizontal separator.
 
 ## Capture Selection
-By default Pupil Capture will use Local USB as the capture source. If you have a Pupil Core headset connected to your computer you will see videos displayed from your Pupil Core headset in the World and Eye windows. 
+By default Pupil Capture will use Local USB as the capture source. If you have a Pupil Core headset connected to your computer you will see videos displayed from your Pupil Core headset in the World and Eye windows.
 
 If no headset is connected or Pupil Capture is unable to open capture devices it will fall back to Ghost capture and display a gray screen. Other options for capture source are described below.
 
@@ -30,7 +30,7 @@ If no headset is connected or Pupil Capture is unable to open capture devices it
   <source src="../../media/core/videos/backend-manager.mp4" type="video/mp4">
 </video>
 
-- Ghost Capture - This is default gray screen that is displayed if no capture device is found. 
+- Ghost Capture - This is default gray screen that is displayed if no capture device is found.
 - Test Image - A fake source that displays the current frame number, resolution, and size of the "fake" video being generated.
 - Video File Source - select this option to use previously recorded videos for the capture selection.
 - Pupil Mobile - select this option when using Pupil Capture with the Pupil Mobile Android application.
@@ -47,13 +47,13 @@ After switching to a different capture source, you can click the `Start with def
 Videos do not appear in Pupil Capture. This could mean that drivers were not automatically installed when you run Pupil Capture as **administrator**. You should first try to run Pupil Capture as **administrator** (right click `pupil_capture.exe` > Run as administrator). If that does not work, follow the troubleshooting steps below:
 
 1. In `Device Manager` (`System > Device Manager`)
-1. `View > Show Hidden Devices` 
-1. Expand `libUSBK Usb Devices`, `Cameras`, and `Imaging Devices` categories. 
+1. `View > Show Hidden Devices`
+1. Expand `libUSBK Usb Devices`, `Cameras`, and `Imaging Devices` categories.
 1. For each **Pupil Cam** device (even hidden devices) click `Uninstall` and check the box agreeing to `Delete the driver software for this device` and press `OK`
-1. Unplug Pupil headset (if plugged in) and plug back in. 
-1. Right click on `pupil_capture.exe` > Run as administrator. This should install drivers automatically. 
+1. Unplug Pupil headset (if plugged in) and plug back in.
+1. Right click on `pupil_capture.exe` > Run as administrator. This should install drivers automatically.
 
-Still having trouble? [Chat with us.](https://pupil-labs.com/chat "Pupil Labs chat on DiscordApp") 
+Still having trouble? [Chat with us.](https://pupil-labs.com/chat "Pupil Labs chat on DiscordApp")
 
 ### Linux
 
@@ -141,9 +141,9 @@ In the `Advanced` sub-menu you can set the `sample duration` - the number of fra
 
 #### Calibration Marker
 
-If you're not going to be doing calibration on screen with the `Screen Marker Calibration` method, then you will need to download the Pupil's Circular Calibration Marker. This marker can be automatically detected by Pupil software in the world scene video. 
+If you're not going to be doing calibration on screen with the `Screen Marker Calibration` method, then you will need to download the Pupil's Circular Calibration Marker. This marker can be automatically detected by Pupil software in the world scene video.
 
-In most use cases you will only need to use the `Pupil Calibration Marker`. The `Stop Marker` is used if you want to be able to conclude a calibration sequence by showing this marker.  
+In most use cases you will only need to use the `Pupil Calibration Marker`. The `Stop Marker` is used if you want to be able to conclude a calibration sequence by showing this marker.
 
 ::: tip
 <v-icon large color="info">info_outline</v-icon>
@@ -167,7 +167,7 @@ Make sure to always use the **v0.4 marker design** for best detection performanc
 
 #### Manual Marker Calibration
 
-This method is done with an operator and a subject. It is suited for midrange distances and can accommodate a wide field of view. The operator will use a printed calibration marker like the one shown in the video. 
+This method is done with an operator and a subject. It is suited for midrange distances and can accommodate a wide field of view. The operator will use a printed calibration marker like the one shown in the video.
 
 
 <video width="100%" controls class="mb-5">
@@ -390,7 +390,7 @@ Apriltags ready to use:
 </div>
 
 
-Markers can be printed on paper, stickers, or displayed on a screen. 
+Markers can be printed on paper, stickers, or displayed on a screen.
 
 
 #### Preparing your Environment
@@ -452,7 +452,7 @@ The detector for Apriltag Markers offers two parameters `Use high resolution` an
 #### Further Functionality
 * You can click the `Open Surface in Window` button to open a view of the surface in a separate window. Gaze positions on the surface will be visualized in this window in real-time.
 * Streaming Surfaces with Pupil Capture - Detected surfaces as well as gaze positions relative to the surface are broadcast under the `surface` topic. Check out [this video](http://youtu.be/qHmfMxGST7A) for a demonstration.
-* Surface Metrics with Pupil Player - if you have defined surfaces, you can generate surface visibility reports or gaze count per surface. See our [blog post](https://pupil-labs.com/news/0392-release) for more information.
+* Surface Metrics with Pupil Player - if you have defined surfaces, you can generate surface visibility reports or gaze count per surface. See our [blog post](https://pupil-labs.com/blog/0392-release) for more information.
 
 #### Legacy Markers
 The legacy surface system used simple square markers, which are less robust to detect.
