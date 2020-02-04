@@ -94,7 +94,7 @@ export default {
       ],
       companyLinks: [
         { title: "about", href: "/about/" },
-        { title: "news", href: "/news/" },
+        { title: "blog", href: "/blog/" },
         { title: "careers", href: "/careers/" },
         { title: "imprint", href: "/imprint/" },
         { title: "legal", href: "/legal/" },
