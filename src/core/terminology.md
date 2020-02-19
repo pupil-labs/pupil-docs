@@ -109,12 +109,10 @@ There are three coordinate systems for each camera:
         - `x: [0, 1], y: [0, 1]`
     - example: `(0.5, 0.5)` (image center)
 - **3D Camera Space**:
-    - origin: center
-    - unit: mm
+    - origin: center of the camera
     - does not includes lens distortion 
-    - bounds:
-        - `x: [0, <image width>], y: [0, <image height>]`
-    - example: `(0, 0, 1)` (image center)
+    - no boundaries
+    - example: `(0, 0, 1)` (a point on the optical axis)
 
 [Reference](https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html).
 You can use the _Camera Intrinsics_ to project a _3d camera location_ to _2d pixel location_, and vice versa.
