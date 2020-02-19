@@ -73,9 +73,11 @@ Swipe left or right for quick access to other views.
 Pupil Mobile devices on the same local WiFi network are automatically detected by Pupil Capture.
 To subscribe to a Pupil Mobile device in Pupil Capture, go to `Video Source` and select your Android Device as the video source.
 
+<!-- TODO: Replace or remove
 <video width="100%" controls class="mb-5">
   <source src="../../media/core/videos/backend-manager.mp4" type="video/mp4">
 </video>
+-->
 
 #### WiFi Bandwidth & Network
 Make sure you have a good WiFi newtork connection and that it's not saturated. The quality of your WiFi connection will affect the sensor streams to your subscribers.

@@ -29,9 +29,11 @@ If no headset is connected or Pupil Capture is unable to open capture devices it
 If you are using the Pupil Mobile Android application, you can activate your headset in the `Video Source` plugin.
 For more advanced setups you can enable `Manual Camera Selection` and activate specific cameras for the world and eye windows separately.
 
+<!-- TODO: Replace with new visualization
 <video width="100%" controls class="mb-5">
   <source src="../../media/core/videos/backend-manager.mp4" type="video/mp4">
 </video>
+-->
 
 
 ## Troubleshooting
