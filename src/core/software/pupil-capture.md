@@ -310,7 +310,8 @@ For this to work your network needs to allow `UDP` transport. If the nodes do no
 
 ::: tip
 <v-icon large color="info">info_outline</v-icon>
-Pupil Groups can easily be integrated in your own app or device. Have a look at <a href="https://github.com/pupil-labs/pupil-helpers/tree/master/pupil_sync">pupil helpers</a> to get started.
+Pupil Groups can easily be integrated in your own app or device.
+Take a look at <a href="/developer/core/network-api/#pupil-groups">the developer docs</a> to get started.
 :::
 
 #### Pupil Time Sync
