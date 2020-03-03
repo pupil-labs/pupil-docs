@@ -204,6 +204,14 @@ This plugin uses fiducial markers ([apriltag](https://april.eecs.umich.edu/softw
 
 See the [surface tracking section](/core/software/pupil-capture/#surface-tracking) for images of the markers to download.
 
+By default, the location of the first visible marker will be used as the origin of the 3d model's coordinate system. In the plugin's menu, you can change the marker that is being used as the origin.
+
+Results are exported in the following files:
+- `head_pose_tacker_model.csv`: A list of all markers used to generate the 3d model and the 3d locations of the marker vertices.
+- `head_pose_tacker_poses.csv`: The headset's pose (rotation and translation) within the 3d model coordinate system for each recorded world frame.
+
+
+
 ### Pupil Data And Post-hoc Detection
 By default, Player starts with the `Pupil From Recording` plugin that tries to load pupil positions that were detected and stored during a Pupil Capture recording.
 Alternatively, one can run the pupil detection post-hoc.
