@@ -79,7 +79,7 @@ for a full example interaction with Pupil Remote.
 
 ## Pupil Groups
 
-The [Pupil Groups plugin](/core/software/pupil-capture/#pupil-groups) uses ZeroMQ's ZRE protocol to implement realtime local network discovery and many-to-many communication.
+The [Pupil Groups plugin](/core/software/pupil-capture/#pupil-groups) uses the [ZRE protocol](https://rfc.zeromq.org/spec:36/ZRE/) to implement real-time local network discovery and many-to-many communication.
 Common workflows like starting and stopping a recording are already implemented by Pupil Capture to use and respond to the Pupil Groups interface, if available.
 
 If you want to integrate Pupil Groups in your own app or device, have a look at the [ZRE protocol specification](https://rfc.zeromq.org/spec:36/ZRE/).
