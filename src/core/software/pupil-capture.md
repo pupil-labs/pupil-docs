@@ -332,7 +332,7 @@ each other.
 
 ::: tip
 <v-icon large color="info">info_outline</v-icon>
-See the <a href="https://github.com/pupil-labs/pupil-helpers/tree/master/pupil_sync">pupil-helpers</a> for example Python implementations.
+See the <a href="https://github.com/pupil-labs/pupil-helpers/tree/62ea54001fd051528bf24537bbd4f5f89e3391e8/network_time_sync">pupil-helpers</a> for example Python implementations.
 :::
 
 ::: tip
