@@ -21,24 +21,20 @@ The World window is the main control center for Pupil Capture. It displays a liv
 1. **Menu**: This area contains settings and contextual information for each plugin.
 1. **Sidebar**: This area contains clickable buttons for each plugin. System plugins are loaded in the top and user added plugins are added below a horizontal separator.
 
-## Capture Selection
-By default Pupil Capture will use Local USB as the capture source. If you have a Pupil Core headset connected to your computer you will see videos displayed from your Pupil Core headset in the World and Eye windows. 
+## Video Source Selection
+By default Pupil Capture will use Local USB as the capture source.
+If you have a Pupil Core headset connected to your computer you will see videos displayed from your Pupil Core headset in the World and Eye windows.
+If no headset is connected or Pupil Capture is unable to open capture devices it will simply display a gray screen.
 
-If no headset is connected or Pupil Capture is unable to open capture devices it will fall back to Ghost capture and display a gray screen. Other options for capture source are described below.
+If you are using the Pupil Mobile Android application, you can activate your headset in the `Video Source` plugin.
+For more advanced setups you can enable `Manual Camera Selection` and activate specific cameras for the world and eye windows separately.
 
+<!-- TODO: Replace with new visualization
 <video width="100%" controls class="mb-5">
   <source src="../../media/core/videos/backend-manager.mp4" type="video/mp4">
 </video>
+-->
 
-- Ghost Capture - This is default gray screen that is displayed if no capture device is found. 
-- Test Image - A fake source that displays the current frame number, resolution, and size of the "fake" video being generated.
-- Video File Source - select this option to use previously recorded videos for the capture selection.
-- Pupil Mobile - select this option when using Pupil Capture with the Pupil Mobile Android application.
-- Local USB - select this option if your Pupil Headset is connected to the machine running Pupil Capture. This is the default setting.
-- RealSense 3D - select this option if you are using an Intel RealSense 3D camera as your scene camera. Read more in the [section on Intel RealSense Support on GitHub](https://github.com/pupil-labs/pupil#intel-realsense-3d-support).
-
-
-After switching to a different capture source, you can click the `Start with default devices` button. This will automatically select the correct sensor and start capturing for corresponding world and eye windows. Or, you can manually select the capture source to use from the world and eye windows.
 
 ## Troubleshooting
 
