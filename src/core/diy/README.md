@@ -42,7 +42,7 @@ or work with someone that can help you for this step.
 In the video and photo the lens holder is removed,
 but you will do it with the lens holder attached.
 
-- Cut off the microphon
+- Cut off the microphone
 - De-solder or break off the push button (Note: Some cameras don’t have this button.)
 - De-solder the blue LED’s
 - Solder on the IR-LED’s. Please take note of LED polarity! [Video guide](https://youtu.be/O-FAXldfq94 "Solder IR LEDs Pupil DIY")
