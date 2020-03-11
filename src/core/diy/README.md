@@ -32,11 +32,9 @@ Take both webcams out of their casings. Follow the video guides.
 
 - [Logitech C525/C512](https://vimeo.com/59844059)
 
-<iframe src="https://player.vimeo.com/video/59844059" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 - [Microsoft HD-6000](https://vimeo.com/53005603)
 
-<iframe src="https://player.vimeo.com/video/53005603" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 ## Solder Work on Eye Camera PCB
 This is by far the trickiest part. You will need some soldering experience,
@@ -47,9 +45,8 @@ but you will do it with the lens holder attached.
 - Cut off the microphon
 - De-solder or break off the push button (Note: Some cameras don’t have this button.)
 - De-solder the blue LED’s
-- solder on the IR-LED’s. Please take note of LED polarity!
+- Solder on the IR-LED’s. Please take note of LED polarity! [Video guide](https://youtu.be/O-FAXldfq94 "Solder IR LEDs Pupil DIY")
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/O-FAXldfq94" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Replace IR-blocking Filter on the Eye Camera
 1. Unscrew the lens from the mount.
@@ -63,7 +60,7 @@ but you will do it with the lens holder attached.
 ## Camera Assembly
 1. Attach the world camera onto the mount using 4 small screws, leftover from disassembly.
 1. Clip the world camera clip onto the headset
-1. Slide the eye-cam into the mount [video guide](https://www.youtube.com/watch?v=wkV9Ye7psP4)
+1. Slide the eye-cam into the mount [video guide](https://youtu.be/wkV9Ye7psP4 "Pupil DIY: Attach eye camera")
 1. Slide the arm onto the headset
 1. Route the cables
 1. Attach USB extension cable(s)
