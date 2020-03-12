@@ -501,3 +501,26 @@ This plugin is used to calculate camera intrinsics, which will enable one to cor
 8. Click on `show undistorted image` to display the results of camera intrinsic estimation. This will display an undistorted view of your scene. If well calibrated, parallel lines in the real world will appear as parallel lines in the undistorted view.
 
 Note that in some rare cases the processing of the recorded patterns can fail, which would lead to a warning message in the world window. In this case just repeat the above process from step 6 and try to get a better coverage of the entire FOV of the camera.
+
+#### Camera Intrinsics Persistancy
+
+Newly estimated camera intrinsics are saved to the Pupil Capture session settings folder:
+- From bundle: `Home directory -> pupil_capture_settings`
+- From source: `repository directory -> capture_settings`
+Specifically, the intrinsics are saved to a file with the name pattern `<camera name>.intrinsics` which includes the relevant intrinsics for each calibrated resolution. See the [developer docs](/developer/core/recording-format/#other-files) on how to read these files manually.
+
+Pupil Capture provides [prerecorded intrinsics](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/camera_models.py#L26-L152) for the following cameras:
+- `Pupil Cam1 ID2`: `640x480`, `1280x720`, `1920x1080`
+- `Logitech Webcam C930e`: `640x480`, `1280x720`, `1920x1080`
+- `PI world v1`: `1088x1080`
+
+When a recording is started in Pupil Capture, the application saves the active scene camera's intrinsics to the `world.intrinsics` file within the recording.
+
+#### Camera Intrinsics Selection
+
+Pupil Capture selects the active camera intrinsics following these priorities:
+1. Active camera name and resolution match a **custom** intrinsics estimation.
+1. Active camera name and resolution match a **prerecorded** intrinsics estimation.
+1. Fallback to a "dummy calibration" ([pinhole camera model without distortion, focal length 1000px](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/camera_models.py#L659-L664)).
+
+Pupil Player follows the same priorities as Pupil Capture but expects the custom intrinsics to be present within the recording under the `<video file name>.intrinsics` file name pattern, e.g. `world.intrinsics`.
