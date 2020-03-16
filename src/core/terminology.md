@@ -110,12 +110,25 @@ There are three coordinate systems for each camera:
     - example: `(0.5, 0.5)` (image center)
 - **3D Camera Space**:
     - origin: center of the camera
-    - does not includes lens distortion 
+    - does not include lens distortion 
     - no boundaries
     - example: `(0, 0, 1)` (a point on the optical axis)
 
 [Reference](https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html).
 You can use the _Camera Intrinsics_ to project a _3d camera location_ to _2d pixel location_, and vice versa.
+
+### Surface (AOI) Coordinate System
+
+[Surfaces](/core/software/pupil-capture/#surface-tracking) (areas of interest, AOI) define their own local coordinate system. For each scene image that includes sufficient surface markers, the `Surface Tracker` plugin calculates the respective _transformation_ function between the scene camera and surface coordinate system. The surface preview (red rectangle overlay) uses its inner triangle to indicate `up`/`top` within the local surface coordinate system. Pupil Capture and Player automatically map gaze and fixation data to surface coordinates if a valid surface transformation is available.
+
+The **surface-normalized** coordinates of mapped gaze/fixations have the following properties:
+- origin: bottom left (pay attention to red triangle indicating surface `up`/`top` side)
+- unit: surface width/height
+- does not include lens distortion
+- bounds (if gaze/fixation is on AOI):
+    - `x: [0, 1], y: [0, 1]`
+- example: `(0.5, 0.5)` (surface center)
+
 
 ## Camera Intrinsics
 
