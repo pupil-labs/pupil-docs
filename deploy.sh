@@ -1,6 +1,5 @@
 #!/bin/bash
 echo "Deploying to production"
-ls -al
 eval "$(ssh-agent -s)"
 chmod 600 ./docs_deploy_key
 echo -e "Host $SERVER_IP\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
