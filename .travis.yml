@@ -3,7 +3,7 @@ node_js:
   - lts/*
 before_install:
   - openssl aes-256-cbc -K $encrypted_deaba444d90d_key -iv $encrypted_deaba444d90d_iv 
-    -in docs_deploy_key.enc -out docs_deploy_key -d
+    -in docs_deploy_key.enc -out docs_deploy_key.txt -d
 install:
   - yarn global add vuepress
   - yarn
