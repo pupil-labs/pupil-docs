@@ -12,11 +12,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      src: ""
-    };
-  },
   props: {
     src: String
   }
