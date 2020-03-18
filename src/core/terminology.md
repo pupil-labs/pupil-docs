@@ -124,10 +124,11 @@ You can use the _Camera Intrinsics_ to project a _3d camera location_ to _2d pix
 The **surface-normalized** coordinates of mapped gaze/fixations have the following properties:
 - origin: bottom left (pay attention to red triangle indicating surface `up`/`top` side)
 - unit: surface width/height
-- does not include lens distortion
 - bounds (if gaze/fixation is on AOI):
     - `x: [0, 1], y: [0, 1]`
 - example: `(0.5, 0.5)` (surface center)
+
+The lens distortion (camera intrinsics) are being compensated during the process of mapping data from the scene image space to the surface coordinate system. In other words, surface coordinate system is not affected by the lens distortion.
 
 
 ## Camera Intrinsics
