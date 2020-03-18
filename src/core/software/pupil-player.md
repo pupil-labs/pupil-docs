@@ -206,11 +206,11 @@ This plugin uses fiducial markers ([apriltag](https://april.eecs.umich.edu/softw
 
 See the [surface tracking section](/core/software/pupil-capture/#surface-tracking) for images of the markers to download.
 
-By default, the location of the first visible marker will be used as the origin of the 3d model's coordinate system. In the plugin's menu, you can change the marker that is being used as the origin.
+By default, the location of the first visible marker will be used as the origin of the 3d model's coordinate system. In the plugin's menu, you can change the marker that is being used as the origin. The unit of the coordinate system is defined as the physical length of the printed markers.
 
 Results are exported in the following files:
 - `head_pose_tacker_model.csv`: A list of all markers used to generate the 3d model and the 3d locations of the marker vertices.
-- `head_pose_tacker_poses.csv`: The headset's pose (rotation and translation) within the 3d model coordinate system for each recorded world frame.
+- `head_pose_tacker_poses.csv`: The world camera's pose within the 3d model coordinate system for each recorded world frame. A camera pose is described as a 6-components vector. The first three components are the rotation vector in Rodrigues format and the last three components are the translation vector.
 
 
 
