@@ -128,7 +128,7 @@ The **surface-normalized** coordinates of mapped gaze/fixations have the followi
     - `x: [0, 1], y: [0, 1]`
 - example: `(0.5, 0.5)` (surface center)
 
-The lens distortion (camera intrinsics) are being compensated during the process of mapping data from the scene image space to the surface coordinate system. In other words, surface coordinate system is not affected by the lens distortion.
+The lens distortion (camera intrinsics) are compensated for during the process of mapping data from the scene image space to the surface coordinate system. In other words, the surface coordinate system is not affected by scene camera lens distortion.
 
 
 ## Camera Intrinsics
