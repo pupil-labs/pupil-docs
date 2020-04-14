@@ -64,11 +64,11 @@ export default {
     axios.get("https://api.github.com/repos/pupil-labs/pupil/releases/latest")
     .then(response => {
       response.data.assets.forEach(asset=>{
-        if (asset.browser_download_url.indexOf('windows_x64.zip')>=0){
+        if (asset.browser_download_url.indexOf('windows')>=0){
            self.url_windows = asset.browser_download_url
-        } else if (asset.browser_download_url.indexOf('linux_x64.zip')>=0){
+        } else if (asset.browser_download_url.indexOf('linux')>=0){
            self.url_linux = asset.browser_download_url
-        } else if (asset.browser_download_url.indexOf('macos_x64.zip')>=0){
+        } else if (asset.browser_download_url.indexOf('macos')>=0){
            self.url_mac = asset.browser_download_url
         }
       })
