@@ -160,6 +160,63 @@ accessed using the `base_data` key.
 }
 ```
 
+### Surface Datum Format
+
+Surface data is published when the [surface tracker](/core/software/pupil-capture/#surface-tracking)
+is able to detect a defined surface. It includes
+- the name of the detected surface,
+- the timestamp of the video frame in which it was detected,
+- the homographies to transform surface to image coordinates and vice versa,
+- gaze and fixation data that was mapped onto the surface.
+
+The gaze and fixation `norm_pos` fields contain [surface coordinates](http://localhost:8080/core/terminology/#surface-aoi-coordinate-system). The `base_data` field is a tuple of the
+original topic and its timestamp.
+
+```py
+{
+    "topic": "surfaces.surface_name",
+    "name": "surface_name",
+    "surf_to_img_trans": (
+        (-394.2704714040225, 62.996680859974035, 833.0782341017057),
+        (24.939461954010476, 264.1698344383364, 171.09768247735033),
+        (-0.0031580300961504023, 0.07378146751738948, 1.0),
+    ),
+    "img_to_surf_trans": (
+        (-0.002552357406770253, 1.5534025217146223e-05, 2.1236555655143734),
+        (0.00025853538051076233, 0.003973842600569134, -0.8952954577358644),
+        (-2.71355412859636e-05, -0.00029314688183396006, 1.0727627809231568),
+    ),
+    "gaze_on_surfaces": (
+        {
+            "topic": "gaze.3d.1._on_surface",
+            "norm_pos": (-0.6709809899330139, 0.41052111983299255),
+            "confidence": 0.5594810076623645,
+            "on_surf": False,
+            "base_data": ("gaze.3d.1.", 714040.132285),
+            "timestamp": 714040.132285,
+        },
+        ...,
+    ),
+    # list of fixations associated with 
+    "fixations_on_surfaces": (
+        {
+            "topic": "fixations_on_surface",
+            "norm_pos": (-0.9006409049034119, 0.7738968133926392),
+            "confidence": 0.8663407531808505,
+            "on_surf": False,
+            "base_data": ("fixations", 714039.771958),
+            "timestamp": 714039.771958,
+            "id": 27,
+            "duration": 306.62299995310605,  # in milliseconds
+            "dispersion": 1.4730711610581475,  # in degrees
+        },
+        ...,
+    ),
+    # timestamp of the world video frame in which the surface was detected
+    "timestamp": 714040.103912,
+}
+```
+
 <v-divider></v-divider>
 
 ## Running From Source
