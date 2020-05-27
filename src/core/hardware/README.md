@@ -139,3 +139,14 @@ All Pupil Core headsets come with 2 sets of nose pads. You can swap the nose pad
 <v-icon large color="info">info_outline</v-icon>
 Depending on your configuration, some additional parts may be included with your Pupil headset.
 :::
+
+## Care Instructions
+Pupil Core eye tracking headsets contain cameras and sensitive electronic components, do not rinse or wet-clean.
+
+- Frames and nose pads can be cleaned with an alcohol based disinfectant applied on damp cloth.
+- Scene camera and eye camera lenses can be carefully cleaned with a microfiber cloth if dust is visible.
+
+### Disinfecting Pupil Core 
+All Pupil Core eye tracking headsets are cleaned with disinfectant prior to shipping. You may want to disinfect the frames between uses. 
+
+The disinfectant we use is made from 22.0g Ethanol, 21.0g 2-Propanol, 8.0g 1-Propanol per 100 grams of solution. One such brand name that we use is "Vibasept". We use the wetted towlettes (wipes). Similar products should be available globally under different brand names.
