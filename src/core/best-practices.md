@@ -45,7 +45,7 @@ We recommend starting to record prior to calibration. This is valuable because i
 
 
 ## Participants
-The less movement you participants will exhibit during an experiment, the more accurate your results will be. This includes movements of head, but also of facial muscles. In order to minimiza unnecessary movement, you should:
+The less movement you participants will exhibit during an experiment, the more accurate your results will be. This includes movements of head, but also of facial muscles. In order to minimize unnecessary movement, you should:
 - Make sure the participant is in a comfortable position that they can maintain during the experiment.
 - Make sure the participant can comfortably read all instructions and does not need to squint.
 - Note: If the participant can keep a relaxed face during the experiment this will minimize slippage. 
