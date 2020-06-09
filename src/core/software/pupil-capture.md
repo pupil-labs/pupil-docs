@@ -105,7 +105,7 @@ Pupil Core headsets come in a variety of configurations. Calibration can be cond
 
 ### Before Every Calibration
 
-Before starting a calibration, ensure that pupil are robustly detected and tracked and that the headset is comfortable for the participant. Make sure that the world camera is in focus for the distance at which you want to calibrate, and that you can see the entire area you want to calibrate within the world camera's field of view (FOV).
+Before starting a calibration, ensure that the participant's pupil is robustly detected and tracked, and that the headset is comfortable for the participant. Make sure that the world camera is in focus for the distance at which you want to calibrate, and that you can see the entire area you want to calibrate within the world camera's field of view (FOV).
 
 
 <div style="display:flex;" class="pb-4">
