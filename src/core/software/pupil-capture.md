@@ -61,7 +61,7 @@ sudo usermod -a -G plugdev $USER
 ```
 
 ## Pupil Detection
-Pupil's algorithms automatically detect the participant's pupil. It runs two detection pipelines in paralle, the 2D and the 3D pupil detection. The 2D detection uses common computer vision technology to detect the pupil location in the camera image. The 3D detection uses a 3D model of the eye(s) that constantly updates based on observations of the eye. This enables the system to compensate for movements of the headset - slippage. To build up an initial model, it is recommended to briefly look around your field of view when putting on the headset.
+Pupil's algorithms automatically detect the participant's pupil. It runs two detection pipelines in parallel, the 2D and the 3D pupil detection. The 2D detection uses common computer vision technology to detect the pupil location in the camera image. The 3D detection uses a 3D model of the eye(s) that constantly updates based on observations of the eye. This enables the system to compensate for movements of the headset - slippage. To build up an initial model, it is recommended to briefly look around your field of view when putting on the headset.
 
 <video width="100%" controls class="mb-5">
   <source src="../../media/core/videos/pd.mp4" type="video/mp4">
