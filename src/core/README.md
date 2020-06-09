@@ -26,13 +26,19 @@ Windows 10 users - start Pupil Capture as **administrator**. This is required fo
 :::
 
 ## 3. Check Pupil Detection
-Everything depends on capturing good raw videos of the eyes.
+
+Capturing good raw videos of the eyes is essential for successful eye-tracking with Pupil.
 
 You will need to [physically adjust](/core/hardware/#headset-adjustments "Pupil Core headset adjustments") the eye cameras on your Pupil Core headset to get good images of the eyes.
 
 Take a look at the eye window(s).
 
-If the pupil is detected you will see a red circle around the edge of your pupil and a red dot at the center of your pupil.
+Pupil uses a 3D model of the eye to improve the pupil detection.
+If everything works fine, you should see a green circle around the eye ball and a red circle around the pupil with a red dot in the center.
+
+Please adjust the cameras such that your pupil is always visible, even when looking at extreme angles.
+Then slowly move your eyes around until the eye model (green circle) adjusted to fit your eye ball.
+
 
 <div class="pb-4">
   <img src="../media/core/imgs/good_bad_eye.jpg" style="display:flex;margin:0 auto;width:60%;">
