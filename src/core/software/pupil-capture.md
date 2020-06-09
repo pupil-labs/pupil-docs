@@ -61,7 +61,11 @@ sudo usermod -a -G plugdev $USER
 ```
 
 ## Pupil Detection
-Pupil's algorithms automatically detect the participant's pupil. It runs two detection pipelines in parallel, the 2D and the 3D pupil detection. The 2D detection uses common computer vision technology to detect the pupil location in the camera image. The 3D detection uses a 3D model of the eye(s) that constantly updates based on observations of the eye. This enables the system to compensate for movements of the headset - slippage. To build up an initial model, it is recommended to briefly look around your field of view when putting on the headset.
+Pupil Core's algorithms automatically detect the participant's pupil. It runs two detection pipelines in parallel, the 2D and the 3D pupil detection. 
+
+2D detection uses computer vision technology to detect the pupil location in the camera image. 
+
+3D detection uses a 3D model of the eye(s) that updates based on observations of the eye. This enables the system to compensate for movements of the Pupil Core eye tracking headset on the participant's face (also known slippage). To build up an initial model, we recommend to look around your field of view when putting on the headset.
 
 <video width="100%" controls class="mb-5">
   <source src="../../media/core/videos/pd.mp4" type="video/mp4">
@@ -86,7 +90,7 @@ Keep in mind that pupil size values are defined in pixels and are therefore depe
 
 ### Calibration Process
 
-Pupil Core headsets have two types of cameras attached. One camera records the subject's field of vision - we call this the `world camera`. Additionally there are one or more cameras recording the participant's eye movements - we call this the `eye cameras`. The data collected during the calibration period is used afterwards to correlate the world camera with the eye cameras.
+Pupil Core headsets have two types of cameras attached. One camera records the subject's field of vision - we call this the `world camera`. Additionally there are one or more cameras recording the participant's eye movements - we call these the `eye cameras`. The data collected during the calibration period is used afterwards to correlate the world camera with the eye cameras.
 
 <video width="100%" controls class="mb-5">
   <source src="../../media/core/videos/clb-hd.mp4" type="video/mp4">
@@ -121,10 +125,10 @@ Before starting a calibration, ensure that the participant's pupil is robustly d
 
 ### Choreographies
 
-All calibrations work in the way that specific markers are presented to the participant while the participant is instructed to look at the markers as closely as possible. The way in which markers are presented is called `Choreography`. Pupil offers different choreographies for common use cases.
+All calibrations require a participant to look at a specific point in the real world or on screen. The way in which markers are presented is called a `Choreography`. Pupil Core provides different choreographies for common use cases.
 
 #### Screen Marker Calibration Choreography
-This is the default choreography, and a quick way to get started. It is best suited for close range eye-tracking in a narrow field of view.
+This is the default choreography, and a quick way to get started.
 
 <video width="100%" controls class="mb-5">
   <source src="../../media/core/videos/clb-s.mp4" type="video/mp4">
@@ -141,7 +145,7 @@ If your participants have trouble following the markers, you can adjust the `Mar
 
 #### Calibration Marker
 
-If you're not going to do calibration on screen with the `Screen Marker` choreography, you will need to download the Pupil's Circular Calibration Marker. This marker can be automatically detected by Pupil software in the world scene video. 
+If you're not going to do calibration on screen with the `Screen Marker` choreography, you will need to download the Pupil's Circular Calibration Marker. This marker can be automatically detected by Pupil software in the world video. 
 
 In most use cases you will only need to use the `Pupil Calibration Marker`. The `Stop Marker` is used if you want to be able to conclude a calibration sequence by showing this marker.
 
@@ -165,7 +169,7 @@ Make sure to always use the **v0.4 marker design** for best detection performanc
 
 
 #### Single Marker Calibration Choreography
-Calibrate using a single marker, either with a hand held physical markers or a digital marker on the screen. Gaze at the center of the marker and move your head in a spiral motion. You can also move your head in other patterns. This choreography enables you to quickly sample a wide range of gaze angles and cover a large range of your FOV.
+Calibrate using a single marker, either with a printed (physical) markers or a digital marker displayed on screen. Gaze at the center of the marker and move your head in a spiral motion. You can also move your head in other patterns. This choreography enables you to quickly sample a wide range of gaze angles and cover a large range of your FOV.
 
 1. Select `Single Marker` choreography
 2. Press `c` on your keyboard or click the blue circular `C` button on the left hand side of the world window to start calibration.
@@ -184,7 +188,7 @@ This paper introduces and evaluates this type of single marker calibration - <co
 :::
 
 #### Natural Features Calibration Choreography
-This choregraphy is for special situations and far distances. Usually not required.
+This choregraphy is used only in special situations.
 
 <video width="100%" controls class="mb-5">
   <source src="../../media/core/videos/clb-natural.mp4" type="video/mp4">
