@@ -72,7 +72,7 @@ As a first step it is recommended to check the eye camera resolution as some par
 
 #### Pupil Detector 2D Settings
 
-Some settings of the 2D pupil detector can be adjusted to improve pupil detection. For a better visualization of these settings, go to the `General Settings` tab of the eye windows and enable the `Algorithm Mode` view. The detector settings can be adjusted in the `Pupil Detector 2D` plugin.
+Some settings of the 2D pupil detector can be adjusted to improve pupil detection. For a better visualization of these settings, go to the `General Settings` menu of the eye windows and enable the `Algorithm Mode` view. The detector settings can be adjusted in the `Pupil Detector 2D` plugin.
 
 * `Pupil Min/Max` : In `Algorithm Mode` the two red circles represent the min and max pupil size settings. The green circle visualizes the current apparent pupil size. Set the min and max values so the green circle (current pupil size) is within the min/max range for _all_ eye movements.
 * `Intensity Range` : Defines the minimum "darkness" of a pixel to be considered as the pupil. The pixels considered for pupil detection are visualized in blue when in `Algorithm Mode`. Try to minimize the range so that the pupil is always fully covered while having as little leakage as possible outside of the pupil. Be aware that this is dependent on the brightness and therefore has a strong interaction with `Video Source/Sensor Settings/Absolute Exposure Time`.
