@@ -179,11 +179,6 @@ Calibrate using a single marker, either with a printed (physical) markers or a d
 
 ::: tip
 <v-icon large color="info">info_outline</v-icon>
-If you're using a physical marker, make sure to select <code>Physical Marker</code> in the <code>Marker display mode</code>. Also make sure that you do <strong>not</strong> display the marker on the screen at the same time when using a printed marker. Two markers visible to the world view at the same time will result in an inaccurate calibration.
-:::
-
-::: tip
-<v-icon large color="info">info_outline</v-icon>
 This paper introduces and evaluates this type of single marker calibration - <code>CalibMe: Fast and Unsupervised Eye Tracker Calibration for Gaze-Based Pervasive Human-Computer Interaction</code>
 :::
 
