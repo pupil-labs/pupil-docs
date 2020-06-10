@@ -157,7 +157,7 @@ You can use this plugin to detect markers in the recording, define surfaces, edi
 
 Here is an example workflow for using the `Surface Tracker` plugin to generate heatmap visualizations and export surface data reports:
 
-  + Load `Surface Tracker` plugin - if you already have surfaces defined, the load may take a few seconds because the plugin will look through the entire video and cache the detected surfaces.
+  + Load the `Surface Tracker` plugin - if you already have surfaces defined, the load may take a few seconds because the plugin will look through the entire video and cache the detected surfaces.
   + Add surface - if you do not have any defined surfaces, you can click on the `Add surface` button when the markers you want to user are visible or just click the circular `A` button in the left hand side of the screen.
   + Surface name and size - In the `Surface Tracker` menu GUI, define the surface name and real world size.
   *Note* - defining size is important as it will affect how heatmaps are rendered.
