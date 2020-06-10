@@ -148,7 +148,7 @@ This plugin is **unique**, therefore you can only load one instance of this plug
 These plugins are simple unique plugins, that operate on the gaze data for analysis and visualizations.
 
 #### Surface Tracker
-This plugin is an post-hoc version of the [Surface Tracking](/core/software/pupil-capture/#surface-tracking) plugin for Pupil Capture.
+This plugin is a post-hoc version of the [Surface Tracking](/core/software/pupil-capture/#surface-tracking) plugin for Pupil Capture.
 You can use this plugin to detect markers in the recording, define surfaces, edit surfaces, and create and export visualizations of gaze data within the defined surfaces.
 
 <div class="pb-4">
