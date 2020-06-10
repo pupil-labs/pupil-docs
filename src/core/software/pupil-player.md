@@ -25,7 +25,7 @@ The Player window is the main control center for `Pupil Player`. It displays vid
   <img src="../../media/core/imgs/pp-callout.jpg" style="display:flex;margin:0 auto;">
 </div>
 
-1. **Graphs**: This area contains performance graphs. The graphs `CPU`, `FPS`, and pupil algorithm detection confidence will be displayed.
+1. **Graphs**: This area contains performance graphs. The graphs display `CPU`, `FPS`, and pupil algorithm detection confidence.
 1. **Hot keys**: This area contains clickable buttons for plugins.
 1. **Timeline Events**: Plugins can add temporal events to this expandable panel.
 1. **Timeline**: Control the playback of the video with the play/pause button (or spacebar on your keyboard). Drag the playhead (vertical line) to the desired point in time.
