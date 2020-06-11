@@ -61,7 +61,11 @@ sudo usermod -a -G plugdev $USER
 ```
 
 ## Pupil Detection
-Pupil's algorithms automatically detect the participant's pupil. With the 3d detection and mapping mode, Pupil uses a 3d model of the eye(s) that constantly updates based on observations of the eye. This enables the system to compensate for movements of the headset - slippage. To build up an initial model, you can just look around your field of view.
+Pupil Core's algorithms automatically detect the participant's pupil. It runs two detection pipelines in parallel, the 2D and the 3D pupil detection. 
+
+2D detection uses computer vision technology to detect the pupil location in the camera image. 
+
+3D detection uses a 3D model of the eye(s) that updates based on observations of the eye. This enables the system to compensate for movements of the Pupil Core eye tracking headset on the participant's face (also known slippage). To build up an initial model, we recommend to look around your field of view when putting on the headset.
 
 <video width="100%" controls class="mb-5">
   <source src="../../media/core/videos/pd.mp4" type="video/mp4">
@@ -70,12 +74,12 @@ Pupil's algorithms automatically detect the participant's pupil. With the 3d det
 ### Fine-tuning Pupil Detection
 As a first step it is recommended to check the eye camera resolution as some parameters are resolution dependent.
 
+#### Pupil Detector 2D Settings
 
+Some settings of the 2D pupil detector can be adjusted to improve pupil detection. For a better visualization of these settings, go to the `General Settings` menu of the eye windows and enable the `Algorithm Mode` view. The detector settings can be adjusted in the `Pupil Detector 2D` plugin.
 
-### Pupil Detector 2D/3D
-
-* `Pupil Min/Max` : Change to `General > Algorithm Mode`. The two red circles represent the min and max pupil size settings. The green circle visualizes the current apparent pupil size. Set the min and max values so the green circle (current pupil size) is within the min/max range for _all_ eye movements.
-* `Intensity Range` : Defines the minimum "darkness" of a pixel to be considered as the pupil. The pixels considered for pupil detection are visualized in blue within the `Algorithm Mode`. Try to minimize the range so that the pupil is always fully covered while having as little leakage as possible outside of the pupil. Be aware that this is dependent on the brightness and therefore has a strong interaction with `UVC Source/Sensor Settings/Absolute Exposure Time`.
+* `Pupil Min/Max` : In `Algorithm Mode` the two red circles represent the min and max pupil size settings. The green circle visualizes the current apparent pupil size. Set the min and max values so the green circle (current pupil size) is within the min/max range for _all_ eye movements.
+* `Intensity Range` : Defines the minimum "darkness" of a pixel to be considered as the pupil. The pixels considered for pupil detection are visualized in blue when in `Algorithm Mode`. Try to minimize the range so that the pupil is always fully covered while having as little leakage as possible outside of the pupil. Be aware that this is dependent on the brightness and therefore has a strong interaction with `Video Source/Sensor Settings/Absolute Exposure Time`.
 
 ::: tip
 <v-icon large color="info">info_outline</v-icon>
@@ -83,14 +87,16 @@ Keep in mind that pupil size values are defined in pixels and are therefore depe
 :::
 
 ## Calibration
-Pupil uses two cameras. One camera records a participant's eye movements - we call this the `eye camera`. Another camera records the subject's field of vision -we call this the `world camera`. In order to know what someone is looking at, we must find the parameters to a function that correlates these two streams of information.
+
+### Calibration Process
+
+Pupil Core headsets have two types of cameras attached. One camera records the subject's field of vision - we call this the `world camera`. Additionally there are one or more cameras recording the participant's eye movements - we call these the `eye cameras`. The data collected during the calibration period is used afterwards to correlate the world camera with the eye cameras.
 
 <video width="100%" controls class="mb-5">
   <source src="../../media/core/videos/clb-hd.mp4" type="video/mp4">
 </video>
 
-### Calibration Process
-Pupil Core headsets comes in a variety of configurations. Calibration can be conducted with a monocular or binocular eye camera setup.
+Pupil Core headsets come in a variety of configurations. Calibration can be conducted with a monocular or binocular eye camera setup.
 
 <video width="100%" controls class="mb-5">
   <source src="../../media/core/videos/clb-mobo.mp4" type="video/mp4">
@@ -103,7 +109,8 @@ Pupil Core headsets comes in a variety of configurations. Calibration can be con
 
 ### Before Every Calibration
 
-Make sure that the users pupil is properly detected and tracked. Make sure that the world camera is in focus for the distance at which you want to calibrate, and that you can see the entire area you want to calibrate within the world cameras extents (FOV).
+Before starting a calibration, ensure that the participant's pupil is robustly detected and tracked, and that the headset is comfortable for the participant. Make sure that the world camera is in focus for the distance at which you want to calibrate, and that you can see the entire area you want to calibrate within the world camera's field of view (FOV).
+
 
 <div style="display:flex;" class="pb-4">
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
@@ -116,30 +123,31 @@ Make sure that the users pupil is properly detected and tracked. Make sure that 
     </div>
 </div>
 
-### Calibration Methods
-Before starting calibration, ensure that eye(s) are robustly detected and that the headset is comfortable for the participant.
+### Choreographies
 
-#### Screen Marker Calibration
-This is the default method, and a quick way to get started. It is best suited for close range eye-tracking in a narrow field of view.
+All calibrations require a participant to look at a specific point in the real world or on screen. The way in which markers are presented is called a `Choreography`. Pupil Core provides different choreographies for common use cases.
+
+#### Screen Marker Calibration Choreography
+This is the default choreography, and a quick way to get started.
 
 <video width="100%" controls class="mb-5">
   <source src="../../media/core/videos/clb-s.mp4" type="video/mp4">
 </video>
 
-1. Select `Screen Marker Calibration`
-1. Select your `Monitor` (if more than 1 monitor)
-1. Toggle `Use fullscreen` to use the entire extents of your monitor (recommended). You can adjust the scale of the pattern for a larger or smaller calibration target.
-1. Press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to start calibration.
-1. Follow the marker on the screen with your eyes. Try to keep your head still during calibration.
-1. The calibration window will close when calibration is complete.
+1. Select the `Screen Marker` choreography
+2. Select your `Monitor` (if more than 1 monitor)
+3. Press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to start calibration.
+4. Follow the marker on the screen with your eyes. Try to keep your head still during calibration.
+5. The calibration window will close when calibration is complete.
 
-In the `Advanced` sub-menu you can set the `sample duration` - the number of frames to sample the eye and marker position. You can also set parameters that are used to debug and detect the circular marker on the screen.
+If your participants have trouble following the markers, you can adjust the `Marker size` or `Sample duration` parameters.
+We recommend to enable `Use fullscreen` for best marker visibility.
 
 #### Calibration Marker
 
-If you're not going to be doing calibration on screen with the `Screen Marker Calibration` method, then you will need to download the Pupil's Circular Calibration Marker. This marker can be automatically detected by Pupil software in the world scene video. 
+If you're not going to do calibration on screen with the `Screen Marker` choreography, you will need to download the Pupil's Circular Calibration Marker. This marker can be automatically detected by Pupil software in the world video. 
 
-In most use cases you will only need to use the `Pupil Calibration Marker`. The `Stop Marker` is used if you want to be able to conclude a calibration sequence by showing this marker.  
+In most use cases you will only need to use the `Pupil Calibration Marker`. The `Stop Marker` is used if you want to be able to conclude a calibration sequence by showing this marker.
 
 ::: tip
 <v-icon large color="info">info_outline</v-icon>
@@ -160,56 +168,22 @@ Make sure to always use the **v0.4 marker design** for best detection performanc
 <a :href="$withBase('/pdfs/v0.4_marker.pdf')" alt="Pupil Labs calibration marker v4.0" target="_blank" rel="noopener">Download Pupil Labs Calibration Marker v0.4</a> to print or display on smartphone/tablet screen.
 
 
+#### Single Marker Calibration Choreography
+Calibrate using a single marker, either with a printed (physical) markers or a digital marker displayed on screen. Gaze at the center of the marker and move your head in a spiral motion. You can also move your head in other patterns. This choreography enables you to quickly sample a wide range of gaze angles and cover a large range of your FOV.
 
-#### Manual Marker Calibration
-
-This method is done with an operator and a subject. It is suited for midrange distances and can accommodate a wide field of view. The operator will use a printed calibration marker like the one shown in the video. 
-
-
-<video width="100%" controls class="mb-5">
-  <source src="../../media/core/videos/clb-man.mp4" type="video/mp4">
-</video>
-
-
-1. Select `Manual Marker Calibration`
-1. Press `c` on your keyboard or click the blue circular `C` button on the left hand side of the world window to start calibration.
-1. Stand in front of the subject (the person wearing the Pupil headset) at the distance you would like to calibrate. (1.5-2m)
-1. Ask the subject to follow the marker with their eyes and hold their head still.
-1. Show the marker to the subject and hold the marker still. You will hear a "click" sound when data sampling starts, and one second later a "tick" sound when data sampling stops.
-1. Move the marker to the next location and hold the marker still.
-1. Repeat until you have covered the subject's field of view (generally about 9 points should suffice).
-1. Show the 'stop marker' or press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to stop calibration.
-
-You will notice that there are no standard controls, only an `Advanced` sub-menu to control detection parameters of the marker and to debug by showing edges of the detected marker in the world view.
-
-::: tip
-<v-icon large color="info">info_outline</v-icon>
-When should I use the Pupil Calibration <strong>Stop</strong> Marker? - Use the <strong>stop</strong> marker to stop/end a calibration. You can also stop a calibration via the Pupil Capture GUI.</a>
-:::
-
-
-
-#### Single Marker Calibration
-Calibrate using a single marker displayed on screen or hand held marker. Gaze at the center of the marker and move your head in a spiral motion. You can also move your head in other patterns. This calibration method enables you to quickly sample a wide range of gaze angles and cover a large range of your FOV.
-
-1. Select Single Marker Calibration
-1. Press `c` on your keyboard or click the blue circular `C` button on the left hand side of the world window to start calibration.
-1. Look at the center of the marker.
-1. Slowly move your head while gazing at the center of the marker. We have found that a spiral pattern is an efficient way to cover a large area of the FOV.
-1. Press the `C` button on your keyboard  or show the stop marker to stop calibrating.
-
-::: tip
-<v-icon large color="info">info_outline</v-icon>
-If you're using a manual marker, make sure to select <code>Marker display mode > manual</code>. Also make sure that you do <strong>not</strong> display the marker on the screen when using a printed marker. Two markers visible to the world view at the same time will result in an inaccurate calibration.
-:::
+1. Select `Single Marker` choreography
+2. Press `c` on your keyboard or click the blue circular `C` button on the left hand side of the world window to start calibration.
+3. Look at the center of the marker.
+4. Slowly move your head while gazing at the center of the marker. We have found that a spiral pattern is an efficient way to cover a large area of the FOV.
+5. Press the `C` button on your keyboard  or show the stop marker to stop calibrating.
 
 ::: tip
 <v-icon large color="info">info_outline</v-icon>
 This paper introduces and evaluates this type of single marker calibration - <code>CalibMe: Fast and Unsupervised Eye Tracker Calibration for Gaze-Based Pervasive Human-Computer Interaction</code>
 :::
 
-#### Natural Features Calibration
-This method is for special situations and far distances. Usually not required.
+#### Natural Features Calibration Choreography
+This choregraphy is used only in special situations.
 
 <video width="100%" controls class="mb-5">
   <source src="../../media/core/videos/clb-natural.mp4" type="video/mp4">
@@ -224,12 +198,12 @@ This method is for special situations and far distances. Usually not required.
 1. Press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to stop calibration.
 
 
-### Notes on calibration accuracy
+### Gaze Mapping and Accuracy
 
-In 2D mode, you should easily be able to achieve tracking accuracy within the physiological limits (sub 1 deg visual degrees). Using the 3d mode you should achieve 1.5-2.5 deg of accuracy.
+With the 2D Gaze Mapping, you should easily be able to achieve tracking accuracy within the physiological limits (sub 1 deg visual degrees). Using the 3D Gaze Mapping you should achieve 1.5-2.5 deg of accuracy.
 
 * Any monocular calibration is accurate only at its depth level relative to the eye (parallax error).
-* Any calibration is only accurate inside the field of view (in the world video) you have calibrated. For example: If during your calibration you only looked at markers or natural features (depending on your calibration method) that are in the left half, you will not have good accuracy in the right half.
+* Any calibration is only accurate inside the field of view (in the world video) you have calibrated. For example: If during your calibration you only looked at markers or natural features (depending on your calibration choreography) that are in the left half, you will not have good accuracy in the right half.
 * Calibration accuracy can be visualized with the `Accuracy Visualizer` plugin. If the `Accuracy Visualizer` plugin is loaded, it will display the residual between reference points and matching gaze positions that were recorded during calibration.
 * Gaze Prediction Accuracy can be estimated with an accuracy test. Start the accuracy by running a normal calibration procedure but press the `T` button in the world window and **not** the `C` button. After completing the test, the plugin will display the error between reference points and matching gaze positions that were recorded during the accuracy test.
 
@@ -275,22 +249,23 @@ and follows the [`PUB-SUB` pattern](http://zguide.zeromq.org/php:chapter1#Gettin
 Clients need to subscribe to their topic of interest to receive the respective data. To reduce network traffic, only data
 with at least one subscription is transferred.
 
-#### Pupil Remote
-`Pupil Remote` is the plugin that functions as the entry point to the broadcast infrastructure. It also provides a high level interface to control Pupil Capture over the network (e.g. start/stop a recording).
+#### Network API plugin
+The `Network API` plugin provides a high level interface to control Pupil Capture over the network (e.g. start/stop a recording). It also functions as the entry point to the broadcast infrastructure.
 
 <video width="100%" controls class="mb-5">
   <source src="../../media/core/videos/pr.mp4" type="video/mp4">
 </video>
 
-* Load the `Pupil Remote` plugin from the `Plugin Manager` sub-menu in the GUI (it is loaded by default).
-* It will automatically open a network port at the default `Address`.
-* Change the address and port as desired.
-* If you want to change the address, just type in the address after the `tcp://`
+The section `Pupil Remote` allows you to specify the network interface. By default, Pupil will listen on the primary network interface. You can specify a custom port, or even choose a different interface.
 
 ::: tip
 <v-icon large color="info">info_outline</v-icon>
 See the developer documentation on how to access Pupil Remote from your own application.
 :::
+
+The `Network API` plugin also broadcasts video frames from the world and eye cameras. You can change the image format in the `Frame Publisher` section.
+
+For a demonstration of how to receive and decode world frames, please take a look at the `recv_world_video_frames` helper scripts in [the pupil-helpers repository](https://github.com/pupil-labs/pupil-helpers/tree/47ce5d4f99488492a4481a629fc7325c6107fbb6/python).
 
 #### Pupil Groups
 `Pupil Groups` can help you to collect data from different devices and control an experiment with multiple actors (data generators and sensors) or use more than one Pupil device simultaneously:
@@ -337,10 +312,6 @@ See the <a href="https://github.com/pupil-labs/pupil-helpers/tree/62ea54001fd051
 For this to work your network needs to allow `UDP` transport. If the nodes do not find each other, create a local wifi network and use that instead.
 :::
 
-#### Frame Publisher
-The `Frame Publisher` plugin broadcasts video frames from the world and eye cameras.
-
-There is a [pupil-helper example script](https://github.com/pupil-labs/pupil-helpers/blob/0df77b47cebd49a6c35b6769da483c115a626836/pupil_remote/recv_world_video_frames.py) that demonstrates how to receive and decode world frames.
 
 #### Remote Recorder
 The [Pupil Mobile](https://docs.pupil-labs.com/#pupil-mobile) app can be controlled
@@ -461,7 +432,7 @@ For all new projects we strongly recommend using Apriltags!
 
 
 ### Blink Detection
-The pupil detection algorithm assigns a `confidence` value to each pupil datum. It represents the quality of the detection result. While the eye is closed the assigned confidence is very low. The `Blink Detection` plugin makes use of this fact by defining a `blink onset` as a significant confidence drop - or a `blink offset` as a significant confidence gain - within a short period of time. The plugin creates a `blink` event for each event loop iteration in the following format:
+The pupil detection algorithm assigns a `confidence` value to each pupil datum. It represents the quality of the detection result. While the eye is closed the assigned confidence is very low. The `Blink Detection` plugin makes use of this fact by defining a `blink onset` as a significant confidence drop - or a `blink offset` as a significant confidence gain - within a short period of time. It always operates on 2D pupil confidence data. The plugin creates a `blink` event for each event loop iteration in the following format:
 
 ```python
 {  # blink datum
@@ -473,11 +444,6 @@ The pupil detection algorithm assigns a `confidence` value to each pupil datum. 
 ```
 
 The `Filter length` is the time window's length in which the plugin tries to find such confidence drops and gains. The plugin fires the above events if the blink confidence within the current time window exceeds the `onset` or `offset` confidence threshold. Setting both thresholds to `0` will always trigger blink events, even if the confidence is very low. This means that onsets and offsets do not appear necessarily as pairs but in waves.
-
-### Audio Capture
-The `Audio Capture` plugin provides access to a selected audio source for other plugins and writes its output to the `audio.mp4` file during a recording. It also writes the Pupil Capture timestamp for each audio packet to the `audio_timestamps.npy` file. This way you can easily correlate single audio packets to their corresponding video frames.
-
-Audio is recorded separately from the video in Pupil Capture. You can play back audio in sync with video in Pupil Player. Audio is automatically merged with the video when you export a video using Pupil Player.
 
 ### Annotations
 The `Annotation Capture` plugin allows you to mark timestamps with a label -- sometimes
