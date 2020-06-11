@@ -28,7 +28,7 @@ If your experiment allows for small breaks in between tasks, then you should con
 
 In the calibration menu you can select a gaze mapping pipeline. By default Pupil offers a 2D and a 3D pipeline, which have different tradeoffs.
 
-The 2D pipeline offers the best accuracy in perfect conditions (< 1° visual error). However, it is very sensitive to slippage. Chose the 2D pipeline if:
+The 2D pipeline offers the best accuracy under _ideal_ conditions (< 1° visual error). However, it is very sensitive to slippage. Chose the 2D pipeline if:
 
 - Your participants do not need to move their heads.
 - You can have very short blocks.
