@@ -162,7 +162,7 @@ Messages can have any topic chosen by the user. See topics below for a list of m
 
 ### Pupil and Gaze Messages
 
-Pupil data is sent from the eye0 and eye1 process with the topic format `pupil.<EYE_ID>.<PUPIL_DETECTOR_IDENTIFIER>`, where `EYE_ID` is `0` or `1` for eye0 and eye1 respectively, and `PUPIL_DETECTOR_IDENTIFIER` is a string that uniquely identifies the pupil detector plugin that produced the message. In the case of the built-in pupil detectors, the identifier corresponds to `2d` and `3d` respectively.
+Pupil data is sent from the eye0 and eye1 process with the topic format `pupil.<EYE_ID>.<PUPIL_DETECTOR_IDENTIFIER>`, where `EYE_ID` is `0` or `1` for eye0 and eye1 respectively, and `PUPIL_DETECTOR_IDENTIFIER` is a string that uniquely identifies the pupil detector plugin that produced the message. In the case of the built-in pupil detectors, the identifier corresponds to `2d` and `3d` respectively. Therefore, the built-in detectors publish the following four topics: `pupil.0.2d`, `pupil.1.2d`, `pupil.0.3d`, `pupil.1.3d`.
 
 Gaze mappers receive this data and publish messages with topic `gaze`. See the
 [Timing & Data Conventions](/developer/core/overview/#pupil-datum-format) section for example messages for the
