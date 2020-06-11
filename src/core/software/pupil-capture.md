@@ -198,9 +198,9 @@ This choregraphy is used only in special situations.
 1. Press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to stop calibration.
 
 
-### Calibration Method and Accuracy
+### Gaze Mapping and Accuracy
 
-With the 2D method, you should easily be able to achieve tracking accuracy within the physiological limits (sub 1 deg visual degrees). Using the 3D method you should achieve 1.5-2.5 deg of accuracy.
+With the 2D Gaze Mapping, you should easily be able to achieve tracking accuracy within the physiological limits (sub 1 deg visual degrees). Using the 3D Gaze Mapping you should achieve 1.5-2.5 deg of accuracy.
 
 * Any monocular calibration is accurate only at its depth level relative to the eye (parallax error).
 * Any calibration is only accurate inside the field of view (in the world video) you have calibrated. For example: If during your calibration you only looked at markers or natural features (depending on your calibration choreography) that are in the left half, you will not have good accuracy in the right half.
