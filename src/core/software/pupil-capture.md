@@ -136,12 +136,12 @@ This is the default choreography, and a quick way to get started.
 
 1. Select the `Screen Marker` choreography
 2. Select your `Monitor` (if more than 1 monitor)
-3. Toggle `Use fullscreen` to use the entire extents of your monitor (recommended). You can adjust the scale of the pattern for a larger or smaller calibration target.
-4. Press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to start calibration.
-5. Follow the marker on the screen with your eyes. Try to keep your head still during calibration.
-6. The calibration window will close when calibration is complete.
+3. Press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to start calibration.
+4. Follow the marker on the screen with your eyes. Try to keep your head still during calibration.
+5. The calibration window will close when calibration is complete.
 
 If your participants have trouble following the markers, you can adjust the `Marker size` or `Sample duration` parameters.
+We recommend to enable `Use fullscreen` for best marker visibility.
 
 #### Calibration Marker
 
