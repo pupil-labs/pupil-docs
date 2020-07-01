@@ -18,13 +18,13 @@ Make sure there is space between the headset frame and your forehead. Headsets a
   <img src="../media/core/icons/pc.png" style="display:flex;margin:0 auto;width:100px;">
 </div>
 
-Start Pupil Capture on your computer. Once the program has initalized, a world video and eye video window will appear.
+Start Pupil Capture on your computer. Once the program has initalized, a world video window and eye video windows will appear.
 
-::: warning
+<!-- ::: warning
 <v-icon large color="warning">info_outline</v-icon>
 Windows 10 users - start Pupil Capture as **administrator**. This is required for camera drivers to be installed. Having trouble with drivers? See [Windows 10 troubleshooting](/core/software/pupil-capture/#troubleshooting "Pupil Core software troubleshooting").
 :::
-
+ -->
 ## 3. Check Pupil Detection
 
 Capturing good raw videos of the eyes is essential for successful eye tracking with Pupil Core.
@@ -33,24 +33,14 @@ You will need to [physically adjust](/core/hardware/#headset-adjustments "Pupil 
 
 Take a look at the eye window(s).
 
-Pupil Core uses a 3D model of the eye to improve the pupil detection.
-If everything works fine, you should see a green circle around the eye ball and a red circle around the pupil with a red dot in the center.
+Pupil Core uses a 3D model of the eye to improve the pupil detection. Adjust the eye cameras such that your pupil is always visible, even when looking at extreme angles.
 
-Please adjust the eye cameras such that your pupil is always visible, even when looking at extreme angles.
-Then slowly move your eyes around until the eye model (green circle) adjusted to fit your eye ball.
+<Youtube src="7wuVCwWcGnE"/>
 
 
-<div class="pb-4">
-  <img src="../media/core/imgs/good_bad_eye.jpg" style="display:flex;margin:0 auto;width:60%;">
-</div>
+Slowly move your eyes around until the eye model (green circle) adjusted to fit your eye ball. If everything is set up properly, you should see a green circle around the eye ball and a red circle around the pupil with a red dot in the center.
 
-1. :heavy_check_mark:  Do - All range of the eye movements are visible.
-2. :x: Don't - The camera arm here is too far away from the eye.
-3. :x: Don't - The eye is not centered in the frame and eyebrow in the frame.
-4. :x: Don't - The eye is out of focus.
-
-
-Check the world window.
+Next, check the world window.
 
 You will see confidence graphs in the top for each eye. 1.0 = high confidence pupil detection. 0.0 = no confidence.
 
