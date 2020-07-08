@@ -106,7 +106,7 @@ export default {
         { name: "twitter", href: "https://twitter.com/pupil_labs" },
         {
           name: "youtube",
-          href: "https://www.youtube.com/channel/UCO1Dx8T9sym3Dl2grS4fsFA"
+          href: "https://www.youtube.com/c/PupilLabs"
         }
       ],
       email: "",
