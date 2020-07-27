@@ -18,7 +18,7 @@ as well as to access the second Network API stage (IPC Backbone). It uses ZeroMQ
 [REQ-REP](http://zguide.zeromq.org/page:all#Ask-and-Ye-Shall-Receive) pattern for
 reliable one-to-one communication.
 
-This is how you connect to Pupil Remote using [pymzq](https://pyzmq.readthedocs.io/):
+This is how you connect to Pupil Remote using [pyzmq](https://pyzmq.readthedocs.io/):
 ```py
 import zmq
 
