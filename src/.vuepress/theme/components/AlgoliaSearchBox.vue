@@ -12,7 +12,7 @@ export default {
 
   data() {
     return {
-      placeholder: undefined,
+      placeholder: undefined
     };
   },
 
@@ -29,7 +29,7 @@ export default {
         ),
         import(
           /* webpackChunkName: "docsearch" */ "docsearch.js/dist/cdn/docsearch.min.css"
-        ),
+        )
       ]).then(([docsearch]) => {
         docsearch = docsearch.default;
         const { algoliaOptions = {} } = userOptions;
@@ -41,7 +41,7 @@ export default {
               {
                 facetFilters: [`lang:${lang}`].concat(
                   algoliaOptions.facetFilters || []
-                ),
+                )
               },
               algoliaOptions
             ),
@@ -60,7 +60,7 @@ export default {
       this.$el.innerHTML =
         '<input id="algolia-search-input" class="search-query">';
       this.initialize(options, lang);
-    },
+    }
   },
 
   watch: {
