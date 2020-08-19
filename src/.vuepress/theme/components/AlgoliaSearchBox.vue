@@ -1,11 +1,7 @@
 <template lang="pug">
-  div(
-    id="search-form"
-    class="algolia-search-wrapper search-box"
-  )
-    input(
+  div.algolia-search-wrapper.search-box(id="search-form")
+    input.search-query(
       id="algolia-search-input"
-      class="search-query"
       :placeholder="placeholder"
     )
 </template>
@@ -16,7 +12,7 @@ export default {
 
   data() {
     return {
-      placeholder: undefined
+      placeholder: undefined,
     };
   },
 
@@ -33,7 +29,7 @@ export default {
         ),
         import(
           /* webpackChunkName: "docsearch" */ "docsearch.js/dist/cdn/docsearch.min.css"
-        )
+        ),
       ]).then(([docsearch]) => {
         docsearch = docsearch.default;
         const { algoliaOptions = {} } = userOptions;
@@ -45,14 +41,16 @@ export default {
               {
                 facetFilters: [`lang:${lang}`].concat(
                   algoliaOptions.facetFilters || []
-                )
+                ),
               },
               algoliaOptions
             ),
             handleSelected: (input, event, suggestion) => {
               const { pathname, hash } = new URL(suggestion.url);
               this.$router.push(`${pathname}${hash}`);
-            }
+              input.setVal("");
+              document.querySelector("input").blur();
+            },
           })
         );
       });
@@ -62,7 +60,7 @@ export default {
       this.$el.innerHTML =
         '<input id="algolia-search-input" class="search-query">';
       this.initialize(options, lang);
-    }
+    },
   },
 
   watch: {
@@ -72,8 +70,14 @@ export default {
 
     options(newValue) {
       this.update(newValue, this.$lang);
-    }
-  }
+    },
+
+    $route(to, from) {
+      const input = document.querySelector("input");
+      input.value = "";
+      this.initialize(this.options, this.$lang);
+    },
+  },
 };
 </script>
 
