@@ -19,7 +19,7 @@ Drag the recording folder (the triple digit one) directly onto the app icon **or
 Don't have a recording yet? [Download a sample recording](https://drive.google.com/file/d/1vzjZkjoi8kESw8lBnsa_k_8hXPf3fMMC/view?usp=sharing "Download sample recording to use in Pupil Player").
 
 ## Player Window
-The Player window is the main control center for `Pupil Player`. It displays video and data recorded by [Pupil Capture](/core/software/pupil-capture), [Pupil Mobile](/core/software/pupil-mobile/), or [Pupil Invisible](/invisible/).
+The Player window is the main control center for `Pupil Player`. It displays video and data recorded by [Pupil Capture](/core/software/pupil-capture) or [Pupil Invisible](/invisible/).
 
 <div class="pb-4">
   <img src="../../media/core/imgs/pp-callout.jpg" style="display:flex;margin:0 auto;">
@@ -233,7 +233,7 @@ Alternatively, one can run the pupil detection post-hoc.
 #### Post-hoc Pupil Detection
 The `Post-hoc Pupil Detection` plugin can be used with any dataset where eye videos were recorded.
 The plugin tries to load the eye videos, and runs the pupil detection algorithm in separate processes.
-This plugin is especially relevant for recordings made with Pupil Mobile, because Pupil Mobile does not perform any pupil detection or gaze estimation on the Android device.
+
 This plugin is available starting with Pupil Player `v0.9.13`.
 
 The `Redetect` button restarts the detection procedure.

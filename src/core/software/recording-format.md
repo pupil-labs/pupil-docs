@@ -63,6 +63,10 @@ user_info.csv
 
 ## Pupil Mobile
 
+::: warning
+Warning: Pupil Mobile Android app is no longer actively maintained.
+:::
+
 ```py
 # Meta File (required)
 info.csv
