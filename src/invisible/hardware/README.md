@@ -75,9 +75,9 @@ Hold the glasses with arms of the frame facing away from you.
 2. Press on the lens with your thumb or fingers on the top corner
    closest to the nose pad.
 
-## Sports Strap
+## Head Strap
 
-The sports strap is an accessory that can be purchased to if you want to use Pupil Invisible while playing sports or in other dynamic activities. The sports strap can be adjusted to fit most wearers by pulling the two tabs.
+The head strap is an accessory that can be purchased to if you want to use Pupil Invisible while playing sports or in other dynamic activities. The head strap can be adjusted to fit most wearers by pulling the two tabs.
 
 <div style="display:flex;justify-content:center;">
   <v-img
