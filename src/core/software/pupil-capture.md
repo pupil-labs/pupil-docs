@@ -309,6 +309,17 @@ See the <a href="https://github.com/pupil-labs/pupil-helpers/tree/62ea54001fd051
 For this to work your network needs to allow `UDP` transport. If the nodes do not find each other, create a local wifi network and use that instead.
 :::
 
+#### Remote Recorder  
+
+::: warning
+<v-icon large color="warning">error_outline</v-icon>
+Depreciation warning: Pupil Mobile app is no longer maintained. 
+:::
+
+The Pupil Mobile app can be controlled via Pupil Capture when connected. This includes changing camera and streaming 
+settings. The `Remote Recorder` plugin extends this list with the possibility 
+to start and stop recording on the Android device.
+
 ### Surface Tracking
 The `Surface Tracker` plugin allows you to define planar surfaces within your environment to track areas of interest (AOI). Surfaces are defined with [Apriltag Markers](https://april.eecs.umich.edu/software/apriltag.html).
 
