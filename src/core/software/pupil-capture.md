@@ -316,7 +316,7 @@ For this to work your network needs to allow `UDP` transport. If the nodes do no
 Depreciation warning: Pupil Mobile app is no longer maintained. 
 :::
 
-The Pupil Mobile app can be controlled via Pupil Capture when connected. This includes changing camera and streaming 
+The [Pupil Mobile app](https://github.com/pupil-labs/pupil-mobile-app) can be controlled via Pupil Capture when connected. This includes changing camera and streaming 
 settings. The `Remote Recorder` plugin extends this list with the possibility 
 to start and stop recording on the Android device.
 
