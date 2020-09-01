@@ -26,9 +26,6 @@ By default Pupil Capture will use Local USB as the capture source.
 If you have a Pupil Core headset connected to your computer you will see videos displayed from your Pupil Core headset in the World and Eye windows.
 If no headset is connected or Pupil Capture is unable to open capture devices it will simply display a gray screen.
 
-If you are using the Pupil Mobile Android application, you can activate your headset in the `Video Source` plugin.
-For more advanced setups you can enable `Manual Camera Selection` and activate specific cameras for the world and eye windows separately.
-
 <!-- TODO: Replace with new visualization
 <video width="100%" controls class="mb-5">
   <source src="../../media/core/videos/backend-manager.mp4" type="video/mp4">
@@ -312,12 +309,16 @@ See the <a href="https://github.com/pupil-labs/pupil-helpers/tree/62ea54001fd051
 For this to work your network needs to allow `UDP` transport. If the nodes do not find each other, create a local wifi network and use that instead.
 :::
 
+#### Remote Recorder  
 
-#### Remote Recorder
-The [Pupil Mobile](https://docs.pupil-labs.com/#pupil-mobile) app can be controlled
-via Pupil Capture when connected. This includes changing camera and streaming
-settings. The `Remote Recorder` plugin extends this list with the possibility
-to start and stop recordings that are stored in the phone.
+::: warning
+<v-icon large color="warning">error_outline</v-icon>
+Depreciation warning: Pupil Mobile app is no longer maintained. 
+:::
+
+The [Pupil Mobile app](https://github.com/pupil-labs/pupil-mobile-app) can be controlled via Pupil Capture when connected. This includes changing camera and streaming 
+settings. The `Remote Recorder` plugin extends this list with the possibility 
+to start and stop recording on the Android device.
 
 ### Surface Tracking
 The `Surface Tracker` plugin allows you to define planar surfaces within your environment to track areas of interest (AOI). Surfaces are defined with [Apriltag Markers](https://april.eecs.umich.edu/software/apriltag.html).
