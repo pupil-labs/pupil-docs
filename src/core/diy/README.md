@@ -9,8 +9,8 @@ The Pupil DIY Kit is not for commercial use or commercial clients.
 
 ## Getting all the parts
 
-The 3d-printed headset is the centerpiece of the Pupil mobile eye tracker.
-You can buy it from the Pupil Labs team through the Pupil shapeways store.
+The 3d-printed headset is the centerpiece of the Pupil core wearable eye tracker.
+You can buy it from Pupil Labs through the [Pupil shapeways store](http://www.shapeways.com/shops/pupil_store).
 The price for the headset is part production cost and part support to the pupil development team. This enables us to give you support and continue to work on the project.
 
 All other parts of the Pupil DIY kit have been specifically selected with availability and affordability in mind.
@@ -30,8 +30,11 @@ The first step is to modify the cameras so we can use them for eye-tracking.
 ## De-case Cameras
 Take both webcams out of their casings. Follow the video guides.
 
-- Logitech C525/C512
-- Microsoft HD-6000
+- [Logitech C525/C512](https://vimeo.com/59844059)
+
+
+- [Microsoft HD-6000](https://vimeo.com/53005603)
+
 
 ## Solder Work on Eye Camera PCB
 This is by far the trickiest part. You will need some soldering experience,
@@ -39,10 +42,11 @@ or work with someone that can help you for this step.
 In the video and photo the lens holder is removed,
 but you will do it with the lens holder attached.
 
-- Cut off the microphon
+- Cut off the microphone
 - De-solder or break off the push button (Note: Some cameras don’t have this button.)
 - De-solder the blue LED’s
-- solder on the IR-LED’s. Please take note of LED polarity! video
+- Solder on the IR-LED’s. Please take note of LED polarity! [Video guide](https://youtu.be/O-FAXldfq94 "Solder IR LEDs Pupil DIY")
+
 
 ## Replace IR-blocking Filter on the Eye Camera
 1. Unscrew the lens from the mount.
@@ -56,7 +60,7 @@ but you will do it with the lens holder attached.
 ## Camera Assembly
 1. Attach the world camera onto the mount using 4 small screws, leftover from disassembly.
 1. Clip the world camera clip onto the headset
-1. Slide the eye-cam into the mount video guide
+1. Slide the eye-cam into the mount [video guide](https://youtu.be/wkV9Ye7psP4 "Pupil DIY: Attach eye camera")
 1. Slide the arm onto the headset
 1. Route the cables
 1. Attach USB extension cable(s)

@@ -18,33 +18,29 @@ Make sure there is space between the headset frame and your forehead. Headsets a
   <img src="../media/core/icons/pc.png" style="display:flex;margin:0 auto;width:100px;">
 </div>
 
-Start Pupil Capture on your computer. Once the program has initalized, a world video and eye video window will appear.
+Start Pupil Capture on your computer. Once the program has initalized, a world video window and eye video windows will appear.
 
-::: warning
+<!-- ::: warning
 <v-icon large color="warning">info_outline</v-icon>
 Windows 10 users - start Pupil Capture as **administrator**. This is required for camera drivers to be installed. Having trouble with drivers? See [Windows 10 troubleshooting](/core/software/pupil-capture/#troubleshooting "Pupil Core software troubleshooting").
 :::
-
+ -->
 ## 3. Check Pupil Detection
-Everything depends on capturing good raw videos of the eyes.
+
+Capturing good raw videos of the eyes is essential for successful eye tracking with Pupil Core.
 
 You will need to [physically adjust](/core/hardware/#headset-adjustments "Pupil Core headset adjustments") the eye cameras on your Pupil Core headset to get good images of the eyes.
 
 Take a look at the eye window(s).
 
-If the pupil is detected you will see a red circle around the edge of your pupil and a red dot at the center of your pupil.
+Pupil Core uses a 3D model of the eye to improve the pupil detection. Adjust the eye cameras such that your pupil is always visible, even when looking at extreme angles.
 
-<div class="pb-4">
-  <img src="../media/core/imgs/good_bad_eye.jpg" style="display:flex;margin:0 auto;width:60%;">
-</div>
-
-1. :heavy_check_mark:  Do - All range of the eye movements are visible.
-2. :x: Don't - The camera arm here is too far away from the eye.
-3. :x: Don't - The eye is not centered in the frame and eyebrow in the frame.
-4. :x: Don't - The eye is out of focus.
+<Youtube src="7wuVCwWcGnE"/>
 
 
-Check the world window.
+Slowly move your eyes around until the eye model (green circle) adjusted to fit your eye ball. If everything is set up properly, you should see a green circle around the eye ball and a red circle around the pupil with a red dot in the center.
+
+Next, check the world window.
 
 You will see confidence graphs in the top for each eye. 1.0 = high confidence pupil detection. 0.0 = no confidence.
 

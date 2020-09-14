@@ -18,7 +18,7 @@ See its [specification](https://github.com/pupil-labs/pupil/blob/master/pupil_sr
 
 ::: tip
 <v-icon large color="info">info_outline</v-icon>
-Pupil Mobile and Pupil Invisible recordings have their own meta file definitions:
+Pupil Invisible recordings have their own meta file definitions:
 `info.csv` and `info.json`. When opened in Pupil Player, the meta info file
 will be transformed the Pupil Player Recording Format 2.0.
 :::

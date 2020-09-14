@@ -48,7 +48,7 @@
                       width="32px"
                     )
               v-layout.hidden-xs-only(justify-center)
-                span.caption--1 Copyright © 2019 Pupil Labs GmbH All rights reserved.
+                span.caption--1 Copyright © {{ currentYear() }} Pupil Labs GmbH All rights reserved.
 
           //- internal links
           v-spacer.hidden-xs-only
@@ -106,7 +106,7 @@ export default {
         { name: "twitter", href: "https://twitter.com/pupil_labs" },
         {
           name: "youtube",
-          href: "https://www.youtube.com/channel/UCO1Dx8T9sym3Dl2grS4fsFA"
+          href: "https://www.youtube.com/c/PupilLabs"
         }
       ],
       email: "",
@@ -125,6 +125,12 @@ export default {
       const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       var isValid = pattern.test(this.email);
       return !isValid;
+    }
+  },
+
+  methods: {
+    currentYear() {
+      return new Date().getFullYear();
     }
   }
 };

@@ -45,6 +45,11 @@ Pupil Invisible Glasses contain cameras and sensitive electronic components, do 
 - Scene camera and eye camera lenses can be carefully cleaned with the provided microfiber cloth if dust is visible.
 - The nose pads can be cleaned with an alcohol based disinfectant applied on a damp cloth
 
+### Disinfecting Frames 
+All Pupil Invisible eye tracking glasses are cleaned with disinfectant prior to shipping. You may want to disinfect the frames between uses. 
+
+The disinfectant we use is made from 22.0g Ethanol, 21.0g 2-Propanol, 8.0g 1-Propanol per 100 grams of solution. One such brand name that we use is "Vibasept". We use the wetted towlettes (wipes). Similar products should be available globally under different brand names.
+
 ## Changing Lenses
 You can easily change the lenses of your Pupil Invisible glasses.
 
@@ -70,9 +75,9 @@ Hold the glasses with arms of the frame facing away from you.
 2. Press on the lens with your thumb or fingers on the top corner
    closest to the nose pad.
 
-## Sports Strap
+## Head Strap
 
-The sports strap is an accessory that can be purchased to if you want to use Pupil Invisible while playing sports or in other dynamic activities. The sports strap can be adjusted to fit most wearers by pulling the two tabs.
+The head strap is an accessory that can be purchased to if you want to use Pupil Invisible while playing sports or in other dynamic activities. The head strap can be adjusted to fit most wearers by pulling the two tabs.
 
 <div style="display:flex;justify-content:center;">
   <v-img

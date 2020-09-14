@@ -18,7 +18,7 @@ as well as to access the second Network API stage (IPC Backbone). It uses ZeroMQ
 [REQ-REP](http://zguide.zeromq.org/page:all#Ask-and-Ye-Shall-Receive) pattern for
 reliable one-to-one communication.
 
-This is how you connect to Pupil Remote using [pymzq](https://pyzmq.readthedocs.io/):
+This is how you connect to Pupil Remote using [pyzmq](https://pyzmq.readthedocs.io/):
 ```py
 import zmq
 
@@ -76,6 +76,22 @@ do not work with Pupil Service.
 
 See this [Python script](https://github.com/pupil-labs/pupil-helpers/blob/master/python/pupil_remote_control.py)
 for a full example interaction with Pupil Remote.
+
+## Pupil Groups
+
+The [Pupil Groups plugin](/core/software/pupil-capture/#pupil-groups) uses the [ZRE protocol](https://rfc.zeromq.org/spec:36/ZRE/) to implement real-time local network discovery and many-to-many communication.
+Common workflows like starting and stopping a recording are already implemented by Pupil Capture to use and respond to the Pupil Groups interface, if available.
+
+If you want to integrate Pupil Groups in your own app or device, have a look at the [ZRE protocol specification](https://rfc.zeromq.org/spec:36/ZRE/).
+From Python we use the [pyre](https://github.com/zeromq/pyre) library to communicate between groups, but any ZRE implementation can be used.
+The Pupil Groups plugin joins a user-defined group, by default `pupil-groups`.
+Make sure that all devices are in the same group.
+You can broadcast notifications to all members in the group, by adding the key-value-pair `"remote_notify": "all"`.
+All messages, whose topic stars with `remote_notify` are also broadcasted.
+The following notifications are broadcasted by default:
+- `recording.should_start`
+- `recording.should_stop`
+
 
 ## IPC Backbone
 
@@ -146,7 +162,8 @@ Messages can have any topic chosen by the user. See topics below for a list of m
 
 ### Pupil and Gaze Messages
 
-Pupil data is sent from the eye0 and eye1 process with the topic `pupil.0` or `pupil.1`.
+Pupil data is sent from the eye0 and eye1 process with the topic format `pupil.<EYE_ID>.<PUPIL_DETECTOR_IDENTIFIER>`, where `EYE_ID` is `0` or `1` for eye0 and eye1 respectively, and `PUPIL_DETECTOR_IDENTIFIER` is a string that uniquely identifies the pupil detector plugin that produced the message. In the case of the built-in pupil detectors, the identifier corresponds to `2d` and `3d` respectively. Therefore, the built-in detectors publish the following four topics: `pupil.0.2d`, `pupil.1.2d`, `pupil.0.3d`, `pupil.1.3d`.
+
 Gaze mappers receive this data and publish messages with topic `gaze`. See the
 [Timing & Data Conventions](/developer/core/overview/#pupil-datum-format) section for example messages for the
 `pupil` and `gaze` topics.

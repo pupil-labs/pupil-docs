@@ -60,37 +60,3 @@ surface_definitions_v01
 # User Info (optional)
 user_info.csv
 ```
-
-## Pupil Mobile
-
-```py
-# Meta File (required)
-info.csv
-
-# Video Files (required)
-# (Names and extensions can vary depending on configuration)
-Pupil Cam1 ID2.mjpeg
-Pupil Cam1 ID2.time
-
-Pupil Cam2 ID0.mjpeg
-Pupil Cam2 ID0.time
-
-Pupil Cam2 ID1.mjpeg
-Pupil Cam2 ID1.time
-
-# Audio Capture (optional)
-audio_00010000.mp4
-audio_00010000.time
-
-# Inertial Measurement Unit (IMU) Files (optional)
-imu_00020000.imu
-imu_00020000.time
-
-# Bluethooth Keyboard Presses (Optional)
-key_00040000.key
-key_00040000.time
-
-# Geographic Data (optional)
-location_00080000.loc
-location_00080000.time
-```

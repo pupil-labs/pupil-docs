@@ -16,21 +16,23 @@ Drag the recording folder (the triple digit one) directly onto the app icon **or
   <img src="../../media/core/imgs/pp-start.jpg" style="display:flex;margin:0 auto;">
 </div>
 
-Don't have a recording yet? [Download a sample recording](https://drive.google.com/file/d/1nLbsrD0p5pEqQqa3V5J_lCmrGC1z4dsx/view?usp=sharing "Download sample recording to use in Pupil Player").
+Don't have a recording yet? [Download a sample recording](https://drive.google.com/file/d/1vzjZkjoi8kESw8lBnsa_k_8hXPf3fMMC/view?usp=sharing "Download sample recording to use in Pupil Player").
 
 ## Player Window
-The Player window is the main control center for `Pupil Player`. It displays video and data recorded by [Pupil Capture](/core/software/pupil-capture), [Pupil Mobile](/core/software/pupil-mobile/), or [Pupil Invisible](/invisible/).
+The Player window is the main control center for `Pupil Player`. It displays video and data recorded by [Pupil Capture](/core/software/pupil-capture) or [Pupil Invisible](/invisible/).
 
 <div class="pb-4">
   <img src="../../media/core/imgs/pp-callout.jpg" style="display:flex;margin:0 auto;">
 </div>
 
-1. **Graphs**: This area contains performance graphs. By default the graphs `CPU`, `FPS`, and pupil algorithm detection confidence will be displayed. You can control graph settings with the `System Graphs` plugin.
+1. **Graphs**: This area contains performance graphs. The graphs display `CPU`, `FPS`, and pupil algorithm detection confidence.
 1. **Hot keys**: This area contains clickable buttons for plugins.
 1. **Timeline Events**: Plugins can add temporal events to this expandable panel.
 1. **Timeline**: Control the playback of the video with the play/pause button (or spacebar on your keyboard). Drag the playhead (vertical line) to the desired point in time.
     - **Trimming**: Drag either end of the timeline to set a trim beginning and ending trim marks. The trim section marks directly inform the section of video/data to export.
-    - **Frame Stepping**: You can use the arrow keys on your keyboard or the `<<` `>>` buttons to advance one frame at a time.
+    - **Frame Stepping**: You can use the arrow keys on your keyboard or the `<<` `>>` buttons to advance one frame at a time while the playback is paused.
+    - **Playback Speed**: To change the playback speed, use the arrow keys on your keyboard or the `<<` `>>` buttons during playback. There are 5 available playback speeds: `0.25x`, `0.5x`, `1x` (default), `2x`, `4x`.
+
 1. **Menu**: This area contains settings and contextual information for each plugin.
 1. **Sidebar**: This area contains clickable buttons for each plugin. System plugins are loaded in the top and user added plugins are added below the horizontal separator.
 
@@ -44,7 +46,7 @@ Here is an example workflow:
 - Open a Plugin - From the `Plugin Manager` GUI menu load the `Vis Circle` plugin.
 - Playback - press the play button or `space` bar on your keyboard to view the video playback with visualization overlay, or drag the playhead in the seek bar to scrub through the dataset.
 - Set trim marks - you can drag the green rounded rectangle at the beginning and end of the seekbar to set the trim marks. This will set the start and end frame for the exporter and for other plugins.
-- Export Video & Raw Data - From the `Plugin Manager` view, load the `Video Export Launcher` plugin and the `Raw Data Exporter` plugin. Press `e` on your keyboard or the `e` button in the left hand side of the window to start the export.
+- Export Video & Raw Data - From the `Plugin Manager` view, load the `World Video Exporter` plugin and the `Raw Data Exporter` plugin. Press `e` on your keyboard or the `e` button in the left hand side of the window to start the export.
 - Check out exported data in the `exports` directory within your recording directory
 
 ::: tip
@@ -65,7 +67,7 @@ There are two general types of plugins:
 In the following sections we provide a summary of plugins currently available and in Pupil Player.
 
 ### Visualization Plugins
-We will call plugins with the `Vis` prefix **visualization** plugins. These plugins are simple plugins, are mostly additive (or *not unique*), and directly operate on the gaze positions to produce visualizations. Other plugins like `Offline Surface Tracker` also produces visualizations, but will be discussed elsewhere due to the extent of its features.
+We will call plugins with the `Vis` prefix **visualization** plugins. These plugins are simple plugins, are mostly additive (or *not unique*), and directly operate on the gaze positions to produce visualizations. Other plugins like `Surface Tracker` also produces visualizations, but will be discussed elsewhere due to the extent of its features.
 
 #### Vis Circle
 Visualize the gaze positions with a circle for each gaze position. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization.
@@ -145,26 +147,26 @@ This plugin is **unique**, therefore you can only load one instance of this plug
 ### Analysis Plugins
 These plugins are simple unique plugins, that operate on the gaze data for analysis and visualizations.
 
-#### Offline Surface Tracker
-This plugin is an offline version of the [Surface Tracking](/core/software/pupil-capture/#surface-tracking) plugin for Pupil Capture.
+#### Surface Tracker
+This plugin is a post-hoc version of the [Surface Tracking](/core/software/pupil-capture/#surface-tracking) plugin for Pupil Capture.
 You can use this plugin to detect markers in the recording, define surfaces, edit surfaces, and create and export visualizations of gaze data within the defined surfaces.
 
 <div class="pb-4">
   <img src="../../media/core/imgs/offline-srf-tracker.jpg" style="display:flex;margin:0 auto;">
 </div>
 
-Here is an example workflow for using the `Offline Surface Detector` plugin to generate heatmap visualizations and export surface data reports:
+Here is an example workflow for using the `Surface Tracker` plugin to generate heatmap visualizations and export surface data reports:
 
-  + Load `Offline Surface Detector` plugin - if you already have surfaces defined, the load may take a few seconds because the plugin will look through the entire video and cache the detected surfaces.
+  + Load the `Surface Tracker` plugin - if you already have surfaces defined, the load may take a few seconds because the plugin will look through the entire video and cache the detected surfaces.
   + Add surface - if you do not have any defined surfaces, you can click on the `Add surface` button when the markers you want to user are visible or just click the circular `A` button in the left hand side of the screen.
-  + Surface name and size - In the `Marker Detector` GUI window, define the surface name and real world size.
+  + Surface name and size - In the `Surface Tracker` menu GUI, define the surface name and real world size.
   *Note* - defining size is important as it will affect how heatmaps are rendered.
   + Set trim marks - optional, but if you want to export data for a specific range, then you should set the trim marks.
   + Recalculate gaze distributions - click the `(Re)calculate gaze distributions` button after specifying surface sizes.
   You should now see heatmaps in the Player window (if gaze positions were within your defined surfaces).
   + Export gaze and surface data - click `e` and all surface metrics reports will be exported and saved for your trim section within your `export` folder.
 
-All files generated by the `Offline Surface Detector` will be located in the subfolder `surfaces`.
+All files generated by the `Surface Tracker` will be located in the subfolder `surfaces`.
 The different reported metrics are:
 
   + `surface_visibility.csv` - Overview of how many world camera frames each surface was contained in.
@@ -187,7 +189,7 @@ This name is augmented by an automatically generated numerical identifier.
 
 
 #### Fixation Detector
-The offline fixation detector calculates fixations for the whole recording. The menu gives feedback about the progress of the detection, how many fixations were found, and shows detailed information about the current fixation. Press `f` or click the `f` hot key button on the left hand side of the window to seek forward to the next fixation.
+The post-hoc fixation detector calculates fixations for the whole recording. The menu gives feedback about the progress of the detection, how many fixations were found, and shows detailed information about the current fixation. Press `f` or click the `f` hot key button on the left hand side of the window to seek forward to the next fixation.
 
 <div class="pb-4">
   <img src="../../media/core/imgs/pg-fixation.jpg" style="display:flex;margin:0 auto;">
@@ -204,42 +206,45 @@ This plugin uses fiducial markers ([apriltag](https://april.eecs.umich.edu/softw
 
 See the [surface tracking section](/core/software/pupil-capture/#surface-tracking) for images of the markers to download.
 
+By default, the location of the first visible marker will be used as the origin of the 3d model's coordinate system. In the plugin's menu, you can change the marker that is being used as the origin. The unit of the coordinate system is defined as the physical length of the printed markers.
+
+Results are exported in the following files:
+- `head_pose_tacker_model.csv`: A list of all markers used to generate the 3d model and the 3d locations of the marker vertices.
+- `head_pose_tacker_poses.csv`: The world camera's pose within the 3d model coordinate system for each recorded world frame. A camera pose is described as a 6-components vector. The first three components are the rotation vector in Rodrigues format and the last three components are the translation vector.
+
+
+
 ### Pupil Data And Post-hoc Detection
-By default, Player starts with the `Pupil From Recording` plugin that tries to load pupil positions that were detected and stored during a Pupil Capture recording.
+By default, Player starts with the `Pupil Data From Recording` plugin that tries to load pupil positions that were detected and stored during a Pupil Capture recording.
 Alternatively, one can run the pupil detection post-hoc.
 
-**Offline (post-hoc) Pupil Detection and Gaze Mapping**
+**Post-hoc Pupil Detection and Gaze Mapping**
 
 <Youtube src="_Jnxi1OMMTc"/>
 
-**Offline (post-hoc) Gaze Mapping With Manual Reference Locations**
-
-<Youtube src="mWyDQHhm7-w?cc_load_policy=1"/>
-
-**Use Offline (post-hoc) Calibration For Another Recording**
+**Post-hoc Calibration For Another Recording**
 
 <Youtube src="eEl3sswsTms?cc_load_policy=1"/>
 
-**Offline (post-hoc) Gaze Mapping Validation**
+**Post-hoc Gaze Mapping Validation**
 
 <Youtube src="aPLnqu26tWI?cc_load_policy=1"/>
 
-#### Offline Pupil Detector
-The `Offline Pupil Detector` plugin can be used with any dataset where eye videos were recorded.
+#### Post-hoc Pupil Detection
+The `Post-hoc Pupil Detection` plugin can be used with any dataset where eye videos were recorded.
 The plugin tries to load the eye videos, and runs the pupil detection algorithm in separate processes.
-This plugin is especially relevant for recordings made with Pupil Mobile, because Pupil Mobile does not perform any pupil detection or gaze estimation on the Android device.
+
 This plugin is available starting with Pupil Player `v0.9.13`.
 
-The `Detection Method` selector sets the detection algorithm to either `2d` or `3d` detection (see [the section on Pupil Detection](/core/software/pupil-capture/#pupil-detector-2d-3d "Pupil Capture pupil detection 2d vs 3d mode") for details).
 The `Redetect` button restarts the detection procedure.
-You can use the `Offline Pupil Detector` plugin to debug, improve, and gain insight into the pupil detection process.
+You can use the `Post-hoc Pupil Detection` plugin to debug, improve, and gain insight into the pupil detection process.
 
 ### Gaze Data And Post-hoc Calibration
-By default, Player starts with the `Gaze From Recording` plugin that tries to load gaze positions that were detected and stored during a Pupil Capture recording.
+By default, Player starts with the `Gaze Data From Recording` plugin that tries to load gaze positions that were detected and stored during a Pupil Capture recording.
 Alternatively, one can run the gaze mapping process post-hoc.
 
-#### Offline Calibration
-The `Offline Calibration` plugin enables you to calibrate, map, and validate gaze post-hoc and is available starting with Pupil Player `v0.9.13`.
+#### Post-hoc Calibration
+The `Post-hoc Gaze Calibration` plugin enables you to calibrate, map, and validate gaze post-hoc and is available starting with Pupil Player `v0.9.13`.
 It can be used on any Pupil dataset.
 
 The workflow is separated into three steps, each with its own submenu: Reference Locations, Calibrations, and Gaze Mappers.

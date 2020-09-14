@@ -48,11 +48,12 @@ USB On-The-Go (OTG) must be enabled for Invisible Glasses to connect to your Com
 
 Check out the video for a demonstration of how to add OTG to quick settings and enable OTG.
 
-<div style="display:flex;justify-content:center;" class="pb-4">
-   <video width="50%" controls muted>
-     <source src="../../media/invisible/invisible-companion-app/videos/usb_otg_oneplus6.mp4" type="video/mp4">
-   </video>
+<div style="display:flex;flex-direction:row;justify-content:center;" class="pb-4">
+    <video style="max-height: 700px;" controls muted>
+      <source src="../../media/invisible/invisible-companion-app/videos/usb_otg_oneplus6.mp4" type="video/mp4">
+    </video>
 </div>
+
 
 ### Enable Application Lock
 
@@ -60,8 +61,8 @@ Lock Pupil Invisible Companion App to the overview to ensure the app keeps runni
 
 Check out the video to see how to lock the app.
 
-<div style="display:flex;justify-content:center;" class="pb-4">
-   <video width="50%" controls muted>
+<div style="display:flex;flex-direction:row;justify-content:center;" class="pb-4">
+   <video style="max-height: 700px;" controls muted>
      <source src="../../media/invisible/invisible-companion-app/videos/app_lock_oneplus6.mp4" type="video/mp4">
    </video>
 </div>

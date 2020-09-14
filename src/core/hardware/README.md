@@ -29,23 +29,19 @@ There are many Pupil Core headset configurations. So, your headset might look di
 ### Slide Eye Camera
 The eye camera arm slides in and out of the headset frame. You can slide the eye camera arm along the track.
 
-<video width="100%" controls class="mb-5">
-  <source src="../../media/core/videos/eyecam-slide.mp4" type="video/mp4">
-</video>
-
-#### Rotate World Camera
-You can rotate the world camera up and down to align with your FOV.
-
-<video width="100%" controls class="mb-5">
-  <source src="../../media/core/videos/worldcam-rotate.mp4" type="video/mp4">
-</video>
+<Youtube src="GsJt3PTUg1k"/>
 
 ### Rotate Eye Camera
-The eye camera arm is connected to the eye camera via the ball joint. You can rotate about its ball joint.
+The eye camera arm is connected to the eye camera via the ball joint. You can rotate about its ball joint. There are 6 degrees of freedom to the ball joint. Try twisting and hinging movements to get a good image of the eye. 
 
-<video width="100%" controls class="mb-5">
-  <source src="../../media/core/videos/eyecam-rotate.mp4" type="video/mp4">
-</video>
+<Youtube src="sxXwIm0WUpc"/>
+
+<Youtube src="rJcNm5_L6QU"/>
+
+### Rotate World Camera
+You can rotate the world camera up and down to align with your FOV.
+
+<Youtube src="rrJHhMPXjKo"/>
 
 ### Ball Joint Set Screw
 You can adjust the set screw to control the movement of the eye camera about the ball joint.
@@ -98,9 +94,8 @@ The high speed 2d world camera comes with two lenses.
 
 The world camera lens are interchangeable, so you can swap between the two lenses provided for normal or wide angle FOV.
 
-<video width="100%" controls class="mb-5">
-  <source src="../../media/core/videos/worldcam-lens.mp4" type="video/mp4">
-</video>
+<Youtube src="TDa3A8L1i4o"/>
+
 
 ::: warning
 <v-icon large color="warning">error_outline</v-icon>
@@ -110,9 +105,7 @@ If you change lenses you need to recalibrate the camera to update intrinsics. Ot
 ### Eye Camera Arm Extender
 If you need to adjust the eye cameras beyond the built in adjustment range, you can use the orange arm extenders that are shipped with your Pupil headset.
 
-<video width="100%" controls class="mb-5">
-  <source src="../../media/core/videos/arm-extend.mp4" type="video/mp4">
-</video>
+<Youtube src="Wbuot169IQ8"/>
 
 Steps:
 1. Unplug your eye camera.
@@ -131,11 +124,20 @@ Starting on `2018-02-01` the arm extender is shipped with all Pupil Core headset
 ### Nose Pads
 All Pupil Core headsets come with 2 sets of nose pads. You can swap the nose pads to customize the fit.
 
-<video width="100%" controls class="mb-5">
-  <source src="../../media/core/videos/nosepad.mp4" type="video/mp4">
-</video>
+<Youtube src="dinaWX5tkPA"/>
 
 ::: tip
 <v-icon large color="info">info_outline</v-icon>
 Depending on your configuration, some additional parts may be included with your Pupil headset.
 :::
+
+## Care Instructions
+Pupil Core eye tracking headsets contain cameras and sensitive electronic components, do not rinse or wet-clean.
+
+- Frames and nose pads can be cleaned with an alcohol based disinfectant applied on damp cloth.
+- Scene camera and eye camera lenses can be carefully cleaned with a microfiber cloth if dust is visible.
+
+### Disinfecting Pupil Core 
+All Pupil Core eye tracking headsets are cleaned with disinfectant prior to shipping. You may want to disinfect the frames between uses. 
+
+The disinfectant we use is made from 22.0g Ethanol, 21.0g 2-Propanol, 8.0g 1-Propanol per 100 grams of solution. One such brand name that we use is "Vibasept". We use the wetted towlettes (wipes). Similar products should be available globally under different brand names.
