@@ -40,13 +40,13 @@ If no headset is connected or Pupil Capture is unable to open capture devices it
 Videos do not appear in Pupil Capture. This could mean that drivers were not automatically installed when you run Pupil Capture as **administrator**. You should first try to run Pupil Capture as **administrator** (right click `pupil_capture.exe` > Run as administrator). If that does not work, follow the troubleshooting steps below:
 
 1. In `Device Manager` (`System > Device Manager`)
-1. `View > Show Hidden Devices` 
-1. Expand `libUSBK Usb Devices`, `Cameras`, and `Imaging Devices` categories. 
+1. `View > Show Hidden Devices`
+1. Expand `libUSBK Usb Devices`, `Cameras`, and `Imaging Devices` categories.
 1. For each **Pupil Cam** device (even hidden devices) click `Uninstall` and check the box agreeing to `Delete the driver software for this device` and press `OK`
-1. Unplug Pupil headset (if plugged in) and plug back in. 
-1. Right click on `pupil_capture.exe` > Run as administrator. This should install drivers automatically. 
+1. Unplug Pupil headset (if plugged in) and plug back in.
+1. Right click on `pupil_capture.exe` > Run as administrator. This should install drivers automatically.
 
-Still having trouble? [Chat with us.](https://pupil-labs.com/chat "Pupil Labs chat on DiscordApp") 
+Still having trouble? [Chat with us.](https://pupil-labs.com/chat "Pupil Labs chat on DiscordApp")
 
 ### Linux
 
@@ -58,9 +58,9 @@ sudo usermod -a -G plugdev $USER
 ```
 
 ## Pupil Detection
-Pupil Core's algorithms automatically detect the participant's pupil. It runs two detection pipelines in parallel, the 2D and the 3D pupil detection. 
+Pupil Core's algorithms automatically detect the participant's pupil. It runs two detection pipelines in parallel, the 2D and the 3D pupil detection.
 
-2D detection uses computer vision technology to detect the pupil location in the camera image. 
+2D detection uses computer vision technology to detect the pupil location in the camera image.
 
 3D detection uses a 3D model of the eye(s) that updates based on observations of the eye. This enables the system to compensate for movements of the Pupil Core eye tracking headset on the participant's face (also known slippage). To build up an initial model, we recommend to look around your field of view when putting on the headset.
 
@@ -142,7 +142,7 @@ We recommend to enable `Use fullscreen` for best marker visibility.
 
 #### Calibration Marker
 
-If you're not going to do calibration on screen with the `Screen Marker` choreography, you will need to download the Pupil's Circular Calibration Marker. This marker can be automatically detected by Pupil software in the world video. 
+If you're not going to do calibration on screen with the `Screen Marker` choreography, you will need to download the Pupil's Circular Calibration Marker. This marker can be automatically detected by Pupil software in the world video.
 
 In most use cases you will only need to use the `Pupil Calibration Marker`. The `Stop Marker` is used if you want to be able to conclude a calibration sequence by showing this marker.
 
@@ -309,15 +309,15 @@ See the <a href="https://github.com/pupil-labs/pupil-helpers/tree/62ea54001fd051
 For this to work your network needs to allow `UDP` transport. If the nodes do not find each other, create a local wifi network and use that instead.
 :::
 
-#### Remote Recorder  
+#### Remote Recorder
 
 ::: warning
 <v-icon large color="warning">error_outline</v-icon>
-Depreciation warning: Pupil Mobile app is no longer maintained. 
+Depreciation warning: Pupil Mobile app is no longer maintained.
 :::
 
-The [Pupil Mobile app](https://github.com/pupil-labs/pupil-mobile-app) can be controlled via Pupil Capture when connected. This includes changing camera and streaming 
-settings. The `Remote Recorder` plugin extends this list with the possibility 
+The [Pupil Mobile app](https://github.com/pupil-labs/pupil-mobile-app) can be controlled via Pupil Capture when connected. This includes changing camera and streaming
+settings. The `Remote Recorder` plugin extends this list with the possibility
 to start and stop recording on the Android device.
 
 ### Surface Tracking
@@ -362,7 +362,7 @@ Apriltags ready to use:
 </div>
 
 
-Markers can be printed on paper, stickers, or displayed on a screen. 
+Markers can be printed on paper, stickers, or displayed on a screen.
 
 
 #### Preparing your Environment
@@ -424,7 +424,7 @@ The detector for Apriltag Markers offers two parameters `Use high resolution` an
 #### Further Functionality
 * You can click the `Open Surface in Window` button to open a view of the surface in a separate window. Gaze positions on the surface will be visualized in this window in real-time.
 * Streaming Surfaces with Pupil Capture - Detected surfaces as well as gaze positions relative to the surface are broadcast under the `surface` topic. Check out [this video](http://youtu.be/qHmfMxGST7A) for a demonstration.
-* Surface Metrics with Pupil Player - if you have defined surfaces, you can generate surface visibility reports or gaze count per surface. See our [blog post](https://pupil-labs.com/news/0392-release) for more information.
+* Surface Metrics with Pupil Player - if you have defined surfaces, you can generate surface visibility reports or gaze count per surface. See our [blog post](https://pupil-labs.com/blog/0392-release) for more information.
 
 #### Legacy Markers
 The legacy surface system used simple square markers, which are less robust to detect.
