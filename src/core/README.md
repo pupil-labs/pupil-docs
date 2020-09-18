@@ -68,6 +68,10 @@ Follow the marker on the screen with your eyes and try to keep your head station
   <source src="../media/core/videos/clb-s.mp4" type="video/mp4">
 </video>
 
+::: tip
+Tip - Want to calibrate with a physical marker? Check out alternative calibration choreographies <a href="https://docs.pupil-labs.com/core/software/pupil-capture/#calibration">here</a>. 
+:::
+
 ## 5. Start Recording
 
 **Start capturing data!**
