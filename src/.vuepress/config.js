@@ -1,16 +1,65 @@
 const VuetifyLoaderPlugin = require("vuetify-loader/lib/plugin");
+const description = "Pupil Labs - We build state of the art eye tracking hardware and software. We work hard to bring research ideas out of the lab and into the real world."
+
 module.exports = {
+
+  extendPageData ($page) {
+    const { frontmatter, regularPath } = $page
+    frontmatter.meta = frontmatter.meta || [];
+
+    // get the main page names
+    let pageName = regularPath.split('/').slice(1).shift()
+    let capitalizedName = ''
+    if (pageName.length === 0) {
+      capitalizedName = 'Docs'
+    } else if (pageName === 'vr-ar') {
+      capitalizedName = pageName.toUpperCase()
+    } else {
+      capitalizedName = pageName.charAt(0).toUpperCase() + pageName.slice(1)
+    }
+
+    // inject meta tags to each page object
+    const default_metas = [
+      {
+        name:'twitter:title',
+        content:`${capitalizedName} - ${$page.title} - Pupil Labs`
+      },
+      {
+        property:'og:title',
+        content:`${capitalizedName} - ${$page.title} - Pupil Labs`
+      },
+      {
+        property:'og:description',
+        content: `${frontmatter.subtitle ? frontmatter.subtitle : description}`
+      },
+      {
+        name:'description',
+        content: `${frontmatter.subtitle ? frontmatter.subtitle : description}`
+      }
+    ]
+    for ( const meta of default_metas ) {
+      frontmatter.meta.push( meta )
+    }
+  },
+
   title: "Pupil Labs",
-  description: "Pupil Labs - We build state of the art eye tracking hardware and software. \
-                We work hard to bring research ideas out of the lab and into the real world.",
   head: [
     ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Material+Icons' }],
     ['link', { rel: 'manifest', href: '/manifest.json' }],
     ['meta', { name: 'theme-color', content: '#eceff1' }],
     ['link', { rel: "apple-touch-icon", type: "image/x-icon", href: "/favicons/apple-touch-icon.png" }],
     ['link', { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicons/favicon-32x32.png" }],
-    ['link', { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicons/favicon-16x16.png" }]
+    ['link', { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicons/favicon-16x16.png" }],
+    ['meta', { name: 'twitter:card', content: 'summary' }],
+    ['meta', { name: 'twitter:site', content: '@pupil_labs' }],
+    ['meta', { name: 'twitter:creator', content: '@pupil_labs' }],
+    ['meta', { name: 'twitter:image', content: '/favicons/og-image-primary.png' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:site_name', content: 'Pupil Labs' }],
+    ['meta', { property: 'og:url', content: 'https://docs.pupil-labs.com' }],
+    ['meta', { property: 'og:image', content: '/favicons/og-image-primary.png' }],
   ],
+
   themeConfig: {
     displayAllHeaders: false,
     lastUpdated: "Last Updated",
