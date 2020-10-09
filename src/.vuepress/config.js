@@ -30,11 +30,11 @@ module.exports = {
       },
       {
         property:'og:description',
-        content: `${frontmatter.subtitle ? frontmatter.subtitle : description}`
+        content: `${frontmatter.description ? frontmatter.description : description}`
       },
       {
         name:'description',
-        content: `${frontmatter.subtitle ? frontmatter.subtitle : description}`
+        content: `${frontmatter.description ? frontmatter.description : description}`
       }
     ]
     for ( const meta of default_metas ) {
