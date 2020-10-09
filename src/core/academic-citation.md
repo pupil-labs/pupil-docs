@@ -1,5 +1,7 @@
 ---
 permalink: /core/academic-citation
+description: Please take a look at our papers below for citation options. If you're using Pupil as a tool in your research please cite the below UbiComp 2014 paper.
+
 ---
 
 # Academic Citation

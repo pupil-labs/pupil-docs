@@ -1,13 +1,17 @@
+---
+description: Using your Pupil Invisible for the first time? Follow the steps in this section to get up and running.
+---
+
 # Getting Started
 
-Using your Pupil Invisible for the first time? Follow the steps below to get up and running. 
+Using your Pupil Invisible for the first time? Follow the steps below to get up and running.
 
 <v-divider></v-divider>
 
 ## 1. Set up your new Companion Device.
 
 The Companion Device included in your Pupil Invisible box is a new device. It has never been turned on, so it will require setup.
-    
+
 Create a new Google account or use an existing Google account during setup.
 
 ## 2. Install and start Pupil Invisible Companion App.
@@ -24,12 +28,12 @@ Create a new Google account or use an existing Google account during setup.
 
 
 ## 3. Connect your glasses
-Connect Pupil Invisible glasses to your Companion Device using the Connector Cable. A series of permission prompts will appear. Tap "Use by default for this USB device" and "OK". 
-    
+Connect Pupil Invisible glasses to your Companion Device using the Connector Cable. A series of permission prompts will appear. Tap "Use by default for this USB device" and "OK".
+
 ::: tip
-Always use the Connector Cable that came with your Pupil Invisible! If you are using a 3rd party USB-C to USB-C cable you might experience issues with the stability of your connection. 
+Always use the Connector Cable that came with your Pupil Invisible! If you are using a 3rd party USB-C to USB-C cable you might experience issues with the stability of your connection.
 :::
-    
+
 ## 4. Record!
 
 That's it, you are ready to record! Just hit the big red button on the
@@ -43,4 +47,3 @@ If you run into any problems check out [troubleshooting](/invisible/user-guide/t
 
 ## Chat with us
 If you have questions or feedback we invite you to chat with our team and other members of the Pupil Invisible community on [Discord](https://pupil-labs.com/chat/ "Pupil Labs chat server on Discord")!
-

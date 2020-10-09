@@ -1,5 +1,6 @@
 ---
 permalink: /core/software/recording-format
+description: Each recording contains a number of files. The exact number and names depend on which Pupil Core headset is connected and which features are enabled during the recording.
 ---
 
 # Recording Format
@@ -7,7 +8,7 @@ permalink: /core/software/recording-format
 Each recording contains a number of files. The exact number and names depend on which
 Pupil Core headset is connected and which features are enabled during the recording.
 
-## Pupil Core 
+## Pupil Core
 
 ```python
 # Meta File (required)

@@ -1,6 +1,10 @@
+---
+description: Welcome to Pupil Labs VR/AR developer docs!
+---
+
 # VR/AR
 
-Welcome to Pupil Labs VR/AR developer docs! 
+Welcome to Pupil Labs VR/AR developer docs!
 
 ## Unity3d Plugin
 

@@ -1,3 +1,7 @@
+---
+description: Welcome to Pupil Core! The first thing you need to do is download the latest Pupil Core software.
+---
+
 # Getting Started
 Welcome to Pupil Core! The first thing you need to do is download the latest Pupil Core software.
 
@@ -69,7 +73,7 @@ Follow the marker on the screen with your eyes and try to keep your head station
 </video>
 
 ::: tip
-Tip - Want to calibrate with a physical marker? Check out alternative calibration choreographies <a href="https://docs.pupil-labs.com/core/software/pupil-capture/#calibration">here</a>. 
+Tip - Want to calibrate with a physical marker? Check out alternative calibration choreographies <a href="https://docs.pupil-labs.com/core/software/pupil-capture/#calibration">here</a>.
 :::
 
 ## 5. Start Recording

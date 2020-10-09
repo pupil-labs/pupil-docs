@@ -1,5 +1,6 @@
 ---
 permalink: /core/terminology
+description: In this section, we will introduce a few key terms/concepts that are essential to Pupil Core.
 ---
 
 # Terminology
@@ -80,7 +81,7 @@ the epoch is January 1, 1970, 00:00:00 (UTC).
 
 The current date time of the device running the Pupil Core software. Uses the _Unix epoch_.
 The _system time_ clock is not guaranteed to be monotonicly increasing since it is
-subject to the devices network clock synchronization. 
+subject to the devices network clock synchronization.
 
 ### Pupil Time
 
@@ -110,7 +111,7 @@ There are three coordinate systems for each camera:
     - example: `(0.5, 0.5)` (image center)
 - **3D Camera Space**:
     - origin: center of the camera
-    - does not include lens distortion 
+    - does not include lens distortion
     - no boundaries
     - example: `(0, 0, 1)` (a point on the optical axis)
 
@@ -146,7 +147,7 @@ and running the estimation locally will result in slightly more precise gaze map
 Salvucci and Goldberg define different categories of fixation detectors. One of them describes dispersion-based algorithms:
 
 > I-DT identifies fixations as groups of consecutive points within a particular dispersion, or maximum separation. Because fixations typically have a duration of at least 100 ms, dispersion-based identification techniques often incorporate a minimum duration threshold of 100-200 ms to help alleviate equipment variability.
-> 
+>
 > *--- Salvucci, D. D., & Goldberg, J. H. (2000, November). Identifying fixations and saccades in eye-tracking protocols. In Proceedings of the 2000 symposium on Eye tracking research & applications (pp. 71-78). ACM.*
 
 Pupil Core's fixation detectors implement a dispersion-based method. The exact procedure differs depending on whether fixations are detected in an online or offline context:

@@ -1,5 +1,6 @@
 ---
 permalink: /invisible/user-guide/troubleshooting
+description: In this section are for troubleshooting.
 ---
 
 # Troubleshooting

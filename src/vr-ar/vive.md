@@ -1,5 +1,6 @@
 ---
 permalink: /vr-ar/htc-vive
+description: Add eye tracking powers to your HTC Vive with our 200Hz binocular eye tracking add-on.
 ---
 
 

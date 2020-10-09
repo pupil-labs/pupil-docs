@@ -1,3 +1,7 @@
+---
+description: Pupil Labs makes add-ons virtual and mixed reality headsets. We currenly make add-ons for HTC Vive, Hololens and Oculus Rift.
+---
+
 # Introduction
 Pupil Labs makes add-ons virtual and mixed reality headsets. We currenly make add-ons for HTC Vive, Hololens and Oculus Rift.
 

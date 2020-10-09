@@ -1,5 +1,6 @@
 ---
 permalink: /developer/core/plugin-api
+description: In Pupil Core, plugins are distributed as Python files that are loaded and executed at runtime.
 ---
 
 # Plugin API

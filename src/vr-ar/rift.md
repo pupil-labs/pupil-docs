@@ -1,5 +1,6 @@
 ---
 permalink: /vr-ar/oculus-rift-dk2
+description: Add eye tracking powers to your Oculus Rift DK2 with our 120hz eye tracking add-ons.
 ---
 
 

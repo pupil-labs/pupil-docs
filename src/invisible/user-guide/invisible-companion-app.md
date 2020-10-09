@@ -1,5 +1,6 @@
 ---
 permalink: /invisible/user-guide/invisible-companion-app
+description: Get familiar with Pupil Invisible Companion app!
 ---
 
 # Invisible Companion App
