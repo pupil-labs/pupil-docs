@@ -1,5 +1,5 @@
 ---
-description: Welcome to Pupil Core! The first thing you need to do is download the latest Pupil Core software.
+description: Welcome to Pupil Core! This section will guide you through setup (software and hardware) in order for you to make your first recording with Pupil Core. 
 ---
 
 # Getting Started
