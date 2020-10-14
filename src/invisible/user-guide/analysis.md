@@ -1,6 +1,6 @@
 ---
 permalink: /invisible/user-guide/analysis
-description: There are different options available for analyzing recordings made with Pupil Invisible. You can use Pupil Cloud, Pupil Player, or export recordings to other third-party tools.
+description: Replay, visualize, and analyze eye tracking recordings made with Pupil Invisible. You can use Pupil Cloud, Pupil Player, or work with some of our third party partners. 
 ---
 
 
