@@ -1,6 +1,6 @@
 ---
 permalink: /core/software/pupil-player
-description: Pupil Player is the second tool you will use after Pupil Capture. It is a media and data visualizer at its core. You will use it to look at Pupil Capture recordings. Visualize your data and export it.
+description: Pupil Player desktop eye tracking visualization software. Use it to play back recordings made with Pupil Core and export data for further analysis.
 ---
 
 # Pupil Player
