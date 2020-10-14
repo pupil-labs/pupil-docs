@@ -1,5 +1,5 @@
 ---
-description: Pupil Invisible Monitor is a stand alone desktop app. It shows all available Pupil Invisible Devices in your Local Area Network.
+description: Pupil Invisible Monitor is a stand alone desktop app used to stream scene video and gaze data from all available Pupil Invisible eye tracking devices on your local WiFi network. 
 ---
 
 # Invisible Monitor App
