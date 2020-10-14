@@ -1,5 +1,5 @@
 ---
-description: If you are planning on using Pupil exclusively for noncommercial purposes, and are not afraid of hacking, then we have made a guide to help you.
+description: If you are planning on using Pupil exclusively for noncommercial purposes, and are not afraid of hacking, then we have made a guide to help create a Pupil DIY headset.
 ---
 
 # DIY
