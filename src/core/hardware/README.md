@@ -1,5 +1,5 @@
 ---
-description: You wear Pupil Core headset like a pair of glasses. The headset is designed to be lightweight and adjustable in order to accommodate a wide range of users.
+description: Learn about the Pupil Core eye tracking headset, adjustments, and accessories. 
 ---
 
 # Hardware
