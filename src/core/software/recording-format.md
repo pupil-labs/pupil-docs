@@ -1,6 +1,6 @@
 ---
 permalink: /core/software/recording-format
-description: Each recording contains a number of files. The exact number and names depend on which Pupil Core headset is connected and which features are enabled during the recording.
+description: Pupil Core recording format. Learn about the files contained within a Pupil Core recording. 
 ---
 
 # Recording Format
