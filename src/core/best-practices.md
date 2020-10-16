@@ -1,5 +1,6 @@
 ---
 permalink: /core/best-practices
+description: Tips for conducting eye tracking experiments with the Pupil Core eye tracking platform.
 ---
 
 # Best Practices

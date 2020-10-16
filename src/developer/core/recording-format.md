@@ -1,5 +1,6 @@
 ---
 permalink: /developer/core/recording-format
+description: We recommend reading the format thourougly if you want to develop software that creates recordings on its own, or processes existing recordings without having to open them in Pupil Player.
 ---
 
 # Recording Format
@@ -11,7 +12,7 @@ or processes existing recordings without having to open them in Pupil Player.
 ## Meta Files
 
 Meta files are essential for Pupil Player. Without them, Pupil Player is not able to
-recognize a directory as a Pupil Recording. 
+recognize a directory as a Pupil Recording.
 
 The [Pupil Player Recording Format 2.0](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/pupil_recording/README.md)—introduced in version `v1.16`—requires the meta info file to be named `info.player.json`.
 See its [specification](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/pupil_recording/README.md) for details.

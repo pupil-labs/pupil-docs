@@ -1,8 +1,12 @@
+---
+description: Learn about the Pupil Core eye tracking headset, adjustments, and accessories. 
+---
+
 # Hardware
-You wear Pupil Core headset like a pair of glasses. The headset is designed to be lightweight and adjustable in order to accommodate a wide range of users. 
+You wear Pupil Core headset like a pair of glasses. The headset is designed to be lightweight and adjustable in order to accommodate a wide range of users.
 
 ::: tip
-There are many Pupil Core headset configurations. So, your headset might look different from images and videos below. 
+There are many Pupil Core headset configurations. So, your headset might look different from images and videos below.
 :::
 
 <div class="pb-4">
@@ -32,7 +36,7 @@ The eye camera arm slides in and out of the headset frame. You can slide the eye
 <Youtube src="GsJt3PTUg1k"/>
 
 ### Rotate Eye Camera
-The eye camera arm is connected to the eye camera via the ball joint. You can rotate about its ball joint. There are 6 degrees of freedom to the ball joint. Try twisting and hinging movements to get a good image of the eye. 
+The eye camera arm is connected to the eye camera via the ball joint. You can rotate about its ball joint. There are 6 degrees of freedom to the ball joint. Try twisting and hinging movements to get a good image of the eye.
 
 <Youtube src="sxXwIm0WUpc"/>
 
@@ -46,7 +50,7 @@ You can rotate the world camera up and down to align with your FOV.
 ### Ball Joint Set Screw
 You can adjust the set screw to control the movement of the eye camera about the ball joint.
 
-We recommend setting the set screw so that you can still move the eye camera by hand but not so loose that the eye camera moves when moving the head. 
+We recommend setting the set screw so that you can still move the eye camera by hand but not so loose that the eye camera moves when moving the head.
 
 You can also tighten the set screw to fix the eye camera in place.
 
@@ -137,7 +141,7 @@ Pupil Core eye tracking headsets contain cameras and sensitive electronic compon
 - Frames and nose pads can be cleaned with an alcohol based disinfectant applied on damp cloth.
 - Scene camera and eye camera lenses can be carefully cleaned with a microfiber cloth if dust is visible.
 
-### Disinfecting Pupil Core 
-All Pupil Core eye tracking headsets are cleaned with disinfectant prior to shipping. You may want to disinfect the frames between uses. 
+### Disinfecting Pupil Core
+All Pupil Core eye tracking headsets are cleaned with disinfectant prior to shipping. You may want to disinfect the frames between uses.
 
 The disinfectant we use is made from 22.0g Ethanol, 21.0g 2-Propanol, 8.0g 1-Propanol per 100 grams of solution. One such brand name that we use is "Vibasept". We use the wetted towlettes (wipes). Similar products should be available globally under different brand names.

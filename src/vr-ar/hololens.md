@@ -1,5 +1,6 @@
 ---
 permalink: /vr-ar/hololens
+description: Add eye tracking powers to your HoloLens with our 200hz eye tracking add-ons.
 ---
 
 # HoloLens Add-On

@@ -1,5 +1,6 @@
 ---
 permalink: /core/software/pupil-service
+description: Pupil Service is a GUI-less real-time eye tracking software used primarily with Pupil Labs VR/AR eye tracking add-ons. 
 ---
 
 # Pupil Service

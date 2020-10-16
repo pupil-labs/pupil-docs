@@ -1,5 +1,6 @@
 ---
 permalink: /core/software/pupil-player
+description: Pupil Player desktop eye tracking visualization software. Use it to play back recordings made with Pupil Core and export data for further analysis.
 ---
 
 # Pupil Player

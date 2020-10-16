@@ -1,5 +1,7 @@
 ---
 permalink: /core/academic-citation
+description: Writing an academic paper that uses Pupil Labs products? Please cite us!
+
 ---
 
 # Academic Citation

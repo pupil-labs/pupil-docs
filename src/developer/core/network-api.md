@@ -1,5 +1,6 @@
 ---
 permalink: /developer/core/network-api
+description: There are two different ways that you can interact with the Pupil Core Network API. We outline how the basic communication works and how you can access the different stages of the Network API.
 ---
 
 # Network API
@@ -55,7 +56,7 @@ you do not call `recv()`, Pupil Capture might become unresponsive!
 This is an overview over all available Pupil Remote commands:
 ```py
 'R'  # start recording with auto generated session name
-'R rec_name'  # start recording named "rec_name" 
+'R rec_name'  # start recording named "rec_name"
 'r'  # stop recording
 'C'  # start currently selected calibration
 'c'  # stop currently selected calibration
@@ -397,7 +398,7 @@ ZMQ PUB SUB will make no guarantees for delivery. Reasons for not receiving mess
  - `Async Connect`/`The Late joiner`: PUB sockets drop messages before a connection has
  been established and topics subscribed. ZMQ connects asynchronously in the background.
  - `The Snail`: If SUB sockets do not consume delivered messages fast enough they start dropping them.
- - `Fast close`: A PUB socket may loose packages if you close it right after sending. 
+ - `Fast close`: A PUB socket may loose packages if you close it right after sending.
 
 For more information see [ZMQ Guide Chapter 5 - Advanced Pub-Sub Patterns](http://zguide.zeromq.org/php:chapter5).
 

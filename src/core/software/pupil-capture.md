@@ -1,5 +1,6 @@
 ---
 permalink: /core/software/pupil-capture
+description: Pupil Capture is the software used with your Pupil Core Headset. Using video streams to detect your pupil, track your gaze, and stream data in realtime.
 ---
 
 # Pupil Capture

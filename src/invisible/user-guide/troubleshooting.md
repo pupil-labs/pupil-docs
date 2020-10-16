@@ -1,5 +1,6 @@
 ---
 permalink: /invisible/user-guide/troubleshooting
+description: Need assistance? Check out this section for troubleshooting with Pupil Invisible. 
 ---
 
 # Troubleshooting
