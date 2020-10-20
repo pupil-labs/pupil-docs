@@ -12,6 +12,11 @@ There are two different ways that you can interact with the Pupil Core Network A
 In the sections below, we outline how the basic communication works and how you can
 access the different stages of the Network API.
 
+If you want to run the Python examples below you will have to install the following dependencies:
+```sh
+pip install zmq msgpack==0.5.6
+```
+
 ## Pupil Remote
 
 Pupil Remote provides a simple, text-based API to remote control the Pupil Core software,
