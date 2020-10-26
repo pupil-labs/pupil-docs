@@ -425,7 +425,7 @@ The detector for Apriltag Markers offers two parameters `Use high resolution` an
 #### Further Functionality
 * You can click the `Open Surface in Window` button to open a view of the surface in a separate window. Gaze positions on the surface will be visualized in this window in real-time.
 * Streaming Surfaces with Pupil Capture - Detected surfaces as well as gaze positions relative to the surface are broadcast under the `surface` topic. Check out [this video](http://youtu.be/qHmfMxGST7A) for a demonstration.
-* Surface Metrics with Pupil Player - if you have defined surfaces, you can generate surface visibility reports or gaze count per surface. See our [blog post](https://pupil-labs.com/blog/0392-release) for more information.
+* Surface Metrics with Pupil Player - if you have defined surfaces, you can generate surface visibility reports or gaze count per surface.
 
 #### Legacy Markers
 The legacy surface system used simple square markers, which are less robust to detect.
