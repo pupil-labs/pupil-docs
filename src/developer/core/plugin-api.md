@@ -81,9 +81,9 @@ class MyCustomPlugin(Plugin):
 
 ### Pupil Detection Plugins
 
-Pupil Core supports custom pupil detection plugins which run in the eye process. These plugins can be used to implement custom algorithms for finding the pupil position in the image, and feed them to the rest of the gaze mapping pipeline.
+Pupil Core supports custom pupil detection plugins that run in the eye process. These plugins can be used to implement custom algorithms for extracting pupillometry data from the eye images and feeding it to the rest of the gaze mapping pipeline.
 
-Pupil detection plugins are supported both in Pupil Capture, as well as Pupil Player. Similar to regular user plugins, custom pupil detection plugins should be placed inside `pupil_capture_settings/plugins` for Capture, and `pupil_player_settings/plugins` for Player, both of which are located in the user directory of your system. The plugins are automatically loaded when either of the applications are started.
+Pupil detection plugins are supported in Pupil Capture, Pupil Player, and Pupil Service. Similar to regular user plugins, custom pupil detection plugins should be placed inside `pupil_capture_settings/plugins` for Pupil Capture, `pupil_player_settings/plugins` for Pupil Player, and `pupil_service_settings/plugin` for Pupil Service, all of which are located in the user directory of your system. The plugins are automatically loaded when any of the applications are started.
 
 Custom pupil detection plugins must subclass the [PupilDetectorPlugin class](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/pupil_detector_plugins/detector_base_plugin.py), which is available during runtime:
 
@@ -94,7 +94,7 @@ class MyCustomPupilDetectorPlugin(PupilDetectorPlugin):
 
     def __init__(self, g_pool):
         super().__init__(g_pool)
-        # In most cases, it is desirable to disable other pupil detectors running in the eye process
+        # In some cases, it might be desirable to disable other pupil detectors running in the eye process
         # e.g. to increase performance on systems with limited computing resources.
         # In such cases, these pupil detection plugins can be disabled with the helper method:
         self._stop_other_pupil_detectors()
@@ -119,9 +119,9 @@ class MyCustomPupilDetectorPlugin(PupilDetectorPlugin):
         pass
 
     def detect(self, frame, **kwargs):
-        # This read-only property must be implemented by the custom subclass.
+        # This method must be implemented by the custom subclass.
         #
-        # Returns a dictionary containing the pupil location and related metadata.
+        # Returns a pupil datum dictionary containing the pupil location and related metadata.
         # See Pupil Datum Format for a list of required keys:
         # https://docs.pupil-labs.com/developer/core/overview/#pupil-datum-format
         pass
