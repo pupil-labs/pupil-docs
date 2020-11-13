@@ -72,7 +72,7 @@ but you will do it with the lens holder attached.
 ## Camera Mounts
 The camera mounts can be replaced by custom build parts that suit your specific camera setup or other sensors.
 
-We release the CAD files for the camera mounts for you to download, modify, in accordance with our license. CAD files for the frame are not open source; see explanation.
+We release the [CAD files for the camera mounts](https://github.com/pupil-labs/pupil-geometry) for you to download, modify, in accordance with our license. CAD files for the frame are not open source; see explanation.
 
 #### Interface Documentation
 By releasing the mounts as example geometry we automatically document the interface. You can use the CAD files to take measurements and make your own mounts.
