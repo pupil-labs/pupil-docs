@@ -129,4 +129,4 @@ class MyCustomPupilDetectorPlugin(PupilDetectorPlugin):
         pass
 ```
 
-See an example of a custom pupil detection plugin which returns artificial pupil locations [here](https://gist.github.com/pupil-labs/todo-provide-uid-of-published-custom-detector-plugin).
+See examples of custom pupil detection plugins [here](https://github.com/pupil-labs/pupil-community/blob/master/README.md#pupil-detector-plugins).
