@@ -67,7 +67,9 @@ see the Python representation of a 3d pupil datum:
 
 ```python
 {
-    # pupil datum
+    ### pupil datum required fields
+
+    'id': 0,  # eye id, 0 or 1
     'topic': 'pupil.0',
     'method': '3d c++',
     'norm_pos': [0.5, 0.5],  # norm space, [0, 1]
@@ -75,15 +77,17 @@ see the Python representation of a 3d pupil datum:
     'timestamp': 535741.715303987,  # time, unit: seconds
     'confidence': 0.0,  # [0, 1]
 
+    ### 2D model data
+
     # 2D ellipse of the pupil in image coordinates
     'ellipse': {  # image space, unit: pixel
         'angle': 90.0,  # unit: degrees
         'center': [320.0, 240.0],
         'axes': [0.0, 0.0],
     },
-    'id': 0,  # eye id, 0 or 1
 
-    ## 3D model data
+    ### 3D model data
+
     # -1 means that the model is building up and has not finished fitting
     'model_birth_timestamp': -1.0,
     'model_confidence': 0.0,
