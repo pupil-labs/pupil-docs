@@ -81,7 +81,7 @@ class MyCustomPlugin(Plugin):
 
 ### Pupil Detection Plugins
 
-Pupil Core supports custom pupil detection plugins that run in the eye process. These plugins can be used to implement custom algorithms for extracting pupillometry data from the eye images and feeding it to the rest of the gaze mapping pipeline.
+Starting with version v2.6, Pupil Core supports custom pupil detection plugins that run in the eye process. These plugins can be used to implement custom algorithms for extracting pupillometry data from the eye images and feeding it to the rest of the gaze mapping pipeline.
 
 Pupil detection plugins are supported in Pupil Capture, Pupil Player, and Pupil Service. Similar to regular user plugins, custom pupil detection plugins should be placed inside `pupil_capture_settings/plugins` for Pupil Capture, `pupil_player_settings/plugins` for Pupil Player, and `pupil_service_settings/plugin` for Pupil Service, all of which are located in the user directory of your system. The plugins are automatically loaded when any of the applications are started.
 
