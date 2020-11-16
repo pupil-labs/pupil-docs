@@ -62,7 +62,7 @@ topic and the `timestamp` (inherited from the eye image), the pupil detector add
 By default, the Pupil Core software uses the
 [3d detector](/core/software/pupil-capture.html#pupil-detection) for pupil detection.
 Since it is an extension of the 2d detector, its data contains keys that were
-inherited from the 2d detection, as well as 3d detector specific keys. Below you can
+inherited from the 2d detection, as well as 3d detector specific keys. The minimal set of keys needed in a valid pupil datum object is: `id`, `topic`, `method`, `norm_pos`, `diameter`, `timestamp`, and `confidence`. Below you can
 see the Python representation of a 3d pupil datum:
 
 ```python
