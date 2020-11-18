@@ -69,6 +69,8 @@ reached based on previous literature and/or professional judgment following insp
 and classified fixations. As an example, we refer the reader to [this paper](https://link.springer.com/content/pdf/10.3758%2FAPP.71.4.881.pdf)
 which provides a quantitative analysis of dispersion thresholds for chess players.
 
+### Errors
+
 Depending on the parameter configuration, the fixation detector can make three types of errors:
 
 **A.** False negatives - Actual fixations are not being detected, e.g. due to maximum dispersion too 
@@ -78,6 +80,7 @@ low; minimum duration too high
 **C.** Too many consecutive true positives that could be grouped to a single fixation, e.g. due to 
 maximum duration too low, or maximum dispersion too low
 
+### Typical Scenarios
 
 Here we consider three scenarios and how the choice of filter thresholds might influence 
 classified fixations.
