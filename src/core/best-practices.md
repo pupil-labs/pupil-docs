@@ -63,9 +63,8 @@ The less movement your participants will exhibit during an experiment, the more 
 
 ## Fixation Filter Thresholds
 
-Choosing appropriate thresholds depends on the nature of the viewing task. It is worth noting that 
-there is no 'gold standard' approach to choosing which thresholds to use. Often a decision is 
-reached based on previous literature and/or professional judgment following inspection of gaze data
+Choosing appropriate thresholds for the [dispersion-based fixation filter](terminology/#fixations) depends on the nature of the viewing task. It is worth noting that 
+there is no 'gold standard' approach. Often a decision is reached based on previous literature and/or professional judgment following inspection of gaze data
 and classified fixations. As an example, we refer the reader to [this paper](https://link.springer.com/content/pdf/10.3758%2FAPP.71.4.881.pdf)
 which provides a quantitative analysis of dispersion thresholds for chess players.
 
@@ -88,16 +87,16 @@ classified fixations.
 1. A seated person fixates a static target. Their head is mostly stationary. Only small compensatory 
 eye rotations are needed to keep the target stabilised on the fovea. Fixations are long.
 
-	In this task, setting maximum duration too low could lead to type C errors. If a fixation lasts 400ms, 
-	filtering with a maximum duration of 200ms will classify two fixations instead of one. Ensure the maximum 
-	duration accommodates your expected fixation durations. 
+In this task, setting maximum duration too low could lead to type C errors. If a fixation lasts 400ms, 
+filtering with a maximum duration of 200ms will classify two fixations instead of one. Ensure the maximum 
+duration accommodates your expected fixation durations. 
 
 2. A seated person scans for appearing targets which disappear suddenly. They initiate many short rapid shifts of gaze from one region to another, interspersed by short fixations. 
 
-	Setting minimum duration too high in this task could lead to missed classifications (type A errors). If 
-	fixations are around 120ms, but the minimum duration is 400ms, fixations go undetected. Setting the 
-	minimum duration too low can lead to very short detections that one would not consider a fixation 
-	(type B error). Ensure the minimum duration is appropriate for the viewing task.
+Setting minimum duration too high in this task could lead to missed classifications (type A errors). If 
+fixations are around 120ms, but the minimum duration is 400ms, fixations go undetected. Setting the 
+minimum duration too low can lead to very short detections that one would not consider a fixation 
+(type B error). Ensure the minimum duration is appropriate for the viewing task.
 
 3. A dynamic environment where a walking person gazes at a sign. Their head is moving considerably when 
 compared to the previous tasks. Larger compensatory eye rotations are needed to stabilise the region of 
@@ -105,10 +104,10 @@ interest on the fovea due to cyclic movements of the head and forward progressio
 are dispersed over a greater area (this is an inherent issue with detecting fixations in scene camera space 
 instead of the real world). 
 
-	Setting the maximum dispersion too low could lead to false negatives (type A error) or a series of 
-	consecutive detections that should have been grouped to a single fixation (type C error). For example, 
-	if the gaze points are dispersed over 2 degrees due to bigger eye rotations, filtering with a maximum 
-	dispersion of 1 degree could classify two separate fixations instead of one. Setting the maximum 
-	dispersion too high might group fixations together that should have been considered separate fixations. 
-	Ensure the maximum dispersion accommodates your viewing task. 
+Setting the maximum dispersion too low could lead to false negatives (type A error) or a series of 
+consecutive detections that should have been grouped to a single fixation (type C error). For example, 
+if the gaze points are dispersed over 2 degrees due to bigger eye rotations, filtering with a maximum 
+dispersion of 1 degree could classify two separate fixations instead of one. Setting the maximum 
+dispersion too high might group fixations together that should have been considered separate fixations. 
+Ensure the maximum dispersion accommodates your viewing task. 
 
