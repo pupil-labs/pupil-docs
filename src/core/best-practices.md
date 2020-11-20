@@ -63,7 +63,7 @@ The less movement your participants will exhibit during an experiment, the more 
 
 ## Fixation Filter Thresholds
 
-Choosing appropriate thresholds for the [dispersion-based fixation filter](terminology/#fixations) depends on the nature of the viewing task. It is worth noting that 
+Choosing appropriate thresholds for the [dispersion-based fixation filter](/core/terminology/#fixations) depends on the nature of the viewing task. It is worth noting that 
 there is no 'gold standard' approach. Often a decision is reached based on previous literature and/or professional judgment following inspection of gaze data
 and classified fixations. As an example, we refer the reader to [this paper](https://link.springer.com/content/pdf/10.3758%2FAPP.71.4.881.pdf)
 which provides a quantitative analysis of dispersion thresholds for chess players.
