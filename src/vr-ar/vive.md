@@ -48,8 +48,12 @@ We recommend this approach.
 ## USB Connection and Camera IDs
 Once you plug the usb cables into your computer:
 
-- The right eye camera will show up with the name: `Pupil Cam 1 ID0`
-- The left eye camera will show up with the name: `Pupil Cam 1 ID1`
+- The right eye camera will show up with the name: `Pupil Cam 3 ID0`
+- The left eye camera will show up with the name: `Pupil Cam 3 ID1`
+
+::: warning
+Note: For older 120Hz systems, the cameras will show up as `Pupil Cam 1 ID0` and `Pupil Cam 1 ID1`.
+:::
 
 ## Interfacing with other software or your own code
 Both cameras are fully UVC compliant and will work with OpenCVs video backend, Pupil Capture, and libraries like `libucv` and `pyuvc`.
