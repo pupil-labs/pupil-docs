@@ -2,7 +2,7 @@ name: Build & Deploy Docs
 
 on:
   push:
-    branches: ["master", "github-actions"] # remove this after testing
+    branches: ["master", "github-actions"] # remove github-actions this after testing
   workflow_dispatch: # this makes the action manual
 
 jobs:
@@ -35,9 +35,10 @@ jobs:
     name: Deploy to production
     needs: build
     runs-on: ubuntu-latest
+    # if: github.ref == 'refs/heads/master' # only run deploy on master branch    
     steps:
       - name: Download generated website .vuepress/dist
-      uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v2
       with: 
         name: vuepress-dist
       - shell: bash
