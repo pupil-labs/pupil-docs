@@ -61,3 +61,14 @@ jobs:
         run: |
           cat dist/gitcommit.txt
           du -ah dist
+      
+      - name: Decrypt deployment keys
+        run: >
+          openssl aes-256-cbc
+          -K $encrypted_deaba444d90d_key
+          -iv $encrypted_deaba444d90d_iv
+          -in docs_deploy_key.enc
+          -out ./docs_deploy_key
+          -d
+      - name: Run deployment script
+        run: bash deploy.sh
