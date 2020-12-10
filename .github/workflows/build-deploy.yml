@@ -38,8 +38,8 @@ jobs:
       
       - name: Get size of the dist folder
         shell: bash
-          run: |
-            du -ah src/.vuepress/dist
+        run: |
+          du -ah src/.vuepress/dist
   
   deploy:
     name: Deploy to production
