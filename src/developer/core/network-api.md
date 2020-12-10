@@ -299,6 +299,59 @@ key-value mapping that contains all attributes of the python `logging.record` in
 }
 ```
 
+### Pupil Detector Plugin Notifications
+
+The following are notifications handled by pupil detector plugins, that can be sent to the IPC Backbone:
+
+```python
+# Notification for enabling/disabling any or all pupil detector plugins
+{
+    'topic': 'notify.pupil_detector.set_enabled',
+    'subject': 'pupil_detector.set_enabled',
+    'value': <is_enabled: bool>,
+    'eye_id': <eye_id: int>,  # optional; possible values: 0 or 1
+    'detector_plugin_class_name': <detector_plugin_class_name: str>,  # optional
+}
+
+# Notification for setting the Region-Of-Interest (ROI) for any or all pupil detector plugins
+{
+    'topic': 'notify.pupil_detector.set_roi',
+    'subject': 'pupil_detector.set_roi',
+    'value': <roi: (min_x: int, min_y: int, max_x: int, max_y: int)>,
+    'eye_id': <eye_id: int>,  # optional; possible values: 0 or 1
+    'detector_plugin_class_name': <detector_plugin_class_name: str>,  # optional
+}
+
+# Notification for updating a partial set of pupil detector properties for a specific pupil detector plugin
+{
+    'topic': 'notify.pupil_detector.set_properties',
+    'subject': 'pupil_detector.set_properties',
+    'values': <detector_properties: dict>,
+    'eye_id': <eye_id: int>,  # required; possible values: 0 or 1
+    'detector_plugin_class_name': <detector_plugin_class_name: str>,  # required
+}
+
+# Notification for requesting pupil detector properties broadcast for any or all pupil detector plugins
+{
+    'topic': 'notify.pupil_detector.broadcast_properties',
+    'subject': 'pupil_detector.broadcast_properties',
+    'eye_id': <eye_id: int>,  # optional; possible values: 0 or 1
+    'detector_plugin_class_name': <detector_plugin_class_name: str>,  # optional
+}
+```
+
+In response to `pupil_detector.broadcast_properties`, zero or more pupil detector plugins will respond with the following messages:
+
+```python
+# This message will be sent on the topic `pupil_detector.properties.<EYE_ID>.<DETECTOR_PLUGIN_CLASS_NAME>`
+{
+    "subject": "pupil_detector.properties.<EYE_ID>.<DETECTOR_PLUGIN_CLASS_NAME>",
+    "values": <detector_properties: dict>,
+}
+```
+
+For an example script that showcases pupil detector plugins' network API, please consult [this helper script](https://github.com/pupil-labs/pupil-helpers/blob/master/python/pupil_detector_network_api.py).
+
 ## Writing to the IPC Backbone
 
 You can send notifications to the IPC Backbone for everybody to read as well. Pupil
