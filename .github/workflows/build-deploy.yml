@@ -42,24 +42,22 @@ jobs:
         with:
           name: vuepress-dist
           path: src/.vuepress/dist      
-  
+
   deploy:
     name: Deploy to production
     runs-on: ubuntu-latest
     needs: build
-    
+
     steps:
       - name: Download generated website dist dir
         uses: actions/download-artifact@v2
         with: 
           name: vuepress-dist
-      
+          path: src/.vuepress/dist
+
       - name: Check dist downloaded and check size
         shell: bash
+        working-directory: src/.vuepress/
         run: |
           cat dist/gitcommit.txt
-          du -ah src/.vuepress/dist
-
-
-
-
+          du -ah dist
