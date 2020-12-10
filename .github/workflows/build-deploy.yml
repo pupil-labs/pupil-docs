@@ -37,10 +37,10 @@ jobs:
     runs-on: ubuntu-latest
     # if: github.ref == 'refs/heads/master' # only run deploy on master branch    
     steps:
-      - name: Download generated website .vuepress/dist
-      - uses: actions/download-artifact@v2
-      with: 
-        name: vuepress-dist
+      - name: Download generated website dist dir
+        uses: actions/download-artifact@v2
+        with: 
+          name: vuepress-dist
       - shell: bash
         run: cat dist/gitcommit.txt
         run: du -ah src/.vuepress/dist
