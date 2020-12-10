@@ -68,7 +68,10 @@ In order to open the video files with the majority of video players, you will ha
 **transcode the video stream encoding from mjpeg to h264** and **change the color format
 from yuvj422p to yuv420p**. You can use the following [ffmpeg](https://ffmpeg.org/ "FFmpeg - software solution for recording, converting, and streaming audio and video")
 command to perform this transcoding:
-> `ffmpeg -i world.mp4 -vf format=yuv420p world_compatible.mp4`
+
+```
+ffmpeg -i world.mp4 -vf format=yuv420p world_compatible.mp4
+```
 
 ## Audio File
 An audio file is only recognized in Pupil Player's playback plugin if the file is named
