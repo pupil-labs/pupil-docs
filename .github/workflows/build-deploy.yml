@@ -19,11 +19,13 @@ jobs:
         with:
           node-version: '12.x'
       
-      - name: Install dependencies
-      - run: yarn global add vuepress # install vuepress first
-      - run: yarn # install package.json 
+      - name: Install vuepress
+        run: yarn global add vuepress
+      - name: Install package.json
+        run: yarn
       - name: Build static site with vuepress
-      - run: yarn build # alias for vuepress build src defined in package.json
+        # alias for vuepress build src defined in package.json
+        run: yarn build
       
       - name: Archive build artifacts
         uses: actions/upload-artifact@v2
