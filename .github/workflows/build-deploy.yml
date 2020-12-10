@@ -69,8 +69,6 @@ jobs:
         env:
           encrypted_deaba444d90d_key: ${{ secrets.encrypted_deaba444d90d_key }}
           encrypted_deaba444d90d_iv: ${{ secrets.encrypted_deaba444d90d_iv }}
-          SERVER_IP: ${{ secrets.SERVER_IP }}
-          SERVER_USER: ${{ secrets.SERVER_USER }}
         run: >
           openssl aes-256-cbc
           -K $encrypted_deaba444d90d_key
@@ -79,4 +77,7 @@ jobs:
           -out ./docs_deploy_key
           -d
       - name: Run deployment script
+        env:
+          SERVER_IP: ${{ secrets.SERVER_IP }}
+          SERVER_USER: ${{ secrets.SERVER_USER }}
         run: bash deploy.sh
