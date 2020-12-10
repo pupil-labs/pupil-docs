@@ -151,12 +151,12 @@ accessed using the `base_data` key.
 
     # 3D space, unit: mm
     'gaze_normals_3d': {
-        0: [x, y, z],
-        1: [x, y, z],
+        '0': [x, y, z],
+        '1': [x, y, z],
     },
     'eye_centers_3d': {
-        0: [x, y, z],
-        1: [x, y, z],
+        '0': [x, y, z],
+        '1': [x, y, z],
     },
     'gaze_point_3d': [x, y, z],
     'base_data': [<pupil datum>]  # list of pupil data used to calculate gaze
