@@ -69,8 +69,8 @@ jobs:
         env:
           encrypted_deaba444d90d_key: ${{ secrets.encrypted_deaba444d90d_key }}
           encrypted_deaba444d90d_iv: ${{ secrets.encrypted_deaba444d90d_iv }}
-          SERVER_IP: ${{ secrects.SERVER_IP }}
-          SERVER_USER: ${{ secrects.SERVER_USER }}
+          SERVER_IP: ${{ secrets.SERVER_IP }}
+          SERVER_USER: ${{ secrets.SERVER_USER }}
         run: >
           openssl aes-256-cbc
           -K $encrypted_deaba444d90d_key
