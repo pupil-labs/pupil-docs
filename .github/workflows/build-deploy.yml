@@ -27,12 +27,6 @@ jobs:
         # alias for vuepress build src defined in package.json
         run: yarn build
       
-      - name: Archive build artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: vuepress-dist
-          path: src/.vuepress/dist
-      
       - name: Write commit SHA to gitcommit.txt in dist
         shell: bash
         run: |
@@ -42,6 +36,12 @@ jobs:
         shell: bash
         run: |
           du -ah src/.vuepress/dist
+
+      - name: Archive build artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: vuepress-dist
+          path: src/.vuepress/dist      
   
   deploy:
     name: Deploy to production
