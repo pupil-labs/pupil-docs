@@ -66,6 +66,11 @@ jobs:
           du -ah dist
       
       - name: Decrypt deployment keys
+        env:
+          encrypted_deaba444d90d_key: ${{ secrets.encrypted_deaba444d90d_key }}
+          encrypted_deaba444d90d_iv: ${{ secrets.encrypted_deaba444d90d_iv }}
+          SERVER_IP: ${{ secrects.SERVER_IP }}
+          SERVER_USER: ${{ secrects.SERVER_USER }}
         run: >
           openssl aes-256-cbc
           -K $encrypted_deaba444d90d_key
