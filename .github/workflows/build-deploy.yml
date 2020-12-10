@@ -32,18 +32,19 @@ jobs:
           path: src/.vuepress/dist
       
       - name: Write commit SHA to gitcommit.txt in dist
-      - shell: bash
-        run: echo $GITHUB_SHA > src/.vuepress/dist/gitcommit.txt
+        shell: bash
+        run: |
+          echo $GITHUB_SHA > src/.vuepress/dist/gitcommit.txt
       
       - name: Get size of the dist folder
-      - shell: bash
-        run: du -ah src/.vuepress/dist
+        shell: bash
+          run: |
+            du -ah src/.vuepress/dist
   
   deploy:
     name: Deploy to production
     runs-on: ubuntu-latest
     needs: build
-    # if: github.ref == 'refs/heads/master' # only run deploy on master branch    
     
     steps:
       - name: Download generated website dist dir
@@ -52,9 +53,10 @@ jobs:
           name: vuepress-dist
       
       - name: Check dist downloaded and check size
-      - shell: bash
-        run: cat dist/gitcommit.txt
-        run: du -ah src/.vuepress/dist
+        shell: bash
+        run: |
+          cat dist/gitcommit.txt
+          du -ah src/.vuepress/dist
 
 
 
