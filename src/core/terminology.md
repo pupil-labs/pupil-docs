@@ -36,7 +36,8 @@ within the _eye coordinate system_.
     [Reference paper](https://arxiv.org/pdf/1405.0006.pdf).
 - **3d Pupil Detection**: Pupil Core uses [`pye3d`](/developer/core/pye3d/) for 3d pupil detection.
     It implements a published mathematical 3D eye model capturing ocular kinematics and
-    optics (see Swirski and Dodgson, 2013, as well as Dierkes, Kassner, and Bulling, 2019).
+    optics (see [Swirski and Dodgson, 2013](https://www.researchgate.net/publication/264658852_A_fully-automatic_temporal_approach_to_single_camera_glint-free_3D_eye_model_fitting "L. Świrski and N. A. Dodgson. A Fully-Automatic, Temporal Approach to Single Camera, Glint-Free 3D Eye Model Fitting. In Proceedings of ECEM 2013."),
+    as well as [Dierkes, Kassner, and Bulling, 2019](https://www.researchgate.net/publication/333490770_A_fast_approach_to_refraction-aware_eye-model_fitting_and_gaze_prediction "K. Dierkes, M. Kassner, A. Bulling. A fast approach to refraction-aware eye-model fitting and gaze prediction. In ETRA ’19: Symposium on Eye Tracking Research and Applications, 2019.")).
     More specifically, frame-by-frame measurements of gaze direction and pupil size rely
     on eyeball-position estimates in the 3D coordinate system defined by the recording
     eye camera. [Read more about it here](/developer/core/pye3d).
