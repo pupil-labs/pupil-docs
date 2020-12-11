@@ -1,0 +1,69 @@
+name: Build & Deploy to Production
+
+on:
+  push:
+    branches: ["master"] 
+  workflow_dispatch: # this makes the action manual
+
+jobs:
+  
+  build:
+    name: Install dependencies and generate static site
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      
+      - name: Install vuepress
+        run: yarn global add vuepress
+      - name: Install package.json
+        run: yarn
+      - name: Build static site with vuepress
+        # alias for vuepress build src defined in package.json
+        run: yarn build
+      
+      - name: Write commit SHA to gitcommit.txt in dist
+        shell: bash
+        run: |
+          echo $GITHUB_SHA > src/.vuepress/dist/gitcommit.txt
+      
+      - name: Get size of files in dist
+        shell: bash
+        run: |
+          du -ah src/.vuepress/dist
+
+      - name: Archive build artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: vuepress-dist
+          path: src/.vuepress/dist      
+
+  deploy:
+    name: Deploy to production
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Download generated website dist dir
+        uses: actions/download-artifact@v2
+        with: 
+          name: vuepress-dist
+          path: src/.vuepress/dist
+
+      - name: Rsync action - Deploy to production
+        uses: burnett01/rsync-deployments@4.1
+        with: 
+          switches: -hrvz --delete --exclude=".htaccess"
+          path: src/.vuepress/dist/
+          remote_path: ${{ secrets.REMOTE_PATH }}
+          remote_host: ${{ secrets.REMOTE_HOST}}
+          remote_user: ${{ secrets.REMOTE_USER }}
+          remote_key: ${{ secrets.DEPLOY_KEY }}
+
