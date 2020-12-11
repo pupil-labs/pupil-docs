@@ -115,6 +115,7 @@ module.exports = {
             'core/network-api',
             'core/recording-format',
             'core/plugin-api',
+            'core/pye3d',
           ]
         },
         'invisible/',

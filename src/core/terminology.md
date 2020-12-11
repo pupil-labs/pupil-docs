@@ -34,12 +34,12 @@ within the _eye coordinate system_.
 - **Pupil Detection**: Process of detecting the pupil within the _eye camera_ video stream.
 - **2d Pupil Detection**: Attempts to find a 2d ellipse that fits the pupil within a given _eye_ image.
     [Reference paper](https://arxiv.org/pdf/1405.0006.pdf).
-- **3d Pupil Detection**: Pupil Core uses [`pye3d`](/core/pye3d) for 3d pupil detection.
+- **3d Pupil Detection**: Pupil Core uses [`pye3d`](/developer/core/pye3d/) for 3d pupil detection.
     It implements a published mathematical 3D eye model capturing ocular kinematics and
     optics (see Swirski and Dodgson, 2013, as well as Dierkes, Kassner, and Bulling, 2019).
     More specifically, frame-by-frame measurements of gaze direction and pupil size rely
     on eyeball-position estimates in the 3D coordinate system defined by the recording
-    eye camera. [Read more about it here](/core/pye3d).
+    eye camera. [Read more about it here](/developer/core/pye3d).
 
 ## Gaze Positions
 Alternatively: _Gaze Data_. Output of the _gaze estimation_. Location of the subject's
