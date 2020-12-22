@@ -8,7 +8,7 @@ description: Replay, visualize, and analyze eye tracking recordings made with Pu
 There are different options available for analyzing recordings made with Pupil Invisible. You can use Pupil Cloud, our open-source analysis tool Pupil Player, or export recordings to other third-party tools including your own custom software.
 
 ## Pupil Cloud
-[Pupil Cloud](https://cloud.pupil-labs.com "Pupil Cloud - Eye tracking recording storage, visualization, and enrichment - Pupil Labs") is a service you can use to store, visualize, and enrich your Pupil Invisible recordings. It integrates seamlessly with Pupil Invisible Companion App for robust uploading of recordings, wearer managment, and template creation. 
+[Pupil Cloud](/cloud/) is a service you can use to store, visualize, and enrich your Pupil Invisible recordings. It integrates seamlessly with Pupil Invisible Companion App for robust uploading of recordings, wearer managment, and template creation. 
 
 Pupil Cloud is in active development and there are many exciting enrichment features in the pipeline that will be coming soon to Pupil Cloud!
 
