@@ -62,6 +62,17 @@ And their corresponding timestamp files should follow the pattern:
 
 - `world_timestamps.npy`, `world_001_timestamps.npy`, `world_002_timestamps.npy`, ...
 
+### Video Player Compatibility
+
+In order to open the video files with the majority of video players, you will have to
+**transcode the video stream encoding from mjpeg to h264** and **change the color format
+from yuvj422p to yuv420p**. You can use the following [ffmpeg](https://ffmpeg.org/ "FFmpeg - software solution for recording, converting, and streaming audio and video")
+command to perform this transcoding:
+
+```
+ffmpeg -i world.mp4 -vf format=yuv420p world_compatible.mp4
+```
+
 ## Audio File
 An audio file is only recognized in Pupil Player's playback plugin if the file is named
 `audio.mp4` and there is a corresponding `audio_timestamps.npy` file containing the
