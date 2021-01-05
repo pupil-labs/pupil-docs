@@ -174,7 +174,7 @@ is able to detect a defined surface. It includes
 - the homographies to transform surface to image coordinates and vice versa,
 - gaze and fixation data that was mapped onto the surface.
 
-The gaze and fixation `norm_pos` fields contain [surface coordinates](http://localhost:8080/core/terminology/#surface-aoi-coordinate-system). The `base_data` field is a tuple of the
+The gaze and fixation `norm_pos` fields contain [surface coordinates](/core/terminology/#surface-aoi-coordinate-system). The `base_data` field is a tuple of the
 original topic and its timestamp.
 
 ```py
