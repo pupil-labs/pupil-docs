@@ -41,7 +41,7 @@ Your purchase of Pupil Invisible includes a free membership to [Pupil Cloud](/cl
 ## OnePlus 6 Companion Device Setup
 
 ::: warning
-The information in this section is only required for OnePlus Companion Devices.
+The information in this section is only required for **OnePlus 6** Companion Devices. OnePlus 8 devices do not require the below steps.
 :::
 
 ### Enable OTG
