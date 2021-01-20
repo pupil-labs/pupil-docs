@@ -92,7 +92,7 @@ Invisible recordings are uploaded to the cloud from the Invisible Companion App 
 
 ### Local transfer
 1) Connect your OnePlus device to a PC via USB (using the USB cable supplied)
-2) Slide down from the top of the device's home-screen and click on 'Android System.USB charging this device'
+2) Slide down from the top of the device's home-screen and click on 'Android System - USB charging this device'
 3) Click on 'Tap for more options'
 4) Select 'Transfer Files'
 5) Open File Browser on your PC and access the Internal shared storage of your OnePlus device
