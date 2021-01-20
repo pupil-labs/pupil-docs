@@ -118,8 +118,10 @@ There are three coordinate systems for each camera:
     - origin: center of the camera
     - does not include lens distortion
     - no boundaries
-    - example: `(0, 0, 1)` (a point on the optical axis)
-
+    - x: horizontal, y: vertical, z: optical axis
+    - example:
+        - `(0, 0, 1)` (a point on the optical axis)
+    
 [Reference](https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html).
 You can use the _Camera Intrinsics_ to project a _3d camera location_ to _2d pixel location_, and vice versa.
 
