@@ -88,10 +88,8 @@ see the Python representation of a 3d pupil datum:
 
     ### 3D model data
 
-    # -1 means that the model is building up and has not finished fitting
-    'model_birth_timestamp': -1.0,
-    'model_confidence': 0.0,
-    'model_id': 1,
+    # Fixed to 1.0 in  pye3d v0.0.4.
+    'model_confidence': 1.0,
 
     # pupil polar coordinates on 3D eye model. The model assumes a fixed
     # eye ball size. Therefore there is no `radius` key
@@ -153,12 +151,12 @@ accessed using the `base_data` key.
 
     # 3D space, unit: mm
     'gaze_normals_3d': {
-        0: [x, y, z],
-        1: [x, y, z],
+        '0': [x, y, z],
+        '1': [x, y, z],
     },
     'eye_centers_3d': {
-        0: [x, y, z],
-        1: [x, y, z],
+        '0': [x, y, z],
+        '1': [x, y, z],
     },
     'gaze_point_3d': [x, y, z],
     'base_data': [<pupil datum>]  # list of pupil data used to calculate gaze
@@ -174,7 +172,7 @@ is able to detect a defined surface. It includes
 - the homographies to transform surface to image coordinates and vice versa,
 - gaze and fixation data that was mapped onto the surface.
 
-The gaze and fixation `norm_pos` fields contain [surface coordinates](http://localhost:8080/core/terminology/#surface-aoi-coordinate-system). The `base_data` field is a tuple of the
+The gaze and fixation `norm_pos` fields contain [surface coordinates](/core/terminology/#surface-aoi-coordinate-system). The `base_data` field is a tuple of the
 original topic and its timestamp.
 
 ```py

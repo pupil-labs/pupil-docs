@@ -41,7 +41,7 @@ Your purchase of Pupil Invisible includes a free membership to [Pupil Cloud](/cl
 ## OnePlus 6 Companion Device Setup
 
 ::: warning
-The information in this section is only required for OnePlus Companion Devices.
+The information in this section is only required for **OnePlus 6** Companion Devices. OnePlus 8 devices do not require the below steps.
 :::
 
 ### Enable OTG
@@ -68,7 +68,7 @@ Check out the video to see how to lock the app.
    </video>
 </div>
 
-### Time synchronization
+## Time synchronization
 
 The Pupil Invisible Companion App runs its own clock as the source for all data timestamps it generates. To start this clock the App samples the phone’s NTP (Network Time Protocol) synchronized UTC clock.
 
@@ -76,4 +76,4 @@ If more that one device is used and the data is required to be synchronised, mak
 
 Pupil Monitor will warn you if a device is not in sync.
 
-More info in the technical implementation and quality of NTP synchronisation can be found in the [Pupil Invisible developer docs](/developer/invisible/#time-synchronization "Pupil Invisible developer docs - time synchronization").
+More info on the technical implementation and quality of NTP synchronisation can be found in the [Pupil Invisible developer docs](/developer/invisible/#time-synchronization "Pupil Invisible developer docs - time synchronization").
