@@ -90,7 +90,7 @@ If you made recordings on Pupil Invisible Companion while cloud upload feature w
 
 1) Enable 'Cloud Upload' in the Companion App settings
 2) Wait until your recording/s are uploaded to Pupil Cloud. In the recording view, uploaded recordings will show a cloud symbol with a tick
-3) Login to Pupil Cloud to view or download your recording/s!
+3) Login to [Pupil Cloud](https://cloud.pupil-labs.com "Pupil Cloud") to playback recordings, enrich data, and download.
 
 ### Local transfer
 1) Connect your OnePlus device to a PC via USB (using the USB cable supplied)
