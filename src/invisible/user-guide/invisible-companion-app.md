@@ -84,7 +84,9 @@ More info on the technical implementation and quality of NTP synchronisation can
 ## Recording transfer
 ### Pupil Cloud
 
-Invisible recordings are uploaded to the cloud from the Invisible Companion App to ensure stability, robustness and security. If you still have the recordings on the Companion device, follow these instructions:
+Pupil Invisible recordings can be uploaded cloud storage directly from the Invisible Companion App. We recommend using Pupil Cloud for ease of user experience, stability, robustness, and data security. 
+
+If you made recordings on Pupil Invisible Companion while cloud upload feature was disabled, you can re-enable and upload recordings to Cloud:```
 
 1) Enable 'Cloud Upload' in the Companion App settings
 2) Wait until your recording/s are uploaded to Pupil Cloud. In the recording view, uploaded recordings will show a cloud symbol with a tick
