@@ -28,17 +28,16 @@ Get familiar with Pupil Invisible Companion app!
 
 ## Pupil Cloud Sign Up
 
-First time users need to Sign Up for a Pupil Cloud account. You can
-Sign Up by using your Google account, or by creating an account with
-email address and password.
+Your purchase of Pupil Invisible includes a free membership to [Pupil Cloud](/cloud). First time users need to Sign Up 
+using a Google account, or by creating an account with email address and password.
 
 ### Automatic uploads to Pupil Cloud
 
-Your purchase of Pupil Invisible includes a free membership to [Pupil Cloud](/cloud). Pupil Cloud enables you to privately 
-and securely upload your recordings from your Companion Device to cloud storage. The usage of this feature is **optional***. 
-You can turn this feature on/off during setup, or at any later time in the app settings. Learn more about [Pupil Cloud](/cloud).
+Pupil Cloud enables you to privately and securely upload your recordings from your Companion Device to cloud storage. 
+The usage of this feature is **optional***. You can turn this feature on/off during setup, or at any later time in the 
+app settings. Learn more about [Pupil Cloud](/cloud).
 
-*200Hz gaze data is provided in Pupil Cloud. On the Companion Device, gaze data is available at 66Hz in real-time
+*200Hz gaze data is provided in Pupil Cloud. On the Companion Device, gaze data is available at 66Hz in real-time.
 <v-divider></v-divider>
 
 ## OnePlus 6 Companion Device Setup
@@ -84,9 +83,9 @@ More info on the technical implementation and quality of NTP synchronisation can
 ## Recording transfer
 ### Pupil Cloud
 
-Pupil Invisible recordings can be uploaded cloud storage directly from the Invisible Companion App. We recommend using Pupil Cloud for ease of user experience, stability, robustness, and data security. 
+Pupil Invisible recordings can be uploaded to Pupil Cloud directly from the Invisible Companion App. We recommend using Pupil Cloud for ease of user experience, stability, robustness, and data security. 
 
-If you made recordings on Pupil Invisible Companion while cloud upload feature was disabled, you can re-enable and upload recordings to Cloud:```
+If you made recordings with the Invisible Companion App while the cloud upload feature was disabled, you can re-enable and upload recordings to Cloud:
 
 1) Enable 'Cloud Upload' in the Companion App settings
 2) Wait until your recording/s are uploaded to Pupil Cloud. In the recording view, uploaded recordings will show a cloud symbol with a tick
