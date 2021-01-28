@@ -28,14 +28,16 @@ Get familiar with Pupil Invisible Companion app!
 
 ## Pupil Cloud Sign Up
 
-First time users need to Sign Up for a Pupil Cloud account. You can
-Sign Up by using your Google account, or by creating an account with
-email address and password.
+Your purchase of Pupil Invisible includes a free membership to [Pupil Cloud](/cloud). First time users need to Sign Up 
+using a Google account, or by creating an account with email address and password.
 
 ### Automatic uploads to Pupil Cloud
 
-Your purchase of Pupil Invisible includes a free membership to [Pupil Cloud](/cloud). Pupil Cloud enables you to privately and securely upload your recordings from your Companion Device to cloud storage. The usage of this feature is **optional**. You can turn this feature on/off during setup, or at any later time in the app settings. Learn more about [Pupil Cloud](/cloud).
+Pupil Cloud enables you to privately and securely upload your recordings from your Companion Device to cloud storage. 
+The usage of this feature is **optional***. You can turn this feature on/off during setup, or at any later time in the 
+app settings. Learn more about [Pupil Cloud](/cloud).
 
+*200Hz gaze data is provided in Pupil Cloud. On the Companion Device, gaze data is available at 66Hz in real-time.
 <v-divider></v-divider>
 
 ## OnePlus 6 Companion Device Setup
@@ -77,3 +79,26 @@ If more that one device is used and the data is required to be synchronised, mak
 Pupil Monitor will warn you if a device is not in sync.
 
 More info on the technical implementation and quality of NTP synchronisation can be found in the [Pupil Invisible developer docs](/developer/invisible/#time-synchronization "Pupil Invisible developer docs - time synchronization").
+
+## Recording transfer
+### Pupil Cloud
+
+Pupil Invisible recordings can be uploaded to Pupil Cloud directly from the Invisible Companion App. We recommend using Pupil Cloud for ease of user experience, stability, robustness, and data security. 
+
+If you made recordings with the Invisible Companion App while the cloud upload feature was disabled, you can re-enable and upload recordings to Cloud:
+
+1) Enable 'Cloud Upload' in the Companion App settings
+2) Wait until your recording/s are uploaded to Pupil Cloud. In the recording view, uploaded recordings will show a cloud symbol with a tick
+3) Login to [Pupil Cloud](https://cloud.pupil-labs.com "Pupil Cloud") to playback recordings, enrich data, and download.
+
+### Local transfer
+1) Connect your OnePlus device to a PC via USB (using the USB cable supplied)
+2) Slide down from the top of the device's home-screen and click on 'Android System - USB charging this device'
+3) Click on 'Tap for more options'
+4) Select 'Transfer Files'
+5) Open File Browser on your PC and access the Internal shared storage of your OnePlus device
+6) Pupil Invisible recordings can be found in the Pupil Invisible folder
+
+::: tip
+On macOS, you require the <a href="https://www.android.com/filetransfer/" alt="Android File Transfer website">Android File Transfer</a> to browse and transfer files between your Mac computer and your Android device.
+:::

@@ -37,13 +37,20 @@ Always use the Connector Cable that came with your Pupil Invisible! If you are u
 ## 4. Record!
 
 That's it, you are ready to record! Just hit the big red button on the
-Companion App's home screen to start. You can play back any recording
-you have made from recordings view or in
-[Pupil Cloud](/cloud "Pupil Cloud documentation").
+Companion App's home screen to start.
 
 If you run into any problems check out [troubleshooting](/invisible/user-guide/troubleshooting).
 
 <v-divider></v-divider>
+
+## 5. Playback and download
+
+You can play back any recording you have made in recordings view. 
+
+After uploading to Pupil Cloud, you can playback recordings, enrich data, and download. Check out [Pupil Cloud](https://cloud.pupil-labs.com/ "Pupil Cloud") for more information. 
+
+Alternatively you can [directly transfer recordings](/invisible/user-guide/invisible-companion-app/#recording-transfer) to your 
+laptop/desktop PC. 
 
 ## Chat with us
 If you have questions or feedback we invite you to chat with our team and other members of the Pupil Invisible community on [Discord](https://pupil-labs.com/chat/ "Pupil Labs chat server on Discord")!
