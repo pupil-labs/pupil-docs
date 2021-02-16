@@ -203,6 +203,10 @@ You can find more information in our [dedicated fixation detection section](/cor
 #### Head Pose Tracking
 This plugin uses fiducial markers ([apriltag](https://april.eecs.umich.edu/software/apriltag.html)) to build a 3d model of the environment and track the headset's pose within it.
 
+::: tip
+The markers used must be unique. You may not use multiple instances of the same marker ID within your environment.
+:::
+
 <Youtube src="9x9h98tywFI"/>
 
 See the [surface tracking section](/core/software/pupil-capture/#surface-tracking) for images of the markers to download.
