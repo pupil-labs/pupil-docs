@@ -211,6 +211,8 @@ The markers used must be unique. You may not use multiple instances of the same 
 
 See the [surface tracking section](/core/software/pupil-capture/#surface-tracking) for images of the markers to download.
 
+Head pose tracking works best in a well lit environment with an even distribution of light, so that the tracking markers are clearly visible. Try to avoid situations where the world-camera faces into bright light, such as sunlight entering through a window in an otherwise dim room
+
 By default, the location of the first visible marker will be used as the origin of the 3d model's coordinate system. In the plugin's menu, you can change the marker that is being used as the origin. The unit of the coordinate system is defined as the physical length of the printed markers.
 
 Results are exported in the following files:
