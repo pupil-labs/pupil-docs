@@ -201,7 +201,7 @@ Toggle `Show fixations` to show a visualization of fixations. The blue number is
 You can find more information in our [dedicated fixation detection section](/core/terminology/#fixations "Pupil Core terminology - fixations").
 
 #### Head Pose Tracking
-This plugin uses fiducial markers ([apriltag](https://april.eecs.umich.edu/software/apriltag.html)) to build a 3d model of the environment and track the headset's pose within it.
+This plugin uses fiducial markers ([apriltag](https://april.eecs.umich.edu/software/apriltag.html)) to build a 3d model of the environment and track the headset's pose within it. Note, only markers of the default `tag36h11` family are currently supported by the head pose tracker plugin.
 
 ::: tip
 The markers used must be unique. You may not use multiple instances of the same marker ID within your environment.
