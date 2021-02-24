@@ -97,7 +97,8 @@ If you made recordings with the Invisible Companion App while the cloud upload f
 3) Click on 'Tap for more options'
 4) Select 'Transfer Files'
 5) Open File Browser on your PC and access the Internal shared storage of your OnePlus device
-6) Pupil Invisible recordings can be found in the Pupil Invisible folder
+6) Pupil Invisible recordings can be found in the `Pupil Invisible` folder
+7) Copy the recordings to your computer before opening them in Pupil Player.
 
 ::: tip
 On macOS, you require the <a href="https://www.android.com/filetransfer/" alt="Android File Transfer website">Android File Transfer</a> to browse and transfer files between your Mac computer and your Android device.
