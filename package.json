@@ -15,7 +15,7 @@
     "build": "vuepress build src"
   },
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "vuepress": "1.5.3",
     "vuetify": "1.5.18",
     "vuetify-loader": "^1.2.2"
