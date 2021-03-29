@@ -54,6 +54,8 @@ All Pupil Invisible eye tracking glasses are cleaned with disinfectant prior to 
 
 The disinfectant we use is made from 22.0g Ethanol, 21.0g 2-Propanol, 8.0g 1-Propanol per 100 grams of solution. One such brand name that we use is "Vibasept". We use the wetted towlettes (wipes). Similar products should be available globally under different brand names.
 
+When applying the disinfectant, be careful around the eye cameras as liquid leaking into the sensor may cause water damage.
+
 ## Changing Lenses
 You can easily change the lenses of your Pupil Invisible glasses.
 
