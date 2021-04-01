@@ -13,8 +13,13 @@ If a recording contains multiple pairs of the start and end events, multiple sec
 
 
 ## Marker Mapper
-==Link to markers==
-==image==
+<div class="pb-4" style="display:flex;justify-content:center;">
+  <v-img
+    :src="require('../../media/cloud/imgs/marker_mapper_header.png')"
+    max-width=80%
+  >
+  </v-img>
+</div>
 The Marker Mapper enrichment enables you to map gaze to an area of interest or "surface". A surface is based on markers placed in the physical environment. A heatmap of gaze data mapped onto the surface can be generated within the enrichment in Pupil Cloud. Mapped gaze can further be downloaded as CSV-files.
 
 ### Setup
@@ -90,7 +95,14 @@ This file contains the surface locations in the scene images for all sections.
 
 ## Reference Image Mapper
 ==Mention setup/limitations==
-==Image==
+
+<div class="pb-4" style="display:flex;justify-content:center;">
+  <v-img
+    :src="require('../../media/cloud/imgs/reference_image_header.png')"
+    max-width=80%
+  >
+  </v-img>
+</div>
 The Reference Image Mapper enrichment enables you to map gaze to a reference image of an object of interest. A heatmap of gaze data mapped onto the reference image can be generated within the enrichment in Pupil Cloud. Mapped gaze can further be downloaded as CSV-files (see below).
 
 For details on how to use this enrichment and setup your recording process for it, please consider the instructions given during the enrichment creation process.

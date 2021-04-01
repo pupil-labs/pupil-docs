@@ -1,12 +1,11 @@
 ---
 description: Description
 ---
-
 # Overview 
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
-    :src="require('../media/cloud/cloud-capture-store-analyze.jpg')"
+    :src="require('../media/cloud/imgs/cloud-capture-store-analyze.jpg')"
     max-width=80%
   >
   </v-img>
@@ -69,7 +68,7 @@ recording:(test OR stairs) label:bkk wearer:will template:"named recording" dura
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
-    :src="require('../media/cloud/cloud-enrichments-illustration.jpg')"
+    :src="require('../media/cloud/imgs/cloud-enrichments-illustration.jpg')"
     max-width=80%
   >
   </v-img>
