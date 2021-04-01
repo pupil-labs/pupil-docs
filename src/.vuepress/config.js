@@ -3,7 +3,7 @@ const description = "Pupil Labs - We build state of the art eye tracking hardwar
 
 module.exports = {
 
-  extendPageData ($page) {
+  extendPageData($page) {
     const { frontmatter, regularPath } = $page
     frontmatter.meta = frontmatter.meta || [];
 
@@ -21,24 +21,24 @@ module.exports = {
     // inject meta tags to each page object
     const default_metas = [
       {
-        name:'twitter:title',
-        content:`${capitalizedName} - ${$page.title} - Pupil Labs`
+        name: 'twitter:title',
+        content: `${capitalizedName} - ${$page.title} - Pupil Labs`
       },
       {
-        property:'og:title',
-        content:`${capitalizedName} - ${$page.title} - Pupil Labs`
+        property: 'og:title',
+        content: `${capitalizedName} - ${$page.title} - Pupil Labs`
       },
       {
-        property:'og:description',
+        property: 'og:description',
         content: `${frontmatter.description ? frontmatter.description : description}`
       },
       {
-        name:'description',
+        name: 'description',
         content: `${frontmatter.description ? frontmatter.description : description}`
       }
     ]
-    for ( const meta of default_metas ) {
-      frontmatter.meta.push( meta )
+    for (const meta of default_metas) {
+      frontmatter.meta.push(meta)
     }
   },
 
@@ -105,6 +105,7 @@ module.exports = {
       ],
       '/cloud/': [
         '',
+        'enrichments/',
       ],
       '/developer/': [
         '',
