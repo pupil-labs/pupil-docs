@@ -138,8 +138,8 @@ This file contains all the mapped gaze data from all sections.
 | **recording id** | Unique identifier of the recording this sample belongs to.     |
 | **timestamp [ns]** | UTC timestamp in nanoseconds of the sample. Equal to the timestamp of the original gaze sample before mapping.     |
 | **gaze detected in reference image** | Boolean indicating whether or not the gaze point was detected inside or outside of the reference image.     |
-| **gaze position in reference image x [pixel]** | Float value representing the x-coordinate of the mapped gaze point in pixel coordinates. If the reference image was not detected in the scene at the given time this value is empty.     |
-| **gaze position in reference image y [pixel]** | Same as "gaze position in reference image x [pixel]" but for the y-coordinate.     |
+| **gaze position in reference image x [px]** | Float value representing the x-coordinate of the mapped gaze point in pixel coordinates. If the reference image was not detected in the scene at the given time this value is empty.     |
+| **gaze position in reference image y [px]** | Same as "gaze position in reference image x [px]" but for the y-coordinate.     |
 
 
 
@@ -261,7 +261,6 @@ This file contains gaze data in world camera coordinates.
 | **timestamp [ns]** | UTC timestamp in nanoseconds of the sample. Equal to the timestamp of the original gaze sample before mapping.     |
 | **gaze x [px]** | Float value representing the x-coordinate of the mapped gaze point in world camera pixel coordinates.
 | **gaze y [px]** | Same as "gaze x [px]" but for the y-coordinate.     |
-==Here we use [px], in other places we use [pixel]==
 
 
 #### imu.csv
