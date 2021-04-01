@@ -15,7 +15,31 @@ If a recording contains multiple pairs of the start and end events, multiple sec
 ## Marker Mapper
 ==Link to markers==
 ==image==
-The Marker Mapper enrichment enables you to map gaze to an area of interest or "surface". A surface is based on markers placed in the physical environment. A heatmap of gaze data mapped onto the surface can be generated within the enrichment in Pupil Cloud. Mapped gaze can further be downloaded as CSV-files (see below).
+The Marker Mapper enrichment enables you to map gaze to an area of interest or "surface". A surface is based on markers placed in the physical environment. A heatmap of gaze data mapped onto the surface can be generated within the enrichment in Pupil Cloud. Mapped gaze can further be downloaded as CSV-files.
+
+### Setup
+For robust detection you should place enough markers on your surface such that at least 3 of them are visible whenever the surface is visible.
+
+You may also place markers inside the surface or outside the surface in close proximity to it.
+
+<div style="display:flex;" class="pb-4">
+    <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
+        <img src="../../media/shared/imgs/apriltags_tag36h11_0-23.jpg" style="padding-bottom:16px;width:60%;">
+        <p>Page 1</p>
+    </div>
+    <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
+        <img src="../../media/shared/imgs/apriltags_tag36h11_24-47.jpg" style="padding-bottom:16px;width:60%;">
+        <p>Page 2</p>
+    </div>
+</div>
+
+
+If you need more markers or higher resolution please see [here](https://github.com/pupil-labs/pupil-helpers/blob/master/markers_stickersheet/tag36h11_full.pdf?raw=True "PDF file with high resolution markers.").
+
+::: warning
+<v-icon large color="warning">error_outline</v-icon>
+Note that the markers require a white border around them for robust detection. In our experience, this should be at least equal to the width of the smallest white square/rectangle shown in the Marker. Please ensure you include a sufficient border when displaying or printing them!
+:::
 
 ### Surface Coordinates
 The Marker Mapper maps gaze points to a 2d surface and returns them in surface coordinates. The top left corner of the surface is defined as `(0, 0)` and the bottom right corner as `(1, 1)`. The orientation of the surface can be set in the enrichment settings.

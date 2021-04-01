@@ -353,11 +353,11 @@ Apriltags ready to use:
 
 <div style="display:flex;" class="pb-4">
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <img src="../../media/core/imgs/apriltags_tag36h11_0-23.jpg" style="padding-bottom:16px;width:60%;">
+        <img src="../../media/shared/imgs/apriltags_tag36h11_0-23.jpg" style="padding-bottom:16px;width:60%;">
         <p>Apriltags tag36h11 0-23</p>
     </div>
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <img src="../../media/core/imgs/apriltags_tag36h11_24-47.jpg" style="padding-bottom:16px;width:60%;">
+        <img src="../../media/shared/imgs/apriltags_tag36h11_24-47.jpg" style="padding-bottom:16px;width:60%;">
         <p>Apriltags tag36h11 24-47</p>
     </div>
 </div>
