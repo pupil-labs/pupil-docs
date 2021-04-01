@@ -23,7 +23,6 @@ The Marker Mapper maps gaze points to a 2d surface and returns them in surface c
 The mapper may return values outside of the surface, which yields values smaller than 0 or larger than 1 and indicates that the corresponding gaze was not on the surface at that time.
 
 ### Export Format
-==Make all the files H4s in the hirarchy==
 
 #### sections.csv 
 This file contains an overview on the sections that were generated from this enrichment.
@@ -41,7 +40,7 @@ This file contains an overview on the sections that were generated from this enr
 | **end event name** | Name of the end event of the section.     |
 
 
-**gaze.csv**
+#### gaze.csv
 This file contains all the mapped gaze data from all sections.
 
 | Field | Description | 
@@ -54,7 +53,7 @@ This file contains all the mapped gaze data from all sections.
 | **gaze position on surface y [normalized]** | Same as gaze position on surface x [normalized] but for y-coordinate.     |
 
 
-**aoi_positions.csv**
+#### aoi_positions.csv
 This file contains the surface locations in the scene images for all sections.
 
 
@@ -77,7 +76,7 @@ The SLAM Mapper maps gaze points to a reference image. As such, the gaze coordin
 
 
 ### Export Format
-**sections.csv**
+#### sections.csv
 This file contains an overview on the sections that were generated from this enrichment.
 
 
@@ -93,7 +92,7 @@ This file contains an overview on the sections that were generated from this enr
 | **end event name** | Name of the end event of the section.     |
 
 
-**gaze.csv**
+#### gaze.csv
 This file contains all the mapped gaze data from all sections.
 
 
@@ -114,7 +113,7 @@ This file contains all the mapped gaze data from all sections.
 The Gaze Overlay enrichment allows you to download world videos with a gaze overlay rendering. You can easily filter out the sections of your recordings you are interested in and the visualization of the gaze circle can be customized (currently: size and color). 
 
 ### Export Format
-**sections.csv**
+#### sections.csv
 This file contains an overview on the sections that were generated from this enrichment.
 
 
@@ -130,7 +129,7 @@ This file contains an overview on the sections that were generated from this enr
 | **end event name** | Name of the end event of the section.     |
 
 
-**Video Files**
+#### Video Files
 The export will have one folder per original recording using the following naming scheme:
 ```<recording name>-<start of recording ID>```
 
@@ -145,7 +144,7 @@ Using the Raw Data Exporter you can get access to all your recording data in con
 Currently, the events used for defining this enrichment are fixed to `recording.begin` and `recording.end`. It is not possible to limit the export range using other events similar to other enrichments.
 
 ### Export Format
-**sections.csv**
+#### sections.csv
 This file contains an overview on the sections that were generated from this enrichment.
 
 
@@ -161,13 +160,13 @@ This file contains an overview on the sections that were generated from this enr
 | **end event name** | Name of the end event of the section.     |
 
 
-**Recording Data**
+#### Recording Data
 The export contains one folder per recording following this naming scheme:
 ```<recording name>-<start of recording ID>```
 The files included in every folder are described in the following.
 ==Given that all data is separated per recording in a folder, the recording id is not really necessarz in the files==
 
-**info.json**
+#### info.json
 This file contains meta information on the recording.
 | Field | Description | 
 | -------- | -------- | 
@@ -193,7 +192,7 @@ Scene video is contained in a file following the following naming scheme:
 ```<beginning of section ID>_<section start time>-<section end time>.mp4```
 
 
-**world_timestamps.csv**
+#### world_timestamps.csv
 This file contains the timestamps of every world video frame.
 
 | Field | Description | 
@@ -203,7 +202,7 @@ This file contains the timestamps of every world video frame.
 | **timestamp [ns]** | UTC timestamp in nanoseconds of the corresponding world frame. |
 
 
-**events.csv**
+#### events.csv
 This file contains project event annotations and real-time recording events.
 ==Link to how real-time recording events work?==
 
@@ -215,7 +214,7 @@ This file contains project event annotations and real-time recording events.
 | **type** | Type of the event. Possible values: project, recording     |
 
 
-**gaze.csv**
+#### gaze.csv
 This file contains gaze data in world camera coordinates.
 
 
@@ -229,7 +228,7 @@ This file contains gaze data in world camera coordinates.
 ==Here we use [px], in other places we use [pixel]==
 
 
-**imu.csv**
+#### imu.csv
 This file contains the acceleration and gyro data capture by the IMU. Gyro values corespond to angular speed around the respective axis in degrees . second. Acelleration values corespond to the acceleration along the respective axis in G.
 
 
