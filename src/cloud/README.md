@@ -2,7 +2,6 @@
 description: Description
 ---
 # Overview 
-
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
     :src="require('../media/cloud/imgs/cloud-capture-store-analyze.jpg')"
@@ -10,14 +9,11 @@ description: Description
   >
   </v-img>
 </div>
-
 Pupil Cloud makes it easy for you to collect, securely store, and analyze your eye tracking data. 
 
 Pupil Invisible Companion App integrates seamlessly with [Pupil Cloud](https://cloud.pupil-labs.com "Pupil Cloud - Eye tracking data storage, visualzation, and analysis - Pupil Labs") - facilitating data logistics with robust uploads from Pupil Invisible Companion app to Pupil Cloud's secure cloud storage. 
 
 ## Drive
-==Add hover in cloud UI to name "drive" and "project" tabs==
-
 The Drive section of Pupil Cloud focuses on raw data and tooling for data collection. It is where all of your raw recording data is uploaded. It is where Templates and Wearers can be created for later use during your data collection in the Pupil Invisible Companion app. 
 
 ### Recordings
@@ -55,7 +51,6 @@ Templates are powerful and flexible. Here are some [example use cases](/invisibl
 
 
 ### Search
-==Seach is also discussed in regordings section. Advanced serach deserves it's own section, so remove mention in recordings?==
 Use advanced search in the recordings view to explore and filter your recordings. The advanced search user interface makes it easy to search by recording names, template names, label names, wearer names, recording duration, and recording date. You can save searches so that you can quickly filter data or easily return a search in the future. 
 
 ==Does it really follow Lucene syntax? Add link to Lucene syntax==
