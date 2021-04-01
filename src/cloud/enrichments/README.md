@@ -144,7 +144,13 @@ This file contains all the mapped gaze data from all sections.
 
 
 ## Gaze Overlay
-==Image==
+<div class="pb-4" style="display:flex;justify-content:center;">
+  <v-img
+    :src="require('../../media/cloud/imgs/gaze_overlay_header1.png')"
+    max-width=80%
+  >
+  </v-img>
+</div>
 
 The Gaze Overlay enrichment allows you to download world videos with a gaze overlay rendering. You can easily filter out the sections of your recordings you are interested in and the visualization of the gaze circle can be customized (currently: size and color). 
 
