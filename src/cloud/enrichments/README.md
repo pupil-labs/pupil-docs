@@ -98,14 +98,26 @@ This file contains the surface locations in the scene images for all sections.
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
-    :src="require('../../media/cloud/imgs/reference_image_header.png')"
+    :src="require('../../media/cloud/imgs/reference_image_mapper_header.png')"
     max-width=80%
   >
   </v-img>
 </div>
+
+This enrichment is still a **beta feature**. Let us know if you have any [feedback](mailto:info+cloud@pupil-labs.com)!
+
 The Reference Image Mapper enrichment enables you to map gaze to a reference image of an object of interest. A heatmap of gaze data mapped onto the reference image can be generated within the enrichment in Pupil Cloud. Mapped gaze can further be downloaded as CSV-files (see below).
 
-For details on how to use this enrichment and setup your recording process for it, please consider the instructions given during the enrichment creation process.
+
+### Setup
+In addition to the reference image itself, calculating this enrichment also requieres to specify a "scanning video". In this video you must record your object(s) for 1-2 minutes fulfilling the following cirteria:
+- Make the recording while holding the Pupil Invisible glasses in your hand rather than wearing on your head.
+- Record the object of interest from all possible angles and from all distances a subject may look at it.
+- Move the glasses slowly while recording this video to avoid motion blur.
+
+Please note that this enrichment only works for reference images showing objects that
+- are static in their environment, i.e. do not move.
+- do not change their appearance (e.g. a computer screen is a negative example as it changes it's appearance dramatically when the displayed content changes.)
 
 ### Mapped Gaze Coordinates
 The SLAM Mapper maps gaze points to a reference image. As such, the gaze coordinates are given in pixels referring to that image. The pixel at (0,0) is in the top left corner.
