@@ -337,6 +337,11 @@ There are many different Apriltag types, currently we support 7 families listed 
 Additionally, we created a PDF with one page per tag for all 587 tags from the **tag36h11** family here: [tag36h11_full.pdf](https://github.com/pupil-labs/pupil-helpers/blob/master/markers_stickersheet/tag36h11_full.pdf?raw=True).
 You can use this to print custom marker sheets by printing multiple pages per sheet.
 
+::: warning
+<v-icon large color="warning">error_outline</v-icon>
+Note that the markers require a white border around them for robust detection. In our experience, this should be at least equal to the width of the smallest white square/rectangle shown in the Marker. Please ensure you include a sufficient border around when displaying markers on screen or printing the markers.
+:::
+
 If you want to generate your own marker sheets or similar PDFs of other families, you can find more information in the [the pupil-helpers repository](https://github.com/pupil-labs/pupil-helpers/tree/master/markers_stickersheet).
 
 Supported Apriltag families:
