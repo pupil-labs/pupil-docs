@@ -506,3 +506,24 @@ Pupil Capture selects the active camera intrinsics following these priorities:
 1. Fallback to a "dummy calibration" ([pinhole camera model without distortion, focal length 1000px](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/camera_models.py#L659-L664)).
 
 Pupil Player follows the same priorities as Pupil Capture but expects the custom intrinsics to be present within the recording under the `<video file name>.intrinsics` file name pattern, e.g. `world.intrinsics`.
+
+#### Camera field of view (FOV)
+
+Based the estimated intrinsics, one can calculate the camera's field of view (FOV).
+
+**Field of view in degrees:**
+| Camera name                            | Resolution  | Horizontal | Vertical | Diagonal |
+| :---                                   | :---:       | :---:      | :---:    | :---:    |
+| PI world v1                            | `1088x1080` | 82°        | 81°      | 116°     |
+| Pupil Cam1 ID2<br/>(wide-angle lens)   | `1920x1080` | 155°       | 85°      | ---      |
+| Pupil Cam1 ID2<br/>(wide-angle lens)   | `1280x720`  | 103°       | 54°      | 122°     |
+| Pupil Cam1 ID2<br/>(wide-angle lens)   | `640x480`   | 103°       | 73°      | 134°     |
+| Pupil Cam1 ID2<br/>(narrow-angle lens) | `1920x1080` | 88°        | 54°      | 106°     |
+| Pupil Cam1 ID2<br/>(narrow-angle lens) | `1280x720`  | 63°        | 37°      | 70°      |
+| Pupil Cam1 ID2<br/>(narrow-angle lens) | `640x480`   | 42°        | 32°      | 51°      |
+| Pupil Cam1 ID0/1                       | `320x240`   | 51°        | 39°      | 61°      |
+| Pupil Cam1 ID0/1                       | `640x480`   | 51°        | 39°      | 62°      |
+| Pupil Cam2 ID0/1                       | `192x192`   | 37°        | 37°      | 51°      |
+| Pupil Cam2 ID0/1                       | `400x400`   | 39°        | 39°      | 53°      |
+| Pupil Cam3 ID0/1                       | `192x192`   | 69°        | 69°      | 88°      |
+| Pupil Cam3 ID0/1                       | `400x400`   | 71°        | 71°      | 91°      |
