@@ -102,9 +102,10 @@ This file contains the surface locations in the scene images for all sections.
   </v-img>
 </div>
 
+The Reference Image Mapper enrichment enables you to map gaze to a reference image of an object of interest. A heatmap of gaze data mapped onto the reference image can be generated within the enrichment in Pupil Cloud. Mapped gaze can further be downloaded as CSV-files (see below).
+
 This enrichment is still a **beta feature**. Let us know if you have any [feedback](mailto:info+cloud@pupil-labs.com)!
 
-The Reference Image Mapper enrichment enables you to map gaze to a reference image of an object of interest. A heatmap of gaze data mapped onto the reference image can be generated within the enrichment in Pupil Cloud. Mapped gaze can further be downloaded as CSV-files (see below).
 
 
 ### Setup
@@ -254,7 +255,7 @@ This file contains the timestamps of every world video frame.
 
 
 #### events.csv
-This file contains project event annotations and real-time [recording events](developer/invisible/#recording-events).
+This file contains project event annotations and real-time [recording events](/developer/invisible/#recording-events "Documentation on recordings events in real-time using recording events").
 
 | Field | Description | 
 | -------- | -------- | 
@@ -265,7 +266,7 @@ This file contains project event annotations and real-time [recording events](de
 
 
 #### gaze.csv
-This file contains gaze data in world camera coordinates. For a definition of the coordinate system see [here](https://docs.pupil-labs.com/developer/invisible/#gaze-coordinate-system).
+This file contains gaze data in world camera coordinates. For a definition of the coordinate system see [here](/developer/invisible/#gaze-coordinate-system "Explanation of Pupil Invisible's gaze coordinate system").
 
 
 | Field | Description | 
@@ -278,7 +279,7 @@ This file contains gaze data in world camera coordinates. For a definition of th
 
 
 #### imu.csv
-This file contains the acceleration and gyro data capture by the IMU. Gyro values corespond to angular speed around the respective axis in degrees. Acelleration values corespond to the acceleration along the respective axis in G. For a definition of the coordinate system see [here](developer/invisible/#imu-coordinate-system).
+This file contains the acceleration and gyro data capture by the IMU. Gyro values corespond to angular speed around the respective axis in degrees. Acelleration values corespond to the acceleration along the respective axis in G. For a definition of the coordinate system see [here](/developer/invisible/#imu-coordinate-system "Explanation of Pupil Invisible's IMU coordinate system").
 
 
 | Field | Description | 
