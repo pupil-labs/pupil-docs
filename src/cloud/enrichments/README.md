@@ -265,7 +265,7 @@ This file contains project event annotations and real-time [recording events](de
 
 
 #### gaze.csv
-This file contains gaze data in world camera coordinates.
+This file contains gaze data in world camera coordinates. For a definition of the coordinate system see [here](https://docs.pupil-labs.com/developer/invisible/#gaze-coordinate-system).
 
 
 | Field | Description | 
@@ -278,7 +278,7 @@ This file contains gaze data in world camera coordinates.
 
 
 #### imu.csv
-This file contains the acceleration and gyro data capture by the IMU. Gyro values corespond to angular speed around the respective axis in degrees . second. Acelleration values corespond to the acceleration along the respective axis in G.
+This file contains the acceleration and gyro data capture by the IMU. Gyro values corespond to angular speed around the respective axis in degrees. Acelleration values corespond to the acceleration along the respective axis in G. For a definition of the coordinate system see [here](developer/invisible/#imu-coordinate-system).
 
 
 | Field | Description | 
@@ -292,4 +292,3 @@ This file contains the acceleration and gyro data capture by the IMU. Gyro value
 | **acceleration x [G]** | Translation speed around x-axis in G. Note `1 G = 9.80665 m/s^2`.|
 | **acceleration y [G]** | Translation speed around y-axis in G. Note `1 G = 9.80665 m/s^2`.|
 | **acceleration z [G]** | Translation speed around z-axis in G. Note `1 G = 9.80665 m/s^2`.|
-==Reference IMU coord system==
