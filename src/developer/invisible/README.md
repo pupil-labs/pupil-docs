@@ -237,7 +237,7 @@ if __name__ == "__main__":
 
 
 
-## Events
+## Recording Events
 
 Events allow external triggers/annotations to be mixed into the Pupil Invisible recording data stream.
 

@@ -94,8 +94,6 @@ This file contains the surface locations in the scene images for all sections.
 
 
 ## Reference Image Mapper
-==Mention setup/limitations==
-
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
     :src="require('../../media/cloud/imgs/reference_image_mapper_header.png')"
@@ -218,7 +216,6 @@ This file contains an overview on the sections that were generated from this enr
 The export contains one folder per recording following this naming scheme:
 ```<recording name>-<start of recording ID>```
 The files included in every folder are described in the following.
-==Given that all data is separated per recording in a folder, the recording id is not really necessarz in the files==
 
 #### info.json
 This file contains meta information on the recording.
@@ -257,8 +254,7 @@ This file contains the timestamps of every world video frame.
 
 
 #### events.csv
-This file contains project event annotations and real-time recording events.
-==Link to how real-time recording events work?==
+This file contains project event annotations and real-time [recording events](developer/invisible/#recording-events).
 
 | Field | Description | 
 | -------- | -------- | 

@@ -85,7 +85,8 @@ The project editor has 3 main sections. Left hand sidebar shows all of the recor
 Within the project editor you can annotate your recordings with events, which mark points in time that are of interest to you. This could for example be when a subject encounters a stimulus for the first time, or when it leaves the subject's vision again. 
 
 Events are also used in the definition of enrichments to indicate which sections of a recording to calculate an enrichment on. All event data can further be downloaded in CSV format using the [Raw Data Exporter](#). 
-==Include link to real-time events==
+
+**Advanced Users**: Events can also be generated in real-time while making a recording. See [here](developer/invisible/#recording-events)!
 
 ### Sections
 Sections will appear in the sections and events sidebar when you create an enrichment. Read more about [enrichments](#). 
