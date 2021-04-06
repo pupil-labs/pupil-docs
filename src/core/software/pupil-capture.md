@@ -486,11 +486,17 @@ Newly estimated camera intrinsics are saved to the Pupil Capture session setting
 Specifically, the intrinsics are saved to a file with the name pattern `<camera name>.intrinsics` which includes the relevant intrinsics for each calibrated resolution. See the [developer docs](/developer/core/recording-format/#other-files) on how to read these files manually.
 
 Pupil Capture provides [prerecorded intrinsics](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/camera_models.py#L26-L152) for the following cameras:
-- `Pupil Cam1 ID2`: `640x480`, `1280x720`, `1920x1080`
-- `Logitech Webcam C930e`: `640x480`, `1280x720`, `1920x1080`
-- `PI world v1`: `1088x1080`
 
-When a recording is started in Pupil Capture, the application saves the active scene camera's intrinsics to the `world.intrinsics` file within the recording.
+| Camera name           | Resolutions                              | Notes                                                     |
+| :---                  | :---:                                    | :---                                                      |
+| Pupil Cam1 ID2        | `640x480`<br/>`1280x720`<br/>`1920x1080` | Pupil Core high-speed scene camera                        |
+| Logitech Webcam C930e | `640x480`<br/>`1280x720`<br/>`1920x1080` | Pupil Core high-definition scene camera                   |
+| PI world v1           | `1088x1080`                              | Pupil Invisible scene camera                              |
+| Pupil Cam1 ID0/1      | `320x240`<br/>`640x480`                  | eye camera;<br/>max. 120 Hz sampling rate                 | 
+| Pupil Cam2 ID0/1      | `192x192`<br/>`400x400`                  | Core headset eye camera;<br/>max. 200 Hz sampling rate    |
+| Pupil Cam3 ID0/1      | `192x192`<br/>`400x400`                  | HTC Vive add-on eye camera;<br/>max. 200 Hz sampling rate |
+
+When a recording is started in Pupil Capture, the application saves the active camera intrinsics to the `world.intrinsics`, `eye0.intrinsics`, and `eye1.intrinsics` files within the recording.
 
 #### Camera Intrinsics Selection
 
