@@ -19,9 +19,9 @@ The Drive section of Pupil Cloud focuses on raw data and tooling for data collec
 ### Recordings
 This is where all your raw recording data lives. You can track the upload progress of incoming recordings from Pupil Invisible devices in the field and playback recordings with gaze overlay for quick qualatitive review.
 
-You can create new [project](#) from selected recordings and view the responses to [template](##templates). Using the [search](#) you can easily filter the recordings to those of interest.
+You can create new [project](#projects-enrichments "Projects and enrichments in Pupil Cloud") from selected recordings and view the responses to [template](#templates "Templates in Pupil Cloud"). Using the [search](#search "Search and advanced search in Pupil Cloud") you can easily filter the recordings to those of interest.
 
-Last, but not least, you can always download raw recording data. Raw recordings have a [binary format]. For a more convenient download format see [Raw Data Exporter](#). 
+Last, but not least, you can always download raw recording data. Raw recordings have a [binary format]. For a more convenient download format see [Raw Data Exporter](enrichments/#raw-data-exporter "Raw Data Exporter enrichment documentation"). 
 
 Note: 200Hz gaze data is only available when you upload your recordings to Pupil Cloud. If you download recordings from Pupil Cloud it will be automatically included. 
 
@@ -47,13 +47,13 @@ Create a new template. The only required field in a template is the `Recording N
 
 **Publish** a template and it will become available to Pupil Invisible Companion Devices. Once published you can no longer edit the template. 
 
-Templates are powerful and flexible. Here are some [example use cases](/invisible/user-guide/intro/#recordings).
+Templates are powerful and flexible. Here are some [example use cases](/invisible/user-guide/intro/#templates) "Example use cases for templates in Pupil Invisible documentation".
 
 
 ### Search
 Use advanced search in the recordings view to explore and filter your recordings. The advanced search user interface makes it easy to search by recording names, template names, label names, wearer names, recording duration, and recording date. You can save searches so that you can quickly filter data or easily return a search in the future. 
 
-**Advanced users**: make your own queries directly in the search bar using [Lucene syntax](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html). Example query:
+**Advanced users**: make your own queries directly in the search bar using [Lucene syntax](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html "Lucene syntax documentation"). Example query:
 ```
 recording:(test OR stairs) label:bkk wearer:will template:"named recording" duration:<=10m recorded:>now-1y
 ```
@@ -72,20 +72,19 @@ A project is made up of a group of recordings. You create projects from the Reco
 
 Projects are used for annotation and analysis. Within a project you can calculate enrichments to process your recordings. Enrichments leverage the power of cloud computing and advanced algorithms to calculate high-level features enabling data aggregation, visualization, and download.
 
-Read more about [Enrichments here](/cloud/enrichments/).
+Read more about [enrichments](/cloud/enrichments/ "Pupil Cloud enrichments for data analysis and visualization").
 
 ### Project Editor
-
-> [name=Will] TODO: Add low-fi image of project editor and name areas of the interface for easy reference. 
+<!-- TODO: Add low-fi image of project editor and name areas of the interface for easy reference. -->
 
 The project editor has 3 main sections. Left hand sidebar shows all of the recordings that are in the project. The center is a video player that shows the currently selected recording and it's events and sections visualized below the playback controls. The right hand sidebar is a list of all events and sections for the currently selected recording. 
 
 ### Events
 Within the project editor you can annotate your recordings with events, which mark points in time that are of interest to you. This could for example be when a subject encounters a stimulus for the first time, or when it leaves the subject's vision again. 
 
-Events are also used in the definition of enrichments to indicate which sections of a recording to calculate an enrichment on. All event data can further be downloaded in CSV format using the [Raw Data Exporter](#). 
+Events are also used in the definition of enrichments to indicate which sections of a recording to calculate an enrichment on. All event data can further be downloaded in CSV format using the [Raw Data Exporter](enrichments/#raw-data-exporter "Raw Data Exporter enrichment documentation"). 
 
-**Advanced Users**: Events can also be generated in real-time while making a recording. See [here](developer/invisible/#recording-events)!
+**Advanced Users**: Events can also be generated in real-time while making a recording. See [here](/developer/invisible/#recording-events "Documentation on recordings events in real-time using recording events")!
 
 ### Sections
-Sections will appear in the sections and events sidebar when you create an enrichment. Read more about [enrichments](#). 
+Sections will appear in the sections and events sidebar when you create an enrichment. Read more about [enrichments](enrichments/ "Pupil Cloud enrichments for data analysis and visualization"). 
