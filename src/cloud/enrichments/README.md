@@ -1,6 +1,6 @@
 ---
 permalink: /cloud/enrichments
-description: Enrichments
+description: Pupil Cloud's Enrichments are powerful tools for data analysis and visualization. Check out how exactly they work right here!
 ---
 
 # Enrichments
