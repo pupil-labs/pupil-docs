@@ -53,8 +53,7 @@ Templates are powerful and flexible. Here are some [example use cases](/invisibl
 ### Search
 Use advanced search in the recordings view to explore and filter your recordings. The advanced search user interface makes it easy to search by recording names, template names, label names, wearer names, recording duration, and recording date. You can save searches so that you can quickly filter data or easily return a search in the future. 
 
-==Does it really follow Lucene syntax? Add link to Lucene syntax==
-**Advanced users**: make own queries directly in the search bar using Lucene syntax. Example query:
+**Advanced users**: make your own queries directly in the search bar using [Lucene syntax](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html). Example query:
 ```
 recording:(test OR stairs) label:bkk wearer:will template:"named recording" duration:<=10m recorded:>now-1y
 ```
