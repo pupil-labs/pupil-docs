@@ -20,10 +20,10 @@ If a recording contains multiple pairs of the start and end events, multiple sec
   >
   </v-img>
 </div>
-The Marker Mapper enrichment enables you to map gaze to an area of interest or "surface". A surface is based on markers placed in the physical environment. A heatmap of gaze data mapped onto the surface can be generated within the enrichment in Pupil Cloud. Mapped gaze can further be downloaded as CSV-files.
+The Marker Mapper enrichment enables you to map gaze to an area of interest or "surface". A surface is based on markers placed in the physical environment. A heatmap of gaze data mapped onto the surface can be generated within the enrichment in Pupil Cloud. Mapped gaze can further be downloaded as CSV files.
 
 ### Setup
-For robust detection you should place enough markers on your surface such that at least 3 of them are visible whenever the surface is visible.
+For robust detection, you should place enough markers on your surface such that at least 3 of them are visible whenever the surface is visible.
 
 You may also place markers inside the surface or outside the surface in close proximity to it.
 
@@ -39,7 +39,7 @@ You may also place markers inside the surface or outside the surface in close pr
 </div>
 
 
-If you need more markers or higher resolution please see [here](https://github.com/pupil-labs/pupil-helpers/blob/master/markers_stickersheet/tag36h11_full.pdf?raw=True "PDF file with high resolution markers.").
+If you need more markers or higher resolution please see [here](https://github.com/pupil-labs/pupil-helpers/blob/master/markers_stickersheet/tag36h11_full.pdf?raw=True "PDF file with high-resolution markers.").
 
 ::: warning
 <v-icon large color="warning">error_outline</v-icon>
@@ -54,7 +54,7 @@ The mapper may return values outside of the surface, which yields values smaller
 ### Export Format
 
 #### sections.csv 
-This file contains an overview on the sections that were generated from this enrichment.
+This file contains an overview of the sections that were generated from this enrichment.
 
 
 | Field | Description | 
@@ -70,7 +70,7 @@ This file contains an overview on the sections that were generated from this enr
 
 
 #### gaze.csv
-This file contains all the mapped gaze data from all sections.
+This file contains all the mapped gaze data from all sections. The coordinate system is explained [here](#surface-coordinates "Explanation of the coordinate system of the Marker Mapper's surfaces").
 
 | Field | Description | 
 | -------- | -------- | 
@@ -78,7 +78,7 @@ This file contains all the mapped gaze data from all sections.
 | **recording id** | Unique identifier of the recording this sample belongs to.     |
 | **timestamp [ns]** | UTC timestamp in nanoseconds of the sample. Equal to the timestamp of the original gaze sample before mapping.     |
 | **gaze detected on surface** | Boolean indicating whether or not the gaze point was inside or outside of the surface.     |
-| **gaze position on surface x [normalized]** | Float value representing the x-coordinate of the mapped gaze point in surface coordinates. See "Surface Coordinates" section for more details. If the surface was not localized this value is empty.     |
+| **gaze position on surface x [normalized]** | Float value representing the x-coordinate of the mapped gaze point in surface coordinates. If the surface was not localized this value is empty.     |
 | **gaze position on surface y [normalized]** | Same as gaze position on surface x [normalized] but for y-coordinate.     |
 
 
@@ -102,15 +102,15 @@ This file contains the surface locations in the scene images for all sections.
   </v-img>
 </div>
 
-The Reference Image Mapper enrichment enables you to map gaze to a reference image of an object of interest. A heatmap of gaze data mapped onto the reference image can be generated within the enrichment in Pupil Cloud. Mapped gaze can further be downloaded as CSV-files (see below).
+The Reference Image Mapper enrichment enables you to map gaze to a reference image of an object of interest. A heatmap of gaze data mapped onto the reference image can be generated within the enrichment in Pupil Cloud. Mapped gaze can further be downloaded as CSV files (see below).
 
 This enrichment is still a **beta feature**. Let us know if you have any [feedback](mailto:info+cloud@pupil-labs.com)!
 
 
 
 ### Setup
-In addition to the reference image itself, calculating this enrichment also requieres to specify a "scanning video". In this video you must record your object(s) for 1-2 minutes fulfilling the following cirteria:
-- Make the recording while holding the Pupil Invisible glasses in your hand rather than wearing on your head.
+In addition to the reference image itself, calculating this enrichment also requires specifying a "scanning video". In this video you must record your object(s) for 1-2 minutes fulfilling the following criteria:
+- Make the recording while holding the Pupil Invisible glasses in your hand rather than wearing it on your head.
 - Record the object of interest from all possible angles and from all distances a subject may look at it.
 - Move the glasses slowly while recording this video to avoid motion blur.
 
@@ -124,7 +124,7 @@ The SLAM Mapper maps gaze points to a reference image. As such, the gaze coordin
 
 ### Export Format
 #### sections.csv
-This file contains an overview on the sections that were generated from this enrichment.
+This file contains an overview of the sections that were generated from this enrichment.
 
 
 | Field | Description | 
@@ -167,7 +167,7 @@ The Gaze Overlay enrichment allows you to download world videos with a gaze over
 
 ### Export Format
 #### sections.csv
-This file contains an overview on the sections that were generated from this enrichment.
+This file contains an overview of the sections that were generated from this enrichment.
 
 
 | Field | Description | 
@@ -186,19 +186,19 @@ This file contains an overview on the sections that were generated from this enr
 The export will have one folder per original recording using the following naming scheme:
 ```<recording name>-<start of recording ID>```
 
-Each folder contains gaze overlay videos of the sections belonging to the coresponding recordings. The video files are named
+Each folder contains gaze overlay videos of the sections belonging to the corresponding recordings. The video files are named
 ```<beginning of section ID>_<start time>-<end time>.mp4```
 where the times are in seconds relative to the recording start.
 
 
 ## Raw Data Exporter
-Using the Raw Data Exporter you can get access to all your recording data in convenient CSV and MP4 format directly from Pupil Cloud. Easily export entire projects and extend your analysis with your own custom tools (R, Python, etc.) or third party analysis platforms. In addition to the raw recording data it also includes event annotations you have added post-hoc.
+Using the Raw Data Exporter you can get access to all your recording data in convenient CSV and MP4 format directly from Pupil Cloud. Easily export entire projects and extend your analysis with your own custom tools (R, Python, etc.) or third-party analysis platforms. In addition to the raw recording data, it also includes event annotations you have added post-hoc.
 
 Currently, the events used for defining this enrichment are fixed to `recording.begin` and `recording.end`. It is not possible to limit the export range using other events similar to other enrichments.
 
 ### Export Format
 #### sections.csv
-This file contains an overview on the sections that were generated from this enrichment.
+This file contains an overview of the sections that were generated from this enrichment.
 
 
 | Field | Description | 
@@ -219,7 +219,7 @@ The export contains one folder per recording following this naming scheme:
 The files included in every folder are described in the following.
 
 #### info.json
-This file contains meta information on the recording.
+This file contains meta-information on the recording.
 | Field | Description | 
 | -------- | -------- | 
 | **android_device_id** | Unique identifier of the Android device used as Invisible Companion.     |
@@ -279,7 +279,7 @@ This file contains gaze data in world camera coordinates. For a definition of th
 
 
 #### imu.csv
-This file contains the acceleration and gyro data capture by the IMU. Gyro values corespond to angular speed around the respective axis in degrees. Acelleration values corespond to the acceleration along the respective axis in G. For a definition of the coordinate system see [here](/developer/invisible/#imu-coordinate-system "Explanation of Pupil Invisible's IMU coordinate system").
+This file contains the acceleration and gyro data capture by the IMU. Gyro values correspond to angular speed around the respective axis in degrees. Accelleration values correspond to the acceleration along the respective axis in G. For a definition of the coordinate system see [here](/developer/invisible/#imu-coordinate-system "Explanation of Pupil Invisible's IMU coordinate system").
 
 
 | Field | Description | 
