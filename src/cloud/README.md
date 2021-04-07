@@ -75,7 +75,14 @@ Projects are used for annotation and analysis. Within a project, you can calcula
 Read more about [enrichments](/cloud/enrichments/ "Pupil Cloud enrichments for data analysis and visualization").
 
 ### Project Editor
-<!-- TODO: Add low-fi image of project editor and name areas of the interface for easy reference. -->
+
+<div class="pb-4" style="display:flex;justify-content:center;filter:drop-shadow(2px 4px 10px #000000);">
+  <v-img
+    :src="require('../media/cloud/imgs/project_editor.png')"
+    max-width=80%
+  >
+  </v-img>
+</div>
 
 The project editor has 3 main sections. Left-hand sidebar shows all of the recordings that are in the project. The center is a video player that shows the currently selected recording and it's events and sections visualized below the playback controls. The right-hand sidebar is a list of all events and sections for the currently selected recording. 
 
