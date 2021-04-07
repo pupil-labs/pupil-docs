@@ -490,11 +490,10 @@ Pupil Capture provides [prerecorded intrinsics](https://github.com/pupil-labs/pu
 | Camera name           | Resolutions                              | Notes                                                     |
 | :---                  | :---:                                    | :---                                                      |
 | Pupil Cam1 ID2        | `640x480`<br/>`1280x720`<br/>`1920x1080` | Pupil Core high-speed scene camera                        |
-| Logitech Webcam C930e | `640x480`<br/>`1280x720`<br/>`1920x1080` | Pupil Core high-definition scene camera                   |
-| PI world v1           | `1088x1080`                              | Pupil Invisible scene camera                              |
-| Pupil Cam1 ID0/1      | `320x240`<br/>`640x480`                  | eye camera;<br/>max. 120 Hz sampling rate                 | 
 | Pupil Cam2 ID0/1      | `192x192`<br/>`400x400`                  | Core headset eye camera;<br/>max. 200 Hz sampling rate    |
 | Pupil Cam3 ID0/1      | `192x192`<br/>`400x400`                  | HTC Vive add-on eye camera;<br/>max. 200 Hz sampling rate |
+| Logitech Webcam C930e | `640x480`<br/>`1280x720`<br/>`1920x1080` | Pupil Core high-definition scene camera (discontinued)    |
+| Pupil Cam1 ID0/1      | `320x240`<br/>`640x480`                  | eye camera (discontinued);<br/>max. 120 Hz sampling rate  | 
 
 When a recording is started in Pupil Capture, the application saves the active camera intrinsics to the `world.intrinsics`, `eye0.intrinsics`, and `eye1.intrinsics` files within the recording.
 
@@ -512,18 +511,20 @@ Pupil Player follows the same priorities as Pupil Capture but expects the custom
 Based the estimated intrinsics, one can calculate the camera's field of view (FOV).
 
 **Field of view in degrees:**
-| Camera name                            | Resolution  | Horizontal | Vertical | Diagonal |
-| :---                                   | :---:       | :---:      | :---:    | :---:    |
-| PI world v1                            | `1088x1080` | 82°        | 81°      | 116°     |
-| Pupil Cam1 ID2<br/>(wide-angle lens)   | `1920x1080` | 155°       | 85°      | ---      |
-| Pupil Cam1 ID2<br/>(wide-angle lens)   | `1280x720`  | 103°       | 54°      | 122°     |
-| Pupil Cam1 ID2<br/>(wide-angle lens)   | `640x480`   | 103°       | 73°      | 134°     |
-| Pupil Cam1 ID2<br/>(narrow-angle lens) | `1920x1080` | 88°        | 54°      | 106°     |
-| Pupil Cam1 ID2<br/>(narrow-angle lens) | `1280x720`  | 63°        | 37°      | 70°      |
-| Pupil Cam1 ID2<br/>(narrow-angle lens) | `640x480`   | 42°        | 32°      | 51°      |
-| Pupil Cam1 ID0/1                       | `320x240`   | 51°        | 39°      | 61°      |
-| Pupil Cam1 ID0/1                       | `640x480`   | 51°        | 39°      | 62°      |
-| Pupil Cam2 ID0/1                       | `192x192`   | 37°        | 37°      | 51°      |
-| Pupil Cam2 ID0/1                       | `400x400`   | 39°        | 39°      | 53°      |
-| Pupil Cam3 ID0/1                       | `192x192`   | 69°        | 69°      | 88°      |
-| Pupil Cam3 ID0/1                       | `400x400`   | 71°        | 71°      | 91°      |
+| Camera name                          | Resolution  | Horizontal | Vertical | Diagonal |
+| :---                                 | :---:       | :---:      | :---:    | :---:    |
+| Pupil Cam1 ID2 (wide-angle lens)     | `1920x1080` | 155°       | 85°      | ---      |
+|                                      | `1280x720`  | 103°       | 54°      | 122°     |
+|                                      | `640x480`   | 103°       | 73°      | 134°     |
+| Pupil Cam1 ID2 (narrow-angle lens)   | `1920x1080` | 88°        | 54°      | 106°     |
+|                                      | `1280x720`  | 63°        | 37°      | 70°      |
+|                                      | `640x480`   | 42°        | 32°      | 51°      |
+| Pupil Cam2 ID0/1                     | `400x400`   | 39°        | 39°      | 53°      |
+|                                      | `192x192`   | 37°        | 37°      | 51°      |
+| Pupil Cam3 ID0/1                     | `400x400`   | 71°        | 71°      | 91°      |
+|                                      | `192x192`   | 69°        | 69°      | 88°      |
+| Logitech Webcam C930e (discontinued) | `1920x1080` | 82°        | 53°      | 91°      |
+|                                      | `1280x720`  | 80°        | 51°      | 89°      |
+|                                      | `640x480`   | 64°        | 52°      | 77°      |
+| Pupil Cam1 ID0/1 (discontinued)      | `640x480`   | 51°        | 39°      | 62°      |
+|                                      | `320x240`   | 51°        | 39°      | 61°      |
