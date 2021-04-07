@@ -13,7 +13,7 @@ If a recording contains multiple pairs of the start and end events, multiple sec
 
 
 ## Marker Mapper
-<div class="pb-4" style="display:flex;justify-content:center;">
+<div class="pb-4" style="display:flex;justify-content:center;filter:drop-shadow(2px 4px 10px #000000);">
   <v-img
     :src="require('../../media/cloud/imgs/marker_mapper_header.png')"
     max-width=80%
@@ -94,7 +94,7 @@ This file contains the surface locations in the scene images for all sections.
 
 
 ## Reference Image Mapper
-<div class="pb-4" style="display:flex;justify-content:center;">
+<div class="pb-4" style="display:flex;justify-content:center;filter:drop-shadow(2px 4px 10px #000000);">
   <v-img
     :src="require('../../media/cloud/imgs/reference_image_mapper_header.png')"
     max-width=80%
@@ -155,7 +155,7 @@ This file contains all the mapped gaze data from all sections.
 
 
 ## Gaze Overlay
-<div class="pb-4" style="display:flex;justify-content:center;">
+<div class="pb-4" style="display:flex;justify-content:center;filter:drop-shadow(2px 4px 10px #000000);">
   <v-img
     :src="require('../../media/cloud/imgs/gaze_overlay_header1.png')"
     max-width=80%
