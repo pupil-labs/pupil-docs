@@ -508,7 +508,7 @@ Pupil Player follows the same priorities as Pupil Capture but expects the custom
 
 #### Camera field of view (FOV)
 
-Based the estimated intrinsics, one can calculate the camera's field of view (FOV).
+Based on the estimated intrinsics, one can calculate the camera's field of view (FOV).
 
 **Field of view in degrees:**
 | Camera name                                | Resolution  | Horizontal | Vertical | Diagonal |
