@@ -511,20 +511,20 @@ Pupil Player follows the same priorities as Pupil Capture but expects the custom
 Based the estimated intrinsics, one can calculate the camera's field of view (FOV).
 
 **Field of view in degrees:**
-| Camera name                          | Resolution  | Horizontal | Vertical | Diagonal |
-| :---                                 | :---:       | :---:      | :---:    | :---:    |
-| Pupil Cam1 ID2 (wide-angle lens)     | `1920x1080` | 155°       | 85°      | ---      |
-|                                      | `1280x720`  | 103°       | 54°      | 122°     |
-|                                      | `640x480`   | 103°       | 73°      | 134°     |
-| Pupil Cam1 ID2 (narrow-angle lens)   | `1920x1080` | 88°        | 54°      | 106°     |
-|                                      | `1280x720`  | 63°        | 37°      | 70°      |
-|                                      | `640x480`   | 42°        | 32°      | 51°      |
-| Pupil Cam2 ID0/1                     | `400x400`   | 39°        | 39°      | 53°      |
-|                                      | `192x192`   | 37°        | 37°      | 51°      |
-| Pupil Cam3 ID0/1                     | `400x400`   | 71°        | 71°      | 91°      |
-|                                      | `192x192`   | 69°        | 69°      | 88°      |
-| Logitech Webcam C930e (discontinued) | `1920x1080` | 82°        | 53°      | 91°      |
-|                                      | `1280x720`  | 80°        | 51°      | 89°      |
-|                                      | `640x480`   | 64°        | 52°      | 77°      |
-| Pupil Cam1 ID0/1 (discontinued)      | `640x480`   | 51°        | 39°      | 62°      |
-|                                      | `320x240`   | 51°        | 39°      | 61°      |
+| Camera name                                | Resolution  | Horizontal | Vertical | Diagonal |
+| :---                                       | :---:       | :---:      | :---:    | :---:    |
+| Pupil Cam1 ID2 (default – wide-angle lens) | `1920x1080` | 155°       | 85°      | ---      |
+|                                            | `1280x720`  | 103°       | 54°      | 122°     |
+|                                            | `640x480`   | 103°       | 73°      | 134°     |
+| Pupil Cam1 ID2 (narrow-angle lens)         | `1920x1080` | 88°        | 54°      | 106°     |
+|                                            | `1280x720`  | 63°        | 37°      | 70°      |
+|                                            | `640x480`   | 42°        | 32°      | 51°      |
+| Pupil Cam2 ID0/1                           | `400x400`   | 39°        | 39°      | 53°      |
+|                                            | `192x192`   | 37°        | 37°      | 51°      |
+| Pupil Cam3 ID0/1                           | `400x400`   | 71°        | 71°      | 91°      |
+|                                            | `192x192`   | 69°        | 69°      | 88°      |
+| Logitech Webcam C930e (discontinued)       | `1920x1080` | 82°        | 53°      | 91°      |
+|                                            | `1280x720`  | 80°        | 51°      | 89°      |
+|                                            | `640x480`   | 64°        | 52°      | 77°      |
+| Pupil Cam1 ID0/1 (discontinued)            | `640x480`   | 51°        | 39°      | 62°      |
+|                                            | `320x240`   | 51°        | 39°      | 61°      |
