@@ -109,14 +109,41 @@ This enrichment is still a **beta feature**. Let us know if you have any [feedba
 
 
 ### Setup
-In addition to the reference image itself, calculating this enrichment also requires specifying a "scanning video". In this video you must record your object(s) for 1-2 minutes fulfilling the following criteria:
+In addition to the reference image itself, calculating this enrichment also requires specifying a **scanning video**. In this video you must record your object(s) for 1-2 minutes fulfilling the following criteria:
 - Make the recording while holding the Pupil Invisible glasses in your hand rather than wearing it on your head.
 - Record the object of interest from all possible angles and from all distances a subject may look at it.
-- Move the glasses slowly while recording this video to avoid motion blur.
+- Move the glasses slowly while recording to avoid motion blur.
 
+
+
+A good scanning video and reference image are shown below:
+<div style="display:flex;" class="pb-4">
+    <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/-S5dOBqC0Uw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>Scanning Video</p>
+    </div>
+    <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
+        <img src="../../media/cloud/imgs/reference_image_sample.jpg" style="padding-bottom:16px;width:60%;">
+        <p>Reference Image</p>
+    </div>
+</div>
+
+
+### Limitations
 Please note that this enrichment only works for reference images showing objects that
-- are static in their environment, i.e. do not move.
-- do not change their appearance (e.g. a computer screen is a negative example as it changes it's appearance dramatically when the displayed content changes.)
+- are static in their environment, i.e. they do not move while recording.
+- are (mostly) static in their appearance, i.e. the object itself does not change while recording.
+
+**Positive Examples**
+- Image/Painting/Poster on a wall.
+- An exhibit in a musem. This could also be 3-dimensional, as long as it is static.
+- The cockpit of a car (or plane). While technically a car is usually moving in its environment, the interior of the car is static. We have found that this is enough to fulfill this criteria.
+
+**Negative Examples**
+- Mobile phone/tablet. These objects typically move in their environment and show drastically changing contents on their screens.
+- Static screens (e.g. computer screen). The content of the screen usually changes dramatically. If they were showing (mostly) static content throughout all recordings, it would work.
+
+When in doubt if your use-case is compatible, we recommend making a quick test recording first.
 
 ### Mapped Gaze Coordinates
 The SLAM Mapper maps gaze points to a reference image. As such, the gaze coordinates are given in pixels referring to that image. The pixel at (0,0) is in the top left corner.
