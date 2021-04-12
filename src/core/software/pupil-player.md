@@ -37,6 +37,19 @@ The Player window is the main control center for `Pupil Player`. It displays vid
 1. **Menu**: This area contains settings and contextual information for each plugin.
 1. **Sidebar**: This area contains clickable buttons for each plugin. System plugins are loaded in the top and user added plugins are added below the horizontal separator.
 
+### Keyboard Shortcuts
+
+| Keyboard Shortcut   | Description                                      |
+|:--------------------|:-------------------------------------------------|
+| `<space>`           | Play and pause video                             |
+| `<arrow left>`      | Step to previous frame / Decrease playback speed |
+| `<arrow right>`     | Step to next frame / Increase playback speed     |
+| `e`                 | Start export                                     |
+| `a`                 | Surface tracker: Add new surface                 |
+| `x`                 | Add annotation (default keyboard shortcut)       |
+| `f`                 | Fixation: Show next                              |
+| `F`                 | Fixation: Show previous                          |
+
 ## Workflow
 
 Pupil Player is similar to a video player. You can playback recordings and can load plugins to build visualizations.
