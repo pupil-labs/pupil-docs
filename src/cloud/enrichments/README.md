@@ -135,15 +135,15 @@ Please note that this enrichment only works for reference images showing objects
 - are (mostly) static in their appearance, i.e. the object itself does not change while recording.
 
 **Positive Examples**
-- Image/Painting/Poster on a wall.
-- An exhibit in a musem. This could also be 3-dimensional, as long as it is static.
-- The cockpit of a car (or plane). While technically a car is usually moving in its environment, the interior of the car is static. We have found that this is enough to fulfill this criteria.
+- Image affixed to a wall/surface. This could be a painting, map, advertisement, poster, menu, etc.
+- An exhibit in a museum. This could also be 3 dimensional, as long as it is static.
+- Control Interface. Aircraft flight deck, automobile dashboard, machine controls. A vehicle (car, boat, airplane, excavator, etc) is usually moving in its environment. However, the interior is relatively static. We have found that this _should_ be enough to fulfill criteria for the reference image mapper.
 
 **Negative Examples**
-- Mobile phone/tablet. These objects typically move in their environment and show drastically changing contents on their screens.
-- Static screens (e.g. computer screen). The content of the screen usually changes dramatically. If they were showing (mostly) static content throughout all recordings, it would work.
+- Mobile phone or tablet screens. Not suitable due to dynamic movement within the environment and dynamic content displayed on screen.
+- Computer monitors and TV screens. The contents displayed on the monitors/screens usually change dramatically. If the content remains static across recordings (e.g. single image) then the reference image mapper would work.
 
-When in doubt if your use-case is compatible, we recommend making a quick test recording first.
+We always recommend making a quick test recording to check if your use-case is compatible.
 
 ### Mapped Gaze Coordinates
 The SLAM Mapper maps gaze points to a reference image. As such, the gaze coordinates are given in pixels referring to that image. The pixel at (0,0) is in the top left corner.
