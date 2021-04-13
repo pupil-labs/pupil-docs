@@ -40,19 +40,27 @@ Invisible Companion devices.
 ```py
 import time
 
+import cv2
+import numpy as np
+
 # https://github.com/pupil-labs/pyndsi/tree/v1.0
 import ndsi  # Main requirement
 
-GAZE_TYPE = "gaze"  # Type of sensors that we are interested in
+SENSOR_TYPES = ["video", "gaze"]
 SENSORS = {}  # Will store connected sensors
 
 
 def main():
     # Start auto-discovery of Pupil Invisible Companion devices
-    network = ndsi.Network(formats={ndsi.DataFormat.V4}, callbacks=(on_network_event,))
+    network = ndsi.Network(
+        formats={ndsi.DataFormat.V4}, callbacks=(on_network_event,))
     network.start()
 
     try:
+        #
+        world_img = np.zeros((1088, 1080, 3))
+        gaze = (0, 0)
+
         # Event loop, runs until interrupted
         while network.running:
             # Check for recently connected/disconnected devices
@@ -60,18 +68,37 @@ def main():
                 network.handle_event()
 
             # Iterate over all connected devices
-            for gaze_sensor in SENSORS.values():
+            for sensor in SENSORS.values():
+
+                # We only consider gaze and video
+                if sensor.type not in SENSOR_TYPES:
+                    continue
+
                 # Fetch recent sensor configuration changes,
                 # required for pyndsi internals
-                while gaze_sensor.has_notifications:
-                    gaze_sensor.handle_notification()
+                while sensor.has_notifications:
+                    sensor.handle_notification()
 
                 # Fetch recent gaze data
-                for gaze in gaze_sensor.fetch_data():
-                    # Output: GazeValue(x, y, ts)
-                    print(gaze_sensor, gaze)
+                for data in sensor.fetch_data():
+                    if data is None:
+                        continue
+                    
+                    if sensor.name == "PI world v1":
+                        world_img = data.bgr
 
-            time.sleep(0.1)
+                    elif sensor.name == "Gaze":
+                        # Draw gaze overlay onto world video frame
+                        gaze = (int(data[0]), int(data[1]))
+
+            # Show world video with gaze overlay
+            cv2.circle(
+                world_img,
+                gaze,
+                40, (0, 0, 255), 4
+            )
+            cv2.imshow("Pupil Invisible - Live Preview", world_img)
+            cv2.waitKey(1)
 
     # Catch interruption and disconnect gracefully
     except (KeyboardInterrupt, SystemExit):
@@ -80,7 +107,7 @@ def main():
 
 def on_network_event(network, event):
     # Handle gaze sensor attachment
-    if event["subject"] == "attach" and event["sensor_type"] == GAZE_TYPE:
+    if event["subject"] == "attach" and event["sensor_type"] in SENSOR_TYPES:
         # Create new sensor, start data streaming,
         # and request current configuration
         sensor = network.sensor(event["sensor_uuid"])
@@ -210,7 +237,7 @@ if __name__ == "__main__":
 
 
 
-## Events
+## Recording Events
 
 Events allow external triggers/annotations to be mixed into the Pupil Invisible recording data stream.
 

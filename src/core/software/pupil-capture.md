@@ -337,6 +337,11 @@ There are many different Apriltag types, currently we support 7 families listed 
 Additionally, we created a PDF with one page per tag for all 587 tags from the **tag36h11** family here: [tag36h11_full.pdf](https://github.com/pupil-labs/pupil-helpers/blob/master/markers_stickersheet/tag36h11_full.pdf?raw=True).
 You can use this to print custom marker sheets by printing multiple pages per sheet.
 
+::: warning
+<v-icon large color="warning">error_outline</v-icon>
+Note that the markers require a white border around them for robust detection. In our experience, this should be at least equal to the width of the smallest white square/rectangle shown in the Marker. Please ensure you include a sufficient border around when displaying markers on screen or printing the markers.
+:::
+
 If you want to generate your own marker sheets or similar PDFs of other families, you can find more information in the [the pupil-helpers repository](https://github.com/pupil-labs/pupil-helpers/tree/master/markers_stickersheet).
 
 Supported Apriltag families:
@@ -353,11 +358,11 @@ Apriltags ready to use:
 
 <div style="display:flex;" class="pb-4">
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <img src="../../media/core/imgs/apriltags_tag36h11_0-23.jpg" style="padding-bottom:16px;width:60%;">
+        <img src="../../media/shared/imgs/apriltags_tag36h11_0-23.jpg" style="padding-bottom:16px;width:60%;">
         <p>Apriltags tag36h11 0-23</p>
     </div>
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <img src="../../media/core/imgs/apriltags_tag36h11_24-47.jpg" style="padding-bottom:16px;width:60%;">
+        <img src="../../media/shared/imgs/apriltags_tag36h11_24-47.jpg" style="padding-bottom:16px;width:60%;">
         <p>Apriltags tag36h11 24-47</p>
     </div>
 </div>
@@ -481,11 +486,16 @@ Newly estimated camera intrinsics are saved to the Pupil Capture session setting
 Specifically, the intrinsics are saved to a file with the name pattern `<camera name>.intrinsics` which includes the relevant intrinsics for each calibrated resolution. See the [developer docs](/developer/core/recording-format/#other-files) on how to read these files manually.
 
 Pupil Capture provides [prerecorded intrinsics](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/camera_models.py#L26-L152) for the following cameras:
-- `Pupil Cam1 ID2`: `640x480`, `1280x720`, `1920x1080`
-- `Logitech Webcam C930e`: `640x480`, `1280x720`, `1920x1080`
-- `PI world v1`: `1088x1080`
 
-When a recording is started in Pupil Capture, the application saves the active scene camera's intrinsics to the `world.intrinsics` file within the recording.
+| Camera name           | Resolutions                              | Notes                                                     |
+| :---                  | :---:                                    | :---                                                      |
+| Pupil Cam1 ID2        | `640x480`<br/>`1280x720`<br/>`1920x1080` | Pupil Core high-speed scene camera                        |
+| Pupil Cam2 ID0/1      | `192x192`<br/>`400x400`                  | Core headset eye camera;<br/>max. 200 Hz sampling rate    |
+| Pupil Cam3 ID0/1      | `192x192`<br/>`400x400`                  | HTC Vive add-on eye camera;<br/>max. 200 Hz sampling rate |
+| Logitech Webcam C930e | `640x480`<br/>`1280x720`<br/>`1920x1080` | Pupil Core high-definition scene camera (discontinued)    |
+| Pupil Cam1 ID0/1      | `320x240`<br/>`640x480`                  | eye camera (discontinued);<br/>max. 120 Hz sampling rate  | 
+
+When a recording is started in Pupil Capture, the application saves the active camera intrinsics to the `world.intrinsics`, `eye0.intrinsics`, and `eye1.intrinsics` files within the recording.
 
 #### Camera Intrinsics Selection
 
@@ -495,3 +505,26 @@ Pupil Capture selects the active camera intrinsics following these priorities:
 1. Fallback to a "dummy calibration" ([pinhole camera model without distortion, focal length 1000px](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/camera_models.py#L659-L664)).
 
 Pupil Player follows the same priorities as Pupil Capture but expects the custom intrinsics to be present within the recording under the `<video file name>.intrinsics` file name pattern, e.g. `world.intrinsics`.
+
+#### Camera field of view (FOV)
+
+Based on the estimated intrinsics, one can calculate the camera's field of view (FOV).
+
+**Field of view in degrees:**
+| Camera name                                | Resolution  | Horizontal | Vertical | Diagonal |
+| :---                                       | :---:       | :---:      | :---:    | :---:    |
+| Pupil Cam1 ID2 (default – wide-angle lens) | `1920x1080` | 155°       | 85°      | ---      |
+|                                            | `1280x720`  | 103°       | 54°      | 122°     |
+|                                            | `640x480`   | 103°       | 73°      | 134°     |
+| Pupil Cam1 ID2 (narrow-angle lens)         | `1920x1080` | 88°        | 54°      | 106°     |
+|                                            | `1280x720`  | 63°        | 37°      | 70°      |
+|                                            | `640x480`   | 42°        | 32°      | 51°      |
+| Pupil Cam2 ID0/1                           | `400x400`   | 39°        | 39°      | 53°      |
+|                                            | `192x192`   | 37°        | 37°      | 51°      |
+| Pupil Cam3 ID0/1                           | `400x400`   | 71°        | 71°      | 91°      |
+|                                            | `192x192`   | 69°        | 69°      | 88°      |
+| Logitech Webcam C930e (discontinued)       | `1920x1080` | 82°        | 53°      | 91°      |
+|                                            | `1280x720`  | 80°        | 51°      | 89°      |
+|                                            | `640x480`   | 64°        | 52°      | 77°      |
+| Pupil Cam1 ID0/1 (discontinued)            | `640x480`   | 51°        | 39°      | 62°      |
+|                                            | `320x240`   | 51°        | 39°      | 61°      |
