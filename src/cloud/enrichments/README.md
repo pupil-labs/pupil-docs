@@ -116,16 +116,20 @@ In addition to the reference image itself, calculating this enrichment also requ
 
 
 
-A good scanning video and reference image are shown below:
-<div style="display:flex;" class="pb-4">
-    <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/-S5dOBqC0Uw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p>Scanning Video</p>
-    </div>
-    <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <img src="../../media/cloud/imgs/reference_image_sample.jpg" style="padding-bottom:16px;width:60%;">
-        <p>Reference Image</p>
-    </div>
+A good scanning recording and reference image are shown below:
+
+**Example Scanning Recording**
+
+<Youtube src="-S5dOBqC0Uw"/>
+
+**Example Reference Image**
+
+<div class="pb-4" style="display:flex;justify-content:center;">
+<v-img 
+  :src="require('../../media/cloud/imgs/reference_image_sample.jpg')"
+  max-width=80%
+>
+</v-img>
 </div>
 
 
