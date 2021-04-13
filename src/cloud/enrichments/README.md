@@ -109,14 +109,45 @@ This enrichment is still a **beta feature**. Let us know if you have any [feedba
 
 
 ### Setup
-In addition to the reference image itself, calculating this enrichment also requires specifying a "scanning video". In this video you must record your object(s) for 1-2 minutes fulfilling the following criteria:
+In addition to the reference image itself, calculating this enrichment also requires specifying a **scanning video**. In this video you must record your object(s) for 1-2 minutes fulfilling the following criteria:
 - Make the recording while holding the Pupil Invisible glasses in your hand rather than wearing it on your head.
 - Record the object of interest from all possible angles and from all distances a subject may look at it.
-- Move the glasses slowly while recording this video to avoid motion blur.
+- Move the glasses slowly while recording to avoid motion blur.
 
+
+
+A good scanning recording and reference image are shown below:
+
+**Example Scanning Recording**
+
+<Youtube src="-S5dOBqC0Uw"/>
+
+**Example Reference Image**
+
+<div class="pb-4" style="display:flex;justify-content:center;">
+<v-img 
+  :src="require('../../media/cloud/imgs/reference_image_sample.jpg')"
+  max-width=80%
+>
+</v-img>
+</div>
+
+
+### Limitations
 Please note that this enrichment only works for reference images showing objects that
-- are static in their environment, i.e. do not move.
-- do not change their appearance (e.g. a computer screen is a negative example as it changes it's appearance dramatically when the displayed content changes.)
+- are static in their environment, i.e. they do not move while recording.
+- are (mostly) static in their appearance, i.e. the object itself does not change while recording.
+
+**Positive Examples**
+- Image affixed to a wall/surface. This could be a painting, map, advertisement, poster, menu, etc.
+- An exhibit in a museum. This could also be 3 dimensional, as long as it is static.
+- Control Interface. Aircraft flight deck, automobile dashboard, machine controls. A vehicle (car, boat, airplane, excavator, etc) is usually moving in its environment. However, the interior is relatively static. We have found that this _should_ be enough to fulfill criteria for the reference image mapper.
+
+**Negative Examples**
+- Mobile phone or tablet screens. Not suitable due to dynamic movement within the environment and dynamic content displayed on screen.
+- Computer monitors and TV screens. The contents displayed on the monitors/screens usually change dramatically. If the content remains static across recordings (e.g. single image) then the reference image mapper would work.
+
+We always recommend making a quick test recording to check if your use-case is compatible.
 
 ### Mapped Gaze Coordinates
 The SLAM Mapper maps gaze points to a reference image. As such, the gaze coordinates are given in pixels referring to that image. The pixel at (0,0) is in the top left corner.
