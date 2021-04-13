@@ -39,16 +39,19 @@ The Player window is the main control center for `Pupil Player`. It displays vid
 
 ### Keyboard Shortcuts
 
-| Keyboard Shortcut   | Description                                      |
-|:--------------------|:-------------------------------------------------|
-| `<space>`           | Play and pause video                             |
-| `<arrow left>`      | Step to previous frame / Decrease playback speed |
-| `<arrow right>`     | Step to next frame / Increase playback speed     |
-| `e`                 | Start export                                     |
-| `a`                 | Surface tracker: Add new surface                 |
-| `x`                 | Add annotation (default keyboard shortcut)       |
-| `f`                 | Fixation: Show next                              |
-| `F`                 | Fixation: Show previous                          |
+| Keyboard Shortcut   | Description                                            |
+|:--------------------|:-------------------------------------------------------|
+| `<space>`           | Play and pause video                                   |
+| `<arrow left>`      | Step to previous frame\* / Decrease playback speed\*\* |
+| `<arrow right>`     | Step to next frame\* / Increase playback speed\*\*     |
+| `e`                 | Start export                                           |
+| `a`                 | Surface tracker: Add new surface                       |
+| `x`                 | Add annotation (default keyboard shortcut)             |
+| `f`                 | Fixation: Show next                                    |
+| `F`                 | Fixation: Show previous                                |
+
+\* While paused
+\*\* During playback
 
 ## Workflow
 
