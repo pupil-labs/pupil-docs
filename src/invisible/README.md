@@ -49,7 +49,7 @@ You can play back any recording you have made in recordings view.
 
 After uploading to Pupil Cloud, you can playback recordings, enrich data, and download. Check out [Pupil Cloud](https://cloud.pupil-labs.com/ "Pupil Cloud") for more information. 
 
-Alternatively you can [directly transfer recordings](/invisible/user-guide/invisible-companion-app/#recording-transfer) to your 
+Alternatively, you can export recordings from the Invisible Companion App and [transfer them directly](/invisible/user-guide/invisible-companion-app/#recording-transfer) to your 
 laptop/desktop PC. 
 
 ## Chat with us
