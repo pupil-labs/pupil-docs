@@ -19,7 +19,7 @@ description: Add eye tracking powers to your HTC Vive with our 200Hz binocular e
 2. **Connector Cable**: USB-C to USB-C cable to connect your Pupil Invisible glasses to your Companion Device
 3. **Lenses**: Clear plano lenses installed in Pupil Invisible glasses. Additional shaded lenses in the case.
 4. **Companion Device**
-5. **Charging Cable and Socket Adapter**: Use to charge your Companion Device
+5. **Charging Cable and Socket Adapter**: Use to charge your Companion Device. Note: EU compatible socket adapter is provided. 
 6. **Microfiber Cleaning Cloth**
 
 
