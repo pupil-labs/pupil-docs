@@ -92,17 +92,16 @@ If you made recordings with the Invisible Companion App while the cloud upload f
 3) Login to [Pupil Cloud](https://cloud.pupil-labs.com "Pupil Cloud") to playback recordings, enrich data, and download.
 
 ### Local transfer
-####Export from Invisible Companion App
+Export from Invisible Companion App:
 1) Open recordings view in Invisible Companion App
 2) Select desired recording/s
 3) Export:
-   1) For single recordings, the export button is found by clicking on the 3 vertical dots to 
-      the right of the cloud symbol
-   2) For multiple recordings, click the download symbol at the bottom of the screen
+   * For single recordings, the export button is found by clicking on the 3 vertical dots to 
+     the right of the cloud symbol
+   * For multiple recordings, click the download symbol at the bottom of the screen    
+4) Exported recordings will be saved to the `Pupil Invisible Export` folder.
     
-3) Exported recordings will be saved to the `Pupil Invisible Export` folder.
-    
-####Transfer Exported Recordings to Desktop/Laptop PC
+Transfer Exported Recordings to Desktop/Laptop PC:
 1) Connect your OnePlus device to a PC via USB (using the USB cable supplied)
 2) Slide down from the top of the device's home-screen and click on 'Android System - USB charging this device'
 3) Click on 'Tap for more options'
