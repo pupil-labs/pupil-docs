@@ -204,6 +204,7 @@ This name is augmented by an automatically generated numerical identifier.
   `img_to_surf_trans` is a matrix transforming coordinates from the camera coordinate system to the surface coordinate system.
   `surf_to_img_trans` is the inverse of `img_to_surf_trans`.
 
+Additionally, the `Surface Tracker` exports the detected markers to the `marker_detections.csv` file. The `world_index` column represents the scene video frame index, `marker_uid` is the label used for identifying a single marker, and `corner_<0|1|2|3>_<x|y>` is the corner coordinate in pixel space.
 
 #### Fixation Detector
 The post-hoc fixation detector calculates fixations for the whole recording. The menu gives feedback about the progress of the detection, how many fixations were found, and shows detailed information about the current fixation. Press `f` or click the `f` hot key button on the left hand side of the window to seek forward to the next fixation.
