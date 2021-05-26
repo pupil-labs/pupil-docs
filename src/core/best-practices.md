@@ -112,24 +112,25 @@ dispersion too high might group fixations together that should have been conside
 Ensure the maximum dispersion accommodates your viewing task. 
 
 ## Sychronization
-Pupil Core is often used concurrently with other Pupil Core devices, and/or third-party devices and software 
-(e.g. physiological sensors, motion capture, stimuli presentation). In order to correlate the data between these,
-temporal alignment is of great importance. 
+Pupil Core is often used concurrently with third-party devices and software (e.g. physiological sensors, 
+motion capture, stimuli presentation). In order to correlate the data between these, temporal alignment is of great importance. 
 
-How you go about synchronizing data will ultimately depend on your setup, but there are three common approaches you 
-can use that leverage our [Network API](core/network-api/#network-api):
+How you go about synchronizing Pupil Core with other devices or software will depend on the setup, but there are three 
+common approaches leveraging our [Network API](core/network-api/#network-api):
 
 ::: tip
 <v-icon large color="info">info_outline</v-icon>
 When using multiple Pupil Core devices (running on the same or multiple machines), simply turn-on 
 the [Network Time Sync Plugin](https://docs.pupil-labs.com/core/software/pupil-capture/#pupil-time-sync) which takes 
-care of Pupil Time synchronisation. The [Pupil Groups Plugin](core/software/pupil-capture/#pupil-groups) also helps you 
-to use more than one Pupil Core device simultaneously. 
+care of Pupil Time synchronisation. The [Pupil Groups Plugin](core/software/pupil-capture/#pupil-groups) also helps when 
+using more than one Pupil Core device simultaneously. 
 :::
 
 ### 1. Lab Streaming Layer (LSL)
-We maintain a Plugin for LSL that publishes gaze data in real-time using the LSL framework. This enables unified and 
-time-synchronised collection of measurements with other LSL supported devices.
+We maintain a [Plugin for LSL](https://github.com/labstreaminglayer/App-PupilLabs/tree/master/pupil_capture) that 
+publishes gaze data in real-time using the [LSL framework](https://labstreaminglayer.readthedocs.io/info/intro.html). 
+This enables unified and time-synchronised collection of measurements with other 
+[LSL supported devices](https://labstreaminglayer.readthedocs.io/info/supported_devices.html).
 
 The plugin synchronizes Capture's own clock, 'Pupil Time', with the pylsl.local_clock(). This allows the recording of 
 native Capture timestamps and removes the necessity of manually synchronizing timestamps after the effect, which makes
@@ -145,7 +146,7 @@ demonstrate a simple real-time method to synchronize Pupil Time with a custom cl
 For an even more accurate and stable time sync, see our [Pupil Time Sync Protocol](/core/software/pupil-capture/#pupil-time-sync).
 
 ### 3. Annotations
-You can use our [Annotation Plugin](core/software/pupil-capture/#annotations) to make annotations with a timestamp in 
+You can use our [Annotation Plugin](/core/software/pupil-capture/#annotations) to make annotations with a timestamp in 
 the recording on desired events, such as trigger events. Annotations can be sent via the keyboard or programmatically. 
 [This script](https://github.com/pupil-labs/pupil-helpers/blob/master/python/remote_annotations.py) demonstrates how you 
 can send remote annotations over the network. 

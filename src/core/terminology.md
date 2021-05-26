@@ -77,7 +77,7 @@ There are two clock types that Pupil Core differentiates between:
 ### 1) System Time
 
 System Time is the current datetime (date and time of day) of the device that is running Pupil Core software. 
-It is usually set when the system starts and regularly updates (e.g. via the device's network time protocol [NTP]). 
+It is usually set when the system starts and regularly updates (e.g. via the device's network time protocol). 
 As a consequence, **it is not** guaranteed to be monotonically increasing – it can jump forwards and backwards.
 
 ### 2) Pupil Time
@@ -98,7 +98,7 @@ relation to a fixed starting point (referred to as an epoch – the point where 
 ::: tip
 <v-icon large color="info">info_outline</v-icon>
 You can convert Pupil Time to System Time with some simple calculations. [Check 
-out this tutorial](/developer/core/overview/#convert-pupil-time-to-system-time)
+out this tutorial](/developer/core/overview/#convert-pupil-time-to-system-time).
 :::
 
 ## Coordinate System
