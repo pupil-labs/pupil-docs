@@ -116,7 +116,7 @@ Pupil Core is often used concurrently with third-party devices and software (e.g
 motion capture, stimuli presentation). In order to correlate the data between these, temporal alignment is of great importance. 
 
 How you go about synchronizing Pupil Core with other devices or software will depend on the setup, but there are three 
-common approaches leveraging our [Network API](core/network-api/#network-api):
+common approaches (steps 2–3 leverage our [Network API](core/network-api/#network-api)):
 
 ::: tip
 <v-icon large color="info">info_outline</v-icon>
@@ -132,7 +132,7 @@ publishes gaze data in real-time using the [LSL framework](https://labstreamingl
 This enables unified and time-synchronised collection of measurements with other 
 [LSL supported devices](https://labstreaminglayer.readthedocs.io/info/supported_devices.html).
 
-The plugin synchronizes Capture's own clock, 'Pupil Time', with the pylsl.local_clock(). This allows the recording of 
+The plugin synchronizes Capture's own clock, Pupil Time, with the pylsl.local_clock(). This allows the recording of 
 native Capture timestamps and removes the necessity of manually synchronizing timestamps after the effect, which makes
 for an accurate and easy to implement solution.
 
