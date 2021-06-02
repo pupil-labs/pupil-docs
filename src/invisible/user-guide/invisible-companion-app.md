@@ -81,34 +81,39 @@ Pupil Monitor will warn you if a device is not in sync.
 More info on the technical implementation and quality of NTP synchronisation can be found in the [Pupil Invisible developer docs](/developer/invisible/#time-synchronization "Pupil Invisible developer docs - time synchronization").
 
 ## Recording transfer
+The recommended way to transfer recordings off of the Companion Device is to upload them to Pupil Cloud. Recordings can be analyzed in Pupil Cloud directly or downloaded to a computer. In case usage of Pupil Cloud is not an option, recordings can also be transfered to a computer directly using a USB connection. Both option are described in more detail below.
+
 ### Pupil Cloud
 
-Pupil Invisible recordings can be uploaded to Pupil Cloud directly from the Invisible Companion App. We recommend using Pupil Cloud for ease of user experience, stability, robustness, and data security. 
+Pupil Invisible recordings can be uploaded to Pupil Cloud directly from the Invisible Companion App. We recommend using Pupil Cloud for ease of use, stability, robustness, and data security. 
 
-If you made recordings with the Invisible Companion App while the cloud upload feature was disabled, you can re-enable and upload recordings to Cloud:
+If you made recordings with the Invisible Companion App while the cloud upload was disabled, you can re-enable and upload recordings to Cloud as follows:
 
-1) Enable 'Cloud Upload' in the Companion App settings
-2) Wait until your recording/s are uploaded to Pupil Cloud. In the recording view, uploaded recordings will show a cloud symbol with a tick
-3) Login to [Pupil Cloud](https://cloud.pupil-labs.com "Pupil Cloud") to playback recordings, enrich data, and download.
+1. Enable 'Cloud Upload' in the Companion App settings.
+2. Wait until your recording(s) are uploaded to Pupil Cloud. In the recording view, uploaded recordings will show a cloud symbol with a tick
+3. Login to [Pupil Cloud](https://cloud.pupil-labs.com "Pupil Cloud") to playback recordings, enrich data, and download.
 
 ### Local transfer
-Export from Invisible Companion App:
-1) Open recordings view in Invisible Companion App
-2) Select desired recording/s
-3) Export:
-   * For single recordings, the export button is found by clicking on the 3 vertical dots to 
+
+To transfer recordings to a computer using a USB connection you need to first export the recordings to the Android filesystem and then access the filesystem from your computer.
+
+**Export from Invisible Companion App**
+1. Open recordings view in Invisible Companion App
+2. Select desired recording/s
+3. Export:
+   - For single recordings, the export button is found by clicking on the 3 vertical dots to 
      the right of the cloud symbol
-   * For multiple recordings, click the download symbol at the bottom of the screen    
-4) Exported recordings will be saved to the `Pupil Invisible Export` folder.
+   - For multiple recordings, click the download symbol at the bottom of the screen    
+4. Exported recordings will be saved to the `Pupil Invisible Export` folder on the Android filesystem.
     
-Transfer Exported Recordings to Desktop/Laptop PC:
-1) Connect your OnePlus device to a PC via USB (using the USB cable supplied)
-2) Slide down from the top of the device's home-screen and click on 'Android System - USB charging this device'
-3) Click on 'Tap for more options'
-4) Select 'Transfer Files'
-5) Open File Browser on your PC and access the Internal shared storage of your OnePlus device
-6) Pupil Invisible recordings can be found in the `Pupil Invisible Export` folder
-7) Copy the recordings to your computer before opening them in Pupil Player.
+**Transfer Exported Recordings to a Computer**
+1. Connect your OnePlus device to a PC via USB (using the USB cable supplied)
+2. Slide down from the top of the device's home-screen and click on 'Android System - USB charging this device'
+3. Click on 'Tap for more options'
+4. Select 'Transfer Files'
+5. Open File Browser on your PC and access the Internal shared storage of your OnePlus device
+6. Pupil Invisible recordings can be found in the `Pupil Invisible Export` folder
+7. Copy the recordings to your computer before opening them in Pupil Player.
 
 ::: tip
 On macOS, you require the <a href="https://www.android.com/filetransfer/" alt="Android File Transfer website">Android File Transfer</a> to browse and transfer files between your Mac computer and your Android device.
