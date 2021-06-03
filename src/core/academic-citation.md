@@ -6,11 +6,13 @@ description: Writing an academic paper that uses Pupil Labs products? Please cit
 
 # Academic Citation
 
-We have been asked a few times about how to cite Pupil in academic research. Please take a look at our papers below for citation options. If you're using Pupil as a tool in your research please cite the below UbiComp 2014 paper.
+We have been asked a few times about how to cite Pupil Core in academic research. Please take a look at our papers below for citation options. If you're using Pupil Core as a tool in your research please cite the below UbiComp 2014 paper.
 
-## Papers that cite Pupil
+For guidance on citing Pupil Invisible please see [here](/invisible/academic-citation).
 
-We have compiled a list of publications that cite Pupil in this [spreadsheet](https://docs.google.com/spreadsheets/d/1ZD6HDbjzrtRNB4VB0b7GFMaXVGKZYeI0zBOBEEPwvBI/edit?ts=576a3b27#gid=0)
+## Papers that cite Pupil Core
+
+We have compiled a list of academic publications that use Pupil Labs products. You can find it [here](https://pupil-labs.com/publications/)!
 
 ## UbiComp 2014 Paper
 
