@@ -74,7 +74,8 @@ module.exports = {
             'user-guide/invisible-companion-app',
             'user-guide/invisible-monitor',
             'user-guide/analysis',
-            'user-guide/troubleshooting'
+            'user-guide/troubleshooting',
+            'user-guide/academic-citation',
           ]
         }
       ],
