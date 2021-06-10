@@ -37,6 +37,22 @@ The Player window is the main control center for `Pupil Player`. It displays vid
 1. **Menu**: This area contains settings and contextual information for each plugin.
 1. **Sidebar**: This area contains clickable buttons for each plugin. System plugins are loaded in the top and user added plugins are added below the horizontal separator.
 
+### Keyboard Shortcuts
+
+| Keyboard Shortcut   | Description                                            |
+|:--------------------|:-------------------------------------------------------|
+| `<space>`           | Play and pause video                                   |
+| `<arrow left>`      | Step to previous frame\* / Decrease playback speed\*\* |
+| `<arrow right>`     | Step to next frame\* / Increase playback speed\*\*     |
+| `e`                 | Start export                                           |
+| `a`                 | Surface tracker: Add new surface                       |
+| `x`                 | Add annotation (default keyboard shortcut)             |
+| `f`                 | Fixation: Show next                                    |
+| `F`                 | Fixation: Show previous                                |
+
+\* While paused
+\*\* During playback
+
 ## Workflow
 
 Pupil Player is similar to a video player. You can playback recordings and can load plugins to build visualizations.
@@ -188,6 +204,7 @@ This name is augmented by an automatically generated numerical identifier.
   `img_to_surf_trans` is a matrix transforming coordinates from the camera coordinate system to the surface coordinate system.
   `surf_to_img_trans` is the inverse of `img_to_surf_trans`.
 
+Additionally, the `Surface Tracker` exports the detected markers to the `marker_detections.csv` file. The `world_index` column represents the scene video frame index, `marker_uid` is the label used for identifying a single marker, and `corner_<0|1|2|3>_<x|y>` is the corner coordinate in pixel space.
 
 #### Fixation Detector
 The post-hoc fixation detector calculates fixations for the whole recording. The menu gives feedback about the progress of the detection, how many fixations were found, and shows detailed information about the current fixation. Press `f` or click the `f` hot key button on the left hand side of the window to seek forward to the next fixation.
