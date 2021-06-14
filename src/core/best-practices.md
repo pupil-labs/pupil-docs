@@ -116,7 +116,7 @@ Pupil Core is often used concurrently with third-party devices and software (e.g
 motion capture, stimuli presentation). In order to correlate the data between these, temporal alignment is of great importance.
 
 How you go about synchronizing Pupil Core with other devices or software will depend on the setup, but there are three 
-common approaches (steps 2–3 leverage our [Network API](/core/network-api/#network-api)):
+common approaches (steps 2–3 leverage our [Network API](/developer/core/network-api)):
 
 ::: tip
 <v-icon large color="info">info_outline</v-icon>
