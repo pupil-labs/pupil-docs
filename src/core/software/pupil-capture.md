@@ -22,6 +22,17 @@ The World window is the main control center for Pupil Capture. It displays a liv
 1. **Menu**: This area contains settings and contextual information for each plugin.
 1. **Sidebar**: This area contains clickable buttons for each plugin. System plugins are loaded in the top and user added plugins are added below a horizontal separator.
 
+### Keyboard Shortcuts
+
+| Keyboard Shortcut   | Description                                                  |
+|:--------------------|:-------------------------------------------------------------|
+| `r`                 | Start and stop recording                                     |
+| `c`                 | Start and stop calibration                                   |
+| `t`                 | Start and stop validation                                    |
+| `a`                 | Surface tracker: Add new surface                             |
+| `x`                 | Add annotation (default keyboard shortcut)                   |
+| `i`                 | Camera intrinsic estimation: Take snapshot of circle pattern |
+
 ## Video Source Selection
 By default Pupil Capture will use Local USB as the capture source.
 If you have a Pupil Core headset connected to your computer you will see videos displayed from your Pupil Core headset in the World and Eye windows.
