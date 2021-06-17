@@ -51,6 +51,56 @@ Each data point should have at least two keys `topic` and `timestamp`. Each data
 separated by a `.`
 2. `timestamp`: [Pupil time](/core/terminology/#pupil-time) at which the datum was generated.
 
+### Convert Pupil Time to System Time
+::: tip
+<v-icon large color="info">info_outline</v-icon>
+Converting Pupil Time to System Time can helpful if you have other data recorded using System Time on the same 
+machine. However, be aware that the accuracy of System Time is variable and depends on the device's network time 
+protocol. Before using System Time for synchronization purposes, read our [Best Practices](/core/best-practices/#sychronization).
+:::
+
+When a Pupil Core recording is started, the time from both clocks is stored. Therefore, we know how they relate to each 
+other / how much they are offset. You can use this information to convert Pupil Time to System Time. For this, you will 
+need: 1) Pupil Time at recording start, and 2) System Time at recording start.
+
+1) At recording start, current Pupil Time is written into the `info.player.json` file of the recording under the 
+   `start_time_synced_s` key.
+2) The current System Time is also saved under the `start_time_system_s` key.
+
+Here is an example of how to implement the conversion with Python:
+
+```python
+import datetime
+
+start_time_system = 1533197768.2805  # System Time at recording start
+start_time_synced = 674439.5502      # Pupil Time at recording start
+
+# Calculate the fixed offset between System and Pupil Time
+offset = start_time_system - start_time_synced
+
+# Choose a Pupil timestamp that you want to convert to System Time
+# (this can be any or all timestamps of interest)
+pupil_timestamp = 674439.4695  # This is a random example of a Pupil timestamp
+
+# Add the fixed offset to the timestamp(s) we wish to convert
+pupiltime_in_systemtime = pupil_timestamp + offset
+
+# Using the datetime python module, we can convert timestamps 
+# stored as seconds represented by floating point values to a 
+# more readable datetime format.
+pupil_datetime = datetime.datetime.fromtimestamp(pupiltime_in_systemtime).strftime("%Y-%m-%d %H:%M:%S.%f")
+
+print(pupil_datetime)
+# example output: '2018-08-02 15:16:08.199800'
+
+# Hint: you can also copy and paste timestamps into various websites that convert them
+# to the readable date time format!
+```
+
+Now you know the basics, why not follow 
+[this in-depth tutorial](https://github.com/pupil-labs/pupil-tutorials/blob/master/08_post_hoc_time_sync.ipynb) 
+that shows how to convert Pupil Time to System Time for different Pupil Core exported files.
+
 ### Pupil Datum Format
 
 The pupil detector generates `pupil` data from `eye` images. In addition to the `pupil`
