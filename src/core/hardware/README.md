@@ -93,10 +93,10 @@ If you have a 120Hz eye camera, make sure the eye camera is in focus. Twist the 
 ## Additional Parts
 
 ### World Camera Lens
-The high speed 2d world camera comes with two lenses.
-60 degree FOV lens (shown on the left) and a wide angle 100 degree FOV lens (shown on the right).
+The high speed world camera comes with two lenses.
+A narrow angle lens and a wide angle lens. The default lens is the wide angle lens. Check out the camera [field of view table](/core/software/pupil-capture/#camera-field-of-view-fov "Pupil Labs camera field of view table") for exact FOV measurements for each lens at different resolutions. 
 
-The world camera lens are interchangeable, so you can swap between the two lenses provided for normal or wide angle FOV.
+The world camera lens are interchangeable, so you can swap between the two lenses provided for wide angle or narrow angle field of view.
 
 <Youtube src="TDa3A8L1i4o"/>
 
