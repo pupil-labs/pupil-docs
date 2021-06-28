@@ -184,6 +184,8 @@ This file contains all the mapped gaze data from all sections.
 | **gaze position in reference image y [px]** | Same as "gaze position in reference image x [px]" but for the y-coordinate.     |
 
 
+#### Reference Image
+The reference image used for defining the enrichment. The file is named `reference_image.jpeg|png`
 
 ## Gaze Overlay
 <div class="pb-4" style="display:flex;justify-content:center;filter:drop-shadow(2px 4px 10px #000000);">

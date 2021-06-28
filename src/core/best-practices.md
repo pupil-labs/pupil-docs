@@ -113,16 +113,21 @@ Ensure the maximum dispersion accommodates your viewing task.
 
 ## Sychronization
 Pupil Core is often used concurrently with third-party devices and software (e.g. physiological sensors, 
-motion capture, stimuli presentation). In order to correlate the data between these, temporal alignment is of great importance. 
+motion capture, stimuli presentation). In order to correlate the data between these, temporal alignment is of great importance.
 
 How you go about synchronizing Pupil Core with other devices or software will depend on the setup, but there are three 
-common approaches (steps 2–3 leverage our [Network API](core/network-api/#network-api)):
+common approaches (steps 2–3 leverage our [Network API](/developer/core/network-api)):
 
 ::: tip
 <v-icon large color="info">info_outline</v-icon>
-When using multiple Pupil Core devices (running on the same or multiple machines), simply turn-on 
+Read about Pupil Core's [timing definitions here](/core/terminology/#timing).
+:::
+
+::: tip
+<v-icon large color="info">info_outline</v-icon>
+When using multiple Pupil Core devices (running on the same or multiple machines), be sure to turn-on 
 the [Network Time Sync Plugin](https://docs.pupil-labs.com/core/software/pupil-capture/#pupil-time-sync) which takes 
-care of Pupil Time synchronisation. The [Pupil Groups Plugin](core/software/pupil-capture/#pupil-groups) also helps when 
+care of Pupil Time synchronization. The [Pupil Groups Plugin](/core/software/pupil-capture/#pupil-groups) also helps when 
 using more than one Pupil Core device simultaneously. 
 :::
 
@@ -138,7 +143,7 @@ for an accurate and easy to implement solution.
 
 ### 2. Custom Clocks
 By default, most third-party devices and software come with their own clock to measure time consistently. These clocks 
-rarely share a common starting point which would allow for automatic time alignment. However, they usually guarantee to 
+*rarely* share a common starting point which would allow for automatic time alignment. However, they usually guarantee to 
 be monotonicly increasing and are very accurate when it comes to measuring time differences (like Pupil Time).
 
 [In this tutorial](https://github.com/pupil-labs/pupil-helpers/blob/master/python/simple_realtime_time_sync.py), we
@@ -149,16 +154,4 @@ For an even more accurate and stable time sync, see our [Pupil Time Sync Protoco
 You can use our [Annotation Plugin](/core/software/pupil-capture/#annotations) to make annotations with a timestamp in 
 the recording on desired events, such as trigger events. Annotations can be sent via the keyboard or programmatically. 
 [This script](https://github.com/pupil-labs/pupil-helpers/blob/master/python/remote_annotations.py) demonstrates how you 
-can send remote annotations over the network. 
-
-::: tip
-<v-icon large color="info">info_outline</v-icon>
-The accuracy of this method can be influenced by network latency. Consider accounting for network latency by combining 
-the Custom Clock demo with your annotation script,
-[like in this example](https://gist.github.com/N-M-T/fa8992b42e19fa3d5277d6b076776fc5).
-:::
-
-### What not to do
-* Thinking about using System time? Read [this overview](/core/terminology/#_1-system-time) for limitations.
-* Do not start a recording on a trigger event that corresponds to the beginning of a recording on your third-party
-  device – not all Pupil Core processes are guaranteed to start at the same time.
+can send remote annotations over the network.
