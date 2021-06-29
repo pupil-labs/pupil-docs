@@ -236,7 +236,36 @@ Results are exported in the following files:
 - `head_pose_tacker_model.csv`: A list of all markers used to generate the 3d model and the 3d locations of the marker vertices.
 - `head_pose_tacker_poses.csv`: The world camera's pose within the 3d model coordinate system for each recorded world frame. A camera pose is described as a 6-components vector. The first three components are the rotation vector in Rodrigues format and the last three components are the translation vector.
 
+#### IMU Timeline
+This plugin loads and visualizes accelerometer and gyroscope data from Pupil Invisible recordings. It also fuses the 
+data using Madgwick's algorithm to yield drift-free orientation estimates in the pitch and roll axes. Note that this
+Plugin will not be loaded with Pupil Core recordings. 
 
+Why fuse the data? Numerical integration of angular rate is subject to position errors that grow with time. Accurate 
+estimates of orientation therefore require drift correction. Madgwick's algorithm removes gyroscope drift in the pitch
+and roll axes using accelerometer feedback to monitor position relative to gravity.
+
+[insert image]
+
+In the Plugin's menu, toggle `View raw timeline` to view the accelerometer and gyroscope readings and `View orientation
+timeline` for pitch and roll. You can also change `Madgwick's beta`. This value is associated with gyroscope mean error.
+Increasing the beta will lead to faster drift corrections but with more sensitivity to lateral accelerations. Read more
+about [Madgwick's algorithm here](https://www.x-io.co.uk/res/doc/madgwick_internal_report.pdf).
+
+Results are exported in `imu_timeline.csv` with the following headers:
+* `gyro_x` - angular velocity about the x-axis in deg/s
+* `gyro_y` - angular velocity about the y-axis in deg/s
+* `gyro_z` - angular velocity about the z-axis in deg/s  
+* `accel_x` - linear acceleration along the x-axis (m/s<sup>2</sup>)
+* `accel_y` - linear acceleration along the y-axis (m/s<sup>2</sup>)
+* `accel_z` - linear acceleration along the z-axis (m/s<sup>2</sup>)  
+* `pitch` - rotation about the x-axis (head tilt from front to back) in degrees
+* `roll` - rotation about the z-axis (head tilt from side to side) in degrees
+
+:::tip
+<v-icon large color="info">info_outline</v-icon>
+Read more about [Pupil Invisible's coordinate systems here](/developer/invisible/#coordinate-systems).
+:::
 
 ### Pupil Data And Post-hoc Detection
 By default, Player starts with the `Pupil Data From Recording` plugin that tries to load pupil positions that were detected and stored during a Pupil Capture recording.
