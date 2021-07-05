@@ -183,6 +183,9 @@ This file contains all the mapped gaze data from all sections.
 | **gaze position in reference image x [px]** | Float value representing the x-coordinate of the mapped gaze point in pixel coordinates. If the reference image was not detected in the scene at the given time this value is empty.     |
 | **gaze position in reference image y [px]** | Same as "gaze position in reference image x [px]" but for the y-coordinate.     |
 
+#### Reference Image
+The reference image used for defining the enrichment. The file is named `reference_image.jpeg|png`
+
 ## Face Mapper
 
 The Face Mapper enrichment robustly detects faces in the scene video. Detections consist of the bounding box of the face. This provides you with insight into _when_ and _where_ faces are visible to a subject.
