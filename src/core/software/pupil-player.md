@@ -237,10 +237,12 @@ Results are exported in the following files:
 - `head_pose_tacker_poses.csv`: The world camera's pose within the 3d model coordinate system for each recorded world frame. A camera pose is described as a 6-components vector. The first three components are the rotation vector in Rodrigues format and the last three components are the translation vector.
 
 #### IMU Timeline
-This plugin visualizes accelerometer and gyroscope readings from Pupil Invisible recordings. It also fuses the 
+This plugin visualizes accelerometer and gyroscope data from Pupil Invisible recordings. It also fuses the 
 data using Madgwick's algorithm to yield drift-free orientation estimates in the pitch and roll axes.
 
-[insert image]
+<div class="pb-4">
+  <img src="../../media/core/imgs/pp-imu.jpg" style="display:flex;margin:0 auto;">
+</div>
 
 Why fuse the data? Numerical integration of angular rate is subject to position errors that grow with time. Accurate 
 estimates of orientation therefore require drift correction. Madgwick's algorithm removes orientation drift in the pitch
@@ -259,9 +261,9 @@ Results are exported in `imu_timeline.csv` with the following columns:
 | `gyro_x`            | Angular velocity about the x-axis in deg/s                             |
 | `gyro_y`            | Angular velocity about the y-axis in deg/s                             |
 | `gyro_z`            | Angular velocity about the z-axis in deg/s                             |
-| `accel_x`           | Linear acceleration along the x-axis (m/s<sup>2</sup>)                 |
-| `accel_y`           | Linear acceleration along the y-axis (m/s<sup>2</sup>)                 |
-| `accel_z`           | Linear acceleration along the z-axis (m/s<sup>2</sup>)                 |
+| `accel_x`           | Linear acceleration along the x-axis in G (9.80665 m/s<sup>2</sup>)    |
+| `accel_y`           | Linear acceleration along the y-axis in G (9.80665 m/s<sup>2</sup>)    |
+| `accel_z`           | Linear acceleration along the z-axis in G (9.80665 m/s<sup>2</sup>)    |
 | `pitch`             | Orientation about the x-axis (head tilt from front to back) in degrees |
 | `roll`              | Orientation about the z-axis (head tilt from side to side) in degrees  |
 
@@ -270,9 +272,9 @@ Results are exported in `imu_timeline.csv` with the following columns:
 Read more about [Pupil Invisible's coordinate systems here](/developer/invisible/#coordinate-systems).
 :::
 
-Caveat: The Plugin is unable to estimate orientation about the yaw axis (head rotation from left to right). This is 
-because the IMU has no magnetometer to monitor heading. The Plugin therefore implements a slimmed down version of Madgwick's
-algorithm for Pitch and Roll only.
+This Plugin is does not estimate orientation about the yaw axis (head rotation from left to right). This is 
+because the IMU has no magnetometer to monitor heading. The Plugin therefore implements a version of Madgwick's
+algorithm that estimates Pitch and Roll only.
 
 Note that this Plugin will not be loaded with Pupil Core recordings.
 
