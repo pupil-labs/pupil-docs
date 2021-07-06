@@ -274,7 +274,7 @@ Read more about [Pupil Invisible's coordinate systems here](/developer/invisible
 
 This Plugin is does not estimate orientation about the yaw axis (head rotation from left to right). This is 
 because the IMU has no magnetometer to monitor heading. The Plugin therefore implements a version of Madgwick's
-algorithm that estimates Pitch and Roll only.
+algorithm that only estimates Pitch and Roll.
 
 Note that this Plugin will not be loaded with Pupil Core recordings.
 
