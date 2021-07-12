@@ -276,7 +276,7 @@ This Plugin does not estimate orientation about the yaw axis (head rotation from
 because the IMU has no magnetometer to monitor heading. The Plugin therefore implements a version of Madgwick's
 algorithm that only estimates Pitch and Roll.
 
-Note that this Plugin will not be loaded with Pupil Core recordings.
+Note that this Plugin [will not be loaded](/core/software/pupil-player/#product-specific-plugins) with Pupil Core recordings.
 
 ### Pupil Data And Post-hoc Detection
 By default, Player starts with the `Pupil Data From Recording` plugin that tries to load pupil positions that were detected and stored during a Pupil Capture recording.
@@ -367,6 +367,7 @@ Here is a list of what plugins are available based on the product that generated
 | Post-hoc gaze calibration | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: |
 | Pupil from recording | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: |
 | Gaze from recording | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: |
+| IMU timeline | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: |
 
 #### Changelog
 > Changed in version 3.3:
