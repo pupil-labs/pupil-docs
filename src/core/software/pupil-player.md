@@ -238,7 +238,7 @@ Results are exported in the following files:
 
 #### IMU Timeline
 This plugin visualizes accelerometer and gyroscope data from Pupil Invisible recordings. It also fuses the 
-data using Madgwick's algorithm to yield drift-free orientation estimates in the pitch and roll axes.
+data using [Madgwick's algorithm](https://github.com/xioTechnologies/Fusion) to yield drift-free orientation estimates in the pitch and roll axes.
 
 <div class="pb-4">
   <img src="../../media/core/imgs/pp-imu.jpg" style="display:flex;margin:0 auto;">
