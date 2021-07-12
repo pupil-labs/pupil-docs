@@ -354,6 +354,27 @@ You can compare `2d` and `3d` mapping results by creating two calibrations and g
 ### Developing your own Plugin
 To develop your own plugin see the [developer guide](/developer/core/overview "Pupil Core developer documentation").
 
+### Product-specific plugins
+Some plugins in Pupil Player _only_ load if they are able to be used with the product that created the recordings.
+
+Here is a list of what plugins are available based on the product that generated the recording:
+
+| Pupil Player Plugin | Pupil Core | Pupil Invisible | Pupil Mobile |
+| :-: | :--: | :-: | :-: |
+| Blink detection | :heavy_check_mark:  |  :heavy_minus_sign: | :heavy_check_mark: |
+| Fixation detection | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: |
+| Post-hoc pupil detection | :heavy_check_mark:| :heavy_minus_sign: | :heavy_check_mark: |
+| Post-hoc gaze calibration | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: |
+| Pupil from recording | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: |
+| Gaze from recording | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: |
+
+#### Changelog
+> Changed in version 3.3:
+> - Removed the `“Pupil from recording”` option, as there is no pupillometry data to load from Pupil Invisible recordings. Pupil Player will no longer generate an empty `pupil_positions.csv` file after export.
+>
+> Added in version 3.2:
+> -  Added product-specific plugins.
+
 ## Export
 You can export data and videos by pressing `e` on your keyboard or the `e` hot key button in the Pupil Player window.
 
