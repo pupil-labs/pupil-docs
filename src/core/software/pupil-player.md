@@ -272,7 +272,7 @@ Results are exported in `imu_timeline.csv` with the following columns:
 Read more about [Pupil Invisible's coordinate systems here](/developer/invisible/#coordinate-systems).
 :::
 
-This Plugin is does not estimate orientation about the yaw axis (head rotation from left to right). This is 
+This Plugin does not estimate orientation about the yaw axis (head rotation from left to right). This is 
 because the IMU has no magnetometer to monitor heading. The Plugin therefore implements a version of Madgwick's
 algorithm that only estimates Pitch and Roll.
 
