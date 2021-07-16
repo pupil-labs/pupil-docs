@@ -22,7 +22,7 @@ description: Need assistance? Check out this section for troubleshooting with Pu
 
 **A red LED is blinking on my Pupil Invisible glasses!**
 
-The LED is indicating that there is a problem that may affect further data collection and tries to grab your attention. To get details on what the problem exactly is open the Pupil Invisible Companion app, which will show an error description.
+The LED is indicating that there is a problem that may affect further data collection and tries to grab your attention. To get details on the problem, open the Pupil Invisible Companion app, which will show an error description.
 
 The potential problems incude:
 - Low battery on the Companion device.
