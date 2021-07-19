@@ -24,7 +24,7 @@ description: Need assistance? Check out this section for troubleshooting with Pu
 
 The LED blinks to try to get the wearer's attention. The red blinking LED indicates that there is a problem that may affect further recording. To get details, open the Pupil Invisible Companion app to view an error description.
 
-The potential problems incude:
+The potential problems include:
 - Low battery on the Companion device.
 - Little storage left on the Companion device.
 - Unstable connection to the Pupil Invisible device during a recording.
