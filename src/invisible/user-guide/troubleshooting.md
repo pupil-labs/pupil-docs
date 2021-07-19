@@ -26,5 +26,5 @@ The LED blinks to try to get the wearer's attention. The red blinking LED indica
 
 The potential problems include:
 - Low battery on the Companion Device.
-- Little storage left on the Companion device.
+- Low storage space remaining on the Companion Device.
 - Unstable connection to the Pupil Invisible device during a recording.
