@@ -19,3 +19,12 @@ description: Need assistance? Check out this section for troubleshooting with Pu
    cable rather than another 3rd party cable. Such cables are available
    in a wide variety of quality and using cables of insufficient quality
    can lead to loss of connection.
+
+**A red LED is blinking on my Pupil Invisible glasses!**
+
+The LED blinks to try to get the wearer's attention. The red blinking LED indicates that there is a problem that may affect further recording. To get details, open the Pupil Invisible Companion app to view an error description.
+
+The potential problems include:
+- Low battery on the Companion Device.
+- Low storage space remaining on the Companion Device.
+- Unstable connection to the Pupil Invisible Glasses device during a recording.
