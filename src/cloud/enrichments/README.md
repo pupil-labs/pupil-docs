@@ -90,11 +90,11 @@ This file contains the surface locations in the scene images for all sections.
 | -------- | -------- | 
 | **section id** | Unique identifier of the corresponding section.     |
 | **timestamp [ns]** | UTC timestamp in nanoseconds of the sample. Equal to the timestamp of the scene camera frame the marker detection was executed on.     |
-| **detected markers** | A list of the markers detected in the corresponding scene camera frame. Markers are represented by their ID and the list is separated by `;`.     |
-| **tl x/y** | x or y coordinate respectively of the **t**op **l**eft corner. Empty in case the surface could not be localized.   |
-| **tr x/y** | x or y coordinate respectively of the **t**op **r**ight corner. Empty in case the surface could not be localized.   |
-| **br x/y** | x or y coordinate respectively of the **b**ottom **r**ight corner. Empty in case the surface could not be localized.   |
-| **bl x/y** | x or y coordinate respectively of the **b**ottom **l**eft corner. Empty in case the surface could not be localized.   |
+| **detected markers** | A list of the markers detected in the corresponding scene camera frame. Markers are represented by their ID and the list is separated by `;`. Added in version 2 of this enrichment.    |
+| **tl x/y [px]** | x or y coordinate respectively of the **t**op **l**eft corner. Empty in case the surface could not be localized. Added in version 2 of this enrichment.   |
+| **tr x/y [px]** | x or y coordinate respectively of the **t**op **r**ight corner. Empty in case the surface could not be localized. Added in version 2 of this enrichment.   |
+| **br x/y [px]** | x or y coordinate respectively of the **b**ottom **r**ight corner. Empty in case the surface could not be localized. Added in version 2 of this enrichment.   |
+| **bl x/y [px]** | x or y coordinate respectively of the **b**ottom **l**eft corner. Empty in case the surface could not be localized. Added in version 2 of this enrichment.   |
 
 
 ## Reference Image Mapper
