@@ -309,7 +309,7 @@ This file contains gaze data in world camera coordinates. For a definition of th
 | **timestamp [ns]** | UTC timestamp in nanoseconds of the sample. Equal to the timestamp of the original gaze sample before mapping.     |
 | **gaze x [px]** | Float value representing the x-coordinate of the mapped gaze point in world camera pixel coordinates.
 | **gaze y [px]** | Same as "gaze x [px]" but for the y-coordinate.     |
-| **worn** | This value indicates whether the Pupil Invisible Glasses have been worn by a subject at this point in time. `1.0` indicates that it has been worn, while `0.0` indicates that is has not been.     |
+| **worn** | This value indicates whether the Pupil Invisible Glasses have been worn by a subject at this point in time. `1.0` indicates that it has been worn, while `0.0` indicates that is has not been. Added in version 2 of this enrichment.    |
 
 
 #### imu.csv
