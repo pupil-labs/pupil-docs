@@ -315,15 +315,15 @@ This file contains gaze data in world camera coordinates. For a definition of th
 #### imu.csv
 This file contains the acceleration and gyro data capture by the IMU. Gyro values correspond to angular speed around the respective axis in degrees. Accelleration values correspond to the acceleration along the respective axis in G. For a definition of the coordinate system see [here](/developer/invisible/#imu-coordinate-system "Explanation of Pupil Invisible's IMU coordinate system").
 
+Additionally, it contains drift-free estimations of the roll and pitch of the Pupil Invisible Glasses based on [Madgwick's algorithm](https://www.x-io.co.uk/res/doc/madgwick_internal_report.pdf). Numerical integration of angular rate is subject to position errors that grow with time. Accurate estimates of orientation therefore require drift correction. Madgwick's algorithm removes orientation drift in the pitch and roll axes using accelerometer feedback to monitor position relative to gravity.
+
 
 | Field | Description | 
 | -------- | -------- | 
 | **section id** | Unique identifier of the corresponding section.     |
 | **recording id** | Unique identifier of the recording this sample belongs to.     |
 | **timestamp [ns]** | UTC timestamp in nanoseconds of the sample.    |
-| **gyro x [deg/s]** | Rotation speed around x-axis.    |
-| **gyro y [deg/s]** | Rotation speed around y-axis.    |
-| **gyro z [deg/s]** | Rotation speed around z-axis.     |
-| **acceleration x [G]** | Translation speed around x-axis in G. Note `1 G = 9.80665 m/s^2`.|
-| **acceleration y [G]** | Translation speed around y-axis in G. Note `1 G = 9.80665 m/s^2`.|
-| **acceleration z [G]** | Translation speed around z-axis in G. Note `1 G = 9.80665 m/s^2`.|
+| **gyro x [deg/s]**<br />**gyro y [deg/s]**<br />**gyro z [deg/s]** | Rotation speed around x, y or z-axis respectively in degrees/s.    |
+| **acceleration x [G]**<br />**acceleration y [G]**<br />**acceleration z [G]** | Translational acceleartion along the x, y or z-axis respectively in G. Note `1 G = 9.80665 m/s^2`.|
+| **roll** | Drift-free estimation of the roll (head tilt from side to side) in degrees. The output range is -180 to +180 degrees. Added in version 2 of this enrichment.    |
+| **pitch** | Drift-free estimation of the pitch (head tilt from front to back) in degrees. The output range is -180 to +180 degrees. Added in version 2 of this enrichment.         |
