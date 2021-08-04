@@ -216,7 +216,8 @@ This file contains all the individual face detections.
 | -------- | -------- | 
 | **section id** | Unique identifier of the corresponding section.     |
 | **recording id** | Unique identifier of the recording this sample belongs to.     |
-| **timestamp [ns]** | UTC timestamp in nanoseconds of the corresponding world timestamp. If multiple faces have been detected in the same scene video frame, each face is reported in a separate row with the same timestamp.     |
+| **timestamp [ns]** | UTC timestamp in nanoseconds of the corresponding world camera frame timestamp. If multiple faces have been detected in the same scene video frame, each face is reported in a separate row with the same timestamp.     |
+| **world frame index** | Index of the according world camera frame this face was detected in.     |
 | **p1 x** | x-coordinate of the starting point of the bounding box rectangle.     |
 | **p1 y** | y-coordinate of the starting point of the bounding box rectangle.     |
 | **p2 x** | x-coordinate of the ending point of the bounding box rectangle.     |
