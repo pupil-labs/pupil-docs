@@ -489,13 +489,18 @@ The fields below are _not_ available for Pupil Invisible recordings:
 * `gaze_normal1_y` - y normal of the visual axis for eye 1
 * `gaze_normal1_z` - z normal of the visual axis for eye 1
 
-### Annotation Export
+### Annotation Player
 
-The `Annotation Player` plugin loads any annotations generated during the recording, as
-well as allows you to add annotations after the effect in Pupil Player. On export, the
-plugin writes the annotation data to `annotations.csv`. It includes at least the
+This plugin loads any annotations generated during the recording, as well as allowing you to add annotations after the 
+effect. With the Pupil Player interface, you can assign hotkeys to your annotations to ensure efficient labelling 
+of important events in your recordings.
+
+<div class="pb-4">
+  <img src="../../media/core/imgs/pp-annotation.jpg" style="display:flex;margin:0 auto;">
+</div>
+
+On export, the annotation plugin writes the annotation data to `annotations.csv`. It includes at least the
 following keys:
-
 - `index`: World frame index during which the annotation started or happened
 - `timestamp`: Start time or timestamp of the annotation in Pupil time
 - `label`: Annotation label
@@ -508,6 +513,20 @@ Their values will be converted to strings using Python's string representation. 
 it is recommended to use primitive types (strings, integers, floats) as value types for
 custom fields.
 :::
+
+Annotation hotkey definitions are stored in the recording directory: 
+`<recording dir>/offline_data/annotation_definitions.json` with the format:
+```json
+{
+    "version": 1,
+    "definitions": {
+        "<label>": "<hotkey>"
+    }
+}
+```
+When a new recording is loaded, Pupil Player will attempt to load the annotation definitions from the recording-specific 
+file. If it is not found or invalid, the last known set of annotation definitions will be loaded from Pupil Player's 
+session settings. This ensures you never lose your annotation hotkey definitions.
 
 ### Fixation Export
 
