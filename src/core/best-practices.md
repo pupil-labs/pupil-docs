@@ -155,3 +155,51 @@ You can use our [Annotation Plugin](/core/software/pupil-capture/#annotations) t
 the recording on desired events, such as trigger events. Annotations can be sent via the keyboard or programmatically. 
 [This script](https://github.com/pupil-labs/pupil-helpers/blob/master/python/remote_annotations.py) demonstrates how you 
 can send remote annotations over the network.
+
+## Pupillometry
+
+Pupil Core measures pupil size in mm provided by the [pye3d model](/developer/core/pye3d/#pye3d-pupil-detection): 
+`diameter_3d`, and in pixels as observed in the eye videos: `diameter`. Pupil size measured in pixels, while useful in 
+some cases, is not a reflection of actual pupil size since it is not corrected for perspective. The output of pye3d 
+should more accurately describe pupil size and will thus be preferable for most users.
+
+### Camera to Pupil Distances 
+Both eyes are measured independently and [adjusting the eye cameras](/core/hardware/#headset-adjustments/) such that 
+they are of equal distance to the eyes is important if data from both eyes are used.
+- `diameter_3d` - The global scale of each radius depends on the quality of the fit of the respective pye3d eye model 
+  (see below for stabilizing the model). If the eye model is estimated too far away from the eye camera for one or both 
+  of the eyes, it will lead to an overestimation of the pupil radius
+- `diameter` - Measured in pixels, and thus dependent on the distance between the eyes and the cameras. Pupil size estimates
+  will vary if the camera to pupil distance is not the same for both eyes
+
+### Stabilize the pye3d model
+For accurate measurements of pupil size in mm, it is necessary to build a stable, well-fit pye3d model by sampling 
+sufficient gaze points from a variety of gaze angles. To achieve this, try moving the head around while looking at a 
+fixed position. If everything is set up correctly, a stable blue circle will surround the modelled eyeball, and this 
+should be of an equivalent size for each eye. See the ['Getting Started'](/core/#_3-check-pupil-detection/) 
+documentation for more details.
+
+### Freeze the pye3d model
+The [pye3d model](/developer/core/pye3d/#pye3d-pupil-detection) regularly updates to account for non-stationary eyeball 
+positions over time. Abrupt changes to the calculated 3d eyeball position (due to errors in the estimation) can lead to 
+a false change in pupil size estimation. This can occur even if the actual pupil size was constant. One solution to 
+prevent this is freezing the model – this option is available as a toggle in the eye windows.
+
+Choosing a time to freeze the model can be subjective – freezing it too soon or too late can lead to an erroneous 
+baseline, such that all absolute pupil sizes are slightly too small or large. Importantly, however, relative pupil sizes, 
+which many users are ultimately interested in, should be robust.
+
+Freezing the model **is not** robust to headset slippage. If using a frozen eyeball model and the headset slips 
+during the experiment, erroneous pupil size estimates will occur. Therefore, only use this option if the 
+experiment is tightly controlled with limited head movements, and keep recordings short and free of slippage as much as
+possible.
+
+:::tip <v-icon large color="info">info_outline</v-icon>
+You can also freeze the model when running 
+[post-hoc pupil detection in Pupil Player](/core/software/pupil-player/#pupil-data-and-post-hoc-detection/). Moreover, 
+clicking 're-detect' after freezing the model will apply the frozen model from the beginning of the recording.
+:::
+
+
+
+
