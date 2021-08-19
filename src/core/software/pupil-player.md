@@ -526,7 +526,7 @@ Annotation hotkey definitions are stored in the recording directory:
 ```
 When a new recording is loaded, Pupil Player will attempt to load the annotation definitions from the recording-specific 
 file. If it is not found or invalid, the last known set of annotation definitions will be loaded from Pupil Player's 
-session settings. This ensures you never lose your annotation hotkey definitions.
+session settings.
 
 ### Fixation Export
 
