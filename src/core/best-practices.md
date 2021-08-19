@@ -159,8 +159,8 @@ can send remote annotations over the network.
 ## Pupillometry
 
 [Pupillometry](https://doi.org/10.1002/wcs.1323) is the study of temporal changes in pupil diameter in response to 
-external light stimuli and/or cognitive processing. Pupil Core reports pupil diameter in mm, provided by the 
-[pye3d](/developer/core/pye3d/#pye3d-pupil-detection) model: `diameter_3d`, and in pixels, as observed in the eye 
+external light stimuli and/or cognitive processing. Pupil Core reports pupil diameter in mm provided by the 
+[pye3d](/developer/core/pye3d/#pye3d-pupil-detection) model: `diameter_3d`, and in pixels as observed in the eye 
 videos: `diameter`. 
 
 Pupil size in pixels is dependent on the camera to pupil distance, and is not corrected for perspective. 
@@ -170,8 +170,9 @@ The output of pye3d more accurately reflects pupil size and will thus be prefera
 Both eyes are measured independently and [adjusting the eye cameras](/core/hardware/#headset-adjustments/) such that 
 they are of equal distance to the eyes is important if data from both eyes are used.
 - `diameter_3d` - The global scale of each radius depends on the quality of the fit of the respective pye3d eye model 
-  (see below). If the eye model is estimated too far away from the eye camera for one or both 
-  of the eyes, it will lead to an overestimation of the pupil radius
+  (see below). If the eye model is estimated too far away from the eye camera for one or both of the eyes, it will lead 
+  to an overestimation of the pupil radius; if the model is estimated too close to the eye camera, it will lead to an 
+  underestimation of the pupil radius.
 - `diameter` - Measured in pixels and thus dependent on the camera to pupil distance. Pupil size estimates
   will vary if unequal for both eyes
 
