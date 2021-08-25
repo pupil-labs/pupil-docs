@@ -179,9 +179,9 @@ they are of equal distance to the eyes is important if data from both eyes are u
 ### pye3d model
 A well-fit [pye3d](/developer/core/pye3d/#pye3d-pupil-detection) model is important for accurate estimates of pupil size 
 in mm. To generate a well-fitting model, sample sufficient gaze points from a variety of gaze angles, e.g. by moving the 
-head around while looking at a fixed position. A well-fit model is visualized by a stable dark blue circle that surrounds 
-the modelled eyeball (i.e. within physiological bounds), and this should be of an equivalent size for each eye. If the 
-model is not well-fit, the circle will be light blue (i.e. out of physiological bounds).
+head around while looking at a fixed position. A well-fit model is visualized by a stable circle that surrounds the 
+modelled eyeball, and this should be of an equivalent size for each eye. A dark blue circle indicates that the model is 
+within physiological bounds, and a light blue circle out of physiological bounds.
 
 <v-img :src="require('../media/core/imgs/bp-pye3d.png')"></v-img>
 <br>
