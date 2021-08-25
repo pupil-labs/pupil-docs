@@ -223,7 +223,7 @@ of the environment and track the headset's pose within it. Note, only markers of
 supported by the head pose tracker plugin.
 
 ::: tip
-The markers used must be unique. You may not use multiple instances of the same marker ID within your environment.
+The markers used must be unique and of the same size. You may not use multiple instances of the same marker ID within your environment.
 :::
 
 <Youtube src="9x9h98tywFI"/>
