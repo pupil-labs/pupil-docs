@@ -154,7 +154,7 @@ Please note that this enrichment only works for reference images showing objects
 We always recommend making a quick test recording to check if your use-case is compatible.
 
 ### Mapped Gaze Coordinates
-The SLAM Mapper maps gaze points to a reference image. As such, the gaze coordinates are given in pixels referring to that image. The pixel at (0,0) is in the top left corner.
+The Reference Image Mapper maps gaze points to a reference image. As such, the gaze coordinates are given in pixels referring to that image. The pixel at (0,0) is in the top left corner.
 
 
 ### Export Format
