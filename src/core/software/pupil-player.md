@@ -403,14 +403,14 @@ The `World Video Exporter` is loaded by default.
   <img src="../../media/core/imgs/export.jpg" style="display:flex;margin:0 auto;">
 </div>
 
-The export saves the world video as shown in Player, including all currently active visualizations (see the [Visualization Plugins](#visualization-plugins "Pupil Player visualization plugins documentation") section). 
+The export saves the world video as shown in Player, including all currently active visualizations (see  [Visualization Plugins](#visualization-plugins "Pupil Player visualization plugins documentation")). 
 
 Gereral overview for exported video files:
 
 The World and Eye video exporter save the scene video file, together with [numpy](https://numpy.org/devdocs/reference/generated/numpy.lib.format.html) and csv files containing timestamps corresponding to each frame. 
-The timestamps follow the [Pupil Time](/core/terminology/#timestamps) convention. The csv timestamp files include an additional `pts` column. This stands for presentation timestamp and refers to the media file's internal time representation. It can be used to seek to/identify specific frames within the media file.
+The timestamps follow the [Pupil Time](/core/terminology/#timestamps) convention. The csv timestamp files include an additional `pts` column. `pts` is an abbreviation for _presentation timestamps_ and refers to the media file's internal time representation. It can be used to seek or identify specific frames within the media file.
 
-Media time is represented in seconds using fractions, i.e. as two integers: pts (numerator) and time base (denominator). The time base stays the same throughout the media stream. Each frame has a pts. Together, you can infer the time in seconds since media start: pts / time_base = seconds since start. 
+Media time (seconds after start) can be calculated as follows: `pts / time_base = seconds since start`. 
 
 We export the pts for the purpose of frame identification within the media stream, e.g. if one wants to extract a specific range of frames based on the external Core timestamps. We do not export the time_base because we do not need the pts for actual time representation. The normal timestamps are sufficient for that.
 
