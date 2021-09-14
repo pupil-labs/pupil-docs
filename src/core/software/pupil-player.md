@@ -408,11 +408,7 @@ The export saves the world video as shown in Player, including all currently act
 Gereral overview for exported video files:
 
 The World and Eye video exporter save the scene video file, together with [numpy](https://numpy.org/devdocs/reference/generated/numpy.lib.format.html) and csv files containing timestamps corresponding to each frame. 
-The timestamps follow the [Pupil Time](/core/terminology/#timestamps) convention. The csv timestamp files include an additional `pts` column. `pts` is an abbreviation for _presentation timestamps_ and refers to the media file's internal time representation. It can be used to seek or identify specific frames within the media file.
-
-Media time (seconds after start) can be calculated as follows: `pts / time_base = seconds since start`. 
-
-We export the pts for the purpose of frame identification within the media stream, e.g. if one wants to extract a specific range of frames based on the external Core timestamps. We do not export the time_base because we do not need the pts for actual time representation. The normal timestamps are sufficient for that.
+The timestamps follow the [Pupil Time](/core/terminology/#timestamps) convention. The csv timestamp files include an additional `pts` column. `pts` is an abbreviation for _presentation timestamps_ and refers to the media file's internal time representation. It can be used to seek or identify specific frames within the media file. See this tutorial on how to extract individual frame images from the world video. 
 
 
 ### Eye Video Exporter
