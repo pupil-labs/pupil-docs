@@ -194,8 +194,7 @@ topic = f"notify.{notification['subject']}"
 
 You should use the `notify` topic for coordination with the app. All notifications
 on the IPC Backbone are automatically made available to all plugins in their
-[`on_notify`](/developer/core/plugin-api/#plugin-callback-methods)
-callback and used in all Pupil apps.
+[`on_notify` callback](/developer/core/plugin-api/#plugin-callback-methods) and used in all Pupil apps.
 
 In stark contrast to gaze and pupil, the notify topic should **not** be used at high
 volume. If you find that you need to write more than 10 messages a second, it is
