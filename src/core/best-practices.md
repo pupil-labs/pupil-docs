@@ -203,7 +203,3 @@ You can also freeze the model when running
 [post-hoc pupil detection in Pupil Player](/core/software/pupil-player/#pupil-data-and-post-hoc-detection/). Moreover, 
 clicking 're-detect' after freezing the model will apply the frozen model from the beginning of the recording.
 :::
-
-
-
-
