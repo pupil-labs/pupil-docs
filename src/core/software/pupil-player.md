@@ -403,7 +403,13 @@ The `World Video Exporter` is loaded by default.
   <img src="../../media/core/imgs/export.jpg" style="display:flex;margin:0 auto;">
 </div>
 
-The export saves the world video as shown in Player, including all currently active visualizations (see the [Visualization Plugins](#visualization-plugins "Pupil Player visualization plugins documentation") section).
+The export saves the world video as shown in Player, including all currently active visualizations (see  [Visualization Plugins](#visualization-plugins "Pupil Player visualization plugins documentation")). 
+
+Gereral overview for exported video files:
+
+The World and Eye video exporter saves the scene video file, together with [numpy](https://numpy.org/devdocs/reference/generated/numpy.lib.format.html) and csv files containing timestamps corresponding to each frame. 
+The timestamps follow the [Pupil Time](/core/terminology/#timestamps) convention. The csv timestamp files include an additional `pts` column. `pts` is an abbreviation for _presentation timestamps_ and refers to the media file's internal time representation. It can be used to seek or identify specific frames within the media file. See this [tutorial on how to extract individual frame images from the world video](https://github.com/pupil-labs/pupil-tutorials/blob/master/09_frame_identification.ipynb). 
+
 
 ### Eye Video Exporter
 The `Eye Video Exporter` needs to be loaded explicitly through the Plugin Manager.
