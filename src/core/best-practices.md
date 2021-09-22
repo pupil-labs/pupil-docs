@@ -163,25 +163,16 @@ external light stimuli and/or cognitive processing. Pupil Core reports pupil dia
 [pye3d](/developer/core/pye3d/#pye3d-pupil-detection) model: `diameter_3d`, and in pixels as observed in the eye 
 videos: `diameter`. 
 
-Pupil size in pixels is dependent on the camera to pupil distance, and is not corrected for perspective. 
-The output of pye3d more accurately reflects pupil size and will thus be preferable for most users.
-
-### Camera to Pupil Distances 
-Both eyes are measured independently and [adjusting the eye cameras](/core/hardware/#headset-adjustments/) such that 
-they are of equal distance to the eyes is important if data from both eyes are used.
-- `diameter_3d` - The global scale of each radius depends on the quality of the fit of the respective pye3d eye model 
-  (see below). If the eye model is estimated too far away from the eye camera for one or both of the eyes, it will lead 
-  to an overestimation of the pupil radius; if the model is estimated too close to the eye camera, it will lead to an 
-  underestimation of the pupil radius.
-- `diameter` - Measured in pixels and thus dependent on the camera to pupil distance. Pupil size estimates
-  will vary if unequal for both eyes
+Pupil size in pixels is dependent on the eye-camera to pupil distance and is not corrected for perspective. 
+Pye3d, on the other hand, accounts for differences in eye-camera to pupil distances and corrects for perspective. 
+It thus more accurately reflects pupil size and will be preferable for most users.
 
 ### pye3d model
 A well-fit [pye3d](/developer/core/pye3d/#pye3d-pupil-detection) model is important for accurate estimates of pupil size 
 in mm. To generate a well-fitting model, sample sufficient gaze points from a variety of gaze angles, e.g. by moving the 
 head around while looking at a fixed position. A well-fit model is visualized by a stable circle that surrounds the 
-modelled eyeball, and this should be of an equivalent size for each eye. A dark blue circle indicates that the model is 
-within physiological bounds, and a light blue circle out of physiological bounds.
+modelled eyeball, and this should be of an equivalent size to the respective eyeball. A dark blue circle indicates that 
+the model is within physiological bounds, and a light blue circle out of physiological bounds.
 
 <v-img :src="require('../media/core/imgs/bp-pye3d.png')"></v-img>
 <br>
@@ -189,19 +180,23 @@ within physiological bounds, and a light blue circle out of physiological bounds
 See the [pye3d release notes](https://github.com/pupil-labs/pupil/releases/tag/v3.4)for further details.
 
 ### Freeze the pye3d model
-The [pye3d model](/developer/core/pye3d/#pye3d-pupil-detection) regularly updates to account for headset slippage
-(erroneous movements of the headset on the wearer). Abrupt changes to the calculated 3d eyeball position (due to errors 
-in the estimation) can lead to a false change in pupil size estimation. This can occur even if the actual pupil size was 
-constant. One solution to prevent this is to freeze the model (available as a toggle in the eye windows).
+:::tip <v-icon large color="info">info_outline</v-icon>
+A frozen model **is not** robust to headset slippage (erroneous movements of the headset on the wearer) as it is 
+prevented from adapting to headset movements. If using a frozen model, and the headset slips during the experiment, 
+erroneous pupil size estimates can occur. Therefore, only use this option if the experiment is tightly controlled with 
+limited head movements, and keep recordings short and free of slippage as much as possible.
+:::
 
-Choosing a time to freeze the model can be subjective – freezing it too soon or too late can lead to an erroneous 
-baseline, such that all absolute pupil sizes are slightly too small or large. Importantly, relative pupil sizes, 
-which many users are ultimately interested in, are not affected.
-
-**Important note**: A frozen model **is not** robust to headset slippage as it is prevented from adapting to headset movements.
-If using a frozen model, and the headset slips during the experiment, erroneous pupil size estimates can occur. 
-Therefore, only use this option if the experiment is tightly controlled with limited head movements, and keep recordings 
-short and free of slippage as much as possible.
+The [pye3d model](/developer/core/pye3d/#pye3d-pupil-detection) regularly updates to account for headset slippage. In certain situations, this can lead to incorrect pupil size 
+estimates:
+1. Hard Slippage: The headset slips on the wearer, and a 2d pupil datum is generated **prior** to the 3d model adjusting
+2. Model Adjustment Error: No slippage occurred, but there is an abrupt change to the calculated 3d eyeball position 
+  (due to errors in the estimation). This can lead to a false change in pupil size estimation even if the actual pupil 
+  size was constant. 
+  
+One solution to prevent model adjustment error is to freeze the model, which is available as a toggle in the eye 
+windows. You should only freeze the model when it is well-fitting as per the description above. Note that pupil size 
+errors due to hard slippage can only be avoided by eliminating headset slippage. 
 
 :::tip <v-icon large color="info">info_outline</v-icon>
 You can also freeze the model when running 
