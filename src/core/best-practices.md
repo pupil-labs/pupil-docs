@@ -157,7 +157,6 @@ the recording on desired events, such as trigger events. Annotations can be sent
 can send remote annotations over the network.
 
 ## Pupillometry
-
 [Pupillometry](https://doi.org/10.1002/wcs.1323) is the study of temporal changes in pupil diameter in response to 
 external light stimuli and/or cognitive processing. Pupil Core reports pupil diameter in mm provided by the 
 [pye3d](/developer/core/pye3d/#pye3d-pupil-detection) model: `diameter_3d`, and in pixels as observed in the eye 
