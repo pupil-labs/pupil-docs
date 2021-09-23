@@ -76,9 +76,9 @@ Public sharing of data with people outside of a workspace is currently not possi
 **When should I use workspaces?**
 
 Workspaces can have many uses. Typical ones are:
-Projects or Studies: Use a separate workspace for every project in order to keep data cleanly separated.
-Teams: If you are a member of multiple teams or organizations, you can use multiple workspaces to control what data you are sharing with whom.
-Clients: If you are working with clients, you can use multiple workspaces in order to keep data separated and to control which collaborator should have access to which client’s data.
+- **Projects or Studies**: Use a separate workspace for every project in order to keep data cleanly separated.
+- **Teams**: If you are a member of multiple teams or organizations, you can use multiple workspaces to control what data you are sharing with whom.
+- **Clients**: If you are working with clients, you can use multiple workspaces in order to keep data separated and to control which collaborator should have access to which client’s data.
  
 **Is there a limit to the number of workspaces I can create?**
 
