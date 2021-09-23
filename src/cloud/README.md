@@ -69,7 +69,7 @@ Only accounts that have been invited to become members of a workspace are grante
 - **Admin**: Has all permissions of an editor and additionally can invite and remove workspace members and change workspace members role.
 - **Owner**: The owner of a workspace is the one who initially created the workspace. Owners have all permissions of an Admin. The owner of a workspace can not be changed.
 
-Public sharing of data with people outside of a workspace is currently not possible.
+Public sharing of data with people outside of a workspace is **not** currently possible.
 
 ### Frequently Asked Questions
 
