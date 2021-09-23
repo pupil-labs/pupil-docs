@@ -93,28 +93,6 @@ No, currently this is not possible. In case you really need this to happen pleas
 No, currently this is not possible. In case you really need this to happen please contact us at `info@pupil-labs.com`.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Projects & Enrichments
 
 <div class="pb-4" style="display:flex;justify-content:center;">
