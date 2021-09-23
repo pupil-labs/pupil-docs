@@ -66,8 +66,8 @@ Only accounts that have been invited to become members of a workspace are grante
 
 - **Viewer**: This role can view all data, but they are not allowed to edit anything. For example: a viewer can download data, playback recordings and view heatmaps. A viewer can not delete any data, create projects, or start compute jobs.
 - **Editor**: This role has full read and edit access to all data in the workspace, which includes the ability to create enrichments, start compute jobs and delete data.
-- **Admin**: On top of having full read and edit access like Editors, this role can additionally invite and remove workspace members and change their role.
-- **Owner**: The owner of a workspace is the one who initially created the workspace. They have Admin rights and their role can not be changed by anyone.
+- **Admin**: Has all permissions of an editor and additionally can invite and remove workspace members and change workspace members role.
+- **Owner**: The owner of a workspace is the one who initially created the workspace. Owners have all permissions of an Admin. The owner of a workspace can not be changed.
 
 Public sharing of data with people outside of a workspace is currently not possible.
 
