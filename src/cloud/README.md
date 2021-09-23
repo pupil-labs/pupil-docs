@@ -64,7 +64,7 @@ Workspaces are containers for your data and enable you to share data in Pupil Cl
 ### Access Control
 Only accounts that have been invited to become members of a workspace are granted access to the data in a workspace. For a more fine-grained control of what each member is allowed to do, they can be assign different roles:
 
-- **Viewer**: This role can view all data, but they are not allowed to edit anything. For example they can download data, playback recordings and view heatmaps, but they can not delete any data, create projects or start compute jobs.
+- **Viewer**: This role can view all data, but they are not allowed to edit anything. For example: a viewer can download data, playback recordings and view heatmaps. A viewer can not delete any data, create projects, or start compute jobs.
 - **Editor**: This role has full read and edit access to all data in the workspace, which includes the ability to create enrichments, start compute jobs and delete data.
 - **Admin**: On top of having full read and edit access like Editors, this role can additionally invite and remove workspace members and change their role.
 - **Owner**: The owner of a workspace is the one who initially created the workspace. They have Admin rights and their role can not be changed by anyone.
