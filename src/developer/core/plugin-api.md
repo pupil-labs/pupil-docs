@@ -102,7 +102,7 @@ unless they inherit from a set of special classes (`System_Plugin_Base`, `Base_M
 ### Plugin class attributes
 
 These class attributes define general plugin behavior. Overwriting them is optional but
-recommneded. `alive` is an exception and should only be set to `False` if you want the
+recommended. `alive` is an exception and should only be set to `False` if you want the
 plugin to close autonomously. Otherwise, this attribute is managed by the enclosing
 application.
 
@@ -178,7 +178,7 @@ class CustomDataExample(Plugin):
 
 ### Plugin utility methods
 
-In addition to the callbacks, the plugin implements a series of useful function to
+In addition to the callbacks, the plugin implements a series of useful functions to
 interact with the application.
 | Utility methods                 | Description                                                                                     |
 |---------------------------------|-------------------------------------------------------------------------------------------------|
