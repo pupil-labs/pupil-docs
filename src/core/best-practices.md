@@ -163,8 +163,9 @@ external light stimuli and/or cognitive processing. Pupil Core reports pupil dia
 videos: `diameter`. 
 
 Pupil size in pixels is dependent on the eye-camera to pupil distance and is not corrected for perspective. 
-Pye3d, on the other hand, accounts for differences in eye-camera to pupil distances and corrects for perspective. 
-It thus more accurately reflects pupil size and will be preferable for most users.
+[Pye3d](/developer/core/pye3d/#pye3d-pupil-detection), on the other hand, accounts for differences in eye-camera to 
+pupil distances and corrects for perspective. It thus more accurately reflects pupil size and will be preferable for most 
+users.
 
 ### pye3d model
 A well-fit [pye3d](/developer/core/pye3d/#pye3d-pupil-detection) model is important for accurate estimates of pupil size 
@@ -186,16 +187,18 @@ erroneous pupil size estimates can occur. Therefore, only use this option if the
 limited head movements, and keep recordings short and free of slippage as much as possible.
 :::
 
-The [pye3d model](/developer/core/pye3d/#pye3d-pupil-detection) regularly updates to account for headset slippage. In certain situations, this can lead to incorrect pupil size 
-estimates:
-1. Hard Slippage: The headset slips on the wearer, and a 2d pupil datum is generated **prior** to the 3d model adjusting
+The [pye3d model](/developer/core/pye3d/#pye3d-pupil-detection) regularly updates to account for headset slippage. In 
+certain situations, this can lead to incorrect pupil size estimates:
+1. Actual Headset Slippage: The headset slips on the wearer, and a 2d pupil datum is generated **prior** to the 3d model 
+   adjusting
 2. Model Adjustment Error: No slippage occurred, but there is an abrupt change to the calculated 3d eyeball position 
   (due to errors in the estimation). This can lead to a false change in pupil size estimation even if the actual pupil 
   size was constant. 
   
-One solution to prevent model adjustment error is to freeze the model, which is available as a toggle in the eye 
-windows. You should only freeze the model when it is well-fitting as per the description above. Note that pupil size 
-errors due to hard slippage can only be avoided by eliminating headset slippage. 
+One solution to prevent 'Model Adjustment Error' is to freeze the model, which is available as a toggle in the eye windows. 
+You should only freeze the model when it is well-fitting as per the description above. Pupil size errors due to 
+'Actual Headset Slippage' can only be avoided by eliminating headset slippage, which should be a key aim when performing
+pupillometry in general, and especially when freezing the model.
 
 :::tip <v-icon large color="info">info_outline</v-icon>
 You can also freeze the model when running 
