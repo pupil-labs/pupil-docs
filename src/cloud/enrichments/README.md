@@ -188,6 +188,14 @@ The reference image used for defining the enrichment. The file is named `referen
 
 ## Face Mapper
 
+<div class="pb-4" style="display:flex;justify-content:center;filter:drop-shadow(2px 4px 10px #000000);">
+  <v-img
+    :src="require('../../media/cloud/imgs/face_mapper_header.jpeg')"
+    max-width=80%
+  >
+  </v-img>
+</div>
+
 The Face Mapper enrichment robustly detects faces in the scene video. Detections consist of the bounding box of the face. This provides you with insight into _when_ and _where_ faces are visible to a subject.
 
 This enrichment automatically maps gaze data onto faces so that you can determine when a subject has been looking at them.
