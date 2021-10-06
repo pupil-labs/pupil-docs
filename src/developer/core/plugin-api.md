@@ -167,6 +167,12 @@ class MyCustomPlugin(Plugin):
         # raise NotImplementedError  # on next launch, do not recover plugin
 ```
 
+::: warning
+<v-icon large color="warning">info_outline</v-icon>
+The top-level keys of the `get_init_dict` dictionary must be of type `str` and its
+values must be primitive Python types that can be encoded by [msgpack](https://msgpack.org/).
+:::
+
 #### Processing callbacks
 
 As described in the [process structure](#process-structure) section above, Pupil Core
