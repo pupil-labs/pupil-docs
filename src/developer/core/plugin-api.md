@@ -167,12 +167,19 @@ class MyCustomPlugin(Plugin):
         # raise NotImplementedError  # on next launch, do not recover plugin
 ```
 
-| Processing callbacks            | Description                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+#### Processing callbacks
+
+As described in the [process structure](#process-structure) section above, Pupil Core
+software launches several processes. Each is driven by an infinite loop that processes
+data in each iteration, the so called "application event cycle". Data is fetched,
+generated, or processed by calling the plugin processing callbacks below in increasing
+`Plugin.order`. 
+
+| Callback                        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 |---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `recent_events(self, events)`   | Called once per application event cycle. `events` is a dictionary with string-keys and built-in python typed values, e.g. lists, dicts, etc. Plugins can add new entries to propagate data to plugins with higher `order`. Entries are stored to their corresponding [`.pldata`](/developer/core/recording-format/#pldata-files) files during recording and published on the [IPC backend](/developer/core/network-api/#ipc-backbone-message-forma). |
 | `gl_display(self)`              | Called once per application event cycle if the calling process has a user interface. Plugins should implement any custom OpenGL visualizations here.                                                                                                                                                                                                                                                                                                 |
 | `on_notify(self, notification)` | Called once for each [`notification`](/developer/core/network-api/#notification-message).                                                                                                                                                                                                                                                                                                                                                            |
-All processing callbacks are called in increasing `Plugin.order`.
 
 Custom data example:
 ```python
