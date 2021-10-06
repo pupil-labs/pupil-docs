@@ -133,7 +133,11 @@ replaced.
 Callback methods are triggered by the enclosing application. These can be divided into
 three categories: Startup/cleanup, processing, and UI interactions.
 
-| Startup/cleanup callbacks          | Description                                                                                                                                                                                                                                                                                                                         |
+#### Startup/cleanup callbacks
+
+Callbacks of this kind are only called once in the life cycle of a plugin.
+
+| Callback                           | Description                                                                                                                                                                                                                                                                                                                         |
 |------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `__init__(self, g_pool, **kwargs)` | Called when a plugin instance is started. `g_pool` provides access to the application. Calling `super().__init__(g_pool)` is strongly recommended. `kwargs` can be used for user preferences. See example below.                                                                                                                    |
 | `init_ui(self)`                    | Called after `__init__` if the calling process provides a user interface. Allows the plugin to setup its settings menu, quick access buttons, etc.                                                                                                                                                                                  |
