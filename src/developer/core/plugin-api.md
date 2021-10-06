@@ -108,11 +108,25 @@ application.
 
 | Name         | Possible values                                                                                        | Default value | Meaning                                                              |
 |--------------|--------------------------------------------------------------------------------------------------------|---------------|----------------------------------------------------------------------|
-| `uniqueness` | `"not_unique"`, `"by_class"`, `"by_base_class"`                                                        | `"by_class"`  | Plugin instance replacement behavior                                 |
+| `uniqueness` | `"not_unique"`, `"by_class"`, `"by_base_class"`                                                        | `"by_class"`  | Plugin instance replacement behavior. See below.                     |
 | `order`      | float in the range of [0.0, 1.0]                                                                       | `0.5`         | Defines the order in which plugins are loaded and called             |
 | `icon_font`  | `"roboto"`, `"pupil_icons"`, `"opensans"`, any other font registered via `Plugin.g_pool.ui.add_font()` | `"roboto"`    | Menu icon font                                                       |
 | `icon_chr`   | Any string whose letters are present in `icon_font`. Recommended to use a single letter string.        | `"?"`         | Menu icon                                                            |
 | `alive`      | `True`, `False`                                                                                        | `True`        | Setting to `False` will shutdown the plugin in the next event cycle. |
+
+
+#### Plugin uniqueness
+- *not unique* - plugins can be instantiated multiple times, e.g. gaze visualization
+plugins
+- *unique by class* - only one plugin instance can exist at a time, e.g. blink
+detector
+- *unique by base class* - if two  plugins share the same base class they are only
+allowed to be active one at a time. For example, each calibration choreography is
+implemented as a separate *by-base-class*-unique plugin but since they all share the
+same base class (`CalibrationChoreographyPlugin`) only one can be active at a time.
+
+If a new instance of a unique plugin is started the old instance will be cleaned up and
+replaced.
 
 ### Plugin callback methods
 
