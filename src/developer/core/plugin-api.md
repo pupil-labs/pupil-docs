@@ -145,7 +145,15 @@ Callbacks of this kind are only called once in the life cycle of a plugin.
 | `deinit_ui(self)`                  | Called before `cleanup` and the calling process provides a user interface. The plugin is responsible for removing any UI elements added in `init_ui`.                                                                                                                                                                               |
 | `get_init_dict(self)`              | Called on each active plugin instance on application shutdown. Returns a dictionary which is stored in the application's persistent session settings. On the next application launch, all previously active plugins will be restored by calling `__init__` and passing the dictionary as the `kwargs` arguments. See example below. |
 
-Session settings example:
+A typical use case of the session settings is to persistently store plugin parameters,
+e.g. the minimum duration parameter of the fixation detector.
+
+The code below shows how to store a custom value (`my_custom_setting`) in the session
+settings. `my_custom_setting=5` defines the default value in case no session settings
+were found when the application was started or the plugin has just been enabled. If
+session settings were loaded successfully the class will be instanciated with the
+dictionary previously returned by `get_init_dict()`.
+
 ```python
 from plugin import Plugin
 
