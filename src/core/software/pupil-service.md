@@ -24,10 +24,15 @@ and toggle to open and close the left and right eye windows.
   <img src="../../media/core/imgs/ps-gui.jpg" style="display:flex;margin:0 auto;width:400px">
 </div>
 
-Note that the eye windows opened by Pupil Service are equivalent to those of Pupil Core, giving you access to all
+Note that the eye windows opened by Pupil Service are equivalent to those of Pupil Capture, giving you access to all
 associated [pupil detection settings](/core/software/pupil-capture/#fine-tuning-pupil-detection).
 
-The real power of Pupil Service comes from control with network commands and less system resources. 
+A powerful feature of Pupil Service is low latency gaze mapping – Pupil Service maps gaze as soon as a new pupil datum 
+is available. Pupil Capture's event loop, on the other hand, is driven by the scene camera, where pupil data is mapped in 
+bulk once the scene camera returns a new frame. 
+
+Pupil Service also uses less system resources. 
+
 Check out the [Network API documentation](/developer/core/network-api/#communicating-with-pupil-service) for examples of 
 communicating with Pupil Service!
 
