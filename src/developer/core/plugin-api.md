@@ -121,8 +121,8 @@ plugins
 - *unique by class* - only one plugin instance can exist at a time, e.g. blink
 detector
 - *unique by base class* - if two  plugins share the same base class they are only
-allowed to be active one at a time. For example, each calibration choreography is
-implemented as a separate *by-base-class*-unique plugin but since they all share the
+allowed to be active one at a time. Calibration choreographies are examples of *unique by base class* plugins.
+They each implement a separate *by-base-class*-unique plugin but since they all share the
 same base class (`CalibrationChoreographyPlugin`) only one can be active at a time.
 
 If a new instance of a unique plugin is started the old instance will be cleaned up and
@@ -151,7 +151,7 @@ e.g. the minimum duration parameter of the fixation detector.
 The code below shows how to store a custom value (`my_custom_setting`) in the session
 settings. `my_custom_setting=5` defines the default value in case no session settings
 were found when the application was started or the plugin has just been enabled. If
-session settings were loaded successfully the class will be instanciated with the
+session settings were loaded successfully the class will be instantiated with the
 dictionary previously returned by `get_init_dict()`.
 
 ```python
@@ -210,7 +210,7 @@ class CustomDataExample(Plugin):
 |---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `on_click(self, pos, button, action)`       | Gets called when the user clicks in the window screen and the event has not been consumed by the GUI. Return `True` if the event was consumed and should not be propagated to any other plugin.                                                                                           |
 | `on_pos(self, pos)`                         | Gets called when the user moves the mouse in the window screen.                                                                                                                                                                                                                           |
-| `on_key(self, key, scancode, action, mods)` | Gets called on key events that were not consumed by the GUI.  Return `True` if the event was consumed and should not be propagated to any other plugin.  See http://www.glfw.org/docs/latest/input_guide.html#input_key for more information key events.                                  |
+| `on_key(self, key, scancode, action, mods)` | Gets called on key events that were not consumed by the GUI.  Return `True` if the event was consumed and should not be propagated to any other plugin.  See [the GLFW documentation](http://www.glfw.org/docs/latest/input_guide.html#input_key) for more information on key events.       |
 | `on_char(self, character)`                  | Gets called on char events that were not consumed by the GUI.          Return True if the event was consumed and should not be propagated         to any other plugin.          See http://www.glfw.org/docs/latest/input_guide.html#input_char for         more information char events. |
 | `on_drop(self, paths)`                      | Gets called on dropped paths of files and/or directories on the window.          Return True if the event was consumed and should not be propagated         to any other plugin.          See http://www.glfw.org/docs/latest/input_guide.html#path_drop for         more information.    |
 | `on_window_resize(self, window, w, h)`      | Gets called when user resizes window                                                                                                                                                                                                                                                      |
