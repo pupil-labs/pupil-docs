@@ -407,7 +407,7 @@ publisher.send(payload)
 ```
 
 ## Communicating with Pupil Service
-This code shows how to use notifications to start the eye windows, set calibration method and close Pupil Service:
+This code shows how to use notifications to start the eye windows, set a calibration method and close Pupil Service:
 ```python
 import zmq, msgpack, time
 
