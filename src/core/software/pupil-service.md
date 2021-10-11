@@ -28,8 +28,7 @@ Note that the eye windows opened by Pupil Service are equivalent to those of Pup
 associated [pupil detection settings](/core/software/pupil-capture/#fine-tuning-pupil-detection).
 
 A powerful feature of Pupil Service is low latency gaze mapping – Pupil Service maps gaze as soon as a new pupil datum 
-is available. Pupil Capture's event loop, on the other hand, is driven by the scene camera, where pupil data is mapped in 
-bulk once the scene camera returns a new frame. 
+is available. Pupil Capture, on the other hand, queues incoming pupil data until the scene camera returns a new frame. Afterward, the queued pupil data is mapped in bulk. 
 
 Pupil Service also uses less system resources. 
 
