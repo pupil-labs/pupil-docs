@@ -192,15 +192,13 @@ The message topic construction:
 topic = f"notify.{notification['subject']}"
 ```
 
-You should use the `notification` topic for coordination with the app. All notifications
-on the IPC Backbone are automatically made available to all plugins in their `on_notify`
-callback and used in all Pupil apps.
-
-**TODO: Link on_notify docs**
+You should use the `notify` topic for coordination with the app. All notifications
+on the IPC Backbone are automatically made available to all plugins in their
+[`on_notify` callback](/developer/core/plugin-api/#plugin-callback-methods) and used in all Pupil apps.
 
 In stark contrast to gaze and pupil, the notify topic should **not** be used at high
 volume. If you find that you need to write more than 10 messages a second, it is
-probably not a notification but another kind of data. Make a custom topic instead.
+probably not a notification but another kind of data. Use a custom topic instead.
 
 ```python
 import zmq

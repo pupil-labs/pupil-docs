@@ -50,6 +50,9 @@ When Pupil Capture starts, in default settings two processes are spawned:
 
 **[Eye](https://github.com/pupil-labs/pupil/blob/master/pupil_src/launchables/eye.py)** and **[World](https://github.com/pupil-labs/pupil/blob/master/pupil_src/launchables/world.py)**. Both processes grab image frames from a video capture stream but they have very different tasks.
 
+Pupil Player spawns with one main process that visualizes the recording but will spawn
+more for background calculations, e.g. post-hoc pupil detection or video exports.
+
 ### Eye Process
 The eye process only has one purpose - to detect the pupil and broadcast its position. The process breakdown looks like this:
 
@@ -60,7 +63,7 @@ The eye process only has one purpose - to detect the pupil and broadcast its pos
 See the [terminology section](/core/terminology "Pupil Core - terminology") for the difference between pupil and gaze data.
 
 ### World Process
-This is the workhorse.
+This is the workhorse in Pupil Capture.
 
 * Grabs the world camera images from the world camera video stream
 * Receives pupil positions from the eye process
@@ -69,15 +72,158 @@ This is the workhorse.
 * Records video and data.
 Most, and preferably all coordination and control happens within the World process.
 
+### Player Process
+Main process within Pupil Player.
+
+* Visualizes recorded data
+* Performs post-hoc analyses
+* Exports video and csv data
+
 ## API Reference
 
-All plugins are required to be subclasses from the root [Plugin class](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/plugin.py#L25-L167). It is available during runtime:
+Plugins are the recommended way to extend Pupil Core software functionality. They are
+typically managed within the application's main process which communicates with the
+plugins via callbacks (see below). These are defined in the root
+[`Plugin` class](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/plugin.py).
+In order to create a new plugin, one has to inherit from this class and overwrite them
+as desired.
+
 ```py
 from plugin import Plugin
 
 class MyCustomPlugin(Plugin):
     pass
 ```
+
+Plugins are automatically listed in the [Plugin Manager](/core/software/pupil-capture/#plugins)
+unless they inherit from a set of special classes (`System_Plugin_Base`, `Base_Manager`,
+`Base_Source`, `CalibrationChoreographyPlugin`, `GazerBase`).
+
+### Plugin class attributes
+
+These class attributes define general plugin behavior. Overwriting them is optional but
+recommended. `alive` is an exception and should only be set to `False` if you want the
+plugin to close autonomously. Otherwise, this attribute is managed by the enclosing
+application.
+
+| Name         | Possible values                                                                                        | Default value | Meaning                                                              |
+|--------------|--------------------------------------------------------------------------------------------------------|---------------|----------------------------------------------------------------------|
+| `uniqueness` | `"not_unique"`, `"by_class"`, `"by_base_class"`                                                        | `"by_class"`  | Plugin instance replacement behavior. See below.                     |
+| `order`      | float in the range of [0.0, 1.0]                                                                       | `0.5`         | Defines the order in which plugins are loaded and called             |
+| `icon_font`  | `"roboto"`, `"pupil_icons"`, `"opensans"`, any other font registered via `Plugin.g_pool.ui.add_font()` | `"roboto"`    | Menu icon font                                                       |
+| `icon_chr`   | Any string whose letters are present in `icon_font`. Recommended to use a single letter string.        | `"?"`         | Menu icon                                                            |
+| `alive`      | `True`, `False`                                                                                        | `True`        | Setting to `False` will shutdown the plugin in the next event cycle. |
+
+
+#### Plugin uniqueness
+- *not unique* - plugins can be instantiated multiple times, e.g. gaze visualization
+plugins
+- *unique by class* - only one plugin instance can exist at a time, e.g. blink
+detector
+- *unique by base class* - if two  plugins share the same base class they are only
+allowed to be active one at a time. Calibration choreographies are examples of *unique by base class* plugins.
+They each implement a separate *by-base-class*-unique plugin but since they all share the
+same base class (`CalibrationChoreographyPlugin`) only one can be active at a time.
+
+If a new instance of a unique plugin is started the old instance will be cleaned up and
+replaced.
+
+### Plugin callback methods
+
+Callback methods are triggered by the enclosing application. These can be divided into
+three categories: Startup/cleanup, processing, and UI interactions.
+
+#### Startup/cleanup callbacks
+
+Callbacks of this kind are only called once in the life cycle of a plugin.
+
+| Callback                           | Description                                                                                                                                                                                                                                                                                                                         |
+|------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `__init__(self, g_pool, **kwargs)` | Called when a plugin instance is started. `g_pool` provides access to the application. Calling `super().__init__(g_pool)` is strongly recommended. `kwargs` can be used for user preferences. See example below.                                                                                                                    |
+| `init_ui(self)`                    | Called after `__init__` if the calling process provides a user interface. Allows the plugin to setup its settings menu, quick access buttons, etc.                                                                                                                                                                                  |
+| `cleanup(self)`                    | Called when `Plugin.alive` is set to `True`, i.e. on application shutdown or if the plugin is being disabled                                                                                                                                                                                                                        |
+| `deinit_ui(self)`                  | Called before `cleanup` and the calling process provides a user interface. The plugin is responsible for removing any UI elements added in `init_ui`.                                                                                                                                                                               |
+| `get_init_dict(self)`              | Called on each active plugin instance on application shutdown. Returns a dictionary which is stored in the application's persistent session settings. On the next application launch, all previously active plugins will be restored by calling `__init__` and passing the dictionary as the `kwargs` arguments. See example below. |
+
+A typical use case of the session settings is to persistently store plugin parameters,
+e.g. the minimum duration parameter of the fixation detector.
+
+The code below shows how to store a custom value (`my_custom_setting`) in the session
+settings. `my_custom_setting=5` defines the default value in case no session settings
+were found when the application was started or the plugin has just been enabled. If
+session settings were loaded successfully the class will be instantiated with the
+dictionary previously returned by `get_init_dict()`.
+
+```python
+from plugin import Plugin
+
+class MyCustomPlugin(Plugin):
+    def __init__(self, g_pool, my_custom_setting=5):
+        self._my_custom_setting = my_custom_setting
+    
+    def get_init_dict(self):
+        return {"my_custom_setting": self._my_custom_setting}
+        # return {}  # on next launch, recover plugin with default settings
+        # raise NotImplementedError  # on next launch, do not recover plugin
+```
+
+::: warning
+<v-icon large color="warning">info_outline</v-icon>
+The top-level keys of the `get_init_dict` dictionary must be of type `str` and its
+values must be primitive Python types that can be encoded by [msgpack](https://msgpack.org/).
+:::
+
+#### Processing callbacks
+
+As described in the [process structure](#process-structure) section above, Pupil Core
+software launches several processes. Each is driven by an infinite loop that processes
+data in each iteration, the so called "application event cycle". Data is fetched,
+generated, or processed by calling the plugin processing callbacks below in increasing
+`Plugin.order`. 
+
+| Callback                        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `recent_events(self, events)`   | Called once per application event cycle. `events` is a dictionary with string-keys and built-in python typed values, e.g. lists, dicts, etc. Plugins can add new entries to propagate data to plugins with higher `order`. Entries are stored to their corresponding [`.pldata`](/developer/core/recording-format/#pldata-files) files during recording and published on the [IPC backend](/developer/core/network-api/#ipc-backbone-message-forma). |
+| `gl_display(self)`              | Called once per application event cycle if the calling process has a user interface. Plugins should implement any custom OpenGL visualizations here.                                                                                                                                                                                                                                                                                                 |
+| `on_notify(self, notification)` | Called once for each [`notification`](/developer/core/network-api/#notification-message).                                                                                                                                                                                                                                                                                                                                                            |
+
+Custom data example:
+```python
+from plugin import Plugin
+
+CUSTOM_TOPIC = "custom_topic"
+
+
+class CustomDataExample(Plugin):
+    def recent_events(self, events):
+        custom_datum = {
+            "topic": CUSTOM_TOPIC,
+            "timestamp": self.g_pool.get_timestamp(),  # Timestamp in pupil time
+            "custom field": 42,
+            # Further fields can be added here.
+            # Their values should be serializable with msgpack.
+        }
+        events[CUSTOM_TOPIC] = [custom_datum]
+```
+
+| UI interaction callbacks                    | Description                                                                                                                                                                                                                                                                               |
+|---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `on_click(self, pos, button, action)`       | Gets called when the user clicks in the window screen and the event has not been consumed by the GUI. Return `True` if the event was consumed and should not be propagated to any other plugin.                                                                                           |
+| `on_pos(self, pos)`                         | Gets called when the user moves the mouse in the window screen.                                                                                                                                                                                                                           |
+| `on_key(self, key, scancode, action, mods)` | Gets called on key events that were not consumed by the GUI.  Return `True` if the event was consumed and should not be propagated to any other plugin.  See [the GLFW documentation](http://www.glfw.org/docs/latest/input_guide.html#input_key) for more information on key events.       |
+| `on_char(self, character)`                  | Gets called on char events that were not consumed by the GUI.          Return True if the event was consumed and should not be propagated         to any other plugin.          See [the GLFW documentation](http://www.glfw.org/docs/latest/input_guide.html#input_char) for         more information on char events. |
+| `on_drop(self, paths)`                      | Gets called on dropped paths of files and/or directories on the window.          Return True if the event was consumed and should not be propagated         to any other plugin.          See [the GLFW documentation](http://www.glfw.org/docs/latest/input_guide.html#path_drop) for         more information on path drop events.    |
+| `on_window_resize(self, window, w, h)`      | Gets called when user resizes window                                                                                                                                                                                                                                                      |
+
+### Plugin utility methods
+
+In addition to the callbacks, the plugin implements a series of useful functions to
+interact with the application.
+| Utility methods                 | Description                                                                                     |
+|---------------------------------|-------------------------------------------------------------------------------------------------|
+| `self.notify_all(notification)` | Sends a [`notification`](/developer/core/network-api/#notification-message) to the IPC backend. |
+| `self.add_menu()`               | Creates a settings menu. Typically called within  `self.init_ui()`.                             |
+| `self.remove_menu()`            | Removes `self.menu`. Typically called within `self.deinit_ui()`                                 |
 
 ### Pupil Detection Plugins
 
