@@ -256,6 +256,17 @@ The Offline Fixation Detector in Pupil Player additionally includes the followin
     # ...
 ```
 
+## Blink Messages
+The online [Blink Detector](/core/software/pupil-capture/#blink-detector) in Pupil Capture publishes the following notification:
+```python
+{   # blink datum
+    'topic': 'blink',
+    'confidence': <float>,  # blink confidence
+    'timestamp': <timestamp float>,
+    'base_data': [<pupil positions>, ...]
+    'type': 'onset' or 'offset'
+}
+```
 
 ### Remote Annotations
 You can also create [annotation](/core/software/pupil-capture/#annotations) events
