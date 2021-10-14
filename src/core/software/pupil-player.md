@@ -253,9 +253,9 @@ Results are exported in `blinks.csv` with the following columns:
 | Key                 | Description                                                |
 |:--------------------|:-----------------------------------------------------------|
 | `id`                | Numerical ID of blink                                      |
-| `start_timestamp`   | Blink end timestamp (ms)                                   |
+| `start_timestamp`   | Blink end timestamp (s)                                    |
 | `duration`          | Blink duration (s)                                         |
-| `end_timestamp`     | Blink start timestamp (ms)                                 |
+| `end_timestamp`     | Blink start timestamp (s)                                  |
 | `start_frame_index` | Blink start world frame index                              |
 | `index`             | Blink median world frame index                             |
 | `end_frame_index`   | Blink end world frame index                                |

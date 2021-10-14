@@ -114,15 +114,15 @@ Ensure the maximum dispersion accommodates your viewing task.
 ## Blink Detector Thresholds
 In general, the default values for the [Blink Detector](/core/software/pupil-player/#blink-detector) should work reasonably 
 well on good quality eye data with robust pupil detection. However, it is often necessary to adjust the thresholds in the 
-event that [blinks](/core/terminology/#blinks) are not accurately  classified. Therefore, it is important to understand 
+event that [blinks](/core/terminology/#blinks) are not accurately classified. Therefore, it is important to understand 
 the types of errors that can occur and to be able to spot them when they occur, thereby enabling you to make appropriate 
 adjustments.
 
 ### Errors
 **A.** False negatives - Blinks are not being detected, e.g. due to the onset threshold being too high  
 **B.** False positives - The onset threshold is set too low and blinks are classified even though they did not occur  
-**C.** The end of a blink is not detected due to the offset threshold being too low. This can lead to erroneous blinks 
-that have unreasonable durations  
+**C.** The end of a blink is not detected due to the offset threshold being too high. This can lead to erroneous blinks 
+that have unreasonable durations
 
 ### Pupil Detection and Blinks
 It is worth noting that poor pupil detection in general can lead to false negatives. In such instances, adjusting the 
