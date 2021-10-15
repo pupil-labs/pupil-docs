@@ -153,8 +153,9 @@ location_ to _2d pixel location_, and vice versa.
 
 ::: tip
 <v-icon large color="info">info_outline</v-icon>
-If the eye model fails to estimate `phi` or `theta` it will set these two fields and the
-`model_confidence` to `0.0`. We recommend discarding these data points.
+In situations where the eye model fails to estimate `phi` or `theta`, such as during
+blinks, it will set these two fields and the `model_confidence` to `0.0`. We recommend
+discarding these data points.
 :::
 ### Surface (AOI) Coordinate System
 
