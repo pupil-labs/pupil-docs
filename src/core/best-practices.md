@@ -109,9 +109,29 @@ consecutive detections that should have been grouped to a single fixation (type 
 if the gaze points are dispersed over 2 degrees due to bigger eye rotations, filtering with a maximum 
 dispersion of 1 degree could classify two separate fixations instead of one. Setting the maximum 
 dispersion too high might group fixations together that should have been considered separate fixations. 
-Ensure the maximum dispersion accommodates your viewing task. 
+Ensure the maximum dispersion accommodates your viewing task.
 
-## Sychronization
+## Blink Detector Thresholds
+In general, the default values for the [Blink Detector](/core/software/pupil-player/#blink-detector) should work reasonably 
+well on good quality eye data with robust pupil detection. However, it is often necessary to adjust the thresholds in the 
+event that [blinks](/core/terminology/#blinks) are not accurately classified. Therefore, it is important to understand 
+the types of errors that can occur and to be able to spot them when they occur, thereby enabling you to make appropriate 
+adjustments.
+
+### Errors
+**A.** False negatives - Blinks are not being detected, e.g. due to the onset threshold being too high  
+**B.** False positives - The onset threshold is set too low and blinks are classified even though they did not occur  
+**C.** The end of a blink is not detected due to the offset threshold being too high. This can lead to erroneous blinks 
+that have unreasonable durations
+
+### Pupil Detection and Blinks
+It is worth noting that poor pupil detection in general can lead to false negatives. In such instances, adjusting the 
+thresholds can make it easier to detect blinks, but also increases the chance of false positives. It is worth taking the 
+time to ensure an optimal setup with regards to [eye camera positioning](/core/#_3-check-pupil-detection) and 
+[2d detector settings](/core/software/pupil-capture/#fine-tuning-pupil-detection) so that the pupils are well-detected
+when the eyes are open.
+
+## Synchronization
 Pupil Core is often used concurrently with third-party devices and software (e.g. physiological sensors, 
 motion capture, stimuli presentation). In order to correlate the data between these, temporal alignment is of great importance.
 

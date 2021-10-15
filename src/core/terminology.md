@@ -57,6 +57,13 @@ Quality assessment of the _pupil detection_ for a given _eye_ image.
 
 _Gaze data_ inherits the _confidence_ value from the _pupil data_ it was based on.
 
+## Blinks
+
+Blinking is defined as a rapid closing and re-opening of the eyelids. Characteristics associated with blinks, like blink 
+rate, can provide insights into factors such as cognitive workload and stress. As such, blinking is of increasing interest 
+to researchers. Pupil Core implements a blink detector that provides blink classification both in 
+[real-time](/core/software/pupil-capture/#blink-detector) and [post-hoc](/core/software/pupil-player/#blink-detector) contexts.
+
 ## Calibration
 
 Process of understanding the relationship between _pupil positions_ and their
