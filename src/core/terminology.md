@@ -127,7 +127,14 @@ There are three coordinate systems for each camera:
     - x: horizontal, y: vertical, z: optical axis
     - example:
         - `(0, 0, 1)` (a point on the optical axis)
-    
+    - [Reference](https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html)
+
+::: tip
+<v-icon large color="info">info_outline</v-icon>
+You can use the [_Camera Intrinsics_](#camera-intrinsics) to project a _3d camera
+location_ to _2d pixel location_, and vice versa.
+:::
+
 - **Eye Model**:
     - shares the 3D Camera Space coordinate system
     - x: horizontal, y: vertical, z: optical axis
@@ -144,8 +151,6 @@ There are three coordinate systems for each camera:
     - note that eye model values are reported in opposite directions for the right eye (eye0) as the right eye camera is 
       physically upside down
     
-[Reference](https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html).
-You can use the _Camera Intrinsics_ to project a _3d camera location_ to _2d pixel location_, and vice versa.
 
 ### Surface (AOI) Coordinate System
 
