@@ -134,7 +134,14 @@ There are three coordinate systems for each camera:
     - x: horizontal, y: vertical, z: optical axis
     - example:
         - `(0, 0, 1)` (a point on the optical axis)
-    
+    - [Reference](https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html)
+
+::: tip
+<v-icon large color="info">info_outline</v-icon>
+You can use the [_Camera Intrinsics_](#camera-intrinsics) to project a _3d camera
+location_ to _2d pixel location_, and vice versa.
+:::
+
 - **Eye Model**:
     - shares the 3D Camera Space coordinate system
     - x: horizontal, y: vertical, z: optical axis
@@ -148,12 +155,15 @@ There are three coordinate systems for each camera:
             - increasing `x` vector component; increasing `phi`
         - see the cartesian to spherical coordinate calculation in our [source code](https://github.com/pupil-labs/pupil/blob/eb8c2324f3fd558858ce33f3816972d93e02fcc6/pupil_src/shared_modules/pupil_detector_plugins/visualizer_pye3d/utilities.py#L14)
         - an overview of eye model data is in the 'Raw Data Exporter' [documentation](/core/software/pupil-player/#raw-data-exporter)
-    - note that eye model values are reported in opposite directions for the right eye (eye0) as the right eye camera is 
-      physically upside down
-    
-[Reference](https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html).
-You can use the _Camera Intrinsics_ to project a _3d camera location_ to _2d pixel location_, and vice versa.
+    - note that eye model values are reported in opposite directions for the right eye
+        (eye0) as the right eye camera is physically upside down
 
+::: tip
+<v-icon large color="info">info_outline</v-icon>
+In situations where the eye model fails to estimate `phi` or `theta`, such as during
+blinks, it will set these two fields and the `model_confidence` to `0.0`. We recommend
+discarding these data points.
+:::
 ### Surface (AOI) Coordinate System
 
 [Surfaces](/core/software/pupil-capture/#surface-tracking) - also known as areas of interest or AOIs - define their own local coordinate system. For each scene image that includes sufficient surface markers, the `Surface Tracker` plugin calculates the respective _transformation_ function between the scene camera and surface coordinate system. The surface preview (red rectangle overlay) uses its inner triangle to indicate `up`/`top` within the local surface coordinate system. Pupil Capture and Player automatically map gaze and fixation data to surface coordinates if a valid surface transformation is available.
