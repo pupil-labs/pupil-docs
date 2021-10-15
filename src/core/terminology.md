@@ -151,6 +151,11 @@ location_ to _2d pixel location_, and vice versa.
     - note that eye model values are reported in opposite directions for the right eye
         (eye0) as the right eye camera is physically upside down
 
+::: tip
+<v-icon large color="info">info_outline</v-icon>
+If the eye model fails to estimate `phi` or `theta` it will set these two fields and the
+`model_confidence` to `0.0`. We recommend discarding these data points.
+:::
 ### Surface (AOI) Coordinate System
 
 [Surfaces](/core/software/pupil-capture/#surface-tracking) - also known as areas of interest or AOIs - define their own local coordinate system. For each scene image that includes sufficient surface markers, the `Surface Tracker` plugin calculates the respective _transformation_ function between the scene camera and surface coordinate system. The surface preview (red rectangle overlay) uses its inner triangle to indicate `up`/`top` within the local surface coordinate system. Pupil Capture and Player automatically map gaze and fixation data to surface coordinates if a valid surface transformation is available.
