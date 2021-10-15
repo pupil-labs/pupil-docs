@@ -148,9 +148,8 @@ location_ to _2d pixel location_, and vice versa.
             - increasing `x` vector component; increasing `phi`
         - see the cartesian to spherical coordinate calculation in our [source code](https://github.com/pupil-labs/pupil/blob/eb8c2324f3fd558858ce33f3816972d93e02fcc6/pupil_src/shared_modules/pupil_detector_plugins/visualizer_pye3d/utilities.py#L14)
         - an overview of eye model data is in the 'Raw Data Exporter' [documentation](/core/software/pupil-player/#raw-data-exporter)
-    - note that eye model values are reported in opposite directions for the right eye (eye0) as the right eye camera is 
-      physically upside down
-    
+    - note that eye model values are reported in opposite directions for the right eye
+        (eye0) as the right eye camera is physically upside down
 
 ### Surface (AOI) Coordinate System
 
