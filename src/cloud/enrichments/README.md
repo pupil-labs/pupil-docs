@@ -81,6 +81,21 @@ This file contains all the mapped gaze data from all sections. The coordinate sy
 | **gaze position on surface x [normalized]** | Float value representing the x-coordinate of the mapped gaze point in surface coordinates. If the surface was not localized this value is empty.     |
 | **gaze position on surface y [normalized]** | Same as gaze position on surface x [normalized] but for y-coordinate.     |
 
+#### fixations.csv
+This file contains fixation events detected in the gaze data stream and mapped to the surface.
+
+
+| Field | Description | 
+| -------- | -------- | 
+| **section id** | Unique identifier of the corresponding section.     |
+| **recording id** | Unique identifier of the recording this sample belongs to.     |
+| **fixation index** | Index of fixation within the section. The index corresponds to the fixation index of the raw unmapped data.    |
+| **start timestamp [ns]** | UTC timestamp in nanoseconds of the start of the fixation.     |
+| **end timestamp [ns]** | UTC timestamp in nanoseconds of the end of the fixation.     |
+| **duration [ms]** | Duration of the fixation in milliseconds.     |
+| **fixation detected on surface** | Boolean indicating whether or not the fixation was inside or outside of the surface. It is considered inside if at least one of the underlying gaze samples was inside the surface.    |
+| **fixation x [normalized]** | Float value representing the x-coordinate of the fixation in surface coordinates. |
+| **fixation y [normalized]** | Same as "fixation x [normalized]" but for the y-coordinate.     |
 
 #### aoi_positions.csv
 This file contains the surface locations in the scene images for all sections.
