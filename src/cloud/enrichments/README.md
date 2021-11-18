@@ -377,6 +377,23 @@ This file contains gaze data in world camera coordinates. For a definition of th
 | **gaze x [px]** | Float value representing the x-coordinate of the mapped gaze point in world camera pixel coordinates.
 | **gaze y [px]** | Same as "gaze x [px]" but for the y-coordinate.     |
 | **worn** | This value indicates whether the Pupil Invisible Glasses have been worn by a subject at this point in time. `1.0` indicates that it has been worn, while `0.0` indicates that is has not been. Added in version 2 of this enrichment.    |
+| **fixation index** | If this gaze samples belongs to a fixation event, this is the corresponding index of the fixation. Otherwise this field is empty.     |
+
+
+#### fixations.csv
+This file contains fixation events detected in the gaze data stream.
+
+
+| Field | Description | 
+| -------- | -------- | 
+| **section id** | Unique identifier of the corresponding section.     |
+| **recording id** | Unique identifier of the recording this sample belongs to.     |
+| **fixation index** | Index of fixation within the section.     |
+| **start timestamp [ns]** | UTC timestamp in nanoseconds of the start of the fixation.     |
+| **end timestamp [ns]** | UTC timestamp in nanoseconds of the end of the fixation.     |
+| **duration [ms]** | Duration of the fixation in milliseconds.     |
+| **fixation x [px]** | Float value representing the x-coordinate of the fixation in world camera pixel coordinates. This position is the average of all gaze samples within the fixation.     |
+| **fixation y [px]** | Same as "fixation x [px]" but for the y-coordinate.     |
 
 
 #### imu.csv
