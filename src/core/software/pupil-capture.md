@@ -449,19 +449,12 @@ For all new projects we strongly recommend using Apriltags!
 
 
 
-### Blink Detection
-The pupil detection algorithm assigns a `confidence` value to each pupil datum. It represents the quality of the detection result. While the eye is closed the assigned confidence is very low. The `Blink Detection` plugin makes use of this fact by defining a `blink onset` as a significant confidence drop - or a `blink offset` as a significant confidence gain - within a short period of time. It always operates on 2D pupil confidence data. The plugin creates a `blink` event for each event loop iteration in the following format:
+### Blink Detector
+The online blink detector classifies [blinks](/core/terminology/#blinks) according to onset and offset thresholds 
+associated with [2D pupil confidence](/core/terminology/#confidence). See the 
+[Blink Detector documentation](/core/software/pupil-player/#blink-detector) for more information.
 
-```python
-{  # blink datum
-	'topic': 'blink',
-    'confidence': <float>,  # blink confidence
-    'timestamp': <timestamp float>,
-    'base_data': [<pupil positions>, ...]
-    'type': 'onset' or 'offset'}
-```
-
-The `Filter length` is the time window's length in which the plugin tries to find such confidence drops and gains. The plugin fires the above events if the blink confidence within the current time window exceeds the `onset` or `offset` confidence threshold. Setting both thresholds to `0` will always trigger blink events, even if the confidence is very low. This means that onsets and offsets do not appear necessarily as pairs but in waves.
+Read more about accessing blink detection results in real-time in the [developer documentation](/developer/core/network-api/#blink-messages).
 
 ### Annotations
 The `Annotation Capture` plugin allows you to mark timestamps with a label -- sometimes

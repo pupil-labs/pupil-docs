@@ -192,15 +192,13 @@ The message topic construction:
 topic = f"notify.{notification['subject']}"
 ```
 
-You should use the `notification` topic for coordination with the app. All notifications
-on the IPC Backbone are automatically made available to all plugins in their `on_notify`
-callback and used in all Pupil apps.
-
-**TODO: Link on_notify docs**
+You should use the `notify` topic for coordination with the app. All notifications
+on the IPC Backbone are automatically made available to all plugins in their
+[`on_notify` callback](/developer/core/plugin-api/#plugin-callback-methods) and used in all Pupil apps.
 
 In stark contrast to gaze and pupil, the notify topic should **not** be used at high
 volume. If you find that you need to write more than 10 messages a second, it is
-probably not a notification but another kind of data. Make a custom topic instead.
+probably not a notification but another kind of data. Use a custom topic instead.
 
 ```python
 import zmq
@@ -256,6 +254,17 @@ The Offline Fixation Detector in Pupil Player additionally includes the followin
     # ...
 ```
 
+## Blink Messages
+The online [Blink Detector](/core/software/pupil-capture/#blink-detector) in Pupil Capture publishes the following notification:
+```python
+{   # blink datum
+    'topic': 'blink',
+    'confidence': <float>,  # blink confidence
+    'timestamp': <timestamp float>,
+    'base_data': [<pupil positions>, ...]
+    'type': 'onset' or 'offset'
+}
+```
 
 ### Remote Annotations
 You can also create [annotation](/core/software/pupil-capture/#annotations) events
@@ -404,6 +413,58 @@ payload = serializer.dumps(notification)
 
 publisher.send_string(topic, flags=zmq.SNDMORE)
 publisher.send(payload)
+```
+
+## Communicating with Pupil Service
+This code shows how to use notifications to start the eye windows, set a calibration method and close Pupil Service:
+```python
+import zmq, msgpack, time
+
+# create a zmq REQ socket to talk to Pupil Service
+ctx = zmq.Context()
+pupil_remote = ctx.socket(zmq.REQ)
+pupil_remote.connect('tcp://localhost:50020')
+
+# convenience function
+def send_recv_notification(n):
+    pupil_remote.send_string(f"notify.{n['subject']}", flags=zmq.SNDMORE)
+    pupil_remote.send(msgpack.dumps(n))
+    return pupil_remote.recv_string()
+
+# set start eye windows
+n = {'subject':'eye_process.should_start.0','eye_id': 0, 'args':{}}
+print(send_recv_notification(n))
+n = {'subject':'eye_process.should_start.1','eye_id':1, 'args':{}}
+print(send_recv_notification(n))
+time.sleep(2)
+
+# set calibration method to hmd calibration
+n = {'subject':'start_plugin','name':'HMD_Calibration', 'args':{}}
+print(send_recv_notification(n))
+time.sleep(2)
+
+# close Pupil Service
+n = {'subject':'service_process.should_stop'}
+print(send_recv_notification(n))
+
+```
+
+The code demonstrates how you can listen to all notifications from Pupil Service. It requires a little helper script called [zmq_tools.py](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/zmq_tools.py).
+```python
+from zmq_tools import *
+
+ctx = zmq.Context()
+requester = ctx.socket(zmq.REQ)
+requester.connect('tcp://localhost:50020') #change ip if using remote machine
+
+# request 'SUB_PORT' for reading data
+requester.send_string('SUB_PORT')
+ipc_sub_port = requester.recv_string()
+
+monitor = Msg_Receiver(ctx,'tcp://localhost:%s'%ipc_sub_port,topics=('notify.',)) #change ip if using remote machine
+
+while True:
+    print(monitor.recv())
 ```
 
 ## IPC Backbone Implementation

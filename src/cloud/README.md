@@ -58,6 +58,41 @@ Use advanced search in the recordings view to explore and filter your recordings
 recording:(test OR stairs) label:bkk wearer:will template:"named recording" duration:<=10m recorded:>now-1y
 ```
 
+## Workspaces
+Workspaces are containers for your data and enable you to share data in Pupil Cloud with your collaborators. All data in Pupil Cloud is part of a workspace and the workspace owner can control access to it. This includes recordings, wearers, templates, labels, projects, and enrichments, which are all isolated within a workspace. 
+
+### Access Control
+Only accounts that have been invited to become members of a workspace are granted access to the data in a workspace. For a more fine-grained control of what each member is allowed to do, they can be assign different roles:
+
+- **Viewer**: This role can view all data, but they are not allowed to edit anything. For example: a viewer can download data, playback recordings and view heatmaps. A viewer can not delete any data, create projects, or start compute jobs.
+- **Editor**: This role has full read and edit access to all data in the workspace, which includes the ability to create enrichments, start compute jobs and delete data.
+- **Admin**: Has all permissions of an editor and additionally can invite and remove workspace members and change workspace members role.
+- **Owner**: The owner of a workspace is the one who initially created the workspace. Owners have all permissions of an Admin. The owner of a workspace can not be changed.
+
+Public sharing of data with people outside of a workspace is **not** currently possible.
+
+### Frequently Asked Questions
+
+**When should I use workspaces?**
+
+Workspaces can have many uses. Typical ones are:
+- **Projects or Studies**: Use a separate workspace for every project in order to keep data cleanly separated.
+- **Teams**: If you are a member of multiple teams or organizations, you can use multiple workspaces to control what data you are sharing with whom.
+- **Clients**: If you are working with clients, you can use multiple workspaces in order to keep data separated and to control which collaborator should have access to which client’s data.
+ 
+**Is there a limit to the number of workspaces I can create?**
+
+No, you can create as many workspaces as you want!
+
+**Can I move recordings between workspaces?**
+
+No, currently this is not possible. In case you really need this to happen please contact us at `info@pupil-labs.com`.
+
+**Can ownership of a workspace be transferred?**
+
+No, currently this is not possible. In case you really need this to happen please contact us at `info@pupil-labs.com`.
+
+
 ## Projects & Enrichments
 
 <div class="pb-4" style="display:flex;justify-content:center;">

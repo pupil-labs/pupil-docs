@@ -217,6 +217,57 @@ Toggle `Show fixations` to show a visualization of fixations. The blue number is
 
 You can find more information in our [dedicated fixation detection section](/core/terminology/#fixations "Pupil Core terminology - fixations").
 
+#### Blink Detector
+Pupil Core's Blink Detector leverages the fact that [2D pupil confidence](/core/terminology/#confidence) drops rapidly 
+in both eyes during a [blink](/core/terminology/#blinks) as the pupil becomes obscured by the eyelid, followed by a rapid 
+rise in confidence as the pupil becomes visible again.
+
+The Blink Detector processes [2D pupil confidence](/core/terminology/#confidence) values by convolving them with a 
+[filter](https://github.com/pupil-labs/pupil/blob/eb8c2324f3fd558858ce33f3816972d93e02fcc6/pupil_src/shared_modules/blink_detection.py#L360). 
+The filter response – called 'activity' – spikes the sharper the confidence drop is and *vice versa* for confidence 
+increases. 
+
+Blinks are subsequently detected based on onset and offset confidence thresholds and a filter length in seconds.
+
+- **Onset Confidence Threshold:** The threshold that the filter response ('Activity') must rise above to classify the
+  onset of a blink, corresponding to a sudden **drop** in 2D pupil detection confidence
+- **Offset Confidence Threshold:** The threshold that the filter response ('Activity') must fall below to classify the 
+  end of a blink, corresponding to a **rise** in 2D pupil detection confidence
+- **Filter Length:** The time window's length in which the detector tries to find confidence drops and gains
+
+In Pupil Player, the green data series labelled 'Activity' is the filter response, and the yellow bars that denote 
+onset and offset confidence are above and below this, respectively. The blink detection result is shown by the red 
+line, characterised by a step function where blinks have been classified.
+
+<div class="pb-4">
+  <img src="../../media/core/imgs/pp-blinks.jpg" style="display:flex;margin:0 auto;">
+</div>
+
+:::tip
+<v-icon large color="info">info_outline</v-icon>
+See our [Best Practices](/core/best-practices/#blink-detector-thresholds) for tips on choosing 
+appropriate Blink Detector thresholds
+:::
+
+Results are exported in `blinks.csv` with the following columns:
+| Key                 | Description                                                |
+|:--------------------|:-----------------------------------------------------------|
+| `id`                | Numerical ID of blink                                      |
+| `start_timestamp`   | Blink end timestamp (s)                                    |
+| `duration`          | Blink duration (s)                                         |
+| `end_timestamp`     | Blink start timestamp (s)                                  |
+| `start_frame_index` | Blink start world frame index                              |
+| `index`             | Blink median world frame index                             |
+| `end_frame_index`   | Blink end world frame index                                |
+| `confidence`        | Mean of absolute filter response during blink clamped at 1 | 
+| `filter_response`   | Filter response ('Activity') during blink                  |
+| `base_data`         | Timestamps of data associated with blink                   |
+
+:::tip
+<v-icon large color="info">info_outline</v-icon>
+Blink count is included in the `blink_detection_report.csv`
+:::
+
 #### Head Pose Tracking
 This plugin uses fiducial markers ([apriltag](https://april.eecs.umich.edu/software/apriltag.html)) to build a 3d model 
 of the environment and track the headset's pose within it. Note, only markers of the default `tag36h11` family are currently 
@@ -447,7 +498,13 @@ The `World Video Exporter` is loaded by default.
   <img src="../../media/core/imgs/export.jpg" style="display:flex;margin:0 auto;">
 </div>
 
-The export saves the world video as shown in Player, including all currently active visualizations (see the [Visualization Plugins](#visualization-plugins "Pupil Player visualization plugins documentation") section).
+The export saves the world video as shown in Player, including all currently active visualizations (see  [Visualization Plugins](#visualization-plugins "Pupil Player visualization plugins documentation")). 
+
+Gereral overview for exported video files:
+
+The World and Eye video exporter saves the scene video file, together with [numpy](https://numpy.org/devdocs/reference/generated/numpy.lib.format.html) and csv files containing timestamps corresponding to each frame. 
+The timestamps follow the [Pupil Time](/core/terminology/#timestamps) convention. The csv timestamp files include an additional `pts` column. `pts` is an abbreviation for _presentation timestamps_ and refers to the media file's internal time representation. It can be used to seek or identify specific frames within the media file. See this [tutorial on how to extract individual frame images from the world video](https://github.com/pupil-labs/pupil-tutorials/blob/master/09_frame_identification.ipynb). 
+
 
 ### Eye Video Exporter
 The `Eye Video Exporter` needs to be loaded explicitly through the Plugin Manager.

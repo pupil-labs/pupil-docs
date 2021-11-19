@@ -109,9 +109,29 @@ consecutive detections that should have been grouped to a single fixation (type 
 if the gaze points are dispersed over 2 degrees due to bigger eye rotations, filtering with a maximum 
 dispersion of 1 degree could classify two separate fixations instead of one. Setting the maximum 
 dispersion too high might group fixations together that should have been considered separate fixations. 
-Ensure the maximum dispersion accommodates your viewing task. 
+Ensure the maximum dispersion accommodates your viewing task.
 
-## Sychronization
+## Blink Detector Thresholds
+In general, the default values for the [Blink Detector](/core/software/pupil-player/#blink-detector) should work reasonably 
+well on good quality eye data with robust pupil detection. However, it is often necessary to adjust the thresholds in the 
+event that [blinks](/core/terminology/#blinks) are not accurately classified. Therefore, it is important to understand 
+the types of errors that can occur and to be able to spot them when they occur, thereby enabling you to make appropriate 
+adjustments.
+
+### Errors
+**A.** False negatives - Blinks are not being detected, e.g. due to the onset threshold being too high  
+**B.** False positives - The onset threshold is set too low and blinks are classified even though they did not occur  
+**C.** The end of a blink is not detected due to the offset threshold being too high. This can lead to erroneous blinks 
+that have unreasonable durations
+
+### Pupil Detection and Blinks
+It is worth noting that poor pupil detection in general can lead to false negatives. In such instances, adjusting the 
+thresholds can make it easier to detect blinks, but also increases the chance of false positives. It is worth taking the 
+time to ensure an optimal setup with regards to [eye camera positioning](/core/#_3-check-pupil-detection) and 
+[2d detector settings](/core/software/pupil-capture/#fine-tuning-pupil-detection) so that the pupils are well-detected
+when the eyes are open.
+
+## Synchronization
 Pupil Core is often used concurrently with third-party devices and software (e.g. physiological sensors, 
 motion capture, stimuli presentation). In order to correlate the data between these, temporal alignment is of great importance.
 
@@ -155,3 +175,53 @@ You can use our [Annotation Plugin](/core/software/pupil-capture/#annotations) t
 the recording on desired events, such as trigger events. Annotations can be sent via the keyboard or programmatically. 
 [This script](https://github.com/pupil-labs/pupil-helpers/blob/master/python/remote_annotations.py) demonstrates how you 
 can send remote annotations over the network.
+
+## Pupillometry
+[Pupillometry](https://doi.org/10.1002/wcs.1323) is the study of temporal changes in pupil diameter in response to 
+external light stimuli and/or cognitive processing. Pupil Core reports pupil diameter in mm provided by the 
+[pye3d](/developer/core/pye3d/#pye3d-pupil-detection) model: `diameter_3d`, and in pixels as observed in the eye 
+videos: `diameter`. 
+
+Pupil size in pixels is dependent on the eye-camera to pupil distance and is not corrected for perspective. 
+[Pye3d](/developer/core/pye3d/#pye3d-pupil-detection), on the other hand, accounts for differences in eye-camera to 
+pupil distances and corrects for perspective. It thus more accurately reflects pupil size and will be preferable for most 
+users.
+
+### pye3d model
+A well-fit [pye3d](/developer/core/pye3d/#pye3d-pupil-detection) model is important for accurate estimates of pupil size 
+in mm. To generate a well-fitting model, sample sufficient gaze points from a variety of gaze angles, e.g. by moving the 
+head around while looking at a fixed position. A well-fit model is visualized by a stable circle that surrounds the 
+modelled eyeball, and this should be of an equivalent size to the respective eyeball. A dark blue circle indicates that 
+the model is within physiological bounds, and a light blue circle out of physiological bounds.
+
+<v-img :src="require('../media/core/imgs/bp-pye3d.png')"></v-img>
+<br>
+
+See the [pye3d release notes](https://github.com/pupil-labs/pupil/releases/tag/v3.4)for further details.
+
+### Freeze the pye3d model
+:::tip <v-icon large color="info">info_outline</v-icon>
+A frozen model **is not** robust to headset slippage (erroneous movements of the headset on the wearer) as it is 
+prevented from adapting to headset movements. If using a frozen model, and the headset slips during the experiment, 
+erroneous pupil size estimates can occur. Therefore, only use this option if the experiment is tightly controlled with 
+limited head movements, and keep recordings short and free of slippage as much as possible.
+:::
+
+The [pye3d model](/developer/core/pye3d/#pye3d-pupil-detection) regularly updates to account for headset slippage. In 
+certain situations, this can lead to incorrect pupil size estimates:
+1. Actual Headset Slippage: The headset slips on the wearer, and a 2d pupil datum is generated **prior** to the 3d model 
+   adjusting
+2. Model Adjustment Error: No slippage occurred, but there is an abrupt change to the calculated 3d eyeball position 
+  (due to errors in the estimation). This can lead to a false change in pupil size estimation even if the actual pupil 
+  size was constant. 
+  
+One solution to prevent 'Model Adjustment Error' is to freeze the model, which is available as a toggle in the eye windows. 
+You should only freeze the model when it is well-fitting as per the description above. Pupil size errors due to 
+'Actual Headset Slippage' can only be avoided by eliminating headset slippage, which should be a key aim when performing
+pupillometry in general, and especially when freezing the model.
+
+:::tip <v-icon large color="info">info_outline</v-icon>
+You can also freeze the model when running 
+[post-hoc pupil detection in Pupil Player](/core/software/pupil-player/#pupil-data-and-post-hoc-detection/). Moreover, 
+clicking 're-detect' after freezing the model will apply the frozen model from the beginning of the recording.
+:::
