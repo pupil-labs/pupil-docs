@@ -89,7 +89,7 @@ This file contains fixation events detected in the gaze data stream and mapped t
 | -------- | -------- | 
 | **section id** | Unique identifier of the corresponding section.     |
 | **recording id** | Unique identifier of the recording this sample belongs to.     |
-| **fixation index** | Index of fixation within the section. The index corresponds to the fixation index of the raw unmapped data.    |
+| **fixation id** | Identifier of fixation within the section. The id corresponds to the fixation id of the raw unmapped data.    |
 | **start timestamp [ns]** | UTC timestamp in nanoseconds of the start of the fixation.     |
 | **end timestamp [ns]** | UTC timestamp in nanoseconds of the end of the fixation.     |
 | **duration [ms]** | Duration of the fixation in milliseconds.     |
@@ -392,7 +392,7 @@ This file contains gaze data in world camera coordinates. For a definition of th
 | **gaze x [px]** | Float value representing the x-coordinate of the mapped gaze point in world camera pixel coordinates.
 | **gaze y [px]** | Same as "gaze x [px]" but for the y-coordinate.     |
 | **worn** | This value indicates whether the Pupil Invisible Glasses have been worn by a subject at this point in time. `1.0` indicates that it has been worn, while `0.0` indicates that is has not been. Added in version 2 of this enrichment.    |
-| **fixation index** | If this gaze samples belongs to a fixation event, this is the corresponding index of the fixation. Otherwise this field is empty.     |
+| **fixation id** | If this gaze samples belongs to a fixation event, this is the corresponding id of the fixation. Otherwise this field is empty.     |
 
 
 #### fixations.csv
@@ -403,7 +403,7 @@ This file contains fixation events detected in the gaze data stream.
 | -------- | -------- | 
 | **section id** | Unique identifier of the corresponding section.     |
 | **recording id** | Unique identifier of the recording this sample belongs to.     |
-| **fixation index** | Index of fixation within the section.     |
+| **fixation id** | Identifier of fixation within the section.     |
 | **start timestamp [ns]** | UTC timestamp in nanoseconds of the start of the fixation.     |
 | **end timestamp [ns]** | UTC timestamp in nanoseconds of the end of the fixation.     |
 | **duration [ms]** | Duration of the fixation in milliseconds.     |
