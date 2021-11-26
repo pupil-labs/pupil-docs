@@ -396,7 +396,10 @@ This file contains gaze data in world camera coordinates. For a definition of th
 
 
 #### fixations.csv
-This file contains fixation events detected in the gaze data stream.
+This file contains fixation and gap events detected in the gaze data stream.
+Gap events are the time periods between two fixations.
+Mostly they correspond to saccads, but they may also be smooth pursiuit movements.
+The corresponding gaze samples that belong to each fixation can be determined from the `gaze.csv` file.
 
 
 | Field | Description | 
@@ -404,11 +407,16 @@ This file contains fixation events detected in the gaze data stream.
 | **section id** | Unique identifier of the corresponding section.     |
 | **recording id** | Unique identifier of the recording this sample belongs to.     |
 | **fixation id** | Identifier of fixation within the section.     |
+| **type** | Either "fixation", if this is a fixation event, or "gap" otherwise. |
 | **start timestamp [ns]** | UTC timestamp in nanoseconds of the start of the fixation.     |
 | **end timestamp [ns]** | UTC timestamp in nanoseconds of the end of the fixation.     |
 | **duration [ms]** | Duration of the fixation in milliseconds.     |
 | **fixation x [px]** | Float value representing the x-coordinate of the fixation in world camera pixel coordinates. This position is the average of all gaze samples within the fixation.     |
 | **fixation y [px]** | Same as "fixation x [px]" but for the y-coordinate.     |
+| **duration [s]** | Duration of the fixation in seconds. |
+| **amplitude [deg]** | Distance between the first and last gaze sample of the fixation in degrees. |
+| **mean velocity [s]** | Mean velocity of the of the compensated gaze signal corresponding to the fixation. |
+| **peak velocity [s]** | Peak velocity of the of the compensated gaze signal corresponding to the fixation. |
 
 
 #### imu.csv
