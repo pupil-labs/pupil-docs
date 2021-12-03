@@ -1,0 +1,146 @@
+---
+description: TODO
+---
+
+# Enrichments
+Enrichments are algorithms running on cloud resources that allow you to perform various forms of analysis on your recordings. They allow you to calculate high-level features and aggregate and visualize data.
+
+## Enrichment Sections
+All enrichments are defined based on a start and end event. Those events are used to specify which sections of a recording an enrichment should be calculated on. From any recording that contains the start and end events, the according section between those events will be extracted for enrichment computation.
+
+If a recording contains multiple pairs of the start and end events, multiple sections will be generated. If an enrichment should be calculated on entire recordings the `recording.begin` and `recording.end` events can be used, which automatically exist for all recordings.
+
+
+## Marker Mapper
+<div class="pb-4" style="display:flex;justify-content:center;filter:drop-shadow(2px 4px 10px #000000);">
+  <v-img
+    :src="require('../../media/cloud/imgs/marker_mapper_header.png')"
+    max-width=80%
+  >
+  </v-img>
+</div>
+The Marker Mapper enrichment enables you to map gaze to an area of interest or "surface". A surface is based on markers placed in the physical environment. A heatmap of gaze data mapped onto the surface can be generated within the enrichment in Pupil Cloud. Mapped gaze can further be downloaded as CSV files.
+
+### Setup
+For robust detection, you should place enough markers on your surface such that at least 3 of them are visible whenever the surface is visible.
+
+You may also place markers inside the surface or outside the surface in close proximity to it.
+
+<div style="display:flex;" class="pb-4">
+    <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
+        <img src="../../media/shared/imgs/apriltags_tag36h11_0-23.jpg" style="padding-bottom:16px;width:60%;">
+        <p>Page 1</p>
+    </div>
+    <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
+        <img src="../../media/shared/imgs/apriltags_tag36h11_24-47.jpg" style="padding-bottom:16px;width:60%;">
+        <p>Page 2</p>
+    </div>
+</div>
+
+
+If you need more markers or higher resolution please see [here](https://github.com/pupil-labs/pupil-helpers/blob/master/markers_stickersheet/tag36h11_full.pdf?raw=True "PDF file with high-resolution markers.").
+
+::: warning
+<v-icon large color="warning">error_outline</v-icon>
+Note that the markers require a white border around them for robust detection. In our experience, this should be at least equal to the width of the smallest white square/rectangle shown in the Marker. Please ensure you include a sufficient border when displaying or printing them!
+:::
+
+### Surface Coordinates
+The Marker Mapper maps gaze points to a 2d surface and returns them in surface coordinates. The top left corner of the surface is defined as `(0, 0)` and the bottom right corner as `(1, 1)`. The orientation of the surface can be set in the enrichment settings.
+
+The mapper may return values outside of the surface, which yields values smaller than 0 or larger than 1 and indicates that the corresponding gaze was not on the surface at that time.
+
+
+## Reference Image Mapper
+<div class="pb-4" style="display:flex;justify-content:center;filter:drop-shadow(2px 4px 10px #000000);">
+  <v-img
+    :src="require('../../media/cloud/imgs/reference_image_mapper_header.png')"
+    max-width=80%
+  >
+  </v-img>
+</div>
+
+The Reference Image Mapper enrichment enables you to map gaze to a reference image of an object of interest. A heatmap of gaze data mapped onto the reference image can be generated within the enrichment in Pupil Cloud. Mapped gaze can further be downloaded as CSV files (see below).
+
+This enrichment is still a **beta feature**. Let us know if you have any [feedback](mailto:info+cloud@pupil-labs.com)!
+
+
+
+### Setup
+In addition to the reference image itself, calculating this enrichment also requires specifying a **scanning video**. In this video you must record your object(s) for 1-2 minutes fulfilling the following criteria:
+- Make the recording while holding the Pupil Invisible glasses in your hand rather than wearing it on your head.
+- Record the object of interest from all possible angles and from all distances a subject may look at it.
+- Move the glasses slowly while recording to avoid motion blur.
+
+
+
+A good scanning recording and reference image are shown below:
+
+**Example Scanning Recording**
+
+<Youtube src="-S5dOBqC0Uw"/>
+
+**Example Reference Image**
+
+<div class="pb-4" style="display:flex;justify-content:center;">
+<v-img 
+  :src="require('../../media/cloud/imgs/reference_image_sample.jpg')"
+  max-width=80%
+>
+</v-img>
+</div>
+
+
+### Limitations
+Please note that this enrichment only works for reference images showing objects that
+- are static in their environment, i.e. they do not move while recording.
+- are (mostly) static in their appearance, i.e. the object itself does not change while recording.
+
+**Positive Examples**
+- Image affixed to a wall/surface. This could be a painting, map, advertisement, poster, menu, etc.
+- An exhibit in a museum. This could also be 3 dimensional, as long as it is static.
+- Control Interface. Aircraft flight deck, automobile dashboard, machine controls. A vehicle (car, boat, airplane, excavator, etc) is usually moving in its environment. However, the interior is relatively static. We have found that this _should_ be enough to fulfill criteria for the reference image mapper.
+
+**Negative Examples**
+- Mobile phone or tablet screens. Not suitable due to dynamic movement within the environment and dynamic content displayed on screen.
+- Computer monitors and TV screens. The contents displayed on the monitors/screens usually change dramatically. If the content remains static across recordings (e.g. single image) then the reference image mapper would work.
+
+We always recommend making a quick test recording to check if your use-case is compatible.
+
+### Mapped Gaze Coordinates
+The Reference Image Mapper maps gaze points to a reference image. As such, the gaze coordinates are given in pixels referring to that image. The pixel at (0,0) is in the top left corner.
+
+
+## Face Mapper
+
+<div class="pb-4" style="display:flex;justify-content:center;filter:drop-shadow(2px 4px 10px #000000);">
+  <v-img
+    :src="require('../../media/cloud/imgs/face_mapper_header.jpeg')"
+    max-width=80%
+  >
+  </v-img>
+</div>
+
+The Face Mapper enrichment robustly detects faces in the scene video. Detections consist of the bounding box of the face. This provides you with insight into _when_ and _where_ faces are visible to a subject.
+
+This enrichment automatically maps gaze data onto faces so that you can determine when a subject has been looking at them.
+
+Additionally, this enrichment also calculates the location of the most important facial landmarks in the image for each face: left eye, right eye, nose, left mouth corner and right mout corner.
+
+
+## Gaze Overlay
+<div class="pb-4" style="display:flex;justify-content:center;filter:drop-shadow(2px 4px 10px #000000);">
+  <v-img
+    :src="require('../../media/cloud/imgs/gaze_overlay_header1.png')"
+    max-width=80%
+  >
+  </v-img>
+</div>
+
+The Gaze Overlay enrichment allows you to download world videos with a gaze overlay rendering. You can easily filter out the sections of your recordings you are interested in and the visualization of the gaze circle can be customized (currently: size and color). 
+
+
+## Raw Data Exporter
+Using the Raw Data Exporter you can get access to all your recording data in convenient CSV and MP4 format directly from Pupil Cloud. Easily export entire projects and extend your analysis with your own custom tools (R, Python, etc.) or third-party analysis platforms. In addition to the raw recording data, it also includes event annotations you have added post-hoc.
+
+Currently, the events used for defining this enrichment are fixed to `recording.begin` and `recording.end`. It is not possible to limit the export range using other events similar to other enrichments.

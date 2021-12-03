@@ -65,19 +65,37 @@ module.exports = {
     lastUpdated: "Last Updated",
     sidebar: {
       '/invisible/': [
-        '',
-        'hardware/',
         {
-          title: 'User Guide',
+          title: 'Getting Started',
           children: [
-            'user-guide/intro',
-            'user-guide/invisible-companion-app',
-            'user-guide/invisible-monitor',
-            'user-guide/analysis',
-            'user-guide/troubleshooting',
-            'user-guide/academic-citation',
+            'getting-started/first-recording',
+            'getting-started/ecosystem-overview',
+            'getting-started/cloud',
           ]
-        }
+        },
+        {
+          title: 'Explanation',
+          children: [
+            'explanation/general',
+            'explanation/enrichments',
+          ]
+        },
+        {
+          title: 'How-Tos',
+          children: [
+            'how-tos/hardware',
+            'how-tos/tools',
+            'how-tos/applications',
+          ]
+        },
+        {
+          title: 'References',
+          children: [
+            'references/export-formats',
+            'references/real-time-api',
+            'references/cloud-api',
+          ]
+        },
       ],
       '/core/': [
         '',
@@ -94,7 +112,17 @@ module.exports = {
             'academic-citation',
           ]
         },
-        'diy/'
+        'diy/',
+        {
+          title: 'Developer',
+          children: [
+            'developer/overview',
+            'developer/network-api',
+            'developer/recording-format',
+            'developer/plugin-api',
+            'developer/pye3d',
+          ]
+        },
 
       ],
       '/vr-ar/': [
@@ -103,28 +131,10 @@ module.exports = {
         'hololens',
         'rift',
         // 'bt300',
-      ],
-      '/cloud/': [
-        '',
-        'enrichments/',
-      ],
-      '/developer/': [
-        '',
-        {
-          title: 'Core',
-          children: [
-            'core/overview',
-            'core/network-api',
-            'core/recording-format',
-            'core/plugin-api',
-            'core/pye3d',
-          ]
-        },
-        'invisible/',
-        'vr-ar/'
+        'developer',
       ],
     },
-    sidebarDepth: 2,
+    sidebarDepth: 1,
     repo: 'https://github.com/pupil-labs/pupil-docs-website',
     repoLabel: 'See on Github',
     docsRepo: 'https://github.com/pupil-labs/pupil-docs',

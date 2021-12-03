@@ -1,17 +1,25 @@
 ---
-description: Pupil Cloud makes it easy for you to collect, securely store, and analyze your eye tracking data.
+description: TODO
 ---
-# Overview 
-<div class="pb-4" style="display:flex;justify-content:center;">
-  <v-img
-    :src="require('../media/cloud/imgs/cloud-capture-store-analyze.jpg')"
-    max-width=80%
-  >
-  </v-img>
-</div>
-Pupil Cloud makes it easy for you to collect, securely store, and analyze your eye tracking data. 
 
-Pupil Invisible Companion App integrates seamlessly with [Pupil Cloud](https://cloud.pupil-labs.com "Pupil Cloud - Eye tracking data storage, visualzation, and analysis - Pupil Labs") - facilitating data logistics with robust uploads from Pupil Invisible Companion app to Pupil Cloud's secure cloud storage. 
+# General
+
+## Wearers
+Wearers are the people wearing your Pupil Invisible glasses. In a classical scientific study, each subject would be a wearer. Create wearer profiles for every wearer to  help organize your recordings. Make or edit wearers in the wearer menu of the Invisible Companion App. We also plan on adding a feature that allows you to finetune the gaze estimation to a specific wearer in the near future.
+
+## Recordings
+A recording starts and stops when you press the red record button in Pupil Invisible Companion App. While this should feel similar to recording a video, there is a lot more happening behind the scenes. When you are recording with Pupil Invisible Companion App, you are capturing not only video data, but also gaze data and more.
+
+Recordings are designed to be flexible and accommodating to your use case. For example, you could start recording without Pupil Invisible glasses connected. Then at a later point in time plug in Pupil Invisible glasses, and Pupil Invisible Companion app will automatically start recording video and gaze data once connected.
+
+## Templates
+Templates are used to add meta-data to a recording. They are forms that can be pre-defined in [Pupil Cloud](/cloud). If they are filled out during or after a recording the according data will be saved alongside the recording. You can customize the template to fit your use case.
+
+Templates are designed to be flexible and powerful. Some example use cases include:
+
+- **Questionnaire**: During the recording of a scientific study participating subjects are often asked to fill out a questionnaire to specify e.g. their age, gender or eye conditions. You can simply create a template for your questionnaire so your subjects can fill out the questionnaire on the Companion Device. All questionnaire answers will be saved conveniently alongside the recording data including their association to the according wearer.
+- **Recording Structure**: If the recordings you want to make happen in a pre-defined structure, e.g. different recording phases or one recording per week, you can set up a template to note down the according phase or week for each recording.
+- **Documenting the unplanned**: In practice, it often happens that something does not go quite as planned. Maybe your subject did not correctly understand the instructions or something in your experiment workflow did not function properly. Using templates you can immediately note down what happened and flag recordings that will require further inspection. This will be saved as part of the recording, so you do not have to keep a separate list of notes.
 
 ## Drive
 The Drive section of Pupil Cloud focuses on raw data and tooling for data collection. It is where all of your raw recording data is uploaded. It is where Templates and Wearers can be created for later use during your data collection in the Pupil Invisible Companion app. 
@@ -97,7 +105,7 @@ No, currently this is not possible. In case you really need this to happen pleas
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
-    :src="require('../media/cloud/imgs/cloud-enrichments-illustration.jpg')"
+    :src="require('../../media/cloud/imgs/cloud-enrichments-illustration.jpg')"
     max-width=80%
   >
   </v-img>
@@ -113,7 +121,7 @@ Read more about [enrichments](/cloud/enrichments/ "Pupil Cloud enrichments for d
 
 <div class="pb-4" style="display:flex;justify-content:center;filter:drop-shadow(2px 4px 10px #000000);">
   <v-img
-    :src="require('../media/cloud/imgs/project_editor.png')"
+    :src="require('../../media/cloud/imgs/project_editor.png')"
     max-width=80%
   >
   </v-img>
@@ -130,3 +138,19 @@ Events are also used in the definition of enrichments to indicate which sections
 
 ### Sections
 Sections will appear in the sections and events sidebar when you create an enrichment. Read more about [enrichments](enrichments/ "Pupil Cloud enrichments for data analysis and visualization"). 
+
+
+
+## Invisible Monitor Desktop App
+
+<div style="display:flex;justify-content:center;" class="pb-4">
+  <v-img
+    :src="require('../../media/invisible/pi-monitor-app.jpg')"
+    max-width=80%
+  >
+  </v-img>
+</div>
+
+Pupil Invisible Monitor is a stand alone desktop app, supported on Windows, MacOS and Linux. It shows all available Pupil Invsible Devices in your Local Area Network. Select a device to view the real-time video feed and gaze signal.
+
+<DownloadLinksMonitor/>
