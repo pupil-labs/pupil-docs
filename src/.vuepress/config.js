@@ -76,8 +76,10 @@ module.exports = {
         {
           title: 'Explanation',
           children: [
-            'explanation/general',
+            'explanation/general-concepts',
+            'explanation/cloud',
             'explanation/enrichments',
+            'explanation/invisible-monitor',
           ]
         },
         {
@@ -96,6 +98,7 @@ module.exports = {
             'references/cloud-api',
           ]
         },
+        "troubleshooting"
       ],
       '/core/': [
         '',
