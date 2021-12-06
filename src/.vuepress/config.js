@@ -76,6 +76,7 @@ module.exports = {
         {
           title: 'Explanation',
           children: [
+            'explanation/data-streams',
             'explanation/general-concepts',
             'explanation/cloud',
             'explanation/enrichments',
