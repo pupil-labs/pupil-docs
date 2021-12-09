@@ -135,7 +135,8 @@ module.exports = {
     search: false,
     searchPlaceholder: 'Search',
     algolia: {
-      apiKey: 'a46ad8b3e5154fd970cd0ffeedb52562',
+      appId: 'BANVRGB2LF',
+      apiKey: 'e19afb93d6e94c2bd3d5e594b4967e0a',
       indexName: 'pupil-labs'
     }
   },
