@@ -204,7 +204,7 @@ The Face Mapper enrichment robustly detects faces in the scene video. Detections
 
 This enrichment automatically maps gaze data onto faces so that you can determine when a subject has been looking at them.
 
-Additionally, this enrichment also calculates the location of the most important facial landmarks in the image for each face: left eye, right eye, nose, left mouth corner and right mout corner.
+Additionally, this enrichment also calculates the location of the most important facial landmarks in the image for each face: left eye, right eye, nose, left mouth corner and right mouth corner.
 
 ### Export Format
 #### sections.csv
