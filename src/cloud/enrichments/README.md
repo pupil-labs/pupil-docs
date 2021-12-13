@@ -80,7 +80,23 @@ This file contains all the mapped gaze data from all sections. The coordinate sy
 | **gaze detected on surface** | Boolean indicating whether or not the gaze point was inside or outside of the surface.     |
 | **gaze position on surface x [normalized]** | Float value representing the x-coordinate of the mapped gaze point in surface coordinates. If the surface was not localized this value is empty.     |
 | **gaze position on surface y [normalized]** | Same as gaze position on surface x [normalized] but for y-coordinate.     |
+| **fixation id** | If this gaze samples belongs to a fixation event, this is the corresponding id of the fixation. Otherwise this field is empty.     |
 
+#### fixations.csv
+This file contains fixation events detected in the gaze data stream and mapped to the surface.
+
+
+| Field | Description | 
+| -------- | -------- | 
+| **section id** | Unique identifier of the corresponding section.     |
+| **recording id** | Unique identifier of the recording this sample belongs to.     |
+| **fixation id** | Identifier of fixation within the section. The id corresponds to the fixation id of the raw unmapped data.    |
+| **start timestamp [ns]** | UTC timestamp in nanoseconds of the start of the fixation.     |
+| **end timestamp [ns]** | UTC timestamp in nanoseconds of the end of the fixation.     |
+| **duration [ms]** | Duration of the fixation in milliseconds.     |
+| **fixation detected on surface** | Boolean indicating whether or not the fixation was inside or outside of the surface.    |
+| **fixation x [normalized]** | Float value representing the x-coordinate of the fixation in surface coordinates. This position is the average of all mapped gaze samples within the fixation.     |
+| **fixation y [normalized]** | Same as "fixation x [normalized]" but for the y-coordinate.     |
 
 #### aoi_positions.csv
 This file contains the surface locations in the scene images for all sections.
@@ -186,6 +202,23 @@ This file contains all the mapped gaze data from all sections.
 | **gaze detected in reference image** | Boolean indicating whether or not the gaze point was detected inside or outside of the reference image.     |
 | **gaze position in reference image x [px]** | Float value representing the x-coordinate of the mapped gaze point in pixel coordinates. If the reference image was not detected in the scene at the given time this value is empty.     |
 | **gaze position in reference image y [px]** | Same as "gaze position in reference image x [px]" but for the y-coordinate.     |
+| **fixation id** | If this gaze samples belongs to a fixation event, this is the corresponding id of the fixation. Otherwise this field is empty.     |
+
+#### fixations.csv
+This file contains fixation events detected in the gaze data stream and mapped to the reference image.
+
+
+| Field | Description | 
+| -------- | -------- | 
+| **section id** | Unique identifier of the corresponding section.     |
+| **recording id** | Unique identifier of the recording this sample belongs to.     |
+| **fixation id** | Identifier of fixation within the section. The id corresponds to the fixation id of the raw unmapped data.    |
+| **start timestamp [ns]** | UTC timestamp in nanoseconds of the start of the fixation.     |
+| **end timestamp [ns]** | UTC timestamp in nanoseconds of the end of the fixation.     |
+| **duration [ms]** | Duration of the fixation in milliseconds.     |
+| **fixation detected in reference image** | Boolean indicating whether or not the fixation was inside or outside of the reference image.    |
+| **fixation x [px]** | Float value representing the x-coordinate of the fixation in reference image coordinates. This position is the average of all mapped gaze samples within the fixation.     |
+| **fixation y [px]** | Same as "fixation x [px]" but for the y-coordinate.     |
 
 #### Reference Image
 The reference image used for defining the enrichment. The file is named `reference_image.jpeg|png`
@@ -253,6 +286,14 @@ This file indicates which gaze samples are on faces (within the bounding box of 
 | **recording id** | Unique identifier of the recording this sample belongs to.     |
 | **timestamp [ns]** | UTC timestamp in nanoseconds of the sample. Equal to the timestamp of the corresponding gaze sample.     |
 | **gaze on face** | Boolean indicating whether the gaze point is on a face.     |
+
+#### fixations_on_face.csv
+This file indicates which fixations are on faces (within the bounding box of detected faces).
+
+| Field | Description | 
+| -------- | -------- | 
+| **fixation id** | Identifier of the fixation event.     |
+| **fixation on face** | Boolean indicating whether the fixation is on a face.     |
 
 ## Gaze Overlay
 <div class="pb-4" style="display:flex;justify-content:center;filter:drop-shadow(2px 4px 10px #000000);">
@@ -377,6 +418,24 @@ This file contains gaze data in world camera coordinates. For a definition of th
 | **gaze x [px]** | Float value representing the x-coordinate of the mapped gaze point in world camera pixel coordinates.
 | **gaze y [px]** | Same as "gaze x [px]" but for the y-coordinate.     |
 | **worn** | This value indicates whether the Pupil Invisible Glasses have been worn by a subject at this point in time. `1.0` indicates that it has been worn, while `0.0` indicates that is has not been. Added in version 2 of this enrichment.    |
+| **fixation id** | If this gaze samples belongs to a fixation event, this is the corresponding id of the fixation. Otherwise this field is empty.     |
+
+
+#### fixations.csv
+This file contains fixations detected in the gaze data stream.
+The corresponding gaze samples that belong to each fixation can be determined from the `gaze.csv` file using the `fixation id` fields.
+
+
+| Field | Description | 
+| -------- | -------- | 
+| **section id** | Unique identifier of the corresponding section.     |
+| **recording id** | Unique identifier of the recording this sample belongs to.     |
+| **fixation id** | Identifier of the fixation. The counter starts at the beginning of the recording.     |
+| **start timestamp [ns]** | UTC timestamp in nanoseconds of the start of the fixation.     |
+| **end timestamp [ns]** | UTC timestamp in nanoseconds of the end of the fixation.     |
+| **duration [ms]** | Duration of the fixation in milliseconds.     |
+| **fixation x [px]** | Float value representing the x-coordinate of the fixation in world camera pixel coordinates. This position is the average of all gaze samples within the fixation.     |
+| **fixation y [px]** | Same as "fixation x [px]" but for the y-coordinate.     |
 
 
 #### imu.csv
