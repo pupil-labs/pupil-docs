@@ -81,6 +81,7 @@ module.exports = {
             'explanation/cloud',
             'explanation/enrichments',
             'explanation/invisible-monitor',
+            'explanation/publications',
           ]
         },
         {
