@@ -60,11 +60,11 @@ Now, let's see some eye tracking in action!
 
 Just put on the glasses and try!
 
-## 4. Make your first Recording
+### 7. Make your first Recording
 
 To make a recording, just hit the big red button on the home screen to start. Once you are done hit the button again and hit save.
 
-## 5. Playback and download
+### 8. Playback and download
 
 Navigate to the **Recordings view** and click the recording you just made to play it! If you enabled the upload of recordings to Pupil Cloud, you should see that the recording has already started uploading!
 
