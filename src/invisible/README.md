@@ -12,7 +12,7 @@ featured_products: [
   },
   {
     title: "Explanation",
-    link: "/invisible/explanation/general-concepts",
+    link: "/invisible/explanation/basic-concepts",
     src: "invisible/pi_companion.jpg" ,
     alt: "Explanation"
   },

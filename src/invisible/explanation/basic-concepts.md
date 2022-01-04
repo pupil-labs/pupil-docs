@@ -2,7 +2,7 @@
 description: TODO
 ---
 
-# General Concepts
+# Basic Concepts
 
 ## Recordings
 A recording starts and stops when you press the red record button in Pupil Invisible Companion App. While this should feel similar to recording a video, there is a lot more happening behind the scenes. When you are recording with Pupil Invisible Companion App, you are capturing not only video data, but several more sensors (see [Data Streams]()).
@@ -31,3 +31,11 @@ Some example use-cases for templates include the following:
 - **Documenting the unplanned**: Data collection does not always go as planned. Sometimes a subject did not quite understand the instructions and sometimes something went wrong in the experiment workflow. Using templates you can immediately note down what happened and flag recordings that will require further inspection. This will be saved as part of the recording, so you do not have to keep a separate list of notes.
 
 
+## Events
+You can annotate relevant points in time in your recordings using **Events**. An event is essentially a timestamp in a recording with an assigned name. You can use events to filter your data temporally to the sections that interest you. 
+
+You may for example want to mark when a certain stimulus became visible and disappeared again with events called `stimulus_start` and `stimulus_end`. Using those, you can filter your data to only consider samples for which the stimulus was present.
+
+Events are also used for the definition of [enrichments]() to indicate on what sections of your recordings they should be calculated.
+
+You can add events to your recordings post-hoc in the project editor, or you can create them at recording time using the real-time API. See "[How to save events using the real-time API?]()" for an example of the latter.
