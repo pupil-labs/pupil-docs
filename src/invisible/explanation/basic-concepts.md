@@ -39,3 +39,5 @@ You may for example want to mark when a certain stimulus became visible and disa
 Events are also used for the definition of [enrichments]() to indicate on what sections of your recordings they should be calculated.
 
 You can add events to your recordings post-hoc in the project editor, or you can create them at recording time using the real-time API. See "[How to save events using the real-time API?]()" for an example of the latter.
+
+Existing events can be downloaded as part of the [Raw Data Export]().
