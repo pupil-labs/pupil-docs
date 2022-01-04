@@ -3,12 +3,12 @@ description: TODO
 ---
 
 # Enrichments
-Enrichments are algorithms running on cloud resources that allow you to perform various forms of analysis on your recordings. They allow you to calculate high-level features and aggregate and visualize data.
+Enrichments allow you to perform various analysis on your recordings. They utilize cloud resources to run complex algorithms on your data. Use them to track objects of interest, aggregate and visualize your data.
 
 ## Enrichment Sections
-All enrichments are defined based on a start and end event. Those events are used to specify which sections of a recording an enrichment should be calculated on. From any recording that contains the start and end events, the according section between those events will be extracted for enrichment computation.
+All enrichments are defined based on a **start** and **end event**. Those events are used to specify which sections of a recording an enrichment should be calculated on. The enrichment will be calculated on any recording in your project that contains the according start and end event. 
 
-If a recording contains multiple pairs of the start and end events, multiple sections will be generated. If an enrichment should be calculated on entire recordings the `recording.begin` and `recording.end` events can be used, which automatically exist for all recordings.
+If a recording contains multiple instances of the start and end event, it will contribute multiple sections accordingly. You can use the auto-generated `recording.begin` and `recording.end` events in order to calcualte enrichments on entire recordings.
 
 
 ## Marker Mapper
