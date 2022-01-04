@@ -6,10 +6,25 @@ description: TODO
 Pupil Invisible glasses include a number of sensors providing different types of data. Some data streams are available in real-time (see [real-time API]()), while others are computed in Pupil Cloud post-hoc after uploading. All data is fully accessible and can be downloaded form Pupil Cloud in convenient formats.
 
 ## Eye Videos
-Pupil Invisible glasses feature two eye cameras, one for each eye. They are fully embedded into the lateral region of the frame. The sensor records IR video at 200 Hz and 192x192px resolution. Right next to each camera is an IR LED, which guarantees good illumination of the eye in dark environments.
+Pupil Invisible glasses feature two eye cameras, one for each eye. They are fully embedded into the frame. The sensors record IR video at 200 Hz and 192x192px resolution. Right next to each camera is an IR LED, which guarantees good illumination of the eye in dark environments.
 
-TODO Close-up image of eye camera and IR LED.
-TODO Example eye images?
+<div style="display:flex;justify-content:center;filter: drop-shadow(6px 6px 4px);" class="pb-4">
+  <v-img
+    :src="require('../../media/invisible/eye-camera.jpg')"
+    max-width=60%
+  >
+  </v-img>
+</div>
+
+Below you can find a collection of example image pairs recorded with different subjects:
+
+<div style="display:flex;justify-content:center;" class="pb-4">
+  <v-img
+    :src="require('../../media/invisible/example-eye-images.jpg')"
+    max-width=100%
+  >
+  </v-img>
+</div>
 
 ## Gaze
 While recording, the Pupil Invisible Companion device is calculating gaze data in real-time. The exact framerate of this signal depends on the model of phone you use as Companion device. On a OnePlus 6 device the framerate is around 50 Hz, while on a OnePlus 8 it is around 65 Hz. Other app running simultaniously on the phone may decrease the framerate.
@@ -39,9 +54,6 @@ Our algorithm is compensating for VOR movements and is thus correctly classifyin
 
 The algorithm will soon be released as open-source. Further, we are currently working on a white paper that describes the algorithm in detail and evaluates it thoroughly.
 
-TODO scan path visualisation
-
-
 ## Blinks
 Blink detection is coming soon!
 
@@ -49,9 +61,6 @@ Blink detection is coming soon!
 The scene camera is attached to the left temple of the Pupil Invisible glasses. It records video at 30 Hz and 1088x1080px resolution with a field of view of 82°x82°.
 
 The scene camera is detachable and can be removed and re-attached freely even during a recording. Scene video capture will automatically resume as soon as the camera is attached again.
-
-TODO image of scene camera
-TODO example of scene image?
 
 ## Audio
 A microphone is integrated into the scene camera module, such that audio can be recorded if the scene camera is connected. Recorded audio will be part of the resulting scene video.
