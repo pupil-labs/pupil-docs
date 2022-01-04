@@ -3,7 +3,7 @@ description: TODO
 ---
 
 # Data Streams
-Pupil Invisible glasses include a number of sensors providing different types of data. Some data streams are available in real-time (see [real-time API]()), while others are computed in Pupil Cloud post-hoc after uploading. All data is fully accessible and can be downloaded form Pupil Cloud in convenient formats.
+Pupil Invisible glasses include a number of sensors providing different types of data. Some data streams are available in real-time (see [real-time API]()), while others are computed in Pupil Cloud post-hoc after uploading. All data is fully accessible and can be downloaded from Pupil Cloud in convenient formats.
 
 ## Eye Videos
 Pupil Invisible glasses feature two eye cameras, one for each eye. They are fully embedded into the frame. The sensors record IR video at 200 Hz and 192x192px resolution. Right next to each camera is an IR LED, which guarantees good illumination of the eye in dark environments.
@@ -67,10 +67,10 @@ A microphone is integrated into the scene camera module, such that audio can be 
 
 Audio recording is disabled in the Pupil Invisible Companion app by default. You can enable it in the settings.
 
-## Inertial Measurments
-An inertial measurment unit (IMU) is integrated in the right temple of the Pupil Invisible glasses. It measures the rotation speed and translational acceleration of the Pupil Invisible glasses.
+## Inertial Measurements
+An inertial measurement unit (IMU) is integrated in the right temple of the Pupil Invisible glasses. It measures the rotation speed and translational acceleration of the Pupil Invisible glasses.
 
-After upload to Pupil Cloud, the absolute roll and pitch values of the glasses are deduced from the inertial measurments.
+After upload to Pupil Cloud, the absolute roll and pitch values of the glasses are deduced from the inertial measurements.
 
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img

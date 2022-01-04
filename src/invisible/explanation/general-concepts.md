@@ -4,21 +4,30 @@ description: TODO
 
 # General Concepts
 
-## Wearers
-Wearers are the people wearing your Pupil Invisible glasses. In a classical scientific study, each subject would be a wearer. Create wearer profiles for every wearer to  help organize your recordings. Make or edit wearers in the wearer menu of the Invisible Companion App. We also plan on adding a feature that allows you to finetune the gaze estimation to a specific wearer in the near future.
-
 ## Recordings
-A recording starts and stops when you press the red record button in Pupil Invisible Companion App. While this should feel similar to recording a video, there is a lot more happening behind the scenes. When you are recording with Pupil Invisible Companion App, you are capturing not only video data, but also gaze data and more.
+A recording starts and stops when you press the red record button in Pupil Invisible Companion App. While this should feel similar to recording a video, there is a lot more happening behind the scenes. When you are recording with Pupil Invisible Companion App, you are capturing not only video data, but several more sensors (see [Data Streams]()).
 
-Recordings are designed to be flexible and accommodating to your use case. For example, you could start recording without Pupil Invisible glasses connected. Then at a later point in time plug in Pupil Invisible glasses, and Pupil Invisible Companion app will automatically start recording video and gaze data once connected.
+Recordings are designed to be as robust as possible. If at any point a sensor is disconnected during a recording, it will automatically start capturing again as soon as it is reconnected. You could start a recording with no Pupil Invisible glasses connected and plug them in at a later time. As soon as they are connected, data will be captured.
+
+The Pupil Invisible Companion App has several more features to ensure a robust data collection and will e.g. warn you in case the Companion devices battery is running low or if you run out of storage space.
+
+## Wearers
+Wearers are the people wearing your Pupil Invisible glasses. In a typical study, each subject would be a wearer. Every recording you make is assigned to a wearer to help you organize your recordings. You can create new wearers on the fly in the Pupil Invisible Companion App or in advance in Pupil Cloud.
+
+Every wearer is assigned a unique ID, such that you can edit the name and profile picture at any time without mixing up your recordings.
+
+In some cases it can make sense to use the offset correction feature to compensate systematic offsets in the predictions of individual wearers (see [How to apply offset corrections?]()). The offset you set will be saved in the werar profile and applied to future recordings of this subject automatically.
+
 
 ## Templates
-Templates are used to add meta-data to a recording. They are forms that can be pre-defined in [Pupil Cloud](/cloud). If they are filled out during or after a recording the according data will be saved alongside the recording. You can customize the template to fit your use case.
+Templates are used to add meta-data to a recording. They are forms that can be pre-defined in [Pupil Cloud](/cloud). Template responses entered during a recording will be saved alongside the recording. You can even set individual fields of the template as required, such that a recording can not be stopped before filling out those fields. This way you can ensure that no important information is forgotten during data collection.
 
-Templates are designed to be flexible and powerful. Some example use cases include:
+You can customize templates to fit your use case. In Pupil Cloud you can create new templates with your own questions. Before your templates become available for selection in the Pupil Invisible Companion app, you need to publish them. After they are published, they can no longer be edited to ensure consistency between responses.
 
-- **Questionnaire**: During the recording of a scientific study participating subjects are often asked to fill out a questionnaire to specify e.g. their age, gender or eye conditions. You can simply create a template for your questionnaire so your subjects can fill out the questionnaire on the Companion Device. All questionnaire answers will be saved conveniently alongside the recording data including their association to the according wearer.
-- **Recording Structure**: If the recordings you want to make happen in a pre-defined structure, e.g. different recording phases or one recording per week, you can set up a template to note down the according phase or week for each recording.
-- **Documenting the unplanned**: In practice, it often happens that something does not go quite as planned. Maybe your subject did not correctly understand the instructions or something in your experiment workflow did not function properly. Using templates you can immediately note down what happened and flag recordings that will require further inspection. This will be saved as part of the recording, so you do not have to keep a separate list of notes.
+Some example use-cases for templates include the following:
+
+- **Questionnaire**: During the recording of a scientific study participating subjects are often asked to fill out a questionnaire to capture e.g. demographic data. You can simply create a template for your questionnaire so your subjects can fill out the questionnaire on the Companion Device. All questionnaire answers will be saved alongside the recording data associated to the according wearer.
+- **Recording Structure**: If your recording schedule has a known structure, e.g. different recording phases or one recording per week, you can set up a template to note down the according phase or week for each recording.
+- **Documenting the unplanned**: Data collection does not always go as planned. Sometimes a subject did not quite understand the instructions and sometimes something went wrong in the experiment workflow. Using templates you can immediately note down what happened and flag recordings that will require further inspection. This will be saved as part of the recording, so you do not have to keep a separate list of notes.
 
 
