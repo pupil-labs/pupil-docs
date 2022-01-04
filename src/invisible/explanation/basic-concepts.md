@@ -57,6 +57,11 @@ In the `Recording Name` field of the template we defined a naming scheme that co
   </v-img>
 </div>
 
+## Projects
+
+A project is a group of recordings. You create projects from the Recordings view in Drive by selecting one or more recordings and clicking "create project from recording". You can also add projects to existing recordings.
+
+Within a project you can annotate recordings with events and create [enrichments]() to power your analysis.
 
 ## Events
 You can annotate relevant points in time in your recordings using **Events**. An event is essentially a timestamp in a recording with an assigned name. You can use events to filter your data temporally to the sections that interest you. 
@@ -68,3 +73,44 @@ Events are also used for the definition of [enrichments]() to indicate on what s
 You can add events to your recordings post-hoc in the project editor, or you can create them at recording time using the real-time API. See "[How to save events using the real-time API?]()" for an example of the latter.
 
 Existing events can be downloaded as part of the [Raw Data Export]().
+
+## Enrichment Sections
+After you have defined and computed an enrichment using a pair of start and end event, all the according enrichment sections will appear in the project editor. 
+
+An enrichment section essentially stands for the results of the enrichment computation. Every recording with fitting start and end events will receive a corresponding enrichment section.
+
+Every enrichment section has a unique ID, which is reference in all enrichment exports. You can preview the results of most enrichments in the project editor by clicking on an enrichment section and playing the corresponding section of the recording.
+
+## Workspaces
+Workspaces are containers for your data and enable you to share data in Pupil Cloud with your collaborators. All data in Pupil Cloud is part of a workspace and the workspace owner can control access to it. This includes recordings, wearers, templates, labels, projects, and enrichments, which are all isolated within a workspace. 
+
+### Access Control
+Only accounts that have been invited to become members of a workspace are granted access to the data in a workspace. For a more fine-grained control of what each member is allowed to do, they can be assign different roles:
+
+- **Viewer**: This role can view all data, but they are not allowed to edit anything. For example: a viewer can download data, playback recordings and view heatmaps. A viewer can not delete any data, create projects, or start compute jobs.
+- **Editor**: This role has full read and edit access to all data in the workspace, which includes the ability to create enrichments, start compute jobs and delete data.
+- **Admin**: Has all permissions of an editor and additionally can invite and remove workspace members and change workspace members role.
+- **Owner**: The owner of a workspace is the one who initially created the workspace. Owners have all permissions of an Admin. The owner of a workspace can not be changed.
+
+Public sharing of data with people outside of a workspace is **not** currently possible.
+
+### Frequently Asked Questions
+
+**When should I use workspaces?**
+
+Workspaces can have many uses. Typical ones are:
+- **Projects or Studies**: Use a separate workspace for every project in order to keep data cleanly separated.
+- **Teams**: If you are a member of multiple teams or organizations, you can use multiple workspaces to control what data you are sharing with whom.
+- **Clients**: If you are working with clients, you can use multiple workspaces in order to keep data separated and to control which collaborator should have access to which client’s data.
+ 
+**Is there a limit to the number of workspaces I can create?**
+
+No, you can create as many workspaces as you want!
+
+**Can I move recordings between workspaces?**
+
+No, currently this is not possible. In case you really need this to happen please contact us at `info@pupil-labs.com`.
+
+**Can ownership of a workspace be transferred?**
+
+No, currently this is not possible. In case you really need this to happen please contact us at `info@pupil-labs.com`.
