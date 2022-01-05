@@ -74,13 +74,6 @@ You can add events to your recordings post-hoc in the project editor, or you can
 
 Existing events can be downloaded as part of the [Raw Data Export]().
 
-## Enrichment Sections
-After you have defined and computed an enrichment using a pair of start and end event, all the according enrichment sections will appear in the project editor. 
-
-An enrichment section essentially stands for the results of the enrichment computation. Every recording with fitting start and end events will receive a corresponding enrichment section.
-
-Every enrichment section has a unique ID, which is reference in all enrichment exports. You can preview the results of most enrichments in the project editor by clicking on an enrichment section and playing the corresponding section of the recording.
-
 ## Workspaces
 Workspaces are containers for your data and enable you to share data in Pupil Cloud with your collaborators. All data in Pupil Cloud is part of a workspace and the workspace owner can control access to it. This includes recordings, wearers, templates, labels, projects, and enrichments, which are all isolated within a workspace. 
 
