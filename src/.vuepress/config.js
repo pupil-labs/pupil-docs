@@ -87,7 +87,14 @@ module.exports = {
           children: [
             'how-tos/hardware',
             'how-tos/tools',
-            'how-tos/applications',
+            {
+              title: 'Applications',
+              children: [
+                'how-tos/applications/gaze-metrics-in-aois/',
+                'how-tos/applications/how-to-implement-an-HCI-aplication-using-the-real-time-API',
+                'how-tos/applications/how-to-track-events-at-recording-time-using-the-real-time-API',
+              ]
+            },
           ]
         },
         {
