@@ -70,7 +70,7 @@ Audio recording is disabled in the Pupil Invisible Companion app by default. You
 ## Inertial Measurements
 An inertial measurement unit (IMU) is integrated in the right temple of the Pupil Invisible glasses. It measures the rotation speed and translational acceleration of the Pupil Invisible glasses.
 
-After upload to Pupil Cloud, the absolute roll and pitch values of the glasses are deduced from the inertial measurements.
+After upload to Pupil Cloud, the absolute roll and pitch values of the glasses are computed from the inertial measurements using the [Madgwick's algorithm](https://www.x-io.co.uk/res/doc/madgwick_internal_report.pdf).
 
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img

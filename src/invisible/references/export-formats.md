@@ -91,9 +91,6 @@ This file contains gaze data in world camera coordinates. For a definition of th
 #### imu.csv
 This file contains the acceleration and gyro data capture by the IMU. Gyro values correspond to angular speed around the respective axis in degrees per second. Acceleration values correspond to the acceleration along the respective axis in G. For a definition of the coordinate system see [here](/developer/invisible/#imu-coordinate-system "Explanation of Pupil Invisible's IMU coordinate system").
 
-Additionally, it contains drift-free estimations of the roll and pitch of the Pupil Invisible Glasses based on [Madgwick's algorithm](https://www.x-io.co.uk/res/doc/madgwick_internal_report.pdf). Numerical integration of angular rate is subject to position errors that grow with time. Accurate estimates of orientation therefore require drift correction. Madgwick's algorithm removes orientation drift in the pitch and roll axes using accelerometer feedback to monitor position relative to gravity.
-
-
 | Field | Description | 
 | -------- | -------- | 
 | **section id** | Unique identifier of the corresponding section.     |
