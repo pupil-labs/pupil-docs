@@ -4,7 +4,7 @@ description: TODO
 
 # Hardware
 
-## How to change the lenses?
+## Change the lenses
 You can easily change the lenses of your Pupil Invisible glasses.
 
 <!-- todo insert video -->
@@ -29,7 +29,7 @@ Hold the glasses with arms of the frame facing away from you.
 2. Press on the lens with your thumb or fingers on the top corner
    closest to the nose pad.
 
-## How to clean the glasses?
+## Clean the glasses
 Pupil Invisible Glasses contain cameras and sensitive electronic components, do not rinse or wet-clean.
 
 - Glasses lenses can be cleaned with the provided microfiber cloth.
@@ -43,7 +43,7 @@ The disinfectant we use is made from 22.0g Ethanol, 21.0g 2-Propanol, 8.0g 1-Pro
 
 Pupil Invisible is not water resistant. When cleaning, be careful around the eye cameras, world camera, and USB connection. Liquid from disinfectant might damage sensitive electronics inside the frame.
 
-## How to attach the head strap?
+## Attach the head strap
 
 The head strap is an accessory that can be purchased if you want to use Pupil Invisible while playing sports or in other dynamic activities. The head strap can be adjusted to fit most wearers by pulling the two tabs.
 

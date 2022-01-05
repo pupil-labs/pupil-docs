@@ -4,8 +4,8 @@ description: TODO
 
 # Tools
 
-## How to apply offset correction?
+## Apply offset correction
 Coming soon!
 
-## How to record events using the real-time API?
+## Record events using the real-time API
 Coming soon!

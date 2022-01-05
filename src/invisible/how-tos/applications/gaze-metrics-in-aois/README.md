@@ -2,7 +2,7 @@
 description: TODO
 ---
 
-# Gaze Metrics in an AOI Analysis
+# Calculate Gaze Metrics in on AOIs
 ```python
 import matplotlib.pyplot as plt
 plt.rcParams['figure.figsize'] = (15.0, 11.0)
