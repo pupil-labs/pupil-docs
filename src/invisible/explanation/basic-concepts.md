@@ -9,7 +9,7 @@ A recording starts and stops when you press the red record button in Pupil Invis
 
 Recordings are designed to be as robust as possible. If at any point a sensor is disconnected during a recording, it will automatically start capturing again as soon as it is reconnected. You could start a recording with no Pupil Invisible glasses connected and plug them in at a later time. As soon as they are connected, data will be captured.
 
-The Pupil Invisible Companion App has several more features to ensure a robust data collection and will e.g. warn you in case the Companion devices battery is running low or if you run out of storage space.
+The Pupil Invisible Companion App has several more features to ensure a robust data collection and will e.g. warn you in case the Companion device's battery is running low or if you run out of storage space.
 
 ## Wearers
 Wearers are the people wearing your Pupil Invisible glasses. In a typical study, each subject would be a wearer. Every recording you make is assigned to a wearer to help you organize your recordings. You can create new wearers on the fly in the Pupil Invisible Companion App or in advance in Pupil Cloud.
