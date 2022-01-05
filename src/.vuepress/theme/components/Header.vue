@@ -37,6 +37,7 @@ export default {
         { icon: "invisible", title: "invisible", link: "/invisible/" },
         { icon: "core", title: "core", link: "/core/" },
         { icon: "vr-ar", title: "vr/ar", link: "/vr-ar/" },
+        { icon: "community", title: "Community", link: "/community/" },
       ]
     };
   },
