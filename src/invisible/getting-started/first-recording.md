@@ -20,7 +20,7 @@ Next, we will have to install the Pupil Invisible Companion app on your device:
 - Search for **Pupil Invisible Companion** in the Google Play Store and click install.
 - Start the Pupil Invisible Companion app when the installation has finished.
 - A couple of permission prompts will appear, which you have to accept.
-- First-time users will need to sign up for a Pupil Cloud account. You can sign up using your Google account, or by creating an account with email address and password.
+- First-time users will need to sign up for a Pupil Cloud account. You can sign up using your Google account, or by creating an account with an email address and password.
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
@@ -55,7 +55,7 @@ Pupil Invisible distinguishes who is wearing the glasses with **wearer profiles*
 
 ### 6. Open the live Preview
 Now, let's see some eye tracking in action! 
-- The **scene and eye camera icons** in the apps home screen should be colored, indicating that the glasses are connected (otherwise the icons would be gray). 
+- The **scene and eye camera icons** in the app's home screen should be colored, indicating that the glasses are connected (otherwise the icons would be gray). 
 - We can see a live stream of the scene video with a gaze overlay by clicking the **Preview** button.
 
 Just put on the glasses and try!
@@ -70,4 +70,4 @@ Navigate to the **Recordings view** and click the recording you just made to pla
 
 <v-divider></v-divider>
 
-Now that we have learned how to make a recording, let's see what we can do with it! In the next article you will get an overview on the software ecosystem at your disposal.
+Now that we have learned how to make a recording, let's see what we can do with it! In the next article, you will get an overview of the software ecosystem at your disposal.

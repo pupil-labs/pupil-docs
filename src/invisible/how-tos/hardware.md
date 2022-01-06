@@ -13,7 +13,7 @@ You can easily change the lenses of your Pupil Invisible glasses.
 
 <Youtube src="ZaUoyuBEOJo"/>
 
-Hold the glasses with arms of the frame facing towards you. Push out from the inside of the frame on the lens surface with your thumb placed close to the nose pad.
+Hold the glasses with the arms of the frame facing towards you. Push out from the inside of the frame on the lens surface with your thumb placed close to the nose pad.
 
 ::: tip
 You will hear a _pop_ sound when the lens is removed or inserted. Don't worry - the frame and lenses are durable!
@@ -24,7 +24,7 @@ You will hear a _pop_ sound when the lens is removed or inserted. Don't worry - 
 
 <Youtube src="Y8hG8t5xiPM"/>
 
-Hold the glasses with arms of the frame facing away from you.
+Hold the glasses with the arms of the frame facing away from you.
 1. Slot the lens in the groove on the side furthest from the nose pad.
 2. Press on the lens with your thumb or fingers on the top corner
    closest to the nose pad.
@@ -34,14 +34,14 @@ Pupil Invisible Glasses contain cameras and sensitive electronic components, do 
 
 - Glasses lenses can be cleaned with the provided microfiber cloth.
 - Scene camera and eye camera lenses can be carefully cleaned with the provided microfiber cloth if dust is visible.
-- The nose pads can be cleaned with an alcohol based disinfectant applied on a damp cloth
+- The nose pads can be cleaned with an alcohol-based disinfectant applied on a damp cloth
 
 ### Disinfecting Frames
-All Pupil Invisible eye tracking glasses are cleaned with disinfectant prior to shipping. You may want to disinfect the frames between uses.
+All Pupil Invisible eye tracking glasses are cleaned with a disinfectant before shipping. You may want to disinfect the frames between uses.
 
-The disinfectant we use is made from 22.0g Ethanol, 21.0g 2-Propanol, 8.0g 1-Propanol per 100 grams of solution. One such brand name that we use is "Vibasept". We use the wetted towlettes (wipes). Similar products should be available globally under different brand names.
+The disinfectant we use is made from 22.0g Ethanol, 21.0g 2-Propanol, 8.0g 1-Propanol per 100 grams of solution. One such brand name that we use is "Vibasept". We use the wetted towelettes (wipes). Similar products should be available globally under different brand names.
 
-Pupil Invisible is not water resistant. When cleaning, be careful around the eye cameras, world camera, and USB connection. Liquid from disinfectant might damage sensitive electronics inside the frame.
+Pupil Invisible is not water-resistant. When cleaning, be careful around the eye cameras, world camera, and USB connection. Liquid from disinfectant might damage sensitive electronics inside the frame.
 
 ## Attach the head strap
 
