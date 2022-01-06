@@ -1,7 +1,7 @@
 ---
 title: "Invisible & Cloud Documentation"
 home: true
-subtitle: "On these pages you can learn everything there is about Pupil Invisible and Pupil Cloud."
+subtitle: "On these pages, you can learn everything there is about Pupil Invisible and Pupil Cloud."
 description: TODO
 featured_products: [
   {

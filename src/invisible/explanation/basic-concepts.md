@@ -16,7 +16,7 @@ Wearers are the people wearing your Pupil Invisible glasses. In a typical study,
 
 Every wearer is assigned a unique ID, such that you can edit the name and profile picture at any time without mixing up your recordings.
 
-In some cases, it can make sense to use the offset correction feature to compensate systematic offsets in the predictions of individual wearers (see [How to apply offset corrections?]()). The offset you set will be saved in the wearer profile and applied to future recordings of this subject automatically.
+In some cases, it can make sense to use the offset correction feature to compensate for systematic offsets in the predictions of individual wearers (see [How to apply offset corrections?]()). The offset you set will be saved in the wearer profile and applied to future recordings of this subject automatically.
 
 
 ## Templates
@@ -80,7 +80,7 @@ Workspaces are containers for your data and enable you to share data in Pupil Cl
 ### Access Control
 Only accounts that have been invited to become members of a workspace are granted access to the data in a workspace. For more fine-grained control of what each member is allowed to do, they can be assigned different roles:
 
-- **Viewer**: This role can view all data, but they are not allowed to edit anything. For example a viewer can download data, playback recordings, and view heatmaps. A viewer can not delete any data, create projects, or start compute jobs.
+- **Viewer**: This role can view all data, but they are not allowed to edit anything. For example, a viewer can download data, playback recordings, and view heatmaps. A viewer can not delete any data, create projects, or start compute jobs.
 - **Editor**: This role has full read and edit access to all data in the workspace, which includes the ability to create enrichments, start compute jobs and delete data.
 - **Admin**: Has all permissions of an editor and additionally can invite and remove workspace members and change workspace members roles.
 - **Owner**: The owner of a workspace is the one who initially created the workspace. Owners have all permissions of an Admin. The owner of a workspace can not be changed.

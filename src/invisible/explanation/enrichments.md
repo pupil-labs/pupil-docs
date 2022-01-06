@@ -3,7 +3,7 @@ description: TODO
 ---
 
 # Enrichments
-Enrichments allow you to perform various analysis on your recordings. They utilize cloud resources to run complex algorithms on your data. Use them to track objects of interest, aggregate and visualize your data.
+Enrichments allow you to perform various analyses on your recordings. They utilize cloud resources to run complex algorithms on your data. Use them to track objects of interest, aggregate and visualize your data.
 
 ## Enrichment Sections
 All enrichments are defined based on a **start** and **end event**. Those events are used to specify which sections of a recording an enrichment should be calculated on. The enrichment will be calculated on any recording in your project that contains the according start and end event in the recording section between those two events.
@@ -145,4 +145,4 @@ The Gaze Overlay enrichment allows you to download world videos with a gaze over
 ## Raw Data Exporter
 Using the Raw Data Exporter you can get access to all your recording data in convenient CSV and MP4 format directly from Pupil Cloud. Easily export entire projects and extend your analysis with your own custom tools (R, Python, etc.) or third-party analysis platforms. In addition to the raw recording data, it also includes event annotations you have added post hoc.
 
-Currently, the events used for defining this enrichment are fixed to `recording.begin` and `recording.end`. It is not possible to limit the export range using other events similar to other enrichments.
+Currently, the events used for defining this enrichment are fixed to `recording.begin` and `recording. end`. It is not possible to limit the export range using other events similar to other enrichments.
