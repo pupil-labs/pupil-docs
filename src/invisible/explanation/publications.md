@@ -5,7 +5,7 @@ description: TODO
 # Publications
 
 ## Publications from the Community
-Pupil Labs prodcuts are being used in various areas of academic research and hundreds of publications have been made with them. You can find list containing most of the existing publications [here](https://pupil-labs.com/publications/).
+Pupil Labs products are being used in various areas of academic research and hundreds of publications have been made with them. You can find a list containing most of the existing publications [here](https://pupil-labs.com/publications/).
 
 If you are using **Pupil Invisible** in your own research, please cite the following paper in your publications!
 
@@ -25,7 +25,7 @@ If you are using **Pupil Invisible** in your own research, please cite the follo
 For guidance on citing **Pupil Core** please see [here](/core/academic-citation).
 
 ## Publications from Pupil Labs
-Pupil Labs has published several papers including white papers as well as pier-reviewd papers on eye tracking algorithms. Below they are listed chronologically:
+Pupil Labs has published several papers including white papers as well as peer reviewed papers on eye tracking algorithms. Below they are listed chronologically:
 
 #### [Pupil: an open source platform for pervasive eye tracking and mobile gaze-based interaction](https://arxiv.org/pdf/1405.0006)
 

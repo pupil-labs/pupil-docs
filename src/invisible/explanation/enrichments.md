@@ -10,7 +10,7 @@ All enrichments are defined based on a **start** and **end event**. Those events
 
 You can preview the results of most enrichments in the project editor by clicking on an enrichment section and playing the corresponding section of the recording. Every enrichment section has a unique ID, which is referenced in all enrichment exports.
 
-If a recording contains multiple instances of the start and end event, it will contribute multiple sections accordingly. You can use the auto-generated `recording.begin` and `recording.end` events in order to calcualte enrichments on entire recordings.
+If a recording contains multiple instances of the start and end event, it will contribute multiple sections accordingly. You can use the auto-generated `recording.begin` and `recording.end` events to calculate enrichments on entire recordings.
 
 
 ## Marker Mapper
@@ -101,10 +101,10 @@ Please note that this enrichment only works for reference images showing objects
 **Positive Examples**
 - Image affixed to a wall/surface. This could be a painting, map, advertisement, poster, menu, etc.
 - An exhibit in a museum. This could also be 3 dimensional, as long as it is static.
-- Control Interface. Aircraft flight deck, automobile dashboard, machine controls. A vehicle (car, boat, airplane, excavator, etc) is usually moving in its environment. However, the interior is relatively static. We have found that this _should_ be enough to fulfill criteria for the reference image mapper.
+- Control Interface. Aircraft flight deck, automobile dashboard, machine controls. A vehicle (car, boat, airplane, excavator, etc) is usually moving in its environment. However, the interior is relatively static. We have found that this _should_ be enough to fulfill the criteria for the reference image mapper.
 
 **Negative Examples**
-- Mobile phone or tablet screens. Not suitable due to dynamic movement within the environment and dynamic content displayed on screen.
+- Mobile phone or tablet screens. Not suitable due to dynamic movement within the environment and dynamic content displayed on the screen.
 - Computer monitors and TV screens. The contents displayed on the monitors/screens usually change dramatically. If the content remains static across recordings (e.g. single image) then the reference image mapper would work.
 
 We always recommend making a quick test recording to check if your use-case is compatible.
@@ -127,7 +127,7 @@ The Face Mapper enrichment robustly detects faces in the scene video. Detections
 
 This enrichment automatically maps gaze data onto faces so that you can determine when a subject has been looking at them.
 
-Additionally, this enrichment also calculates the location of the most important facial landmarks in the image for each face: left eye, right eye, nose, left mouth corner and right mout corner.
+Additionally, this enrichment also calculates the location of the most important facial landmarks in the image for each face: left eye, right eye, nose, left mouth corner, and right mouth corner.
 
 
 ## Gaze Overlay
@@ -143,6 +143,6 @@ The Gaze Overlay enrichment allows you to download world videos with a gaze over
 
 
 ## Raw Data Exporter
-Using the Raw Data Exporter you can get access to all your recording data in convenient CSV and MP4 format directly from Pupil Cloud. Easily export entire projects and extend your analysis with your own custom tools (R, Python, etc.) or third-party analysis platforms. In addition to the raw recording data, it also includes event annotations you have added post-hoc.
+Using the Raw Data Exporter you can get access to all your recording data in convenient CSV and MP4 format directly from Pupil Cloud. Easily export entire projects and extend your analysis with your own custom tools (R, Python, etc.) or third-party analysis platforms. In addition to the raw recording data, it also includes event annotations you have added post hoc.
 
 Currently, the events used for defining this enrichment are fixed to `recording.begin` and `recording.end`. It is not possible to limit the export range using other events similar to other enrichments.
