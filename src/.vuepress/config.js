@@ -66,11 +66,11 @@ module.exports = {
     sidebar: {
       '/invisible/': [
         {
-          title: 'Getting Started',
+          title: 'Tutorials',
           children: [
-            'getting-started/first-recording',
-            'getting-started/ecosystem-overview',
-            'getting-started/cloud',
+            'tutorials/first-recording',
+            'tutorials/ecosystem-overview',
+            'tutorials/cloud',
           ]
         },
         {

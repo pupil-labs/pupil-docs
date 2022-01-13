@@ -6,7 +6,7 @@ description: TODO
 featured_products: [
   {
     title: "Getting Started",
-    link: "/invisible/getting-started/first-recording",
+    link: "/invisible/tutorials/first-recording",
     src: "invisible/pi_companion.jpg" ,
     alt: "Getting Started"
   },
@@ -36,6 +36,6 @@ featured_products: [
 
 Check out this collection of common problems and how to solve them!
 
-<v-btn round dark to="/invisible/getting-started/first-recording" class="bg-link-blue ml-0"> Troubleshooting </v-btn>
+<v-btn round dark to="/invisible/troubleshooting" class="bg-link-blue ml-0"> Troubleshooting </v-btn>
 :::
 
