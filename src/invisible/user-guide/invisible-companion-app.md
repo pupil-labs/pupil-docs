@@ -81,11 +81,15 @@ Pupil Monitor will warn you if a device is not in sync.
 More info on the technical implementation and quality of NTP synchronisation can be found in the [Pupil Invisible developer docs](/developer/invisible/#time-synchronization "Pupil Invisible developer docs - time synchronization").
 
 ## Recording transfer
-The recommended way to transfer recordings off of the Companion Device is to upload them to Pupil Cloud. Recordings can be analyzed in Pupil Cloud directly or downloaded to a computer. In case usage of Pupil Cloud is not an option, recordings can also be transfered to a computer directly using a USB connection. Both option are described in more detail below.
+The recommended way to transfer recordings off of the Companion Device is to upload them to Pupil Cloud. Recordings can be analyzed in Pupil Cloud directly or downloaded to a computer. 
+
+In case usage of Pupil Cloud is not an option, recordings can also be transferred to a computer directly using a USB connection. 
+
+Both options are described in more detail below.
 
 ### Pupil Cloud
 
-Pupil Invisible recordings can be uploaded to Pupil Cloud directly from the Invisible Companion App. We recommend using Pupil Cloud for ease of use, stability, robustness, and data security. 
+Pupil Invisible recordings **can only be** uploaded to Pupil Cloud directly from the Invisible Companion App. We recommend using Pupil Cloud for ease of use, stability, robustness, and data security. 
 
 If you made recordings with the Invisible Companion App while the cloud upload was disabled, you can re-enable and upload recordings to Cloud as follows:
 
@@ -95,7 +99,22 @@ If you made recordings with the Invisible Companion App while the cloud upload w
 
 ### Local transfer
 
+:::tip
+<v-icon large color="info">info_outline</v-icon>
+Recordings transferred locally will contain gaze data at 66 Hz (estimated in real-time on the Companion Device). Only 
+recordings uploaded to Pupil Cloud are densified to 200 Hz.
+:::
+
 To transfer recordings to a computer using a USB connection you need to first export the recordings to the Android filesystem and then access the filesystem from your computer.
+
+Note that the export process does not delete the recordings from the Invisible Companion App, and you can still upload 
+to Pupil Cloud at a later date if required. 
+
+Recordings that are deleted from the Invisible Companion App, e.g. to free up storage space, cannot be transferred back 
+to the Invisible Companion App from your backup location (including Pupil Cloud, a laptop/desktop PC, or external HD). 
+
+This means that if you delete the recordings prior to a Pupil Cloud upload, they cannot be uploaded to Pupil Cloud at a 
+later date.
 
 **Export from Invisible Companion App**
 1. Open recordings view in Invisible Companion App
@@ -116,5 +135,6 @@ To transfer recordings to a computer using a USB connection you need to first ex
 7. Copy the recordings to your computer before opening them in Pupil Player.
 
 ::: tip
+<v-icon large color="info">info_outline</v-icon>
 On macOS, you require the <a href="https://www.android.com/filetransfer/" alt="Android File Transfer website">Android File Transfer</a> to browse and transfer files between your Mac computer and your Android device.
 :::
