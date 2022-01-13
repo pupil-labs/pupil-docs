@@ -71,6 +71,7 @@ module.exports = {
             'tutorials/first-recording',
             'tutorials/ecosystem-overview',
             'tutorials/cloud',
+            'tutorials/real-time-api/',
           ]
         },
         {
