@@ -20,7 +20,7 @@ In some cases, it can make sense to use the offset correction feature to compens
 
 
 ## Templates
-Templates are used to add meta-data to a recording. They are forms that can be filled out at recording time. The responses will be saved alongside the recording. Further, templates define a naming scheme for recordings. If you for example add a field for the `Subject ID` to the form, you can set this value to be added to your recording names automatically.
+Templates are used to add meta-data to a recording (e.g. age, gender or location). They are forms that can be filled out at recording time to document important information for your study. The responses will be saved alongside the recording. Further, templates define a naming scheme for recordings. If you for example add a field for the `Experimental Condition` to the form, you can set this value to be added to your recording names automatically. This is useful if you have a pre-defined structure to your study.
 
 ### Form for Meta-Data
 You can create new templates in Pupil Cloud and customize them to your use case. You can add as many form fields as you want, including text fields and multiple-choice fields.
@@ -92,7 +92,7 @@ Public sharing of data with people outside of a workspace is **not** currently p
 **When should I use workspaces?**
 
 Workspaces can have many uses. Typical ones are:
-- **Projects or Studies**: Use a separate workspace for every project to keep data cleanly separated.
+- **Projects or Studies**: Use workspaces to collect projects with a similar theme, "Sport Training" for example. Then every project within the workspace can be used to catalogue recordings of different sports, like "Golf Putting", "Archery", "Basketball Free Throw". This ensures data is cleanly separated.
 - **Teams**: If you are a member of multiple teams or organizations, you can use multiple workspaces to control what data you are sharing with whom.
 - **Clients**: If you are working with clients, you can use multiple workspaces to keep data separated and to control which collaborator should have access to which client’s data.
  
