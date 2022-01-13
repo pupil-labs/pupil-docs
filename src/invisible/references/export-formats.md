@@ -180,7 +180,7 @@ This file contains all the mapped gaze data from all sections.
 | **gaze position in reference image y [px]** | Same as "gaze position in reference image x [px]" but for the y-coordinate.     |
 
 #### Reference Image
-The reference image that was used for defining the enrichment. The file is named `reference_image.jpeg|png`
+The reference image was used for defining the enrichment. The file is named `reference_image.jpeg|png`
 
 
 ## Face Mapper
