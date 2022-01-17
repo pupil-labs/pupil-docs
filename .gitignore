@@ -50,3 +50,5 @@ tmp
 yarn-error.log
 
 .vscode/
+
+*.ipynb_checkpoints/
