@@ -13,7 +13,7 @@ It makes it easy to store all your data securely in one place and it offers a va
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
-    :src="require('../../media/cloud/imgs/cloud-capture-store-analyze.jpg')"
+    :src="require('../../media/invisible/PL-Ecosystem-02.jpg')"
     max-width=80%
   >
   </v-img>
