@@ -8,10 +8,10 @@ Pupil Invisible glasses include a number of sensors providing different types of
 ## Eye Videos
 Pupil Invisible glasses feature two eye cameras, one for each eye. They are fully embedded into the frame. The sensors record IR video at 200 Hz and 192x192px resolution. Right next to each camera is an IR LED, which guarantees good illumination of the eye in dark environments.
 
-<div style="display:flex;justify-content:center;filter: drop-shadow(6px 6px 4px);" class="pb-4">
+<div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
     :src="require('../../media/invisible/eye-camera.jpg')"
-    max-width=60%
+    max-width=80%
   >
   </v-img>
 </div>
