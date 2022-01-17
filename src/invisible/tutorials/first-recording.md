@@ -60,6 +60,14 @@ Now, let's see some eye tracking in action!
 
 Just put on the glasses and try!
 
+<div class="pb-4" style="display:flex;justify-content:center;">
+  <v-img
+    :src="require('../../media/invisible/PI-Home_UI.jpg')"
+    max-width=100%
+  >
+  </v-img>
+</div>
+
 ### 7. Make your first Recording
 
 To make a recording, just hit the big red button on the home screen to start. Once you are done hit the button again and hit save.
