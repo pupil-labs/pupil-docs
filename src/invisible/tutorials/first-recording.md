@@ -15,12 +15,12 @@ The Companion Device included in your Pupil Invisible box is a new device. It ha
 Create a new Google account or use an existing Google account during setup.
 
 ### 2. Install and start Pupil Invisible Companion App.
-Next, we will have to install the Pupil Invisible Companion app on your device:
+Next, you have to install the Pupil Invisible Companion app on your device:
 - Launch the **Google Play Store** app. It is already installed by default on your Companion Device.
 - Search for **Pupil Invisible Companion** in the Google Play Store and click install.
 - Start the Pupil Invisible Companion app when the installation has finished.
 - A couple of permission prompts will appear, which you have to accept.
-- First-time users will need to sign up for a Pupil Cloud account. You can sign up using your Google account, or by creating an account with an email address and password.
+- First-time users need to sign up for a Pupil Cloud account. You can sign up using your Google account, or by creating an account with an email address and password.
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
@@ -56,7 +56,7 @@ Pupil Invisible distinguishes who is wearing the glasses with **wearer profiles*
 ### 6. Open the live Preview
 Now, let's see some eye tracking in action! 
 - The **scene and eye camera icons** in the app's home screen should be colored, indicating that the glasses are connected (otherwise the icons would be gray). 
-- We can see a live stream of the scene video with a gaze overlay by clicking the **Preview** button.
+- You can see a live stream of the scene video with a gaze overlay by clicking the **Preview** button.
 
 Just put on the glasses and try!
 
@@ -70,7 +70,7 @@ Just put on the glasses and try!
 
 ### 7. Make your first Recording
 
-To make a recording, just hit the big red button on the home screen to start. Once you are done hit the button again and hit save.
+To make a recording, hit the big red button on the home screen to start. Once you are done hit the button again and hit save.
 
 ### 8. Playback and download
 
@@ -78,4 +78,4 @@ Navigate to the **Recordings view** and click the recording you just made to pla
 
 <v-divider></v-divider>
 
-Now that we have learned how to make a recording, let's see what we can do with it! In the next article, you will get an overview of the software ecosystem at your disposal.
+Now that you learned how to make a recording, explore what you can do with it! In the next article, you will get an overview of the software ecosystem at your disposal.
