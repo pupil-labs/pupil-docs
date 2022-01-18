@@ -45,7 +45,7 @@ jobs:
 
   deploy-staging:
     name: Deploy to staging
-    if: github.event.ref == 'refs/heads/main'
+#     if: github.event.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment: 
       name: staging
@@ -61,7 +61,7 @@ jobs:
           name: vuepress-dist
           path: src/.vuepress/dist
 
-      - name: Rsync action - Deploy to production
+      - name: Rsync action - Deploy to staging
         uses: burnett01/rsync-deployments@4.1
         with: 
           switches: -hrvz --delete --exclude=".htaccess"
