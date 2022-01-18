@@ -41,11 +41,41 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: vuepress-dist
-          path: src/.vuepress/dist      
+          path: src/.vuepress/dist
 
-  deploy:
+  deploy-staging:
+    name: Deploy to staging
+    runs-on: ubuntu-latest
+    environment: 
+      name: staging
+      url: https://docs-staging.pupil-labs.com
+    needs: build
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Download generated website dist dir
+        uses: actions/download-artifact@v2
+        with: 
+          name: vuepress-dist
+          path: src/.vuepress/dist
+
+      - name: Rsync action - Deploy to production
+        uses: burnett01/rsync-deployments@4.1
+        with: 
+          switches: -hrvz --delete --exclude=".htaccess"
+          path: src/.vuepress/dist/
+          remote_path: ${{ secrets.REMOTE_PATH }}
+          remote_host: ${{ secrets.REMOTE_HOST}}
+          remote_user: ${{ secrets.REMOTE_USER }}
+          remote_key: ${{ secrets.DEPLOY_KEY }}
+
+  deploy-production:
     name: Deploy to production
     runs-on: ubuntu-latest
+    environment: 
+      name: production
+      url: https://docs.pupil-labs.com
     needs: build
 
     steps:
