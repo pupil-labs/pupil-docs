@@ -87,13 +87,22 @@ module.exports = {
           title: 'How-Tos',
           children: [
             'how-tos/hardware',
-            'how-tos/tools',
+            {
+              title: 'Tools',
+              children: [
+                'how-tos/tools/apply-offset-correction',
+                'how-tos/tools/monitor-your-data-collection-in-real-time',
+                'how-tos/tools/achieve-super-precise-time-sync-using-events',
+                'how-tos/tools/transfer-recordings-via-usb',
+                'how-tos/tools/make-complex-search-queries-in-pupil-cloud',
+              ]
+            },
             {
               title: 'Applications',
               children: [
                 'how-tos/applications/gaze-metrics-in-aois/',
-                'how-tos/applications/how-to-implement-an-HCI-aplication-using-the-real-time-API',
-                'how-tos/applications/how-to-track-events-at-recording-time-using-the-real-time-API',
+                'how-tos/applications/implement-hci-applications-using-the-real-time-api-and-screen-tracking',
+                'how-tos/applications/track-your-experiment-progress-using-events',
               ]
             },
           ]

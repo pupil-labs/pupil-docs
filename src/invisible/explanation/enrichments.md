@@ -1,4 +1,5 @@
 ---
+permalink: /invisible/explanation/enrichments
 description: TODO
 ---
 
