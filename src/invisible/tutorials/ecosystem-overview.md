@@ -13,7 +13,7 @@ It makes it easy to store all your data securely in one place and it offers a va
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
-    :src="require('../../media/invisible/PL-Ecosystem-02.jpg')"
+    :src="require('../../media/invisible/PL-Ecosystem-white.jpg')"
     max-width=80%
   >
   </v-img>

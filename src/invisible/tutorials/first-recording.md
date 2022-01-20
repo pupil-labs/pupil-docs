@@ -62,7 +62,7 @@ Just put on the glasses and try!
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
-    :src="require('../../media/invisible/PI-Home_UI.jpg')"
+    :src="require('../../media/invisible/PI-Home_UI-white.jpg')"
     max-width=100%
   >
   </v-img>

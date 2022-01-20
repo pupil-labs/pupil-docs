@@ -10,7 +10,7 @@ Pupil Invisible glasses feature two eye cameras, one for each eye. They are full
 
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
-    :src="require('../../media/invisible/eye-camera.jpg')"
+    :src="require('../../media/invisible/PI-Camera_annotation-white.jpg')"
     max-width=80%
   >
   </v-img>
