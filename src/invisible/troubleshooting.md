@@ -1,4 +1,5 @@
 ---
+permalink: /invisible/troubleshooting
 description: TODO
 ---
 
@@ -49,7 +50,7 @@ Have you been using the **Safari browser** to make the download?
 1. Make sure the Companion app and the device you are using to access the API are connected to the same local network.
 1. For discovery the local network must allow MDNS and UDP traffic. In large public networks this may be prohibited for security reasons.
    
-   - You may still be able to connect to the Pupil Invisible device using it's IP address like this. You can find the IP address in the wifi settings of the phone. Once you have it, you can connect like this:
+   - You may still be able to connect to the Pupil Invisible device using it's IP address. You can find the IP address in the wifi settings of the phone. Once you have it, you can connect like this:
       ```python
       from pupil_labs.realtime_api.basic import Device
 

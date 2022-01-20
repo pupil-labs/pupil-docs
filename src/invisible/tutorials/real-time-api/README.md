@@ -1,24 +1,26 @@
 # Real-Time API
 For some applications it is critical to have access to eye tracking data in real-time. Imagine for example an application utilizing gaze-interaction to allow users to press a button using only their eyes.
 
-In other cases it may be important to automatically start or stop a recording and save [events](). For example you might want to launch a screen-based experiment and have the recording start automatically when the stimulus presentation begins. Additionally, you might want to save the timestamps of when the subject interacted with the screen.
+In other cases it may be important to automatically start or stop a recording and save [events](/invisible/explanation/basic-concepts/#events). For example you might want to launch a screen-based experiment and have the recording start automatically when the stimulus presentation begins. Additionally, you might want to save the timestamps of when the subject interacted with the screen.
 
 All of this is possible for developers using Pupil Invisible's real-time API. It allows you to stream gaze data and scene video to any device connected to the same local network. Further, you can control all devices remotely to start and stop recordings or save events.
 
-If you are not a developer and simply need a tool to monitor and controll all your devices in real-time, check out [Pupil Invisible Monitor]().
+If you are not a developer and simply need a tool to monitor and control all your devices in real-time, check out [Pupil Invisible Monitor](/invisible/how-tos/tools/monitor-your-data-collection-in-real-time).
 
-We have created a Python client library for the API that makes it very easy to use. If you require access to the API from a different programming language please see the documentation [here]().
+We have created a Python client library for the API that makes it very easy to use. If you require access to the API from a different programming language, you will have to write your own client. Please see the documentation [here](https://pupil-labs-realtime-api.readthedocs.io/en/latest/index.html).
 
 To install the client library execute the following command in a terminal:
 
-`pip install pupil_labs`
+```
+pip install pupil_labs
+```
 
 ### Using the Client Library
 The client comes in two modes, `simple` and `async`. The simple mode is very easy to use and is the one we will focus on in this tutorial. 
 
 The async mode is using Python's async.io in order to implement non-blocking asynchronous communication. The calls made using the simple mode are blocking. If you don't know what any of this means, that's okay! The simple mode suffices for most use-cases and you usually do not need to understand the differences!
 
-The simple client is located in `pupil_labs.realtime_api.simple`. Using the `discover_one_device` method we can connect to a Pupil Invisible device connected to your local network. Make sure the Invisible Companion app is running! If no device can be found, please check [this section]() in our troubleshooting area! 
+The simple client is located in `pupil_labs.realtime_api.simple`. Using the `discover_one_device` method we can connect to a Pupil Invisible device connected to your local network. Make sure the Invisible Companion app is running! If no device can be found, please check [this section](/invisible/troubleshooting/#i-can-not-connect-to-devices-using-the-real-time-api) in our troubleshooting area! 
 
 
 ```python
@@ -66,7 +68,7 @@ device.recording_stop_and_save()
     Started recording with id 2f99d9f9-f009-4015-97dd-eb253de443b0
     
 
-While a recording is running, you can save [events]() using the `send_event` method. By default, the Pupil Invisible device receiving the event will assign assign a timestamp to it, using the time of arrivel. Optionally, you can set a custom nanosecond timestamp for your event instead.
+While a recording is running, you can save [events](/invisible/explanation/basic-concepts/#events) using the `send_event` method. By default, the Pupil Invisible device receiving the event will assign assign a timestamp to it, using the time of arrival. Optionally, you can set a custom nanosecond timestamp for your event instead.
 
 
 ```python
@@ -194,8 +196,8 @@ plt.scatter(gaze_sample.x, gaze_sample.y, s=200, facecolors='none', edgecolors='
 
 Using the the simple mode of the real-time API client you can easily access scene video and gaze data in real-time as well as remote control your Pupil Invisible devices.
 
-You can find the full API references [here]().
+You can find the full API references [here](/invisible/references/real-time-api).
 
-For an example implementation on how to use the real-time API in action, please see [Implement HCI applications using Surface Tracking and the Real-Time API]() or [Automatically track Experiment Trials using Events and the Real-Time API]().
+For an example implementation on how to use the real-time API in action, please see [Implement HCI Applications using the Real-Time API and Screen Tracking](/invisible/how-tos/applications/implement-hci-applications-using-the-real-time-api-and-screen-tracking) or [/invisible/how-tos/applications/track-your-experiment-progress-using-events]().
 
-To learn more about the `async` mode of the client see [here]().
+To learn more about the `async` mode of the client see [here](https://pupil-labs-realtime-api.readthedocs.io/en/latest/index.html).

@@ -1,4 +1,5 @@
 ---
+permalink: /invisible/explanation/basic-concepts
 description: TODO
 ---
 
