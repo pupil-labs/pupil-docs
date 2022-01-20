@@ -67,6 +67,6 @@ This enables you to implement HCI applications with Pupil Invisible or to stream
 Pupil Cloud too provides an API that allows developers to access stored data programmatically. It allows to download data without using the UI and enables highly streamlined data processing pipelines. See [here]() for more details.
 
 ### 3rd Party Analysis Software
-A range of software integrations is available for Pupil Invisible recordings, including compatibility with e.g. the [iMotions]() and [Bliskshift]() software. You can find a full list of official partners [here](). 
+A range of software integrations is available for Pupil Invisible recordings, including compatibility with e.g. the [iMotions]() and [Blickshift]() software. You can find a full list of official partners [here](). 
 
 Further, there are many open-source projects available built by the community. Join our [Discord](https://pupil-labs.com/chat) server and ask people to point you in the right direction for your project!

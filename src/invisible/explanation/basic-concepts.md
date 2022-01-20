@@ -20,7 +20,7 @@ In some cases, it can make sense to use the offset correction feature to compens
 
 
 ## Templates
-Templates are used to add meta-data to a recording (e.g. age, gender or location). They are forms that can be filled out at recording time to document important information for your study. The responses will be saved alongside the recording. Further, templates define a naming scheme for recordings. If you for example add a field for the `Experimental Condition` to the form, you can set this value to be added to your recording names automatically. This is useful if you have a pre-defined structure to your study.
+Templates are used to add meta-data to a recording (e.g. age, gender or location). They are forms that can be filled out at recording time to document important information for your study. The responses will be saved alongside the recording. Further, templates define a naming scheme for recordings. If you for example add a field for the `Experiment Name` to the form, you can set this value to be added to your recording names automatically. This is useful if you have a pre-defined structure to your study.
 
 ### Form for Meta-Data
 You can create new templates in Pupil Cloud and customize them to your use case. You can add as many form fields as you want, including text fields and multiple-choice fields.

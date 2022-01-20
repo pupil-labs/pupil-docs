@@ -2,7 +2,7 @@
 description: TODO
 ---
 
-# Calculate Gaze Metrics in on AOIs
+# Calculate Gaze Metrics in AOIs
 ```python
 import matplotlib.pyplot as plt
 plt.rcParams['figure.figsize'] = (15.0, 11.0)
@@ -14,7 +14,7 @@ Typical questions asked in these settings are
 - Which object was looked at first?
 - What percentage of subjects looked at each object at least once?
 
-All those applications require knowledge about when the gaze of a subject was on an object of interet and when it was not. Traditionally, researchers have to manually go through all the recordings and annotate when which object was visible in the scene and if the gaze was on them at the time. Using the Reference Image Mapper in Pupil Cloud it is possible to map gaze onto a reference image of the objects of interest automatically, enabling all of the above analysis.
+All those applications require knowledge about when the gaze of a subject was on an object of interest and when it was not. Traditionally, researchers have to manually go through all the recordings and annotate when which object was visible in the scene and if the gaze was on them at the time. Using the Reference Image Mapper in Pupil Cloud it is possible to map gaze onto a reference image of the objects of interest automatically, enabling all of the above analysis.
 
 In this tutorial we will take a detailed look at how the export of a Reference Image Mapper enrichment can be used for exactly this purpose. We will use an example dataset from a supermarket study where subjects were asked to buy products from different categories including ground coffee. We will consider the different products available in the coffee shelf as our objects of interest and explore how the subjects distributed their gaze over the shelf using classic eye tracking metrics. Utilizing the Reference Image Mapper and a couple of common Python libraries we can implement this very easily.
 
