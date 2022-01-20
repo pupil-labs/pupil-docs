@@ -29,6 +29,10 @@ Hold the glasses with the arms of the frame facing away from you.
 2. Press on the lens with your thumb or fingers on the top corner
    closest to the nose pad.
 
+::: tip
+You can get custom lenses with specific prescription values at any optician. Alternatively, you can purchase the [lens kit](https://pupil-labs.com/products/invisible/accessories/) from the Pupil Invisible accessories.
+:::
+
 ## Clean the glasses
 Pupil Invisible Glasses contain cameras and sensitive electronic components, do not rinse or wet-clean.
 
@@ -43,9 +47,10 @@ The disinfectant we use is made from 22.0g Ethanol, 21.0g 2-Propanol, 8.0g 1-Pro
 
 Pupil Invisible is not water-resistant. When cleaning, be careful around the eye cameras, world camera, and USB connection. Liquid from disinfectant might damage sensitive electronics inside the frame.
 
+
 ## Attach the head strap
 
-The head strap is an accessory that can be purchased if you want to use Pupil Invisible while playing sports or in other dynamic activities. The head strap can be adjusted to fit most wearers by pulling the two tabs.
+The [head strap](https://pupil-labs.com/products/invisible/accessories/) is an accessory that can be purchased if you want to use Pupil Invisible while playing sports or in other dynamic activities. The head strap can be adjusted to fit most wearers by pulling the two tabs.
 
 <div style="display:flex;justify-content:center;">
   <v-img
