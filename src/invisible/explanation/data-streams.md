@@ -41,7 +41,7 @@ After a recording is uploaded to Pupil Cloud, the gaze data is automatically re-
 
 The gaze data is output in pixel space of the scene camera image, which has a resolution of 1088x1080px. The origin is in the top-left corner of the image.
 
-You can find a high-level description as well as a thorough evaluation of the accuracy and robustness of the gaze estimation algorithm in our [white paper](https://arxiv.org/pdf/2009.00508).
+The gaze estimation algorithm is based on end-2-end deep learning and provides gaze data robustly without requiring a calibration. You can find a high-level description as well as a thorough evaluation of the accuracy and robustness of the algorithm in our [white paper](https://arxiv.org/pdf/2009.00508).
 
 ## Fixations
 The two primary types of movement the eye is performing are fixations and saccades. During fixation, the eye is fixated on a specific point in the environment. A saccade is a very quick movement where the eye is jumping from one fixation to the next. Properties like the fixation duration are correlated with cognitive processes like e.g. cognitive load.
