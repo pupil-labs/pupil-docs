@@ -23,10 +23,10 @@ featured_products: [
     alt: "How Tos"
   },
   {
-    title: "References",
-    link: "/invisible/references/export-formats",
+    title: "Reference",
+    link: "/invisible/reference/export-formats",
     src: "invisible/pi_companion.jpg" ,
-    alt: "References"
+    alt: "Reference"
   }
 ]
 ---
