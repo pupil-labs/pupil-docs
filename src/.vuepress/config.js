@@ -77,8 +77,8 @@ module.exports = {
         {
           title: 'Explanation',
           children: [
-            'explanation/data-streams',
             'explanation/basic-concepts',
+            'explanation/data-streams',
             'explanation/enrichments',
             'explanation/publications',
           ]
@@ -108,11 +108,11 @@ module.exports = {
           ]
         },
         {
-          title: 'References',
+          title: 'Reference',
           children: [
-            'references/export-formats',
-            'references/real-time-api',
-            'references/cloud-api',
+            'reference/export-formats',
+            'reference/real-time-api',
+            'reference/cloud-api',
           ]
         },
         "troubleshooting"
