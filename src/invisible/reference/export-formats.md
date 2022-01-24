@@ -318,3 +318,8 @@ Each folder contains gaze overlay videos of the sections belonging to the corres
 where the times are in seconds relative to the recording start.
 
 
+
+## Binary Recording Data
+If you download recording data straight off of the phone without uploading to Pupil Cloud first, you will receive raw binary data. This data is difficult to handle and we do not recommend you use it directly. If using Pupil Cloud is not an option for you, please export the data via Pupil Player to convenient formats instead (see [Transfer Recordings via USB](src\invisible\how-tos\tools\transfer-recordings-via-usb.md)).
+
+You can find the format documentation of the raw binary data [here](https://docs.google.com/spreadsheets/d/1e1Xc1FoQiyf_ZHkSUnVdkVjdIanOdzP0dgJdJgt0QZg/edit?usp=sharing). Please note that the raw data format may change without advance notification.
