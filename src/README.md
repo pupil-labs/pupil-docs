@@ -16,25 +16,16 @@ featured_products: [
     src: "core/imgs/core_connect.jpg",
     alt: "Pupil Core headset"
   },
-  {
-    title: "VR/AR Add-Ons",
-    link: "/vr-ar/",
-    src: "vr-ar/imgs/vive_explode_grey.jpg",
-    alt: "HTC Vive 200Hz Binocular add-on"
-  },
-  {
-    title: "Pupil Cloud",
-    link: "/cloud/",
-    src: "cloud/imgs/cloud_oneplus.jpg",
-    alt: "Pupil Cloud platform"
-  }
 ]
 ---
 
-::: slot dev
-# Developer Documentation
+::: slot articles
+# What is Eye Tracking?
 
-Overview of language, code structure and general conventions.
+Are you new to eye tracking? Get a head-start on the topic from our introductory article covering question like 
+- Why do we move our eyes in the first place?
+- What applications are there for eye tracking?
+- How does an eye tracker work?
 
-<v-btn round dark to="/developer/" class="bg-link-blue ml-0"> Read documentation </v-btn>
+<v-btn round dark to="https://pupil-labs.com/blog/news/what-is-eye-tracking/" class="bg-link-blue ml-0"> Read article </v-btn>
 :::
