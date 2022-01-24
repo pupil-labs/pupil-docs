@@ -196,7 +196,7 @@ plt.scatter(gaze_sample.x, gaze_sample.y, s=200, facecolors='none', edgecolors='
 
 Using the the simple mode of the real-time API client you can easily access scene video and gaze data in real-time as well as remote control your Pupil Invisible devices.
 
-You can find the full API references [here](/invisible/references/real-time-api).
+You can find the full API reference [here](/invisible/reference/real-time-api).
 
 For an example implementation on how to use the real-time API in action, please see [Implement HCI Applications using the Real-Time API and Screen Tracking](/invisible/how-tos/applications/implement-hci-applications-using-the-real-time-api-and-screen-tracking) or [/invisible/how-tos/applications/track-your-experiment-progress-using-events]().
 
