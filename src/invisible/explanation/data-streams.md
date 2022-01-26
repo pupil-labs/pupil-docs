@@ -1,4 +1,5 @@
 ---
+permalink: /invisible/explanation/data-streams
 description: TODO
 ---
 
