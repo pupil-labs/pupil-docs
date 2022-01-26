@@ -475,7 +475,7 @@ This plugin is used to calculate camera intrinsics, which will enable one to cor
 2. Click on 'show pattern' to display the pattern
 3. Resize the pattern to fill the screen
 4. Hold your Pupil headset and aim it at the pattern.
-5. With the world window in focus, press `c` on your keyboard or the circular `C` button in the world windows to detect and capture a pattern.
+5. With the world window in focus, press `i` on your keyboard or the circular `I` button in the world windows to detect and capture a pattern.
 6. Data will be sampled and displayed on the screen as a border of the calibrated pattern. (Note - make sure to move your headset at different angles and try to cover the entire FOV of the world camera for best possible calibration results)
 7. Repeat until you have captured 10 patterns.
 8. Click on `show undistorted image` to display the results of camera intrinsic estimation. This will display an undistorted view of your scene. If well calibrated, parallel lines in the real world will appear as parallel lines in the undistorted view.
