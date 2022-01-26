@@ -24,14 +24,14 @@ Next, you have to install the Pupil Invisible Companion app on your device:
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
-    :src="require('../../media/invisible/google-play-logo.png')"
+    :src="require('../../media/invisible/tutorials/google-play-logo.png')"
     max-width=50%
   >
   </v-img>
 </div>
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
-    :src="require('../../media/invisible/pic-play-store.jpg')"
+    :src="require('../../media/invisible/tutorials/pic-play-store.jpg')"
     max-width=50%
   >
   </v-img>
@@ -62,7 +62,7 @@ Just put on the glasses and try!
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
-    :src="require('../../media/invisible/PI-Home_UI-white.jpg')"
+    :src="require('../../media/invisible/tutorials/PI-Home_UI-white.jpg')"
     max-width=100%
   >
   </v-img>

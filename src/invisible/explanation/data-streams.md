@@ -10,7 +10,7 @@ Pupil Invisible glasses feature two eye cameras, one for each eye. They are full
 
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
-    :src="require('../../media/invisible/PI-Camera_annotation-white.jpg')"
+    :src="require('../../media/invisible/explanation/PI-Camera_annotation-white.jpg')"
     max-width=80%
   >
   </v-img>
@@ -20,7 +20,7 @@ Below you can find a collection of example image pairs recorded with different s
 
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
-    :src="require('../../media/invisible/example-eye-images.jpg')"
+    :src="require('../../media/invisible/explanation/example-eye-images.jpg')"
     max-width=100%
   >
   </v-img>
@@ -33,7 +33,7 @@ After a recording is uploaded to Pupil Cloud, the gaze data is automatically re-
 
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
-    :src="require('../../media/invisible/pi-gaze-coordinate-diagram.jpg')"
+    :src="require('../../media/invisible/explanation/pi-gaze-coordinate-diagram.jpg')"
     max-width=80%
   >
   </v-img>
@@ -74,7 +74,7 @@ After uploading to Pupil Cloud, the absolute roll and pitch values of the glasse
 
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
-    :src="require('../../media/invisible/pi-imu-diagram.jpg')"
+    :src="require('../../media/invisible/explanation/pi-imu-diagram.jpg')"
     max-width=80%
   >
   </v-img>
