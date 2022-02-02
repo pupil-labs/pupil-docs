@@ -54,7 +54,7 @@ The [head strap](https://pupil-labs.com/products/invisible/accessories/) is an a
 
 <div style="display:flex;justify-content:center;">
   <v-img
-    :src="require('../../media/invisible/pi-strap.jpg')"
+    :src="require('../../media/invisible/how-tos/pi-strap.jpg')"
     max-width=80%
   >
   </v-img>

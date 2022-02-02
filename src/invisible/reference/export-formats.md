@@ -4,10 +4,8 @@ description: TODO
 
 # Export Formats
 
-## Raw Data Exporter
-
-#### sections.csv
-This file contains an overview of the sections that were generated from this enrichment.
+## General Information
+All [enrichments](/invisible/explanation/enrichments) are defined on specific sections of recordings using events. Every enrichment export contains a `sections.csv` file summarizing the available sections as follows:
 
 | Field | Description | 
 | -------- | -------- | 
@@ -20,8 +18,11 @@ This file contains an overview of the sections that were generated from this enr
 | **start event name** | Name of the start event of the section.     |
 | **end event name** | Name of the end event of the section.     |
 
+Further, every enrichment export contains a files called `enrichment_info.txt`, which contains the name of the enrichment type, a link to the appropriate documentation, and the version of the enrichment that was used.
 
-#### Recording Data
+## Raw Data Exporter
+
+#### Recording Folders
 The export contains one folder per recording following this naming scheme:
 ```<recording name>-<start of recording ID>```
 The files included in every folder are described in the following.
@@ -64,7 +65,7 @@ This file contains the timestamps of every world video frame.
 
 
 #### events.csv
-This file contains project event annotations and real-time [recording events](/developer/invisible/#recording-events "Documentation on recordings events in real-time using recording events").
+This file contains [event](/invisible/explanation/basic-concepts/#events) data for all recordings. It contains both project event annotations and real-time recording events.
 
 | Field | Description | 
 | -------- | -------- | 
@@ -75,7 +76,7 @@ This file contains project event annotations and real-time [recording events](/d
 
 
 #### gaze.csv
-This file contains gaze data in world camera coordinates. For a definition of the coordinate system see [here](/developer/invisible/#gaze-coordinate-system "Explanation of Pupil Invisible's gaze coordinate system").
+This file contains [gaze](/invisible/explanation/data-streams/#gaze) data in world camera coordinates.
 
 
 | Field | Description | 
@@ -90,8 +91,8 @@ This file contains gaze data in world camera coordinates. For a definition of th
 
 
 #### fixations.csv
-This file contains fixations detected in the gaze data stream.
-The corresponding gaze samples that belong to each fixation can be determined from the `gaze.csv` file using the `fixation id` fields.
+This file contains [fixations](/invisible/explanation/data-streams/#fixations) detected in the gaze data stream.
+The corresponding gaze samples that belong to each fixation can be determined from the `gaze.csv` file using the `fixation id` field.
 
 
 | Field | Description | 
@@ -107,6 +108,7 @@ The corresponding gaze samples that belong to each fixation can be determined fr
 
 
 #### imu.csv
+This file contains data recorded by the integrated [IMU](/invisible/explanation/data-streams/#inertial-measurements) (inertial measurement unit).
 
 | Field | Description | 
 | -------- | -------- | 
@@ -121,24 +123,8 @@ The corresponding gaze samples that belong to each fixation can be determined fr
 
 ## Marker Mapper
 
-#### sections.csv 
-This file contains an overview of the sections that were generated from this enrichment.
-
-
-| Field | Description | 
-| -------- | -------- | 
-| **section id** | Unique identifier of the section.     |
-| **recording id** | Unique identifier of the recording this section belongs to.     |
-| **recording name** | Name of the recording this section belongs to.     |
-| **wearer id** | Unique identifier of the wearer used in the corresponding recording.     |
-| **section start time [ns]** | Timestamp corresponding to the start event of the section. Given as UTC timestamp in nanoseconds.     |
-| **section end time [ns]** | Timestamp corresponding to the end event of the section. Given as UTC timestamp in nanoseconds.     |
-| **start event name** | Name of the start event of the section.     |
-| **end event name** | Name of the end event of the section.     |
-
-
 #### gaze.csv
-This file contains all the mapped gaze data from all sections. The coordinate system is explained [here](#surface-coordinates "Explanation of the coordinate system of the Marker Mapper's surfaces").
+This file contains all the mapped gaze data from all sections. The coordinate system is explained [here](/invisible/explanation/enrichments/#surface-coordinates).
 
 | Field | Description | 
 | -------- | -------- | 
@@ -183,22 +169,6 @@ This file contains the surface locations in the scene images for all sections.
 
 ## Reference Image Mapper
 
-#### sections.csv
-This file contains an overview of the sections that were generated from this enrichment.
-
-
-| Field | Description | 
-| -------- | -------- | 
-| **section id** | Unique identifier of the section.     |
-| **recording id** | Unique identifier of the recording this section belongs to.     |
-| **recording name** | Name of the recording this section belongs to.     |
-| **wearer id** | Unique identifier of the wearer used in the corresponding recording.     |
-| **section start time [ns]** | Timestamp corresponding to the start event of the section. Given as UTC timestamp in nanoseconds.     |
-| **section end time [ns]** | Timestamp corresponding to the end event of the section. Given as UTC timestamp in nanoseconds.     |
-| **start event name** | Name of the start event of the section.     |
-| **end event name** | Name of the end event of the section.     |
-
-
 #### gaze.csv
 This file contains all the mapped gaze data from all sections.
 
@@ -234,20 +204,6 @@ The reference image was used for defining the enrichment. The file is named `ref
 
 
 ## Face Mapper
-
-#### sections.csv
-This file contains an overview of the sections that are generated by this enrichment.
-
-| Field | Description | 
-| -------- | -------- | 
-| **section id** | Unique identifier of the section.     |
-| **recording id** | Unique identifier of the recording this section belongs to.     |
-| **recording name** | Name of the recording this section belongs to.     |
-| **wearer id** | Unique identifier of the wearer used in the corresponding recording.     |
-| **section start time [ns]** | Timestamp corresponding to the start event of the section. Given as UTC timestamp in nanoseconds.     |
-| **section end time [ns]** | Timestamp corresponding to the end event of the section. Given as UTC timestamp in nanoseconds.     |
-| **start event name** | Name of the start event of the section.     |
-| **end event name** | Name of the end event of the section.     |
 
 #### face_positions.csv
 This file contains all the individual face detections.
@@ -292,22 +248,6 @@ This file indicates which fixations are on faces (within the bounding box of det
 
 
 ## Gaze Overlay
-
-#### sections.csv
-This file contains an overview of the sections that were generated from this enrichment.
-
-
-| Field | Description | 
-| -------- | -------- | 
-| **section id** | Unique identifier of the section.     |
-| **recording id** | Unique identifier of the recording this section belongs to.     |
-| **recording name** | Name of the recording this section belongs to.     |
-| **wearer id** | Unique identifier of the wearer used in the corresponding recording.     |
-| **section start time [ns]** | Timestamp corresponding to the start event of the section. Given as UTC timestamp in nanoseconds.     |
-| **section end time [ns]** | Timestamp corresponding to the end event of the section. Given as UTC timestamp in nanoseconds.     |
-| **start event name** | Name of the start event of the section.     |
-| **end event name** | Name of the end event of the section.     |
-
 
 #### Video Files
 The export will have one folder per original recording using the following naming scheme:

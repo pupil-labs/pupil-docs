@@ -1,4 +1,5 @@
 ---
+permalink: /invisible/explanation/data-streams
 description: TODO
 ---
 
@@ -10,7 +11,7 @@ Pupil Invisible glasses feature two eye cameras, one for each eye. They are full
 
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
-    :src="require('../../media/invisible/PI-Camera_annotation-white.jpg')"
+    :src="require('../../media/invisible/explanation/PI-Camera_annotation-white.jpg')"
     max-width=80%
   >
   </v-img>
@@ -20,7 +21,7 @@ Below you can find a collection of example image pairs recorded with different s
 
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
-    :src="require('../../media/invisible/example-eye-images.jpg')"
+    :src="require('../../media/invisible/explanation/example-eye-images.jpg')"
     max-width=100%
   >
   </v-img>
@@ -33,7 +34,7 @@ After a recording is uploaded to Pupil Cloud, the gaze data is automatically re-
 
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
-    :src="require('../../media/invisible/pi-gaze-coordinate-diagram.jpg')"
+    :src="require('../../media/invisible/explanation/pi-gaze-coordinate-diagram.jpg')"
     max-width=80%
   >
   </v-img>
@@ -41,12 +42,12 @@ After a recording is uploaded to Pupil Cloud, the gaze data is automatically re-
 
 The gaze data is output in pixel space of the scene camera image, which has a resolution of 1088x1080px. The origin is in the top-left corner of the image.
 
-You can find a high-level description as well as a thorough evaluation of the accuracy and robustness of the gaze estimation algorithm in our [white paper](https://arxiv.org/pdf/2009.00508).
+The gaze estimation algorithm is based on end-2-end deep learning and provides gaze data robustly without requiring a calibration. You can find a high-level description as well as a thorough evaluation of the accuracy and robustness of the algorithm in our [white paper](https://arxiv.org/pdf/2009.00508).
 
 ## Fixations
 The two primary types of movement the eye is performing are fixations and saccades. During fixation, the eye is fixated on a specific point in the environment. A saccade is a very quick movement where the eye is jumping from one fixation to the next. Properties like the fixation duration are correlated with cognitive processes like e.g. cognitive load.
 
-Fixations are calculated automatically in Pupil Cloud after uploading a recording. They are available as part of all enrichment downloads. The downloads for gaze mapping enrichments ([Reference Image Mapper](/invisible/explanation/enrichments/#reference-image-mapper), [Marker Mapper](/invisible/explanation/enrichments/#marker-mapper)) also include "mapped fixations".
+Fixations are calculated automatically in Pupil Cloud after uploading a recording. They are available as part of the [Raw Data Exporter](/invisible/explanation/enrichments/#raw-data-exporter) enrichment downloads. The downloads for gaze mapping enrichments ([Reference Image Mapper](/invisible/explanation/enrichments/#reference-image-mapper), [Marker Mapper](/invisible/explanation/enrichments/#marker-mapper)) also include "mapped fixations".
 
 The fixation detection algorithm we have developed was specifically designed for head-mounted eye trackers. Traditionally, fixation detection algorithms are assuming the head of the subject to be stationary, which is however usually not the case when using head-mounted eye trackers.
 If there is head movement during a fixation, the vestibulo-ocular reflex (VOR) is performing a counter-movement with the eye to keep the gaze stable on the point of fixation.
@@ -74,7 +75,7 @@ After uploading to Pupil Cloud, the absolute roll and pitch values of the glasse
 
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
-    :src="require('../../media/invisible/pi-imu-diagram.jpg')"
+    :src="require('../../media/invisible/explanation/pi-imu-diagram.jpg')"
     max-width=80%
   >
   </v-img>

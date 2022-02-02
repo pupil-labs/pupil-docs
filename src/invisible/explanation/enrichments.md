@@ -17,7 +17,7 @@ If a recording contains multiple instances of the start and end event, it will c
 ## Marker Mapper
 <div class="pb-4" style="display:flex;justify-content:center;filter:drop-shadow(2px 4px 10px #000000);">
   <v-img
-    :src="require('../../media/cloud/imgs/marker_mapper_header.png')"
+    :src="require('../../media/invisible/explanation/marker_mapper_header.png')"
     max-width=80%
   >
   </v-img>
@@ -57,7 +57,7 @@ The mapper may return values outside of the surface, which yields values smaller
 ## Reference Image Mapper
 <div class="pb-4" style="display:flex;justify-content:center;filter:drop-shadow(2px 4px 10px #000000);">
   <v-img
-    :src="require('../../media/cloud/imgs/reference_image_mapper_header.png')"
+    :src="require('../../media/invisible/explanation/reference_image_mapper_header.png')"
     max-width=80%
   >
   </v-img>
@@ -87,7 +87,7 @@ A good scanning recording and reference image are shown below:
 
 <div class="pb-4" style="display:flex;justify-content:center;">
 <v-img 
-  :src="require('../../media/cloud/imgs/reference_image_sample.jpg')"
+  :src="require('../../media/invisible/explanation/reference_image_sample.jpg')"
   max-width=80%
 >
 </v-img>
@@ -118,7 +118,7 @@ The Reference Image Mapper maps gaze points to a reference image. As such, the g
 
 <div class="pb-4" style="display:flex;justify-content:center;filter:drop-shadow(2px 4px 10px #000000);">
   <v-img
-    :src="require('../../media/cloud/imgs/face_mapper_header.jpeg')"
+    :src="require('../../media/invisible/explanation/face_mapper_header.jpeg')"
     max-width=80%
   >
   </v-img>
@@ -134,7 +134,7 @@ Additionally, this enrichment also calculates the location of the most important
 ## Gaze Overlay
 <div class="pb-4" style="display:flex;justify-content:center;filter:drop-shadow(2px 4px 10px #000000);">
   <v-img
-    :src="require('../../media/cloud/imgs/gaze_overlay_header1.png')"
+    :src="require('../../media/invisible/explanation/gaze_overlay_header1.png')"
     max-width=80%
   >
   </v-img>

@@ -14,7 +14,7 @@ It makes it easy to store all your data securely in one place and it offers a va
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
-    :src="require('../../media/invisible/PL-Ecosystem-white.jpg')"
+    :src="require('../../media/invisible/tutorials/PL-Ecosystem-white.jpg')"
     max-width=80%
   >
   </v-img>
@@ -47,7 +47,7 @@ There are a number of other tools available for processing Pupil Invisible recor
 ### Pupil Invisible Monitor
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
-    :src="require('../../media/invisible/pi-monitor-app.jpg')"
+    :src="require('../../media/invisible/tutorials/pi-monitor-app.jpg')"
     max-width=80%
   >
   </v-img>
