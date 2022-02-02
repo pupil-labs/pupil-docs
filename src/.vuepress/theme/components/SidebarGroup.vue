@@ -26,7 +26,7 @@
     <a
       v-else
       class="sidebar-heading sidebar-link justify-space-between"
-      :class="{ open, 'active': groupHeadActive() }"
+      :class="{ open, 'heading-active': groupHeadActive() }"
       @click="$emit('toggle')"
     >
       {{ item.title }}
@@ -89,16 +89,16 @@ export default {
   &.is-sub-group
     padding-left 0
     & > .sidebar-heading
-      font-size 0.95em
+      font-size 12px
       line-height 1.4
       font-weight normal
-      padding-left 2rem
-      &:not(.clickable)
-        opacity 0.5
+      padding-left 32px
+      // &:not(.clickable)
+      //   opacity 0.5
     & > .sidebar-group-items
       padding-left 1rem
       & > li > .sidebar-link
-        font-size: 0.95em;
+        font-size: 12px
         border-left none
   &.depth-2
     & > .sidebar-heading
