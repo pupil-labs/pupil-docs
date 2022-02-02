@@ -30,13 +30,13 @@ export default {
         ? renderExternal(h, item.path, item.title || item.path)
         : renderLink(h, item.path, item.title || item.path, active);
 
-    const configDepth =
-      $page.frontmatter.sidebarDepth ||
-      sidebarDepth ||
-      $themeLocaleConfig.sidebarDepth ||
-      $themeConfig.sidebarDepth;
+    // const configDepth =
+    //   $page.frontmatter.sidebarDepth ||
+    //   sidebarDepth ||
+    //   $themeLocaleConfig.sidebarDepth ||
+    //   $themeConfig.sidebarDepth;
 
-    const maxDepth = configDepth == null ? 1 : configDepth;
+    // const maxDepth = configDepth == null ? 1 : configDepth;
 
     const displayAllHeaders =
       $themeLocaleConfig.displayAllHeaders || $themeConfig.displayAllHeaders;
@@ -44,7 +44,7 @@ export default {
     if (item.type === "auto") {
       return [
         link,
-        renderChildren(h, item.children, item.basePath, $route, maxDepth)
+        renderChildren(h, item.children, item.basePath, $route, 0)
       ];
     } else if (
       (active || displayAllHeaders) &&
@@ -52,7 +52,7 @@ export default {
       !hashRE.test(item.path)
     ) {
       const children = groupHeaders(item.headers);
-      return [link, renderChildren(h, children, item.path, $route, maxDepth)];
+      return [link, renderChildren(h, children, item.path, $route, 0)];
     } else {
       return link;
     }
@@ -135,13 +135,13 @@ function renderExternal(h, to, text) {
     border-left unset !important
 
 a.sidebar-link
-  font-size 18px
+  font-size 13px
   font-weight 400
   display flex
   align-items center
   color #455A64
   border-left 0.25rem solid transparent
-  padding 8px 24px
+  padding 4px 24px
   line-height 1.4
   width: 100%
   box-sizing: border-box
@@ -149,10 +149,12 @@ a.sidebar-link
   &:hover
     color #0D122A
     background-color #ECEFF1
-  &.active
+  &.heading-active
     font-weight 600
     color #0D122A
-    border-left-color  #0D122A
+    border-left-color #0D122A
+  &.page-active
+    color #1263cc
   // .sidebar-group &
   //   padding-left 40px
   .sidebar-sub-headers &
@@ -188,7 +190,7 @@ a.sidebar-link
   background: rgba(189,189,189,.4)
 
   &.active
-    background-color #0D122A
+    background-color blue
 
 .sidebar-group
   .sidebar-link
@@ -196,11 +198,11 @@ a.sidebar-link
   .sidebar-group-items
     .sidebar-link
       font-weight 400
-      font-size 16px
+      font-size 12px
       &.active
         font-weight bold
+        color #1263cc
 
   .side-nav__progress-bar
     left: 32px
-
 </style>
