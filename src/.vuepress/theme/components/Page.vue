@@ -3,10 +3,37 @@
     <slot name="top" />
 
     <div class="gridCol">
-      <Content
-        style="max-width:800px;margin: 0 auto;width:100%;"
-        class="theme-default-content"
-      />
+      <div>
+        <Content class="theme-default-content"/>
+        <v-divider class="mt-4"></v-divider>
+        <footer class="page-edit justify-space-between" style="display:flex;">
+          <div class="edit-link" v-if="editLink">
+            <a class="caption--1" :href="editLink" target="_blank" rel="noopener noreferrer">
+              {{ editLinkText }}
+              <OutboundLink />
+            </a>
+          </div>
+          <div class="last-updated caption--1" v-if="lastUpdated">
+            <span class="prefix">{{ lastUpdatedText }}:</span>
+            <span class="time">{{ lastUpdated }}</span>
+          </div>
+        </footer>
+        <div class="page-nav" v-if="prev || next">
+          <v-layout>
+            <div>
+              <v-btn class="ml-0 page-nav-btn" round color="primary" v-if="prev" :to="prev.path" :id="prev.title">
+                <v-icon left dark>arrow_back</v-icon>
+                Back
+              </v-btn>
+            </div>
+            <v-spacer></v-spacer>
+            <v-btn class="mr-0 page-nav-btn" round color="primary" v-if="next" :to="next.path" :id="next.title">
+              Next
+              <v-icon right dark>arrow_forward</v-icon>
+            </v-btn>
+          </v-layout>
+        </div>
+      </div>
       <div
         v-if="haveTitle"
         class="pageContent"
@@ -27,36 +54,6 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="theme-default-content" style="padding:0 2.5rem;">
-      <v-divider></v-divider>
-    </div>
-
-    <footer class="page-edit">
-      <div class="edit-link" v-if="editLink">
-        <a :href="editLink" target="_blank" rel="noopener noreferrer">{{ editLinkText }}</a>
-        <OutboundLink />
-      </div>
-
-      <div class="last-updated" v-if="lastUpdated">
-        <span class="prefix">{{ lastUpdatedText }}:</span>
-        <span class="time">{{ lastUpdated }}</span>
-      </div>
-    </footer>
-
-    <div class="page-nav pb-5 my-4" v-if="prev || next">
-      <v-layout>
-        <v-btn class="ml-0" round color="primary" v-if="prev" :to="prev.path">
-          <v-icon left dark>arrow_back</v-icon>
-          {{ prev.title || prev.path }}
-        </v-btn>
-        <v-spacer></v-spacer>
-        <v-btn class="mr-0" round color="primary" v-if="next" :to="next.path">
-          {{ next.title || next.path }}
-          <v-icon right dark>arrow_forward</v-icon>
-        </v-btn>
-      </v-layout>
     </div>
 
     <slot name="bottom" />
@@ -236,8 +233,7 @@ function flatten(items, res) {
       color lighten($textColor, 25%)
       margin-right 0.25rem
   .last-updated
-    float right
-    font-size 0.9em
+    // font-size 0.9em
     .prefix
       font-weight 500
       color lighten($textColor, 25%)
