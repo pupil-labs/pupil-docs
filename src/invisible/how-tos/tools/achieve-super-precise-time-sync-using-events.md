@@ -29,8 +29,8 @@ While an error of `<20 ms` is sufficient for most applications, some require eve
 
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
-    :src="require('../../../media/invisible/how-tos/time-synchronization-with-events.png')"
-    max-width=60%
+    :src="require('../../../media/invisible/how-tos/time-synchronization-with-events.jpg')"
+    max-width=100%
   >
   </v-img>
 </div>

@@ -12,7 +12,7 @@ Pupil Invisible glasses feature two eye cameras, one for each eye. They are full
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
     :src="require('../../media/invisible/explanation/PI-Camera_annotation-white.jpg')"
-    max-width=80%
+    max-width=100%
   >
   </v-img>
 </div>
@@ -35,7 +35,7 @@ After a recording is uploaded to Pupil Cloud, the gaze data is automatically re-
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
     :src="require('../../media/invisible/explanation/pi-gaze-coordinate-diagram.jpg')"
-    max-width=80%
+    max-width=100%
   >
   </v-img>
 </div>
@@ -76,7 +76,7 @@ After uploading to Pupil Cloud, the absolute roll and pitch values of the glasse
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
     :src="require('../../media/invisible/explanation/pi-imu-diagram.jpg')"
-    max-width=80%
+    max-width=100%
   >
   </v-img>
 </div>
