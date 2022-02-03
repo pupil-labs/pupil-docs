@@ -5,10 +5,10 @@ description: TODO
 # Pupil Invisible & Cloud Documentation
 Welcome to the documentation of Pupil Invisible & Cloud! On these pages you can learn everything there is to learn about the Pupil Invisible ecosystem. Starting from taking you first steps all the way to implementing advanced applications, all you need is here.
 
-#### Tutorials
+#### Getting Started
 This section is directed at new users who want to get to grips with the tools. Working through the tutorials will put you into a great position to consume the rest of the documentation and get started with your project.
 
-If you only just got your Pupil Invisible device, we recommend you go ahead and [make your first recording](/invisible/tutorials/first-recording)!
+If you only just got your Pupil Invisible device, we recommend you go ahead and [make your first recording](/invisible/getting-started/first-recording)!
 
 
 #### Explanation
