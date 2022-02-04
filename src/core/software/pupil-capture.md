@@ -7,14 +7,14 @@ description: Pupil Capture is the software used with your Pupil Core Headset. Us
 Pupil Capture is the software used with your Pupil Core Headset. The software reads the video streams coming in from the world camera and the eye camera(s). Pupil Capture uses the video streams to detect your pupil, track your gaze, detect and track markers in your environment, record video and events, and stream data in realtime.
 
 <div class="pb-4">
-  <img src="../../media/core/icons/pc.png" style="display:flex;margin:0 auto;width:100px;">
+  <v-img :src="require('../../media/core/icons/pc.png')" style="display:flex;margin:0 auto;width:100px;"></v-iimg>
 </div>
 
 ## World Window
 The World window is the main control center for Pupil Capture. It displays a live world camera video feed from your Pupil Core headset.
 
 <div class="pb-4">
-  <img src="../../media/core/imgs/capture-callout.jpg" style="display:flex;margin:0 auto;">
+  <v-img :src="require('../../media/core/imgs/capture-callout.jpg')" style="display:flex;margin:0 auto;"></v-img>
 </div>
 
 1. **Graphs**: This area contains performance graphs. By default the graphs `CPU`, `FPS`, and pupil algorithm detection confidence will be displayed. You can control graph settings with the System Graphs plugin.
@@ -123,11 +123,11 @@ Before starting a calibration, ensure that the participant's pupil is robustly d
 
 <div style="display:flex;" class="pb-4">
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <img src="../../media/core/imgs/pupil-detect.jpg" style="width:300px;height:300px;">
+        <v-img :src="require('../../media/core/imgs/pupil-detect.jpg')" style="width:300px;height:300px;"></v-img>
         <p>Your Pupil is properly detected by the camera.</p>
     </div>
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <img src="../../media/core/imgs/focus.jpg" style="width:300px;height:300px;">
+        <v-img :src="require('../../media/core/imgs/focus.jpg')" style="width:300px;height:300px;"></v-img>
         <p>Make sure the world camera is in focus.</p>
     </div>
 </div>
@@ -165,11 +165,11 @@ Make sure to always use the **v0.4 marker design** for best detection performanc
 
 <div style="display:flex;" class="pb-4">
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <img src="../../media/core/imgs/v0.4_calib_marker_02.jpg" style="width:300px;height:300px;">
+        <v-img :src="require('../../media/core/imgs/v0.4_calib_marker_02.jpg')" style="width:300px;height:300px;"></v-img>
         <p>Pupil Calibration Marker v0.4</p>
     </div>
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <img src="../../media/core/imgs/v0.4_calib_marker_01.jpg" style="width:300px;height:300px;">
+        <v-img :src="require('../../media/core/imgs/v0.4_calib_marker_01.jpg')" style="width:300px;height:300px;"></v-img>
         <p>Pupil Calibration Stop Marker v0.4</p>
     </div>
 </div>
@@ -236,7 +236,7 @@ If you open up a recording session folder you will see a collection of video(s) 
 Open the `Plugin Manager` menu on the right.
 
 <div class="pb-4">
-  <img src="../../media/core/imgs//capture-plugin.jpg" style="display:flex;margin:0 auto;width:100%;">
+  <v-img :src="require('../../media/core/imgs//capture-plugin.jpg')" style="display:flex;margin:0 auto;width:100%;"></v-img>
 </div>
 
 It lists all available plugins.
@@ -369,11 +369,11 @@ Apriltags ready to use:
 
 <div style="display:flex;" class="pb-4">
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <img src="../../media/shared/imgs/apriltags_tag36h11_0-23.jpg" style="padding-bottom:16px;width:60%;">
+        <v-img :src="require('../../media/shared/imgs/apriltags_tag36h11_0-23.jpg')" style="padding-bottom:16px;width:60%;"></v-img>
         <p>Apriltags tag36h11 0-23</p>
     </div>
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <img src="../../media/shared/imgs/apriltags_tag36h11_24-47.jpg" style="padding-bottom:16px;width:60%;">
+        <v-img :src="require('../../media/shared/imgs/apriltags_tag36h11_24-47.jpg')" style="padding-bottom:16px;width:60%;"></v-img>
         <p>Apriltags tag36h11 24-47</p>
     </div>
 </div>

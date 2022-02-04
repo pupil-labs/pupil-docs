@@ -8,7 +8,7 @@ Pupil Service is like Pupil Capture except it does not have a world video feed, 
 It is intended to be used with VR and AR eye tracking setups.
 
 <div class="pb-4">
-  <img src="../../media/core/icons/ps.png"style="display:flex;margin:0 auto;width:100px;">
+  <v-img :src="require('../../media/core/icons/ps.png')" style="display:flex;margin:0 auto;width:100px;"></v-img>
 </div>
 
 :::tip
@@ -21,7 +21,7 @@ With the Pupil Service GUI you can define a [Pupil Remote Address](/developer/co
 and toggle to open and close the left and right eye windows.
 
 <div class="pb-4">
-  <img src="../../media/core/imgs/ps-gui.jpg" style="display:flex;margin:0 auto;width:400px">
+  <v-img :src="require('../../media/core/imgs/ps-gui.jpg')" style="display:flex;margin:0 auto;width:400px"></v-img>
 </div>
 
 Note that the eye windows opened by Pupil Service are equivalent to those of Pupil Capture, giving you access to all

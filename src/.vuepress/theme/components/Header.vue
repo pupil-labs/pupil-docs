@@ -1,10 +1,10 @@
 <template lang="pug">
 div
-  v-toolbar.elevation-1(app, fixed, clipped-left, height="60px")
+  v-toolbar.elevation-1(app fixed clipped-left height="60px")
     SidebarButton(@toggle-sidebar="$emit('toggle-sidebar')")
     a.align-center.d-flex(
-      href="https://pupil-labs.com",
-      target="_blank",
+      href="https://pupil-labs.com"
+      target="_blank"
       rel="noopener"
     )
       img(:src="$withBase('/logos/pl_logo.svg')")
@@ -13,12 +13,19 @@ div
     v-toolbar-items.hidden-sm-and-down
       template(v-for="item in docs_menu")
         v-btn(
-          flat,
-          :key="item.title",
-          :to="item.link",
-          :class="{ 'text-capitalize': item.title != 'vr/ar', 'text-uppercase': item.title == 'vr/ar' }",
+          flat
+          :key="item.title"
+          :to="item.link"
+          :class="{ 'text-capitalize': item.title != 'vr/ar', 'text-uppercase': item.title == 'vr/ar' }"
           style="margin: 0"
         ) {{ item.title }}
+      v-btn(
+        flat
+        href="https://pupil-labs.com/chat/"
+        class="text-capitalize"
+        style="margin: 0"
+        target="_blank"
+      ) Chat
 </template>
 
 <script>
@@ -34,7 +41,6 @@ export default {
         { icon: "invisible", title: "invisible", link: "/invisible/" },
         { icon: "core", title: "core", link: "/core/" },
         { icon: "vr-ar", title: "vr/ar", link: "/vr-ar/" },
-        { icon: "chat", title: "Chat", link: "https://pupil-labs.com/chat/" },
       ],
     };
   },
