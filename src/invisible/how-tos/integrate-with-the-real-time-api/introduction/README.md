@@ -1,4 +1,4 @@
-# Real-Time API
+# Introduction
 For some applications it is critical to have access to eye tracking data in real-time. Imagine for example an application utilizing gaze-interaction to allow users to press a button using only their eyes.
 
 In other cases it may be important to automatically start or stop a recording and save [events](/invisible/explainers/basic-concepts/#events). For example you might want to launch a screen-based experiment and have the recording start automatically when the stimulus presentation begins. Additionally, you might want to save the timestamps of when the subject interacted with the screen.
