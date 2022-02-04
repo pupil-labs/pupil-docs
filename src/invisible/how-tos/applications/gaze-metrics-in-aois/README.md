@@ -528,6 +528,6 @@ plt.title("Time to first contact")
 
 ### Conclusion
 
-In this tutorial we have used the exports of a Reference Image Mapper enrichment to calculate several typical eye tracking metrics. Using an examplatory dataset from a supermarket study we have seen how we can do quantitative analysis of gaze behavior using only a few common Python libraries.
+In this tutorial we have used the exports of a Reference Image Mapper enrichment to calculate several typical eye tracking metrics. Using an exemplary dataset from a supermarket study we have seen how we can do quantitative analysis of gaze behavior using only a few common Python libraries.
 
 If you have further questions or any feedback please let us know! You can send us an email to [info@pupil-labs.com](mailto:info@pupil-labs.com) or chat with us on [Discord](https://pupil-labs.com/chat/)!
