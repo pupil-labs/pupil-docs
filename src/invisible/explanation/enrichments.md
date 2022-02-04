@@ -15,10 +15,10 @@ If a recording contains multiple instances of the start and end event, it will c
 
 
 ## Marker Mapper
-<div class="pb-4" style="display:flex;justify-content:center;filter:drop-shadow(2px 4px 10px #000000);">
+<div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
-    :src="require('../../media/invisible/explanation/marker_mapper_header.png')"
-    max-width=80%
+    :src="require('../../media/invisible/explanation/marker_mapper_header.jpg')"
+    max-width=100%
   >
   </v-img>
 </div>
@@ -29,15 +29,12 @@ For robust detection, you should place enough markers on your surface such that 
 
 You may also place markers inside the surface or outside the surface in close proximity to it.
 
-<div style="display:flex;" class="pb-4">
-    <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <img src="../../media/shared/imgs/apriltags_tag36h11_0-23.jpg" style="padding-bottom:16px;width:60%;">
-        <p>Page 1</p>
-    </div>
-    <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <img src="../../media/shared/imgs/apriltags_tag36h11_24-47.jpg" style="padding-bottom:16px;width:60%;">
-        <p>Page 2</p>
-    </div>
+<div class="pb-4" style="display:flex;justify-content:center;">
+  <v-img
+    :src="require('../../media/shared/imgs/apriltags.jpg')"
+    max-width=100%
+  >
+  </v-img>
 </div>
 
 
@@ -55,10 +52,10 @@ The mapper may return values outside of the surface, which yields values smaller
 
 
 ## Reference Image Mapper
-<div class="pb-4" style="display:flex;justify-content:center;filter:drop-shadow(2px 4px 10px #000000);">
+<div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
-    :src="require('../../media/invisible/explanation/reference_image_mapper_header.png')"
-    max-width=80%
+    :src="require('../../media/invisible/explanation/reference_image_mapper_header.jpg')"
+    max-width=100%
   >
   </v-img>
 </div>
@@ -88,7 +85,7 @@ A good scanning recording and reference image are shown below:
 <div class="pb-4" style="display:flex;justify-content:center;">
 <v-img 
   :src="require('../../media/invisible/explanation/reference_image_sample.jpg')"
-  max-width=80%
+  max-width=100%
 >
 </v-img>
 </div>
@@ -116,10 +113,10 @@ The Reference Image Mapper maps gaze points to a reference image. As such, the g
 
 ## Face Mapper
 
-<div class="pb-4" style="display:flex;justify-content:center;filter:drop-shadow(2px 4px 10px #000000);">
+<div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
     :src="require('../../media/invisible/explanation/face_mapper_header.jpeg')"
-    max-width=80%
+    max-width=100%
   >
   </v-img>
 </div>
@@ -132,10 +129,10 @@ Additionally, this enrichment also calculates the location of the most important
 
 
 ## Gaze Overlay
-<div class="pb-4" style="display:flex;justify-content:center;filter:drop-shadow(2px 4px 10px #000000);">
+<div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
-    :src="require('../../media/invisible/explanation/gaze_overlay_header1.png')"
-    max-width=80%
+    :src="require('../../media/invisible/explanation/gaze_overlay_header1.jpg')"
+    max-width=100%
   >
   </v-img>
 </div>

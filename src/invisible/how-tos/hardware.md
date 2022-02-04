@@ -52,10 +52,10 @@ Pupil Invisible is not water-resistant. When cleaning, be careful around the eye
 
 The [head strap](https://pupil-labs.com/products/invisible/accessories/) is an accessory that can be purchased if you want to use Pupil Invisible while playing sports or in other dynamic activities. The head strap can be adjusted to fit most wearers by pulling the two tabs.
 
-<div style="display:flex;justify-content:center;">
+<div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
     :src="require('../../media/invisible/how-tos/pi-strap.jpg')"
-    max-width=80%
+    max-width=100%
   >
   </v-img>
 </div>
