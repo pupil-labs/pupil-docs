@@ -7,7 +7,7 @@ description: Pupil Capture is the software used with your Pupil Core Headset. Us
 Pupil Capture is the software used with your Pupil Core Headset. The software reads the video streams coming in from the world camera and the eye camera(s). Pupil Capture uses the video streams to detect your pupil, track your gaze, detect and track markers in your environment, record video and events, and stream data in realtime.
 
 <div class="pb-4">
-  <v-img :src="require('../../media/core/icons/pc.png')" style="display:flex;margin:0 auto;width:100px;"></v-iimg>
+  <v-img :src="require('../../media/core/icons/pc.png')" style="display:flex;margin:0 auto;width:100px;"></v-img>
 </div>
 
 ## World Window
