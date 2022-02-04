@@ -86,7 +86,14 @@ module.exports = {
         {
           title: 'How-Tos',
           children: [
-            'how-tos/hardware',
+            {
+              title: 'Pupil Invisible Glasses',
+              children: [
+                'how-tos/pupil-invisible-glasses/exchange-lenses',
+                'how-tos/pupil-invisible-glasses/clean-and-disinfect',
+                'how-tos/pupil-invisible-glasses/attach-the-head-strap',
+              ]
+            },
             {
               title: 'Tools',
               children: [
