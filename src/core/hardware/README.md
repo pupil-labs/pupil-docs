@@ -10,7 +10,7 @@ There are many Pupil Core headset configurations. So, your headset might look di
 :::
 
 <div class="pb-4">
-  <img src="../../media/core/imgs/core_hardware_intro.jpg" width="100%" style="display:flex;margin:0 auto;">
+  <v-img :src="require('../../media/core/imgs/core_hardware_intro.jpg')" width="100%" style="display:flex;margin:0 auto;"></v-img>
 </div>
 
 **Terminology**
@@ -80,7 +80,7 @@ Set the focus for the distance at which you will be calibrating by rotating the 
 :::
 
 <div class="pb-4">
-  <img src="../../media/core/imgs/e200.jpg" width="100%" style="display:flex;margin:0 auto;">
+  <v-img :src="require('../../media/core/imgs/e200.jpg')" width="100%" style="display:flex;margin:0 auto;"></v-img>
 </div>
 
 ### Focus 120Hz Eye Camera
