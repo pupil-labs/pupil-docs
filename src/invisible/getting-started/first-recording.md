@@ -2,7 +2,7 @@
 description: TODO
 ---
 
-# Make your first recording!
+# Make your first recording
 
 Using your Pupil Invisible for the first time? Follow the steps below to make your first recording!
 

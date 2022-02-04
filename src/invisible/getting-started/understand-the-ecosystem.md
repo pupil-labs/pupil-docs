@@ -1,9 +1,9 @@
 ---
-permalink: /invisible/getting-started/ecosystem-overview
+permalink: /invisible/getting-started/understand-the-ecosystem
 description: TODO
 ---
 
-# Ecosystem Overview
+# Understand the Ecosystem
 
 Once you have made a recording using your Pupil Invisible glasses, the next step is to transfer it off of the phone for further processing.
 We will introduce the different available options in the article alongside a couple of other key components.

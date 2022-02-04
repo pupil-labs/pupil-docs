@@ -69,9 +69,8 @@ module.exports = {
           title: 'Getting Started',
           children: [
             'getting-started/first-recording',
-            'getting-started/ecosystem-overview',
-            'getting-started/cloud',
-            'getting-started/real-time-api/',
+            'getting-started/understand-the-ecosystem',
+            'getting-started/analyse-recordings-in-pupil-cloud',
           ]
         },
         {
