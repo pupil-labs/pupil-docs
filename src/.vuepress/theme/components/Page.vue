@@ -2,46 +2,58 @@
   <v-content class="page">
     <slot name="top" />
 
-    <!-- <div
-      v-if="haveTitle"
-      style="display:flex;flex-direction:column;float:right;padding:60px 60px 24px;position:sticky;top:120px;"
-    >
-      <p>Contents</p>
-      <template v-for="head in $page.headers">
-        <a v-if="head.level == '3'" :href="`#${head.slug}`">{{ head.title }}</a>
-      </template>
-    </div>-->
-
-    <Content class="theme-default-content" />
-
-    <div class="theme-default-content" style="padding:0 2.5rem;">
-      <v-divider></v-divider>
-    </div>
-
-    <footer class="page-edit">
-      <div class="edit-link" v-if="editLink">
-        <a :href="editLink" target="_blank" rel="noopener noreferrer">{{ editLinkText }}</a>
-        <OutboundLink />
+    <div class="gridCol">
+      <div>
+        <Content class="theme-default-content"/>
+        <v-divider class="mt-4"></v-divider>
+        <footer class="page-edit justify-space-between" style="display:flex;">
+          <div class="edit-link" v-if="editLink">
+            <a class="caption--1" :href="editLink" target="_blank" rel="noopener noreferrer">
+              {{ editLinkText }}
+              <OutboundLink />
+            </a>
+          </div>
+          <div class="last-updated caption--1" v-if="lastUpdated">
+            <span class="prefix">{{ lastUpdatedText }}:</span>
+            <span class="time">{{ lastUpdated }}</span>
+          </div>
+        </footer>
+        <div class="page-nav" v-if="prev || next">
+          <v-layout>
+            <div>
+              <v-btn class="ml-0 page-nav-btn" round color="primary" v-if="prev" :to="prev.path" :id="prev.title">
+                <v-icon left dark>arrow_back</v-icon>
+                Back
+              </v-btn>
+            </div>
+            <v-spacer></v-spacer>
+            <v-btn class="mr-0 page-nav-btn" round color="primary" v-if="next" :to="next.path" :id="next.title">
+              Next
+              <v-icon right dark>arrow_forward</v-icon>
+            </v-btn>
+          </v-layout>
+        </div>
       </div>
-
-      <div class="last-updated" v-if="lastUpdated">
-        <span class="prefix">{{ lastUpdatedText }}:</span>
-        <span class="time">{{ lastUpdated }}</span>
+      <div
+        v-if="haveTitle"
+        class="pageContent"
+      >
+        <div style="position:sticky;top:120px;">
+          <p>On This Page</p>
+          <div style="display:grid;gap:8px;">
+            <template v-for="head in $page.headers">
+              <a
+                v-if="head.level == '2'"
+                :key="head.slug"
+                :href="`#${head.slug}`"
+                style="font-size:12px"
+              >
+                {{ head.title }}
+              </a>
+            </template>
+          </div>
+        </div>
       </div>
-    </footer>
-
-    <div class="page-nav pb-5 my-4" v-if="prev || next">
-      <v-layout>
-        <v-btn class="ml-0" round color="primary" v-if="prev" :to="prev.path">
-          <v-icon left dark>arrow_back</v-icon>
-          {{ prev.title || prev.path }}
-        </v-btn>
-        <v-spacer></v-spacer>
-        <v-btn class="mr-0" round color="primary" v-if="next" :to="next.path">
-          {{ next.title || next.path }}
-          <v-icon right dark>arrow_forward</v-icon>
-        </v-btn>
-      </v-layout>
     </div>
 
     <slot name="bottom" />
@@ -127,7 +139,7 @@ export default {
         let pageHeaders = this.$page.headers;
         for (let i = 0; i < pageHeaders.length; i++) {
           const headers = pageHeaders[i];
-          if (headers.level == 3) {
+          if (headers.level == 2) {
             return true;
           }
         }
@@ -197,6 +209,13 @@ function flatten(items, res) {
 <style lang="stylus">
 @require '../styles/wrapper.styl'
 
+.gridCol
+  display grid
+  position relative
+  grid-template-columns minmax(0, 4fr) minmax(100px, 1fr)
+  gap 40px;
+  padding 2rem 2.5rem
+
 .page
   padding 60px 0 0 330px !important
   padding-bottom 2rem
@@ -214,8 +233,7 @@ function flatten(items, res) {
       color lighten($textColor, 25%)
       margin-right 0.25rem
   .last-updated
-    float right
-    font-size 0.9em
+    // font-size 0.9em
     .prefix
       font-weight 500
       color lighten($textColor, 25%)
@@ -237,6 +255,10 @@ function flatten(items, res) {
     float right
 
 @media (max-width: $MQNarrow)
+  .pageContent
+    display: none !important;
+  .gridCol
+    grid-template-columns 1fr
   .page
     padding-left unset !important
   .page-edit
