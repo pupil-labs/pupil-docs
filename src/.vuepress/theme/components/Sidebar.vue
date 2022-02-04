@@ -52,6 +52,7 @@ export default {
 .sidebar
   ul
     padding 0
+    padding-bottom 8px
     margin 0
     list-style-type none
   .nav-links
@@ -63,14 +64,14 @@ export default {
     .nav-item, .repo-link
       display block
       line-height 1.25rem
-      font-size 18px
+      font-size 16px
       padding 0.5rem 0 0.5rem 1.5rem
   & > .sidebar-links
-    padding-bottom 24px
+    padding 8px 0
     & > li > a.sidebar-link
-      font-size 18px
+      font-size 13px
       line-height 1.7
       font-weight bold
     & > li:not(:first-child)
-      margin-top .75rem
+      margin-top 4px
 </style>
