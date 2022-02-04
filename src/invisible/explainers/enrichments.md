@@ -1,5 +1,5 @@
 ---
-permalink: /invisible/explanation/enrichments
+permalink: /invisible/explainers/enrichments
 description: TODO
 ---
 
@@ -7,7 +7,7 @@ description: TODO
 Enrichments allow you to perform various analyses on your recordings. They utilize cloud resources to run complex algorithms on your data. Use them to track objects of interest, aggregate and visualize your data.
 
 ## Enrichment Sections
-All enrichments are defined based on a **start** and **end [event](/invisible/explanation/basic-concepts/#events)**. Those events are used to specify which sections of a recording an enrichment should be calculated on. The enrichment will be calculated on any recording in your project that contains the according start and end event in the recording section between those two events.
+All enrichments are defined based on a **start** and **end [event](/invisible/explainers/basic-concepts/#events)**. Those events are used to specify which sections of a recording an enrichment should be calculated on. The enrichment will be calculated on any recording in your project that contains the according start and end event in the recording section between those two events.
 
 You can preview the results of most enrichments in the project editor by clicking on an enrichment section and playing the corresponding section of the recording. Every enrichment section has a unique ID, which is referenced in all enrichment exports.
 
@@ -17,7 +17,7 @@ If a recording contains multiple instances of the start and end event, it will c
 ## Marker Mapper
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
-    :src="require('../../media/invisible/explanation/marker_mapper_header.jpg')"
+    :src="require('../../media/invisible/explainers/marker_mapper_header.jpg')"
     max-width=100%
   >
   </v-img>
@@ -54,7 +54,7 @@ The mapper may return values outside of the surface, which yields values smaller
 ## Reference Image Mapper
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
-    :src="require('../../media/invisible/explanation/reference_image_mapper_header.jpg')"
+    :src="require('../../media/invisible/explainers/reference_image_mapper_header.jpg')"
     max-width=100%
   >
   </v-img>
@@ -84,7 +84,7 @@ A good scanning recording and reference image are shown below:
 
 <div class="pb-4" style="display:flex;justify-content:center;">
 <v-img 
-  :src="require('../../media/invisible/explanation/reference_image_sample.jpg')"
+  :src="require('../../media/invisible/explainers/reference_image_sample.jpg')"
   max-width=100%
 >
 </v-img>
@@ -115,7 +115,7 @@ The Reference Image Mapper maps gaze points to a reference image. As such, the g
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
-    :src="require('../../media/invisible/explanation/face_mapper_header.jpeg')"
+    :src="require('../../media/invisible/explainers/face_mapper_header.jpeg')"
     max-width=100%
   >
   </v-img>
@@ -131,7 +131,7 @@ Additionally, this enrichment also calculates the location of the most important
 ## Gaze Overlay
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
-    :src="require('../../media/invisible/explanation/gaze_overlay_header1.jpg')"
+    :src="require('../../media/invisible/explainers/gaze_overlay_header1.jpg')"
     max-width=100%
   >
   </v-img>

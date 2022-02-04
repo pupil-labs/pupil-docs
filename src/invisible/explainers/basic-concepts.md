@@ -1,12 +1,12 @@
 ---
-permalink: /invisible/explanation/basic-concepts
+permalink: /invisible/explainers/basic-concepts
 description: TODO
 ---
 
 # Basic Concepts
 
 ## Recordings
-A recording starts and stops when you press the red record button in Pupil Invisible Companion App. While this should feel similar to recording a video, there is a lot more happening behind the scenes. When you are recording with Pupil Invisible Companion App, you are capturing not only video data but several more sensors (see [Data Streams](/invisible/explanation/data-streams)).
+A recording starts and stops when you press the red record button in Pupil Invisible Companion App. While this should feel similar to recording a video, there is a lot more happening behind the scenes. When you are recording with Pupil Invisible Companion App, you are capturing not only video data but several more sensors (see [Data Streams](/invisible/explainers/data-streams)).
 
 Recordings are designed to be as robust as possible. If at any point a sensor is disconnected during a recording, it will automatically start capturing again as soon as it is reconnected. You could start a recording with no Pupil Invisible glasses connected and plug them in at a later time. As soon as they are connected, data will be captured.
 
@@ -52,7 +52,7 @@ In the `Recording Name` field of the template, we defined a naming scheme that c
 
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
-    :src="require('../../media/invisible/explanation/template-naming-example.jpg')"
+    :src="require('../../media/invisible/explainers/template-naming-example.jpg')"
     max-width=100%
   >
   </v-img>
@@ -62,18 +62,18 @@ In the `Recording Name` field of the template, we defined a naming scheme that c
 
 A project is a group of recordings. You create projects from the Recordings view in Drive by selecting one or more recordings and clicking "create project from recording". You can also add projects to existing recordings.
 
-Within a project, you can annotate recordings with events and create [enrichments](/invisible/explanation/enrichments) to power your analysis.
+Within a project, you can annotate recordings with events and create [enrichments](/invisible/explainers/enrichments) to power your analysis.
 
 ## Events
 You can annotate relevant points in time in your recordings using **Events**. An event is essentially a timestamp in a recording with an assigned name. You can use events to filter your data temporally to the sections that interest you. 
 
 You may for example want to mark when a certain stimulus became visible and disappeared again with events called `stimulus_start` and `stimulus_end`. Using those, you can filter your data to only consider samples for which the stimulus was present.
 
-Events are also used for the definition of [enrichments](/invisible/explanation/enrichments) to indicate on what sections of your recordings they should be calculated.
+Events are also used for the definition of [enrichments](/invisible/explainers/enrichments) to indicate on what sections of your recordings they should be calculated.
 
 You can add events to your recordings post hoc in the project editor, or you can create them at recording time using the [real-time API](/invisible/getting-started/real-time-api).
 
-Existing events can be downloaded as part of the [Raw Data Export](/invisible/explanation/enrichments/#raw-data-exporter).
+Existing events can be downloaded as part of the [Raw Data Export](/invisible/explainers/enrichments/#raw-data-exporter).
 
 ## Workspaces
 Workspaces are containers for your data and enable you to share data in Pupil Cloud with your collaborators. All data in Pupil Cloud is part of a workspace and the workspace owner can control access to it. This includes recordings, wearers, templates, labels, projects, and enrichments, which are all isolated within a workspace. 

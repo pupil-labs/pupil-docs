@@ -5,7 +5,7 @@ description: TODO
 # Export Formats
 
 ## General Information
-All [enrichments](/invisible/explanation/enrichments) are defined on specific sections of recordings using events. Every enrichment export contains a `sections.csv` file summarizing the available sections as follows:
+All [enrichments](/invisible/explainers/enrichments) are defined on specific sections of recordings using events. Every enrichment export contains a `sections.csv` file summarizing the available sections as follows:
 
 | Field | Description | 
 | -------- | -------- | 
@@ -65,7 +65,7 @@ This file contains the timestamps of every world video frame.
 
 
 #### events.csv
-This file contains [event](/invisible/explanation/basic-concepts/#events) data for all recordings. It contains both project event annotations and real-time recording events.
+This file contains [event](/invisible/explainers/basic-concepts/#events) data for all recordings. It contains both project event annotations and real-time recording events.
 
 | Field | Description | 
 | -------- | -------- | 
@@ -76,7 +76,7 @@ This file contains [event](/invisible/explanation/basic-concepts/#events) data f
 
 
 #### gaze.csv
-This file contains [gaze](/invisible/explanation/data-streams/#gaze) data in world camera coordinates.
+This file contains [gaze](/invisible/explainers/data-streams/#gaze) data in world camera coordinates.
 
 
 | Field | Description | 
@@ -91,7 +91,7 @@ This file contains [gaze](/invisible/explanation/data-streams/#gaze) data in wor
 
 
 #### fixations.csv
-This file contains [fixations](/invisible/explanation/data-streams/#fixations) detected in the gaze data stream.
+This file contains [fixations](/invisible/explainers/data-streams/#fixations) detected in the gaze data stream.
 The corresponding gaze samples that belong to each fixation can be determined from the `gaze.csv` file using the `fixation id` field.
 
 
@@ -108,7 +108,7 @@ The corresponding gaze samples that belong to each fixation can be determined fr
 
 
 #### imu.csv
-This file contains data recorded by the integrated [IMU](/invisible/explanation/data-streams/#inertial-measurements) (inertial measurement unit).
+This file contains data recorded by the integrated [IMU](/invisible/explainers/data-streams/#inertial-measurements) (inertial measurement unit).
 
 | Field | Description | 
 | -------- | -------- | 
@@ -124,7 +124,7 @@ This file contains data recorded by the integrated [IMU](/invisible/explanation/
 ## Marker Mapper
 
 #### gaze.csv
-This file contains all the mapped gaze data from all sections. The coordinate system is explained [here](/invisible/explanation/enrichments/#surface-coordinates).
+This file contains all the mapped gaze data from all sections. The coordinate system is explained [here](/invisible/explainers/enrichments/#surface-coordinates).
 
 | Field | Description | 
 | -------- | -------- | 

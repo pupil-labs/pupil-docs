@@ -75,12 +75,12 @@ module.exports = {
           ]
         },
         {
-          title: 'Explanation',
+          title: 'Explainers',
           children: [
-            'explanation/basic-concepts',
-            'explanation/data-streams',
-            'explanation/enrichments',
-            'explanation/publications',
+            'explainers/basic-concepts',
+            'explainers/data-streams',
+            'explainers/enrichments',
+            'explainers/publications',
           ]
         },
         {
