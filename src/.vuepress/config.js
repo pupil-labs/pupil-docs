@@ -94,30 +94,35 @@ module.exports = {
               ]
             },
             {
+              title: 'Data Collection with the Companion App',
+              children: [
+                'how-tos/data-collection-with-the-companion-app/achieve-super-precise-time-sync-using-events',
+                'how-tos/data-collection-with-the-companion-app/apply-offset-correction',
+                'how-tos/data-collection-with-the-companion-app/monitor-your-data-collection-in-real-time',
+                'how-tos/data-collection-with-the-companion-app/transfer-recordings-via-usb',
+              ]
+            },
+            {
+              title: 'Pupil Cloud',
+              children: [
+                'how-tos/pupil-cloud/organize-a-study-using-templates',
+                'how-tos/pupil-cloud/use-workspaces-to-organize-data',
+                'how-tos/pupil-cloud/make-complex-search-queries',
+              ]
+            },
+            {
+              title: 'Advanced Analysis',
+              children: [
+                'how-tos/advanced-analysis/gaze-metrics-in-aois/',
+              ]
+            },
+            {
               title: 'Integrate with the Real-Time API',
               children: [
                 'how-tos/integrate-with-the-real-time-api/introduction/',
                 'how-tos/integrate-with-the-real-time-api/track-your-experiment-progress-using-events',
                 'how-tos/integrate-with-the-real-time-api/implement-hci-applications-using-the-real-time-api-and-screen-tracking',
                 'how-tos/integrate-with-the-real-time-api/write-your-own-client',
-              ]
-            },
-            {
-              title: 'Tools',
-              children: [
-                'how-tos/tools/apply-offset-correction',
-                'how-tos/tools/monitor-your-data-collection-in-real-time',
-                'how-tos/tools/achieve-super-precise-time-sync-using-events',
-                'how-tos/tools/transfer-recordings-via-usb',
-                'how-tos/tools/make-complex-search-queries-in-pupil-cloud',
-              ]
-            },
-            {
-              title: 'Applications',
-              children: [
-                'how-tos/applications/gaze-metrics-in-aois/',
-                'how-tos/applications/implement-hci-applications-using-the-real-time-api-and-screen-tracking',
-                'how-tos/applications/track-your-experiment-progress-using-events',
               ]
             },
           ]
