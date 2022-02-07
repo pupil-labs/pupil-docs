@@ -47,6 +47,14 @@ The gaze estimation algorithm is based on end-2-end deep learning and provides g
 ## Fixations
 The two primary types of movement the eye is performing are fixations and saccades. During fixation, the eye is fixated on a specific point in the environment. A saccade is a very quick movement where the eye is jumping from one fixation to the next. Properties like the fixation duration are correlated with cognitive processes like e.g. cognitive load.
 
+<div style="display:flex;justify-content:center;" class="pb-4">
+  <v-img
+    :src="require('../../media/invisible/explainers/fixations.png')"
+    max-width=100%
+  >
+  </v-img>
+</div>
+
 Fixations are calculated automatically in Pupil Cloud after uploading a recording. They are available as part of the [Raw Data Exporter](/invisible/explainers/enrichments/#raw-data-exporter) enrichment downloads. The downloads for gaze mapping enrichments ([Reference Image Mapper](/invisible/explainers/enrichments/#reference-image-mapper), [Marker Mapper](/invisible/explainers/enrichments/#marker-mapper)) also include "mapped fixations".
 
 The fixation detection algorithm we have developed was specifically designed for head-mounted eye trackers. Traditionally, fixation detection algorithms are assuming the head of the subject to be stationary, which is however usually not the case when using head-mounted eye trackers.
