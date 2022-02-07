@@ -14,6 +14,12 @@ You can preview the results of most enrichments in the project editor by clickin
 If a recording contains multiple instances of the start and end event, it will contribute multiple sections accordingly. You can use the auto-generated `recording.begin` and `recording.end` events to calculate enrichments on entire recordings.
 
 
+## Raw Data Exporter
+Using the Raw Data Exporter you can get access to all your recording data in convenient CSV and MP4 format directly from Pupil Cloud. Easily export entire projects and extend your analysis with your own custom tools (R, Python, etc.) or third-party analysis platforms. In addition to the raw recording data, it also includes event annotations you have added post hoc.
+
+Currently, the events used for defining this enrichment are fixed to `recording.begin` and `recording. end`. It is not possible to limit the export range using other events similar to other enrichments.
+
+
 ## Marker Mapper
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
@@ -139,8 +145,3 @@ Additionally, this enrichment also calculates the location of the most important
 
 The Gaze Overlay enrichment allows you to download world videos with a gaze overlay rendering. You can easily filter out the sections of your recordings you are interested in and the visualization of the gaze circle can be customized (currently: size and color). 
 
-
-## Raw Data Exporter
-Using the Raw Data Exporter you can get access to all your recording data in convenient CSV and MP4 format directly from Pupil Cloud. Easily export entire projects and extend your analysis with your own custom tools (R, Python, etc.) or third-party analysis platforms. In addition to the raw recording data, it also includes event annotations you have added post hoc.
-
-Currently, the events used for defining this enrichment are fixed to `recording.begin` and `recording. end`. It is not possible to limit the export range using other events similar to other enrichments.
