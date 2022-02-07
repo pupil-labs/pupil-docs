@@ -79,6 +79,7 @@ module.exports = {
             'explainers/basic-concepts',
             'explainers/data-streams',
             'explainers/enrichments',
+            'explainers/glasses-and-companion-device',
             'explainers/publications',
           ]
         },
