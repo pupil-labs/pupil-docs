@@ -132,8 +132,7 @@ module.exports = {
           title: 'Reference',
           children: [
             'reference/export-formats',
-            'reference/real-time-api',
-            'reference/cloud-api',
+            'https://pupil-labs-realtime-api.readthedocs.io/en/latest/api/index.html',
           ]
         },
         "troubleshooting"
