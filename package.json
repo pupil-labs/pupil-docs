@@ -2,12 +2,12 @@
   "devDependencies": {
     "@vuepress/plugin-google-analytics": "^1.9.7",
     "@vuepress/plugin-pwa": "^1.9.7",
-    "css-loader": "^6.6.0",
+    "css-loader": "^3.2.0",
     "pug": "^3.0.2",
     "pug-plain-loader": "^1.1.0",
     "style-loader": "^3.3.1",
     "stylus": "^0.56.0",
-    "stylus-loader": "^6.2.0",
+    "stylus-loader": "^3.0.2",
     "vuepress-plugin-sitemap": "^2.3.1"
   },
   "scripts": {
@@ -16,8 +16,9 @@
   },
   "dependencies": {
     "axios": "^0.25.0",
+    "sass-loader": "^12.4.0",
     "vuepress": "1.9.7",
-    "vuetify": "2.6.3",
+    "vuetify": "^1.5.18",
     "vuetify-loader": "^1.7.3"
   }
 }
