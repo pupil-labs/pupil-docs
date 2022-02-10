@@ -10,7 +10,7 @@ To this end we are assuming a minimalistic experiment setup: we want to record s
 ## How to use Events to keep track?
 Events are essentially timestamps within a recording that have been marked with a name. We need to keep track of when a specific image is shown during a recording, so we can associate the according fixation data with that image. Thus, we will create an event at the start and end of each image presentation to mark this section.
 
-Events can either be created post hoc in the project editor, or at recording time using either the [real-time API]() or [Pupil Invisible Monitor](). In this example we are interested in fully automating the event creation and will thus use the real-time API to save events, but depending on your use-case you could use either of those methods.
+Events can either be created post hoc in the project editor, or at recording time using either the [real-time API](/invisible/how-tos/integrate-with-the-real-time-api/introduction) or [Pupil Invisible Monitor](/invisible/how-tos/data-collection-with-the-companion-app/monitor-your-data-collection-in-real-time). In this example we are interested in fully automating the event creation and will thus use the real-time API to save events, but depending on your use-case you could use either of those methods.
 
 You can download the example data used in this guide [here](https://drive.google.com/file/d/1O-HJJbJWRBgcZS1sowCX2srmME5hTub0/view?usp=sharing) and find the code [here](https://github.com/pupil-labs/pupil-docs/src/invisible/how-tos/integrate-with-the-real-time-api/track-your-experiment-progress-using-events/track-your-experiment-progress-using-events.md).
 
