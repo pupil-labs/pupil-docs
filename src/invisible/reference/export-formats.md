@@ -88,6 +88,7 @@ This file contains [gaze](/invisible/explainers/data-streams/#gaze) data in worl
 | **gaze y [px]** | Same as "gaze x [px]" but for the y-coordinate.     |
 | **worn** | This value indicates whether the Pupil Invisible Glasses have been worn by a subject at this point in time. `1.0` indicates that it has been worn, while `0.0` indicates that is has not been. Added in version 2 of this enrichment.    |
 | **fixation id** | If this gaze samples belongs to a fixation event, this is the corresponding id of the fixation. Otherwise this field is empty.     |
+| **blink id** | If this gaze samples belongs to a blink event, this is the corresponding id of the blink. Otherwise this field is empty.     |
 
 
 #### fixations.csv
@@ -106,6 +107,19 @@ The corresponding gaze samples that belong to each fixation can be determined fr
 | **fixation x [px]** | Float value representing the x-coordinate of the fixation in world camera pixel coordinates. This position is the average of all gaze samples within the fixation.     |
 | **fixation y [px]** | Same as "fixation x [px]" but for the y-coordinate.     |
 
+#### blinks.csv
+This file contains [blinks](/invisible/explainers/data-streams/#blinks) detected in the eye video.
+The corresponding gaze samples that belong to each blink can be determined from the `gaze.csv` file using the `blink id` field.
+
+
+| Field | Description | 
+| -------- | -------- | 
+| **section id** | Unique identifier of the corresponding section.     |
+| **recording id** | Unique identifier of the recording this sample belongs to.     |
+| **blink id** | Identifier of the blink. The counter starts at the beginning of the recording.     |
+| **start timestamp [ns]** | UTC timestamp in nanoseconds of the start of the blink.     |
+| **end timestamp [ns]** | UTC timestamp in nanoseconds of the end of the blink.     |
+| **duration [ms]** | Duration of the blink in milliseconds.     |
 
 #### imu.csv
 This file contains data recorded by the integrated [IMU](/invisible/explainers/data-streams/#inertial-measurements) (inertial measurement unit).
@@ -135,6 +149,7 @@ This file contains all the mapped gaze data from all sections. The coordinate sy
 | **gaze position on surface x [normalized]** | Float value representing the x-coordinate of the mapped gaze point in surface coordinates. If the surface was not localized this value is empty.     |
 | **gaze position on surface y [normalized]** | Same as gaze position on surface x [normalized] but for y-coordinate.     |
 | **fixation id** | If this gaze samples belongs to a fixation event, this is the corresponding id of the fixation. Otherwise this field is empty.     |
+| **blink id** | If this gaze samples belongs to a blink event, this is the corresponding id of the blink. Otherwise this field is empty.     |
 
 #### fixations.csv
 This file contains fixation events detected in the gaze data stream and mapped to the surface.
@@ -151,6 +166,20 @@ This file contains fixation events detected in the gaze data stream and mapped t
 | **fixation detected on surface** | Boolean indicating whether or not the fixation was inside or outside of the surface.    |
 | **fixation x [normalized]** | Float value representing the x-coordinate of the fixation in surface coordinates. This position is the average of all mapped gaze samples within the fixation.     |
 | **fixation y [normalized]** | Same as "fixation x [normalized]" but for the y-coordinate.     |
+
+#### blinks.csv
+This file contains [blinks](/invisible/explainers/data-streams/#blinks) detected in the eye video.
+The corresponding gaze samples that belong to each blink can be determined from the `gaze.csv` file using the `blink id` field.
+
+
+| Field | Description | 
+| -------- | -------- | 
+| **section id** | Unique identifier of the corresponding section.     |
+| **recording id** | Unique identifier of the recording this sample belongs to.     |
+| **blink id** | Identifier of the blink. The counter starts at the beginning of the recording.     |
+| **start timestamp [ns]** | UTC timestamp in nanoseconds of the start of the blink.     |
+| **end timestamp [ns]** | UTC timestamp in nanoseconds of the end of the blink.     |
+| **duration [ms]** | Duration of the blink in milliseconds.     |
 
 #### aoi_positions.csv
 This file contains the surface locations in the scene images for all sections.
@@ -182,6 +211,7 @@ This file contains all the mapped gaze data from all sections.
 | **gaze position in reference image x [px]** | Float value representing the x-coordinate of the mapped gaze point in pixel coordinates. If the reference image was not detected in the scene at the given time this value is empty.     |
 | **gaze position in reference image y [px]** | Same as "gaze position in reference image x [px]" but for the y-coordinate.     |
 | **fixation id** | If this gaze samples belongs to a fixation event, this is the corresponding id of the fixation. Otherwise this field is empty.     |
+| **blink id** | If this gaze samples belongs to a blink event, this is the corresponding id of the blink. Otherwise this field is empty.     |
 
 #### fixations.csv
 This file contains fixation events detected in the gaze data stream and mapped to the reference image.
@@ -198,6 +228,20 @@ This file contains fixation events detected in the gaze data stream and mapped t
 | **fixation detected in reference image** | Boolean indicating whether or not the fixation was inside or outside of the reference image.    |
 | **fixation x [px]** | Float value representing the x-coordinate of the fixation in reference image coordinates. This position is the average of all mapped gaze samples within the fixation.     |
 | **fixation y [px]** | Same as "fixation x [px]" but for the y-coordinate.     |
+
+#### blinks.csv
+This file contains [blinks](/invisible/explainers/data-streams/#blinks) detected in the eye video.
+The corresponding gaze samples that belong to each blink can be determined from the `gaze.csv` file using the `blink id` field.
+
+
+| Field | Description | 
+| -------- | -------- | 
+| **section id** | Unique identifier of the corresponding section.     |
+| **recording id** | Unique identifier of the recording this sample belongs to.     |
+| **blink id** | Identifier of the blink. The counter starts at the beginning of the recording.     |
+| **start timestamp [ns]** | UTC timestamp in nanoseconds of the start of the blink.     |
+| **end timestamp [ns]** | UTC timestamp in nanoseconds of the end of the blink.     |
+| **duration [ms]** | Duration of the blink in milliseconds.     |
 
 #### Reference Image
 The reference image was used for defining the enrichment. The file is named `reference_image.jpeg|png`
