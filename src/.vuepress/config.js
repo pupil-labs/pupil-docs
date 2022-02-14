@@ -97,8 +97,8 @@ module.exports = {
             {
               title: 'Data Collection with the Companion App',
               children: [
-                'how-tos/data-collection-with-the-companion-app/achieve-super-precise-time-sync-using-events',
-                'how-tos/data-collection-with-the-companion-app/apply-offset-correction',
+                // 'how-tos/data-collection-with-the-companion-app/achieve-super-precise-time-sync-using-events',
+                // 'how-tos/data-collection-with-the-companion-app/apply-offset-correction',
                 'how-tos/data-collection-with-the-companion-app/monitor-your-data-collection-in-real-time',
                 'how-tos/data-collection-with-the-companion-app/transfer-recordings-via-usb',
               ]
