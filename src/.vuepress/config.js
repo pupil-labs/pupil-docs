@@ -103,14 +103,14 @@ module.exports = {
                 'how-tos/data-collection-with-the-companion-app/transfer-recordings-via-usb',
               ]
             },
-            {
-              title: 'Pupil Cloud',
-              children: [
-                'how-tos/pupil-cloud/organize-a-study-using-templates',
-                'how-tos/pupil-cloud/use-workspaces-to-organize-data',
-                'how-tos/pupil-cloud/make-complex-search-queries',
-              ]
-            },
+            // {
+            //   title: 'Pupil Cloud',
+            //   children: [
+            //     'how-tos/pupil-cloud/organize-a-study-using-templates',
+            //     'how-tos/pupil-cloud/use-workspaces-to-organize-data',
+            //     'how-tos/pupil-cloud/make-complex-search-queries',
+            //   ]
+            // },
             {
               title: 'Advanced Analysis',
               children: [
@@ -123,7 +123,7 @@ module.exports = {
                 'how-tos/integrate-with-the-real-time-api/introduction/',
                 'how-tos/integrate-with-the-real-time-api/track-your-experiment-progress-using-events/',
                 'how-tos/integrate-with-the-real-time-api/implement-hci-applications-using-the-real-time-api-and-screen-tracking',
-                'how-tos/integrate-with-the-real-time-api/write-your-own-client',
+                // 'how-tos/integrate-with-the-real-time-api/write-your-own-client',
               ]
             },
           ]
