@@ -22,7 +22,7 @@ This section contains a range of how-tos that demonstrate how to solve a specifi
 
 Highlights include
 - [Calculate Gaze Metrics in AOIs](/invisible/how-tos/applications/gaze-metrics-in-aois/)
-- [Implement HCI Applications using the Real-Time API and Screen Tracking](/invisible/how-tos/applications/implement-hci-applications-using-the-real-time-api-and-screen-tracking.md)
+- [Implement HCI Applications with Screen Tracking](/invisible/how-tos/applications/implement-hci-applications-with-screen-tracking.md)
 - [Monitor your Data Collection in Real-Time](/invisible/how-tos/tools/monitor-your-data-collection-in-real-time)
 
 

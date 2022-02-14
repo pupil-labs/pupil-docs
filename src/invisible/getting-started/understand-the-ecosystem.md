@@ -68,7 +68,7 @@ This enables you to implement HCI applications with Pupil Invisible or to stream
 Check-out out our [real-time API tutorial](/invisible/getting-started/real-time-api) to learn more!
 
 To see concrete usage examples, see our how-tos:
-- [Implement HCI Applications using the Real-Time API and Screen Tracking](/invisible/how-tos/applications/implement-hci-applications-using-the-real-time-api-and-screen-tracking)
+- [Implement HCI Applications with Screen Tracking](/invisible/how-tos/applications/implement-hci-applications-with-screen-tracking)
 - [Track your Experiment Progress using Events](/invisible/how-tos/applications/track-your-experiment-progress-using-events)
 
 
