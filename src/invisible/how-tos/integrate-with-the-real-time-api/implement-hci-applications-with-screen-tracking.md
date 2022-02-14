@@ -2,5 +2,5 @@
 description: TODO
 ---
 
-# Implement HCI Applications using the Real-Time API and Screen Tracking
+# Implement HCI Applications with Screen Tracking
 Coming soon!
