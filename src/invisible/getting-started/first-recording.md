@@ -41,7 +41,7 @@ Next, you have to install the Pupil Invisible Companion app on your device:
 
 ### 3. Follow the Setup Instructions on Screen
 
-- As part of the setup process, you can enable uploading recordings to *Pupil Cloud**.
+- As part of the setup process, you can enable uploading recordings to **Pupil Cloud**.
 - Pupil Cloud is an online storage and analysis platform for eye tracking recordings. It makes it easy to get recordings off of the phone and includes various algorithms for processing them. Uploading data to Pupil Cloud is optional, but some features are not available without it (e.g. obtaining the 200 Hz gaze signal).
 - You can change this setting at any time in the settings of the app.
 - You will also be asked to create your first **wearer profile**. Pupil Invisible is using wearer profiles to distinguish who is wearing the glasses.
