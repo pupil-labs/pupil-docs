@@ -26,14 +26,14 @@ Next, you have to install the Pupil Invisible Companion app on your device:
 
 <div class="pb-4" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
   <v-img
-    :src="require('../../media/invisible/getting-started/google-play-logo.png')"
-    style="width:100%;"
+    :src="require('../../media/invisible/getting-started/google-play-badge.png')"
+    style="width:80%;"
     contain
   >
   </v-img>
   <v-img
-    :src="require('../../media/invisible/getting-started/pic-play-store.jpg')"
-    style="width:100%;"
+    :src="require('../../media/invisible/getting-started/companion_app_logo.jpg')"
+    style="width:80%;"
     contain
   >
   </v-img>
