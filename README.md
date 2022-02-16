@@ -29,6 +29,15 @@ yarn
 
 ## Development
 
+To generate markdown files from Jupyter notebooks install nbconvert via
+```
+pip install nbconvert
+```
+and run the following command
+```
+python -m jupyter nbconvert --to markdown **/*.ipynb --ExtractOutputPreprocessor.enabled=False
+```
+
 Start local development with:
 ```bash
 yarn dev
