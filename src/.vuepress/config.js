@@ -123,7 +123,7 @@ module.exports = {
                 'how-tos/integrate-with-the-real-time-api/introduction/',
                 'how-tos/integrate-with-the-real-time-api/track-your-experiment-progress-using-events/',
                 'how-tos/integrate-with-the-real-time-api/implement-hci-applications-with-screen-tracking',
-                'how-tos/integrate-with-the-real-time-api/ndsi',
+                'how-tos/integrate-with-the-real-time-api/legacy-api',
                 // 'how-tos/integrate-with-the-real-time-api/write-your-own-client',
               ]
             },
