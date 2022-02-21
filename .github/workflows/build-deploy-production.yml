@@ -13,6 +13,17 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - run: pip install nbconvert
+      - name: Convert Jupyter notebooks
+        run: |
+          shopt -s globstar
+          python -m jupyter nbconvert --to markdown **/*.ipynb --ExtractOutputPreprocessor.enabled=False
+          shopt -u globstar
+        shell: bash
+
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
