@@ -75,11 +75,8 @@ This is an overview over all available Pupil Remote commands:
 ```
 
 :::danger Delayed Execution
-Sending a command takes time to be transmitted. In other words, a command is only
-executed in Pupil Capture after some short delay. This is especially important to keep
-in mind for the `T`, `t`, and `R` commands. See our
-[Best Practices](/core/best-practices/#synchronization) regarding time synchronization.
-<br/><br/>Do not rely on the sent time-point of `R` for time sychnronization!
+Pupil Remote commands can be subject to transmission delay (e.g. from network latency). This is especially important to keep in mind for the `T`, `t`, and `R` commands. 
+<br/><br/>We do not recommend using `R` for time synchronization. In addition to transmission delay, not all recording processes are guaranteed to start simultaneously when Pupil Capture receives the command. Please read our [Best Practices](/core/best-practices/#synchronization) for more appropriate methods of time synchronization. 
 :::
 
 ::: tip
