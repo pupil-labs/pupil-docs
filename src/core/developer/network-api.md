@@ -74,6 +74,14 @@ This is an overview over all available Pupil Remote commands:
 'SUB_PORT'  # return the current sub port of the IPC Backbone
 ```
 
+:::danger Delayed Execution
+Sending a command takes time to be transmitted. In other words, a command is only
+executed in Pupil Capture after some short delay. This is especially important to keep
+in mind for the `T`, `t`, and `R` commands. See our
+[Best Practices](/core/best-practices/#synchronization) regarding time synchronization.
+<br/><br/>Do not rely on the sent time-point of `R` for time sychnronization!
+:::
+
 ::: tip
 <v-icon large color="info">info_outline</v-icon>
 Pupil Service does not support the creation of recordings, i.e. the `R` and `r` commands
