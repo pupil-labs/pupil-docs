@@ -10,7 +10,7 @@ export default {
     h,
     {
       parent: { $page, $site, $route, $themeConfig, $themeLocaleConfig },
-      props: { item, sidebarDepth }
+      props: { item, sidebarDepth },
     }
   ) {
     // use custom active class matching logic
@@ -21,7 +21,7 @@ export default {
     const active =
       item.type === "auto"
         ? selfActive ||
-          item.children.some(c =>
+          item.children.some((c) =>
             isActive($route, item.basePath + "#" + c.slug)
           )
         : selfActive;
@@ -42,10 +42,7 @@ export default {
       $themeLocaleConfig.displayAllHeaders || $themeConfig.displayAllHeaders;
 
     if (item.type === "auto") {
-      return [
-        link,
-        renderChildren(h, item.children, item.basePath, $route, 0)
-      ];
+      return [link, renderChildren(h, item.children, item.basePath, $route, 0)];
     } else if (
       (active || displayAllHeaders) &&
       item.headers &&
@@ -56,7 +53,7 @@ export default {
     } else {
       return link;
     }
-  }
+  },
 };
 
 function renderLink(h, to, text, active) {
@@ -66,12 +63,12 @@ function renderLink(h, to, text, active) {
       props: {
         to,
         activeClass: "",
-        exactActiveClass: ""
+        exactActiveClass: "",
       },
       class: {
         active,
-        "sidebar-link": true
-      }
+        "sidebar-link": true,
+      },
     },
     text
   );
@@ -82,8 +79,8 @@ function renderI(h, depth, active) {
     return h("i", {
       class: {
         active,
-        "side-nav__progress-bar": true
-      }
+        "side-nav__progress-bar": true,
+      },
     });
   }
 }
@@ -93,12 +90,12 @@ function renderChildren(h, children, path, route, maxDepth, depth = 1) {
   return h(
     "ul",
     { class: `sidebar-sub-headers depth--${depth}` },
-    children.map(c => {
+    children.map((c) => {
       const active = isActive(route, path + "#" + c.slug);
       return h("li", { class: "sidebar-sub-header" }, [
         renderI(h, depth, active),
         renderLink(h, path + "#" + c.slug, c.title, active),
-        renderChildren(h, c.children, path, route, maxDepth, depth + 1)
+        renderChildren(h, c.children, path, route, maxDepth, depth + 1),
       ]);
     })
   );
@@ -111,11 +108,11 @@ function renderExternal(h, to, text) {
       attrs: {
         href: to,
         target: "_blank",
-        rel: "noopener noreferrer"
+        rel: "noopener noreferrer",
       },
       class: {
-        "sidebar-link": true
-      }
+        "sidebar-link": true,
+      },
     },
     [text, h("OutboundLink")]
   );
@@ -123,86 +120,140 @@ function renderExternal(h, to, text) {
 </script>
 
 <style lang="stylus">
-.sidebar .sidebar-sub-headers
+.sidebar .sidebar-sub-headers {
   // padding-left 1rem
-  font-size 0.95em
+  font-size: 0.95em;
+}
 
-.sidebar-sub-header
-  position relative
+.sidebar-sub-header {
+  position: relative;
+}
 
-.sidebar-group-items
-  a
-    border-left unset !important
+.sidebar-group-items {
+  a {
+    border-left: unset !important;
+  }
+}
 
-a.sidebar-link
-  font-size 13px
-  font-weight 400
-  display flex
-  align-items center
-  color #455A64
-  border-left 0.25rem solid transparent
-  padding 4px 24px
-  line-height 1.4
-  width: 100%
-  box-sizing: border-box
-  min-height 24px
-  &:hover
-    color #0D122A
-    background-color #ECEFF1
-  &.heading-active
-    font-weight 600
-    color #0D122A
-    border-left-color #0D122A
-  &.page-active
-    color #1263cc
+a.sidebar-link {
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  color: #455A64;
+  padding: 4px 16px;
+  line-height: 1.4;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 24px;
+
+  &:hover {
+    color: #0D122A;
+    background-color: #ECEFF1;
+  }
+
+  &.heading-active {
+    font-weight: 600;
+    color: #0D122A;
+  }
+
+  &.page-active {
+    color: #1263cc;
+  }
+
   // .sidebar-group &
-  //   padding-left 40px
-  .sidebar-sub-headers &
-    padding-left 48px
-    border-left unset
-  .depth--2 &
-    padding-left 64px
+  // padding-left 40px
+  .sidebar-sub-headers & {
+    padding-left: 48px;
+    border-left: unset;
+  }
 
-.sidebar-group-items
-  .sidebar-link
-    padding-left 32px
-  .sidebar-sub-headers
-    .sidebar-link
-      padding-left 48px
-    .depth--2
-      .sidebar-link
-        padding-left 64px
+  .depth--2 & {
+    padding-left: 64px;
+  }
+}
 
-  .depth--1
-    .side-nav__progress-bar
-      height 42px
-  .depth--2
-    .side-nav__progress-bar
-      height unset
+li > a.sidebar-link {
+  padding-left: 40px;
+}
 
-.side-nav__progress-bar
-  display: block
-  position: absolute
-  top: 0
-  bottom: 0
-  left: 30px
-  width: 2px
-  background: rgba(189,189,189,.4)
+.sidebar-group-items {
+  padding: 4px 0 !important;
 
-  &.active
-    background-color blue
+  .sidebar-link {
+    padding-left: 40px;
+  }
 
-.sidebar-group
-  .sidebar-link
-    font-weight bold
-  .sidebar-group-items
-    .sidebar-link
-      font-weight 400
-      font-size 12px
-      &.active
-        font-weight bold
-        color #1263cc
+  .sidebar-sub-headers {
+    .sidebar-link {
+      padding-left: 48px;
+    }
 
-  .side-nav__progress-bar
-    left: 32px
+    .depth--2 {
+      .sidebar-link {
+        padding-left: 64px;
+      }
+    }
+  }
+
+  .depth--1 {
+    .side-nav__progress-bar {
+      height: 42px;
+    }
+  }
+
+  .depth--2 {
+    .side-nav__progress-bar {
+      height: unset;
+    }
+  }
+}
+
+.side-nav__progress-bar {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 30px;
+  width: 2px;
+  background: rgba(189, 189, 189, 0.4);
+
+  &.active {
+    background-color: blue;
+  }
+}
+
+// .depth-1 {
+// .sidebar-heading {
+// font-weight: bold;
+// }
+// }
+.sidebar-group {
+  .sidebar-link {
+    font-weight: bold;
+  }
+
+  .sidebar-group-items {
+    .sidebar-link {
+      font-weight: 400;
+      font-size: 12px;
+
+      &.active {
+        color: #1263cc;
+      }
+    }
+
+    .sidebar-heading {
+      font-weight: bold;
+    }
+  }
+
+  .side-nav__progress-bar {
+    left: 32px;
+  }
+}
+
+.sidebar-link.active {
+  color: #1263cc;
+}
 </style>
