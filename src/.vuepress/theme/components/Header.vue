@@ -1,31 +1,33 @@
 <template lang="pug">
 div
-  v-toolbar.elevation-1(app fixed clipped-left height="60px")
+  v-toolbar.elevation-1(app, fixed, clipped-left, height="60px")
     SidebarButton(@toggle-sidebar="$emit('toggle-sidebar')")
     a.align-center.d-flex(
-      href="https://pupil-labs.com"
-      target="_blank"
+      href="https://pupil-labs.com",
+      target="_blank",
       rel="noopener"
     )
       img(:src="$withBase('/logos/pl_logo.svg')")
     v-spacer
     AlgoliaSearchBox(:options="algolia")
-    v-toolbar-items.hidden-sm-and-down
+    v-spacer
+    v-toolbar-items.hidden-sm-and-down(style="gap: 16px")
       template(v-for="item in docs_menu")
         v-btn(
-          flat
-          :key="item.title"
-          :to="item.link"
-          :class="{ 'text-capitalize': item.title != 'vr/ar', 'text-uppercase': item.title == 'vr/ar' }"
-          style="margin: 0"
+          flat,
+          :key="item.title",
+          :to="item.link",
+          :class="{ 'text-capitalize': item.title != 'vr/ar', 'text-uppercase': item.title == 'vr/ar' }",
+          style="margin: 0; height: 40px"
         ) {{ item.title }}
-      v-btn(
-        flat
-        href="https://pupil-labs.com/chat/"
-        class="text-capitalize"
-        style="margin: 0"
+      v-btn.text-capitalize(
+        flat,
+        href="https://pupil-labs.com/chat/",
+        style="margin: 0; height: 40px",
         target="_blank"
-      ) Chat
+      )
+        span.pr-2 Chat
+        OutboundLink
 </template>
 
 <script>

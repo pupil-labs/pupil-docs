@@ -183,7 +183,7 @@ module.exports = {
     editLinks: true,
     editLinkText: 'Edit this page',
     search: false,
-    searchPlaceholder: 'Search',
+    searchPlaceholder: 'Search documentation',
     algolia: {
       appId: 'BANVRGB2LF',
       apiKey: 'e19afb93d6e94c2bd3d5e594b4967e0a',
