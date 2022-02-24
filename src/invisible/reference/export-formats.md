@@ -1,5 +1,5 @@
 ---
-description: TODO
+description: Documentation of the exact export formats of Pupil Cloud.
 ---
 
 # Export Formats

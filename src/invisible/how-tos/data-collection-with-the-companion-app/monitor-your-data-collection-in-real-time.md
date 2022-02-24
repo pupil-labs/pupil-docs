@@ -1,5 +1,5 @@
 ---
-description: TODO
+description: Links to Pupil Invisible Monitor app.
 ---
 
 # Monitor your Data Collection in Real-Time

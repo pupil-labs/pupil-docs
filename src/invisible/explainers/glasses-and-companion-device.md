@@ -1,6 +1,6 @@
 ---
 permalink: /invisible/explainers/glasses-and-companion-device
-description: TODO
+description: Introduction to the Pupil Invisible Hardware and Companion app.
 ---
 
 # Glasses & Companion Device

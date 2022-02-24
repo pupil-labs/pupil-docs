@@ -1,10 +1,10 @@
 ---
 permalink: /invisible/explainers/basic-concepts
-description: TODO
+description: Introduction to a number of organizational constructs.
 ---
 
 # Basic Concepts
-There are a number of organizational constructs we use to make working with our tools easy, flexible and reliable:
+There are a number of organizational constructs we use to make working with our tools flexible and reliable:
 
 A [recording](/invisible/explainers/basic-concepts/#recordings) is made each time you press record in the Invisible Companion app. Each recording has a [wearer](/invisible/explainers/basic-concepts/#wearers) and a [template](/invisible/explainers/basic-concepts/#templates) associated with it. Once uploaded to Pupil Cloud you can add recordings to [projects](/invisible/explainers/basic-concepts/#projects), this creates a context for you to add [enrichments](/invisible/explainers/enrichments) to aggregate and analyse your data.
 

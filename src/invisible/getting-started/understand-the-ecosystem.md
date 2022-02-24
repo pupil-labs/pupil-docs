@@ -1,6 +1,6 @@
 ---
 permalink: /invisible/getting-started/understand-the-ecosystem
-description: TODO
+description: Overview article on the Pupil Invisible ecosystem introducing available software components.
 ---
 
 # Understand the Ecosystem

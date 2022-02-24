@@ -1,6 +1,6 @@
 ---
 permalink: /invisible/explainers/enrichments
-description: TODO
+description: Explanation of all available enrichments including setup instructions.
 ---
 
 # Enrichments

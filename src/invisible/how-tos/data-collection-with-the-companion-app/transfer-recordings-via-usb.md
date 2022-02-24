@@ -1,5 +1,5 @@
 ---
-description: TODO
+description: How-To guide on transferring recordings off of the Companion phone via USB.
 ---
 
 # Transfer Recordings via USB

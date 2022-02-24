@@ -1,5 +1,5 @@
 ---
-description: TODO
+description: How-To guide on exchanging the lenses of Pupil Invisible glasses.
 ---
 
 # Exchange the Lenses

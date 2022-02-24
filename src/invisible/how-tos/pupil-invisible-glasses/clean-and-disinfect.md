@@ -1,5 +1,5 @@
 ---
-description: TODO
+description: How-To guide on cleaning and disinfecting Pupil Invisible glasses.
 ---
 
 # Clean and Disinfect

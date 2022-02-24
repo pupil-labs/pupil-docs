@@ -1,6 +1,6 @@
 ---
 permalink: /invisible/explainers/data-streams
-description: TODO
+description: Summary of all available data streams in Pupil Invisible recordings
 ---
 
 # Data Streams

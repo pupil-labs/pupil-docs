@@ -1,6 +1,6 @@
 ---
 permalink: /invisible/troubleshooting
-description: TODO
+description: Troubleshooting section listing common issues and their solution.
 ---
 
 # Troubleshooting

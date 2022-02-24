@@ -1,5 +1,5 @@
 ---
-description: TODO
+description: Pupil Invisible and Pupil Cloud documentation ranging from getting started guides, to explanations of advanced concepts, how-to guides and references on export formats and APIs.
 ---
 
 # Pupil Invisible & Cloud Documentation

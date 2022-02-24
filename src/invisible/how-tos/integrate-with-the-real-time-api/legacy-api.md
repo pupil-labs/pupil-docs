@@ -1,5 +1,5 @@
 ---
-description: TODO
+description: Guide on using the now deprecated real-time API called NDSI.
 ---
 
 # Legacy API

@@ -1,5 +1,5 @@
 ---
-description: TODO
+description: Summary of scientific publications by Pupil Labs and the Pupil Community.
 ---
 
 # Publications

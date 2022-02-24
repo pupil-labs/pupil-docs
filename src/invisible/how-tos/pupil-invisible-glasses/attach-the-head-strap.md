@@ -1,5 +1,5 @@
 ---
-description: TODO
+description: How-To guide on attaching the head-strap to Pupil Invisible glasses.
 ---
 
 # Attach the Head Strap

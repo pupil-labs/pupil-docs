@@ -1,5 +1,5 @@
 ---
-description: TODO
+description: Beginner guide to making your first Pupil Invisible recording.
 ---
 
 # Make your first recording
