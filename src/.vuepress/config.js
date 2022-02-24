@@ -111,18 +111,18 @@ module.exports = {
             //     'how-tos/pupil-cloud/make-complex-search-queries',
             //   ]
             // },
-            {
-              title: 'Advanced Analysis',
-              children: [
-                'how-tos/advanced-analysis/gaze-metrics-in-aois/',
-              ]
-            },
+            // {
+            //   title: 'Advanced Analysis',
+            //   children: [
+            //     'how-tos/advanced-analysis/gaze-metrics-in-aois/',
+            //   ]
+            // },
             {
               title: 'Integrate with the Real-Time API',
               children: [
                 'how-tos/integrate-with-the-real-time-api/introduction/',
                 'how-tos/integrate-with-the-real-time-api/track-your-experiment-progress-using-events/',
-                'how-tos/integrate-with-the-real-time-api/implement-hci-applications-with-screen-tracking',
+                // 'how-tos/integrate-with-the-real-time-api/implement-hci-applications-with-screen-tracking',
                 'how-tos/integrate-with-the-real-time-api/legacy-api',
                 // 'how-tos/integrate-with-the-real-time-api/write-your-own-client',
               ]
