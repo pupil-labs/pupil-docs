@@ -273,6 +273,10 @@ function flatten(items, res) {
       color: #1263cc;
       font-weight: bold;
     }
+
+    &:hover {
+      color: #1263cc;
+    }
   }
 }
 
