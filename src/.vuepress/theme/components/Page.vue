@@ -2,7 +2,7 @@
   <v-content class="page">
     <slot name="top" />
 
-    <div class="gridCol">
+    <div class="gridCol" id="observer-root">
       <div>
         <Content class="theme-default-content" />
         <v-divider class="mt-4"></v-divider>
@@ -55,16 +55,21 @@
       </div>
       <div v-if="haveTitle" class="pageContent">
         <div class="page-toc">
-          <div style="display: grid; gap: 8px">
+          <div style="display: grid; gap: 8px; padding: 8px 0">
             <template v-for="head in $page.headers">
-              <a
-                v-if="head.level == '2'"
+              <div
                 :key="head.slug"
-                :href="`#${head.slug}`"
-                style="font-size: 12px"
+                style="font-size: 12px; line-height: normal"
               >
-                {{ head.title }}
-              </a>
+                <a v-if="head.level == '2'" :href="`#${head.slug}`">
+                  {{ head.title }}
+                </a>
+                <div style="padding-left: 12px">
+                  <a v-if="head.level == '3'" :href="`#${head.slug}`">
+                    {{ head.title }}
+                  </a>
+                </div>
+              </div>
             </template>
           </div>
         </div>
@@ -80,6 +85,22 @@ import { resolvePage, outboundRE, endingSlashRE } from "../util";
 
 export default {
   props: ["sidebarItems"],
+
+  data() {
+    return {
+      observer: null,
+    };
+  },
+
+  mounted() {
+    this.observer = new IntersectionObserver(this.observeHeader, {
+      threshold: 1.0,
+    });
+    document.querySelectorAll("h2[id]").forEach((el) => {
+      this.observer.observe(el);
+      console.log(el);
+    });
+  },
 
   computed: {
     lastUpdated() {
@@ -148,13 +169,13 @@ export default {
         `Edit this page`
       );
     },
-
+    //
     haveTitle() {
       if (this.$page.headers) {
         let pageHeaders = this.$page.headers;
         for (let i = 0; i < pageHeaders.length; i++) {
           const headers = pageHeaders[i];
-          if (headers.level == 2) {
+          if (headers.level == 2 || headers.level == 3) {
             return true;
           }
         }
@@ -163,6 +184,21 @@ export default {
   },
 
   methods: {
+    observeHeader(entries) {
+      entries.forEach((entry) => {
+        const id = entry.target.getAttribute("id");
+        if (entry.isIntersecting) {
+          document
+            .querySelector(`div > a[href="#${id}"]`)
+            .classList.add("active");
+        } else {
+          document
+            .querySelector(`div > a[href="#${id}"]`)
+            .classList.remove("active");
+        }
+      });
+    },
+
     createEditLink(repo, docsRepo, docsDir, docsBranch, path) {
       const bitbucket = /bitbucket.org/;
       if (bitbucket.test(repo)) {
@@ -229,13 +265,22 @@ function flatten(items, res) {
   top: 120px;
   border-left: 1px solid #1263CC;
   padding: 0 20px;
+
+  a {
+    color: black;
+
+    &.active {
+      color: #1263cc;
+      font-weight: bold;
+    }
+  }
 }
 
 .gridCol {
   display: grid;
   position: relative;
-  grid-template-columns: minmax(0, 4fr) minmax(100px, 1fr);
-  gap: 40px;
+  grid-template-columns: minmax(0, 4fr) minmax(200px, 1fr);
+  gap: 80px;
   padding: 2rem 2.5rem;
 }
 
