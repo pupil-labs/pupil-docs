@@ -26,7 +26,7 @@ div
         style="margin: 0; height: 36px",
         target="_blank"
       )
-        span.pr-2 Chat
+        span.pr-1 Chat
         OutboundLink
 </template>
 
