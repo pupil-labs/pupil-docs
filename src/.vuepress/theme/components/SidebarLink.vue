@@ -70,7 +70,7 @@ function renderLink(h, to, text, active) {
         "sidebar-link": true,
       },
     },
-    text
+    [h("span", text)]
   );
 }
 
@@ -114,7 +114,7 @@ function renderExternal(h, to, text) {
         "sidebar-link": true,
       },
     },
-    [text, h("OutboundLink")]
+    [h("span", text), h("OutboundLink")]
   );
 }
 </script>
@@ -146,6 +146,11 @@ a.sidebar-link {
   width: 100%;
   box-sizing: border-box;
   min-height: 24px;
+  line-height: 1;
+
+  > span {
+    transform: translateY(1px);
+  }
 
   &:hover {
     color: #0D122A;
@@ -239,6 +244,7 @@ li > a.sidebar-link {
       font-size: 12px;
 
       &.active {
+        background-color: unset;
         color: #1263cc;
       }
     }
@@ -253,7 +259,16 @@ li > a.sidebar-link {
   }
 }
 
-.sidebar-link.active {
-  color: #1263cc;
+.sidebar-links {
+  .sidebar-link.active {
+    background-color: #E8F0FE;
+    border-radius: 4px;
+    color: #1263cc;
+  }
+}
+
+.icon.outbound {
+  margin-left: 4px;
+  top: 0;
 }
 </style>

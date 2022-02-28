@@ -66,6 +66,11 @@ module.exports = {
     sidebar: {
       '/invisible/': [
         {
+          title: "Overview",
+          path: "/invisible/",
+          collapsable: false,
+        },
+        {
           title: 'Getting Started',
           children: [
             'getting-started/first-recording',
@@ -133,7 +138,11 @@ module.exports = {
           title: 'Reference',
           children: [
             'reference/export-formats',
-          ]
+            {
+              title: "Realtime API",
+              path: "https://pupil-labs-realtime-api.readthedocs.io/en/latest/api/index.html",
+            }
+          ],
         },
         "troubleshooting"
       ],

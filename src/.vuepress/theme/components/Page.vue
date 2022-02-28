@@ -93,13 +93,17 @@ export default {
   },
 
   mounted() {
-    this.observer = new IntersectionObserver(this.observeHeader, {
-      threshold: 1.0,
-    });
-    document.querySelectorAll("h2[id]").forEach((el) => {
-      this.observer.observe(el);
-      console.log(el);
-    });
+    this.initObserver();
+  },
+
+  watch: {
+    $route(to, from) {
+      this.initObserver();
+    },
+  },
+
+  beforeDestroy() {
+    this.observer.disconnect();
   },
 
   computed: {
@@ -184,17 +188,30 @@ export default {
   },
 
   methods: {
+    initObserver() {
+      setTimeout(() => {
+        this.observer = new IntersectionObserver(this.observeHeader, {
+          threshold: 1.0,
+        });
+        document.querySelectorAll("h2[id]").forEach((el) => {
+          this.observer.observe(el);
+        });
+      }, 200);
+    },
+
     observeHeader(entries) {
       entries.forEach((entry) => {
         const id = entry.target.getAttribute("id");
         if (entry.isIntersecting) {
-          document
-            .querySelector(`div > a[href="#${id}"]`)
-            .classList.add("active");
-        } else {
-          document
-            .querySelector(`div > a[href="#${id}"]`)
-            .classList.remove("active");
+          const div = document.querySelector(`div > a[href="#${id}"]`);
+          if (div) {
+            div.classList.add("active");
+          }
+        } else if (!entry.isIntersecting) {
+          const div = document.querySelector(`div > a[href="#${id}"]`);
+          if (div) {
+            div.classList.remove("active");
+          }
         }
       });
     },
