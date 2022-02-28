@@ -66,6 +66,11 @@ module.exports = {
     sidebar: {
       '/invisible/': [
         {
+          title: "Overview",
+          path: "/invisible/",
+          collapsable: false,
+        },
+        {
           title: 'Getting Started',
           children: [
             'getting-started/first-recording',

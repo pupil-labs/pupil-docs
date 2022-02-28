@@ -1,5 +1,6 @@
 <template>
   <section
+    v-if="collapsable"
     class="sidebar-group"
     :class="[
       {
@@ -52,16 +53,23 @@
       />
     </DropdownTransition>
   </section>
+  <SidebarLink
+    v-else
+    :sidebarDepth="item.sidebarDepth"
+    :items="item"
+    @click.native="$emit('toggle')"
+  />
 </template>
 
 <script>
 import { isActive } from "../util";
 import DropdownTransition from "@theme/components/DropdownTransition.vue";
+import SidebarLink from "@theme/components/SidebarLink.vue";
 
 export default {
   name: "SidebarGroup",
   props: ["item", "open", "collapsable", "depth"],
-  components: { DropdownTransition },
+  components: { DropdownTransition, SidebarLink },
   // ref: https://vuejs.org/v2/guide/components-edge-cases.html#Circular-References-Between-Components
   beforeCreate() {
     this.$options.components.SidebarLinks =
@@ -102,6 +110,12 @@ export default {
 }
 
 .sidebar-group {
+  &.uncollapsable {
+    a.sidebar-link {
+      padding-left: 40px;
+    }
+  }
+
   .sidebar-group {
     padding-left: 0.5em;
   }

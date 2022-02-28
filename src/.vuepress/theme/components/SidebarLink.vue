@@ -244,6 +244,7 @@ li > a.sidebar-link {
       font-size: 12px;
 
       &.active {
+        background-color: unset;
         color: #1263cc;
       }
     }
@@ -258,8 +259,12 @@ li > a.sidebar-link {
   }
 }
 
-.sidebar-link.active {
-  color: #1263cc;
+.sidebar-links {
+  .sidebar-link.active {
+    background-color: #E8F0FE;
+    border-radius: 4px;
+    color: #1263cc;
+  }
 }
 
 .icon.outbound {
