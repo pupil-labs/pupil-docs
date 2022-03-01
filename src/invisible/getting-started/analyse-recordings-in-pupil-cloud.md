@@ -50,7 +50,7 @@ To create a project, select a recording from Drive and click on 'Create Project 
   </v-img>
 </div>
 
-This takes you to Project Editor. Give the project a name.
+Give the project a name, and you'll be taken to Project Editor. 
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
@@ -61,7 +61,7 @@ This takes you to Project Editor. Give the project a name.
 </div>
 
 Project Editor has three main parts. The left-hand sidebar shows recordings that are in the project. The center is a 
-video player. The right sidebar shows events and sections.
+video player. The right-hand sidebar shows events and sections.
 
 Now let’s go ahead and create an enrichment!
 

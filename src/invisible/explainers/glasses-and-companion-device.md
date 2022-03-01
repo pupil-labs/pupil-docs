@@ -52,7 +52,7 @@ The models we currently support are OnePlus 6, OnePlus 8, and OnePlus 8T.
 If you want to replace or add an extra Companion device you purchase it [directly from us](https://pupil-labs.com/products/invisible/accessories/) or from any other distributor. The companion app is free and can be downloaded from the [Play Store](https://play.google.com/store/apps/details?id=com.pupillabs.invisiblecomp).
 
 :::danger
-Make sure to update the **Companion app** on a regular basis, however, be careful with updating the **Android** version. Some Android versions have issues with accessing USB devices, rendering them incompatible with Pupil Invisible.
+Make sure to update the **Companion app** on a regular basis. However, be careful with updating the **Android** version. Some Android versions have issues with accessing USB devices, rendering them incompatible with Pupil Invisible.
 :::
 
 The currently supported Android versions are as follows:

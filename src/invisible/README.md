@@ -2,7 +2,7 @@
 description: Pupil Invisible and Pupil Cloud documentation ranging from getting started guides, to explanations of advanced concepts, how-to guides, and references on export formats and APIs.
 ---
 # Pupil Invisible & Cloud Documentation
-Welcome to the documentation of Pupil Invisible & Cloud! On these pages you can learn everything there is to learn about the Pupil Invisible ecosystem. Starting from taking your first steps all the way to implementing advanced applications, all you need is here.
+Welcome to the documentation of Pupil Invisible & Cloud! On these pages you can learn everything there is to learn about the Pupil Invisible ecosystem. Starting from taking your first steps all the way to implementing advanced applications, everything you need is here.
 
 ## Getting Started
 This section is directed at new users who want to get to grips with the tools. Working through the tutorials will put you in a great position to consume the rest of the documentation and get started with your project.
@@ -17,7 +17,7 @@ Examples that might interest you are an overview of all the [available data stre
 
 
 ## How-Tos
-This section contains a range of how-tos that demonstrate how to solve a specific problem.
+This section contains a range of how-tos for solving specific problems.
 
 Highlights include
 - [Calculate Gaze Metrics in AOIs](/invisible/how-tos/applications/gaze-metrics-in-aois/)
@@ -28,7 +28,7 @@ Highlights include
 ## Reference
 This section serves as a reference for [export formats](src/invisible/reference/export-formats.md), which you can consult when working with any data coming out of Pupil Cloud.
 
-Further, it contains a full API reference for for the [real-time API client](src/invisible/reference/real-time-api.md).
+Further, it contains a full API reference for the [real-time API client](src/invisible/reference/real-time-api.md).
 
 ## Troubleshooting
 Are you having any trouble using Pupil Invisible or Pupil Cloud? We have collected the most common issues you may run into together with their solution in this section.

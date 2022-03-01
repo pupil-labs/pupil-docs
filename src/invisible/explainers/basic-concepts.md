@@ -27,7 +27,7 @@ In some cases, it can make sense to use the offset correction feature to compens
 
 
 ## Templates
-Templates are used to add meta-data to a recording (e.g. age, gender, or location). They are forms that can be filled out at recording time to document important information for your study. The responses will be saved alongside the recording. Further, templates define a naming scheme for recordings. If you for example add a field for the `Experiment Name` to the form, you can set this value to be added to your recording names automatically. This is useful if you have a pre-defined structure for your study.
+Templates are used to add meta-data to a recording (e.g. age, gender, or location). They are forms that can be filled out at recording time to document important information for your study. The responses will be saved alongside the recording. Further, templates define a naming scheme for recordings. If, for example, you add a field for the `Experiment Name` to the form, you can set this value to be added to your recording names automatically. This is useful if you have a pre-defined structure for your study.
 
 ### Form for Meta-Data
 You can create new templates in Pupil Cloud and customize them to your use case. You can add as many form fields as you want, including text fields and multiple-choice fields.
@@ -36,7 +36,7 @@ You can set individual fields of the template to be "required", such that a reco
 
 Before your templates become available for selection in the Pupil Invisible Companion app, you need to **publish** them. After they are published, they can no longer be edited to ensure consistency between responses.
 
-Some example use-cases for template forms include the following:
+Some example use-cases for template forms include:
 
 - **Questionnaire**: During the recording of a scientific study participating subjects are often asked to fill out a questionnaire to capture e.g. demographic data. You can simply create a template for your questionnaire so your subjects can fill out the questionnaire on the Companion Device. All questionnaire answers will be saved alongside the recording data associated with the according wearer.
 - **Recording Structure**: If your recording schedule has a known structure, e.g. different recording phases or one recording per week, you can set up a template to note down the respective phase or week for each recording.
@@ -98,7 +98,7 @@ Public sharing of data with people outside of a workspace is **not** currently p
 
 **When should I use workspaces?**
 
-Workspaces can have many uses. Typical ones are:
+Workspaces can have many uses. Typical ones include:
 - **Projects or Studies**: Use workspaces to collect projects with a similar theme, "Sport Training" for example. Then every project within the workspace can be used to catalog recordings of different sports, like "Golf Putting", "Archery", "Basketball Free Throw". This ensures data is cleanly separated.
 - **Teams**: If you are a member of multiple teams or organizations, you can use multiple workspaces to control what data you are sharing with whom.
 - **Clients**: If you are working with clients, you can use multiple workspaces to keep data separated and to control which collaborator should have access to which client’s data.
@@ -113,4 +113,4 @@ No, currently this is not possible. In case you really need this to happen pleas
 
 **Can the ownership of a workspace be transferred?**
 
-No, currently this is not possible. In case you really need this to happen please contact us at `info@pupil-labs.com`.
+Like with moving recordings between workspaces, this is not currently possible. In case you really need this to happen please contact us at `info@pupil-labs.com`.
