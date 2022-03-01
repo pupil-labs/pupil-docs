@@ -25,12 +25,14 @@ Next, you have to install the Pupil Invisible Companion app on your device:
 - First-time users need to sign up for a Pupil Cloud account. You can sign up using your Google account, or by creating an account with an email address and password.
 
 <div class="pb-4" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
+  <a href="https://play.google.com/store/apps/details?id=com.pupillabs.invisiblecomp" target="_blank">
   <v-img
     :src="require('../../media/invisible/getting-started/google-play-badge.png')"
     style="width:80%;"
     contain
   >
   </v-img>
+  </a>
   <v-img
     :src="require('../../media/invisible/getting-started/companion_app_logo.jpg')"
     style="width:80%;"
