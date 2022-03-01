@@ -177,7 +177,7 @@ export default {
   }
 }
 
-@media (min-width: $MQMobile) {
+@media (min-width: 768px) {
   .algolia-search-wrapper {
     .algolia-autocomplete {
       .algolia-docsearch-suggestion {
@@ -203,7 +203,7 @@ export default {
   }
 }
 
-@media (max-width: $MQMobile) {
+@media (max-width: 768px) {
   .algolia-search-wrapper {
     .ds-dropdown-menu {
       min-width: calc(100vw - 4rem) !important;

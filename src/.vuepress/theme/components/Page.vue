@@ -359,7 +359,7 @@ function flatten(items, res) {
   }
 }
 
-@media (max-width: $MQNarrow) {
+@media (max-width: 1024px) {
   .pageContent {
     display: none !important;
   }
