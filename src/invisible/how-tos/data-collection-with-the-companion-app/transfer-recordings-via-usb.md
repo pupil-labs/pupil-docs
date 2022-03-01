@@ -3,11 +3,11 @@ description: How-To guide on transferring recordings off of the Companion phone 
 ---
 
 # Transfer Recordings via USB
-The recommended way for transferring recordings off of the phone is to upload them to Pupil Cloud. For some use cases this may however not be possible and such users may want to transfer the recordings via USB.
+The recommended way for transferring recordings off of the phone is to upload them to Pupil Cloud. For some use-cases this may however not be possible and such users may want to transfer the recordings via USB.
 
 To transfer recordings directly to a computer you first need to export the recordings to the Android filesystem. Then you need to access the filesystem to copy the data over to your computer. 
 
-Recordings downloaded directly from the phone will be in a raw binary format that is difficult to handel. Finally, you should thus export the recordings using Pupil Player to more convenient formats.
+Recordings downloaded directly from the phone will be in a raw binary format that is difficult to handle. Finally, you should thus export the recordings using Pupil Player to more convenient formats.
 
 **Export from Invisible Companion App**
 1. Open recordings view in Invisible Companion App
@@ -24,7 +24,7 @@ Recordings downloaded directly from the phone will be in a raw binary format tha
 3. Click on 'Tap for more options'
 4. Select 'Transfer Files'
 5. Open File Browser on your PC and access the Internal shared storage of your OnePlus device
-6. Locate the export folder on the phone. Usually it is in `Documents/Pupil Invisible Export`.
+6. Locate the export folder on the phone. Usually, it is in `Documents/Pupil Invisible Export`.
 7. Copy the recordings to your computer.
 8. Export the recordings using [Pupil Player](/core/software/pupil-player/#export).
 
@@ -35,8 +35,7 @@ to Pupil Cloud at a later date if required.
 Recordings that are deleted from the Invisible Companion App, e.g. to free up storage space, cannot be transferred back 
 to the Invisible Companion App from your backup location (including Pupil Cloud, a laptop/desktop PC, or external HD). 
 
-This means that if you delete the recordings prior to a Pupil Cloud upload, they cannot be uploaded to Pupil Cloud at a 
-later date.
+This means that if you delete the recordings prior to uploading them to Pupil Cloud, they cannot be uploaded at a later date either.
 
 ::: tip
 <v-icon large color="info">info_outline</v-icon>

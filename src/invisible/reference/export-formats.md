@@ -18,7 +18,7 @@ All [enrichments](/invisible/explainers/enrichments) are defined on specific sec
 | **start event name** | Name of the start event of the section.     |
 | **end event name** | Name of the end event of the section.     |
 
-Further, every enrichment export contains a files called `enrichment_info.txt`, which contains the name of the enrichment type, a link to the appropriate documentation, and the version of the enrichment that was used.
+Further, every enrichment export contains a file called `enrichment_info.txt`, which contains the name of the enrichment type, a link to the appropriate documentation, and the version of the enrichment that was used.
 
 ## Raw Data Exporter
 
@@ -86,8 +86,8 @@ This file contains [gaze](/invisible/explainers/data-streams/#gaze) data in worl
 | **timestamp [ns]** | UTC timestamp in nanoseconds of the sample. Equal to the timestamp of the original gaze sample before mapping.     |
 | **gaze x [px]** | Float value representing the x-coordinate of the mapped gaze point in world camera pixel coordinates.
 | **gaze y [px]** | Same as "gaze x [px]" but for the y-coordinate.     |
-| **worn** | This value indicates whether the Pupil Invisible Glasses have been worn by a subject at this point in time. `1.0` indicates that it has been worn, while `0.0` indicates that is has not been. Added in version 2 of this enrichment.    |
-| **fixation id** | If this gaze samples belongs to a fixation event, this is the corresponding id of the fixation. Otherwise this field is empty.     |
+| **worn** | This value indicates whether the Pupil Invisible Glasses have been worn by a subject at this point in time. `1.0` indicates that it has been worn, while `0.0` indicates that it has not been worn. Added in version 2 of this enrichment.    |
+| **fixation id** | If this gaze sample belongs to a fixation event, this is the corresponding id of the fixation. Otherwise, this field is empty.     |
 
 
 #### fixations.csv
@@ -134,7 +134,7 @@ This file contains all the mapped gaze data from all sections. The coordinate sy
 | **gaze detected on surface** | Boolean indicating whether or not the gaze point was inside or outside of the surface.     |
 | **gaze position on surface x [normalized]** | Float value representing the x-coordinate of the mapped gaze point in surface coordinates. If the surface was not localized this value is empty.     |
 | **gaze position on surface y [normalized]** | Same as gaze position on surface x [normalized] but for y-coordinate.     |
-| **fixation id** | If this gaze samples belongs to a fixation event, this is the corresponding id of the fixation. Otherwise this field is empty.     |
+| **fixation id** | If this gaze sample belongs to a fixation event, this is the corresponding id of the fixation. Otherwise, this field is empty.     |
 
 #### fixations.csv
 This file contains fixation events detected in the gaze data stream and mapped to the surface.
@@ -181,7 +181,7 @@ This file contains all the mapped gaze data from all sections.
 | **gaze detected in reference image** | Boolean indicating whether or not the gaze point was detected inside or outside of the reference image.     |
 | **gaze position in reference image x [px]** | Float value representing the x-coordinate of the mapped gaze point in pixel coordinates. If the reference image was not detected in the scene at the given time this value is empty.     |
 | **gaze position in reference image y [px]** | Same as "gaze position in reference image x [px]" but for the y-coordinate.     |
-| **fixation id** | If this gaze samples belongs to a fixation event, this is the corresponding id of the fixation. Otherwise this field is empty.     |
+| **fixation id** | If this gaze sample belongs to a fixation event, this is the corresponding id of the fixation. Otherwise, this field is empty.     |
 
 #### fixations.csv
 This file contains fixation events detected in the gaze data stream and mapped to the reference image.

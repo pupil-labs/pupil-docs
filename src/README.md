@@ -8,7 +8,7 @@ top_links:
       title: "Pupil Invisible and Pupil Cloud",
       link: "/invisible/",
       src: "invisible/pi_glasses.jpg",
-      description: "Learn how to setup Pupil Invisible hardware and collect your first set of data. Connect to Pupil Cloud, manage your data and take your research to the next level.",
+      description: "Learn how to setup Pupil Invisible hardware and collect your first set of data. Connect to Pupil Cloud, manage your data, and take your research to the next level.",
       alt: "Pupil Invisible Companion",
       btn_text: "Enter documentation",
     },

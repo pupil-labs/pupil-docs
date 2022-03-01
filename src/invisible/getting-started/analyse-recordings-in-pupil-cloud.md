@@ -1,12 +1,12 @@
 ---
 permalink: /invisible/getting-started/analyse-recordings-in-pupil-cloud
-description: Beginner guide to using Pupil Cloud to manage and analyse recordings.
+description: Beginner guide to using Pupil Cloud to manage and analyze recordings.
 ---
 
 # Analyse Recordings in Pupil Cloud
 New to Pupil Cloud? You’re in the right place! 
 
-This guide shows you how to store, playback and enrich Pupil Invisible recordings.
+This guide shows you how to store, playback, and enrich Pupil Invisible recordings.
 
 Let’s get oriented.
 
@@ -60,7 +60,7 @@ This takes you to Project Editor. Give the project a name.
   </v-img>
 </div>
 
-Project Editor has three main parts. The left-hand sidebar shows recordings that are in the project. The centre is a 
+Project Editor has three main parts. The left-hand sidebar shows recordings that are in the project. The center is a 
 video player. The right sidebar shows events and sections.
 
 Now let’s go ahead and create an enrichment!
