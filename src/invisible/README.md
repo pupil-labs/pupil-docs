@@ -20,15 +20,18 @@ Examples that might interest you are an overview of all the [available data stre
 This section contains a range of how-tos for solving specific problems.
 
 Highlights include
-- [Calculate Gaze Metrics in AOIs](/invisible/how-tos/applications/gaze-metrics-in-aois/)
-- [Implement HCI Applications with Screen Tracking](/invisible/how-tos/applications/implement-hci-applications-with-screen-tracking.md)
-- [Monitor your Data Collection in Real-Time](/invisible/how-tos/tools/monitor-your-data-collection-in-real-time)
+- [Introduction to the Real-Time API](/invisible/how-tos/integrate-with-the-real-time-api/introduction/)
+- [Monitor your Data Collection in Real-Time](/invisible/how-tos/data-collection-with-the-companion-app/monitor-your-data-collection-in-real-time)
+- [Exchange the Lenses of Pupil Invisible glasses](/invisible/how-tos/pupil-invisible-glasses/exchange-lenses)
+
+
+
 
 
 ## Reference
-This section serves as a reference for [export formats](src/invisible/reference/export-formats.md), which you can consult when working with any data coming out of Pupil Cloud.
+This section serves as a reference for [export formats](/invisible/reference/export-formats), which you can consult when working with any data coming out of Pupil Cloud.
 
-Further, it contains a full API reference for the [real-time API client](src/invisible/reference/real-time-api.md).
+Further, it contains a full API reference for the [real-time API client](https://pupil-labs-realtime-api.readthedocs.io/en/latest/api/index.html).
 
 ## Troubleshooting
-Are you having any trouble using Pupil Invisible or Pupil Cloud? We have collected the most common issues you may run into together with their solution in this section.
+Are you having any trouble using Pupil Invisible or Pupil Cloud? We have collected the most common issues you may run into together with their solution in [this](/invisible/troubleshooting) section.
