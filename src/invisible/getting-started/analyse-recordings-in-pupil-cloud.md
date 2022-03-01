@@ -22,7 +22,13 @@ recommend following the [make your first recording guide](/invisible/getting-sta
 After logging in to Pupil Cloud using the same account id + password created when setting up the Pupil Invisible 
 Companion App, you’ll be presented with Drive.
 
-[Insert Fig 1. Drive]
+<div class="pb-4" style="display:flex;justify-content:center;">
+  <v-img
+    :src="require('../../media/invisible/getting-started/PC-Getting_Started-Fig_1.jpg')"
+    max-width=100%
+  >
+  </v-img>
+</div>
 
 Drive is where your recordings live. 
 
@@ -36,7 +42,13 @@ Projects are where you organize and enrich data; enrichment is just the term we 
 
 To create a project, select a recording from Drive and click on 'Create Project from Selection' in the icon menu.
 
-[Insert Fig 2. Create project from selection]
+<div class="pb-4" style="display:flex;justify-content:center;">
+  <v-img
+    :src="require('../../media/invisible/getting-started/PC-Getting_Started-Fig_2.jpg')"
+    max-width=100%
+  >
+  </v-img>
+</div>
 
 Give the project a name.
 
@@ -44,7 +56,13 @@ Give the project a name.
 
 This takes you to Project Editor.
 
-[Insert Fig 4. Project editor]
+<div class="pb-4" style="display:flex;justify-content:center;">
+  <v-img
+    :src="require('../../media/invisible/getting-started/PC-Getting_Started-Fig_3.jpg')"
+    max-width=100%
+  >
+  </v-img>
+</div>
 
 Project Editor has three main parts. The left-hand sidebar shows recordings that are in the project. The centre is a 
 video player. The right sidebar shows events and sections.
@@ -69,9 +87,15 @@ the Face Mapper enrichment on the entire recording.
 Instead, let’s add some events of our own.
 
 Over in the right sidebar, you can type them manually (A). The events will appear in the right sidebar (B) and down in 
-the timeline (C and D). 
+the timeline (C). 
 
-[Insert Fig 5. Add events]
+<div class="pb-4" style="display:flex;justify-content:center;">
+  <v-img
+    :src="require('../../media/invisible/getting-started/PC-Getting_Started-Fig_4.jpg')"
+    max-width=100%
+  >
+  </v-img>
+</div>
 
 You can move forward and backward frame-by-frame using the < and >  keys.
 
@@ -81,7 +105,13 @@ Face Mapper on a section of the recording where the people were visible to the w
 ### 3.2 Creating the enrichment
 Now that our events have been added, click on 'Enrichment', followed by '+ New Enrichment'.
 
-[Insert Fig 6a. Enrichment]
+<div class="pb-4" style="display:flex;justify-content:center;">
+  <v-img
+    :src="require('../../media/invisible/getting-started/PC-Getting_Started-Fig_5.jpg')"
+    max-width=100%
+  >
+  </v-img>
+</div>
 
 [Insert Fig 6b. Enrichment]
 
@@ -91,16 +121,34 @@ Select 'Face Mapper' from the dropdown menu.
 
 Name the enrichment (A) and define its start and endpoint using our existing events (B)
 
-[Insert Fig 8. Name and events]
+<div class="pb-4" style="display:flex;justify-content:center;">
+  <v-img
+    :src="require('../../media/invisible/getting-started/PC-Getting_Started-Fig_6.jpg')"
+    max-width=100%
+  >
+  </v-img>
+</div>
 
 Et Voila! The enrichment has been calculated and the results are ready to right-click and download. Check out the 
 download format here.
 
-[Insert Fig 9. Et Voila]
+<div class="pb-4" style="display:flex;justify-content:center;">
+  <v-img
+    :src="require('../../media/invisible/getting-started/PC-Getting_Started-Fig_7.jpg')"
+    max-width=100%
+  >
+  </v-img>
+</div>
 
 Now let’s navigate back to the Project Editor.
 
-[Insert Fig 10. Result]
+<div class="pb-4" style="display:flex;justify-content:center;">
+  <v-img
+    :src="require('../../media/invisible/getting-started/PC-Getting_Started-Fig_8.jpg')"
+    max-width=100%
+  >
+  </v-img>
+</div>
 
 The section that the enrichment was calculated on is now visible in the right sidebar. Click on it to see it in 
 the timeline and to show the detection result on the scene video.
