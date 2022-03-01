@@ -45,7 +45,7 @@ Gaze data is output in pixel space of the scene camera image, which has a resolu
 The gaze estimation algorithm is based on end-2-end deep learning and provides gaze data robustly without requiring a calibration. You can find a high-level description as well as a thorough evaluation of the accuracy and robustness of the algorithm in our [white paper](https://arxiv.org/pdf/2009.00508).
 
 ## Fixations
-Two primary types of movements exhibited by the visual system are fixations and saccades. During fixations, the eyes are directed at a specific point in the environment. A saccade is a very quick movement where the eyes jump from one fixation to the next. Properties like fixation duration are of significant importance for studying gaze behaviour.
+Two primary types of eye movements exhibited by the visual system are fixations and saccades. During fixations, the eyes are directed at a specific point in the environment. A saccade is a very quick movement where the eyes jump from one fixation to the next. Properties like fixation duration are of significant importance for studying gaze behaviour.
 
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img

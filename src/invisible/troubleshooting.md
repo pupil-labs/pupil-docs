@@ -4,7 +4,7 @@ description: Troubleshooting section listing common issues and their solution.
 ---
 
 # Troubleshooting
-Below you can find a list of issues we have observed in the past and recommendations on how to fix them. If the instructions do solve the problem for you, please reach out to us on [Discord](https://pupil-labs.com/chat/) or via email to `info@pupil-labs.com`.
+Below you can find a list of issues we have observed in the past and recommendations on how to fix them. If the instructions do not solve the problem for you, please reach out to us on [Discord](https://pupil-labs.com/chat/) or via email to `info@pupil-labs.com`.
 
 
 ## Pupil Invisible & Companion App
