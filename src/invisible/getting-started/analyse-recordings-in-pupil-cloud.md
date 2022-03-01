@@ -50,11 +50,7 @@ To create a project, select a recording from Drive and click on 'Create Project 
   </v-img>
 </div>
 
-Give the project a name.
-
-[Insert Fig 3. Name project]
-
-This takes you to Project Editor.
+This takes you to Project Editor. Give the project a name.
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
@@ -113,13 +109,7 @@ Now that our events have been added, click on 'Enrichment', followed by '+ New E
   </v-img>
 </div>
 
-[Insert Fig 6b. Enrichment]
-
-Select 'Face Mapper' from the dropdown menu.
-
-[Insert Fig 7. Face mapper]
-
-Name the enrichment (A) and define its start and endpoint using our existing events (B)
+Select 'Face Mapper' from the dropdown menu. Name the enrichment (A) and define its start and endpoint using our existing events (B).
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
@@ -129,8 +119,7 @@ Name the enrichment (A) and define its start and endpoint using our existing eve
   </v-img>
 </div>
 
-Et Voila! The enrichment has been calculated and the results are ready to right-click and download. Check out the 
-download format here.
+Et Voila! The enrichment has been calculated and the results are ready to right-click and download. Check out the download format [here](/invisible/reference/export-formats).
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
@@ -159,5 +148,3 @@ recording, and subsequently, use events and sections to define an Enrichment.
 
 These are the basic skills you will need to work in the Pupil Cloud environment, and you can apply them to other 
 enrichments.
-
-Ready to go further and set up enrichments that require more in-depth knowledge? Dive into our How-tos!
