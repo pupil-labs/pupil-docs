@@ -5,7 +5,7 @@ description: How-To guide on exchanging the lenses of Pupil Invisible glasses.
 # Exchange the Lenses
 You can easily change the lenses of your Pupil Invisible glasses. A pair of shaded lenses is included with every device.
 
-You can get custom lenses with specific prescription values at any optician. Alternatively, you can purchase a [lens kit](https://pupil-labs.com/products/invisible/accessories/) from the Pupil Invisible accessories.
+You can get custom lenses with specific prescription values at any optician. Alternatively, you can purchase a [lens kit](https://pupil-labs.com/products/invisible/accessories/) from the Pupil Invisible accessories page.
 
 
 ## Removing Lenses

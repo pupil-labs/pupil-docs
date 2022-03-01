@@ -3,7 +3,7 @@ description: How-To guide on transferring recordings off of the Companion phone 
 ---
 
 # Transfer Recordings via USB
-The recommended way for transferring recordings off of the phone is to upload them to Pupil Cloud. For some use-cases this may however not be possible and such users may want to transfer the recordings via USB.
+The recommended way for transferring recordings off of the phone is to upload them to Pupil Cloud. For some use-cases, however, this may not be possible, and users may want to transfer the recordings via USB.
 
 To transfer recordings directly to a computer you first need to export the recordings to the Android filesystem. Then you need to access the filesystem to copy the data over to your computer. 
 
@@ -35,7 +35,7 @@ to Pupil Cloud at a later date if required.
 Recordings that are deleted from the Invisible Companion App, e.g. to free up storage space, cannot be transferred back 
 to the Invisible Companion App from your backup location (including Pupil Cloud, a laptop/desktop PC, or external HD). 
 
-This means that if you delete the recordings prior to uploading them to Pupil Cloud, they cannot be uploaded at a later date either.
+This means that if you delete the recordings prior to uploading them to Pupil Cloud, they cannot be uploaded at a later date.
 
 ::: tip
 <v-icon large color="info">info_outline</v-icon>

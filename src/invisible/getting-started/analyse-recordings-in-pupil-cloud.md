@@ -50,7 +50,7 @@ To create a project, select a recording from Drive and click on 'Create Project 
   </v-img>
 </div>
 
-This takes you to Project Editor. Give the project a name.
+Give the project a name, and you'll be taken to Project Editor. 
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
@@ -61,7 +61,7 @@ This takes you to Project Editor. Give the project a name.
 </div>
 
 Project Editor has three main parts. The left-hand sidebar shows recordings that are in the project. The center is a 
-video player. The right sidebar shows events and sections.
+video player. The right-hand sidebar shows events and sections.
 
 Now let’s go ahead and create an enrichment!
 
@@ -119,7 +119,7 @@ Select 'Face Mapper' from the dropdown menu. Name the enrichment (A) and define 
   </v-img>
 </div>
 
-Et Voila! The enrichment has been calculated and the results are ready to right-click and download. Check out the download format [here](/invisible/reference/export-formats).
+Et Voila! The enrichment has been calculated and the results are ready to right-click and download. Check out the download format [here](/invisible/reference/export-formats/#reference-image-mapper).
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
