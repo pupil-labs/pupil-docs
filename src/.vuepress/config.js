@@ -75,7 +75,10 @@ module.exports = {
           children: [
             'getting-started/first-recording',
             'getting-started/understand-the-ecosystem',
-            'getting-started/analyse-recordings-in-pupil-cloud',
+            {
+              title: "Analysis in Pupil Cloud",
+              path: "getting-started/analyse-recordings-in-pupil-cloud",
+            }
           ]
         },
         {
@@ -100,7 +103,7 @@ module.exports = {
               ]
             },
             {
-              title: 'Data Collection with the Companion App',
+              title: 'Data Collection',
               children: [
                 // 'how-tos/data-collection-with-the-companion-app/achieve-super-precise-time-sync-using-events',
                 // 'how-tos/data-collection-with-the-companion-app/apply-offset-correction',
