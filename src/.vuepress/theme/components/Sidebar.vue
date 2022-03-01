@@ -1,13 +1,17 @@
 <template lang="pug">
 aside.sidebar
-  v-list.hidden-md-and-up
+  v-list.lg-hidden-up.pa-3
     template(v-for="item in docs_menu")
-      v-list-tile(:to="item.link")
+      v-list-tile(v-if="item.link", :to="item.link")
         v-list-tile-title(
           :class="{ 'text-capitalize': item.title != 'vr/ar', 'text-uppercase': item.title == 'vr/ar' }"
         )
           | {{ item.title }}
-
+      v-list-tile(v-else, :href="item.href", target="_blank")
+        v-list-tile-title.text-capitalize
+          span.pr-1 {{ item.title }}
+          OutboundLink
+  v-divider.lg-hidden-up
   NavLinks
   slot(name="top")
   .pa-3
@@ -27,10 +31,9 @@ export default {
       docs_menu: [
         { icon: "home", title: "home", link: "/" },
         { icon: "invisible", title: "invisible", link: "/invisible/" },
-        { icon: "cloud", title: "cloud", link: "/cloud/" },
         { icon: "core", title: "core", link: "/core/" },
         { icon: "vr-ar", title: "vr/ar", link: "/vr-ar/" },
-        { icon: "developer", title: "developer", link: "/developer/" },
+        { icon: "chat", title: "chat", href: "https://pupil-labs.com/chat/" },
       ],
     };
   },

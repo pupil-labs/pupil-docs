@@ -1,5 +1,5 @@
 ---
-description: TODO
+description: Beginner guide to making your first Pupil Invisible recording.
 ---
 
 # Make your first recording
@@ -25,12 +25,14 @@ Next, you have to install the Pupil Invisible Companion app on your device:
 - First-time users need to sign up for a Pupil Cloud account. You can sign up using your Google account, or by creating an account with an email address and password.
 
 <div class="pb-4" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
+  <a href="https://play.google.com/store/apps/details?id=com.pupillabs.invisiblecomp" target="_blank">
   <v-img
     :src="require('../../media/invisible/getting-started/google-play-badge.png')"
     style="width:80%;"
     contain
   >
   </v-img>
+  </a>
   <v-img
     :src="require('../../media/invisible/getting-started/companion_app_logo.jpg')"
     style="width:80%;"
@@ -41,7 +43,7 @@ Next, you have to install the Pupil Invisible Companion app on your device:
 
 ### 3. Follow the Setup Instructions on Screen
 
-- As part of the setup process, you can enable uploading recordings to \***\*Pupil Cloud**.
+- As part of the setup process, you can enable uploading recordings to **Pupil Cloud**.
 - Pupil Cloud is an online storage and analysis platform for eye tracking recordings. It makes it easy to get recordings off of the phone and includes various algorithms for processing them. Uploading data to Pupil Cloud is optional, but some features are not available without it (e.g. obtaining the 200 Hz gaze signal).
 - You can change this setting at any time in the settings of the app.
 - You will also be asked to create your first **wearer profile**. Pupil Invisible is using wearer profiles to distinguish who is wearing the glasses.

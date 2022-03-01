@@ -10,8 +10,8 @@ div
       img(:src="$withBase('/logos/pl_logo.svg')")
     v-spacer
     AlgoliaSearchBox(:options="algolia")
-    v-spacer
-    v-toolbar-items.hidden-sm-and-down(style="gap: 16px")
+    v-spacer.lg-hidden-down
+    v-toolbar-items.lg-hidden-down(style="gap: 16px")
       template(v-for="item in docs_menu")
         v-btn(
           flat,
