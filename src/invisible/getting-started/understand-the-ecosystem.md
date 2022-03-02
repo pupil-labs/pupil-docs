@@ -9,7 +9,7 @@ The Pupil Invisible ecosystem contains a range of tools that support you during 
 ## Pupil Invisible Companion app and Glasses
 You should have already used the Pupil Invisible Companion app to [make your first recording](/invisible/getting-started/first-recording). This app is the core of every Pupil Invisible data collection.
 
-When your glasses are connected to the Companion device, the Companion device supplies them with power and the app calculates a real-time gaze signal. When making a recording, all generated data is saved on the Companion device.
+When your glasses are connected to the Companion device, it supplies them with power and the app calculates a real-time gaze signal. When making a recording, all generated data is saved on the Companion device.
 
 The app automatically saves [UTC timestamps](https://en.wikipedia.org/wiki/Coordinated_Universal_Time) for every generated data sample. This allows you to easily sync your data with other 3rd party sensors, or to sync recordings from multiple subjects that have been made in parallel.
 
@@ -32,7 +32,7 @@ From here, you can either download the raw data in a convenient format or use so
 
 We have a strict [privacy policy](https://pupil-labs.com/legal/) that ensures your recording data is accessible only by you and those you explicitly grant access to. Pupil Labs will never access your recording data unless you explicitly instruct us to. If needed, additional privacy features are available that limit what data is stored in Pupil Cloud, like disabling scene video upload or blurring faces in the scene video (coming soon!).
 
-If Cloud upload is enabled in Pupil Invisible Companion app, then recordings will be uploaded automatically to Pupil Cloud. No additional effort is required for data logistics.
+If Cloud upload is enabled in the Pupil Invisible Companion app, then recordings will be uploaded automatically to Pupil Cloud. No additional effort is required for data logistics.
 
 
 ## Pupil Player
