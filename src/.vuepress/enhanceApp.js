@@ -20,6 +20,10 @@ import Vuetify, {
   VListTile,
   VListTileTitle,
   VMenu,
+  VExpansionPanel,
+  VExpansionPanelContent,
+  VCardText,
+  VChip,
 } from 'vuetify/lib';
 
 export default ({ Vue, router, options }) => {
@@ -46,6 +50,10 @@ export default ({ Vue, router, options }) => {
       VListTile,
       VListTileTitle,
       VMenu,
+      VExpansionPanel,
+      VExpansionPanelContent,
+      VCardText,
+      VChip,
     },
     theme: {
       primary: "#1263CC"
