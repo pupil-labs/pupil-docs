@@ -22,7 +22,7 @@ recommend following the [make your first recording guide](/invisible/getting-sta
 Log in to Pupil Cloud using the same account that you used to set up the Pupil Invisible 
 Companion App.
 
-Once logged in you will see the Drive view - this is where your recordings live.
+Once logged in you will see the Drive view – this is where your recordings live.
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
@@ -38,9 +38,9 @@ review. Just double-click on a recording to playback or right-click for more opt
 Now that your recordings are safely stored in Drive, let’s create a Project!
 
 ## 2. Projects
-Projects are where you organize and enrich data. Enrichment enrichment the term we use for analysis.
+Projects are where you organize and enrich data. Enrichment is the term we use for analysis.
 
-To create a project, select one or more recording from Drive and click on 'Create Project from Selection' in the icon menu. 
+To create a project, select one or more recordings from Drive and click on 'Create Project from Selection' in the icon menu. 
 
 This will jump you straight into a new project. Name your project and continue. 
 
@@ -73,18 +73,18 @@ Our example recording contains people, so let’s try out the Face Mapper enrich
 Why not make a similar recording and follow along? You can add the recording to your Project from within Drive!
 
 ### 3.1 Events and sections
-Before creating the enrichment, we should to think about events and sections. These are an important part of how we work 
+Before creating the enrichment, we should think about events and sections. These are an important part of how we work 
 with recordings and enrichments. 
 
-**Single** events can be useful to identify important points in a recording
-**Two** events can be used to define a **section** of the recording
-**Enrichments** run on **sections**.
+**Single** events can be useful to identify important points in a recording  
+**Two** events can be used to define a **section** of the recording  
+**Enrichments** run on **sections**  
 
 Currently, only the auto-generated events of `recording.begin` and `recording.end` exist. We could use these to run 
 the Face Mapper enrichment on the entire recording. But, we want to be more specific because we are only interested in part of the recording. So, let’s add some events of our own.
 
 A. In the right sidebar, type in the name of the event.  
-B. Events will appear in the right sidebar. 
+B. Events will appear in the right sidebar.  
 C. Events will also appear in the the timeline as small dots. 
 
 <div class="pb-4" style="display:flex;justify-content:center;">
@@ -146,7 +146,7 @@ the timeline and to show the detection result on the scene video.
 
 ## 4. Conclusion
 In this guide, we have covered how to playback your uploaded recordings in Drive, create a Project from a 
-recording, use events and sections to define an Enrichment. 
+recording, and use events and sections to define an Enrichment. 
 
 These are the basic skills you will need to work in the Pupil Cloud environment, and you can apply them to other 
-enrichments.
+enrichments!
