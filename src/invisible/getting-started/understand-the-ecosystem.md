@@ -4,18 +4,18 @@ description: Overview article on the Pupil Invisible ecosystem introducing avail
 ---
 
 # Understand the Ecosystem
-The Pupil Invisible ecosystem contains a range of tools that support you during data collection and data analysis. This overview introduces all the key components to let you know which ones may be of interest!
+The Pupil Invisible ecosystem contains a range of tools that support you during data collection and data analysis. This overview introduces all the key components so you can become familiar with all tools at your disposal.
 
 ## Pupil Invisible Companion app and Glasses
-You have already used the Pupil Invisible Companion app to [make your first recording](/invisible/getting-started/first-recording). The app is the core of every data collection.
+You should have already used the Pupil Invisible Companion app to [make your first recording](/invisible/getting-started/first-recording). This app is the core of every Pupil Invisible data collection.
 
-When glasses are connected to the Companion phone, the phone supplies them with power and the app calculates a real-time gaze signal. When making a recording, all generated data is saved on the phone.
+When your glasses are connected to the Companion Device, the Companion Device supplies them with power and the app calculates a real-time gaze signal. When making a recording, all generated data is saved on the Companion Device.
 
-The app automatically saves UTC timestamps for every generated data sample. This allows you to easily sync your data with other 3rd party sensors, or to sync recordings from multiple subjects that have been made in parallel.
+The app automatically saves [UTC timestamps](https://en.wikipedia.org/wiki/Coordinated_Universal_Time) for every generated data sample. This allows you to easily sync your data with other 3rd party sensors, or to sync recordings from multiple subjects that have been made in parallel.
 
 
 ## Pupil Cloud
-Pupil Cloud is our cloud-based storage and analysis platform and is the recommended tool for handling your Pupil Invisible recordings.
+Pupil Cloud is our web based storage and analysis platform. It is the recommended tool for handling your Pupil Invisible recordings.
 It makes it easy to store all your data securely in one place and it offers a variety of options for analysis.
 
 <div class="pb-4" style="display:flex;justify-content:center;">
@@ -26,19 +26,19 @@ It makes it easy to store all your data securely in one place and it offers a va
   </v-img>
 </div>
 
-Once a recording is uploaded to Pupil Cloud the processing pipeline begins adding several additional low-level data streams to it, including the 200 Hz gaze signal and fixation data. Some of this data (e.g. the 200 Hz gaze signal) is not available outside of Pupil Cloud.
+Once a recording is uploaded to Pupil Cloud the processing pipeline begins adding several additional low-level data streams to it - including the 200 Hz gaze signal and fixation data. Some of this data (e.g. the 200 Hz gaze signal) is not available outside of Pupil Cloud.
 
-From here, you can either download the raw data in a convenient format or use some of the available analysis algorithms to extract additional information from the data. You may for example use the [Face Mapper](/invisible/explainers/enrichments/#face-mapper) to automatically track when subjects are looking at faces, or the [Reference Image Mapper](/invisible/explainers/enrichments/#reference-image-mapper) to track when subjects are looking at objects of interest represented by a reference image.
+From here, you can either download the raw data in a convenient format or use some of the available analysis algorithms to extract additional information from the data. For example, use the [Face Mapper](/invisible/explainers/enrichments/#face-mapper) to automatically track when subjects are looking at faces. Or use the [Reference Image Mapper](/invisible/explainers/enrichments/#reference-image-mapper) to track when subjects are looking at objects of interest represented by a reference image.
 
 We have a strict [privacy policy](https://pupil-labs.com/legal/) that ensures your recording data is accessible only by you and those you explicitly grant access to. Pupil Labs will never access your recording data unless you explicitly instruct us to. If needed, additional privacy features are available that limit what data is stored in Pupil Cloud, like disabling scene video upload or blurring faces in the scene video (coming soon!).
 
-If enabled, recordings will be uploaded automatically to Pupil Cloud, such that no additional effort is needed for data logistics.
+If Cloud upload is enabled in Pupil Invisible Companion app, then recordings will be uploaded automatically to Pupil Cloud. No additional effort is required for data logistics.
 
 
 ## Pupil Player
-Alternatively, you can transfer recordings directly from the phone to a computer using a USB cable (see [Transfer recordings via USB?](/invisible/how-tos/tools/transfer-recordings-via-usb)). Recordings are saved in a binary format on the phone, which is not easily human-readable. We thus recommend exporting recordings to more convenient formats using Pupil Player.
+If you can't use Pupil Cloud, you can transfer recordings directly from the phone to a computer using a USB cable (see [Transfer recordings via USB?](/invisible/how-tos/tools/transfer-recordings-via-usb)). Recordings are saved in a binary format on the phone, which is not easily human-readable. We thus recommend exporting recordings to more convenient formats using Pupil Player.
 
-Pupil Player is open-source software that was initially developed for the Pupil Core headset. It allows to playback Pupil Invisible recordings and offers a subset of the available analysis features available in Pupil Cloud for offline computation.
+Pupil Player is open source software that was initially developed for the Pupil Core eye tracking headset. Pupil Player is designed to work with one recording at a time. Use it to playback Pupil Invisible recordings, export to CSV, and for available analysis features.  
 
 Detailed documentation on Pupil Player is available [here](/core/software/pupil-player).
 
@@ -58,12 +58,12 @@ Note that without uploading to Pupil Cloud, the 200 Hz gaze signal is not availa
 
 All data generated by Pupil Invisible can be monitored in real-time using the Pupil Invisible Monitor app. To access the app simply visit `pi.local` in your browser while being connected to the same WiFi network as the Companion device.
 
-It allows you to stream scene video and gaze data as well as to remotely control the Companion app to start/stop recordings and save events. This way you can fully control and monitor an ongoing recording session without having to directly interact with the Companion device carried by the subject.
+It allows you to stream scene video and gaze data as well as to remotely control the Companion app to start/stop recordings and save events. This way you can fully control and monitor an ongoing recording session without having to directly interact with the Companion Device carried by the subject.
 
 ## Real-Time API
-All data generated by Pupil Invisible is accessible to developers in real-time via our **Real-Time API**. Similar to the Pupil Invisible Monitor app, it allows you to stream data, remotely start/stop recordings and save events. The only requirement is that the Companion device and the computer using the API are connected to the same WiFi network.
+All data generated by Pupil Invisible is accessible to developers in real-time via our **Real-Time API**. Similar to the Pupil Invisible Monitor app, it allows you to stream data, remotely start/stop recordings and save events. The only requirement is that the Companion Device and the computer using the API are connected to the same WiFi network.
 
-This enables you to implement HCI applications with Pupil Invisible or to streamline your experiments by remotely controlling your devices and saving events automatically.
+This enables you to implement Human Computer Interaction (HCI) applications with Pupil Invisible or to streamline your experiments by remotely controlling your devices and saving events automatically.
 
 Check-out out our [real-time API tutorial](/invisible/getting-started/real-time-api) to learn more!
 
