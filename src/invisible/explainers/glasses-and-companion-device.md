@@ -12,7 +12,7 @@ description: Introduction to the Pupil Invisible Hardware and Companion app.
   </v-img>
 </div>
 
-The Pupil Invisible glasses attach with a USB-C cable to the Companion Phone for operation. The Phone is used to supply the glasses with power and receive the raw sensor data for storage and further processing. Using the app you can make recordings, preview real-time gaze and world video, stream data over the network, set up wearers, select templates, and preview and upload recordings to Pupil Cloud.
+The Pupil Invisible glasses connect to the Companion device (Android Phone) with a USB-C cable. The Companion device supplies the glasses with power and receives the raw sensor data for storage and further processing. Use the Pupil Invisible Companion App to make recordings, preview real-time gaze and world video, stream data over the network, set up wearers, select templates, and preview and upload recordings to Pupil Cloud.
 
 
 ## Pupil Invisible Glasses
@@ -32,20 +32,20 @@ While looking almost like normal glasses, the Pupil Invisible glasses are filled
  
 - **IMU**: A 6-degrees-of-freedom IMU is integrated into the right arm of the glasses. It captures the [inertia](/invisible/explainers/data-streams/#inertial-measurements) of the glasses, including translational acceleration, rotational speed, pitch and roll.
 
-- **Indicator LED**: An RGB LED is located in the front-right of the glasses to notify the wearer in case of issues. If for example, the phone is running out of battery or storage space, it will start blinking (the phone will also start vibrating!).
+- **Indicator LED**: An RGB LED is located in the front-right of the glasses to notify the wearer in case of issues. For example, if the Companion device is running out of battery or storage space, the indicator light will start blinking (the Companion device will also start vibrating!).
 
 - **Lenses**: A pair of exchangeable lenses sits in the front of the glasses. The glasses ship with clear plano lenses, as well as a pair of shaded lenses. Lenses with prescription values can be obtained from any optician or via our [lens kit](https://pupil-labs.com/products/invisible/accessories/). See our how-to guide on [exchanging lenses](/invisible/how-tos/pupil-invisible-glasses/exchange-lenses) for more information.
 
-- **USB-C Connector**: The connector is used to connect the glasses to the Companion phone. Always use the cable supplied with the phone to guarantee a stable connection!
+- **USB-C Connector**: The connector is used to connect the glasses to the Companion device. Always use the cable that was provided with your Pupil Invisible system to guarantee a stable connection!
 
-- **Serial Plaque**: The glasses' serial number can be found on a plaque at the tip of the left arm.
+- **Serial Plaque**: The glasses serial number can be found on a plaque at the tip of the left arm.
 
 :::danger
 The electronics and sensors are sensitive! Please follow our how-to guide when [cleaning and disinfecting](/invisible/how-tos/pupil-invisible-glasses/cleaning-and-disinfecting)  your glasses.
 :::
 
 ## Pupil Invisible Companion Device
-The companion device is a flagship Android smartphone. It is a regular phone that is not customized or modified in any way. We support a small number of models, carefully selected and tested for maximum stability and performance. Our Companion app is tuned to work with these particular models as we require full control over various low-level functions of the hardware. 
+The Companion device is a flagship Android smartphone. It is a regular phone that is not customized or modified in any way. We support a small number of models, carefully selected and tested for maximum stability and performance. The Pupil Invisible Companion app is tuned to work with these particular models as we require full control over various low-level functions of the hardware. 
 
 The models we currently support are OnePlus 6, OnePlus 8, and OnePlus 8T.
 
