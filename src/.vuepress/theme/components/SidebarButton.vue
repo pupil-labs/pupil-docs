@@ -32,7 +32,6 @@
 @media (max-width: 1024px) {
   .sidebar-button {
     display: block;
-    margin-right: 24px;
   }
 }
 </style>
