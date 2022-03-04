@@ -173,3 +173,21 @@ https://www.youtube.com/watch?v=HGMjJLnK2_4
 ```md
 <Youtube src="HGMjJLnK2_4"/>
 ```
+
+
+### Videos
+Use Videos component to quickly add local videos to markdown files.
+
+Just add the relative path of the video to the src prop of the component like so.
+Note that you need to use `require` in order for Webpack to correctly resolve the path.
+
+```md
+<Videos :src="require(`../../media/core/videos/worldcam-focus.mp4`)">
+```
+
+The default video type is `video/mp4` which is automatically added but in case you are using a different type of video, just update the type prop.
+
+
+```md
+<Videos :src="require(`../../media/core/videos/worldcam-focus.webm`)" type="video/webm">
+```
