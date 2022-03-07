@@ -60,7 +60,8 @@ export default ({ Vue, router, options }) => {
     '/#pupil-player' : '/core/software/pupil-player/',
     '/#network-plugins' : '/core/software/pupil-capture/#network-plugins',
     '/#interprocess-and-network-communication' : '/developer/core/network-api/',
-    '/#annotations' : '/core/software/pupil-capture/#annotations'
+    '/#annotations' : '/core/software/pupil-capture/#annotations',
+    '/invisible/user-guide/invisible-companion-app/#local-transfer' : '/invisible/how-tos/data-collection-with-the-companion-app/transfer-recordings-via-usb.html',
   }
 
   router.beforeEach((to, from, next) => {
