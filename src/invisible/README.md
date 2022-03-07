@@ -129,27 +129,27 @@ export default {
       explainers: [
         {
           title: "Data Streams",
-          link: "",
+          link: "/invisible/explainers/data-streams/",
         },
         {
           title: "Templates",
-          link: "",
+          link: "/invisible/explainers/basic-concepts/#templates",
         },
         {
           title: "Enrichments",
-          link: "",
+          link: "/invisible/explainers/enrichments/",
         },
         {
           title: "Fixations",
-          link: "",
+          link: "/invisible/explainers/data-streams/#fixations",
         },
         {
           title: "Workspaces",
-          link: "",
+          link: "/invisible/explainers/basic-concepts/#workspaces",
         },
         {
           title: "Blinks",
-          link: "",
+          link: "/invisible/explainers/data-streams/#blinks",
         }
       ]
     };
