@@ -36,7 +36,7 @@ If Cloud upload is enabled in the Pupil Invisible Companion app, then recordings
 
 
 ## Pupil Player
-If you can't use Pupil Cloud, you can transfer recordings directly from the phone to a computer using a USB cable (see [Transfer recordings via USB?](/invisible/how-tos/tools/transfer-recordings-via-usb)). Recordings are saved in a binary format on the phone, which is not easily human-readable. We thus recommend exporting recordings to more convenient formats using Pupil Player.
+If you can't use Pupil Cloud, you can transfer recordings directly from the phone to a computer using a USB cable (see [Transfer recordings via USB](/invisible/how-tos/data-collection-with-the-companion-app/transfer-recordings-via-usb.html)). Recordings are saved in a binary format on the phone, which is not easily human-readable. We thus recommend exporting recordings to more convenient formats using Pupil Player.
 
 Pupil Player is open source software that was initially developed for the Pupil Core eye tracking headset. Pupil Player is designed to work with one recording at a time. Use it to playback Pupil Invisible recordings, export to CSV, and for available analysis features.  
 
