@@ -258,7 +258,13 @@ function find(page, items, offset) {
   for (let i = 0; i < res.length; i++) {
     const cur = res[i];
     if (cur.type === "page" && cur.path === decodeURIComponent(page.path)) {
-      return res[i + offset];
+      const link = res[i + offset];
+      if (link !== undefined && link.type === "external") {
+        const href = res[i + offset + offset];
+        return href;
+      } else {
+        return link;
+      }
     }
   }
 }
