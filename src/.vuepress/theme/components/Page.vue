@@ -64,8 +64,8 @@
                 <a v-if="head.level == '2'" :href="`#${head.slug}`">
                   {{ head.title }}
                 </a>
-                <div style="padding-left: 12px">
-                  <a v-if="head.level == '3'" :href="`#${head.slug}`">
+                <div v-if="head.level == '3'" style="padding-left: 12px">
+                  <a :href="`#${head.slug}`">
                     {{ head.title }}
                   </a>
                 </div>
