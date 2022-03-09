@@ -64,8 +64,8 @@
                 <a v-if="head.level == '2'" :href="`#${head.slug}`">
                   {{ head.title }}
                 </a>
-                <div style="padding-left: 12px">
-                  <a v-if="head.level == '3'" :href="`#${head.slug}`">
+                <div v-if="head.level == '3'" style="padding-left: 12px">
+                  <a :href="`#${head.slug}`">
                     {{ head.title }}
                   </a>
                 </div>
@@ -258,7 +258,13 @@ function find(page, items, offset) {
   for (let i = 0; i < res.length; i++) {
     const cur = res[i];
     if (cur.type === "page" && cur.path === decodeURIComponent(page.path)) {
-      return res[i + offset];
+      const link = res[i + offset];
+      if (link !== undefined && link.type === "external") {
+        const href = res[i + offset + offset];
+        return href;
+      } else {
+        return link;
+      }
     }
   }
 }

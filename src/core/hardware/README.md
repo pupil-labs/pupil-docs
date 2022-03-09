@@ -54,9 +54,7 @@ We recommend setting the set screw so that you can still move the eye camera by 
 
 You can also tighten the set screw to fix the eye camera in place.
 
-<video width="100%" controls class="mb-5">
-  <source src="../../media/core/videos/eyecam-screw.mp4" type="video/mp4">
-</video>
+<Videos :src="require(`../../media/core/videos/eyecam-screw.mp4`)" />
 
 ::: tip
 <v-icon large color="info">info_outline</v-icon>
@@ -68,9 +66,7 @@ Before you calibrate, make sure to properly adjust the headset to get optimal ey
 ### Focus World Camera
 Set the focus for the distance at which you will be calibrating by rotating the camera lens.
 
-<video width="100%" controls class="mb-5">
-  <source src="../../media/core/videos/worldcam-focus.mp4" type="video/mp4">
-</video>
+<Videos :src="require(`../../media/core/videos/worldcam-focus.mp4`)" />
 
 ### No Focus 200Hz Eye Camera
 
@@ -86,9 +82,7 @@ Set the focus for the distance at which you will be calibrating by rotating the 
 ### Focus 120Hz Eye Camera
 If you have a 120Hz eye camera, make sure the eye camera is in focus. Twist the lens focus ring of the eye camera with your fingers or lens adjuster tool to bring the eye camera into focus.
 
-<video width="100%" controls class="mb-5">
-  <source src="../../media/core/videos/eye-adjust.mp4" type="video/mp4">
-</video>
+<Videos :src="require(`../../media/core/videos/eye-adjust.mp4`)" />
 
 ## Additional Parts
 

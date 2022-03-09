@@ -3,7 +3,6 @@
     <li
       v-for="(item, i) in items"
       :key="i"
-      :id="`${item.title.split(' ').join('-').toLowerCase()}`"
       :class="i === openGroupIndex ? 'page-active' : ''"
     >
       <SidebarGroup

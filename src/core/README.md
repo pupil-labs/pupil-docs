@@ -52,25 +52,18 @@ You will see confidence graphs in the top for each eye. 1.0 = high confidence pu
 Tip - move your head around while looking at a fixed position. This enables you to check that your pupil is visible in the video even at extreme angles.
 :::
 
-<video width="100%" controls class="mb-5">
-  <source src="../media/core/videos/pd.mp4" type="video/mp4">
-</video>
-
+<Videos :src="require(`../media/core/videos/pd.mp4`)" />
 
 ## 4. Calibration
 In order to know what someone is looking at, we must establish a mapping between pupil and gaze positions. This is what we call calibration. The calibration process establishes a mapping from pupil to gaze coordinates.
 
-<video width="100%" controls class="mb-5">
-  <source src="../media/core/videos/clb-hd.mp4" type="video/mp4">
-</video>
+<Videos :src="require(`../media/core/videos/clb-hd.mp4`)" />
 
 #### Screen Marker Calibration Method
 Click `c` on the world screen or press `c` on the keyboard to start calibrate.
 Follow the marker on the screen with your eyes and try to keep your head stationary.
 
-<video width="100%" controls class="mb-5">
-  <source src="../media/core/videos/clb-s.mp4" type="video/mp4">
-</video>
+<Videos :src="require(`../media/core/videos/clb-s.mp4`)" />
 
 ::: tip
 Tip - Want to calibrate with a physical marker? Check out alternative calibration choreographies <a href="https://docs.pupil-labs.com/core/software/pupil-capture/#calibration">here</a>.
@@ -84,10 +77,7 @@ Pupil Capture will save the world video stream and all the corresponding gaze da
 
 **Start/Stop recording**: Press the `r` key on your keyboard or press the circular `R` button on the left hand side of the world window. The elapsed recording time will appear next to the `R` button.
 
-<video width="100%" controls class="mb-5">
-  <source src="../media/core/videos/rec.mp4" type="video/mp4">
-</video>
-
+<Videos :src="require(`../media/core/videos/rec.mp4`)" />
 
 ## 6. Locate Saved Recording
 
