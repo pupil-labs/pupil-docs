@@ -180,8 +180,8 @@ export default {
   display: inline-block;
   position: relative;
   width: 300px;
-  margin: 0 1.25rem;
 
+  // margin: 0 1.25rem;
   input {
     cursor: text;
     width: 100%;
@@ -192,7 +192,7 @@ export default {
     border-radius: 2rem;
     font-size: 12px;
     line-height: 2rem;
-    padding: 0 0.5rem 0 2rem;
+    padding: 0 1rem 0 1rem;
     outline: none;
     transition: all 0.2s ease;
     // background #fff url(search.svg) 0.6rem 0.5rem no-repeat
@@ -256,14 +256,6 @@ export default {
 @media all and (-ms-high-contrast: none) {
   .search-box input {
     height: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .search-box {
-    input {
-      left: 1rem;
-    }
   }
 }
 </style>

@@ -76,9 +76,7 @@ Pupil Core's algorithms automatically detect the participant's pupil. It runs tw
 
 3D detection uses a 3D model of the eye(s) that updates based on observations of the eye. This enables the system to compensate for movements of the Pupil Core eye tracking headset on the participant's face (also known slippage). To build up an initial model, we recommend to look around your field of view when putting on the headset.
 
-<video width="100%" controls class="mb-5">
-  <source src="../../media/core/videos/pd.mp4" type="video/mp4">
-</video>
+<Videos :src="require(`../../media/core/videos/pd.mp4`)" />
 
 ### Fine-tuning Pupil Detection
 As a first step it is recommended to check the eye camera resolution as some parameters are resolution dependent.
@@ -101,15 +99,11 @@ Keep in mind that pupil size values are defined in pixels and are therefore depe
 
 Pupil Core headsets have two types of cameras attached. One camera records the subject's field of vision - we call this the `world camera`. Additionally there are one or more cameras recording the participant's eye movements - we call these the `eye cameras`. The data collected during the calibration period is used afterwards to correlate the world camera with the eye cameras.
 
-<video width="100%" controls class="mb-5">
-  <source src="../../media/core/videos/clb-hd.mp4" type="video/mp4">
-</video>
+<Videos :src="require(`../../media/core/videos/clb-hd.mp4`)" />
 
-Pupil Core headsets come in a variety of configurations. Calibration can be conducted with a monocular or binocular eye camera setup.
+Pupil Core headsets come in a variety of configurations. Calibration can be conducted with a monocular or binocular eye camera setup.>
 
-<video width="100%" controls class="mb-5">
-  <source src="../../media/core/videos/clb-mobo.mp4" type="video/mp4">
-</video>
+<Videos :src="require(`../../media/core/videos/clb-mobo.mp4`)" />
 
 <div style="display:flex;" class="pb-4">
     <p style="flex-grow:1;display:flex;justify-content:center;">Monocular</p>
@@ -139,9 +133,7 @@ All calibrations require a participant to look at a specific point in the real w
 #### Screen Marker Calibration Choreography
 This is the default choreography, and a quick way to get started.
 
-<video width="100%" controls class="mb-5">
-  <source src="../../media/core/videos/clb-s.mp4" type="video/mp4">
-</video>
+<Videos :src="require(`../../media/core/videos/clb-s.mp4`)" />
 
 1. Select the `Screen Marker` choreography
 2. Select your `Monitor` (if more than 1 monitor)
@@ -194,9 +186,8 @@ This paper introduces and evaluates this type of single marker calibration - <co
 #### Natural Features Calibration Choreography
 This choregraphy is used only in special situations.
 
-<video width="100%" controls class="mb-5">
-  <source src="../../media/core/videos/clb-natural.mp4" type="video/mp4">
-</video>
+<Videos :src="require(`../../media/core/videos/clb-natural.mp4`)" />
+
 
 1. Select `Natural Features Calibration`
 1. Press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to start calibration.
@@ -217,9 +208,7 @@ With the 2D Gaze Mapping, you should easily be able to achieve tracking accuracy
 * Gaze Prediction Accuracy can be estimated with an accuracy test. Start the accuracy by running a normal calibration procedure but press the `T` button in the world window and **not** the `C` button. After completing the test, the plugin will display the error between reference points and matching gaze positions that were recorded during the accuracy test.
 
 ## Recording
-<video width="100%" controls class="mb-5">
-  <source src="../../media/core/videos/rec.mp4" type="video/mp4">
-</video>
+<Videos :src="require(`../../media/core/videos/rec.mp4`)" />
 
 Press `r` on your keyboard or press the blue circular `R` button on the left hand side of the world window to start recording. You will see red text with the elapsed time of recording next to the `R` button. To stop recording, press `r` on your keyboard or press the `R` button on screen.
 
@@ -261,9 +250,7 @@ with at least one subscription is transferred.
 #### Network API plugin
 The `Network API` plugin provides a high level interface to control Pupil Capture over the network (e.g. start/stop a recording). It also functions as the entry point to the broadcast infrastructure.
 
-<video width="100%" controls class="mb-5">
-  <source src="../../media/core/videos/pr.mp4" type="video/mp4">
-</video>
+<Videos :src="require(`../../media/core/videos/pr.mp4`)" />
 
 The section `Pupil Remote` allows you to specify the network interface. By default, Pupil will listen on the primary network interface. You can specify a custom port, or even choose a different interface.
 
@@ -400,9 +387,7 @@ When placing your markers please follow the guidelines:
 Surfaces can be defined with Pupil Capture in real-time, or post-hoc with Pupil Player.
 In both cases the necessary steps are as follows:
 
-<video width="100%" controls class="mb-5">
-  <source src="../../media/core/videos/srf-tracking.mp4" type="video/mp4">
-</video>
+<Videos :src="require(`../../media/core/videos/srf-tracking.mp4`)" />
 
 *   Prepare your environment as described above.
 *   Turn on the `Surface Tracker` plugin .

@@ -1,13 +1,22 @@
 <template lang="pug">
 div
-  v-toolbar.elevation-1(app, fixed, clipped-left, height="60px")
+  v-toolbar.elevation-1.gap-container(app, fixed, clipped-left, height="60px")
     SidebarButton(@toggle-sidebar="$emit('toggle-sidebar')")
     a.align-center.d-flex(
       href="https://pupil-labs.com",
       target="_blank",
       rel="noopener"
     )
-      img(:src="$withBase('/logos/pl_logo.svg')")
+      img.sm-hidden-down(
+        :src="$withBase('/logos/pl_logo.svg')",
+        alt="Pupil Labs logo"
+      )
+      img.sm-hidden-up(
+        :src="$withBase('/logos/pl_logomark.svg')",
+        height="52px",
+        width="auto",
+        alt="Pupil Labs logo"
+      )
     v-spacer
     AlgoliaSearchBox(:options="algolia")
     v-spacer.lg-hidden-down
