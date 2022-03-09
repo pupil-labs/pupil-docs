@@ -2,46 +2,78 @@
   <v-content class="page">
     <slot name="top" />
 
-    <!-- <div
-      v-if="haveTitle"
-      style="display:flex;flex-direction:column;float:right;padding:60px 60px 24px;position:sticky;top:120px;"
-    >
-      <p>Contents</p>
-      <template v-for="head in $page.headers">
-        <a v-if="head.level == '3'" :href="`#${head.slug}`">{{ head.title }}</a>
-      </template>
-    </div>-->
-
-    <Content class="theme-default-content" />
-
-    <div class="theme-default-content" style="padding:0 2.5rem;">
-      <v-divider></v-divider>
-    </div>
-
-    <footer class="page-edit">
-      <div class="edit-link" v-if="editLink">
-        <a :href="editLink" target="_blank" rel="noopener noreferrer">{{ editLinkText }}</a>
-        <OutboundLink />
+    <div class="gridCol" id="observer-root">
+      <div>
+        <Content class="theme-default-content" />
+        <v-divider class="mt-4"></v-divider>
+        <footer class="page-edit justify-space-between" style="display: flex">
+          <div class="edit-link" v-if="editLink">
+            <a
+              class="caption--1"
+              :href="editLink"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ editLinkText }}
+              <OutboundLink />
+            </a>
+          </div>
+          <div class="last-updated caption--1" v-if="lastUpdated">
+            <span class="prefix">{{ lastUpdatedText }}:</span>
+            <span class="time">{{ lastUpdated }}</span>
+          </div>
+        </footer>
+        <div class="page-nav" v-if="prev || next">
+          <v-layout>
+            <div>
+              <v-btn
+                class="ml-0 page-nav-btn"
+                round
+                color="primary"
+                v-if="prev"
+                :to="prev.path"
+                :id="prev.title"
+              >
+                <v-icon left dark>arrow_back</v-icon>
+                Back
+              </v-btn>
+            </div>
+            <v-spacer></v-spacer>
+            <v-btn
+              class="mr-0 page-nav-btn"
+              round
+              color="primary"
+              v-if="next"
+              :to="next.path"
+              :id="next.title"
+            >
+              Next
+              <v-icon right dark>arrow_forward</v-icon>
+            </v-btn>
+          </v-layout>
+        </div>
       </div>
-
-      <div class="last-updated" v-if="lastUpdated">
-        <span class="prefix">{{ lastUpdatedText }}:</span>
-        <span class="time">{{ lastUpdated }}</span>
+      <div v-if="haveTitle" class="pageContent">
+        <div class="page-toc">
+          <div style="display: grid; gap: 8px; padding: 8px 0">
+            <template v-for="head in $page.headers">
+              <div
+                :key="head.slug"
+                style="font-size: 12px; line-height: normal"
+              >
+                <a v-if="head.level == '2'" :href="`#${head.slug}`">
+                  {{ head.title }}
+                </a>
+                <div style="padding-left: 12px">
+                  <a v-if="head.level == '3'" :href="`#${head.slug}`">
+                    {{ head.title }}
+                  </a>
+                </div>
+              </div>
+            </template>
+          </div>
+        </div>
       </div>
-    </footer>
-
-    <div class="page-nav pb-5 my-4" v-if="prev || next">
-      <v-layout>
-        <v-btn class="ml-0" round color="primary" v-if="prev" :to="prev.path">
-          <v-icon left dark>arrow_back</v-icon>
-          {{ prev.title || prev.path }}
-        </v-btn>
-        <v-spacer></v-spacer>
-        <v-btn class="mr-0" round color="primary" v-if="next" :to="next.path">
-          {{ next.title || next.path }}
-          <v-icon right dark>arrow_forward</v-icon>
-        </v-btn>
-      </v-layout>
     </div>
 
     <slot name="bottom" />
@@ -53,6 +85,26 @@ import { resolvePage, outboundRE, endingSlashRE } from "../util";
 
 export default {
   props: ["sidebarItems"],
+
+  data() {
+    return {
+      observer: null,
+    };
+  },
+
+  mounted() {
+    this.initObserver();
+  },
+
+  watch: {
+    $route(to, from) {
+      this.initObserver();
+    },
+  },
+
+  beforeDestroy() {
+    this.observer.disconnect();
+  },
 
   computed: {
     lastUpdated() {
@@ -100,7 +152,7 @@ export default {
         editLinks,
         docsDir = "",
         docsBranch = "master",
-        docsRepo = repo
+        docsRepo = repo,
       } = this.$site.themeConfig;
 
       if (docsRepo && editLinks && this.$page.relativePath) {
@@ -121,21 +173,49 @@ export default {
         `Edit this page`
       );
     },
-
+    //
     haveTitle() {
       if (this.$page.headers) {
         let pageHeaders = this.$page.headers;
         for (let i = 0; i < pageHeaders.length; i++) {
           const headers = pageHeaders[i];
-          if (headers.level == 3) {
+          if (headers.level == 2 || headers.level == 3) {
             return true;
           }
         }
       }
-    }
+    },
   },
 
   methods: {
+    initObserver() {
+      setTimeout(() => {
+        this.observer = new IntersectionObserver(this.observeHeader, {
+          threshold: 1.0,
+        });
+        document.querySelectorAll("h2[id]").forEach((el) => {
+          this.observer.observe(el);
+        });
+      }, 200);
+    },
+
+    observeHeader(entries) {
+      entries.forEach((entry) => {
+        const id = entry.target.getAttribute("id");
+        if (entry.isIntersecting) {
+          const div = document.querySelector(`div > a[href="#${id}"]`);
+          if (div) {
+            div.classList.add("active");
+          }
+        } else if (!entry.isIntersecting) {
+          const div = document.querySelector(`div > a[href="#${id}"]`);
+          if (div) {
+            div.classList.remove("active");
+          }
+        }
+      });
+    },
+
     createEditLink(repo, docsRepo, docsDir, docsBranch, path) {
       const bitbucket = /bitbucket.org/;
       if (bitbucket.test(repo)) {
@@ -160,8 +240,8 @@ export default {
         (docsDir ? docsDir.replace(endingSlashRE, "") + "/" : "") +
         path
       );
-    }
-  }
+    },
+  },
 };
 
 function resolvePrev(page, items) {
@@ -195,56 +275,113 @@ function flatten(items, res) {
 </script>
 
 <style lang="stylus">
-@require '../styles/wrapper.styl'
+@require '../styles/wrapper.styl';
 
-.page
-  padding 60px 0 0 330px !important
-  padding-bottom 2rem
-  display block
-  background-color white
+.page-toc {
+  position: sticky;
+  top: 120px;
+  border-left: 1px solid #1263CC;
+  padding: 0 20px;
 
-.page-edit
-  @extend $wrapper
-  padding-top 1rem
-  padding-bottom 1rem
-  overflow auto
-  .edit-link
-    display inline-block
-    a
-      color lighten($textColor, 25%)
-      margin-right 0.25rem
-  .last-updated
-    float right
-    font-size 0.9em
-    .prefix
-      font-weight 500
-      color lighten($textColor, 25%)
-    .time
-      font-weight 400
-      color #aaa
+  a {
+    color: black;
 
-.page-nav
-  @extend $wrapper
-  padding-top 24px
-  padding-bottom 24px
-  .inner
-    min-height 2rem
-    margin-top 0
-    border-top 1px solid $borderColor
-    padding-top 1rem
-    overflow auto // clear float
-  .next
-    float right
+    &.active {
+      color: #1263cc;
+      font-weight: bold;
+    }
 
-@media (max-width: $MQNarrow)
-  .page
-    padding-left unset !important
-  .page-edit
-    .edit-link
-      margin-bottom .5rem
-    .last-updated
-      font-size .8em
-      float none
-      text-align left
+    &:hover {
+      color: #1263cc;
+    }
+  }
+}
 
+.gridCol {
+  display: grid;
+  position: relative;
+  grid-template-columns: minmax(0, 4fr) minmax(200px, 1fr);
+  gap: 80px;
+  padding: 2rem 2.5rem;
+}
+
+.page {
+  padding: 60px 0 0 330px !important;
+  padding-bottom: 2rem;
+  display: block;
+  background-color: white;
+}
+
+.page-edit {
+  @extend $wrapper;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  overflow: auto;
+
+  .edit-link {
+    display: inline-block;
+
+    a {
+      color: lighten($textColor, 25%);
+      margin-right: 0.25rem;
+    }
+  }
+
+  .last-updated {
+    // font-size 0.9em
+    .prefix {
+      font-weight: 500;
+      color: lighten($textColor, 25%);
+    }
+
+    .time {
+      font-weight: 400;
+      color: #aaa;
+    }
+  }
+}
+
+.page-nav {
+  @extend $wrapper;
+  padding-top: 24px;
+  padding-bottom: 24px;
+
+  .inner {
+    min-height: 2rem;
+    margin-top: 0;
+    border-top: 1px solid $borderColor;
+    padding-top: 1rem;
+    overflow: auto; // clear float
+  }
+
+  .next {
+    float: right;
+  }
+}
+
+@media (max-width: 1024px) {
+  .pageContent {
+    display: none !important;
+  }
+
+  .gridCol {
+    grid-template-columns: 1fr;
+  }
+
+  .page {
+    padding-left: unset !important;
+  }
+
+  .page-edit {
+    .edit-link {
+      margin-bottom: 0.5rem;
+    }
+
+    .last-updated {
+      font-size: 0.8em;
+      float: none;
+      text-align: left;
+    }
+  }
+}
 </style>

@@ -17,17 +17,22 @@
 </template>
 
 <style lang="stylus">
-.sidebar-button
-  cursor pointer
-  display none
-  padding 0.6rem
-  .icon
-    display block
-    width 24px
-    height 24px
+.sidebar-button {
+  cursor: pointer;
+  display: none;
+  padding: 0.6rem;
 
-@media (max-width: $MQNarrow)
-  .sidebar-button
-    display block
-    margin-right 24px
+  .icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .sidebar-button {
+    display: block;
+    margin-right: 24px;
+  }
+}
 </style>

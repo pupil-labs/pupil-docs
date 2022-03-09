@@ -1,40 +1,53 @@
 ---
-title: "Get Started!"
+title: "Pupil Labs Documentation"
 home: true
-subtitle: "Welcome to Pupil Labs documentation. Get up and running with your Pupil Labs eye tracking tools. Read user guides, developer docs, connect with us via chat!"
-description: "Welcome to Pupil Labs documentation. Get up and running with your Pupil Labs eye tracking tools. Read user guides, developer docs, connect with us via chat!"
-featured_products: [
-  {
-    title: "Pupil Invisible",
-    link: "/invisible/",
-    src: "invisible/pi_companion.jpg" ,
-    alt: "Pupil Invisible Companion"
-  },
-  {
-    title: "Pupil Core",
-    link: "/core/",
-    src: "core/imgs/core_connect.jpg",
-    alt: "Pupil Core headset"
-  },
-  {
-    title: "VR/AR Add-Ons",
-    link: "/vr-ar/",
-    src: "vr-ar/imgs/vive_explode_grey.jpg",
-    alt: "HTC Vive 200Hz Binocular add-on"
-  },
-  {
-    title: "Pupil Cloud",
-    link: "/cloud/",
-    src: "cloud/imgs/cloud_oneplus.jpg",
-    alt: "Pupil Cloud platform"
-  }
-]
+subtitle: "Official docs for users getting started with their Pupil Labs eye tracking glasses and for developers working on eye tracking applications and integrations."
+top_links:
+  [
+    {
+      title: "Pupil Invisible and Pupil Cloud",
+      link: "/invisible/",
+      src: "invisible/pi_glasses.jpg",
+      description: "Learn how to setup Pupil Invisible eye tracking glasses and collect real world data. Connect to Pupil Cloud, manage your data, analyze, and take your research to the next level.",
+      alt: "Pupil Invisible Companion",
+      btn_text: "Enter documentation",
+    },
+    {
+      title: "Pupil Core",
+      link: "/core/",
+      src: "core/imgs/core_headset.jpg",
+      description: "Learn how to setup Pupil Core eye tracking headset and collect data with Pupil Capture. Use Pupil Player to explore your data in greater detail.",
+      alt: "Pupil Core headset",
+      btn_text: "Enter documentation",
+    },
+  ]
+bottom_links:
+  [
+    {
+      title: "Pupil VR/AR",
+      link: "/vr-ar/",
+      description: "Learn how to setup Pupil Labs VR/AR add-ons and start developing your VR/AR research, applications, and integrations.",
+      alt: "Pupil VR/AR",
+      btn_text: "Enter documentation",
+    },
+    {
+      title: "Discord",
+      href: "https://pupil-labs.com/chat",
+      description: "Chat with the Pupil Labs team and community on discord.",
+      alt: "Pupil Labs Discord channel",
+      btn_text: "Chat now",
+      logo: "discord.svg",
+    },
+  ]
 ---
 
-::: slot dev
-# Developer Documentation
+::: slot articles
 
-Overview of language, code structure and general conventions.
+## What is Eye Tracking?
 
-<v-btn round dark to="/developer/" class="bg-link-blue ml-0"> Read documentation </v-btn>
+How does an eye tracker work? What applications are there for eye tracking? Why do we move our eyes in the first place? Check out our intro article to orient yourself in the world of eye tracking. 
+
+<div>
+  <v-btn round dark to="https://pupil-labs.com/blog/news/what-is-eye-tracking/" class="bg-link-blue ma-0 elevation-0"> Read more</v-btn>
+</div>
 :::

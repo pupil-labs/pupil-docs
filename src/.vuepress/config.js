@@ -65,19 +65,89 @@ module.exports = {
     lastUpdated: "Last Updated",
     sidebar: {
       '/invisible/': [
-        '',
-        'hardware/',
         {
-          title: 'User Guide',
+          title: "Overview",
+          path: "/invisible/",
+          collapsable: false,
+        },
+        {
+          title: 'Getting Started',
           children: [
-            'user-guide/intro',
-            'user-guide/invisible-companion-app',
-            'user-guide/invisible-monitor',
-            'user-guide/analysis',
-            'user-guide/troubleshooting',
-            'user-guide/academic-citation',
+            'getting-started/first-recording',
+            'getting-started/understand-the-ecosystem',
+            {
+              title: "Analysis in Pupil Cloud",
+              path: "getting-started/analyse-recordings-in-pupil-cloud",
+            }
           ]
-        }
+        },
+        {
+          title: 'Explainers',
+          children: [
+            'explainers/basic-concepts',
+            'explainers/data-streams',
+            'explainers/enrichments',
+            'explainers/glasses-and-companion-device',
+            'explainers/publications',
+          ]
+        },
+        {
+          title: 'How-Tos',
+          children: [
+            {
+              title: 'Pupil Invisible Glasses',
+              children: [
+                'how-tos/pupil-invisible-glasses/exchange-lenses',
+                'how-tos/pupil-invisible-glasses/clean-and-disinfect',
+                'how-tos/pupil-invisible-glasses/attach-the-head-strap',
+              ]
+            },
+            {
+              title: 'Data Collection',
+              children: [
+                // 'how-tos/data-collection-with-the-companion-app/achieve-super-precise-time-sync-using-events',
+                // 'how-tos/data-collection-with-the-companion-app/apply-offset-correction',
+                'how-tos/data-collection-with-the-companion-app/monitor-your-data-collection-in-real-time',
+                'how-tos/data-collection-with-the-companion-app/transfer-recordings-via-usb',
+              ]
+            },
+            // {
+            //   title: 'Pupil Cloud',
+            //   children: [
+            //     'how-tos/pupil-cloud/organize-a-study-using-templates',
+            //     'how-tos/pupil-cloud/use-workspaces-to-organize-data',
+            //     'how-tos/pupil-cloud/make-complex-search-queries',
+            //   ]
+            // },
+            // {
+            //   title: 'Advanced Analysis',
+            //   children: [
+            //     'how-tos/advanced-analysis/gaze-metrics-in-aois/',
+            //   ]
+            // },
+            {
+              title: 'Integrate with the Real-Time API',
+              children: [
+                'how-tos/integrate-with-the-real-time-api/introduction/',
+                'how-tos/integrate-with-the-real-time-api/track-your-experiment-progress-using-events/',
+                // 'how-tos/integrate-with-the-real-time-api/implement-hci-applications-with-screen-tracking',
+                'how-tos/integrate-with-the-real-time-api/legacy-api',
+                // 'how-tos/integrate-with-the-real-time-api/write-your-own-client',
+              ]
+            },
+          ]
+        },
+        {
+          title: 'Reference',
+          children: [
+            'reference/export-formats',
+            {
+              title: "Real-time API",
+              path: "https://pupil-labs-realtime-api.readthedocs.io/en/latest/api/index.html",
+            }
+          ],
+        },
+        "troubleshooting"
       ],
       '/core/': [
         '',
@@ -94,7 +164,17 @@ module.exports = {
             'academic-citation',
           ]
         },
-        'diy/'
+        'diy/',
+        {
+          title: 'Developer',
+          children: [
+            'developer/overview',
+            'developer/network-api',
+            'developer/recording-format',
+            'developer/plugin-api',
+            'developer/pye3d',
+          ]
+        },
 
       ],
       '/vr-ar/': [
@@ -103,28 +183,10 @@ module.exports = {
         'hololens',
         'rift',
         // 'bt300',
-      ],
-      '/cloud/': [
-        '',
-        'enrichments/',
-      ],
-      '/developer/': [
-        '',
-        {
-          title: 'Core',
-          children: [
-            'core/overview',
-            'core/network-api',
-            'core/recording-format',
-            'core/plugin-api',
-            'core/pye3d',
-          ]
-        },
-        'invisible/',
-        'vr-ar/'
+        'developer',
       ],
     },
-    sidebarDepth: 2,
+    sidebarDepth: 1,
     repo: 'https://github.com/pupil-labs/pupil-docs-website',
     repoLabel: 'See on Github',
     docsRepo: 'https://github.com/pupil-labs/pupil-docs',
@@ -133,7 +195,7 @@ module.exports = {
     editLinks: true,
     editLinkText: 'Edit this page',
     search: false,
-    searchPlaceholder: 'Search',
+    searchPlaceholder: 'Search documentation',
     algolia: {
       appId: 'BANVRGB2LF',
       apiKey: 'e19afb93d6e94c2bd3d5e594b4967e0a',

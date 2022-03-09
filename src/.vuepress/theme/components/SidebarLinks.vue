@@ -4,9 +4,8 @@
       v-for="(item, i) in items"
       :key="i"
       :id="`${item.title.split(' ').join('-').toLowerCase()}`"
-      :style="i === 0 ? 'margin-top: 16px;' : '' "
+      :class="i === openGroupIndex ? 'page-active' : ''"
     >
-      <v-divider v-if="i > 0" class="my-3"></v-divider>
       <SidebarGroup
         v-if="item.type === 'group'"
         :item="item"
@@ -15,7 +14,12 @@
         :depth="depth"
         @toggle="toggleGroup(i)"
       />
-      <SidebarLink v-else :sidebarDepth="sidebarDepth" :item="item" />
+      <SidebarLink
+        v-else
+        :sidebarDepth="sidebarDepth"
+        :item="item"
+        @click.native="$emit('toggle')"
+      />
     </li>
   </ul>
 </template>
@@ -33,12 +37,12 @@ export default {
   props: [
     "items",
     "depth", // depth of current sidebar links
-    "sidebarDepth" // depth of headers to be extracted
+    "sidebarDepth", // depth of headers to be extracted
   ],
 
   data() {
     return {
-      openGroupIndex: 0
+      openGroupIndex: 0,
     };
   },
 
@@ -49,7 +53,7 @@ export default {
   watch: {
     $route() {
       this.refreshIndex();
-    }
+    },
   },
 
   methods: {
@@ -66,8 +70,8 @@ export default {
 
     isActive(page) {
       return isActive(this.$route, page.regularPath);
-    }
-  }
+    },
+  },
 };
 
 function resolveOpenGroupIndex(route, items) {
@@ -75,7 +79,7 @@ function resolveOpenGroupIndex(route, items) {
     const item = items[i];
     if (
       item.type === "group" &&
-      item.children.some(c => c.type === "page" && isActive(route, c.path))
+      item.children.some((c) => c.type === "page" && isActive(route, c.path))
     ) {
       return i;
     }
