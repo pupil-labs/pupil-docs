@@ -143,7 +143,7 @@ module.exports = {
             'reference/export-formats',
             {
               title: "Real-time API",
-              path: "https://pupil-labs-realtime-api.readthedocs.io/en/latest/api/index.html",
+              path: "https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/index.html",
             }
           ],
         },
