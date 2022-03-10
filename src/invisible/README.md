@@ -79,7 +79,7 @@ This section contains a range of how-tos that address specific topics and challe
 ## Reference
 This section is where you will find reference for [export formats](/invisible/reference/export-formats), which you can consult when working with any data coming out of Pupil Cloud.
 
-It also contains a full API reference for the [real-time API client](https://pupil-labs-realtime-api.readthedocs.io/en/latest/api/index.html).
+It also contains a full API reference for the [real-time API client](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/index.html).
 
 <router-link class="underline" to="/invisible/reference/export-formats">Jump to section</router-link>
 
