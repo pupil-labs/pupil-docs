@@ -134,6 +134,8 @@ This enrichment automatically maps gaze data onto faces so that you can determin
 
 Additionally, this enrichment also calculates the location of the most important facial landmarks in the image for each face: left eye, right eye, nose, left mouth corner, and right mouth corner.
 
+The face detection algorithm used under the hood for this enrichment is [RetinaFace](https://github.com/deepinsight/insightface/tree/master/detection/retinaface).
+
 
 ## Gaze Overlay
 <div class="pb-4" style="display:flex;justify-content:center;">
