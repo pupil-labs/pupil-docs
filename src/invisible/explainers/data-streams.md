@@ -49,7 +49,7 @@ Two primary types of eye movements exhibited by the visual system are fixations 
 
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
-    :src="require('../../media/invisible/explainers/fixations.png')"
+    :src="require('../../media/invisible/explainers/fixations.jpg')"
     max-width=100%
   >
   </v-img>
