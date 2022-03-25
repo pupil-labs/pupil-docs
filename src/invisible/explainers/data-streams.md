@@ -55,7 +55,7 @@ The two primary types of movement the eye is performing are fixations and saccad
   </v-img>
 </div>
 
-Fixations are calculated automatically in Pupil Cloud after uploading a recording. They are available as part of the [Raw Data Exporter](/invisible/explainers/enrichments/#raw-data-exporter) enrichment downloads. The downloads for gaze mapping enrichments ([Reference Image Mapper](/invisible/explainers/enrichments/#reference-image-mapper), [Marker Mapper](/invisible/explainers/enrichments/#marker-mapper)) also include "mapped fixations".
+Fixations are calculated automatically in Pupil Cloud after uploading a recording. They are available as part of the [Raw Data Exporter](/invisible/reference/export-formats.html#fixations-csv) enrichment downloads. The downloads for gaze mapping enrichments ([Reference Image Mapper](/invisible/reference/export-formats.html#fixations-csv-3), [Marker Mapper](/invisible/reference/export-formats.html#fixations-csv-2)) also include "mapped fixations".
 
 The fixation detection algorithm we have developed was specifically designed for head-mounted eye trackers. Traditionally, fixation detection algorithms are assuming the head of the subject to be stationary, which is however usually not the case when using head-mounted eye trackers.
 If there is head movement during a fixation, the vestibulo-ocular reflex (VOR) is performing a counter-movement with the eye to keep the gaze stable on the point of fixation.
@@ -64,7 +64,11 @@ Our algorithm is compensating for VOR movements and is thus correctly classifyin
 The algorithm will soon be released as open-source. Further, we are currently working on a white paper that describes the algorithm in detail and evaluates it thoroughly.
 
 ## Blinks
-Blink detection is coming soon!
+During blinks the eye is briefly covered by the eye lids, which serves the purpose of spreading tears across the cornea. The blink rate and blink duration are however also correlated with cognitive processes, which makes it an interesting physiological signal.
+
+Blinks are detected automatically in Pupil Cloud after uploading a recording. They are available as part of the [Raw Data Exporter](/invisible/reference/export-formats.html#blinks-csv) enrichment downloads.
+
+The blink detection algorithm is operating directly on the eye video to detect the movement patterns of blinks. It will soon be released as open-source.
 
 ## Scene Video
 The scene camera is attached to the left temple of the Pupil Invisible glasses. It records video at 30 Hz and 1088x1080px resolution with a field of view of 82°x82°.
