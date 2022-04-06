@@ -85,7 +85,7 @@ the Face Mapper enrichment on the entire recording. But, we want to be more spec
 
 A. In the right sidebar, type in the name of the event.  
 B. Events will appear in the right sidebar.  
-C. Events will also appear in the the timeline as small dots. 
+C. Events will also appear in the timeline as small dots. 
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
@@ -121,7 +121,11 @@ Select 'Face Mapper' from the dropdown menu. Name the enrichment (A) and define 
   </v-img>
 </div>
 
-Et Voila! The enrichment has been calculated and the results are ready to right-click and download. Check out the download format [here](/invisible/reference/export-formats).
+Now we can run the enrichment. To run the enrichment, click on the arrow icon in the right-side of the enrichment. 
+Depending on how long your section is, this may take a few moments to complete.
+
+Once the enrichment has finished, the results will be ready to right-click and download. Check out the download format
+[here](/invisible/reference/export-formats).
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
