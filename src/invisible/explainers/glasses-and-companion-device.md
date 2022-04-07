@@ -54,8 +54,7 @@ If you want to replace or add an extra Companion device you can purchase it [dir
 ## Companion Device Updates
 ### Companion App
 Make sure to update the Companion app on a regular basis. The latest version will always be available on the 
-[Play Store](https://play.google.com/store/apps/details?id=com.pupillabs.invisiblecomp). You can check which version 
-is currently installed on your device in the Companion app settings. 
+[Play Store](https://play.google.com/store/apps/details?id=com.pupillabs.invisiblecomp).
 
 ### Android OS
 We ship each Companion Device with a specific Android Version, carefully tested to ensure robustness and stability.
