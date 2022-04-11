@@ -92,13 +92,14 @@ A narrow angle lens and a wide angle lens. The default lens is the wide angle le
 
 The world camera lens are interchangeable, so you can swap between the two lenses provided for wide angle or narrow angle field of view.
 
-<Youtube src="TDa3A8L1i4o"/>
-
-
 ::: warning
 <v-icon large color="warning">error_outline</v-icon>
-If you change lenses you need to recalibrate the camera to update intrinsics. Otherwise 3d calibration and accuracy test will not work properly!
+If you change lenses, you will need to re-estimate the [camera intrinsics](/core/terminology/#camera-intrinsics). Otherwise, 3d calibration and subsequently gaze
+estimation will be inaccurate. Check out [these instructions](/core/software/pupil-capture/#camera-intrinsics-estimation) 
+for details of how to re-estimate the camera intrinsics.
 :::
+
+<Youtube src="TDa3A8L1i4o"/>
 
 ### Eye Camera Arm Extender
 If you need to adjust the eye cameras beyond the built in adjustment range, you can use the orange arm extenders that are shipped with your Pupil headset.
