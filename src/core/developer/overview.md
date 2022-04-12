@@ -103,7 +103,7 @@ You can see the [algorithm implementation here](https://github.com/pupil-labs/pu
 and the [matching evaluation here](https://github.com/pupil-labs/pupil-matching-evaluation).
 :::
 
-### Convert Pupil Time to System Time
+## Convert Pupil Time to System Time
 ::: tip
 <v-icon large color="info">info_outline</v-icon>
 Converting Pupil Time to System Time can helpful if you have other data recorded using System Time on the same 
@@ -153,7 +153,7 @@ Now you know the basics, why not follow
 [this in-depth tutorial](https://github.com/pupil-labs/pupil-tutorials/blob/master/08_post_hoc_time_sync.ipynb) 
 that shows how to convert Pupil Time to System Time for different Pupil Core exported files.
 
-### Pupil Datum Format
+## Pupil Datum Format
 
 The pupil detector generates `pupil` data from `eye` images. In addition to the `pupil`
 topic and the `timestamp` (inherited from the eye image), the pupil detector adds fields most importantly:
@@ -220,7 +220,7 @@ see the Python representation of a 3d pupil datum:
 
 ```
 
-### Gaze Datum Format
+## Gaze Datum Format
 
 Gaza data is based on one (monocular) or two (binocular) pupil positions. The gaze
 mapper is automatically setup after calibration and maps pupil positions into the world
@@ -265,7 +265,7 @@ accessed using the `base_data` key.
 }
 ```
 
-### Surface Datum Format
+## Surface Datum Format
 
 Surface data is published when the [surface tracker](/core/software/pupil-capture/#surface-tracking)
 is able to detect a defined surface. It includes
