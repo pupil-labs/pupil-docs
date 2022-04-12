@@ -28,7 +28,6 @@ In most cases you can simply [download Pupil Core app bundles](https://github.co
 ## Terminology
 There are a lot of new terms that are specific to eye and to Pupil Core. We have compiled a small list in the [terminology section](/core/terminology).
 
-
 ## Timing & Data Conventions
 Pupil Capture is designed to work with multiple cameras that free-run at different
 frame rates that may not be in sync. World and eye images are timestamped and any
@@ -50,6 +49,59 @@ Each data point should have at least two keys `topic` and `timestamp`. Each data
 1. `topic`: Identifies the type of the object. We recommend that you specify subtypes,
 separated by a `.`
 2. `timestamp`: [Pupil time](/core/terminology/#pupil-time) at which the datum was generated.
+
+## Pupil Data Matching
+Because Pupil Capture receives data from free-running eye cameras with sampling rates that may not be in sync, it employs 
+a pupil data matching algorithm to decide which video frames should be used for each gaze estimation.
+
+### Eye Video Frame Timestamp Offset
+When an eye video frame is received by Pupil Capture and assigned a pupil timestamp, a fixed offset of 5 ms is applied to
+it to account for transmission delay from camera to Pupil software. Note, this transmission delay is not guaranteed 
+to be constant, and the variability in the delay causes most of the FPS variance seen, especially on Windows.
+
+### Pupil and Gaze Datums
+When raw eye video frames arrive at Pupil Capture, the pupil detection algorithm is run and pupil datums are generated. 
+For binocular gaze, the pupil data matching algorithm tries to match **two** pupil datums to send to the gaze 
+mapper for gaze estimation. In some case (described below) this is not possible and gaze is mapped monocularly. 
+
+Each gaze datum thus has a `base_data` field that refers two pupil datums that were used in its construction: 
+`timestamp-id timestamp-id...`. The gaze datum is assigned the average of these timestamps. For monocular gaze, 
+`base_data` refers to one pupil datum and is intuitively assigned its corresponding pupil datum timestamp.
+
+### Matching algorithm
+In each Pupil Capture eye process, the following occurs:
+1. Record the exposure of frame `F_i` at time `T_i` (software timestamped on arrival with 5 ms offset applied)
+2. Run pupil detection algorithm on `F_i`, thus generating a pupil datum `P_i` with timestamp `T_i`
+3. Send `P_i` to Pupil Capture World process
+
+In the Pupil Capture world process, the following occurs:
+1. Receive and queue `P_i` (there are separate queues for each eye; queues are automatically sorted by time)
+2. Get oldest pupil datums from each queue; right eye: `P_0` and left eye: `P_1` (does not remove data from queue)
+3. Match `P_0` and `P_1` and remove oldest datum from its respective queue if the following conditions are met:
+   <ol type="a">
+   <li>Both pupil datums have a confidence of 0.6 or higher </li>
+   <li>`abs(T_0 - T_1)` is smaller than a specific temporal cutoff (calculated dynamically based on the pupil data present 
+        in each queue; represents effective frame rate of each eye process)</li>
+   </ol>
+4. If conditions 3a and 3b are not met, map older `P_i` monocularly and remove datum from queue. Leave newer datum in 
+   queue
+5. Repeat at step 2 for each new pupil datum
+
+### Important Points
+- The matching algorithm will always map at least the oldest pupil datum
+- Whether the datum is mapped monocularly or binocularly depends on the confidence of the pair as well as their temporal 
+  distance
+- Given sufficient computational resources, all data is mapped; no data is dropped in this process
+- The latency of base data to gaze time is variable, e.g. ~1-6 ms
+- Single pupil datums can be matched more than once (i.e. a sample from eye0 could be matched with 3 samples from eye1 
+  to generate a gaze datum
+  - This effectively leads to super-sampling of the pupil data, which is why you can see more data points than one would expect in the gaze positions file – this is ultimately necessary since the algorithm needs to run in real-time and there is only limited knowledge about future data
+  - In contrast, sub-sampling uses multiple values to build one new value   
+    
+:::tip
+You can see the [algorithm implementation here](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/gaze_mapping/matching.py)
+and the [matching evaluation here](https://github.com/pupil-labs/pupil-matching-evaluation).
+:::
 
 ### Convert Pupil Time to System Time
 ::: tip
