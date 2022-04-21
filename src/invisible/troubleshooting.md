@@ -32,6 +32,13 @@ Potential problems include:
 1. Are you using a **OnePlus 6** device?
    - Make sure the **Companion app is locked** to the Android app overview. If it is not locked, you should see a red lock symbol in the top-left of the companion app's home screen. You can find instructions on how to lock the app [here](/invisible/user-guide/invisible-companion-app/#enable-application-lock "Pupil Invisible Companion OnePlus App Lock").
 
+#### 'Always open Invisible Companion when...' dialog keeps opening when I plug in the Glasses!
+This is an Android bug that requires a defaults reset of the Pupil Invisible Companion App:
+1. Long press on the Pupil Invsible Companion App in the home screen.
+1. Click `App Info` then `Advanced` followed by `Open by default`. 
+1. Click `Clear defaults`. (No recordings will be lost.)
+1. Open the App and follow the dialoges.
+
 ## Pupil Cloud
 
 #### My enrichment download contains only an `info.json` file and nothing else!
