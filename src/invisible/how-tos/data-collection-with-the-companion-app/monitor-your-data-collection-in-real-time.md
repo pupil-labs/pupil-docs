@@ -14,7 +14,9 @@ description: Links to Pupil Invisible Monitor app.
 
 Using the **Pupil Invisible Monitor** app you can easily monitor you data collection in real-time and remote control all your Pupil Invisible glasses from another device. It's a web-app that can be opened in any browser on a computer, tablet or phone! The only requirement is that the Pupil Invisible Companion device and the device you use to access the Monitor app are connected to the same network.
 
-To access the Monitor app make sure the Pupil Invisible Companion app is running and visit the page [pi.local](http://pi.local) on your monitoring device.
+To access the Monitor app make sure the Pupil Invisible Companion app is running and visit the page [pi.local:8080](http://pi.local:8080) on your monitoring device.
+
+**Pro-Tip**: The Pupil Invisible Companion app can display a QR code that gets you straight to the monitor website. Just select `Streaming` in the menu!
 
 
 ## The App's User Interface
