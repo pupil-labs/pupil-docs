@@ -77,4 +77,4 @@ Navigate to the **Recordings view** and click the recording you just made to pla
 
 <v-divider></v-divider>
 
-Now that yave have made a recording, let's explore what you can do with it! In the next article, you will get an overview of the software ecosystem at your disposal.
+Now that you have made a recording, let's explore what you can do with it! In the next article, you will get an overview of the software ecosystem at your disposal.
