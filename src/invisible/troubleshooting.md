@@ -21,6 +21,15 @@ Potential problems include:
 - Low storage space remaining on the Companion Device.
 - Unstable connection to the Pupil Invisible Glasses device during a recording.
 
+#### I accidentally updated my OnePlus 6 to an incompatible Android version!
+You need to rollback the Android version to be compatible again. Please note that all data on the phone will be lost during the rollback, so make backups accordingly.
+
+To execute the rollback, follow these steps:
+1. Download the ROM package [here](https://drive.google.com/file/d/1X8SVUH7UU7g0dcf-iWWXTPtMWzGguhUA/view?usp=sharing).
+1. Copy the ROM package to the mobile phone storage root directory.
+1. Go to Settings -> system updates -> top right corner icon -> local upgrade -> click on the installation package -> immediately upgrade -> system upgrade to 100%.
+1. Select Reboot system now.
+ 
 #### The scene camera and eye cameras are not being recorded or recognized in the companion app!
 1. Make sure you use the included black USB-C to USB-C connector cable rather than a third-party cable. Third-party USB cables vary widely in their quality and can lead to loss of connection.
 1. Are you using a **OnePlus 6** device?
