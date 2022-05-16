@@ -44,6 +44,6 @@ On **macOS**, you need the <a href="https://www.android.com/filetransfer/" alt="
 
 :::tip
 <v-icon large color="info">info_outline</v-icon>
-Recordings transferred locally will contain gaze data at **66 Hz** (estimated in real-time on the Companion Device). Only 
+Recordings transferred locally will contain gaze data at **~120 Hz** (estimated in real-time on the Companion Device). Only 
 recordings uploaded to Pupil Cloud are densified to 200 Hz.
 :::
