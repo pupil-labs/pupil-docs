@@ -51,6 +51,10 @@ The models we currently support are OnePlus 6, OnePlus 8, and OnePlus 8T.
 
 If you want to replace or add an extra Companion device you can purchase it [directly from us](https://pupil-labs.com/products/invisible/accessories/) or from any other distributor. The companion app is free and can be downloaded from the [Play Store](https://play.google.com/store/apps/details?id=com.pupillabs.invisiblecomp).
 
+Using a fully charged OnePlus 8 device you get around 150 minutes of continuous recording time. You can extend this duration by simultaneously charging the phone during a recording using a powered USB-C hub. With this setup you connect the hub to the phone, and the Pupil Invisible device and a power source to the hub.
+
+Note that not every USB-C hub is compatible with Android! One hub we have tested successfully is available [here](https://www.amazon.de/dp/B08CKXNJZS/ref=pe_27091401_487027711_TE_SCE_dp_1). Also note that the original OnePlus charger is not compatible with regular hubs (including the linked one) because it uses non-standard power delivery. Other regular UBS charger should work though.
+
 ## Companion Device Updates
 ### Companion App
 Make sure to update the Companion app on a regular basis. The latest version will always be available on the 
