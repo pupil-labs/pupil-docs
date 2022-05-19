@@ -53,7 +53,7 @@ If you want to replace or add an extra Companion device you can purchase it [dir
 
 Using a fully charged OnePlus 8 device you get around 150 minutes of continuous recording time. You can extend this duration by simultaneously charging the phone during a recording using a powered USB-C hub. With this setup you connect the hub to the phone, and the Pupil Invisible device and a power source to the hub.
 
-Note that not every USB-C hub is compatible with Android! One hub we have tested successfully is available [here](https://www.amazon.de/dp/B08CKXNJZS/ref=pe_27091401_487027711_TE_SCE_dp_1). Also, note that the original OnePlus charger is not compatible with regular hubs (including the linked one) because it uses non-standard power delivery. Other regular USB chargers should work though.
+Note that not every USB-C hub is compatible with Android! One hub we have tested successfully is available [here](https://www.amazon.de/dp/B08CKXNJZS/). Also, note that the original OnePlus charger is not compatible with regular hubs (including the linked one) because it uses non-standard power delivery. Other regular USB chargers should work though.
 
 ## Companion Device Updates
 ### Companion App
