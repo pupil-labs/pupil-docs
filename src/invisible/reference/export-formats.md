@@ -53,6 +53,18 @@ This file contains meta-information on the recording.
 Scene video is contained in a file following the following naming scheme:
 ```<beginning of section ID>_<section start time>-<section end time>.mp4```
 
+#### scene_camera.json
+This file contains the camera intrinsics of the used scene camera. The values are determined via calibration of every camera during manufacturing.
+
+| Field | Description | 
+| -------- | -------- | 
+| **camera_matrix** | The camera matrix of the scene camera.     |
+| **dist_coefs** | The distortion coefficients of the scene camera. The order of the values is `(k1, k2, p1, p2, k3, k4, k5, k6)` following [OpenCV's distortion model](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#ga3207604e4b1a1758aa66acb6ed5aa65d). |
+| **rotation_matrix** | Extrinsic rotation matrix describing how the scene camera is positioned in relation to the eye cameras. For more details please see section III-B of the [white paper](https://arxiv.org/pdf/2009.00508.pdf).     |
+| **serial_number** | The serial number of the scene camera. This number can also be found on the back of the scene camera module. Please note that this number is different from the serial number of the frame, which can be found on the tip of the left temple of the Pupil Invisible frame.     |
+| **version** | The version of the intrinsics data format.     |
+
+
 
 #### world_timestamps.csv
 This file contains the timestamps of every world video frame.
@@ -89,6 +101,8 @@ This file contains [gaze](/invisible/explainers/data-streams/#gaze) data in worl
 | **worn** | This value indicates whether the Pupil Invisible Glasses have been worn by a subject at this point in time. `1.0` indicates that it has been worn, while `0.0` indicates that it has not been worn. Added in version 2 of this enrichment.    |
 | **fixation id** | If this gaze sample belongs to a fixation event, this is the corresponding id of the fixation. Otherwise, this field is empty.     |
 | **blink id** | If this gaze samples belongs to a blink event, this is the corresponding id of the blink. Otherwise this field is empty.     |
+| **azimuth [deg]** | The [azimuth](https://en.wikipedia.org/wiki/Horizontal_coordinate_system) of the gaze ray in relation to the scene camera in degrees.     |
+| **elevation [deg]** | The [elevation](https://en.wikipedia.org/wiki/Horizontal_coordinate_system) of the gaze ray in relation to the scene camera in degrees.     |
 
 
 #### fixations.csv
