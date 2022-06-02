@@ -21,11 +21,16 @@ Potential problems include:
 - Low storage space remaining on the Companion Device.
 - Unstable connection to the Pupil Invisible Glasses device during a recording.
 
-#### I accidentally updated my OnePlus 6 to an incompatible Android version!
+#### I accidentally updated my Companion device to an incompatible Android version!
 You need to rollback the Android version to be compatible again. Please note that all data on the phone will be lost during the rollback, so make backups accordingly.
 
 To execute the rollback, follow these steps:
-1. Download the ROM package [here](https://drive.google.com/file/d/1X8SVUH7UU7g0dcf-iWWXTPtMWzGguhUA/view?usp=sharing).
+1. Download the ROM package for your corresponding phone model
+
+   - [OnePlus 6](https://drive.google.com/file/d/1X8SVUH7UU7g0dcf-iWWXTPtMWzGguhUA/view?usp=sharing)
+   - [OnePlus 8](https://oxygenos.oneplus.net/OnePlus8Oxygen_15.E.42_OTA_0420_all_2202141439_a219946519874834.zip)
+   - [OnePlus 8T](https://oxygenos.oneplus.net/OnePlus8TOxygen_15.E.31_OTA_0310_all_2202182356_edc3927f4900402e.zip)
+
 1. Copy the ROM package to the mobile phone storage root directory.
 1. Go to Settings -> system updates -> top right corner icon -> local upgrade -> click on the installation package -> immediately upgrade -> system upgrade to 100%.
 1. Select Reboot system now.
