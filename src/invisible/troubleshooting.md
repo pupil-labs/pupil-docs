@@ -28,8 +28,8 @@ To execute the rollback, follow these steps:
 1. Download the ROM package for your corresponding phone model
 
    - [OnePlus 6](https://drive.google.com/file/d/1X8SVUH7UU7g0dcf-iWWXTPtMWzGguhUA/view?usp=sharing)
-   - [OnePlus 8](https://oxygenos.oneplus.net/OnePlus8Oxygen_15.E.42_OTA_0420_all_2202141439_a219946519874834.zip)
-   - [OnePlus 8T](https://oxygenos.oneplus.net/OnePlus8TOxygen_15.E.31_OTA_0310_all_2202182356_edc3927f4900402e.zip)
+   - [OnePlus 8](https://drive.google.com/file/d/1URONngNET7r9IEhCjSZnpYEc7ZDIMLjZ/view?usp=sharing)
+   - [OnePlus 8T](https://drive.google.com/file/d/1UupRPipCrQ27TtR-d626Y8y3WNqcRtZf/view?usp=sharing)
 
 1. Copy the ROM package to the mobile phone storage root directory.
 1. Go to Settings -> system updates -> top right corner icon -> local upgrade -> click on the installation package -> immediately upgrade -> system upgrade to 100%.
