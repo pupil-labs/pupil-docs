@@ -1,2 +1,3 @@
 README.md
-data/museum
+data/*
+!data/example_frame.png
