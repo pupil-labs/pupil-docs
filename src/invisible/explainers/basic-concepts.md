@@ -113,4 +113,4 @@ No, currently this is not possible.
 
 **Can the ownership of a workspace be transferred?**
 
-Like with moving recordings between workspaces, this is not currently possible.
+This is not currently possible in the app. Please make a request if this is needed via email to `info@pupil-labs.com`.
