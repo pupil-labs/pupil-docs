@@ -21,15 +21,49 @@ Potential problems include:
 - Low storage space remaining on the Companion Device.
 - Unstable connection to the Pupil Invisible Glasses device during a recording.
 
-#### I accidentally updated my OnePlus 6 to an incompatible Android version!
+#### I accidentally updated my Companion device to an incompatible Android version!
 You need to rollback the Android version to be compatible again. Please note that all data on the phone will be lost during the rollback, so make backups accordingly.
 
-To execute the rollback, follow these steps:
+::: tip
+<v-icon large color="info">info_outline</v-icon>
+The instructions below require you to copy files to your phone. If you are not familiar
+with this procedure, see steps 1-5 from [these instructions](/invisible/how-tos/data-collection-with-the-companion-app/transfer-recordings-via-usb.html#transfer-exported-recordings-to-a-computer).
+:::
+
+**OnePus 6**
+
+If you upgraded to Android 10 or newer and want to roll back, follow these steps:
 1. Download the ROM package [here](https://drive.google.com/file/d/1X8SVUH7UU7g0dcf-iWWXTPtMWzGguhUA/view?usp=sharing).
 1. Copy the ROM package to the mobile phone storage root directory.
 1. Go to Settings -> system updates -> top right corner icon -> local upgrade -> click on the installation package -> immediately upgrade -> system upgrade to 100%.
 1. Select Reboot system now.
- 
+
+**OnePlus 8/8T**
+
+If you upgraded to Android 12 or newer and want to roll back, follow these steps:
+1. Download the ROM package for your corresponding phone model to your computer
+
+   - [OnePlus 8](https://drive.google.com/file/d/1WtZ7bVwWPwYIGq4aWadeG-7MLu-KXhIS/view?usp=sharing)
+   - [OnePlus 8T](https://drive.google.com/file/d/1K2VI-R4gGN8mdS6FxLiRo48ICF_UBB7A/view?usp=sharing)
+
+1. Download the [official Rollback APK](https://oxygenos.oneplus.net/OPLocalUpdate_For_Android12.apk) to your computer
+1. Copy the downloaded ROM and APK to the top level of the device's Internal Storage (do not put it inside of any folders)
+1. On the phone,
+   1. open the pre-installed `Files` or `File Manager` application,
+   1. navigate to the device's Internal Storage, and
+   1. select the `OPLocalUpdate_For_Android12.apk`.
+
+   This should start the install process for the application.
+   (You might need to grant install permissions to the `Files` application. A corresponding dialogue will guide
+   you if this is the case.)
+1. Open the newly installed `System Update` app
+1. Tap the ⚙️ icon in the top right
+1. Select the downgrade ROM from step 4
+1. Read and confirm the warning
+1. Enter the phone's pin
+1. Wait until the system update has been installed successfully
+1. Tap `Reboot`
+
 #### The scene camera and eye cameras are not being recorded or recognized in the companion app!
 1. Make sure you use the included black USB-C to USB-C connector cable rather than a third-party cable. Third-party USB cables vary widely in their quality and can lead to loss of connection.
 1. Are you using a **OnePlus 6** device?

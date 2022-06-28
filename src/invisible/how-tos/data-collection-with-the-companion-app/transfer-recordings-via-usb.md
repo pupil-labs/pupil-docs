@@ -9,7 +9,7 @@ To transfer recordings directly to a computer you first need to export the recor
 
 Recordings downloaded directly from the phone will be in a raw binary format that is difficult to handle. Finally, you should thus export the recordings using Pupil Player to more convenient formats.
 
-**Export from Invisible Companion App**
+#### Export from Invisible Companion App
 1. Open recordings view in Invisible Companion App
 2. Select desired recording/s
 3. Export:
@@ -18,7 +18,7 @@ Recordings downloaded directly from the phone will be in a raw binary format tha
    - For multiple recordings, click the download symbol at the bottom of the screen    
 4. The app via show you a dialog indicating to which folder the recordings will be exported too. Confirm this by clicking `Yes`.
     
-**Transfer Exported Recordings to a Computer**
+#### Transfer Exported Recordings to a Computer
 1. Connect your OnePlus device to a PC via USB (using the USB cable supplied)
 2. Slide down from the top of the device's home-screen and click on 'Android System - USB charging this device'
 3. Click on 'Tap for more options'
