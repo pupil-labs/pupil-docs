@@ -6,8 +6,6 @@ contents/css
 contents/js/*.js
 assets/rev_manifest
 rev_manifest.json
-changelog.txt #mgg just to write the commit message
-
 
 # Compiled Object files, Static and Dynamic libs (Shared Objects)
 *.o
