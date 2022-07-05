@@ -6,6 +6,8 @@ contents/css
 contents/js/*.js
 assets/rev_manifest
 rev_manifest.json
+changelog.txt #mgg just to write the commit message
+
 
 # Compiled Object files, Static and Dynamic libs (Shared Objects)
 *.o
@@ -221,3 +223,4 @@ cython_debug/
 #.idea/
 
 # End of https://www.toptal.com/developers/gitignore/api/jupyternotebooks,python
+changelog.txt

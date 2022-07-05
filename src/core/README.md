@@ -12,7 +12,7 @@ Follow the steps below to get up and running and become familiar with the workfl
 <v-divider></v-divider>
 
 ## 1. Put on Pupil Core
-Put on Pupil Core headset and plug it in to your computer.
+Put on the Pupil Core headset and plug it into your computer.
 
 Make sure there is space between the headset frame and your forehead. Headsets are adjustable and shipped with additional parts. For more information head over to the [Hardware](/core/hardware/ "Pupil Core hardware documentation") section of the docs.
 
@@ -42,7 +42,7 @@ Pupil Core uses a 3D model of the eye to improve the pupil detection. Adjust the
 <Youtube src="7wuVCwWcGnE"/>
 
 
-Slowly move your eyes around until the eye model (green circle) adjusted to fit your eye ball. If everything is set up properly, you should see a green circle around the eye ball and a red circle around the pupil with a red dot in the center.
+Slowly move your eyes around until the eye model (green circle) adjusted to fit your eyeball. If everything is set up properly, you should see a green circle around the eyeball and a red circle around the pupil with a red dot in the center.
 
 Next, check the world window.
 
@@ -60,7 +60,7 @@ In order to know what someone is looking at, we must establish a mapping between
 <Videos :src="require(`../media/core/videos/clb-hd.mp4`)" />
 
 #### Screen Marker Calibration Method
-Click `c` on the world screen or press `c` on the keyboard to start calibrate.
+Click `c` on the world screen or press `c` on the keyboard to start calibrating.
 Follow the marker on the screen with your eyes and try to keep your head stationary.
 
 <Videos :src="require(`../media/core/videos/clb-s.mp4`)" />
@@ -83,14 +83,14 @@ Pupil Capture will save the world video stream and all the corresponding gaze da
 
 By default, each recording will live in its own unique data folder contained in the recordings folder.
 
-The default recordings directory will organize all recordings by date. Each time you press record a new folder will be created. Below we show an example of 3 recordings that have been made on the same date `001`, `002`, and `003`:
+The default recordings directory will organize all recordings by date. Each time you press record a new folder will be created. Below we show an example of 3 recordings that have been made on the same date `000`, `001`, and `002`:
 
 ```
 recordings/
   2019-09-30/
+    000/
     001/
     002/
-    003/
 ```
 
 ## 7. Visualize in Pupil Player
