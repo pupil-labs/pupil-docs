@@ -72,3 +72,9 @@ If you purchased your device from a third-party distributor, you'll need to ensu
 supported Android versions are as follows:
 - On **OnePlus 6**: Android 8 and 9
 - On **OnePlus 8** and **8T**: Android 11
+
+:::tip
+Should you have upgraded to an incompatible Android version by accident, you have the
+option to rollback to a compatible version. You can find the instructions
+[here](/invisible/troubleshooting/#i-accidentally-updated-my-companion-device-to-an-incompatible-android-version)
+:::
