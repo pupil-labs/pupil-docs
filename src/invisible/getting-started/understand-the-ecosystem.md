@@ -43,7 +43,7 @@ Pupil Player is open source software that was initially developed for the Pupil 
 Detailed documentation on Pupil Player is available [here](/core/software/pupil-player).
 
 ::: tip
-Note that without uploading to Pupil Cloud, the 200 Hz gaze signal is not available in a recording. Instead, only the real-time gaze signal computed by the phone is available, which is limited to ~65 Hz (using a OnePlus 8 phone).
+Note that without uploading to Pupil Cloud, the 200 Hz gaze signal is not available in a recording. Instead, only the real-time gaze signal computed by the phone is available, which is limited to ~120 Hz (using a OnePlus 8 phone).
 :::
 
 
