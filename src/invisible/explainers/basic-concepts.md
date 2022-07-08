@@ -114,3 +114,11 @@ No, currently this is not possible.
 **Can the ownership of a workspace be transferred?**
 
 This is not currently possible in the app. Please make a request if this is needed via email to `info@pupil-labs.com`.
+
+### Demo Workspace
+
+Every user of Pupil Cloud has access to the Demo Workspace. It contains example projects that can be explored to understand all the features of Pupil Cloud and see them in the context of actual projects. Over time, we will add more projects that illustrate additional features and use-cases.
+
+The existing projects in the demo workspace can not be edited. However, you can create new projects using the existing recordings and within those you can create enrichments and events, and play around with all the features as you like. Things you create and edit in the demo workspace are only visible to you and nobody else.
+
+You can not upload your own recordings to the demo workspace. You can delete all the things you have created, but non of the pre-existing projects or recordings.
