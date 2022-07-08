@@ -18,7 +18,7 @@ jobs:
       - name: Convert Jupyter notebooks
         run: |
           shopt -s globstar
-          python -m jupyter nbconvert --to markdown **/*.ipynb --ExtractOutputPreprocessor.enabled=False
+          jupyter-nbconvert --to markdown **/*.ipynb --ExtractOutputPreprocessor.enabled=False
           shopt -u globstar
         shell: bash
 
