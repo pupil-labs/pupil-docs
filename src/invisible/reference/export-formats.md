@@ -224,7 +224,7 @@ This file contains fixation events detected in the gaze data stream and mapped t
 | **fixation id** | Identifier of fixation within the section. The id corresponds to the fixation id of the raw unmapped data.    |
 | **start timestamp [ns]** | UTC timestamp in nanoseconds of the start of the fixation.     |
 | **end timestamp [ns]** | UTC timestamp in nanoseconds of the end of the fixation.     |
-| **duration [ms]** | Duration of the fixation in milliseconds.     |
+| **duration [ms]** | Duration of the fixation in milliseconds. The maximum is 32767ms     |
 | **fixation detected in reference image** | Boolean indicating whether or not the fixation was inside or outside of the reference image.    |
 | **fixation x [px]** | Float value representing the x-coordinate of the fixation in reference image coordinates. This position is the average of all mapped gaze samples within the fixation.     |
 | **fixation y [px]** | Same as "fixation x [px]" but for the y-coordinate.     |
