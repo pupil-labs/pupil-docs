@@ -23,7 +23,7 @@ Wearers are the people wearing your Pupil Invisible glasses. In a typical study,
 
 Every wearer is assigned a unique ID, such that you can edit the name and profile picture at any time without mixing up your recordings.
 
-In some cases, it can make sense to use the offset correction feature to compensate for systematic offsets in the predictions of individual wearers (see [Apply offset correction](/invisible/how-tos/tools/apply-offset-correction)). The offset you set will be saved in the wearer profile and applied to future recordings of this subject automatically.
+In some cases, it can make sense to use the offset correction feature to compensate for systematic offsets in the predictions of individual wearers. To access this feature click on the name of the currently selected wearer on the home screen and then click "Adjust". The offset you set will be saved in the wearer profile and applied to future recordings of this subject automatically.
 
 
 ## Templates
