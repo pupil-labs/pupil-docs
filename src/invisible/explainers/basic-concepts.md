@@ -23,7 +23,7 @@ Wearers are the people wearing your Pupil Invisible glasses. In a typical study,
 
 Every wearer is assigned a unique ID, such that you can edit the name and profile picture at any time without mixing up your recordings.
 
-In some cases, it can make sense to use the offset correction feature to compensate for systematic offsets in the predictions of individual wearers (see [Apply offset correction](/invisible/how-tos/tools/apply-offset-correction)). The offset you set will be saved in the wearer profile and applied to future recordings of this subject automatically.
+In some cases, it can make sense to use the offset correction feature to compensate for systematic offsets in the predictions of individual wearers. To access this feature click on the name of the currently selected wearer on the home screen and then click "Adjust". The offset you set will be saved in the wearer profile and applied to future recordings of this subject automatically.
 
 
 ## Templates
@@ -114,3 +114,11 @@ No, currently this is not possible.
 **Can the ownership of a workspace be transferred?**
 
 This is not currently possible in the app. Please make a request if this is needed via email to `info@pupil-labs.com`.
+
+### Demo Workspace
+
+Every user of Pupil Cloud has access to the [Demo Workspace](https://cloud.pupil-labs.com/workspace/78cddeee-772e-4e54-9963-1cc2f62825f9). It contains example projects that can be explored to understand all the features of Pupil Cloud and see them in the context of actual projects. Over time, we will add more projects that illustrate additional features and use-cases.
+
+The existing projects in the demo workspace can not be edited. However, you can create new projects using the existing recordings and within those you can create enrichments and events, and play around with all the features as you like. Things you create and edit in the demo workspace are only visible to you and nobody else.
+
+You can not upload your own recordings to the demo workspace. You can delete all the things you have created, but non of the pre-existing projects or recordings.
