@@ -207,6 +207,12 @@ With the 2D Gaze Mapping, you should easily be able to achieve tracking accuracy
 * Calibration accuracy can be visualized with the `Accuracy Visualizer` plugin. If the `Accuracy Visualizer` plugin is loaded, it will display the residual between reference points and matching gaze positions that were recorded during calibration.
 * Gaze Prediction Accuracy can be estimated with an accuracy test. Start the accuracy by running a normal calibration procedure but press the `T` button in the world window and **not** the `C` button. After completing the test, the plugin will display the error between reference points and matching gaze positions that were recorded during the accuracy test.
 
+**Accuracy** is calculated as the average angular offset (distance) (in degrees of visual angle)
+between fixation locations and the corresponding locations of the fixation targets.
+
+**Precision** is calculated as the Root Mean Square (RMS) of the angular distance (in degrees of visual angle)
+between successive samples during a fixation.
+
 ## Recording
 <Videos :src="require(`../../media/core/videos/rec.mp4`)" />
 
