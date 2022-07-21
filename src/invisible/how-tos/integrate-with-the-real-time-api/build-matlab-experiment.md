@@ -41,10 +41,10 @@ All images displayed in the demo are from [Unsplash](https://unsplash.com/). We 
 
 ## How to run the demo
 Download the wrapper and the demo code, either cloning the repository or downloading the .zip file from 
-[here](https://github.com/pupil-labs/realtime-matlab-experiment).
+[here](https://github.com/pupil-labs/realtime-matlab-experiment/archive/refs/heads/main.zip).
 
 ```git
-git clone 
+git clone https://github.com/pupil-labs/realtime-matlab-experiment.git
 ```
 
 Ensure Psychtoolbox is installed and that it runs properly. Confirm that your Pupil Invisible is connected to the same 
