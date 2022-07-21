@@ -35,7 +35,7 @@ pip install nbconvert
 ```
 and run the following command
 ```
-python -m jupyter nbconvert --to markdown **/*.ipynb --ExtractOutputPreprocessor.enabled=False
+jupyter-nbconvert --to markdown **/*.ipynb --ExtractOutputPreprocessor.enabled=False
 ```
 
 Start local development with:
