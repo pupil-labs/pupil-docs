@@ -162,16 +162,16 @@ There are several arguments that can be used to control the wrapper:
 - The default is `status`.
  See the section [Running the demo](#running-the-demo) on how to use them.
 - `EventName`: followed by a string with the annotation name for the event, default is `Test event`.
-- `URLhost`: followed by a string containing the URL of Pupil Invisible, default is `http://pi.local:8080/`. It's generally good practice to call directly to the URL. 
-Nevertheless, Matlab does resolve the DNS and stores it in the cache, so you will only notice a delay in the first call.   
+- `URLhost`: followed by a string containing the URL of Pupil Invisible, default is `http://pi.local:8080/`. It's generally good practice to call directly to the URL. Nevertheless, Matlab does resolve the DNS and stores it in the cache, so you will only notice a delay in the first call.   
 
 ## Notes
 :::tip
 <v-icon large color="info">info_outline</v-icon>
 The current wrapper function does not support RTSP protocol. Therefore it is not possible to stream video or gaze positions. If you need this feature, please directly use the [Realtime Network API](https://pupil-labs-realtime-api.readthedocs.io/en/stable/guides/under-the-hood.html?highlight=RTSP). 
 :::
-:::tip
-<v-icon large color="info">info_outline</v-icon>
+
+::: warning
+<v-icon large color="warning">info_outline</v-icon>
 The average response time for HTTP requests to Pupil Invisible in MATLAB is 0.33 +- 0.14 seconds (on a 1000 requests test). 
 This time might vary depending on your connection and computer load. If you need better time accuracy, check out our 
 [Python API](https://pupil-labs-realtime-api.readthedocs.io/en/stable/examples/index.html).
