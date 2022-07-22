@@ -113,7 +113,7 @@ Did you use **Safari browser** to make the download?
    
    - You may still be able to connect to the Pupil Invisible device using its IP address. You can find the IP address in the WiFi settings of the phone. Once you have it, you can connect like this:
       ```python
-      from pupil_labs.realtime_api.basic import Device
+      from pupil_labs.realtime_api.simple import Device
 
       # This address is just an example. Find out the actual IP address of your device!
       ip = "192.168.1.169"
