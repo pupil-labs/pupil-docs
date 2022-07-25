@@ -119,12 +119,6 @@ module.exports = {
             //     'how-tos/pupil-cloud/make-complex-search-queries',
             //   ]
             // },
-            // {
-            //   title: 'Advanced Analysis',
-            //   children: [
-            //     'how-tos/advanced-analysis/gaze-metrics-in-aois/',
-            //   ]
-            // },
             {
               title: 'Integrate with the Real-Time API',
               children: [
@@ -133,6 +127,15 @@ module.exports = {
                 // 'how-tos/integrate-with-the-real-time-api/implement-hci-applications-with-screen-tracking',
                 'how-tos/integrate-with-the-real-time-api/legacy-api',
                 // 'how-tos/integrate-with-the-real-time-api/write-your-own-client',
+              ]
+            },
+            {
+              title: 'Advanced Analysis',
+              children: [
+                {
+                  title: "Undistort Video & Gaze Data",
+                  path: 'how-tos/advanced-analysis/intrinsics/',
+                }
               ]
             },
           ]
