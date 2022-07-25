@@ -74,7 +74,7 @@ This enrichment is still a **beta feature**. Let us know if you have any [feedba
 
 
 ### Setup
-In addition to the reference image itself, calculating this enrichment also requires specifying a **scanning video**. In this video you must record your object(s) for 1-2 minutes fulfilling the following criteria:
+In addition to the reference image itself, calculating this enrichment also requires specifying a **scanning video**. In this video you must record your object(s) for 1-2 minutes (maximum 3 minutes) fulfilling the following criteria:
 - Make the recording while holding the Pupil Invisible glasses in your hand rather than wearing it on your head.
 - Record the object of interest from all possible angles and from all distances a subject may look at it.
 - Move the glasses slowly while recording to avoid motion blur.
