@@ -1,0 +1,22 @@
+# Ignore local address
+http://pi.local:8080/
+localhost:%25s
+
+# Ignore all .js files
+file:///**/*.js
+./*.js
+
+# Ignore all .css files
+./*.css
+
+# Ignore all .svg files
+./*.svg
+
+# Ignore all .svg files
+./*.png
+
+# Ignore all .svg files
+./*.mp4
+
+# Ignore all files
+# file:///
