@@ -12,10 +12,10 @@ file:///**/*.js
 # Ignore all .svg files
 ./*.svg
 
-# Ignore all .svg files
+# Ignore all .png files
 ./*.png
 
-# Ignore all .svg files
+# Ignore all .mp4 files
 ./*.mp4
 
 # Ignore all files
