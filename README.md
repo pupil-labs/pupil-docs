@@ -16,7 +16,7 @@ We welcome all contributions! To edit content:
 1. Make a Pull Request
 
 ## Download
-For this project we use Yarn for dependency management.
+For this project, we use Yarn for dependency management.
 
 Download and install [Yarn](https://yarnpkg.com/en/docs/install).
 
@@ -37,6 +37,10 @@ and run the following command
 ```
 jupyter-nbconvert --to markdown **/*.ipynb --ExtractOutputPreprocessor.enabled=False
 ```
+on a Windows machine, you can achieve the same output by running the following command using PowerShell
+``` 
+ls *.ipynb -Recurse | foreach{jupyter-nbconvert --to markdown $_ --ExtractOutputPreprocessor.enabled=False}
+```
 
 Start local development with:
 ```bash
@@ -48,7 +52,7 @@ To generate static assets, run:
 yarn build
 ```
 
-## Directory Struture
+## Directory Structure
 
 ```markdown
 .
@@ -117,7 +121,7 @@ Note - `webm` and `webp` will be implemented in future iterations.
 ## Style Guide
 We aim for the docs to be concise and readable.
 
-All content is written in Markdown. If you're new to Markdown see [this guide](https://guides.github.com/features/mastering-markdown/ "Github - Mastering Markdown"). HTML markup is also parsed, but discouraged unless absolutely needed.
+All content is written in Markdown. If you're new to Markdown see [this guide](https://guides.github.com/features/mastering-markdown/ "Github - Mastering Markdown"). HTML markup is also parsed but discouraged unless absolutely needed.
 
 ### Table of contents
 All H1, H2, H3 headers will be automatically added to the table of contents.
