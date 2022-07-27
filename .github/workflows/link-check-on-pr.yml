@@ -14,10 +14,14 @@ jobs:
           fetch-depth: 2
 
       # Gets a list of files from the PR with a git status of Added (A) or Modified (M) | (via outputs.all_changed_files)
-      - name: 'Example - Get a list of changed files to process'
+      - name: 'Example - Get a list of changed files to process(Only html/md/ipynb files)'
         id: get-changed-files
-        uses: tj-actions/changed-files@v23
+        uses: tj-actions/changed-files@v24
         with:
+          files: |
+            **/*.html
+            **/*.md
+            **/*.ipynb
           separator: ','
 
       # lychee-action requires pre-processing for file paths with spaces (boundary quotes added in lychee-action input):
@@ -31,7 +35,7 @@ jobs:
         id: lychee
         uses: lycheeverse/lychee-action@v1.5.0
         with:
-          args: -v -n -a 403,503,429,200 --cache -i -b 'https://docs.pupil-labs.com/' --include-verbatim -- '${{ steps.changed-files.outputs.all_changed_files }}'
+          args: -v -n -a 403,503,429,200 --cache -i -b 'https://docs.pupil-labs.com/' --exclude-mail --include-verbatim -- '${{ steps.changed-files.outputs.all_changed_files }}'
           jobSummary: true
           lycheeVersion: 0.10.0
           output: /tmp/out.txt
