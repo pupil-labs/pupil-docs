@@ -28,7 +28,7 @@ Below you can find a collection of example image pairs recorded with different s
 </div>
 
 ## Gaze
-While recording, the Pupil Invisible Companion device calculates gaze data in real-time. The exact framerate of this signal depends on the model of phone you use as Companion device. On a OnePlus 6 device, the framerate is around 50 Hz, while on a OnePlus 8 it is around 120 Hz. Other apps running simultaneously on the phone may decrease the framerate.
+While recording, the Pupil Invisible Companion device calculates gaze data in real-time. The exact framerate of this signal depends on the model of phone you use as Companion device. On a OnePlus 8 device it is +120 Hz. Other apps running simultaneously on the phone may decrease the framerate.
 
 After a recording is uploaded to Pupil Cloud, gaze data is automatically re-computed at the full framerate of 200 Hz.
 
