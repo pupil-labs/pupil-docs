@@ -41,7 +41,7 @@ While looking almost like normal glasses, the Pupil Invisible glasses are filled
 - **Serial Plaque**: The glasses serial number can be found on a plaque at the tip of the left arm.
 
 :::danger
-The electronics and sensors are sensitive! Please follow our how-to guide when [cleaning and disinfecting](/invisible/how-tos/pupil-invisible-glasses/cleaning-and-disinfecting)  your glasses.
+The electronics and sensors are sensitive! Please follow our how-to guide when [cleaning and disinfecting](/invisible/how-tos/pupil-invisible-glasses/clean-and-disinfect)  your glasses.
 :::
 
 ## Pupil Invisible Companion Device

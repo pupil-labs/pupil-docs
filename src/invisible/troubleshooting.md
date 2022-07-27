@@ -80,7 +80,7 @@ If you upgraded to Android 12 or newer and want to roll back, follow these steps
 1. Make sure that permissions to access the USB devices are given and **"Use by default for this device" is enabled**. If those permissions are not given or not set to be used by default, you should get prompts asking you for permissions every time you reconnect the glasses to the companion device. To fix this, reconnect your glasses and for every prompt that shows up give permission and check the "Use by default for this device" checkbox.
 1. Make sure you use the included black USB-C to USB-C connector cable rather than a third-party cable. Third-party USB cables vary widely in their quality and can lead to loss of connection.
 1. Are you using a **OnePlus 6** device?
-   - Make sure the **Companion app is locked** to the Android app overview. If it is not locked, you should see a red lock symbol in the top-left of the companion app's home screen. You can find instructions on how to lock the app [here](/invisible/user-guide/invisible-companion-app/#enable-application-lock "Pupil Invisible Companion OnePlus App Lock").
+   - Make sure the **Companion app is locked** to the Android app overview. If it is not locked, you should see a red lock symbol in the top-left of the companion app's home screen.
    Check out the video to see how to lock the app.
 
 <div style="display:flex;flex-direction:row;justify-content:center;" class="pb-4">
