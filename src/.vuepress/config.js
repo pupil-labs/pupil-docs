@@ -110,6 +110,12 @@ module.exports = {
               ]
             },
             {
+              title: 'Advanced Analysis',
+              children: [
+                'how-tos/advanced-analysis/gaze-metrics-in-aois/',
+              ]
+            },
+            {
               title: 'Integrate with the Real-Time API',
               children: [
                 'how-tos/integrate-with-the-real-time-api/introduction/',
