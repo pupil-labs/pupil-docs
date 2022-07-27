@@ -119,12 +119,12 @@ module.exports = {
             //     'how-tos/pupil-cloud/make-complex-search-queries',
             //   ]
             // },
-            // {
-            //   title: 'Advanced Analysis',
-            //   children: [
-            //     'how-tos/advanced-analysis/gaze-metrics-in-aois/',
-            //   ]
-            // },
+            {
+              title: 'Advanced Analysis',
+              children: [
+                'how-tos/advanced-analysis/gaze-metrics-in-aois/',
+              ]
+            },
             {
               title: 'Integrate with the Real-Time API',
               children: [
