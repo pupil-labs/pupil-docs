@@ -63,7 +63,7 @@ def load_fit_data(fname: str) -> pd.DataFrame:
 
     df["timestamp"] = df["timestamp"].dt.tz_localize(None)
 
-    return 
+    return df
 
 
 def get_pupil_timestamps(fname: str) -> pd.DataFrame:
