@@ -38,11 +38,11 @@ jobs:
           args: -v -n -a 403,503,429,200 --cache -i -b 'https://docs.pupil-labs.com/' --exclude-mail --include-verbatim -- '${{ steps.changed-files.outputs.all_changed_files }}'
           jobSummary: true
           lycheeVersion: 0.10.0
-          output: /tmp/out.txt
+          output: /tmp/lychee/out.md
 
       - id: get-comment-body
         run: |
-          body="$(cat /tmp/out.txt)"
+          body="$(cat /tmp/lychee/out.md)"
           body="${body//'%'/'%25'}"
           body="${body//$'\n'/'%0A'}"
           body="${body//$'\r'/'%0D'}" 
