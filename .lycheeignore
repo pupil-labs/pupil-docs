@@ -1,0 +1,34 @@
+# Ignore local address
+http://pi.local:8080/
+localhost:%25s
+
+# Ignore all .js files
+file:///**/*.js
+./*.js
+
+# Ignore all .css files
+./*.css
+
+# Ignore all .svg files
+./*.svg
+
+# Ignore all .png files
+./*.png
+
+# Ignore all .mp4 files
+./*.mp4
+
+# Ignore all .jpg files
+./*.jpg
+
+# Ignore all .jpeg files
+./*.jpeg
+
+# Subscribe email, needs right post request to the endpoint
+https://mailchimp.us3.list-manage.com/subscribe/post
+
+# Too many redirects but it works
+http://doi.acm.org/10.1145/2638728.2641695
+
+# Ignore all files
+# file:///
