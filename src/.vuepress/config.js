@@ -123,15 +123,15 @@ module.exports = {
                 'how-tos/advanced-analysis/gaze-metrics-in-aois/',
               ]
             },
-            // {
-            //   title: 'Advanced Analysis',
-            //   children: [
-            //     {
-            //       title: "Undistort Video & Gaze Data",
-            //       path: 'how-tos/advanced-analysis/intrinsics/',
-            //     }
-            //   ]
-            // },
+            {
+              title: 'Advanced Analysis',
+              children: [
+                {
+                  title: "Undistort Video & Gaze Data",
+                  path: 'how-tos/advanced-analysis/intrinsics/',
+                }
+              ]
+            },
           ]
         },
         {
