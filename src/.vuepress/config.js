@@ -121,17 +121,9 @@ module.exports = {
               title: 'Advanced Analysis',
               children: [
                 'how-tos/advanced-analysis/gaze-metrics-in-aois/',
+                'how-tos/advanced-analysis/syncing-sensors/',
               ]
             },
-            // {
-            //   title: 'Advanced Analysis',
-            //   children: [
-            //     {
-            //       title: "Undistort Video & Gaze Data",
-            //       path: 'how-tos/advanced-analysis/intrinsics/',
-            //     }
-            //   ]
-            // },
           ]
         },
         {
