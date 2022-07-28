@@ -19,12 +19,6 @@ def make_visualization(matched_data, world_video_path, output_path):
     for index, packet in enumerate(av.open(world_video_path).demux(video=0)):
         world_lookup[index] = packet
 
-
-
-
-
-
-
     original_container = av.open(str(world_video_path))
     original_video_stream = original_container.streams.video[0]
 
@@ -57,9 +51,6 @@ def make_visualization(matched_data, world_video_path, output_path):
 
             img = frame.to_ndarray(format="bgr24")
             vis_img = _render_onto_image(img, (gaze_x, gaze_y), hr)
-
-            cv2.imshow("Scene Video + Gaze + Heartrate", vis_img)
-            cv2.waitKey(1)
             
             new_frame = frame.from_ndarray(vis_img, format="bgr24")
             new_frame.pts = frame.pts
