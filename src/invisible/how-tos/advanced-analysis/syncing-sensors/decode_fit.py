@@ -59,7 +59,11 @@ def load_fit_data(fname: str) -> pd.DataFrame:
 
     # Create DataFrames from the data we have collected. If any information is missing from a particular
     # point, it will show up as a null value or "NaN" in the DataFrame.
-    return pd.DataFrame(points_data, columns=POINTS_COLUMN_NAMES)
+    df = pd.DataFrame(points_data, columns=POINTS_COLUMN_NAMES)
+
+    df["timestamp"] = df["timestamp"].dt.tz_localize(None)
+
+    return 
 
 
 def get_pupil_timestamps(fname: str) -> pd.DataFrame:
