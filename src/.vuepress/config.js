@@ -117,6 +117,12 @@ module.exports = {
                 'how-tos/integrate-with-the-real-time-api/legacy-api',
               ]
             },
+            {
+              title: 'Advanced Analysis',
+              children: [
+                'how-tos/advanced-analysis/gaze-metrics-in-aois/',
+              ]
+            },
             // {
             //   title: 'Advanced Analysis',
             //   children: [
