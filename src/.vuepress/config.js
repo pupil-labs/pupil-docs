@@ -122,7 +122,7 @@ module.exports = {
               children: [
                 'how-tos/advanced-analysis/gaze-metrics-in-aois/',
                 {
-                  title: "Undistort Video & Gaze Data",
+                  title: "Undistort Video and Gaze Data",
                   path: 'how-tos/advanced-analysis/intrinsics/',
                 }
               ]
