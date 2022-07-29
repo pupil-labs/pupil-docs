@@ -66,5 +66,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Fail workflow if link broken
-        if: steps.lychee.outputs.exit_code !=0
+        if: steps.lychee.outputs.exit_code == 2
         run: exit 1
