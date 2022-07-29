@@ -30,13 +30,6 @@ jobs:
         run: |
           QUOTE_WRAPPED="$( sed "s/,/' '/g" <<< '${{ steps.get-changed-files.outputs.all_changed_files }}' )"
           echo "::set-output name=all_changed_files::${QUOTE_WRAPPED}"
-          
-      # - name: Restore lychee cache
-      #   uses: actions/cache@v3
-      #   with:
-      #     path: .lycheecache
-      #     key: cache-lychee-${{ github.sha }}
-      #     restore-keys: cache-lychee-
 
       - name: 'Check Links'
         id: lychee
@@ -46,8 +39,6 @@ jobs:
           lycheeVersion: 0.10.1
           output: lychee/results.md
           jobSummary: true
-
-      # --cache --max-cache-age 1d
 
       - id: get-comment-body
         if: steps.lychee.outputs.exit_code == 2
