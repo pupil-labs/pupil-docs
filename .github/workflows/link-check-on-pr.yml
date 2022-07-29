@@ -33,14 +33,15 @@ jobs:
 
       - name: 'Check Links'
         id: lychee
-        uses: lycheeverse/lychee-action@v1.5.0
+        uses: lycheeverse/lychee-action@v1.5.1
         with:
           args: -v -n -a 403,503,429,200 --cache -i -b 'https://docs.pupil-labs.com/' --exclude-mail --include-verbatim -- '${{ steps.changed-files.outputs.all_changed_files }}'
           jobSummary: true
-          lycheeVersion: 0.10.0
+          lycheeVersion: 0.10.1
           output: /tmp/lychee/out.md
-
+    
       - id: get-comment-body
+        if: steps.lychee.outputs.exit_code == 2
         run: |
           body="$(echo "# Link check summary"; cat /tmp/lychee/out.md)"
           body="${body//'%'/'%25'}"
@@ -49,6 +50,7 @@ jobs:
           echo "::set-output name=body::$body"
 
       - name: Create comment
+        if: steps.lychee.outputs.exit_code == 2
         uses: thollander/actions-comment-pull-request@v1
         with:
           message: ${{ steps.get-comment-body.outputs.body }}
