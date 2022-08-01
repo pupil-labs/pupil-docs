@@ -2,61 +2,55 @@
 permalink: /invisible/how-tos/integrate-with-the-real-time-api/build-matlab-experiment
 description: A simple guide on how to build experiments in Matlab
 ---
-
 # Building experiments in Matlab
 
-Sometimes you may want to synchronise your MATLAB code with Pupil Invisible recordings. An easy way to separate your data 
-is to annotate the recording using [events](/invisible/explainers/basic-concepts/#events). This can be done through the 
-[real-time API](/invisible/how-tos/integrate-with-the-real-time-api/introduction).
+MATLAB is extensively used within the research community and is often coupled with eye tracking technologies for tasks like controlling gaze, blinks, or fixations under certain stimulus conditions. 
+When collecting data with a head-mounted eye tracker like Pupil Invisible, it can be critical to sync the stimulus presentation with the eye tracking recording. For that, you need to know when a stimulus is shown, so you can segment the eye tracking data accordingly.
 
-While we do not officially support MATLAB, we have created a simple MATLAB wrapper so that you can call some functions of
-the Pupil Invisible real-time API to send events and remote start/stop recordings.
+In this guide, you will learn how to track stimulus presentation as part of your eye tracking recording conveniently and fully automatically using [events](/invisible/explainers/basic-concepts/#events) and the [Pupil Invisible's real-time API](/invisible/how-tos/integrate-with-the-real-time-api/introduction). You will see a simple example experiment, learn how it uses events, and how those events enable the segmentation of eye tracking data per stimulus during analysis.
 
-This wrapper uses the [.net.http package from Matlab](https://mathworks.com/help/matlab/ref/matlab.net.http-package.html#), 
-which was introduced in the 2016b release. Before starting, please ensure you use this or a newer version of the software 
-and have the package installed.
+While the real-time API does not officially support MATLAB, we have created a simple wrapper to enable some of the available functions required for this application.
 
-This guide will show you how to use this wrapper in your experiments. To this end, we will have a minimal demo that 
-displays a set of images and records events when these are shown.
+## Requirements
 
-::: tip
-You can download the wrapper function and the demo code used [here](https://github.com/pupil-labs/realtime-matlab-experiment).
-:::
+This wrapper uses the [.net.http package from MATLAB](https://mathworks.com/help/matlab/ref/matlab.net.http-package.html#), 
+which was introduced in the MATLAB 2016b release. Before starting, please ensure you use this or a newer version of MATLAB.
+
+You can use any library that you want to present your stimulus or even [run the wrapper alone](#can-i-run-the-wrapper-alone?). However, if you plan on running the current demo to its full extent, you will need to install [Psychtoolbox](http://www.psychtoolbox.org/download.html) and ensure it runs before continuing.
+
+[Psychtoolbox](http://www.psychtoolbox.org/) is a free set of MATLAB and GNU Octave functions for vision and neuroscience research, which makes it easy to synthesize and show accurately controlled visual and auditory stimuli and interact with the observer. You can learn more about it [here](http://www.psychtoolbox.org/).
+
+All images used in the demo are from [Unsplash](https://unsplash.com/), but we do not include the photos in the demo files. Therefore, you will need internet access so MATLAB can read them from the web.
+
+Finally, you will need to download the wrapper and demo code by cloning the repository or downloading the .zip file from 
+[here](https://github.com/pupil-labs/realtime-matlab-experiment/archive/refs/heads/main.zip).
+
+```git 
+git clone https://github.com/pupil-labs/realtime-matlab-experiment.git
+```
 
 ## How to use Events to keep track of your experiment
+
+Before we dig into how to run the demo and the wrapper, you will need to understand what events are and how to use them to keep track of your experiment.
+
 Events are essentially timestamps within a recording that have been marked with a name. In this demo, we need to track 
 when a specific image is shown during a recording to associate the fixation data with that image. Thus, we will create an 
 event at the start and end of each image presentation to mark this section.
 
 Events can either be created post-hoc in the project editor, or at recording time using either the 
 [real-time API](/invisible/how-tos/integrate-with-the-real-time-api/introduction) or 
-[Pupil Invisible Monitor](/invisible/how-tos/data-collection-with-the-companion-app/monitor-your-data-collection-in-real-time). 
-In this example we are interested in fully automating the event creation within MATLAB. Still, depending on your use case, 
+[Pupil Invisible Monitor](/invisible/how-tos/data-collection-with-the-companion-app/monitor-your-data-collection-in-real-time). In this example, we are interested in fully automating the event creation within MATLAB. Still, depending on your use case, 
 you could use either of those methods.
 
-## Implementation
-In this demo, we will choose [Psychtoolbox](https://www.psychtoolbox.org/) to display the images due to its widespread 
-use within the community. However, you can use any library that suits you best.
+## Running the demo
 
-All images displayed in the demo are from [Unsplash](https://unsplash.com/). We thank the respective authors for the images.
-
-## How to run the demo
-Download the wrapper and the demo code, either cloning the repository or downloading the .zip file from 
-[here](https://github.com/pupil-labs/realtime-matlab-experiment/archive/refs/heads/main.zip).
-
-```git
-git clone https://github.com/pupil-labs/realtime-matlab-experiment.git
-```
-
-Ensure Psychtoolbox is installed and that it runs properly. Confirm that your Pupil Invisible is connected to the same 
-network as your computer, and then you can execute the demo code.
+Hands-on! Confirm that your Pupil Invisible is plugged to the Companion Device. The Companion Device and the MATLAB computer must be connected to the same network. Then you can execute the demo code as shown below:
 
 ```matlab	
 demo_pupil_labs();
 ```
-## Running the demo
-Besides all the required steps to display an image in Psychtoolbox (you can find that in the demo code), there are several 
-calls to the Pupil Invisible real-time API.
+## Through the demo
+Beyond all the steps needed to display an image in Psychtoolbox (which you can find in the demo code), here we will focus on the calls to the Pupil Invisible real-time API.
 
 First, we start with a call to check if the connection is working.
 
@@ -66,7 +60,7 @@ r = pupil_labs_realtime_api();
 
 A proper connection will return the code 200 on the `r.StatusCode` property.
 
-Then the images are loaded, and several steps follow to prepare a Psychtoolbox call to the screen. After that, the 
+Then, the demo script will load the images, and several steps will follow to prepare a Psychtoolbox call to the screen. After that, the 
 recording is initialised.
 
 ```matlab
@@ -91,15 +85,14 @@ Finally, the recording is stopped and saved after iterating through all the imag
 ```matlab
 pupil_labs_realtime_api('Command', 'save');
 ```
-Additionally, a cancel command was included in our catch routine, so the recording is discarded if an error occur.
+Additionally, a cancel command was included in our catch routine, so the recording is discarded if any error occurs.
 
 ```matlab
 pupil_labs_realtime_api('Command', 'cancel');
 ```
 
 That is all we have to do during data collection. Once all recordings have been uploaded to Pupil Cloud, we create a 
-project to export them using the [Raw Data Exporter](/invisible/reference/export-formats/#raw-data-exporter). Within the project 
-editor we can already see the events in every recording.
+project to export them using the [Raw Data Exporter](/invisible/reference/export-formats/#raw-data-exporter). Within the project editor, we can already see the events in every recording.
 
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
@@ -112,7 +105,7 @@ editor we can already see the events in every recording.
 ## Analysing the data
 Having the .csv files means we can read them within MATLAB and start doing some magic!
 
-Let's plot the amount of fixations per image using our demo data.
+Let's plot the number of fixations per image using our demo data.
 
 ```matlab	
 % Import events and fixations from the csv files as tables
@@ -151,12 +144,13 @@ title(['Fixations per image - PI', newline]);
 
 ## Can I run the wrapper alone? 
 Yes, if you are not planning on using Psychtoolbox, you can also use the wrapper alone. Download the 
-`pupil_labs_realtime_api` function and add it to your path. Then, call it as you would normally call a function.
+`pupil_labs_realtime_api` function and add it to your path. Then, call it as you would typically call a function.
 
 ```matlab
 r = pupil_labs_realtime_api('Command','status');
 ```
-There are several arguments that can be used to control the wrapper:
+
+Several arguments can be used to control the wrapper:
 
 - `Command`: followed by one of the following commands,  `status`, `start`, `stop`, `save`, `cancel`, or `event`. 
 - The default is `status`.
@@ -164,14 +158,14 @@ There are several arguments that can be used to control the wrapper:
 - `EventName`: followed by a string with the annotation name for the event, default is `Test event`.
 - `URLhost`: followed by a string containing the URL of Pupil Invisible, default is `http://pi.local:8080/`. It's generally good practice to call directly to the URL. Nevertheless, Matlab does resolve the DNS and stores it in the cache, so you will only notice a delay in the first call.   
 
-## Notes
+## Notes and disclaimers
 :::tip
 <v-icon large color="info">info_outline</v-icon>
 The current wrapper function does not support RTSP protocol. Therefore it is not possible to stream video or gaze positions. If you need this feature, please directly use the [Realtime Network API](https://pupil-labs-realtime-api.readthedocs.io/en/stable/guides/under-the-hood.html?highlight=RTSP). 
 :::
 
 ::: warning
-<v-icon large color="warning">info_outline</v-icon>
+<v-icon large color="warning">timer</v-icon>
 The average response time for HTTP requests to Pupil Invisible in MATLAB is 0.33 +- 0.14 seconds (on a 1000 requests test). 
 This time might vary depending on your connection and computer load. If you need better time accuracy, check out our 
 [Python API](https://pupil-labs-realtime-api.readthedocs.io/en/stable/examples/index.html).
