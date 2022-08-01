@@ -230,7 +230,7 @@ This file contains fixation events detected in the gaze data stream and mapped t
 | **fixation y [px]** | Same as "fixation x [px]" but for the y-coordinate.     |
 
 #### Reference Image
-The reference image was used for defining the enrichment. The file is named `reference_image.jpeg|png`
+The reference image that was used for defining the enrichment. The file is named `reference_image.jpeg|png`.
 
 
 ## Face Mapper

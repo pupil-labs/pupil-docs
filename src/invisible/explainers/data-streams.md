@@ -4,7 +4,7 @@ description: Summary of all available data streams in Pupil Invisible recordings
 ---
 
 # Data Streams
-Pupil Invisible glasses include a number of sensors providing different types of data. Some data streams are available in real-time (see [real-time API](/invisible/getting-started/real-time-api)), while others are computed in Pupil Cloud post hoc after uploading. All data is fully accessible and can be downloaded from Pupil Cloud in convenient formats.
+Pupil Invisible glasses include a number of sensors providing different types of data. Some data streams are available in real-time (see [real-time API](/invisible/how-tos/integrate-with-the-real-time-api/introduction)), while others are computed in Pupil Cloud post hoc after uploading. All data is fully accessible and can be downloaded from Pupil Cloud in convenient formats.
 
 ## Eye Videos
 Pupil Invisible glasses feature two eye cameras, one for each eye. They are fully embedded into the frame. The sensors record IR video at 200 Hz and with a resolution of 192x192px. Right next to each camera is an IR LED, which guarantees good illumination of the eye in dark environments.
@@ -28,7 +28,7 @@ Below you can find a collection of example image pairs recorded with different s
 </div>
 
 ## Gaze
-While recording, the Pupil Invisible Companion device calculates gaze data in real-time. The exact framerate of this signal depends on the model of phone you use as Companion device. On a OnePlus 6 device, the framerate is around 50 Hz, while on a OnePlus 8 it is around 65 Hz. Other apps running simultaneously on the phone may decrease the framerate.
+While recording, the Pupil Invisible Companion device calculates gaze data in real-time. The exact framerate of this signal depends on the model of phone you use as Companion device. On a OnePlus 8 device it is +120 Hz. Other apps running simultaneously on the phone may decrease the framerate.
 
 After a recording is uploaded to Pupil Cloud, gaze data is automatically re-computed at the full framerate of 200 Hz.
 

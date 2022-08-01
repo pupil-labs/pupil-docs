@@ -105,34 +105,26 @@ module.exports = {
             {
               title: 'Data Collection',
               children: [
-                // 'how-tos/data-collection-with-the-companion-app/achieve-super-precise-time-sync-using-events',
-                // 'how-tos/data-collection-with-the-companion-app/apply-offset-correction',
                 'how-tos/data-collection-with-the-companion-app/monitor-your-data-collection-in-real-time',
                 'how-tos/data-collection-with-the-companion-app/transfer-recordings-via-usb',
               ]
             },
-            // {
-            //   title: 'Pupil Cloud',
-            //   children: [
-            //     'how-tos/pupil-cloud/organize-a-study-using-templates',
-            //     'how-tos/pupil-cloud/use-workspaces-to-organize-data',
-            //     'how-tos/pupil-cloud/make-complex-search-queries',
-            //   ]
-            // },
-            // {
-            //   title: 'Advanced Analysis',
-            //   children: [
-            //     'how-tos/advanced-analysis/gaze-metrics-in-aois/',
-            //   ]
-            // },
             {
               title: 'Integrate with the Real-Time API',
               children: [
                 'how-tos/integrate-with-the-real-time-api/introduction/',
                 'how-tos/integrate-with-the-real-time-api/track-your-experiment-progress-using-events/',
-                // 'how-tos/integrate-with-the-real-time-api/implement-hci-applications-with-screen-tracking',
                 'how-tos/integrate-with-the-real-time-api/legacy-api',
-                // 'how-tos/integrate-with-the-real-time-api/write-your-own-client',
+              ]
+            },
+            {
+              title: 'Advanced Analysis',
+              children: [
+                'how-tos/advanced-analysis/gaze-metrics-in-aois/',
+                {
+                  title: "Undistort Video and Gaze Data",
+                  path: 'how-tos/advanced-analysis/intrinsics/',
+                }
               ]
             },
           ]
