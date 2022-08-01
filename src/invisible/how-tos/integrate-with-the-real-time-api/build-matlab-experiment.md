@@ -5,6 +5,7 @@ description: A simple guide on how to build experiments in Matlab
 # Building experiments in Matlab
 
 MATLAB is extensively used within the research community and is often coupled with eye tracking technologies for tasks like controlling gaze, blinks, or fixations under certain stimulus conditions. 
+
 When collecting data with a head-mounted eye tracker like Pupil Invisible, it can be critical to sync the stimulus presentation with the eye tracking recording. For that, you need to know when a stimulus is shown, so you can segment the eye tracking data accordingly.
 
 In this guide, you will learn how to track stimulus presentation as part of your eye tracking recording conveniently and fully automatically using [events](/invisible/explainers/basic-concepts/#events) and the [Pupil Invisible's real-time API](/invisible/how-tos/integrate-with-the-real-time-api/introduction). You will see a simple example experiment, learn how it uses events, and how those events enable the segmentation of eye tracking data per stimulus during analysis.
@@ -13,8 +14,7 @@ While the real-time API does not officially support MATLAB, we have created a si
 
 ## Requirements
 
-This wrapper uses the [.net.http package from MATLAB](https://mathworks.com/help/matlab/ref/matlab.net.http-package.html#), 
-which was introduced in the MATLAB 2016b release. Before starting, please ensure you use this or a newer version of MATLAB.
+This wrapper uses the [.net.http package from MATLAB](https://mathworks.com/help/matlab/ref/matlab.net.http-package.html#), which was introduced in the MATLAB 2016b release. Before starting, please ensure you use this or a newer version of MATLAB.
 
 You can use any library that you want to present your stimulus or even [run the wrapper alone](#can-i-run-the-wrapper-alone?). However, if you plan on running the current demo to its full extent, you will need to install [Psychtoolbox](http://www.psychtoolbox.org/download.html) and ensure it runs before continuing.
 
@@ -33,23 +33,21 @@ git clone https://github.com/pupil-labs/realtime-matlab-experiment.git
 
 Before we dig into how to run the demo and the wrapper, you will need to understand what events are and how to use them to keep track of your experiment.
 
-Events are essentially timestamps within a recording that have been marked with a name. In this demo, we need to track 
-when a specific image is shown during a recording to associate the fixation data with that image. Thus, we will create an 
-event at the start and end of each image presentation to mark this section.
+Events are essentially timestamps within a recording that have been marked with a name. In this demo, we need to track when a specific image is shown during a recording to associate the fixation data with that image. Thus, we will create an event at the start and end of each image presentation to mark this section.
 
-Events can either be created post-hoc in the project editor, or at recording time using either the 
-[real-time API](/invisible/how-tos/integrate-with-the-real-time-api/introduction) or 
-[Pupil Invisible Monitor](/invisible/how-tos/data-collection-with-the-companion-app/monitor-your-data-collection-in-real-time). In this example, we are interested in fully automating the event creation within MATLAB. Still, depending on your use case, 
-you could use either of those methods.
+Events can either be created post-hoc in the project editor, or at recording time using either the [real-time API](/invisible/how-tos/integrate-with-the-real-time-api/introduction) or [Pupil Invisible Monitor](/invisible/how-tos/data-collection-with-the-companion-app/monitor-your-data-collection-in-real-time). In this example, we are interested in fully automating the event creation within MATLAB. Still, depending on your use case, you could use either of those methods.
 
 ## Running the demo
 
-Hands-on! Confirm that your Pupil Invisible is plugged to the Companion Device. The Companion Device and the MATLAB computer must be connected to the same network. Then you can execute the demo code as shown below:
+Hands-on! 
+Confirm that your Pupil Invisible is plugged to the Companion Device. 
+Check that the Companion Device and the MATLAB computer are connected to the same network. 
+Then you can execute the demo code as shown below:
 
 ```matlab	
 demo_pupil_labs();
 ```
-## Through the demo
+### Through the demo
 Beyond all the steps needed to display an image in Psychtoolbox (which you can find in the demo code), here we will focus on the calls to the Pupil Invisible real-time API.
 
 First, we start with a call to check if the connection is working.
@@ -60,17 +58,14 @@ r = pupil_labs_realtime_api();
 
 A proper connection will return the code 200 on the `r.StatusCode` property.
 
-Then, the demo script will load the images, and several steps will follow to prepare a Psychtoolbox call to the screen. After that, the 
-recording is initialised.
+Then, the demo script will load the images, and several steps will follow to prepare a Psychtoolbox call to the screen. After that, the recording is initialised.
 
 ```matlab
 pupil_labs_realtime_api('Command', 'start');
 ```
-It's good practice to start the recording before drawing anything on the screen, as the device might start the recording 
-with a small delay.
+It's good practice to start the recording before drawing anything on the screen, as the device might start the recording with a small delay.
 
-In the demo, a logo is shown, and a keystroke is required to start displaying the images when the participant is ready. 
-When an image is shown `(Screen('Flip'))`, a starting event call is made to annotate the beginning of the image presentation.
+In the demo, a logo is shown, and a keystroke is required to start displaying the images when the participant is ready. When an image is shown `(Screen('Flip'))`, a starting event call is made to annotate the beginning of the image presentation.
 
 ```matlab
 pupil_labs_realtime_api('Command', 'event', 'EventName', ['Picture_',num2str(n, '%02.0f'),'_start']);
@@ -143,8 +138,7 @@ title(['Fixations per image - PI', newline]);
 
 
 ## Can I run the wrapper alone? 
-Yes, if you are not planning on using Psychtoolbox, you can also use the wrapper alone. Download the 
-`pupil_labs_realtime_api` function and add it to your path. Then, call it as you would typically call a function.
+Yes, if you are not planning on using Psychtoolbox, you can also use the wrapper alone. Download the `pupil_labs_realtime_api` function and add it to your path. Then, call it as you would typically call a function.
 
 ```matlab
 r = pupil_labs_realtime_api('Command','status');
