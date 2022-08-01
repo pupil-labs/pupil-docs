@@ -4,13 +4,13 @@ description: A simple guide on how to build experiments in Matlab
 ---
 # Building experiments in Matlab
 
-MATLAB is extensively used within the research community and is often coupled with eye tracking technologies for tasks like controlling gaze, blinks, or fixations under certain stimulus conditions. 
+MATLAB is often used by researchers to build eye tracking experiments, such as tracking how long participants look at stimuli presented on a computer screen. 
 
-When collecting data with a head-mounted eye tracker like Pupil Invisible, it can be critical to sync the stimulus presentation with the eye tracking recording. For that, you need to know when a stimulus is shown, so you can segment the eye tracking data accordingly.
+When working with head-mounted eye trackers like Pupil Invisible, it can be useful to synchronize stimuli presentation with the eye tracking recording. This enables you to, a) keep track of when a stimulus is shown, and b) segment the eye tracking data accordingly. 
 
-In this guide, you will learn how to track stimulus presentation as part of your eye tracking recording conveniently and fully automatically using [events](/invisible/explainers/basic-concepts/#events) and the [Pupil Invisible's real-time API](/invisible/how-tos/integrate-with-the-real-time-api/introduction). You will see a simple example experiment, learn how it uses events, and how those events enable the segmentation of eye tracking data per stimulus during analysis.
+In this guide, we will build a simple MATLAB experiment. The experiment will show you how to automatically and conveniently track stimulus presentation as part of your eye tracking recording using [events](/invisible/explainers/basic-concepts/#events) and [Pupil Invisible's real-time API](/invisible/how-tos/integrate-with-the-real-time-api/introduction). Finally, you will see how those events enable the segmentation of eye tracking data per stimulus during the analysis. 
 
-While the real-time API does not officially support MATLAB, we have created a simple wrapper to enable some of the available functions required for this application.
+While MATLAB is not officially supported by [Pupil Invisible's real-time API](/invisible/how-tos/integrate-with-the-real-time-api/introduction), we have created a simple wrapper to enable some of the available functions required for this application.
 
 ## Requirements
 
@@ -18,7 +18,7 @@ This wrapper uses the [.net.http package from MATLAB](https://mathworks.com/help
 
 You can use any library that you want to present your stimulus or even [run the wrapper alone](#can-i-run-the-wrapper-alone?). However, if you plan on running the current demo to its full extent, you will need to install [Psychtoolbox](http://www.psychtoolbox.org/download.html) and ensure it runs before continuing.
 
-[Psychtoolbox](http://www.psychtoolbox.org/) is a free set of MATLAB and GNU Octave functions for vision and neuroscience research, which makes it easy to synthesize and show accurately controlled visual and auditory stimuli and interact with the observer. You can learn more about it [here](http://www.psychtoolbox.org/).
+[Psychtoolbox](http://www.psychtoolbox.org/) is a free set of MATLAB and GNU Octave functions for vision and neuroscience research, which makes it easy to show accurately controlled visual stimuli on-screen. You can learn more about it [here](http://www.psychtoolbox.org/).
 
 All images used in the demo are from [Unsplash](https://unsplash.com/), but we do not include the photos in the demo files. Therefore, you will need internet access so MATLAB can read them from the web.
 
