@@ -76,10 +76,10 @@ def get_pupil_timestamps(fname: str) -> pd.DataFrame:
 
 if __name__ == "__main__":
     # from sys import argv
-    fname_fit = "/Users/marc/Downloads/eye-tracking-run.FIT"  # Path to FIT file
+    fname_fit = "/Users/rcdew/pupil-docs/src/invisible/how-tos/advanced-analysis/syncing-sensors/data/eye-tracking-run.FIT"  # Path to FIT file
     points_df = load_fit_data(fname_fit)
 
-    fname_pl = "/Users/marc/Downloads/raw-data-export (2)/running_rd-4a40d94d/gaze.csv"  # Path to Invisible data
+    fname_pl = "/Users/rcdew/Dropbox/PC/Documents/Pupil Labs/SyncBiosensors/Extract FIT data/raw-data-export/running_rd-4a40d94d/gaze.csv"  # Path to Invisible data
     ts_pl = get_pupil_timestamps(fname_pl)
     # print("\nGarmin ts:")
     # print(points_df["timestamp"])
