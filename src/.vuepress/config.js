@@ -114,7 +114,7 @@ module.exports = {
               children: [
                 'how-tos/integrate-with-the-real-time-api/introduction/',
                 'how-tos/integrate-with-the-real-time-api/track-your-experiment-progress-using-events/',
-                'how-tos/integrate-with-the-real-time-api/track-your-experiment-in-matlab/',
+                'how-tos/integrate-with-the-real-time-api/track-your-experiment-in-matlab',
                 'how-tos/integrate-with-the-real-time-api/legacy-api',
               ]
             },
