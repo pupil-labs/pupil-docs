@@ -101,7 +101,7 @@ pupil_labs_realtime_api('Command', 'cancel');
 ```
 
 That is all we have to do during data collection. Once all recordings have been uploaded to Pupil Cloud, we create a 
-project to export them using the [Raw Data Exporter](/invisible/reference/export-formats/#raw-data-exporter). Within the project 
+project to export them using the [Raw Data Exporter](/invisible/references/export-formats/#raw-data-exporter). Within the project 
 editor we can already see the events in every recording.
 
 <div style="display:flex;justify-content:center;" class="pb-4">
