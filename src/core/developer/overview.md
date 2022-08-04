@@ -6,7 +6,7 @@ description: Welcome to Pupil Core developer documentation.
 # Overview
 
 Welcome to Pupil Core developer documentation. If you haven't already, we
-highly recommend reading the [_Getting Started_](/core/#getting-started) section and the [_User Guide_](/core/software/pupil-capture.html), before continuing with the developer documentation.
+highly recommend reading the [_Getting Started_](/core/#getting-started) section and the [_User Guide_](/core/software/pupil-capture), before continuing with the developer documentation.
 
 Have a question? Get in touch with developers and other community members on the `#pupil-software-dev`
 channel on [Discord](https://pupil-labs.com/chat).
@@ -162,7 +162,7 @@ topic and the `timestamp` (inherited from the eye image), the pupil detector add
 - `confidence`: Value indicating quality of the measurement
 
 By default, the Pupil Core software uses the
-[3d detector](/core/software/pupil-capture.html#pupil-detection) for pupil detection.
+[3d detector](/core/software/pupil-capture#pupil-detection) for pupil detection.
 Since it is an extension of the 2d detector, its data contains keys that were
 inherited from the 2d detection, as well as 3d detector specific keys. The minimal set of keys needed in a valid pupil datum object is: `id`, `topic`, `method`, `norm_pos`, `diameter`, `timestamp`, and `confidence`. Below you can
 see the Python representation of a 3d pupil datum:

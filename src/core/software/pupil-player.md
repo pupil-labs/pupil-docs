@@ -345,8 +345,7 @@ and roll axes using accelerometer feedback to monitor position relative to gravi
 
 In the Plugin's menu, toggle `View raw timeline` to view the accelerometer and gyroscope readings and `View orientation
 timeline` for pitch and roll. You can also change `Madgwick's beta`. This value is associated with gyroscope mean error.
-Increasing the beta will lead to faster drift corrections but with more sensitivity to lateral accelerations. Read more
-about [Madgwick's algorithm here](https://www.x-io.co.uk/res/doc/madgwick_internal_report.pdf).
+Increasing the beta will lead to faster drift corrections but with more sensitivity to lateral accelerations. Read more about [Madgwick's algorithm here](https://x-io.co.uk/downloads/madgwick_internal_report.pdf).
 
 Results are exported in `imu_timeline.csv` with the following columns:
 | Key                 | Description                                                            |
@@ -362,14 +361,13 @@ Results are exported in `imu_timeline.csv` with the following columns:
 | `pitch`             | Orientation about the x-axis (head tilt from front to back) in degrees |
 | `roll`              | Orientation about the z-axis (head tilt from side to side) in degrees  |
 
-:::tip
+<!-- :::tip
 <v-icon large color="info">info_outline</v-icon>
 Read more about [Pupil Invisible's coordinate systems here](/developer/invisible/#coordinate-systems).
-:::
+::: -->
 
 This Plugin does not estimate orientation about the yaw axis (head rotation from left to right). This is 
-because the IMU has no magnetometer to monitor heading. The Plugin therefore implements a version of Madgwick's
-algorithm that only estimates Pitch and Roll.
+because the IMU has no magnetometer to monitor heading. The Plugin therefore implements a version of Madgwick's algorithm that only estimates Pitch and Roll.
 
 Note that this Plugin [will not be loaded](/core/software/pupil-player/#product-specific-plugins) with Pupil Core recordings.
 
