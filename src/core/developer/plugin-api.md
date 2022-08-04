@@ -26,7 +26,7 @@ user's home directory and follows this naming convention: `pupil_<name>_settings
 Each user directory has a `plugins` subdirectory into which the plugin files need to be
 placed. The Pupil Core software will attempt to load the files during the next launch.
 
-If the plugin was installed correctly, it should appear in the [Plugin Manager](/core/software/pupil-capture.html#plugins)
+If the plugin was installed correctly, it should appear in the [Plugin Manager](/core/software/pupil-capture/#plugins)
 of the corresponding Pupil Core software. Check the log file (`~/pupil_<name>_settings/<name>.log`) for errors if this is not the case.
 
 ::: warning
