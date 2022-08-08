@@ -122,6 +122,7 @@ module.exports = {
               title: 'Advanced Analysis',
               children: [
                 'how-tos/advanced-analysis/gaze-metrics-in-aois/',
+                'how-tos/advanced-analysis/syncing-sensors/',
                 {
                   title: "Undistort Video and Gaze Data",
                   path: 'how-tos/advanced-analysis/intrinsics/',
