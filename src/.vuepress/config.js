@@ -114,6 +114,7 @@ module.exports = {
               children: [
                 'how-tos/integrate-with-the-real-time-api/introduction/',
                 'how-tos/integrate-with-the-real-time-api/track-your-experiment-progress-using-events/',
+                'how-tos/integrate-with-the-real-time-api/track-your-experiment-in-matlab',
                 'how-tos/integrate-with-the-real-time-api/legacy-api',
               ]
             },
@@ -122,6 +123,10 @@ module.exports = {
               children: [
                 'how-tos/advanced-analysis/gaze-metrics-in-aois/',
                 'how-tos/advanced-analysis/syncing-sensors/',
+                {
+                  title: "Undistort Video and Gaze Data",
+                  path: 'how-tos/advanced-analysis/intrinsics/',
+                }
               ]
             },
           ]
