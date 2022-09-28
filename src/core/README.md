@@ -37,12 +37,17 @@ You will need to [physically adjust](/core/hardware/#headset-adjustments "Pupil 
 
 Take a look at the eye window(s).
 
-Pupil Core uses a 3D model of the eye to improve the pupil detection. Adjust the eye cameras such that your pupil is always visible, even when looking at extreme angles.
-
-<Youtube src="7wuVCwWcGnE"/>
+Pupil Core uses a 3D model of the eye to improve the pupil detection. Slide cameras along the headset frame and rotate them on the ball joint, until you get a clear frontal image of both eyes. Make sure that your pupil is always visible, even when looking at extreme angles.
 
 
-Slowly move your eyes around until the eye model (green circle) adjusted to fit your eyeball. If everything is set up properly, you should see a green circle around the eyeball and a red circle around the pupil with a red dot in the center.
+<Youtube src="kjjPL7gLy7s"/>
+
+
+Slowly move your eyes around until the eye model (blue circle) adjusted to fit your eyeball. If everything is set up properly, you should see a blue circle around the eyeball and a red circle around the pupil with a red dot in the center.
+
+
+<Youtube src="_1ZRgfLJ3hc"/>
+
 
 Next, check the world window.
 
