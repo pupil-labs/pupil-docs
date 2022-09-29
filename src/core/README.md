@@ -37,13 +37,13 @@ You will need to [physically adjust](/core/hardware/#headset-adjustments "Pupil 
 
 Take a look at the eye window(s).
 
-Pupil Core uses a 3D model of the eye to improve the pupil detection. Slide cameras along the headset frame and rotate them on the ball joint, until you get a clear frontal image of both eyes. Make sure that your pupil is always visible, even when looking at extreme angles.
+Slide cameras along the headset frame and rotate them on the ball joint, until you get a clear frontal image of both eyes. Make sure that your pupil is always visible, even when looking at extreme angles.
 
 
 <Youtube src="kjjPL7gLy7s"/>
 
 
-Slowly move your eyes around until the eye model (blue circle) adjusted to fit your eyeball. If everything is set up properly, you should see a blue circle around the eyeball and a red circle around the pupil with a red dot in the center.
+Pupil Core uses a 3D model of the eye to improve the pupil detection. Slowly move your eyes around until the eye model (blue circle) adjusted to fit your eyeball. If everything is set up properly, you should see a blue circle around the eyeball and a red circle around the pupil with a red dot in the center.
 
 
 <Youtube src="_1ZRgfLJ3hc"/>
@@ -54,10 +54,8 @@ Next, check the world window.
 You will see confidence graphs in the top for each eye. 1.0 = high confidence pupil detection. 0.0 = no confidence.
 
 ::: tip
-Tip - move your head around while looking at a fixed position. This enables you to check that your pupil is visible in the video even at extreme angles.
+Tip - There is another way to build the 3d model. You can also move your head around while looking at a fixed position. This enables you to check that your pupil is visible in the video even at extreme angles.
 :::
-
-<Videos :src="require(`../media/core/videos/pd.mp4`)" />
 
 ## 4. Calibration
 In order to know what someone is looking at, we must establish a mapping between pupil and gaze positions. This is what we call calibration. The calibration process establishes a mapping from pupil to gaze coordinates.
