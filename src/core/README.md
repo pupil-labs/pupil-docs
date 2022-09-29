@@ -43,7 +43,7 @@ Slide the cameras along the headset frame and rotate them on the ball joint, unt
 <Youtube src="kjjPL7gLy7s"/>
 
 
-Pupil Core uses a 3D model of the eye to improve the pupil detection. Slowly move your eyes around until the eye model (blue circle) adjusted to fit your eyeball. If everything is set up properly, you should see a blue circle around the eyeball and a red circle around the pupil with a red dot in the center.
+Pupil Core uses a 3D model of the eye to improve pupil detection. Slowly move your eyes around until the eye model (blue circle) is adjusted to fit your eyeball. If everything is set up properly, you should see a blue circle around the eyeball and a red circle around the pupil with a red dot in the center.
 
 
 <Youtube src="_1ZRgfLJ3hc"/>
