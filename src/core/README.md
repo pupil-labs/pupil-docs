@@ -37,7 +37,7 @@ You will need to [physically adjust](/core/hardware/#headset-adjustments "Pupil 
 
 Take a look at the eye window(s).
 
-Slide cameras along the headset frame and rotate them on the ball joint, until you get a clear frontal image of both eyes. Make sure that your pupil is always visible, even when looking at extreme angles.
+Slide the cameras along the headset frame and rotate them on the ball joint, until you get a clear image of both eyes. Make sure that your pupil is always visible, even when looking at extreme angles.
 
 
 <Youtube src="kjjPL7gLy7s"/>
