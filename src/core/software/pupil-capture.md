@@ -69,7 +69,7 @@ If the cameras are listed as `unknown` and you are not able to access cameras in
 sudo usermod -a -G plugdev $USER
 ```
 
-### macOS Monterey
+### macOS 12 Monterey and newer
 
 Due to new [technical limitations](https://github.com/libusb/libusb/issues/1014), Pupil Capture and Pupil Service need to be started with administrator privileges to get access to the video camera feeds. To do that, copy the applications into your /Applications folder and run the corresponding command from the terminal:
 
