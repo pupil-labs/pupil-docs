@@ -52,11 +52,11 @@ If no headset is connected or Pupil Capture is unable to open capture devices it
 Videos do not appear in Pupil Capture. This could mean that drivers were not automatically installed when you run Pupil Capture as **administrator**. You should first try to run Pupil Capture as **administrator** (right click `pupil_capture.exe` > Run as administrator). If that does not work, follow the troubleshooting steps below:
 
 1. In `Device Manager` (`System > Device Manager`)
-1. `View > Show Hidden Devices`
-1. Expand `libUSBK Usb Devices`, `Cameras`, and `Imaging Devices` categories.
-1. For each **Pupil Cam** device (even hidden devices) click `Uninstall` and check the box agreeing to `Delete the driver software for this device` and press `OK`
-1. Unplug Pupil headset (if plugged in) and plug back in.
-1. Right click on `pupil_capture.exe` > Run as administrator. This should install drivers automatically.
+2. `View > Show Hidden Devices`
+3. Expand `libUSBK Usb Devices`, `Cameras`, and `Imaging Devices` categories.
+4. For each **Pupil Cam** device (even hidden devices) click `Uninstall` and check the box agreeing to `Delete the driver software for this device` and press `OK`
+5. Unplug Pupil headset (if plugged in) and plug back in.
+6. Right click on `pupil_capture.exe` > Run as administrator. This should install drivers automatically.
 
 Still having trouble? [Chat with us.](https://pupil-labs.com/chat "Pupil Labs chat on DiscordApp")
 
@@ -64,10 +64,27 @@ Still having trouble? [Chat with us.](https://pupil-labs.com/chat "Pupil Labs ch
 
 If the cameras are listed as `unknown` and you are not able to access cameras in Pupil Capture. Please try the following:
 1. Shut down Pupil Capture if it is still running.
-1. Add your user to the `plugdev` group by executing the following command in the terminal:
+2. Add your user to the `plugdev` group by executing the following command in the terminal:
 ```sh
 sudo usermod -a -G plugdev $USER
 ```
+
+### macOS Monterey
+
+Due to new [technical limitations](https://github.com/libusb/libusb/issues/1014), Pupil Capture and Pupil Service need to be started with administrator privileges to get access to the video camera feeds. To do that, copy the applications into your /Applications folder and run the corresponding command from the terminal:
+
+Pupil Capture: 
+``` zsh
+sudo /Applications/Pupil\ Capture.app/Contents/MacOS/pupil_capture
+```
+Pupil Service: 
+``` zsh
+sudo /Applications/Pupil\ Service.app/Contents/MacOS/pupil_service
+```
+
+**Note**: The terminal will prompt you for your administrator password. It will not preview any typed keys. Simply hit enter once the password has been typed.
+
+**Note**: When recording with administrator privileges, the resulting folder inherits admin file permissions. Pupil Player will detect these and ask you for the administrator password to reset the file permissions. This will be only necessary once per recording.
 
 ## Pupil Detection
 Pupil Core's algorithms automatically detect the participant's pupil. It runs two detection pipelines in parallel, the 2D and the 3D pupil detection.
