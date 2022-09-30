@@ -32,7 +32,7 @@ Below, gaze is mapped in four very different environments: to a **magazine cover
 
 <div>
   <div class="grid grid-cols-2 sm-grid-cols-2 md-grid-cols-4 lg-grid-cols-4 xl-grid-cols-4 gap-4">
-    <div v-for="index in 4">
+    <div v-for="index in 3">
       <v-img 
         contain
         class="rounded" 
@@ -47,6 +47,7 @@ Below, gaze is mapped in four very different environments: to a **magazine cover
   </div>
 </div>
 
+<PhotoGrid src="../../../media/invisible/rim/heatmap-" count=3 />
 
 ### 1. Magazine reading
 
