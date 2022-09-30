@@ -30,24 +30,12 @@ In this guide, we will show you how the Reference Image Mapper can be used in a 
 
 Below, gaze is mapped in four very different environments: to a **magazine cover**, a **basketball** backboard, a **supermarket shelf**, and even a **whole building**! Let's take a look at what the Reference Image and Scanning Recording look like to produce the below heatmaps.
 
-<div>
-  <div class="grid grid-cols-2 sm-grid-cols-2 md-grid-cols-4 lg-grid-cols-4 xl-grid-cols-4 gap-4">
-    <div v-for="index in 3">
-      <v-img 
-        contain
-        class="rounded" 
-        style="margin-bottom:32px;"
-        :src="require(`../../../media/invisible/rim/heatmap-${index}.jpg`)"
-        aspect-ratio="1"
-        max-height="300px"
-        max-width="300px"
-      >
-      </v-img>
-    </div>
-  </div>
-</div>
-
-<PhotoGrid src="../../../media/invisible/rim/heatmap-" count=3 />
+<PhotoGrid :images="[
+  require(`../../../media/invisible/rim/heatmap-0.jpg`),
+  require(`../../../media/invisible/rim/heatmap-1.jpg`),
+  require(`../../../media/invisible/rim/heatmap-2.jpg`),
+  require(`../../../media/invisible/rim/heatmap-3.jpg`),
+]"/>
 
 ### 1. Magazine reading
 
