@@ -46,7 +46,7 @@ export default {
     }
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 800px) {
     .gallery {
     grid-template-columns: repeat(auto-fill, 49%);
     }
@@ -65,6 +65,5 @@ export default {
     height: 100%;
     }
 }
-
 
 </style>

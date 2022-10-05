@@ -22,6 +22,8 @@ A heatmap of gaze data mapped onto the reference image can be generated within P
 
 ## Setup
 
+<Youtube src="ygqzQEzUIS4"/>
+
 To produce a Reference Image Mapper enrichment, you will need two things in addition to your eye tracking recording(s):
 1. A reference image
 2. A scanning video of the object/feature(s) taken with Pupil Invisible’s scene camera
@@ -40,13 +42,18 @@ Below, gaze is mapped in four very different environments: to a **magazine cover
 ### 1. Magazine reading
 
 
-<div class="grid grid-cols-2 sm-grid-cols-2 md-grid-cols-2 lg-grid-cols-2 xl-grid-cols-2 gap-4">
-  <div>
+<div class="mcontainer">
+  <div class="col-mcontainer">
     <h4>Reference image</h4>
-    <iframe src="https://drive.google.com/file/d/1iWlU99D9SB9AVreQ4FH-X1iMMnbLfD6T/preview" width="100%" height="300px" allow="autoplay"></iframe>
+    <v-img
+    class="rounded" 
+    style="margin-bottom:14px;"
+    max-width="100%" max-height="300px" contain 
+    :src="require('../../../media/invisible/rim/magazine-img.jpg')"
+  ></v-img>
     First, we need a high-resolution .jpeg of the page.
   </div>
-  <div>
+  <div class="col-mcontainer">
     <h4>Scanning video</h4>
     <iframe src="https://drive.google.com/file/d/12AZR34Ygp_0mHkF9-ry9HS_4Q93DtRWz/preview" width="100%" height="300px" allow="autoplay"></iframe>
     Then, we need a scanning recording, about <i>15 s</i> long, taken on a blank background and in good lighting (natural light works well). Note that the magazine page is clear with good contrast
@@ -56,13 +63,18 @@ Below, gaze is mapped in four very different environments: to a **magazine cover
 
 ### 2. Basketball
 
-<div class="grid grid-cols-2 sm-grid-cols-2 md-grid-cols-2 lg-grid-cols-2 xl-grid-cols-2 gap-4">
-  <div>
+<div class="mcontainer">
+  <div class="col-mcontainer">
     <h4>Reference image</h4>
-    <iframe src="https://drive.google.com/file/d/1XNAjhvCZMaoOlYaWk5e0uK_EyQXfz9KT/preview" width="100%" height="300px" allow="autoplay"></iframe>
+    <v-img
+    class="rounded" 
+    style="margin-bottom:14px;"
+    max-width="100%" max-height="300px" contain 
+    :src="require('../../../media/invisible/rim/basketball-img.jpg')"
+  ></v-img>
     Here we can take a photo of the basketball hoop and court background.
   </div>
-  <div>
+  <div class="col-mcontainer">
     <h4>Scanning video</h4>
     <iframe src="https://drive.google.com/file/d/1oDVLdMRXOLzJf-bdP3SxdavV3nLck-jV/preview" width="100%" height="300px" allow="autoplay"></iframe>
     The scanning recording, in this case, is about 45 s long – note that the angles and distances cover what a player might see when dribbling towards the basket or taking a shot
@@ -71,13 +83,18 @@ Below, gaze is mapped in four very different environments: to a **magazine cover
 
 ### 3. Supermarket shelf
 
-<div class="grid grid-cols-2 sm-grid-cols-2 md-grid-cols-2 lg-grid-cols-2 xl-grid-cols-2 gap-4">
-  <div>
+<div class="mcontainer">
+  <div class="col-mcontainer">
     <h4>Reference image</h4>
-    <iframe src="https://drive.google.com/file/d/1psb9N4_d5xn51jyiP4N664kTyq75FPZ2/preview" width="100%" height="300px" allow="autoplay"></iframe>
+    <v-img
+    class="rounded" 
+    style="margin-bottom:14px;"
+    max-width="100%" max-height="300px" contain 
+    :src="require('../../../media/invisible/rim/supermarket-img.jpg')"
+  ></v-img>
     This photo captures the assortment of packagíng in the coffee aisle of a supermarket.
   </div>
-  <div>
+  <div class="col-mcontainer">
     <h4>Scanning video</h4>
     <iframe src="https://drive.google.com/file/d/1JMV-4g53yKTae5BMDsXlaMsxxun8-gCU/preview" width="100%" height="300px" allow="autoplay"></iframe>
     Notice that the scanning recording is fairly slow to reduce motion blur for this feature rich shelf.
@@ -86,13 +103,18 @@ Below, gaze is mapped in four very different environments: to a **magazine cover
 
 ### 4. An entire building
 
-<div class="grid grid-cols-2 sm-grid-cols-2 md-grid-cols-2 lg-grid-cols-2 xl-grid-cols-2 gap-4">
-  <div>
+<div class="mcontainer" display="grid | inline-grid">
+  <div class="col-mcontainer">
     <h4>Reference image</h4>
-    <iframe src="https://drive.google.com/file/d/1GujEsgeup67oTeOEAeLQ_nPIeZvn_ymG/preview" width="100%" height="300px" allow="autoplay"></iframe>
+    <v-img
+    class="rounded" 
+    style="margin-bottom:14px;"
+    max-width="100%" max-height="300px" contain 
+    :src="require('../../../media/invisible/rim/building-img.jpg')"
+    ></v-img>
     This is a photo of the <i>entire</i> building
   </div>
-  <div>
+  <div class="col-mcontainer">
     <h4>Scanning video</h4>
     <iframe src="https://drive.google.com/file/d/1S_BeAh4WvsoUXXA-y82MahMfOFLmP4z8/preview" width="100%" height="300px" allow="autoplay"></iframe>
     We take a longer scanning recording, about 2 min. The angles and distances cover what a person might see whilst walking past or standing in front of the building.
@@ -135,14 +157,13 @@ To check if gaze has been mapped successfully, use the side-by-side view:
 
 Now when you play back the recording you can see where gaze is mapped to on your reference image for validation
 
-## Oclusions
+## Occlusions
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
     class="rounded" 
-    style="margin-bottom:32px;"
     :src="require('../../../media/invisible/rim/basketball-occlusion.png')"
-    max-width=40%
+    max-width=400px
   >
   </v-img>
 </div>
@@ -168,3 +189,30 @@ In cases such as supermarket shopping, where features of the environment like fr
 
 Under the hood, the Reference Image Mapper uses a method called SLAM, which builds a model of the environment. You can see this by enabling the ‘point cloud’ in your Cloud Project.
 :::
+
+<style>
+.mcontainer{
+  display: flex;
+  flex-wrap: wrap;
+}
+.col-mcontainer{
+  flex: 50%;
+  padding: 0 4px;
+}
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  .col-mcontainer{
+    flex: 100%;
+  }
+}
+@media screen and (max-width: 800px) {
+    .col-mcontainer{
+    flex: 50%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .col-mcontainer{
+    flex: 100%;
+  }
+}
+
+</style>
