@@ -7,7 +7,7 @@ permalink: /invisible/explainers/enrichments/reference-image-mapper
 
 Reference Image Mapper is a powerful tool to automatically map gaze onto to features/objects in the environment.
 
-<Youtube src="IF8f1Z3ZkEo" autoplay="1" muted="1"/>
+<Youtube src="IF8f1Z3ZkEo" muted="1"/>
 
 
 A heatmap of gaze data mapped onto the reference image can be generated within Pupil Cloud. Mapped gaze and fixation data can further be downloaded as [CSV files](/invisible/reference/export-formats.html#reference-image-mapper). 
@@ -172,7 +172,7 @@ If you need to remove the falsely mapped data points, there are a few workaround
 
 **Use Sections to map portions of your recordings**
 
-In cases such as supermarket shopping, where features of the environment like freezers and aisles are repetitive and overlapping, it can be useful to divide recordings into shorter [Sections](/invisible/explainers/enrichments/overview#enrichment-sections) for enrichment. This way you can ensure gaze is only mapped to portions of the recording when you know the user is looking at a particular part of the store.
+In cases such as supermarket shopping, where features of the environment like freezers and aisles are repetitive and overlapping, it can be useful to divide recordings into shorter [Sections](/invisible/explainers/enrichments#enrichment-sections) for enrichment. This way you can ensure gaze is only mapped to portions of the recording when you know the user is looking at a particular part of the store.
 
 
 ::: tip
