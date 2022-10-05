@@ -7,15 +7,7 @@ permalink: /invisible/explainers/enrichments/reference-image-mapper
 
 Reference Image Mapper is a powerful tool to automatically map gaze onto to features/objects in the environment.
 
-<div class="pb-4" style="display:flex;justify-content:center;">
-  <v-img
-    class="rounded" 
-    style="margin-bottom:32px;"
-    :src="require('../../../media/invisible/rim/reference_image_mapper_header.png')"
-    max-width=100%
-  >
-  </v-img>
-</div>
+<Youtube src="IF8f1Z3ZkEo" autoplay="1" muted="1"/>
 
 
 A heatmap of gaze data mapped onto the reference image can be generated within Pupil Cloud. Mapped gaze and fixation data can further be downloaded as [CSV files](/invisible/reference/export-formats.html#reference-image-mapper). 
@@ -55,7 +47,7 @@ Below, gaze is mapped in four very different environments: to a **magazine cover
   </div>
   <div class="col-mcontainer">
     <h4>Scanning video</h4>
-    <iframe src="https://drive.google.com/file/d/12AZR34Ygp_0mHkF9-ry9HS_4Q93DtRWz/preview" width="100%" height="300px" allow="autoplay"></iframe>
+    <Youtube src="SplYZK-ZzE8"/>
     Then, we need a scanning recording, about <i>15 s</i> long, taken on a blank background and in good lighting (natural light works well). Note that the magazine page is clear with good contrast
   </div>
 </div>
@@ -76,7 +68,7 @@ Below, gaze is mapped in four very different environments: to a **magazine cover
   </div>
   <div class="col-mcontainer">
     <h4>Scanning video</h4>
-    <iframe src="https://drive.google.com/file/d/1oDVLdMRXOLzJf-bdP3SxdavV3nLck-jV/preview" width="100%" height="300px" allow="autoplay"></iframe>
+    <Youtube src="4MB5o4W_XJo"/>
     The scanning recording, in this case, is about 45 s long – note that the angles and distances cover what a player might see when dribbling towards the basket or taking a shot
   </div>
 </div>
@@ -96,7 +88,7 @@ Below, gaze is mapped in four very different environments: to a **magazine cover
   </div>
   <div class="col-mcontainer">
     <h4>Scanning video</h4>
-    <iframe src="https://drive.google.com/file/d/1JMV-4g53yKTae5BMDsXlaMsxxun8-gCU/preview" width="100%" height="300px" allow="autoplay"></iframe>
+    <Youtube src="d3Yk3nKDIOQ"/>
     Notice that the scanning recording is fairly slow to reduce motion blur for this feature rich shelf.
   </div>
 </div>
@@ -116,7 +108,7 @@ Below, gaze is mapped in four very different environments: to a **magazine cover
   </div>
   <div class="col-mcontainer">
     <h4>Scanning video</h4>
-    <iframe src="https://drive.google.com/file/d/1S_BeAh4WvsoUXXA-y82MahMfOFLmP4z8/preview" width="100%" height="300px" allow="autoplay"></iframe>
+    <Youtube src="0U4H-uOIHlw"/>
     We take a longer scanning recording, about 2 min. The angles and distances cover what a person might see whilst walking past or standing in front of the building.
   </div>
 </div>
