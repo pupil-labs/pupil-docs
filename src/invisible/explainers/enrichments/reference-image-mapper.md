@@ -116,7 +116,7 @@ Below, gaze is mapped in four very different environments: to a **magazine cover
 ## Scanning best practices
 
 - Make the recording while holding the Pupil Invisible glasses in your hand rather than wearing it on your head.
-- Record the object of interest from all possible angles and from all distances a subject may look at it. More diversity is better. Collecting sufficiently diverse viewpoints or a large object, like a building, may take longer than capturing a small object like a magazine.
+- Record the object of interest from all possible angles and from all distances a subject may look. More diversity is better. Collecting sufficiently diverse viewpoints or a large object, like a building, may take longer than capturing a small object like a magazine.
 - Move the glasses slowly while recording to avoid motion blur.
 - Make sure to have good contrast and that your scene lighting during scanning is similar to that during mapping.
 
