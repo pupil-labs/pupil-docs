@@ -16,7 +16,7 @@ A heatmap of gaze data mapped onto the reference image can be generated, and map
 
 <Youtube src="ygqzQEzUIS4"/>
 
-To produce a Reference Image Mapper enrichment, you will need two things in addition to your eye tracking recording(s):
+As described in the setup video, you will need two things in addition to your eye tracking recording(s) to produce a Reference Image Mapper enrichment:
 1. A reference image
 2. A scanning video of the object/feature(s) taken with Pupil Invisible’s scene camera
 
