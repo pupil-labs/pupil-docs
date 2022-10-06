@@ -179,7 +179,7 @@ In cases such as supermarket shopping, where features of the environment like fr
 
 **Want to know more?**
 
-Under the hood, the Reference Image Mapper uses a method called SLAM, which builds a model of the environment. You can see this by enabling the ‘point cloud’ in your Cloud Project.
+Under the hood, the Reference Image Mapper uses a method called Structure from Motion (SfM) to build a model of the environment. You can see this by enabling the ‘point cloud’ in your Cloud Project.
 :::
 
 <style>
