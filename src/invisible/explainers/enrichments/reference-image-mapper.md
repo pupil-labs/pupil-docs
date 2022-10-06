@@ -122,7 +122,7 @@ Below, gaze is mapped in four very different environments: to a **magazine cover
 
 What works and what doesn’t?
 - These examples are **feature rich**. Reference Image Mapper needs enough salient visual content to produce a successful mapping.
-- The scenes are relatively **static** features in the environment. If there is a lot of movement or the objects change in appearance, the mapping *can* fail.
+- The scenes have relatively **static** features in the environment. If there is a lot of movement or the objects change in appearance, the mapping *can* fail.
 
 ::: tip
 **Ready to go?**
