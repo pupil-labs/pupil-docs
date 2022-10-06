@@ -10,7 +10,7 @@ Reference Image Mapper is a powerful tool to automatically map gaze onto to feat
 <Youtube src="IF8f1Z3ZkEo" muted="1"/>
 
 
-A heatmap of gaze data mapped onto the reference image can be generated within Pupil Cloud. Mapped gaze and fixation data can further be downloaded as [CSV files](/invisible/reference/export-formats.html#reference-image-mapper). 
+A heatmap of gaze data mapped onto the reference image can be generated, and mapped gaze and fixation data can further be downloaded as [CSV files](/invisible/reference/export-formats.html#reference-image-mapper). 
 
 ## Setup
 
