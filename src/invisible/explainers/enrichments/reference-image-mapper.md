@@ -165,7 +165,7 @@ Sometimes an object will occlude the feature/object of interest. The reference i
 
 If you need to remove the falsely mapped data points, there are a few workarounds.
 
-1. Use Events and Sections to trim out false positive sections as in the above tip.
+1. Use Events and Sections to trim out false positive sections.
 2. Manually remove the affected data points in the reference image mapper export, by finding the timestamp and deleting the row in the .csv export.
 
 ## Repetitions
