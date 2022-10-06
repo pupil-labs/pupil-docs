@@ -70,8 +70,8 @@ export default ({ Vue, router, options }) => {
     "/#interprocess-and-network-communication": "/developer/core/network-api/",
     "/#annotations": "/core/software/pupil-capture/#annotations",
     "/cloud/enrichments/#reference-image-mapper":
-      "invisible/reference/export-formats",
-    "/cloud": "/invisible",
+      "invisible/reference/export-formats/",
+    "/cloud": "/invisible/",
   };
 
   router.beforeEach((to, from, next) => {
