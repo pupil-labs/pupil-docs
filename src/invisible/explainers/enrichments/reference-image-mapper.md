@@ -22,7 +22,7 @@ To produce a Reference Image Mapper enrichment, you will need two things in addi
 
 In this guide, we will show you how the Reference Image Mapper can be used in a few different situations. This should help you get set up using the enrichment in your own testing environment!
 
-Below, gaze is mapped in four very different environments: to a **magazine cover**, a **basketball** backboard, a **supermarket shelf**, and even a **whole building**! Let's take a look at what the Reference Image and Scanning Recording look like to produce the below heatmaps.
+Below, gaze is mapped in four very different environments: to a **magazine cover**, a **basketball backboard**, a **supermarket shelf**, and even a **whole building**!
 
 <PhotoGrid :images="[
   require(`../../../media/invisible/rim/heatmap-0.jpg`),
