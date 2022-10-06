@@ -144,7 +144,7 @@ Why not try replicating the above examples? Or even try it with your own use-cas
 To check if gaze has been mapped successfully, use the side-by-side view:
 1. Select a recording
 2. Select the Reference Image Mapper Enrichment
-3. Select the Scene Reference Image View
+3. Select the Scene / Reference Image View
 4. If you want to visualize and evaluate the 3D model generated (white dots), just turn on the Point Cloud toggle!
 
 Now when you play back the recording you can see where gaze is mapped to on your reference image for validation
