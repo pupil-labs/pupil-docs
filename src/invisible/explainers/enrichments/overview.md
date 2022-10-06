@@ -24,7 +24,7 @@ From mapping your gaze to real-world features of the environment, like surfaces,
 </div>
 
 ## Enrichment Sections
-Before you go, note that all enrichments are defined based on a **start** and **end [event](/invisible/explainers/basic-concepts/#events)**. Those events are used to specify which sections of a recording an enrichment should be calculated on. The enrichment will be calculated on any recording in your project that contains the respective start and end event in the recording section between those two events.
+Before you continue, note that all enrichments are defined based on a **start** and **end [event](/invisible/explainers/basic-concepts/#events)**. Those events are used to specify which sections of a recording an enrichment should be calculated on. The enrichment will be calculated on any recording in your project that contains the respective start and end events in the recording section between those two events.
 
 You can preview the results of most enrichments in the project editor by clicking on an enrichment section and playing the corresponding section of the recording. Every enrichment section has a unique ID, which is referenced in all enrichment exports.
 
