@@ -31,6 +31,7 @@ Below, gaze is mapped in four very different environments: to a **magazine cover
   require(`../../../media/invisible/rim/heatmap-3.jpg`),
 ]"/>
 
+Let's take a look at what the Reference Image and Scanning Recording look like to produce these heatmaps.
 ### 1. Magazine reading
 
 
