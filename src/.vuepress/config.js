@@ -86,7 +86,21 @@ module.exports = {
           children: [
             'explainers/basic-concepts',
             'explainers/data-streams',
-            'explainers/enrichments',
+            {
+              title: "Enrichments",
+              children: [
+                {
+                  title: 'Overview', 
+                  path: 'explainers/enrichments/overview'
+                },
+                'explainers/enrichments/reference-image-mapper',
+                'explainers/enrichments/marker-mapper',
+                'explainers/enrichments/face-mapper',
+                'explainers/enrichments/gaze-overlay',
+                'explainers/enrichments/raw-data',
+              ]
+            },
+            // 'explainers/enrichments',
             'explainers/glasses-and-companion-device',
             'explainers/publications',
           ]

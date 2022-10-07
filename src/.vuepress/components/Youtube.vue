@@ -2,8 +2,8 @@
 .pb-4(style="display: flex; justify-content: center; aspect-ratio: 16 / 9")
   iframe(
     width="100%",
-    height="100%",
-    :src="`https://www.youtube-nocookie.com/embed/${src}?autoplay=0&rel=0&modestbranding=1&loop=1`",
+    height=height,
+    :src="`https://www.youtube-nocookie.com/embed/${src}?autoplay=${autoplay}&rel=0&modestbranding=1&loop=1&muted=${muted}`",
     frameborder="0",
     allow="accelerometer; encrypted-media; gyroscope; picture-in-picture",
     allowfullscreen
@@ -16,6 +16,22 @@ export default {
     src: {
       type: String,
       required: true,
+    },
+    height: {
+      type: String,
+      default: "100%",
+    },
+    width: {
+      type: String,
+      default: "100%",
+    },
+    muted: {
+      type: String,
+      default: "0",
+    },
+    autoplay: {
+      type: String,
+      default: "0",
     },
   },
 };
