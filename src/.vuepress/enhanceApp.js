@@ -69,14 +69,17 @@ export default ({ Vue, router, options }) => {
     "/#network-plugins": "/core/software/pupil-capture/#network-plugins",
     "/#interprocess-and-network-communication": "/developer/core/network-api/",
     "/#annotations": "/core/software/pupil-capture/#annotations",
+    "/invisible/user-guide/invisible-companion-app/#local-transfer":
+      "/invisible/how-tos/data-collection-with-the-companion-app/transfer-recordings-via-usb.html",
     "/cloud/enrichments/#reference-image-mapper":
-      "invisible/reference/export-formats/",
+      "/invisible/explainers/enrichments/#reference-image-mapper",
     "/cloud": "/invisible/",
+    "/cloud/": "/invisible/",
   };
 
   router.beforeEach((to, from, next) => {
     if (Object.keys(redirect_dict).indexOf(to.fullPath) >= 0) {
-      next(redirect_dict[to.fullPath]);
+      next({ path: redirect_dict[to.fullPath] });
     } else {
       next();
     }
