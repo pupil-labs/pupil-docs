@@ -70,11 +70,11 @@ export default ({ Vue, router, options }) => {
     "/#interprocess-and-network-communication": "/developer/core/network-api/",
     "/#annotations": "/core/software/pupil-capture/#annotations",
     "/invisible/user-guide/invisible-companion-app/#local-transfer":
-      "/invisible/how-tos/data-collection-with-the-companion-app/transfer-recordings-via-usb.html",
+      "/invisible/how-tos/data-collection-with-the-companion-app/transfer-recordings-via-usb",
     "/cloud/enrichments/#reference-image-mapper":
       "/invisible/explainers/enrichments/#reference-image-mapper",
-    "/cloud": "/invisible/",
     "/cloud/": "/invisible/",
+    "/cloud": "/invisible/",
   };
 
   router.beforeEach((to, from, next) => {
