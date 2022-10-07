@@ -5,7 +5,7 @@ permalink: /invisible/explainers/enrichments/reference-image-mapper
 
 # Reference Image Mapper
 
-Reference Image Mapper is a powerful tool to automatically map gaze onto to features/objects in the environment.
+Reference Image Mapper is a powerful tool to automatically map gaze onto features/objects in the environment.
 
 <Youtube src="IF8f1Z3ZkEo" muted="1"/>
 
@@ -115,22 +115,22 @@ Let's take a look at what the Reference Image and Scanning Recording look like t
 </div>
 
 ## Scanning best practices
-
+Try to follow these best practices when recording a scanning video:
 - Make the recording while holding the Pupil Invisible glasses in your hand rather than wearing it on your head.
-- Record the object of interest from all possible angles and from all distances a subject may look. More diversity is better. Collecting sufficiently diverse viewpoints or a large object, like a building, may take longer than capturing a small object like a magazine.
+- Record the object of interest from all possible angles and from all distances a subject may view them. More diversity is better. Collecting sufficiently diverse viewpoints for a large object, like a building, may require you to move accordingly large distances.
 - Move the glasses slowly while recording to avoid motion blur.
 - Make sure to have good contrast and that your scene lighting during scanning is similar to that during mapping.
 
 What works and what doesn’t?
-- These examples are **feature rich**. Reference Image Mapper needs enough salient visual content to produce a successful mapping.
-- The scenes have relatively **static** features in the environment. If there is a lot of movement or the objects change in appearance, the mapping *can* fail.
+- The scene must be **feature rich** like in the examples above. There has to be enough salient visual content to produce a successful mapping.
+- The scene needs to have relatively **static** features in the environment. If there is a lot of movement or the objects change in appearance or shape, the mapping *can* fail.
 
 ::: tip
 **Ready to go?**
 Why not try replicating the above examples? Or even try it with your own use-cases! If you haven’t already, we recommend you check out the [Cloud Getting Started Guide](/invisible/getting-started/analyse-recordings-in-pupil-cloud/#analyse-recordings-in-pupil-cloud), which covers the basics of working with enrichments.
 :::
 
-## Validate gaze mapping
+## Validate the gaze mapping
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
@@ -143,12 +143,12 @@ Why not try replicating the above examples? Or even try it with your own use-cas
 </div>
 
 To check if gaze has been mapped successfully, use the side-by-side view:
-1. Select a recording
-2. Select the Reference Image Mapper Enrichment
-3. Select the Scene / Reference Image View
+1. Select a recording.
+2. Select the Reference Image Mapper Enrichment.
+3. Select the Scene / Reference Image View.
 4. If you want to visualize and evaluate the 3D model generated (white dots), just turn on the Point Cloud toggle!
 
-Now when you play back the recording you can see where gaze is mapped to on your reference image for validation
+Now when you play back the recording you can see where gaze is mapped to on your reference image for validation.
 
 ## Occlusions
 
@@ -162,7 +162,7 @@ Now when you play back the recording you can see where gaze is mapped to on your
 </div>
 
 
-Sometimes an object will occlude the feature/object of interest. The reference image mapper may not know this, so a false positive mapping could occur. 
+Sometimes an object will occlude the feature/object of interest. The reference image mapper may not recognize this, so a false positive mapping could occur. 
 
 If you need to remove the falsely mapped data points, there are a few workarounds.
 
@@ -170,9 +170,6 @@ If you need to remove the falsely mapped data points, there are a few workaround
 2. Manually remove the affected data points in the reference image mapper export, by finding the timestamp and deleting the row in the .csv export.
 
 ## Repetitions
-
-**Use Sections to map portions of your recordings**
-
 In cases such as supermarket shopping, where features of the environment like freezers and aisles are repetitive and overlapping, it can be useful to divide recordings into shorter [Sections](/invisible/explainers/enrichments#enrichment-sections) for enrichment. This way you can ensure gaze is only mapped to portions of the recording when you know the user is looking at a particular part of the store.
 
 
