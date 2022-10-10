@@ -14,11 +14,11 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: '3.x'
-      - run: pip install nbconvert
+      - run: pip install nbconvert packaging
       - name: Convert Jupyter notebooks
         run: |
           shopt -s globstar
-          python -m jupyter nbconvert --to markdown **/*.ipynb --ExtractOutputPreprocessor.enabled=False
+          jupyter-nbconvert --to markdown **/*.ipynb --ExtractOutputPreprocessor.enabled=False
           shopt -u globstar
         shell: bash
 

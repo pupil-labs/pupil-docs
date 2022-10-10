@@ -1,0 +1,65 @@
+name: Links check on REQ  
+
+on:
+  repository_dispatch:
+  workflow_dispatch:
+
+jobs:
+  linkChecker:
+    name: Install dependencies and generate static site and check for broken links
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - run: pip install nbconvert packaging
+
+      - name: Convert Jupyter notebooks
+        run: |
+          shopt -s globstar
+          jupyter-nbconvert --to markdown **/*.ipynb --ExtractOutputPreprocessor.enabled=False
+          shopt -u globstar
+        shell: bash
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      
+      - name: Install vuepress
+        run: yarn global add vuepress
+
+      - name: Install package.json
+        run: yarn
+
+      - name: Build static site with vuepress
+        # alias for vuepress build src defined in package.json
+        run: yarn build
+      
+      - name: Get size of files in dist 
+        shell: bash
+        run: |
+          du -ah src/.vuepress/dist
+
+      # Check built html pages for broken links
+      - name: Link checker
+        id: lychee
+        uses: lycheeverse/lychee-action@v1.5.0
+        with:
+        # Check all markdown and html files in repo (exclude those in .lycheeignore)
+          args: -v -n -a 403,503,429,200 --cache -i -u 'Mozilla/5.0' -b 'https://docs.pupil-labs.com' --exclude-mail --include-verbatim 'src/.vuepress/**/*.html' #'src/core/**/*.md' 'src/invisible/**/*.md' 'src/vr-ar/**/*.md' 'src/**/*.md' 'src/invisible/**/*.ipynb' 'src/core/**/*.ipynb'
+          jobSummary: true
+          lycheeVersion: 0.10.0
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Create Issue From File from lychee
+        uses: peter-evans/create-issue-from-file@v3
+        with:
+          title: Link Checker Report
+          content-filepath: ./lychee/out.md
+          labels: report, automated issue
+          

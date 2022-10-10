@@ -28,7 +28,7 @@ While looking almost like normal glasses, the Pupil Invisible glasses are filled
 
 - **Eye Cameras**: A binocular pair of infrared cameras with matching 850nm infrared illuminator **LEDs** are used to capture [eye videos](/invisible/explainers/data-streams/#eye-videos). The raw data is saved with each recording and is used for real-time [gaze](/invisible/explainers/data-streams/#gaze) estimation.
 
-- **Scene Camera**: A detachable scene camera is located on the right arm of the glasses capturing [scene video](/invisible/explainers/data-streams/#scene-video). A **microphone** is integrated into the camera module to capture [audio](/invisible/explainers/data-streams/#audio). You can detach and attach the camera at any time before, during, and after a recording. The app will capture scene video during a recording automatically whenever it is attached. Capturing audio is optional and settable in the Companion app settings.
+- **Scene Camera**: A detachable scene camera is located on the left arm of the glasses capturing [scene video](/invisible/explainers/data-streams/#scene-video). A **microphone** is integrated into the camera module to capture [audio](/invisible/explainers/data-streams/#audio). You can detach and attach the camera at any time before, during, and after a recording. The app will capture scene video during a recording automatically whenever it is attached. Capturing audio is optional and settable in the Companion app settings.
  
 - **IMU**: A 6-degrees-of-freedom IMU is integrated into the right arm of the glasses. It captures the [inertia](/invisible/explainers/data-streams/#inertial-measurements) of the glasses, including translational acceleration, rotational speed, pitch and roll.
 
@@ -41,7 +41,7 @@ While looking almost like normal glasses, the Pupil Invisible glasses are filled
 - **Serial Plaque**: The glasses serial number can be found on a plaque at the tip of the left arm.
 
 :::danger
-The electronics and sensors are sensitive! Please follow our how-to guide when [cleaning and disinfecting](/invisible/how-tos/pupil-invisible-glasses/cleaning-and-disinfecting)  your glasses.
+The electronics and sensors are sensitive! Please follow our how-to guide when [cleaning and disinfecting](/invisible/how-tos/pupil-invisible-glasses/clean-and-disinfect)  your glasses.
 :::
 
 ## Pupil Invisible Companion Device
@@ -49,12 +49,32 @@ The Companion device is a flagship Android smartphone. It is a regular phone tha
 
 The models we currently support are OnePlus 6, OnePlus 8, and OnePlus 8T.
 
-If you want to replace or add an extra Companion device you purchase it [directly from us](https://pupil-labs.com/products/invisible/accessories/) or from any other distributor. The companion app is free and can be downloaded from the [Play Store](https://play.google.com/store/apps/details?id=com.pupillabs.invisiblecomp).
+If you want to replace or add an extra Companion device you can purchase it [directly from us](https://pupil-labs.com/products/invisible/accessories/) or from any other distributor. The companion app is free and can be downloaded from the [Play Store](https://play.google.com/store/apps/details?id=com.pupillabs.invisiblecomp).
+
+Using a fully charged OnePlus 8 device you get around 150 minutes of continuous recording time. You can extend this duration by simultaneously charging the phone during a recording using a powered USB-C hub. With this setup you connect the hub to the phone, and the Pupil Invisible device and a power source to the hub.
+
+Note that not every USB-C hub is compatible with Android! One hub we have tested successfully is available [here](https://www.amazon.de/dp/B08CKXNJZS/). Also, note that the original OnePlus charger is not compatible with regular hubs (including the linked one) because it uses non-standard power delivery. Other regular USB chargers should work though.
+
+## Companion Device Updates
+### Companion App
+Make sure to update the Companion app on a regular basis. The latest version will always be available on the 
+[Play Store](https://play.google.com/store/apps/details?id=com.pupillabs.invisiblecomp).
+
+### Android OS
+We ship each Companion Device with a specific Android Version, carefully tested to ensure robustness and stability.
 
 :::danger
-Make sure to update the **Companion app** on a regular basis. However, be careful with updating the **Android** version. Some Android versions have issues with accessing USB devices, rendering them incompatible with Pupil Invisible.
+We recommend that you don't allow Android system updates on your device. Some Android versions have issues with accessing 
+USB devices, rendering them incompatible with Pupil Invisible.
 :::
 
-The currently supported Android versions are as follows:
+If you purchased your device from a third-party distributor, you'll need to ensure that the correct Android version is installed. The currently 
+supported Android versions are as follows:
 - On **OnePlus 6**: Android 8 and 9
 - On **OnePlus 8** and **8T**: Android 11
+
+:::tip
+Should you have upgraded to an incompatible Android version by accident, you have the
+option to rollback to a compatible version. You can find the instructions
+[here](/invisible/troubleshooting/#i-accidentally-updated-my-companion-device-to-an-incompatible-android-version)
+:::

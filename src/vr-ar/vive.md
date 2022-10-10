@@ -51,20 +51,5 @@ Once you plug the usb cables into your computer:
 - The right eye camera will show up with the name: `Pupil Cam 3 ID0`
 - The left eye camera will show up with the name: `Pupil Cam 3 ID1`
 
-::: warning
-Note: For older 120Hz systems, the cameras will show up as `Pupil Cam 1 ID0` and `Pupil Cam 1 ID1`.
-:::
-
 ## Interfacing with other software or your own code
 Both cameras are fully UVC compliant and will work with OpenCVs video backend, Pupil Capture, and libraries like `libucv` and `pyuvc`.
-
-## Focus and Resolutions
-
-::: warning
-Depreciation Warning: The below information is only relevant for older 120Hz eye cameras. New Vive/Vive Pro add-ons use 200Hz eye cameras that can not be focused.
-:::
-
-After assembly and connection.
-Fire up Pupil Capture or Service and adjust the focus of the eye cameras by rotating the lens by a few degrees (not revolutions) in the lens housing.
-
-Use `640x480` or `320x240` resolution to get `120fps` and a good view of the eye. Other resolutions will crop the eye images.

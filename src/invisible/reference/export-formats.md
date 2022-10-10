@@ -53,6 +53,18 @@ This file contains meta-information on the recording.
 Scene video is contained in a file following the following naming scheme:
 ```<beginning of section ID>_<section start time>-<section end time>.mp4```
 
+#### scene_camera.json
+This file contains the camera intrinsics of the used scene camera. The values are determined via calibration of every camera during manufacturing.
+
+| Field | Description | 
+| -------- | -------- | 
+| **camera_matrix** | The camera matrix of the scene camera.     |
+| **dist_coefs** | The distortion coefficients of the scene camera. The order of the values is `(k1, k2, p1, p2, k3, k4, k5, k6)` following [OpenCV's distortion model](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#ga3207604e4b1a1758aa66acb6ed5aa65d). |
+| **rotation_matrix** | Extrinsic rotation matrix describing how the scene camera is positioned in relation to the eye cameras. For more details please see section III-B of the [white paper](https://arxiv.org/pdf/2009.00508.pdf).     |
+| **serial_number** | The serial number of the scene camera. This number can also be found on the back of the scene camera module. Please note that this number is different from the serial number of the frame, which can be found on the tip of the left temple of the Pupil Invisible frame.     |
+| **version** | The version of the intrinsics data format.     |
+
+
 
 #### world_timestamps.csv
 This file contains the timestamps of every world video frame.
@@ -88,6 +100,9 @@ This file contains [gaze](/invisible/explainers/data-streams/#gaze) data in worl
 | **gaze y [px]** | Same as "gaze x [px]" but for the y-coordinate.     |
 | **worn** | This value indicates whether the Pupil Invisible Glasses have been worn by a subject at this point in time. `1.0` indicates that it has been worn, while `0.0` indicates that it has not been worn. Added in version 2 of this enrichment.    |
 | **fixation id** | If this gaze sample belongs to a fixation event, this is the corresponding id of the fixation. Otherwise, this field is empty.     |
+| **blink id** | If this gaze samples belongs to a blink event, this is the corresponding id of the blink. Otherwise this field is empty.     |
+| **azimuth [deg]** | The [azimuth](https://en.wikipedia.org/wiki/Horizontal_coordinate_system) of the gaze ray in relation to the scene camera in degrees.     |
+| **elevation [deg]** | The [elevation](https://en.wikipedia.org/wiki/Horizontal_coordinate_system) of the gaze ray in relation to the scene camera in degrees.     |
 
 
 #### fixations.csv
@@ -106,6 +121,19 @@ The corresponding gaze samples that belong to each fixation can be determined fr
 | **fixation x [px]** | Float value representing the x-coordinate of the fixation in world camera pixel coordinates. This position is the average of all gaze samples within the fixation.     |
 | **fixation y [px]** | Same as "fixation x [px]" but for the y-coordinate.     |
 
+#### blinks.csv
+This file contains [blinks](/invisible/explainers/data-streams/#blinks) detected in the eye video.
+The corresponding gaze samples that belong to each blink can be determined from the `gaze.csv` file using the `blink id` field.
+
+
+| Field | Description | 
+| -------- | -------- | 
+| **section id** | Unique identifier of the corresponding section.     |
+| **recording id** | Unique identifier of the recording this sample belongs to.     |
+| **blink id** | Identifier of the blink. The counter starts at the beginning of the recording.     |
+| **start timestamp [ns]** | UTC timestamp in nanoseconds of the start of the blink.     |
+| **end timestamp [ns]** | UTC timestamp in nanoseconds of the end of the blink.     |
+| **duration [ms]** | Duration of the blink in milliseconds.     |
 
 #### imu.csv
 This file contains data recorded by the integrated [IMU](/invisible/explainers/data-streams/#inertial-measurements) (inertial measurement unit).
@@ -135,6 +163,7 @@ This file contains all the mapped gaze data from all sections. The coordinate sy
 | **gaze position on surface x [normalized]** | Float value representing the x-coordinate of the mapped gaze point in surface coordinates. If the surface was not localized this value is empty.     |
 | **gaze position on surface y [normalized]** | Same as gaze position on surface x [normalized] but for y-coordinate.     |
 | **fixation id** | If this gaze sample belongs to a fixation event, this is the corresponding id of the fixation. Otherwise, this field is empty.     |
+| **blink id** | If this gaze samples belongs to a blink event, this is the corresponding id of the blink. Otherwise this field is empty.     |
 
 #### fixations.csv
 This file contains fixation events detected in the gaze data stream and mapped to the surface.
@@ -182,6 +211,7 @@ This file contains all the mapped gaze data from all sections.
 | **gaze position in reference image x [px]** | Float value representing the x-coordinate of the mapped gaze point in pixel coordinates. If the reference image was not detected in the scene at the given time this value is empty.     |
 | **gaze position in reference image y [px]** | Same as "gaze position in reference image x [px]" but for the y-coordinate.     |
 | **fixation id** | If this gaze sample belongs to a fixation event, this is the corresponding id of the fixation. Otherwise, this field is empty.     |
+| **blink id** | If this gaze samples belongs to a blink event, this is the corresponding id of the blink. Otherwise this field is empty.     |
 
 #### fixations.csv
 This file contains fixation events detected in the gaze data stream and mapped to the reference image.
@@ -200,7 +230,7 @@ This file contains fixation events detected in the gaze data stream and mapped t
 | **fixation y [px]** | Same as "fixation x [px]" but for the y-coordinate.     |
 
 #### Reference Image
-The reference image was used for defining the enrichment. The file is named `reference_image.jpeg|png`
+The reference image that was used for defining the enrichment. The file is named `reference_image.jpeg|png`.
 
 
 ## Face Mapper

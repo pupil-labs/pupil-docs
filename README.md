@@ -16,7 +16,7 @@ We welcome all contributions! To edit content:
 1. Make a Pull Request
 
 ## Download
-For this project we use Yarn for dependency management.
+For this project, we use Yarn for dependency management.
 
 Download and install [Yarn](https://yarnpkg.com/en/docs/install).
 
@@ -35,7 +35,11 @@ pip install nbconvert
 ```
 and run the following command
 ```
-python -m jupyter nbconvert --to markdown **/*.ipynb --ExtractOutputPreprocessor.enabled=False
+jupyter-nbconvert --to markdown **/*.ipynb --ExtractOutputPreprocessor.enabled=False
+```
+on a Windows machine, you can achieve the same output by running the following command using PowerShell
+``` 
+ls *.ipynb -Recurse | foreach{jupyter-nbconvert --to markdown $_ --ExtractOutputPreprocessor.enabled=False}
 ```
 
 Start local development with:
@@ -48,7 +52,7 @@ To generate static assets, run:
 yarn build
 ```
 
-## Directory Struture
+## Directory Structure
 
 ```markdown
 .
@@ -117,7 +121,7 @@ Note - `webm` and `webp` will be implemented in future iterations.
 ## Style Guide
 We aim for the docs to be concise and readable.
 
-All content is written in Markdown. If you're new to Markdown see [this guide](https://guides.github.com/features/mastering-markdown/ "Github - Mastering Markdown"). HTML markup is also parsed, but discouraged unless absolutely needed.
+All content is written in Markdown. If you're new to Markdown see [this guide](https://guides.github.com/features/mastering-markdown/ "Github - Mastering Markdown"). HTML markup is also parsed but discouraged unless absolutely needed.
 
 ### Table of contents
 All H1, H2, H3 headers will be automatically added to the table of contents.
@@ -172,4 +176,22 @@ https://www.youtube.com/watch?v=HGMjJLnK2_4
 
 ```md
 <Youtube src="HGMjJLnK2_4"/>
+```
+
+
+### Videos
+Use Videos component to quickly add local videos to markdown files.
+
+Just add the relative path of the video to the src prop of the component like so.
+Note that you need to use `require` in order for Webpack to correctly resolve the path.
+
+```md
+<Videos :src="require(`../../media/core/videos/worldcam-focus.mp4`)">
+```
+
+The default video type is `video/mp4` which is automatically added but in case you are using a different type of video, just update the type prop.
+
+
+```md
+<Videos :src="require(`../../media/core/videos/worldcam-focus.webm`)" type="video/webm">
 ```

@@ -3,13 +3,18 @@ description: How-To guide on transferring recordings off of the Companion phone 
 ---
 
 # Transfer Recordings via USB
+
+
+::: tip
+<v-icon large color="info">info_outline</v-icon>
 The recommended way for transferring recordings off of the phone is to upload them to Pupil Cloud. For some use-cases, however, this may not be possible, and users may want to transfer the recordings via USB.
+:::
 
 To transfer recordings directly to a computer you first need to export the recordings to the Android filesystem. Then you need to access the filesystem to copy the data over to your computer. 
 
 Recordings downloaded directly from the phone will be in a raw binary format that is difficult to handle. Finally, you should thus export the recordings using Pupil Player to more convenient formats.
 
-**Export from Invisible Companion App**
+#### Export from Invisible Companion App
 1. Open recordings view in Invisible Companion App
 2. Select desired recording/s
 3. Export:
@@ -18,7 +23,7 @@ Recordings downloaded directly from the phone will be in a raw binary format tha
    - For multiple recordings, click the download symbol at the bottom of the screen    
 4. The app via show you a dialog indicating to which folder the recordings will be exported too. Confirm this by clicking `Yes`.
     
-**Transfer Exported Recordings to a Computer**
+#### Transfer Exported Recordings to a Computer
 1. Connect your OnePlus device to a PC via USB (using the USB cable supplied)
 2. Slide down from the top of the device's home-screen and click on 'Android System - USB charging this device'
 3. Click on 'Tap for more options'
@@ -45,6 +50,6 @@ On **macOS**, you need the <a href="https://www.android.com/filetransfer/" alt="
 
 :::tip
 <v-icon large color="info">info_outline</v-icon>
-Recordings transferred locally will contain gaze data at **66 Hz** (estimated in real-time on the Companion Device). Only 
+Recordings transferred locally will contain gaze data at **~120 Hz** (estimated in real-time on the Companion Device). Only 
 recordings uploaded to Pupil Cloud are densified to 200 Hz.
 :::

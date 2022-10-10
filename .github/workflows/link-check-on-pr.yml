@@ -1,0 +1,60 @@
+name: Links check on PR
+
+on:
+  pull_request
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Test changed-files
+    steps:
+      # Compares the default generated "test merge commit" by Github of the PR branch into the base branch
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      # Gets a list of files from the PR with a git status of Added (A) or Modified (M) | (via outputs.all_changed_files)
+      - name: 'Example - Get a list of changed files to process(Only html/md/ipynb files)'
+        id: get-changed-files
+        uses: tj-actions/changed-files@v24
+        with:
+          files: |
+            **/*.html
+            **/*.md
+            **/*.ipynb
+          separator: ','
+
+      # lychee-action requires pre-processing for file paths with spaces (boundary quotes added in lychee-action input):
+      - name: 'Compatibility with eval: Quote wrap paths to support spaces'
+        id: changed-files
+        run: |
+          QUOTE_WRAPPED="$( sed "s/,/' '/g" <<< '${{ steps.get-changed-files.outputs.all_changed_files }}' )"
+          echo "::set-output name=all_changed_files::${QUOTE_WRAPPED}"
+
+      - name: 'Check Links'
+        id: lychee
+        uses: lycheeverse/lychee-action@v1.5.1
+        with:
+          args: -v -n -a 403,503,429,200 -i -b 'https://docs.pupil-labs.com/' --exclude-mail --include-verbatim -- '${{ steps.changed-files.outputs.all_changed_files }}'
+          lycheeVersion: 0.10.1
+          output: lychee/results.md
+          jobSummary: true
+
+      - id: get-comment-body
+        if: steps.lychee.outputs.exit_code == 2
+        run: |
+          body="$(echo "# Link check summary"; cat lychee/results.md)"
+          body="${body//'%'/'%25'}"
+          body="${body//$'\n'/'%0A'}"
+          body="${body//$'\r'/'%0D'}" 
+          echo "::set-output name=body::$body"
+      - name: Create comment
+        if: steps.lychee.outputs.exit_code == 2
+        uses: thollander/actions-comment-pull-request@v1
+        with:
+          message: ${{ steps.get-comment-body.outputs.body }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Fail workflow if link broken
+        if: steps.lychee.outputs.exit_code == 2
+        run: exit 1

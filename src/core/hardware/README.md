@@ -54,9 +54,7 @@ We recommend setting the set screw so that you can still move the eye camera by 
 
 You can also tighten the set screw to fix the eye camera in place.
 
-<video width="100%" controls class="mb-5">
-  <source src="../../media/core/videos/eyecam-screw.mp4" type="video/mp4">
-</video>
+<Videos :src="require(`../../media/core/videos/eyecam-screw.mp4`)" />
 
 ::: tip
 <v-icon large color="info">info_outline</v-icon>
@@ -68,9 +66,7 @@ Before you calibrate, make sure to properly adjust the headset to get optimal ey
 ### Focus World Camera
 Set the focus for the distance at which you will be calibrating by rotating the camera lens.
 
-<video width="100%" controls class="mb-5">
-  <source src="../../media/core/videos/worldcam-focus.mp4" type="video/mp4">
-</video>
+<Videos :src="require(`../../media/core/videos/worldcam-focus.mp4`)" />
 
 ### No Focus 200Hz Eye Camera
 
@@ -86,9 +82,7 @@ Set the focus for the distance at which you will be calibrating by rotating the 
 ### Focus 120Hz Eye Camera
 If you have a 120Hz eye camera, make sure the eye camera is in focus. Twist the lens focus ring of the eye camera with your fingers or lens adjuster tool to bring the eye camera into focus.
 
-<video width="100%" controls class="mb-5">
-  <source src="../../media/core/videos/eye-adjust.mp4" type="video/mp4">
-</video>
+<Videos :src="require(`../../media/core/videos/eye-adjust.mp4`)" />
 
 ## Additional Parts
 
@@ -98,13 +92,14 @@ A narrow angle lens and a wide angle lens. The default lens is the wide angle le
 
 The world camera lens are interchangeable, so you can swap between the two lenses provided for wide angle or narrow angle field of view.
 
-<Youtube src="TDa3A8L1i4o"/>
-
-
 ::: warning
 <v-icon large color="warning">error_outline</v-icon>
-If you change lenses you need to recalibrate the camera to update intrinsics. Otherwise 3d calibration and accuracy test will not work properly!
+If you change lenses, you will need to re-estimate the [camera intrinsics](/core/terminology/#camera-intrinsics). Otherwise, 3d calibration and subsequently gaze
+estimation will be inaccurate. Check out [these instructions](/core/software/pupil-capture/#camera-intrinsics-estimation) 
+for details of how to re-estimate the camera intrinsics.
 :::
+
+<Youtube src="TDa3A8L1i4o"/>
 
 ### Eye Camera Arm Extender
 If you need to adjust the eye cameras beyond the built in adjustment range, you can use the orange arm extenders that are shipped with your Pupil headset.

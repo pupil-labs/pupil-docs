@@ -7,10 +7,11 @@ description: Guide on using the now deprecated real-time API called NDSI.
 :::danger
 <v-icon large color="gray">info_outline</v-icon>
 
-Our previous real-time API called NDSI is now deprecated! We recommend using the new real-time API client introduced [here](/invisible/itegrate-with-the-real-time-api/introduction).
+Our previous real-time API called NDSI is now deprecated! We recommend using the new real-time API client introduced [here](/invisible/how-tos/integrate-with-the-real-time-api/introduction/).
+
 :::
 
-[Pupil Invisible Companion App](/invisible/user-guide/invisible-companion-app/ "Pupil Invisible Companion App") uses
+Pupil Invisible Companion app uses
 the [NDSI v4](https://github.com/pupil-labs/pyndsi/blob/v1.0/ndsi-commspec.md "NDSI communication specification protocol") protocol
 to publish its scene video and gaze data via local network.
 
@@ -117,7 +118,7 @@ main()  # Execute example
 Starting and stopping recordings on Pupil Invisible Companion App can be controlled remotely by another device that is in the same network and follows the NDSI v4 protocol.
 
 
- - The Pupil Invisible Companion App has to be ready for recording and the active [template](/invisible/user-guide/intro/#templates) must have no required fields to avoid incomplete templates or force input on the remotely controlled phone.
+ - The Pupil Invisible Companion App has to be ready for recording and the active [template](/invisible/explainers/basic-concepts/#templates) must have no required fields to avoid incomplete templates or force input on the remotely controlled phone.
  - The remote device can set the `local_capture` control of the hardware sensor after attaching to it, to start and stop a recording, see the example below for more details.
 
 ```py

@@ -2,8 +2,8 @@
 v-content.home
   //- md content
   .bg-sclera-white
-    v-container
-      v-layout.py-4(row, justify-between, align-center, style="gap: 24px")
+    v-container.grid-list-xl
+      v-layout.py-4(row, wrap, justify-between, align-center)
         v-flex(xs12, sm6)
           h1.pb-0 {{ data.title }}
         v-flex(xs12, sm6)
@@ -13,12 +13,12 @@ v-content.home
 
   v-container(v-if="data.top_links")
     .grid(
-      style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px"
+      style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px"
     )
       div(v-for="(item, i) in data.top_links", :key="i")
         v-card.h-full.grid(
           flat,
-          style="grid-template-rows: 1fr 1fr; border: 1px solid #eceff1"
+          style="grid-template-rows: auto 1fr; border: 1px solid #eceff1"
         )
           v-img(
             height="100%",
@@ -27,7 +27,7 @@ v-content.home
             :alt="item.alt",
             :src="require(`../../../media/${item.src}`)"
           )
-          v-container.h-full.pa-5
+          v-container.h-full.pa-4
             .h-full(
               style="display: flex; flex-direction: column; justify-content: space-between"
             )
@@ -45,20 +45,21 @@ v-content.home
   v-container.mb-4
     v-card(dark, elevation="0")
       v-img(:src="require('../../../media/invisible/pi_wide_02.jpg')")
-        v-container.h-full(style="padding: 60px 100px")
-          .grid.h-full(style="grid-template-columns: 1fr 1fr; gap: 24px")
-            Content.justify-space-between(
-              slot-key="articles",
-              style="display: flex; flex-direction: column"
-            )
+        v-container.h-full.pa-4.sm-pa-5
+          v-layout
+            v-flex(xs12, sm6)
+              Content.justify-space-between(
+                slot-key="articles",
+                style="display: flex; flex-direction: column"
+              )
 
   v-container(v-if="data.bottom_links")
     .grid(
-      style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px"
+      style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px"
     )
       div(v-for="(item, i) in data.bottom_links", :key="i")
         v-card.h-full(flat, style="background-color: #eceff1")
-          v-container.h-full.pa-5
+          v-container.h-full.pa-4
             .h-full(
               style="display: flex; flex-direction: column; justify-content: space-between"
             )

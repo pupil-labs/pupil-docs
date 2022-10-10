@@ -63,7 +63,7 @@ Here is an example workflow:
 - Open a Plugin - From the `Plugin Manager` GUI menu load the `Vis Circle` plugin.
 - Playback - press the play button or `space` bar on your keyboard to view the video playback with visualization overlay, or drag the playhead in the seek bar to scrub through the dataset.
 - Set trim marks - you can drag the green rounded rectangle at the beginning and end of the seekbar to set the trim marks. This will set the start and end frame for the exporter and for other plugins.
-- Export Video & Raw Data - From the `Plugin Manager` view, load the `World Video Exporter` plugin and the `Raw Data Exporter` plugin. Press `e` on your keyboard or the `e` button in the left hand side of the window to start the export.
+- Export Video & Raw Data - From the `Plugin Manager` view, load the `World Video Exporter` plugin and the `Raw Data Exporter` plugin. Press `e` on your keyboard or the `download icon` button in the left hand side of the window to start the export.
 - Check out exported data in the `exports` directory within your recording directory
 
 ::: tip
@@ -345,8 +345,7 @@ and roll axes using accelerometer feedback to monitor position relative to gravi
 
 In the Plugin's menu, toggle `View raw timeline` to view the accelerometer and gyroscope readings and `View orientation
 timeline` for pitch and roll. You can also change `Madgwick's beta`. This value is associated with gyroscope mean error.
-Increasing the beta will lead to faster drift corrections but with more sensitivity to lateral accelerations. Read more
-about [Madgwick's algorithm here](https://www.x-io.co.uk/res/doc/madgwick_internal_report.pdf).
+Increasing the beta will lead to faster drift corrections but with more sensitivity to lateral accelerations. Read more about [Madgwick's algorithm here](https://x-io.co.uk/downloads/madgwick_internal_report.pdf).
 
 Results are exported in `imu_timeline.csv` with the following columns:
 | Key                 | Description                                                            |
@@ -362,14 +361,13 @@ Results are exported in `imu_timeline.csv` with the following columns:
 | `pitch`             | Orientation about the x-axis (head tilt from front to back) in degrees |
 | `roll`              | Orientation about the z-axis (head tilt from side to side) in degrees  |
 
-:::tip
+<!-- :::tip
 <v-icon large color="info">info_outline</v-icon>
 Read more about [Pupil Invisible's coordinate systems here](/developer/invisible/#coordinate-systems).
-:::
+::: -->
 
 This Plugin does not estimate orientation about the yaw axis (head rotation from left to right). This is 
-because the IMU has no magnetometer to monitor heading. The Plugin therefore implements a version of Madgwick's
-algorithm that only estimates Pitch and Roll.
+because the IMU has no magnetometer to monitor heading. The Plugin therefore implements a version of Madgwick's algorithm that only estimates Pitch and Roll.
 
 Note that this Plugin [will not be loaded](/core/software/pupil-player/#product-specific-plugins) with Pupil Core recordings.
 

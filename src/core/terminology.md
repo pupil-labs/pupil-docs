@@ -183,10 +183,10 @@ The lens distortion (camera intrinsics) are compensated for during the process o
 The _camera intrinsics_ contain [camera matrix and lens distortion information](https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html).
 They are used in _3d gaze mapping_ to correctly transform _3d pupil data_ to _3d gaze data_.
 
-The Pupil Core software provides default camera intrinsics for all official Pupil Core
-cameras. It is recommended to run the [Camera Intrinsics Estimation](/core/software/pupil-capture/#camera-intrinsics-estimation)
+Pupil Core software provides default camera intrinsics for all official Pupil Core
+cameras. It is also possible to run [Camera Intrinsics Estimation](/core/software/pupil-capture/#camera-intrinsics-estimation)
 for your Pupil Core _world_ camera after receiving it. Each camera is slightly different
-and running the estimation locally will result in slightly more precise gaze mapping.
+and running the estimation locally can result in slightly more precise gaze mapping.
 
 ## Fixations
 

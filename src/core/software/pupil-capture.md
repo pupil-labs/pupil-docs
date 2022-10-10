@@ -52,11 +52,11 @@ If no headset is connected or Pupil Capture is unable to open capture devices it
 Videos do not appear in Pupil Capture. This could mean that drivers were not automatically installed when you run Pupil Capture as **administrator**. You should first try to run Pupil Capture as **administrator** (right click `pupil_capture.exe` > Run as administrator). If that does not work, follow the troubleshooting steps below:
 
 1. In `Device Manager` (`System > Device Manager`)
-1. `View > Show Hidden Devices`
-1. Expand `libUSBK Usb Devices`, `Cameras`, and `Imaging Devices` categories.
-1. For each **Pupil Cam** device (even hidden devices) click `Uninstall` and check the box agreeing to `Delete the driver software for this device` and press `OK`
-1. Unplug Pupil headset (if plugged in) and plug back in.
-1. Right click on `pupil_capture.exe` > Run as administrator. This should install drivers automatically.
+2. `View > Show Hidden Devices`
+3. Expand `libUSBK Usb Devices`, `Cameras`, and `Imaging Devices` categories.
+4. For each **Pupil Cam** device (even hidden devices) click `Uninstall` and check the box agreeing to `Delete the driver software for this device` and press `OK`
+5. Unplug Pupil headset (if plugged in) and plug back in.
+6. Right click on `pupil_capture.exe` > Run as administrator. This should install drivers automatically.
 
 Still having trouble? [Chat with us.](https://pupil-labs.com/chat "Pupil Labs chat on DiscordApp")
 
@@ -64,10 +64,27 @@ Still having trouble? [Chat with us.](https://pupil-labs.com/chat "Pupil Labs ch
 
 If the cameras are listed as `unknown` and you are not able to access cameras in Pupil Capture. Please try the following:
 1. Shut down Pupil Capture if it is still running.
-1. Add your user to the `plugdev` group by executing the following command in the terminal:
+2. Add your user to the `plugdev` group by executing the following command in the terminal:
 ```sh
 sudo usermod -a -G plugdev $USER
 ```
+
+### macOS 12 Monterey and newer
+
+Due to new [technical limitations](https://github.com/libusb/libusb/issues/1014), Pupil Capture and Pupil Service need to be started with administrator privileges to get access to the video camera feeds. To do that, copy the applications into your /Applications folder and run the corresponding command from the terminal:
+
+Pupil Capture: 
+``` zsh
+sudo /Applications/Pupil\ Capture.app/Contents/MacOS/pupil_capture
+```
+Pupil Service: 
+``` zsh
+sudo /Applications/Pupil\ Service.app/Contents/MacOS/pupil_service
+```
+
+**Note**: The terminal will prompt you for your administrator password. It will not preview any typed keys. Simply hit enter once the password has been typed.
+
+**Note**: When recording with administrator privileges, the resulting folder inherits admin file permissions. Pupil Player will detect these and ask you for the administrator password to reset the file permissions. This will be only necessary once per recording.
 
 ## Pupil Detection
 Pupil Core's algorithms automatically detect the participant's pupil. It runs two detection pipelines in parallel, the 2D and the 3D pupil detection.
@@ -76,9 +93,7 @@ Pupil Core's algorithms automatically detect the participant's pupil. It runs tw
 
 3D detection uses a 3D model of the eye(s) that updates based on observations of the eye. This enables the system to compensate for movements of the Pupil Core eye tracking headset on the participant's face (also known slippage). To build up an initial model, we recommend to look around your field of view when putting on the headset.
 
-<video width="100%" controls class="mb-5">
-  <source src="../../media/core/videos/pd.mp4" type="video/mp4">
-</video>
+<Videos :src="require(`../../media/core/videos/pd.mp4`)" />
 
 ### Fine-tuning Pupil Detection
 As a first step it is recommended to check the eye camera resolution as some parameters are resolution dependent.
@@ -101,15 +116,11 @@ Keep in mind that pupil size values are defined in pixels and are therefore depe
 
 Pupil Core headsets have two types of cameras attached. One camera records the subject's field of vision - we call this the `world camera`. Additionally there are one or more cameras recording the participant's eye movements - we call these the `eye cameras`. The data collected during the calibration period is used afterwards to correlate the world camera with the eye cameras.
 
-<video width="100%" controls class="mb-5">
-  <source src="../../media/core/videos/clb-hd.mp4" type="video/mp4">
-</video>
+<Videos :src="require(`../../media/core/videos/clb-hd.mp4`)" />
 
-Pupil Core headsets come in a variety of configurations. Calibration can be conducted with a monocular or binocular eye camera setup.
+Pupil Core headsets come in a variety of configurations. Calibration can be conducted with a monocular or binocular eye camera setup.>
 
-<video width="100%" controls class="mb-5">
-  <source src="../../media/core/videos/clb-mobo.mp4" type="video/mp4">
-</video>
+<Videos :src="require(`../../media/core/videos/clb-mobo.mp4`)" />
 
 <div style="display:flex;" class="pb-4">
     <p style="flex-grow:1;display:flex;justify-content:center;">Monocular</p>
@@ -139,9 +150,7 @@ All calibrations require a participant to look at a specific point in the real w
 #### Screen Marker Calibration Choreography
 This is the default choreography, and a quick way to get started.
 
-<video width="100%" controls class="mb-5">
-  <source src="../../media/core/videos/clb-s.mp4" type="video/mp4">
-</video>
+<Videos :src="require(`../../media/core/videos/clb-s.mp4`)" />
 
 1. Select the `Screen Marker` choreography
 2. Select your `Monitor` (if more than 1 monitor)
@@ -194,9 +203,8 @@ This paper introduces and evaluates this type of single marker calibration - <co
 #### Natural Features Calibration Choreography
 This choregraphy is used only in special situations.
 
-<video width="100%" controls class="mb-5">
-  <source src="../../media/core/videos/clb-natural.mp4" type="video/mp4">
-</video>
+<Videos :src="require(`../../media/core/videos/clb-natural.mp4`)" />
+
 
 1. Select `Natural Features Calibration`
 1. Press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to start calibration.
@@ -216,12 +224,16 @@ With the 2D Gaze Mapping, you should easily be able to achieve tracking accuracy
 * Calibration accuracy can be visualized with the `Accuracy Visualizer` plugin. If the `Accuracy Visualizer` plugin is loaded, it will display the residual between reference points and matching gaze positions that were recorded during calibration.
 * Gaze Prediction Accuracy can be estimated with an accuracy test. Start the accuracy by running a normal calibration procedure but press the `T` button in the world window and **not** the `C` button. After completing the test, the plugin will display the error between reference points and matching gaze positions that were recorded during the accuracy test.
 
-## Recording
-<video width="100%" controls class="mb-5">
-  <source src="../../media/core/videos/rec.mp4" type="video/mp4">
-</video>
+**Accuracy** is calculated as the average angular offset (distance) (in degrees of visual angle)
+between fixation locations and the corresponding locations of the fixation targets.
 
-Press `r` on your keyboard or press the blue circular `R` button on the left hand side of the world window to start recording. You will see red text with the elapsed time of recording next to the `R` button. To stop recording, press `r` on your keyboard or press the `R` button on screen.
+**Precision** is calculated as the Root Mean Square (RMS) of the angular distance (in degrees of visual angle)
+between successive samples during a fixation.
+
+## Recording
+<Videos :src="require(`../../media/core/videos/rec.mp4`)" />
+
+Press `r` on your keyboard or press the circular `R` button on the left hand side of the world window to start recording. You will see red text with the elapsed time of recording next to the `R` button. To stop recording, press `r` on your keyboard or press the `R` button on screen.
 
 You can change recording settings in the `Recorder` plugin menu. Set the folder where recordings are saved under `Path to recordings`. Set the recording name in `Recording session name`.
 
@@ -261,9 +273,7 @@ with at least one subscription is transferred.
 #### Network API plugin
 The `Network API` plugin provides a high level interface to control Pupil Capture over the network (e.g. start/stop a recording). It also functions as the entry point to the broadcast infrastructure.
 
-<video width="100%" controls class="mb-5">
-  <source src="../../media/core/videos/pr.mp4" type="video/mp4">
-</video>
+<Videos :src="require(`../../media/core/videos/pr.mp4`)" />
 
 The section `Pupil Remote` allows you to specify the network interface. By default, Pupil will listen on the primary network interface. You can specify a custom port, or even choose a different interface.
 
@@ -400,9 +410,7 @@ When placing your markers please follow the guidelines:
 Surfaces can be defined with Pupil Capture in real-time, or post-hoc with Pupil Player.
 In both cases the necessary steps are as follows:
 
-<video width="100%" controls class="mb-5">
-  <source src="../../media/core/videos/srf-tracking.mp4" type="video/mp4">
-</video>
+<Videos :src="require(`../../media/core/videos/srf-tracking.mp4`)" />
 
 *   Prepare your environment as described above.
 *   Turn on the `Surface Tracker` plugin .
@@ -469,7 +477,7 @@ events programmatically and send them to Pupil Capture via the
 [Pupil Core Network API](/developer/core/network-api).
 
 ### Camera Intrinsics Estimation
-This plugin is used to calculate camera intrinsics, which will enable one to correct camera distortion. Pupil Capture has built in, default camera intrinsics models for the high speed world camera and the high resolution world camera. You can re-calibrate your camera and/or calibrate a camera that is not supplied by Pupil Labs by running this calibration routine. We support two different distortion models, radial distortion and fisheye distortion. For cameras with a FOV of 100 degrees or greater (like e.g. the high speed world camera) the fisheye distortion model usually performs better, for cameras with a smaller FOV (e.g. the high resolution world camera) we recommend the radial distortion model.
+This plugin is used to calculate [camera intrinsics](/core/terminology/#camera-intrinsics), which will enable one to correct camera distortion. Pupil Capture has built in, default camera intrinsics models for the high speed world camera and the high resolution world camera. You can re-calibrate your camera and/or calibrate a camera that is not supplied by Pupil Labs by running this calibration routine. We support two different distortion models, radial distortion and fisheye distortion. For cameras with a FOV of 100 degrees or greater (like e.g. the high speed world camera) the fisheye distortion model usually performs better, for cameras with a smaller FOV (e.g. the high resolution world camera) we recommend the radial distortion model.
 
 1. Select `Camera Intrinsics Estimation`
 2. Click on 'show pattern' to display the pattern
@@ -481,6 +489,10 @@ This plugin is used to calculate camera intrinsics, which will enable one to cor
 8. Click on `show undistorted image` to display the results of camera intrinsic estimation. This will display an undistorted view of your scene. If well calibrated, parallel lines in the real world will appear as parallel lines in the undistorted view.
 
 Note that in some rare cases the processing of the recorded patterns can fail, which would lead to a warning message in the world window. In this case just repeat the above process from step 6 and try to get a better coverage of the entire FOV of the camera.
+
+:::tip
+If you are having trouble estimating camera intrinsics, [Chat with us.](https://pupil-labs.com/chat "Pupil Labs chat on DiscordApp")
+:::
 
 #### Camera Intrinsics Persistancy
 
