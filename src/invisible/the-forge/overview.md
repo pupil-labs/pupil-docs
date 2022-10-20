@@ -85,7 +85,7 @@ Check out our packages [here](https://pupil-labs.com/products/support/)!
             enrichments: [
                 {
                 title: "Define areas of interest and compute gaze metrics",
-                link: "/invisible/explainers/enrichments/reference-image-mapper",
+                link: "/invisible/the-forge/gaze-metrics-in-aois/",
                 },
                 {
                 title: "Map your gaze onto screen content (like a web or a video)",
