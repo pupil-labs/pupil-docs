@@ -135,7 +135,6 @@ module.exports = {
             {
               title: 'Advanced Analysis',
               children: [
-                'how-tos/advanced-analysis/gaze-metrics-in-aois/',
                 'how-tos/advanced-analysis/syncing-sensors/',
                 {
                   title: "Undistort Video and Gaze Data",
@@ -155,7 +154,22 @@ module.exports = {
             }
           ],
         },
-        "troubleshooting"
+        "troubleshooting",
+        {
+          title: 'The Forge',
+          children: [
+            
+            {
+              title: 'Overview', 
+              path: 'the-forge/overview'
+            },
+            'the-forge/gaze-metrics-in-aois/',
+            {
+              title: 'Map your gaze onto screen content',
+              path: 'the-forge/map-your-gaze-to-a-2d-screen'
+            },
+          ],
+        },
       ],
       '/core/': [
         '',
