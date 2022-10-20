@@ -20,6 +20,10 @@ As described in the setup video, you will need two things in addition to your ey
 1. A reference image
 2. A scanning video of the object/feature(s) taken with Pupil Invisible’s scene camera
 
+::: tip Note
+Please record a scanning video that is less than **3 minutes** long!
+:::
+
 In this guide, we will show you how the Reference Image Mapper can be used in a few different situations. This should help you get set up using the enrichment in your own testing environment!
 
 Below, gaze is mapped in four very different environments: to a **magazine cover**, a **basketball backboard**, a **supermarket shelf**, and even a **whole building**!
@@ -114,6 +118,68 @@ Let's take a look at what the Reference Image and Scanning Recording look like t
   </div>
 </div>
 
+### 5. A living space - working with multiple reference images
+
+The above examples show how to properly set up a Reference Image Mapper enrichment with a single reference image. However, there are some cases in which it would be useful to map gaze into <i>multiple</i> reference images taken from the same environment - for example, moving in a room while interacting with certain parts of it.
+To make that possible, you will need:
+1. Multiple reference images (one for each area you will explore)
+2. Multiple scanning recording (2 or more, depending on environment dimensions/complexity)
+
+
+<div class="grid-container">
+  <div class="item1"><h4>Reference images</h4></div>
+  <div class="item2"><h4>Scanning videos</h4></div>
+  <div class="item3"><v-img
+    class="rounded" 
+    style="margin-bottom:14px;"
+    max-width="100%" max-height="300px" contain 
+    :src="require('../../../media/invisible/rim/cupboard-img.png')"
+    ></v-img></div>
+  <div class="item4"><v-img
+    class="rounded" 
+    style="margin-bottom:14px;"
+    max-width="100%" max-height="300px" contain 
+    :src="require('../../../media/invisible/rim/kitchen-img.png')"
+    ></v-img></div>
+  <div class="item5"><v-img
+    class="rounded" 
+    style="margin-bottom:14px;"
+    max-width="100%" max-height="300px" contain 
+    :src="require('../../../media/invisible/rim/tv-img.png')"
+    ></v-img></div>
+  <div class="item6"><v-img
+    class="rounded" 
+    style="margin-bottom:14px;"
+    max-width="100%" max-height="300px" contain 
+    :src="require('../../../media/invisible/rim/kitchen+table-img.jpeg')"
+    ></v-img></div>
+  <div class="item7"><v-img
+    class="rounded" 
+    style="margin-bottom:14px;"
+    max-width="100%" max-height="300px" contain 
+    :src="require('../../../media/invisible/rim/desk-img.png')"
+    ></v-img></div>
+  <div class="item8"><Youtube src="D9_LJJ-UQmY"/>
+    </div>
+  <div class="item9"><Youtube src="4QJbZ1jGOps"/></div>
+  <div class="item10">These photos capture<br>the room furniture and areas I am interested in.</div>
+  <div class="item11">We split the scanning recording into<br>two separate ones, almost 3 min each.<br>Each scanning recording focuses on<br>a part of the room. The angles and distances<br>cover what a person might see whilst walking<br>around the living room.</div>
+</div>
+<br>
+
+::: tip Curious to see the result?
+<div class="container">
+  <div class="col-sm">
+    <div class="row"> Here you can see how the gaze is mapped onto the different pictures while the user is moving across the living room.
+    </div>
+    <div> <br> </div>
+    <div class="row"> <Youtube src="3gGvydd-ets"/>
+    </div>
+  </div>
+</div>
+:::
+
+
 ## Scanning best practices
 Try to follow these best practices when recording a scanning video:
 - Make the recording while holding the Pupil Invisible glasses in your hand rather than wearing it on your head.
@@ -203,6 +269,103 @@ Under the hood, the Reference Image Mapper uses a method called Structure from M
   .col-mcontainer{
     flex: 100%;
   }
+}
+
+
+}
+.grid-container {
+  display: grid;
+    grid-template: 1.6em 1.6em 1.6em / 1fr 1fr 1fr;
+    grid-template: repeat(3,auto) / repeat(2, 1fr);
+    grid-gap: 10px;
+
+}
+
+.item1 {
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  flex: 100%;
+}
+
+.item2 {
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  flex: 100%;
+}
+
+.item3 {
+  grid-row-start: 2;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  flex: 100%;
+}
+
+.item4 {
+  grid-row-start: 2;
+  grid-row-end: 2;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  flex: 100%;
+}
+
+.item5 {
+  grid-row-start: 3;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 1;
+}
+
+.item6 {
+  grid-row-start: 3;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  flex: 100%;
+}
+
+.item7 {
+  grid-row-start: 4;
+  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  flex: 100%;
+}
+
+.item8 {
+  grid-row-start: 2;
+  grid-row-end: 2;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  flex: 100%;
+}
+
+.item9 {
+  grid-row-start: 3;
+  grid-row-end: 3;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  flex: 100%;
+}
+
+.item10 {
+  grid-row-start: 4;
+  grid-row-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  flex: 100%;
+}
+
+.item11 {
+  grid-row-start: 4;
+  grid-row-end: 4;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  flex: 100%;
 }
 
 </style>
