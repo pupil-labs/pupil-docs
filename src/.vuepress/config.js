@@ -168,6 +168,7 @@ module.exports = {
               title: 'Map your gaze onto screen content',
               path: 'the-forge/map-your-gaze-to-a-2d-screen'
             },
+            'the-forge/multiple-rim'
           ],
         },
       ],

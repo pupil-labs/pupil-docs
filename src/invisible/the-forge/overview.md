@@ -91,6 +91,10 @@ Check out our packages [here](https://pupil-labs.com/products/support/)!
                 title: "Map your gaze onto screen content (like a web or a video)",
                 link: "/invisible/the-forge/map-your-gaze-to-a-2d-screen",
                 },
+                {
+                title: "Running multiple RIMs in parallel",
+                link:"/invisible/the-forge/multiple-rim",
+                },
             ]
             };
         },
