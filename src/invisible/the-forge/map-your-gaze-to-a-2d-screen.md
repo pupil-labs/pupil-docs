@@ -17,15 +17,25 @@ Before continuing, ensure you are familiar with the [Reference Image Mapper](htt
 
 We recommend you run the enrichment, e.g. with a short recording of your desktop + monitor/screen to ensure it's working okay. Once satisfied, you can use the same reference image + scanning recording for your dynamic screen content.
 
-You will also need to know how to record your screen's content (if you do not know, check out the [screen recording](#Screen-recording) section to learn how you can do this using the free, open-source program [OBS](https://obsproject.com/)).
+You will also need to know how to record your screen's content (check out the [screen recording](#Screen-recording) section to learn how you can do this using the free, open-source program [OBS](https://obsproject.com/)).
 
 ### Software requirements
-- [ ] You will need Python 3.7 or higher installed on your computer. Go to your command prompt and paste the following to know what version do you have: 
-`python --version`.
+
+<v-checkbox 
+  v-model="checkbox"
+  dense
+  append
+  color="primary"
+  class="shrink mr-2 mt-0">
+</v-checkbox>
+
+You will need Python 3.7 or higher installed on your computer. Go to your command prompt and paste the following to know what version do you have: 
+<code>python --version</code>.
 
 <details>
 <summary>New to Python?</summary>
 <!-- This is collapsed  -->
+<br>
 Installing Python is generally easy, and nowadays, Linux MacOS and even some Windows computers come with Python already installed. If you do need to install Python and aren't confident about it, you can find a few notes on the <a href="https://wiki.python.org/moin/BeginnersGuide/Download">Beginners Guide wiki page</a>, but installation is unremarkable on most platforms.
 </details>
 <!-- empty line  -->
@@ -53,6 +63,7 @@ By looking at the screen when you press the button, you'll have a visual referen
 :::
 
 ## Once you have everything recorded
+
 - [ ] Create a new [Reference Image Mapper](https://docs.pupil-labs.com/invisible/explainers/enrichments/#reference-image-mapper) enrichment, or add your new eye tracking recordings to an existing enrichment. Run the enrichment, and download the results by right-clicking the enrichment in Cloud once it's computed (See the screenshot below).
 
 <div class="pb-4" style="display:flex;justify-content:center;">
