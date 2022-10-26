@@ -21,16 +21,20 @@ You will also need to know how to record your screen's content (check out the [s
 
 ### Software requirements
 
-<v-checkbox 
-  v-model="checkbox"
-  dense
-  append
-  color="primary"
-  class="shrink mr-2 mt-0">
-</v-checkbox>
+<v-layout row align-center>
+<v-flex fill-height shrink>
+  <v-checkbox 
+    dense
+    color="primary"
+    >
+  </v-checkbox>
+</v-flex>
+</v-flex shrink>
+  You will need Python 3.7 or higher installed on your computer. 
+</v-flex>
+</v-layout>
 
-You will need Python 3.7 or higher installed on your computer. Go to your command prompt and paste the following to know what version do you have: 
-<code>python --version</code>.
+If you are not sure what version are you running, go to your command prompt and paste the following to know what version do you have: `python --version`.
 
 <details>
 <summary>New to Python?</summary>
@@ -41,7 +45,18 @@ Installing Python is generally easy, and nowadays, Linux MacOS and even some Win
 <!-- empty line  -->
 <br>
 
-- [ ] Execute the following command `pip install pupil-labs-dynamic-rim` in the console to install the required libraries.
+<v-layout row align-start>
+<v-flex fill-height shrink>
+  <v-checkbox 
+    dense
+    color="primary"
+    >
+  </v-checkbox>
+</v-flex>
+</v-flex shrink>
+  <p>Execute the following command <code>pip install pupil-labs-dynamic-rim</code> in the console to install the required libraries.</p>
+</v-flex>
+</v-layout> 
 
 If you have the checklist completed, you are ready for the next steps.
 
@@ -64,7 +79,18 @@ By looking at the screen when you press the button, you'll have a visual referen
 
 ## Once you have everything recorded
 
-- [ ] Create a new [Reference Image Mapper](https://docs.pupil-labs.com/invisible/explainers/enrichments/#reference-image-mapper) enrichment, or add your new eye tracking recordings to an existing enrichment. Run the enrichment, and download the results by right-clicking the enrichment in Cloud once it's computed (See the screenshot below).
+<v-layout row align-start>
+<v-flex fill-height shrink>
+  <v-checkbox 
+    dense
+    color="primary"
+    >
+  </v-checkbox>
+</v-flex>
+</v-flex fill-height shrink>
+  <p>Create a new <a href="https://docs.pupil-labs.com/invisible/explainers/enrichments/#reference-image-mapper">Reference Image Mapper</a> enrichment, or add your new eye tracking recordings to an existing enrichment. Run the enrichment, and download the results by right-clicking the enrichment in Cloud once it's computed (See the screenshot below).</p>
+</v-flex>
+</v-layout> 
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
@@ -75,7 +101,18 @@ By looking at the screen when you press the button, you'll have a visual referen
   </v-img>
 </div>
 
-- [ ] Now you'll need to get the raw data from your new recording(s). Run the [RAW data enrichment](https://docs.pupil-labs.com/invisible/explainers/enrichments/#raw-data-exporter) and right-click on it to download like above.
+<v-layout row align-start>
+<v-flex fill-height shrink>
+  <v-checkbox 
+    dense
+    color="primary"
+    >
+  </v-checkbox>
+</v-flex>
+</v-flex fill-height shrink>
+  <p>Now you'll need to get the raw data from your new recording(s). Run the <a href="https://docs.pupil-labs.com/invisible/explainers/enrichments/#raw-data-exporter">RAW data enrichment</a> and right-click on it to download like above.</p>
+</v-flex>
+</v-layout> 
 
 ## Running the code
 Now you can run the code by executing the following command in your console:
@@ -204,8 +241,9 @@ If you want to start your screen and eye tracking recordings automatically (no v
 <summary>Click here to learn about recording your screen like a pro</summary>
 <!-- This is collapsed   -->
 <br>
-Assuming you have OBS installed and correctly set up, you will need to install the <a href="https://github.com/obsproject/obs-websocket">OBS WebSocket plugin</a>. Follow the installer's instructions, and click on "Tools > obs-websocket Settings" when finished.
-A pop-up will appear and let you modify the settings. There are two parameters we will need for later, the port and the password.
+Assuming you have <b>OBS</b> installed and correctly set up, you will need to install the <a href="https://github.com/obsproject/obs-websocket"><b>OBS WebSocket plugin</b></a>. 
+<br>
+Follow the installer's instructions, and click on "Tools > obs-websocket Settings" when finished. A pop-up will appear and let you modify the settings. There are two parameters we will need for later, the port and the password.
 
 But for now, let's go back to your Python console and install the following packages:
     
@@ -214,19 +252,17 @@ But for now, let's go back to your Python console and install the following pack
 The first package will help us access the WebSocket API from OBS, and the second is our real-time API wrapper for Python.
 
 Download the script [recording.py](https://raw.githubusercontent.com/pupil-labs/dynamic-rim-module/main/src/pupil_labs/dynamic_content_on_rim/recording/recording.py?token=GHSAT0AAAAAABXIQHJWQYOPFDTO36JXC5N6YZNSEUQ). As you can see, the script uses asynchronous calls to send WebSockets without blocking each other. 
-Go to lines 76 & 77 and modify them according to the parameters we had in the obs-websocket settings.
-* 76: `url="ws://localhost:XXXX/"`where XXXX is the port number you use, defaults to 4455.
+Go to lines **76 & 77** and modify them according to the parameters we had in the obs-websocket settings.
+* **L76:** `url="ws://localhost:XXXX/"`where XXXX is the port number you use, defaults to 4455.
     
 ::: danger
-Do not use 8080! as Pupil Invisible uses this one.
+**Do not use 8080!** Pupil Invisible uses this one for the real-time API.
 :::
     
-* 77: Password -> Obvious, isn't it? 
+* **L77:** Password -> Obvious, isn't it? 
 
-Once everything is set, you only have to run recording.py. This will automatically connect to Pupil Invisible, launch OBS in your system, wait (5s) for it to be fully open, and then send a signal to start recording in OBS along with a "start.video" annotation to your Pupil Invisible.
+Once everything is set, you only have to run *recording.py*.<br>
+This will automatically connect to Pupil Invisible, launch OBS in your system, wait (5s) for it to be fully open, and then send a signal to start recording in OBS along with a "start.video" annotation to your Pupil Invisible.
 
 </details>
 <!-- empty line   -->
-
-
-
