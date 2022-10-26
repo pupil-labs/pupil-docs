@@ -7,7 +7,7 @@ permalink: /invisible/the-forge/overview/
     <iframe style="border: none" width="250" height="250" src="https://rive.app/s/e3WH_1eZ30_7NFAR29QQjw/embed" allowfullscreen></iframe>
     </div>
     <div class="col-mcontainer-2">
-    <h1>The Forge 🔨</h1> <b>Ahoy apprentice! Welcome to the Forge!</b><br>
+    <h1>The Forge 🔨</h1> <b>Ahoy apprentice! Welcome to the Forge!</b><br><br>
     Ready to get the most out of your eye-tracker? This is the place where we share some of our more advanced tools, explainers, tutorials and projects that go beyond the basic use case.
     <br>
     <br>
@@ -45,9 +45,9 @@ Of course! We are happy to hear what would you like us to craft next.
     <v-btn
         round
         color="primary"
-        href="https://forms.clickup.com/f/1a5e7-5850/AU4RNHAV0UEXNG7PXF"
+        href="https://pupil-labs.canny.io/"
         > 
-    <v-icon left dark>feedback</v-icon> Submit feedback 
+    <v-icon left dark>feedback</v-icon> Request a feature!
     </v-btn>
 </div>
 
