@@ -1,13 +1,13 @@
 ---
 description: Welcome to the Forge
-permalink: /invisible/the-forge/overview/
+permalink: /invisible/the-forge
 ---
 <div class="mcontainer">
     <div class="col-mcontainer-1">
     <iframe style="border: none" width="250" height="250" src="https://rive.app/s/e3WH_1eZ30_7NFAR29QQjw/embed" allowfullscreen></iframe>
     </div>
     <div class="col-mcontainer-2">
-    <h1>The Forge 🔨</h1> <b>Hi apprentice! Welcome to the Forge!</b><br><br>
+    <h1>The Forge 🔨</h1> <b>Greetings apprentice! Welcome to the Forge!</b><br><br>
     Ready to get the most out of your eye-tracker? This is the place where we share some of our more advanced tools, explainers, tutorials and projects that go beyond the basic use case.
     <br>
     <br>

@@ -160,7 +160,7 @@ module.exports = {
           children: [
             
             {
-              title: 'Overview', 
+              title: 'Welcome', 
               path: 'the-forge/overview'
             },
             'the-forge/gaze-metrics-in-aois/',

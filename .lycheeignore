@@ -1,6 +1,7 @@
 # Ignore local address
 http://pi.local:8080/
 localhost:%25s
+ws://localhost:XXXX/
 
 # Ignore all .js files
 file:///**/*.js
