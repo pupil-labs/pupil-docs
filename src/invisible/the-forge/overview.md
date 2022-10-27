@@ -7,17 +7,17 @@ permalink: /invisible/the-forge/overview/
     <iframe style="border: none" width="250" height="250" src="https://rive.app/s/e3WH_1eZ30_7NFAR29QQjw/embed" allowfullscreen></iframe>
     </div>
     <div class="col-mcontainer-2">
-    <h1>The Forge 🔨</h1> <b>Ahoy apprentice! Welcome to the Forge!</b><br><br>
+    <h1>The Forge 🔨</h1> <b>Hi apprentice! Welcome to the Forge!</b><br><br>
     Ready to get the most out of your eye-tracker? This is the place where we share some of our more advanced tools, explainers, tutorials and projects that go beyond the basic use case.
     <br>
     <br>
-    You can peek at them, but more importantly you can also play with what our smiths have been working on. 
+    You can peek at them, but more importantly, you can also play with what our smiths have been working on. 
     </div>
 </div>
 <br>
 
 ### What do you have to offer? 
-From remaping gaze to objects, getting more juice out of the reference image mapper, combining Check out the latest tools and tutorials while they are tempering:
+From remapping gaze to objects, getting more juice out of the reference image mapper, and combining them, to use upcoming technologies together with your eye tracker. Check out the latest tools and tutorials while they are tempering:
 
 <div class="text-center">
   <v-btn
@@ -33,10 +33,10 @@ From remaping gaze to objects, getting more juice out of the reference image map
   </v-btn>
 </div>
 
-### Will these tools ever become available in the Cloud?
-Some of these features may end up in the Cloud in the future, some others may not. 
+### Will these tools ever become available directly in your applications (Cloud, Companion app, device)?
+Some of these features may end up in production in the future, some others may not. 
 
-The Forge is not meant to be a replacement for the Cloud tools, but rather a place where some of our more edge case tools and projects can live. It will also be a place to test some new features and get feedback from the community.
+The Forge is not meant to be a replacement for the tools we offer in the Cloud or our app, but rather a place where some of our more edge case tools and projects can live. It will also be a place to test some new features and get feedback from the community.
 
 ### Can I suggest a feature?
 Of course! We are happy to hear what would you like us to craft next.
@@ -50,7 +50,6 @@ Of course! We are happy to hear what would you like us to craft next.
     <v-icon left dark>feedback</v-icon> Request a feature!
     </v-btn>
 </div>
-
 
 ### Do you need training?
 
@@ -77,16 +76,6 @@ We offer a variety of training workshops and custom support, in case you need a 
     flex: 60%;
     padding: 0 20px;
     }
-    /* @media screen and (max-width: 800px) {
-        .col-mcontainer{
-        flex: 50%;
-    }
-    }
-    @media screen and (max-width: 400px) {
-    .col-mcontainer{
-        flex: 100%;
-    } 
-    }*/
 </style>
 
 
