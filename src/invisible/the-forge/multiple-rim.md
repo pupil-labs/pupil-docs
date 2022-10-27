@@ -4,7 +4,10 @@ permalink: /invisible/the-forge/multiple-rim/
 ---
 
 # Map and visualize gaze onto multiple reference images taken from the same environment
-<Youtube src="3gGvydd-ets"/>
+<div class="iframe-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/3gGvydd-ets" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<br>
 
 In the [Reference Image Mapper](/invisible/explainers/enrichments/reference-image-mapper/) guide, we learnt how to properly set up a Reference Image Mapper enrichment, with a <i>single</i> reference image. However, there are some cases in which it would be useful to map gaze onto <i>multiple</i> reference images taken from the same environment - for example, moving in a room while interacting with certain parts of it. 
 
@@ -50,14 +53,21 @@ Please follow our best practices to ensure optimal scanning:
 To ensure good scanning of big plain surfaces - like tables and kitchen countertops - enrich them with features. Use a printed tablecloth and/or place items to produce a successful mapping!
 :::
 
-<Youtube src="D9_LJJ-UQmY"/>
-<Youtube src="4QJbZ1jGOps"/>
+<div class="iframe-container2">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/D9_LJJ-UQmY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div class="iframe-container2">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/4QJbZ1jGOps" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
 
 ## Run the enrichments
 Here we recorded just one video where the wearer was asked to walk and freely explore the living room. Now it is time to map the subject's gaze from this video into the five pictures above.
  
-<Youtube src="8K4x-l3jdU"/>
-
+<div class="iframe-container2">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/T8K4x-l3jdU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 During the recording, the user looked at the same furniture and parts of the room multiple times. To save up time and computational resources, we suggest you split the recording into shorter [Sections](/invisible/explainers/enrichments/#enrichment-sections) - based on which part of the room the user is exploring - to run separate enrichment on them.
 
 For this recording, we used the following [event annotations](/invisible/explainers/basic-concepts/#events) to run five Reference Image Mapper enrichments:
@@ -99,4 +109,33 @@ img {
     box-sizing: border-box;
 }
 
+ .iframe-container{
+  position: relative;
+  width: 100%;
+  padding-bottom: 54.6%; 
+  height: 0;
+}
+.iframe-container iframe{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.iframe-container2{
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  margin-bottom: -180px;
+  height: 0;
+}
+.iframe-container2 iframe{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 70%;
+  height: 70%;
+}
+ 
 </style>
