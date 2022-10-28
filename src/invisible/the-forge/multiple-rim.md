@@ -7,7 +7,7 @@ tags: [Pupil Invisible, Cloud]
 # Map and visualize gaze onto multiple reference images taken from the same environment
 <TagLinks />
 <div class="iframe-container">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/3gGvydd-ets" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/wi4MAzuJIzU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <br>
 
@@ -56,10 +56,10 @@ To ensure good scanning of big plain surfaces - like tables and kitchen countert
 :::
 
 <div class="iframe-container2">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/D9_LJJ-UQmY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/FQ2SdFcnqXw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <div class="iframe-container2">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/4QJbZ1jGOps" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/aEOZZrUrEpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 
@@ -67,8 +67,8 @@ To ensure good scanning of big plain surfaces - like tables and kitchen countert
 ## Run the enrichments
 Here we recorded just one video where the wearer was asked to walk and freely explore the living room. Now it is time to map the subject's gaze from this video into the five pictures above.
  
-<div class="iframe-container2">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/T8K4x-l3jdU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="iframe-container3">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/XTIkB8Wct6M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 During the recording, the user looked at the same furniture and parts of the room multiple times. To save up time and computational resources, we suggest you split the recording into shorter [Sections](/invisible/explainers/enrichments/#enrichment-sections) - based on which part of the room the user is exploring - to run separate enrichment on them.
 
@@ -116,6 +116,8 @@ img {
   width: 100%;
   padding-bottom: 54.6%; 
   height: 0;
+  margin-left:auto;
+  margin-right:auto;
 }
 .iframe-container iframe{
   position: absolute;
@@ -127,17 +129,39 @@ img {
 
 .iframe-container2{
   position: relative;
-  width: 100%;
-  padding-bottom: 100%;
-  margin-bottom: -180px;
+  width: 80%;
+  padding-bottom: 80%;
+  margin-bottom: 50px;
   height: 0;
+  margin-left:auto;
+  margin-right:auto;
 }
+
 .iframe-container2 iframe{
   position: absolute;
   top:0;
   left: 0;
-  width: 70%;
-  height: 70%;
+  width: 100%;
+  height: 100%;
+}
+
+.iframe-container3{
+  position: relative;
+  width: 80%;
+  padding-bottom: 80%;
+  margin-bottom: 50px;
+  height: 0;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.iframe-container3 iframe{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
 }
  
 </style>
