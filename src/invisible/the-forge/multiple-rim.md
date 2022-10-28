@@ -1,9 +1,11 @@
 ---
 description: A living space - working with multiple reference images
 permalink: /invisible/the-forge/multiple-rim/
+tags: [Pupil Invisible, Cloud]
 ---
 
 # Map and visualize gaze onto multiple reference images taken from the same environment
+<TagLinks />
 <div class="iframe-container">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/3gGvydd-ets" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
