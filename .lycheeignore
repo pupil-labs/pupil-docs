@@ -1,6 +1,7 @@
 # Ignore local address
 http://pi.local:8080/
 localhost:%25s
+file:///home/runner/work/pupil-docs/pupil-docs/src/invisible/the-forge/ws:/localhost:XXXX
 ws://localhost:XXXX/
 
 # Ignore all .js files
