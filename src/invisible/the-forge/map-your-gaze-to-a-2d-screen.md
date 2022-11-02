@@ -6,7 +6,7 @@ tags: [Pupil Invisible, Cloud]
 
 # Map and visualise gaze onto a display content using the Reference Image Mapper
 <TagLinks />
-<Youtube src="e7rGbzeDVaE"/>
+<Youtube src="OXIUjIzCplc"/>
 
 In this guide, we will show you how to map and visualise gaze onto a screen with dynamic content, e.g. a video, web browsing or any other content of your choice, using the [Reference Image Mapper](https://docs.pupil-labs.com/invisible/explainers/enrichments/#reference-image-mapper) enrichment and a few clicks.
 
