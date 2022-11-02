@@ -1,6 +1,6 @@
 ---
 description: A living space - working with multiple reference images
-permalink: /invisible/the-forge/multiple-rim/
+permalink: /the-forge/multiple-rim/
 tags: [Pupil Invisible, Cloud]
 ---
 
@@ -22,10 +22,10 @@ Before continuing, ensure you are familiar with the [Reference Image Mapper](/in
 
 First, we will take pictures of the areas and/or furniture of the room we are interested in.
 
-|<img src="../../media/the-forge/cupboard-img.png"/>|<img src="../../media/the-forge/desk-img.png"/>|
+|<img src="../media/the-forge/cupboard-img.png"/>|<img src="../media/the-forge/desk-img.png"/>|
 |---|---|
-|<img src="../../media/the-forge/kitchen-imgs.png"/>|<img src="../../media/the-forge/tv-img.png">|
-|<img src="../../media/the-forge/kitchen+table-img.jpeg"/>||
+|<img src="../media/the-forge/kitchen-imgs.png"/>|<img src="../media/the-forge/tv-img.png">|
+|<img src="../media/the-forge/kitchen+table-img.jpeg"/>||
 
 
 ## Scanning recordings
@@ -76,12 +76,12 @@ And that's all, folks! Relax and grab a cup of coffee while waiting for the enri
 
 From the Enrichment view, you can visualize heatmaps of each reference image, as follows: 
 
-|<img src="../../media/the-forge/cupboard-img.png"/>|<img src="../../media/the-forge/cupboard-overlay.png"/>|
+|<img src="../media/the-forge/cupboard-img.png"/>|<img src="../media/the-forge/cupboard-overlay.png"/>|
 |---|---|
-|<img src="../../media/the-forge/desk-img.png"/>|<img src="../../media/the-forge/desk-overlay.png"/>|
-|<img src="../../media/the-forge/kitchen-imgs.png"/>|<img src="../../media/the-forge/kitchen-overlay.png"/>|
-|<img src="../../media/the-forge/kitchen+table-img.jpeg"/>|<img src="../../media/the-forge/kitchen+table-overlay.png"/>|
-|<img src="../../media/the-forge/tv-img.png"/>|<img src="../../media/the-forge/tv-overlay.png"/>|
+|<img src="../media/the-forge/desk-img.png"/>|<img src="../media/the-forge/desk-overlay.png"/>|
+|<img src="../media/the-forge/kitchen-imgs.png"/>|<img src="../media/the-forge/kitchen-overlay.png"/>|
+|<img src="../media/the-forge/kitchen+table-img.jpeg"/>|<img src="../media/the-forge/kitchen+table-overlay.png"/>|
+|<img src="../media/the-forge/tv-img.png"/>|<img src="../media/the-forge/tv-overlay.png"/>|
 
 
 <style>

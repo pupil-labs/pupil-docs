@@ -155,25 +155,6 @@ module.exports = {
           ],
         },
         "troubleshooting",
-        {
-          title: 'The Forge',
-          children: [
-            
-            {
-              title: 'Welcome', 
-              path: 'the-forge/overview'
-            },
-            'the-forge/gaze-metrics-in-aois/',
-            {
-              title: 'Map your gaze onto screen content',
-              path: 'the-forge/map-your-gaze-to-a-2d-screen'
-            },
-            {
-              title: 'Use multiple RIM enrichments',
-              path: 'the-forge/multiple-rim'
-            },
-          ],
-        },
       ],
       '/core/': [
         '',
@@ -210,6 +191,22 @@ module.exports = {
         'rift',
         // 'bt300',
         'developer',
+      ],
+      '/the-forge/': [
+        {
+          title: 'Welcome', 
+          path: '/the-forge/',
+          collapsable: false,
+        },
+        'gaze-metrics-in-aois/',
+        {
+          title: 'Map your gaze onto screen content',
+          path: 'map-your-gaze-to-a-2d-screen'
+        },
+        {
+          title: 'Use multiple RIM enrichments',
+          path: 'multiple-rim'
+        },
       ],
     },
     sidebarDepth: 1,

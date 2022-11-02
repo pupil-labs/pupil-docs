@@ -1,6 +1,6 @@
 ---
 description: Welcome to the Forge
-permalink: /invisible/the-forge
+permalink: /the-forge
 ---
 <div class="mcontainer">
     <div class="col-mcontainer-1">
@@ -86,22 +86,22 @@ export default {
     enrichments: [
         // {
         //   title: "Map your gaze to body parts using DensePose",
-        //   link: "/invisible/the-forge/dense-pose",
+        //   link: "/the-forge/dense-pose",
         //   color: "warning"
         // },
         {
         title: "Map your gaze onto screen content (like a web or a video)",
-        link: "/invisible/the-forge/map-your-gaze-to-a-2d-screen",
+        link: "/the-forge/map-your-gaze-to-a-2d-screen",
         color: "warning",
         },
         {
         title: "Running multiple RIMs in parallel",
-        link:"/invisible/the-forge/multiple-rim",
+        link:"/the-forge/multiple-rim",
         color:"warning",
         },
         {
         title: "Define areas of interest and compute gaze metrics",
-        link: "/invisible/the-forge/gaze-metrics-in-aois/",
+        link: "/the-forge/gaze-metrics-in-aois/",
         color: "warning",
         },
     ]

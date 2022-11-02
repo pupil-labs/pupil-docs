@@ -1,6 +1,6 @@
 ---
 description: Map your gaze to a screen surface using RIM
-permalink: /invisible/the-forge/map-your-gaze-to-a-2d-screen/
+permalink: /the-forge/map-your-gaze-to-a-2d-screen/
 tags: [Pupil Invisible, Cloud]
 ---
 
@@ -97,7 +97,7 @@ By looking at the screen when you press the button, you'll have a visual referen
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
     class="rounded" 
-    :src="require('../../media/the-forge/download_rim.png')"
+    :src="require('../media/the-forge/download_rim.png')"
     max-width=400px
   >
   </v-img>
@@ -137,7 +137,7 @@ Use the left button on your mouse to select the points. A red dot will let you k
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
     class="rounded" 
-    :src="require('../../media/the-forge/screen_corners.png')"
+    :src="require('../media/the-forge/screen_corners.png')"
     max-width=300px
   >
   </v-img>
