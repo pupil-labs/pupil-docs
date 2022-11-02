@@ -4,20 +4,20 @@ permalink: /invisible/the-forge
 ---
 <div class="mcontainer">
     <div class="col-mcontainer-1">
-    <iframe style="border: none" width="250" height="250" src="https://rive.app/s/e3WH_1eZ30_7NFAR29QQjw/embed" allowfullscreen></iframe>
+    <iframe style="border: none" width="250" height="320" src="https://rive.app/s/Q5D4ZrSxz0SB2HSqa-cCZQ/embed" allowfullscreen></iframe>
     </div>
     <div class="col-mcontainer-2">
     <h1>The Forge 🔨</h1> <b>Greetings apprentice! Welcome to the Forge!</b><br><br>
-    Ready to get the most out of your eye-tracker? This is the place where we share some of our more advanced tools, explainers, tutorials and projects that go beyond the basic use case.
+    Ready to get the most out of your eye-tracker? If the answer is yes, you're in the right place! This is the space where we share some of our more advanced tools, explainers, tutorials and projects that go beyond the basic use case.
     <br>
     <br>
-    You can peek at them, but more importantly, you can also play with what our smiths have been working on. 
+    You can peek at them, but more importantly, you can also play with what our smiths have been working on.
     </div>
 </div>
 <br>
 
 ### What do you have to offer? 
-From remapping gaze to objects, getting more juice out of the reference image mapper, and combining them, to use upcoming technologies together with your eye tracker. Check out the latest tools and tutorials while they are tempering:
+Take your gaze data to a new level by getting which areas of interest are gazed, obtaining the most out of the reference image mapper, combining multiple enrichments, or merging cutting-edge technologies with your eye tracker....  Check out the latest tools and tutorials as they get tempered:
 
 <div class="text-center">
   <v-btn
@@ -36,7 +36,7 @@ From remapping gaze to objects, getting more juice out of the reference image ma
 ### Will these tools ever become available directly in your applications (Cloud, Companion app, device)?
 Some of these features may end up in production in the future, some others may not. 
 
-The Forge is not meant to be a replacement for the tools we offer in the Cloud or our app, but rather a place where some of our more edge case tools and projects can live. It will also be a place to test some new features and get feedback from the community.
+The Forge is not meant to be a replacement for the tools we offer in the Cloud or the Companion App, but rather a place where some of our more edge-case tools and projects can live. It will also be a place to test some new features and gather feedback from the community.
 
 ### Can I suggest a feature?
 Of course! We are happy to hear what would you like us to craft next.
@@ -57,7 +57,7 @@ Of course! We are happy to hear what would you like us to craft next.
 *Very well. I will teach you the ways of the Forge.*
 
 ::: tip
-We offer a variety of training workshops and custom support, in case you need a hand with your project, check out our packages [here](https://pupil-labs.com/products/support/)!
+We offer a variety of training workshops and custom support packages, in case you need a hand with your project. Check them out [here](https://pupil-labs.com/products/support/)!
 :::
 
 <style>
@@ -82,10 +82,13 @@ We offer a variety of training workshops and custom support, in case you need a 
 <script>
 export default {
   data: () => ({
-    counter: 0,
-    acounter:null,
     panel: null,
     enrichments: [
+        // {
+        //   title: "Map your gaze to body parts using DensePose",
+        //   link: "/invisible/the-forge/dense-pose",
+        //   color: "warning"
+        // },
         {
         title: "Map your gaze onto screen content (like a web or a video)",
         link: "/invisible/the-forge/map-your-gaze-to-a-2d-screen",
