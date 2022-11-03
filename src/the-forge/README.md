@@ -17,7 +17,7 @@ permalink: /the-forge
 <br>
 
 ### What do you have to offer? 
-Take your gaze data to a new level by getting which areas of interest are gazed, obtaining the most out of the reference image mapper, combining multiple enrichments, or merging cutting-edge technologies with your eye tracker....  Check out the latest tools and tutorials as they get tempered:
+Take your gaze data to a new level by getting which areas of interest are gazed, obtaining the most out of the reference image mapper, combining multiple enrichments, or merging cutting-edge technologies with your eye tracker...  Check out the latest tools and tutorials as they get tempered:
 
 <div class="text-center">
   <v-btn

@@ -1,6 +1,6 @@
 <template>
   <v-btn v-if="show" color="#5865F2" fab fixed bottom right @click="gotoChat">
-    <v-img max-width="30" src="../../logos/discord-mark-white.svg"></v-img>
+    <v-img max-width="28" src="../../logos/discord-mark-white.svg"></v-img>
     <!-- <v-icon color="white">question_answer</v-icon> -->
   </v-btn>
 </template>
