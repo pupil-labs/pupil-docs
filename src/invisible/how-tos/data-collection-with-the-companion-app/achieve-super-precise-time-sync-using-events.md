@@ -117,10 +117,10 @@ print(f"Clock offset estimate: {offset / 1e6:.2f} ms")
       File "C:\Users\Admin\Anaconda3\envs\sci\lib\site-packages\pupil_labs\realtime_api\device.py", line 66, in status_updates
         break
     RuntimeError: async generator ignored GeneratorExit
-
+    
 
     Clock offset estimate: 840.44 ms
-
+    
 
 
 ```python
@@ -227,10 +227,10 @@ for device in devices:
       File "C:\Users\Admin\Anaconda3\envs\sci\lib\site-packages\pupil_labs\realtime_api\device.py", line 66, in status_updates
         break
     RuntimeError: async generator ignored GeneratorExit
-
+    
 
     Clock offset estimate: 926.60 ms
-
+    
 
 
 ```python

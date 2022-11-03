@@ -11,7 +11,7 @@ tags: [Pupil Invisible, Cloud]
 In this guide, we will show you how to map and visualise gaze onto a screen with dynamic content, e.g. a video, web browsing or any other content of your choice, using the [Reference Image Mapper](https://docs.pupil-labs.com/invisible/explainers/enrichments/#reference-image-mapper) enrichment and a few clicks.
 
 ::: tip
-**Note:** This tutorial requires some technical knowledge, but don't worry. We made it almost click and run for you! You can learn as much or as little as you like.
+**Note:** This tutorial requires some technical knowledge, but don't worry. We made it almost click and run for you!
 :::
 
 ## What you'll need
@@ -19,7 +19,7 @@ Before continuing, ensure you are familiar with the [Reference Image Mapper](htt
 
 We recommend you run the enrichment, e.g. with a short recording of your desktop + monitor/screen to ensure it's working okay. Once satisfied, you can use the same reference image + scanning recording for your dynamic screen content.
 
-You will also need to know how to record your screen's content (check out the [screen recording](#Screen-recording) section to learn how you can do this using the free and open-source program [OBS](https://obsproject.com/)).
+You will also need to know how to record your screen's content (check out the [screen recording](#Screen-recording) section to learn how you can do this using the free, open-source program [OBS](https://obsproject.com/)).
 
 ### Software requirements
 
@@ -35,6 +35,17 @@ You will also need to know how to record your screen's content (check out the [s
   You will need Python 3.7 or higher installed on your computer. 
 </v-flex>
 </v-layout>
+
+If you are not sure what version are you running, go to your command prompt and paste the following to know what version do you have: `python --version`.
+
+<details>
+<summary>New to Python?</summary>
+<!-- This is collapsed  -->
+<br>
+Installing Python is generally easy, and nowadays, Linux MacOS and even some Windows computers come with Python already installed. If you do need to install Python and aren't confident about it, you can find a few notes on the <a href="https://wiki.python.org/moin/BeginnersGuide/Download">Beginners Guide wiki page</a>, but installation is unremarkable on most platforms.
+</details>
+<!-- empty line  -->
+<br>
 
 <v-layout row align-start>
 <v-flex fill-height shrink>
@@ -63,7 +74,7 @@ Check [here](https://docs.pupil-labs.com/invisible/explainers/basic-concepts/#ev
 
 ::: tip
 **Tip:**<br>
-When you initiate your recordings, you'll need to know when the screen recording started, relative to your eye tracking recording. Thus, start your eye tracker recording first, and make sure that the eye tracker scene camera faces the OBS program on the screen. Then, start the screen recording. <br> <br>
+When you initiate your recordings, you'll need to know when the screen recording started, relative to your eye tracking recording. Thus, start your eye tracker recording first, and make sure that the eye-tracker scene camera faces the OBS program on the screen. Then, start the screen recording. <br> <br>
 By looking at the screen when you press the button, you'll have a visual reference to create the [event annotation](https://docs.pupil-labs.com/invisible/explainers/basic-concepts/#events) later in Cloud.<br>
 <br>**Recap**: <br>Eye tracking **first**; screen recording **second**<br>
 :::
@@ -79,7 +90,7 @@ By looking at the screen when you press the button, you'll have a visual referen
   </v-checkbox>
 </v-flex>
 </v-flex fill-height shrink>
-  <p>Create a new <a href="https://docs.pupil-labs.com/invisible/explainers/enrichments/#reference-image-mapper">Reference Image Mapper</a> enrichment, or add your new eye tracking recordings to an existing enrichment. Run the enrichment, and download the results by right-clicking the enrichment in Cloud once it's computed (see the screenshot below).</p>
+  <p>Create a new <a href="https://docs.pupil-labs.com/invisible/explainers/enrichments/#reference-image-mapper">Reference Image Mapper</a> enrichment, or add your new eye tracking recordings to an existing enrichment. Run the enrichment, and download the results by right-clicking the enrichment in Cloud once it's computed (See the screenshot below).</p>
 </v-flex>
 </v-layout> 
 
