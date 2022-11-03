@@ -76,7 +76,6 @@ export default ({ Vue, router, options }) => {
     "/cloud/enrichments/#reference-image-mapper":
       "/invisible/explainers/enrichments/reference-image-mapper/",
     "/cloud/": "/invisible/",
-    "/cloud": "/invisible/",
   };
 
   router.beforeEach((to, from, next) => {

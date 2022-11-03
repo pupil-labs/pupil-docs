@@ -29,14 +29,14 @@ div
           :class="{ 'text-capitalize': item.title != 'vr/ar', 'text-uppercase': item.title == 'vr/ar' }",
           style="margin: 0; height: 36px"
         ) {{ item.title }}
-      v-btn.text-capitalize(
-        flat,
-        href="https://pupil-labs.com/chat/",
-        style="margin: 0; height: 36px",
-        target="_blank"
-      )
-        span.pr-1 Chat
-        OutboundLink
+      //- v-btn.text-capitalize(
+      //-   flat,
+      //-   href="https://pupil-labs.com/chat/",
+      //-   style="margin: 0; height: 36px",
+      //-   target="_blank"
+      //- )
+      //-   span.pr-1 Chat
+      //-   OutboundLink
 </template>
 
 <script>

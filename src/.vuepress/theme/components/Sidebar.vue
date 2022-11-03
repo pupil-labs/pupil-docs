@@ -33,7 +33,7 @@ export default {
         { icon: "invisible", title: "invisible", link: "/invisible/" },
         { icon: "core", title: "core", link: "/core/" },
         { icon: "vr-ar", title: "vr/ar", link: "/vr-ar/" },
-        { icon: "chat", title: "chat", href: "https://pupil-labs.com/chat/" },
+        { icon: "the-forge", title: "the forge", link: "/the-forge/" },
       ],
     };
   },

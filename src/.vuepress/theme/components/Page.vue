@@ -75,42 +75,37 @@
         </div>
       </div>
     </div>
-
+    <FABbtn />
     <slot name="bottom" />
   </v-content>
 </template>
 
 <script>
+import FABbtn from "../../components/FABbtn.vue";
 import { resolvePage, outboundRE, endingSlashRE } from "../util";
 
 export default {
   props: ["sidebarItems"],
-
   data() {
     return {
       observer: null,
     };
   },
-
   mounted() {
     this.initObserver();
   },
-
   watch: {
     $route(to, from) {
       this.initObserver();
     },
   },
-
   beforeDestroy() {
     this.observer.disconnect();
   },
-
   computed: {
     lastUpdated() {
       return this.$page.lastUpdated;
     },
-
     lastUpdatedText() {
       if (typeof this.$themeLocaleConfig.lastUpdated === "string") {
         return this.$themeLocaleConfig.lastUpdated;
@@ -120,7 +115,6 @@ export default {
       }
       return "Last Updated";
     },
-
     prev() {
       const prev = this.$page.frontmatter.prev;
       if (prev === false) {
@@ -131,7 +125,6 @@ export default {
         return resolvePrev(this.$page, this.sidebarItems);
       }
     },
-
     next() {
       const next = this.$page.frontmatter.next;
       if (next === false) {
@@ -142,7 +135,6 @@ export default {
         return resolveNext(this.$page, this.sidebarItems);
       }
     },
-
     editLink() {
       if (this.$page.frontmatter.editLink === false) {
         return;
@@ -164,7 +156,6 @@ export default {
         );
       }
     },
-
     editLinkText() {
       return (
         this.$themeLocaleConfig.editLinkText ||
@@ -185,19 +176,17 @@ export default {
       }
     },
   },
-
   methods: {
     initObserver() {
       setTimeout(() => {
         this.observer = new IntersectionObserver(this.observeHeader, {
-          threshold: 1.0,
+          threshold: 1,
         });
         document.querySelectorAll("h2[id]").forEach((el) => {
           this.observer.observe(el);
         });
       }, 200);
     },
-
     observeHeader(entries) {
       entries.forEach((entry) => {
         const id = entry.target.getAttribute("id");
@@ -214,7 +203,6 @@ export default {
         }
       });
     },
-
     createEditLink(repo, docsRepo, docsDir, docsBranch, path) {
       const bitbucket = /bitbucket.org/;
       if (bitbucket.test(repo)) {
@@ -228,7 +216,6 @@ export default {
           `?mode=edit&spa=0&at=${docsBranch}&fileviewer=file-view-default`
         );
       }
-
       const base = outboundRE.test(docsRepo)
         ? docsRepo
         : `https://github.dev/${docsRepo}`;
@@ -245,6 +232,7 @@ export default {
       return link;
     },
   },
+  components: { FABbtn },
 };
 
 function changeExtension(file, extension) {
