@@ -29,9 +29,9 @@ First, we will take pictures of the areas and/or furniture of the room we are in
 
 
 ## Scanning recordings
-In this guide, we want to map gaze onto different parts of a living room, for this reason, we recorded **two** scanning videos. We choose to use more than one scanning recording because the environment is too big and dense-detailed to be effectively scanned just by a single one. 
+In this guide, we want to map gaze onto different parts of a living room, for this reason, we recorded **two** scanning videos. We chose to use more than one scanning recording because the environment is a bit too big to be effectively scanned just by a single one. 
 
-Based on the environment dimension/complexity, we suggest you to split it in more than one part and record separate scanning videos.
+Based on the environment dimension/complexity, you might need to do the same and record separate scanning videos.
 
 Please follow our [best practices](https://docs.pupil-labs.com/invisible/explainers/enrichments/reference-image-mapper/#scanning-best-practices) for optimal scanning.
 
@@ -61,7 +61,9 @@ Here we recorded just one video where the wearer was asked to walk and freely ex
 </div>
 
 
-During the recording, the user looked at the same furniture and parts of the room multiple times. To save up time and computational resources, we suggest you split the recording into shorter [Sections](/invisible/explainers/enrichments/#enrichment-sections) - based on which part of the room the user is exploring - to run separate enrichment on them.
+During the recording, the user looked at the same furniture and parts of the room multiple times. We suggest you focus on 
+specific [sections](/invisible/explainers/enrichments/#enrichment-sections) of the recording based on which part of the 
+room the user is exploring.
 
 For this recording, we used the following [event annotations](/invisible/explainers/basic-concepts/#events) to run five Reference Image Mapper enrichments:
 - Cupboard: `cupboard.begin` and `cupboard.end`
@@ -72,9 +74,9 @@ For this recording, we used the following [event annotations](/invisible/explain
 
 
 ## Final results
-And that's all, folks! Relax and grab a cup of coffee while waiting for the enrichments to be done (it may take several minutes, depending on how long are the recordings). Once everything is finished, from the Project Editor view you can visualize how the gaze is simultaneously mapped both on the recording and the reference images (as shown in the video at the very beginning of this guide).
+It may take several minutes to run these enrichments depending on how long your recordings are. Once everything is finished, you can visualize how gaze is simultaneously mapped both on the recording and the reference images from the Project Editor view (as shown in the video at the very beginning of this guide).
 
-From the Enrichment view, you can visualize heatmaps of each reference image, as follows: 
+From the Enrichment view, you can visualize heatmaps of each reference image: 
 
 |<img src="../../media/the-forge/cupboard-img.png"/>|<img src="../../media/the-forge/cupboard-overlay.png"/>|
 |---|---|
@@ -156,3 +158,5 @@ img {
 }
  
 </style>
+
+That's it. We look forward to seeing your own mapped environments!
