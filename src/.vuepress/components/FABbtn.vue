@@ -54,23 +54,33 @@ export default {
     return {
       show_big: true,
       gotoChat() {
-        window.open("https://pupil-labs.com/chat/", "_blank");
+        if (typeof window !== "undefined") {
+          window.open("https://pupil-labs.com/chat/", "_blank");
+        }
       },
     };
   },
   mounted() {
-    this.show_big = window.innerWidth > 600;
+    if (typeof window !== "undefined") {
+      this.show_big = window.innerWidth > 600;
+    }
   },
   /*if resize window, change the button size*/
   beforeDestroy() {
-    window.removeEventListener("resize", this.handleResize);
+    if (typeof window !== "undefined") {
+      window.removeEventListener("resize", this.handleResize);
+    }
   },
   created() {
-    window.addEventListener("resize", this.handleResize);
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", this.handleResize);
+    }
   },
   methods: {
     handleResize() {
-      this.show_big = window.innerWidth > 600;
+      if (typeof window !== "undefined") {
+        this.show_big = window.innerWidth > 600;
+      }
     },
   },
 };
