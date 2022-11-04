@@ -1,7 +1,7 @@
 # Ignore local address
 http://pi.local:8080/
 localhost:%25s
-file:///home/runner/work/pupil-docs/pupil-docs/src/invisible/the-forge/ws:/localhost:XXXX
+file:///home/runner/work/pupil-docs/pupil-docs/src/the-forge/ws:/localhost:XXXX
 ws://localhost:XXXX/
 
 # Ignore all .js files
@@ -52,3 +52,4 @@ https://docs.pupil-labs.com/FQ2SdFcnqXw
 https://docs.pupil-labs.com/aEOZZrUrEpE
 https://docs.pupil-labs.com/wi4MAzuJIzU
 https://docs.pupil-labs.com/dYcN0HVirDA
+https://docs.pupil-labs.com/90nYSMqUXIE
