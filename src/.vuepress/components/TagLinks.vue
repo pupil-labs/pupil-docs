@@ -1,11 +1,13 @@
 <template lang="html">
   <div>
-    <router-link
+    <v-btn 
       v-for="tag in $page.frontmatter.tags"
       :key="tag"
       :to="{ path: getPageLink(tag) }"
-    >
-        {{ tag }}  
+      small
+      outline
+      color="primary"
+      style="font-size:11pt; font-weight:normal;"> {{ tag }}  </v-btn>  
     </router-link>
     <br></br>
   </div>
