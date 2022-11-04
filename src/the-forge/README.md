@@ -8,7 +8,7 @@ permalink: /the-forge
     </div>
     <div class="col-mcontainer-2">
     <h1>The Forge 🔨</h1> <b>Greetings apprentice! Welcome to the Forge!</b><br><br>
-    Ready to get the most out of your eye-tracker? If the answer is yes, you're in the right place! This is the space where we share some of our more advanced tools, explainers, tutorials and projects that go beyond the basic use case.
+    Ready to get the most out of your eye tracker? If the answer is yes, you're in the right place! This is a space where we share some of our more advanced tools, explainers, tutorials and projects that go beyond the basic use cases.
     <br>
     <br>
     You can peek at them, but more importantly, you can also play with what our smiths have been working on.
@@ -17,7 +17,7 @@ permalink: /the-forge
 <br>
 
 ### What do you have to offer? 
-Take your gaze data to a new level by getting which areas of interest are gazed, obtaining the most out of the reference image mapper, combining multiple enrichments, or merging cutting-edge technologies with your eye tracker...  Check out the latest tools and tutorials as they get tempered:
+Take your gaze data to new levels – determine which areas of interest are gazed; obtain more out of the reference image mapper by combining multiple enrichments; merge cutting-edge technologies with your eye tracking data... Check out the latest tools and tutorials as they get tempered:
 
 <div class="text-center">
   <v-btn
@@ -34,9 +34,11 @@ Take your gaze data to a new level by getting which areas of interest are gazed,
 </div>
 
 ### Will these tools ever become available directly in your applications (Cloud, Companion app, device)?
-Some of these features may end up in production in the future, some others may not. 
+Some of these features may end up in production in the future, others may not. 
 
-The Forge is not meant to be a replacement for the tools we offer in the Cloud or the Companion App, but rather a place where some of our more edge-case tools and projects can live. It will also be a place to test some new features and gather feedback from the community.
+The Forge is not meant to be a replacement for the tools we offer in Cloud or the Companion App, but rather it is a place 
+where some of our more edge-case tools and projects live. It will also be a place to test new features and gather 
+feedback from the community.
 
 ### Can I suggest a feature?
 Of course! We are happy to hear what would you like us to craft next.
@@ -90,12 +92,12 @@ export default {
         //   color: "warning"
         // },
         {
-        title: "Map your gaze onto screen content (like a web or a video)",
+        title: "Map your gaze onto screen content (like web browsing or video playback)",
         link: "/the-forge/map-your-gaze-to-a-2d-screen",
         color: "warning",
         },
         {
-        title: "Running multiple RIMs in parallel",
+        title: "Run multiple Reference Image Mappers in parallel",
         link:"/the-forge/multiple-rim",
         color:"warning",
         },
