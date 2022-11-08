@@ -17,6 +17,8 @@ aside.sidebar
   .pa-3
     SidebarLinks(:depth="0", :items="items")
   slot(name="bottom")
+  SuggestFeature
+  slot(name="bottombutton")
 </template>
 
 <script>
@@ -34,6 +36,7 @@ export default {
         { icon: "core", title: "core", link: "/core/" },
         { icon: "vr-ar", title: "vr/ar", link: "/vr-ar/" },
         { icon: "the-forge", title: "the forge", link: "/the-forge/" },
+        { icon: "chat", title: "chat", href: "https://pupil-labs.com/chat/" },
       ],
     };
   },
