@@ -6,23 +6,25 @@
       fixed
       bottom
       right
+      outline
       dark
       color="#5865F2"
       class="fixed"
       style="bottom: 2rem; right: 2rem; font-size: small;"
       @click="gotoChat()"
     >
-      <v-img width="20" src="../../logos/discord-mark-white.svg"></v-img>
+      <v-img width="20" src="../../logos/discord-mark-color.svg"></v-img>
       &nbsp; Chat with us in Discord
     </v-btn>
   </div>
   <div v-else>
     <!-- Use this if small screen -->
-    <v-tooltip top color="#5865F2">
+    <!-- <v-tooltip top color="#5865F2">
       <template v-slot:activator="{ on }">
         <v-btn
           v-on="on"
           fab
+          small
           fixed
           bottom
           right
@@ -30,13 +32,13 @@
           @click="gotoChat()"
         >
           <v-img
-            max-width="28"
+            max-width="20"
             src="../../logos/discord-mark-white.svg"
           ></v-img>
         </v-btn>
       </template>
       <span>Chat with us in Discord</span>
-    </v-tooltip>
+    </v-tooltip> -->
   </div>
 </template>
 
