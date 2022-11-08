@@ -19,17 +19,29 @@ permalink: /the-forge
 ### What do you have to offer? 
 Take your gaze data to new levels – determine which areas of interest are gazed; obtain more out of the reference image mapper by combining multiple enrichments; merge cutting-edge technologies with your eye tracking data... Check out the latest tools and tutorials as they get tempered:
 
-<div class="text-center">
+<div class="text-left">
+  <v-btn
+    color="flat"
+    block
+    round
+    outline
+    class="fixed"
+    style="font-weight:normal; min-height:50px; min-width:85%;text-align:left;"
+    to="/the-forge/map-your-gaze-to-a-2d-screen"
+    > <v-icon left color="warning">whatshot</v-icon>Map your gaze onto screen content <br />(like web browsing or video playback)</v-btn>
+
   <v-btn
     v-for="(item,index) in enrichments"
     :key="index"
     color="flat"
+    block
     round
     outline
-    style="font-weight:normal;"
+    class="fixed"
+    style="font-weight:normal;min-width:85%;"
     :to="item.link"
   >
-  <v-icon left :color="item.color">whatshot</v-icon> {{  item.title }}
+  <v-icon left :color="item.color">whatshot</v-icon> {{item.title}}
   </v-btn>
 </div>
 
@@ -91,11 +103,6 @@ export default {
         //   link: "/the-forge/dense-pose",
         //   color: "warning"
         // },
-        {
-        title: "Map your gaze onto screen content (like web browsing or video playback)",
-        link: "/the-forge/map-your-gaze-to-a-2d-screen",
-        color: "warning",
-        },
         {
         title: "Run multiple Reference Image Mappers in parallel",
         link:"/the-forge/multiple-rim",
