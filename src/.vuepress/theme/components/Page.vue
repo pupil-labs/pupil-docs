@@ -75,7 +75,6 @@
         </div>
       </div>
     </div>
-    <FABbtn />
     <slot name="bottom" />
   </v-content>
 </template>
