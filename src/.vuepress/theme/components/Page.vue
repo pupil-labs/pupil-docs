@@ -232,7 +232,6 @@ export default {
       const base = outboundRE.test(docsRepo)
         ? docsRepo
         : `https://github.dev/${docsRepo}`;
-
       var link = (
         base.replace("github.com", "github.dev").replace(endingSlashRE, "") +
         `/blob` +
@@ -250,8 +249,12 @@ export default {
 
 function changeExtension(file, extension) {
   const path = require('path');
-  const basename = path.basename(file, path.extname(file))
-  return path.join(path.dirname(file), basename + extension)
+  const basename = path.basename(file, path.extname(file));
+  console.log("a", basename);
+  console.log("b", path.dirname(file));
+  const result = path.dirname(file) + path.sep + basename + extension;
+  console.log("c", result);
+  return result
 };
 
 function resolvePrev(page, items) {
