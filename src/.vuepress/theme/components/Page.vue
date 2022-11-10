@@ -240,9 +240,18 @@ export default {
         (docsDir ? docsDir.replace(endingSlashRE, "") + "/" : "") +
         path
       );
+      if (this.$page.frontmatter.isNotebook) {
+        link = changeExtension(link, ".ipynb")
+      }
       return link;
     },
   },
+};
+
+function changeExtension(file, extension) {
+  const path = require('path');
+  const basename = path.basename(file, path.extname(file))
+  return path.join(path.dirname(file), basename + extension)
 };
 
 function resolvePrev(page, items) {
