@@ -17,11 +17,12 @@ aside.sidebar
   .pa-3
     SidebarLinks(:depth="0", :items="items")
   slot(name="bottom")
-  SideBarBanner
+  SidebarBanner
   slot(name="bottombutton")
 </template>
 
 <script>
+import SidebarBanner from "../../components/SideBarBanner.vue";
 import SidebarLinks from "@theme/components/SidebarLinks.vue";
 import NavLinks from "@theme/components/NavLinks.vue";
 
@@ -41,6 +42,7 @@ export default {
   },
 
   components: {
+    SidebarBanner,
     SidebarLinks,
     NavLinks,
   },

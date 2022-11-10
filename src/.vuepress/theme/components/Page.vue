@@ -80,7 +80,6 @@
 </template>
 
 <script>
-import FABbtn from "../../components/FABbtn.vue";
 import { resolvePage, outboundRE, endingSlashRE } from "../util";
 
 export default {
@@ -231,7 +230,6 @@ export default {
       return link;
     },
   },
-  components: { FABbtn },
 };
 
 function changeExtension(file, extension) {
