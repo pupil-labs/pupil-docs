@@ -1,6 +1,6 @@
 ---
 description: Using densepose to map gaze onto body parts
-permalink: /the-forge/dense-pose/
+permalink: /alpha-lab/dense-pose/
 tags: [Pupil Invisible, Cloud]
 ---
 # Map your gaze onto body parts using DensePose

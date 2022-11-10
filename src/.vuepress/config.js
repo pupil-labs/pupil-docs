@@ -192,10 +192,10 @@ module.exports = {
         // 'bt300',
         'developer',
       ],
-      '/the-forge/': [
+      '/alpha-lab/': [
         {
           title: 'Welcome', 
-          path: '/the-forge/',
+          path: '/alpha-lab/',
           collapsable: false,
         },
         'gaze-metrics-in-aois/',

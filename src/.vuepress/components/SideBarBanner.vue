@@ -71,7 +71,7 @@ export default {
 <style>
 @media screen {
   .banner {
-    background-color: #f3f3f3;
+    background-color: #ffffff;
     height: 140px;
     width: 239px;
     position: fixed;
@@ -83,12 +83,12 @@ export default {
     font-weight: bold;
     color: #455a64;
     line-height: 1.4;
-    min-width: 207px;
-    max-width: 207px; /* Mobile collapsible bar is 239px wide */
+    width: 207px; /* Mobile collapsible bar is 239px wide */
     left: 1rem;
     flex: auto;
     text-align: left;
     padding-left: 0px;
+    align-content: center;
   }
 }
 @media screen and (min-width: 1025px) {
@@ -101,14 +101,7 @@ export default {
     left: 0;
   }
   .v-btn.banner-btn {
-    font-size: 14px;
-    font-weight: bold;
-    line-height: 1.4;
-    min-width: 247px;
-    max-width: 247px; /*  2 rem = 32px - Sidebar on desktop is 279px wide*/
-    left: 1rem;
-    flex: auto;
-    text-align: left;
+    width: 247px; /*  2 rem = 32px - Sidebar on desktop is 279px wide*/
   }
 }
 </style>

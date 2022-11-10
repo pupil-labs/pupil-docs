@@ -1,6 +1,6 @@
 ---
 description: A living space - working with multiple reference images
-permalink: /the-forge/multiple-rim/
+permalink: /alpha-lab/multiple-rim/
 tags: [Pupil Invisible, Cloud]
 ---
 
@@ -22,10 +22,10 @@ Before continuing, ensure you are familiar with the [Reference Image Mapper](/in
 
 First, we will take pictures of the areas and/or furniture of the room we are interested in.
 
-|<img src="../media/the-forge/cupboard-img.png"/>|<img src="../media/the-forge/desk-img.png"/>|
+|<img src="../media/alpha-lab/cupboard-img.png"/>|<img src="../media/alpha-lab/desk-img.png"/>|
 |---|---|
-|<img src="../media/the-forge/kitchen-imgs.png"/>|<img src="../media/the-forge/tv-img.png">|
-|<img src="../media/the-forge/kitchen+table-img.jpeg"/>||
+|<img src="../media/alpha-lab/kitchen-imgs.png"/>|<img src="../media/alpha-lab/tv-img.png">|
+|<img src="../media/alpha-lab/kitchen+table-img.jpeg"/>||
 
 
 ## Scanning recordings
@@ -79,12 +79,12 @@ It may take several minutes to run these enrichments depending on how long your 
 From the Enrichment view, you can visualize heatmaps of each reference image: 
 
 
-|<img src="../media/the-forge/cupboard-img.png"/>|<img src="../media/the-forge/cupboard-overlay.png"/>|
+|<img src="../media/alpha-lab/cupboard-img.png"/>|<img src="../media/alpha-lab/cupboard-overlay.png"/>|
 |---|---|
-|<img src="../media/the-forge/desk-img.png"/>|<img src="../media/the-forge/desk-overlay.png"/>|
-|<img src="../media/the-forge/kitchen-imgs.png"/>|<img src="../media/the-forge/kitchen-overlay.png"/>|
-|<img src="../media/the-forge/kitchen+table-img.jpeg"/>|<img src="../media/the-forge/kitchen+table-overlay.png"/>|
-|<img src="../media/the-forge/tv-img.png"/>|<img src="../media/the-forge/tv-overlay.png"/>|
+|<img src="../media/alpha-lab/desk-img.png"/>|<img src="../media/alpha-lab/desk-overlay.png"/>|
+|<img src="../media/alpha-lab/kitchen-imgs.png"/>|<img src="../media/alpha-lab/kitchen-overlay.png"/>|
+|<img src="../media/alpha-lab/kitchen+table-img.jpeg"/>|<img src="../media/alpha-lab/kitchen+table-overlay.png"/>|
+|<img src="../media/alpha-lab/tv-img.png"/>|<img src="../media/alpha-lab/tv-overlay.png"/>|
 
 That's it. We look forward to seeing your own mapped environments!
 

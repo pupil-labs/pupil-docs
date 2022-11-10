@@ -42,7 +42,7 @@ export default {
         { icon: "invisible", title: "invisible", link: "/invisible/" },
         { icon: "core", title: "core", link: "/core/" },
         { icon: "vr-ar", title: "vr/ar", link: "/vr-ar/" },
-        { icon: "the-forge", title: "the forge", link: "/the-forge/" },
+        { icon: "alpha-lab", title: "Alpha Lab", link: "/alpha-lab/" },
       ],
     };
   },
