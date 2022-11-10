@@ -1,7 +1,7 @@
 # Ignore local address
 http://pi.local:8080/
 localhost:%25s
-file:///home/runner/work/pupil-docs/pupil-docs/src/the-forge/ws:/localhost:XXXX
+file:///home/runner/work/pupil-docs/pupil-docs/src/alpha-lab/ws:/localhost:XXXX
 ws://localhost:XXXX/
 
 # Ignore all .js files
