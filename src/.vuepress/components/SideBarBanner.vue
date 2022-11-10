@@ -7,13 +7,12 @@
       flat
       left
       class="banner-btn"
-      style="bottom: 67px; min-height:60px;"
+      style="bottom: 67px; min-height:40px;"
       @click="gotoCanny()"
       ><v-icon left>
         campaign
       </v-icon>
-      Missing something? <br />
-      &nbsp;Suggest a feature!</v-btn
+      Suggest a feature</v-btn
     >
     <v-btn
       fixed
@@ -72,7 +71,7 @@ export default {
 @media screen {
   .banner {
     background-color: #ffffff;
-    height: 140px;
+    height: 150px;
     width: 239px;
     position: fixed;
     bottom: 0;
@@ -93,12 +92,7 @@ export default {
 }
 @media screen and (min-width: 1025px) {
   .banner {
-    background-color: #ffffff;
-    height: 140px;
     width: 279px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
   }
   .v-btn.banner-btn {
     width: 247px; /*  2 rem = 32px - Sidebar on desktop is 279px wide*/
