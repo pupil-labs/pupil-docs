@@ -4,7 +4,7 @@ permalink: /alpha-lab/
 ---
 <div class="mcontainer">
     <div class="col-mcontainer-1">
-    <iframe style="border: none" width="250" height="320" src="https://rive.app/s/Q5D4ZrSxz0SB2HSqa-cCZQ/embed" allowfullscreen></iframe>
+    <iframe style="border: none" width="250" height="320" src="https://rive.app/s/zRsyQ_Q-OkmbfhIGGID-4Q/embed" allowfullscreen></iframe>
     </div>
     <div class="col-mcontainer-2">
     <h1>Alpha Lab</h1> <b>Hello humanoid! Welcome to the Alpha Lab!</b><br><br>
