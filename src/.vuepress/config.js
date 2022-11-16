@@ -89,7 +89,7 @@ module.exports = {
               title: "Enrichments",
               children: [
                 {
-                  title: 'Overview', 
+                  title: 'Overview',
                   path: 'explainers/enrichments/overview'
                 },
                 'explainers/enrichments/reference-image-mapper',
@@ -120,6 +120,7 @@ module.exports = {
               children: [
                 'how-tos/data-collection-with-the-companion-app/monitor-your-data-collection-in-real-time',
                 'how-tos/data-collection-with-the-companion-app/transfer-recordings-via-usb',
+                'how-tos/data-collection-with-the-companion-app/achieve-super-precise-time-sync',
               ]
             },
             {
