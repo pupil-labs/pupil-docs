@@ -55,4 +55,4 @@ device.close()
 
 Using continuous offset estimates like this, you can precisely compensate for clock drifts by correcting the respective timestamps.
 
-When using a wifi connection, the speed of data transfer can vary at times, leading to inaccuracies in the estimation. If precise synchronization down to a few milliseconds is required, it is recommended to use an ethernet connection. You can connect an ethernet cable to the phone using an appropriate USB-C adapter or hub.
+When using a wifi connection, the speed of data transfer can vary at times, leading to inaccuracies in the estimation. If precise synchronization down to a few milliseconds is required, it is recommended to use an ethernet connection. You can connect an ethernet cable to the phone using an appropriate USB-C adapter or hub, see [here](https://docs.pupil-labs.com/invisible/explainers/glasses-and-companion-device/#using-a-usb-c-hub) for details.
