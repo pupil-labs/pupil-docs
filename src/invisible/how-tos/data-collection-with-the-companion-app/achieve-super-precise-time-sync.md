@@ -1,6 +1,5 @@
 ---
 description: How-To guide on achieving super-precise time sync using the real-time API.
-is_notebook: true
 ---
 
 # Achieve super-precise Time Sync
