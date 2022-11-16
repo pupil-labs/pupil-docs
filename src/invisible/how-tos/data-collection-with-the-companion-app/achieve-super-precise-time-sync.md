@@ -3,19 +3,19 @@ description: How-To guide on achieving super-precise time sync using the real-ti
 ---
 
 # Achieve super-precise Time Sync
-For some applications it is critical to accurately synchronize your Pupil Invisible device with another clock. That could be a second Pupil Invisible device, an external sensor or a computer you use for stimulus presentation. 
+For some applications, it is critical to accurately synchronize your Pupil Invisible device with another clock. That could be from a second Pupil Invisible device, an external sensor, or a computer you use for stimulus presentation. 
 
-Pupil Invisible is providing UTC timestamps for all the data it generates, which makes it easy to sync the data to anything. Those timestamps are generated using the clock of the Companion device. All digital clocks suffer from drift however, meaning that they are running slightly too fast or slow at all times. Over time this error accumulates and can lead to errors when comparing two clocks.
+Pupil Invisible provides UTC timestamps for all the data it generates, which makes it easy to sync the data to anything. Those timestamps are generated using the clock of the Companion device. However, digital clocks can suffer from drift, meaning that they sometimes run slightly too fast or slow. Over time this error accumulates and can lead to errors when comparing two clocks.
 
-Therefore digital clocks regularly readajust themselves by syncing to a master clock over the internet every other day or so. Two freshly synced clocks should have <~20 ms of an offset. Over several days this might accumulate to several 100 ms though, which is often not acceptable.
+Therefore digital clocks regularly readjust themselves by syncing to a master clock over the internet every other day or so. Two freshly synced clocks should have <~20 ms of an offset. Over several days, this might accumulate to several 100 ms, which is often not acceptable.
 
 
 ### Force Syncing to the Master Clock on Demand
-The easiest way to achieve more accurate time synchronization is to force a sync-up to the master clock of all devices before starting data collection. The drift error takes a while to accumulate and is negligible for at least several hours after a sync-up. While the error is <~20 ms directly after sync-up, it should still be `<~150 ms` after 24 hours.
+The easiest way to achieve more accurate time synchronization is to force a sync-up to the master clock of all devices before starting data collection. This will ensure drift error is minimized for at least a few hours.
 
-A sync-up can usually be forced by toggling automatic determination of the current time off and back on in the operating systems settings. In Android for example the `Date & Time` settings in the `System` settings have a toggle called `Use network-provided time`. Whenever this toggle is turned on, the system is syncing up.
+A sync-up can usually be forced by toggling automatic determination of the current time off and back on in the operating system's settings. In Android, for example, the `Date & Time` settings in the `System` settings have a toggle called `Use network-provided time`. Whenever this toggle is turned on, the system syncs up.
 
-Depending on the operating system, devices use different master clock servers to sync with. Ideally, all devices would sync to the exact same master clock to avoid small errors between different masters. Some operating systems allow to specify which server to use. Android is using the following ones depending on the region:
+Depending on the operating system, devices use different master clock servers to sync with. Ideally, all devices would sync to the same master clock to avoid small errors between different masters. Some operating systems allow specifying which server to use. Android uses the following ones depending on the region:
 
 ```
 Asia
@@ -29,10 +29,12 @@ NTP_SERVER=north-america.pool.ntp.org
 ```
 
 ### Improving Synchronization further
-While an error of `<20 ms` is sufficient for most applications, some require even better synchronization. To improve further, you can estimate the exact offset between the clock used by Pupil Invisible and the external clock down to the millisecond.
+While an error of `<20 ms` is sufficient for most applications, some require even better synchronization. To achieve this, you can estimate the offset between the clock used by Pupil Invisible and the external clock down to millisecond accuracy.
 
-This can be done using the `TimeOffsetEstimator` of the real-time API. Using the following code you can estimate the offset between the Pupil Invisible clock and the clock of the host executing the code.
-
+This can be done using the `TimeOffsetEstimator` of the real-time API. Using the following code, you can estimate the offset between the Pupil Invisible clock and the clock of the host executing the code.
+::: tip
+**Dependency**: `pip install "pupil-labs-realtime-api>=1.1.0"`
+:::
 ```python
 from pupil_labs.realtime_api.simple import discover_one_device
 
