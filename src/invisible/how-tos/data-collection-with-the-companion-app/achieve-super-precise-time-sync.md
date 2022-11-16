@@ -32,7 +32,9 @@ NTP_SERVER=north-america.pool.ntp.org
 While an error of `<20 ms` is sufficient for most applications, some require even better synchronization. To improve further, you can estimate the exact offset between the clock used by Pupil Invisible and the external clock down to the millisecond.
 
 This can be done using the `TimeOffsetEstimator` of the real-time API. Using the following code, you can estimate the offset between the Pupil Invisible clock and the clock of the host executing the code.
-
+::: tip
+**Dependency**: `pip install "pupil-labs-realtime-api>=1.1.0"`
+:::
 ```python
 from pupil_labs.realtime_api.simple import discover_one_device
 
