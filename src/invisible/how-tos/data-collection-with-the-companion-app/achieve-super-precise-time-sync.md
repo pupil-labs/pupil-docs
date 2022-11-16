@@ -2,7 +2,7 @@
 description: How-To guide on achieving super-precise time sync using the real-time API.
 ---
 
-# Achieve super-precise Time Sync using Events
+# Achieve super-precise Time Sync
 For some applications it is critical to accurately synchronize your Pupil Invisible device with another clock. That could be a second Pupil Invisible device, an external sensor or a computer you use for stimulus presentation. 
 
 Pupil Invisible is providing UTC timestamps for all the data it generates, which makes it easy to sync the data to anything. Those timestamps are generated using the clock of the Companion device. All digital clocks suffer from drift however, meaning that they are running slightly too fast or slow at all times. Over time this error accumulates and can lead to errors when comparing two clocks.
