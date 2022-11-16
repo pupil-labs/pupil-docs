@@ -52,6 +52,17 @@ To generate static assets, run:
 yarn build
 ```
 
+### Adding new notebooks
+
+The first cell should be a Markdown cell and start with "frontmatter"
+
+```md
+---
+description: DESCRIPTION
+is_notebook: true
+---
+```
+
 ## Directory Structure
 
 ```markdown
