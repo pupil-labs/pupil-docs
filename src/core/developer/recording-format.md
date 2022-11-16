@@ -28,7 +28,7 @@ will be transformed the Pupil Player Recording Format 2.0.
 Timestamp files must follow this strict naming convention:
 Given that a data file is named `<name>.<ext>` then its timestamps file has to be named `<name>_timestamps.npy`.
 
-Timestamp files are saved in the [NPY binary format](https://docs.scipy.org/doc/numpy/neps/npy-format.html). You can use [`numpy.load()`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.load.html#numpy.load) to access the timestamps in Python.
+Timestamp files are saved in the [NPY binary format](https://numpy.org/doc/stable/reference/generated/numpy.lib.format.html#module-numpy.lib.format). You can use [`numpy.load()`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.load.html#numpy.load) to access the timestamps in Python.
 
 A datum and its timestamp have the same index within their respective files, i.e. the `i`th timestamp in `world_timestamps.npy` belongs to the `i`th video frame in `world.mp4`.
 

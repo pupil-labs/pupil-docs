@@ -3,7 +3,12 @@ description: How-To guide on transferring recordings off of the Companion phone 
 ---
 
 # Transfer Recordings via USB
+
+
+::: tip
+<v-icon large color="info">info_outline</v-icon>
 The recommended way for transferring recordings off of the phone is to upload them to Pupil Cloud. For some use-cases, however, this may not be possible, and users may want to transfer the recordings via USB.
+:::
 
 To transfer recordings directly to a computer you first need to export the recordings to the Android filesystem. Then you need to access the filesystem to copy the data over to your computer. 
 
@@ -26,8 +31,9 @@ Recordings downloaded directly from the phone will be in a raw binary format tha
 5. Open File Browser on your PC and access the Internal shared storage of your OnePlus device
 6. Locate the export folder on the phone. Usually, it is in `Documents/Pupil Invisible Export`.
 7. Copy the recordings to your computer.
-8. Export the recordings using [Pupil Player](/core/software/pupil-player/#export).
+8. Export the recordings using [Pupil Player](/core/software/pupil-player/#export) (part of Pupil Core Software).
 
+<DownloadLinks/>
 
 Note that the export process does not delete the recordings from the Invisible Companion App, and you can still upload 
 to Pupil Cloud at a later date if required. 

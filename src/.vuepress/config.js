@@ -44,7 +44,6 @@ module.exports = {
 
   title: "Pupil Labs",
   head: [
-    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Material+Icons' }],
     ['link', { rel: 'manifest', href: '/manifest.json' }],
     ['meta', { name: 'theme-color', content: '#eceff1' }],
     ['link', { rel: "apple-touch-icon", type: "image/x-icon", href: "/favicons/apple-touch-icon.png" }],
@@ -86,7 +85,21 @@ module.exports = {
           children: [
             'explainers/basic-concepts',
             'explainers/data-streams',
-            'explainers/enrichments',
+            {
+              title: "Enrichments",
+              children: [
+                {
+                  title: 'Overview', 
+                  path: 'explainers/enrichments/overview'
+                },
+                'explainers/enrichments/reference-image-mapper',
+                'explainers/enrichments/marker-mapper',
+                'explainers/enrichments/face-mapper',
+                'explainers/enrichments/gaze-overlay',
+                'explainers/enrichments/raw-data',
+              ]
+            },
+            // 'explainers/enrichments',
             'explainers/glasses-and-companion-device',
             'explainers/publications',
           ]
@@ -114,6 +127,7 @@ module.exports = {
               children: [
                 'how-tos/integrate-with-the-real-time-api/introduction/',
                 'how-tos/integrate-with-the-real-time-api/track-your-experiment-progress-using-events/',
+                'how-tos/integrate-with-the-real-time-api/track-your-experiment-in-matlab',
                 'how-tos/integrate-with-the-real-time-api/legacy-api',
               ]
             },
@@ -121,6 +135,7 @@ module.exports = {
               title: 'Advanced Analysis',
               children: [
                 'how-tos/advanced-analysis/gaze-metrics-in-aois/',
+                'how-tos/advanced-analysis/syncing-sensors/',
                 {
                   title: "Undistort Video and Gaze Data",
                   path: 'how-tos/advanced-analysis/intrinsics/',

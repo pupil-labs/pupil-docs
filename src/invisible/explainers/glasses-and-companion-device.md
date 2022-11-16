@@ -28,7 +28,7 @@ While looking almost like normal glasses, the Pupil Invisible glasses are filled
 
 - **Eye Cameras**: A binocular pair of infrared cameras with matching 850nm infrared illuminator **LEDs** are used to capture [eye videos](/invisible/explainers/data-streams/#eye-videos). The raw data is saved with each recording and is used for real-time [gaze](/invisible/explainers/data-streams/#gaze) estimation.
 
-- **Scene Camera**: A detachable scene camera is located on the right arm of the glasses capturing [scene video](/invisible/explainers/data-streams/#scene-video). A **microphone** is integrated into the camera module to capture [audio](/invisible/explainers/data-streams/#audio). You can detach and attach the camera at any time before, during, and after a recording. The app will capture scene video during a recording automatically whenever it is attached. Capturing audio is optional and settable in the Companion app settings.
+- **Scene Camera**: A detachable scene camera is located on the left arm of the glasses capturing [scene video](/invisible/explainers/data-streams/#scene-video). A **microphone** is integrated into the camera module to capture [audio](/invisible/explainers/data-streams/#audio). You can detach and attach the camera at any time before, during, and after a recording. The app will capture scene video during a recording automatically whenever it is attached. Capturing audio is optional and settable in the Companion app settings.
  
 - **IMU**: A 6-degrees-of-freedom IMU is integrated into the right arm of the glasses. It captures the [inertia](/invisible/explainers/data-streams/#inertial-measurements) of the glasses, including translational acceleration, rotational speed, pitch and roll.
 
