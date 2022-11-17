@@ -7,11 +7,11 @@ For some applications, it is critical to accurately synchronize your Pupil Invis
 
 Pupil Invisible provides UTC timestamps for all the data it generates, which makes it easy to sync the data to anything. Those timestamps are generated using the clock of the Companion device. However, digital clocks can suffer from drift, meaning that they sometimes run slightly too fast or slow. Over time this error accumulates and can lead to errors when comparing two clocks.
 
-Therefore digital clocks regularly readjust themselves by syncing to a master clock over the internet every other day or so. Two freshly synced clocks should have <~20 ms of an offset. Over several days, this might accumulate to several 100 ms, which is often not acceptable.
+Therefore digital clocks regularly readjust themselves by syncing to a master clock over the internet every other day or so. Two freshly synced clocks should have <~20 ms of an offset. From there, the offset increases in the order of a couple 10s of milliseconds per hour. After 24 hours it may reach about 1 second.
 
 
 ### Force Syncing to the Master Clock on Demand
-The easiest way to achieve more accurate time synchronization is to force a sync-up to the master clock of all devices before starting data collection. This will ensure drift error is minimized for at least a few hours.
+The easiest way to achieve accurate time synchronization is to force a fresh sync-up to the master clock of all devices before starting data collection. This will ensure drift error is minimized for at least a few hours.
 
 A sync-up can usually be forced by toggling automatic determination of the current time off and back on in the operating system's settings. In Android, for example, the `Date & Time` settings in the `System` settings have a toggle called `Use network-provided time`. Whenever this toggle is turned on, the system syncs up.
 
@@ -29,7 +29,7 @@ NTP_SERVER=north-america.pool.ntp.org
 ```
 
 ### Improving Synchronization further
-While an error of `<20 ms` is sufficient for most applications, some require even better synchronization. To achieve this, you can estimate the offset between the clock used by Pupil Invisible and the external clock down to millisecond accuracy.
+While an error of `<20 ms` is sufficient for most applications, some require even better synchronization. To achieve this, you can estimate the offset between the clock used by Pupil Invisible and the external clock down to single millisecond accuracy.
 
 This can be done using the `TimeOffsetEstimator` of the real-time API. Using the following code, you can estimate the offset between the Pupil Invisible clock and the clock of the host executing the code.
 ::: tip
@@ -56,5 +56,3 @@ device.close()
 ```
 
 Using continuous offset estimates like this, you can precisely compensate for clock drifts by correcting the respective timestamps.
-
-When using a wifi connection, the speed of data transfer can vary at times, leading to inaccuracies in the estimation. If precise synchronization down to a few milliseconds is required, it is recommended to use an ethernet connection. You can connect an ethernet cable to the phone using an appropriate USB-C adapter or hub, see [here](https://docs.pupil-labs.com/invisible/explainers/glasses-and-companion-device/#using-a-usb-c-hub) for details.
