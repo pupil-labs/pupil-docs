@@ -1,88 +1,27 @@
 ---
-description: Welcome to the Forge
+description: Welcome to Alpha Lab!
 permalink: /alpha-lab/
 ---
 
 # Welcome to Alpha Lab!
 
-<div>
-  <div class="d-flex align-center">
-    <iframe style="border: none" width="250" height="320" src="https://rive.app/s/g-ft4kxqiEirmEZP-1TzHQ/embed" allowfullscreen />
-  </div>
-  <p>
-    Ready to get the most out of your eye tracker? If the answer is yes, you're in the right place! This is a space where we share some of our more advanced tools, explainers, tutorials and projects that go beyond the basic use cases.
-  </p>
-  <p>
-    You can peek at them, but more importantly, you can also play with what our specialists have been working on.
-  </p>
-</div>
+[insert image that is generated with stable diffusion/similar or something from r&d with a bunch of eyeballs in a grid. If going the generated route, include a caption with the prompt. The image should look cool and a bit weird. It doesn’t need to be permanent. We could even have multiple images that cycle on each reload. It should signal signal a bit of playfulness (serious-play), technical chops, and openness]
 
-## What do you have to offer?
+Pupil Labs is made up of people who are curious by nature. We are researchers, designers, toolmakers, and professional tinkerers. We enjoy building quick prototypes and demos to explore our curiosities. We built Alpha Lab so that we can have a centralized place to collect the results of our explorations and to share it with the world.
 
-Take your gaze data to new levels – determine which areas of interest are gazed; obtain more out of the reference image mapper by combining multiple enrichments; merge cutting-edge technologies with your eye tracking data... Check out the latest tools and tutorials as they get out:
+Alpha Lab is not a place for official product documentation. Everything you find here should be considered a work in progress, and may even be a bit rough around the edges. That is the nature of exploration!
 
-<div class="pb-4">
-  <v-btn
-    v-for="(item,index) in guides"
-    :key="index"
-    outline
-    round
-    color="primary"
-    :to="item.link"
-    style="font-weight:normal;"
-  >
-    {{ item.title }}
-  </v-btn>
-</div>
+We encourage you to read through the results and go further - play around, build from the ideas here, hack away!
+Sharing is caring
+Some of the prototypes and demos you see here came from our own home-grown curiosities. Others were inspired by questions from you - members of our community - via discussion on [discord](discord link?)].
 
-## Will these tools ever become available directly in your applications (Cloud, Companion app, device)?
+If you have an idea that you want us to explore [let us know](canny). It could be a demo of using our existing tools, or an out of the box idea that combines some new state of the art deep learning pipeline with eye tracking.
+Show and tell
+Enough talk; let’s dive in.
 
-Some of these features may end up in production in the future, others may not.
+[One card per demo/prototype with caption - image for each]
+Netflix and fixate: Here we show you how you can use Pupil Invisible + Pupil Cloud’s Reference Image Mapper to map gaze onto dynamic on screen content - like a video.
 
-The Forge is not meant to be a replacement for the tools we offer in Cloud or the Companion App, but rather it is a place
-where some of our more edge-case tools and projects live. It will also be a place to test new features and gather
-feedback from the community.
+AOIs: Here we demonstrate how to make areas of interest using data downloaded from Pupil Cloud’s Reference Image Mapper.
 
-## Can I suggest a feature?
-
-Of course! We are happy to hear what would you like us to build next.
-
-<div>
-  <v-btn
-    large
-    color="primary"
-    href="https://feedback.pupil-labs.com/"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Request a feature!
-  </v-btn>
-</div>
-
-## Do you need training?
-
-### You wish to do what our robots do?
-
-We offer a variety of training workshops and custom support packages, in case you need a hand with your project. Check them out [here](https://pupil-labs.com/products/support/)!
-
-<script>
-export default {
-  data: () => ({
-    panel: null,
-    guides: [
-      {
-        title: "Map your gaze onto screen content",
-        link: "/alpha-lab/map-your-gaze-to-a-2d-screen",
-      },
-      {
-        title: "Run multiple Reference Image Mappers in parallel",
-        link: "/alpha-lab/multiple-rim",
-      },
-      {
-        title: "Define areas of interest and compute gaze metrics",
-        link: "/alpha-lab/gaze-metrics-in-aois/",
-      },
-    ],
-  }),
-}
-</script>
+RIM Room: We pushed the limits of markerless mapping with Pupil Clou’s Reference Image Mapper - scanning an entire apartment.
