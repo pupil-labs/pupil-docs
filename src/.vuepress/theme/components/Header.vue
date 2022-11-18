@@ -2,7 +2,7 @@
 div
   v-toolbar.elevation-1.gap-container(app, fixed, clipped-left, height="60px")
     SidebarButton(@toggle-sidebar="$emit('toggle-sidebar')")
-    a.align-center.d-flex(to="/")
+    router-link(to="/")
       img.sm-hidden-down(
         :src="$withBase('/logos/pl_logo.svg')",
         alt="Pupil Labs logo"

@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="caption--1 pb-3">
-    <span>Products used in this experiment: </span>
+    <span>Products used: </span>
     <a
       v-for="(tag, index) in $page.frontmatter.tags"
       :key="tag"
