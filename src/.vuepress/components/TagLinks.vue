@@ -1,34 +1,33 @@
 <template lang="html">
-  <div>
-    <v-btn 
-      v-for="tag in $page.frontmatter.tags"
+  <div class="caption--1 pb-3">
+    <span>Products used in this experiment: </span>
+    <a
+      v-for="(tag, index) in $page.frontmatter.tags"
       :key="tag"
-      :to="{ path: getPageLink(tag) }"
-      small
-      outline
+      :href="getPageLink(tag)"
       color="primary"
-      style="font-size:11pt; font-weight:normal;"> {{ tag }}  </v-btn>  
-    </router-link>
-    <br></br>
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {{ index + 1 < $page.frontmatter.tags.length ? `${tag}, ` : tag }}
+    </a>
   </div>
 </template>
 <script>
 export default {
-    methods: {
-        getPageLink(tag) {
-            if (tag.toLowerCase().includes('invisible')) {
-                return '/invisible/'
-            }
-            else if (tag.toLowerCase().includes('cloud')) {
-                return '/invisible/getting-started/analyse-recordings-in-pupil-cloud/'
-            }
-            else if (tag.toLowerCase().includes('core')) {
-                return '/core/'
-            }
-            else {
-                return '/tags.html'
-            }
-        }
-    },
-}
+  methods: {
+    getPageLink(tag) {
+      const url = "https://pupil-labs.com/products";
+      if (tag.toLowerCase().includes("invisible")) {
+        return `${url}/invisible/`;
+      } else if (tag.toLowerCase().includes("cloud")) {
+        return `${url}/cloud`;
+      } else if (tag.toLowerCase().includes("core")) {
+        return `${url}/core/`;
+      } else {
+        return;
+      }
+    }
+  }
+};
 </script>
