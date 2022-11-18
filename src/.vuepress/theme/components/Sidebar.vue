@@ -1,28 +1,33 @@
 <template lang="pug">
 aside.sidebar
-  v-list.lg-hidden-up.pa-3
-    template(v-for="item in docs_menu")
-      v-list-tile(v-if="item.link", :to="item.link")
-        v-list-tile-title(
-          :class="{ 'text-capitalize': item.title != 'vr/ar', 'text-uppercase': item.title == 'vr/ar' }"
-        )
-          | {{ item.title }}
-      v-list-tile(v-else, :href="item.href", target="_blank")
-        v-list-tile-title.text-capitalize
-          span.pr-1 {{ item.title }}
-          OutboundLink
-  v-divider.lg-hidden-up
   NavLinks
   slot(name="top")
-  .pa-3
-    SidebarLinks(:depth="0", :items="items")
+  div(
+    style="display: grid; height: 100%; align-content: space-between; width: inherit"
+  )
+    div(style="width: inherit")
+      v-list.lg-hidden-up.pa-3
+        template(v-for="item in docs_menu")
+          v-list-tile(v-if="item.link", :to="item.link")
+            v-list-tile-title(
+              :class="{ 'text-capitalize': item.title != 'vr/ar', 'text-uppercase': item.title == 'vr/ar' }"
+            )
+              | {{ item.title }}
+          v-list-tile(v-else, :href="item.href", target="_blank")
+            v-list-tile-title.text-capitalize
+              span.pr-1 {{ item.title }}
+              OutboundLink
+      v-divider.lg-hidden-up
+      .pa-3
+        SidebarLinks(:depth="0", :items="items")
+    .pa-3(style="width: inherit")
+      SidebarBanner
   slot(name="bottom")
-  SidebarBanner
   slot(name="bottombutton")
 </template>
 
 <script>
-import SidebarBanner from "../../components/SideBarBanner.vue";
+import SidebarBanner from "@theme/components/SidebarBanner.vue";
 import SidebarLinks from "@theme/components/SidebarLinks.vue";
 import NavLinks from "@theme/components/NavLinks.vue";
 
