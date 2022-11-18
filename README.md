@@ -176,6 +176,17 @@ Text.
 :::
 ```
 
+#### Multiple lines
+- adding multiple blocks in the slot will automatically render separate elements with no need for <br> to vertically align items
+
+```md
+::: tip
+**title-1:** text
+
+**title-2**: text
+:::
+```
+
 ### Youtube videos
 Use Youtube component to quickly add videos to markdown files.
 
