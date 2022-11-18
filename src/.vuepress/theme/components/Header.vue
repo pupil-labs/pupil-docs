@@ -2,10 +2,7 @@
 div
   v-toolbar.elevation-1.gap-container(app, fixed, clipped-left, height="60px")
     SidebarButton(@toggle-sidebar="$emit('toggle-sidebar')")
-    a.align-center.d-flex(
-      href="/",
-      rel="noopener"
-    )
+    a.align-center.d-flex(to="/")
       img.sm-hidden-down(
         :src="$withBase('/logos/pl_logo.svg')",
         alt="Pupil Labs logo"
@@ -28,6 +25,14 @@ div
           :class="{ 'text-capitalize': item.title != 'vr/ar', 'text-uppercase': item.title == 'vr/ar' }",
           style="margin: 0; height: 36px"
         ) {{ item.title }}
+      v-btn.text-capitalize(
+        flat,
+        href="https://pupil-labs.com/chat/",
+        style="margin: 0; height: 36px",
+        target="_blank"
+      )
+        span.pr-1 Chat
+        OutboundLink
 </template>
 
 <script>
