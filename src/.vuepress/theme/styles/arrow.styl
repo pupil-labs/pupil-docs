@@ -22,9 +22,14 @@
     border-right 6px solid #455A64
 
 .depth-1
-  span.arrow
+  .arrow
     width 6px
     height 6px
-    border-left 3px solid transparent
-    border-right 3px solid transparent
-    border-top 4px solid black
+    &.down
+      border-left 3px solid transparent
+      border-right 3px solid transparent
+      border-top 4px solid black
+     &.right
+      border-top 3px solid transparent
+      border-bottom 3px solid transparent
+      border-left 4px solid #455A64
