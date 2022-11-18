@@ -36,7 +36,7 @@ Examples that might interest you are an overview of all the [available data stre
     round
     color="primary"
     :to="item.link"
-    style="font-weight:normal;border-color"
+    style="font-weight:normal;"
   >
     {{ item.title }}
   </v-btn>
