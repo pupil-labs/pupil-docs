@@ -154,7 +154,6 @@ export default {
         docsBranch = "master",
         docsRepo = repo,
       } = this.$site.themeConfig;
-
       if (docsRepo && editLinks && this.$page.relativePath) {
         return this.createEditLink(
           repo,
@@ -232,16 +231,30 @@ export default {
 
       const base = outboundRE.test(docsRepo)
         ? docsRepo
-        : `https://github.com/${docsRepo}`;
-      return (
-        base.replace(endingSlashRE, "") +
-        `/edit` +
+        : `https://github.dev/${docsRepo}`;
+      var link = (
+        base.replace("github.com", "github.dev").replace(endingSlashRE, "") +
+        `/blob` +
         `/${docsBranch}/` +
         (docsDir ? docsDir.replace(endingSlashRE, "") + "/" : "") +
         path
       );
+      if (this.$page.frontmatter.isNotebook) {
+        link = changeExtension(link, ".ipynb")
+      }
+      return link;
     },
   },
+};
+
+function changeExtension(file, extension) {
+  const path = require('path');
+  const basename = path.basename(file, path.extname(file));
+  console.log("a", basename);
+  console.log("b", path.dirname(file));
+  const result = path.dirname(file) + path.sep + basename + extension;
+  console.log("c", result);
+  return result
 };
 
 function resolvePrev(page, items) {
