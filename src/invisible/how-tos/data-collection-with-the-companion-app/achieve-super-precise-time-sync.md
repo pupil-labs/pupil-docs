@@ -56,7 +56,10 @@ device.close()
 ```
 
 Using continuous offset estimates like this, you can precisely compensate for clock drifts by correcting the respective timestamps with it.
-
+The calculation would look like this:
+```python
+companion_app_time = external_clock_time - offset```
+```
 ::: tip
 In very busy wifi networks the transfer speeds might fluctuate wildly and potentially impact the clock offset measurement. In such cases it would be helpful to connect the phone to the network via [ethernet](/invisible/explainers/glasses-and-companion-device/#using-a-usb-c-hub) instead.
 :::
