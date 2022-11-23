@@ -2,9 +2,7 @@
 aside.sidebar
   NavLinks
   slot(name="top")
-  div(
-    style="display: grid; height: 100%; align-content: space-between; width: inherit"
-  )
+  div.sidebar-content
     div(style="width: inherit")
       v-list.lg-hidden-up.pa-3
         template(v-for="item in docs_menu")
@@ -57,6 +55,12 @@ export default {
 </script>
 
 <style lang="stylus">
+.sidebar-content {
+  display: grid;
+  height: 100%;
+  align-content: space-between;
+  overflow: hidden;
+}
 .sidebar {
   ul {
     padding: 0;
