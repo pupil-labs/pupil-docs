@@ -31,20 +31,55 @@ If you have an idea that you want us to explore [let us know](https://feedback.p
 
 Enough talk; let’s dive in.
 
-<div class="mb-4" style="display:flex;justify-content:center;">
-  <v-img class="rounded" :src="require('../media/alpha-lab/reference-aoi.jpg')" width="100%" aspect-ratio="1.7778" />
+<div>
+    <div class="grid grid-cols-1 sm-grid-cols-2 md-grid-cols-3 lg-grid-cols-2 xl-grid-cols-3 gap-8">
+      <div v-for="(item, index) in showTell">
+        <router-link
+          :key="index"
+          :to="item.to"
+        >
+          <v-img
+            class="rounded"
+            aspect-ratio="1.4"
+            style="margin-bottom:32px;"
+            :position="item.position"
+            :src="require(`../media/alpha-lab/${item.img}`)"
+          />
+          <p class="caption--1 font-weight-bold pb-3">{{ item.title }}</p>
+        </router-link>
+        <p class="caption--1">
+          {{ item.text }}
+        </p>
+      </div>
+    </div>
 </div>
 
-**[AOIs](/alpha-lab/gaze-metrics-in-aois/)**: Here we demonstrate how to make areas of interest using data downloaded from Pupil Cloud’s Reference Image Mapper.
-
-<div class="mb-4" style="display:flex;justify-content:center;">
-  <v-img class="rounded" :src="require('../media/alpha-lab/netflix-fixation.png')" wih="100%" aspect-ratio="1.7778" />
-</div>
-
-**[Netflix and fixate](/alpha-lab/map-your-gaze-to-a-2d-screen/)**: Here we show you how you can use Pupil Invisible + Pupil Cloud’s Reference Image Mapper to map gaze onto dynamic on screen content - like a video.
-
-<div class="mb-4" style="display:flex;justify-content:center;">
-  <v-img class="rounded" :src="require('../media/alpha-lab/desk-overlay.png')" width="100%" aspect-ratio="1.7778" />
-</div>
-
-**[RIM Room](/alpha-lab/multiple-rim/)**: We pushed the limits of markerless mapping with Pupil Clou’s Reference Image Mapper - scanning an entire apartment.
+<script>
+export default {
+  data() {
+    return {
+      showTell: [
+        {
+          title: "AOIs",
+          text: "Here we demonstrate how to make areas of interest using data downloaded from Pupil Cloud’s Reference Image Mapper.",
+          to: "/alpha-lab/gaze-metrics-in-aois/",
+          img: "reference-aoi.jpg",
+        },
+        {
+          title: "Netflix and fixate",
+          text: "Here we show you how you can use Pupil Invisible + Pupil Cloud’s Reference Image Mapper to map gaze onto dynamic on screen content - like a video.",
+          to: "/alpha-lab/map-your-gaze-to-a-2d-screen/",
+          img: "netflix-fixation.png",
+          position: "38%"
+        },
+        {
+          title: "RIM Room",
+          text: "We pushed the limits of markerless mapping with Pupil Clou’s Reference Image Mapper - scanning an entire apartment.",
+          to: "/alpha-lab/multiple-rim/",
+          img: "desk-overlay.png",
+        },
+      ],
+    };
+  },
+}
+</script>
