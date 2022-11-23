@@ -31,20 +31,20 @@ If you have an idea that you want us to explore [let us know](https://feedback.p
 
 Enough talk; let’s dive in.
 
-**[AOIs](/alpha-lab/gaze-metrics-in-aois/)**: Here we demonstrate how to make areas of interest using data downloaded from Pupil Cloud’s Reference Image Mapper.
-
 <div class="mb-4" style="display:flex;justify-content:center;">
   <v-img class="rounded" :src="require('../media/alpha-lab/reference-aoi.jpg')" width="100%" aspect-ratio="1.7778" />
 </div>
 
-**[Netflix and fixate](/alpha-lab/map-your-gaze-to-a-2d-screen/)**: Here we show you how you can use Pupil Invisible + Pupil Cloud’s Reference Image Mapper to map gaze onto dynamic on screen content - like a video.
+**[AOIs](/alpha-lab/gaze-metrics-in-aois/)**: Here we demonstrate how to make areas of interest using data downloaded from Pupil Cloud’s Reference Image Mapper.
 
 <div class="mb-4" style="display:flex;justify-content:center;">
   <v-img class="rounded" :src="require('../media/alpha-lab/netflix-fixation.png')" wih="100%" aspect-ratio="1.7778" />
 </div>
 
-**[RIM Room](/alpha-lab/multiple-rim/)**: We pushed the limits of markerless mapping with Pupil Clou’s Reference Image Mapper - scanning an entire apartment.
+**[Netflix and fixate](/alpha-lab/map-your-gaze-to-a-2d-screen/)**: Here we show you how you can use Pupil Invisible + Pupil Cloud’s Reference Image Mapper to map gaze onto dynamic on screen content - like a video.
 
 <div class="mb-4" style="display:flex;justify-content:center;">
   <v-img class="rounded" :src="require('../media/alpha-lab/desk-overlay.png')" width="100%" aspect-ratio="1.7778" />
 </div>
+
+**[RIM Room](/alpha-lab/multiple-rim/)**: We pushed the limits of markerless mapping with Pupil Clou’s Reference Image Mapper - scanning an entire apartment.
