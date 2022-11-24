@@ -1,12 +1,12 @@
 ---
-description: Welcome to Alpha Lab!
+description: Welcome to Alpha Lab!yar
 permalink: /alpha-lab/
 ---
 
 # Welcome to Alpha Lab!
 
 <div class="mb-4" style="display:flex;justify-content:center;">
-  <v-img class="rounded" src="https://via.placeholder.com/1280x720" width="100%" />
+  <v-img class="rounded" :src="require(`../media/alpha-lab/alpha-lab-banner.jpg`)" width="100%" />
 </div>
 
 <div class="caption--1 pb-4">
@@ -74,7 +74,13 @@ export default {
         },
         {
           title: "RIM Room",
-          text: "We pushed the limits of markerless mapping with Pupil Clou’s Reference Image Mapper - scanning an entire apartment.",
+          text: "We pushed the limits of markerless mapping with Pupil Cloud’s Reference Image Mapper - scanning an entire apartment.",
+          to: "/alpha-lab/multiple-rim/",
+          img: "desk-overlay.png",
+        },
+        {
+          title: "RIM Room",
+          text: "We pushed the limits of markerless mapping with Pupil Cloud’s Reference Image Mapper - scanning an entire apartment.",
           to: "/alpha-lab/multiple-rim/",
           img: "desk-overlay.png",
         },
