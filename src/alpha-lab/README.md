@@ -10,7 +10,7 @@ permalink: /alpha-lab/
 </div>
 
 <div class="caption--1 pb-4">
-  <span>caption</span>
+  <span>Image credit: DALL-E (prompt) - “pattern made with lots of eyes with laboratory and garage tools, vectorized art”</span>
 </div>
 
 Pupil Labs is made up of people who are curious by nature. We are researchers, designers, toolmakers, and professional tinkerers. We enjoy building quick prototypes and demos to explore our curiosities. We built Alpha Lab so that we can have a centralized place to collect the results of our explorations and to share it with the world.
