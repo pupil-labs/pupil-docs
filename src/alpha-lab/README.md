@@ -13,8 +13,6 @@ permalink: /alpha-lab/
   <span>caption</span>
 </div>
 
-[insert image that is generated with stable diffusion/similar or something from r&d with a bunch of eyeballs in a grid. If going the generated route, include a caption with the prompt. The image should look cool and a bit weird. It doesn’t need to be permanent. We could even have multiple images that cycle on each reload. It should signal signal a bit of playfulness (serious-play), technical chops, and openness]
-
 Pupil Labs is made up of people who are curious by nature. We are researchers, designers, toolmakers, and professional tinkerers. We enjoy building quick prototypes and demos to explore our curiosities. We built Alpha Lab so that we can have a centralized place to collect the results of our explorations and to share it with the world.
 
 Alpha Lab is not a place for official product documentation. Everything you find here should be considered a work in progress, and may even be a bit rough around the edges. That is the nature of exploration!
