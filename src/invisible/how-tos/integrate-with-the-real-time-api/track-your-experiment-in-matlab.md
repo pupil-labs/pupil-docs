@@ -1,7 +1,6 @@
-e---
-permalink: /invisible/how-tos/integrate-with-the-real-time-api/track-your-experiment-in-matlab
+---
+permalink: /invisible/how-tos/integrate-with-the-real-time-api/track-your-experiment-in-matlab'
 description: A simple guide on how to build experiments in Matlab
-
 ---
 
 # Track your experiment in MATLAB
