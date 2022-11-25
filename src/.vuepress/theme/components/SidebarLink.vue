@@ -148,10 +148,6 @@ a.sidebar-link {
   min-height: 24px;
   line-height: 1;
 
-  > span {
-    transform: translateY(1px);
-  }
-
   &:hover {
     color: #0D122A;
     background-color: #ECEFF1;
@@ -180,6 +176,14 @@ a.sidebar-link {
 
 li > a.sidebar-link {
   padding-left: 40px;
+}
+
+.depth-1 {
+  .sidebar-group-items {
+    .sidebar-link {
+      padding-left: 52px;
+    }
+  }
 }
 
 .sidebar-group-items {

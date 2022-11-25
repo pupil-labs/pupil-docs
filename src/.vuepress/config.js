@@ -135,7 +135,6 @@ module.exports = {
             {
               title: 'Advanced Analysis',
               children: [
-                'how-tos/advanced-analysis/gaze-metrics-in-aois/',
                 'how-tos/advanced-analysis/syncing-sensors/',
                 {
                   title: "Undistort Video and Gaze Data",
@@ -155,7 +154,7 @@ module.exports = {
             }
           ],
         },
-        "troubleshooting"
+        "troubleshooting",
       ],
       '/core/': [
         '',
@@ -192,6 +191,22 @@ module.exports = {
         'rift',
         // 'bt300',
         'developer',
+      ],
+      '/alpha-lab/': [
+        {
+          title: 'Welcome', 
+          path: '/alpha-lab/',
+          collapsable: false,
+        },
+        'gaze-metrics-in-aois/',
+        {
+          title: 'Map your gaze onto screen content',
+          path: 'map-your-gaze-to-a-2d-screen'
+        },
+        {
+          title: 'Use multiple RIM enrichments',
+          path: 'multiple-rim'
+        },
       ],
     },
     sidebarDepth: 1,

@@ -2,11 +2,7 @@
 div
   v-toolbar.elevation-1.gap-container(app, fixed, clipped-left, height="60px")
     SidebarButton(@toggle-sidebar="$emit('toggle-sidebar')")
-    a.align-center.d-flex(
-      href="https://pupil-labs.com",
-      target="_blank",
-      rel="noopener"
-    )
+    router-link(to="/")
       img.sm-hidden-down(
         :src="$withBase('/logos/pl_logo.svg')",
         alt="Pupil Labs logo"
@@ -48,10 +44,10 @@ export default {
   data() {
     return {
       docs_menu: [
-        { icon: "home", title: "home", link: "/" },
         { icon: "invisible", title: "invisible", link: "/invisible/" },
         { icon: "core", title: "core", link: "/core/" },
         { icon: "vr-ar", title: "vr/ar", link: "/vr-ar/" },
+        { icon: "alpha-lab", title: "Alpha Lab", link: "/alpha-lab/" },
       ],
     };
   },

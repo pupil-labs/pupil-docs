@@ -176,6 +176,32 @@ Text.
 :::
 ```
 
+<!-- coming soon
+#### Text with icon
+Wrap the icon and text in the same block.
+
+`v-icon` is a vuetify tag, so you could change the color property and also replace the icon by changing the `error_outline` to any Material Icons.
+
+```markdown
+::: danger
+<div>
+    <v-icon large color="warning">error_outline</v-icon>
+    Text.
+</div>
+:::
+```
+
+#### Multiple lines
+- adding multiple blocks in the slot will automatically render separate elements with no need for <br> to vertically align items
+
+```md
+::: tip
+**title-1:** text
+
+**title-2**: text
+:::
+``` -->
+
 ### Youtube videos
 Use Youtube component to quickly add videos to markdown files.
 

@@ -1,6 +1,8 @@
 # Ignore local address
 http://pi.local:8080/
 localhost:%25s
+file:///home/runner/work/pupil-docs/pupil-docs/src/alpha-lab/ws:/localhost:XXXX
+ws://localhost:XXXX/
 
 # Ignore all .js files
 file:///**/*.js
@@ -42,4 +44,12 @@ https://docs.pupil-labs.com/SplYZK-ZzE8
 https://docs.pupil-labs.com/4MB5o4W_XJo
 https://docs.pupil-labs.com/d3Yk3nKDIOQ
 https://docs.pupil-labs.com/0U4H-uOIHlw
-
+https://docs.pupil-labs.com/OXIUjIzCplc
+https://docs.pupil-labs.com/_LWwqbHU8L0
+https://docs.pupil-labs.com/_3gGvydd-ets
+https://docs.pupil-labs.com/XTIkB8Wct6M
+https://docs.pupil-labs.com/FQ2SdFcnqXw
+https://docs.pupil-labs.com/aEOZZrUrEpE
+https://docs.pupil-labs.com/wi4MAzuJIzU
+https://docs.pupil-labs.com/dYcN0HVirDA
+https://docs.pupil-labs.com/90nYSMqUXIE

@@ -126,7 +126,7 @@ What works and what doesn’t?
 - The scene needs to have relatively **static** features in the environment. If there is a lot of movement or the objects change in appearance or shape, the mapping *can* fail.
 
 ::: tip
-**Ready to go?**
+**Ready to go?**<br>
 Why not try replicating the above examples? Or even try it with your own use-cases! If you haven’t already, we recommend you check out the [Cloud Getting Started Guide](/invisible/getting-started/analyse-recordings-in-pupil-cloud/#analyse-recordings-in-pupil-cloud), which covers the basics of working with enrichments.
 :::
 
@@ -174,9 +174,7 @@ In cases such as supermarket shopping, where features of the environment like fr
 
 
 ::: tip
-
-**Want to know more?**
-
+**Want to know more?**<br>
 Under the hood, the Reference Image Mapper uses a method called Structure from Motion (SfM) to build a model of the environment. You can see this by enabling the ‘point cloud’ in your Cloud Project.
 :::
 
