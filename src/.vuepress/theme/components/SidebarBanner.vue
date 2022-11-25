@@ -26,15 +26,22 @@ export default {
         {
           icon: "campaign",
           title: "Request a feature",
-          href: "https://feedback.pupil-labs.com/"
+          href: "https://feedback.pupil-labs.com/",
         },
         {
           img: "discord_dark",
           title: "Chat with us",
-          href: "https://pupil-labs.com/chat/"
-        }
-      ]
+          href: "https://pupil-labs.com/chat/",
+        },
+      ],
     };
-  }
+  },
+  watch: {
+    $route(to, from) {
+      this.banner_menu[0].href = to.path.includes("core")
+        ? "https://github.com/pupil-labs/pupil/discussions/2275"
+        : "https://feedback.pupil-labs.com/";
+    },
+  },
 };
 </script>
