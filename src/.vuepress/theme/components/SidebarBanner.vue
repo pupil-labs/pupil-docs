@@ -38,11 +38,9 @@ export default {
   },
   watch: {
     $route(to, from) {
-      if (typeof window !== "undefined") {
-        this.banner_menu[0].href = window.location.href.includes("core")
-          ? "https://github.com/pupil-labs/pupil/discussions/2275"
-          : "https://feedback.pupil-labs.com/";
-      }
+      this.banner_menu[0].href = to.path.includes("core")
+        ? "https://github.com/pupil-labs/pupil/discussions/2275"
+        : "https://feedback.pupil-labs.com/";
     },
   },
 };
