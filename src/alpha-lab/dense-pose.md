@@ -14,18 +14,17 @@ tags: [Pupil Invisible, Cloud]
 
 Have you ever wondered which body parts we gaze upon while conversing with others? Where a professional basketball player looks just before passing? Does hand movement play a role when delivering a speech?
 
-Here we introduce a powerful and time-saving automation that can help answer these questions by identifying body parts of people in the scene video and recording whether they were gazed at!
+Here we introduce a powerful and time-saving automation that can help answer these questions. It works by identifying body parts of people in the scene video and recording whether they were gazed at!
 
 ::: tip
 <b>This sounds really complicated...</b><br>
-Don't worry! We've made this powerful tool easy-to-use, so you can get started right away – no coding required!<br>
-By the end, you'll have a video like the one above, and a CSV file documenting which body parts were gazed.
+Don't worry! We've made this powerful tool easy-to-use, so you can get started right away – no coding required! By the end, you'll have a video like the one above, and a CSV file documenting which body parts were gazed.
 :::
 
+## Powered by DensePose
 <details>
-    <summary>This tool employs the powerful <b>DensePose</b> (<a href="https://ai.facebook.com/tools/detectron2/">detectron2</a>, Meta AI). Click here to learn more!</summary>
+    <summary>This tool employs <b>DensePose</b> (<a href="https://ai.facebook.com/tools/detectron2/">detectron2</a>, Meta AI). Click here to learn more!</summary>
 <!-- This is collapsed   -->
-<h2>What is <b>DensePose</b>?</h2><br>
     DensePose is a method for dense human pose estimation and dense human body part segmentation. It's based on the Mask R-CNN architecture and is trained on the COCO dataset. DensePose is now a part of Detectron2's framework. You can read all the details in their paper <a href="https://arxiv.org/abs/1802.00434">DensePose: Dense Human Pose Estimation In The Wild.</a>
 </details>
 <br>
@@ -33,7 +32,7 @@ By the end, you'll have a video like the one above, and a CSV file documenting w
 ## What you'll need
 
 1. A **[Raw data export]()** from Pupil Cloud. The downloaded folder contains one subfolder for every recording in the project. Each subfolder contains a scene video, gaze.csv, and other files. We will work with those subfolders, so have them at hand
-2. A **Google account**. We set up a Google Colab notebook so you can execute all of this [from your browser](#Running-in-your-browser). This way, Google will lend you some extra computing power and required dependencies. [FAQ about Google Colab](https://research.google.com/colaboratory/intl/en-GB/faq.html), including what it is, how it's free, and some limitations. (If you do fancy running things locally, check out [this section](#Running-it-locally))
+2. A **Google account**. We set up a Google Colab notebook so you can execute all of this [from your browser](#Running-in-your-browser). This way, Google will lend you some extra computing power and required dependencies. [FAQ about Google Colab](https://research.google.com/colaboratory/intl/en-GB/faq.html), including what it is, how it's free, and some limitations. (If you do fancy running things locally, check out [this section](#running-locally).)
 
 
 ## Running in your browser
@@ -58,7 +57,7 @@ After the code is executed, new files will be generated. Check the new DensePose
 
 #### Video
 
-You've already seen the accompanying video above. There's no mistery – you have a bounding box delimiting each person detected, a blue shaded mask over the body parts, a yellow highlighted body part when it's gazed at, and the typical red circle for the gaze position.
+You've already seen the accompanying video above. There's no mystery – you have a bounding box delimiting each person detected, a blue shaded mask over the body parts, a yellow highlighted body part when it's gazed at, and the typical red circle for the gaze position.
 
 #### Gaze map image
 
