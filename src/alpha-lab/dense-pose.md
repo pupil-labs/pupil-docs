@@ -23,7 +23,7 @@ Don't worry! We've made this powerful tool easy-to-use, so you can get started r
 
 ## Powered by DensePose
 <details>
-    <summary>This tool employs <b>DensePose</b> (<a href="https://ai.facebook.com/tools/detectron2/">detectron2</a>, Meta AI). Click here to learn more!</summary>
+    <summary>This tool employs <b>DensePose</b> (<a href="https://ai.facebook.com/tools/detectron2/">detectron2</a>, Meta AI). Click here to learn more</summary><br>
 <!-- This is collapsed   -->
     DensePose is a method for dense human pose estimation and dense human body part segmentation. It's based on the Mask R-CNN architecture and is trained on the COCO dataset. DensePose is now a part of Detectron2's framework. You can read all the details in their paper <a href="https://arxiv.org/abs/1802.00434">DensePose: Dense Human Pose Estimation In The Wild.</a>
 </details>
