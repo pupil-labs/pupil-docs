@@ -40,7 +40,13 @@ By the end, you'll have a video like the one above, and a CSV file documenting w
 
 Firstly, from the raw enrichment, upload one of the subfolders that you're interested in **(uncompressed)** to Google Drive.
 
-Now for the Google Colab part: [click here to access the notebook](https://colab.research.google.com/drive/1s6mBNAhcnxhJlqxeaQ2IZMk_Ca381p25#forceEdit=true&sandboxMode=true), and carefully follow the instructions there. 
+Now for the Google Colab part: [click here to access the notebook](https://colab.research.google.com/drive/1s6mBNAhcnxhJlqxeaQ2IZMk_Ca381p25#forceEdit=true&sandboxMode=true), and carefully follow the instructions there.
+
+<div class="mb-4" style="display:flex;justify-content:center;">
+  <a href="https://colab.research.google.com/drive/1s6mBNAhcnxhJlqxeaQ2IZMk_Ca381p25#forceEdit=true&sandboxMode=true">
+    <img style="width:180px" src="https://img.shields.io/static/v1?label=&message=Open%20in%20Google%20Colab&color=blue&labelColor=grey&logo=Google%20Colab&logoColor=#F9AB00" alt="colab badge">
+  </a>
+</div>
 
 ::: tip
 The notebook contains lots of rows and this can seem overwhelming. It needn't be. It's actually really simple. Just click on each of the play buttons...
