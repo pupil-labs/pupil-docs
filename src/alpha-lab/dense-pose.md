@@ -6,7 +6,7 @@ tags: [Pupil Invisible, Cloud]
 # Map gaze onto body parts using DensePose
 
 <TagLinks />
-<Youtube src="hcHupBgOyZo"/>
+<Youtube src="uoq11XtNH5E"/>
 
 **Act 3, Scene 1:**  *"To be or not to be?"* proclaims Prince Hamlet while holding a skull in his hand. But, where is the audience looking? At the hand, at the arm, or the face?<br>
 
@@ -138,7 +138,7 @@ If you want to run it only on one specific section of your recording, you can pa
 <summary>Model details & FAQ</summary><br>
 <!-- This is collapsed   -->
 - Model weights:<br>
-densepose_rcnn_R_50_FPN_DL_s1x<br><br>
+<code>densepose_rcnn_R_50_FPN_DL_s1x</code><br><br>
 - Why is there no gaze recorded on the back of the head, hands or feet?<br>
 There is no definition for those parts in DensePose. Likewise the frontal view of the arms in the picture refers to the inside of the arms, not the front.<br>
 <br>
