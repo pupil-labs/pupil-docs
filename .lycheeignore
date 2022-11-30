@@ -26,6 +26,9 @@ file:///**/*.js
 # Ignore all .jpeg files
 ./*.jpeg
 
+# Ignore all .py files
+./*.py
+
 # Subscribe email, needs right post request to the endpoint
 https://mailchimp.us3.list-manage.com/subscribe/post
 
