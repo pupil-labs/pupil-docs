@@ -1,6 +1,6 @@
 ---
 description: Explanation of all available enrichments including setup instructions.
-permalink: /invisible/explainers/enrichments
+permalink: /invisible/enrichments
 ---
 
 # What are Enrichments? 
@@ -9,18 +9,27 @@ Enrichments are tools that allow you to explore and visualize your data in new w
 ## What can I do with Enrichments?
 From mapping your gaze to real-world features of the environment, like surfaces, 3d objects, and faces, to aggregating and visualizing your data, enrichments can help you get the most out of your recordings. See below for a list of all available enrichments and their use cases.
 
-<div class="pb-4">
-  <v-btn
-    v-for="(item,index) in enrichments"
-    :key="index"
-    outline
-    round
-    color="primary"
-    :to="item.link"
-    style="font-weight:normal;border-color"
-  >
-    {{ item.title }}
-  </v-btn>
+<div>
+    <div class="grid grid-cols-1 sm-grid-cols-2 md-grid-cols-3 lg-grid-cols-2 xl-grid-cols-3 gap-8">
+      <div v-for="(item, index) in enrichments">
+        <router-link
+          :key="index"
+          :to="item.to"
+        >
+          <v-img
+            class="rounded"
+            aspect-ratio="1.4"
+            style="margin-bottom:32px;"
+            :position="item.position"
+            :src="require(`../../media/invisible/explainers/${item.img}`)"
+          />
+          <p class="caption--1 font-weight-bold pb-3">{{ item.title }}</p>
+        </router-link>
+        <p class="caption--1">
+          {{ item.text }}
+        </p>
+      </div>
+    </div>
 </div>
 
 ## Enrichment Sections
@@ -38,25 +47,35 @@ export default {
       enrichments: [
         {
           title: "Reference image mapper",
-          link: "/invisible/explainers/enrichments/reference-image-mapper",
+          to: "/invisible/enrichments/reference-image-mapper",
+          text: "Our markerless solution to map gaze data from the real world onto a reference image.",
+          img: "reference_image_mapper_header.jpg",
         },
         {
           title: "Marker mapper",
-          link: "/invisible/explainers/enrichments/marker-mapper",
+          to: "/invisible/enrichments/marker-mapper",
+          text: "Use apriltags to get your gaze onto a surface.",
+          img: "marker_mapper_header.jpg",
         },
         {
           title: "Face mapper",
-          link: "/invisible/explainers/enrichments/face-mapper",
+          to: "/invisible/enrichments/face-mapper",
+          text: "Map gaze data to faces in the scene video.",
+          img: "face_mapper_header.jpeg",
         },
         {
           title: "Gaze overlay",
-          link: "/invisible/explainers/enrichments/gaze-overlay",
+          to: "/invisible/enrichments/gaze-overlay",
+          text: "Visualise your gaze on top of the scene video and undistort the scene video.",
+          img: "gaze_overlay_header1.jpg",
         },
         {
           title: "Raw Data",
-          link: "/invisible/explainers/enrichments/raw-data",
+          to: "/invisible/enrichments/raw-data",
+          text: "Export raw data from your recordings in convenient CSV and MP4 format.",
+          img: "raw_image_header.jpg",
         },
-      ]
+      ],
     };
   },
 }

@@ -1,6 +1,6 @@
 ---
 description: Raw data explainer
-permalink: /invisible/explainers/enrichments/raw-data
+permalink: /invisible/enrichments/raw-data
 ---
 
 ## Raw Data Exporter
