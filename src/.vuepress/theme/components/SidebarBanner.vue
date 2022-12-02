@@ -13,7 +13,7 @@ v-list(style="display: grid; gap: 8px")
           :src="$withBase(`/icons/${item.img}.svg`)",
           width="32px"
         )
-        v-icon(v-else, color="#000") campaign
+        v-icon(v-else, color="#000") {{ item.icon }}
         v-list-tile-title
           span.pr-1 {{ item.title }}
 </template>
@@ -23,6 +23,11 @@ export default {
   data() {
     return {
       banner_menu: [
+        {
+          icon: "book",
+          title: "Publications",
+          href: "/invisible/publications.html",
+        },
         {
           icon: "campaign",
           title: "Request a feature",
@@ -38,9 +43,13 @@ export default {
   },
   watch: {
     $route(to, from) {
-      this.banner_menu[0].href = to.path.includes("core")
+      this.banner_menu[1].href = to.path.includes("core")
         ? "https://github.com/pupil-labs/pupil/discussions/2275"
         : "https://feedback.pupil-labs.com/";
+      this.banner_menu[0].href =
+        to.path.includes("core") || to.path.includes("vr-ar")
+          ? "core/academic-citation/"
+          : "/invisible/publications.html";
     },
   },
 };

@@ -87,7 +87,6 @@ module.exports = {
             'basic-concepts/wearers-and-templates',
             'basic-concepts/projects-and-workspaces',
             'basic-concepts/events',
-            'basic-concepts/publications',
           ]
         },
         {
