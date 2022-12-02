@@ -123,15 +123,6 @@ module.exports = {
               ]
             },
             {
-              title: 'Integrate with the Real-Time API',
-              children: [
-                'how-tos/integrate-with-the-real-time-api/introduction/',
-                'how-tos/integrate-with-the-real-time-api/track-your-experiment-progress-using-events/',
-                'how-tos/integrate-with-the-real-time-api/track-your-experiment-in-matlab',
-                'how-tos/integrate-with-the-real-time-api/legacy-api',
-              ]
-            },
-            {
               title: 'Advanced Analysis',
               children: [
                 'how-tos/advanced-analysis/syncing-sensors/',
@@ -144,13 +135,22 @@ module.exports = {
           ]
         },
         {
+          title: 'Real-Time API',
+          children: [
+            'real-time-api/introduction/',
+            'real-time-api/track-your-experiment-progress-using-events/',
+            'real-time-api/track-your-experiment-in-matlab',
+            {
+              title: "API Client - Developer Docs",
+              path: "https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/index.html",
+            },
+            'real-time-api/legacy-api',
+          ]
+        },
+        {
           title: 'Reference',
           children: [
             'reference/export-formats',
-            {
-              title: "Real-time API",
-              path: "https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/index.html",
-            }
           ],
         },
         "troubleshooting",
@@ -193,7 +193,7 @@ module.exports = {
       ],
       '/alpha-lab/': [
         {
-          title: 'Welcome', 
+          title: 'Welcome',
           path: '/alpha-lab/',
           collapsable: false,
         },
