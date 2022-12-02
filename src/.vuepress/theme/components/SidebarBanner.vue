@@ -48,7 +48,7 @@ export default {
         : "https://feedback.pupil-labs.com/";
       this.banner_menu[0].href =
         to.path.includes("core") || to.path.includes("vr-ar")
-          ? "core/academic-citation/"
+          ? "/core/academic-citation/"
           : "/invisible/publications.html";
     },
   },
