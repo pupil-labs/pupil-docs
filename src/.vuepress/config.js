@@ -81,20 +81,6 @@ module.exports = {
           ]
         },
         {
-          title: "Enrichments",
-          children: [
-            {
-              title: 'Overview',
-              path: 'enrichments/overview'
-            },
-            'enrichments/reference-image-mapper',
-            'enrichments/marker-mapper',
-            'enrichments/face-mapper',
-            'enrichments/gaze-overlay',
-            'enrichments/raw-data',
-          ]
-        },
-        {
           title: 'Basic Concepts',
           children: [
             'basic-concepts/data-streams',
@@ -117,6 +103,20 @@ module.exports = {
                 'glasses-and-companion/hardware-handling/attach-the-head-strap',
               ]
             },
+          ]
+        },
+        {
+          title: "Enrichments",
+          children: [
+            {
+              title: 'Overview',
+              path: 'enrichments/overview'
+            },
+            'enrichments/reference-image-mapper',
+            'enrichments/marker-mapper',
+            'enrichments/face-mapper',
+            'enrichments/gaze-overlay',
+            'enrichments/raw-data',
           ]
         },
         {
