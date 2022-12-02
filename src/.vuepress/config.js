@@ -81,15 +81,6 @@ module.exports = {
           ]
         },
         {
-          title: 'Explainers',
-          children: [
-            'explainers/basic-concepts',
-            'explainers/data-streams',
-            'explainers/glasses-and-companion-device',
-            'explainers/publications',
-          ]
-        },
-        {
           title: "Enrichments",
           children: [
             {
@@ -104,16 +95,33 @@ module.exports = {
           ]
         },
         {
-          title: 'How-Tos',
+          title: 'Basic Concepts',
           children: [
+            'basic-concepts/data-streams',
+            'basic-concepts/wearers-and-templates',
+            'basic-concepts/projects-and-workspaces',
+            'basic-concepts/events',
+            'basic-concepts/publications',
+          ]
+        },
+        {
+          title: 'Glasses & Companion',
+          children: [
+            'glasses-and-companion/technical-overview',
+            'glasses-and-companion/companion-device',
             {
-              title: 'Pupil Invisible Glasses',
+              title: 'Hardware handling',
               children: [
-                'how-tos/pupil-invisible-glasses/exchange-lenses',
-                'how-tos/pupil-invisible-glasses/clean-and-disinfect',
-                'how-tos/pupil-invisible-glasses/attach-the-head-strap',
+                'glasses-and-companion/hardware-handling/exchange-lenses',
+                'glasses-and-companion/hardware-handling/clean-and-disinfect',
+                'glasses-and-companion/hardware-handling/attach-the-head-strap',
               ]
             },
+          ]
+        },
+        {
+          title: 'How-To Guides',
+          children: [
             {
               title: 'Data Collection',
               children: [
@@ -147,12 +155,7 @@ module.exports = {
             'real-time-api/legacy-api',
           ]
         },
-        {
-          title: 'Reference',
-          children: [
-            'reference/export-formats',
-          ],
-        },
+        'reference/export-formats',
         "troubleshooting",
       ],
       '/core/': [
