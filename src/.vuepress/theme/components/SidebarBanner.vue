@@ -24,7 +24,7 @@ export default {
     return {
       banner_menu: [
         {
-          icon: "book",
+          icon: "format_quote",
           title: "Publications",
           href: "/invisible/publications.html",
         },
