@@ -4,7 +4,7 @@ v-list(style="display: grid; gap: 8px")
     v-list-tile(
       :key="item.title",
       :href="item.href",
-      target="_blank",
+      :target="item.target",
       rel="noopener noreferrer"
     )
       .d-flex(style="gap: 16px")
@@ -27,16 +27,19 @@ export default {
           icon: "format_quote",
           title: "Cite us",
           href: "/invisible/publications.html",
+          target: "",
         },
         {
           icon: "campaign",
           title: "Request a feature",
           href: "https://feedback.pupil-labs.com/",
+          target: "_blank",
         },
         {
           img: "discord_dark",
           title: "Chat with us",
           href: "https://pupil-labs.com/chat/",
+          target: "_blank",
         },
       ],
     };
