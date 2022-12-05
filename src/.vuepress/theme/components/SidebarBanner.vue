@@ -25,7 +25,7 @@ export default {
       banner_menu: [
         {
           icon: "format_quote",
-          title: "Publications",
+          title: "Cite us",
           href: "/invisible/publications.html",
         },
         {
