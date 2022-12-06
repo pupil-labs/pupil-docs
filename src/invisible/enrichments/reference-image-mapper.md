@@ -1,6 +1,6 @@
 ---
 description: Powerful tool to map gaze data from the scene camera onto a reference image 
-permalink: /invisible/explainers/enrichments/reference-image-mapper
+permalink: /invisible/enrichments/reference-image-mapper
 ---
 
 # Reference Image Mapper
@@ -25,10 +25,10 @@ In this guide, we will show you how the Reference Image Mapper can be used in a 
 Below, gaze is mapped in four very different environments: to a **magazine cover**, a **basketball backboard**, a **supermarket shelf**, and even a **whole building**!
 
 <PhotoGrid :images="[
-  require(`../../../media/invisible/rim/heatmap-0.jpg`),
-  require(`../../../media/invisible/rim/heatmap-1.jpg`),
-  require(`../../../media/invisible/rim/heatmap-2.jpg`),
-  require(`../../../media/invisible/rim/heatmap-3.jpg`),
+  require(`../../media/invisible/rim/heatmap-0.jpg`),
+  require(`../../media/invisible/rim/heatmap-1.jpg`),
+  require(`../../media/invisible/rim/heatmap-2.jpg`),
+  require(`../../media/invisible/rim/heatmap-3.jpg`),
 ]"/>
 
 Let's take a look at what the Reference Image and Scanning Recording look like to produce these heatmaps.
@@ -42,7 +42,7 @@ Let's take a look at what the Reference Image and Scanning Recording look like t
     class="rounded" 
     style="margin-bottom:14px;"
     max-width="100%" max-height="300px" contain 
-    :src="require('../../../media/invisible/rim/magazine-img.jpg')"
+    :src="require('../../media/invisible/rim/magazine-img.jpg')"
   ></v-img>
     First, we need a high-resolution .jpeg of the page.
   </div>
@@ -63,7 +63,7 @@ Let's take a look at what the Reference Image and Scanning Recording look like t
     class="rounded" 
     style="margin-bottom:14px;"
     max-width="100%" max-height="300px" contain 
-    :src="require('../../../media/invisible/rim/basketball-img.jpg')"
+    :src="require('../../media/invisible/rim/basketball-img.jpg')"
   ></v-img>
     Here we can take a photo of the basketball hoop and court background.
   </div>
@@ -83,7 +83,7 @@ Let's take a look at what the Reference Image and Scanning Recording look like t
     class="rounded" 
     style="margin-bottom:14px;"
     max-width="100%" max-height="300px" contain 
-    :src="require('../../../media/invisible/rim/supermarket-img.jpg')"
+    :src="require('../../media/invisible/rim/supermarket-img.jpg')"
   ></v-img>
     This photo captures the assortment of packagíng in the coffee aisle of a supermarket.
   </div>
@@ -103,7 +103,7 @@ Let's take a look at what the Reference Image and Scanning Recording look like t
     class="rounded" 
     style="margin-bottom:14px;"
     max-width="100%" max-height="300px" contain 
-    :src="require('../../../media/invisible/rim/building-img.jpg')"
+    :src="require('../../media/invisible/rim/building-img.jpg')"
     ></v-img>
     This is a photo of the <i>entire</i> building
   </div>
@@ -136,7 +136,7 @@ Why not try replicating the above examples? Or even try it with your own use-cas
   <v-img
     class="rounded" 
     style="margin-bottom:32px;"
-    :src="require('../../../media/invisible/rim/rim-in-cloud.png')"
+    :src="require('../../media/invisible/rim/rim-in-cloud.png')"
     max-width=90%
   >
   </v-img>
@@ -155,7 +155,7 @@ Now when you play back the recording you can see where gaze is mapped to on your
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
     class="rounded" 
-    :src="require('../../../media/invisible/rim/basketball-occlusion.png')"
+    :src="require('../../media/invisible/rim/basketball-occlusion.png')"
     max-width=400px
   >
   </v-img>
@@ -178,7 +178,7 @@ In cases such as supermarket shopping, where features of the environment like fr
 Under the hood, the Reference Image Mapper uses a method called Structure from Motion (SfM) to build a model of the environment. You can see this by enabling the ‘point cloud’ in your Cloud Project.
 :::
 
-<style>
+<style scoped>
 .mcontainer{
   display: flex;
   flex-wrap: wrap;
