@@ -1,3 +1,0 @@
-reference-image-mapper export
-Find detailed documentation here: https://docs.pupil-labs.com/cloud/enrichments/#reference-image-mapper 
-Version 1

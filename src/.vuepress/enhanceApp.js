@@ -3,10 +3,12 @@ import Vuetify, {
   VNavigationDrawer,
   VToolbar,
   VToolbarItems,
+  VTooltip,
   VBtn,
   VSpacer,
   VContent,
   VContainer,
+  VCheckbox,
   VLayout,
   VFlex,
   VCard,
@@ -33,10 +35,12 @@ export default ({ Vue, router, options }) => {
       VNavigationDrawer,
       VToolbar,
       VToolbarItems,
+      VTooltip,
       VBtn,
       VSpacer,
       VContent,
       VContainer,
+      VCheckbox,
       VLayout,
       VFlex,
       VCard,
@@ -74,7 +78,6 @@ export default ({ Vue, router, options }) => {
     "/cloud/enrichments/#reference-image-mapper":
       "/invisible/explainers/enrichments/reference-image-mapper/",
     "/cloud/": "/invisible/",
-    "/cloud": "/invisible/",
   };
 
   router.beforeEach((to, from, next) => {

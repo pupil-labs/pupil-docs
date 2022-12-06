@@ -374,5 +374,3 @@ def on_network_event(network, event):
 if __name__ == "__main__":
     main()  # Execute example
 ```
-
-More info regarding sync can be found in the [time synchronization test report](https://docs.google.com/document/d/16JpIUUXNQvJ74FqfVJI6PAUUAV2nrbcCpdYamrJif_M/edit# "Time synchronization report on google docs")

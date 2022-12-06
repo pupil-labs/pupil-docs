@@ -85,23 +85,22 @@ module.exports = {
           children: [
             'explainers/basic-concepts',
             'explainers/data-streams',
-            {
-              title: "Enrichments",
-              children: [
-                {
-                  title: 'Overview',
-                  path: 'explainers/enrichments/overview'
-                },
-                'explainers/enrichments/reference-image-mapper',
-                'explainers/enrichments/marker-mapper',
-                'explainers/enrichments/face-mapper',
-                'explainers/enrichments/gaze-overlay',
-                'explainers/enrichments/raw-data',
-              ]
-            },
-            // 'explainers/enrichments',
             'explainers/glasses-and-companion-device',
             'explainers/publications',
+          ]
+        },
+        {
+          title: "Enrichments",
+          children: [
+            {
+              title: 'Overview',
+              path: 'enrichments/overview'
+            },
+            'enrichments/reference-image-mapper',
+            'enrichments/marker-mapper',
+            'enrichments/face-mapper',
+            'enrichments/gaze-overlay',
+            'enrichments/raw-data',
           ]
         },
         {
@@ -135,7 +134,6 @@ module.exports = {
             {
               title: 'Advanced Analysis',
               children: [
-                'how-tos/advanced-analysis/gaze-metrics-in-aois/',
                 'how-tos/advanced-analysis/syncing-sensors/',
                 {
                   title: "Undistort Video and Gaze Data",
@@ -155,7 +153,7 @@ module.exports = {
             }
           ],
         },
-        "troubleshooting"
+        "troubleshooting",
       ],
       '/core/': [
         '',
@@ -192,6 +190,22 @@ module.exports = {
         'rift',
         // 'bt300',
         'developer',
+      ],
+      '/alpha-lab/': [
+        {
+          title: 'Welcome', 
+          path: '/alpha-lab/',
+          collapsable: false,
+        },
+        'gaze-metrics-in-aois/',
+        {
+          title: 'Map your gaze onto screen content',
+          path: 'map-your-gaze-to-a-2d-screen'
+        },
+        {
+          title: 'Use multiple RIM enrichments',
+          path: 'multiple-rim'
+        },
       ],
     },
     sidebarDepth: 1,

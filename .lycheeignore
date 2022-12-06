@@ -1,6 +1,8 @@
 # Ignore local address
 http://pi.local:8080/
 localhost:%25s
+file:///home/runner/work/pupil-docs/pupil-docs/src/alpha-lab/ws:/localhost:XXXX
+ws://localhost:XXXX/
 
 # Ignore all .js files
 file:///**/*.js
@@ -24,6 +26,9 @@ file:///**/*.js
 # Ignore all .jpeg files
 ./*.jpeg
 
+# Ignore all .py files
+./*.py
+
 # Subscribe email, needs right post request to the endpoint
 https://mailchimp.us3.list-manage.com/subscribe/post
 
@@ -42,10 +47,43 @@ https://docs.pupil-labs.com/SplYZK-ZzE8
 https://docs.pupil-labs.com/4MB5o4W_XJo
 https://docs.pupil-labs.com/d3Yk3nKDIOQ
 https://docs.pupil-labs.com/0U4H-uOIHlw
+https://docs.pupil-labs.com/OXIUjIzCplc
+https://docs.pupil-labs.com/_LWwqbHU8L0
+https://docs.pupil-labs.com/_3gGvydd-ets
+https://docs.pupil-labs.com/XTIkB8Wct6M
+https://docs.pupil-labs.com/FQ2SdFcnqXw
+https://docs.pupil-labs.com/aEOZZrUrEpE
+https://docs.pupil-labs.com/wi4MAzuJIzU
+https://docs.pupil-labs.com/dYcN0HVirDA
+https://docs.pupil-labs.com/90nYSMqUXIE
+
+https://docs.pupil-labs.com/Wbuot169IQ8
+https://docs.pupil-labs.com/GsJt3PTUg1k
+https://docs.pupil-labs.com/dinaWX5tkPA
+https://docs.pupil-labs.com/rrJHhMPXjKo
+https://docs.pupil-labs.com/rJcNm5_L6QU
+https://docs.pupil-labs.com/TDa3A8L1i4o
+https://docs.pupil-labs.com/sxXwIm0WUpc
+https://docs.pupil-labs.com/tUzgFV0-0iA
+https://docs.pupil-labs.com/nvNjlKp9-co
+https://docs.pupil-labs.com/HGMjJLnK2_4
 https://docs.pupil-labs.com/ZRdWlmxBH30
 https://docs.pupil-labs.com/eVsNdQL7VEI
-https://docs.pupil-labs.com/HGMjJLnK2_4
+https://docs.pupil-labs.com/bvdxMYtzVTE
+https://docs.pupil-labs.com/AVeUwAFKmAc
+https://docs.pupil-labs.com/_Y0_4LDhphY
+https://docs.pupil-labs.com/5LqjfgbDydM
+https://docs.pupil-labs.com/ztT9WkDhpow
+https://docs.pupil-labs.com/Y8hG8t5xiPM
+https://docs.pupil-labs.com/ZaUoyuBEOJo
+https://docs.pupil-labs.com/Y8hG8t5xiPM
+https://docs.pupil-labs.com/ZaUoyuBEOJo
 https://docs.pupil-labs.com/9x9h98tywFI
-https://docs.pupil-labs.com/aPLnqu26tWI?cc_load_policy=1
-https://docs.pupil-labs.com/eEl3sswsTms?cc_load_policy=1
+https://docs.pupil-labs.com/eEl3sswsTms
+https://docs.pupil-labs.com/aPLnqu26tWI
 https://docs.pupil-labs.com/_Jnxi1OMMTc
+https://docs.pupil-labs.com/uoq11XtNH5E
+# TCP
+https://docs.pupil-labs.com/f'tcp://%7Bip%7D:%7Bpub_port%7D
+https://docs.pupil-labs.com/f'tcp://%7Bip%7D:%7Bport%7D
+https://docs.pupil-labs.com/f'tcp://%7Bip%7D:%7Bsub_port%7D
