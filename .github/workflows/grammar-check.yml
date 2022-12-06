@@ -1,0 +1,51 @@
+name: ✍️ Grammar check on PR
+
+on:
+  pull_request
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Test changed-files
+    steps:
+      # Compares the default generated "test merge commit" by Github of the PR branch into the base branch
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      # Gets a list of files from the PR with a git status of Added (A) or Modified (M) | (via outputs.all_changed_files)
+      - name: 'Example - Get a list of changed files to process(Only html/md/ipynb files)'
+        id: get-changed-files
+        uses: tj-actions/changed-files@v34
+        with:
+          files: |
+            **/*.html
+            **/*.md
+            **/*.ipynb
+          separator: ','
+
+      - name: 'Compatibility with eval: Quote wrap paths to support spaces'
+        id: changed-files
+        run: |
+          QUOTE_WRAPPED="$( sed "s/,/' '/g" <<< '${{ steps.get-changed-files.outputs.all_changed_files }}' )"
+          echo "{all_changed_files}={${QUOTE_WRAPPED}}" >> $GITHUB_OUTPUT
+          
+      - name: 'Check Grammar'
+        id: cspell
+        uses: streetsidesoftware/cspell-action@v2
+        with:
+          files: |
+            **/*.{md,html,ipynb}
+          strict: false
+          verbose: true
+        
+      - name: 'Create comment'
+        if: steps.cspell.outputs.number_of_issues > 0
+        uses: thollander/actions-comment-pull-request@v1
+        with:
+          message: "<h3>✍️ Cspell found errors in the text</h3> Check out the review comments in the files changed section, I've flagged some issues"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: 'Fail workflow if there are grammar errors'
+        if: steps.cspell.outputs.number_of_issues > 0
+        run: exit 1

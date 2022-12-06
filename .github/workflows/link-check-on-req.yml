@@ -1,4 +1,4 @@
-name: Links check on REQ  
+name: 🔗 Links check on REQ  
 
 on:
   repository_dispatch:
@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v4
         with:
           python-version: '3.x'
       - run: pip install nbconvert packaging
@@ -25,9 +25,9 @@ jobs:
         shell: bash
 
       - name: Use Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: '12.x'
+          node-version: 16
       
       - name: Install vuepress
         run: yarn global add vuepress
@@ -47,17 +47,16 @@ jobs:
       # Check built html pages for broken links
       - name: Link checker
         id: lychee
-        uses: lycheeverse/lychee-action@v1.5.0
+        uses: lycheeverse/lychee-action@v1.5.4
         with:
         # Check all markdown and html files in repo (exclude those in .lycheeignore)
-          args: -v -n -a 403,503,429,200 --cache -i -u 'Mozilla/5.0' -b 'https://docs.pupil-labs.com' --exclude-mail --include-verbatim 'src/.vuepress/**/*.html' #'src/core/**/*.md' 'src/invisible/**/*.md' 'src/vr-ar/**/*.md' 'src/**/*.md' 'src/invisible/**/*.ipynb' 'src/core/**/*.ipynb'
+          args: -v -n -a 403,503,429,200 --cache -i -u 'Mozilla/5.0' -b 'https://docs.pupil-labs.com' --exclude-mail --include-verbatim 'src/.vuepress/**/*.html' 'src/core/**/*.md' 'src/invisible/**/*.md' 'src/vr-ar/**/*.md' 'src/**/*.md' 'src/invisible/**/*.ipynb' 'src/core/**/*.ipynb'
           jobSummary: true
-          lycheeVersion: 0.10.0
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Create Issue From File from lychee
-        uses: peter-evans/create-issue-from-file@v3
+        uses: peter-evans/create-issue-from-file@v4.0.1
         with:
           title: Link Checker Report
           content-filepath: ./lychee/out.md
