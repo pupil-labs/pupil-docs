@@ -50,7 +50,7 @@ jobs:
         uses: lycheeverse/lychee-action@v1.5.4
         with:
         # Check all markdown and html files in repo (exclude those in .lycheeignore)
-          args: -v -n -a 403,503,429,200 --cache -i -u 'Mozilla/5.0' -b 'https://docs.pupil-labs.com' --exclude-mail --include-verbatim 'src/.vuepress/**/*.html' 'src/core/**/*.md' 'src/invisible/**/*.md' 'src/vr-ar/**/*.md' 'src/**/*.md' 'src/invisible/**/*.ipynb' 'src/core/**/*.ipynb'
+          args: -v -n -a 403,503,429,200 --cache -i -u 'Mozilla/5.0' -b 'https://docs.pupil-labs.com' --exclude-mail --include-verbatim 'src/core/**/*.md' 'src/invisible/**/*.md' 'src/vr-ar/**/*.md' 'src/**/*.md' 'src/invisible/**/*.ipynb' 'src/core/**/*.ipynb' #'src/.vuepress/**/*.html'
           jobSummary: true
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
