@@ -17,7 +17,7 @@ In this guide, we will show you how to map and visualise gaze onto a screen with
 
 ## What you'll need
 
-Before continuing, ensure you are familiar with the [Reference Image Mapper](https://docs.pupil-labs.com/invisible/explainers/enrichments/#reference-image-mapper) enrichment. Check out [this explainer video](https://www.youtube.com/watch?v=ygqzQEzUIS4&t=56s) for reference.
+Before continuing, ensure you are familiar with the [Reference Image Mapper](https://docs.pupil-labs.com/invisible/enrichments/#reference-image-mapper) enrichment. Check out [this explainer video](https://www.youtube.com/watch?v=ygqzQEzUIS4&t=56s) for reference.
 
 We recommend you run the enrichment, e.g. with a short recording of your desktop + monitor/screen to ensure it's working okay. Once satisfied, you can use the same reference image + scanning recording for your dynamic screen content.
 
@@ -65,7 +65,7 @@ By looking at the screen when you press the button, you'll have a visual referen
   </v-img>
 </div>
 
-- Now you'll need to get the raw data from your new recording(s). Run the [RAW data enrichment](https://docs.pupil-labs.com/invisible/explainers/enrichments/#raw-data-exporter) and right-click on it to download like above.
+- Now you'll need to get the raw data from your new recording(s). Run the [RAW data enrichment](https://docs.pupil-labs.com/invisible/enrichments/#raw-data-exporter) and right-click on it to download like above.
 
 ## Running the code
 
