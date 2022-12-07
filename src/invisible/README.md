@@ -145,7 +145,7 @@ export default {
         },
         {
           title: "Enrichments",
-          link: "/invisible/explainers/enrichments",
+          link: "/invisible/enrichments",
         },
         {
           title: "Publications",
