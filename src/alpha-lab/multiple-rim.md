@@ -69,7 +69,7 @@ During the recording, the user looked at the same furniture and parts of the roo
 specific [sections](/invisible/enrichments/#enrichment-sections) of the recording based on which part of the
 room the user is exploring.
 
-For this recording, we used the following [event annotations](/invisible/basic-concepts/#events) to run five Reference Image Mapper enrichments:
+For this recording, we used the following [event annotations](/invisible/explainers/basic-concepts/#events) to run five Reference Image Mapper enrichments:
 
 - Cupboard: `cupboard.begin` and `cupboard.end`
 - Desk: `desk.begin` and `desk.end`
