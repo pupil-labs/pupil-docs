@@ -4,9 +4,11 @@ on:
   pull_request
 
 jobs:
-  build:
+  check_links_on_pr_files_online:
     runs-on: ubuntu-latest
-    name: Test changed-files
+    name: Test changed-files for broken links
+    outputs:
+      lychee_exited: ${{ steps.lychee.outputs.exit_code }}
     steps:
       # Compares the default generated "test merge commit" by Github of the PR branch into the base branch
       - uses: actions/checkout@v3
@@ -41,10 +43,61 @@ jobs:
           output: lychee/results.md
           jobSummary: true
 
+  check_failed_links_using_new_branch_url:
+    #if: ${{ needs.check_links_on_pr_files_online.outputs.lychee_exited == 2 }}
+    runs-on: ubuntu-latest
+    name: Test failed links using branch url
+    needs: check_links_on_pr_files_online
+    outputs:
+      lychee_exited: ${{ steps.lychee.outputs.exit_code }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: 'Get branch url'
+        id: git-branch-name
+        run: |
+          url="https://github.com/"
+          url+=${{github.repository}}
+          url+="/tree/"
+          url+=${{github.ref}}
+          url+="/src/"
+          echo "branch_name=${url}" >> $GITHUB_OUTPUT
+      
+      - name: 'Get broken URLs from results.md'
+        id: get-broken-urls
+        run: |
+          broken_urls="$(cat lychee/results_final.md)"
+          echo ${broken_urls}
+          broken_urls=${broken_urls//https:\/\/docs.pupil-labs.com\//$''}
+          echo ${broken_urls}
+          mkdir temp
+          echo ${broken_urls} > temp/broken_urls.md
+          rm lychee/results.md
+          rm -rf lychee
+
+      - name: 'Test again these broken links with the new branch url'
+        id: final-links
+        uses: lycheeverse/lychee-action@v1.5.4
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        with:
+          args: -v -n -a 403,503,429,200 -i -b '${{ steps.git-branch-name.outputs.branch_name }}' --exclude-mail --include-verbatim 'temp/broken_urls.md'
+          output: lychee/results_final.md
+          debug: true
+          jobSummary: true
+
+  post_comment:
+    #if: ${{ needs.check_failed_links_using_new_branch_url.outputs.lychee_exited == 2 }}
+    runs-on: ubuntu-latest
+    name: Post comment
+    needs: [check_links_on_pr_files_online, check_failed_links_using_new_branch_url]
+    steps:
       - id: get-comment-body
         if: env.lychee_exit_code == 2
         run: |
-          body="$(echo "# Link check summary"; cat lychee/results.md)"
+          body="$(echo "# Link check summary"; cat lychee/results_final.md)"
           body="${body//'%'/'%25'}"
           body="${body//$'\n'/'%0A'}"
           body="${body//$'\r'/'%0D'}" 
