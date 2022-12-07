@@ -1,6 +1,7 @@
 ---
 permalink: /invisible/real-time-api/introduction
 description: Beginner guide on using the real-time API client to remote control Pupil Invisible devices and stream data.
+isNotebook: true
 ---
 
 # Introduction
@@ -57,7 +58,7 @@ print(f"Serial number of connected glasses: {device.serial_number_glasses}")
     Battery level: 43%
     Free storage: 92.4 GB
     Serial number of connected glasses: h4gcf
-
+    
 
 ### Remote Control of Pupil Invisible Devices
 Use the [`recording_start`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.recording_start)
@@ -77,7 +78,7 @@ device.recording_stop_and_save()
 ```
 
     Started recording with id 2f99d9f9-f009-4015-97dd-eb253de443b0
-
+    
 
 While a recording is running, you can save [events](/invisible/explainers/basic-concepts/#events)
 using the [`send_event`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.send_event) method.
@@ -100,7 +101,7 @@ device.recording_stop_and_save()
 
     Event(name=None recording_id=None timestamp_unix_ns=1642599117043000000 datetime=2022-01-19 14:31:57.043000)
     Event(name=None recording_id=fd8c98ca-cd6c-4d3f-9a05-fbdb0ef42668 timestamp_unix_ns=1642599122555200500 datetime=2022-01-19 14:32:02.555201)
-
+    
 
 ### Streaming Scene Video and Gaze Data
 You can receive the current scene camera frame using the
@@ -128,7 +129,7 @@ plt.imshow(scene_image_rgb)
 ```
 
     This scene camera image was recorded at 2022-02-28 14:00:59.226667
-
+    
 
 
 
@@ -161,7 +162,7 @@ plt.ylim(1080, 0)
 ```
 
     This gaze sample was recorded at 2022-02-28 14:01:29.520955
-
+    
 
 
 
@@ -202,7 +203,7 @@ plt.scatter(gaze_sample.x, gaze_sample.y, s=200, facecolors='none', edgecolors='
     This gaze sample was recorded at 2022-01-19 16:09:40.947967
     This scene video was recorded at 2022-01-19 16:09:40.938255
     Temporal difference between both is 9.7 ms
-
+    
 
 
 
@@ -219,7 +220,7 @@ plt.scatter(gaze_sample.x, gaze_sample.y, s=200, facecolors='none', edgecolors='
 
 ### Conclusion
 
-Using the the simple mode of the real-time API client you can easily access scene video and gaze data in real-time as well as remote control your Pupil Invisible devices.
+Using the simple mode of the real-time API client you can easily access scene video and gaze data in real-time as well as remote control your Pupil Invisible devices.
 
 You can find the full API reference [here](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html).
 

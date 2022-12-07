@@ -1,6 +1,7 @@
 ---
 permalink: /invisible/real-time-api/track-your-experiment-progress-using-events
 description: How-To guide tracking experiment progress using events and the real-time API.
+isNotebook: true
 ---
 
 # Track your Experiment Progress using Events
@@ -80,11 +81,11 @@ cleanup_stimulus_presentation()
 device.recording_stop_and_save()
 ```
 
-That is all we have to do during data collection. Once all recordings have uploaded to Pupil Cloud, we create a project with them in order to export them using the [Raw Data Exporter](/invisible/enrichments/#raw-data-exporter). In the project editor we can already see the events in every recording.
+That is all we have to do during data collection. Once all recordings have uploaded to Pupil Cloud, we create a project with them in order to export them using the [Raw Data Exporter](/invisible/explainers/enrichments/#raw-data-exporter). In the project editor we can already see the events in every recording.
 
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
-    :src="require('../../../media/invisible/how-tos/project-editor-screenshot.png')"
+    :src="require('../../../../media/invisible/how-tos/project-editor-screenshot.png')"
     max-width=100%
   >
   </v-img>
