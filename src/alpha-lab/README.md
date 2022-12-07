@@ -1,5 +1,5 @@
 ---
-description: Welcome to Alpha Lab!yar
+description: Welcome to Alpha Lab!
 permalink: /alpha-lab/
 ---
 
@@ -73,6 +73,12 @@ export default {
           text: "We pushed the limits of markerless mapping with Pupil Cloud’s Reference Image Mapper - scanning an entire apartment.",
           to: "/alpha-lab/multiple-rim/",
           img: "desk-overlay.png",
+        },
+        {
+          title: "Look at my hand!",
+          text: "Use detectron's densepose AI to segment and know at which part of a body a person is looking at.",
+          to: "/alpha-lab/dense-pose/",
+          img: "densepose.png",
         },
       ],
     };

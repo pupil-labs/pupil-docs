@@ -38,7 +38,7 @@ Using the various event buttons, you can remotely save an [event](/invisible/exp
 
 In case you have trouble connecting to your Pupil Invisible device please consider the following:
 - First, make sure the Companion phone and the device you are using for monitoring are both connected to the same network.
-- The the local network must allow MDNS and UDP traffic for the app to work. In large public networks this may be prohibited for security reasons. You can circumvent this by running a separate WiFi using the phone's hot spot functionality or an extra router.
+- The local network must allow MDNS and UDP traffic for the app to work. In large public networks this may be prohibited for security reasons. You can circumvent this by running a separate WiFi using the phone's hot spot functionality or an extra router.
 
 If you still have trouble, please reach out to us in [chat](https://pupil-labs.com/chat/)!
 

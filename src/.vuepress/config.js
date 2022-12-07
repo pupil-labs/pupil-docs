@@ -201,12 +201,16 @@ module.exports = {
         },
         'gaze-metrics-in-aois/',
         {
+          title: 'Use multiple RIM enrichments',
+          path: 'multiple-rim'
+        },
+        {
           title: 'Map your gaze onto screen content',
           path: 'map-your-gaze-to-a-2d-screen'
         },
         {
-          title: 'Use multiple RIM enrichments',
-          path: 'multiple-rim'
+          title: 'Map your gaze onto body parts',
+          path: 'dense-pose'
         },
       ],
     },

@@ -124,7 +124,7 @@ Pupil Core headsets come in a variety of configurations. Calibration can be cond
 
 <div style="display:flex;" class="pb-4">
     <p style="flex-grow:1;display:flex;justify-content:center;">Monocular</p>
-    <p style="flex-grow:1;display:flex;justify-content:center;">Binocualar</p>
+    <p style="flex-grow:1;display:flex;justify-content:center;">Binocular</p>
 </div>
 
 ### Before Every Calibration
@@ -494,7 +494,7 @@ Note that in some rare cases the processing of the recorded patterns can fail, w
 If you are having trouble estimating camera intrinsics, [Chat with us.](https://pupil-labs.com/chat "Pupil Labs chat on DiscordApp")
 :::
 
-#### Camera Intrinsics Persistancy
+#### Camera Intrinsics Persistency
 
 Newly estimated camera intrinsics are saved to the Pupil Capture session settings folder:
 - From bundle: `Home directory -> pupil_capture_settings`
