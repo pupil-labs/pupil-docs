@@ -170,7 +170,7 @@ If you need to remove the falsely mapped data points, there are a few workaround
 2. Manually remove the affected data points in the reference image mapper export, by finding the timestamp and deleting the row in the .csv export.
 
 ## Repetitions
-In cases such as supermarket shopping, where features of the environment like freezers and aisles are repetitive and overlapping, it can be useful to divide recordings into shorter [Sections](/invisible/explainers/enrichments#enrichment-sections) for enrichment. This way you can ensure gaze is only mapped to portions of the recording when you know the user is looking at a particular part of the store.
+In cases such as supermarket shopping, where features of the environment like freezers and aisles are repetitive and overlapping, it can be useful to divide recordings into shorter [Sections](/invisible/enrichments#enrichment-sections) for enrichment. This way you can ensure gaze is only mapped to portions of the recording when you know the user is looking at a particular part of the store.
 
 
 ::: tip
