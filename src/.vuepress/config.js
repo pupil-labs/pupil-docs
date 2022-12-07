@@ -84,7 +84,7 @@ module.exports = {
           title: 'Basic Concepts',
           children: [
             'basic-concepts/data-streams',
-            'basic-concepts/wearers-and-templates',
+            'basic-concepts/recordings-wearers-and-templates',
             'basic-concepts/projects-and-workspaces',
             'basic-concepts/events',
           ]

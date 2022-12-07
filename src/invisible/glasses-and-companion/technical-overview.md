@@ -14,8 +14,6 @@
 
 The Pupil Invisible glasses connect to the Companion device (Android Phone) with a USB-C cable. The Companion device supplies the glasses with power and receives the raw sensor data for storage and further processing. Use the Pupil Invisible Companion App to make recordings, preview real-time gaze and world video, stream data over the network, set up wearers, select templates, and preview and upload recordings to Pupil Cloud.
 
-
-## Pupil Invisible Glasses
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
     :src="require('../../media/invisible/explainers/pi_sensor_callout.jpg')"
@@ -43,14 +41,3 @@ While looking almost like normal glasses, the Pupil Invisible glasses are filled
 :::danger
 The electronics and sensors are sensitive! Please follow our how-to guide when [cleaning and disinfecting](/invisible/how-tos/pupil-invisible-glasses/clean-and-disinfect)  your glasses.
 :::
-
-## Pupil Invisible Companion Device
-The Companion device is a flagship Android smartphone. It is a regular phone that is not customized or modified in any way. We support a small number of models, carefully selected and tested for maximum stability and performance. The Pupil Invisible Companion app is tuned to work with these particular models as we require full control over various low-level functions of the hardware. 
-
-The models we currently support are OnePlus 6, OnePlus 8, and OnePlus 8T.
-
-If you want to replace or add an extra Companion device you can purchase it [directly from us](https://pupil-labs.com/products/invisible/accessories/) or from any other distributor. The companion app is free and can be downloaded from the [Play Store](https://play.google.com/store/apps/details?id=com.pupillabs.invisiblecomp).
-
-Using a fully charged OnePlus 8 device you get around 150 minutes of continuous recording time. You can extend this duration by simultaneously charging the phone during a recording using a powered USB-C hub. With this setup you connect the hub to the phone, and the Pupil Invisible device and a power source to the hub.
-
-Note that not every USB-C hub is compatible with Android! One hub we have tested successfully is available [here](https://www.amazon.de/dp/B08CKXNJZS/). Also, note that the original OnePlus charger is not compatible with regular hubs (including the linked one) because it uses non-standard power delivery. Other regular USB chargers should work though.

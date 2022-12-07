@@ -15,6 +15,7 @@ Using a fully charged OnePlus 8 device you get around 150 minutes of continuous 
 Note that not every USB-C hub is compatible with Android! One hub we have tested successfully is available [here](https://www.amazon.de/dp/B08CKXNJZS/). Also, note that the original OnePlus charger is not compatible with regular hubs (including the linked one) because it uses non-standard power delivery. Other regular USB chargers should work though.
 
 ## Companion Device Updates
+
 ### Companion App
 Make sure to update the Companion app on a regular basis. The latest version will always be available on the 
 [Play Store](https://play.google.com/store/apps/details?id=com.pupillabs.invisiblecomp).
