@@ -13,10 +13,10 @@ tags: [Pupil Invisible, Cloud]
 </div>
 <br>
 
-In the [Reference Image Mapper](/invisible/explainers/enrichments/reference-image-mapper/) guide, we learnt how to properly set up a Reference Image Mapper enrichment, with a <i>single</i> reference image. However, there are some cases in which it would be useful to map gaze onto <i>multiple</i> reference images taken from the same environment - for example, moving in a room while interacting with certain parts of it.
+In the [Reference Image Mapper](/invisible/enrichments/reference-image-mapper/) guide, we learnt how to properly set up a Reference Image Mapper enrichment, with a <i>single</i> reference image. However, there are some cases in which it would be useful to map gaze onto <i>multiple</i> reference images taken from the same environment - for example, moving in a room while interacting with certain parts of it.
 
 ::: tip
-Before continuing, ensure you are familiar with the [Reference Image Mapper](/invisible/explainers/enrichments/#reference-image-mapper) enrichment. Check out [this explainer video](https://www.youtube.com/watch?v=ygqzQEzUIS4&t=56s) for reference.
+Before continuing, ensure you are familiar with the [Reference Image Mapper](/invisible/enrichments/#reference-image-mapper) enrichment. Check out [this explainer video](https://www.youtube.com/watch?v=ygqzQEzUIS4&t=56s) for reference.
 :::
 
 ## Reference Images
@@ -34,7 +34,7 @@ In this guide, we want to map gaze onto different parts of a living room, for th
 
 Based on the environment dimension/complexity, you might need to do the same and record separate scanning videos.
 
-Please follow our [best practices](https://docs.pupil-labs.com/invisible/explainers/enrichments/reference-image-mapper/#scanning-best-practices) for optimal scanning.
+Please follow our [best practices](https://docs.pupil-labs.com/invisible/enrichments/reference-image-mapper/#scanning-best-practices) for optimal scanning.
 
 ::: tip
 To ensure good scanning of big plain surfaces - like tables and kitchen countertops - enrich them with features. Use a printed tablecloth and/or place items to produce a successful mapping!
@@ -66,10 +66,10 @@ Here we recorded just one video where the wearer was asked to walk and freely ex
 </div>
 
 During the recording, the user looked at the same furniture and parts of the room multiple times. We suggest you focus on
-specific [sections](/invisible/explainers/enrichments/#enrichment-sections) of the recording based on which part of the
+specific [sections](/invisible/enrichments/#enrichment-sections) of the recording based on which part of the
 room the user is exploring.
 
-For this recording, we used the following [event annotations](/invisible/explainers/basic-concepts/#events) to run five Reference Image Mapper enrichments:
+For this recording, we used the following [event annotations](/invisible/basic-concepts/#events) to run five Reference Image Mapper enrichments:
 
 - Cupboard: `cupboard.begin` and `cupboard.end`
 - Desk: `desk.begin` and `desk.end`

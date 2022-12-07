@@ -5,7 +5,7 @@ description: Documentation of the exact export formats of Pupil Cloud.
 # Export Formats
 
 ## General Information
-All [enrichments](/invisible/explainers/enrichments) are defined on specific sections of recordings using events. Every enrichment export contains a `sections.csv` file summarizing the available sections as follows:
+All [enrichments](/invisible/enrichments) are defined on specific sections of recordings using events. Every enrichment export contains a `sections.csv` file summarizing the available sections as follows:
 
 | Field | Description | 
 | -------- | -------- | 
@@ -152,7 +152,7 @@ This file contains data recorded by the integrated [IMU](/invisible/explainers/d
 ## Marker Mapper
 
 #### gaze.csv
-This file contains all the mapped gaze data from all sections. The coordinate system is explained [here](/invisible/explainers/enrichments/#surface-coordinates).
+This file contains all the mapped gaze data from all sections. The coordinate system is explained [here](/invisible/enrichments/#surface-coordinates).
 
 | Field | Description | 
 | -------- | -------- | 

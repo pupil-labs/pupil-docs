@@ -76,7 +76,7 @@ export default ({ Vue, router, options }) => {
     "/invisible/user-guide/invisible-companion-app/#local-transfer":
       "/invisible/how-tos/data-collection-with-the-companion-app/transfer-recordings-via-usb",
     "/cloud/enrichments/#reference-image-mapper":
-      "/invisible/explainers/enrichments/reference-image-mapper/",
+      "/invisible/enrichments/reference-image-mapper/",
     "/cloud/": "/invisible/",
   };
 
