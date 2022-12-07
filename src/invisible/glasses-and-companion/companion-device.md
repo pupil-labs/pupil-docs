@@ -1,6 +1,6 @@
 ---
-# permalink: /invisible/explainers/glasses-and-companion-device
-# description: Introduction to the Pupil Invisible Hardware and Companion app.
+permalink: /invisible/glasses-and-companion/companion-device
+description: Information on the Companion device and app.
 ---
 
 # Companion Device

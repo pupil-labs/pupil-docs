@@ -1,4 +1,5 @@
 ---
+permalink: /invisible/real-time-api/introduction
 description: Beginner guide on using the real-time API client to remote control Pupil Invisible devices and stream data.
 ---
 

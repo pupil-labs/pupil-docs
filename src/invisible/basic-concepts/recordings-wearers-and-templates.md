@@ -1,6 +1,6 @@
 ---
-# permalink: /invisible/explainers/basic-concepts
-# description: Introduction to a number of organizational constructs.
+permalink: /invisible/basic-concepts/recordins-wearers-and-templates
+description: Introduction to recordings, wearers and templates, and their usage in Pupil Cloud.
 ---
 
 # Recordings, Wearers & Templates

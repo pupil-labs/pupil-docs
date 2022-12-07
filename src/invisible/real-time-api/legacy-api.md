@@ -1,4 +1,5 @@
 ---
+permalink: /invisible/real-time-api/legacy-api
 description: Guide on using the now deprecated real-time API called NDSI.
 ---
 

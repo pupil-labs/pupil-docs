@@ -1,5 +1,5 @@
 ---
-permalink: /invisible/real-time-api/track-your-experiment-in-matlab'
+permalink: /invisible/real-time-api/track-your-experiment-in-matlab
 description: A simple guide on how to build experiments in Matlab
 ---
 

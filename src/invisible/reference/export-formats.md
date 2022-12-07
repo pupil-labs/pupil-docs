@@ -1,4 +1,5 @@
 ---
+permalink: /invisible/reference/export-formats
 description: Documentation of the exact export formats of Pupil Cloud.
 ---
 

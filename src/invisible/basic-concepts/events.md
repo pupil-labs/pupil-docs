@@ -1,6 +1,6 @@
 ---
-# permalink: /invisible/explainers/events
-# description: Introduction to a number of organizational constructs.
+permalink: /invisible/basic-concepts/events
+description: Introduction on events and theri usage in Pupil Cloud.
 ---
 
 # Events

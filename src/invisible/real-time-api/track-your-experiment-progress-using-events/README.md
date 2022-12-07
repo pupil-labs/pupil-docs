@@ -1,4 +1,5 @@
 ---
+permalink: /invisible/real-time-api/track-your-experiment-progress-using-events
 description: How-To guide tracking experiment progress using events and the real-time API.
 ---
 

@@ -1,4 +1,5 @@
 ---
+permalink: /invisible/glasses-and-companion/hardware-handling/exchange-lenses
 description: How-To guide on exchanging the lenses of Pupil Invisible glasses.
 ---
 

@@ -1,6 +1,6 @@
 ---
-# permalink: /invisible/explainers/data-streams
-# description: Summary of all available data streams in Pupil Invisible recordings
+permalink: /invisible/basic-concepts/data-streams
+description: Summary of all available data streams in Pupil Invisible recordings
 ---
 
 # Data Streams
