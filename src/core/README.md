@@ -22,7 +22,7 @@ Make sure there is space between the headset frame and your forehead. Headsets a
   <v-img :src="require('../media/core/icons/pc.png')" style="display:flex;margin:0 auto;width:100px;"></v-img>
 </div>
 
-Start Pupil Capture on your computer. Once the program has initalized, a world video window and eye video windows will appear.
+Start Pupil Capture on your computer. Once the program has initialized, a world video window and eye video windows will appear.
 
 <!-- ::: warning
 <v-icon large color="warning">info_outline</v-icon>

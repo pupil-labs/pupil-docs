@@ -1,12 +1,12 @@
 ---
 permalink: /developer/core/recording-format
-description: We recommend reading the format thourougly if you want to develop software that creates recordings on its own, or processes existing recordings without having to open them in Pupil Player.
+description: We recommend reading the format thoroughly if you want to develop software that creates recordings on its own, or processes existing recordings without having to open them in Pupil Player.
 ---
 
 # Recording Format
 
 This section outlines the Pupil Player recording format. We recommend reading it
-thourougly if you want to develop software that creates recordings on its own,
+thoroughly if you want to develop software that creates recordings on its own,
 or processes existing recordings without having to open them in Pupil Player.
 
 ## Meta Files
@@ -35,7 +35,7 @@ A datum and its timestamp have the same index within their respective files, i.e
 ## Video Files
 Video files are only recognized if they comply with the following constraints:
 
-Allowed video file extentions are:
+Allowed video file extensions are:
 
 - `.mp4`
 - `.mkv`
@@ -90,4 +90,4 @@ Pupil Player decodes the messages into [`file_methods.Serialized_Dict`](https://
 You can use [`file_methods.PLData_Writer`](https://github.com/pupil-labs/pupil/blob/315188dcfba9bef02a5b1d9a3770929d7510ae2f/pupil_src/shared_modules/file_methods.py#L138) and [`file_methods.load_pldata_file()`](https://github.com/pupil-labs/pupil/blob/315188dcfba9bef02a5b1d9a3770929d7510ae2f/pupil_src/shared_modules/file_methods.py#L111) to read and write `pldata` files.
 
 ## Other Files
-Files without file extention, e.g. the deprecated `pupil_data` file, and files with a `.meta` extention are msgpack-encoded dictionaries. They can be read and written using [`file_methods.load_object()` and `file_methods.save_object()`](https://github.com/pupil-labs/pupil/blob/315188dcfba9bef02a5b1d9a3770929d7510ae2f/pupil_src/shared_modules/file_methods.py#L57-L87) and do *not* have a corresponding timestamps file.
+Files without file extension, e.g. the deprecated `pupil_data` file, and files with a `.meta` extension are msgpack-encoded dictionaries. They can be read and written using [`file_methods.load_object()` and `file_methods.save_object()`](https://github.com/pupil-labs/pupil/blob/315188dcfba9bef02a5b1d9a3770929d7510ae2f/pupil_src/shared_modules/file_methods.py#L57-L87) and do *not* have a corresponding timestamps file.

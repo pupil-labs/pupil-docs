@@ -23,7 +23,7 @@ This section will guide you through all steps needed to turn your HTC Vive into 
 <Youtube src="eVsNdQL7VEI"/>
 
 ## A detailed look
-Detailed look at the engagement process between the eye tracking ring the the lens holding geometry.
+Detailed look at the engagement process between the eye tracking ring and the lens holding geometry.
 **Do not follow these steps.**
 Just have a look to get a feeling for the snap-in part to the guide above.
 

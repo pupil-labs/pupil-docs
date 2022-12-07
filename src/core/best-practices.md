@@ -164,7 +164,7 @@ for an accurate and easy to implement solution.
 ### 2. Custom Clocks
 By default, most third-party devices and software come with their own clock to measure time consistently. These clocks 
 *rarely* share a common starting point which would allow for automatic time alignment. However, they usually guarantee to 
-be monotonicly increasing and are very accurate when it comes to measuring time differences (like Pupil Time).
+be monotonically increasing and are very accurate when it comes to measuring time differences (like Pupil Time).
 
 [In this tutorial](https://github.com/pupil-labs/pupil-helpers/blob/master/python/simple_realtime_time_sync.py), we
 demonstrate a simple real-time method to synchronize Pupil Time with a custom clock (e.g. used by third-party software). 
