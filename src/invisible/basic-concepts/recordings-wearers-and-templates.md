@@ -6,7 +6,7 @@
 # Recordings, Wearers & Templates
 There are a number of organizational constructs we use to make working with our tools flexible and reliable:
 
-A [recording](/invisible/explainers/basic-concepts/#recordings) is made each time you press record in the Invisible Companion app. Each recording has a [wearer](/invisible/explainers/basic-concepts/#wearers) and a [template](/invisible/explainers/basic-concepts/#templates) associated with it. Once uploaded to Pupil Cloud you can add recordings to [projects](/invisible/explainers/basic-concepts/#projects), this creates a context for you to add [enrichments](/invisible/explainers/enrichments) to aggregate and analyse your data.
+A [recording](/invisible/explainers/basic-concepts/#recordings) is made each time you press record in the Invisible Companion app. Each recording has a [wearer](/invisible/explainers/basic-concepts/#wearers) and a [template](/invisible/explainers/basic-concepts/#templates) associated with it. Once uploaded to Pupil Cloud you can add recordings to [projects](/invisible/explainers/basic-concepts/#projects), this creates a context for you to add [enrichments](/invisible/enrichments) to aggregate and analyse your data.
 
 Finally, [workspaces](/invisible/explainers/basic-concepts/#workspaces) are used to keep recordings, wearers, templates, and projects organized and isolated so you can share them with clients and collaborators.
 
