@@ -26,7 +26,7 @@ export default {
         {
           icon: "format_quote",
           title: "Cite us",
-          href: "/invisible/publications.html",
+          href: "/invisible/publications",
           target: "",
         },
         {
@@ -52,7 +52,7 @@ export default {
       this.banner_menu[0].href =
         to.path.includes("core") || to.path.includes("vr-ar")
           ? "/core/academic-citation/"
-          : "/invisible/publications.html";
+          : "/invisible/publications";
     },
   },
 };

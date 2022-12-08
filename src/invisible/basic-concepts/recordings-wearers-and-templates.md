@@ -1,5 +1,5 @@
 ---
-permalink: /invisible/basic-concepts/recordins-wearers-and-templates
+permalink: /invisible/basic-concepts/recordings-wearers-and-templates
 description: Introduction to recordings, wearers and templates, and their usage in Pupil Cloud.
 ---
 
