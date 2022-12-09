@@ -1,10 +1,13 @@
 ---
 description: Pupil Invisible and Pupil Cloud documentation ranging from getting started guides to explanations of advanced concepts, how-to guides, and references on export formats and APIs.
 ---
+
 # Pupil Invisible & Cloud Documentation
+
 Welcome to the Pupil Invisible & Pupil Cloud docs! In this section of the docs you will learn everything there is to learn about the Pupil Invisible ecosystem. Start by making your first recording and proceed all the way to implementing advanced applications. Everything you need is here.
 
 ## Getting Started
+
 This section is for new users who want to get to grips with the tools. Working through the tutorials will put you in a great position to follow along with the rest of the documentation and get started with your project.
 
 <div>
@@ -24,6 +27,7 @@ This section is for new users who want to get to grips with the tools. Working t
 <v-divider />
 
 ## Basic Concepts
+
 This section explains all relevant concepts in detail and provides background information on how everything works. If you want to understand a certain aspect in detail, check out the respective section here.
 
 <div class="pb-4">
@@ -45,6 +49,7 @@ This section explains all relevant concepts in detail and provides background in
 <v-divider />
 
 ## Glasses & Companion
+
 This section gives an overview of the Pupil Invisible glasses, as well as of the Companion device and app. It also contains guides on how to handle the glasses, e.g. to exchange the lenses.
 
 <div class="pb-4">
@@ -66,6 +71,7 @@ This section gives an overview of the Pupil Invisible glasses, as well as of the
 <v-divider />
 
 ## Enrichments
+
 This section explains all the enrichments available in Pupil Cloud and guides you through using them successfully.
 
 <div class="pb-4">
@@ -87,20 +93,21 @@ This section explains all the enrichments available in Pupil Cloud and guides yo
 <v-divider />
 
 ## How-Tos
+
 This section contains a range of how-tos that address specific topics and challenges.
 
 Some highlights:
 
 <div class="howto-container">
-  <v-expansion-panel v-model="panel">
+  <v-expansion-panel v-model="panelHowTo">
     <v-expansion-panel-content
-      v-for="(item, index) in panelContent"
+      v-for="(item, idxHowTo) in panelContent"
       :key="index"
       hide-actions
     >
       <template v-slot:header>
         <div class="flex">
-          <div style="width:16px;margin-right:8px">{{ panel == index ? '-' : '+' }}</div>
+          <div style="width:16px;margin-right:8px">{{ panelHowTo === idxHowTo ? '-' : '+' }}</div>
           <span>{{ item.title }}</span>
         </div>
       </template>
@@ -119,20 +126,21 @@ Some highlights:
 <v-divider />
 
 ## Real-Time API
+
 The real-time API allows you to stream gaze data and scene video to any device connected to the same local network. Further, you can control all devices remotely to start and stop recordings or save events.
 
 This section contains a range of guides introducing the real-time API and common use cases of it.
 
 <div class="howto-container">
-  <v-expansion-panel v-model="panel">
+  <v-expansion-panel v-model="panelRealTimeApi">
     <v-expansion-panel-content
-      v-for="(item, index) in realTimeAPI"
-      :key="index"
+      v-for="(item, idxApi) in realTimeAPI"
+      :key="idxApi"
       hide-actions
     >
       <template v-slot:header>
         <div class="flex">
-          <div style="width:16px;margin-right:8px">{{ panel == index ? '-' : '+' }}</div>
+          <div style="width:16px;margin-right:8px">{{ panelRealTimeApi === idxApi ? '-' : '+' }}</div>
           <span>{{ item.title }}</span>
         </div>
       </template>
@@ -151,6 +159,7 @@ This section contains a range of guides introducing the real-time API and common
 <v-divider />
 
 ## Export Formats
+
 This section is where you will find references for [export formats](/invisible/reference/export-formats), which you can consult when working with any data coming out of Pupil Cloud.
 
 <router-link class="underline" to="/invisible/reference/export-formats">Jump to section</router-link>
@@ -158,6 +167,7 @@ This section is where you will find references for [export formats](/invisible/r
 <v-divider />
 
 ## Troubleshooting
+
 Having trouble with Pupil Invisible or Pupil Cloud? We have collected the most common issues you may run into together with solutions in [this](/invisible/troubleshooting) section.
 
 <router-link class="underline" to="/invisible/troubleshooting">Jump to section</router-link>
@@ -166,7 +176,8 @@ Having trouble with Pupil Invisible or Pupil Cloud? We have collected the most c
 export default {
   data() {
     return {
-      panel: null,
+      panelHowTo: null,
+      panelRealTimeApi: null,
       gettingStarted: [
         {
           title: "Make Your First Recording",
