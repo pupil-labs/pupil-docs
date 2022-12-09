@@ -1,5 +1,15 @@
 name: 🌍 Links check on PR
 
+# This Action is designed to be used in a pull request (PR) workflow on GitHub. 
+# It uses the actions/checkout action to check out the PR branch and compare it with the base branch. 
+# Then, it uses the tj-actions/changed-files action to get a list of files that have been added or modified in the PR. 
+# This list is then passed to the lycheeverse/lychee-action action, which checks the files for broken links.
+# If the lychee-action step finds any broken links, a second job is triggered to test the broken links again,
+# this time using the URL of the branch on which the PR is based. 
+# This is done by getting the branch URL with a run step, then passing the broken URLs to lychee-action to test again 
+# with the new URL.
+# Overall, this Action is intended to help ensure that links in files added or modified in a PR do not lead to broken pages.
+
 on:
   pull_request
 
@@ -44,7 +54,7 @@ jobs:
           jobSummary: true
 
   check_failed_links_using_new_branch_url:
-    #if: ${{ needs.check_links_on_pr_files_online.outputs.lychee_exited == 2 }}
+    #if: ${{ needs.check_links_on_pr_files_online.outputs.lychee_exited == 2 }} if: fileExists('lychee/results.md')
     runs-on: ubuntu-latest
     name: Test failed links using branch url
     needs: check_links_on_pr_files_online
@@ -68,7 +78,7 @@ jobs:
       - name: 'Get broken URLs from results.md'
         id: get-broken-urls
         run: |
-          broken_urls="$(cat lychee/results_final.md)"
+          broken_urls="$(cat lychee/results.md)"
           echo ${broken_urls}
           broken_urls=${broken_urls//https:\/\/docs.pupil-labs.com\//$''}
           echo ${broken_urls}
