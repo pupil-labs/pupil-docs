@@ -1,14 +1,8 @@
-name: 🌍 Links check on PR
-
-# This Action is designed to be used in a pull request (PR) workflow on GitHub. 
-# It uses the actions/checkout action to check out the PR branch and compare it with the base branch. 
-# Then, it uses the tj-actions/changed-files action to get a list of files that have been added or modified in the PR. 
-# This list is then passed to the lycheeverse/lychee-action action, which checks the files for broken links.
-# If the lychee-action step finds any broken links, a second job is triggered to test the broken links again,
-# this time using the URL of the branch on which the PR is based. 
-# This is done by getting the branch URL with a run step, then passing the broken URLs to lychee-action to test again 
-# with the new URL.
-# Overall, this Action is intended to help ensure that links in files added or modified in a PR do not lead to broken pages.
+name: on PR
+# This workflow is triggered on pull requests to the repository.
+# It runs a job to check for broken links in the files changed in the PR against the online built webpage, and against the files on the PR branch.
+# It checks for spelling errors in the files changed in the PR.
+# It builds the static site and checks the size of the built site.
 
 on:
   pull_request
@@ -16,7 +10,7 @@ on:
 jobs:
   check_links_on_pr_files_online:
     runs-on: ubuntu-latest
-    name: Test changed-files for broken links
+    name: 🌍 Test changed-files for broken links
     outputs:
       lychee_exited: ${{ steps.stringify.outputs.lychee_exited }}
       lychee_file: ${{ steps.stringify.outputs.lychee_file }}
@@ -57,7 +51,7 @@ jobs:
       - name: 'Outputs as strings'
         id: stringify
         run: |
-          EXIT_CODE_STRING="$( printf '%d' "${{ steps.lychee.outputs.exit_code }}" )"
+          EXIT_CODE_STRING="$( printf '%d' "${{ env.lychee_exit_code }}" )"
           echo "lychee_exited=${EXIT_CODE_STRING}" >> $GITHUB_OUTPUT
           MD_OUT="$( cat ./lychee/results.md )"
           MD_OUT="${MD_OUT//'%'/'%25'}"
@@ -69,8 +63,9 @@ jobs:
           echo "lychee_file=${MD_OUT}" >> $GITHUB_OUTPUT
         
   check_failed_links_using_new_branch_url:
+    if: contains(['2'],${{ needs.check_links_on_pr_files_online.outputs.lychee_exited }})
     runs-on: ubuntu-latest
-    name: Test failed links using branch url
+    name: 🐙 Test failed links using branch url
     needs: check_links_on_pr_files_online
     outputs:
       lychee_exited_2: ${{ steps.stringify2.outputs.lychee_exited }}
@@ -80,11 +75,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: 'Check if outputs did propagate across jobs'
-        id: checks
-        run: |
-          echo ${{ needs.check_links_on_pr_files_online.outputs.lychee_exited }}
-          echo ${{ needs.check_links_on_pr_files_online.outputs.lychee_file }}
+      - uses: mdecoleman/pr-branch-name@1.2.0
+        id: branch_name
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 'Get branch url'
         id: git-branch-name
@@ -92,7 +86,7 @@ jobs:
           url="https://github.com/"
           url+=${{github.repository}}
           url+="/tree/"
-          url+=${{github.ref}}
+          url+=${{steps.branch_name.outputs.branch}}
           url+="/src/"
           echo "branch_name=${url}" >> $GITHUB_OUTPUT
       
@@ -109,20 +103,22 @@ jobs:
           echo ${broken_urls} > temp/broken_urls.md
 
       - name: 'Test again these broken links with the new branch url'
-        id: final-links
+        id: lychee
         uses: lycheeverse/lychee-action@v1.5.4
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
-          args: -v -n -a 403,503,429,200 -i -b '${{ steps.git-branch-name.outputs.branch_name }}' --exclude-mail --include-verbatim --'temp/broken_urls.md'
+          args: -v -n -a 403,503,429,200 -i -b '${{ steps.git-branch-name.outputs.branch_name }}' --exclude-mail --include-verbatim temp/broken_urls.md
           output: ./lychee/results_final.md
           jobSummary: true
       
       - name: 'Convert outputs to strings'
         id: stringify2
         run: |
-          EXIT_CODE_STRING="$( printf '%d' "${{ steps.final-links.outputs.exit_code }}" )"
+          EXIT_CODE_STRING="$( printf '%d' "${{  env.lychee_exit_code }}" )"
           echo "lychee_exited=${EXIT_CODE_STRING}" >> $GITHUB_OUTPUT
+          if [ ${{  env.lychee_exit_code }} -eq 2 ]
+          then
           MD_OUT="$( cat ./lychee/results_final.md )"
           MD_OUT="${MD_OUT//'%'/'%25'}"
           MD_OUT="${MD_OUT//$'\n'/'%0A'}"
@@ -131,30 +127,64 @@ jobs:
           echo "$MD_OUT" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
           echo "lychee_file=${MD_OUT}" >> $GITHUB_OUTPUT
+          else
+          echo "lychee_file=" >> $GITHUB_OUTPUT
+          fi
 
-  post_comment:
-    if: contains(['2'],${{ needs.check_failed_links_using_new_branch_url.outputs.lychee_exited_2}})
+  check_spelling:
+    name: ✍️ Check spelling
     runs-on: ubuntu-latest
-    name: Post comment
-    needs: [check_links_on_pr_files_online, check_failed_links_using_new_branch_url]
+    outputs:
+      fail_spelling: ${{ steps.fail.outputs.fail_spelling }}
     steps:
-      - id: get-comment-body
-        run: |
-          body="$(echo "# Link check summary"; ${{ needs.check_failed_links_using_new_branch_url.outputs.lychee_file_2 }})"
-          body="${body//'%'/'%25'}"
-          body="${body//$'\n'/'%0A'}"
-          body="${body//$'\r'/'%0D'}" 
-          # echo "text<<EOF" >> $GITHUB_OUTPUT
-          # echo "$body" >> $GITHUB_OUTPUT
-          # echo "EOF" >> $GITHUB_OUTPUT
-          echo "::set-output name=body::$body" # the new output breaks format. See https://github.community/t/set-output-truncates-multiline-strings/16852/3
-          # echo "body=${body}" >> $GITHUB_OUTPUT
-          
-      - name: Create comment
-        uses: thollander/actions-comment-pull-request@v1
+      - uses: actions/checkout@v3
         with:
-          message: ${{ steps.get-comment-body.outputs.body }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
-      - name: Fail workflow if link broken
-        run: exit 1
+          fetch-depth: 2
+      - name: 'Check Grammar'
+        id: cspell
+        uses: streetsidesoftware/cspell-action@v2
+        with:
+          files: |
+            **/*.{md,html,ipynb}
+          strict: false
+          verbose: true
+        
+      - name: 'Fail if spelling errors are found'
+        id: fail
+        if: steps.cspell.outputs.number_of_issues > 0
+        run: |
+          echo "fail_spelling="Spelling errors found" >> $GITHUB_OUTPUT
+          exit 1
+
+  build:
+    name: 📦 Build
+    runs-on: ubuntu-latest
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - run: pip install nbconvert packaging
+      - name: Convert Jupyter notebooks
+        run: |
+          shopt -s globstar
+          jupyter-nbconvert --to markdown **/*.ipynb --ExtractOutputPreprocessor.enabled=False
+          shopt -u globstar
+        shell: bash
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install vuepress
+        run: yarn global add vuepress
+      - name: Install package.json
+        run: yarn
+      - name: Build static site with vuepress
+        # alias for vuepress build src defined in package.json
+        run: yarn build
+
+      - name: Get size of files in dist
+        shell: bash
+        run: |
+          du -ah src/.vuepress/dist
