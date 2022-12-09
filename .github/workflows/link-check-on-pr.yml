@@ -18,7 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Test changed-files for broken links
     outputs:
-      lychee_exited: ${{ steps.lychee.outputs.exit_code }}
+      lychee_exited: ${{ steps.stringify.outputs.lychee_exited }}
+      lychee_file: ${{ steps.stringify.outputs.lychee_file }}
     steps:
       # Compares the default generated "test merge commit" by Github of the PR branch into the base branch
       - uses: actions/checkout@v3
@@ -26,7 +27,7 @@ jobs:
           fetch-depth: 2
 
       # Gets a list of files from the PR with a git status of Added (A) or Modified (M) | (via outputs.all_changed_files)
-      - name: 'Example - Get a list of changed files to process(Only html/md/ipynb files)'
+      - name: 'Get a list of changed files to process(Only html/md/ipynb files)'
         id: get-changed-files
         uses: tj-actions/changed-files@v34
         with:
@@ -37,7 +38,7 @@ jobs:
           separator: ','
 
       # lychee-action requires pre-processing for file paths with spaces (boundary quotes added in lychee-action input):
-      - name: 'Compatibility with eval: Quote wrap paths to support spaces'
+      - name: 'Quote wrap paths to support spaces'
         id: changed-files
         run: |
           QUOTE_WRAPPED="$( sed "s/,/' '/g" <<< '${{ steps.get-changed-files.outputs.all_changed_files }}' )"
@@ -50,20 +51,40 @@ jobs:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
           args: -v -n -a 403,503,429,200 -i -b 'https://docs.pupil-labs.com/' --exclude-mail --include-verbatim -- '${{ steps.changed-files.outputs.all_changed_files }}'
-          output: lychee/results.md
+          output: ./lychee/results.md
           jobSummary: true
-
+      
+      - name: 'Outputs as strings'
+        id: stringify
+        run: |
+          EXIT_CODE_STRING="$( printf '%d' "${{ steps.lychee.outputs.exit_code }}" )"
+          echo "lychee_exited=${EXIT_CODE_STRING}" >> $GITHUB_OUTPUT
+          MD_OUT="$( cat ./lychee/results.md )"
+          MD_OUT="${MD_OUT//'%'/'%25'}"
+          MD_OUT="${MD_OUT//$'\n'/'%0A'}"
+          MD_OUT="${MD_OUT//$'\r'/'%0D'}" 
+          echo "text<<EOF" >> $GITHUB_OUTPUT
+          echo "$MD_OUT" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+          echo "lychee_file=${MD_OUT}" >> $GITHUB_OUTPUT
+        
   check_failed_links_using_new_branch_url:
-    #if: ${{ needs.check_links_on_pr_files_online.outputs.lychee_exited == 2 }} if: fileExists('lychee/results.md')
     runs-on: ubuntu-latest
     name: Test failed links using branch url
     needs: check_links_on_pr_files_online
     outputs:
-      lychee_exited: ${{ steps.lychee.outputs.exit_code }}
+      lychee_exited_2: ${{ steps.stringify2.outputs.lychee_exited }}
+      lychee_file_2: ${{ steps.stringify2.outputs.lychee_file }}
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+
+      - name: 'Check if outputs did propagate across jobs'
+        id: checks
+        run: |
+          echo ${{ needs.check_links_on_pr_files_online.outputs.lychee_exited }}
+          echo ${{ needs.check_links_on_pr_files_online.outputs.lychee_file }}
 
       - name: 'Get branch url'
         id: git-branch-name
@@ -78,14 +99,14 @@ jobs:
       - name: 'Get broken URLs from results.md'
         id: get-broken-urls
         run: |
-          broken_urls="$(cat lychee/results.md)"
-          echo ${broken_urls}
+          broken_urls="${{ needs.check_links_on_pr_files_online.outputs.lychee_file }}"
+          broken_urls=$(echo "$broken_urls" | sed "s/%25/%/g")
+          body=$(echo "$broken_urls" | sed "s/%0A/$'\n'/g")
+          broken_urls=$(echo "$broken_urls" | sed "s/%0D/$'\r'/g")
           broken_urls=${broken_urls//https:\/\/docs.pupil-labs.com\//$''}
           echo ${broken_urls}
-          mkdir temp
+          mkdir -p temp
           echo ${broken_urls} > temp/broken_urls.md
-          rm lychee/results.md
-          rm -rf lychee
 
       - name: 'Test again these broken links with the new branch url'
         id: final-links
@@ -93,21 +114,33 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
-          args: -v -n -a 403,503,429,200 -i -b '${{ steps.git-branch-name.outputs.branch_name }}' --exclude-mail --include-verbatim 'temp/broken_urls.md'
-          output: lychee/results_final.md
-          debug: true
+          args: -v -n -a 403,503,429,200 -i -b '${{ steps.git-branch-name.outputs.branch_name }}' --exclude-mail --include-verbatim --'temp/broken_urls.md'
+          output: ./lychee/results_final.md
           jobSummary: true
+      
+      - name: 'Convert outputs to strings'
+        id: stringify2
+        run: |
+          EXIT_CODE_STRING="$( printf '%d' "${{ steps.final-links.outputs.exit_code }}" )"
+          echo "lychee_exited=${EXIT_CODE_STRING}" >> $GITHUB_OUTPUT
+          MD_OUT="$( cat ./lychee/results_final.md )"
+          MD_OUT="${MD_OUT//'%'/'%25'}"
+          MD_OUT="${MD_OUT//$'\n'/'%0A'}"
+          MD_OUT="${MD_OUT//$'\r'/'%0D'}" 
+          echo "text<<EOF" >> $GITHUB_OUTPUT
+          echo "$MD_OUT" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+          echo "lychee_file=${MD_OUT}" >> $GITHUB_OUTPUT
 
   post_comment:
-    #if: ${{ needs.check_failed_links_using_new_branch_url.outputs.lychee_exited == 2 }}
+    if: contains(['2'],${{ needs.check_failed_links_using_new_branch_url.outputs.lychee_exited_2}})
     runs-on: ubuntu-latest
     name: Post comment
     needs: [check_links_on_pr_files_online, check_failed_links_using_new_branch_url]
     steps:
       - id: get-comment-body
-        if: env.lychee_exit_code == 2
         run: |
-          body="$(echo "# Link check summary"; cat lychee/results_final.md)"
+          body="$(echo "# Link check summary"; ${{ needs.check_failed_links_using_new_branch_url.outputs.lychee_file_2 }})"
           body="${body//'%'/'%25'}"
           body="${body//$'\n'/'%0A'}"
           body="${body//$'\r'/'%0D'}" 
@@ -118,12 +151,10 @@ jobs:
           # echo "body=${body}" >> $GITHUB_OUTPUT
           
       - name: Create comment
-        if: env.lychee_exit_code == 2
         uses: thollander/actions-comment-pull-request@v1
         with:
           message: ${{ steps.get-comment-body.outputs.body }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Fail workflow if link broken
-        if: env.lychee_exit_code == 2
         run: exit 1

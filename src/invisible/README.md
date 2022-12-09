@@ -227,11 +227,11 @@ export default {
         },
         {
           title: "Wearers",
-          link: "/invisible/basic-concepts/basic-concepts/#wearers",
+          link: "/invisible/basic-concepts/recordings-wearers-and-templates/#wearers",
         },
         {
           title: "Templates",
-          link: "/invisible/basic-concepts/basic-concepts/#templates",
+          link: "/invisible/basic-concepts//recordings-wearers-and-templates/#templates",
         },
       ],
       glassesAndCompanion: [
