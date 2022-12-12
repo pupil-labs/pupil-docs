@@ -24,7 +24,7 @@ Once the page has loaded, you will be presented with a live stream of the scene 
 
 If you have multiple Pupil Invisible devices connected to the network, you can switch between devices using the switch button.
 
-Using the various event buttons, you can remotely save an [event](/invisible/explainers/basic-concepts/#events) in a recording to mark points of interest. In the settings view you can customize the according event names.
+Using the various event buttons, you can remotely save an [event](/invisible/basic-concepts/events) in a recording to mark points of interest. In the settings view you can customize the according event names.
 
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
@@ -46,6 +46,6 @@ If you still have trouble, please reach out to us in [chat](https://pupil-labs.c
 
 The Pupil Invisible Monitor app allows you to easily monitor your data collection and remotely control all your Pupil Invisible devices.
 
-If you want to go further and get real-time access to the generated data for custom processing, please checkout our [real-time API](/invisible/how-tos/integrate-with-the-real-time-api/introduction).
+If you want to go further and get real-time access to the generated data for custom processing, please checkout our [real-time API](/invisible/real-time-api/introduction/).
 
-If you want to save events programmatically in real-time during your data collection, check out our how-to guide on [Tracking your Experiment Progress using Events](/invisible/how-tos/integrate-with-the-real-time-api/track-your-experiment-progress-using-events) using the real-time API.
+If you want to save events programmatically in real-time during your data collection, check out our how-to guide on [Tracking your Experiment Progress using Events](/invisible/real-time-api/track-your-experiment-progress-using-events/) using the real-time API.

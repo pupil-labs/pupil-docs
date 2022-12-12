@@ -9,7 +9,7 @@ MATLAB is often used by researchers to build eye tracking experiments, such as t
 
 When working with head-mounted eye trackers like Pupil Invisible, it can be useful to synchronize stimuli presentation with the eye tracking recording. This enables you to, a) keep track of when a stimulus is shown, and b) segment the eye tracking data accordingly.
 
-In this guide, we will build a simple MATLAB experiment. The experiment will show you how to automatically and conveniently track stimulus presentation as part of your eye tracking recording using [events](/invisible/explainers/basic-concepts/#events) and [Pupil Invisible's real-time API](/invisible/real-time-api/introduction). Finally, you will see how those events enable the segmentation of eye tracking data per stimulus during the analysis.
+In this guide, we will build a simple MATLAB experiment. The experiment will show you how to automatically and conveniently track stimulus presentation as part of your eye tracking recording using [events](/invisible/basic-concepts/events) and [Pupil Invisible's real-time API](/invisible/real-time-api/introduction). Finally, you will see how those events enable the segmentation of eye tracking data per stimulus during the analysis.
 
 While MATLAB is not officially supported by [Pupil Invisible's real-time API](/invisible/real-time-api/introduction), we have created a simple wrapper to enable some of the available functions required for this application.
 

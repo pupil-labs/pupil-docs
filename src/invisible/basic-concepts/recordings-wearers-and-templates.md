@@ -8,11 +8,11 @@ There are a number of organizational constructs we use to make working with our 
 
 A [recording](/invisible/basic-concepts/recordings-wearers-and-templates/#recordings) is made each time you press record in the Invisible Companion app. Each recording has a [wearer](/invisible/basic-concepts/recordings-wearers-and-templates/#wearers) and a [template](/invisible/basic-concepts/recordings-wearers-and-templates/#templates) associated with it. Once uploaded to Pupil Cloud you can add recordings to [projects](/invisible/basic-concepts/projects-and-workspaces/#projects), this creates a context for you to add [enrichments](/invisible/enrichments) to aggregate and analyse your data.
 
-Finally, [workspaces](/invisible/explainers/basic-concepts/#workspaces) are used to keep recordings, wearers, templates, and projects organized and isolated so you can share them with clients and collaborators.
+Finally, [workspaces](/invisible/basic-concepts/projects-and-workspaces/#workspaces) are used to keep recordings, wearers, templates, and projects organized and isolated so you can share them with clients and collaborators.
 
 
 ## Recordings
-A recording starts and stops when you press the red record button in Pupil Invisible Companion App. While this should feel similar to recording a video, there is a lot more happening behind the scenes. When you are recording with Pupil Invisible Companion App, you are capturing not only video data but several more sensors (see [Data Streams](/invisible/explainers/data-streams)).
+A recording starts and stops when you press the red record button in Pupil Invisible Companion App. While this should feel similar to recording a video, there is a lot more happening behind the scenes. When you are recording with Pupil Invisible Companion App, you are capturing not only video data but several more sensors (see [Data Streams](/invisible/basic-concepts/data-streams)).
 
 Recordings are designed to be as robust as possible. If at any point a sensor is disconnected during a recording, it will automatically start capturing again as soon as it is reconnected. You could start a recording with no Pupil Invisible glasses connected and plug them in at a later time. As soon as they are connected, data will be captured.
 

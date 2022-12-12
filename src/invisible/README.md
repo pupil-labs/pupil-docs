@@ -231,7 +231,7 @@ export default {
         },
         {
           title: "Templates",
-          link: "/invisible/basic-concepts//recordings-wearers-and-templates/#templates",
+          link: "/invisible/basic-concepts/recordings-wearers-and-templates/#templates",
         },
       ],
       glassesAndCompanion: [
