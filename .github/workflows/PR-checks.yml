@@ -8,9 +8,80 @@ on:
   pull_request
 
 jobs:
+  build:
+    name: 📦 Build
+    runs-on: ubuntu-latest
+    outputs:
+      html_lychee_exited: ${{ steps.stringify.outputs.lychee_exited }}
+      html_lychee_file: ${{ steps.stringify.outputs.lychee_file }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - run: pip install nbconvert packaging
+      - name: Convert Jupyter notebooks
+        run: |
+          shopt -s globstar
+          jupyter-nbconvert --to markdown **/*.ipynb --ExtractOutputPreprocessor.enabled=False
+          shopt -u globstar
+        shell: bash
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install vuepress
+        run: yarn global add vuepress
+      - name: Install package.json
+        run: yarn
+      - name: Build static site with vuepress
+        # alias for vuepress build src defined in package.json
+        run: yarn build
+
+      - name: Get size of files in dist
+        shell: bash
+        run: |
+          du -ah src/.vuepress/dist
+
+      - name: 'Get built html files'
+        id: html-files
+        run: |
+          html_files=$(find src/.vuepress/dist -name '*.html')
+          html_files="${html_files//$'\n'/ }"
+          html_files="${html_files//$'\r'/ }"
+          echo $html_files
+          echo "all_html_files=${html_files}" >> $GITHUB_OUTPUT
+      
+      - name: 'Check Links'
+        id: lychee
+        uses: lycheeverse/lychee-action@v1.5.4
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        with:
+          args: -v -n -a 403,503,429,200 -i -b 'https://docs.pupil-labs.com/' --exclude-mail --include-verbatim -- ${{ steps.html-files.outputs.all_html_files }}
+          output: ./lychee/htmlfiles.md
+          jobSummary: true
+      
+      - name: 'Outputs as strings'
+        id: stringify
+        run: |
+          EXIT_CODE_STRING="$( printf '%d' "${{ env.lychee_exit_code }}" )"
+          echo "lychee_exited=${EXIT_CODE_STRING}" >> $GITHUB_OUTPUT
+          MD_OUT="$( cat ./lychee/htmlfiles.md )"
+          MD_OUT="${MD_OUT//'%'/'%25'}"
+          MD_OUT="${MD_OUT//$'\n'/'%0A'}"
+          MD_OUT="${MD_OUT//$'\r'/'%0D'}" 
+          echo "text<<EOF" >> $GITHUB_OUTPUT
+          echo "$MD_OUT" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+          echo "lychee_file=${MD_OUT}" >> $GITHUB_OUTPUT
+      
   check_links_on_pr_files_online:
     runs-on: ubuntu-latest
-    name: 🌍 Test changed-files for broken links
+    name: 🌍 Test (.md/ipynb) changed-files for broken links
     outputs:
       lychee_exited: ${{ steps.stringify.outputs.lychee_exited }}
       lychee_file: ${{ steps.stringify.outputs.lychee_file }}
@@ -26,7 +97,6 @@ jobs:
         uses: tj-actions/changed-files@v34
         with:
           files: |
-            **/*.html
             **/*.md
             **/*.ipynb
           separator: ','
@@ -66,19 +136,15 @@ jobs:
     if: contains(['2'],${{ needs.check_links_on_pr_files_online.outputs.lychee_exited }})
     runs-on: ubuntu-latest
     name: 🐙 Test failed links using branch url
-    needs: check_links_on_pr_files_online
-    outputs:
-      lychee_exited_2: ${{ steps.stringify2.outputs.lychee_exited }}
-      lychee_file_2: ${{ steps.stringify2.outputs.lychee_file }}
+    needs: [check_links_on_pr_files_online, build]
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      - uses: mdecoleman/pr-branch-name@1.2.0
-        id: branch_name
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Get branch name
+        id: branch-name
+        uses: tj-actions/branch-names@v6
 
       - name: 'Get branch url'
         id: git-branch-name
@@ -86,18 +152,26 @@ jobs:
           url="https://github.com/"
           url+=${{github.repository}}
           url+="/tree/"
-          url+=${{steps.branch_name.outputs.branch}}
+          url+=${{ steps.branch-name.outputs.current_branch }}
           url+="/src/"
           echo "branch_name=${url}" >> $GITHUB_OUTPUT
       
       - name: 'Get broken URLs from results.md'
         id: get-broken-urls
         run: |
-          broken_urls="${{ needs.check_links_on_pr_files_online.outputs.lychee_file }}"
+          broken_urls=""
+          if [ ${{ needs.check_links_on_pr_files_online.outputs.lychee_exited }} == 2 ]
+          then
+          broken_urls+="${{ needs.check_links_on_pr_files_online.outputs.lychee_file }}"
+          fi
+          if [ ${{ needs.build.outputs.html_lychee_exited }} == 2 ]
+          then
+          broken_urls+="${{ needs.build.outputs.html_lychee_file }}"
+          fi
           broken_urls=$(echo "$broken_urls" | sed "s/%25/%/g")
           body=$(echo "$broken_urls" | sed "s/%0A/$'\n'/g")
           broken_urls=$(echo "$broken_urls" | sed "s/%0D/$'\r'/g")
-          broken_urls=${broken_urls//https:\/\/docs.pupil-labs.com\//$''}
+          broken_urls=$(echo "$broken_urls" | sed "s/https:\/\/docs.pupil-labs.com\///g")
           echo ${broken_urls}
           mkdir -p temp
           echo ${broken_urls} > temp/broken_urls.md
@@ -111,25 +185,7 @@ jobs:
           args: -v -n -a 403,503,429,200 -i -b '${{ steps.git-branch-name.outputs.branch_name }}' --exclude-mail --include-verbatim temp/broken_urls.md
           output: ./lychee/results_final.md
           jobSummary: true
-      
-      - name: 'Convert outputs to strings'
-        id: stringify2
-        run: |
-          EXIT_CODE_STRING="$( printf '%d' "${{  env.lychee_exit_code }}" )"
-          echo "lychee_exited=${EXIT_CODE_STRING}" >> $GITHUB_OUTPUT
-          if [ ${{  env.lychee_exit_code }} -eq 2 ]
-          then
-          MD_OUT="$( cat ./lychee/results_final.md )"
-          MD_OUT="${MD_OUT//'%'/'%25'}"
-          MD_OUT="${MD_OUT//$'\n'/'%0A'}"
-          MD_OUT="${MD_OUT//$'\r'/'%0D'}" 
-          echo "text<<EOF" >> $GITHUB_OUTPUT
-          echo "$MD_OUT" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
-          echo "lychee_file=${MD_OUT}" >> $GITHUB_OUTPUT
-          else
-          echo "lychee_file=" >> $GITHUB_OUTPUT
-          fi
+          fail: true
 
   check_spelling:
     name: ✍️ Check spelling
@@ -156,35 +212,3 @@ jobs:
           echo "fail_spelling="Spelling errors found" >> $GITHUB_OUTPUT
           exit 1
 
-  build:
-    name: 📦 Build
-    runs-on: ubuntu-latest
-
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-      - run: pip install nbconvert packaging
-      - name: Convert Jupyter notebooks
-        run: |
-          shopt -s globstar
-          jupyter-nbconvert --to markdown **/*.ipynb --ExtractOutputPreprocessor.enabled=False
-          shopt -u globstar
-        shell: bash
-
-      - name: Use Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
-      - name: Install vuepress
-        run: yarn global add vuepress
-      - name: Install package.json
-        run: yarn
-      - name: Build static site with vuepress
-        # alias for vuepress build src defined in package.json
-        run: yarn build
-
-      - name: Get size of files in dist
-        shell: bash
-        run: |
-          du -ah src/.vuepress/dist
