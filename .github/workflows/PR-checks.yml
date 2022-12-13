@@ -61,7 +61,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
-          args: -v -n -a 403,503,429,200 -i -b 'https://docs.pupil-labs.com/' --exclude-mail --include-verbatim -- ${{ steps.html-files.outputs.all_html_files }}
+          args: -v -n -a 403,503,429,200 -i -b 'src/.vuepress/dist' --exclude-mail --include-verbatim -- ${{ steps.html-files.outputs.all_html_files }}
           output: ./lychee/htmlfiles.md
           jobSummary: true
       

@@ -7,7 +7,7 @@ description: Overview article on the Pupil Invisible ecosystem introducing avail
 The Pupil Invisible ecosystem contains a range of tools that support you during data collection and data analysis. This overview introduces all the key components so you can become familiar with all tools at your disposal.
 
 ## Pupil Invisible Companion app and Glasses
-You should have already used the Pupil Invisible Companion app to [make your first recording](/invisible/getting-started/first-recording). This app is the core of every Pupil Invisible data collection.
+You should have already used the Pupil Invisible Companion app to [make your first recording](/invisible/getting-started/first-recording.html). This app is the core of every Pupil Invisible data collection.
 
 When your glasses are connected to the Companion device, it supplies them with power and the app calculates a real-time gaze signal. When making a recording, all generated data is saved on the Companion device.
 
@@ -36,7 +36,7 @@ If Cloud upload is enabled in the Pupil Invisible Companion app, then recordings
 
 
 ## Pupil Player
-If you can't use Pupil Cloud, you can transfer recordings directly from the phone to a computer using a USB cable (see [Transfer recordings via USB](/invisible/how-tos/data-collection-with-the-companion-app/transfer-recordings-via-usb)). Recordings are saved in a binary format on the phone, which is not easily human-readable. We thus recommend exporting recordings to more convenient formats using Pupil Player.
+If you can't use Pupil Cloud, you can transfer recordings directly from the phone to a computer using a USB cable (see [Transfer recordings via USB](/invisible/how-tos/data-collection-with-the-companion-app/transfer-recordings-via-usb.html)). Recordings are saved in a binary format on the phone, which is not easily human-readable. We thus recommend exporting recordings to more convenient formats using Pupil Player.
 
 Pupil Player is open source software that was initially developed for the Pupil Core eye tracking headset. Pupil Player is designed to work with one recording at a time. Use it to playback Pupil Invisible recordings, export to CSV, and for available analysis features.  
 
