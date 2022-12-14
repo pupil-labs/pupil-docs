@@ -8,7 +8,7 @@ description: Guide on using the now deprecated real-time API called NDSI.
 :::danger
 <v-icon large color="gray">info_outline</v-icon>
 
-Our previous real-time API called NDSI is now deprecated! We recommend using the new real-time API client introduced [here](/invisible/how-tos/integrate-with-the-real-time-api/introduction/).
+Our previous real-time API called NDSI is now deprecated! We recommend using the new real-time API client introduced [here](/invisible/real-time-api/introduction/).
 
 :::
 

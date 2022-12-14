@@ -1,15 +1,14 @@
 name: on PR
 # This workflow is triggered on pull requests to the repository.
-# It runs a job to check for broken links in the files changed in the PR against the online built webpage, and against the files on the PR branch.
+# It runs a job to build the docvs, and check for broken links in the files changed in the PR on the built static pages.
 # It checks for spelling errors in the files changed in the PR.
-# It builds the static site and checks the size of the built site.
 
 on:
   pull_request
 
 jobs:
   build:
-    name: 📦 Build
+    name: 📦 Build & 🌍 Check links
     runs-on: ubuntu-latest
     outputs:
       html_lychee_exited: ${{ steps.stringify.outputs.lychee_exited }}
@@ -61,7 +60,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
-          args: -v -n -a 403,503,429,200 -i -b 'https://docs.pupil-labs.com/' --exclude-mail --include-verbatim -- ${{ steps.html-files.outputs.all_html_files }}
+          args: -v -n -a 403,503,429,200 -i -b 'src/.vuepress/dist' --exclude-mail --include-verbatim -- ${{ steps.html-files.outputs.all_html_files }}
           output: ./lychee/htmlfiles.md
           jobSummary: true
       
@@ -78,114 +77,17 @@ jobs:
           echo "$MD_OUT" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
           echo "lychee_file=${MD_OUT}" >> $GITHUB_OUTPUT
-      
-  check_links_on_pr_files_online:
+
+  link_fail:
+    name: 🚨 Fail if links are broken
     runs-on: ubuntu-latest
-    name: 🌍 Test (.md/ipynb) changed-files for broken links
-    outputs:
-      lychee_exited: ${{ steps.stringify.outputs.lychee_exited }}
-      lychee_file: ${{ steps.stringify.outputs.lychee_file }}
+    needs: build
+    if: ${{ needs.build.outputs.html_lychee_exited != 0 }}
     steps:
-      # Compares the default generated "test merge commit" by Github of the PR branch into the base branch
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 2
-
-      # Gets a list of files from the PR with a git status of Added (A) or Modified (M) | (via outputs.all_changed_files)
-      - name: 'Get a list of changed files to process(Only html/md/ipynb files)'
-        id: get-changed-files
-        uses: tj-actions/changed-files@v34
-        with:
-          files: |
-            **/*.md
-            **/*.ipynb
-          separator: ','
-
-      # lychee-action requires pre-processing for file paths with spaces (boundary quotes added in lychee-action input):
-      - name: 'Quote wrap paths to support spaces'
-        id: changed-files
+      - name: 'Fail if links are broken'
         run: |
-          QUOTE_WRAPPED="$( sed "s/,/' '/g" <<< '${{ steps.get-changed-files.outputs.all_changed_files }}' )"
-          echo "all_changed_files=${QUOTE_WRAPPED}" >> $GITHUB_OUTPUT
-
-      - name: 'Check Links'
-        id: lychee
-        uses: lycheeverse/lychee-action@v1.5.4
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        with:
-          args: -v -n -a 403,503,429,200 -i -b 'https://docs.pupil-labs.com/' --exclude-mail --include-verbatim -- '${{ steps.changed-files.outputs.all_changed_files }}'
-          output: ./lychee/results.md
-          jobSummary: true
-      
-      - name: 'Outputs as strings'
-        id: stringify
-        run: |
-          EXIT_CODE_STRING="$( printf '%d' "${{ env.lychee_exit_code }}" )"
-          echo "lychee_exited=${EXIT_CODE_STRING}" >> $GITHUB_OUTPUT
-          MD_OUT="$( cat ./lychee/results.md )"
-          MD_OUT="${MD_OUT//'%'/'%25'}"
-          MD_OUT="${MD_OUT//$'\n'/'%0A'}"
-          MD_OUT="${MD_OUT//$'\r'/'%0D'}" 
-          echo "text<<EOF" >> $GITHUB_OUTPUT
-          echo "$MD_OUT" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
-          echo "lychee_file=${MD_OUT}" >> $GITHUB_OUTPUT
-        
-  check_failed_links_using_new_branch_url:
-    if: contains(['2'],${{ needs.check_links_on_pr_files_online.outputs.lychee_exited }})
-    runs-on: ubuntu-latest
-    name: 🐙 Test failed links using branch url
-    needs: [check_links_on_pr_files_online, build]
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - name: Get branch name
-        id: branch-name
-        uses: tj-actions/branch-names@v6
-
-      - name: 'Get branch url'
-        id: git-branch-name
-        run: |
-          url="https://github.com/"
-          url+=${{github.repository}}
-          url+="/tree/"
-          url+=${{ steps.branch-name.outputs.current_branch }}
-          url+="/src/"
-          echo "branch_name=${url}" >> $GITHUB_OUTPUT
-      
-      - name: 'Get broken URLs from results.md'
-        id: get-broken-urls
-        run: |
-          broken_urls=""
-          if [ ${{ needs.check_links_on_pr_files_online.outputs.lychee_exited }} == 2 ]
-          then
-          broken_urls+="${{ needs.check_links_on_pr_files_online.outputs.lychee_file }}"
-          fi
-          if [ ${{ needs.build.outputs.html_lychee_exited }} == 2 ]
-          then
-          broken_urls+="${{ needs.build.outputs.html_lychee_file }}"
-          fi
-          broken_urls=$(echo "$broken_urls" | sed "s/%25/%/g")
-          body=$(echo "$broken_urls" | sed "s/%0A/$'\n'/g")
-          broken_urls=$(echo "$broken_urls" | sed "s/%0D/$'\r'/g")
-          broken_urls=$(echo "$broken_urls" | sed "s/https:\/\/docs.pupil-labs.com\///g")
-          echo ${broken_urls}
-          mkdir -p temp
-          echo ${broken_urls} > temp/broken_urls.md
-
-      - name: 'Test again these broken links with the new branch url'
-        id: lychee
-        uses: lycheeverse/lychee-action@v1.5.4
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        with:
-          args: -v -n -a 403,503,429,200 -i -b '${{ steps.git-branch-name.outputs.branch_name }}' --exclude-mail --include-verbatim temp/broken_urls.md
-          output: ./lychee/results_final.md
-          jobSummary: true
-          fail: true
+          echo "Some links are broken"
+          exit 1
 
   check_spelling:
     name: ✍️ Check spelling

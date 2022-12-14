@@ -4,7 +4,7 @@ description: Summary of all available data streams in Pupil Invisible recordings
 ---
 
 # Data Streams
-Pupil Invisible glasses include a number of sensors providing different types of data. Some data streams are available in real-time (see [real-time API](/invisible/how-tos/integrate-with-the-real-time-api/introduction)), while others are computed in Pupil Cloud post hoc after uploading. All data is fully accessible and can be downloaded from Pupil Cloud in convenient formats.
+Pupil Invisible glasses include a number of sensors providing different types of data. Some data streams are available in real-time (see [real-time API](/invisible/real-time-api/introduction/)), while others are computed in Pupil Cloud post hoc after uploading. All data is fully accessible and can be downloaded from Pupil Cloud in convenient formats.
 
 ## Eye Videos
 Pupil Invisible glasses feature two eye cameras, one for each eye. They are fully embedded into the frame. The sensors record IR video at 200 Hz and with a resolution of 192x192px. Right next to each camera is an IR LED, which guarantees good illumination of the eye in dark environments.

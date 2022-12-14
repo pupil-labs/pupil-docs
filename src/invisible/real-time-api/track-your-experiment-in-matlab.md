@@ -40,7 +40,7 @@ Before we dig into how to run the demo and the wrapper, you will need to underst
 
 Events are essentially timestamps within a recording that have been marked with a name. In this demo, we need to track when a specific image is shown during a recording to associate the fixation data with that image. Thus, we will create an event at the start and end of each image presentation to mark this section.
 
-Events can be created post-hoc in the project editor or at recording time using either the [real-time API](/invisible/real-time-api/introduction) or [Pupil Invisible Monitor](/invisible/how-tos/data-collection-with-the-companion-app/monitor-your-data-collection-in-real-time). In this example, we are interested in fully automating the event creation within MATLAB. Still, depending on your use case, you could use either of those methods.
+Events can be created post-hoc in the project editor or at recording time using either the [real-time API](/invisible/real-time-api/introduction) or [Pupil Invisible Monitor](/invisible/how-tos/data-collection-with-the-companion-app/monitor-your-data-collection-in-real-time.html). In this example, we are interested in fully automating the event creation within MATLAB. Still, depending on your use case, you could use either of those methods.
 
 ## Running the demo
 
@@ -98,7 +98,7 @@ pupil_labs_realtime_api('Command', 'cancel');
 ```
 
 That is all we have to do during data collection. Once all recordings have been uploaded to Pupil Cloud, we create a
-project to export them using the [Raw Data Exporter](/invisible/reference/export-formats.html#raw-data-exporter). Within the project editor, we can already see the events in every recording.
+project to export them using the [Raw Data Exporter](/invisible/reference/export-formats/#raw-data-exporter). Within the project editor, we can already see the events in every recording.
 
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
