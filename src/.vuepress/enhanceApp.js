@@ -66,7 +66,7 @@ export default ({ Vue, router, options }) => {
     },
   });
 
-  router.beforeEach((to, from, next) => {
+  router.beforeRouteEnter((to, from, next) => {
     const redirect = redirect_dict[to.fullPath];
     console.log(to.fullPath);
     console.log(redirect);
