@@ -262,7 +262,13 @@ module.exports = {
       {
         ga: "UA-40856943-3"
       }
-    ]
+    ],
+    [
+      "dehydrate",
+      {
+        noSSR: '404.html',
+      }
+  ],
   ],
 
   chainWebpack: config => {

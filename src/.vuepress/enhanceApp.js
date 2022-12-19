@@ -66,19 +66,9 @@ export default ({ Vue, router, options }) => {
     },
   });
 
-  console.log(router);
-
-  // router.beforeEach((to, from, next) => {
-  //   const redirect = redirect_dict[to.fullPath];
-  //   console.log(to.fullPath);
-  //   console.log(redirect);
-  //   if (redirect) {
-  //     next({ path: redirect });
-  //   } else next();
-  // });
-
-  router.afterEach((to) => {
+  router.beforeEach((to, from, next) => {
     const redirect = redirect_dict[to.fullPath];
-    if (redirect) router.push({ path: redirect });
+    if (redirect) next({ path: redirect });
+    else next();
   });
 };
