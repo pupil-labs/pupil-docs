@@ -8,6 +8,7 @@
     "style-loader": "^1.0.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
+    "vuepress-plugin-dehydrate": "^1.1.5",
     "vuepress-plugin-sitemap": "^2.1.2"
   },
   "scripts": {
