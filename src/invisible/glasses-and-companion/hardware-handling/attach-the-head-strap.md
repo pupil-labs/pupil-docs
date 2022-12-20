@@ -1,4 +1,5 @@
 ---
+permalink: /invisible/glasses-and-companion/hardware-handling/attach-the-head-strap
 description: How-To guide on attaching the head-strap to Pupil Invisible glasses.
 ---
 

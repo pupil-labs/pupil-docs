@@ -1,32 +1,34 @@
 import Vuetify, {
   VApp,
-  VNavigationDrawer,
-  VToolbar,
-  VToolbarItems,
-  VTooltip,
   VBtn,
-  VSpacer,
-  VContent,
-  VContainer,
-  VCheckbox,
-  VLayout,
-  VFlex,
   VCard,
+  VCardText,
   VCardTitle,
-  VTextField,
-  VForm,
-  VImg,
+  VCheckbox,
+  VChip,
+  VContainer,
+  VContent,
   VDivider,
+  VExpansionPanel,
+  VExpansionPanelContent,
+  VFlex,
+  VForm,
   VIcon,
+  VImg,
+  VLayout,
   VList,
   VListTile,
   VListTileTitle,
   VMenu,
-  VExpansionPanel,
-  VExpansionPanelContent,
-  VCardText,
-  VChip,
+  VNavigationDrawer,
+  VSpacer,
+  VTextField,
+  VToolbar,
+  VToolbarItems,
+  VTooltip,
 } from "vuetify/lib";
+
+import redirect_dict from "./redirect.js";
 
 export default ({ Vue, router, options }) => {
   Vue.use(Vuetify, {
@@ -64,27 +66,9 @@ export default ({ Vue, router, options }) => {
     },
   });
 
-  var redirect_dict = {
-    "/#export": "/core/software/pupil-player/#export",
-    "/#surface-tracking": "/core/software/pupil-capture/#surface-tracking",
-    "/#analysis-plugins": "/core/software/pupil-player/#analysis-plugins",
-    "/#pupil-capture": "/core/software/pupil-capture/",
-    "/#pupil-player": "/core/software/pupil-player/",
-    "/#network-plugins": "/core/software/pupil-capture/#network-plugins",
-    "/#interprocess-and-network-communication": "/developer/core/network-api/",
-    "/#annotations": "/core/software/pupil-capture/#annotations",
-    "/invisible/user-guide/invisible-companion-app/#local-transfer":
-      "/invisible/how-tos/data-collection-with-the-companion-app/transfer-recordings-via-usb",
-    "/cloud/enrichments/#reference-image-mapper":
-      "/invisible/enrichments/reference-image-mapper/",
-    "/cloud/": "/invisible/",
-  };
-
   router.beforeEach((to, from, next) => {
-    if (Object.keys(redirect_dict).indexOf(to.fullPath) >= 0) {
-      next({ path: redirect_dict[to.fullPath] });
-    } else {
-      next();
-    }
+    const redirect = redirect_dict[to.fullPath];
+    if (redirect) next({ path: redirect });
+    else next();
   });
 };

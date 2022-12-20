@@ -81,12 +81,27 @@ module.exports = {
           ]
         },
         {
-          title: 'Explainers',
+          title: 'Basic Concepts',
           children: [
-            'explainers/basic-concepts',
-            'explainers/data-streams',
-            'explainers/glasses-and-companion-device',
-            'explainers/publications',
+            'basic-concepts/data-streams',
+            'basic-concepts/recordings-wearers-and-templates',
+            'basic-concepts/projects-and-workspaces',
+            'basic-concepts/events',
+          ]
+        },
+        {
+          title: 'Glasses & Companion',
+          children: [
+            'glasses-and-companion/technical-overview',
+            'glasses-and-companion/companion-device',
+            {
+              title: 'Hardware handling',
+              children: [
+                'glasses-and-companion/hardware-handling/exchange-lenses',
+                'glasses-and-companion/hardware-handling/clean-and-disinfect',
+                'glasses-and-companion/hardware-handling/attach-the-head-strap',
+              ]
+            },
           ]
         },
         {
@@ -104,31 +119,14 @@ module.exports = {
           ]
         },
         {
-          title: 'How-Tos',
+          title: 'How-To Guides',
           children: [
-            {
-              title: 'Pupil Invisible Glasses',
-              children: [
-                'how-tos/pupil-invisible-glasses/exchange-lenses',
-                'how-tos/pupil-invisible-glasses/clean-and-disinfect',
-                'how-tos/pupil-invisible-glasses/attach-the-head-strap',
-              ]
-            },
             {
               title: 'Data Collection',
               children: [
                 'how-tos/data-collection-with-the-companion-app/monitor-your-data-collection-in-real-time',
                 'how-tos/data-collection-with-the-companion-app/transfer-recordings-via-usb',
                 'how-tos/data-collection-with-the-companion-app/achieve-super-precise-time-sync',
-              ]
-            },
-            {
-              title: 'Integrate with the Real-Time API',
-              children: [
-                'how-tos/integrate-with-the-real-time-api/introduction/',
-                'how-tos/integrate-with-the-real-time-api/track-your-experiment-progress-using-events/',
-                'how-tos/integrate-with-the-real-time-api/track-your-experiment-in-matlab',
-                'how-tos/integrate-with-the-real-time-api/legacy-api',
               ]
             },
             {
@@ -144,15 +142,19 @@ module.exports = {
           ]
         },
         {
-          title: 'Reference',
+          title: 'Real-Time API',
           children: [
-            'reference/export-formats',
+            'real-time-api/introduction/',
+            'real-time-api/track-your-experiment-progress-using-events/',
+            'real-time-api/track-your-experiment-in-matlab',
             {
-              title: "Real-time API",
+              title: "API Client - Developer Docs",
               path: "https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/index.html",
-            }
-          ],
+            },
+            'real-time-api/legacy-api',
+          ]
         },
+        'reference/export-formats',
         "troubleshooting",
       ],
       '/core/': [
@@ -193,7 +195,7 @@ module.exports = {
       ],
       '/alpha-lab/': [
         {
-          title: 'Welcome', 
+          title: 'Welcome',
           path: '/alpha-lab/',
           collapsable: false,
         },
@@ -260,7 +262,13 @@ module.exports = {
       {
         ga: "UA-40856943-3"
       }
-    ]
+    ],
+    [
+      "dehydrate",
+      {
+        noSSR: '404.html',
+      }
+  ],
   ],
 
   chainWebpack: config => {

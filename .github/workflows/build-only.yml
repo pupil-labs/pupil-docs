@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v4
         with:
           python-version: '3.x'
       - run: pip install nbconvert packaging
@@ -23,10 +23,10 @@ jobs:
         shell: bash
 
       - name: Use Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: '12.x'
-      
+          node-version: 16
+
       - name: Install vuepress
         run: yarn global add vuepress
       - name: Install package.json
@@ -34,8 +34,8 @@ jobs:
       - name: Build static site with vuepress
         # alias for vuepress build src defined in package.json
         run: yarn build
-      
-      - name: Get size of files in dist 
+
+      - name: Get size of files in dist
         shell: bash
         run: |
           du -ah src/.vuepress/dist

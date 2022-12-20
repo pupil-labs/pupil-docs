@@ -1,10 +1,10 @@
 ---
-permalink: /invisible/explainers/data-streams
+permalink: /invisible/basic-concepts/data-streams
 description: Summary of all available data streams in Pupil Invisible recordings
 ---
 
 # Data Streams
-Pupil Invisible glasses include a number of sensors providing different types of data. Some data streams are available in real-time (see [real-time API](/invisible/how-tos/integrate-with-the-real-time-api/introduction)), while others are computed in Pupil Cloud post hoc after uploading. All data is fully accessible and can be downloaded from Pupil Cloud in convenient formats.
+Pupil Invisible glasses include a number of sensors providing different types of data. Some data streams are available in real-time (see [real-time API](/invisible/real-time-api/introduction/)), while others are computed in Pupil Cloud post hoc after uploading. All data is fully accessible and can be downloaded from Pupil Cloud in convenient formats.
 
 ## Eye Videos
 Pupil Invisible glasses feature two eye cameras, one for each eye. They are fully embedded into the frame. The sensors record IR video at 200 Hz and with a resolution of 192x192px. Right next to each camera is an IR LED, which guarantees good illumination of the eye in dark environments.
@@ -55,7 +55,7 @@ Two primary types of eye movements exhibited by the visual system are fixations 
   </v-img>
 </div>
 
-Fixations are calculated automatically in Pupil Cloud after uploading a recording. They are available as part of the [Raw Data Exporter](/invisible/reference/export-formats.html#fixations-csv) enrichment downloads. The downloads for gaze mapping enrichments ([Reference Image Mapper](/invisible/reference/export-formats.html#fixations-csv-3), [Marker Mapper](/invisible/reference/export-formats.html#fixations-csv-2)) also include "mapped fixations".
+Fixations are calculated automatically in Pupil Cloud after uploading a recording. They are available as part of the [Raw Data Exporter](/invisible/reference/export-formats/#fixations-csv) enrichment downloads. The downloads for gaze mapping enrichments ([Reference Image Mapper](/invisible/reference/export-formats/#fixations-csv-3), [Marker Mapper](/invisible/reference/export-formats/#fixations-csv-2)) also include "mapped fixations".
 
 The fixation detection algorithm employed in Pupil Cloud was developed by us, and was specifically designed for head-mounted eye trackers. 
 
@@ -70,7 +70,7 @@ The algorithm will soon be released with an open-source licence. Further, we are
 ## Blinks
 During blinks the eye is briefly covered by the eye lids, which serves the purpose of spreading tears across the cornea. The blink rate and blink duration are however also correlated with cognitive processes, which makes it an interesting physiological signal.
 
-Blinks are detected automatically in Pupil Cloud after uploading a recording. They are available as part of the [Raw Data Exporter](/invisible/reference/export-formats.html#blinks-csv) enrichment downloads.
+Blinks are detected automatically in Pupil Cloud after uploading a recording. They are available as part of the [Raw Data Exporter](/invisible/reference/export-formats/#blinks-csv) enrichment downloads.
 
 The blink detection algorithm is operating directly on the eye video to detect the movement patterns of blinks. It will soon be released as open-source.
 

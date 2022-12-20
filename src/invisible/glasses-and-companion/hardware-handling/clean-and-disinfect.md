@@ -1,4 +1,5 @@
 ---
+permalink: /invisible/glasses-and-companion/hardware-handling/clean-and-disinfect
 description: How-To guide on cleaning and disinfecting Pupil Invisible glasses.
 ---
 

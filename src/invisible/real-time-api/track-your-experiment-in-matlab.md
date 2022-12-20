@@ -1,5 +1,5 @@
 ---
-permalink: /invisible/how-tos/integrate-with-the-real-time-api/track-your-experiment-in-matlab'
+permalink: /invisible/real-time-api/track-your-experiment-in-matlab
 description: A simple guide on how to build experiments in Matlab
 ---
 
@@ -9,12 +9,12 @@ MATLAB is often used by researchers to build eye tracking experiments, such as t
 
 When working with head-mounted eye trackers like Pupil Invisible, it can be useful to synchronize stimuli presentation with the eye tracking recording. This enables you to, a) keep track of when a stimulus is shown, and b) segment the eye tracking data accordingly.
 
-In this guide, we will build a simple MATLAB experiment. The experiment will show you how to automatically and conveniently track stimulus presentation as part of your eye tracking recording using [events](/invisible/explainers/basic-concepts/#events) and [Pupil Invisible's real-time API](/invisible/how-tos/integrate-with-the-real-time-api/introduction). Finally, you will see how those events enable the segmentation of eye tracking data per stimulus during the analysis.
+In this guide, we will build a simple MATLAB experiment. The experiment will show you how to automatically and conveniently track stimulus presentation as part of your eye tracking recording using [events](/invisible/basic-concepts/events) and [Pupil Invisible's real-time API](/invisible/real-time-api/introduction). Finally, you will see how those events enable the segmentation of eye tracking data per stimulus during the analysis.
 
-While MATLAB is not officially supported by [Pupil Invisible's real-time API](/invisible/how-tos/integrate-with-the-real-time-api/introduction), we have created a simple wrapper to enable some of the available functions required for this application.
+While MATLAB is not officially supported by [Pupil Invisible's real-time API](/invisible/real-time-api/introduction), we have created a simple wrapper to enable some of the available functions required for this application.
 
 ::: tip
-A similar guide for tracking an experiment in Python can be found [here](/invisible/how-tos/integrate-with-the-real-time-api/track-your-experiment-progress-using-events).
+A similar guide for tracking an experiment in Python can be found [here](/invisible/real-time-api/track-your-experiment-progress-using-events).
 :::
 
 ## Requirements
@@ -40,7 +40,7 @@ Before we dig into how to run the demo and the wrapper, you will need to underst
 
 Events are essentially timestamps within a recording that have been marked with a name. In this demo, we need to track when a specific image is shown during a recording to associate the fixation data with that image. Thus, we will create an event at the start and end of each image presentation to mark this section.
 
-Events can be created post-hoc in the project editor or at recording time using either the [real-time API](/invisible/how-tos/integrate-with-the-real-time-api/introduction) or [Pupil Invisible Monitor](/invisible/how-tos/data-collection-with-the-companion-app/monitor-your-data-collection-in-real-time). In this example, we are interested in fully automating the event creation within MATLAB. Still, depending on your use case, you could use either of those methods.
+Events can be created post-hoc in the project editor or at recording time using either the [real-time API](/invisible/real-time-api/introduction) or [Pupil Invisible Monitor](/invisible/how-tos/data-collection-with-the-companion-app/monitor-your-data-collection-in-real-time.html). In this example, we are interested in fully automating the event creation within MATLAB. Still, depending on your use case, you could use either of those methods.
 
 ## Running the demo
 
@@ -98,11 +98,11 @@ pupil_labs_realtime_api('Command', 'cancel');
 ```
 
 That is all we have to do during data collection. Once all recordings have been uploaded to Pupil Cloud, we create a
-project to export them using the [Raw Data Exporter](/invisible/reference/export-formats.html#raw-data-exporter). Within the project editor, we can already see the events in every recording.
+project to export them using the [Raw Data Exporter](/invisible/reference/export-formats/#raw-data-exporter). Within the project editor, we can already see the events in every recording.
 
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
-    :src="require('../../../media/invisible/how-tos/screenshot-matlab-pi-cloud.jpg')"
+    :src="require('../../media/invisible/how-tos/screenshot-matlab-pi-cloud.jpg')"
     max-width=100%
   >
   </v-img>
@@ -142,7 +142,7 @@ title(['Fixations per image - PI', newline]);
 
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
-    :src="require('../../../media/invisible/how-tos/barplot-matlab-pi-cloud.jpg')"
+    :src="require('../../media/invisible/how-tos/barplot-matlab-pi-cloud.jpg')"
     max-width=100%
   >
   </v-img>

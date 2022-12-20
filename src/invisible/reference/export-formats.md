@@ -1,4 +1,5 @@
 ---
+permalink: /invisible/reference/export-formats
 description: Documentation of the exact export formats of Pupil Cloud.
 ---
 
@@ -77,7 +78,7 @@ This file contains the timestamps of every world video frame.
 
 
 #### events.csv
-This file contains [event](/invisible/explainers/basic-concepts/#events) data for all recordings. It contains both project event annotations and real-time recording events.
+This file contains [event](/invisible/basic-concepts/events) data for all recordings. It contains both project event annotations and real-time recording events.
 
 | Field | Description | 
 | -------- | -------- | 
@@ -88,7 +89,7 @@ This file contains [event](/invisible/explainers/basic-concepts/#events) data fo
 
 
 #### gaze.csv
-This file contains [gaze](/invisible/explainers/data-streams/#gaze) data in world camera coordinates.
+This file contains [gaze](/invisible/basic-concepts/data-streams/#gaze) data in world camera coordinates.
 
 
 | Field | Description | 
@@ -106,7 +107,7 @@ This file contains [gaze](/invisible/explainers/data-streams/#gaze) data in worl
 
 
 #### fixations.csv
-This file contains [fixations](/invisible/explainers/data-streams/#fixations) detected in the gaze data stream.
+This file contains [fixations](/invisible/basic-concepts/data-streams/#fixations) detected in the gaze data stream.
 The corresponding gaze samples that belong to each fixation can be determined from the `gaze.csv` file using the `fixation id` field.
 
 
@@ -122,7 +123,7 @@ The corresponding gaze samples that belong to each fixation can be determined fr
 | **fixation y [px]** | Same as "fixation x [px]" but for the y-coordinate.     |
 
 #### blinks.csv
-This file contains [blinks](/invisible/explainers/data-streams/#blinks) detected in the eye video.
+This file contains [blinks](/invisible/basic-concepts/data-streams/#blinks) detected in the eye video.
 The corresponding gaze samples that belong to each blink can be determined from the `gaze.csv` file using the `blink id` field.
 
 
@@ -136,7 +137,7 @@ The corresponding gaze samples that belong to each blink can be determined from 
 | **duration [ms]** | Duration of the blink in milliseconds.     |
 
 #### imu.csv
-This file contains data recorded by the integrated [IMU](/invisible/explainers/data-streams/#inertial-measurements) (inertial measurement unit).
+This file contains data recorded by the integrated [IMU](/invisible/basic-concepts/data-streams/#inertial-measurements) (inertial measurement unit).
 
 | Field | Description | 
 | -------- | -------- | 

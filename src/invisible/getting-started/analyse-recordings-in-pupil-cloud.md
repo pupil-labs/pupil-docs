@@ -13,7 +13,7 @@ Let’s get started.
 :::tip
 <v-icon large color="info">info_outline</v-icon>
 This guide assumes you’ve already uploaded at least one recording to Pupil Cloud. If you haven’t, we 
-recommend following the [make your first recording guide](/invisible/getting-started/first-recording)
+recommend following the [make your first recording guide](/invisible/getting-started/first-recording.html)
 :::
 
 <v-divider></v-divider>
