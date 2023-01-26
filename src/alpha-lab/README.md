@@ -66,8 +66,8 @@ export default {
           alt_text: bannerText.xmas,
         };
       } else {
-        // If it's not December, pick a random banner from the 6 available banners
-        const numberOfImages = 6;
+        // If it's not December, pick a random banner from the 7 available banners
+        const numberOfImages = 7;
         const randomImageNumber = [Math.trunc(Math.random() * numberOfImages)+1];
         const randomImage = `img${randomImageNumber.toString()}.png`;
         const randomImageAltText = "img"+randomImageNumber.toString();
