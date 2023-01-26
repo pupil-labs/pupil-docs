@@ -61,7 +61,7 @@ export default {
       // Get the current month
       const month = new Date().getMonth();
       // If it's December, change the banner to one with a Christmas theme
-      if (month === 0) {
+      if (month === 11) {
         return {
           img_name: require("../media/alpha-lab/banners/xmas.png"),
           alt_text: bannerText.xmas,
@@ -109,10 +109,6 @@ export default {
         },
       ],
       banner: this.loadRandomImage(),
-      // {
-      //   img_name: "xmas.png",
-      //   alt_text: "Image credit: DALL-E (prompt) - “pattern made with lots of eyes with laboratory and garage tools, vectorized art”",
-      // },
     };
   },
 }
