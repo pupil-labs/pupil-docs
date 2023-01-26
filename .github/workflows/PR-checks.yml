@@ -69,6 +69,11 @@ jobs:
         run: |
           EXIT_CODE_STRING="$( printf '%d' "${{ env.lychee_exit_code }}" )"
           echo "lychee_exited=${EXIT_CODE_STRING}" >> $GITHUB_OUTPUT
+          if [ $EXIT_CODE_STRING -eq 0 ]; then
+            echo "lychee_file=No broken links found" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          if [ $EXIT_CODE_STRING -eq 1 ]; then
           MD_OUT="$( cat ./lychee/htmlfiles.md )"
           MD_OUT="${MD_OUT//'%'/'%25'}"
           MD_OUT="${MD_OUT//$'\n'/'%0A'}"
@@ -77,6 +82,7 @@ jobs:
           echo "$MD_OUT" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
           echo "lychee_file=${MD_OUT}" >> $GITHUB_OUTPUT
+          fi
 
   link_fail:
     name: 🚨 Fail if links are broken
