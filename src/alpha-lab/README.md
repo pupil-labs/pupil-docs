@@ -67,7 +67,7 @@ export default {
         };
       } else {
         // If it's not December, pick a random banner from the 6 available banners
-        const numberOfImages = 5;
+        const numberOfImages = 6;
         const randomImageNumber = [Math.floor(Math.random() * numberOfImages)+1];
         const randomImage = `img${randomImageNumber.toString()}.png`;
         const randomImageAltText = "img"+randomImageNumber.toString();
