@@ -7,7 +7,6 @@ permalink: /alpha-lab/
 
 <div class="mb-4" style="display:flex;justify-content:center;">
   <v-img class="rounded" :src="banner.img_name" 
-  :lazy-src="require(`../media/alpha-lab/banners/img1.png`)"
   width="100%" 
   :alt="banner.alt_text"
   :title="banner.alt_text" />
