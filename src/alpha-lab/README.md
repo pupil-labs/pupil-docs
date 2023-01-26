@@ -6,9 +6,11 @@ permalink: /alpha-lab/
 # Welcome to Alpha Lab!
 
 <div class="mb-4" style="display:flex;justify-content:center;">
-  <v-img class="rounded" :src="require(`../media/alpha-lab/alpha-lab-banner.jpg`)" width="100%" 
-  alt="Image credit: DALL-E (prompt) - “pattern made with lots of eyes with laboratory and garage tools, vectorized art”"
-  title="Image credit: DALL-E (prompt) - “pattern made with lots of eyes with laboratory and garage tools, vectorized art”" />
+  <v-img class="rounded" :src="banner.img_name" 
+  :lazy-src="require(`../media/alpha-lab/banners/img1.png`)"
+  width="100%" 
+  :alt="banner.alt_text"
+  :title="banner.alt_text" />
 </div>
 
 Pupil Labs is made up of people who are curious by nature. We are researchers, designers, toolmakers, and professional tinkerers. We enjoy building quick prototypes and demos to explore our curiosities. We built Alpha Lab so that we can have a centralized place to collect the results of our explorations and to share it with the world.
@@ -52,6 +54,31 @@ Enough talk; let’s dive in.
 
 <script>
 export default {
+  methods:{
+    loadRandomImage() {
+      // Set the banner text from a JSON file
+      var bannerText = require("../media/alpha-lab/banners/banners.json");
+      // Get the current month
+      const month = new Date().getMonth();
+      // If it's December, change the banner to one with a Christmas theme
+      if (month === 0) {
+        return {
+          img_name: require("../media/alpha-lab/banners/xmas.png"),
+          alt_text: bannerText.xmas,
+        };
+      } else {
+        // If it's not December, pick a random banner from the 6 available banners
+        const numberOfImages = 5;
+        const randomImageNumber = [Math.floor(Math.random() * numberOfImages)+1];
+        const randomImage = `img${randomImageNumber.toString()}.png`;
+        const randomImageAltText = "img"+randomImageNumber.toString();
+        return {
+          img_name: require("../media/alpha-lab/banners/"+randomImage),
+          alt_text: bannerText[randomImageAltText],
+        };
+      }
+    },
+  },
   data() {
     return {
       showTell: [
@@ -81,6 +108,11 @@ export default {
           img: "densepose.png",
         },
       ],
+      banner: this.loadRandomImage(),
+      // {
+      //   img_name: "xmas.png",
+      //   alt_text: "Image credit: DALL-E (prompt) - “pattern made with lots of eyes with laboratory and garage tools, vectorized art”",
+      // },
     };
   },
 }
