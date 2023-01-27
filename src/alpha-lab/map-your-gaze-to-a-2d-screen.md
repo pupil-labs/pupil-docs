@@ -36,17 +36,17 @@ Let's assume you have everything ready to go – your participant is sat infron
 
 So that we can capture your participant's visual interactions with the screen content, we will need to make sure that both the _eye tracking_ **and** _screen recordings_ happen at the same time.
 
-Importantly, both sources (eye tracking and screen recording) record individually. As such, you'll need what we call an [event annotation](https://docs.pupil-labs.com/invisible/explainers/basic-concepts/#events) to synchronise them later.
+Importantly, both sources (eye tracking and screen recording) record individually. As such, you'll need what we call an [event annotation](https://docs.pupil-labs.com/invisible/basic-concepts/events/) to synchronise them later.
 
-The [event annotation](https://docs.pupil-labs.com/invisible/explainers/basic-concepts/#events) should be used to indicate the beginning of the _screen content recording_ in the _eye tracking recording_, and be named `start.video`.
-Check [here](https://docs.pupil-labs.com/invisible/explainers/basic-concepts/#events) how you can create these events in the Cloud.
+The [event annotation](https://docs.pupil-labs.com/invisible/basic-concepts/events/) should be used to indicate the beginning of the _screen content recording_ in the _eye tracking recording_, and be named `start.video`.
+Check [here](https://docs.pupil-labs.com/invisible/basic-concepts/events/) how you can create these events in the Cloud.
 
 ::: tip
 **Tip:**
 When you initiate your recordings, you'll need to know when the screen recording started, relative to your eye tracking recording. Thus, start your eye tracker recording first, and make sure that the eye tracker scene camera faces the OBS program on the screen. Then, start the screen recording.
 <br>
 <br>
-By looking at the screen when you press the button, you'll have a visual reference to create the [event annotation](https://docs.pupil-labs.com/invisible/explainers/basic-concepts/#events) later in Cloud.
+By looking at the screen when you press the button, you'll have a visual reference to create the [event annotation](https://docs.pupil-labs.com/invisible/basic-concepts/events/) later in Cloud.
 <br>
 <br>
 **Recap**: Eye tracking **first**; screen recording **second**

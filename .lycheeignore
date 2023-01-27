@@ -2,7 +2,7 @@
 http://pi.local:8080/
 localhost:%25s
 file:///home/runner/work/pupil-docs/pupil-docs/src/alpha-lab/ws:/localhost:XXXX
-file:///Users/mgg/Desktop/pupil/docs_restruct/src/.vuepress/dist/alpha-lab/map-your-gaze-to-a-2d-screen/ws:/localhost:XXXX
+file:///home/runner/work/pupil-docs/pupil-docs/src/.vuepress/dist/alpha-lab/map-your-gaze-to-a-2d-screen/ws:/localhost:XXXX
 ws://localhost:XXXX/
 
 # Ignore all .js files
@@ -88,3 +88,5 @@ https://docs.pupil-labs.com/uoq11XtNH5E
 https://docs.pupil-labs.com/f'tcp://%7Bip%7D:%7Bpub_port%7D
 https://docs.pupil-labs.com/f'tcp://%7Bip%7D:%7Bport%7D
 https://docs.pupil-labs.com/f'tcp://%7Bip%7D:%7Bsub_port%7D
+# Twitter as it seems to timeout    
+https://twitter.com/pupil_labs 
