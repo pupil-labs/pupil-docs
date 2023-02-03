@@ -369,7 +369,7 @@ function flatten(items, res) {
   }
 
   .gridCol {
-    grid-template-columns: 1fr;
+    display: block;
   }
 
   .page {
