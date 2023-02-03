@@ -59,7 +59,10 @@ but you will do it with the lens holder attached.
 1. Use plastic glue to fix the piece. Don’t let the glue touch the center!
 1. Put the lens back inside. You will have to manually focus the lens when you run the software for the first time by hand. Later you can use the focus control in software to fine tune.
 
-<iframe src="https://player.vimeo.com/video/59844058" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<div>
+  <iframe src="https://player.vimeo.com/video/59844058" width="100%" height="360" frameborder="0" allow="autoplay; fullscreen" 
+  allowfullscreen></iframe>
+</div>
 
 ## Camera Assembly
 1. Attach the world camera onto the mount using 4 small screws, leftover from disassembly.

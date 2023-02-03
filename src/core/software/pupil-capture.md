@@ -132,7 +132,7 @@ Pupil Core headsets come in a variety of configurations. Calibration can be cond
 Before starting a calibration, ensure that the participant's pupil is robustly detected and tracked, and that the headset is comfortable for the participant. Make sure that the world camera is in focus for the distance at which you want to calibrate, and that you can see the entire area you want to calibrate within the world camera's field of view (FOV).
 
 
-<div style="display:flex;" class="pb-4">
+<div style="display:flex; flex-wrap: wrap;" class="pb-4">
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
         <v-img :src="require('../../media/core/imgs/pupil-detect.jpg')" style="width:300px;height:300px;"></v-img>
         <p>Your Pupil is properly detected by the camera.</p>
@@ -172,7 +172,7 @@ In most use cases you will only need to use the `Pupil Calibration Marker`. The 
 Make sure to always use the **v0.4 marker design** for best detection performance!
 :::
 
-<div style="display:flex;" class="pb-4">
+<div style="display:flex; flex-wrap: wrap;" class="pb-4">
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
         <v-img :src="require('../../media/core/imgs/v0.4_calib_marker_02.jpg')" style="width:300px;height:300px;"></v-img>
         <p>Pupil Calibration Marker v0.4</p>
@@ -377,7 +377,7 @@ Supported Apriltag families:
 
 Apriltags ready to use:
 
-<div style="display:flex;" class="pb-4">
+<div style="display:flex; flex-wrap: wrap;" class="pb-4">
     <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
         <v-img :src="require('../../media/shared/imgs/apriltags_tag36h11_0-23.jpg')" style="padding-bottom:16px;width:60%;"></v-img>
         <p>Apriltags tag36h11 0-23</p>
