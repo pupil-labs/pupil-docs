@@ -44,6 +44,7 @@ export default {
   data() {
     return {
       docs_menu: [
+        { icon: "neon", title: "neon", link: "/neon/" },
         { icon: "invisible", title: "invisible", link: "/invisible/" },
         { icon: "core", title: "core", link: "/core/" },
         { icon: "vr-ar", title: "vr/ar", link: "/vr-ar/" },

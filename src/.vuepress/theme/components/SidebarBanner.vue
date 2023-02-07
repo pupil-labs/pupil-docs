@@ -26,7 +26,7 @@ export default {
         {
           icon: "format_quote",
           title: "Cite us",
-          href: "/invisible/publications",
+          href: "/neon/publications",
           target: "",
         },
         {
@@ -46,13 +46,21 @@ export default {
   },
   watch: {
     $route(to, from) {
-      this.banner_menu[1].href = to.path.includes("core")
-        ? "https://github.com/pupil-labs/pupil/discussions/2275"
-        : "https://feedback.pupil-labs.com/";
-      this.banner_menu[0].href =
-        to.path.includes("core") || to.path.includes("vr-ar")
-          ? "/core/academic-citation/"
-          : "/invisible/publications";
+      let citation_target = null;
+      let feedback_target = null;
+      if (to.path.includes("core") || to.path.includes("vr-ar")) {
+        citation_target = "/core/academic-citation/";
+        feedback_target =
+          "https://github.com/pupil-labs/pupil/discussions/2275";
+      } else if (to.path.includes("invisible")) {
+        citation_target = "/invisible/publications";
+        feedback_target = "https://feedback.pupil-labs.com/";
+      } else {
+        citation_target = "/neon/publications";
+        feedback_target = "https://feedback.pupil-labs.com/";
+      }
+      this.banner_menu[0].href = citation_target;
+      this.banner_menu[1].href = feedback_target;
     },
   },
 };

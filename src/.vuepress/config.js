@@ -63,6 +63,88 @@ module.exports = {
     displayAllHeaders: false,
     lastUpdated: "Last Updated",
     sidebar: {
+      '/neon/': [
+        {
+          title: "Overview",
+          path: "/neon/",
+          collapsable: false,
+        },
+        {
+          title: 'Getting Started',
+          children: [
+            'getting-started/first-recording',
+            'getting-started/understand-the-ecosystem',
+            {
+              title: "Analysis in Pupil Cloud",
+              path: "getting-started/analyse-recordings-in-pupil-cloud",
+            }
+          ]
+        },
+        {
+          title: 'Basic Concepts',
+          children: [
+            'basic-concepts/data-streams',
+            'basic-concepts/recordings-wearers-and-templates',
+            'basic-concepts/projects-and-workspaces',
+            'basic-concepts/events',
+          ]
+        },
+        {
+          title: 'Glasses & Companion',
+          children: [
+            'glasses-and-companion/technical-overview',
+            'glasses-and-companion/companion-device',
+            {
+              title: 'Hardware handling',
+              children: [
+                'glasses-and-companion/hardware-handling/swap-frames',
+                'glasses-and-companion/hardware-handling/clean-and-disinfect',
+              ]
+            },
+          ]
+        },
+        {
+          title: "Enrichments",
+          children: [
+            {
+              title: 'Overview',
+              path: 'enrichments/overview'
+            },
+            'enrichments/reference-image-mapper',
+            'enrichments/marker-mapper',
+            'enrichments/face-mapper',
+            'enrichments/gaze-overlay',
+            'enrichments/raw-data',
+          ]
+        },
+        {
+          title: 'How-To Guides',
+          children: [
+            {
+              title: 'Data Collection',
+              children: [
+                'how-tos/data-collection-with-the-companion-app/monitor-your-data-collection-in-real-time',
+                'how-tos/data-collection-with-the-companion-app/transfer-recordings-via-usb',
+                'how-tos/data-collection-with-the-companion-app/achieve-super-precise-time-sync',
+              ]
+            },
+          ]
+        },
+        {
+          title: 'Real-Time API',
+          children: [
+            'real-time-api/introduction/',
+            'real-time-api/track-your-experiment-progress-using-events/',
+            'real-time-api/track-your-experiment-in-matlab',
+            {
+              title: "API Client - Developer Docs",
+              path: "https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/index.html",
+            },
+          ]
+        },
+        'reference/export-formats',
+        "troubleshooting",
+      ],
       '/invisible/': [
         {
           title: "Overview",
@@ -268,7 +350,7 @@ module.exports = {
       {
         noSSR: '404.html',
       }
-  ],
+    ],
   ],
 
   chainWebpack: config => {
