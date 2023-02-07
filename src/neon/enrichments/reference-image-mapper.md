@@ -34,9 +34,6 @@ Below, gaze is mapped in four very different environments: to a **magazine cover
 Let's take a look at what the Reference Image and Scanning Recording look like to produce these heatmaps.
 ### 1. Magazine reading
 
-
-[TODO: Do we need to update the example scanning videos to neon videos?]
-
 <div class="mcontainer">
   <div class="col-mcontainer">
     <h4>Reference image</h4>
