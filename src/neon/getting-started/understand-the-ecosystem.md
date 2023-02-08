@@ -82,11 +82,4 @@ Neon can be used in a large range of environments for a variety of applications.
 
 If none of the available frames fits your needs, you can also design your own using the [Bare Metal](TODO: insert link to custom frame) version. You could design your own glasses-like frame or integrate Neon into your a custom head-worn device.
 
-
-## 3rd Party Integrations
-
-[TODO: update this section. Probably no integrations at launch]
-
-A range of software integrations are available for Neon recordings, including compatibility with e.g. [iMotions](https://imotions.com/) and [Blickshift](https://www.blickshift.com/?lang=de) software. You can find a full list of official partners [here](https://pupil-labs.com/partners-resellers/). 
-
-Further, there are many open-source projects available built by the community. Join our [Discord](https://pupil-labs.com/chat) server and ask people to point you in the right direction for your project!
+[TODO: insert fitting image introducing the different frames]
