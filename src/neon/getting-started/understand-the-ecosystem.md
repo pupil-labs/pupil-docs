@@ -6,10 +6,6 @@ description: Overview article on the Neon ecosystem introducing available softwa
 # Understand the Ecosystem
 The Neon ecosystem contains a range of tools that support you during data collection and data analysis. This overview introduces all the key components so you can become familiar with all tools at your disposal.
 
-## Neon Frames
-
-[TODO: to be written]
-
 ## Neon App
 You should have already used the Neon app to [make your first recording](/neon/getting-started/first-recording.html). This app is the core of every Neon data collection.
 
@@ -79,6 +75,12 @@ This enables you to e.g. implement Human Computer Interaction (HCI) applications
 Check-out out our [real-time API tutorial](/neon/real-time-api/introduction/) to learn more!
 
 For a concrete usage example, see [Track your Experiment Progress using Events](/neon/real-time-api/track-your-experiment-progress-using-events/)!
+
+## Neon Frames
+
+Neon can be used in a large range of environments for a variety of applications. We offer a range of different frames designed for different use cases to further facilitate this. Next to the [Just act natural](TODO: insert link) frame, which closely resembles a regular pair of glasses, there is for example the [Better safe than sorry](TODO: insert link) frame, which has a safety rating, or the [Ready set go!](TODO: insert link) frame, which can easily be worn under various helmets. For work with children there is the child-size frame [All fun and games](TODO: insert link). A full list of all available frames can be found in the[shop](TODO: insert link to frames in shop).
+
+If none of the available frames fits your needs, you can also design your own using the [Bare Metal](TODO: insert link to custom frame) version. You could design your own glasses-like frame or integrate Neon into your a custom head-worn device.
 
 
 ## 3rd Party Integrations
