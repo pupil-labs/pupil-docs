@@ -106,6 +106,12 @@ export default {
           to: "/alpha-lab/dense-pose/",
           img: "densepose.png",
         },
+        {
+          title: "Scanpath",
+          text: "Discover how to generate scanpath images and videos with Pupil Invisible + Pupil Cloud's Reference Image Mapper.",
+          to: "/alpha-lab/scanpath-rim/",
+          img: "Steven_scanpath.jpeg",
+        },
       ],
       banner: this.loadRandomImage(),
     };
