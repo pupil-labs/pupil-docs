@@ -10,7 +10,7 @@ tags: [Pupil Invisible, Cloud]
 <img src="../media/alpha-lab/Steven_scanpath.jpeg"/>
 
 <div class="iframe-container2">
-    <iframe width="750" height="562.5" src="https://www.youtube.com/embed/7V3X4XmbRAM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="2000" height="1500" src="https://www.youtube.com/embed/7V3X4XmbRAM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <br>
 
@@ -93,6 +93,7 @@ To customize the appearance of the legend, such as the position, dimensions, or 
 - In `cv2.line`, edit `thickness` to set a new width for the colored line
 
 <style scoped>
+
     img {
     border-radius: 10px;
     max-width: 100%;
@@ -100,22 +101,22 @@ To customize the appearance of the legend, such as the position, dimensions, or 
     box-sizing: border-box;
 }
 
-.iframe-container{
+.iframe-container2{
   position: relative;
   width: 100%;
-  padding-bottom: 80%;
-  margin-bottom: 50px;
+  padding-bottom: 75%;
+  margin-bottom: 10px;
   height: 0;
-  margin-left:auto;
-  margin-right:auto;
+  margin-left:0;
+  margin-right:0;
 }
 
-.iframe-container iframe{
+.iframe-container2 iframe{
   position: absolute;
   top:0;
   left: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 </style>
