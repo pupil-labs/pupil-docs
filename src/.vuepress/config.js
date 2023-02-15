@@ -212,6 +212,10 @@ module.exports = {
           title: 'Map your gaze onto body parts',
           path: 'dense-pose'
         },
+        {
+          title: 'Scanpath onto RIM',
+          path: 'scanpath-rim'
+        },
       ],
     },
     sidebarDepth: 1,
