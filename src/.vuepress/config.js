@@ -213,7 +213,7 @@ module.exports = {
           path: 'dense-pose'
         },
         {
-          title: 'Scanpath onto RIM',
+          title: 'Generate scanpath using the reference image mapper',
           path: 'scanpath-rim'
         },
       ],
