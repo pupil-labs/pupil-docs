@@ -1,20 +1,19 @@
 ---
-description: Generating Scanpaths of gaze mapped by Reference Image Mapper
+description: Generate scanpaths of gaze mapped by Reference Image Mapper
 permalink: /alpha-lab/scanpath-rim/
 tags: [Pupil Invisible, Cloud]
 ---
 
-# Generating Scanpaths of gaze mapped by Reference Image Mapper
+# Generate scanpaths of gaze mapped by Reference Image Mapper
 
 <TagLinks />
-<img src="../media/alpha-lab/Steven_scanpath.jpeg"/>
 
 <div class="iframe-container2">
     <iframe width="2000" height="1500" src="https://www.youtube.com/embed/7V3X4XmbRAM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+</div> 
 <br>
 
-The [Reference Image Mapper](/invisible/enrichments/reference-image-mapper/) is a powerful tool for mapping gaze onto 2d images of real-world environments, and to generate heatmaps. Here we offer a new way to visualise your RIM data – we have created a ready-to-use script that generates scanpaths + fixations, providing deeper insights into the patterns of visual attention!
+The [Reference Image Mapper](/invisible/enrichments/reference-image-mapper/) is a powerful tool for mapping gaze onto 2d images of real-world environments, and to generate heatmaps. Here we offer a new way to visualise your RIM data – we have created a ready-to-use script that generates static images and also videos of fixations scanpath, providing deeper insights into the patterns of visual attention!
 
 ::: tip
 Before continuing, ensure you are familiar with the [Reference Image Mapper](/invisible/enrichments/#reference-image-mapper) enrichment. Check out [this explainer video](https://www.youtube.com/watch?v=ygqzQEzUIS4&t=56s) for reference.
@@ -22,6 +21,8 @@ Before continuing, ensure you are familiar with the [Reference Image Mapper](/in
 
 ## What is a scanpath?
 A scanpath is a graphical representation of an individual's gaze movements. It shows the sequence of fixations, or pauses in gaze, and the rapid eye movements made between fixations, known as saccades. The scanpath offers a glimpse into what the observer is focusing on and the duration and frequency of their attention to different aspects of the scene. This information is a valuable tool for understanding a person's visual attention and perception.
+
+<img src="../media/alpha-lab/Steven_scanpath.jpeg"/> 
 
 ## What you'll need:
 - A Reference Image Mapper export folder
