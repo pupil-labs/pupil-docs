@@ -89,7 +89,7 @@ export default {
         },
         {
           title: "Netflix and fixate",
-          text: "Here we show you how you can use Pupil Invisible + Pupil Cloud’s Reference Image Mapper to map gaze onto dynamic on screen content - like a video.",
+          text: "Here we show you how you can use Pupil Cloud’s Reference Image Mapper to map gaze onto dynamic on-screen content - like a video.",
           to: "/alpha-lab/map-your-gaze-to-a-2d-screen/",
           img: "netflix-fixation.png",
           position: "38%"
@@ -102,13 +102,13 @@ export default {
         },
         {
           title: "Look at my hand!",
-          text: "Use detectron's densepose AI to segment and know at which part of a body a person is looking at.",
+          text: "Use detectron's densepose AI to segment ~~~~and know at which part of a body a person is looking at.",
           to: "/alpha-lab/dense-pose/",
           img: "densepose.png",
         },
         {
-          title: "Scanpath",
-          text: "Discover how to generate scanpath images and videos with Pupil Invisible + Pupil Cloud's Reference Image Mapper.",
+          title: "Follow my path",
+          text: "Discover how to generate static and dynamic scanpaths with Pupil Cloud's Reference Image Mapper.",
           to: "/alpha-lab/scanpath-rim/",
           img: "Steven_scanpath.jpeg",
         },

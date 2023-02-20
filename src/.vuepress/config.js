@@ -201,7 +201,7 @@ module.exports = {
         },
         'gaze-metrics-in-aois/',
         {
-          title: 'Use multiple RIM enrichments',
+          title: 'Use multiple Reference Image Mapper enrichments',
           path: 'multiple-rim'
         },
         {
@@ -213,7 +213,7 @@ module.exports = {
           path: 'dense-pose'
         },
         {
-          title: 'Generate scanpath using the reference image mapper',
+          title: 'Generate scanpaths with Reference Image Mapper',
           path: 'scanpath-rim'
         },
       ],
