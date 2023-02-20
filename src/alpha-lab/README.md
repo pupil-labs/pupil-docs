@@ -102,7 +102,7 @@ export default {
         },
         {
           title: "Look at my hand!",
-          text: "Use detectron's densepose AI to segment ~~~~and know at which part of a body a person is looking at.",
+          text: "Use detectron's densepose AI to segment and know at which part of a body a person is looking.",
           to: "/alpha-lab/dense-pose/",
           img: "densepose.png",
         },
