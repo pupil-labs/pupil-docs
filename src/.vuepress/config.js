@@ -201,7 +201,7 @@ module.exports = {
         },
         'gaze-metrics-in-aois/',
         {
-          title: 'Use multiple RIM enrichments',
+          title: 'Use multiple Reference Image Mapper enrichments',
           path: 'multiple-rim'
         },
         {
@@ -211,6 +211,10 @@ module.exports = {
         {
           title: 'Map your gaze onto body parts',
           path: 'dense-pose'
+        },
+        {
+          title: 'Generate scanpaths with Reference Image Mapper',
+          path: 'scanpath-rim'
         },
       ],
     },
