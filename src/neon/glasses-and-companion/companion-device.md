@@ -10,7 +10,7 @@ The models we currently support are OnePlus 8, and OnePlus 8T.
 
 [TODO: update link to shop]
 
-If you want to replace or add an extra Companion device you can purchase it [directly from us](https://pupil-labs.com/products/neon/accessories/) or from any other distributor. The Neon app is free and can be downloaded from the [Play Store](https://play.google.com/store/apps/details?id=com.pupillabs.invisiblecomp).[TODO: fix link to app]
+If you want to replace or add an extra Companion device you can purchase it [directly from us](https://pupil-labs.com/products/neon/accessories/) or from any other distributor. The Neon app is free and can be downloaded from the [Play Store](https://play.google.com/store/apps/details?id=com.pupillabs.neoncomp).
 
 Using a fully charged OnePlus 8 device you get around 150 minutes of continuous recording time. You can extend this duration by simultaneously charging the phone during a recording [using a powered USB-C hub](/neon/glasses-and-companion/companion-device#using-a-usb-c-hub).
 
