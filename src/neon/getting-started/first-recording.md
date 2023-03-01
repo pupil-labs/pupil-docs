@@ -16,13 +16,13 @@ The Companion Device included in your Neon case is a brand-new device. It has ne
 
 Create a new Google account or use an existing Google account during setup.
 
-## 2. Install and start the Neon app.
+## 2. Install and start the Neon Companion app.
 
-Next, install the Neon app on your device:
+Next, install the Neon Companion app on your device:
 
 - Launch the **Google Play Store** app. It is already installed by default on your Companion Device.
 - Search for **Neon Companion** in the Google Play Store and click install.
-- Start the Neon app when the installation has finished.
+- Start the Neon Companion app when the installation has finished.
 - A couple of permission prompts will appear, which you need to accept.
 - First-time users need to sign up for a [Pupil Cloud](https://cloud.pupil-labs.com/) account. Sign up using your Google account, or create an account with an email address and password.
 

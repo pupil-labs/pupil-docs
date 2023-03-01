@@ -13,7 +13,7 @@ description: A technical overview of Neon.
   </v-img>
 </div>
 
-Neon connects to the Companion device (Android phone) with a USB-C cable. The Companion device supplies Neon with power and receives the raw sensor data for storage and further processing. Use the Neon app to make recordings, preview real-time gaze and world video, stream data over the network, set up wearers, select templates, and preview and upload recordings to Pupil Cloud.
+Neon connects to the Companion device (Android phone) with a USB-C cable. The Companion device supplies Neon with power and receives the raw sensor data for storage and further processing. Use the Neon Companion app to make recordings, preview real-time gaze and world video, stream data over the network, set up wearers, select templates, and preview and upload recordings to Pupil Cloud.
 
 
 <div class="pb-4" style="display:flex;justify-content:center;">
@@ -30,7 +30,7 @@ The Neon module is filled with sensors and electronics:
 
 - **IR LEDs**: One infrared LED is located on each arm of the module. The LEDs illuminate the eyes of the wearer to improve image quality in dark environments.
 
-- **Scene Camera**: A front-facing scene camera is located at the center of the module capturing [scene video](/neon/basic-concepts/data-streams/#scene-video). A **microphone** is integrated in the module to capture [audio](/neon/basic-concepts/data-streams/#audio). Capturing audio is optional and settable in the Neon app settings.
+- **Scene Camera**: A front-facing scene camera is located at the center of the module capturing [scene video](/neon/basic-concepts/data-streams/#scene-video). A **microphone** is integrated in the module to capture [audio](/neon/basic-concepts/data-streams/#audio). Capturing audio is optional and settable in the Neon Companion app settings.
  
 - **IMU**: A 9-degrees-of-freedom IMU is integrated into the module. It captures the [inertia](/neon/basic-concepts/data-streams/#inertial-measurements) of the glasses, including translational acceleration, rotational speed, magnetic orientation, pitch, yaw, and roll.
 

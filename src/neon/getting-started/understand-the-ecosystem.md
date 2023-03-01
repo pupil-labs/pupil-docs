@@ -6,8 +6,8 @@ description: Overview article on the Neon ecosystem introducing available softwa
 # Understand the Ecosystem
 The Neon ecosystem contains a range of tools that support you during data collection and data analysis. This overview introduces all the key components so you can become familiar with all tools at your disposal.
 
-## Neon App
-You should have already used the Neon app to [make your first recording](/neon/getting-started/first-recording.html). This app is the core of every Neon data collection.
+## Neon Companion app
+You should have already used the Neon Companion app to [make your first recording](/neon/getting-started/first-recording.html). This app is the core of every Neon data collection.
 
 When your Neon is connected to the Companion device, it supplies it with power and the app calculates a real-time gaze signal. When making a recording, all generated data is saved on the Companion device.
 
@@ -32,17 +32,17 @@ From here, you can either download the raw data in a convenient format or use so
 
 We have a strict [privacy policy](https://pupil-labs.com/legal/) that ensures your recording data is accessible only by you and those you explicitly grant access to. Pupil Labs will never access your recording data unless you explicitly instruct us to.
 
-If Cloud upload is enabled in the Neon app, then recordings will be uploaded automatically to Pupil Cloud. No additional effort is required for data logistics.
+If Cloud upload is enabled in the Neon Companion app, then recordings will be uploaded automatically to Pupil Cloud. No additional effort is required for data logistics.
 
 
 ## Pupil Capture
 
-To take advantage of the high robustness and ease of use of the Neon eye tracking pipeline, we recommend using the Neon app and Pupil Cloud for data collection and analysis. You can however also use Neon in conjunction with the Pupil Capture software, which was originally developed for the Pupil Core eye tracking headset.
+To take advantage of the high robustness and ease of use of the Neon eye tracking pipeline, we recommend using the Neon Companion app and Pupil Cloud for data collection and analysis. You can however also use Neon in conjunction with the Pupil Capture software, which was originally developed for the Pupil Core eye tracking headset.
 
 When using Pupil Capture, the Pupil Core eye tracking pipeline will be used instead. You would essentially be using Neon as if it was a Pupil Core headset. This comes with all the strengths and limitations of Pupil Core, i.e. good performance in controlled lab conditions, but limited robustness in real-world scenarios and the need for calibration.
 
 ::: tip
-Note: Recordings made with the Neon app can not be opened in Pupil Player. Recordings made with Pupil Capture can not be uploaded to Pupil Cloud.
+Note: Recordings made with the Neon Companion app can not be opened in Pupil Player. Recordings made with Pupil Capture can not be uploaded to Pupil Cloud.
 :::
 
 

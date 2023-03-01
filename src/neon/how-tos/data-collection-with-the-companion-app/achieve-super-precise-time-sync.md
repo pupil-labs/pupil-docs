@@ -47,7 +47,7 @@ if device is None:
 estimate = device.estimate_time_offset()
 if estimate is None:
     device.close()
-    raise SystemExit("Neon app is too old")
+    raise SystemExit("Neon Companion app is too old")
 
 print(f"Mean time offset: {estimate.time_offset_ms.mean} ms")
 print(f"Mean roundtrip duration: {estimate.roundtrip_duration_ms.mean} ms")

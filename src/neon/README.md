@@ -51,7 +51,7 @@ This section explains all relevant concepts in detail and provides background in
 
 ## Glasses & Companion
 
-This section gives an overview of Neon, as well as of the Companion device and Neon app. It also contains guides on how to handle the hardware, e.g. how to swap frames.
+This section gives an overview of Neon, as well as of the Companion device and Neon Companion app. It also contains guides on how to handle the hardware, e.g. how to swap frames.
 
 <div class="pb-4">
   <v-btn

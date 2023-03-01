@@ -19,7 +19,7 @@ recommend following the [make your first recording guide](/neon/getting-started/
 <v-divider></v-divider>
 
 ## 1. Drive
-Log in to Pupil Cloud using the same account that you used to set up the Neon app.
+Log in to Pupil Cloud using the same account that you used to set up the Neon Companion app.
 
 Once logged in you will see the Drive view – this is where your recordings live.
 

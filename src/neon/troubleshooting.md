@@ -7,14 +7,14 @@ description: Troubleshooting section listing common issues and their solution.
 Below you can find a list of issues we have observed in the past and recommendations on how to fix them. If the instructions do not solve the problem for you, please reach out to us on [Discord](https://pupil-labs.com/chat/) or via email to `info@pupil-labs.com`.
 
 
-## Neon & Neon App
+## Neon & Neon Companion app
 
 #### Recordings are not uploading to Pupil Cloud successfully
-1. Make sure **Cloud upload** is enabled in the Neon app's settings.
+1. Make sure **Cloud upload** is enabled in the Neon Companion app's settings.
 1. Try logging out of the app and back in.
 
 #### The Companion device is vibrating and a red LED is blinking in the Neon module!
-The vibrations and the blinking LED try to grab the wearer's attention to notify them of a problem that may critically hurt the ongoing recording. To get details on the problem, open the Neon app, which will show an error description.
+The vibrations and the blinking LED try to grab the wearer's attention to notify them of a problem that may critically hurt the ongoing recording. To get details on the problem, open the Neon Companion app, which will show an error description.
 
 Potential problems include:
 - Low battery on the Companion Device.
@@ -56,7 +56,7 @@ If you upgraded to Android 12 or newer and want to roll back, follow these steps
 1. Wait until the system update has been installed successfully
 1. Tap `Reboot`
 
-#### The scene camera and eye cameras are not being recorded or recognized in the Neon app!
+#### The scene camera and eye cameras are not being recorded or recognized in the Neon Companion app!
 1. Make sure you use the included black USB-C to USB-C connector cable rather than a third-party cable. Third-party USB cables vary widely in their quality and can lead to loss of connection.
 
 #### The scene video or gaze data cuts off at some point in a recording!
@@ -84,7 +84,7 @@ Did you use **Safari browser** to make the download?
 ## Real-Time API
 
 #### I cannot connect to devices using the real-time API!
-1. Make sure the Neon app and the device you are using to access the API are connected to the same local network.
+1. Make sure the Neon Companion app and the device you are using to access the API are connected to the same local network.
 1. For discovery the local network must allow MDNS and UDP traffic. In large public networks this may be prohibited for security reasons.
    
    - You may still be able to connect to Neon using its IP address. You can find the IP address in the WiFi settings of the phone. Once you have it, you can connect like this:

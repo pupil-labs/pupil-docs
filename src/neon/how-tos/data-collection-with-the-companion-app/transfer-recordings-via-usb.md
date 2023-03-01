@@ -14,8 +14,8 @@ To transfer recordings directly to a computer you first need to export the recor
 
 Recordings downloaded directly from the phone will be in a raw binary format that is difficult to handle. Finally, you should thus export the recordings using Pupil Player to more convenient formats.
 
-#### Export from Neon App
-1. Open the recordings view in the Neon app
+#### Export from Neon Companion app
+1. Open the recordings view in the Neon Companion app
 2. Select desired recording/s
 3. Export:
    - For single recordings, the export button is found by clicking on the 3 vertical dots to 
@@ -38,11 +38,11 @@ Recordings downloaded directly from the phone will be in a raw binary format tha
 
 <DownloadLinks/>
 
-Note that the export process does not delete the recordings from the Neon app, and you can still upload 
+Note that the export process does not delete the recordings from the Neon Companion app, and you can still upload 
 to Pupil Cloud at a later date if required. 
 
-Recordings that are deleted from the Neon app, e.g. to free up storage space, cannot be transferred back 
-to the Neon app from your backup location (including Pupil Cloud, a laptop/desktop PC, or external HD). 
+Recordings that are deleted from the Neon Companion app, e.g. to free up storage space, cannot be transferred back 
+to the Neon Companion app from your backup location (including Pupil Cloud, a laptop/desktop PC, or external HD). 
 
 This means that if you delete the recordings prior to uploading them to Pupil Cloud, they cannot be uploaded at a later date.
 

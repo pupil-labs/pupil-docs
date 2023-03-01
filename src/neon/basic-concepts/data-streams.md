@@ -33,7 +33,7 @@ Below you can find a collection of example image pairs recorded with different s
 </div>
 
 ## Gaze
-The Neon app can provide gaze data in real-time. When using a OnePlus 8 Companion device, the available framerate is +120 Hz (the achieved framerate varies from ~200Hz in the first minute of a recording to ~120Hz for longer recordings. This is due to restrictions in resource consumption applied by the Android operating system). Other apps running simultaneously on the phone may decrease the framerate.
+The Neon Companion app can provide gaze data in real-time. When using a OnePlus 8 Companion device, the available framerate is +120 Hz (the achieved framerate varies from ~200Hz in the first minute of a recording to ~120Hz for longer recordings. This is due to restrictions in resource consumption applied by the Android operating system). Other apps running simultaneously on the phone may decrease the framerate.
 
 After a recording is uploaded to Pupil Cloud, gaze data is automatically re-computed at the full framerate of 200 Hz and can be downloaded from there.
 
@@ -82,7 +82,7 @@ The scene camera can be operated with automatic or manual exposure. In situation
 ## Audio
 A microphone is integrated into the Neon module. Recorded audio will be part of the resulting scene video.
 
-Audio recording is disabled in the Neon app by default and can be enabled in the settings.
+Audio recording is disabled in the Neon Companion app by default and can be enabled in the settings.
 
 ## Inertial Measurements
 An 9-DoF inertial measurement unit (IMU) is integrated into the Neon module featuring a fused and independent accelerometer, gyroscope, and magnetometer measuring acceleration, magnetic orientation, and angular velocity.

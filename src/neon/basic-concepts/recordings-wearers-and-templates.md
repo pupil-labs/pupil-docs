@@ -6,24 +6,24 @@ description: Introduction to recordings, wearers and templates, and their usage 
 # Recordings, Wearers & Templates
 There are a number of organizational constructs we use to make working with our tools flexible and reliable:
 
-A [recording](/neon/basic-concepts/recordings-wearers-and-templates/#recordings) is made each time you press record in the Neon app. Each recording has a [wearer](/neon/basic-concepts/recordings-wearers-and-templates/#wearers) and a [template](/neon/basic-concepts/recordings-wearers-and-templates/#templates) associated with it. Once uploaded to Pupil Cloud you can add recordings to [projects](/neon/basic-concepts/projects-and-workspaces/#projects), this creates a context for you to add [enrichments](/neon/enrichments) to aggregate and analyse your data.
+A [recording](/neon/basic-concepts/recordings-wearers-and-templates/#recordings) is made each time you press record in the Neon Companion app. Each recording has a [wearer](/neon/basic-concepts/recordings-wearers-and-templates/#wearers) and a [template](/neon/basic-concepts/recordings-wearers-and-templates/#templates) associated with it. Once uploaded to Pupil Cloud you can add recordings to [projects](/neon/basic-concepts/projects-and-workspaces/#projects), this creates a context for you to add [enrichments](/neon/enrichments) to aggregate and analyse your data.
 
 Finally, [workspaces](/neon/basic-concepts/projects-and-workspaces/#workspaces) are used to keep recordings, wearers, templates, and projects organized and isolated so you can share them with clients and collaborators.
 
 
 ## Recordings
-A recording starts and stops when you press the record button in the Neon app. While this should feel similar to recording a regular video on your phone, there is a lot more happening behind the scenes. When you are recording with the Neon App, you are capturing not only video data but several more sensors (see [Data Streams](/neon/basic-concepts/data-streams)).
+A recording starts and stops when you press the record button in the Neon Companion app. While this should feel similar to recording a regular video on your phone, there is a lot more happening behind the scenes. When you are recording with the Neon Companion app, you are capturing not only video data but several more sensors (see [Data Streams](/neon/basic-concepts/data-streams)).
 
 Recordings are designed to be as robust as possible. If at any point the Neon module is temporarily disconnected from the Companion phone, it will automatically start capturing again as soon as it is reconnected. You could start a recording with no Neon glasses connected and plug them in at a later time. As soon as they are connected, data will be captured.
 
-The Neon app has several more features to ensure robust data collection and will e.g. warn you in case the Companion device's battery is running low or if you run out of storage space.
+The Neon Companion app has several more features to ensure robust data collection and will e.g. warn you in case the Companion device's battery is running low or if you run out of storage space.
 
 ## Wearers
-Wearers are the people wearing your Neon. In a typical study, each subject would be a wearer. Every recording you make is assigned to a wearer to help you organize your recordings. You can create new wearers on the fly in the Neon app or in advance in Pupil Cloud.
+Wearers are the people wearing your Neon. In a typical study, each subject would be a wearer. Every recording you make is assigned to a wearer to help you organize your recordings. You can create new wearers on the fly in the Neon Companion app or in advance in Pupil Cloud.
 
 Every wearer is assigned a unique ID, such that you can edit the name and profile picture at any time without mixing up your recordings.
 
-[TODO: Confirm that this is still true in the new Neon app design]
+[TODO: Confirm that this is still true in the new Neon Companion app design]
 In some cases, it can make sense to use the offset correction feature to compensate for systematic offsets in the predictions of individual wearers. To access this feature click on the name of the currently selected wearer on the home screen and then click "Adjust". The offset you set will be saved in the wearer profile and applied to future recordings of this subject automatically.
 
 
@@ -35,7 +35,7 @@ You can create new templates in Pupil Cloud and customize them to your use case.
 
 You can set individual fields of the template to be "required", such that a recording can not be stopped before filling out those fields.
 
-Before your templates become available for selection in the Neon app, you need to **publish** them. After they are published, they can no longer be edited to ensure consistency between responses.
+Before your templates become available for selection in the Neon Companion app, you need to **publish** them. After they are published, they can no longer be edited to ensure consistency between responses.
 
 Some example use-cases for template forms include:
 

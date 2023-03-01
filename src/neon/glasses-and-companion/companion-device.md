@@ -1,23 +1,23 @@
 ---
 permalink: /neon/glasses-and-companion/companion-device
-description: Information on the Companion device and Neon app.
+description: Information on the Companion device and Neon Companion app.
 ---
 
 # Companion Device
-The Companion device is a flagship Android smartphone. It is a regular phone that is not customized or modified in any way. To ensure maximum stability and performance we can only support a small number of carefully selected and tested models. The Neon app is tuned to work with these particular models as we require full control over various low-level functions of the hardware. 
+The Companion device is a flagship Android smartphone. It is a regular phone that is not customized or modified in any way. To ensure maximum stability and performance we can only support a small number of carefully selected and tested models. The Neon Companion app is tuned to work with these particular models as we require full control over various low-level functions of the hardware. 
 
 The models we currently support are OnePlus 8, and OnePlus 8T.
 
 [TODO: update link to shop]
 
-If you want to replace or add an extra Companion device you can purchase it [directly from us](https://pupil-labs.com/products/neon/accessories/) or from any other distributor. The Neon app is free and can be downloaded from the [Play Store](https://play.google.com/store/apps/details?id=com.pupillabs.neoncomp).
+If you want to replace or add an extra Companion device you can purchase it [directly from us](https://pupil-labs.com/products/neon/accessories/) or from any other distributor. The Neon Companion app is free and can be downloaded from the [Play Store](https://play.google.com/store/apps/details?id=com.pupillabs.neoncomp).
 
 Using a fully charged OnePlus 8 device you get around 150 minutes of continuous recording time. You can extend this duration by simultaneously charging the phone during a recording [using a powered USB-C hub](/neon/glasses-and-companion/companion-device#using-a-usb-c-hub).
 
 ## Companion Device Updates
 
-### Neon App
-Make sure to update the Neon app on a regular basis. The latest version will always be available on the 
+### Neon Companion app
+Make sure to update the Neon Companion app on a regular basis. The latest version will always be available on the 
 [Play Store](https://play.google.com/store/apps/details?id=com.pupillabs.invisiblecomp). [TODO: fix link to app]
 
 ### Android OS
