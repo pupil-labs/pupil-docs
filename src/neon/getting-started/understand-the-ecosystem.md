@@ -51,8 +51,6 @@ Note: Recordings made with the Neon Companion app can not be opened in Pupil Pla
 
 ## Neon Monitor
 
-[TODO: update image]
-
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
     :src="require('../../media/invisible/getting-started/pi-monitor-app.jpg')"
@@ -79,5 +77,3 @@ For a concrete usage example, see [Track your Experiment Progress using Events](
 Neon can be used in a large range of environments for a variety of applications. We offer a range of different frames designed for different use cases to further facilitate this. Next to the [Just act natural](TODO: insert link) frame, which closely resembles a regular pair of glasses, there is for example the [Better safe than sorry](TODO: insert link) frame, which has a safety rating, or the [Ready set go!](TODO: insert link) frame, which can easily be worn under various helmets. For work with children there is the child-size frame [All fun and games](TODO: insert link). A full list of all available frames can be found in the[shop](TODO: insert link to frames in shop).
 
 If none of the available frames fits your needs, you can also design your own using the [Bare Metal](TODO: insert link to custom frame) version. You could design your own glasses-like frame or integrate Neon into your a custom head-worn device.
-
-[TODO: insert fitting image introducing the different frames]

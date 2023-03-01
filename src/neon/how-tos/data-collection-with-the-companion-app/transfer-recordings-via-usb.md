@@ -24,8 +24,6 @@ Recordings downloaded directly from the phone will be in a raw binary format tha
 4. The app via show you a dialog indicating to which folder the recordings will be exported too. Confirm this by clicking `Yes`.
     
 
-[TODO: Double-check correctness of instructions]
-
 #### Transfer Exported Recordings to a Computer
 1. Connect your OnePlus device to a PC via USB (using the USB cable supplied)
 2. Slide down from the top of the device's home-screen and click on 'Android System - USB charging this device'

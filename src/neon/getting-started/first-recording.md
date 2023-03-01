@@ -74,8 +74,6 @@ Press the round record button on the home view to start recording. Once you are 
 
 ## 6. Playback and download
 
-[TODO Update based on new app design]
-
 Navigate to the **Recordings view** and click the recording you just made to play it! If you enabled the upload of recordings to Pupil Cloud, you should see that the recording has already started uploading!
 
 <v-divider></v-divider>

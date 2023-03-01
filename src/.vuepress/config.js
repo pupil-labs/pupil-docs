@@ -97,7 +97,7 @@ module.exports = {
             {
               title: 'Hardware handling',
               children: [
-                'glasses-and-companion/hardware-handling/swap-frames',
+                // 'glasses-and-companion/hardware-handling/swap-frames',
                 'glasses-and-companion/hardware-handling/clean-and-disinfect',
               ]
             },
