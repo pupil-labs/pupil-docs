@@ -7,30 +7,10 @@ description: Summary of all available data streams in Neon recordings
 The Neon module contains a number of sensors providing different types of data. Some data streams are available in real-time (see [real-time API](/neon/real-time-api/introduction/)), while others are computed in Pupil Cloud post hoc after uploading. All data is fully accessible and can be downloaded from Pupil Cloud in convenient formats.
 
 ## Eye Videos
-The Neon module features two eye cameras, one for each eye. They are located at the tip of the small arms of the module. The sensors record IR video at 200 Hz with a resolution of 192x192px. The two sensors are synced in hardware, such that they record images at the exact same time. [TODO: Confirm] The resulting images a concatenated in a single video stream of 384x192px resolution. 
+The Neon module features two eye cameras, one for each eye. They are located at the tip of the small arms of the module. The sensors record IR video at 200 Hz with a resolution of 192x192px. The two sensors are synced in hardware, such that they record images at the exact same time. The resulting images a concatenated in a single video stream of 384x192px resolution. 
 
 An IR LED is located just above each camera, which guarantees good illumination of the eye in dark environments.
 
-[TODO: Update Image with close up of camera arm indicating eye camera and IR LED positions.]
-
-<div style="display:flex;justify-content:center;" class="pb-4">
-  <v-img
-    :src="require('../../media/invisible/explainers/PI-Camera_annotation-white.jpg')"
-    max-width=100%
-  >
-  </v-img>
-</div>
-
-[TODO: update image]
-Below you can find a collection of example image pairs recorded with different subjects:
-
-<div style="display:flex;justify-content:center;" class="pb-4">
-  <v-img
-    :src="require('../../media/invisible/explainers/example-eye-images.jpg')"
-    max-width=100%
-  >
-  </v-img>
-</div>
 
 ## Gaze
 The Neon Companion app can provide gaze data in real-time. When using a OnePlus 8 Companion device, the available framerate is +120 Hz (the achieved framerate varies from ~200Hz in the first minute of a recording to ~120Hz for longer recordings. This is due to restrictions in resource consumption applied by the Android operating system). Other apps running simultaneously on the phone may decrease the framerate.
@@ -65,14 +45,12 @@ Fixations are calculated automatically in Pupil Cloud after uploading a recordin
 
 The deployed fixation detection algorithm was specifically designed for head-mounted eye trackers and offers increased robustness in the presence of head-movements. Especially movements due to vestibulo-ocular reflex are compensated for, which is not the case for most other fixation detection algorithms. 
 
-[TODO reference paper]
-
 ## Blinks
 During blinks the eye is briefly covered by the eye lids, which serves the purpose of spreading tears across the cornea. The blink rate and blink duration are also correlated with cognitive processes, which makes them interesting physiological signals.
 
 Blinks are detected automatically in Pupil Cloud after uploading a recording and are part of the downloadable data.
 
-The blink detection algorithm is operating directly on the eye video to detect the movement patterns of blinks. [TODO: reference open-source implementation]
+The blink detection algorithm is operating directly on the eye video to detect the movement patterns of blinks.
 
 ## Scene Video
 The front-facing scene camera is located in the center of the Neon Module. It records video at 30 Hz and 1600x1200 px resolution with a field of view of 132°x81°.
