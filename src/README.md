@@ -7,6 +7,14 @@ top_links:
     {
       title: "Pupil Invisible and Pupil Cloud",
       link: "/invisible/",
+      src: "neon/home_neon.jpeg",
+      description: "Learn how to use Neon and collect real-world data. Connect to Pupil Cloud, manage your data, analyze, and take your research to the next level.",
+      alt: "Pupil Invisible Companion",
+      btn_text: "Enter documentation",
+    },
+    {
+      title: "Pupil Invisible and Pupil Cloud",
+      link: "/invisible/",
       src: "invisible/pi_glasses.jpg",
       description: "Learn how to setup Pupil Invisible eye tracking glasses and collect real world data. Connect to Pupil Cloud, manage your data, analyze, and take your research to the next level.",
       alt: "Pupil Invisible Companion",

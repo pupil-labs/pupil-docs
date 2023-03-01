@@ -10,12 +10,11 @@ Welcome to the Neon & Pupil Cloud docs! In this section of the docs you will lea
 
 This section is for new users who want to get to grips with the tools. Working through the tutorials will put you in a great position to follow along with the rest of the documentation and get started with your project.
 
-[TODO: Update image]
 
 <div>
   <div class="grid grid-cols-1 sm-grid-cols-2 md-grid-cols-3 lg-grid-cols-2 xl-grid-cols-3 gap-8">
     <div v-for="(item,index) in gettingStarted">
-      <v-img class="rounded" style="margin-bottom:32px;" :src="require(`../media/invisible/overview-${index + 1}.jpg`)"></v-img>
+      <v-img class="rounded" style="margin-bottom:32px;" :src="require(`../media/neon/overview-${index + 1}.jpg`)"></v-img>
       <p class="caption--1 font-weight-bold pb-3">{{ item.title }}</p>
       <p class="caption--1">
         {{ item.text }}
