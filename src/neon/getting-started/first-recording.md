@@ -26,7 +26,6 @@ Next, install the Neon app on your device:
 - A couple of permission prompts will appear, which you need to accept.
 - First-time users need to sign up for a [Pupil Cloud](https://cloud.pupil-labs.com/) account. Sign up using your Google account, or create an account with an email address and password.
 
-[TODO Update images]
 [TODO Update links to the correct app]
 
 <div class="pb-4" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
@@ -39,7 +38,7 @@ Next, install the Neon app on your device:
   </v-img>
   </a>
   <v-img
-    :src="require('../../media/invisible/getting-started/companion_app_logo.jpg')"
+    :src="require('../../media/neon/neon_companion.jpg')"
     style="width:80%;"
     contain
   >
@@ -62,11 +61,10 @@ Now, let's see some eye tracking in action!
 
 Put on the glasses and give it a try!
 
-[TODO Update image]
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
-    :src="require('../../media/invisible/getting-started/PI-Home_UI-white.jpg')"
+    :src="require('../../media/neon/open_the_live_preview.jpg')"
     max-width=100%
   >
   </v-img>

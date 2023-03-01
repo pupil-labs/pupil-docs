@@ -18,11 +18,9 @@ The app automatically saves [UTC timestamps](https://en.wikipedia.org/wiki/Coord
 Pupil Cloud is our web-based storage and analysis platform located at [cloud.pupil-labs.com](https://cloud.pupil-labs.com/). It is the recommended tool for handling your Neon recordings.
 It makes it easy to store all your data securely in one place and it offers a variety of options for analysis.
 
-[TODO: update image]
-
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
-    :src="require('../../media/invisible/getting-started/PL-Ecosystem-white.jpg')"
+    :src="require('../../media/neon/pupil_cloud.jpg')"
     max-width=100%
   >
   </v-img>

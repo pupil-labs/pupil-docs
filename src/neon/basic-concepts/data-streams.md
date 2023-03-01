@@ -36,11 +36,10 @@ Below you can find a collection of example image pairs recorded with different s
 The Neon app can provide gaze data in real-time. When using a OnePlus 8 Companion device, the available framerate is +120 Hz (the achieved framerate varies from ~200Hz in the first minute of a recording to ~120Hz for longer recordings. This is due to restrictions in resource consumption applied by the Android operating system). Other apps running simultaneously on the phone may decrease the framerate.
 
 After a recording is uploaded to Pupil Cloud, gaze data is automatically re-computed at the full framerate of 200 Hz and can be downloaded from there.
-[TODO: update image]
 
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
-    :src="require('../../media/invisible/explainers/pi-gaze-coordinate-diagram.jpg')"
+    :src="require('../../media/neon/gaze.jpg')"
     max-width=100%
   >
   </v-img>
@@ -53,11 +52,10 @@ The gaze estimation algorithm is based on end-2-end deep learning and provides g
 ## Fixations
 The two primary types of eye movements exhibited by the visual system are fixations and saccades. During fixations, the eyes are directed at a specific point in the environment. A saccade is a very quick movement where the eyes jump from one fixation to the next. Properties like the fixation duration are of significant importance for studying gaze behaviour.
 
-[TODO: update image using Pupil Clouds scan path visualization]
 
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
-    :src="require('../../media/invisible/explainers/fixations.jpg')"
+    :src="require('../../media/neon/fixations.jpg')"
     max-width=100%
   >
   </v-img>
@@ -91,11 +89,10 @@ An 9-DoF inertial measurement unit (IMU) is integrated into the Neon module feat
 
 After uploading to Pupil Cloud, absolute roll, pitch, and yaw values of the glasses are computed from the inertial measurements using [Madgwick's algorithm](https://x-io.co.uk/downloads/madgwick_internal_report.pdf).
 
-[TODO: confirm that orientation is correct and update image]
 
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
-    :src="require('../../media/invisible/explainers/pi-imu-diagram.jpg')"
+    :src="require('../../media/neon/inertial_measurements.jpg')"
     max-width=100%
   >
   </v-img>
