@@ -44,7 +44,7 @@ This section explains all relevant concepts in detail and provides background in
   </v-btn>
 </div>
 
-<router-link class="underline" to="/invisible/basic-concepts/">View more</router-link>
+<router-link class="underline" to="/invisible/basic-concepts/data-streams/">View more</router-link>
 
 <v-divider />
 
