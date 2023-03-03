@@ -42,16 +42,19 @@ This file contains meta-information on the recording.
 | **calib_version** | Version of the offset correction used by the Neon Companion app. |
 | **data_format_version** | Version of the data format used by the Neon Companion app.     |
 | **duration** | Duration of the recording in nanoseconds|
+| **frame_id** | Number identifying the type of frame used for this recording, e.g. 1 for "Just act natural". |
+| **frame_name** | Name of the frame used for this recording. |
 | **gaze_offset** | Gaze offset applied to this recording using the offset correction. Values are in pixels.|
+| **module_serial_number** | Serial number of the Neon module used for the recording. This number is encoded in the QR code on the back of the Neon module. |
+| **os_version** | Version of the Android OS that was installed on the recording Companion device. |
 | **pipeline_version** | Version of the gaze estimation pipeline used by the Neon Companion app. |
 | **recording_id** | Unique identifier of the recording. |
-| **serial_number** | Serial number of Neon module used for the recording. This number is encoded in the QR code on the back of the Neon module. |
 | **start_time** | Timestamp of when the recording was started. Given as UTC timestamp in nanoseconds. |
 | **template_data** | Data regarding the selected template for the recording as well as the response values. |
 | **wearer_id** | Unique identifier of the wearer selected for this recording. |
 | **wearer_name** | Name of the wearer selected for this recording. |
-| **frame_number** | Number identifying the type of frame used for this recording. |
-| **frame_name** | Name of the frame used for this recording. |
+| **workspace_id** | The ID of the Pupil Cloud workspace this recording has been assigned to. |
+
 
 **Scene Video**
 Scene video is contained in a file following the following naming scheme:
@@ -158,6 +161,7 @@ This file contains data recorded by the integrated [IMU](/neon/basic-concepts/da
 | **acceleration x [G]**<br />**acceleration y [G]**<br />**acceleration z [G]** | Translational acceleration along the x, y or z-axis respectively in G. Note `1 G = 9.80665 m/s^2`.|
 | **roll** | Drift-free estimation of the roll (head tilt from side to side) in degrees. The output range is -180 to +180 degrees. Added in version 2 of this enrichment.    |
 | **pitch** | Drift-free estimation of the pitch (head tilt from front to back) in degrees. The output range is -180 to +180 degrees. Added in version 2 of this enrichment. |
+| **rotation vector w**<br />**rotation vector x**<br />**rotation vector  y**<br />**rotation vector  z** | Quaternion describing the rotation of the Neon module. |
 
 
 ## Marker Mapper
