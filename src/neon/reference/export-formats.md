@@ -31,7 +31,6 @@ The files included in every folder are described in the following.
 #### info.json
 This file contains meta-information on the recording.
 
-[TODO: Confirm naming of serial frame id and frame name]
 
 | Field | Description | 
 | -------- | -------- | 
@@ -62,8 +61,6 @@ Scene video is contained in a file following the following naming scheme:
 
 #### scene_camera.json
 This file contains the camera intrinsics of the used scene camera. The values are determined via calibration of every camera during manufacturing.
-
-[TODO: Confirm that the serial will be included in both scene_camera.json and info.json]
 
 | Field | Description | 
 | -------- | -------- | 
@@ -97,8 +94,6 @@ This file contains [event](/neon/basic-concepts/events) data for all recordings.
 
 #### gaze.csv
 This file contains [gaze](/neon/basic-concepts/data-streams/#gaze) data in world camera coordinates.
-
-[TODO: Confirm that worn data will be available]
 
 
 | Field | Description | 
@@ -149,8 +144,6 @@ The corresponding gaze samples that belong to each blink can be determined from 
 
 #### imu.csv
 This file contains data recorded by the integrated [IMU](/neon/basic-concepts/data-streams/#inertial-measurements) (inertial measurement unit).
-
-[TODO: Upadate export format]
 
 | Field | Description | 
 | -------- | -------- | 
@@ -301,13 +294,3 @@ The export will have one folder per original recording using the following namin
 Each folder contains gaze overlay videos of the sections belonging to the corresponding recordings. The video files are named
 ```<beginning of section ID>_<start time>-<end time>.mp4```
 where the times are in seconds relative to the recording start.
-
-
-
-## Binary Recording Data
-
-[TODO: Update this section]
-
-If you download recording data straight off of the phone without uploading to Pupil Cloud first, you will receive raw binary data. This data is difficult to handle and we do not recommend you use it directly. If using Pupil Cloud is not an option for you, please [export the data via Pupil Player](/core/software/pupil-player/#export) to convenient formats instead. Note that the formats used by Pupil Player are not the same as in Pupil Cloud.
-
-You can find the format documentation of the raw binary data [here](https://docs.google.com/spreadsheets/d/1e1Xc1FoQiyf_ZHkSUnVdkVjdIanOdzP0dgJdJgt0QZg/edit?usp=sharing). Please note that the raw data format may change without advance notification.
