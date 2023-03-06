@@ -41,6 +41,7 @@ This file contains meta-information on the recording.
 | **calib_version** | Version of the offset correction used by the Neon Companion app. |
 | **data_format_version** | Version of the data format used by the Neon Companion app.     |
 | **duration** | Duration of the recording in nanoseconds|
+| **firmware_version** | Version numbers of the firmware and FPGA. |
 | **frame_id** | Number identifying the type of frame used for this recording. |
 | **frame_name** | Name of the frame used for this recording. |
 | **gaze_offset** | Gaze offset applied to this recording using the offset correction. Values are in pixels.|
