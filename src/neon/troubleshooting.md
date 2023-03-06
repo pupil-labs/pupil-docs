@@ -59,12 +59,6 @@ If you upgraded to Android 12 or newer and want to roll back, follow these steps
 #### The scene camera and eye cameras are not being recorded or recognized in the Neon Companion app!
 1. Make sure you use the included black USB-C to USB-C connector cable rather than a third-party cable. Third-party USB cables vary widely in their quality and can lead to loss of connection.
 
-#### The scene video or gaze data cuts off at some point in a recording!
-1. Make sure that permissions to access the USB devices are given and **"Use by default for this device" is enabled**. If those permissions are not given or not set to be used by default, you should get prompts asking you for permissions every time you reconnect the glasses to the companion device. To fix this, reconnect your glasses and for every prompt that shows up give permission and check the "Use by default for this device" checkbox.
-1. Make sure you use the included black USB-C to USB-C connector cable rather than a third-party cable. Third-party USB cables vary widely in their quality and can lead to loss of connection.
-
-[TODO: Update section on how to deal with constant permission requests!]
-
 #### 'Always open Invisible Companion when...' dialog keeps opening when I plug in the Glasses!
 This is an Android OS bug. Fix it by resetting Pupil Invisible Companion App to default settings:
 1. Long press on the Pupil Invisible Companion App icon in the home screen.
