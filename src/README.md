@@ -5,11 +5,11 @@ subtitle: "Official docs for users getting started with their Pupil Labs eye tra
 top_links:
   [
     {
-      title: "Pupil Invisible and Pupil Cloud",
-      link: "/invisible/",
+      title: "Neon and Pupil Cloud",
+      link: "/neon/",
       src: "neon/home_neon.jpg",
       description: "Learn how to use Neon and collect real-world data. Connect to Pupil Cloud, manage your data, analyze, and take your research to the next level.",
-      alt: "Pupil Invisible Companion",
+      alt: "Neon",
       btn_text: "Enter documentation",
     },
     {
