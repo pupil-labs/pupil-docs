@@ -216,6 +216,10 @@ module.exports = {
           title: 'Generate scanpaths with Reference Image Mapper',
           path: 'scanpath-rim'
         },
+        {
+          title: 'Creating 3D models of your environment with NerfStudio',
+          path: 'nerfs'
+        },
       ],
     },
     sidebarDepth: 1,
