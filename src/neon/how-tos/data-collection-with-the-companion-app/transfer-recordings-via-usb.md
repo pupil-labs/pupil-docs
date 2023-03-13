@@ -12,7 +12,7 @@ The recommended way for transferring recordings off of the phone is to upload th
 
 To transfer recordings directly to a computer you first need to export the recordings to the Android filesystem. Then you need to access the filesystem to copy the data over to your computer. 
 
-Recordings downloaded directly from the phone will be in a raw binary format that is difficult to handle. Finally, you should thus export the recordings using Pupil Player to more convenient formats.
+Recordings downloaded directly from the phone will be in a raw binary format.
 
 #### Export from Neon Companion app
 1. Open the recordings view in the Neon Companion app
