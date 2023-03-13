@@ -35,20 +35,6 @@ We have a strict [privacy policy](https://pupil-labs.com/legal/) that ensures yo
 If Cloud upload is enabled in the Neon Companion app, then recordings will be uploaded automatically to Pupil Cloud. No additional effort is required for data logistics.
 
 
-## Pupil Capture
-
-To take advantage of the high robustness and ease of use of the Neon eye tracking pipeline, we recommend using the Neon Companion app and Pupil Cloud for data collection and analysis. You can however also use Neon in conjunction with the Pupil Capture software, which was originally developed for the Pupil Core eye tracking headset.
-
-When using Pupil Capture, the Pupil Core eye tracking pipeline will be used instead. You would essentially be using Neon as if it was a Pupil Core headset. This comes with all the strengths and limitations of Pupil Core, i.e. good performance in controlled lab conditions, but limited robustness in real-world scenarios and the need for calibration.
-
-::: tip
-Note: Recordings made with the Neon Companion app can not be opened in Pupil Player. Recordings made with Pupil Capture can not be uploaded to Pupil Cloud.
-:::
-
-
-<DownloadLinks/>
-
-
 ## Neon Monitor
 
 <div style="display:flex;justify-content:center;" class="pb-4">
@@ -71,3 +57,16 @@ This enables you to e.g. implement Human Computer Interaction (HCI) applications
 Check-out out our [real-time API tutorial](/neon/real-time-api/introduction/) to learn more!
 
 For a concrete usage example, see [Track your Experiment Progress using Events](/neon/real-time-api/track-your-experiment-progress-using-events/)!
+
+## Pupil Capture
+
+To take advantage of the high robustness and ease of use of the Neon eye tracking pipeline, we recommend using the Neon Companion app and Pupil Cloud for data collection and analysis. You can however also use Neon in conjunction with the Pupil Capture software, which was originally developed for the Pupil Core eye tracking headset.
+
+When using Pupil Capture, the Pupil Core eye tracking pipeline will be used instead. You would essentially be using Neon as if it was a Pupil Core headset. This comes with all the strengths and limitations of Pupil Core, i.e. good performance in controlled lab conditions, but limited robustness in real-world scenarios and the need for calibration.
+
+::: tip
+Note: Recordings made with the Neon Companion app can not be opened in Pupil Player. Recordings made with Pupil Capture can not be uploaded to Pupil Cloud.
+:::
+
+
+<DownloadLinks/>
