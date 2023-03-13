@@ -40,9 +40,6 @@ option to rollback to a compatible version. You can find the instructions
 ## Using a USB-C Hub
 The capabilities of the Companion device can be extended by connecting it to a USB-C hub. You can still connect Neon to the Companion device through the hub. For this to work, the hub needs to provide a USB-C port that supports data transfer (some USB-C ports only support power delivery!). 
 
-::: tip
-Using a USB-C hub only works with **Android 11** and higher, which means that it is not compatible with the **OnePlus 6**.
-:::
 
 Most importantly using a hub allows you to:
 - **charge the phone while recording**: if the hub supports power delivery, you can connect a power source to it to charge the Companion device even while it is recording. This allows to arbitrarily extend the recording duration.
