@@ -1,7 +1,7 @@
 ---
 description: Map your gaze to a screen surface using RIM
 permalink: /alpha-lab/map-your-gaze-to-a-2d-screen/
-tags: [Pupil Invisible, Cloud]
+tags: [Pupil Invisible, Cloud, Neon]
 ---
 
 # Map and visualise gaze onto a display content using the Reference Image Mapper
