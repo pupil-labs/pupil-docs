@@ -118,5 +118,4 @@ jobs:
         if: steps.cspell.outputs.number_of_issues > 0
         run: |
           echo "fail_spelling="Spelling errors found" >> $GITHUB_OUTPUT
-          exit 1
 
