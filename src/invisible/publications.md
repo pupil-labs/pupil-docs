@@ -25,6 +25,10 @@ If you are using **Pupil Invisible** in your own research, please cite the follo
 
 For guidance on citing **Pupil Core** please see [here](/core/academic-citation).
 
+::: tip
+When citing Pupil Invisible in your publications, you may want to report the neural network version you are using. You can find this information in the [info.json](/invisible/reference/export-formats/#info-json) file, under pipeline_version.
+:::
+
 ## Publications from Pupil Labs
 Pupil Labs has published several papers including white papers as well as peer-reviewed papers on eye tracking algorithms. Below they are listed chronologically:
 
