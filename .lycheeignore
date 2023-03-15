@@ -1,5 +1,6 @@
 # Ignore local address
 http://pi.local:8080/
+http://neon.local:8080/
 localhost:%25s
 file:///home/runner/work/pupil-docs/pupil-docs/src/alpha-lab/ws:/localhost:XXXX
 file:///home/runner/work/pupil-docs/pupil-docs/src/.vuepress/dist/alpha-lab/map-your-gaze-to-a-2d-screen/ws:/localhost:XXXX
