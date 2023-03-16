@@ -114,7 +114,7 @@ export default {
         },
         {
           title: "NeRFing out",
-          text: "Creating 3D Models of your environment using the reference image mapper and NerfStudio",
+          text: "Create 3D Models of your environment using the reference image mapper and NerfStudio",
           to: "/alpha-lab/nerfs",
           img: "nerf.png",
         },

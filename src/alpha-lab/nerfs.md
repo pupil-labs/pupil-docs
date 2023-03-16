@@ -1,11 +1,11 @@
 ---
-title: Create 3D Models of your environment with reference image mapper and nerfstudio
+title: Create 3D Models of your environment using the reference image mapper and NerfStudio
 description: "Nerfing your eye tracking recordings: use nerfstudio to create 3D models of your environment, and plot gaze in 3D."
 permalink: /alpha-lab/nerfs
 tags: [Pupil Invisible, Neon, Cloud]
 ---
 <!-- <head> <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script> </head> -->
-# Create 3D Models of Your Environment with Reference Image Mapper and NerfStudio
+# Create 3D Models of your environment using the reference image mapper and NerfStudio
 
 <TagLinks />
 <Youtube src="7W2DCkPfFLE"/>

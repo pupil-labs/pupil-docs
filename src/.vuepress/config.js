@@ -295,12 +295,12 @@ module.exports = {
           path: 'dense-pose'
         },
         {
-          title: 'Generate scanpaths with Reference Image Mapper',
-          path: 'scanpath-rim'
+          title: 'Map your gaze onto 3D models with NerfStudio',
+          path: 'nerfs'
         },
         {
-          title: 'Creating 3D models of your environment with NerfStudio',
-          path: 'nerfs'
+          title: 'Generate scanpaths with Reference Image Mapper',
+          path: 'scanpath-rim'
         },
       ],
     },
