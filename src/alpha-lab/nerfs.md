@@ -16,7 +16,7 @@ tags: [Pupil Invisible, Neon, Cloud]
 
 If you watched the accompanying video, you have witnessed a 3D reconstruction of an environment based on an eye tracking recording. In essence, we have explored how to augment the output of our [reference image mapper enrichment](/invisible/enrichments/reference-image-mapper/) to show a third person view of an eye tracking recording. Other wordly, huh?
 
-A third person view allows you to see more of the environment and how your partipant explores and visually interacts with it. Let's break it down – in the video, the green points denote where the “user’s head” was during the recording, while the yellow line illustrates a gaze ray from the head to the object that's looked at. You can also see a 3D heat-map showing which areas attracted attention.
+A third person view allows you to see more of the environment and how your partipant explores and visually interacts with it. Let's break it down – in the video, the green points (actually camera frustrums) denote where the “user’s head” was during the recording, while the yellow line illustrates a gaze ray from the head to the object that's looked at. You can also see a 3D heat-map showing which areas attracted attention.
 
 ## A 3D view?
 
@@ -28,17 +28,17 @@ But nowadays, thanks to recent advances in deep learning, we have an easier way 
 
 That advance we are talking about are [Neural Radiance Fields](https://arxiv.org/pdf/2003.08934.pdf) or NeRFs 🔫. NeRFs are a relatively novel method that use deep neural networks. They learn how light and colour vary based on the viewer's location and direction. So, by providing this tool with a set of images of a scene from different angles, it can generate novel views that were never actually captured by the camera.
 
-With this technique, we can create high-fidelity and photorealistic 3D models that can be used for various applications such as virtual reality, robotics, urban mapping, or in our case, to understand how the wearer was moving and looking in their environment. This approach doesn't need endless pictures of the environment, just a set of frames and camera poses (where the camera was located and where it pointed to).
+With this technique, we can create high-fidelity and photorealistic 3D models that can be used for various applications such as virtual reality, robotics, urban mapping, or in our case, to understand how the wearer was moving and looking in their environment. This approach doesn't need endless pictures of the environment, just a small set of frames and camera poses (where the camera was located and where it pointed to).
 
 ## That sounds cool! How we get those?
 
-Once you made a recording, we do not know where the camera was on each frame, and this is crucial information that we need to train the NeRF. No worries, COLMAP to the rescue! You can think of COLMAP as a puzzle solver. It takes your frames and figures out where the camera was located and where it was pointing. Something similar is used within our Reference Image Mapper. In fact, we use the poses this enrichment produces, and transform them to something nerfstudio can understand.
+Once you made a recording, we do not know where the camera was during the recording of each frame, and this is crucial information that we need to train the NeRF. No worries, COLMAP to the rescue! You can think of COLMAP as a puzzle solver. It takes your frames and figures out where the camera was located and where it was pointing. Something similar is used within our Reference Image Mapper. In fact, we use the poses this enrichment produces, and transform them to something nerfstudio can understand.
 
 ## Now, what is NeRFStudio?
 
 [Nerfstudio](https://docs.nerf.studio/en/latest/) 🚜 is an open-source package that allows users to interactively create, visualise and edit NeRFs, and bundles several tools including a way to generate 3D meshes from the NeRF.
 
-Under the hood, NerfStudio is built on top of PyTorch and PyQt, and uses OpenGL for real-time rendering. It leverages the NeRF codebase to load and manipulate the models, and provides a high-level interface to interact with them. NerfStudio is still in active development, and new features and improvements are being added regularly.
+Under the hood, NerfStudio is built on top of PyTorch and PyQt, and uses ZeroMQ, ThreeJS and ReactJS for real-time rendering. It leverages the NeRF codebase to load and manipulate the models, and provides a high-level interface to interact with them. NerfStudio is still in active development, and new features and improvements are being added regularly.
 
 ## Great, how can I generate my own?
 
@@ -52,6 +52,7 @@ This is not gonna be an easy path...
 
 - A powerful computer with CUDA support (e.g. an Nvidia GPU) is a **must** for this to work
 - A completed Reference Image Mapper enrichment (static environments work best here, like in the accompanying videos)
+- Your computer needs to support [openGL](https://www.opengl.org/), which sadly excludes Macs.
 
 ### Get your development environment ready
 
@@ -182,7 +183,7 @@ If you got to here, congrats! You are almost there. By now, you should already h
 
 ### To Blender!
     
-Now it's time again for more manual fine-tuning, you will need to use [Blender](https://www.blender.org/) or Maya to open the mesh export `.obj` ({BASE_PATH}/exports/{EXPERIMENT_NAME}/mesh.obj), prune it if necesary, and export it as `.ply` format.
+Now it's time again for more manual fine-tuning, you will need to use [Blender](https://www.blender.org/) or Maya to open the mesh export `.obj` `({BASE_PATH}/exports/{EXPERIMENT_NAME}/mesh.obj)`, prune it if necesary, and export it as `.ply` format.
 
     
 ### Almost there!
