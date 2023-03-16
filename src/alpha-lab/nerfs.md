@@ -88,9 +88,8 @@ Cloning the mapping tool and installing it:
 
 ```bash
 # Get gaze mapping repo
-git clone https://github.com/pupil-labs/pyflux.git
+git clone https://github.com/pupil-labs/pyflux.git pyflux
 cd pyflux
-git checkout -b mgg
 pip install -e .
 ```
 
