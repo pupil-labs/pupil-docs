@@ -32,7 +32,6 @@ Recordings downloaded directly from the phone will be in a raw binary format.
 5. Open File Browser on your PC and access the Internal shared storage of your OnePlus device
 6. Locate the export folder on the phone. Usually, it is in `Documents/Neon Export`.
 7. Copy the recordings to your computer.
-8. Export the recordings using [Pupil Player](/core/software/pupil-player/#export) (part of Pupil Core Software).
 
 <DownloadLinks/>
 
