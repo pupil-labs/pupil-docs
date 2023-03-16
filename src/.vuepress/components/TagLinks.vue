@@ -16,28 +16,30 @@
   </div>
 </template>
 <script>
-  export default {
-    methods: {
-      getPageLink(tag) {
-        const url = "https://pupil-labs.com/products";
-        if (tag.toLowerCase().includes("invisible")) {
-          return `${url}/invisible/`;
-        } else if (tag.toLowerCase().includes("cloud")) {
-          return `${url}/cloud/`;
-        } else if (tag.toLowerCase().includes("core")) {
-          return `${url}/core/`;
-        } else {
-          return;
-        }
-      },
+export default {
+  methods: {
+    getPageLink(tag) {
+      const url = "https://pupil-labs.com/products";
+      if (tag.toLowerCase().includes("invisible")) {
+        return `${url}/invisible/`;
+      } else if (tag.toLowerCase().includes("neon")) {
+        return `${url}/neon/`;
+      } else if (tag.toLowerCase().includes("cloud")) {
+        return `${url}/cloud/`;
+      } else if (tag.toLowerCase().includes("core")) {
+        return `${url}/core/`;
+      } else {
+        return;
+      }
     },
-  };
+  },
+};
 </script>
 
 <style scoped>
-  .taglinks a:not(:first-child):before {
-    font-family: AtlasGrotesk, sans-serif;
-    font-size: 12px !important;
-    content: ", ";
-  }
+.taglinks a:not(:first-child):before {
+  font-family: AtlasGrotesk, sans-serif;
+  font-size: 12px !important;
+  content: ", ";
+}
 </style>

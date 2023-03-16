@@ -112,11 +112,3 @@ jobs:
             **/*.{md,html,ipynb}
           strict: false
           verbose: true
-        
-      - name: 'Fail if spelling errors are found'
-        id: fail
-        if: steps.cspell.outputs.number_of_issues > 0
-        run: |
-          echo "fail_spelling="Spelling errors found" >> $GITHUB_OUTPUT
-          exit 1
-

@@ -12,6 +12,10 @@ Pupil Labs products are being used in various areas of academic research and hun
 We are currently in the process of writing a white paper on **Neon**. Once it is done we would kindly ask you to cite it in your publications if you are using Neon in your research. Until the white paper is ready, please cite product page on the website:
 [https://pupil-labs.com/products/neon/](https://pupil-labs.com/products/neon/)
 
+::: tip
+When citing Pupil Neon in your publications, you may want to report the neural network version you are using. You can find this information in the [info.json](/neon/reference/export-formats/#info-json) file, under pipeline_version.
+:::
+
 For guidance on citing **Pupil Invisible** please see [here](/invisible/publications) and for **Pupil Core** see [here](/core/academic-citation).
 
 ## Publications from Pupil Labs

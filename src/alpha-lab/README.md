@@ -112,6 +112,12 @@ export default {
           to: "/alpha-lab/scanpath-rim/",
           img: "Steven_scanpath.jpeg",
         },
+        {
+          title: "NeRFing out",
+          text: "Create 3D Models of your environment using the reference image mapper and NerfStudio",
+          to: "/alpha-lab/nerfs",
+          img: "nerf.png",
+        },
       ],
       banner: this.loadRandomImage(),
     };
