@@ -8,7 +8,7 @@ tags: [Pupil Invisible, Neon, Cloud]
 # Create 3D Models of Your Environment with Reference Image Mapper and NerfStudio
 
 <TagLinks />
-<Youtube src="ZSWl8qQcQk0"/>
+<Youtube src="7W2DCkPfFLE"/>
 
 ::: danger
 🕰️ - *Great Scott! This content is highly experimental. Using it will take you on a wild ride into the future, but beware - you'll be going solo. Consider yourself warned!* 🎢
