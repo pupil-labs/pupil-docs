@@ -36,9 +36,13 @@ information is a valuable tool for understanding a person's visual attention and
 - Python 3.7 or higher
 - [This](https://gist.github.com/elepl94/9f669c4d81e455cf2095957831219664) ready-to-go script
 
+::: warning
+Depending on your Python configuration, you might need to install `tkinter`
+:::
+
 ## Running the code
 All you need to do is run the command `python3 RIM_scanpath.py` in your terminal. A prompt will then appear asking for 
-the location of the Reference Image Mapper export folder. After this, just sit back and wait for the processing to finish. 
+the location of the Reference Image Mapper export folder. Once you provide this location, a window will appear where you can visualize the smallest and largest fixations recorded on the Reference Image. You can then upscale or downscale them to get your desired final results. After this, just sit back and wait for the processing to finish. 
 Upon completion, the resulting scanpath visualisations will be saved in a newly created sub-folder called "scanpath”.
 
 If you wish to enhance the appearance of your scanpaths, keep reading for additional instructions!
