@@ -63,7 +63,9 @@ A microphone is integrated into the Neon module. Recorded audio will be part of 
 Audio recording is disabled in the Neon Companion app by default and can be enabled in the settings.
 
 ## Movement (IMU Data)
-An 9-DoF inertial measurement unit (IMU) is integrated into the Neon module featuring an accelerometer, gyroscope, and magnetometer and a fusion engine, measuring acceleration, magnetic orientation, and angular velocity as well as complete pose. Absolute roll, pitch, and yaw values can be trivially derived from this and are avaible in Pupil Cloud.
+The Neon module is equipped with a 9-DoF inertial measurement unit (IMU) featuring an accelerometer, gyroscope, and magnetometer. The accelerometer and gyroscope measure linear acceleration and angular velocity, respectively, and are provided as raw values. A fusion engine also combines these values with magnetometer readings to estimate the module's absolute orientation relative to magnetic north and gravity. 
+
+The orientation estimation is provided as a quaternion (w, x, y, z) and Euler angles (roll, pitch, yaw).
 
 
 <div style="display:flex;justify-content:center;" class="pb-4">
@@ -74,4 +76,4 @@ An 9-DoF inertial measurement unit (IMU) is integrated into the Neon module feat
   </v-img>
 </div>
 
-The IMU is oriented in the frame, such that the x-axis points to the right, the y-axis points downwards and the z-axis points to the front.
+The IMU is oriented in the frame, such that the x-axis points to the right, the y-axis points to the front and the z-axis points upwards.
