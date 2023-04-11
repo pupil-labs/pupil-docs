@@ -58,7 +58,7 @@ In the `Recording Name` field of the template, we defined a naming scheme that c
 
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
-    :src="require('../../media/invisible/explainers/template-naming-example.jpg')"
+    :src="require('../../media/invisible/explainers/template-naming-example.png')"
     max-width=100%
   >
   </v-img>

@@ -7,7 +7,7 @@ permalink: /invisible/enrichments/face-mapper
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
-    :src="require('../../media/invisible/explainers/face_mapper_header.jpeg')"
+    :src="require('../../media/invisible/explainers/face_mapper_header.png')"
     max-width=100%
   >
   </v-img>

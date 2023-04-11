@@ -142,13 +142,9 @@ Why not try replicating the above examples? Or even try it with your own use-cas
   </v-img>
 </div>
 
-To check if gaze has been mapped successfully, use the side-by-side view:
-1. Select a recording.
-2. Select the Reference Image Mapper Enrichment.
-3. Select the Scene / Reference Image View.
-4. If you want to visualize and evaluate the 3D model generated (white dots), just turn on the Point Cloud toggle!
+To check if gaze has been mapped successfully, you can use the side-by-side view. Just select the Reference Image Mapper enrichment and play a recording. The reference image is shown next to the recording and mapped gaze will be shown on it.
 
-Now when you play back the recording you can see where gaze is mapped to on your reference image for validation.
+If the enrichment visualization is enabled in the timeline, a point cloud will be overlayed on the scene video. This represents the 3D model that was fit to the scene by the enrichment. If it was successful the point cloud will move smoothly with the objects in the scene as if it was a part of them.
 
 ## Occlusions
 
