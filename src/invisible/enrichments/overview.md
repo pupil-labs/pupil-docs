@@ -55,25 +55,19 @@ export default {
           title: "Marker mapper",
           to: "/invisible/enrichments/marker-mapper",
           text: "Use apriltags to get your gaze onto a surface.",
-          img: "marker_mapper_header.jpg",
+          img: "marker_mapper_header.png",
         },
         {
           title: "Face mapper",
           to: "/invisible/enrichments/face-mapper",
           text: "Map gaze data to faces in the scene video.",
-          img: "face_mapper_header.jpeg",
+          img: "face_mapper_header.png",
         },
         {
           title: "Gaze overlay",
           to: "/invisible/enrichments/gaze-overlay",
           text: "Visualise your gaze on top of the scene video and undistort the scene video.",
           img: "gaze_overlay_header1.jpg",
-        },
-        {
-          title: "Raw Data",
-          to: "/invisible/enrichments/raw-data",
-          text: "Export raw data from your recordings in convenient CSV and MP4 format.",
-          img: "raw_image_header.jpg",
         },
       ],
     };

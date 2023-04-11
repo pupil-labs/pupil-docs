@@ -1,11 +1,11 @@
 ---
-description: Map your gaze to a surface using fiduciarial markers
+description: Map your gaze to a surface using fiducial markers
 permalink: /invisible/enrichments/marker-mapper
 ---
 # Marker Mapper
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
-    :src="require('../../media/invisible/explainers/marker_mapper_header.jpg')"
+    :src="require('../../media/invisible/explainers/marker_mapper_header.png')"
     max-width=100%
   >
   </v-img>
