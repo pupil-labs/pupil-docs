@@ -48,7 +48,7 @@ export default {
         {
           title: "Reference image mapper",
           to: "/invisible/enrichments/reference-image-mapper",
-          text: "Our markerless solution to map gaze data from the real world onto a reference image.",ga
+          text: "Our markerless solution to map gaze data from the real world onto a reference image.",
           img: "reference_image_mapper_header.png",
         },
         {
