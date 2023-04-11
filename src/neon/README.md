@@ -262,10 +262,6 @@ export default {
           title: "Gaze Overlay",
           link: "/neon/enrichments/gaze-overlay/",
         },
-        {
-          title: "Raw Data Exporter",
-          link: "/neon/enrichments/raw-data/",
-        },
       ],
     };
   },

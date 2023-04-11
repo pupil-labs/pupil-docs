@@ -265,10 +265,6 @@ export default {
           title: "Gaze Overlay",
           link: "/invisible/enrichments/gaze-overlay/",
         },
-        {
-          title: "Raw Data Exporter",
-          link: "/invisible/enrichments/raw-data/",
-        },
       ],
     };
   },
