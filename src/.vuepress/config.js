@@ -142,7 +142,10 @@ module.exports = {
             },
           ]
         },
-        'reference/export-formats',
+        {
+          title: "Recording Format",
+          path: 'http://docs.pupil-labs.com/export-formats/recording-data/neon',
+        },
         "troubleshooting",
       ],
       '/invisible/': [
@@ -236,7 +239,10 @@ module.exports = {
             'real-time-api/legacy-api',
           ]
         },
-        'reference/export-formats',
+        {
+          title: "Recording Format",
+          path: 'http://docs.pupil-labs.com/export-formats/recording-data/invisible',
+        },
         "troubleshooting",
       ],
       '/core/': [
@@ -301,6 +307,30 @@ module.exports = {
         {
           title: 'Generate scanpaths with Reference Image Mapper',
           path: 'scanpath-rim'
+        },
+      ],
+      '/export-formats/': [
+        {
+          title: 'Recording Data',
+          children: [
+            {
+              title: "Neon",
+              path: "recording-data/neon",
+            },
+            {
+              title: "Pupil Invisible",
+              path: "recording-data/invisible",
+            },
+          ]
+        },
+        {
+          title: 'Enrichment Data',
+          children: [
+            "enrichment-data/reference-image-mapper",
+            "enrichment-data/marker-mapper",
+            "enrichment-data/face-mapper",
+            "enrichment-data/gaze-overlay",
+          ]
         },
       ],
     },

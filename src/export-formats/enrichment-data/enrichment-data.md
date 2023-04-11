@@ -1,12 +1,12 @@
 ---
-permalink: /invisible/reference/export-formats
+permalink: /export-formats/enrichment-data
 description: Documentation of the exact export formats of Pupil Cloud.
 ---
 
 # Export Formats
 
 ## General Information
-All [enrichments](/invisible/enrichments) are defined on specific sections of recordings using events. Every enrichment export contains a `sections.csv` file summarizing the available sections as follows:
+All [enrichments](/neon/enrichments) are defined on specific sections of recordings using events. Every enrichment export contains a `sections.csv` file summarizing the available sections as follows:
 
 | Field | Description | 
 | -------- | -------- | 
@@ -31,24 +31,30 @@ The files included in every folder are described in the following.
 #### info.json
 This file contains meta-information on the recording.
 
+
 | Field | Description | 
 | -------- | -------- | 
-| **android_device_id** | Unique identifier of the Android device used as Invisible Companion.     |
+| **android_device_id** | Unique identifier of the Android device used as Companion.     |
 | **android_device_model** | Model name of the Companion device.     |
 | **android_device_name** | Device name of the Companion device.     |
-| **app_version** | Version of the Companion app used to make the recording. |
-| **calib_version** | Version of the offset correction used by the Companion app. |
-| **data_format_version** | Version of the data format used by the Companion app.     |
+| **app_version** | Version of the Neon Companion app used to make the recording. |
+| **calib_version** | Version of the offset correction used by the Neon Companion app. |
+| **data_format_version** | Version of the data format used by the Neon Companion app.     |
 | **duration** | Duration of the recording in nanoseconds|
+| **firmware_version** | Version numbers of the firmware and FPGA. |
+| **frame_id** | Number identifying the type of frame used for this recording. |
+| **frame_name** | Name of the frame used for this recording. |
 | **gaze_offset** | Gaze offset applied to this recording using the offset correction. Values are in pixels.|
-| **glasses_serial_number** | Serial number of the Pupil Invisible glasses used for the recording. |
-| **pipeline_version** | Version of the gaze estimation pipeline used by the Companion app. |
+| **module_serial_number** | Serial number of the Neon module used for the recording. This number is encoded in the QR code on the back of the Neon module. |
+| **os_version** | Version of the Android OS that was installed on the recording Companion device. |
+| **pipeline_version** | Version of the gaze estimation pipeline used by the Neon Companion app. |
 | **recording_id** | Unique identifier of the recording. |
-| **scene_camera_serial_number** | Serial number of the scene camera used for the recording. |
 | **start_time** | Timestamp of when the recording was started. Given as UTC timestamp in nanoseconds. |
 | **template_data** | Data regarding the selected template for the recording as well as the response values. |
 | **wearer_id** | Unique identifier of the wearer selected for this recording. |
 | **wearer_name** | Name of the wearer selected for this recording. |
+| **workspace_id** | The ID of the Pupil Cloud workspace this recording has been assigned to. |
+
 
 **Scene Video**
 Scene video is contained in a file following the following naming scheme:
@@ -61,8 +67,7 @@ This file contains the camera intrinsics of the used scene camera. The values ar
 | -------- | -------- | 
 | **camera_matrix** | The camera matrix of the scene camera.     |
 | **dist_coefs** | The distortion coefficients of the scene camera. The order of the values is `(k1, k2, p1, p2, k3, k4, k5, k6)` following [OpenCV's distortion model](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#ga3207604e4b1a1758aa66acb6ed5aa65d). |
-| **rotation_matrix** | Extrinsic rotation matrix describing how the scene camera is positioned in relation to the eye cameras. For more details please see section III-B of the [white paper](https://arxiv.org/pdf/2009.00508.pdf).     |
-| **serial_number** | The serial number of the scene camera. This number can also be found on the back of the scene camera module. Please note that this number is different from the serial number of the frame, which can be found on the tip of the left temple of the Pupil Invisible frame.     |
+| **serial_number** | Serial number of Neon module used for the recording. This number is encoded in the QR code on the back of the Neon module.      |
 | **version** | The version of the intrinsics data format.     |
 
 
@@ -78,7 +83,7 @@ This file contains the timestamps of every world video frame.
 
 
 #### events.csv
-This file contains [event](/invisible/basic-concepts/events) data for all recordings. It contains both project event annotations and real-time recording events.
+This file contains [event](/neon/basic-concepts/events) data for all recordings. It contains both project event annotations and real-time recording events.
 
 | Field | Description | 
 | -------- | -------- | 
@@ -89,7 +94,7 @@ This file contains [event](/invisible/basic-concepts/events) data for all record
 
 
 #### gaze.csv
-This file contains [gaze](/invisible/basic-concepts/data-streams/#gaze) data in world camera coordinates.
+This file contains [gaze](/neon/basic-concepts/data-streams/#gaze) data in world camera coordinates.
 
 
 | Field | Description | 
@@ -99,7 +104,7 @@ This file contains [gaze](/invisible/basic-concepts/data-streams/#gaze) data in 
 | **timestamp [ns]** | UTC timestamp in nanoseconds of the sample. Equal to the timestamp of the original gaze sample before mapping.     |
 | **gaze x [px]** | Float value representing the x-coordinate of the mapped gaze point in world camera pixel coordinates.
 | **gaze y [px]** | Same as "gaze x [px]" but for the y-coordinate.     |
-| **worn** | This value indicates whether the Pupil Invisible Glasses have been worn by a subject at this point in time. `1.0` indicates that it has been worn, while `0.0` indicates that it has not been worn. Added in version 2 of this enrichment.    |
+| **worn** | These values indicate whether Neon has been worn by a subject at the respective point in time. `1.0` indicates that it has been worn, while `0.0` indicates that it has not been worn.    |
 | **fixation id** | If this gaze sample belongs to a fixation event, this is the corresponding id of the fixation. Otherwise, this field is empty.     |
 | **blink id** | If this gaze samples belongs to a blink event, this is the corresponding id of the blink. Otherwise this field is empty.     |
 | **azimuth [deg]** | The [azimuth](https://en.wikipedia.org/wiki/Horizontal_coordinate_system) of the gaze ray in relation to the scene camera in degrees.     |
@@ -107,7 +112,7 @@ This file contains [gaze](/invisible/basic-concepts/data-streams/#gaze) data in 
 
 
 #### fixations.csv
-This file contains [fixations](/invisible/basic-concepts/data-streams/#fixations) detected in the gaze data stream.
+This file contains [fixations](/neon/basic-concepts/data-streams/#fixations) detected in the gaze data stream.
 The corresponding gaze samples that belong to each fixation can be determined from the `gaze.csv` file using the `fixation id` field.
 
 
@@ -121,9 +126,11 @@ The corresponding gaze samples that belong to each fixation can be determined fr
 | **duration [ms]** | Duration of the fixation in milliseconds.     |
 | **fixation x [px]** | Float value representing the x-coordinate of the fixation in world camera pixel coordinates. This position is the average of all gaze samples within the fixation.     |
 | **fixation y [px]** | Same as "fixation x [px]" but for the y-coordinate.     |
+| **azimuth [deg]** | The [azimuth](https://en.wikipedia.org/wiki/Horizontal_coordinate_system) of the gaze ray corresponding to the fixation location in relation to the scene camera in degrees.     |
+| **elevation [deg]** | The [elevation](https://en.wikipedia.org/wiki/Horizontal_coordinate_system) of the gaze ray corresponding to the fixation location in relation to the scene camera in degrees.     |
 
 #### blinks.csv
-This file contains [blinks](/invisible/basic-concepts/data-streams/#blinks) detected in the eye video.
+This file contains [blinks](/neon/basic-concepts/data-streams/#blinks) detected in the eye video.
 The corresponding gaze samples that belong to each blink can be determined from the `gaze.csv` file using the `blink id` field.
 
 
@@ -137,7 +144,7 @@ The corresponding gaze samples that belong to each blink can be determined from 
 | **duration [ms]** | Duration of the blink in milliseconds.     |
 
 #### imu.csv
-This file contains data recorded by the integrated [IMU](/invisible/basic-concepts/data-streams/#inertial-measurements) (inertial measurement unit).
+This file contains data recorded by the integrated [IMU](/neon/basic-concepts/data-streams/#inertial-measurements) (inertial measurement unit).
 
 | Field | Description | 
 | -------- | -------- | 
@@ -148,12 +155,13 @@ This file contains data recorded by the integrated [IMU](/invisible/basic-concep
 | **acceleration x [G]**<br />**acceleration y [G]**<br />**acceleration z [G]** | Translational acceleration along the x, y or z-axis respectively in G. Note `1 G = 9.80665 m/s^2`.|
 | **roll** | Drift-free estimation of the roll (head tilt from side to side) in degrees. The output range is -180 to +180 degrees. Added in version 2 of this enrichment.    |
 | **pitch** | Drift-free estimation of the pitch (head tilt from front to back) in degrees. The output range is -180 to +180 degrees. Added in version 2 of this enrichment. |
+| **rotation vector w**<br />**rotation vector x**<br />**rotation vector  y**<br />**rotation vector  z** | Quaternion describing the rotation of the Neon module. |
 
 
 ## Marker Mapper
 
 #### gaze.csv
-This file contains all the mapped gaze data from all sections. The coordinate system is explained [here](/invisible/enrichments/#surface-coordinates).
+This file contains all the mapped gaze data from all sections. The coordinate system is explained [here](/neon/enrichments/#surface-coordinates).
 
 | Field | Description | 
 | -------- | -------- | 
@@ -182,7 +190,7 @@ This file contains fixation events detected in the gaze data stream and mapped t
 | **fixation x [normalized]** | Float value representing the x-coordinate of the fixation in surface coordinates. This position is the average of all mapped gaze samples within the fixation.     |
 | **fixation y [normalized]** | Same as "fixation x [normalized]" but for the y-coordinate.     |
 
-#### aoi_positions.csv
+#### surface_positions.csv
 This file contains the surface locations in the scene images for all sections.
 
 
@@ -287,10 +295,3 @@ The export will have one folder per original recording using the following namin
 Each folder contains gaze overlay videos of the sections belonging to the corresponding recordings. The video files are named
 ```<beginning of section ID>_<start time>-<end time>.mp4```
 where the times are in seconds relative to the recording start.
-
-
-
-## Binary Recording Data
-If you download recording data straight off of the phone without uploading to Pupil Cloud first, you will receive raw binary data. This data is difficult to handle and we do not recommend you use it directly. If using Pupil Cloud is not an option for you, please [export the data via Pupil Player](/core/software/pupil-player/#export) to convenient formats instead. Note that the formats used by Pupil Player are not the same as in Pupil Cloud.
-
-You can find the format documentation of the raw binary data [here](https://docs.google.com/spreadsheets/d/1e1Xc1FoQiyf_ZHkSUnVdkVjdIanOdzP0dgJdJgt0QZg/edit?usp=sharing). Please note that the raw data format may change without advance notification.
