@@ -49,7 +49,7 @@ export default {
           title: "Reference image mapper",
           to: "/neon/enrichments/reference-image-mapper",
           text: "Our markerless solution to map gaze data from the real world onto a reference image.",
-          img: "reference_image_mapper_header.jpg",
+          img: "reference_image_mapper_header.png",
         },
         {
           title: "Marker mapper",
@@ -67,7 +67,7 @@ export default {
           title: "Gaze overlay",
           to: "/neon/enrichments/gaze-overlay",
           text: "Visualise your gaze on top of the scene video and undistort the scene video.",
-          img: "gaze_overlay_header1.jpg",
+          img: "gaze_overlay_header.png",
         },
       ],
     };

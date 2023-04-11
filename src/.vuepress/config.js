@@ -114,7 +114,6 @@ module.exports = {
             'enrichments/marker-mapper',
             'enrichments/face-mapper',
             'enrichments/gaze-overlay',
-            'enrichments/raw-data',
           ]
         },
         {
@@ -200,7 +199,6 @@ module.exports = {
             'enrichments/marker-mapper',
             'enrichments/face-mapper',
             'enrichments/gaze-overlay',
-            'enrichments/raw-data',
           ]
         },
         {
