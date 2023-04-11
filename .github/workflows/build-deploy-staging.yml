@@ -14,7 +14,7 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: '3.x'
-      - run: pip install nbconvert packaging
+      - run: pip install nbconvert==7.0.0 packaging
       - name: Convert Jupyter notebooks
         run: |
           shopt -s globstar
