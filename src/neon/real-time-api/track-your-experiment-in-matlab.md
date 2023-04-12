@@ -162,7 +162,7 @@ Several arguments can be used to control the wrapper:
 - The default is `status`.
   See the section [Running the demo](#running-the-demo) on how to use them.
 - `EventName`: followed by a string with the annotation name for the event, default is `Test event`.
-- `URLhost`: followed by a string containing the URL of Pupil Invisible, default is `http://pi.local:8080/`. It's generally good practice to call directly to the URL. Nevertheless, Matlab does resolve the DNS and stores it in the cache, so you will only notice a delay in the first call.
+- `URLhost`: followed by a string containing the URL of Pupil Invisible, default is `http://neon.local:8080/`. It's generally good practice to call directly to the URL. Nevertheless, Matlab does resolve the DNS and stores it in the cache, so you will only notice a delay in the first call.
 
 ## Notes and disclaimers
 
