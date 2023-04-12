@@ -63,9 +63,7 @@ Traditionally, fixation detection algorithms assumed the head of the subject to 
 If head movements occur during a fixation, compensatory eye movements are required to keep gaze stable on the point of fixation. These are initiated by the 
 vestibulo-ocular reflex (VOR). 
 
-Our algorithm explicitly compensates for VOR eye movements and thus correctly classifies fixations in more dynamic scenarios!
-
-The algorithm will soon be released with an open-source licence. Further, we are currently working on a white paper that describes the algorithm in detail and evaluates it thoroughly.
+Our algorithm explicitly compensates for VOR eye movements and thus correctly classifies fixations in more dynamic scenarios! Read more about that in the [Pupil Labs fixation detector whitepaper](https://docs.google.com/document/d/1dTL1VS83F-W1AZfbG-EogYwq2PFk463HqwGgshK3yJE/export?format=pdf)
 
 ## Blinks
 During blinks the eye is briefly covered by the eye lids, which serves the purpose of spreading tears across the cornea. The blink rate and blink duration are however also correlated with cognitive processes, which makes it an interesting physiological signal.
