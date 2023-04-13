@@ -20,7 +20,7 @@ It makes it easy to store all your data securely in one place and it offers a va
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
-    :src="require('../../media/invisible/getting-started/pi-ecosystem.jpg')"
+    :src="require('../../media/invisible/getting-started/PL-Ecosystem-white.jpg')"
     max-width=100%
   >
   </v-img>
