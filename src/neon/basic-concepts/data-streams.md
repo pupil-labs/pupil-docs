@@ -50,7 +50,7 @@ During blinks the eye is briefly covered by the eye lids, which serves the purpo
 
 Blinks are detected automatically in Pupil Cloud after uploading a recording and are part of the downloadable data.
 
-The blink detection algorithm is operating directly on the eye video to detect the movement patterns of blinks.
+The blink detection algorithm is operating directly on the eye video to detect the movement patterns of blinks. Read more about the algorithm in the [Pupil Labs blink detector whitepaper](https://docs.google.com/document/d/1JLBhC7fmBr6BR59IT3cWgYyqiaM8HLpFxv5KImrN-qE/export?format=pdf). The algorithm will soon be released as open-source
 
 ## Scene Video
 The front-facing scene camera is located in the center of the Neon Module. It records video at 30 Hz and 1600x1200 px resolution with a field of view of 132°x81°.
