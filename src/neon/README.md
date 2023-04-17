@@ -161,7 +161,7 @@ This section contains a range of guides introducing the real-time API and common
 
 ## Export Formats
 
-This section is where you will find references for [export formats](/neon/reference/export-formats), which you can consult when working with any data coming out of Pupil Cloud.
+This section is where you will find references for [export formats](/export-formats/recording-data/neon), which you can consult when working with any data coming out of Pupil Cloud.
 
 <router-link class="underline" to="/neon/reference/export-formats">Jump to section</router-link>
 
