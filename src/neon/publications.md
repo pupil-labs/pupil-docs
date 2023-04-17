@@ -13,7 +13,7 @@ We are currently in the process of writing a white paper on **Neon**. Once it is
 [https://pupil-labs.com/products/neon/](https://pupil-labs.com/products/neon/)
 
 ::: tip
-When citing Pupil Neon in your publications, you may want to report the neural network version you are using. You can find this information in the [info.json](/neon/reference/export-formats/#info-json) file, under pipeline_version.
+When citing Pupil Neon in your publications, you may want to report the neural network version you are using. You can find this information in the [info.json](/export-formats/recording-data/neon/#info-json) file, under pipeline_version.
 :::
 
 For guidance on citing **Pupil Invisible** please see [here](/invisible/publications) and for **Pupil Core** see [here](/core/academic-citation).

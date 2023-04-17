@@ -26,7 +26,7 @@ If you are using **Pupil Invisible** in your own research, please cite the follo
 For guidance on citing **Pupil Core** please see [here](/core/academic-citation).
 
 ::: tip
-When citing Pupil Invisible in your publications, you may want to report the neural network version you are using. You can find this information in the [info.json](/invisible/reference/export-formats/#info-json) file, under pipeline_version.
+When citing Pupil Invisible in your publications, you may want to report the neural network version you are using. You can find this information in the [info.json](/export-formats/recording-data/neoinvisiblen/#info-json) file, under pipeline_version.
 :::
 
 ## Publications from Pupil Labs

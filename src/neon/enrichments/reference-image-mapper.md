@@ -10,7 +10,7 @@ Reference Image Mapper is a powerful tool to automatically map gaze onto feature
 <Youtube src="IF8f1Z3ZkEo" muted="1"/>
 
 
-A heatmap of gaze data mapped onto the reference image can be generated, and mapped gaze and fixation data can further be downloaded as [CSV files](/neon/reference/export-formats/#reference-image-mapper). 
+A heatmap of gaze data mapped onto the reference image can be generated, and mapped gaze and fixation data can further be downloaded as [CSV files](/export-formats/enrichment-data/marker-mapper/#fixations-csv). 
 
 ## Setup
 

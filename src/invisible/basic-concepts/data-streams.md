@@ -55,7 +55,7 @@ Two primary types of eye movements exhibited by the visual system are fixations 
   </v-img>
 </div>
 
-Fixations are calculated automatically in Pupil Cloud after uploading a recording. They are available as part of the [Raw Data Exporter](/invisible/reference/export-formats/#fixations-csv) enrichment downloads. The downloads for gaze mapping enrichments ([Reference Image Mapper](/invisible/reference/export-formats/#fixations-csv-3), [Marker Mapper](/invisible/reference/export-formats/#fixations-csv-2)) also include "mapped fixations".
+Fixations are calculated automatically in Pupil Cloud after uploading a recording. They are available as part of the [recording exports](/export-formats/recording-data/invisible). The downloads for gaze mapping enrichments ([Reference Image Mapper](/export-formats/enrichment-data/reference-image-mapper/#fixations-csv), [Marker Mapper](/export-formats/enrichment-data/marker-mapper/#fixations-csv)) also include "mapped fixations".
 
 The fixation detection algorithm employed in Pupil Cloud was developed by us, and was specifically designed for head-mounted eye trackers. 
 
@@ -70,7 +70,7 @@ The algorithm will soon be released with an open-source licence. Further, we are
 ## Blinks
 During blinks the eye is briefly covered by the eye lids, which serves the purpose of spreading tears across the cornea. The blink rate and blink duration are however also correlated with cognitive processes, which makes it an interesting physiological signal.
 
-Blinks are detected automatically in Pupil Cloud after uploading a recording. They are available as part of the [Raw Data Exporter](/invisible/reference/export-formats/#blinks-csv) enrichment downloads.
+Blinks are detected automatically in Pupil Cloud after uploading a recording. They are available as part of the [recording exports](/export-formats/recording-data/invisible).
 
 The blink detection algorithm is operating directly on the eye video to detect the movement patterns of blinks. It will soon be released as open-source.
 

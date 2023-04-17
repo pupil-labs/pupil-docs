@@ -41,7 +41,7 @@ The two primary types of eye movements exhibited by the visual system are fixati
   </v-img>
 </div>
 
-Fixations are calculated automatically in Pupil Cloud after uploading a recording and are included in relevant downloads. The downloads for gaze mapping enrichments ([Reference Image Mapper](/neon/reference/export-formats/#fixations-csv-3), [Marker Mapper](/neon/reference/export-formats/#fixations-csv-2)) also include "mapped fixations".
+Fixations are calculated automatically in Pupil Cloud after uploading a recording and are included in relevant downloads. The downloads for gaze mapping enrichments ([Reference Image Mapper](/export-formats/enrichment-data/marker-mapper/#fixations-csv), [Marker Mapper](/export-formats/enrichment-data/reference-image-mapper/#fixations-csv)) also include "mapped fixations".
 
 The deployed fixation detection algorithm was specifically designed for head-mounted eye trackers and offers increased robustness in the presence of head-movements. Especially movements due to vestibulo-ocular reflex are compensated for, which is not the case for most other fixation detection algorithms. 
 
