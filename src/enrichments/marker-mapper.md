@@ -1,6 +1,6 @@
 ---
 description: Map your gaze to a surface using fiducial markers
-permalink: /invisible/enrichments/marker-mapper
+permalink: /enrichments/marker-mapper
 ---
 # Marker Mapper
 <div class="pb-4" style="display:flex;justify-content:center;">

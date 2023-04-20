@@ -1,6 +1,6 @@
 ---
-description: Crearte rich visualizations of gaze data by overlaying it onto scene video.
-permalink: /invisible/enrichments/gaze-overlay
+description: Create rich visualizations of gaze data by overlaying it onto scene video.
+permalink: /enrichments/gaze-overlay
 ---
 ## Gaze Overlay
 <div class="pb-4" style="display:flex;justify-content:center;">

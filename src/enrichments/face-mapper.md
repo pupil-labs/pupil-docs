@@ -1,6 +1,6 @@
 ---
 description: Face mapper enrichment explainer
-permalink: /neon/enrichments/face-mapper
+permalink: /enrichments/face-mapper
 ---
 
 ## Face Mapper

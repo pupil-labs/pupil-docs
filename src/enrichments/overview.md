@@ -1,6 +1,6 @@
 ---
 description: Explanation of all available enrichments including setup instructions.
-permalink: /neon/enrichments
+permalink: /enrichments
 ---
 
 # What are Enrichments? 

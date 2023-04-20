@@ -106,16 +106,17 @@ pip install -e .
 If everything went sucessfully, it will take you around 20 minutes to install everything.
     
 ### Generate a token
-Now, you will need a developer token from Pupil Cloud, so click on your profile picture at the bottom left of the page, select "Account Settings" on the pop-up. Click on the Developer section and "Generate a new token".
+Now, you will need a developer token from Pupil Cloud, so click on your profile picture at the top right of the page, select "Account Settings" on the drop-down. On the left side panel click on the "Developer" section and "New Token".
 
 Once showing, copy the token. Note that you won't be able to see it again, so please store it securely and if you ever doubt if you expose it, delete it and create a new one.
 
-<div class="mb-4" style="display:flex;justify-content:center;">
+<!-- <div class="mb-4" style="display:flex;justify-content:center;">
   <v-img class="rounded" :src="require('../media/alpha-lab/generate-token.png')" 
   width="100%" 
   alt="Screenshot of Cloud Developer's page with tokens generated"
   title="Screenshot of Cloud Developer's page with tokens generated" />
-</div>
+</div> -->
+<!-- TODO: UPDATE IMAGE -->
     
 ### Time to define your parameters
 

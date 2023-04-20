@@ -1,7 +1,7 @@
 ---
 description: A living space - working with multiple reference images
 permalink: /alpha-lab/multiple-rim/
-tags: [Pupil Invisible, Cloud]
+tags: [Pupil Invisible, Neon, Cloud]
 ---
 
 # Map and visualize gaze onto multiple reference images taken from the same environment

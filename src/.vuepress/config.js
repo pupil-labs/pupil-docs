@@ -193,12 +193,12 @@ module.exports = {
           children: [
             {
               title: 'Overview',
-              path: 'enrichments/overview'
+              absolutePath: 'enrichments/'
             },
-            'enrichments/reference-image-mapper',
-            'enrichments/marker-mapper',
-            'enrichments/face-mapper',
-            'enrichments/gaze-overlay',
+            // 'enrichments/reference-image-mapper',
+            // {title: 'Marker Mapper', path: '/enrichments/marker-mapper'},
+            // {title: 'Face Mapper', path: '/enrichments/face-mapper'},
+            // {title: 'Gaze Overlay', path: '/enrichments/gaze-overlay'},
           ]
         },
         {

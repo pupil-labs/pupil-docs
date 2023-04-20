@@ -1,6 +1,6 @@
 ---
 description: Powerful tool to map gaze data from the scene camera onto a reference image 
-permalink: /neon/enrichments/reference-image-mapper
+permalink: /enrichments/reference-image-mapper
 ---
 
 # Reference Image Mapper

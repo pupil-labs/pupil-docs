@@ -1,7 +1,7 @@
 ---
 description: Generate static and dynamic scanpaths with Reference Image Mapper
 permalink: /alpha-lab/scanpath-rim/
-tags: [Pupil Invisible, Cloud]
+tags: [Pupil Invisible, Neon, Cloud]
 ---
 
 # Generate static and dynamic scanpaths with Reference Image Mapper
@@ -32,7 +32,7 @@ information is a valuable tool for understanding a person's visual attention and
 <img src="../media/alpha-lab/Steven_scanpath.jpeg"/> 
 
 ## What you'll need:
-- A Reference Image Mapper export folder
+- A Reference Image Mapper export download
 - Python 3.7 or higher
 - [This](https://gist.github.com/elepl94/9f669c4d81e455cf2095957831219664) ready-to-go script
 
