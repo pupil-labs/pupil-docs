@@ -9,7 +9,7 @@ To keep your data organized, Pupil Cloud offers a few different organizational c
 ## Projects
 A project is a set of recordings that is grouped for joined processing and analysis. You create projects from the Recordings view in Drive by selecting one or more recordings and clicking "create project from recording". You can also add projects to existing recordings.
 
-Within a project, you can annotate recordings with events and create [enrichments](/invisible/enrichments) to power your analysis.
+Within a project, you can annotate recordings with events and create [enrichments](/enrichments) to power your analysis.
 
 ## Workspaces
 Workspaces are large containers for your data and enable you to share data in Pupil Cloud with your collaborators. All data in Pupil Cloud is part of a workspace and the workspace owner can control access to it. A workspace can contain multiple projects. All recordings, wearers, templates, labels, and enrichments are isolated within a workspace and can not exist in another workspace at the same time.

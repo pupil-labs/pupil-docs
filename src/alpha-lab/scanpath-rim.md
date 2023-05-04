@@ -13,13 +13,13 @@ tags: [Pupil Invisible, Neon, Cloud]
 </div> 
 <br>
 
-The [Reference Image Mapper](/invisible/enrichments/reference-image-mapper/) is a powerful tool that maps gaze onto 2D 
+The [Reference Image Mapper](/enrichments/reference-image-mapper/) is a powerful tool that maps gaze onto 2D 
 images of real-world environments and generates heatmaps. Now, we offer a new way to visualize your Reference Image Mapper 
 data. We have created a ready-to-use script that generates static and dynamic scanpaths, providing deeper insights into 
 patterns of visual behavior.
 
 ::: tip
-Before continuing, ensure you are familiar with the [Reference Image Mapper](/invisible/enrichments/#reference-image-mapper) 
+Before continuing, ensure you are familiar with the [Reference Image Mapper](/enrichments/reference-image-mapper) 
 enrichment. Check out [this explainer video](https://www.youtube.com/watch?v=ygqzQEzUIS4&t=56s) for reference.
 :::
 

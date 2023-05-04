@@ -88,7 +88,7 @@ This section explains all the enrichments available in Pupil Cloud and guides yo
   </v-btn>
 </div>
 
-<router-link class="underline" to="/invisible/enrichments/">View more</router-link>
+<router-link class="underline" to="/enrichments/">View more</router-link>
 
 <v-divider />
 
@@ -251,19 +251,19 @@ export default {
       enrichments: [
         {
           title: "Reference Image Mapper",
-          link: "/invisible/enrichments/reference-image-mapper/",
+          link: "/enrichments/reference-image-mapper/",
         },
         {
           title: "Marker Mapper",
-          link: "/invisible/enrichments/marker-mapper/",
+          link: "/enrichments/marker-mapper/",
         },
         {
           title: "Face Mapper",
-          link: "/invisible/enrichments/face-mapper/",
+          link: "/enrichments/face-mapper/",
         },
         {
           title: "Gaze Overlay",
-          link: "/invisible/enrichments/gaze-overlay/",
+          link: "/enrichments/gaze-overlay/",
         },
       ],
     };

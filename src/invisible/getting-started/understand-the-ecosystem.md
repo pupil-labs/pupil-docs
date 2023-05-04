@@ -28,7 +28,7 @@ It makes it easy to store all your data securely in one place and it offers a va
 
 Once a recording is uploaded to Pupil Cloud the processing pipeline begins adding several additional low-level data streams to it - including the 200 Hz gaze signal and fixation data. Some of this data (e.g. the 200 Hz gaze signal) is not available outside of Pupil Cloud.
 
-From here, you can either download the raw data in a convenient format or use some of the available analysis algorithms to extract additional information from the data. For example, use the [Face Mapper](/invisible/enrichments/#face-mapper) to automatically track when subjects are looking at faces. Or use the [Reference Image Mapper](/invisible/enrichments/#reference-image-mapper) to track when subjects are looking at objects of interest represented by a reference image.
+From here, you can either download the raw data in a convenient format or use some of the available analysis algorithms to extract additional information from the data. For example, use the [Face Mapper](/enrichments/face-mapper) to automatically track when subjects are looking at faces. Or use the [Reference Image Mapper](/enrichments/reference-image-mapper) to track when subjects are looking at objects of interest represented by a reference image.
 
 We have a strict [privacy policy](https://pupil-labs.com/legal/) that ensures your recording data is accessible only by you and those you explicitly grant access to. Pupil Labs will never access your recording data unless you explicitly instruct us to. If needed, additional privacy features are available that limit what data is stored in Pupil Cloud, like disabling scene video upload or blurring faces in the scene video (coming soon!).
 

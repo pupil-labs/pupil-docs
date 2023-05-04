@@ -6,7 +6,7 @@ description: Documentation of the exact export formats of Pupil Cloud.
 # Marker Mapper
 
 ## gaze.csv
-This file contains all the mapped gaze data from all sections. The coordinate system is explained [here](/invisible/enrichments/#surface-coordinates).
+This file contains all the mapped gaze data from all sections. The coordinate system is explained [here](/enrichments/#surface-coordinates).
 
 | Field | Description | 
 | -------- | -------- | 
