@@ -56,6 +56,14 @@ export default {
   },
 };
 
+/*
+  This code renders a link using the router-link component. The router-link
+  component is used to make links to other pages in the application. The
+  router-link component will automatically add the active class to the link
+  when the link is active. The active class is used to highlight the link
+  when the link is active.
+*/
+
 function renderLink(h, to, text, active) {
   return h(
     "router-link",
@@ -74,6 +82,8 @@ function renderLink(h, to, text, active) {
   );
 }
 
+/* This code renders the progress bar in the side navigation. */
+
 function renderI(h, depth, active) {
   if (depth >= 1) {
     return h("i", {
@@ -84,6 +94,10 @@ function renderI(h, depth, active) {
     });
   }
 }
+
+/* This code renders the sidebar navigation for a page.
+It takes a Vue h function, the page's children, the path to the page, the current route, the maximum depth of the sidebar, and the current depth of the sidebar.
+It returns a Vue node that renders the sidebar. */
 
 function renderChildren(h, children, path, route, maxDepth, depth = 1) {
   if (!children || depth > maxDepth) return null;
@@ -100,6 +114,10 @@ function renderChildren(h, children, path, route, maxDepth, depth = 1) {
     })
   );
 }
+
+/* This code renders a link to the given URL. 
+The link opens in a new tab, and has a special icon to indicate that it is an external link. 
+The text of the link is given by the text parameter. */
 
 function renderExternal(h, to, text) {
   return h(

@@ -5,7 +5,7 @@ permalink: /enrichments/marker-mapper
 # Marker Mapper
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
-    :src="require('../../media/invisible/explainers/marker_mapper_header.png')"
+    :src="require('../media/invisible/explainers/marker_mapper_header.png')"
     max-width=100%
   >
   </v-img>
@@ -18,11 +18,11 @@ For robust detection, you should place enough markers on your surface such that 
 You can use these images as a template for printing markers:
 
 <div class="pb-4" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
-  <a download="apriltags_tag36h11_0-23.jpg" href="../../media/shared/imgs/apriltags_tag36h11_0-23.jpg" title="AprilTags 0-23">
-    <img src="../../media/shared/imgs/apriltags_tag36h11_0-23.jpg">
+  <a download="apriltags_tag36h11_0-23.jpg" href="../media/shared/imgs/apriltags_tag36h11_0-23.jpg" title="AprilTags 0-23">
+    <img src="../media/shared/imgs/apriltags_tag36h11_0-23.jpg">
   </a>
-  <a download="apriltags_tag36h11_24-47.jpg" href="../../../media/shared/imgs/apriltags_tag36h11_24-47.jpg" title="AprilTags 0-23">
-    <img src="../../media/shared/imgs/apriltags_tag36h11_24-47.jpg">
+  <a download="apriltags_tag36h11_24-47.jpg" href="../../media/shared/imgs/apriltags_tag36h11_24-47.jpg" title="AprilTags 0-23">
+    <img src="../media/shared/imgs/apriltags_tag36h11_24-47.jpg">
   </a>
 </div>
 

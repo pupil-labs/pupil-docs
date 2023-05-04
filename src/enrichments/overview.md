@@ -21,7 +21,7 @@ From mapping your gaze to real-world features of the environment, like surfaces,
             aspect-ratio="1.4"
             style="margin-bottom:32px;"
             :position="item.position"
-            :src="require(`../../media/invisible/explainers/${item.img}`)"
+            :src="require(`../media/invisible/explainers/${item.img}`)"
           />
           <p class="caption--1 font-weight-bold pb-3">{{ item.title }}</p>
         </router-link>
@@ -47,25 +47,25 @@ export default {
       enrichments: [
         {
           title: "Reference image mapper",
-          to: "/neon/enrichments/reference-image-mapper",
+          to: "/enrichments/reference-image-mapper",
           text: "Our markerless solution to map gaze data from the real world onto a reference image.",
           img: "reference_image_mapper_header.png",
         },
         {
           title: "Marker mapper",
-          to: "/neon/enrichments/marker-mapper",
+          to: "/enrichments/marker-mapper",
           text: "Use apriltags to get your gaze onto a surface.",
           img: "marker_mapper_header.png",
         },
         {
           title: "Face mapper",
-          to: "/neon/enrichments/face-mapper",
+          to: "/enrichments/face-mapper",
           text: "Map gaze data to faces in the scene video.",
           img: "face_mapper_header.png",
         },
         {
           title: "Gaze overlay",
-          to: "/neon/enrichments/gaze-overlay",
+          to: "/enrichments/gaze-overlay",
           text: "Visualise your gaze on top of the scene video and undistort the scene video.",
           img: "gaze_overlay_header.png",
         },
