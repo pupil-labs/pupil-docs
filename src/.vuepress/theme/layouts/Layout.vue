@@ -94,6 +94,8 @@ export default {
         } else {
           this.previousPageUrl = to.path;
         }
+      } else {
+        this.previousPageUrl = to.path;
       }
     });
   },
