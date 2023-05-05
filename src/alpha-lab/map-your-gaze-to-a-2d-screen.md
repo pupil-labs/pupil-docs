@@ -65,7 +65,7 @@ By looking at the screen when you press the button, you'll have a visual referen
   </v-img>
 </div>
 
-- Now you'll need to get the raw data from your new recording(s). Run the [RAW data enrichment](https://docs.pupil-labs.com/invisible/enrichments/#raw-data-exporter) and right-click on it to download like above.
+- Now you'll need to get the raw data from your new recording(s). Download the raw data by clicking on downloads at the bottom left side of the page in the project's view.
 
 ## Running the code
 
@@ -76,7 +76,7 @@ Now you can run the code by executing the following command in your console:
 The application/script will prompt for a series of user inputs:
 
 1. Select the folder path to the Reference Image Mapper download. This folder should contain gaze.csv, sections.csv files and the reference image
-2. Select the subfolder corresponding to Raw data export of the eye tracking recording you are using. This directory should contain event.csv, gaze.csv, world_timestamps.csv, and video files (don't select the folder with the scanning recording you made of the scene)
+2. Select the subfolder corresponding to raw data export of the eye tracking recording you are using. This directory should contain event.csv, gaze.csv, world_timestamps.csv, and video files (don't select the folder with the scanning recording you made of the scene)
 3. Select the video from the screen display
 
 ::: danger

@@ -34,7 +34,7 @@ export default {
 
   data() {
     return {
-      isSidebarOpen: false
+      isSidebarOpen: false,
     };
   },
 
@@ -49,6 +49,13 @@ export default {
     },
 
     sidebarItems() {
+      /* if this.$page.regularPath contains enrichments or export-formats, then the regularPath should change to neon*/
+      if (
+        this.$page.regularPath.includes("enrichments") ||
+        this.$page.regularPath.includes("export-formats")
+      ) {
+        this.$page.regularPath = "/neon/";
+      }
       return resolveSidebarItems(
         this.$page,
         this.$page.regularPath,
@@ -63,11 +70,11 @@ export default {
         {
           "no-navbar": !this.shouldShowNavbar,
           "sidebar-open": this.isSidebarOpen,
-          "no-sidebar": !this.shouldShowSidebar
+          "no-sidebar": !this.shouldShowSidebar,
         },
-        userPageClass
+        userPageClass,
       ];
-    }
+    },
   },
 
   mounted() {
@@ -85,7 +92,7 @@ export default {
     onTouchStart(e) {
       this.touchStart = {
         x: e.changedTouches[0].clientX,
-        y: e.changedTouches[0].clientY
+        y: e.changedTouches[0].clientY,
       };
     },
 
@@ -99,8 +106,8 @@ export default {
           this.toggleSidebar(false);
         }
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

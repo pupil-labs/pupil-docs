@@ -34,7 +34,7 @@ In this guide, we want to map gaze onto different parts of a living room, for th
 
 Based on the environment dimension/complexity, you might need to do the same and record separate scanning videos.
 
-Please follow our [best practices](https://docs.pupil-labs.com/enrichments/reference-image-mapper/#scanning-best-practices) for optimal scanning.
+Please follow our [best practices](/enrichments/reference-image-mapper/#scanning-best-practices) for optimal scanning.
 
 ::: tip
 To ensure good scanning of big plain surfaces - like tables and kitchen countertops - enrich them with features. Use a printed tablecloth and/or place items to produce a successful mapping!
@@ -66,7 +66,7 @@ Here we recorded just one video where the wearer was asked to walk and freely ex
 </div>
 
 During the recording, the user looked at the same furniture and parts of the room multiple times. We suggest you focus on
-specific [sections](/enrichments/enrichment-sections) of the recording based on which part of the
+specific [sections](/enrichments/#enrichment-sections) of the recording based on which part of the
 room the user is exploring.
 
 For this recording, we used the following [event annotations](/invisible/basic-concepts/events) to run five Reference Image Mapper enrichments:

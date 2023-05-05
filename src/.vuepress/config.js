@@ -266,7 +266,7 @@ module.exports = {
               path: "/enrichments",
             },
             {
-              title: "Marker Mapper",
+              title: "Reference Image Mapper",
               path: "/enrichments/reference-image-mapper",
             },
             {

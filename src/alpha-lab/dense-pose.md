@@ -31,13 +31,13 @@ Don't worry! We've made this powerful tool easy-to-use, so you can get started r
 
 ## What you'll need
 
-1. A **[Raw data download](https://docs.pupil-labs.com/invisible/enrichments/raw-data/)** from Pupil Cloud. The downloaded folder contains one subfolder for every recording in the project. Each subfolder contains a scene video, gaze.csv, and other files. We will work with those subfolders, so have them at hand
+1. A **[Raw data export](/export-formats/recording-data/neon/)** from your project in Pupil Cloud. The downloaded folder contains one subfolder for every recording in the project. Each subfolder contains a scene video, gaze.csv, and other files. We will work with those subfolders, so have them at hand
 2. A **Google account (optional)**. We set up a Google Colab notebook so you can execute all of this [from your browser](#Running-in-your-browser). This way, Google will lend you some extra computing power and required dependencies. [FAQ about Google Colab](https://research.google.com/colaboratory/intl/en-GB/faq.html), including what it is, how it's free, and some limitations. (If you do fancy running things locally, check out [this section](#running-locally).)
 
 
 ## Running in your browser
 
-Firstly, from the raw data export, upload one of the subfolders(recording folder) that you're interested in **(uncompressed)** to Google Drive.
+Firstly, from the raw data export, upload **(uncompressed)** one of the subfolders(recording folder) that you're interested in  to Google Drive.
 
 Now for the Google Colab part: [click here to access the notebook](https://colab.research.google.com/drive/1s6mBNAhcnxhJlqxeaQ2IZMk_Ca381p25#forceEdit=true&sandboxMode=true), and carefully follow the instructions there.
 
