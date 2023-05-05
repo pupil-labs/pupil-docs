@@ -35,6 +35,7 @@ export default {
   data() {
     return {
       isSidebarOpen: false,
+      previousPageUrl: "/",
     };
   },
 
@@ -49,16 +50,11 @@ export default {
     },
 
     sidebarItems() {
-      /* if this.$page.regularPath contains enrichments or export-formats, then the regularPath should change to neon*/
-      if (
-        this.$page.regularPath.includes("enrichments") ||
-        this.$page.regularPath.includes("export-formats")
-      ) {
-        this.$page.regularPath = "/neon/";
-      }
+      /* if this.$page.regularPath contains enrichments or export-formats, then the regularPath should change to neon or invisble based on the previous page*/
+      console.log(this.previousPageUrl);
       return resolveSidebarItems(
         this.$page,
-        this.$page.regularPath,
+        this.previousPageUrl,
         this.$site,
         this.$localePath
       );
@@ -78,8 +74,27 @@ export default {
   },
 
   mounted() {
-    this.$router.afterEach(() => {
+    this.$router.afterEach((to, from) => {
       this.isSidebarOpen = false;
+      if (from.path.includes("neon")) {
+        if (
+          this.$page.regularPath.includes("enrichments") ||
+          this.$page.regularPath.includes("export-formats")
+        ) {
+          this.previousPageUrl = "/neon/";
+        } else {
+          this.previousPageUrl = to.path;
+        }
+      } else if (from.path.includes("invisible")) {
+        if (
+          this.$page.regularPath.includes("enrichments") ||
+          this.$page.regularPath.includes("export-formats")
+        ) {
+          this.previousPageUrl = "/invisible/";
+        } else {
+          this.previousPageUrl = to.path;
+        }
+      }
     });
   },
 
