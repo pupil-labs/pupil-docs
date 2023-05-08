@@ -35,7 +35,7 @@ export default {
   data() {
     return {
       isSidebarOpen: false,
-      previousPageUrl: "/",
+      previousPageUrl: null,
     };
   },
 
@@ -50,7 +50,17 @@ export default {
     },
 
     sidebarItems() {
-      /* if this.$page.regularPath contains enrichments or export-formats, then the regularPath should change to neon or invisble based on the previous page*/
+      /* Fail safe, previousPage will be null if coming from external source, thus load neon for enrichments and export formats*/
+      if (this.previousPageUrl === null) {
+        if (
+          this.$page.regularPath.includes("enrichments") ||
+          this.$page.regularPath.includes("export-formats")
+        ) {
+          this.previousPageUrl = "/neon/";
+        } else {
+          this.previousPageUrl = this.$page.regularPath;
+        }
+      }
       console.log(this.previousPageUrl);
       return resolveSidebarItems(
         this.$page,
@@ -76,16 +86,8 @@ export default {
   mounted() {
     this.$router.afterEach((to, from) => {
       this.isSidebarOpen = false;
-      if (from.path.includes("neon")) {
-        if (
-          this.$page.regularPath.includes("enrichments") ||
-          this.$page.regularPath.includes("export-formats")
-        ) {
-          this.previousPageUrl = "/neon/";
-        } else {
-          this.previousPageUrl = to.path;
-        }
-      } else if (from.path.includes("invisible")) {
+      /* This part here checks from which page comes from and sets the previous url accordingly.*/
+      if (from.path.includes("invisible")) {
         if (
           this.$page.regularPath.includes("enrichments") ||
           this.$page.regularPath.includes("export-formats")
@@ -95,7 +97,14 @@ export default {
           this.previousPageUrl = to.path;
         }
       } else {
-        this.previousPageUrl = to.path;
+        if (
+          this.$page.regularPath.includes("enrichments") ||
+          this.$page.regularPath.includes("export-formats")
+        ) {
+          this.previousPageUrl = "/neon/";
+        } else {
+          this.previousPageUrl = to.path;
+        }
       }
     });
   },
