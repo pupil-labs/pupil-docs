@@ -143,14 +143,14 @@ module.exports = {
           // Enrichments
           title: "Enrichments",
           children: [
-            { title: "Overview", path: "/enrichments" },
+            { title: "Overview", path: "/enrichments/" },
             {
               title: "Reference Image Mapper",
-              path: "enrichments/reference-image-mapper",
+              path: "/enrichments/reference-image-mapper/",
             },
             { title: "Marker Mapper", path: "/enrichments/marker-mapper/" },
-            { title: "Face Mapper", path: "/enrichments/face-mapper" },
-            { title: "Gaze Overlay", path: "/enrichments/gaze-overlay" },
+            { title: "Face Mapper", path: "/enrichments/face-mapper/" },
+            { title: "Gaze Overlay", path: "/enrichments/gaze-overlay/" },
           ],
         },
         {
