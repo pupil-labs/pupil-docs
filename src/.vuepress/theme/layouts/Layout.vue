@@ -96,6 +96,18 @@ export default {
         } else {
           this.previousPageUrl = to.path;
         }
+      } else if (
+        from.path.includes("enrichments") ||
+        from.path.includes("export-formats")
+      ) {
+        if (
+          this.$page.regularPath.includes("enrichments") ||
+          this.$page.regularPath.includes("export-formats")
+        ) {
+          this.previousPageUrl = from.$page.previousPageUrl;
+        } else {
+          this.previousPageUrl = to.path;
+        }
       } else {
         if (
           this.$page.regularPath.includes("enrichments") ||
