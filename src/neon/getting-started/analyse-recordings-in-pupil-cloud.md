@@ -6,6 +6,6 @@ description: Beginner guide to using Pupil Cloud to manage and analyze recording
 # Analyse Recordings in Pupil Cloud
 New to Pupil Cloud? You’re in the right place.
 
-Watch our video introduction below to learn the basics!
+Watch our onboarding video below to learn the basics!
 
-<Youtube src="zbrVgSWf9Bs"/>
+<Youtube src="VUeawlmm16Q"/>
