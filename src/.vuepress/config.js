@@ -30,15 +30,13 @@ module.exports = {
       },
       {
         property: "og:description",
-        content: `${
-          frontmatter.description ? frontmatter.description : description
-        }`,
+        content: `${frontmatter.description ? frontmatter.description : description
+          }`,
       },
       {
         name: "description",
-        content: `${
-          frontmatter.description ? frontmatter.description : description
-        }`,
+        content: `${frontmatter.description ? frontmatter.description : description
+          }`,
       },
     ];
     for (const meta of default_metas) {
@@ -182,10 +180,10 @@ module.exports = {
         },
         {
           // Recording Format
-          title: "Recording Format",
+          title: "Export Formats",
           children: [
             {
-              title: "Device exporting format",
+              title: "Recording Data",
               path: "/export-formats/recording-data/neon",
             },
             {
@@ -320,10 +318,10 @@ module.exports = {
         },
         {
           // Recording Format
-          title: "Recording Format",
+          title: "Export Formats",
           children: [
             {
-              title: "Device exporting format",
+              title: "Recording Data",
               path: "/export-formats/recording-data/invisible",
             },
             {
