@@ -88,7 +88,7 @@ This section explains all the enrichments available in Pupil Cloud and guides yo
   </v-btn>
 </div>
 
-<router-link class="underline" to="/invisible/enrichments/">View more</router-link>
+<router-link class="underline" to="/enrichments/">View more</router-link>
 
 <v-divider />
 
@@ -160,9 +160,9 @@ This section contains a range of guides introducing the real-time API and common
 
 ## Export Formats
 
-This section is where you will find references for [export formats](/invisible/reference/export-formats), which you can consult when working with any data coming out of Pupil Cloud.
+This section is where you will find references for [export formats](/export-formats/recording-data/invisible), which you can consult when working with any data coming out of Pupil Cloud.
 
-<router-link class="underline" to="/invisible/reference/export-formats">Jump to section</router-link>
+<router-link class="underline" to="/export-formats/recording-data/invisible">Jump to section</router-link>
 
 <v-divider />
 
@@ -251,23 +251,19 @@ export default {
       enrichments: [
         {
           title: "Reference Image Mapper",
-          link: "/invisible/enrichments/reference-image-mapper/",
+          link: "/enrichments/reference-image-mapper/",
         },
         {
           title: "Marker Mapper",
-          link: "/invisible/enrichments/marker-mapper/",
+          link: "/enrichments/marker-mapper/",
         },
         {
           title: "Face Mapper",
-          link: "/invisible/enrichments/face-mapper/",
+          link: "/enrichments/face-mapper/",
         },
         {
           title: "Gaze Overlay",
-          link: "/invisible/enrichments/gaze-overlay/",
-        },
-        {
-          title: "Raw Data Exporter",
-          link: "/invisible/enrichments/raw-data/",
+          link: "/enrichments/gaze-overlay/",
         },
       ],
     };

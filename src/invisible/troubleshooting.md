@@ -30,7 +30,7 @@ The instructions below require you to copy files to your phone. If you are not f
 with this procedure, see steps 1-5 from [these instructions](/invisible/how-tos/data-collection-with-the-companion-app/transfer-recordings-via-usb.html#transfer-exported-recordings-to-a-computer).
 :::
 
-**OnePus 6**
+**OnePlus 6**
 
 If you upgraded to Android 10 or newer and want to roll back, follow these steps:
 1. Download the ROM package [here](https://drive.google.com/file/d/1X8SVUH7UU7g0dcf-iWWXTPtMWzGguhUA/view?usp=sharing).
@@ -64,7 +64,7 @@ If you upgraded to Android 12 or newer and want to roll back, follow these steps
 1. Wait until the system update has been installed successfully
 1. Tap `Reboot`
 
-#### The scene camera and eye cameras are not being recorded or recognized in the companion app!
+#### The scene camera and eye cameras are not being recorded or recognized in the Companion app!
 1. Make sure you use the included black USB-C to USB-C connector cable rather than a third-party cable. Third-party USB cables vary widely in their quality and can lead to loss of connection.
 1. Are you using a **OnePlus 6** device?
    - Make sure **OTG** is enabled. If it is not enabled you should see a red USB sign in the top-left of the companion app's home screen. Check out the video for a demonstration of how to add OTG to quick settings and enable OTG.

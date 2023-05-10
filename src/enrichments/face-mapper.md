@@ -1,13 +1,13 @@
 ---
 description: Face mapper enrichment explainer
-permalink: /invisible/enrichments/face-mapper
+permalink: /enrichments/face-mapper
 ---
 
 ## Face Mapper
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
-    :src="require('../../media/invisible/explainers/face_mapper_header.jpeg')"
+    :src="require('../media/invisible/explainers/face_mapper_header.png')"
     max-width=100%
   >
   </v-img>

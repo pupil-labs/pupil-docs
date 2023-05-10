@@ -1,6 +1,6 @@
 ---
 description: Powerful tool to map gaze data from the scene camera onto a reference image 
-permalink: /neon/enrichments/reference-image-mapper
+permalink: /enrichments/reference-image-mapper
 ---
 
 # Reference Image Mapper
@@ -10,7 +10,7 @@ Reference Image Mapper is a powerful tool to automatically map gaze onto feature
 <Youtube src="IF8f1Z3ZkEo" muted="1"/>
 
 
-A heatmap of gaze data mapped onto the reference image can be generated, and mapped gaze and fixation data can further be downloaded as [CSV files](/neon/reference/export-formats/#reference-image-mapper). 
+A heatmap of gaze data mapped onto the reference image can be generated, and mapped gaze and fixation data can further be downloaded as [CSV files](/export-formats/enrichment-data/reference-image-mapper/#fixations-csv). 
 
 ## Setup
 
@@ -18,17 +18,26 @@ A heatmap of gaze data mapped onto the reference image can be generated, and map
 
 As described in the setup video, you will need two things in addition to your eye tracking recording(s) to produce a Reference Image Mapper enrichment:
 1. A reference image
-2. A scanning video of the object/feature(s) taken with Neon’s scene camera
+2. A scanning video of the object/feature(s) taken with Invisible/Neon’s scene camera
+
+:::tip
+**Reference Image**<br/>
+Only the scanning recording needs to be taken with Invisible/Neon. The reference image can be taken with any camera. It can be also be a scanned image.
+<br/>
+<br/>
+<b>Duration</b><br/>
+The **3 min** duration limit only applies to the scanning recording, the rest of your videos can be as long as you like. <br/>But to avoid long processing times and get the best results, we recommend spliting the recordings into relevant parts where you expect the image to be mapped. <br/>
+:::
 
 In this guide, we will show you how the Reference Image Mapper can be used in a few different situations. This should help you get set up using the enrichment in your own testing environment!
 
 Below, gaze is mapped in four very different environments: to a **magazine cover**, a **basketball backboard**, a **supermarket shelf**, and even a **whole building**!
 
 <PhotoGrid :images="[
-  require(`../../media/invisible/rim/heatmap-0.jpg`),
-  require(`../../media/invisible/rim/heatmap-1.jpg`),
-  require(`../../media/invisible/rim/heatmap-2.jpg`),
-  require(`../../media/invisible/rim/heatmap-3.jpg`),
+  require(`../media/invisible/rim/heatmap-0.jpg`),
+  require(`../media/invisible/rim/heatmap-1.jpg`),
+  require(`../media/invisible/rim/heatmap-2.jpg`),
+  require(`../media/invisible/rim/heatmap-3.jpg`),
 ]"/>
 
 Let's take a look at what the Reference Image and Scanning Recording look like to produce these heatmaps.
@@ -41,7 +50,7 @@ Let's take a look at what the Reference Image and Scanning Recording look like t
     class="rounded" 
     style="margin-bottom:14px;"
     max-width="100%" max-height="300px" contain 
-    :src="require('../../media/invisible/rim/magazine-img.jpg')"
+    :src="require('../media/invisible/rim/magazine-img.jpg')"
   ></v-img>
     First, we need a high-resolution .jpeg of the page.
   </div>
@@ -62,7 +71,7 @@ Let's take a look at what the Reference Image and Scanning Recording look like t
     class="rounded" 
     style="margin-bottom:14px;"
     max-width="100%" max-height="300px" contain 
-    :src="require('../../media/invisible/rim/basketball-img.jpg')"
+    :src="require('../media/invisible/rim/basketball-img.jpg')"
   ></v-img>
     Here we can take a photo of the basketball hoop and court background.
   </div>
@@ -82,7 +91,7 @@ Let's take a look at what the Reference Image and Scanning Recording look like t
     class="rounded" 
     style="margin-bottom:14px;"
     max-width="100%" max-height="300px" contain 
-    :src="require('../../media/invisible/rim/supermarket-img.jpg')"
+    :src="require('../media/invisible/rim/supermarket-img.jpg')"
   ></v-img>
     This photo captures the assortment of packagíng in the coffee aisle of a supermarket.
   </div>
@@ -102,7 +111,7 @@ Let's take a look at what the Reference Image and Scanning Recording look like t
     class="rounded" 
     style="margin-bottom:14px;"
     max-width="100%" max-height="300px" contain 
-    :src="require('../../media/invisible/rim/building-img.jpg')"
+    :src="require('../media/invisible/rim/building-img.jpg')"
     ></v-img>
     This is a photo of the <i>entire</i> building
   </div>
@@ -135,7 +144,7 @@ Why not try replicating the above examples? Or even try it with your own use cas
   <v-img
     class="rounded" 
     style="margin-bottom:32px;"
-    :src="require('../../media/invisible/rim/rim-in-cloud.png')"
+    :src="require('../media/invisible/rim/rim-in-cloud.png')"
     max-width=90%
   >
   </v-img>
@@ -145,7 +154,7 @@ To check if gaze has been mapped successfully, use the side-by-side view:
 1. Select a recording.
 2. Select the Reference Image Mapper Enrichment.
 3. Select the Scene / Reference Image View.
-4. If you want to visualize and evaluate the 3D model generated (white dots), just turn on the Point Cloud toggle!
+<!-- 4. If you want to visualize and evaluate the 3D model generated (white dots), just turn on the Point Cloud toggle! Not in the new cloud UI (to be deleted if no toggle is added)-->
 
 Now when you play back the recording you can see where gaze is mapped to on your reference image for validation.
 
@@ -154,7 +163,7 @@ Now when you play back the recording you can see where gaze is mapped to on your
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
     class="rounded" 
-    :src="require('../../media/invisible/rim/basketball-occlusion.png')"
+    :src="require('../media/invisible/rim/basketball-occlusion.png')"
     max-width=400px
   >
   </v-img>
@@ -174,7 +183,7 @@ In cases such as supermarket shopping, where features of the environment like fr
 
 ::: tip
 **Want to know more?**<br>
-Under the hood, the Reference Image Mapper uses a method called Structure from Motion (SfM) to build a model of the environment. You can see this by enabling the ‘point cloud’ in your Cloud Project.
+Under the hood, the Reference Image Mapper uses a method called Structure from Motion (SfM) to build a model of the environment. You can see this model as a ‘point cloud’ on the left side video.
 :::
 
 <style scoped>

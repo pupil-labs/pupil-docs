@@ -14,7 +14,7 @@ tags: [Pupil Invisible, Neon, Cloud]
 🕰️ - *Great Scott! This content is highly experimental. Using it will take you on a wild ride into the future, but beware - you'll be going solo. Consider yourself warned!* 🎢
 :::
 
-If you watched the accompanying video, you have witnessed 3D environment reconstructions based on eye tracking recordings. In essence, we have explored how to augment the output of our [Reference Image Mapper enrichment](/invisible/enrichments/reference-image-mapper/) to show a third person view of an eye tracking recording. Other wordly, huh?
+If you watched the accompanying video, you have witnessed 3D environment reconstructions based on eye tracking recordings. In essence, we have explored how to augment the output of our [Reference Image Mapper enrichment](/enrichments/reference-image-mapper/) to show a third person view of an eye tracking recording. Other wordly, huh?
 
 A third person view allows you to see more of the environment and how your partipant explores and visually interacts with it. Let's break it down – in the video, the green points (actually camera frustrums) denote where the “user’s head” was during the recording, while the yellow line illustrates a gaze ray from the head to the object that's looked at. You can also see a 3D heat-map showing which areas attracted attention.
 
@@ -106,16 +106,17 @@ pip install -e .
 If everything went sucessfully, it will take you around 20 minutes to install everything.
     
 ### Generate a token
-Now, you will need a developer token from Pupil Cloud, so click on your profile picture at the bottom left of the page, select "Account Settings" on the pop-up. Click on the Developer section and "Generate a new token".
+Now, you will need a developer token from Pupil Cloud, so click on your profile picture at the top right of the page, select "Account Settings" on the drop-down. On the left side panel click on the "Developer" section and "New Token".
 
 Once showing, copy the token. Note that you won't be able to see it again, so please store it securely and if you ever doubt if you expose it, delete it and create a new one.
 
-<div class="mb-4" style="display:flex;justify-content:center;">
+<!-- <div class="mb-4" style="display:flex;justify-content:center;">
   <v-img class="rounded" :src="require('../media/alpha-lab/generate-token.png')" 
   width="100%" 
   alt="Screenshot of Cloud Developer's page with tokens generated"
   title="Screenshot of Cloud Developer's page with tokens generated" />
-</div>
+</div> -->
+<!-- TODO: UPDATE IMAGE -->
     
 ### Time to define your parameters
 

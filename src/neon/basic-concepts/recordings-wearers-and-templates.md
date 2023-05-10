@@ -6,7 +6,7 @@ description: Introduction to recordings, wearers and templates, and their usage 
 # Recordings, Wearers & Templates
 There are a number of organizational constructs we use to make working with our tools flexible and reliable:
 
-A [recording](/neon/basic-concepts/recordings-wearers-and-templates/#recordings) is made each time you press record in the Neon Companion app. Each recording has a [wearer](/neon/basic-concepts/recordings-wearers-and-templates/#wearers) and a [template](/neon/basic-concepts/recordings-wearers-and-templates/#templates) associated with it. Once uploaded to Pupil Cloud you can add recordings to [projects](/neon/basic-concepts/projects-and-workspaces/#projects), this creates a context for you to add [enrichments](/neon/enrichments) to aggregate and analyse your data.
+A [recording](/neon/basic-concepts/recordings-wearers-and-templates/#recordings) is made each time you press record in the Neon Companion app. Each recording has a [wearer](/neon/basic-concepts/recordings-wearers-and-templates/#wearers) and a [template](/neon/basic-concepts/recordings-wearers-and-templates/#templates) associated with it. Once uploaded to Pupil Cloud you can add recordings to [projects](/neon/basic-concepts/projects-and-workspaces/#projects), this creates a context for you to add [enrichments](/enrichments) to aggregate and analyse your data.
 
 Finally, [workspaces](/neon/basic-concepts/projects-and-workspaces/#workspaces) are used to keep recordings, wearers, templates, and projects organized and isolated so you can share them with clients and collaborators.
 
@@ -58,7 +58,7 @@ In the `Recording Name` field of the template, we defined a naming scheme that c
 
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
-    :src="require('../../media/invisible/explainers/template-naming-example.jpg')"
+    :src="require('../../media/invisible/explainers/template-naming-example.png')"
     max-width=100%
   >
   </v-img>

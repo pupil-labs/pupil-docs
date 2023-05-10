@@ -34,7 +34,8 @@ export default {
 
   data() {
     return {
-      isSidebarOpen: false
+      isSidebarOpen: false,
+      previousPageUrl: null,
     };
   },
 
@@ -49,9 +50,21 @@ export default {
     },
 
     sidebarItems() {
+      /* Fail safe, previousPage will be null if coming from external source, thus load neon for enrichments and export formats*/
+      if (this.previousPageUrl === null) {
+        if (
+          this.$page.regularPath.includes("enrichments") ||
+          this.$page.regularPath.includes("export-formats")
+        ) {
+          this.previousPageUrl = "/neon/";
+        } else {
+          this.previousPageUrl = this.$page.regularPath;
+        }
+      }
+      console.log(this.previousPageUrl);
       return resolveSidebarItems(
         this.$page,
-        this.$page.regularPath,
+        this.previousPageUrl,
         this.$site,
         this.$localePath
       );
@@ -63,16 +76,48 @@ export default {
         {
           "no-navbar": !this.shouldShowNavbar,
           "sidebar-open": this.isSidebarOpen,
-          "no-sidebar": !this.shouldShowSidebar
+          "no-sidebar": !this.shouldShowSidebar,
         },
-        userPageClass
+        userPageClass,
       ];
-    }
+    },
   },
 
   mounted() {
-    this.$router.afterEach(() => {
+    this.$router.afterEach((to, from) => {
       this.isSidebarOpen = false;
+      /* This part here checks from which page comes from and sets the previous url accordingly.*/
+      if (from.path.includes("invisible")) {
+        if (
+          this.$page.regularPath.includes("enrichments") ||
+          this.$page.regularPath.includes("export-formats")
+        ) {
+          this.previousPageUrl = "/invisible/";
+        } else {
+          this.previousPageUrl = to.path;
+        }
+      } else if (
+        from.path.includes("enrichments") ||
+        from.path.includes("export-formats")
+      ) {
+        if (
+          this.$page.regularPath.includes("enrichments") ||
+          this.$page.regularPath.includes("export-formats")
+        ) {
+          this.previousPageUrl = from.$page.previousPageUrl;
+        } else {
+          this.previousPageUrl = to.path;
+        }
+      } else {
+        if (
+          this.$page.regularPath.includes("enrichments") ||
+          this.$page.regularPath.includes("export-formats")
+        ) {
+          this.previousPageUrl = "/neon/";
+        } else {
+          this.previousPageUrl = to.path;
+        }
+      }
     });
   },
 
@@ -85,7 +130,7 @@ export default {
     onTouchStart(e) {
       this.touchStart = {
         x: e.changedTouches[0].clientX,
-        y: e.changedTouches[0].clientY
+        y: e.changedTouches[0].clientY,
       };
     },
 
@@ -99,8 +144,8 @@ export default {
           this.toggleSidebar(false);
         }
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
