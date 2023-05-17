@@ -413,6 +413,10 @@ module.exports = {
           title: "Generate scanpaths with Reference Image Mapper",
           path: "scanpath-rim",
         },
+        {
+          title: "Neon with mobile apps",
+          path: "phone-screens",
+        },
       ],
     },
     sidebarDepth: 1,
