@@ -414,7 +414,7 @@ module.exports = {
           path: "scanpath-rim",
         },
         {
-          title: "Neon with mobile apps",
+          title: "Uncovering gaze behavior on phone screens with Neon",
           path: "phone-screens",
         },
       ],
