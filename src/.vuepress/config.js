@@ -30,13 +30,15 @@ module.exports = {
       },
       {
         property: "og:description",
-        content: `${frontmatter.description ? frontmatter.description : description
-          }`,
+        content: `${
+          frontmatter.description ? frontmatter.description : description
+        }`,
       },
       {
         name: "description",
-        content: `${frontmatter.description ? frontmatter.description : description
-          }`,
+        content: `${
+          frontmatter.description ? frontmatter.description : description
+        }`,
       },
     ];
     for (const meta of default_metas) {
@@ -161,6 +163,15 @@ module.exports = {
                 "how-tos/data-collection-with-the-companion-app/monitor-your-data-collection-in-real-time",
                 "how-tos/data-collection-with-the-companion-app/transfer-recordings-via-usb",
                 "how-tos/data-collection-with-the-companion-app/achieve-super-precise-time-sync",
+              ],
+            },
+            {
+              title: "Advanced Analysis",
+              children: [
+                {
+                  title: "Undistort Video and Gaze Data",
+                  path: "how-tos/advance-analysis/undistort/",
+                },
               ],
             },
           ],
