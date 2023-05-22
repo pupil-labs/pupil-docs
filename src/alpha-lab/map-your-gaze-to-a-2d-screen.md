@@ -9,7 +9,7 @@ tags: [Pupil Invisible, Neon, Cloud]
 <TagLinks />
 <Youtube src="OXIUjIzCplc"/>
 
-In this guide, we will show you how to map and visualise gaze onto a screen with dynamic content, e.g. a video, web browsing or any other content of your choice, using the [Reference Image Mapper](https://docs.pupil-labs.com/invisible/enrichments/#reference-image-mapper) enrichment and a few clicks.
+In this guide, we will show you how to map and visualise gaze onto a screen with dynamic content, e.g. a video, web browsing or any other content of your choice, using the [Reference Image Mapper](https://docs.pupil-labs.com/enrichments/reference-image-mapper/) enrichment and a few clicks.
 
 ::: tip
 **Note:** This tutorial requires some technical knowledge, but don't worry. We made it almost click and run for you! You can learn as much or as little as you like.
@@ -17,7 +17,7 @@ In this guide, we will show you how to map and visualise gaze onto a screen with
 
 ## What you'll need
 
-Before continuing, ensure you are familiar with the [Reference Image Mapper](https://docs.pupil-labs.com/invisible/enrichments/#reference-image-mapper) enrichment. Check out [this explainer video](https://www.youtube.com/watch?v=ygqzQEzUIS4&t=56s) for reference.
+Before continuing, ensure you are familiar with the [Reference Image Mapper](https://docs.pupil-labs.com/enrichments/reference-image-mapper/) enrichment. Check out [this explainer video](https://www.youtube.com/watch?v=ygqzQEzUIS4&t=56s) for reference.
 
 We recommend you run the enrichment, e.g. with a short recording of your desktop + monitor/screen to ensure it's working okay. Once satisfied, you can use the same reference image + scanning recording for your dynamic screen content.
 
@@ -54,7 +54,7 @@ By looking at the screen when you press the button, you'll have a visual referen
 
 ## Once you have everything recorded
 
-- Create a new [Reference Image Mapper](https://docs.pupil-labs.com/invisible/enrichments/#reference-image-mapper) enrichment, or add your new eye tracking recordings to an existing enrichment. Run the enrichment, and download the results by right-clicking the enrichment in Cloud once it's computed (see the screenshot below).
+- Create a new [Reference Image Mapper](https://docs.pupil-labs.com/enrichments/reference-image-mapper/) enrichment, or add your new eye tracking recordings to an existing enrichment. Run the enrichment, and download the results by right-clicking the enrichment in Cloud once it's computed (see the screenshot below).
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
@@ -116,8 +116,8 @@ If you only want the final visualisation and the data, there is nothing else you
 <summary>Read more</summary>
 <!-- This is collapsed   -->
 <br>
-The code is hosted at <a href="https://github.com/pupil-labs/dynamic-rim-module">https://github.com/pupil-labs/dynamic-rim-module</a>. 
-    
+The code is hosted at <a href="https://github.com/pupil-labs/dynamic-rim-module">https://github.com/pupil-labs/dynamic-rim-module</a>.
+
 Navigate to `src/pupil_labs/dynamic_content_on_rim/`. You will first notice that we split the code into several modules. The core functionality is in the script `dynamic_rim.py`. Under the uitools folder, you will find the code used to ask for paths, directories or even to ask for the screen corners. And under the video/read folder is the script to read the timestamps or find a frame for specific timestamps.
 
 In summary, we read the .csv files into Pandas data frames. We use pyav to obtain the timestamps/presentation times for each frame on the videos, and we use OpenCV to get the transformation matrix and apply it to the gaze coordinates. We then merge the data using the timestamps and finally decode the right frames, work with them and encode them again.
@@ -212,7 +212,7 @@ If you want to start your screen and eye tracking recordings automatically (no v
 <summary>Click here to learn about recording your screen like a pro</summary>
 <!-- This is collapsed   -->
 <br>
-Assuming you have <b>OBS</b> installed and correctly set up, you will need to install the <a href="https://github.com/obsproject/obs-websocket"><b>OBS WebSocket plugin</b></a>. 
+Assuming you have <b>OBS</b> installed and correctly set up, you will need to install the <a href="https://github.com/obsproject/obs-websocket"><b>OBS WebSocket plugin</b></a>.
 <br>
 Follow the installer's instructions, and click on "Tools > obs-websocket Settings" when finished. A pop-up will appear and let you modify the settings. There are two parameters we will need for later, the port and the password.
 
