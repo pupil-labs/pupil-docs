@@ -3,20 +3,32 @@ title: Undistorting Video and Gaze Data
 description: "Undistorting Neon's scene camera video and gaze data, using the intrinsic and extrinsic camera parameters."
 permalink: /neon/how-tos/advance-analysis/undistort/
 ---
-# Correcting for the fish-eye lens distortion on Neon's scene camera
-One particular challenge that often arises in eye tracking setups is the presence of [fish-eye lens distortions](https://en.wikipedia.org/wiki/Fisheye_lens), also known as barrel distortions. Fish-eye lenses, with their wide-angle characteristics, allow for a broad field of view, enabling the capture of more information within a single frame. However, this advantage comes at the cost of introducing non-linear distortions. 
+# Correcting for the lens distortion on Neon's scene camera
+One particular challenge that often arises in wearable eye tracking setups is the presence of distortions on the scene camera. The type of lenses used, with their wide-angle characteristics, allow for a broad field of view, enabling the capture of more information within a single frame. However, this advantage comes at the cost of introducing distortions to the image. <!-- rectilinear distortions -->
 
 While we account for them in Pupil Cloud, and we even give you the possibility to download the undistorted video using the [Gaze Overlay enrichment](/enrichments/gaze-overlay), this is not the case when using the [Realtime API](/neon/real-time-api) or raw data, where you may want to correct it by yourself.
 
-## Why is it important to correct for fisheye lens distortions?
+## Why is it important to correct for the lens distortions?
+
+<div class="mb-4" style="display:flex;justify-content:center;">
+  <v-img class="rounded" :src="require('../../../media/neon/undistort.png')"
+  width="100%" 
+  alt="Side by side comparison of a distorted and undistorted image with gaze positions overlaid."
+  title="Side by side comparison of a distorted and undistorted image with gaze positions overlaid." />
+</div>
+
 Correcting these distortions brings many benefits, by aligning the captured scene with the underlying geometry of the environment, the corrected images provide a more faithful representation of the observer's visual perspective. This alignment is particularly crucial in scenarios where spatial relationships, distances, or areas of interest are essential factors under investigation.
 
-Moreover, the correct calibration of fisheye lens distortions ensures comparability and consistency across different eye tracking studies. Researchers often rely on datasets collected from various experiments, and without a standardized correction procedure, variations in lens distortions could introduce unnecessary variability and hinder the ability to generalize findings across studies.
+Moreover, the correction of lens distortions ensures comparability and consistency across different eye tracking studies. Researchers often rely on datasets collected from various experiments, and without a standardized correction procedure, variations in lens distortions could introduce unnecessary variability and hinder the ability to generalize findings across studies.
 
-Beyond the scientific realm, the application of fisheye lens correction extends to practical domains as well. If you plan to incorporate Neon to virtual reality or augmented reality, you will need to affix the Neon module to the headset and to compute the geometrical relationship from the scene camera to the virtual reality camera. By accounting for fisheye lens distortions, you can better correlate the gaze position with the underlying geometry of the virtual environment, thus improving the accuracy of your gaze-based interactions.
+Beyond the scientific realm, the application of lens correction extends to practical domains as well. If you plan to incorporate Neon to virtual reality or augmented reality, you will need to affix the Neon module to the headset and to compute the geometrical relationship from the scene camera to the virtual reality camera. By accounting for lens distortions, you can better correlate the gaze position with the underlying geometry of the virtual environment, thus improving the accuracy of your gaze-based interactions.
 
-## How to correct for fisheye lens distortions?
-In this tutorial, we will cover how to read the provided intrinsic and extrinsic camera parameters and correct for fisheye lens distortions in Neon's scene camera. We will also show you how to undistort the gaze data, so that you can map the gaze position onto the undistorted scene camera video.
+:::tip
+**TLDR**; Correcting for lens distortions is crutial for spatial analysis and comparability across studies.
+:::
+
+## How to correct for the lens distortions?
+In this tutorial, we will cover how to read the provided intrinsic and extrinsic camera parameters and correct for the lens distortions in Neon's scene camera. We will also show you how to undistort the gaze data, so that you can map the gaze position onto the undistorted scene camera video.
 
 We will be using Python and OpenCV to perform the undistortion but the same principles apply to other programming languages and libraries.
 
@@ -30,8 +42,26 @@ To follow this guide, you will need to have the following libraries installed on
 pip install opencv-python numpy
 ```
 
+### Reading from the Cloud download JSON file
+
+We measure the intrinsics and extrinsics parameters from the cameras for you, such that you do not need to do it by yourself. If you are using the [Cloud download](/export-formats/recording-data/neon/#scene-camera-json) format, you can find the intrinsic parameters in the *scene_camera.json* file which you can read using the following function:
+
+```python
+def read_from_json(path):
+    with open(path, "r") as f:
+        data = json.load(f)
+    return data
+```
+Where *path* points to the *scene_camera.json* file. Then, we will store the scene camera matrix, distortion coefficients in variables for later use.
+
+```python
+calibration = read_from_json(path)
+K = np.array(calibration["camera_matrix"])
+D = np.array(calibration["distortion_coefficients"])[0]
+```
+
 ### Reading from the raw file
-We measure the intrinsics and extrinsics parameters from the cameras for you, such that you do not need to do it by yourself. So, let's start by reading the raw file containing these parameters. The calibration parameters are stored in a binary file, and you can read it using the following function:
+If you are using the RAW data, this data is also stored there. The calibration parameters are stored in a binary file, and you can read it using the following function:
 
 ```python
 def read_instrinsics_neon(path):
@@ -60,35 +90,11 @@ Where *path* points to the calibration file, which is located in the same folder
 
 ``` python
 calibration = read_instrinsics_neon(path)
-R = np.eye(3)
 K = calibration["scene_camera_matrix"][0]
 D = calibration["scene_distortion_coefficients"][0]
 ```
 
-### Reading from the Cloud download JSON file
-
-If you are using the [Cloud download](/export-formats/recording-data/neon/#scene-camera-json) format, you can find the intrinsic parameters in the *scene_camera.json* file which you can read using the following function:
-
-```python
-def read_from_json(path):
-    with open(path, "r") as f:
-        data = json.load(f)
-    return data
-```
-
-Similarly, we will store the scene camera matrix, distortion coefficients in variables for later use.
-
-```python
-calibration = read_from_json(path)
-R = np.eye(3)
-K = np.array(calibration["camera_matrix"])
-D = np.array(calibration["distortion_coefficients"])[0]
-```
-
 ## Understanding the variables
-### Identity matrix (R)
-An identity matrix representing no rotation, meaning that the camera coordinate system is aligned with the world coordinate system without any rotation. This implies that the camera is positioned in the world such that its x-axis aligns with the world's x-axis, its y-axis aligns with the world's y-axis, and its z-axis aligns with the world's z-axis.
-
 
 ### Scene camera matrix (K)
 A 3x3 matrix representing the intrinsic parameters of the camera. The camera matrix contains information about the focal length, principal point, and skew of the camera, defined as follows:
@@ -117,36 +123,27 @@ where:
 
 
 ## Undistorting the video and gaze data per frame
-Assuming we have our frame (in OpenCV) and gaze data, we can undistort them using the following code:
+Assuming we have our frame (in OpenCV) and gaze data, we can undistort it using the following code:
 
 ```python
 undist_frame = cv2.undistort(orig_frame, K, D)
 ```
 
-<!-- ```python
-undistorted_size = frame.shape[:2][::-1]
-map1, map2 = cv2.fisheye.initUndistortRectifyMap(
-    np.array(K),
-    np.array(D),
-    R,
-    np.array(K),
-    undistorted_size,
-    cv2.CV_16SC2,
-)
-frame = cv2.remap(
-    frame,
-    map1,
-    map2,
-    interpolation=cv2.INTER_LINEAR,
-    borderMode=cv2.BORDER_CONSTANT,
-)
-``` -->
+Where *orig_frame* is the original frame, *K* is the scene camera matrix, and *D* is the distortion coefficients. The function returns the undistorted frame.
 
-And this is how we undistort the gaze point:
+Below you can find an example of an undistorted frame (red) overlaid with the original frame (blue):
+
+<div class="mb-4" style="display:flex;justify-content:center;">
+  <v-img class="rounded" :src="require('../../../media/neon/undistort02.png')"
+  max-width="60%" 
+  alt="Image showing the original frame overlaid with the undistorted frame."
+  title="Image showing the original frame overlaid with the undistorted frame." />
+</div>
+
+Finally, this is how we undistort the gaze point:
 
 ```python
-xy_undist = cv2.fisheye.undistortPoints(
-    xy.reshape(-1, 1, 2).astype(np.float32), K, D, P=K
-)
+xy_undist = cv2.undistortPoints(xy.reshape(-1, 1, 2).astype(np.float32), 
+    K, D, P=K)
 xy_undist = xy_undist.reshape(-1, 2)
 ```
