@@ -4,40 +4,56 @@ description: "Evaluating Neon's accuracy on phone screens"
 permalink: /alpha-lab/phone-screens
 tags: [Neon, Cloud]
 ---
-# Uncovering gaze behavior on phone screens with Neon
+# Uncovering gaze behaviour on phone screens with Neon
 
 
 <TagLinks />
 <Youtube src="_MhvHURMuZE"/>
 
-:::tip 
-Have you ever wondered what your eyes focus on when you scroll through your favorite mobile radio app? 
-:::
 
-**Introducing Neon!**
+Have you ever wondered what your eyes focus on when scrolling through your favourite app? 
 
-We tested whether Neon, our latest eye-tracker, would accurately capture gaze behaviour while scanning small icons on mobile applications. 
+In this article, we test whether Neon, our latest eye tracker, can accurately capture and characterise viewing behaviour 
+while gazing at small icons on mobile applications. To achieve this, we used some of Alpha Lab's existing tutorials, including
+how to generate scanpaths, define areas of interest (AOIs) and calculate outcome metrics, and map gaze onto dynamic content.
 
-We also go further by using some of Alpha Lab's existing tutorials to evaluate Neon's performance and characterise gaze behaviour while scrolling a mobile app - including how to define areas of interest (AOIs) and calculate basic metrics, map gaze onto dynamic content, and generate scanpaths. Shall we start?
+Shall we start?
 
 ## What you'll need
-Below you can find the tools we used for this project. Using these tools, you can replicate the content of this article with your own applications: 
+Below you can find the tools we used for this project. Using these, you can replicate the content of this article with 
+your own applications.
 
-- The [Reference Image Mapper enrichment](/enrichments/reference-image-mapper/)
-- Our Alpha Lab tutorial on [how to define areas of interest (AOIs) and calculate basic metrics](/alpha-lab/gaze-metrics-in-aois/)
-- Our Alpha Lab tutorial on [how to generate scanpaths](/alpha-lab/scanpath-rim/)
-- Our Alpha Lab tutorial on [how to map and visualize gaze onto dynamic screen content](/alpha-lab/map-your-gaze-to-a-2d-screen/)
+### Cloud enrichment
+- [Reference Image Mapper](/enrichments/reference-image-mapper/)
+
+### Alpha Lab tutorials
+- [How to generate scanpaths](/alpha-lab/scanpath-rim/)
+- [How to define areas of interest (AOIs) and calculate basic metrics](/alpha-lab/gaze-metrics-in-aois/)
+- [How to map and visualize gaze onto dynamic screen content](/alpha-lab/map-your-gaze-to-a-2d-screen/)
+
+### How we used them
+We firstly used the Reference Image Mapper enrichment to create a 3D model of a phone positioned on a desk, and 
+subsequently to map gaze onto a 2D image of the phone-on-desk. Then we used Alpha Lab tutorials to process 
+the exported results, generate advanced visualisations, and compute outcome metrics.
 
 :::tip
-:bulb: Make sure your phone is stable on a phone mount or stand. The techniques used here rely on the Reference Image Mapper enrichment. The scanning video needed for this tool requires relatively static features in the environment. If there is a lot of movement or the objects change in appearance or shape, the mapping can fail.
+:bulb: 
+When preparing the Reference Image Mapper Enrichment, make sure your phone is stable on a phone mount or stand. The 
+scanning video needed for this tool requires relatively static features in the environment. If there is a lot of movement 
+or the objects change in appearance or shape, the mapping can fail. More on this [in the docs](/enrichments/reference-image-mapper#setup/)! 
 :::
 
 ## Gaze behaviour on mobile apps: Insights from Neon
 
 ### Heatmaps and scanpaths
-What catches your attention and how do you navigate through the interface of a mobile app? 
+What catches your attention and how do you visually navigate through the interface/page of a mobile app? 
 
-Two visualizations that help to illustrate these patterns are heatmaps and scanpaths (left and right panel below). Heatmaps show the areas of the app that receive the most attention, with warmer colors indicating more fixations. Meanwhile, scanpaths trace the path of the eye movements, showing the sequence of fixations and eye movements that occur during the visual exploration. The circle cize of the scanpath below shows fixation duration: The bigger the circle, the longer the user glanced at this area of the screen. 
+Two visualizations that help to illustrate these patterns are heatmaps and scanpaths (left and right panel below). 
+Heatmaps show the areas of the app that receive the most attention, with warmer colors indicating more fixations, and can be
+generated natively in Pupil Cloud. Meanwhile, scanpaths trace the path of the eye movements, showing the sequence of fixations 
+and eye movements that occur during the visual exploration. The circle cize of the scanpath below reflects fixation duration: 
+The bigger the circle, the longer the user fixated this area of the screen. Use the scanpath tutorial linked above to generate
+this visualization.
 
 <div class="mcontainer">
   <div class="col-mcontainer">
@@ -50,7 +66,14 @@ Two visualizations that help to illustrate these patterns are heatmaps and scanp
 
 ### Calculation of gaze metrics on AOIs
 
-Analyzing eye-tracking data can provide valuable insights into user behavior, but simply looking at visualizations like heatmaps and scanpaths may not always reveal the full story. This is why we opted for a quantitative analysis of our data as well by calculating gaze metrics, such as [dwell time](/alpha-lab/gaze-metrics-in-aois/#dwell-time) and [time to first contact](/alpha-lab/gaze-metrics-in-aois/#time-to-first-contact). These metrics offer tangible and quantitative outcomes about the salience of each AOI: Longer dwell time implies longer total fixation on a specific AOI and could be considered as a proxy of attentional allocation. Conversely, the shorter the time to first contact, the faster this AOI captured the user's attention, pointing to increased salience of this area.
+Analyzing eye-tracking data can provide valuable insights into user behavior, but simply looking at visualizations like 
+heatmaps and scanpaths may not always reveal the full story. This is why we opted for a quantitative analysis of our data 
+as well by calculating gaze metrics, such as [dwell time](/alpha-lab/gaze-metrics-in-aois/#dwell-time) and
+[time to first contact](/alpha-lab/gaze-metrics-in-aois/#time-to-first-contact). These metrics offer tangible and 
+quantitative outcomes about the salience of each AOI: Longer dwell time implies longer total fixation on a specific AOI 
+and could be considered as a proxy of attentional allocation. Conversely, the shorter the time to first contact, the faster 
+this AOI captured the user's attention, pointing to increased salience of this area. Follow along with the AOI tutorial
+for these calculations and charts!
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img class="rounded" :src="require(`../media/alpha-lab/3.phone-dwell-time.png`)" title="Graph showing dwell time on defined AOIs over the phone screen" alt="Graph showing dwell time on defined AOIs over the phone screen" cover/>
@@ -63,22 +86,36 @@ Analyzing eye-tracking data can provide valuable insights into user behavior, bu
 </div>
 
 
-### Map your gaze onto your phone's content
-So far, we've only scratched the surface by examining static images. Now, it's time to dive into the dynamic world of our smartphones and explore gaze behavior in its natural habitat. 
+### Map your gaze onto dynamic phone screen content
+So far, we've only scratched the surface by examining static images. Now, it's time to dive into the dynamic world of 
+our smartphones and explore gaze behavior more naturally while scrolling. Use the dynamic screen mapping tutorial for this one!
 
-One tool that's helping us do just that is [our tutorial on how to map and visualize gaze onto a screen with dynamic content](/alpha-lab/map-your-gaze-to-a-2d-screen/). Neon's accuracy ensures that even the minutest details aren't overlooked, as shown in the video below. But the benefits don't stop at visualizations alone. The tool also generates a CSV file containing mapped gaze data onto the screen, offering a world of possibilities for further customization and in-depth analysis. 
+Checking out the recording, Neon's accuracy richly captures gaze behaviour, and provides a nice high-level overview of 
+what the wearer was looking at. 
+
+Visualizations are great, but the real power of this tool is that it generates a CSV file containing gaze data mapped 
+onto the screen, in 2D x, y coordinates. This offers many possibilities for further customization and in-depth analysis. 
 
 <Youtube src="TsZmf49GdgI"/>
 
 ## In the wild
 
-That's all fine, but what does it look like to interact with phone screens in the real-world? Consider this scenario: Imagine searching for products on your mobile app while looking at the physical products on a supermarket shelf. We brought Neon into the wild to assess its performance beyond controlled environments. See an example of real-world user behavior below!
+That's all fine, but what does it look like to interact with phone screens when out and about? Consider this scenario: 
+Imagine searching for products on your mobile app while looking at the physical products on a supermarket shelf. We 
+brought Neon into the wild to assess its performance beyond controlled environments. See an example of real-world user 
+behavior below!
  
 <Youtube src="QIaFGpzsRmI"/>
 
 ## Let's wrap it up!
 
-In a nutshell, this project has unveiled the remarkable accuracy of Neon in tracking eye movements during mobile app scrolling. The findings are not limited to our specific use case and could be particularly useful for UX research. By combining Neon with the techniques we've highlighted here, you can gain invaluable insights into user engagement with apps. Curious about how Neon can fit into your work? Need assistance in implementing your own analysis pipelines? Reach out to us [by email](mailto:info@pupil-labs.com), or visit our [Support Page](https://pupil-labs.com/products/support/)! 
+This article has unveiled the remarkable capability of Neon's calibration-free eye tracking to capture 
+viewing behaviour during mobile app interactions - both inside and out and about. This tutorial, and it's outcomes, 
+are not limited to our specific use case and could be particularly useful for other types of UI/UX research. By combining 
+Neon with the techniques we've highlighted here, you can gain invaluable insights into user engagement. 
+
+Curious about how Neon can fit into your work? Need assistance in implementing your own analysis pipelines? Reach out to 
+us [by email](mailto:info@pupil-labs.com) or visit our [Support Page](https://pupil-labs.com/products/support/)! 
 
 <style scoped>
 .mcontainer{
