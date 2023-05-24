@@ -23,10 +23,10 @@ We also go further by using some of Alpha Lab's existing tutorials to evaluate N
 ## What you'll need
 Below you can find the tools we used for this project. Using these tools, you can replicate the content of this article with your own applications: 
 
-- The [Reference Image Mapper enrichment:](/enrichments/reference-image-mapper/)
+- The [Reference Image Mapper enrichment](/enrichments/reference-image-mapper/)
 - Our Alpha Lab tutorial on [how to define areas of interest (AOIs) and calculate basic metrics](/alpha-lab/gaze-metrics-in-aois/)
 - Our Alpha Lab tutorial on [how to generate scanpaths](/alpha-lab/scanpath-rim/)
-- Our Alpha Lab tutorial on [how to map and visualizw gaze onto dynamic screen content](/alpha-lab/map-your-gaze-to-a-2d-screen/)
+- Our Alpha Lab tutorial on [how to map and visualize gaze onto dynamic screen content](/alpha-lab/map-your-gaze-to-a-2d-screen/)
 
 :::tip
 :bulb: Make sure your phone is stable on a phone mount or stand. The techniques used here rely on the Reference Image Mapper enrichment. The scanning video needed for this tool requires relatively static features in the environment. If there is a lot of movement or the objects change in appearance or shape, the mapping can fail.
@@ -78,7 +78,7 @@ That's all fine, but what does it look like to interact with phone screens in th
 
 ## Let's wrap it up!
 
-In a nutshell, this project has unveiled the remarkable accuracy of Neon in tracking eye movements during mobile app scrolling. The findings are not limited to our specific use case and could be particularly useful for UX research. By combining Neon with the techniques we've highlighted here, you can gain invaluable insights into user engagement with apps. Curious about how Neon can fit into your work? Need assistance in implementing your own analysis pipelines? Reach out to info@pupil-labs.com, or visit https://pupil-labs.com/products/support/! 
+In a nutshell, this project has unveiled the remarkable accuracy of Neon in tracking eye movements during mobile app scrolling. The findings are not limited to our specific use case and could be particularly useful for UX research. By combining Neon with the techniques we've highlighted here, you can gain invaluable insights into user engagement with apps. Curious about how Neon can fit into your work? Need assistance in implementing your own analysis pipelines? Reach out to us [by email](mailto:info@pupil-labs.com), or visit our [Support Page](https://pupil-labs.com/products/support/)! 
 
 <style scoped>
 .mcontainer{
