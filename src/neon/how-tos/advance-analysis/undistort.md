@@ -44,7 +44,7 @@ pip install opencv-python numpy
 
 ### Reading from the Cloud download JSON file
 
-We measure the intrinsics and extrinsics parameters from the cameras for you, such that you do not need to do it by yourself. If you are using the [Cloud download](/export-formats/recording-data/neon/#scene-camera-json) format, you can find the intrinsic parameters in the *scene_camera.json* file which you can read using the following function:
+We measure the intrinsics and extrinsics parameters from the cameras for you, such that you do not need to do it by yourself. If you are using the [Cloud download](/export-formats/recording-data/neon/#scene-camera-json) format, you can find the intrinsic parameters in the **scene_camera.json** file which you can read using the following function:
 
 ```python
 def read_from_json(path):
@@ -52,7 +52,7 @@ def read_from_json(path):
         data = json.load(f)
     return data
 ```
-Where *path* points to the *scene_camera.json* file. Then, we will store the scene camera matrix, distortion coefficients in variables for later use.
+Where **path** points to the **scene_camera.json** file. Then, we will store the scene camera matrix, distortion coefficients in variables for later use.
 
 ```python
 calibration = read_from_json(path)
@@ -61,7 +61,10 @@ D = np.array(calibration["distortion_coefficients"])[0]
 ```
 
 ### Reading from the raw file
+<details><summary>Click to see how to read it from the raw format</summary><br>
+<!-- This is collapsed   -->
 If you are using the RAW data, this data is also stored there. The calibration parameters are stored in a binary file, and you can read it using the following function:
+
 
 ```python
 def read_instrinsics_neon(path):
@@ -86,13 +89,16 @@ def read_instrinsics_neon(path):
     )
 ```
 
-Where *path* points to the calibration file, which is located in the same folder as the raw data with the name *calibration.bin*. Then, we will store the scene camera matrix, distortion coefficients in variables for later use.
+Where **path** points to the calibration file, which is located in the same folder as the raw data with the name **calibration.bin**. Then, we will store the scene camera matrix, distortion coefficients in variables for later use.
 
 ``` python
 calibration = read_instrinsics_neon(path)
 K = calibration["scene_camera_matrix"][0]
 D = calibration["scene_distortion_coefficients"][0]
 ```
+
+</details>
+<!-- empty line   -->
 
 ## Understanding the variables
 
@@ -131,7 +137,7 @@ undist_frame = cv2.undistort(orig_frame, K, D)
 
 Where *orig_frame* is the original frame, *K* is the scene camera matrix, and *D* is the distortion coefficients. The function returns the undistorted frame.
 
-Below you can find an example of an undistorted frame (red) overlaid with the original frame (blue):
+Below you can find an example of an <span style="color:red">**undistorted frame**</span> (in <span style="color:red">red</span>) overlaid with the <span style="color:blue">**original frame**</span> (in <span style="color:blue">blue</span>):
 
 <div class="mb-4" style="display:flex;justify-content:center;">
   <v-img class="rounded" :src="require('../../../media/neon/undistort02.png')"
