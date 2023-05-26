@@ -58,7 +58,7 @@ Two visualisations that help to illustrate these patterns are heatmaps and scanp
 
 ### Calculation of gaze metrics on AOIs
 
-Analyzing eye tracking data can provide valuable insights into user behaviour, but simply looking at visualisations like 
+Analysing eye tracking data can provide valuable insights into user behaviour, but simply looking at visualisations like 
 heatmaps and scanpaths may not always reveal the full story. This is why we opted for a quantitative analysis of our data 
 as well by calculating gaze metrics, such as [dwell time](/alpha-lab/gaze-metrics-in-aois/#dwell-time) and
 [time to first contact](/alpha-lab/gaze-metrics-in-aois/#time-to-first-contact). These metrics offer tangible and 
@@ -86,7 +86,7 @@ Checking out the recording, Neon's accuracy richly captures gaze behaviour and p
 what the wearer was looking at. 
 
 Visualisations are great, but the real power of this tool is that it generates a CSV file containing gaze data mapped 
-onto the screen, in 2D x, y coordinates. This offers many possibilities for further customization and in-depth analysis. 
+onto the screen, in 2D x, y coordinates. This offers many possibilities for further customisation and in-depth analysis. 
 
 <Youtube src="RKrf3YQjzao"/>
 
