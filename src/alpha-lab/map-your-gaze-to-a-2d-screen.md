@@ -116,8 +116,8 @@ If you only want the final visualisation and the data, there is nothing else you
 <summary>Read more</summary>
 <!-- This is collapsed   -->
 <br>
-The code is hosted at <a href="https://github.com/pupil-labs/dynamic-rim-module">https://github.com/pupil-labs/dynamic-rim-module</a>. 
-    
+The code is hosted at <a href="https://github.com/pupil-labs/dynamic-rim-module">https://github.com/pupil-labs/dynamic-rim-module</a>.
+
 Navigate to `src/pupil_labs/dynamic_content_on_rim/`. You will first notice that we split the code into several modules. The core functionality is in the script `dynamic_rim.py`. Under the uitools folder, you will find the code used to ask for paths, directories or even to ask for the screen corners. And under the video/read folder is the script to read the timestamps or find a frame for specific timestamps.
 
 In summary, we read the .csv files into Pandas data frames. We use pyav to obtain the timestamps/presentation times for each frame on the videos, and we use OpenCV to get the transformation matrix and apply it to the gaze coordinates. We then merge the data using the timestamps and finally decode the right frames, work with them and encode them again.
@@ -212,7 +212,7 @@ If you want to start your screen and eye tracking recordings automatically (no v
 <summary>Click here to learn about recording your screen like a pro</summary>
 <!-- This is collapsed   -->
 <br>
-Assuming you have <b>OBS</b> installed and correctly set up, you will need to install the <a href="https://github.com/obsproject/obs-websocket"><b>OBS WebSocket plugin</b></a>. 
+Assuming you have <b>OBS</b> installed and correctly set up, you will need to install the <a href="https://github.com/obsproject/obs-websocket"><b>OBS WebSocket plugin</b></a>.
 <br>
 Follow the installer's instructions, and click on "Tools > obs-websocket Settings" when finished. A pop-up will appear and let you modify the settings. There are two parameters we will need for later, the port and the password.
 
