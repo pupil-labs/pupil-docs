@@ -413,6 +413,10 @@ module.exports = {
           title: "Generate scanpaths with Reference Image Mapper",
           path: "scanpath-rim",
         },
+        {
+          title: "Uncover gaze behaviour on phone screens with Neon",
+          path: "phone-screens",
+        },
       ],
     },
     sidebarDepth: 1,

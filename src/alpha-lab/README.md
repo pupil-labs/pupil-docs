@@ -118,6 +118,12 @@ export default {
           to: "/alpha-lab/nerfs",
           img: "nerf.png",
         },
+        {
+          title: "Neon and mobile apps!",
+          text: "Evaluating Neon's accuracy on phone screens.",
+          to: "/alpha-lab/phone-screens",
+          img: "phone.png",
+        },
       ],
       banner: this.loadRandomImage(),
     };

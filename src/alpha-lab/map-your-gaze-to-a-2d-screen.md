@@ -9,7 +9,7 @@ tags: [Pupil Invisible, Neon, Cloud]
 <TagLinks />
 <Youtube src="OXIUjIzCplc"/>
 
-In this guide, we will show you how to map and visualise gaze onto a screen with dynamic content, e.g. a video, web browsing or any other content of your choice, using the [Reference Image Mapper](https://docs.pupil-labs.com/enrichments/reference-image-mapper/) enrichment and a few clicks.
+In this guide, we will show you how to map and visualise gaze onto a screen with dynamic content, e.g. a video, web browsing or any other content of your choice, using the [Reference Image Mapper](/enrichments/reference-image-mapper) enrichment and a few clicks.
 
 ::: tip
 **Note:** This tutorial requires some technical knowledge, but don't worry. We made it almost click and run for you! You can learn as much or as little as you like.
@@ -17,7 +17,7 @@ In this guide, we will show you how to map and visualise gaze onto a screen with
 
 ## What you'll need
 
-Before continuing, ensure you are familiar with the [Reference Image Mapper](https://docs.pupil-labs.com/enrichments/reference-image-mapper/) enrichment. Check out [this explainer video](https://www.youtube.com/watch?v=ygqzQEzUIS4&t=56s) for reference.
+Before continuing, ensure you are familiar with the [Reference Image Mapper](/enrichments/reference-image-mapper) enrichment. Check out [this explainer video](https://www.youtube.com/watch?v=ygqzQEzUIS4&t=56s) for reference.
 
 We recommend you run the enrichment, e.g. with a short recording of your desktop + monitor/screen to ensure it's working okay. Once satisfied, you can use the same reference image + scanning recording for your dynamic screen content.
 
@@ -36,17 +36,17 @@ Let's assume you have everything ready to go – your participant is sat infron
 
 So that we can capture your participant's visual interactions with the screen content, we will need to make sure that both the _eye tracking_ **and** _screen recordings_ happen at the same time.
 
-Importantly, both sources (eye tracking and screen recording) record individually. As such, you'll need what we call an [event annotation](https://docs.pupil-labs.com/invisible/basic-concepts/events/) to synchronise them later.
+Importantly, both sources (eye tracking and screen recording) record individually. As such, you'll need what we call an [event annotation](/invisible/basic-concepts/events/) to synchronise them later.
 
-The [event annotation](https://docs.pupil-labs.com/invisible/basic-concepts/events/) should be used to indicate the beginning of the _screen content recording_ in the _eye tracking recording_, and be named `start.video`.
-Check [here](https://docs.pupil-labs.com/invisible/basic-concepts/events/) how you can create these events in the Cloud.
+The [event annotation](/invisible/basic-concepts/events/) should be used to indicate the beginning of the _screen content recording_ in the _eye tracking recording_, and be named `start.video`.
+Check [here](/invisible/basic-concepts/events/) how you can create these events in the Cloud.
 
 ::: tip
 **Tip:**
 When you initiate your recordings, you'll need to know when the screen recording started, relative to your eye tracking recording. Thus, start your eye tracker recording first, and make sure that the eye tracker scene camera faces the OBS program on the screen. Then, start the screen recording.
 <br>
 <br>
-By looking at the screen when you press the button, you'll have a visual reference to create the [event annotation](https://docs.pupil-labs.com/invisible/basic-concepts/events/) later in Cloud.
+By looking at the screen when you press the button, you'll have a visual reference to create the [event annotation](/invisible/basic-concepts/events/) later in Cloud.
 <br>
 <br>
 **Recap**: Eye tracking **first**; screen recording **second**
@@ -54,7 +54,7 @@ By looking at the screen when you press the button, you'll have a visual referen
 
 ## Once you have everything recorded
 
-- Create a new [Reference Image Mapper](https://docs.pupil-labs.com/enrichments/reference-image-mapper/) enrichment, or add your new eye tracking recordings to an existing enrichment. Run the enrichment, and download the results by right-clicking the enrichment in Cloud once it's computed (see the screenshot below).
+- Create a new [Reference Image Mapper](/enrichments/reference-image-mapper) enrichment, or add your new eye tracking recordings to an existing enrichment. Run the enrichment, and download the results by right-clicking the enrichment in Cloud once it's computed (see the screenshot below).
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
