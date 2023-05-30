@@ -1,10 +1,10 @@
 ---
-title: Uncovering gaze behaviour on phone screens with Neon
-description: "Evaluating Neon's accuracy on phone screens"
+title: Uncover gaze behaviour on phone screens with Neon
+description: "Evaluate Neon's accuracy on phone screens"
 permalink: /alpha-lab/phone-screens
 tags: [Neon, Cloud]
 ---
-# Uncovering gaze behaviour on phone screens with Neon
+# Uncover gaze behaviour on phone screens with Neon
 
 
 <TagLinks />
