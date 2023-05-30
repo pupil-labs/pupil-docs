@@ -120,7 +120,7 @@ export default {
         },
         {
           title: "Neon and mobile apps!",
-          text: "Evaluating Neon's accuracy on phone screens.",
+          text: "Use Neon and existing Alpha Lab content to capture and characterise viewing behaviour on mobile phone screens.",
           to: "/alpha-lab/phone-screens",
           img: "phone.png",
         },
