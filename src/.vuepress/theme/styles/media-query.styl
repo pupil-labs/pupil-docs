@@ -43,7 +43,7 @@
 }
 
 // lg
-@media (min-width: 1024px) {
+@media (min-width: 1024px -1px) {
   .lg-grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -59,9 +59,14 @@
   }
 }
 
-@media (min-width: (768px + 1px))
+@media (min-width: (1025px))
   .theme-container.no-sidebar
     .sidebar
       transform translateX(-100%)
     .page
       padding-left 0
+  .theme-container
+    .sidebar
+      .sidebar-content
+        .v-list
+          display none !important;
