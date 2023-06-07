@@ -118,6 +118,12 @@ export default {
           to: "/alpha-lab/nerfs",
           img: "nerf.png",
         },
+        {
+          title: "Neon and mobile apps!",
+          text: "Use Neon and existing Alpha Lab content to capture and characterise viewing behaviour on mobile phone screens.",
+          to: "/alpha-lab/phone-screens",
+          img: "phone.png",
+        },
       ],
       banner: this.loadRandomImage(),
     };

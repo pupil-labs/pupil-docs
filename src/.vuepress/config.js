@@ -424,6 +424,10 @@ module.exports = {
           title: "Generate scanpaths with Reference Image Mapper",
           path: "scanpath-rim",
         },
+        {
+          title: "Uncover gaze behaviour on phone screens with Neon",
+          path: "phone-screens",
+        },
       ],
     },
     sidebarDepth: 1,
@@ -470,17 +474,16 @@ module.exports = {
       },
     ],
     [
-      "@vuepress/google-analytics",
-      {
-        ga: "UA-40856943-3",
-      },
-    ],
-    [
       "dehydrate",
       {
         noSSR: "404.html",
       },
     ],
+    [
+      "google-analytics-4", {
+        gtag: "G-YSCHB0T6ML"
+      }
+    ]
   ],
 
   chainWebpack: (config) => {

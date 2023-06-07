@@ -135,6 +135,7 @@ This file contains data recorded by the integrated [IMU](/neon/basic-concepts/da
 | **timestamp [ns]** | UTC timestamp in nanoseconds of the sample.    |
 | **gyro x [deg/s]**<br />**gyro y [deg/s]**<br />**gyro z [deg/s]** | Rotation speed around x, y or z-axis respectively in degrees/s.    |
 | **acceleration x [G]**<br />**acceleration y [G]**<br />**acceleration z [G]** | Translational acceleration along the x, y or z-axis respectively in G. Note `1 G = 9.80665 m/s^2`.|
-| **roll** | Drift-free estimation of the roll (head tilt from side to side) in degrees. The output range is -180 to +180 degrees. Added in version 2 of this enrichment.    |
-| **pitch** | Drift-free estimation of the pitch (head tilt from front to back) in degrees. The output range is -180 to +180 degrees. Added in version 2 of this enrichment. |
-| **rotation vector w**<br />**rotation vector x**<br />**rotation vector  y**<br />**rotation vector  z** | Quaternion describing the rotation of the Neon module. |
+| **roll [deg]** | Drift-free estimate of the roll (head tilt from side to side) in degrees. The output range is -180 to +180 degrees. Added in version 2 of this enrichment.    |
+| **pitch [deg]** | Drift-free estimate of the pitch (head tilt from front to back) in degrees. The output range is -90 to +90 degrees. Added in version 2 of this enrichment. |
+| **yaw [deg]** | Drift-free estimate of the yaw (horizontal head rotation) in degrees. The output range is -180 to +180 degrees. Added in version 2 of this enrichment. |
+| **quaternion w**<br />**quaternion x**<br />**quaternion y**<br />**quaternion z** | Quaternion describing the rotation of the Neon module. |
