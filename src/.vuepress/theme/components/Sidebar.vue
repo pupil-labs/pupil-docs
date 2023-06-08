@@ -5,18 +5,19 @@ aside.sidebar
   div.sidebar-content
     div(style="width: inherit")
       v-list.lg-hidden-up.pa-3
-        template(v-for="item in docs_menu")
-          v-list-tile(v-if="item.link", :to="item.link")
-            v-list-tile-title(
-              :class="{ 'text-capitalize': item.title != 'vr/ar', 'text-uppercase': item.title == 'vr/ar' }"
-            )
-              | {{ item.title }}
-          v-list-tile(v-else, :href="item.href", target="_blank")
-            v-list-tile-title.text-capitalize
-              span.pr-1 {{ item.title }}
-              OutboundLink
-      v-divider.lg-hidden-up
-      .pa-3
+        div.sidebar-top
+          template(v-for="item in docs_menu")
+            v-list-tile(v-if="item.link", :to="item.link")
+              v-list-tile-title(
+                :class="{ 'text-capitalize': item.title != 'vr/ar', 'text-uppercase': item.title == 'vr/ar' }"
+              )
+                | {{ item.title }}
+            v-list-tile(v-else, :href="item.href", target="_blank")
+              v-list-tile-title.text-capitalize
+                span.pr-1 {{ item.title }}
+                OutboundLink
+          v-divider.lg-hidden-up
+          .pa-3
         SidebarLinks(:depth="0", :items="items")
     .pa-3(style="width: inherit")
       SidebarBanner
