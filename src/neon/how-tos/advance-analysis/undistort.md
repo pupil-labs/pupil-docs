@@ -11,7 +11,7 @@ While we account for them in Pupil Cloud, and we even give you the possibility t
 ## Why is it important to correct for the lens distortions?
 
 <div class="mb-4" style="display:flex;justify-content:center;">
-  <v-img class="rounded" :src="require('../../../media/neon/undistort.png')"
+  <v-img class="rounded" :src="require('../../../media/neon/undist/sidebyside_neon_with_gaze.jpg')"
   width="100%" 
   alt="Side by side comparison of a distorted and undistorted image with gaze positions overlaid."
   title="Side by side comparison of a distorted and undistorted image with gaze positions overlaid." />
@@ -22,6 +22,29 @@ Correcting these distortions brings many benefits, by aligning the captured scen
 Moreover, the correction of lens distortions ensures comparability and consistency across different eye tracking studies. Researchers often rely on datasets collected from various experiments, and without a standardized correction procedure, variations in lens distortions could introduce unnecessary variability and hinder the ability to generalize findings across studies.
 
 Beyond the scientific realm, the application of lens correction extends to practical domains as well. If you plan to incorporate Neon to virtual reality or augmented reality, you will need to affix the Neon module to the headset and to compute the geometrical relationship from the scene camera to the virtual reality camera. By accounting for lens distortions, you can better correlate the gaze position with the underlying geometry of the virtual environment, thus improving the accuracy of your gaze-based interactions.
+
+Below you can find an example of an <span style="color:red">**original frame**</span> (in <span style="color:red">red</span>) and <span style="color:blue">**undistorted frame**</span> (in <span style="color:blue">blue</span>):
+
+<div>
+<script
+  defer
+  src="https://unpkg.com/img-comparison-slider@7/dist/index.js"
+></script>
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/img-comparison-slider@7/dist/styles.css"
+/>
+
+<img-comparison-slider
+width="60%"
+keyboard=enabled
+>
+  <img slot="first" src="../../../media/neon/undist/dist_neon.jpg" />
+  <img slot="second" src="../../../media/neon/undist/undist_neon.jpg" />
+</img-comparison-slider>
+<br>
+<br>
+</div>
 
 :::tip
 **TLDR**; Correcting for lens distortions is crutial for spatial analysis and comparability across studies.
@@ -137,11 +160,10 @@ undist_frame = cv2.undistort(orig_frame, K, D)
 
 Where *orig_frame* is the original frame, *K* is the scene camera matrix, and *D* is the distortion coefficients. The function returns the undistorted frame.
 
-Below you can find an example of an <span style="color:red">**undistorted frame**</span> (in <span style="color:red">red</span>) overlaid with the <span style="color:blue">**original frame**</span> (in <span style="color:blue">blue</span>):
 
 <div class="mb-4" style="display:flex;justify-content:center;">
-  <v-img class="rounded" :src="require('../../../media/neon/undistort02.png')"
-  max-width="60%" 
+  <v-img class="rounded" :src="require('../../../media/neon/undist/sidebyside_neon.jpg')"
+  max-width="100%" 
   alt="Image showing the original frame overlaid with the undistorted frame."
   title="Image showing the original frame overlaid with the undistorted frame." />
 </div>
@@ -153,3 +175,11 @@ xy_undist = cv2.undistortPoints(xy.reshape(-1, 1, 2).astype(np.float32),
     K, D, P=K)
 xy_undist = xy_undist.reshape(-1, 2)
 ```
+On the examplme below, we show the original gaze points overlaid ove the undistorted frame (in red) and the undistorted point positions (in yellow):
+
+<div class="mb-4" style="display:flex;justify-content:center;">
+  <v-img class="rounded" :src="require('../../../media/neon/undist/undist_neon_with_gaze.jpg')"
+  max-width="70%" 
+  alt="Image showing the original frame overlaid with the undistorted frame."
+  title="Image showing the original frame overlaid with the undistorted frame." />
+</div>

@@ -33,7 +33,6 @@ Recordings downloaded directly from the phone will be in a raw binary format.
 6. Locate the export folder on the phone. Usually, it is in `Documents/Neon Export`.
 7. Copy the recordings to your computer.
 
-<DownloadLinks/>
 
 Note that the export process does not delete the recordings from the Neon Companion app, and you can still upload 
 to Pupil Cloud at a later date if required. 
