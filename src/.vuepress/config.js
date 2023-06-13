@@ -133,7 +133,7 @@ module.exports = {
             {
               title: "Hardware handling",
               children: [
-                // 'glasses-and-companion/hardware-handling/swap-frames',
+                "glasses-and-companion/hardware-handling/frames",
                 "glasses-and-companion/hardware-handling/clean-and-disinfect",
               ],
             },
@@ -199,6 +199,7 @@ module.exports = {
             },
             {
               title: "Enrichment Data",
+              path: "/export-formats/enrichment-data",
               children: [
                 {
                   title: "Reference Image Mapper",
@@ -337,6 +338,7 @@ module.exports = {
             },
             {
               title: "Enrichment Data",
+              path: "/export-formats/enrichment-data",
               children: [
                 {
                   title: "Reference Image Mapper",
@@ -480,10 +482,11 @@ module.exports = {
       },
     ],
     [
-      "google-analytics-4", {
-        gtag: "G-YSCHB0T6ML"
-      }
-    ]
+      "google-analytics-4",
+      {
+        gtag: "G-YSCHB0T6ML",
+      },
+    ],
   ],
 
   chainWebpack: (config) => {
