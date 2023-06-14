@@ -1,12 +1,12 @@
 ---
 permalink: /export-formats/enrichment-data/
-description: Documentation of the exact export formats of Pupil Cloud enrichments.
+description: Documentation of the export formats of Pupil Cloud enrichments.
 ---
-## Where can I find the results of my enrichments?
+## Enrichment Exports
 
-At the left side of the project's view you can see a list of the enrichments you created, below you will find a download button, which will open a view with both the raw downloads and the enrichments data.
+To export the results of an enrichment, navigate to the "Downloads" view of your project.
 
-For a detailed view of what each enrichment result contains, please refer to the respective enrichment export page:
+Select the enrichment type you are interested in to get detailed information about the export format.
 
 <div class="pb-4">
   <v-btn
