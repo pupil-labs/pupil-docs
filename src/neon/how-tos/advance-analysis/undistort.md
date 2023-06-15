@@ -17,15 +17,11 @@ While we account for them in Pupil Cloud, and we even give you the possibility t
   title="Side by side comparison of a distorted and undistorted image with gaze positions overlaid." />
 </div>
 
-Correcting these distortions brings many benefits, by aligning the captured scene with the underlying geometry of the environment, the corrected images provide a more faithful representation of the observer's visual perspective. This alignment is particularly crucial in scenarios where spatial relationships, distances, or areas of interest are essential factors under investigation.
-
-Moreover, the correction of lens distortions ensures comparability and consistency across different eye tracking studies. Researchers often rely on datasets collected from various experiments, and without a standardized correction procedure, variations in lens distortions could introduce unnecessary variability and hinder the ability to generalize findings across studies.
-
-Beyond the scientific realm, the application of lens correction extends to practical domains as well. If you plan to incorporate Neon to virtual reality or augmented reality, you will need to affix the Neon module to the headset and to compute the geometrical relationship from the scene camera to the virtual reality camera. By accounting for lens distortions, you can better correlate the gaze position with the underlying geometry of the virtual environment, thus improving the accuracy of your gaze-based interactions.
+Correcting these distortions brings many benefits, by aligning the captured scene with the underlying geometry of the environment, the corrected images provide a more realistic representation of the observer's visual perspective. This alignment is particularly crucial in scenarios where spatial relationships, distances, or areas of interest are essential factors under investigation.
 
 Below you can find an example of an <span style="color:red">**original frame**</span> (in <span style="color:red">red</span>) and <span style="color:blue">**undistorted frame**</span> (in <span style="color:blue">blue</span>):
 
-<div>
+<div style="width: 60%; margin: 0 auto;">
 <script
   defer
   src="https://unpkg.com/img-comparison-slider@7/dist/index.js"
@@ -34,9 +30,7 @@ Below you can find an example of an <span style="color:red">**original frame**</
   rel="stylesheet"
   href="https://unpkg.com/img-comparison-slider@7/dist/styles.css"
 />
-
 <img-comparison-slider
-width="60%"
 keyboard=enabled
 >
   <img slot="first" src="../../../media/neon/undist/dist_neon.jpg" />
@@ -139,6 +133,10 @@ where:
 - **fx** and **fy** are the focal lengths expressed in pixels. They represent the ratio between the size of a pixel in the image plane and the focal length of the camera. A larger value indicates a higher zoom level.
 - **cx** and **cy** are the coordinates of the principal point, which represents the optical center of the camera. It indicates the position of the image center in the image plane, usually close to the center of the image.
 
+<div>
+<a href="https://docs.opencv.org/4.x/dc/dbb/tutorial_py_calibration.html" target="_blank">Read more about OpenCV convention here.</a>
+</div>
+
 ### Distortion coefficients (D)
 
 ```
@@ -150,6 +148,9 @@ where:
 - **k1** to **k6** are radial distortion coefficients. They model the radial distortion caused by the curvature of the lens, making straight lines appear curved near the edges of the image.
 - **p1** and **p2** are tangential distortion coefficients. They model the tangential distortion caused by the misalignment between the camera sensor and the lens, resulting in image distortions that are not radial.
 
+<div>
+<a href="https://docs.opencv.org/4.x/dc/dbb/tutorial_py_calibration.html" target="_blank">Read more about OpenCV convention here.</a>
+</div>
 
 ## Undistorting the video and gaze data per frame
 Assuming we have our frame (in OpenCV) and gaze data, we can undistort it using the following code:
