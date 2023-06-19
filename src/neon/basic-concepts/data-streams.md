@@ -67,17 +67,32 @@ The Neon module is equipped with a 9-DoF [inertial measurement unit](https://inv
 
 The IMU is sampled at 220 Hz. When downloading recordings from Pupil Cloud the IMU's orientation in Euler angles (i.e. roll, pitch, and yaw) is also available.
 
+The IMU is located in the top bar of the module and it's coordinate system is oriented with the x-axis pointing to the right, the y-axis pointing in front, and the z-axis pointing upwards.
 
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
-    :src="require('../../media/neon/inertial_measurements.jpg')"
+    :src="require('../../media/neon/imu_coordinate_system.jpg')"
     max-width=100%
   >
   </v-img>
 </div>
 
-The IMU is oriented in the frame, such that the x-axis points to the right, the y-axis points to the front and the z-axis points upwards.
+Pitch is defined as a rotation around the x-axis with a value range of -90° to +90°. Yaw and roll are rotations around the y- and z-axis, respectively, with value ranges of -180° to +180°.
 
-```tip
-Note the following limitation regarding streaming IMU data via the real-time API: streaming IMU data is only possible while a recording is running or the live scene video preview is opened on the Companion phone.
-```
+<div style="display:flex;justify-content:center;" class="pb-4">
+  <v-img
+    :src="require('../../media/neon/imu_pitch_yaw_roll.jpg')"
+    max-width=100%
+  >
+  </v-img>
+</div>
+
+When relating data from the IMU to things visible in the scene camera, it may be necessary to align their respective 3D coordinate systems. The IMU's coordinate system is rotated by 102° around the x-axis in relation to the scene camera's coordinate system.
+
+<div style="display:flex;justify-content:center;" class="pb-4">
+  <v-img
+    :src="require('../../media/neon/imu_scene_camera.jpg')"
+    max-width=100%
+  >
+  </v-img>
+</div>
