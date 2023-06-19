@@ -16,8 +16,10 @@ All you need to do is to loosen the two screws fixating the Neon module into the
   title="Image of a Neon module attached to a frame" />
 </div>
 
-# Bare Metal Frame
-If you would like to proptotype your own frame we also offer the Bare Metal option, which includes the minimum required components to attach the Neon module to your own frame, a "nest" and a cable to connect it to the phone.
+## Design your own Frame
+You can design your own custom frame and integrate Neon into whichever form factor you want. To support this, we offer the "Bare Metal" frame, which only includes the "nest" PCB and USB cable. These are the only components you need to operate the Neon module and you can design your custom frame around them.
+
+CAD models of the Neon module and nest are available [here](https://github.com/pupil-labs/neon-geometry). A model of the "Just act natural" frame is also included as a template to kickstart your design process!
 
 <div class="mb-4" style="display:flex;justify-content:center;">
   <v-img class="rounded" :src="require('../../../media/neon/bare_metal.jpg')"
@@ -25,7 +27,3 @@ If you would like to proptotype your own frame we also offer the Bare Metal opti
   alt="Image of a Bare Metal frame"
   title="Image of a Bare Metal frame" />
 </div>
-
-::: tip
-You may want to check the 3D models if you plan on designing your own frame. You can find them [here](https://github.com/pupil-labs/neon-geometry)
-:::
