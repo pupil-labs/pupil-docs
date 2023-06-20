@@ -93,7 +93,7 @@ cd pyflux
 pip install -e .
 ```
 
-Cloning the nerfstudio repository at 0.1.19, and intsalling it:
+Cloning the nerfstudio repository at 0.1.19, and installing it:
   
 ```bash
 cd ..
