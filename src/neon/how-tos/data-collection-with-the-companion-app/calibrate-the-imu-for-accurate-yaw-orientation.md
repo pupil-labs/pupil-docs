@@ -1,5 +1,6 @@
 ---
 description: "How-to calibrate Neon magnetometer to obatain accurate yaw orientation."
+permalink: /neon/how-tos/data-collection-with-the-companion-app/calibrate-the-imu-for-accurate-yaw-orientation
 ---
 # Calibrate the IMU for accurate yaw orientation
 
