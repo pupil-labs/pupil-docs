@@ -163,6 +163,7 @@ module.exports = {
                 "how-tos/data-collection-with-the-companion-app/monitor-your-data-collection-in-real-time",
                 "how-tos/data-collection-with-the-companion-app/transfer-recordings-via-usb",
                 "how-tos/data-collection-with-the-companion-app/achieve-super-precise-time-sync",
+                "how-tos/data-collection-with-the-companion-app/calibrate-the-imu-for-accurate-yaw-orientation"
               ],
             },
             {
