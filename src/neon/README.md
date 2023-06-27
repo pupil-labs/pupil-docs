@@ -13,8 +13,8 @@ This section is for new users who want to get to grips with the tools. Working t
 
 <div>
   <div class="grid grid-cols-1 sm-grid-cols-2 md-grid-cols-3 lg-grid-cols-2 xl-grid-cols-3 gap-8">
-    <div v-for="(item,index) in gettingStarted">
-      <v-img class="rounded" style="margin-bottom:32px;" :src="require(`../media/neon/overview-${index + 1}.jpg`)"></v-img>
+    <div v-for="(item,idxgS) in gettingStarted">
+      <v-img class="rounded" style="margin-bottom:32px;" :src="require(`../media/neon/overview-${idxgS + 1}.jpg`)"></v-img>
       <p class="caption--1 font-weight-bold pb-3">{{ item.title }}</p>
       <p class="caption--1">
         {{ item.text }}
@@ -33,8 +33,8 @@ This section explains all relevant concepts in detail and provides background in
 
 <div class="pb-4">
   <v-btn
-    v-for="(item,index) in basicConcepts"
-    :key="index"
+    v-for="(item,idxbC) in basicConcepts"
+    :key="idxbC"
     outline
     round
     color="primary"
@@ -55,8 +55,8 @@ This section gives an overview of Neon, as well as of the Companion device and N
 
 <div class="pb-4">
   <v-btn
-    v-for="(item,index) in glassesAndCompanion"
-    :key="index"
+    v-for="(item,idxGlC) in glassesAndCompanion"
+    :key="idxGlC"
     outline
     round
     color="primary"
@@ -77,8 +77,8 @@ This section explains all the enrichments available in Pupil Cloud and guides yo
 
 <div class="pb-4">
   <v-btn
-    v-for="(item,index) in enrichments"
-    :key="index"
+    v-for="(item,idxEnrich) in enrichments"
+    :key="idxEnrich"
     outline
     round
     color="primary"
@@ -103,7 +103,7 @@ Some highlights:
   <v-expansion-panel v-model="panelHowTo">
     <v-expansion-panel-content
       v-for="(item, idxHowTo) in panelContent"
-      :key="index"
+      :key="idxHowTo"
       hide-actions
     >
       <template v-slot:header>
