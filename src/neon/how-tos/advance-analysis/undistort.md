@@ -4,11 +4,11 @@ description: "Undistorting Neon's scene camera video and gaze data, using the in
 permalink: /neon/how-tos/advance-analysis/undistort/
 ---
 # Correcting for the lens distortion on Neon's scene camera
-One particular challenge that often arises in wearable eye tracking setups is the presence of distortions on the scene camera. The type of lenses used, with their wide-angle characteristics, allow for a broad field of view, enabling the capture of more information within a single frame. However, this advantage comes at the cost of introducing distortions to the image. <!-- rectilinear distortions -->
+A circumstance that often arises in wearable eye tracking setups is the presence of distortions on the scene camera. The type of lenses used, with their wide-angle characteristics, allow for a broad field of view, enabling the capture of more information within a single frame. However, this advantage comes at the cost of introducing distortions to the image. <!-- rectilinear distortions -->
 
 While we account for them in Pupil Cloud, and we even give you the possibility to download the undistorted video using the [Gaze Overlay enrichment](/enrichments/gaze-overlay), this is not the case when using the [Realtime API](/neon/real-time-api) or raw data, where you may want to correct it by yourself.
 
-## Why is it important to correct for the lens distortions?
+## When is it beneficial to correct for lens distortion?
 
 <div class="mb-4" style="display:flex;justify-content:center;">
   <v-img class="rounded" :src="require('../../../media/neon/undist/sidebyside_neon_with_gaze.jpg')"
@@ -17,7 +17,7 @@ While we account for them in Pupil Cloud, and we even give you the possibility t
   title="Side by side comparison of a distorted and undistorted image with gaze positions overlaid." />
 </div>
 
-Correcting these distortions brings many benefits, by aligning the captured scene with the underlying geometry of the environment, the corrected images provide a more realistic representation of the observer's visual perspective. This alignment is particularly crucial in scenarios where spatial relationships, distances, or areas of interest are essential factors under investigation.
+The lens distortion in Neon's scene camera is not very strong, but correcting for it can have benefits for some applications. The undistorted image may be a more realistic or appealing representation of the observer's visual perspective (e.g. parallel lines will also be parallel in the undistorted image). Some computer vision algorithms also perform better on undistorted images.
 
 Below you can find an example of an <span style="color:red">**original frame**</span> (in <span style="color:red">red</span>) and <span style="color:blue">**undistorted frame**</span> (in <span style="color:blue">blue</span>):
 
@@ -130,7 +130,7 @@ K = [[fx, 0, cx],
 
 where:
 
-- **fx** and **fy** are the focal lengths expressed in pixels. They represent the ratio between the size of a pixel in the image plane and the focal length of the camera. A larger value indicates a higher zoom level.
+- **fx** and **fy** are the focal lengths expressed in pixels. They measure the distance between the camera sensor and the pinhole opening of the camera. As such, they determine the field of view of the camera.
 - **cx** and **cy** are the coordinates of the principal point, which represents the optical center of the camera. It indicates the position of the image center in the image plane, usually close to the center of the image.
 
 <div>
