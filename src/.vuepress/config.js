@@ -30,13 +30,15 @@ module.exports = {
       },
       {
         property: "og:description",
-        content: `${frontmatter.description ? frontmatter.description : description
-          }`,
+        content: `${
+          frontmatter.description ? frontmatter.description : description
+        }`,
       },
       {
         name: "description",
-        content: `${frontmatter.description ? frontmatter.description : description
-          }`,
+        content: `${
+          frontmatter.description ? frontmatter.description : description
+        }`,
       },
     ];
     for (const meta of default_metas) {
@@ -131,7 +133,7 @@ module.exports = {
             {
               title: "Hardware handling",
               children: [
-                // 'glasses-and-companion/hardware-handling/swap-frames',
+                "glasses-and-companion/hardware-handling/frames",
                 "glasses-and-companion/hardware-handling/clean-and-disinfect",
               ],
             },
@@ -161,6 +163,16 @@ module.exports = {
                 "how-tos/data-collection-with-the-companion-app/monitor-your-data-collection-in-real-time",
                 "how-tos/data-collection-with-the-companion-app/transfer-recordings-via-usb",
                 "how-tos/data-collection-with-the-companion-app/achieve-super-precise-time-sync",
+                "how-tos/data-collection-with-the-companion-app/calibrate-the-imu-for-accurate-yaw-orientation"
+              ],
+            },
+            {
+              title: "Advanced Analysis",
+              children: [
+                {
+                  title: "Undistort Video and Gaze Data",
+                  path: "how-tos/advance-analysis/undistort/",
+                },
               ],
             },
           ],
@@ -188,6 +200,7 @@ module.exports = {
             },
             {
               title: "Enrichment Data",
+              path: "/export-formats/enrichment-data",
               children: [
                 {
                   title: "Reference Image Mapper",
@@ -326,6 +339,7 @@ module.exports = {
             },
             {
               title: "Enrichment Data",
+              path: "/export-formats/enrichment-data",
               children: [
                 {
                   title: "Reference Image Mapper",
@@ -469,10 +483,11 @@ module.exports = {
       },
     ],
     [
-      "google-analytics-4", {
-        gtag: "G-YSCHB0T6ML"
-      }
-    ]
+      "google-analytics-4",
+      {
+        gtag: "G-YSCHB0T6ML",
+      },
+    ],
   ],
 
   chainWebpack: (config) => {

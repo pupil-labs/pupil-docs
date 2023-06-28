@@ -5,7 +5,7 @@ permalink: /enrichments/gaze-overlay
 ## Gaze Overlay
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img
-    :src="require('../media/invisible/explainers/gaze_overlay_header.png')"
+    :src="require('../media/enrichments/gaze_overlay_header.png')"
     max-width=100%
   >
   </v-img>

@@ -63,21 +63,36 @@ A microphone is integrated into the Neon module. Recorded audio will be part of 
 Audio recording is disabled in the Neon Companion app by default and can be enabled in the settings.
 
 ## Movement (IMU Data)
-The Neon module is equipped with a 9-DoF [inertial measurement unit](https://invensense.tdk.com/products/motion-tracking/9-axis/icm-20948/) (IMU) featuring an accelerometer, gyroscope, and magnetometer. The accelerometer and gyroscope measure linear acceleration and angular velocity, respectively, and are provided as raw values. A fusion engine also combines these values with magnetometer readings to estimate the module's absolute orientation relative to magnetic north and gravity as a quaternion. 
+The Neon module is equipped with a 9-DoF [inertial measurement unit](https://invensense.tdk.com/products/motion-tracking/9-axis/icm-20948/) (IMU) featuring an accelerometer, gyroscope, and magnetometer. The accelerometer and gyroscope measure linear acceleration and angular velocity, respectively, and are provided as raw values. A fusion engine also combines these values with magnetometer readings to estimate the module's absolute orientation relative to magnetic north and gravity as a quaternion. Note that in order to obtain precise absolute yaw readings, the magnetometer needs to be pre-calibrated. See how in [this guide](/neon/how-tos/data-collection-with-the-companion-app/calibrate-the-imu-for-accurate-yaw-orientation).
 
 The IMU is sampled at 220 Hz. When downloading recordings from Pupil Cloud the IMU's orientation in Euler angles (i.e. roll, pitch, and yaw) is also available.
 
+The IMU is located in the top bar of the module and it's coordinate system is oriented with the x-axis pointing to the right, the y-axis pointing in front, and the z-axis pointing upwards.
 
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
-    :src="require('../../media/neon/inertial_measurements.jpg')"
+    :src="require('../../media/neon/imu_coordinate_system.jpg')"
     max-width=100%
   >
   </v-img>
 </div>
 
-The IMU is oriented in the frame, such that the x-axis points to the right, the y-axis points to the front and the z-axis points upwards.
+Pitch is defined as a rotation around the x-axis with a value range of -90° to +90°. Yaw and roll are rotations around the y- and z-axis, respectively, with value ranges of -180° to +180°.
 
-```tip
-Note the following limitation regarding streaming IMU data via the real-time API: streaming IMU data is only possible while a recording is running or the live scene video preview is opened on the Companion phone.
-```
+<div style="display:flex;justify-content:center;" class="pb-4">
+  <v-img
+    :src="require('../../media/neon/imu_pitch_yaw_roll.jpg')"
+    max-width=100%
+  >
+  </v-img>
+</div>
+
+When relating data from the IMU to things visible in the scene camera, it may be necessary to align their respective 3D coordinate systems. The IMU's coordinate system is rotated by 102° around the x-axis in relation to the scene camera's coordinate system.
+
+<div style="display:flex;justify-content:center;" class="pb-4">
+  <v-img
+    :src="require('../../media/neon/imu_scene_camera.jpg')"
+    max-width=100%
+  >
+  </v-img>
+</div>

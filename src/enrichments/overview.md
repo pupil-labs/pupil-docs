@@ -21,7 +21,7 @@ From mapping your gaze to real-world features of the environment, like surfaces,
             aspect-ratio="1.4"
             style="margin-bottom:32px;"
             :position="item.position"
-            :src="require(`../media/invisible/explainers/${item.img}`)"
+            :src="require(`../media/enrichments/${item.img}`)"
           />
           <p class="caption--1 font-weight-bold pb-3">{{ item.title }}</p>
         </router-link>
