@@ -160,10 +160,14 @@ module.exports = {
             {
               title: "Data Collection",
               children: [
-                "how-tos/data-collection-with-the-companion-app/monitor-your-data-collection-in-real-time",
-                "how-tos/data-collection-with-the-companion-app/transfer-recordings-via-usb",
-                "how-tos/data-collection-with-the-companion-app/achieve-super-precise-time-sync",
-                "how-tos/data-collection-with-the-companion-app/calibrate-the-imu-for-accurate-yaw-orientation"
+                "how-tos/data-collection/monitor-your-data-collection-in-real-time",
+                "how-tos/data-collection/transfer-recordings-via-usb",
+                "how-tos/data-collection/achieve-super-precise-time-sync",
+                "how-tos/data-collection/calibrate-the-imu-for-accurate-yaw-orientation",
+                {
+                  title: "Use it with Capture",
+                  path: "how-tos/data-collection/using-capture",
+                },
               ],
             },
             {

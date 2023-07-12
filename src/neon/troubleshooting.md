@@ -27,7 +27,7 @@ You need to rollback the Android version to be compatible again. Please note tha
 ::: tip
 <v-icon large color="info">info_outline</v-icon>
 The instructions below require you to copy files to your phone. If you are not familiar
-with this procedure, see steps 1-5 from [these instructions](/neon/how-tos/data-collection-with-the-companion-app/transfer-recordings-via-usb.html#transfer-exported-recordings-to-a-computer).
+with this procedure, see steps 1-5 from [these instructions](/neon/how-tos/data-collection/transfer-recordings-via-usb.html#transfer-exported-recordings-to-a-computer).
 :::
 
 **OnePlus 8/8T**
