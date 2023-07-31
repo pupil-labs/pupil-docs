@@ -13,7 +13,7 @@ Therefore digital clocks regularly readjust themselves by syncing to a master cl
 ### Force Syncing to the Master Clock on Demand
 The easiest way to achieve accurate time synchronization is to force a fresh sync-up to the master clock of all devices before starting data collection. This will ensure drift error is minimized for at least a few hours.
 
-A sync-up can usually be forced by toggling automatic determination of the current time off and back on in the operating system's settings. In Android, for example, the `Date & Time` settings in the `System` settings have a toggle called `Use network-provided time`. Whenever this toggle is turned on, the system syncs up.
+A sync-up can usually be forced by toggling the automatic determination of the current time off and back on in the operating system's settings. In Android 11, for example, the `Date & Time` settings in the `System` settings have a toggle called `Use network-provided time`. In Android 12, the toggle is called `Set time automatically`. Whenever this toggle is turned on, the system syncs up.
 
 Depending on the operating system, devices use different master clock servers to sync with. Ideally, all devices would sync to the same master clock to avoid small errors between different masters. Some operating systems allow specifying which server to use. Android uses the following ones depending on the region:
 
