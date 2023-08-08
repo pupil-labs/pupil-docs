@@ -126,7 +126,7 @@ This file contains data recorded by the integrated [IMU](/invisible/basic-concep
 | **section id** | Unique identifier of the corresponding section.     |
 | **recording id** | Unique identifier of the recording this sample belongs to.     |
 | **timestamp [ns]** | UTC timestamp in nanoseconds of the sample.    |
-| **gyro x [deg/s]**<br />**gyro y [deg/s]**<br />**gyro z [deg/s]** | Rotation speed around x, y or z-axis respectively in degrees/s.    |
+| **gyro x [rad/s]**<br />**gyro y [rad/s]**<br />**gyro z [rad/s]** | Rotation speed around x, y or z-axis respectively in radians/s.    |
 | **acceleration x [G]**<br />**acceleration y [G]**<br />**acceleration z [G]** | Translational acceleration along the x, y or z-axis respectively in G. Note `1 G = 9.80665 m/s^2`.|
 | **roll** | Drift-free estimation of the roll (head tilt from side to side) in radians. The output range is -π to +π rad. Added in version 2 of this enrichment.    |
 | **pitch** | Drift-free estimation of the pitch (head tilt from front to back) in radians. The output range is -π to +π rad. Added in version 2 of this enrichment. |
