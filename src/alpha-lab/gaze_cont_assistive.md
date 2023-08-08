@@ -9,7 +9,7 @@ tags: [Neon]
 <TagLinks />
 <Youtube src="cuvWqVOAc5M"/>
 
-:::tip
+::: tip
 Imagine a world where you can browse the internet with a mere glance or write an email using only your eyes. This is not science fiction; it is the realm of gaze-contingent systems - an immensely helpful technology for those seeking transformative assistive solutions. 
 :::
 
@@ -25,7 +25,7 @@ Using such technologies has become much easier recently thanks to the advancemen
 
 We have, therefore, prepared a guide to aid you in creating your very own gaze-contingent controller using [Neon](https://pupil-labs.com/products/neon/).
 
-## How to use a head-mounted eye tracker for screen-based interaction (context)
+## How to use a head-mounted eye tracker for screen-based interaction
 
 To implement a gaze-contingent application, one needs to overcome two challenges: 
 
@@ -35,7 +35,7 @@ For head-mounted eye trackers, the first challenge is to transform the gaze from
 
 **Gaze-controlled mouse in real time**
 
-The second challenge is interpreting the gaze on-screen and updating the control input (e.g., a mouse) in real time. To tackle this challenge, we used Neon's [Real-time API](https://docs.pupil-labs.com/neon/real-time-api/introduction/), along with our [Real-time Screen Gaze](https://github.com/pupil-labs/realtime-screen-gaze/) package that allows users to acquire screen-based gaze coordinates in real time. 
+The second challenge is interpreting the gaze on-screen and updating the control input (e.g., a mouse) in real time. To tackle this challenge, we used Neon's [Real-time API](/neon/real-time-api/introduction/), along with our [Real-time Screen Gaze](https://github.com/pupil-labs/realtime-screen-gaze/) package that allows users to acquire screen-based gaze coordinates in real time. 
 
 Follow the steps in the next section and in no time you will be able to use your gaze to navigate a website and fixate on different parts to trigger a mouse click with your eyes.
 
@@ -49,7 +49,7 @@ Follow the steps in the next section and in no time you will be able to use your
     - Click on `Mouse Control` and embark on your journey into the realm of gaze contingency.
     - Right-click anywhere in the window or on any of the tags to show or hide the Settings window.
 
-    <img src="../media/alpha-lab/Settings-gaze-controlled-cursor-demo.png"/> 
+<img src="../media/alpha-lab/Settings-gaze-controlled-cursor-demo.png"/> 
 
 ## What's next? 
 
