@@ -129,7 +129,7 @@ export default {
           text: "Use Neon to create gaze-contingent assistive technology.",
           to: "/alpha-lab/gaze-contingency-assistive",
           img: "phone.png",
-        }
+        },
       ],
       banner: this.loadRandomImage(),
     };
