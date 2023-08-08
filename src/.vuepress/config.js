@@ -436,7 +436,8 @@ module.exports = {
           path: "phone-screens",
         },
         {
-          title: "A practical guide to implementing gaze contingency in assistive technology",
+          title:
+            "A practical guide to implementing gaze contingency in assistive technology",
           path: "gaze-contingency-assistive",
         },
       ],
