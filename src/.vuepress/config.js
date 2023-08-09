@@ -437,7 +437,7 @@ module.exports = {
         },
         {
           title:
-            "A practical guide to implementing gaze contingency in assistive technology",
+            "Gaze contingency in assistive technology",
           path: "gaze-contingency-assistive",
         },
       ],
