@@ -125,8 +125,8 @@ export default {
           img: "phone.png",
         },
         {
-          title: "Gaze contingency in assistive technology",
-          text: "Use Neon to create gaze-contingent assistive technology.",
+          title: "Gaze-contingent assistant",
+          text: "Build gaze-contingent assistive applications with Neon!",
           to: "/alpha-lab/gaze-contingency-assistive",
           img: "gaze-cont-main-page.png",
         },
