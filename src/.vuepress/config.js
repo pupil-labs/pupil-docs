@@ -437,7 +437,7 @@ module.exports = {
         },
         {
           title:
-            "Gaze contingency in assistive technology",
+            "Build gaze-contingent assistive applications with Neon",
           path: "gaze-contingency-assistive",
         },
       ],
