@@ -35,7 +35,7 @@ This file contains fixation events detected in the gaze data stream and mapped t
 | **fixation x [normalized]** | Float value representing the x-coordinate of the fixation in surface coordinates. This position is the average of all mapped gaze samples within the fixation.     |
 | **fixation y [normalized]** | Same as "fixation x [normalized]" but for the y-coordinate.     |
 
-## aoi_positions.csv
+## surface_positions.csv
 This file contains the surface locations in the scene images for all sections.
 
 
