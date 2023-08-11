@@ -435,6 +435,11 @@ module.exports = {
           title: "Uncover gaze behaviour on phone screens with Neon",
           path: "phone-screens",
         },
+        {
+          title:
+            "Build gaze-contingent assistive applications with Neon",
+          path: "gaze-contingency-assistive",
+        },
       ],
     },
     sidebarDepth: 1,

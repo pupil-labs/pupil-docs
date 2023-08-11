@@ -124,6 +124,12 @@ export default {
           to: "/alpha-lab/phone-screens",
           img: "phone.png",
         },
+        {
+          title: "Gaze-contingent assistant",
+          text: "Build gaze-contingent assistive applications with Neon!",
+          to: "/alpha-lab/gaze-contingency-assistive",
+          img: "gaze-cont-main-page.png",
+        },
       ],
       banner: this.loadRandomImage(),
     };
