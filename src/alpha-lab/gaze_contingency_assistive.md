@@ -4,13 +4,13 @@ description: "Gaze contingent systems for assistive technology"
 permalink: /alpha-lab/gaze-contingency-assistive
 tags: [Neon]
 ---
-# A practical guide to implementing gaze contingency in assistive technology
+# A practical guide to implementing gaze contingency for assistive technology
 
 <TagLinks />
 <Youtube src="cuvWqVOAc5M"/>
 
 ::: tip
-Imagine a world where transformative assistive solutions allow you to browse the internet with a mere glance or write an email using only your eyes. This is not science fiction; it is the realm of gaze-contingent technology.
+Imagine a world where transformative assistive solutions enable you to browse the internet with a mere glance or write an email using only your eyes. This is not science fiction; it is the realm of gaze-contingent technology.
 :::
 
 ## Hacking the eyes with gaze contingency
@@ -49,7 +49,7 @@ in the demo enables mouse clicks when gaze hovers over different elements of the
 
 **It’s your turn…**
 
-Follow the steps in the next section and in no time you will be able to use your gaze to navigate a website and fixate on different parts to trigger a mouse click with your eyes.
+Follow the steps in the next section to be able to use your gaze to navigate a website and fixate on different parts to trigger a mouse click with your eyes.
 
 ## Steps
 
