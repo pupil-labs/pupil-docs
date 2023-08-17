@@ -3,10 +3,18 @@ title: A practical guide to implementing gaze contingency in assistive technolog
 description: "Gaze contingent systems for assistive technology"
 permalink: /alpha-lab/gaze-contingency-assistive
 meta:
+  - name: twitter:card
+    content: player
   - name: twitter:image
-    content: "https://img.youtube.com/vi/cuvWqVOAc5M/sddefault.jpg"
+    content: "https://i.ytimg.com/vi/cuvWqVOAc5M/maxresdefault.jpg"
+  - name: twitter:player
+    content: "https://www.youtube.com/embed/cuvWqVOAc5M"
+  - name: twitter:width
+    content: "1280"
+  - name: twitter:height
+    content: "720"
   - property: og:image
-    content: "https://img.youtube.com/vi/cuvWqVOAc5M/sddefault.jpg"
+    content: "https://i.ytimg.com/vi/cuvWqVOAc5M/maxresdefault.jpg"
 tags: [Neon]
 ---
 
