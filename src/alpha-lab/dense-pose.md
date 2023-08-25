@@ -65,7 +65,9 @@ After executing the code, new files will be generated. Check the new DensePoseCo
   <v-img class="rounded" :src="require(`../media/alpha-lab/densepose-result.png`)" width="100%" />
 </div>
     
-3. Two files are also stored: 1) a simple `[parts_count.csv](https://www.notion.so/69d881ce18cd42c2b4d95d13e98432ec?pvs=21)` showing the number of times each body part is gazed, and 2) a `[densepose.csv](https://www.notion.so/69d881ce18cd42c2b4d95d13e98432ec?pvs=21)` following a structure similar to the gaze.csv, but also with a new column indicating gazed body parts.
+3. Two files are also stored: 
+  1) A simple `parts_count.csv` showing the number of times each body part is gazed, and 
+  2) A `densepose.csv` following a structure similar to the gaze.csv, but also with a new column indicating gazed body parts.
 
 ## Runing locally
 
