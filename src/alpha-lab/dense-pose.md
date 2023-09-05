@@ -74,5 +74,5 @@ After executing the code, new files will be generated. Check the new DensePoseCo
 You can also run everything on your local machine. However, this option is only available for Linux and MacOS users, as detectron2 does not support Windows 😕. If you do not have a GPU on your computer, we strongly recommend using our Google Colab notebook. Detailed instructions on running locally can be found in the [Github repository](https://github.com/pupil-labs/densepose-module) and the associated [read the docs](https://densepose-module.readthedocs.io/).
 
 ::: tip 
-Need assistance in implementing your gaze-contingent task? Reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com) or on our [Discord server](https://pupil-labs.com/chat/) or visit our [Support Page](https://pupil-labs.com/products/support/) for dedicated support options.
+Need assistance implementing your own DensePose + gaze tracking application? Reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com) or on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for formal support options.
 :::
