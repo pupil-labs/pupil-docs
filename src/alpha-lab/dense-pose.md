@@ -1,5 +1,5 @@
 ---
-title: "Map gaze onto body parts using DensePose"
+title: "Map your gaze onto body parts with DensePose"
 description: "Using densepose to map gaze onto body parts. To be or not to be? proclaims Prince Hamlet while holding a skull in his hand. But, where is the audience looking? At the hand, at the arm, or the face?"
 permalink: /alpha-lab/dense-pose/
 meta:
