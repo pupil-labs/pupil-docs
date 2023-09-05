@@ -54,7 +54,7 @@ Until recently, existing methods for tracking body parts in eye tracking scene v
   <v-img class="rounded" :src="require(`../media/alpha-lab/densepose-colab.png`)" width="100%" />
 </div>
 
-## Contribution
+## Results
 
 After executing the code, new files will be generated. Check the new DensePoseColab folder for the results:
 
