@@ -36,7 +36,7 @@ Understanding which body parts people look at during interactions, whether visua
 
 Pupil Cloud currently offers a [Face Mapper enrichment](/enrichments/face-mapper/), which tracks faces in scene video and determines whether they were gazed at. However, tracking the rest of the body is currently not possible. This is where our guide comes in. By following our instructions, you will be able to automatically detect and track body parts of people in your eye tracking recordings. Subsequently, you can map gaze onto them, enabling a deeper understanding of how the eye tracker wearer visually interacted with them.
 
-Until recently, existing methods for tracking body parts in eye tracking scene video were not very robust or accurate. However, Meta has released DensePose, a new tool that promises to solve many of these problems. As a result, we have decided to incorporate DensePose into our guide. For more information about DensePose, please refer to the paper, [DensePose: Dense Human Pose Estimation In The Wild](https://arxiv.org/abs/1802.00434).
+Until recently, existing methods for tracking body parts in eye tracking scene video were not very robust or accurate. However, Meta has released DensePose, a new tool that promises to solve many of these problems. As a result, we have decided to incorporate DensePose into our guide. For more information about DensePose, please refer to [DensePose: Dense Human Pose Estimation In The Wild](https://arxiv.org/abs/1802.00434).
 
 ## Steps
 
