@@ -69,7 +69,7 @@ After executing the code, new files will be generated. Check the new DensePoseCo
   1) A simple `parts_count.csv` showing the number of times each body part is gazed, and 
   2) A `densepose.csv` following a structure similar to the gaze.csv, but also with a new column indicating gazed body parts.
 
-## Runing locally
+## Running locally
 
 You can also run everything on your local machine. However, this option is only available for Linux and MacOS users, as detectron2 does not support Windows 😕. If you do not have a GPU on your computer, we strongly recommend using our Google Colab notebook. Detailed instructions on running locally can be found in the [Github repository](https://github.com/pupil-labs/densepose-module) and the associated [read the docs](https://densepose-module.readthedocs.io/).
 
