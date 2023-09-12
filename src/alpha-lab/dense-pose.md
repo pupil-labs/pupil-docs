@@ -30,13 +30,16 @@ Have you ever wondered which body parts we gaze upon while conversing with other
 
 ## Understanding visual behaviour on body parts
 
-Understanding which body parts people look at during interactions, whether visual or otherwise, is an important topic in fields ranging from sports science to psycholinguistics. This guide shows you how to use Neon or Pupil Invisible eye tracking with Meta's DensePose to characterise gaze behaviour on body parts that appear in the scene video, as shown above.
+Understanding which body parts people look at during interactions, whether visual or otherwise, is an important topic in 
+fields ranging from sports science to psycholinguistics. This guide shows you how to use Neon or Pupil Invisible eye 
+tracking with [DensePose](https://github.com/facebookresearch/DensePose) (Github repository of [Dense Human Pose Estimation In The Wild](https://arxiv.org/abs/1802.00434)) 
+to characterise gaze behaviour on body parts that appear in the scene video, as shown above.
 
 ## What tools enable this?
 
-Pupil Cloud currently offers a [Face Mapper enrichment](/enrichments/face-mapper/), which tracks faces in scene video and determines whether they were gazed at. However, tracking the rest of the body is currently not available in Cloud. This is where our guide comes in. By following our instructions, you will be able to automatically detect and track body parts of people visible in the scene video of your recordings, and map gaze onto tracked body parts. This tool can enable a deeper understanding of how a subject (wearing the eye tracker) visually interacted with other people.
+Pupil Cloud currently offers a [Face Mapper enrichment](/enrichments/face-mapper/), which tracks faces in scene video and determines whether they were gazed at. However, tracking the rest of the body is currently not available in Cloud. This is where our guide comes in. By following our instructions, you will be able to automatically detect and track body parts of people visible in the scene video of your recordings, and map gaze onto tracked body parts. This approach can enable a deeper understanding of how subjects (wearing the eye tracker) visually interacted with other people.
 
-Until recently, existing methods for tracking body parts in eye tracking scene video were not very robust or accurate. However, Meta has released [DensePose](https://arxiv.org/abs/1802.00434), a new tool that promises to solve many of these problems. As a result, we have decided to incorporate it into our guide.
+Until recently, existing methods for tracking body parts in eye tracking scene video were not very robust or accurate. However, [DensePose](https://github.com/facebookresearch/DensePose) promises to solve many of these problems, so we have decided to incorporate it into our guide.
 
 ## Steps
 
@@ -50,10 +53,6 @@ Until recently, existing methods for tracking body parts in eye tracking scene v
   </a>
 </div>
 
-<div class="mb-4" style="display:flex;justify-content:center;">
-  <v-img class="rounded" :src="require(`../media/alpha-lab/densepose-colab.png`)" width="100%" />
-</div>
-
 ## Results
 
 After executing the code, new files will be generated. Check the new DensePoseColab folder for the results:
@@ -65,14 +64,14 @@ After executing the code, new files will be generated. Check the new DensePoseCo
   <v-img class="rounded" :src="require(`../media/alpha-lab/densepose-result.png`)" width="100%" />
 </div>
     
-3. Two files are also stored: 
-  1) A simple `parts_count.csv` showing the number of times each body part is gazed, and 
-  2) A `densepose.csv` following a structure similar to the gaze.csv, but also with a new column indicating gazed body parts.
+3. Two files are also stored:
+- `parts_count.csv` - shows the number of times each body part is gazed 
+- `densepose.csv` - follows a structure similar to `gaze.csv`, but also with a new column indicating gazed body parts
 
 ## Running locally
 
-You can also run everything on your local machine. However, this option is only available for Linux and MacOS users, as detectron2 does not support Windows 😕. If you do not have a GPU on your computer, we strongly recommend using our Google Colab notebook. Detailed instructions on running locally can be found in the [Github repository](https://github.com/pupil-labs/densepose-module) and the associated [read the docs](https://densepose-module.readthedocs.io/).
+You can also run everything on your local machine. However, this option is only available for Linux and MacOS users as detectron2 does not support Windows 😕. If you do not have a GPU on your computer, we strongly recommend using our Google Colab notebook. Detailed instructions on running locally can be found in the [Github repository](https://github.com/pupil-labs/densepose-module) and the associated [read the docs](https://densepose-module.readthedocs.io/).
 
 ::: tip 
-Need assistance implementing your own DensePose + gaze tracking application? Reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com) or on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for formal support options.
+Need assistance implementing your own DensePose + gaze tracking application? Reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for formal support options.
 :::
