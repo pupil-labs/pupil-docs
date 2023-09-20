@@ -30,15 +30,13 @@ module.exports = {
       },
       {
         property: "og:description",
-        content: `${
-          frontmatter.description ? frontmatter.description : description
-        }`,
+        content: `${frontmatter.description ? frontmatter.description : description
+          }`,
       },
       {
         name: "description",
-        content: `${
-          frontmatter.description ? frontmatter.description : description
-        }`,
+        content: `${frontmatter.description ? frontmatter.description : description
+          }`,
       },
     ];
     for (const meta of default_metas) {
@@ -140,18 +138,31 @@ module.exports = {
           ],
         },
         {
-          // Enrichments
-          title: "Enrichments",
+          title: "Pupil Cloud",
           children: [
-            { title: "Overview", path: "/enrichments/" },
             {
-              title: "Reference Image Mapper",
-              path: "/enrichments/reference-image-mapper/",
+              // Enrichments
+              title: "Enrichments",
+              children: [
+                { title: "Overview", path: "/pupil-cloud/enrichments/" },
+                {
+                  title: "Reference Image Mapper",
+                  path: "/pupil-cloud/enrichments/reference-image-mapper/",
+                },
+                { title: "Marker Mapper", path: "/pupil-cloud/enrichments/marker-mapper/" },
+                { title: "Face Mapper", path: "/pupil-cloud/enrichments/face-mapper/" },
+              ],
             },
-            { title: "Marker Mapper", path: "/enrichments/marker-mapper/" },
-            { title: "Face Mapper", path: "/enrichments/face-mapper/" },
-            { title: "Gaze Overlay", path: "/enrichments/gaze-overlay/" },
-          ],
+            {
+              // Visualizations
+              title: "Visualizations",
+              children: [
+                { title: "Overview", path: "/pupil-cloud/visualizations/" },
+                { title: "Video Renderer", path: "/pupil-cloud/visualizations/video-renderer/" },
+                { title: "Heatmap", path: "/pupil-cloud/visualizations/heatmap/" },
+              ],
+            }
+          ]
         },
         {
           // How-To Guides
@@ -273,27 +284,31 @@ module.exports = {
           ],
         },
         {
-          // Enrichments
-          title: "Enrichments",
+          title: "Pupil Cloud",
           children: [
             {
-              title: "Overview",
-              path: "/enrichments",
+              // Enrichments
+              title: "Enrichments",
+              children: [
+                { title: "Overview", path: "/pupil-cloud/enrichments/" },
+                {
+                  title: "Reference Image Mapper",
+                  path: "/pupil-cloud/enrichments/reference-image-mapper/",
+                },
+                { title: "Marker Mapper", path: "/pupil-cloud/enrichments/marker-mapper/" },
+                { title: "Face Mapper", path: "/pupil-cloud/enrichments/face-mapper/" },
+              ],
             },
             {
-              title: "Reference Image Mapper",
-              path: "/enrichments/reference-image-mapper",
-            },
-            {
-              title: "Marker Mapper",
-              path: "/enrichments/marker-mapper/",
-            },
-            { title: "Face Mapper", path: "/enrichments/face-mapper" },
-            {
-              title: "Gaze Overlay",
-              path: "/enrichments/gaze-overlay",
-            },
-          ],
+              // Visualizations
+              title: "Visualizations",
+              children: [
+                { title: "Overview", path: "/pupil-cloud/visualizations/" },
+                { title: "Video Renderer", path: "/pupil-cloud/visualizations/video-renderer/" },
+                { title: "Heatmap", path: "/pupil-cloud/visualizations/heatmap/" },
+              ],
+            }
+          ]
         },
         {
           // How-To Guides

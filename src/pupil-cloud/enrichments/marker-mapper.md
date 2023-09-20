@@ -5,7 +5,7 @@ permalink: /enrichments/marker-mapper
 # Marker Mapper
 
 <div class="mb-4" style="display:flex;justify-content:center;">
-  <v-img class="rounded" :src="require('../media/enrichments/marker_mapper_header.png')"
+  <v-img class="rounded" :src="require('../../media/enrichments/marker_mapper_header.png')"
   width="80%" 
   alt="A screenshot of the Marker Mapper enrichment on Pupil Cloud."
   title="A screenshot of the Marker Mapper enrichment on Pupil Cloud" />
@@ -18,11 +18,11 @@ For robust detection, you should place enough markers on your surface such that 
 You can use these images as a template for printing markers:
 
 <div class="pb-4" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
-  <a download="apriltags_tag36h11_0-23.jpg" href="../media/shared/imgs/apriltags_tag36h11_0-23.jpg" title="AprilTags 0-23">
-    <img src="../media/shared/imgs/apriltags_tag36h11_0-23.jpg">
+  <a download="apriltags_tag36h11_0-23.jpg" href="../../media/shared/imgs/apriltags_tag36h11_0-23.jpg" title="AprilTags 0-23">
+    <img src="../../media/shared/imgs/apriltags_tag36h11_0-23.jpg">
   </a>
-  <a download="apriltags_tag36h11_24-47.jpg" href="../../media/shared/imgs/apriltags_tag36h11_24-47.jpg" title="AprilTags 0-23">
-    <img src="../media/shared/imgs/apriltags_tag36h11_24-47.jpg">
+  <a download="apriltags_tag36h11_24-47.jpg" href="../../../media/shared/imgs/apriltags_tag36h11_24-47.jpg" title="AprilTags 0-23">
+    <img src="../../media/shared/imgs/apriltags_tag36h11_24-47.jpg">
   </a>
 </div>
 
@@ -42,7 +42,7 @@ Note that when adding a new marker to the surface definition, another marker tha
 A surface definition always needs to contain at least 2 markers. Thus, at least 2 markers have to be visible in the video frame when initially creating the surface, and you cannot remove further markers from the surface definition when the marker count is down to 2.
 
 <div class="mb-4" style="display:flex;justify-content:center;">
-  <v-img class="rounded" :src="require('../media/enrichments/marker_mapper_additional.png')"
+  <v-img class="rounded" :src="require('../../media/enrichments/marker_mapper_additional.png')"
   width="80%" 
   alt="A screenshot of the Marker Mapper enrichment on Pupil Cloud."
   title="A screenshot of the Marker Mapper enrichment on Pupil Cloud" />

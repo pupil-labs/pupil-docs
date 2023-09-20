@@ -1,6 +1,6 @@
 ---
 description: Explanation of all available enrichments including setup instructions.
-permalink: /enrichments
+permalink: /pupil-cloud/enrichments
 ---
 
 # What are Enrichments? 
@@ -21,7 +21,7 @@ From mapping your gaze to real-world features of the environment, like surfaces,
             aspect-ratio="1.4"
             style="margin-bottom:32px;"
             :position="item.position"
-            :src="require(`../media/enrichments/${item.img}`)"
+            :src="require(`../../media/enrichments/${item.img}`)"
           />
           <p class="caption--1 font-weight-bold pb-3">{{ item.title }}</p>
         </router-link>
@@ -47,36 +47,24 @@ export default {
       enrichments: [
         {
           title: "Reference image mapper",
-          to: "/enrichments/reference-image-mapper",
+          to: "/pupil-cloud/enrichments/reference-image-mapper",
           text: "Our markerless solution to map gaze data from the real world onto a reference image.",
           img: "reference_image_mapper_header.png",
         },
         {
           title: "Marker mapper",
-          to: "/enrichments/marker-mapper",
+          to: "/pupil-cloud/enrichments/marker-mapper",
           text: "Use apriltags to get your gaze onto a surface.",
           img: "marker_mapper_header.png",
         },
         {
           title: "Face mapper",
-          to: "/enrichments/face-mapper",
+          to: "/pupil-cloud/enrichments/face-mapper",
           text: "Map gaze data to faces in the scene video.",
           img: "face_mapper_header.png",
-        },
-        {
-          title: "Gaze overlay",
-          to: "/enrichments/gaze-overlay",
-          text: "Visualise your gaze on top of the scene video and undistort the scene video.",
-          img: "gaze_overlay_header.png",
         },
       ],
     };
   },
 }
 </script>
-
-
-
-
-
-
