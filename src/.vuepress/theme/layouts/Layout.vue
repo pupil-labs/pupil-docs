@@ -36,6 +36,12 @@ export default {
     return {
       isSidebarOpen: false,
       previousPageUrl: null,
+      undeclaredRoutes: [
+        "pupil-cloud",
+        "enrichments",
+        "export-formats",
+        "visualizations",
+      ],
     };
   },
 
@@ -53,8 +59,9 @@ export default {
       /* Fail safe, previousPage will be null if coming from external source, thus load neon for enrichments and export formats*/
       if (this.previousPageUrl === null) {
         if (
-          this.$page.regularPath.includes("enrichments") ||
-          this.$page.regularPath.includes("export-formats")
+          this.undeclaredRoutes.some((item) =>
+            this.$page.regularPath.includes(item)
+          )
         ) {
           this.previousPageUrl = "/neon/";
         } else {
@@ -89,20 +96,23 @@ export default {
       /* This part here checks from which page comes from and sets the previous url accordingly.*/
       if (from.path.includes("invisible")) {
         if (
-          this.$page.regularPath.includes("enrichments") ||
-          this.$page.regularPath.includes("export-formats")
+          this.undeclaredRoutes.some((item) =>
+            this.$page.regularPath.includes(item)
+          )
         ) {
           this.previousPageUrl = "/invisible/";
         } else {
           this.previousPageUrl = to.path;
         }
       } else if (
-        from.path.includes("enrichments") ||
-        from.path.includes("export-formats")
+        this.undeclaredRoutes.some((item) =>
+          this.$page.regularPath.includes(item)
+        )
       ) {
         if (
-          this.$page.regularPath.includes("enrichments") ||
-          this.$page.regularPath.includes("export-formats")
+          this.undeclaredRoutes.some((item) =>
+            this.$page.regularPath.includes(item)
+          )
         ) {
           this.previousPageUrl = from.$page.previousPageUrl;
         } else {
@@ -110,8 +120,9 @@ export default {
         }
       } else {
         if (
-          this.$page.regularPath.includes("enrichments") ||
-          this.$page.regularPath.includes("export-formats")
+          this.undeclaredRoutes.some((item) =>
+            this.$page.regularPath.includes(item)
+          )
         ) {
           this.previousPageUrl = "/neon/";
         } else {
