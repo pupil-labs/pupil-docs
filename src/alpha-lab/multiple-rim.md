@@ -112,12 +112,12 @@ To ensure accurate scanning of large plain surfaces like tables and kitchen coun
 <div style="margin-bottom: 5px;"></div>
 
 4. **Add Custom Events:** During the eye tracking recording, users may focus on specific furniture or parts of the room multiple times. By adding custom [events](/neon/basic-concepts/events) annotations corresponding to these areas or objects, you can create [sections](/enrichments/#enrichment-sections) for the enrichments to be performed. This approach allows you to run each enrichment only on the portion of the recording where a certain object is present. For this tutorial, we used the following event annotations to run five Reference Image Mapper enrichments:
-    - Cupboard: `cupboard.begin` and `cupboard.end`
     - Desk: `desk.begin` and `desk.end`
-    - Kitchen: `kitchen.begin` and `kitchen.end`
     - TV area 1: `tv1.begin` and `tv1.end`
     - TV area 2: `tv2.begin` and `tv2.end`
     - Table: `table.begin` and `table.end`
+    - Kitchen: `kitchen.begin` and `kitchen.end`
+    - Cupboard: `cupboard.begin` and `cupboard.end`
 
 5. **Create and run the enrichments:** You will need to create a separate enrichment for each reference image. A reasonable naming scheme *could* correspond to each area of the environment, like ‘cupboard’, ‘desk’ etc. In the temporal selection of each enrichment, be sure to use the appropriate events labels. E.g. for ‘cupboard’, you would use `cupboard.begin` and `cupboard.end`. Now, run the enrichments to map the subject's gaze from the recording onto the multiple reference images you captured.
 
