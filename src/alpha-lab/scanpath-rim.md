@@ -17,25 +17,38 @@ tags: [Pupil Invisible, Neon, Cloud]
 Picture this: Build and customise scanpath visualisations with your Reference Image Mapper exports!
 :::
 
-## Unlocking visual exploration with scanpaths
-A scanpath is a graphical representation of an individual's gaze. It shows the sequence of fixations (pauses in gaze), and rapid eye movements made between fixations (saccades). Scanpaths offer a glimpse into how the observer has focused their attention on different aspects of the scene, which is a valuable tool for understanding a person's visual attention and perception. 
+## Visualising gaze exploration with scanpaths
+Scanpaths are graphical representations of gaze over time. As shown in the video above, they contain fixation locations 
+(blue numbered circles) and saccades made between fixations (blue connecting lines). The size of the circles reflect 
+fixation durations, with longer fixations corresponding to bigger circles. The length of the connecting lines reflect 
+saccadic amplitudes, with larger gaze shifts corresponding to longer lines. Scanpaths offer a glimpse into how the 
+observer has focused their attention on different aspects of the scene, which is a valuable tool for understanding a 
+person's visual attention and perception.
 
-In this guide, we will show you how to generate both static and dynamic scanpath visualisations using your Reference Image Mapper exported data, like in the video above.
+In this guide, we will show you how to generate both static and dynamic scanpath visualisations using your Reference 
+Image Mapper exported data.
 
 ::: tip
 Before continuing, ensure you are familiar with the [Reference Image Mapper](/enrichments/reference-image-mapper) 
 enrichment. Check out [this explainer video](https://www.youtube.com/watch?v=ygqzQEzUIS4&t=56s) for reference.
 :::
 
-## Building the visualisations in an offline context
-The [Reference Image Mapper](/enrichments/reference-image-mapper) available in Pupil Cloud is a tool that maps gaze onto 2D images and can subsequently generate heatmaps. However, it currently does not support the production of scanpath visualizations. Since scanpaths provide a useful characterization of *where*, *when*, and *how long* attention was focused on various elements, we developed a script that enables you to generate both static and dynamic scanpaths using your Reference Image Mapper data exported from Pupil Cloud.
+## Extending current tools
+The [Reference Image Mapper](/enrichments/reference-image-mapper) enrichment available in Pupil Cloud is a tool that maps gaze onto
+2D images and can subsequently generate heatmaps. However, it currently does not support the production of scanpath visualizations.
+Thus, we chose to develop a script that shows you how to build your own scanpaths using Reference Image Mapped data.
+
 
 ## Steps
-1. Run a [Reference Image Mapper](https://docs.pupil-labs.com/enrichments/reference-image-mapper/) enrichment and download the results
-2. Download [this](https://gist.github.com/elepl94/9f669c4d81e455cf2095957831219664) gist and follow the instructions in the [readme](https://gist.github.com/elepl94/9f669c4d81e455cf2095957831219664#file-readme-md)
+1. Run a [Reference Image Mapper enrichment](https://docs.pupil-labs.com/enrichments/reference-image-mapper/) and download the results
+2. Download [this script](https://gist.github.com/elepl94/9f669c4d81e455cf2095957831219664) and follow the [installation instructions](https://gist.github.com/elepl94/9f669c4d81e455cf2095957831219664#installation)
 
-## Final results
-After the script has completed its execution, you'll find the resulting scanpath visualizations stored in a newly created sub-folder named "scanpath." For each participant, you will obtain a reference image with the scanpath superimposed on it, along with a video that illustrates gaze behavior on the reference image, featuring a dynamic scanpath overlay. Furthermore, an aggregated visualization, combining all participants' scanpaths, will be at your disposal, providing the opportunity for more comprehensive and in-depth analyses.
+## Review the scanpaths
+After the script has completed its execution, you'll find the resulting scanpath visualizations stored in a newly created 
+sub-folder named "scanpath." For each participant, you will obtain a reference image with the scanpath superimposed on it. 
+You will also find a video featuring a dynamic scanpath overlay. Finally, if you had multiple participants, an aggregated 
+visualization combining all participants' scanpaths will be available, enabling a more comprehensive overview of the subjects'
+gaze behavior.
 
 <div style="display: flex; justify-content: space-between;">
     <div style="flex: 1; margin-right: 10px;">
