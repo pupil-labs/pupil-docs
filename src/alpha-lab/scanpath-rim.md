@@ -43,6 +43,11 @@ Thus, we chose to develop a script that shows you how to build your own scanpath
 2. Download [this script](https://gist.github.com/elepl94/9f669c4d81e455cf2095957831219664) and follow the [installation instructions](https://gist.github.com/elepl94/9f669c4d81e455cf2095957831219664#installation)
 
 ## Review the scanpaths
+<div class="iframe-container2">
+    <iframe width="2000" height="1500" src="https://www.youtube.com/embed/X43aTIRjwgQ?si=aTzAkRrYNqdOEf0T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div> 
+<br>
+
 After the script has completed its execution, you'll find the resulting scanpath visualizations stored in a newly created 
 sub-folder named "scanpath." For each participant, you will obtain a reference image with the scanpath superimposed on it. 
 You will also find a video featuring a dynamic scanpath overlay. Finally, if you had multiple participants, an aggregated 
@@ -55,17 +60,14 @@ gaze behavior.
             <img src="../media/alpha-lab/Jack_scanpath.jpeg" alt="Jack Scanpath" style="width: 100%; height: 100%;">
         </div>
     </div>
-    <div style="flex: 1;">
-        <div class="iframe-container2" style="width: 100%;">
-            <div style="width: 100%; text-align: center;">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/X43aTIRjwgQ?si=aTzAkRrYNqdOEf0T" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
 </div>
 
-<div style="width: 100%; text-align: center;">
-    <img src="../media/alpha-lab/general_scanpath.jpeg" alt="General Scanpath" style="width: 50%; height: 50%;">
+<div style="display: flex; justify-content: space-between;">
+    <div style="flex: 1; margin-right: 10px;">
+        <div style="width: 100%; text-align: center;">
+            <img src="../media/alpha-lab/general_scanpath.jpeg" alt="General Scanpath" style="width: 100%; height: 100%;">
+        </div>
+    </div>
 </div>
 
 <style scoped>
