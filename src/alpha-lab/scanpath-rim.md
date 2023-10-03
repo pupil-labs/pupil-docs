@@ -18,12 +18,11 @@ Picture this: Build and customise scanpath visualisations with your Reference Im
 :::
 
 ## Visualising gaze exploration with scanpaths
-Scanpaths are graphical representations of gaze over time. As shown in the video above, they contain fixation locations 
-(blue numbered circles) and saccades made between fixations (blue connecting lines). The size of the circles reflect 
-fixation durations, with longer fixations corresponding to bigger circles. The length of the connecting lines reflect 
-saccadic amplitudes, with larger gaze shifts corresponding to longer lines. Scanpaths offer a glimpse into how the 
-observer has focused their attention on different aspects of the scene, which is a valuable tool for understanding a 
-person's visual attention and perception.
+Scanpaths are graphical representations of gaze over time. Scanpaths offer a glimpse into how the observer has focused their attention on different aspects of the scene, which is a valuable tool for understanding a person's visual attention and perception. The video above shows:
+- Fixation locations are visualized as blue numbered circles. Saccades are shown with blue lines connecting fixations. 
+- Fixation duration is mapped to circle size. Longer fixations corresponding to bigger circles. 
+- Lines visualize saccades. Longer lines correspond larger saccadic amplitude (larger shifts in gaze). 
+
 
 In this guide, we will show you how to generate both static and dynamic scanpath visualisations using your Reference 
 Image Mapper exported data.
