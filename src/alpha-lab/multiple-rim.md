@@ -4,7 +4,7 @@ permalink: /alpha-lab/multiple-rim/
 tags: [Pupil Invisible, Neon, Cloud]
 ---
 
-# Map and visualize gaze onto multiple reference images taken from the same environment
+# Map and visualize gaze on multiple reference images taken from the same environment
 
 <TagLinks />
 
@@ -17,26 +17,40 @@ tags: [Pupil Invisible, Neon, Cloud]
 Level-up your Reference Image Mapper workflow to extract insights from participants freely exploring their environment!
 :::
 
-## Exploring gaze patterns on multiple regions of an environment
-Understanding where subjects focus their gaze in relation to their environment is a common area of study for researchers in fields as diverse as art, architecture, and fall safety. Recently, powerful scene recognition tools such as the Reference Image Mapper enrichment in Pupil Cloud have made it possible to map gaze onto 3D environments, and generate heatmap visualizations. This offers a high-level overview of visual exploration patterns and also paves the way for further analysis, such as region of interest analysis.
+## Exploring gaze patterns in multiple regions of an environment
+Understanding where people focus their gaze while exploring their environment is an area of interest for researchers in 
+diverse fields, ranging from art and architecture to medical training. Recently, powerful scene recognition tools such as 
+the Reference Image Mapper enrichment in Pupil Cloud have made it possible to map gaze in 3D real-world environments and 
+generate heatmap visualizations. These offer an informative overview of visual exploration patterns and also pave the way 
+for further analysis, such as region of interest analysis.
 
-In this guide, we will show you how to use the [Reference Image Mapper](/enrichments/reference-image-mapper/) to map a participant's gaze onto multiple areas of a living environment as they freely navigate around it.
+In this guide, we will show you how to use the [Reference Image Mapper](/enrichments/reference-image-mapper/) to map a 
+participant's gaze onto _multiple_ areas of a living environment as they freely navigate around it.
 
 ::: tip
-Before continuing, ensure you are familiar with the [Reference Image Mapper](/enrichments/reference-image-mapper) enrichment. Check out [this explainer video](https://www.youtube.com/watch?v=ygqzQEzUIS4&t=56s) for reference.
+Before continuing, ensure you are familiar with the [Reference Image Mapper](/enrichments/reference-image-mapper) enrichment. 
+Check out [this explainer video](https://www.youtube.com/watch?v=ygqzQEzUIS4&t=56s) for reference.
 :::
 
 ## The tools at hand
-The [Reference Image Mapper](/enrichments/reference-image-mapper/) enrichment available in Pupil Cloud can be used to map gaze onto a single reference image of an environment. However, mapping gaze onto *multiple* regions of an environment is often of interest, since it can enable a deeper understanding of patterns of visual exploration.  Therefore, we have put together this guide to show you how to leverage Reference Image Mapper for this purpose.
-
-Because the [Reference Image Mapper](/enrichments/reference-image-mapper/) is only able to map gaze onto a *single* reference image, we need a few things to generate *multiple* reference image mappings in a larger environment:
-
-- Multiple reference images of the environment
-- Single or multiple scanning recordings. The choice of whether to use single or multiple scanning recordings depends on the dimensions of the space to be explored. Further details on this in ‘Steps’
-- An eye tracking recording taken as the participant(s) move freely within the environment, combined with custom user-inputted [events](/neon/basic-concepts/events) to segment the recording into [sections](/enrichments/#enrichment-sections) based on the specific areas the person was looking at
+The [Reference Image Mapper](/enrichments/reference-image-mapper/) enrichment available in Pupil Cloud can be used to map 
+gaze onto a _single_ reference image of an environment. However, mapping gaze onto *multiple* regions of an environment is 
+often of interest, since it can enable a deeper understanding of patterns of visual exploration.  Therefore, we have put 
+together this guide to show you how to leverage Reference Image Mapper for this purpose.
 
 ## Steps
-1. **Capture Reference Images:** Take pictures of the areas or objects within the environment you wish to investigate. Here are some example pictures of different areas and pieces of furniture in the living room:
+Because the [Reference Image Mapper](/enrichments/reference-image-mapper/) is only able to map gaze onto a *single* reference image, 
+we need a few things to generate *multiple* reference image mappings in a larger environment:
+
+- Multiple reference images of the environment
+- Single or multiple scanning recordings. The choice of whether to use single or multiple scanning recordings depends on 
+the dimensions of the space to be explored (see below for examples)
+- An eye tracking recording taken as the participant(s) move freely within the environment
+- User-inputted [events](/neon/basic-concepts/events) to segment the recording(s) into [sections](/enrichments/#enrichment-sections) based on 
+the areas the person was looking at
+
+
+1. **Capture Reference Images:** Take pictures of the areas or objects within the environment you wish to investigate. Here are some example pictures of different areas and pieces of furniture in our environment (a living room, dining area, and kitchen):
 
 <div class="image-row">
     <div class="image-column">
@@ -63,12 +77,13 @@ Because the [Reference Image Mapper](/enrichments/reference-image-mapper/) is on
 
 <div style="margin-bottom: 50px;"></div>
 
-2. **Record Scanning Videos:** For this tutorial, we used *five* separate scanning recordings to cover the living room environment. If you have an even bigger or more complex environment, it might be necessary to use more scanning recordings, which is fine. On the other hand, it might be possible to use just one scanning recording if you can capture sufficient data, or where you have a smaller environment. Remember, each scanning recording must be **under 3 minutes in duration**. 
+2. **Record Scanning Videos:** For this guide, we used *five* separate scanning recordings to cover the environment. If you have an even bigger or more complex environment, it might be necessary to use more scanning recordings, which is fine. On the other hand, it might be possible to use just one scanning recording if you can capture sufficient data, or where you have a smaller environment. Remember, each scanning recording must be **under 3 minutes in duration**. 
     
 Check out these videos which show how we made the scans (also be sure to follow our [best practices](/enrichments/reference-image-mapper/#scanning-best-practices) for optimal scanning):
 
 ::: tip
-To ensure accurate scanning of large plain surfaces like tables and kitchen countertops, enrich them with features. Consider using a printed tablecloth or placing items to enhance the mapping process.
+The Reference Image Mapper prefers feature-rich environments. If you have large plain surfaces, like empty tables or countertops, 
+consider placing some strategic items within the environment to increase the chances of successful mapping. 
 :::
 
 <div style="display: flex;">
@@ -111,7 +126,7 @@ To ensure accurate scanning of large plain surfaces like tables and kitchen coun
 
 <div style="margin-bottom: 5px;"></div>
 
-4. **Add Custom Events:** During the eye tracking recording, users may focus on specific furniture or parts of the room multiple times. By adding custom [events](/neon/basic-concepts/events) annotations corresponding to these areas or objects, you can create [sections](/enrichments/#enrichment-sections) for the enrichments to be performed. This approach allows you to run each enrichment only on the portion of the recording where a certain object is present. For this tutorial, we used the following event annotations to run five Reference Image Mapper enrichments:
+4. **Add Custom Events:** During the eye tracking recording, users may focus on specific furniture or parts of the room multiple times. By adding custom [event](/neon/basic-concepts/events) annotations corresponding to these areas or objects, you can create [sections](/enrichments/#enrichment-sections) for the enrichments to be performed. This approach allows you to run each enrichment only on the portion of the recording where a certain object is present. For this guide, we used the following event annotations to run five Reference Image Mapper enrichments:
     - Desk: `desk.begin` and `desk.end`
     - TV area 1: `tv1.begin` and `tv1.end`
     - TV area 2: `tv2.begin` and `tv2.end`
@@ -123,7 +138,7 @@ To ensure accurate scanning of large plain surfaces like tables and kitchen coun
 
 ## Final results
 
-Once the enrichments are completed, heatmaps are automatically generated illustrating the areas which attracted more gaze. Additionally, you'll have the option to download gaze and fixation data mapped within the bounds of the pictures, enabling you to conduct further in-depth analyses.
+Once the enrichments are completed, you can view the heatmaps which illustrate areas which attracted more gaze. Additionally, you'll have the option to download gaze and fixation data mapped within the bounds of the pictures, enabling you to conduct further in-depth analyses.
 
 <div class="image-row">
     <div class="image-column">
