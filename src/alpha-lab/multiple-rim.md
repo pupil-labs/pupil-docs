@@ -142,58 +142,28 @@ Once the enrichments are completed, you can view the heatmaps which illustrate a
 
 <div class="image-row">
     <div class="image-column">
-        <img src="../media/alpha-lab/desk.jpeg" alt="Desk" class="image">
+        <img src="../media/alpha-lab/desk-heatmap.jpeg" alt="Desk" class="image">
     </div>
     <div class="image-column">
-        <img src="../media/alpha-lab/desk-heatmap.jpeg" alt="Desk-heatmap" class="image">
+        <img src="../media/alpha-lab/tv1-heatmap.jpeg" alt="TV1" class="image">
     </div>
-  </div>
+    <div class="image-column">
+        <img src="../media/alpha-lab/tv2-heatmap.jpeg" alt="TV2" class="image">
+    </div>
 </div>
 <div class="image-row">
     <div class="image-column">
-        <img src="../media/alpha-lab/tv1.jpeg" alt="TV1" class="image">
+        <img src="../media/alpha-lab/table-heatmap.jpeg" alt="Table" class="image">
     </div>
     <div class="image-column">
-        <img src="../media/alpha-lab/tv1-heatmap.jpeg" alt="TV1-heatmap" class="image">
+        <img src="../media/alpha-lab/kitchen-heatmap.jpeg" alt="Kitchen" class="image">
     </div>
-  </div>
+    <div class="image-column">
+        <img src="../media/alpha-lab/cupboard-heatmap.jpeg" alt="Cupboard" class="image">
+    </div>
 </div>
-<div class="image-row">
-    <div class="image-column">
-        <img src="../media/alpha-lab/tv2.jpeg" alt="TV2" class="image">
-    </div>
-    <div class="image-column">
-        <img src="../media/alpha-lab/tv2-heatmap.jpeg" alt="TV2-heatmap" class="image">
-    </div>
-  </div>
-</div>
-<div class="image-row">
-    <div class="image-column">
-        <img src="../media/alpha-lab/table.jpeg" alt="Table" class="image">
-    </div>
-    <div class="image-column">
-        <img src="../media/alpha-lab/table-heatmap.jpeg" alt="Table-heatmap" class="image">
-    </div>
-  </div>
-</div>
-<div class="image-row">
-    <div class="image-column">
-        <img src="../media/alpha-lab/kitchen.jpeg" alt="Kitchen" class="image">
-    </div>
-    <div class="image-column">
-        <img src="../media/alpha-lab/kitchen-heatmap.jpeg" alt="Kitchen-heatmap" class="image">
-    </div>
-  </div>
-</div>
-<div class="image-row">
-    <div class="image-column">
-        <img src="../media/alpha-lab/cupboard.jpeg" alt="Cupboard" class="image">
-    </div>
-    <div class="image-column">
-        <img src="../media/alpha-lab/cupboard-heatmap.jpeg" alt="Cupboard-heatmap" class="image">
-    </div>
-  </div>
-</div>
+
+<div style="margin-bottom: 50px;"></div>
 
 <style scoped>
 
