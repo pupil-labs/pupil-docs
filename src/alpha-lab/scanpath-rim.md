@@ -14,10 +14,10 @@ tags: [Pupil Invisible, Neon, Cloud]
 <br>
 
 ::: tip
-Picture this: Build and customise scanpath visualisations with your Reference Image Mapper exports!
+Picture this: Build and customize scanpath visualizations with your Reference Image Mapper exports!
 :::
 
-## Visualising gaze exploration with scanpaths
+## Visualizing gaze exploration with scanpaths
 Scanpaths are graphical representations of gaze over time. They provide a glimpse into how the observer has focused their attention on different aspects of a scene, making them a valuable tool for understanding a person's visual attention and perception. The video above illustrates this concept. It shows:
 - Fixation locations, visualized as blue numbered circles
 - Fixation durations, which are mapped to the size of the circles. Longer fixations correspond to larger circles
