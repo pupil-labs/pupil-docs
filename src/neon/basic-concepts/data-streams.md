@@ -65,11 +65,7 @@ Audio recording is disabled in the Neon Companion app by default and can be enab
 ## Movement (IMU Data)
 The Neon module is equipped with a 9-DoF [inertial measurement unit](https://invensense.tdk.com/products/motion-tracking/9-axis/icm-20948/) (IMU) featuring an accelerometer, gyroscope, and magnetometer. The accelerometer and gyroscope measure linear acceleration and angular velocity, respectively, and are provided as raw values. A fusion engine also combines these values with magnetometer readings to estimate the module's absolute orientation relative to magnetic north and gravity as a quaternion. Note that in order to obtain precise absolute yaw readings, the magnetometer needs to be pre-calibrated. See how in [this guide](/neon/how-tos/data-collection-with-the-companion-app/calibrate-the-imu-for-accurate-yaw-orientation).
 
-The IMU is sampled at 109 Hz. When downloading recordings from Pupil Cloud the IMU's orientation in Euler angles (i.e. roll, pitch, and yaw) is also available.
-
-::: tip
-**Note:** Older versions of the Neon Companion app have sampled the IMU at 220 Hz. Due to limitations of the USB system this has lead to inaccurate timestamps. Starting with version v2.7.4 the sampling rate is reduced to 109 Hz.
-:::
+The IMU is sampled at 110 Hz. When downloading recordings from Pupil Cloud the IMU's orientation in Euler angles (i.e. roll, pitch, and yaw) is also available.
 
 The IMU is located in the top bar of the module and it's coordinate system is oriented with the x-axis pointing to the right, the y-axis pointing in front, and the z-axis pointing upwards.
 
