@@ -18,11 +18,7 @@ Level-up your Reference Image Mapper workflow to extract insights from participa
 :::
 
 ## Exploring gaze patterns in multiple regions of an environment
-Understanding where people focus their gaze while exploring their environment is an area of interest for researchers in 
-diverse fields, ranging from art and architecture to medical training. Recently, powerful scene recognition tools such as 
-the Reference Image Mapper enrichment in Pupil Cloud have made it possible to map gaze in 3D real-world environments and 
-generate heatmap visualizations. These offer an informative overview of visual exploration patterns and also pave the way 
-for further analysis, such as region of interest analysis.
+Understanding where people focus their gaze while exploring their environment is a topic of interest for researchers across various fields, including art, architecture, and medical training. With the Reference Image Mapper enrichment in Pupil Cloud, we can map gaze in 3D real-world environments and generate heatmap visualizations. These offer an informative overview of visual exploration patterns and also pave the way  for further analysis, such as region of interest analysis.
 
 In this guide, we will show you how to use the [Reference Image Mapper](/enrichments/reference-image-mapper/) to map a 
 participant's gaze onto _multiple_ areas of a living environment as they freely navigate around it.
@@ -33,14 +29,10 @@ Check out [this explainer video](https://www.youtube.com/watch?v=ygqzQEzUIS4&t=5
 :::
 
 ## The tools at hand
-The [Reference Image Mapper](/enrichments/reference-image-mapper/) enrichment available in Pupil Cloud can be used to map 
-gaze onto a _single_ reference image of an environment. However, mapping gaze onto *multiple* regions of an environment is 
-often of interest, since it can enable a deeper understanding of patterns of visual exploration.  Therefore, we have put 
-together this guide to show you how to leverage Reference Image Mapper for this purpose.
+The [Reference Image Mapper](/enrichments/reference-image-mapper/) in Pupil Cloud allows mapping gaze onto a _single_ reference image of an environment, but there's often a need to analyze *multiple* regions for a deeper understanding of visual exploration patterns. This guide demonstrates how to utilize the Reference Image Mapper for this purpose.
 
 ## Steps
-Because the [Reference Image Mapper](/enrichments/reference-image-mapper/) is only able to map gaze onto a *single* reference image, 
-we need a few things to generate *multiple* reference image mappings in a larger environment:
+Since the [Reference Image Mapper](/enrichments/reference-image-mapper/) is designed to map gaze onto a *single* reference image, our tutorial involves applying the Reference Image Mapper *multiple* times over the same recording to generate mappings for separate regions. To achieve this, we need:
 
 - Multiple reference images of the environment
 - Single or multiple scanning recordings. The choice of whether to use single or multiple scanning recordings depends on 
@@ -112,15 +104,9 @@ consider placing some strategic items within the environment to increase the cha
   </div>
 </div>
 
-<div style="display: flex; justify-content: center;">
-  <div style="flex: 50%; padding: 5px;">
-    <div style="position: relative; padding-bottom: 75%; height: 0; margin-bottom: -35%;">
-      <iframe style="position: absolute; width: 50%; height: 50%; left: 50%; transform: translateX(-50%); border: none;" src="https://www.youtube.com/embed/fmy9F8Q9eW0?si=F7q399iZHGW2kArv"></iframe>
-    </div>
-  </div>
+<div class="iframe-container2">
+  <iframe src="https://www.youtube.com/embed/fmy9F8Q9eW0?si=F7q399iZHGW2kArv" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-
-<div style="margin-bottom: 5px;"></div>
 
 3. **Eye Tracking Recordings:** Make an eye tracking recording while the participant(s) freely explore and visually interact with various elements within the environment. (You can of course make these prior to the reference images and scanning recordings).
 
@@ -200,33 +186,16 @@ img {
 
 .iframe-container2{
   position: relative;
-  width: 80%;
-  padding-bottom: 80%;
-  margin-bottom: 50px;
-  height: 0;
+  width: 50%;
+  height: 50%;
+  padding-bottom: 37.5%;
+  height: auto;
   margin-left:auto;
   margin-right:auto;
+  margin-bottom: 50px;
 }
 
 .iframe-container2 iframe{
-  position: absolute;
-  top:0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.iframe-container3{
-  position: relative;
-  width: 80%;
-  padding-bottom: 80%;
-  margin-bottom: 50px;
-  height: 0;
-  margin-left:auto;
-  margin-right:auto;
-}
-
-.iframe-container3 iframe{
   position: absolute;
   top:0;
   left: 0;
@@ -256,37 +225,27 @@ img {
 .video-container {
     display: flex;
     justify-content: center;
-    width: 80%;
-    padding-bottom: 0%;
-    margin-bottom: 10px;
-    height: 80%;
-    margin-left: 0;
-    margin-right: 0;
+    width: 100%;
+    height: 100%;
     position: relative;
 }
 
-.video-row {
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 0px;
+.test-container {
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Adjust the height as needed */
 }
 
-.video-column {
-    flex: 1;
-    margin-right: 5px; /* Reduce the margin to reduce space */
-    width: 100%;
-    height: 100%;
+.test {
+  width: 50%;
+  height: 50%;
+  position: relative;
 }
 
-.video {
-    display: flex;
-    top: 0;
-    left: 0;
-}
-
-/* Style for the last video to center it */
-.centered-video {
-    margin: 0 auto; /* Center horizontally */
+.test iframe {
+  position: absolute;
+  width: 80%;
+  height: 80%;
 }
  
 </style>
