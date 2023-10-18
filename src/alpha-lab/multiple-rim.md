@@ -18,10 +18,14 @@ Level-up your Reference Image Mapper workflow to extract insights from participa
 :::
 
 ## Exploring gaze patterns in multiple regions of an environment
-Understanding where people focus their gaze while exploring their environment is a topic of interest for researchers across various fields, including art, architecture, and medical training. With the Reference Image Mapper enrichment in Pupil Cloud, we can map gaze in 3D real-world environments and generate heatmap visualizations. These offer an informative overview of visual exploration patterns and also pave the way  for further analysis, such as region of interest analysis.
 
-In this guide, we will show you how to use the [Reference Image Mapper](/enrichments/reference-image-mapper/) to map a 
-participant's gaze onto _multiple_ areas of a living environment as they freely navigate around it.
+Understanding where people focus their gaze while exploring their environment is a topic of interest for researchers in 
+diverse fields, ranging from Art and Architecture to Zoology. The [Reference Image Mapper](/enrichments/reference-image-mapper/) 
+enrichment in Pupil Cloud makes it possible to map gaze onto 3D real-world environments and generate heatmaps. These provide 
+an informative overview of visual exploration patterns and also pave the way for further analysis, such as region of interest analysis.
+
+In this guide, we will demonstrate how to use the [Reference Image Mapper](/enrichments/reference-image-mapper/) to map a 
+participant's gaze onto various regions of a living environment as they freely navigate through it.
 
 ::: tip
 Before continuing, ensure you are familiar with the [Reference Image Mapper](/enrichments/reference-image-mapper) enrichment. 
@@ -29,18 +33,19 @@ Check out [this explainer video](https://www.youtube.com/watch?v=ygqzQEzUIS4&t=5
 :::
 
 ## The tools at hand
-The [Reference Image Mapper](/enrichments/reference-image-mapper/) in Pupil Cloud allows mapping gaze onto a _single_ reference image of an environment, but there's often a need to analyze *multiple* regions for a deeper understanding of visual exploration patterns. This guide demonstrates how to utilize the Reference Image Mapper for this purpose.
+The [Reference Image Mapper](/enrichments/reference-image-mapper/) enables mapping of gaze onto a 
+_single_ reference image of an environment. However, there is often a need to analyze _multiple_ regions for a more in-depth 
+understanding of visual exploration. This guide demonstrates how to accomplish this by applying the enrichment multiple 
+times during the same recording to generate mappings and heatmaps for different regions.
 
 ## Steps
-Since the [Reference Image Mapper](/enrichments/reference-image-mapper/) is designed to map gaze onto a *single* reference image, our tutorial involves applying the Reference Image Mapper *multiple* times over the same recording to generate mappings for separate regions. To achieve this, we need:
-
+For the analysis, we will need the following:
 - Multiple reference images of the environment
 - Single or multiple scanning recordings. The choice of whether to use single or multiple scanning recordings depends on 
 the dimensions of the space to be explored (see below for examples)
 - An eye tracking recording taken as the participant(s) move freely within the environment
 - User-inputted [events](/neon/basic-concepts/events) to segment the recording(s) into [sections](/enrichments/#enrichment-sections) based on 
 the areas the person was looking at
-
 
 1. **Capture Reference Images:** Take pictures of the areas or objects within the environment you wish to investigate. Here are some example pictures of different areas and pieces of furniture in our environment (a living room, dining area, and kitchen):
 
@@ -69,7 +74,7 @@ the areas the person was looking at
 
 <div style="margin-bottom: 50px;"></div>
 
-2. **Record Scanning Videos:** For this guide, we used *five* separate scanning recordings to cover the environment. If you have an even bigger or more complex environment, it might be necessary to use more scanning recordings, which is fine. On the other hand, it might be possible to use just one scanning recording if you can capture sufficient data, or where you have a smaller environment. Remember, each scanning recording must be **under 3 minutes in duration**. 
+2. **Record Scanning Videos:** For this guide, we used *five* separate scanning recordings to cover the environment. If you have a bigger or more complex environment, it might be necessary to use more. On the other hand, it might be possible to use fewer if you have a smaller environment or if you can capture sufficient data. Remember, each scanning recording must be **under 3 minutes in duration**. 
     
 Check out these videos which show how we made the scans (also be sure to follow our [best practices](/enrichments/reference-image-mapper/#scanning-best-practices) for optimal scanning):
 
@@ -112,7 +117,7 @@ consider placing some strategic items within the environment to increase the cha
 
 <div style="margin-bottom: 5px;"></div>
 
-4. **Add Custom Events:** During the eye tracking recording, users may focus on specific furniture or parts of the room multiple times. By adding custom [event](/neon/basic-concepts/events) annotations corresponding to these areas or objects, you can create [sections](/enrichments/#enrichment-sections) for the enrichments to be performed. This approach allows you to run each enrichment only on the portion of the recording where a certain object is present. For this guide, we used the following event annotations to run five Reference Image Mapper enrichments:
+4. **Add Custom Events:** During the eye tracking recording, users may focus on a specific region once or multiple times. I.e. they may revisit that region. By adding custom [event](/neon/basic-concepts/events) annotations corresponding to these periods, you can create [sections](/enrichments/#enrichment-sections) for the enrichments to be computed. This enables you to run each enrichment only on the section(s) of recording where a certain region is being gazed at. For this guide, we used the following event annotations to run five Reference Image Mapper enrichments:
     - Desk: `desk.begin` and `desk.end`
     - TV area 1: `tv1.begin` and `tv1.end`
     - TV area 2: `tv2.begin` and `tv2.end`
