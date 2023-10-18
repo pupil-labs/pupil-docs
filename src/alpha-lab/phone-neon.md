@@ -64,7 +64,6 @@ For a detailed explanation and visual representation of these metrics, you can r
   </v-img>
 </div>
 
-
 ### Map your gaze onto dynamic phone screen content
 Until now, the tools that we have used have been limited to mapping gaze onto static images. However, the dynamic realm of mobile phones makes it important to study gaze behaviour in a more natural context, particularly during scrolling. We, therefore, used the [dynamic screen mapping tutorial](/alpha-lab/map-your-gaze-to-a-2d-screen/) for this purpose. This approach will provide a comprehensive understanding of gaze behaviour in dynamic interfaces.
 
@@ -76,7 +75,7 @@ While visualisations are valuable, a very useful facet of this tool is its abili
 
 ## Let's wrap it up!
 
-Overall, we were impressed by Neon's capability to effectively characterise viewing behaviour on mobile apps, both in controlled environments and real-world scenarios, especially considering its calibration-free nature. The techniques outlined in this tutorial are not confined to our specific application; they hold significant value for various UI/UX and neuromarketing research endeavours. By integrating Neon with the methodologies discussed here, researchers can acquire invaluable insights into user engagement.
+Overall, we were impressed by Neon's capability to effectively characterise viewing behaviour on mobile apps, especially considering its calibration-free nature. The techniques outlined in this tutorial are not confined to our specific application; they hold significant value for various UI/UX and neuromarketing research endeavours. By integrating Neon with the methodologies discussed here, researchers can acquire invaluable insights into user engagement.
 
 Curious about how Neon can fit into your work? Need assistance in implementing your own analysis pipelines? Reach out to us [by email](mailto:info@pupil-labs.com) or visit our [Support Page](https://pupil-labs.com/products/support/)! 
 
