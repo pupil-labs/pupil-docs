@@ -32,11 +32,6 @@ Subsequently, we exported the data to analyse offline for a more in-depth explor
 The following section presents the results of our analyses, each accompanied by a brief description for clarity.
 
 ### Heatmaps and scanpaths
-Two valuable visualisations for understanding gaze behaviour on mobile screens are heatmaps and scanpaths (left and right images, respectively). 
-
-Heatmaps visually represent the app areas that receive the most attention, with warmer colours denoting higher fixation rates. These heatmaps can be easily generated within Pupil Cloud using the Reference Image Mapper.
-
-Meanwhile, scanpaths depict the sequence of eye movements and fixations during visual exploration. The circle size in the scanpath corresponds to fixation duration; larger circles indicate longer user focus on specific screen areas. For those interested in generating these visualisations, our [scanpath tutorial](/alpha-lab/scanpath-rim/) provides a step-by-step guide.
 
 <div class="mcontainer">
   <div class="col-mcontainer">
@@ -46,13 +41,14 @@ Meanwhile, scanpaths depict the sequence of eye movements and fixations during v
       <v-img class="rounded" :src="require(`../media/alpha-lab/2.phone-nadia_scanpath.jpeg`)" title="Scanpath over a phone screen" alt="Scanpath over a phone screen" cover/>
   </div>
 </div>
+        
+Two valuable visualisations for understanding gaze behaviour on mobile screens are heatmaps and scanpaths (left and right images, respectively). 
+
+Heatmaps visually represent the app areas that receive the most attention, with warmer colours denoting higher fixation rates. These heatmaps can be easily generated within Pupil Cloud using the Reference Image Mapper.
+
+Meanwhile, scanpaths depict the sequence of eye movements and fixations during visual exploration. The circle size in the scanpath corresponds to fixation duration; larger circles indicate longer user focus on specific screen areas. In the example provided, the focus was primarily on the singing woman in the middle-right panel of the app, as indicated by the largest fixation circle among the ten fixations used to generate this scanpath. For those interested in generating these visualisations, our [scanpath tutorial](/alpha-lab/scanpath-rim/) provides a step-by-step guide.
 
 ### Calculation of gaze metrics on AOIs
-Examining eye tracking data provides valuable insights into user behaviour, but relying solely on visualisations like heatmaps and scanpaths might not always reveal the complete picture. To gain a more comprehensive understanding, we conducted a quantitative analysis of our data. This involved calculating gaze metrics such as [dwell time](/alpha-lab/gaze-metrics-in-aois/#dwell-time) and [time to first contact](/alpha-lab/gaze-metrics-in-aois/#time-to-first-contact). These metrics offer tangible and quantitative outcomes about the salience of each AOI. 
-
-Dwell time signifies the total duration of fixation on a specific AOI, serving as an indicator of attentional allocation. Longer dwell times suggest prolonged focus on an AOI. On the other hand, the time to first contact measures how quickly an AOI captures a user's attention, indicating its prominence.
-
-For a detailed explanation and visual representation of these metrics, you can refer to our [AOI tutorial](/alpha-lab/gaze-metrics-in-aois/), which provides step-by-step instructions and charts for your analysis.
 
 <div class="pb-4" style="display:flex;justify-content:center;">
   <v-img class="rounded" :src="require(`../media/alpha-lab/3.phone-dwell-time.png`)" title="Graph showing dwell time on defined AOIs over the phone screen" alt="Graph showing dwell time on defined AOIs over the phone screen" cover/>
@@ -64,14 +60,21 @@ For a detailed explanation and visual representation of these metrics, you can r
   </v-img>
 </div>
 
+Examining eye tracking data provides valuable insights into user behaviour, but relying solely on visualisations like heatmaps and scanpaths might not always reveal the complete picture. To gain a more comprehensive understanding, we conducted a quantitative analysis of our data. This involved calculating gaze metrics such as [dwell time](/alpha-lab/gaze-metrics-in-aois/#dwell-time) and [time to first contact](/alpha-lab/gaze-metrics-in-aois/#time-to-first-contact). These metrics offer tangible and quantitative outcomes about the salience of each AOI. 
+
+Dwell time signifies the total duration of fixation on a specific AOI, serving as an indicator of attentional allocation. Longer dwell times suggest prolonged focus on an AOI. On the other hand, the time to first contact measures how quickly an AOI captures a user's attention, indicating its prominence. As shown in this example, there are clear differences between the areas of interest in both attentional allocation and salience that became evident thanks to the quantitative analysis that focused on the measures mentioned earlier.  
+
+For a detailed explanation and visual representation of these metrics, you can refer to our [AOI tutorial](/alpha-lab/gaze-metrics-in-aois/), which provides step-by-step instructions and charts for your analysis.
+
 ### Map your gaze onto dynamic phone screen content
+
+<Youtube src="RKrf3YQjzao"/>
+
 Until now, the tools that we have used have been limited to mapping gaze onto static images. However, the dynamic realm of mobile phones makes it important to study gaze behaviour in a more natural context, particularly during scrolling. We, therefore, used the [dynamic screen mapping tutorial](/alpha-lab/map-your-gaze-to-a-2d-screen/) for this purpose. This approach provided a more comprehensive understanding of gaze behaviour in dynamic interfaces.
 
 Upon reviewing the recording, Neon demonstrated good accuracy in capturing gaze behaviour, offering a useful high-level overview of the wearer's focal points.
 
 While visualisations are valuable, a very useful facet of this tool is its ability to generate a CSV file containing gaze data mapped onto the screen, represented in 2D x, y coordinates. This feature opens avenues for extensive customisation and more in-depth analysis.
-
-<Youtube src="RKrf3YQjzao"/>
 
 ## Let's wrap it up!
 
