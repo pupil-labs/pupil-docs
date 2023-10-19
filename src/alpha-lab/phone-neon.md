@@ -15,7 +15,7 @@ What catches your attention and how do you visually navigate through the interfa
 :::
 
 ## Gaze behaviour during mobile app engagement
-Researchers in fields such as UI/UX and neuromarketing frequently investigate user visual engagement with mobile applications. Wearable eye tracking is sometimes used for this purpose as it can provide valuable insights into user experience during mobile browsing. In this article, we tested the effectiveness of our latest wearable eye tracker, Neon, in capturing and analysing users' viewing behaviour when focusing on small icons and features of mobile applications.
+Researchers in fields such as UI/UX and neuromarketing frequently investigate user visual engagement with mobile applications. Wearable eye tracking is sometimes used for this purpose as it can provide valuable insights into user experience during mobile browsing. In this article, we used our latest wearable eye tracker, Neon, to capture and analyse users' viewing behaviour when focusing on small icons and features of mobile applications.
 
 ## Overcoming usability challenges with Neon
 In the past, wearable eye tracking faced challenges in usability primarily due to calibration limitations, which may have made mobile browsing measurements difficult and time-consuming in practice. However, we believe that Neon overcomes these obstacles by offering calibration-free gaze estimation with very good accuracy. For this reason, we wanted to test Neon’s performance for tracking gaze during mobile browsing.
