@@ -32,7 +32,7 @@ Subsequently, we exported the data to analyse offline for a more in-depth explor
 The following section presents the results of our analyses, each accompanied by a brief description for clarity.
 
 ### Heatmaps and scanpaths
-Two valuable visualisations for understanding gaze behaviour on mobile screens are heatmaps and scanpaths (illustrated in the left and right panels below). 
+Two valuable visualisations for understanding gaze behaviour on mobile screens are heatmaps and scanpaths (left and right images, respectively). 
 
 Heatmaps visually represent the app areas that receive the most attention, with warmer colours denoting higher fixation rates. These heatmaps can be easily generated within Pupil Cloud using the Reference Image Mapper.
 
@@ -65,11 +65,11 @@ For a detailed explanation and visual representation of these metrics, you can r
 </div>
 
 ### Map your gaze onto dynamic phone screen content
-Until now, the tools that we have used have been limited to mapping gaze onto static images. However, the dynamic realm of mobile phones makes it important to study gaze behaviour in a more natural context, particularly during scrolling. We, therefore, used the [dynamic screen mapping tutorial](/alpha-lab/map-your-gaze-to-a-2d-screen/) for this purpose. This approach will provide a comprehensive understanding of gaze behaviour in dynamic interfaces.
+Until now, the tools that we have used have been limited to mapping gaze onto static images. However, the dynamic realm of mobile phones makes it important to study gaze behaviour in a more natural context, particularly during scrolling. We, therefore, used the [dynamic screen mapping tutorial](/alpha-lab/map-your-gaze-to-a-2d-screen/) for this purpose. This approach provided a more comprehensive understanding of gaze behaviour in dynamic interfaces.
 
-Upon reviewing the recording, Neon demonstrates good accuracy in capturing gaze behaviour, offering a comprehensive high-level overview of the wearer's focal points.
+Upon reviewing the recording, Neon demonstrated good accuracy in capturing gaze behaviour, offering a useful high-level overview of the wearer's focal points.
 
-While visualisations are valuable, a very useful facet of this tool is its ability to generate a CSV file containing gaze data mapped onto the screen, represented in 2D x, y coordinates. This feature opens avenues for extensive customisation and in-depth analysis.
+While visualisations are valuable, a very useful facet of this tool is its ability to generate a CSV file containing gaze data mapped onto the screen, represented in 2D x, y coordinates. This feature opens avenues for extensive customisation and more in-depth analysis.
 
 <Youtube src="RKrf3YQjzao"/>
 
