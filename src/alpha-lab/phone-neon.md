@@ -25,7 +25,7 @@ In order to characterise viewing behaviour on mobile phones using Neon, we first
 
 Firstly, we placed the phone in a static position on a desk, allowing us to interact with the app. 
 
-Then, we used Pupil Cloud's [Reference Image Mapper](/enrichments/reference-image-mapper/) to map gaze onto a 2D reference image of the environment that contained our test phone, like in the videos and snapshots you will see next. 
+Then, we used Pupil Cloud's [Reference Image Mapper](/enrichments/reference-image-mapper/) to map gaze onto a 2D reference image of the environment that contained our test phone, like in the videos and snapshots. 
 
 Subsequently, we exported the data to analyse offline for in-depth exploration. For the offline analysis, we used existing Alpha Lab tutorials that allowed us to [generate scanpaths](/alpha-lab/scanpath-rim/), [define areas of interest (AOIs) and calculate gaze metrics](/alpha-lab/gaze-metrics-in-aois/), and [map gaze onto dynamic content](/alpha-lab/map-your-gaze-to-a-2d-screen/). 
 
