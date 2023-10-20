@@ -98,7 +98,7 @@ export default {
           title: "RIM Room",
           text: "We pushed the limits of markerless mapping with Pupil Cloud’s Reference Image Mapper - scanning an entire apartment.",
           to: "/alpha-lab/multiple-rim/",
-          img: "desk-overlay.png",
+          img: "desk-heatmap.jpeg",
         },
         {
           title: "Look at my hand!",

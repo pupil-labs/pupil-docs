@@ -4,93 +4,157 @@ permalink: /alpha-lab/multiple-rim/
 tags: [Pupil Invisible, Neon, Cloud]
 ---
 
-# Map and visualize gaze onto multiple reference images taken from the same environment
+# Map and visualize gaze on multiple reference images taken from the same environment
 
 <TagLinks />
 
 <div class="iframe-container">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/7iXIFjdkt-Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/CLNDE0VJVng?si=Hsp2C3JYRCIOtKyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <br>
-
-In the [Reference Image Mapper](/enrichments/reference-image-mapper/) guide, we learnt how to properly set up a Reference Image Mapper enrichment, with a <i>single</i> reference image. However, there are some cases in which it would be useful to map gaze onto <i>multiple</i> reference images taken from the same environment - for example, moving in a room while interacting with certain parts of it.
 
 ::: tip
-Before continuing, ensure you are familiar with the [Reference Image Mapper](/enrichments/reference-image-mapper) enrichment. Check out [this explainer video](https://www.youtube.com/watch?v=ygqzQEzUIS4&t=56s) for reference.
+Level-up your Reference Image Mapper workflow to extract insights from participants freely exploring their environment!
 :::
 
-## Reference Images
+## Exploring gaze patterns in multiple regions of an environment
 
-First, we will take pictures of the areas and/or furniture of the room we are interested in.
+Understanding where people focus their gaze while exploring their environment is a topic of interest for researchers in 
+diverse fields, ranging from Art and Architecture to Zoology. The [Reference Image Mapper](/enrichments/reference-image-mapper/) 
+enrichment in Pupil Cloud makes it possible to map gaze onto 3D real-world environments and generate heatmaps. These provide 
+an informative overview of visual exploration patterns and also pave the way for further analysis, such as region of interest analysis.
 
-| <img src="../media/alpha-lab/cupboard-img.png"/>       | <img src="../media/alpha-lab/desk-img.png"/> |
-| ------------------------------------------------------ | -------------------------------------------- |
-| <img src="../media/alpha-lab/kitchen-imgs.png"/>       | <img src="../media/alpha-lab/tv-img.png">    |
-| <img src="../media/alpha-lab/kitchen+table-img.jpeg"/> |                                              |
-
-## Scanning recordings
-
-In this guide, we want to map gaze onto different parts of a living room, for this reason, we recorded **two** scanning videos. We chose to use more than one scanning recording because the environment is a bit too big to be effectively scanned just by a single one.
-
-Based on the environment dimension/complexity, you might need to do the same and record separate scanning videos.
-
-Please follow our [best practices](/enrichments/reference-image-mapper/#scanning-best-practices) for optimal scanning.
+In this guide, we will demonstrate how to use the [Reference Image Mapper](/enrichments/reference-image-mapper/) to map a 
+participant's gaze onto various regions of a living environment as they freely navigate through it.
 
 ::: tip
-To ensure good scanning of big plain surfaces - like tables and kitchen countertops - enrich them with features. Use a printed tablecloth and/or place items to produce a successful mapping!
+Before continuing, ensure you are familiar with the [Reference Image Mapper](/enrichments/reference-image-mapper) enrichment. 
+Check out [this explainer video](https://www.youtube.com/watch?v=ygqzQEzUIS4&t=56s) for reference.
 :::
 
-<div class="iframe-container2">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/FQ2SdFcnqXw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+## The tools at hand
+The [Reference Image Mapper](/enrichments/reference-image-mapper/) enables mapping of gaze onto a 
+_single_ reference image of an environment. However, there is often a need to analyze _multiple_ regions for a more in-depth 
+understanding of visual exploration. This guide demonstrates how to accomplish this by applying the enrichment multiple 
+times during the same recording to generate mappings and heatmaps for different regions.
+
+## Steps
+For the analysis, we will need the following:
+- Multiple reference images of the environment
+- Single or multiple scanning recordings. The choice of whether to use single or multiple scanning recordings depends on 
+the dimensions of the space to be explored (see below for examples)
+- An eye tracking recording taken as the participant(s) move freely within the environment
+- User-inputted [events](/neon/basic-concepts/events) to segment the recording(s) into [sections](/enrichments/#enrichment-sections) based on 
+the areas the person was looking at
+
+1. **Capture Reference Images:** Take pictures of the areas or objects within the environment you wish to investigate. Here are some example pictures of different areas and pieces of furniture in our environment (a living room, dining area, and kitchen):
+
+<div class="image-row">
+    <div class="image-column">
+        <img src="../media/alpha-lab/desk.jpeg" alt="Desk" class="image">
+    </div>
+    <div class="image-column">
+        <img src="../media/alpha-lab/tv1.jpeg" alt="TV1" class="image">
+    </div>
+    <div class="image-column">
+        <img src="../media/alpha-lab/tv2.jpeg" alt="TV2" class="image">
+    </div>
 </div>
-<div class="iframe-container2">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/aEOZZrUrEpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="image-row">
+    <div class="image-column">
+        <img src="../media/alpha-lab/table.jpeg" alt="Table" class="image">
+    </div>
+    <div class="image-column">
+        <img src="../media/alpha-lab/kitchen.jpeg" alt="Kitchen" class="image">
+    </div>
+    <div class="image-column">
+        <img src="../media/alpha-lab/cupboard.jpeg" alt="Cupboard" class="image">
+    </div>
 </div>
 
-::: danger
-**Scanning Recording Duration**
-<br>
-<br>
-Please record a scanning video that is less than 3 minutes long!
-<br>
-<br>
-The Reference Image Mapper enrichment does **not** accept longer recordings.
+<div style="margin-bottom: 50px;"></div>
+
+2. **Record Scanning Videos:** For this guide, we used *five* separate scanning recordings to cover the environment. If you have a bigger or more complex environment, it might be necessary to use more. On the other hand, it might be possible to use fewer if you have a smaller environment or if you can capture sufficient data. Remember, each scanning recording must be **under 3 minutes in duration**. 
+    
+Check out these videos which show how we made the scans (also be sure to follow our [best practices](/enrichments/reference-image-mapper/#scanning-best-practices) for optimal scanning):
+
+::: tip
+The Reference Image Mapper prefers feature-rich environments. If you have large plain surfaces, like empty tables or countertops, 
+consider placing some strategic items within the environment to increase the chances of successful mapping. 
 :::
 
-## Run the enrichments
-
-Here we recorded just one video where the wearer was asked to walk and freely explore the living room. Now it is time to map the subject's gaze from this video into the five pictures above.
-
-<div class="iframe-container3">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/XTIkB8Wct6M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div style="display: flex;">
+  <div style="flex: 50%; padding: 5px;">
+    <div style="position: relative; padding-bottom: 75%; height: 0;">
+      <iframe style="position: absolute; width: 100%; height: 100%; border: none;" src="https://www.youtube.com/embed/jeL8gs053lg?si=6wlx4fjxlfiqrbRq"></iframe>
+    </div>
+  </div>
+  <div style="flex: 50%; padding: 5px;">
+    <div style="position: relative; padding-bottom: 75%; height: 0;">
+      <iframe style="position: absolute; width: 100%; height: 100%; border: none;" src="https://www.youtube.com/embed/zksTzVkGifk?si=3bxl0eKOgRbfoes-"></iframe>
+    </div>
+  </div>
 </div>
 
-During the recording, the user looked at the same furniture and parts of the room multiple times. We suggest you focus on
-specific [sections](/enrichments/#enrichment-sections) of the recording based on which part of the
-room the user is exploring.
+<div style="display: flex;">
+  <div style="flex: 50%; padding: 5px;">
+    <div style="position: relative; padding-bottom: 75%; height: 0;">
+      <iframe style="position: absolute; width: 100%; height: 100%; border: none;" src="https://www.youtube.com/embed/Bg_SiFByceY?si=d2koC7-V7bbrYL3h"></iframe>
+    </div>
+  </div>
+  <div style="flex: 50%; padding: 5px;">
+    <div style="position: relative; padding-bottom: 75%; height: 0;">
+      <iframe style="position: absolute; width: 100%; height: 100%; border: none;" src="https://www.youtube.com/embed/0r8oAn2AZMQ?si=SbSVHedGTJ4Zshfw"></iframe>
+    </div>
+  </div>
+</div>
 
-For this recording, we used the following [event annotations](/invisible/basic-concepts/events) to run five Reference Image Mapper enrichments:
+<div class="iframe-container2">
+  <iframe src="https://www.youtube.com/embed/fmy9F8Q9eW0?si=F7q399iZHGW2kArv" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-- Cupboard: `cupboard.begin` and `cupboard.end`
-- Desk: `desk.begin` and `desk.end`
-- Kitchen: `kitchen.begin` and `kitchen.end`
-- TV: `tv.begin` and `tv.end`
-- Table: `table.begin` and `table.end`
+3. **Eye Tracking Recordings:** Make an eye tracking recording while the participant(s) freely explore and visually interact with various elements within the environment. (You can of course make these prior to the reference images and scanning recordings).
+
+<div style="margin-bottom: 5px;"></div>
+
+4. **Add Custom Events:** During the eye tracking recording, users may focus on a specific region once or multiple times. I.e. they may revisit that region. By adding custom [event](/neon/basic-concepts/events) annotations corresponding to these periods, you can create [sections](/enrichments/#enrichment-sections) for the enrichments to be computed. This enables you to run each enrichment only on the section(s) of recording where a certain region is being gazed at. For this guide, we used the following event annotations to run five Reference Image Mapper enrichments:
+    - Desk: `desk.begin` and `desk.end`
+    - TV area 1: `tv1.begin` and `tv1.end`
+    - TV area 2: `tv2.begin` and `tv2.end`
+    - Table: `table.begin` and `table.end`
+    - Kitchen: `kitchen.begin` and `kitchen.end`
+    - Cupboard: `cupboard.begin` and `cupboard.end`
+
+5. **Create and run the enrichments:** You will need to create a separate enrichment for each reference image. A reasonable naming scheme *could* correspond to each area of the environment, like ‘cupboard’, ‘desk’ etc. In the temporal selection of each enrichment, be sure to use the appropriate events labels. E.g. for ‘cupboard’, you would use `cupboard.begin` and `cupboard.end`. Now, run the enrichments to map the subject's gaze from the recording onto the multiple reference images you captured.
 
 ## Final results
 
-It may take several minutes to run these enrichments depending on how long your recordings are. Once everything is finished, you can visualize how gaze is simultaneously mapped both on the recording and the reference images from the Project Editor view (as shown in the video at the very beginning of this guide).
+Once the enrichments are completed, you can view the heatmaps which illustrate areas which attracted more gaze. Additionally, you'll have the option to download gaze and fixation data mapped within the bounds of the pictures, enabling you to conduct further in-depth analyses.
 
-From the Enrichment view, you can visualize heatmaps of each reference image:
+<div class="image-row">
+    <div class="image-column">
+        <img src="../media/alpha-lab/desk-heatmap.jpeg" alt="Desk" class="image">
+    </div>
+    <div class="image-column">
+        <img src="../media/alpha-lab/tv1-heatmap.jpeg" alt="TV1" class="image">
+    </div>
+    <div class="image-column">
+        <img src="../media/alpha-lab/tv2-heatmap.jpeg" alt="TV2" class="image">
+    </div>
+</div>
+<div class="image-row">
+    <div class="image-column">
+        <img src="../media/alpha-lab/table-heatmap.jpeg" alt="Table" class="image">
+    </div>
+    <div class="image-column">
+        <img src="../media/alpha-lab/kitchen-heatmap.jpeg" alt="Kitchen" class="image">
+    </div>
+    <div class="image-column">
+        <img src="../media/alpha-lab/cupboard-heatmap.jpeg" alt="Cupboard" class="image">
+    </div>
+</div>
 
-| <img src="../media/alpha-lab/cupboard-img.png"/>       | <img src="../media/alpha-lab/cupboard-overlay.png"/>      |
-| ------------------------------------------------------ | --------------------------------------------------------- |
-| <img src="../media/alpha-lab/desk-img.png"/>           | <img src="../media/alpha-lab/desk-overlay.png"/>          |
-| <img src="../media/alpha-lab/kitchen-imgs.png"/>       | <img src="../media/alpha-lab/kitchen-overlay.png"/>       |
-| <img src="../media/alpha-lab/kitchen+table-img.jpeg"/> | <img src="../media/alpha-lab/kitchen+table-overlay.png"/> |
-| <img src="../media/alpha-lab/tv-img.png"/>             | <img src="../media/alpha-lab/tv-overlay.png"/>            |
-
-That's it. We look forward to seeing your own mapped environments!
+<div style="margin-bottom: 50px;"></div>
 
 <style scoped>
 
@@ -104,7 +168,6 @@ table, tr, td, th {
 }
 
 img {
-    border-radius: 10px;
     max-width: 100%;
     height: auto;
     box-sizing: border-box;
@@ -128,12 +191,13 @@ img {
 
 .iframe-container2{
   position: relative;
-  width: 80%;
-  padding-bottom: 80%;
-  margin-bottom: 50px;
-  height: 0;
+  width: 50%;
+  height: 50%;
+  padding-bottom: 37.5%;
+  height: auto;
   margin-left:auto;
   margin-right:auto;
+  margin-bottom: 50px;
 }
 
 .iframe-container2 iframe{
@@ -142,25 +206,51 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-}
-
-.iframe-container3{
-  position: relative;
-  width: 80%;
-  padding-bottom: 80%;
-  margin-bottom: 50px;
-  height: 0;
-  margin-left:auto;
-  margin-right:auto;
-}
-
-.iframe-container3 iframe{
-  position: absolute;
-  top:0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   
+}
+
+.image-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Add spacing between rows */
+}
+
+.image-column {
+    flex: 1;
+    margin-right: 10px; /* Add spacing between images */
+}
+
+/* Style for the images */
+.image {
+    width: 100%;
+    height: auto;
+    display: block; /* Remove extra space below images */
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.test-container {
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Adjust the height as needed */
+}
+
+.test {
+  width: 50%;
+  height: 50%;
+  position: relative;
+}
+
+.test iframe {
+  position: absolute;
+  width: 80%;
+  height: 80%;
 }
  
 </style>
