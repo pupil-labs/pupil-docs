@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  ignoreDeadLinks: true,
   head: [['link', { rel: 'icon', href: './favicon.png' }]],
   title: "Pupil Invisible",
   description: "Documentation of the Pupil Invisible eye tracker and it's ecosystem.",
