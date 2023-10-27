@@ -25,7 +25,7 @@ jobs:
         run: npm run docs:build
       
       - name: Upload
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: neon
           path: neon/.vitepress/dist
@@ -51,7 +51,7 @@ jobs:
         run: npm run docs:build
       
       - name: Upload
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: invisible
           path: invisible/.vitepress/dist
@@ -64,7 +64,7 @@ jobs:
       - uses: actions/checkout@v3         
       
       - name: Index - Upload
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: landing-page
           path: index.html
@@ -81,19 +81,19 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Download Neon
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: neon
           path: neon/
 
       - name: Download Invisible
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: invisible
           path: invisible/
 
       - name: Download landing page
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: landing-page
           path: landing-page/
