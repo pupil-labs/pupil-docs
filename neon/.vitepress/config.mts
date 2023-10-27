@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   head: [['link', { rel: 'icon', href: '/../favicon.png' }]],
   ignoreDeadLinks: true,
+  base: '/neon/',
   title: "Neon",
   description: "Documentation of the Neon eye tracker and it's ecosystem.",
   themeConfig: {
