@@ -33,11 +33,17 @@ jobs:
         run: |
           du -ah neon/.vitepress/dist
 
-      - name: Archive build artifacts
+      - name: Neon - Upload
         uses: actions/upload-artifact@v2
         with:
-          name: neon-vitepress-dist
+          name: neon
           path: neon/.vitepress/dist
+      
+      - name: Index - Upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: index
+          path: index.html
 
   deploy-staging:
     name: Deploy to staging
@@ -53,14 +59,14 @@ jobs:
       - name: Download generated website dist dir
         uses: actions/download-artifact@v2
         with:
-          name: neon-vitepress-dist
-          path: neon/.vitepress/dist
+          name: neon
+          path: neon/
 
       - name: Rsync action - Deploy to staging
         uses: burnett01/rsync-deployments@4.1
         with:
           switches: -hrvz --delete --exclude=".htaccess"
-          path: neon/.vitepress/dist/
+          path: .
           remote_path: ${{ secrets.REMOTE_PATH }}
           remote_host: ${{ secrets.REMOTE_HOST}}
           remote_user: ${{ secrets.REMOTE_USER }}
