@@ -55,6 +55,32 @@ jobs:
         with:
           name: invisible
           path: invisible/.vitepress/dist
+  
+  alpha-lab:
+    name: Build Alpha Lab
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        working-directory: ./alpha-lab
+        run: npm install
+
+      - name: Make build
+        working-directory: ./alpha-lab
+        run: npm run docs:build
+      
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: alpha-lab
+          path: alpha-lab/.vitepress/dist
 
   landing-page:
     name: Upload landing page
@@ -91,6 +117,12 @@ jobs:
         with:
           name: invisible
           path: invisible/
+      
+      - name: Download AlphaLab
+        uses: actions/download-artifact@v3
+        with:
+          name: alpha-lab
+          path: alpha-lab/
 
       - name: Download landing page
         uses: actions/download-artifact@v3

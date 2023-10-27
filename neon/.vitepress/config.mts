@@ -22,7 +22,7 @@ export default defineConfig({
         ]
       },
       { text: 'Real-Time API', link: '/real-time-api/' },
-      { text: 'Alpha Lab', link: 'TODO' },
+      { text: 'Alpha Lab', link: 'https://docs.pupil-labs.com/alpha-lab/' },
       { text: 'Feedback', link: 'https://feedback.pupil-labs.com/' },
     ],
 

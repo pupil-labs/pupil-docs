@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/invisible/',
   ignoreDeadLinks: true,
   head: [['link', { rel: 'icon', href: './favicon.png' }]],
   title: "Pupil Invisible",
@@ -14,7 +15,7 @@ export default defineConfig({
       { text: 'Data Collection', link: '/data-collection/' },
       { text: 'Pupil Cloud', link: '/pupil-cloud/' },
       { text: 'Real-Time API', link: '/real-time-api/tutorials/' },
-      { text: 'Alpha Lab', link: 'TODO' },
+      { text: 'Alpha Lab', link: 'https://docs.pupil-labs.com/alpha-lab/' },
       { text: 'Feedback', link: 'https://feedback.pupil-labs.com/' },
     ],
 
