@@ -4,8 +4,8 @@ on:
   workflow_dispatch: # this makes the action manual
 
 jobs:
-  build:
-    name: Install dependencies and generate static site
+  neon:
+    name: Build Neon
     runs-on: ubuntu-latest
 
     steps:
@@ -16,33 +16,57 @@ jobs:
         with:
           node-version: 18
 
-      - name: Neon dependencies
+      - name: Install dependencies
         working-directory: ./neon
         run: npm install
-      - name: Neon build
+
+      - name: Make build
         working-directory: ./neon
         run: npm run docs:build
       
-      - name: Neon write commit SHA to gitcommit.txt in dist
-        shell: bash
-        run: |
-          echo $GITHUB_SHA > neon/.vitepress/dist/gitcommit.txt
-
-      - name: Neon get size of files in dist
-        shell: bash
-        run: |
-          du -ah neon/.vitepress/dist
-
-      - name: Neon - Upload
+      - name: Upload
         uses: actions/upload-artifact@v2
         with:
           name: neon
           path: neon/.vitepress/dist
+  
+  invisible:
+    name: Build Invisible
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        working-directory: ./invisible
+        run: npm install
+
+      - name: Make build
+        working-directory: ./invisible
+        run: npm run docs:build
+      
+      - name: Upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: invisible
+          path: invisible/.vitepress/dist
+
+  landing-page:
+    name: Upload landing page
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3         
       
       - name: Index - Upload
         uses: actions/upload-artifact@v2
         with:
-          name: index
+          name: landing-page
           path: index.html
 
   deploy-staging:
@@ -51,16 +75,29 @@ jobs:
     environment:
       name: staging
       url: https://docs-staging.pupil-labs.com
-    needs: build
+    needs: [neon, invisible, landing-page]
 
     steps:
       - uses: actions/checkout@v3
 
-      - name: Download generated website dist dir
+      - name: Download Neon
         uses: actions/download-artifact@v2
         with:
           name: neon
           path: neon/
+
+      - name: Download Invisible
+        uses: actions/download-artifact@v2
+        with:
+          name: invisible
+          path: invisible/
+
+      - name: Download landing page
+        uses: actions/download-artifact@v2
+        with:
+          name: landing-page
+          path: landing-page/
+  
 
       - name: Rsync action - Deploy to staging
         uses: burnett01/rsync-deployments@4.1
