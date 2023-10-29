@@ -14,7 +14,7 @@ export default defineConfig({
       { text: 'User Guide', link: '/software/pupil-capture/' },
       { text: 'DIY', link: '/diy/' },
       { text: 'Developer', link: '/developer/' },
-      { text: 'VR/AR', link: 'https://docs.pupil-labs.com/alpha-lab/' },
+      { text: 'VR/AR', link: '/vr-ar/' },
     ],
 
     sidebar: {
@@ -44,6 +44,13 @@ export default defineConfig({
         { text: 'Recording Format', link: '/developer/recording-format/' },
         { text: 'Plugin API', link: '/developer/plugin-api/' },
         { text: 'py3d Pupil Detection', link: '/developer/pye3d/' },
+      ],
+      "/vr-ar/": [
+        { text: 'Overview', link: '/vr-ar/' },
+        { text: 'HTC-Vice Add-On', link: '/vr-ar/vive/' },
+        { text: 'HoloLens Add-On', link: '/vr-ar/hololens/' },
+        { text: 'Oculus Rift DK2 Add-On', link: '/vr-ar/rift/' },
+        { text: 'Developer', link: '/vr-ar/developer/' },
       ],
     },
 
