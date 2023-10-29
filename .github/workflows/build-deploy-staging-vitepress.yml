@@ -118,7 +118,7 @@ jobs:
     environment:
       name: staging
       url: https://docs-staging.pupil-labs.com
-    needs: [neon, invisible, landing-page]
+    needs: [neon, invisible, landing-page, alpha-lab, debugging-info]
 
     steps:
       - uses: actions/checkout@v3
