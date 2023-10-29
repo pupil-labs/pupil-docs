@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "pug": "^3.0.2",
+    "vitepress": "^1.0.0-rc.20",
+    "vue-pug-plugin": "^2.0.3"
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  }
+}
