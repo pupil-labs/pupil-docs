@@ -37,6 +37,8 @@ export default defineConfig({
         text: 'Other',
         items: [
           { text: 'Gaze-Contingent Assistive Applications', link: '/gaze-contingency-assistive/' },
+          { text: 'Undistort Video and Gaze Data', link: '/undistort/' },
+          { text: 'Use Neon with Pupil Capture', link: '/neon-with-capture/' },
         ]
       },
     ],
