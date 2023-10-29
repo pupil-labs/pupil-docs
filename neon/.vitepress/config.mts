@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  head: [['link', { rel: 'icon', href: '/../favicon.png' }]],
+  head: [['link', { rel: 'icon', href: './favicon.png' }]],
   ignoreDeadLinks: true,
   base: '/neon/',
   title: "Neon",
