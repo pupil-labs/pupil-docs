@@ -1,8 +1,3 @@
----
-permalink: /developer/core/network-api
-description: There are two different ways that you can interact with the Pupil Core Network API. We outline how the basic communication works and how you can access the different stages of the Network API.
----
-
 # Network API
 
 There are two different ways that you can interact with the Pupil Core Network API:
@@ -53,7 +48,6 @@ print(pupil_remote.recv_string())
 ```
 
 ::: warning
-<v-icon large color="warning">info_outline</v-icon>
 For every message that you send to Pupil Remote, you need to receive the response. If
 you do not call `recv()`, Pupil Capture might become unresponsive!
 :::
@@ -80,7 +74,6 @@ Pupil Remote commands can be subject to transmission delay (e.g. from network la
 :::
 
 ::: tip
-<v-icon large color="info">info_outline</v-icon>
 Pupil Service does not support the creation of recordings, i.e. the `R` and `r` commands
 do not work with Pupil Service.
 :::
@@ -484,7 +477,6 @@ actors' messages. Therefore, it is the Backbone of all communication to/from and
 within the Pupil Core software.
 
 ::: tip
-<v-icon large color="info">info_outline</v-icon>
 Note - The main process does not do any CPU heavy work. It only runs the proxy, launches
 other processes and does a few other light tasks.
 :::
@@ -527,7 +519,6 @@ ZMQ PUB SUB will make no guarantees for delivery. Reasons for not receiving mess
 For more information see [ZMQ Guide Chapter 5 - Advanced Pub-Sub Patterns](http://zguide.zeromq.org/php:chapter5).
 
 :::tip
-<v-icon large color="info">info_outline</v-icon>
 In order to avoid accidentally dropping notifications in Pupil, we use a `PUSH` instead
 of an `PUB` socket. It acts as an intermediary for notifications and guarantees that any
 notification sent to the IPC Backbone, is processed and published by it.

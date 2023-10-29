@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  head: [['link', { rel: 'icon', href: './favicon.png' }]],
+  head: [['link', { rel: 'icon', href: '/core/favicon.png' }]],
   ignoreDeadLinks: true,
   base: '/core/',
   title: "Pupil Core",
@@ -11,29 +11,39 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Getting Started', link: '/getting-started/' },
-      { text: 'Hardware', link: '/general/module-technical-overview/' },
-      { text: 'User Guide', link: '/data-collection/' },
-      { text: 'DIY', link: '/data-collection/' },
-      { text: 'Developer', link: '/real-time-api/' },
+      { text: 'User Guide', link: '/software/pupil-capture/' },
+      { text: 'DIY', link: '/diy/' },
+      { text: 'Developer', link: '/developer/' },
       { text: 'VR/AR', link: 'https://docs.pupil-labs.com/alpha-lab/' },
     ],
 
     sidebar: {
-      "/user-guide/": [
-        { text: 'Pupil Capture', link: '/data-collection/' },
-        { text: 'Pupil Player', link: '/data-collection/' },
-        { text: 'Pupil Service', link: '/data-collection/' },
-        { text: 'Recording Format', link: '/data-collection/' },
-        { text: 'Terminology', link: '/data-collection/' },
-        { text: 'Best Practices', link: '/data-collection/' },
+      "/": [
+        {
+          text: 'Software', items: [
+            { text: 'Pupil Capture', link: '/software/pupil-capture/' },
+            { text: 'Pupil Player', link: '/software/pupil-player/' },
+            { text: 'Pupil Service', link: '/software/pupil-service/' },
+            { text: 'Recording Format', link: '/software/recording-format/' },
+          ]
+        },
+        {
+          text: 'Other', items: [
+            { text: 'Hardware', link: '/hardware/' },
+            { text: 'Terminology', link: '/terminology/' },
+            { text: 'Best Practices', link: '/best-practices/' },
+            { text: 'Academic Citation', link: '/academic-citation/' },
+          ]
+        },
+
 
       ],
       "/developer/": [
-        { text: 'Overview', link: '/data-collection/' },
-        { text: 'Netowork API', link: '/data-collection/' },
-        { text: 'Recording Format', link: '/data-collection/' },
-        { text: 'Plugin API', link: '/data-collection/' },
-        { text: 'py3d Pupil Detection', link: '/data-collection/' },
+        { text: 'Overview', link: '/developer/' },
+        { text: 'Netowork API', link: '/developer/network-api/' },
+        { text: 'Recording Format', link: '/developer/recording-format/' },
+        { text: 'Plugin API', link: '/developer/plugin-api/' },
+        { text: 'py3d Pupil Detection', link: '/developer/pye3d/' },
       ],
     },
 

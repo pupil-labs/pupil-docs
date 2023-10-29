@@ -1,8 +1,3 @@
----
-permalink: /core/best-practices
-description: Tips for conducting eye tracking experiments with the Pupil Core eye tracking platform.
----
-
 # Best Practices
 
 _Tips for conducting eye tracking experiments with the Pupil Core eye tracking platform._
@@ -139,12 +134,10 @@ How you go about synchronizing Pupil Core with other devices or software will de
 common approaches (steps 2–3 leverage our [Network API](/developer/core/network-api)):
 
 ::: tip
-<v-icon large color="info">info_outline</v-icon>
 Read about Pupil Core's [timing definitions here](/core/terminology/#timing).
 :::
 
 ::: tip
-<v-icon large color="info">info_outline</v-icon>
 When using multiple Pupil Core devices (running on the same or multiple machines), be sure to turn-on 
 the [Network Time Sync Plugin](https://docs.pupil-labs.com/core/software/pupil-capture/#pupil-time-sync) which takes 
 care of Pupil Time synchronization. The [Pupil Groups Plugin](/core/software/pupil-capture/#pupil-groups) also helps when 
@@ -194,13 +187,12 @@ head around while looking at a fixed position. A well-fit model is visualized by
 modelled eyeball, and this should be of an equivalent size to the respective eyeball. A dark blue circle indicates that 
 the model is within physiological bounds, and a light blue circle out of physiological bounds.
 
-<v-img :src="require('../media/core/imgs/bp-pye3d.png')"></v-img>
-<br>
+![Py3D Model](./bp-pye3d.png)
 
 See the [pye3d release notes](https://github.com/pupil-labs/pupil/releases/tag/v3.4)for further details.
 
 ### Freeze the pye3d model
-:::tip <v-icon large color="info">info_outline</v-icon>
+:::tip
 A frozen model **is not** robust to headset slippage (erroneous movements of the headset on the wearer) as it is 
 prevented from adapting to headset movements. If using a frozen model, and the headset slips during the experiment, 
 erroneous pupil size estimates can occur. Therefore, only use this option if the experiment is tightly controlled with 
@@ -220,7 +212,7 @@ You should only freeze the model when it is well-fitting as per the description 
 'Actual Headset Slippage' can only be avoided by eliminating headset slippage, which should be a key aim when performing
 pupillometry in general, and especially when freezing the model.
 
-:::tip <v-icon large color="info">info_outline</v-icon>
+:::tip 
 You can also freeze the model when running 
 [post-hoc pupil detection in Pupil Player](/core/software/pupil-player/#pupil-data-and-post-hoc-detection/). Moreover, 
 clicking 're-detect' after freezing the model will apply the frozen model from the beginning of the recording.

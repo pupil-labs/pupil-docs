@@ -1,21 +1,12 @@
----
-permalink: /core/software/pupil-capture
-description: Pupil Capture is the software used with your Pupil Core Headset. Using video streams to detect your pupil, track your gaze, and stream data in realtime.
----
-
 # Pupil Capture
 Pupil Capture is the software used with your Pupil Core Headset. The software reads the video streams coming in from the world camera and the eye camera(s). Pupil Capture uses the video streams to detect your pupil, track your gaze, detect and track markers in your environment, record video and events, and stream data in realtime.
 
-<div class="pb-4">
-  <v-img :src="require('../../media/core/icons/pc.png')" style="display:flex;margin:0 auto;width:100px;"></v-img>
-</div>
+![Pupil Capture](./pc.png)
 
 ## World Window
 The World window is the main control center for Pupil Capture. It displays a live world camera video feed from your Pupil Core headset.
 
-<div class="pb-4">
-  <v-img :src="require('../../media/core/imgs/capture-callout.jpg')" style="display:flex;margin:0 auto;"></v-img>
-</div>
+![Pupil Captuere callout](./capture-callout.jpg)
 
 1. **Graphs**: This area contains performance graphs. By default the graphs `CPU`, `FPS`, and pupil algorithm detection confidence will be displayed. You can control graph settings with the System Graphs plugin.
 1. **Hot keys**: This area contains clickable buttons for plugins.
@@ -93,7 +84,9 @@ Pupil Core's algorithms automatically detect the participant's pupil. It runs tw
 
 3D detection uses a 3D model of the eye(s) that updates based on observations of the eye. This enables the system to compensate for movements of the Pupil Core eye tracking headset on the participant's face (also known slippage). To build up an initial model, we recommend to look around your field of view when putting on the headset.
 
-<Videos :src="require(`../../media/core/videos/pd.mp4`)" />
+<video width="100%" controls>
+  <source src="./pd.mp4" type="video/mp4">
+</video>
 
 ### Fine-tuning Pupil Detection
 As a first step it is recommended to check the eye camera resolution as some parameters are resolution dependent.
@@ -106,7 +99,6 @@ Some settings of the 2D pupil detector can be adjusted to improve pupil detectio
 * `Intensity Range` : Defines the minimum "darkness" of a pixel to be considered as the pupil. The pixels considered for pupil detection are visualized in blue when in `Algorithm Mode`. Try to minimize the range so that the pupil is always fully covered while having as little leakage as possible outside of the pupil. Be aware that this is dependent on the brightness and therefore has a strong interaction with `Video Source/Sensor Settings/Absolute Exposure Time`.
 
 ::: tip
-<v-icon large color="info">info_outline</v-icon>
 Keep in mind that pupil size values are defined in pixels and are therefore dependent on the resolution settings of your sensor.
 :::
 
@@ -116,11 +108,15 @@ Keep in mind that pupil size values are defined in pixels and are therefore depe
 
 Pupil Core headsets have two types of cameras attached. One camera records the subject's field of vision - we call this the `world camera`. Additionally there are one or more cameras recording the participant's eye movements - we call these the `eye cameras`. The data collected during the calibration period is used afterwards to correlate the world camera with the eye cameras.
 
-<Videos :src="require(`../../media/core/videos/clb-hd.mp4`)" />
+<video width="100%" controls>
+  <source src="./clb-hd.mp4" type="video/mp4">
+</video>
 
 Pupil Core headsets come in a variety of configurations. Calibration can be conducted with a monocular or binocular eye camera setup.>
 
-<Videos :src="require(`../../media/core/videos/clb-mobo.mp4`)" />
+<video width="100%" controls>
+  <source src="./clb-mobo.mp4" type="video/mp4">
+</video>
 
 <div style="display:flex;" class="pb-4">
     <p style="flex-grow:1;display:flex;justify-content:center;">Monocular</p>
@@ -133,14 +129,19 @@ Before starting a calibration, ensure that the participant's pupil is robustly d
 
 
 <div style="display:flex; flex-wrap: wrap;" class="pb-4">
-    <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <v-img :src="require('../../media/core/imgs/pupil-detect.jpg')" style="width:300px;height:300px;"></v-img>
-        <p>Your Pupil is properly detected by the camera.</p>
-    </div>
-    <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <v-img :src="require('../../media/core/imgs/focus.jpg')" style="width:300px;height:300px;"></v-img>
-        <p>Make sure the world camera is in focus.</p>
-    </div>
+<div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
+
+![Pupil Detection](./pupil-detect.jpg)
+
+<p>Your Pupil is properly detected by the camera.</p>
+</div>
+    
+<div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
+
+![Focus](focus.jpg)
+
+<p>Make sure the world camera is in focus.</p>
+</div>
 </div>
 
 ### Choreographies
@@ -150,7 +151,9 @@ All calibrations require a participant to look at a specific point in the real w
 #### Screen Marker Calibration Choreography
 This is the default choreography, and a quick way to get started.
 
-<Videos :src="require(`../../media/core/videos/clb-s.mp4`)" />
+<video width="100%" controls>
+  <source src="./clb-s.mp4" type="video/mp4">
+</video>
 
 1. Select the `Screen Marker` choreography
 2. Select your `Monitor` (if more than 1 monitor)
@@ -168,22 +171,25 @@ If you're not going to do calibration on screen with the `Screen Marker` choreog
 In most use cases you will only need to use the `Pupil Calibration Marker`. The `Stop Marker` is used if you want to be able to conclude a calibration sequence by showing this marker.
 
 ::: tip
-<v-icon large color="info">info_outline</v-icon>
 Make sure to always use the **v0.4 marker design** for best detection performance!
 :::
 
 <div style="display:flex; flex-wrap: wrap;" class="pb-4">
-    <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <v-img :src="require('../../media/core/imgs/v0.4_calib_marker_02.jpg')" style="width:300px;height:300px;"></v-img>
-        <p>Pupil Calibration Marker v0.4</p>
-    </div>
-    <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <v-img :src="require('../../media/core/imgs/v0.4_calib_marker_01.jpg')" style="width:300px;height:300px;"></v-img>
-        <p>Pupil Calibration Stop Marker v0.4</p>
-    </div>
+<div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
+
+![Calibration markers 1](./v0.4_calib_marker_01.jpg)
+
+<p>Pupil Calibration Marker v0.4</p>
+</div>
+<div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
+
+![Calibration markers 2](./v0.4_calib_marker_02.jpg)
+
+<p>Pupil Calibration Stop Marker v0.4</p>
+</div>
 </div>
 
-<a :href="$withBase('/pdfs/v0.4_marker.pdf')" alt="Pupil Labs calibration marker v4.0" target="_blank" rel="noopener">Download Pupil Labs Calibration Marker v0.4</a> to print or display on smartphone/tablet screen.
+[Download Pupil Labs Calibration Marker v0.4](http://docs.pupil-labs.com/core/software/pupil-capture/v0.4_marker.pdf') to print or display on smartphone/tablet screen.
 
 
 #### Single Marker Calibration Choreography
@@ -196,14 +202,15 @@ Calibrate using a single marker, either with a printed (physical) markers or a d
 5. Press the `C` button on your keyboard  or show the stop marker to stop calibrating.
 
 ::: tip
-<v-icon large color="info">info_outline</v-icon>
 This paper introduces and evaluates this type of single marker calibration - <code>CalibMe: Fast and Unsupervised Eye Tracker Calibration for Gaze-Based Pervasive Human-Computer Interaction</code>
 :::
 
 #### Natural Features Calibration Choreography
 This choregraphy is used only in special situations.
 
-<Videos :src="require(`../../media/core/videos/clb-natural.mp4`)" />
+<video width="100%" controls>
+  <source src="./clb-natural.mp4" type="video/mp4">
+</video>
 
 
 1. Select `Natural Features Calibration`
@@ -231,7 +238,9 @@ between fixation locations and the corresponding locations of the fixation targe
 between successive samples during a fixation.
 
 ## Recording
-<Videos :src="require(`../../media/core/videos/rec.mp4`)" />
+<video width="100%" controls>
+  <source src="./rec.mp4" type="video/mp4">
+</video>
 
 Press `r` on your keyboard or press the circular `R` button on the left hand side of the world window to start recording. You will see red text with the elapsed time of recording next to the `R` button. To stop recording, press `r` on your keyboard or press the `R` button on screen.
 
@@ -247,9 +256,7 @@ If you open up a recording session folder you will see a collection of video(s) 
 ## Plugins
 Open the `Plugin Manager` menu on the right.
 
-<div class="pb-4">
-  <v-img :src="require('../../media/core/imgs//capture-plugin.jpg')" style="display:flex;margin:0 auto;width:100%;"></v-img>
-</div>
+![Pupil Capture Plugins](./capture-plugin.jpg)
 
 It lists all available plugins.
 Click the button next to the plugin's name to turn on or off the plugin.
@@ -273,12 +280,13 @@ with at least one subscription is transferred.
 #### Network API plugin
 The `Network API` plugin provides a high level interface to control Pupil Capture over the network (e.g. start/stop a recording). It also functions as the entry point to the broadcast infrastructure.
 
-<Videos :src="require(`../../media/core/videos/pr.mp4`)" />
+<video width="100%" controls>
+  <source src="./pr.mp4" type="video/mp4">
+</video>
 
 The section `Pupil Remote` allows you to specify the network interface. By default, Pupil will listen on the primary network interface. You can specify a custom port, or even choose a different interface.
 
 ::: tip
-<v-icon large color="info">info_outline</v-icon>
 See the developer documentation on how to access Pupil Remote from your own application.
 :::
 
@@ -294,12 +302,10 @@ For a demonstration of how to receive and decode world frames, please take a loo
 * Furthermore, actions like starting and stopping a recording on one device will be mirrored instantly on all other devices.
 
 ::: tip
-<v-icon large color="info">info_outline</v-icon>
 For this to work your network needs to allow `UDP` transport. If the nodes do not find each other, create a local wifi network and use that instead.
 :::
 
 ::: tip
-<v-icon large color="info">info_outline</v-icon>
 Pupil Groups can easily be integrated in your own app or device.
 Take a look at <a href="/developer/core/network-api/#pupil-groups">the developer docs</a> to get started.
 :::
@@ -322,19 +328,16 @@ that each node has to implement the same protocol version to be able to talk to
 each other.
 
 ::: tip
-<v-icon large color="info">info_outline</v-icon>
 See the <a href="https://github.com/pupil-labs/pupil-helpers/tree/62ea54001fd051528bf24537bbd4f5f89e3391e8/network_time_sync">pupil-helpers</a> for example Python implementations.
 :::
 
 ::: tip
-<v-icon large color="info">info_outline</v-icon>
 For this to work your network needs to allow `UDP` transport. If the nodes do not find each other, create a local wifi network and use that instead.
 :::
 
 #### Remote Recorder
 
 ::: warning
-<v-icon large color="warning">error_outline</v-icon>
 Depreciation warning: Pupil Mobile app is no longer maintained.
 :::
 
@@ -346,7 +349,6 @@ to start and stop recording on the Android device.
 The `Surface Tracker` plugin allows you to define planar surfaces within your environment to track areas of interest (AOI). Surfaces are defined with [Apriltag Markers](https://april.eecs.umich.edu/software/apriltag.html).
 
 ::: tip
-<v-icon large color="info">info_outline</v-icon>
 The legacy surface tracker used simple square markers, which are less robust to detect.
 For all new projects we strongly recommend using Apriltags.
 You can find more information on the legacy markers below.
@@ -359,7 +361,6 @@ Additionally, we created a PDF with one page per tag for all 587 tags from the *
 You can use this to print custom marker sheets by printing multiple pages per sheet.
 
 ::: warning
-<v-icon large color="warning">error_outline</v-icon>
 Note that the markers require a white border around them for robust detection. In our experience, this should be at least equal to the width of the smallest white square/rectangle shown in the Marker. Please ensure you include a sufficient border around when displaying markers on screen or printing the markers.
 :::
 
@@ -377,17 +378,18 @@ Supported Apriltag families:
 
 Apriltags ready to use:
 
-<div style="display:flex; flex-wrap: wrap;" class="pb-4">
-    <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <v-img :src="require('../../media/shared/imgs/apriltags_tag36h11_0-23.jpg')" style="padding-bottom:16px;width:60%;"></v-img>
-        <p>Apriltags tag36h11 0-23</p>
-    </div>
-    <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
-        <v-img :src="require('../../media/shared/imgs/apriltags_tag36h11_24-47.jpg')" style="padding-bottom:16px;width:60%;"></v-img>
-        <p>Apriltags tag36h11 24-47</p>
-    </div>
-</div>
+<div class="pb-4" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
+  <a download="apriltags_tag36h11_0-23.jpg" href="../../media/shared/imgs/apriltags_tag36h11_0-23.jpg" title="AprilTags 0-23">
 
+  ![Apriltags 0 - 23](./apriltags_tag36h11_0-23.jpg)
+
+  </a>
+  <a download="apriltags_tag36h11_24-47.jpg" href="../../../media/shared/imgs/apriltags_tag36h11_24-47.jpg" title="AprilTags 0-23">
+    
+  ![Apriltags 24 - 47](./apriltags_tag36h11_24-47.jpg)
+
+  </a>
+</div>
 
 Markers can be printed on paper, stickers, or displayed on a screen.
 
@@ -410,7 +412,9 @@ When placing your markers please follow the guidelines:
 Surfaces can be defined with Pupil Capture in real-time, or post-hoc with Pupil Player.
 In both cases the necessary steps are as follows:
 
-<Videos :src="require(`../../media/core/videos/srf-tracking.mp4`)" />
+<video width="100%" controls>
+  <source src="./srf-tracking.mp4" type="video/mp4">
+</video>
 
 *   Prepare your environment as described above.
 *   Turn on the `Surface Tracker` plugin .

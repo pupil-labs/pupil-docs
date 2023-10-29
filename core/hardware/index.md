@@ -1,7 +1,3 @@
----
-description: Learn about the Pupil Core eye tracking headset, adjustments, and accessories. 
----
-
 # Hardware
 You wear Pupil Core headset like a pair of glasses. The headset is designed to be lightweight and adjustable in order to accommodate a wide range of users.
 
@@ -9,9 +5,7 @@ You wear Pupil Core headset like a pair of glasses. The headset is designed to b
 There are many Pupil Core headset configurations. So, your headset might look different from images and videos below.
 :::
 
-<div class="pb-4">
-  <v-img :src="require('../../media/core/imgs/core_hardware_intro.jpg')" width="100%" style="display:flex;margin:0 auto;"></v-img>
-</div>
+![Pupil Core Hardware](./core_hardware_intro.jpg)
 
 **Terminology**
 1. World camera
@@ -54,7 +48,9 @@ We recommend setting the set screw so that you can still move the eye camera by 
 
 You can also tighten the set screw to fix the eye camera in place.
 
-<Videos :src="require(`../../media/core/videos/eyecam-screw.mp4`)" />
+<video width="100%" controls>
+  <source src="./eyecam-screw.mp4" type="video/mp4">
+</video>
 
 ::: tip
 <v-icon large color="info">info_outline</v-icon>
@@ -66,7 +62,9 @@ Before you calibrate, make sure to properly adjust the headset to get optimal ey
 ### Focus World Camera
 Set the focus for the distance at which you will be calibrating by rotating the camera lens.
 
-<Videos :src="require(`../../media/core/videos/worldcam-focus.mp4`)" />
+<video width="100%" controls>
+  <source src="./worldcam-focus.mp4" type="video/mp4">
+</video>
 
 ### No Focus 200Hz Eye Camera
 
@@ -75,14 +73,14 @@ Set the focus for the distance at which you will be calibrating by rotating the 
 200Hz eye cameras **do not** need to be focused, and **can not be focused**. The lens of the 200Hz eye camera is arrested using glue. Twisting the lens will risk breaking the mount.
 :::
 
-<div class="pb-4">
-  <v-img :src="require('../../media/core/imgs/e200.jpg')" width="100%" style="display:flex;margin:0 auto;"></v-img>
-</div>
+![Pupil Core eye camera](./e200.jpg)
 
 ### Focus 120Hz Eye Camera
 If you have a 120Hz eye camera, make sure the eye camera is in focus. Twist the lens focus ring of the eye camera with your fingers or lens adjuster tool to bring the eye camera into focus.
 
-<Videos :src="require(`../../media/core/videos/eye-adjust.mp4`)" />
+<video width="100%" controls>
+  <source src="./eye-adjust.mp4" type="video/mp4">
+</video>
 
 ## Additional Parts
 
@@ -93,7 +91,6 @@ A narrow angle lens and a wide angle lens. The default lens is the wide angle le
 The world camera lens are interchangeable, so you can swap between the two lenses provided for wide angle or narrow angle field of view.
 
 ::: warning
-<v-icon large color="warning">error_outline</v-icon>
 If you change lenses, you will need to re-estimate the [camera intrinsics](/core/terminology/#camera-intrinsics). Otherwise, 3d calibration and subsequently gaze
 estimation will be inaccurate. Check out [these instructions](/core/software/pupil-capture/#camera-intrinsics-estimation) 
 for details of how to re-estimate the camera intrinsics.
@@ -116,7 +113,6 @@ Steps:
 The eye camera arm extender works for all existing 120 and 200Hz systems.
 
 ::: tip
-<v-icon large color="info">info_outline</v-icon>
 Starting on `2018-02-01` the arm extender is shipped with all Pupil Core headset orders. If you have an older headset, you can get the extender from our [Shapeways store](http://shpws.me/PL6w).
 :::
 
@@ -126,7 +122,6 @@ All Pupil Core headsets come with 2 sets of nose pads. You can swap the nose pad
 <Youtube src="dinaWX5tkPA"/>
 
 ::: tip
-<v-icon large color="info">info_outline</v-icon>
 Depending on your configuration, some additional parts may be included with your Pupil headset.
 :::
 

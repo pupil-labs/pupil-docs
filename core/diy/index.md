@@ -1,13 +1,8 @@
----
-description: If you are planning on using Pupil exclusively for noncommercial purposes, and are not afraid of hacking, then we have made a guide to help create a Pupil DIY headset.
----
-
 # DIY
 
 If you are an individual planning on using Pupil exclusively for noncommercial purposes, and are not afraid of SMD soldering and hacking – then, buy the parts, modify the cameras, and assemble a Pupil DIY headset. We have made a guide to help you and a shopping list.
 
 ::: tip
-<v-icon large color="info">info_outline</v-icon>
 The Pupil DIY Kit is not for commercial use or commercial clients.
 :::
 
@@ -81,7 +76,6 @@ We release the [CAD files for the camera mounts](https://github.com/pupil-labs/p
 By releasing the mounts as example geometry we automatically document the interface. You can use the CAD files to take measurements and make your own mounts.
 
 ::: tip
-<v-icon large color="info">info_outline</v-icon>
 The tolerances may need to be changed for your material or fabrication process.
 :::
 

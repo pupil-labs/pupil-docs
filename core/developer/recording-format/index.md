@@ -1,8 +1,3 @@
----
-permalink: /developer/core/recording-format
-description: We recommend reading the format thoroughly if you want to develop software that creates recordings on its own, or processes existing recordings without having to open them in Pupil Player.
----
-
 # Recording Format
 
 This section outlines the Pupil Player recording format. We recommend reading it
@@ -18,7 +13,6 @@ The [Pupil Player Recording Format 2.0](https://github.com/pupil-labs/pupil/blob
 See its [specification](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/pupil_recording/README.md) for details.
 
 ::: tip
-<v-icon large color="info">info_outline</v-icon>
 Pupil Invisible recordings have their own meta file definitions:
 `info.csv` and `info.json`. When opened in Pupil Player, the meta info file
 will be transformed the Pupil Player Recording Format 2.0.

@@ -1,30 +1,19 @@
----
-permalink: /core/software/pupil-player
-description: Pupil Player desktop eye tracking visualization software. Use it to play back recordings made with Pupil Core and export data for further analysis.
----
-
 # Pupil Player
 Pupil Player is the second tool you will use after Pupil Capture. It is a media and data visualizer at its core. You will use it to look at Pupil Capture recordings. Visualize your data and export it.
 
-<div class="pb-4">
-  <v-img :src="require('../../media/core/icons/pp.png')" style="display:flex;margin:0 auto;width:100px;"></v-img>
-</div>
+![Pupil Player Icon](./pp.png)
 
 ## Load a recording
 Drag the recording folder (the triple digit one) directly onto the app icon **or** launch the application and drag + drop the recording folder into the Pupil Player window.
 
-<div class="pb-4">
-  <v-img :src="require('../../media/core/imgs/pp-start.jpg')" style="display:flex;margin:0 auto;"></v-img>
-</div>
+![Drag and drop recording folder](./pp-start.jpg)
 
 Don't have a recording yet? [Download a sample recording](https://drive.google.com/file/d/1vzjZkjoi8kESw8lBnsa_k_8hXPf3fMMC/view?usp=sharing "Download sample recording to use in Pupil Player").
 
 ## Player Window
 The Player window is the main control center for `Pupil Player`. It displays video and data recorded by [Pupil Capture](/core/software/pupil-capture) or [Pupil Invisible](/invisible/).
 
-<div class="pb-4">
-  <v-img :src="require('../../media/core/imgs/pp-callout.jpg')" style="display:flex;margin:0 auto;"></v-img>
-</div>
+![Pupil Player Callout](./pp-callout.jpg)
 
 1. **Graphs**: This area contains performance graphs. The graphs display `CPU`, `FPS`, and pupil algorithm detection confidence.
 1. **Hot keys**: This area contains clickable buttons for plugins.
@@ -67,7 +56,6 @@ Here is an example workflow:
 - Check out exported data in the `exports` directory within your recording directory
 
 ::: tip
-<v-icon large color="info">info_outline</v-icon>
 Pupil Player will <strong>never</strong> remove or overwrite any of your raw data gathered during capture. All exports are isolated within a sub-directory named <code>exports</code>. Exports will never be overwritten.
 :::
 
@@ -89,9 +77,7 @@ We will call plugins with the `Vis` prefix **visualization** plugins. These plug
 #### Vis Circle
 Visualize the gaze positions with a circle for each gaze position. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization.
 
-<div class="pb-4">
-  <v-img :src="require('../../media/core/imgs/vis-circle.jpg')" style="display:flex;margin:0 auto;"></v-img>
-</div>
+![Circle Visualizations](./vis-circle.jpg)
 
 You can set the following parameters:
 
@@ -105,9 +91,7 @@ Here we show an example of how you could use **2** instances of the `Vis Circle`
 #### Vis Cross
 Visualize the gaze positions with a cross for each gaze position. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization. You can set the following parameters:
 
-<div class="pb-4">
-  <v-img :src="require('../../media/core/imgs/vis-cross.jpg')" style="display:flex;margin:0 auto;"></v-img>
-</div>
+![Cross Visualizations](./vis-cross.jpg)
 
   + `inner offset length` - the distance in pixels to offset the interior cross endpoints from the gaze position. A value of `0` will make the crosshairs intersect the gaze position.
   + `outer length` - The length of the cross lines in pixels from the gaze position. Note - equal values of `inner offset length` and `outer length` will result in a cross with no length, and therefore not rendered.
@@ -119,9 +103,7 @@ Here we show an example of how you could use **2** instances of the `Vis Cross` 
 #### Vis Polyline
 Visualize the gaze positions with a polyline for each gaze position.
 
-<div class="pb-4">
-  <v-img :src="require('../../media/core/imgs/vis-polyline.jpg')" style="display:flex;margin:0 auto;"></v-img>
-</div>
+![Polyline Visualizations](./vis-polyline.jpg)
 
 This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization. You can set the following parameters:
 
@@ -133,9 +115,7 @@ An example showing `Vis Polyline` used with `Vis Circle`. The polyline enables o
 #### Vis Light Points
 Visualize the gaze positions as a point of light for each gaze position. The `falloff` of the light from the gaze position is specified by the user.
 
-<div class="pb-4">
-  <v-img :src="require('../../media/core/imgs/vis-lightpoints.jpg')" style="display:flex;margin:0 auto;"></v-img>
-</div>
+![Lightpoints Visualizations](./vis-lightpoints.jpg)
 
 This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization. You can set the following parameters:
 
@@ -146,9 +126,7 @@ Here is an example demonstrating `Vis Light Points` with a falloff of 73.
 #### Vis Eye Video Overlay
 Here is an example of the `Eye Video Overlay` with binocular eye videos.
 
-<div class="pb-4">
-  <v-img :src="require('../../media/core/imgs/vis-eyeoverlay.jpg')" style="display:flex;margin:0 auto;"></v-img>
-</div>
+![Eye overlay Visualizations](./vis-eyeoverlay.jpg)
 
 This plugin can be used to overlay the eye video on top of the world video. Note that the eye video is not recorded by default in Pupil Capture so if you want to use this plugin, make sure to check `record eye video` in Pupil Capture.
 
@@ -168,9 +146,7 @@ These plugins are simple unique plugins, that operate on the gaze data for analy
 This plugin is a post-hoc version of the [Surface Tracking](/core/software/pupil-capture/#surface-tracking) plugin for Pupil Capture.
 You can use this plugin to detect markers in the recording, define surfaces, edit surfaces, and create and export visualizations of gaze data within the defined surfaces.
 
-<div class="pb-4">
-  <v-img :src="require('../../media/core/imgs/offline-srf-tracker.jpg')" style="display:flex;margin:0 auto;"></v-img>
-</div>
+![Offline surface tracker](./offline-srf-tracker.jpg)
 
 Here is an example workflow for using the `Surface Tracker` plugin to generate heatmap visualizations and export surface data reports:
 
@@ -209,9 +185,7 @@ Additionally, the `Surface Tracker` exports the detected markers to the `marker_
 #### Fixation Detector
 The post-hoc fixation detector calculates fixations for the whole recording. The menu gives feedback about the progress of the detection, how many fixations were found, and shows detailed information about the current fixation. Press `f` or click the `f` hot key button on the left hand side of the window to seek forward to the next fixation.
 
-<div class="pb-4">
-  <v-img :src="require('../../media/core/imgs/pg-fixation.jpg')" style="display:flex;margin:0 auto;"></v-img>
-</div>
+![Fixations](./pg-fixation.jpg)
 
 Toggle `Show fixations` to show a visualization of fixations. The blue number is the number of the fixation (0 being the first fixation). You can export fixation reports for your current trim section by pressing `e` on your keyboard or the `e` hot key button on the left hand side of the window.
 
@@ -239,12 +213,9 @@ In Pupil Player, the green data series labelled 'Activity' is the filter respons
 onset and offset confidence are above and below this, respectively. The blink detection result is shown by the red 
 line, characterised by a step function where blinks have been classified.
 
-<div class="pb-4">
-  <v-img :src="require('../../media/core/imgs/pp-blinks.jpg')" style="display:flex;margin:0 auto;"></v-img>
-</div>
+![Blinks](./pp-blinks.jpg)
 
 :::tip
-<v-icon large color="info">info_outline</v-icon>
 See our [Best Practices](/core/best-practices/#blink-detector-thresholds) for tips on choosing 
 appropriate Blink Detector thresholds
 :::
@@ -264,7 +235,6 @@ Results are exported in `blinks.csv` with the following columns:
 | `base_data`         | Timestamps of data associated with blink                   |
 
 :::tip
-<v-icon large color="info">info_outline</v-icon>
 Blink count is included in the `blink_detection_report.csv`
 :::
 
@@ -321,9 +291,7 @@ using the right-hand convention, where:
 The correct position of the origin marker is vertical relative to the earth (e.g. on a computer monitor) pointing 
 upwards: 
 
-<div class="pb-1">
-  <v-img :src="require('../../media/core/imgs/pp-hp-marker.jpg')" style="display:flex;margin:0 auto;"></v-img>
-</div>
+![Head Pose](./pp-hp-marker.jpg)
 
 :::tip
 Euler angles are an intuitive representation of rotation. However, they can be subject to the effects of 
@@ -335,9 +303,7 @@ Euler angles are an intuitive representation of rotation. However, they can be s
 This plugin visualizes accelerometer and gyroscope data from Pupil Invisible recordings. It also fuses the 
 data using [Madgwick's algorithm](https://github.com/xioTechnologies/Fusion) to yield drift-free orientation estimates in the pitch and roll axes.
 
-<div class="pb-4">
-  <v-img :src="require('../../media/core/imgs/pp-imu.jpg')" style="display:flex;margin:0 auto;"></v-img>
-</div>
+![IMU](./pp-imu.jpg)
 
 Why fuse the data? Numerical integration of angular rate is subject to position errors that grow with time. Accurate 
 estimates of orientation therefore require drift correction. Madgwick's algorithm removes orientation drift in the pitch
@@ -434,13 +400,11 @@ Each gaze mapper has the following properties:
 - `Validation`: You can validate the accuracy and precision of the mapped gaze by comparing it to reference locations in the selected `Validation Range`. It uses the same methodology as the [`Accuracy Visualizer`](/core/software/pupil-capture/#notes-on-calibration-accuracy "Notes on calibration accuracy").
 
 ::: warning
-<v-icon large color="warning">error_outline</v-icon>
 Overlapping mapping ranges result in multiple gaze points per gaze datum.
 This can be temporarily disabled by turning off the according gaze mapper's `Activate Gaze` option.
 :::
 
 ::: tip
-<v-icon large color="info">info_outline</v-icon>
 You can compare `2d` and `3d` mapping results by creating two calibrations and gaze mappers with the same calibration and mapping ranges.
 :::
 
@@ -492,9 +456,7 @@ Completed tasks are kept in the list for reference.
 ### World Video Exporter
 The `World Video Exporter` is loaded by default.
 
-<div class="pb-4">
-  <v-img :src="require('../../media/core/imgs/export.jpg')" style="display:flex;margin:0 auto;"></v-img>
-</div>
+![Export](./export.jpg)
 
 The export saves the world video as shown in Player, including all currently active visualizations (see  [Visualization Plugins](#visualization-plugins "Pupil Player visualization plugins documentation")). 
 
@@ -516,9 +478,7 @@ Specifically, it undistorts the world video images using the camera intrinsics. 
 ### Raw Data Exporter
 The `Raw Data Exporter` exports pupil and gaze data to `.csv` files and is active by default.
 
-<div class="pb-4">
-  <v-img :src="require('../../media/core/imgs/raw-export.jpg')" style="display:flex;margin:0 auto;"></v-img>
-</div>
+![Raw export](./raw-export.jpg)
 
 #### pupil_positions.csv
 * `pupil_timestamp` - timestamp of the source image frame
@@ -594,9 +554,7 @@ This plugin loads any annotations generated during the recording, as well as all
 effect. With the Pupil Player interface, you can assign hotkeys to your annotations to ensure efficient labelling 
 of important events in your recordings.
 
-<div class="pb-4">
-  <v-img :src="require('../../media/core/imgs/pp-annotation.jpg')" style="display:flex;margin:0 auto;"></v-img>
-</div>
+![Annotations](./pp-annotation.jpg)
 
 On export, the annotation plugin writes the annotation data to `annotations.csv`. It includes at least the
 following keys:
@@ -606,7 +564,6 @@ following keys:
 - `duration`: Duration of the annotation
 
 ::: tip
-<v-icon large color="info">info_outline</v-icon>
 Any custom field encountered in the annotations will be exported as an additional column.
 Their values will be converted to strings using Python's string representation. Therefore,
 it is recommended to use primitive types (strings, integers, floats) as value types for

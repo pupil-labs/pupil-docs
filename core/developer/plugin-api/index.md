@@ -1,8 +1,3 @@
----
-permalink: /developer/core/plugin-api
-description: In Pupil Core, plugins are distributed as Python files that are loaded and executed at runtime.
----
-
 # Plugin API
 
 In Pupil Core, plugins are distributed as Python files that are loaded and executed at
@@ -30,7 +25,6 @@ If the plugin was installed correctly, it should appear in the [Plugin Manager](
 of the corresponding Pupil Core software. Check the log file (`~/pupil_<name>_settings/<name>.log`) for errors if this is not the case.
 
 ::: warning
-<v-icon large color="warning">info_outline</v-icon>
 The bundled applications use their own isolated Python environment, i.e. the plugin will
 not recognize your local `pip` installation! Any additional dependencies need to be
 installed into the `plugins` folder, next to the plugin.
@@ -168,7 +162,6 @@ class MyCustomPlugin(Plugin):
 ```
 
 ::: warning
-<v-icon large color="warning">info_outline</v-icon>
 The top-level keys of the `get_init_dict` dictionary must be of type `str` and its
 values must be primitive Python types that can be encoded by [msgpack](https://msgpack.org/).
 :::
@@ -236,7 +229,6 @@ Conceptually, pupil detection plugins are wrappers around pupil detectors to mak
 Custom pupil detectors must subclass the [DetectorBase class](https://github.com/pupil-labs/pupil-detectors/blob/master/src/pupil_detectors/detector_base.pyx), while custom pupil detection plugins must subclass the [PupilDetectorPlugin class](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/pupil_detector_plugins/detector_base_plugin.py).
 
 ::: tip
-<v-icon large color="info">info_outline</v-icon>
 See [Pupil Datum Format](https://docs.pupil-labs.com/developer/core/overview/#pupil-datum-format) for a list of required keys of the pupil datum dictionary returned by the `detect` method.
 :::
 
