@@ -94,6 +94,23 @@ jobs:
         with:
           name: landing-page
           path: index.html
+  
+  debugging-info:
+    name: Upload landing page
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3         
+      - name: Write commit SHA to gitcommit.txt
+        shell: bash
+        run: |
+          echo $GITHUB_SHA > gitcommit.txt
+
+      - name: Gitcommit - upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: gitcommit
+          path: gitcommit.txt
 
   deploy-staging:
     name: Deploy to staging
@@ -106,6 +123,17 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Get size of files
+        shell: bash
+        run: |
+          du -ah .
+      
+      - name: Download Neon
+        uses: actions/download-artifact@v3
+        with:
+          name: gitcommit
+          path: gitcommit.txt
+      
       - name: Download Neon
         uses: actions/download-artifact@v3
         with:
