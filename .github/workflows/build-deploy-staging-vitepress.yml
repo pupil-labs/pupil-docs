@@ -1,0 +1,170 @@
+name: Build/Deploy to Staging (Vitepress)
+
+on:
+  workflow_dispatch: # this makes the action manual
+
+jobs:
+  neon:
+    name: Build Neon
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        working-directory: ./neon
+        run: npm install
+
+      - name: Make build
+        working-directory: ./neon
+        run: npm run docs:build
+      
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: neon
+          path: neon/.vitepress/dist
+  
+  invisible:
+    name: Build Invisible
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        working-directory: ./invisible
+        run: npm install
+
+      - name: Make build
+        working-directory: ./invisible
+        run: npm run docs:build
+      
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: invisible
+          path: invisible/.vitepress/dist
+  
+  alpha-lab:
+    name: Build Alpha Lab
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        working-directory: ./alpha-lab
+        run: npm install
+
+      - name: Make build
+        working-directory: ./alpha-lab
+        run: npm run docs:build
+      
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: alpha-lab
+          path: alpha-lab/.vitepress/dist
+
+  landing-page:
+    name: Upload landing page
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3         
+      
+      - name: Index - Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: landing-page
+          path: index.html
+  
+  debugging-info:
+    name: Upload landing page
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3         
+      - name: Write commit SHA to gitcommit.txt
+        shell: bash
+        run: |
+          echo $GITHUB_SHA > gitcommit.txt
+
+      - name: Gitcommit - upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: gitcommit
+          path: gitcommit.txt
+
+  deploy-staging:
+    name: Deploy to staging
+    runs-on: ubuntu-latest
+    environment:
+      name: staging
+      url: https://docs-staging.pupil-labs.com
+    needs: [neon, invisible, landing-page, alpha-lab, debugging-info]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Get size of files
+        shell: bash
+        run: |
+          du -ah .
+      
+      - name: Download Neon
+        uses: actions/download-artifact@v3
+        with:
+          name: gitcommit
+          path: gitcommit.txt
+      
+      - name: Download Neon
+        uses: actions/download-artifact@v3
+        with:
+          name: neon
+          path: neon/
+
+      - name: Download Invisible
+        uses: actions/download-artifact@v3
+        with:
+          name: invisible
+          path: invisible/
+      
+      - name: Download AlphaLab
+        uses: actions/download-artifact@v3
+        with:
+          name: alpha-lab
+          path: alpha-lab/
+
+      - name: Download landing page
+        uses: actions/download-artifact@v3
+        with:
+          name: landing-page
+          path: landing-page/
+  
+
+      - name: Rsync action - Deploy to staging
+        uses: burnett01/rsync-deployments@4.1
+        with:
+          switches: -hrvz --delete --exclude=".htaccess"
+          path: .
+          remote_path: ${{ secrets.REMOTE_PATH }}
+          remote_host: ${{ secrets.REMOTE_HOST}}
+          remote_user: ${{ secrets.REMOTE_USER }}
+          remote_key: ${{ secrets.DEPLOY_KEY }}

@@ -4,9 +4,9 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   head: [['link', { rel: 'icon', href: './favicon.png' }]],
   ignoreDeadLinks: true,
-  base: '/neon/',
-  title: "Neon",
-  description: "Documentation of the Neon eye tracker and it's ecosystem.",
+  base: '/core/',
+  title: "Pupil Core",
+  description: "Documentation of the Pupil Core eye tracker and it's ecosystem.",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [

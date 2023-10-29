@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "Pupil Invisible"
+  name: "Neon"
   text: "Documentation"
   tagline: My great project tagline
   image: "./Module_Front.png"

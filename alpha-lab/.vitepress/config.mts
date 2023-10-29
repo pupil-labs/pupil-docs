@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/alpha-lab/',
   head: [['link', { rel: 'icon', href: './favicon.png' }]],
   ignoreDeadLinks: true,
   title: "Alpha Lab",
