@@ -78,7 +78,7 @@ This file contains [gaze](/neon/basic-concepts/data-streams/#gaze) data in world
 | -------- | -------- | 
 | **section id** | Unique identifier of the corresponding section.     |
 | **recording id** | Unique identifier of the recording this sample belongs to.     |
-| **timestamp [ns]** | UTC timestamp in nanoseconds of the sample. Equal to the timestamp of the original gaze sample before mapping.     |
+| **timestamp [ns]** | UTC timestamp in nanoseconds of the sample. Equal to the timestamp of the eye video frame this sample was generated with.     |
 | **gaze x [px]** | Float value representing the x-coordinate of the mapped gaze point in world camera pixel coordinates.
 | **gaze y [px]** | Same as "gaze x [px]" but for the y-coordinate.     |
 | **worn** | These values indicate whether Neon has been worn by a subject at the respective point in time. `1.0` indicates that it has been worn, while `0.0` indicates that it has not been worn.    |
@@ -105,6 +105,19 @@ The corresponding gaze samples that belong to each fixation can be determined fr
 | **fixation y [px]** | Same as "fixation x [px]" but for the y-coordinate.     |
 | **azimuth [deg]** | The [azimuth](https://en.wikipedia.org/wiki/Horizontal_coordinate_system) of the gaze ray corresponding to the fixation location in relation to the scene camera in degrees.     |
 | **elevation [deg]** | The [elevation](https://en.wikipedia.org/wiki/Horizontal_coordinate_system) of the gaze ray corresponding to the fixation location in relation to the scene camera in degrees.     |
+
+## 3d_eye_states.csv.csv
+This file contains [3D eye states](/general/data-streams/#3d-eye-states) as well as [pupil diameter](/general/data-streams/#pupil-diamaters) data.
+
+
+| Field                     | Description | 
+| ------------------------- | -------- | 
+| **section id**            | Unique identifier of the corresponding section.     |
+| **recording id**          | Unique identifier of the recording this sample belongs to.     |
+| **timestamp [ns]**        | UTC timestamp in nanoseconds of the sample. Equal to the timestamp of the eye video frame this sample was generated with. |
+| **pupil diameter left [mm]** <br /> **pupil diameter right [mm]**| Physical pupil diameter of the left and right eye respectively. Currently those values are always equal.  |
+| **eye ball center left x [mm]**<br /> **eye ball center left y [mm]**<br /> **eye ball center left z [mm]**<br /> **eye ball center right x [mm]**<br /> **eye ball center right y [mm]**<br /> **eye ball center right z [mm]** | Location of left and right eye ball centers in millimeters in relation to the Neon module. For details on the coordinate systems see [here](TODO). |
+| **optical axis left x**<br /> **optical axis left y**<br /> **optical axis left z**<br /> **optical axis right x**<br /> **optical axis right y**<br /> **optical axis right z** | Directional vector describing the optical axis of the left and right eye, i.e. the vector pointing from eye ball center to pupil center of the resepective eye. For details on the coordinate systems see [here](TODO). |
 
 ## blinks.csv
 This file contains [blinks](/neon/basic-concepts/data-streams/#blinks) detected in the eye video.

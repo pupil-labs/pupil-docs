@@ -10,13 +10,13 @@ An IR LED is located just above each camera, which guarantees good illumination 
 
 
 ## Gaze <Badge>Real-time</Badge>
-The Neon Companion app can provide gaze data in real-time. When using a OnePlus 8 Companion device, the available framerate is +120 Hz (the achieved framerate varies from ~200Hz in the first minute of a recording to ~120Hz for longer recordings. This is due to restrictions in resource consumption applied by the Android operating system). Other apps running simultaneously on the phone may decrease the framerate.
-
-After a recording is uploaded to Pupil Cloud, gaze data is automatically re-computed at the full framerate of 200 Hz and can be downloaded from there.
+The Neon Companion app can provide gaze data in real-time at up to 200 Hz. Gaze data is output in pixel space of the scene camera image, which has a resolution of 1600x1200 px. The origin is in the top-left corner of the image.
 
 ![Gaze](./gaze.jpg)
 
-Gaze data is output in pixel space of the scene camera image, which has a resolution of 1600x1200 px. The origin is in the top-left corner of the image.
+The achieved framerate can vary based on what Companion device is used and environmental conditions. One the OnePlus 10 the full 200 Hz can generally be achieved outside of especially hot environments. On the OnePlus 8 the framerate typically drops to ~120 Hz within a few minutes of starting a recording. Other apps running simultaneously on the phone may decrease the framerate.
+
+After a recording is uploaded to Pupil Cloud, gaze data is automatically re-computed at the full 200 Hz framerat and can be downloaded from there.
 
 The gaze estimation algorithm is based on end-2-end deep learning and provides gaze data robustly without requiring a calibration. We are currently working on a white paper that thoroughly evaluated the algorithm and will link it here once it is published.
 
@@ -28,6 +28,16 @@ The two primary types of eye movements exhibited by the visual system are fixati
 Fixations are calculated automatically in Pupil Cloud after uploading a recording and are included in relevant downloads. The downloads for gaze mapping enrichments ([Reference Image Mapper](/export-formats/enrichment-data/marker-mapper/#fixations-csv), [Marker Mapper](/export-formats/enrichment-data/reference-image-mapper/#fixations-csv)) also include "mapped fixations".
 
 The deployed fixation detection algorithm was specifically designed for head-mounted eye trackers and offers increased robustness in the presence of head-movements. Especially movements due to vestibulo-ocular reflex are compensated for, which is not the case for most other fixation detection algorithms. Read more about that in the [Pupil Labs fixation detector whitepaper](https://docs.google.com/document/d/1dTL1VS83F-W1AZfbG-EogYwq2PFk463HqwGgshK3yJE/export?format=pdf)
+
+## 3D Eye States <Badge>Pupil Cloud</Badge>
+After uploading a recording to Pupil Cloud, 3D eye states are computed automatically at 200 Hz. The 3D eye states are a time series of each eye's position and orientation in 3D space, given by the eye ball center and the optical axis of each eye. 
+
+The coordinate system is defined as follows:
+
+![Coordinate systems of 3D eye states](./3d_eye_states.png)
+
+## Pupil Diameters <Badge>Pupil Cloud</Badge>
+After uploading a recording to Pupil Cloud, pupil diameters are computed automatically at 200 Hz. The computed pupil diameters correspond to the physical diameter of the 3D pupil, rather than the apparent pupil diameter in the eye video. Measurements are given in mm.
 
 ## Blinks <Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>
 During blinks the eye is briefly covered by the eye lids, which serves the purpose of spreading tears across the cornea. The blink rate and blink duration are also correlated with cognitive processes, which makes them interesting physiological signals.
@@ -65,6 +75,3 @@ When exporting recordings from Pupil Cloud or Neon Player the IMU's orientation 
 Pitch is defined as a rotation around the x-axis with a value range of -90° to +90°. Yaw and roll are rotations around the y- and z-axis, respectively, with value ranges of -180° to +180°.
 
 ![IMU Pitch, Yaw, Roll](./imu_pitch_yaw_roll.jpg)
-
-## Pupil Diamater and Eye Pose <Badge>Pupil Cloud</Badge>
-Coming soon!
