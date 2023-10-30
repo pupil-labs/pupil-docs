@@ -36,8 +36,12 @@ The coordinate system is depicted below. The origin corresponds to the scene cam
 
 ![Coordinate systems of 3D eye states](./3d_eye_states.png)
 
+You can specify the inter eye distance (IED) of a wearer in the wearer profile before making a recording to further improve the accuracy of the measurements. If no IED value is specified, the population average of 63 mm is used.
+
 ## Pupil Diameters <Badge>Pupil Cloud</Badge>
 After uploading a recording to Pupil Cloud, pupil diameters are computed automatically at 200 Hz. The computed pupil diameters correspond to the actual physical diameter of the 3D pupil, rather than the apparent pupil diameter in the eye video. Measurements are given in mm.
+
+Similar to the 3D eye states, the accuracy of the pupil diameter measurements improves when supplying the wearer's IED in the wearer profile before making a recording.
 
 ## Blinks <Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>
 During blinks the eye is briefly covered by the eye lids, which serves the purpose of spreading tears across the cornea. The blink rate and blink duration are also correlated with cognitive processes, which makes them interesting physiological signals.
