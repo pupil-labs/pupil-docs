@@ -3,7 +3,6 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   head: [['link', { rel: 'icon', href: '/core/favicon.png' }]],
-  ignoreDeadLinks: true,
   base: '/core/',
   title: "Pupil Core",
   description: "Documentation of the Pupil Core eye tracker and it's ecosystem.",
