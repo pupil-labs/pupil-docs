@@ -106,8 +106,8 @@ The corresponding gaze samples that belong to each fixation can be determined fr
 | **azimuth [deg]** | The [azimuth](https://en.wikipedia.org/wiki/Horizontal_coordinate_system) of the gaze ray corresponding to the fixation location in relation to the scene camera in degrees.     |
 | **elevation [deg]** | The [elevation](https://en.wikipedia.org/wiki/Horizontal_coordinate_system) of the gaze ray corresponding to the fixation location in relation to the scene camera in degrees.     |
 
-## 3d_eye_states.csv.csv
-This file contains [3D eye states](/general/data-streams/#3d-eye-states) as well as [pupil diameter](/general/data-streams/#pupil-diamaters) data.
+## 3d_eye_states.csv
+This file contains [3D eye states](/general/data-streams/#_3d-eye-states) as well as [pupil diameter](/general/data-streams/#pupil-diamaters) data.
 
 
 | Field                     | Description | 
