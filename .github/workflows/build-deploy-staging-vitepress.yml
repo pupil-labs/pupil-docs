@@ -109,7 +109,7 @@ jobs:
           path: landing-page/.vitepress/dist
   
   debugging-info:
-    name: Upload landing page
+    name: Upload debugging info
     runs-on: ubuntu-latest
 
     steps:
@@ -141,7 +141,7 @@ jobs:
         run: |
           du -ah .
       
-      - name: Download Neon
+      - name: Download gitcommit
         uses: actions/download-artifact@v3
         with:
           name: gitcommit
@@ -165,12 +165,10 @@ jobs:
           name: alpha-lab
           path: alpha-lab/
 
-      - name: Download landing page
+      - name: Download Landing Page
         uses: actions/download-artifact@v3
         with:
-          name: landing-page
-          path: /
-  
+          name: landing-page  
 
       - name: Rsync action - Deploy to staging
         uses: burnett01/rsync-deployments@4.1
