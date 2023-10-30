@@ -45,6 +45,20 @@ Fixations are calculated automatically in Pupil Cloud after uploading a recordin
 
 The deployed fixation detection algorithm was specifically designed for head-mounted eye trackers and offers increased robustness in the presence of head-movements. Especially movements due to vestibulo-ocular reflex are compensated for, which is not the case for most other fixation detection algorithms. Read more about that in the [Pupil Labs fixation detector whitepaper](https://docs.google.com/document/d/1dTL1VS83F-W1AZfbG-EogYwq2PFk463HqwGgshK3yJE/export?format=pdf)
 
+## 3D Eye States
+After uploading a recording to Pupil Cloud, 3D eye states are computed automatically at 200 Hz. The 3D eye states are a time series of each eye's position and orientation in 3D space, given by the location of the eyeball center and the optical axis of each eye. 
+
+The coordinate system is depicted below. The origin corresponds to the scene camera of the Neon Module.
+
+![Coordinate systems of 3D eye states](../../media/neon/3d_eye_states.png)
+
+You can specify the inter eye distance (IED) of a wearer in the wearer profile before making a recording to further improve the accuracy of the measurements. If no IED value is specified, the population average of 63 mm is used.
+
+## Pupil Diameters
+After uploading a recording to Pupil Cloud, pupil diameters are computed automatically at 200 Hz. The computed pupil diameters correspond to the actual physical diameter of the 3D pupil, rather than the apparent pupil diameter in the eye video. Measurements are given in mm.
+
+Similar to the 3D eye states, the accuracy of the pupil diameter measurements improves when supplying the wearer's IED in the wearer profile before making a recording.
+
 ## Blinks
 During blinks the eye is briefly covered by the eye lids, which serves the purpose of spreading tears across the cornea. The blink rate and blink duration are also correlated with cognitive processes, which makes them interesting physiological signals.
 
