@@ -32,16 +32,16 @@ If your are interested in learning more about the technical details of the under
 
 # <font size=5>Getting started</font>
 
-To get started, we invite you to check out the accompanying [**GitHub repository**](https://github.com/pupil-labs/real-time-blink-detection), where you can find a detailed instruction on how to install all required packages as well as a [**Jupyter notebook**](https://github.com/pupil-labs/real-time-blink-detection/blob/main/blink_detection.ipynb) that contains all the code needed and instructions on how to run everything.
+To get started, we invite you to check out the accompanying [**GitHub repository**](https://github.com/pupil-labs/real-time-blink-detection). There you can find a detailed instruction on how to install all required packages as well as a [**Jupyter notebook**](https://github.com/pupil-labs/real-time-blink-detection/blob/main/blink_detection.ipynb) that contains all the code needed and instructions on how to run everything.
 
-If you don't have a recording at hand, worry not! The GitHub repository comes with an example recording that you can freely explore.
+If you don't have a Pupil Invisible or Neon recording at hand, worry not! The GitHub repository comes with an example recording (made with Neon) that you can explore.
 
 # <font size=5>Results</font>
 
 <!-- # <font size=4><strong>Part 1</strong>: Posthoc blink detection</font> -->
 <strong>Part 1: Posthoc blink detection</strong>
 
-After you have run the first part of the notebook, you will have an output from which we can derive a number of statistics, which provide potential insights into the state of your participants: the total number of detected blinks, the estimated blink rate (in Hz), and the average blink duration (in seconds), as well as eyelid closing and re-opening durations (in seconds).
+Once you have run the first part of the notebook, you will get an output from which you can derive a number of statistics that provide various insights about your recording: the total number of detected blinks, the estimated blink rate (in Hz), and the average blink duration (in seconds), as well as eyelid closing and re-opening durations (in seconds).
 
 <div class="pb-4" style="display:flex;justify-content:left;">
   <v-img
@@ -54,7 +54,7 @@ After you have run the first part of the notebook, you will have an output from 
 
 <font size=2>**Figure 1.** Blink statistics extracted from the provided example Neon recording.</font>
 
-You will additionally get a plot with a visual representation of the detected blinks, providing further insights into the temporal distribution of the detected blinks:
+You will additionally get a visual representation of the detected blinks, providing an overview of the temporal distribution of the detected blinks:
 
 
 ![Visual blink representation](../media/alpha-lab/eye_blinks_timeline.png)
@@ -64,7 +64,7 @@ When examining blink durations and the eyelid closing and re-opening times, you 
 
 # <font size=3><strong>Part 2.1.: Real-time blink detection</strong></font>
 
-In the first section of Part 2 of the guide, you will learn how to estimate blink rate in quasi real-time. From this, you will obtain a graph, as shown below, that is updated with every blink and shows the current estimation of blink rate.
+In the first section of Part 2 of the guide, you will learn how to estimate blink rate in quasi real-time. From this, you will obtain a graph, as shown below, that is updated with every blink and shows an estimate of the current blink rate.
 
 <div class="pb-4" style="display:flex;justify-content:left;">
   <v-img
@@ -79,7 +79,7 @@ In the first section of Part 2 of the guide, you will learn how to estimate blin
 
 # <font size=3>Part 2.2.: Toggling recordings remotely through eye blinks</font>
 
-In the last section of the guide, we will show you how to control a Neon or Pupil Invisible device through a rapid sequence of three eye blinks. Upon detection of said sequence, the companion device will initiate a new recording or stop an ongoing one, as illustrated in the video below:
+In the last section of the guide, you will learn how to control a Neon or Pupil Invisible device through a rapid sequence of three eye blinks. Upon detection of said sequence, the companion device will initiate a new recording or stop an ongoing one, as illustrated in the video below:
 
 <div class="pb-4" style="display:flex;justify-content:left;">
     <iframe width="400" height=258 src="https://www.youtube.com/embed/idAHOysl37Q?&mute=1&controls=0&autoplay=1&loop=1&playlist=idAHOysl37Q&rel=0">
