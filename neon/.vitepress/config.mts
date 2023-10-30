@@ -102,6 +102,7 @@ export default defineConfig({
             { text: 'Time Synchronization', link: '/data-collection/time-synchronization/' },
           ]
         },
+        { text: 'Troubleshooting', link: '/data-collection/troubleshooting/' },
       ],
       "/pupil-cloud/": [
         {
@@ -133,6 +134,7 @@ export default defineConfig({
             { text: 'Video Renderer', link: '/pupil-cloud/visualizations/video-renderer/' },
           ]
         },
+        { text: 'Troubleshooting', link: '/pupil-cloud/troubleshooting/' },
       ],
       "/real-time-api/": [
         {

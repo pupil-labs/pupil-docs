@@ -29,5 +29,5 @@ supported Android versions are as follows:
 :::tip
 Should you have upgraded to an incompatible Android version by accident, you have the
 option to rollback to a compatible version. You can find the instructions
-[here](TODO)
+[here](/data-collection/troubleshooting/#i-accidentally-updated-my-companion-device-to-an-incompatible-android-version)
 :::
