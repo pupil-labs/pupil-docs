@@ -87,13 +87,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3         
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        working-directory: ./landing-page
+        run: npm install
+
+      - name: Make build
+        working-directory: ./landing-page
+        run: npm run docs:build
       
-      - name: Index - Upload
+      - name: Upload
         uses: actions/upload-artifact@v3
         with:
           name: landing-page
-          path: index.html
+          path: landing-page/.vitepress/dist
   
   debugging-info:
     name: Upload landing page
@@ -156,7 +169,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: landing-page
-          path: landing-page/
+          path: /
   
 
       - name: Rsync action - Deploy to staging
