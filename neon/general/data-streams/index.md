@@ -32,7 +32,7 @@ The deployed fixation detection algorithm was specifically designed for head-mou
 ## 3D Eye States <Badge>Pupil Cloud</Badge>
 After uploading a recording to Pupil Cloud, 3D eye states are computed automatically at 200 Hz. The 3D eye states are a time series of each eye's position and orientation in 3D space, given by the location of the eyeball center and the optical axis of each eye. 
 
-The coordinate system is defined as follows:
+The coordinate system is depicted below. The origin corresponds to the scene camera of the Neon Module.
 
 ![Coordinate systems of 3D eye states](./3d_eye_states.png)
 
