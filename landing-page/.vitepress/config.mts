@@ -18,11 +18,6 @@ export default defineConfig({
       { icon: 'twitter', link: 'TODO' },
 
     ],
-
-    search: {
-      provider: 'local'
-    },
-
     outline: [2, 3],
   },
   appearance: 'force-dark',
