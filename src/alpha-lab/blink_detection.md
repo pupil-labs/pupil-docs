@@ -85,7 +85,7 @@ In the last section of the guide, you will learn how to control a Neon or Pupil 
   <v-img
     class="rounded"
     :src="require('../media/alpha-lab/eye_blinks_toggle_recording.gif')"
-    max-width=800px
+    max-width=300px
   >
   </v-img>
 </div>
