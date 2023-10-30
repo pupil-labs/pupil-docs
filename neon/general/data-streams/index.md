@@ -30,14 +30,14 @@ Fixations are calculated automatically in Pupil Cloud after uploading a recordin
 The deployed fixation detection algorithm was specifically designed for head-mounted eye trackers and offers increased robustness in the presence of head-movements. Especially movements due to vestibulo-ocular reflex are compensated for, which is not the case for most other fixation detection algorithms. Read more about that in the [Pupil Labs fixation detector whitepaper](https://docs.google.com/document/d/1dTL1VS83F-W1AZfbG-EogYwq2PFk463HqwGgshK3yJE/export?format=pdf)
 
 ## 3D Eye States <Badge>Pupil Cloud</Badge>
-After uploading a recording to Pupil Cloud, 3D eye states are computed automatically at 200 Hz. The 3D eye states are a time series of each eye's position and orientation in 3D space, given by the eye ball center and the optical axis of each eye. 
+After uploading a recording to Pupil Cloud, 3D eye states are computed automatically at 200 Hz. The 3D eye states are a time series of each eye's position and orientation in 3D space, given by the location of the eyeball center and the optical axis of each eye. 
 
 The coordinate system is defined as follows:
 
 ![Coordinate systems of 3D eye states](./3d_eye_states.png)
 
 ## Pupil Diameters <Badge>Pupil Cloud</Badge>
-After uploading a recording to Pupil Cloud, pupil diameters are computed automatically at 200 Hz. The computed pupil diameters correspond to the physical diameter of the 3D pupil, rather than the apparent pupil diameter in the eye video. Measurements are given in mm.
+After uploading a recording to Pupil Cloud, pupil diameters are computed automatically at 200 Hz. The computed pupil diameters correspond to the actual physical diameter of the 3D pupil, rather than the apparent pupil diameter in the eye video. Measurements are given in mm.
 
 ## Blinks <Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>
 During blinks the eye is briefly covered by the eye lids, which serves the purpose of spreading tears across the cornea. The blink rate and blink duration are also correlated with cognitive processes, which makes them interesting physiological signals.
