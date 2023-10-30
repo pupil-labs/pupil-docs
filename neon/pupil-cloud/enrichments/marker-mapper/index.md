@@ -51,7 +51,7 @@ The mapper may return values outside of the surface, which yields values smaller
 ## Export Format
 
 ### gaze.csv
-This file contains all the mapped gaze data from all sections. The coordinate system is explained [here](/enrichments/#surface-coordinates).
+This file contains all the mapped gaze data from all sections. The coordinate system is explained [here](/pupil-cloud/enrichments/marker-mapper/#surface-coordinates).
 
 | Field | Description | 
 | -------- | -------- | 

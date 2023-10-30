@@ -7,11 +7,11 @@ isNotebook: true
 # Introduction
 For some applications it is critical to have access to eye tracking data in real time. Imagine for example an application utilizing gaze interaction to allow users to press a button using only their eyes.
 
-In other cases it may be important to automatically start or stop a recording and save [events](/neon/basic-concepts/events/). For example, you might want to launch a screen-based experiment and have the recording start automatically when the stimulus presentation begins. Additionally, you might want to save the timestamps of when the subject interacted with the screen.
+In other cases it may be important to automatically start or stop a recording and save [events](/general/events/). For example, you might want to launch a screen-based experiment and have the recording start automatically when the stimulus presentation begins. Additionally, you might want to save the timestamps of when the subject interacted with the screen.
 
 All of this is possible for developers using the [Realtime Network API](https://github.com/pupil-labs/realtime-network-api). It allows you to stream gaze data and scene video to any device connected to the same local network. Further, you can control all devices remotely to start and stop recordings or save events.
 
-If you are not a developer and simply need a tool to monitor and control all your devices in real-time, check out [Neon Monitor](/neon/how-tos/data-collection-with-the-companion-app/monitor-your-data-collection-in-real-time.html).
+If you are not a developer and simply need a tool to monitor and control all your devices in real-time, check out [Neon Monitor](/data-collection/monitor-app/).
 
 We have created a Python client library for the API that makes it very easy to use. If you require access to the API from a different programming language, you will have to write your own client. Please see the documentation [here](https://pupil-labs-realtime-api.readthedocs.io/en/stable/guides/under-the-hood.html).
 
@@ -30,7 +30,7 @@ You can download the code for this guide [here](https://github.com/pupil-labs/pu
 
 The async mode is using Python's [asyncio](https://docs.python.org/3/library/asyncio.html) in order to implement non-blocking asynchronous communication. The calls made using the simple mode are blocking. If you don't know what any of this means, that's okay! The simple mode suffices for most use-cases and you usually do not need to understand the differences!
 
-The simple client is located in [`pupil_labs.realtime_api.simple`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#simple-api). Using the [`discover_one_device`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.discover_one_device) function, we can connect to a Neon device connected to your local network. Make sure the Neon Companion app is running! If no device can be found, please check [this section](/neon/troubleshooting/#i-can-not-connect-to-devices-using-the-real-time-api) in our troubleshooting area! 
+The simple client is located in [`pupil_labs.realtime_api.simple`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#simple-api). Using the [`discover_one_device`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.discover_one_device) function, we can connect to a Neon device connected to your local network. Make sure the Neon Companion app is running! If no device can be found, please check [this section](TODO) in our troubleshooting area! 
 
 
 ```python
@@ -80,7 +80,7 @@ device.recording_stop_and_save()
     Started recording with id 2f99d9f9-f009-4015-97dd-eb253de443b0
 
 
-While a recording is running, you can save [events](/neon/basic-concepts/events)
+While a recording is running, you can save [events](/general/events/)
 using the [`send_event`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.send_event) method.
 By default, the Neon device receiving the event will assign a timestamp to it,
 using the time of arrival. Optionally, you can set a custom nanosecond timestamp for your event instead.
@@ -224,7 +224,7 @@ Using the simple mode of the real-time API client you can easily access scene vi
 
 You can find the full API reference [here](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html).
 
-For an example implementation on how to use the real-time API in action, please see [Track your Experiment Progress using Events](/neon/real-time-api/track-your-experiment-progress-using-events/).
+For an example implementation on how to use the real-time API in action, please see [Track your Experiment Progress using Events](/real-time-api/track-your-experiment-progress-using-events/).
 
 To learn more about the `async` mode of the client see [here](https://pupil-labs-realtime-api.readthedocs.io/en/stable/examples/async.html).
 

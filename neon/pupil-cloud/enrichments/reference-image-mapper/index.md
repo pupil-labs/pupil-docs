@@ -5,7 +5,7 @@ Reference Image Mapper is a powerful tool to automatically map gaze onto feature
 <Youtube src="IF8f1Z3ZkEo" muted="1"/>
 
 
-A heatmap of gaze data mapped onto the reference image can be generated, and mapped gaze and fixation data can further be downloaded as [CSV files](/export-formats/enrichment-data/reference-image-mapper/#fixations-csv). 
+A heatmap of gaze data mapped onto the reference image can be generated, and mapped gaze and fixation data can further be downloaded as [CSV files](/pupil-cloud/enrichments/reference-image-mapper/#export-format). 
 
 ## Setup
 
@@ -118,7 +118,7 @@ What works and what doesn’t?
 
 ::: tip
 **Ready to go?**<br>
-Why not try replicating the above examples? Or even try it with your own use cases! If you haven’t already, we recommend you check out the [Cloud Getting Started Guide](/neon/getting-started/analyse-recordings-in-pupil-cloud/#analyse-recordings-in-pupil-cloud), which covers the basics of working with enrichments.
+Why not try replicating the above examples? Or even try it with your own use cases! If you haven’t already, we recommend you check out the [Cloud Getting Started Guide](/pupil-cloud/tutorials/), which covers the basics of working with enrichments.
 :::
 
 ## Validate the gaze mapping
@@ -146,7 +146,7 @@ If you need to remove the falsely mapped data points, there are a few workaround
 2. Manually remove the affected data points in the reference image mapper export, by finding the timestamp and deleting the row in the .csv export.
 
 ## Repetitions
-In cases such as supermarket shopping, where features of the environment like freezers and aisles are repetitive and overlapping, it can be useful to divide recordings into shorter sections using [Events](/neon/basic-concepts/events) for enrichment. This way you can ensure gaze is only mapped to portions of the recording during which you know the user is looking at a particular part of the store.
+In cases such as supermarket shopping, where features of the environment like freezers and aisles are repetitive and overlapping, it can be useful to divide recordings into shorter sections using [Events](/general/events/) for enrichment. This way you can ensure gaze is only mapped to portions of the recording during which you know the user is looking at a particular part of the store.
 
 
 ::: tip

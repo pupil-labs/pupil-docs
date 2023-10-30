@@ -1,7 +1,7 @@
 # Track your Experiment Progress using Events
 Running a data collection for an experiment can be an organizational challenge. Many experiments are running through different phases and keeping track of what data belongs to what phase can be one of the difficulties.
 
-Using [events](/neon/basic-concepts/events), tracking the progress of an experiment becomes very easy and can often be fully automated though.
+Using [events](/general/events/), tracking the progress of an experiment becomes very easy and can often be fully automated though.
 
 In this guide we will demonstrate how to save events at recording time and how to utilize them later during analysis to easily keep track of what phase a certain section of data was recorded in.
 
@@ -14,7 +14,7 @@ You can download the example data used in this guide [here](https://drive.google
 ## How to use Events to keep track?
 Events are essentially timestamps within a recording that have been marked with a name. We need to keep track of when a specific image is shown during a recording, so we can associate the according fixation data with that image. Thus, we will create an event at the start and end of each image presentation to mark this section.
 
-Events can either be created post hoc in the project editor, or at recording time using either the [real-time API](/neon/real-time-api/introduction/) or [Neon Monitor](/neon/how-tos/data-collection-with-the-companion-app/monitor-your-data-collection-in-real-time.html). In this example we are interested in fully automating the event creation and will thus use the real-time API to save events, but depending on your use-case you could use either of those methods.
+Events can either be created post hoc in the project editor, or at recording time using either the [real-time API](/real-time-api/tutorials/) or [Neon Monitor](/data-collection/monitor-app/). In this example we are interested in fully automating the event creation and will thus use the real-time API to save events, but depending on your use-case you could use either of those methods.
 
 ## Implementation
 The implementation for stimulus presentation is minimal. The images are loaded using OpenCV and are displayed in a full-screen window for fixed amount of time.
@@ -75,11 +75,7 @@ cleanup_stimulus_presentation()
 device.recording_stop_and_save()
 ```
 
-That is all we have to do during data collection. Once all recordings have uploaded to Pupil Cloud, we create a project with them in order to export them using the [Raw Data Exporter](/neon/enrichments/#raw-data-exporter). In the project editor we can already see the events in every recording.
-
-![Project Editor Screenshot](./project-editor-screenshot.png)
-
-Let's look at at example event and fixation data from the raw data export.
+That is all we have to do during data collection. Once the recordings have uploaded to Pupil Cloud we can already see the events in the timeline for every recording. Next, export the timeseries data of all recordings from Pupil Cloud.
 
 
 ```python

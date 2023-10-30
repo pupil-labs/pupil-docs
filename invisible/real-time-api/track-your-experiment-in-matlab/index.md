@@ -4,12 +4,12 @@ MATLAB is often used by researchers to build eye tracking experiments, such as t
 
 When working with head-mounted eye trackers like Pupil Invisible, it can be useful to synchronize stimuli presentation with the eye tracking recording. This enables you to, a) keep track of when a stimulus is shown, and b) segment the eye tracking data accordingly.
 
-In this guide, we will build a simple MATLAB experiment. The experiment will show you how to automatically and conveniently track stimulus presentation as part of your eye tracking recording using [events](/invisible/basic-concepts/events) and [Pupil Invisible's real-time API](/invisible/real-time-api/introduction). Finally, you will see how those events enable the segmentation of eye tracking data per stimulus during the analysis.
+In this guide, we will build a simple MATLAB experiment. The experiment will show you how to automatically and conveniently track stimulus presentation as part of your eye tracking recording using [events](/general/events/) and [Pupil Invisible's real-time API](/real-time-api/tutorials/). Finally, you will see how those events enable the segmentation of eye tracking data per stimulus during the analysis.
 
-While MATLAB is not officially supported by [Pupil Invisible's real-time API](/invisible/real-time-api/introduction), we have created a simple wrapper to enable some of the available functions required for this application.
+While MATLAB is not officially supported by [Pupil Invisible's real-time API](/real-time-api/tutorials/), we have created a simple wrapper to enable some of the available functions required for this application.
 
 ::: tip
-A similar guide for tracking an experiment in Python can be found [here](/invisible/real-time-api/track-your-experiment-progress-using-events).
+A similar guide for tracking an experiment in Python can be found [here](/real-time-api/track-your-experiment-progress-using-events/).
 :::
 
 ## Requirements
@@ -35,7 +35,7 @@ Before we dig into how to run the demo and the wrapper, you will need to underst
 
 Events are essentially timestamps within a recording that have been marked with a name. In this demo, we need to track when a specific image is shown during a recording to associate the fixation data with that image. Thus, we will create an event at the start and end of each image presentation to mark this section.
 
-Events can be created post-hoc in the project editor or at recording time using either the [real-time API](/invisible/real-time-api/introduction) or [Pupil Invisible Monitor](/invisible/how-tos/data-collection-with-the-companion-app/monitor-your-data-collection-in-real-time.html). In this example, we are interested in fully automating the event creation within MATLAB. Still, depending on your use case, you could use either of those methods.
+Events can be created post-hoc in the project editor or at recording time using either the [real-time API](/real-time-api/tutorials/) or the [Monitor app](/data-collection/monitor-app/). In this example, we are interested in fully automating the event creation within MATLAB. Still, depending on your use case, you could use either of those methods.
 
 ## Running the demo
 
