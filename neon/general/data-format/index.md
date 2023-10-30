@@ -60,7 +60,7 @@ This file contains the timestamps of every world video frame.
 
 
 ## events.csv
-This file contains [event](/neon/basic-concepts/events) data for all recordings. It contains both project event annotations and real-time recording events.
+This file contains [event](/general/events/) data for all recordings. It contains both project event annotations and real-time recording events.
 
 | Field | Description | 
 | -------- | -------- | 
@@ -71,7 +71,7 @@ This file contains [event](/neon/basic-concepts/events) data for all recordings.
 
 
 ## gaze.csv
-This file contains [gaze](/neon/basic-concepts/data-streams/#gaze) data in world camera coordinates.
+This file contains [gaze](/general/data-streams/#gaze) data in world camera coordinates.
 
 
 | Field | Description | 
@@ -89,7 +89,7 @@ This file contains [gaze](/neon/basic-concepts/data-streams/#gaze) data in world
 
 
 ## fixations.csv
-This file contains [fixations](/neon/basic-concepts/data-streams/#fixations) detected in the gaze data stream.
+This file contains [fixations](/general/data-streams/#fixations) detected in the gaze data stream.
 The corresponding gaze samples that belong to each fixation can be determined from the `gaze.csv` file using the `fixation id` field.
 
 
@@ -116,11 +116,11 @@ This file contains [3D eye states](/general/data-streams/#_3d-eye-states) as wel
 | **recording id**          | Unique identifier of the recording this sample belongs to.     |
 | **timestamp [ns]**        | UTC timestamp in nanoseconds of the sample. Equal to the timestamp of the eye video frame this sample was generated with. |
 | **pupil diameter left [mm]** <br /> **pupil diameter right [mm]**| Physical pupil diameter of the left and right eye respectively. Currently, the average pupil diameter across both eyes is reported for both eyes, making those two values equal. |
-| **eye ball center left x [mm]**<br /> **eye ball center left y [mm]**<br /> **eye ball center left z [mm]**<br /> **eye ball center right x [mm]**<br /> **eye ball center right y [mm]**<br /> **eye ball center right z [mm]** | Location of left and right eye ball centers in millimeters in relation to the scene camera of the Neon module. For details on the coordinate systems see [here](TODO). |
-| **optical axis left x**<br /> **optical axis left y**<br /> **optical axis left z**<br /> **optical axis right x**<br /> **optical axis right y**<br /> **optical axis right z** | Directional vector describing the optical axis of the left and right eye, i.e. the vector pointing from eye ball center to pupil center of the resepective eye. For details on the coordinate systems see [here](TODO). |
+| **eye ball center left x [mm]**<br /> **eye ball center left y [mm]**<br /> **eye ball center left z [mm]**<br /> **eye ball center right x [mm]**<br /> **eye ball center right y [mm]**<br /> **eye ball center right z [mm]** | Location of left and right eye ball centers in millimeters in relation to the scene camera of the Neon module. For details on the coordinate systems see [here](/general/data-streams/#_3d-eye-states). |
+| **optical axis left x**<br /> **optical axis left y**<br /> **optical axis left z**<br /> **optical axis right x**<br /> **optical axis right y**<br /> **optical axis right z** | Directional vector describing the optical axis of the left and right eye, i.e. the vector pointing from eye ball center to pupil center of the resepective eye. For details on the coordinate systems see [here](/general/data-streams/#_3d-eye-states). |
 
 ## blinks.csv
-This file contains [blinks](/neon/basic-concepts/data-streams/#blinks) detected in the eye video.
+This file contains [blinks](/general/data-streams/#blinks) detected in the eye video.
 The corresponding gaze samples that belong to each blink can be determined from the `gaze.csv` file using the `blink id` field.
 
 
@@ -134,7 +134,7 @@ The corresponding gaze samples that belong to each blink can be determined from 
 | **duration [ms]** | Duration of the blink in milliseconds.     |
 
 ## imu.csv
-This file contains data recorded by the integrated [IMU](/neon/basic-concepts/data-streams/#inertial-measurements) (inertial measurement unit).
+This file contains data recorded by the integrated [IMU](/general/data-streams/#movement-imu-data) (inertial measurement unit).
 
 | Field | Description | 
 | -------- | -------- | 

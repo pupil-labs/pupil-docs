@@ -104,6 +104,7 @@ export default defineConfig({
         {
           text: 'Enrichments',
           items: [
+            { text: 'Overview', link: '/pupil-cloud/enrichments/' },
             { text: 'Reference Image Mapper', link: '/pupil-cloud/enrichments/reference-image-mapper/' },
             { text: 'Marker Mapper', link: '/pupil-cloud/enrichments/marker-mapper/' },
             { text: 'Face Mapper', link: '/pupil-cloud/enrichments/face-mapper/' },

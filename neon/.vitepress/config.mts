@@ -3,7 +3,6 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   head: [['link', { rel: 'icon', href: './favicon.png' }]],
-  ignoreDeadLinks: true,
   base: '/neon/',
   title: "Neon",
   description: "Documentation of the Neon eye tracker and it's ecosystem.",
@@ -21,7 +20,7 @@ export default defineConfig({
           { text: 'Neon XR', link: '/neon-xr/' },
         ]
       },
-      { text: 'Real-Time API', link: '/real-time-api/' },
+      { text: 'Real-Time API', link: '/real-time-api/tutorials/' },
       { text: 'Alpha Lab', link: 'https://docs.pupil-labs.com/alpha-lab/' },
       { text: 'Feedback', link: 'https://feedback.pupil-labs.com/' },
     ],
@@ -121,6 +120,7 @@ export default defineConfig({
         {
           text: 'Enrichments',
           items: [
+            { text: 'Overview', link: '/pupil-cloud/enrichments/' },
             { text: 'Reference Image Mapper', link: '/pupil-cloud/enrichments/reference-image-mapper/' },
             { text: 'Marker Mapper', link: '/pupil-cloud/enrichments/marker-mapper/' },
             { text: 'Face Mapper', link: '/pupil-cloud/enrichments/face-mapper/' },

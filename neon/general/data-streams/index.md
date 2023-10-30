@@ -1,5 +1,5 @@
 # Data Streams
-The Neon module contains a number of sensors providing different types of data. Some data is available in real-time (e.g. via the [real-time API](TODO)), while other data is generated post hoc through either [Pupil Cloud](TODO) or [Neon Player](TODO). 
+The Neon module contains a number of sensors providing different types of data. Some data is available in real-time (e.g. via the [real-time API](/real-time-api/tutorials/)), while other data is generated post hoc through either [Pupil Cloud](/pupil-cloud/) or [Neon Player](/neon-player/). 
  
 Below you can find a description of all data streams and where they are available. All data is fully accessible and can be downloaded in convenient formats.
 
@@ -25,7 +25,7 @@ The two primary types of eye movements exhibited by the visual system are fixati
 
 ![Fixations](./fixations.jpg)
 
-Fixations are calculated automatically in Pupil Cloud after uploading a recording and are included in relevant downloads. The downloads for gaze mapping enrichments ([Reference Image Mapper](/export-formats/enrichment-data/marker-mapper/#fixations-csv), [Marker Mapper](/export-formats/enrichment-data/reference-image-mapper/#fixations-csv)) also include "mapped fixations".
+Fixations are calculated automatically in Pupil Cloud after uploading a recording and are included in relevant downloads. The downloads for gaze mapping enrichments ([Reference Image Mapper](/pupil-cloud/enrichments/reference-image-mapper/#export-format), [Marker Mapper](/pupil-cloud/enrichments/marker-mapper/#export-format)) also include "mapped fixations".
 
 The deployed fixation detection algorithm was specifically designed for head-mounted eye trackers and offers increased robustness in the presence of head-movements. Especially movements due to vestibulo-ocular reflex are compensated for, which is not the case for most other fixation detection algorithms. Read more about that in the [Pupil Labs fixation detector whitepaper](https://docs.google.com/document/d/1dTL1VS83F-W1AZfbG-EogYwq2PFk463HqwGgshK3yJE/export?format=pdf)
 
@@ -63,7 +63,7 @@ Audio recording is disabled in the Neon Companion app by default and can be enab
 ## Movement (IMU Data) 
 The Neon module is equipped with a 9-DoF [inertial measurement unit](https://invensense.tdk.com/products/motion-tracking/9-axis/icm-20948/) (IMU) featuring an accelerometer, gyroscope, and magnetometer. The accelerometer and gyroscope measure linear acceleration and angular velocity, respectively, and are provided as raw values. 
 
-A fusion engine also combines these values with magnetometer readings to estimate the module's absolute orientation relative to magnetic north and gravity as a quaternion. Note that in order to obtain precise absolute yaw readings, the magnetometer needs to be [calibrated](/neon/how-tos/data-collection-with-the-companion-app/calibrate-the-imu-for-accurate-yaw-orientation).
+A fusion engine also combines these values with magnetometer readings to estimate the module's absolute orientation relative to magnetic north and gravity as a quaternion. Note that in order to obtain precise absolute yaw readings, the magnetometer needs to be [calibrated](/data-collection/calibrating-the-imu/).
 
 The IMU is located in the top bar of the module and is sampled at 220 Hz. It's coordinate system is oriented with the x-axis pointing to the right, the y-axis pointing in front, and the z-axis pointing upwards.
 

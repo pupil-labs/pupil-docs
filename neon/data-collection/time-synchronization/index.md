@@ -27,7 +27,7 @@ NTP_SERVER=north-america.pool.ntp.org
 ### Improving Synchronization further
 While an error of `<20 ms` is sufficient for most applications, some require even better synchronization. To achieve this, you can estimate the offset between the clock used by Neon and the external clock down to single millisecond accuracy.
 
-This can be done using the `TimeOffsetEstimator` of the [real-time API](/neon/real-time-api/introduction/). Using the following code, you can estimate the offset between the Neon clock and the clock of the host executing the code.
+This can be done using the `TimeOffsetEstimator` of the [real-time API](/real-time-api/tutorials/). Using the following code, you can estimate the offset between the Neon clock and the clock of the host executing the code.
 ::: tip
 **Dependency**: `pip install "pupil-labs-realtime-api>=1.1.0"`
 :::
@@ -57,5 +57,5 @@ The calculation would look like this:
 companion_app_time = external_clock_time - offset
 ```
 ::: tip
-**Note:** In very busy wifi networks the transfer speeds might fluctuate wildly and potentially impact the clock offset measurement. In such cases it would be helpful to connect the phone to the network via [ethernet](/neon/glasses-and-companion/companion-device/#using-a-usb-c-hub) instead.
+**Note:** In very busy wifi networks the transfer speeds might fluctuate wildly and potentially impact the clock offset measurement. In such cases it would be helpful to connect the phone to the network via [ethernet](/general/using-a-usb-hub/) instead.
 :::

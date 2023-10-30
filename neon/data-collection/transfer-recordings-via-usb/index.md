@@ -1,7 +1,7 @@
 # Transfer Recordings via USB
 
 ::: tip
-The recommended way for transferring recordings off of the phone is to upload them to [Pupil Cloud](TODO). For some use-cases, however, this may not be possible and users may want to transfer the recordings via USB.
+The recommended way for transferring recordings off of the phone is to upload them to [Pupil Cloud](/pupil-cloud/). For some use-cases, however, this may not be possible and users may want to transfer the recordings via USB.
 :::
 
 To transfer recordings directly to a computer you first need to export the recordings to the Android filesystem. Then you need to access the filesystem to copy the data over to your computer. 

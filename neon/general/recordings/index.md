@@ -1,5 +1,5 @@
 # Recordings
-A recording starts and stops when you press the record button in the Neon Companion app. While this should feel similar to recording a regular video on your phone, there is a lot more happening behind the scenes. When you are recording with the Neon Companion app, you are capturing not only video data but several more sensors (see [Data Streams](/neon/basic-concepts/data-streams)).
+A recording starts and stops when you press the record button in the Neon Companion app. While this should feel similar to recording a regular video on your phone, there is a lot more happening behind the scenes. When you are recording with the Neon Companion app, you are capturing not only video data but several more sensors (see [Data Streams](/general/data-streams/)).
 
 Recordings are designed to be as robust as possible. If at any point the Neon module is temporarily disconnected from the Companion phone, it will automatically start capturing again as soon as it is reconnected. You could start a recording with no Neon connected and plug it in at a later time. As soon as it is connected, data will be captured.
 

@@ -16,7 +16,7 @@ Once the page has loaded, you will be presented with a live stream of the scene 
 
 If you have multiple Neons connected to the network, you can switch between devices using the switch button.
 
-Using the various event buttons, you can remotely save an [event](/neon/basic-concepts/events) in a recording to mark points of interest. In the settings view you can customize the according event names.
+Using the various event buttons, you can remotely save an [event](/general/events/) in a recording to mark points of interest. In the settings view you can customize the according event names.
 
 ![Monitor App UI](./monitor-ui.png)
 
@@ -32,6 +32,6 @@ If you still have trouble, please reach out to us in [chat](https://pupil-labs.c
 
 The Neon Monitor app allows you to easily monitor your data collection and remotely control all your Neons.
 
-If you want to go further and get real-time access to the generated data for custom processing, please check out our [real-time API](/neon/real-time-api/introduction/).
+If you want to go further and get real-time access to the generated data for custom processing, please check out our [real-time API](/real-time-api/tutorials/).
 
-If you want to save events programmatically in real-time during your data collection, check out our how-to guide on [Tracking your Experiment Progress using Events](/neon/real-time-api/track-your-experiment-progress-using-events/) using the real-time API.
+If you want to save events programmatically in real-time during your data collection, check out our how-to guide on [Tracking your Experiment Progress using Events](/real-time-api/track-your-experiment-progress-using-events/) using the real-time API.
