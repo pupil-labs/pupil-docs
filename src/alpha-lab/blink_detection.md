@@ -82,9 +82,18 @@ In the first section of Part 2 of the guide, you will learn how to estimate blin
 In the last section of the guide, you will learn how to control a Neon or Pupil Invisible device through a rapid sequence of three eye blinks. Upon detection of said sequence, the companion device will initiate a new recording or stop an ongoing one, as illustrated in the video below:
 
 <div class="pb-4" style="display:flex;justify-content:left;">
+  <v-img
+    class="rounded"
+    :src="require('../media/alpha-lab/eye_blinks_toggle_recording.gif')"
+    max-width=800px
+  >
+  </v-img>
+</div>
+
+<!-- <div class="pb-4" style="display:flex;justify-content:left;">
     <iframe width="400" height=258 src="https://www.youtube.com/embed/idAHOysl37Q?&mute=1&controls=0&autoplay=1&loop=1&playlist=idAHOysl37Q&rel=0">
     </iframe>
-</div>
+</div> -->
 
 # <font size=5>Conclusion</font>
 In this Alpha Lab, we have shown you how you can use our blink detection pipeline, both offline as well as in real-time, and how you can build simple applications with it. We're excited to see what you will build using these tools.
