@@ -34,13 +34,13 @@ within the _eye coordinate system_.
 - **Pupil Detection**: Process of detecting the pupil within the _eye camera_ video stream.
 - **2d Pupil Detection**: Attempts to find a 2d ellipse that fits the pupil within a given _eye_ image.
     [Reference paper](https://arxiv.org/pdf/1405.0006.pdf).
-- **3d Pupil Detection**: Pupil Core uses [`pye3d`](/developer/core/pye3d/) for 3d pupil detection.
+- **3d Pupil Detection**: Pupil Core uses [`pye3d`](/developer/pye3d/) for 3d pupil detection.
     It implements a published mathematical 3D eye model capturing ocular kinematics and
     optics (see [Swirski and Dodgson, 2013](https://www.researchgate.net/publication/264658852_A_fully-automatic_temporal_approach_to_single_camera_glint-free_3D_eye_model_fitting "L. Świrski and N. A. Dodgson. A Fully-Automatic, Temporal Approach to Single Camera, Glint-Free 3D Eye Model Fitting. In Proceedings of ECEM 2013."),
     as well as [Dierkes, Kassner, and Bulling, 2019](https://www.researchgate.net/publication/333490770_A_fast_approach_to_refraction-aware_eye-model_fitting_and_gaze_prediction "K. Dierkes, M. Kassner, A. Bulling. A fast approach to refraction-aware eye-model fitting and gaze prediction. In ETRA ’19: Symposium on Eye Tracking Research and Applications, 2019.")).
     More specifically, frame-by-frame measurements of gaze direction and pupil size rely
     on eyeball-position estimates in the 3D coordinate system defined by the recording
-    eye camera. [Read more about it here](/developer/core/pye3d).
+    eye camera. [Read more about it here](/developer/pye3d/).
 
 ## Gaze Positions
 Alternatively: _Gaze Data_. Output of the _gaze estimation_. Location of the subject's
@@ -62,7 +62,7 @@ _Gaze data_ inherits the _confidence_ value from the _pupil data_ it was based o
 Blinking is defined as a rapid closing and re-opening of the eyelids. Characteristics associated with blinks, like blink 
 rate, can provide insights into factors such as cognitive workload and stress. As such, blinking is of increasing interest 
 to researchers. Pupil Core implements a blink detector that provides blink classification both in 
-[real-time](/core/software/pupil-capture/#blink-detector) and [post-hoc](/core/software/pupil-player/#blink-detector) contexts.
+[real-time](/software/pupil-capture/#blink-detector) and [post-hoc](/software/pupil-player/#blink-detector) contexts.
 
 ## Calibration
 
@@ -105,7 +105,7 @@ relation to a fixed starting point (referred to as an epoch – the point where 
 ::: tip
 <v-icon large color="info">info_outline</v-icon>
 You can convert Pupil Time to System Time with some simple calculations. [Check 
-out this tutorial](/developer/core/overview/#convert-pupil-time-to-system-time).
+out this tutorial](/developer/#convert-pupil-time-to-system-time).
 :::
 
 ## Coordinate System
@@ -154,7 +154,7 @@ location_ to _2d pixel location_, and vice versa.
         - looking left:
             - increasing `x` vector component; increasing `phi`
         - see the cartesian to spherical coordinate calculation in our [source code](https://github.com/pupil-labs/pupil/blob/eb8c2324f3fd558858ce33f3816972d93e02fcc6/pupil_src/shared_modules/pupil_detector_plugins/visualizer_pye3d/utilities.py#L14)
-        - an overview of eye model data is in the 'Raw Data Exporter' [documentation](/core/software/pupil-player/#raw-data-exporter)
+        - an overview of eye model data is in the 'Raw Data Exporter' [documentation](/software/pupil-player/#raw-data-exporter)
     - note that eye model values are reported in opposite directions for the right eye
         (eye0) as the right eye camera is physically upside down
 
@@ -166,7 +166,7 @@ discarding these data points.
 :::
 ### Surface (AOI) Coordinate System
 
-[Surfaces](/core/software/pupil-capture/#surface-tracking) - also known as areas of interest or AOIs - define their own local coordinate system. For each scene image that includes sufficient surface markers, the `Surface Tracker` plugin calculates the respective _transformation_ function between the scene camera and surface coordinate system. The surface preview (red rectangle overlay) uses its inner triangle to indicate `up`/`top` within the local surface coordinate system. Pupil Capture and Player automatically map gaze and fixation data to surface coordinates if a valid surface transformation is available.
+[Surfaces](/software/pupil-capture/#surface-tracking) - also known as areas of interest or AOIs - define their own local coordinate system. For each scene image that includes sufficient surface markers, the `Surface Tracker` plugin calculates the respective _transformation_ function between the scene camera and surface coordinate system. The surface preview (red rectangle overlay) uses its inner triangle to indicate `up`/`top` within the local surface coordinate system. Pupil Capture and Player automatically map gaze and fixation data to surface coordinates if a valid surface transformation is available.
 
 The **surface-normalized** coordinates of mapped gaze/fixations have the following properties:
 - origin: bottom left (pay attention to red triangle indicating surface `up`/`top` side)
@@ -184,7 +184,7 @@ The _camera intrinsics_ contain [camera matrix and lens distortion information](
 They are used in _3d gaze mapping_ to correctly transform _3d pupil data_ to _3d gaze data_.
 
 Pupil Core software provides default camera intrinsics for all official Pupil Core
-cameras. It is also possible to run [Camera Intrinsics Estimation](/core/software/pupil-capture/#camera-intrinsics-estimation)
+cameras. It is also possible to run [Camera Intrinsics Estimation](/software/pupil-capture/#camera-intrinsics-estimation)
 for your Pupil Core _world_ camera after receiving it. Each camera is slightly different
 and running the estimation locally can result in slightly more precise gaze mapping.
 

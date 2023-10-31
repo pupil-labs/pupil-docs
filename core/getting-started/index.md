@@ -13,7 +13,7 @@ Follow the steps below to get up and running and become familiar with the workfl
 ## 1. Put on Pupil Core
 Put on the Pupil Core headset and plug it into your computer.
 
-Make sure there is space between the headset frame and your forehead. Headsets are adjustable and shipped with additional parts. For more information head over to the [Hardware](/core/hardware/ "Pupil Core hardware documentation") section of the docs.
+Make sure there is space between the headset frame and your forehead. Headsets are adjustable and shipped with additional parts. For more information head over to the [Hardware](/hardware/ "Pupil Core hardware documentation") section of the docs.
 
 ## 2. Launch Pupil Capture
 
@@ -25,7 +25,7 @@ Start Pupil Capture on your computer. Once the program has initialized, a world 
 
 Capturing good raw videos of the eyes is essential for successful eye tracking with Pupil Core.
 
-You will need to [physically adjust](/core/hardware/#headset-adjustments "Pupil Core headset adjustments") the eye cameras on your Pupil Core headset to get good images of the eyes.
+You will need to [physically adjust](/hardware/#headset-adjustments "Pupil Core headset adjustments") the eye cameras on your Pupil Core headset to get good images of the eyes.
 
 Take a look at the eye window(s).
 
@@ -107,4 +107,4 @@ You can export videos and data by pressing `e` on your keyboard or the down arro
 
 Exports are saved within a dedicated folder named exports within the original recording folder.
 
-Read more about the [recording format](/core/software/recording-format/#pupil-core "Pupil Core recording format")
+Read more about the [recording format](/software/recording-format/#pupil-core "Pupil Core recording format")

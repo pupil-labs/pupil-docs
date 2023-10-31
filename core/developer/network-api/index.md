@@ -70,7 +70,7 @@ This is an overview over all available Pupil Remote commands:
 
 :::danger Delayed Execution
 Pupil Remote commands can be subject to transmission delay (e.g. from network latency). This is especially important to keep in mind for the `T`, `t`, and `R` commands. 
-<br/><br/>We do not recommend using `R` for time synchronization. In addition to transmission delay, not all recording processes are guaranteed to start simultaneously when Pupil Capture receives the command. Please read our [Best Practices](/core/best-practices/#synchronization) for more appropriate methods of time synchronization. 
+<br/><br/>We do not recommend using `R` for time synchronization. In addition to transmission delay, not all recording processes are guaranteed to start simultaneously when Pupil Capture receives the command. Please read our [Best Practices](/best-practices/#synchronization) for more appropriate methods of time synchronization. 
 :::
 
 ::: tip
@@ -83,7 +83,7 @@ for a full example interaction with Pupil Remote.
 
 ## Pupil Groups
 
-The [Pupil Groups plugin](/core/software/pupil-capture/#pupil-groups) uses the [ZRE protocol](https://rfc.zeromq.org/spec:36/ZRE/) to implement real-time local network discovery and many-to-many communication.
+The [Pupil Groups plugin](/software/pupil-capture/#pupil-groups) uses the [ZRE protocol](https://rfc.zeromq.org/spec:36/ZRE/) to implement real-time local network discovery and many-to-many communication.
 Common workflows like starting and stopping a recording are already implemented by Pupil Capture to use and respond to the Pupil Groups interface, if available.
 
 If you want to integrate Pupil Groups in your own app or device, have a look at the [ZRE protocol specification](https://rfc.zeromq.org/spec:36/ZRE/).
@@ -147,7 +147,7 @@ while True:
     print(f"{topic}: {message}")
 ```
 
-See the [data conventions](/developer/core/overview/#timing-data-conventions) and
+See the [data conventions](/developer/#timing-data-conventions) and
 [message format](#ipc-backbone-message-format) sections for details on the data format.
 
 ## IPC Backbone Message Format
@@ -169,7 +169,7 @@ Messages can have any topic chosen by the user. See topics below for a list of m
 Pupil data is sent from the eye0 and eye1 process with the topic format `pupil.<EYE_ID>.<PUPIL_DETECTOR_IDENTIFIER>`, where `EYE_ID` is `0` or `1` for eye0 and eye1 respectively, and `PUPIL_DETECTOR_IDENTIFIER` is a string that uniquely identifies the pupil detector plugin that produced the message. In the case of the built-in pupil detectors, the identifier corresponds to `2d` and `3d` respectively. Therefore, the built-in detectors publish the following four topics: `pupil.0.2d`, `pupil.1.2d`, `pupil.0.3d`, `pupil.1.3d`.
 
 Gaze mappers receive this data and publish messages with topic `gaze`. See the
-[Timing & Data Conventions](/developer/core/overview/#pupil-datum-format) section for example messages for the
+[Timing & Data Conventions](/developer/#pupil-datum-format) section for example messages for the
 `pupil` and `gaze` topics.
 
 ### Notification Message
@@ -192,7 +192,7 @@ topic = f"notify.{notification['subject']}"
 
 You should use the `notify` topic for coordination with the app. All notifications
 on the IPC Backbone are automatically made available to all plugins in their
-[`on_notify` callback](/developer/core/plugin-api/#plugin-callback-methods) and used in all Pupil apps.
+[`on_notify` callback](/developer/plugin-api/#plugin-callback-methods) and used in all Pupil apps.
 
 In stark contrast to gaze and pupil, the notify topic should **not** be used at high
 volume. If you find that you need to write more than 10 messages a second, it is
@@ -214,7 +214,7 @@ pub_socket.send_string(topic, flags=zmq.SNDMORE)
 pub_socket.send(msgpack.dumps(payload, use_bin_type=True))
 ```
 
-The script above requires you to implement a custom [Plugin](/developer/core/plugin-api/) to process the
+The script above requires you to implement a custom [Plugin](/developer/plugin-api/) to process the
 incoming messages. Alternatively, you can use remote annotations.
 
 ### Fixation Messages
@@ -253,7 +253,7 @@ The Offline Fixation Detector in Pupil Player additionally includes the followin
 ```
 
 ## Blink Messages
-The online [Blink Detector](/core/software/pupil-capture/#blink-detector) in Pupil Capture publishes the following notification:
+The online [Blink Detector](/software/pupil-capture/#blink-detector) in Pupil Capture publishes the following notification:
 ```python
 {   # blink datum
     'topic': 'blink',
@@ -265,7 +265,7 @@ The online [Blink Detector](/core/software/pupil-capture/#blink-detector) in Pup
 ```
 
 ### Remote Annotations
-You can also create [annotation](/core/software/pupil-capture/#annotations) events
+You can also create [annotation](/software/pupil-capture/#annotations) events
 programmatically and send them using the IPC, or by sending messages to the Pupil Remote
 interface. Here is an example annotation.
 
@@ -281,7 +281,7 @@ interface. Here is an example annotation.
 ::: tip
 <v-icon large color="info">info_outline</v-icon>
 You can add custom fields to your annotation which will be included in the
-[csv export](/core/software/pupil-player/#annotation-export).
+[csv export](/software/pupil-player/#annotation-export).
 :::
 
 ::: tip

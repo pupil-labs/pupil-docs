@@ -251,7 +251,7 @@ Note - you must specify an existing folder, otherwise the `Path to recordings` w
 :::
 
 ### Recording files
-If you open up a recording session folder you will see a collection of video(s) and data files. Take a look at [Recording format](/core/software/recording-format) for an overview.
+If you open up a recording session folder you will see a collection of video(s) and data files. Take a look at [Recording format](/software/recording-format/)/ for an overview.
 
 ## Plugins
 Open the `Plugin Manager` menu on the right.
@@ -269,7 +269,7 @@ within the `pupil_capture_settings` or `pupil_player_settings` folder.
 ### Fixation Detector
 The online fixation detector classifies fixations based on the dispersion-duration principle. A fixation is visualized as a yellow circle around the gaze point that is shown in the Pupil Capture `world` window.
 
-You can find more information in our [dedicated fixation detection section](/core/terminology/#fixations "Pupil Core terminology - fixations").
+You can find more information in our [dedicated fixation detection section](/terminology/#fixations "Pupil Core terminology - fixations").
 
 ### Network plugins
 Pupil Capture has a built-in data broadcast functionality. It is based on the network library [ZeroMQ](http://zeromq.org/)
@@ -307,7 +307,7 @@ For this to work your network needs to allow `UDP` transport. If the nodes do no
 
 ::: tip
 Pupil Groups can easily be integrated in your own app or device.
-Take a look at <a href="/developer/core/network-api/#pupil-groups">the developer docs</a> to get started.
+Take a look at <a href="/developer/network-api/#pupil-groups">the developer docs</a> to get started.
 :::
 
 #### Pupil Time Sync
@@ -462,26 +462,26 @@ For all new projects we strongly recommend using Apriltags!
 
 
 ### Blink Detector
-The online blink detector classifies [blinks](/core/terminology/#blinks) according to onset and offset thresholds 
-associated with [2D pupil confidence](/core/terminology/#confidence). See the 
-[Blink Detector documentation](/core/software/pupil-player/#blink-detector) for more information.
+The online blink detector classifies [blinks](/terminology/#blinks) according to onset and offset thresholds 
+associated with [2D pupil confidence](/terminology/#confidence). See the 
+[Blink Detector documentation](/software/pupil-player/#blink-detector) for more information.
 
-Read more about accessing blink detection results in real-time in the [developer documentation](/developer/core/network-api/#blink-messages).
+Read more about accessing blink detection results in real-time in the [developer documentation](/developer/network-api/#blink-messages).
 
 ### Annotations
 The `Annotation Capture` plugin allows you to mark timestamps with a label -- sometimes
 referred to as triggers. These labels can be created by pressing their respective hotkey
 or by sending a message with the topic `annotation`. This is useful to mark external
 events (e.g. "start of condition A") within the Pupil recording. The `Annotation Player`
-plugin is able to correlate and [export these events](/core/software/pupil-player/#annotation-export)
+plugin is able to correlate and [export these events](/software/pupil-player/#annotation-export)
 as well as add new ones.
 
-You can also create [remote annotation](/developer/core/network-api/#remote-annotations)
+You can also create [remote annotation](/developer/network-api/#remote-annotations)
 events programmatically and send them to Pupil Capture via the
-[Pupil Core Network API](/developer/core/network-api).
+[Pupil Core Network API](/developer/network-api/).
 
 ### Camera Intrinsics Estimation
-This plugin is used to calculate [camera intrinsics](/core/terminology/#camera-intrinsics), which will enable one to correct camera distortion. Pupil Capture has built in, default camera intrinsics models for the high speed world camera and the high resolution world camera. You can re-calibrate your camera and/or calibrate a camera that is not supplied by Pupil Labs by running this calibration routine. We support two different distortion models, radial distortion and fisheye distortion. For cameras with a FOV of 100 degrees or greater (like e.g. the high speed world camera) the fisheye distortion model usually performs better, for cameras with a smaller FOV (e.g. the high resolution world camera) we recommend the radial distortion model.
+This plugin is used to calculate [camera intrinsics](/terminology/#camera-intrinsics), which will enable one to correct camera distortion. Pupil Capture has built in, default camera intrinsics models for the high speed world camera and the high resolution world camera. You can re-calibrate your camera and/or calibrate a camera that is not supplied by Pupil Labs by running this calibration routine. We support two different distortion models, radial distortion and fisheye distortion. For cameras with a FOV of 100 degrees or greater (like e.g. the high speed world camera) the fisheye distortion model usually performs better, for cameras with a smaller FOV (e.g. the high resolution world camera) we recommend the radial distortion model.
 
 1. Select `Camera Intrinsics Estimation`
 2. Click on 'show pattern' to display the pattern
@@ -503,7 +503,7 @@ If you are having trouble estimating camera intrinsics, [Chat with us.](https://
 Newly estimated camera intrinsics are saved to the Pupil Capture session settings folder:
 - From bundle: `Home directory -> pupil_capture_settings`
 - From source: `repository directory -> capture_settings`
-Specifically, the intrinsics are saved to a file with the name pattern `<camera name>.intrinsics` which includes the relevant intrinsics for each calibrated resolution. See the [developer docs](/developer/core/recording-format/#other-files) on how to read these files manually.
+Specifically, the intrinsics are saved to a file with the name pattern `<camera name>.intrinsics` which includes the relevant intrinsics for each calibrated resolution. See the [developer docs](/developer/recording-format/#other-files) on how to read these files manually.
 
 Pupil Capture provides [prerecorded intrinsics](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/camera_models.py#L26-L152) for the following cameras:
 

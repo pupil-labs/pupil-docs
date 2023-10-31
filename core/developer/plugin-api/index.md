@@ -21,7 +21,7 @@ user's home directory and follows this naming convention: `pupil_<name>_settings
 Each user directory has a `plugins` subdirectory into which the plugin files need to be
 placed. The Pupil Core software will attempt to load the files during the next launch.
 
-If the plugin was installed correctly, it should appear in the [Plugin Manager](/core/software/pupil-capture/#plugins)
+If the plugin was installed correctly, it should appear in the [Plugin Manager](/software/pupil-capture/#plugins)
 of the corresponding Pupil Core software. Check the log file (`~/pupil_<name>_settings/<name>.log`) for errors if this is not the case.
 
 ::: warning
@@ -32,7 +32,7 @@ installed into the `plugins` folder, next to the plugin.
 
 ## Development
 
-For the plugin development process, we recommend to [run from source](/developer/core/overview/#running-from-source).
+For the plugin development process, we recommend to [run from source](/developer/#running-from-source).
 
 ### Language
 Pupil is written in `Python 3.6`, but no "heavy lifting" is done in Python. High performance computer vision, media compression, display libraries, and custom functions are written in external libraries or c/c++ and accessed though [cython](http://cython.org/). Python plays the role of "glue" that sticks all the pieces together.
@@ -54,7 +54,7 @@ The eye process only has one purpose - to detect the pupil and broadcast its pos
 * Find the pupil position in the image
 * Broadcast/stream the detected pupil position.
 
-See the [terminology section](/core/terminology "Pupil Core - terminology") for the difference between pupil and gaze data.
+See the [terminology section](/terminology/ "Pupil Core - terminology") for the difference between pupil and gaze data.
 
 ### World Process
 This is the workhorse in Pupil Capture.
@@ -89,7 +89,7 @@ class MyCustomPlugin(Plugin):
     pass
 ```
 
-Plugins are automatically listed in the [Plugin Manager](/core/software/pupil-capture/#plugins)
+Plugins are automatically listed in the [Plugin Manager](/software/pupil-capture/#plugins)
 unless they inherit from a set of special classes (`System_Plugin_Base`, `Base_Manager`,
 `Base_Source`, `CalibrationChoreographyPlugin`, `GazerBase`).
 
@@ -176,9 +176,9 @@ generated, or processed by calling the plugin processing callbacks below in incr
 
 | Callback                        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 |---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `recent_events(self, events)`   | Called once per application event cycle. `events` is a dictionary with string-keys and built-in python typed values, e.g. lists, dicts, etc. Plugins can add new entries to propagate data to plugins with higher `order`. Entries are stored to their corresponding [`.pldata`](/developer/core/recording-format/#pldata-files) files during recording and published on the [IPC backend](/developer/core/network-api/#ipc-backbone-message-forma). |
+| `recent_events(self, events)`   | Called once per application event cycle. `events` is a dictionary with string-keys and built-in python typed values, e.g. lists, dicts, etc. Plugins can add new entries to propagate data to plugins with higher `order`. Entries are stored to their corresponding [`.pldata`](/developer/recording-format/#pldata-files) files during recording and published on the [IPC backend](/developer/network-api/#ipc-backbone-message-forma). |
 | `gl_display(self)`              | Called once per application event cycle if the calling process has a user interface. Plugins should implement any custom OpenGL visualizations here.                                                                                                                                                                                                                                                                                                 |
-| `on_notify(self, notification)` | Called once for each [`notification`](/developer/core/network-api/#notification-message).                                                                                                                                                                                                                                                                                                                                                            |
+| `on_notify(self, notification)` | Called once for each [`notification`](/developer/network-api/#notification-message).                                                                                                                                                                                                                                                                                                                                                            |
 
 Custom data example:
 ```python
@@ -214,7 +214,7 @@ In addition to the callbacks, the plugin implements a series of useful functions
 interact with the application.
 | Utility methods                 | Description                                                                                     |
 |---------------------------------|-------------------------------------------------------------------------------------------------|
-| `self.notify_all(notification)` | Sends a [`notification`](/developer/core/network-api/#notification-message) to the IPC backend. |
+| `self.notify_all(notification)` | Sends a [`notification`](/developer/network-api/#notification-message) to the IPC backend. |
 | `self.add_menu()`               | Creates a settings menu. Typically called within  `self.init_ui()`.                             |
 | `self.remove_menu()`            | Removes `self.menu`. Typically called within `self.deinit_ui()`                                 |
 
@@ -229,7 +229,7 @@ Conceptually, pupil detection plugins are wrappers around pupil detectors to mak
 Custom pupil detectors must subclass the [DetectorBase class](https://github.com/pupil-labs/pupil-detectors/blob/master/src/pupil_detectors/detector_base.pyx), while custom pupil detection plugins must subclass the [PupilDetectorPlugin class](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/pupil_detector_plugins/detector_base_plugin.py).
 
 ::: tip
-See [Pupil Datum Format](https://docs.pupil-labs.com/developer/core/overview/#pupil-datum-format) for a list of required keys of the pupil datum dictionary returned by the `detect` method.
+See [Pupil Datum Format](https://docs.pupil-labs.com/developer/#pupil-datum-format) for a list of required keys of the pupil datum dictionary returned by the `detect` method.
 :::
 
 ```py
@@ -268,7 +268,7 @@ class MyCustomPupilDetectorPlugin(PupilDetectorPlugin):
         #
         # Returns a pupil datum dictionary containing the pupil location and related metadata.
         # See Pupil Datum Format for a list of required keys:
-        # https://docs.pupil-labs.com/developer/core/overview/#pupil-datum-format
+        # https://docs.pupil-labs.com/developer/overview/#pupil-datum-format
         pass
 ```
 

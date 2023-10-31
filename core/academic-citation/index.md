@@ -2,8 +2,6 @@
 
 We have been asked a few times about how to cite Pupil Core in academic research. Please take a look at our papers below for citation options. If you're using Pupil Core as a tool in your research please cite the below UbiComp 2014 paper.
 
-For guidance on citing Pupil Invisible please see [here](/invisible/publications/).
-
 ## Papers that cite Pupil Core
 
 We have compiled a list of academic publications that use Pupil Labs products. You can find it [here](https://pupil-labs.com/publications/)!

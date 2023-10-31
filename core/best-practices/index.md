@@ -58,7 +58,7 @@ The less movement your participants will exhibit during an experiment, the more 
 
 ## Fixation Filter Thresholds
 
-Choosing appropriate thresholds for the [dispersion-based fixation filter](/core/terminology/#fixations) depends on the nature of the viewing task. It is worth noting that 
+Choosing appropriate thresholds for the [dispersion-based fixation filter](/terminology/#fixations) depends on the nature of the viewing task. It is worth noting that 
 there is no 'gold standard' approach. Often a decision is reached based on previous literature and/or professional judgment following inspection of gaze data
 and classified fixations. As an example, we refer the reader to [this paper](https://link.springer.com/content/pdf/10.3758%2FAPP.71.4.881.pdf)
 which provides a quantitative analysis of dispersion thresholds for chess players.
@@ -107,9 +107,9 @@ dispersion too high might group fixations together that should have been conside
 Ensure the maximum dispersion accommodates your viewing task.
 
 ## Blink Detector Thresholds
-In general, the default values for the [Blink Detector](/core/software/pupil-player/#blink-detector) should work reasonably 
+In general, the default values for the [Blink Detector](/software/pupil-player/#blink-detector) should work reasonably 
 well on good quality eye data with robust pupil detection. However, it is often necessary to adjust the thresholds in the 
-event that [blinks](/core/terminology/#blinks) are not accurately classified. Therefore, it is important to understand 
+event that [blinks](/terminology/#blinks) are not accurately classified. Therefore, it is important to understand 
 the types of errors that can occur and to be able to spot them when they occur, thereby enabling you to make appropriate 
 adjustments.
 
@@ -122,8 +122,8 @@ that have unreasonable durations
 ### Pupil Detection and Blinks
 It is worth noting that poor pupil detection in general can lead to false negatives. In such instances, adjusting the 
 thresholds can make it easier to detect blinks, but also increases the chance of false positives. It is worth taking the 
-time to ensure an optimal setup with regards to [eye camera positioning](/core/#_3-check-pupil-detection) and 
-[2d detector settings](/core/software/pupil-capture/#fine-tuning-pupil-detection) so that the pupils are well-detected
+time to ensure an optimal setup with regards to [eye camera positioning](/#_3-check-pupil-detection) and 
+[2d detector settings](/software/pupil-capture/#fine-tuning-pupil-detection) so that the pupils are well-detected
 when the eyes are open.
 
 ## Synchronization
@@ -131,16 +131,16 @@ Pupil Core is often used concurrently with third-party devices and software (e.g
 motion capture, stimuli presentation). In order to correlate the data between these, temporal alignment is of great importance.
 
 How you go about synchronizing Pupil Core with other devices or software will depend on the setup, but there are three 
-common approaches (steps 2–3 leverage our [Network API](/developer/core/network-api)):
+common approaches (steps 2–3 leverage our [Network API](/developer/network-api/)):
 
 ::: tip
-Read about Pupil Core's [timing definitions here](/core/terminology/#timing).
+Read about Pupil Core's [timing definitions here](/terminology/#timing).
 :::
 
 ::: tip
 When using multiple Pupil Core devices (running on the same or multiple machines), be sure to turn-on 
 the [Network Time Sync Plugin](https://docs.pupil-labs.com/core/software/pupil-capture/#pupil-time-sync) which takes 
-care of Pupil Time synchronization. The [Pupil Groups Plugin](/core/software/pupil-capture/#pupil-groups) also helps when 
+care of Pupil Time synchronization. The [Pupil Groups Plugin](/software/pupil-capture/#pupil-groups) also helps when 
 using more than one Pupil Core device simultaneously. 
 :::
 
@@ -161,10 +161,10 @@ be monotonically increasing and are very accurate when it comes to measuring tim
 
 [In this tutorial](https://github.com/pupil-labs/pupil-helpers/blob/master/python/simple_realtime_time_sync.py), we
 demonstrate a simple real-time method to synchronize Pupil Time with a custom clock (e.g. used by third-party software). 
-For an even more accurate and stable time sync, see our [Pupil Time Sync Protocol](/core/software/pupil-capture/#pupil-time-sync).
+For an even more accurate and stable time sync, see our [Pupil Time Sync Protocol](/software/pupil-capture/#pupil-time-sync).
 
 ### 3. Annotations
-You can use our [Annotation Plugin](/core/software/pupil-capture/#annotations) to make annotations with a timestamp in 
+You can use our [Annotation Plugin](/software/pupil-capture/#annotations) to make annotations with a timestamp in 
 the recording on desired events, such as trigger events. Annotations can be sent via the keyboard or programmatically. 
 [This script](https://github.com/pupil-labs/pupil-helpers/blob/master/python/remote_annotations.py) demonstrates how you 
 can send remote annotations over the network.
@@ -172,16 +172,16 @@ can send remote annotations over the network.
 ## Pupillometry
 [Pupillometry](https://doi.org/10.1002/wcs.1323) is the study of temporal changes in pupil diameter in response to 
 external light stimuli and/or cognitive processing. Pupil Core reports pupil diameter in mm provided by the 
-[pye3d](/developer/core/pye3d/#pye3d-pupil-detection) model: `diameter_3d`, and in pixels as observed in the eye 
+[pye3d](/developer/pye3d/#pye3d-pupil-detection) model: `diameter_3d`, and in pixels as observed in the eye 
 videos: `diameter`. 
 
 Pupil size in pixels is dependent on the eye-camera to pupil distance and is not corrected for perspective. 
-[Pye3d](/developer/core/pye3d/#pye3d-pupil-detection), on the other hand, accounts for differences in eye-camera to 
+[Pye3d](/developer/pye3d/#pye3d-pupil-detection), on the other hand, accounts for differences in eye-camera to 
 pupil distances and corrects for perspective. It thus more accurately reflects pupil size and will be preferable for most 
 users.
 
 ### pye3d model
-A well-fit [pye3d](/developer/core/pye3d/#pye3d-pupil-detection) model is important for accurate estimates of pupil size 
+A well-fit [pye3d](/developer/pye3d/#pye3d-pupil-detection) model is important for accurate estimates of pupil size 
 in mm. To generate a well-fitting model, sample sufficient gaze points from a variety of gaze angles, e.g. by moving the 
 head around while looking at a fixed position. A well-fit model is visualized by a stable circle that surrounds the 
 modelled eyeball, and this should be of an equivalent size to the respective eyeball. A dark blue circle indicates that 
@@ -199,7 +199,7 @@ erroneous pupil size estimates can occur. Therefore, only use this option if the
 limited head movements, and keep recordings short and free of slippage as much as possible.
 :::
 
-The [pye3d model](/developer/core/pye3d/#pye3d-pupil-detection) regularly updates to account for headset slippage. In 
+The [pye3d model](/developer/pye3d/#pye3d-pupil-detection) regularly updates to account for headset slippage. In 
 certain situations, this can lead to incorrect pupil size estimates:
 1. Actual Headset Slippage: The headset slips on the wearer, and a 2d pupil datum is generated **prior** to the 3d model 
    adjusting
@@ -214,6 +214,6 @@ pupillometry in general, and especially when freezing the model.
 
 :::tip 
 You can also freeze the model when running 
-[post-hoc pupil detection in Pupil Player](/core/software/pupil-player/#pupil-data-and-post-hoc-detection/). Moreover, 
+[post-hoc pupil detection in Pupil Player](/software/pupil-player/#pupil-data-and-post-hoc-detection/). Moreover, 
 clicking 're-detect' after freezing the model will apply the frozen model from the beginning of the recording.
 :::

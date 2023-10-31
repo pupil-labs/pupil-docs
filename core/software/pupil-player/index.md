@@ -11,7 +11,7 @@ Drag the recording folder (the triple digit one) directly onto the app icon **or
 Don't have a recording yet? [Download a sample recording](https://drive.google.com/file/d/1vzjZkjoi8kESw8lBnsa_k_8hXPf3fMMC/view?usp=sharing "Download sample recording to use in Pupil Player").
 
 ## Player Window
-The Player window is the main control center for `Pupil Player`. It displays video and data recorded by [Pupil Capture](/core/software/pupil-capture) or [Pupil Invisible](/invisible/).
+The Player window is the main control center for `Pupil Player`. It displays video and data recorded by [Pupil Capture](/software/pupil-capture/) or [Pupil Invisible](https://docs.pupil-labs.com/invisible/).
 
 ![Pupil Player Callout](./pp-callout.jpg)
 
@@ -143,7 +143,7 @@ This plugin is **unique**, therefore you can only load one instance of this plug
 These plugins are simple unique plugins, that operate on the gaze data for analysis and visualizations.
 
 #### Surface Tracker
-This plugin is a post-hoc version of the [Surface Tracking](/core/software/pupil-capture/#surface-tracking) plugin for Pupil Capture.
+This plugin is a post-hoc version of the [Surface Tracking](/software/pupil-capture/#surface-tracking) plugin for Pupil Capture.
 You can use this plugin to detect markers in the recording, define surfaces, edit surfaces, and create and export visualizations of gaze data within the defined surfaces.
 
 ![Offline surface tracker](./offline-srf-tracker.jpg)
@@ -189,14 +189,14 @@ The post-hoc fixation detector calculates fixations for the whole recording. The
 
 Toggle `Show fixations` to show a visualization of fixations. The blue number is the number of the fixation (0 being the first fixation). You can export fixation reports for your current trim section by pressing `e` on your keyboard or the `e` hot key button on the left hand side of the window.
 
-You can find more information in our [dedicated fixation detection section](/core/terminology/#fixations "Pupil Core terminology - fixations").
+You can find more information in our [dedicated fixation detection section](/terminology/#fixations "Pupil Core terminology - fixations").
 
 #### Blink Detector
-Pupil Core's Blink Detector leverages the fact that [2D pupil confidence](/core/terminology/#confidence) drops rapidly 
-in both eyes during a [blink](/core/terminology/#blinks) as the pupil becomes obscured by the eyelid, followed by a rapid 
+Pupil Core's Blink Detector leverages the fact that [2D pupil confidence](/terminology/#confidence) drops rapidly 
+in both eyes during a [blink](/terminology/#blinks) as the pupil becomes obscured by the eyelid, followed by a rapid 
 rise in confidence as the pupil becomes visible again.
 
-The Blink Detector processes [2D pupil confidence](/core/terminology/#confidence) values by convolving them with a 
+The Blink Detector processes [2D pupil confidence](/terminology/#confidence) values by convolving them with a 
 [filter](https://github.com/pupil-labs/pupil/blob/eb8c2324f3fd558858ce33f3816972d93e02fcc6/pupil_src/shared_modules/blink_detection.py#L360). 
 The filter response – called 'activity' – spikes the sharper the confidence drop is and *vice versa* for confidence 
 increases. 
@@ -216,7 +216,7 @@ line, characterised by a step function where blinks have been classified.
 ![Blinks](./pp-blinks.jpg)
 
 :::tip
-See our [Best Practices](/core/best-practices/#blink-detector-thresholds) for tips on choosing 
+See our [Best Practices](/best-practices/#blink-detector-thresholds) for tips on choosing 
 appropriate Blink Detector thresholds
 :::
 
@@ -249,7 +249,7 @@ The markers used must be unique and of the same size. You may not use multiple i
 
 <Youtube src="9x9h98tywFI"/>
 
-See the [surface tracking section](/core/software/pupil-capture/#surface-tracking) for images of the markers to download.
+See the [surface tracking section](/software/pupil-capture/#surface-tracking) for images of the markers to download.
 
 Head pose tracking works best in a well lit environment with an even distribution of light, so that the tracking markers 
 are clearly visible. Try to avoid situations where the world-camera faces into bright light, such as sunlight entering 
@@ -335,7 +335,7 @@ Read more about [Pupil Invisible's coordinate systems here](/developer/invisible
 This Plugin does not estimate orientation about the yaw axis (head rotation from left to right). This is 
 because the IMU has no magnetometer to monitor heading. The Plugin therefore implements a version of Madgwick's algorithm that only estimates Pitch and Roll.
 
-Note that this Plugin [will not be loaded](/core/software/pupil-player/#product-specific-plugins) with Pupil Core recordings.
+Note that this Plugin [will not be loaded](/software/pupil-player/#product-specific-plugins) with Pupil Core recordings.
 
 ### Pupil Data And Post-hoc Detection
 By default, Player starts with the `Pupil Data From Recording` plugin that tries to load pupil positions that were detected and stored during a Pupil Capture recording.
@@ -375,7 +375,7 @@ The workflow is separated into three steps, each with its own submenu: Reference
 Reference locations are points within the recorded world video that are known to have been fixated on by the participant/subject.
 They can either be automatically detected or manually annotated:
 
-1. `Detect Circle Markers in Recording`: This button starts the automatic detection of [circular calibration markers](/core/software/pupil-capture/#calibration-marker "Pupil circular calibration marker documentation") within the world video. The progress is visualized in the plugin's timeline.
+1. `Detect Circle Markers in Recording`: This button starts the automatic detection of [circular calibration markers](/software/pupil-capture/#calibration-marker "Pupil circular calibration marker documentation") within the world video. The progress is visualized in the plugin's timeline.
 2. `Manual Edit Mode`: When this option is enabled, you can add new locations as well as correct and delete existing ones. There can only be one location per world frame.
 
 As in Capture, one can have more than one calibration per recording.
@@ -397,7 +397,7 @@ Each gaze mapper has the following properties:
 - `Calibration`: One of the previously created or imported calibrations (see screencast)
 - `Mapping Range`: Time range in which pupil data will be mapped to gaze data.
 - `Manual Correction`: Apply a fixed offset to your gaze mapping.
-- `Validation`: You can validate the accuracy and precision of the mapped gaze by comparing it to reference locations in the selected `Validation Range`. It uses the same methodology as the [`Accuracy Visualizer`](/core/software/pupil-capture/#notes-on-calibration-accuracy "Notes on calibration accuracy").
+- `Validation`: You can validate the accuracy and precision of the mapped gaze by comparing it to reference locations in the selected `Validation Range`. It uses the same methodology as the [`Accuracy Visualizer`](/software/pupil-capture/#notes-on-calibration-accuracy "Notes on calibration accuracy").
 
 ::: warning
 Overlapping mapping ranges result in multiple gaze points per gaze datum.
@@ -409,7 +409,7 @@ You can compare `2d` and `3d` mapping results by creating two calibrations and g
 :::
 
 ### Developing your own Plugin
-To develop your own plugin see the [developer guide](/developer/core/overview "Pupil Core developer documentation").
+To develop your own plugin see the [developer guide](/developer/ "Pupil Core developer documentation").
 
 ### Product-specific plugins
 Some plugins in Pupil Player _only_ load if they are able to be used with the product that created the recordings.
@@ -440,7 +440,7 @@ All open plugins that have export capability will export when you press `e`.
 Exports are separated from your raw data and contained in the `exports` sub-directory.
 The exports directory lives within your recording directory.
 
-Active video exporters will run in the background and you can see the progress bar of the export in the GUI. While exporting, you can continue working with Pupil Player and even launch new exports. Each video export creates at least one `mp4` and its respective file timestamp file. See the [Data Format](/developer/core/recording-format/ "Pupil Core recording format") section for details.
+Active video exporters will run in the background and you can see the progress bar of the export in the GUI. While exporting, you can continue working with Pupil Player and even launch new exports. Each video export creates at least one `mp4` and its respective file timestamp file. See the [Data Format](/developer/recording-format/ "Pupil Core recording format") section for details.
 
 ### Export Directory
 Every export creates a new folder within the `exports` sub-directory of your recording. All data from the export is saved to this folder.
@@ -463,7 +463,7 @@ The export saves the world video as shown in Player, including all currently act
 General overview for exported video files:
 
 The World and Eye video exporter saves the scene video file, together with [numpy](https://numpy.org/devdocs/reference/generated/numpy.lib.format.html) and csv files containing timestamps corresponding to each frame. 
-The timestamps follow the [Pupil Time](/core/terminology/#timestamps) convention. The csv timestamp files include an additional `pts` column. `pts` is an abbreviation for _presentation timestamps_ and refers to the media file's internal time representation. It can be used to seek or identify specific frames within the media file. See this [tutorial on how to extract individual frame images from the world video](https://github.com/pupil-labs/pupil-tutorials/blob/master/09_frame_identification.ipynb). 
+The timestamps follow the [Pupil Time](/terminology/#timestamps) convention. The csv timestamp files include an additional `pts` column. `pts` is an abbreviation for _presentation timestamps_ and refers to the media file's internal time representation. It can be used to seek or identify specific frames within the media file. See this [tutorial on how to extract individual frame images from the world video](https://github.com/pupil-labs/pupil-tutorials/blob/master/09_frame_identification.ipynb). 
 
 
 ### Eye Video Exporter

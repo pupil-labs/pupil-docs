@@ -86,13 +86,13 @@ If you have a 120Hz eye camera, make sure the eye camera is in focus. Twist the 
 
 ### World Camera Lens
 The high speed world camera comes with two lenses.
-A narrow angle lens and a wide angle lens. The default lens is the wide angle lens. Check out the camera [field of view table](/core/software/pupil-capture/#camera-field-of-view-fov "Pupil Labs camera field of view table") for exact FOV measurements for each lens at different resolutions. 
+A narrow angle lens and a wide angle lens. The default lens is the wide angle lens. Check out the camera [field of view table](/software/pupil-capture/#camera-field-of-view-fov "Pupil Labs camera field of view table") for exact FOV measurements for each lens at different resolutions. 
 
 The world camera lens are interchangeable, so you can swap between the two lenses provided for wide angle or narrow angle field of view.
 
 ::: warning
-If you change lenses, you will need to re-estimate the [camera intrinsics](/core/terminology/#camera-intrinsics). Otherwise, 3d calibration and subsequently gaze
-estimation will be inaccurate. Check out [these instructions](/core/software/pupil-capture/#camera-intrinsics-estimation) 
+If you change lenses, you will need to re-estimate the [camera intrinsics](/terminology/#camera-intrinsics). Otherwise, 3d calibration and subsequently gaze
+estimation will be inaccurate. Check out [these instructions](/software/pupil-capture/#camera-intrinsics-estimation) 
 for details of how to re-estimate the camera intrinsics.
 :::
 
