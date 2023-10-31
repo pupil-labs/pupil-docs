@@ -3,7 +3,7 @@ import { defineConfig } from "vitepress";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   head: [["link", { rel: "icon", href: "./favicon.png" }]],
-  base: "/neon",
+  base: "/neon/",
   title: "Neon",
   description: "Documentation of the Neon eye tracker and it's ecosystem.",
   themeConfig: {
