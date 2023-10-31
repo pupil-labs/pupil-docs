@@ -26,7 +26,7 @@ Recordings downloaded directly from the phone will be in a raw binary format tha
 5. Open File Browser on your PC and access the Internal shared storage of your OnePlus device
 6. Locate the export folder on the phone. Usually, it is in `Documents/Pupil Invisible Export`.
 7. Copy the recordings to your computer.
-8. Export the recordings using [Pupil Player](/software/pupil-player/#export) (part of Pupil Core Software).
+8. Export the recordings using [Pupil Player](https://docs-staging.pupil-labs.com/core/software/pupil-player/#export) (part of Pupil Core Software).
 
 <DownloadLinks/>
 

@@ -2,7 +2,7 @@
 The Neon ecosystem contains a range of tools that support you during data collection and data analysis. This overview introduces all the key components so you can become familiar with all tools at your disposal.
 
 ## Neon Companion app
-You should have already used the Neon Companion app to [make your first recording](/neon/getting-started/first-recording.html). This app is the core of every Neon data collection.
+You should have already used the Neon Companion app to [make your first recording](/getting-started/first-recording/). This app is the core of every Neon data collection.
 
 When your Neon is connected to the Companion device, it supplies it with power and the app calculates a real-time gaze signal. When making a recording, all generated data is saved on the Companion device.
 
@@ -17,7 +17,7 @@ It makes it easy to store all your data securely in one place and it offers a va
 
 Once a recording is uploaded to Pupil Cloud the processing pipeline begins adding several additional low-level data streams to it - including the 200 Hz gaze signal and fixation data. Some of this data (e.g. the 200 Hz gaze signal) is not available outside of Pupil Cloud.
 
-From here, you can either download the raw data in a convenient format or use some of the available analysis algorithms to extract additional information from the data. For example, use the [Face Mapper](/enrichments/#face-mapper) to automatically track when subjects are looking at faces. Or use the [Reference Image Mapper](/enrichments/#reference-image-mapper) to track when subjects are looking at objects of interest represented by a reference image.
+From here, you can either download the raw data in a convenient format or use some of the available analysis algorithms to extract additional information from the data. For example, use the [Face Mapper](/pupil-cloud/enrichments/face-mapper/) to automatically track when subjects are looking at faces. Or use the [Reference Image Mapper](/pupil-cloud/enrichments/reference-image-mapper/) to track when subjects are looking at objects of interest represented by a reference image.
 
 We have a strict [privacy policy](https://pupil-labs.com/legal/) that ensures your recording data is accessible only by you and those you explicitly grant access to. Pupil Labs will never access your recording data unless you explicitly instruct us to.
 
@@ -39,5 +39,5 @@ This enables you to e.g. implement Human Computer Interaction (HCI) applications
 
 Check-out out our [real-time API tutorial](https://docs-staging.pupil-labs.com/neon/real-time-api/tutorials/) to learn more!
 
-For a concrete usage example, see [Track your Experiment Progress using Events](/neon/real-time-api/track-your-experiment-progress-using-events/)!
+For a concrete usage example, see [Track your Experiment Progress using Events](/real-time-api/track-your-experiment-progress-using-events/)!
 

@@ -3,7 +3,6 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   base: '/invisible/',
-  ignoreDeadLinks: true,
   head: [['link', { rel: 'icon', href: './favicon.png' }]],
   title: "Pupil Invisible",
   description: "Documentation of the Pupil Invisible eye tracker and it's ecosystem.",
@@ -34,6 +33,7 @@ export default defineConfig({
           text: 'Pupil Invisible',
           items: [
             { text: 'Technical Overview', link: '/general/technical-overview/' },
+            { text: 'Exchange Lenses', link: '/general/exchange-lenses/' },
             { text: 'Cleaning & Disinfecting', link: '/general/clean-and-disinfect/' },
           ]
         },
@@ -86,6 +86,7 @@ export default defineConfig({
             { text: 'Time Synchronization', link: '/data-collection/time-synchronization/' },
           ]
         },
+        { text: 'Troubleshooting', link: '/data-collection/troubleshooting/' },
       ],
       "/pupil-cloud/": [
         {

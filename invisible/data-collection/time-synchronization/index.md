@@ -57,5 +57,5 @@ The calculation would look like this:
 companion_app_time = external_clock_time - offset
 ```
 ::: tip
-**Note:** In very busy wifi networks the transfer speeds might fluctuate wildly and potentially impact the clock offset measurement. In such cases it would be helpful to connect the phone to the network via [ethernet](/invisible/glasses-and-companion/companion-device/#using-a-usb-c-hub) instead.
+**Note:** In very busy wifi networks the transfer speeds might fluctuate wildly and potentially impact the clock offset measurement. In such cases it would be helpful to connect the phone to the network via [ethernet](/general/using-a-usb-hub/) instead.
 :::
