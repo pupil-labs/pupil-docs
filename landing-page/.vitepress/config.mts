@@ -1,8 +1,8 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  head: [['link', { rel: 'icon', href: './favicon.png' }]],
+  head: [["link", { rel: "icon", href: "./favicon.png" }]],
   title: "Pupil Labs Documentation",
   description: "Documentation for all Pupil Labs products.",
   themeConfig: {
@@ -12,12 +12,12 @@ export default defineConfig({
     sidebar: {},
 
     socialLinks: [
-      { icon: 'discord', link: 'TODO' },
-      { icon: 'youtube', link: 'TODO' },
-      { icon: 'twitter', link: 'TODO' },
-
+      { icon: "discord", link: "TODO" },
+      { icon: "youtube", link: "TODO" },
+      { icon: "twitter", link: "TODO" },
     ],
     outline: [2, 3],
   },
   appearance: true,
-})
+  cleanUrls: true,
+});
