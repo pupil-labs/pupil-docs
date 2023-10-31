@@ -21,12 +21,12 @@ Below you can find the tools we used for this project. Using these, you can repl
 your own applications.
 
 ### Cloud enrichment
-- [Reference Image Mapper](/enrichments/reference-image-mapper/)
+- [Reference Image Mapper](https://docs-staging.pupil-labs.com/pupil-cloud/enrichments/reference-image-mapper/)
 
 ### Alpha Lab tutorials
-- [How to generate scanpaths](/alpha-lab/scanpath-rim/)
-- [How to define areas of interest (AOIs) and calculate basic metrics](/alpha-lab/gaze-metrics-in-aois/)
-- [How to map and visualise gaze onto dynamic screen content](/alpha-lab/map-your-gaze-to-a-2d-screen/)
+- [How to generate scanpaths](/scanpath-rim/)
+- [How to define areas of interest (AOIs) and calculate basic metrics](/gaze-metrics-in-aois/)
+- [How to map and visualise gaze onto dynamic screen content](/map-your-gaze-to-a-2d-screen/)
 
 ### How we used them
 We first used the Reference Image Mapper enrichment to create a 3D model of a phone positioned on a desk and subsequently to map gaze onto a 2D image of the phone-on-desk. Then we used Alpha Lab tutorials to process the exported results, generate advanced visualisations, and compute outcome metrics.
@@ -35,7 +35,7 @@ We first used the Reference Image Mapper enrichment to create a 3D model of a ph
 :bulb: 
 When preparing the Reference Image Mapper Enrichment, make sure your phone is stable on a phone mount or stand. The 
 scanning video needed for this tool requires relatively static features in the environment. If there is a lot of movement 
-or the objects change in appearance or shape, the mapping can fail. More on this [in the docs](/enrichments/reference-image-mapper#setup/)! 
+or the objects change in appearance or shape, the mapping can fail. More on this [in the docs](https://docs-staging.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/#setup)! 
 :::
 
 ## Gaze behaviour on mobile apps: Insights from Neon
@@ -62,8 +62,8 @@ Two visualisations that help to illustrate these patterns are heatmaps and scanp
 
 Analysing eye tracking data can provide valuable insights into user behaviour, but simply looking at visualisations like 
 heatmaps and scanpaths may not always reveal the full story. This is why we opted for a quantitative analysis of our data 
-as well by calculating gaze metrics, such as [dwell time](/alpha-lab/gaze-metrics-in-aois/#dwell-time) and
-[time to first contact](/alpha-lab/gaze-metrics-in-aois/#time-to-first-contact). These metrics offer tangible and 
+as well by calculating gaze metrics, such as [dwell time](/gaze-metrics-in-aois/#dwell-time) and
+[time to first contact](/gaze-metrics-in-aois/#time-to-first-contact). These metrics offer tangible and 
 quantitative outcomes about the salience of each AOI: Longer dwell time implies longer total fixation on a specific AOI 
 and could be considered as a proxy of attentional allocation. Conversely, the shorter the time to first contact, the faster 
 this AOI captured the user's attention, pointing to increased salience of this area. Follow along with the AOI tutorial

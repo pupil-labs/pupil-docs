@@ -13,7 +13,7 @@ tags: [Pupil Invisible, Neon, Cloud]
 🕰️ - *Great Scott! This content is highly experimental. Using it will take you on a wild ride into the future, but beware - you'll be going solo. Consider yourself warned!* 🎢
 :::
 
-If you watched the accompanying video, you have witnessed 3D environment reconstructions based on eye tracking recordings. In essence, we have explored how to augment the output of our [Reference Image Mapper enrichment](/enrichments/reference-image-mapper/) to show a third person view of an eye tracking recording. Other wordly, huh?
+If you watched the accompanying video, you have witnessed 3D environment reconstructions based on eye tracking recordings. In essence, we have explored how to augment the output of our [Reference Image Mapper enrichment](https://docs-staging.pupil-labs.com/pupil-cloud/enrichments/reference-image-mapper/) to show a third person view of an eye tracking recording. Other wordly, huh?
 
 A third person view allows you to see more of the environment and how your partipant explores and visually interacts with it. Let's break it down – in the video, the green points (actually camera frustrums) denote where the “user’s head” was during the recording, while the yellow line illustrates a gaze ray from the head to the object that's looked at. You can also see a 3D heat-map showing which areas attracted attention.
 

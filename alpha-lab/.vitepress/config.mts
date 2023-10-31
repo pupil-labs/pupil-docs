@@ -4,7 +4,6 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   base: '/alpha-lab/',
   head: [['link', { rel: 'icon', href: './favicon.png' }]],
-  ignoreDeadLinks: true,
   title: "Alpha Lab",
   description: "Documentation of the Neon eye tracker and it's ecosystem.",
   themeConfig: {

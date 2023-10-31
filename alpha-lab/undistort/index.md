@@ -6,7 +6,7 @@ permalink: /neon/how-tos/advance-analysis/undistort/
 # Correcting for the lens distortion on Neon's scene camera
 A circumstance that often arises in wearable eye tracking setups is the presence of distortions on the scene camera. The type of lenses used, with their wide-angle characteristics, allow for a broad field of view, enabling the capture of more information within a single frame. However, this advantage comes at the cost of introducing distortions to the image. <!-- rectilinear distortions -->
 
-While we account for them in Pupil Cloud, and we even give you the possibility to download the undistorted video using the [Gaze Overlay enrichment](/enrichments/gaze-overlay), this is not the case when using the [Realtime API](/neon/real-time-api) or raw data, where you may want to correct it by yourself.
+While we account for them in Pupil Cloud, and we even give you the possibility to download the undistorted video using the [Video Renderer Visualization](https://docs-staging.pupil-labs.com/neon/pupil-cloud/visualizations/video-renderer/), this is not the case when using the [Realtime API](https://docs-staging.pupil-labs.com/neon/real-time-api/tutorials/) or raw data, where you may want to correct it by yourself.
 
 ## When is it beneficial to correct for lens distortion?
 
@@ -31,7 +31,7 @@ pip install opencv-python numpy
 
 ### Reading from the Cloud download JSON file
 
-We measure the intrinsics and extrinsics parameters from the cameras for you, such that you do not need to do it by yourself. If you are using the [Cloud download](/export-formats/recording-data/neon/#scene-camera-json) format, you can find the intrinsic parameters in the **scene_camera.json** file which you can read using the following function:
+We measure the intrinsics and extrinsics parameters from the cameras for you, such that you do not need to do it by yourself. If you are using the [Cloud download](https://docs-staging.pupil-labs.com/neon/general/data-format/#scene-camera-json) format, you can find the intrinsic parameters in the **scene_camera.json** file which you can read using the following function:
 
 ```python
 def read_from_json(path):

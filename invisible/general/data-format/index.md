@@ -55,7 +55,7 @@ This file contains the timestamps of every world video frame.
 
 
 ## events.csv
-This file contains [event](/invisible/basic-concepts/events) data for all recordings. It contains both project event annotations and real-time recording events.
+This file contains [event](https://docs-staging.pupil-labs.com/neon/general/events/) data for all recordings. It contains both project event annotations and real-time recording events.
 
 | Field | Description | 
 | -------- | -------- | 

@@ -47,8 +47,8 @@ computer, and map gaze into the coordinate system of the screen.
 
 To locate the screen, we use [AprilTags](https://april.eecs.umich.edu/software/apriltag) to identify the image of the
 screen as it appears in Neon’s scene camera. Gaze data is transferred to the computer via Neon's
-[Real-time API](/neon/real-time-api/introduction/). We then transform gaze from _scene camera_ to _screen-based_
-coordinates using a [homography](<https://en.m.wikipedia.org/wiki/Homography_(computer_vision)>) approach like the [Marker Mapper](/enrichments/marker-mapper/)
+[Real-time API](https://docs-staging.pupil-labs.com/neon/real-time-api/tutorials/). We then transform gaze from _scene camera_ to _screen-based_
+coordinates using a [homography](<https://en.m.wikipedia.org/wiki/Homography_(computer_vision)>) approach like the [Marker Mapper](https://docs-staging.pupil-labs.com/neon/pupil-cloud/enrichments/marker-mapper/)
 enrichment we offer in Pupil Cloud as a post-hoc solution. The heavy lifting of all this is handled by
 our [Real-time Screen Gaze](https://github.com/pupil-labs/realtime-screen-gaze/) package (written for this guide).
 
@@ -67,7 +67,7 @@ Follow the steps in the next section to be able to use your gaze to navigate a w
 ## Steps
 
 1. Follow the instructions in [Gaze-controlled Cursor Demo](https://github.com/pupil-labs/gaze-controlled-cursor-demo) to download and run it locally on your computer.
-2. Start up [Neon](/neon/getting-started/first-recording.html), make sure it’s detected in the demo window, then check out the settings:
+2. Start up [Neon](https://docs-staging.pupil-labs.com/neon/getting-started/first-recording/), make sure it’s detected in the demo window, then check out the settings:
    - Adjust the `Tag Size` and `Tag Brightness` settings as necessary until all four AprilTag markers are successfully tracked (markers that are not tracked will display a red border as shown in the image below).
    - Modify the `Dwell Radius` and `Dwell Time` values to customize the size of the gaze circle and the dwell time required for gaze to trigger a mouse action.
    - Click on `Mouse Control` and embark on your journey into the realm of gaze contingency.
