@@ -66,5 +66,5 @@ export default defineConfig({
 
     outline: [2, 3],
   },
-  appearance: 'force-dark',
+  appearance: true,
 })
