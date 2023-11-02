@@ -4,14 +4,14 @@
   import { useData } from "vitepress";
   import { useSidebar } from "vitepress/theme";
   // import VPNavBarAppearance from 'vitepress/dist/client/theme-default/components/VPNavBarAppearance.vue'
-  import VPNavBarExtra from "../neon/node_modules/vitepress/dist/client/theme-default/components/VPNavBarExtra.vue";
-  import VPNavBarHamburger from "../neon/node_modules/vitepress/dist/client/theme-default/components/VPNavBarHamburger.vue";
-  import VPNavBarMenu from "../neon/node_modules/vitepress/dist/client/theme-default/components/VPNavBarMenu.vue";
-  import VPNavBarSearch from "../neon/node_modules/vitepress/dist/client/theme-default/components/VPNavBarSearch.vue";
-  import VPNavBarSocialLinks from "../neon/node_modules/vitepress/dist/client/theme-default/components/VPNavBarSocialLinks.vue";
-  import VPNavBarTitle from "../neon/node_modules/vitepress/dist/client/theme-default/components/VPNavBarTitle.vue";
-  import VPNavBarTranslations from "../neon/node_modules/vitepress/dist/client/theme-default/components/VPNavBarTranslations.vue";
-  import VPNavBarMenuLink from "vitepress/dist/client/theme-default/components/VPNavBarMenuLink.vue";
+  import VPNavBarExtra from "vitepress/dist/client/theme-default/components/VPNavBarExtra.vue";
+  import VPNavBarHamburger from "vitepress/dist/client/theme-default/components/VPNavBarHamburger.vue";
+  import VPNavBarMenu from "vitepress/dist/client/theme-default/components/VPNavBarMenu.vue";
+  import VPNavBarSearch from "vitepress/dist/client/theme-default/components/VPNavBarSearch.vue";
+  import VPNavBarSocialLinks from "vitepress/dist/client/theme-default/components/VPNavBarSocialLinks.vue";
+  import VPNavBarTitle from "vitepress/dist/client/theme-default/components/VPNavBarTitle.vue";
+  import VPNavBarTranslations from "vitepress/dist/client/theme-default/components/VPNavBarTranslations.vue";
+  // import VPNavBarMenuLink from "vitepress/dist/client/theme-default/components/VPNavBarMenuLink.vue";
 
   defineProps<{
     isScreenOpen: boolean;
@@ -56,11 +56,23 @@
           <slot name="nav-bar-content-before" />
           <VPNavBarSearch class="search" />
           <VPNavBarMenu class="menu" />
-          <!-- <nav aria-labelledby="main-nav-aria-label" class="VPNavBarMenu menu">
-                        <span id="main-nav-aria-label" class="visually-hidden">Main Navigation</span>
-                        <VPNavBarMenuLink :item="{ text: 'AlphaLab', link: 'https://docs.pupil-labs.com/alpha-lab/' }" />
-                        <VPNavBarMenuLink :item="{ text: 'Feedback', link: 'https://feedback.pupil-labs.com/' }" />
-                    </nav> -->
+          <nav aria-labelledby="main-nav-aria-label" class="VPNavBarMenu menu">
+            <span id="main-nav-aria-label" class="visually-hidden"
+              >Main Navigation</span
+            >
+            <VPNavBarMenuLink
+              :item="{
+                text: 'AlphaLab',
+                link: 'https://docs.pupil-labs.com/alpha-lab/',
+              }"
+            />
+            <VPNavBarMenuLink
+              :item="{
+                text: 'Feedback',
+                link: 'https://feedback.pupil-labs.com/',
+              }"
+            />
+          </nav>
           <VPNavBarTranslations class="translations" />
           <!-- <VPNavBarAppearance class="appearance" /> -->
           <VPNavBarSocialLinks class="social-links" />
