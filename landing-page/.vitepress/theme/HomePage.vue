@@ -84,7 +84,7 @@
       >
         {{ fm.hero.name }}
       </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-3">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div>
           <h1
             v-if="fm.hero?.title"
