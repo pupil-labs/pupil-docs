@@ -1,23 +1,35 @@
+import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vitepress'
 
-// https://vitepress.dev/reference/site-config
-export default defineConfig({
-  head: [['link', { rel: 'icon', href: './favicon.png' }]],
+import { config as default_config } from './../../default_config.mts'
+import { theme_config as default_theme_config } from './../../default_config.mts'
+
+
+let theme_config_additions = {
+
+}
+
+let theme_config = { ...default_theme_config, ...theme_config_additions }
+
+let config_additions = {
   title: "Pupil Labs Documentation",
   description: "Documentation for all Pupil Labs products.",
-  themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
-    nav: [],
-
-    sidebar: {},
-
-    socialLinks: [
-      { icon: 'discord', link: 'TODO' },
-      { icon: 'youtube', link: 'TODO' },
-      { icon: 'twitter', link: 'TODO' },
-
-    ],
-    outline: [2, 3],
+  vite: {
+    resolve: {
+      alias: [
+        {
+          find: /^.*\/VPNavBar\.vue$/,
+          replacement: fileURLToPath(
+            new URL('./components/CustomNavBar.vue', import.meta.url)
+          )
+        }
+      ]
+    }
   },
-  appearance: true,
+}
+
+export default defineConfig({
+  ...default_config,
+  ...config_additions,
+  themeConfig: theme_config,
 })

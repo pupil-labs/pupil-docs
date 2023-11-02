@@ -57,11 +57,11 @@ watchPostEffect(() => {
                     <slot name="nav-bar-content-before" />
                     <VPNavBarSearch class="search" />
                     <VPNavBarMenu class="menu" />
-                    <nav aria-labelledby="main-nav-aria-label" class="VPNavBarMenu menu">
+                    <!-- <nav aria-labelledby="main-nav-aria-label" class="VPNavBarMenu menu">
                         <span id="main-nav-aria-label" class="visually-hidden">Main Navigation</span>
                         <VPNavBarMenuLink :item="{ text: 'AlphaLab', link: 'https://docs.pupil-labs.com/alpha-lab/' }" />
                         <VPNavBarMenuLink :item="{ text: 'Feedback', link: 'https://feedback.pupil-labs.com/' }" />
-                    </nav>
+                    </nav> -->
                     <VPNavBarTranslations class="translations" />
                     <!-- <VPNavBarAppearance class="appearance" /> -->
                     <VPNavBarSocialLinks class="social-links" />
