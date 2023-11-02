@@ -26,6 +26,10 @@ let config_additions = {
       ]
     }
   },
+  rewrites: {
+    'abc/': 'xyz/',
+    'neon/abc/': 'neon/xyz/`,
+  }
 }
 
 export default defineConfig({
