@@ -28,6 +28,7 @@ let config_additions = {
   },
   rewrites: {
     'abc/': 'xyz/',
+    '/abc/': '/xyz/',
     'neon/abc/': 'neon/xyz/',
   }
 }
