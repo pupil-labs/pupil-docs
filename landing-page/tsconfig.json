@@ -18,7 +18,6 @@
     "allowJs": true,
     "paths": {
       "@/*": ["../*"],
-      "@components/*": ["./.vitepress/components/*"],
       "@theme/*": ["./.vitepress/theme/*"]
     }
   },
