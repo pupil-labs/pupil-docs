@@ -1,4 +1,6 @@
 <script setup lang="ts">
+  import ArrowIcon from "@theme/components/ArrowIcon.vue";
+
   import { useData } from "vitepress";
   const { frontmatter } = useData();
 
@@ -6,7 +8,7 @@
 
   interface FM extends FrontMatter {
     hero?: {
-      name?: string;
+      title?: string;
       text?: string;
       tagline?: string;
     };
@@ -15,42 +17,108 @@
   const fm: FM = frontmatter;
 </script>
 
+<style>
+  .textLink {
+    color: var(--vp-c-brand-1);
+  }
+
+  .textLink:hover {
+    color: var(--vp-c-brand-2);
+  }
+</style>
+
 <template>
-  <div class="container p-6 mx-auto grid gap-4">
-    <div class="grid grid-cols-3">
-      <div>
-        <h1
-          v-if="fm.hero?.name"
-          class="text-4xl pb-2"
-          style="color: var(--vp-c-brand-1)"
-        >
-          {{ fm.hero.name }}
-        </h1>
-        <p v-if="fm.hero?.text">{{ fm.hero.text }}</p>
-        <div v-if="fm.hero?.tagline">{{ fm.hero?.tagline }}</div>
+  <div class="container grid gap-8 px-6 py-16 my-11 mx-auto">
+    <div class="grid gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-3">
+        <div>
+          <h1
+            v-if="fm.hero?.title"
+            class="text-4xl pb-4 font-semibold"
+            style="color: var(--vp-c-brand-1)"
+          >
+            {{ fm.hero.title }}
+          </h1>
+          <p v-if="fm.hero?.text" style="color: var(--vp-c-text-1)">
+            {{ fm.hero.text }}
+          </p>
+          <div v-if="fm.hero?.tagline">{{ fm.hero?.tagline }}</div>
+        </div>
+      </div>
+      <div class="grid gap-4">
+        <p class="font-semibold">What product?</p>
+        <div v-if="fm.products" class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div
+            v-for="product in fm.products"
+            :key="product.title"
+            class="rounded-lg flex flex-col"
+            style="background-color: var(--vp-c-bg-elv)"
+          >
+            <img
+              src="https://place-hold.it/450x300/"
+              class="h-auto w-full rounded-tl-lg rounded-tr-lg"
+              style="aspect-ratio: 1.5"
+            />
+            <div
+              class="grid grid-rows-[auto,_1fr,_auto] gap-4 p-6 h-full justify-between"
+            >
+              <p class="font-semibold text-2xl">{{ product.title }}</p>
+              <p class="">{{ product.details }}</p>
+              <a :href="product.link.href" class="textLink">
+                <div v-if="product.link" class="flex gap-2 items-center">
+                  <span>{{ product.link.text }}</span>
+                  <ArrowIcon />
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div v-if="fm.products" class="grid grid-cols-3 gap-4">
-      <div
-        v-for="product in fm.products"
-        :key="product.title"
-        class="rounded-lg"
-        style="background-color: var(--vp-c-bg-elv)"
+    <hr style="border-color: var(--vp-c-divider)" />
+    <div>
+      <h2
+        v-if="fm.hero?.name"
+        class="text-4xl pb-4 font-semibold"
+        style="color: var(--vp-c-brand-1)"
       >
-        <img
-          src="https://place-hold.it/450x300/"
-          class="h-auto w-full rounded-tl-lg rounded-tr-lg"
-        />
-        <div class="grid gap-2 p-3">
-          <p>{{ product.title }}</p>
-          <p>{{ product.details }}</p>
-          <div v-if="product.link">
-            <a
-              :href="product.link.href"
-              class="text-blue-400 hover:text-blue-300"
+        {{ fm.hero.name }}
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3">
+        <div>
+          <h1
+            v-if="fm.hero?.title"
+            class="text-4xl pb-4 font-semibold"
+            style="color: var(--vp-c-brand-1)"
+          >
+            {{ fm.hero.title }}
+          </h1>
+          <p v-if="fm.hero?.text" style="color: var(--vp-c-text-1)">
+            {{ fm.hero.text }}
+          </p>
+          <div v-if="fm.hero?.tagline">{{ fm.hero?.tagline }}</div>
+        </div>
+        <div class="grid col-span-2">
+          <div v-if="fm.products" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div
+              v-for="product in fm.alpha.cards"
+              :key="product.title"
+              class="rounded-lg flex flex-col"
+              style="background-color: var(--vp-c-bg-elv)"
             >
-              <span>{{ product.link.text }}</span>
-            </a>
+              <div
+                class="grid grid-rows-[auto,_1fr,_auto] gap-4 p-6 h-full justify-between"
+              >
+                <p class="font-semibold text-2xl">{{ product.title }}</p>
+                <p class="">{{ product.details }}</p>
+                <a :href="product.link.href" class="textLink">
+                  <div v-if="product.link" class="flex gap-2 items-center">
+                    <span>{{ product.link.text }}</span>
+                    <ArrowIcon />
+                  </div>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
