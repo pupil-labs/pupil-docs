@@ -4,7 +4,7 @@
 
 <template>
   <div class="container grid gap-20 px-6 my-8 mx-auto">
-    <div class="flex flex-col sm:flex-row justify-between gap-4">
+    <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
       <div><PupilLogo /></div>
       <div class="text-sm">
         <div>info@pupil-labs.com</div>
