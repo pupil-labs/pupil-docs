@@ -3,7 +3,7 @@ layout: HomePage
 sidebar: false
 
 hero:
-  name: "Pupil Labs Documentation"
+  title: "Pupil Labs Documentation"
   text: ""
   tagline: Official docs for users getting started with their Pupil Labs eye tracking glasses and for developers working on eye tracking applications and integrations.
 
@@ -17,4 +17,21 @@ products:
   - title: Core
     details: Learn how to setup Pupil Core eye tracking headset and collect data with Pupil Capture. Use Pupil Player to explore your data in greater detail.
     link: { text: "Enter Documentation", href: "/core/" }
+
+alpha:
+  title: "Alpha Lab"
+  text: "This is the space for our latest experiments with our tools. This is the space for our latest experiments with our tools. This is the space for our latest experiments with our tools. "
+  cards:
+    - title: Define AOIs and Calculate Gaze Metrics
+      details: Learn how to use Neon and collect real-world data. Connect to Pupil Cloud, manage your data, analyze, and take your research to the next level.
+      link: { text: View, href: "" }
+    - title: Using multiple Reference Image Mapper enrichments
+      details: Learn how to setup Pupil Invisible eye tracking glasses and collect real world data. Connect to Pupil Cloud, manage your data, analyze, and take your research to the next level.
+      link: { text: View, href: "" }
+    - title: Define AOIs and Calculate Gaze Metrics
+      details: Learn how to use Neon and collect real-world data. Connect to Pupil Cloud, manage your data, analyze, and take your research to the next level.
+      link: { text: View, href: "" }
+    - title: Using multiple Reference Image Mapper enrichments
+      details: Learn how to setup Pupil Invisible eye tracking glasses and collect real world data. Connect to Pupil Cloud, manage your data, analyze, and take your research to the next level.
+      link: { text: View, href: "" }
 ---
