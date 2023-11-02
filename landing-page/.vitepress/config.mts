@@ -7,7 +7,12 @@ export default defineConfig({
   description: "Documentation for all Pupil Labs products.",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    nav: [],
+    nav: [
+      { text: "Neon", link: "/neon/" },
+      { text: "Invisible", link: "/invisible/" },
+      { text: "Core", link: "/core/" },
+      { text: "Alpha Lab", link: "/alpha-lab/" },
+    ],
 
     sidebar: {},
 
