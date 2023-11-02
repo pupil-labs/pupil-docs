@@ -1,7 +1,20 @@
+import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  vite: {
+    resolve: {
+      alias: [
+        {
+          find: /^.*\/VPNavBar\.vue$/,
+          replacement: fileURLToPath(
+            new URL('./components/CustomNavBar.vue', import.meta.url)
+          )
+        }
+      ]
+    }
+  },
   head: [['link', { rel: 'icon', href: './favicon.png' }]],
   base: '/neon/',
   title: "Neon",
@@ -21,8 +34,6 @@ export default defineConfig({
         ]
       },
       { text: 'Real-Time API', link: '/real-time-api/tutorials/' },
-      { text: 'Alpha Lab', link: 'https://docs.pupil-labs.com/alpha-lab/' },
-      { text: 'Feedback', link: 'https://feedback.pupil-labs.com/' },
     ],
 
     sidebar: {
