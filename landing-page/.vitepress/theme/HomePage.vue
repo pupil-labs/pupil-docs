@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import ArrowIcon from "@theme/components/ArrowIcon.vue";
+  import Footer from "@theme/components/Footer.vue";
 
   import { useData } from "vitepress";
   const { frontmatter } = useData();
@@ -28,13 +29,15 @@
 </style>
 
 <template>
-  <div class="container grid gap-20 px-6 py-16 my-11 mx-auto">
+  <div
+    class="container grid gap-20 px-6 pt-6 sm:pb-12 md:pb-16 lg:pb-20 my-4 sm:my-11 mx-auto"
+  >
     <div class="grid gap-8">
-      <div class="grid grid-cols-1 sm:grid-cols-3">
+      <div class="grid grid-cols-1 lg:grid-cols-3">
         <div>
           <h1
             v-if="fm.hero?.title"
-            class="text-4xl pb-4 font-semibold"
+            class="text-2xl sm:text-4xl pb-4 font-semibold"
             style="color: var(--vp-c-brand-1)"
           >
             {{ fm.hero.title }}
@@ -42,11 +45,12 @@
           <p v-if="fm.hero?.text" style="color: var(--vp-c-text-1)">
             {{ fm.hero.text }}
           </p>
-          <div v-if="fm.hero?.tagline">{{ fm.hero?.tagline }}</div>
+          <div v-if="fm.hero?.tagline" class="text-lg sm:text-2xl">
+            {{ fm.hero?.tagline }}
+          </div>
         </div>
       </div>
       <div class="grid gap-4">
-        <p class="font-semibold">What product?</p>
         <div v-if="fm.products" class="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div
             v-for="product in fm.products"
@@ -62,10 +66,13 @@
             <div
               class="grid grid-rows-[auto,_1fr,_auto] gap-4 p-6 h-full justify-between"
             >
-              <p class="font-semibold text-2xl">{{ product.title }}</p>
-              <p class="">{{ product.details }}</p>
+              <p class="font-semibold">{{ product.title }}</p>
+              <p class="text-sm">{{ product.details }}</p>
               <a :href="product.link.href" class="textLink">
-                <div v-if="product.link" class="flex gap-2 items-center">
+                <div
+                  v-if="product.link"
+                  class="flex gap-2 items-center text-sm"
+                >
                   <span>{{ product.link.text }}</span>
                   <ArrowIcon />
                 </div>
@@ -77,29 +84,27 @@
     </div>
     <hr style="border-color: var(--vp-c-divider)" />
     <div>
-      <h2
-        v-if="fm.hero?.name"
-        class="text-4xl pb-4 font-semibold"
-        style="color: var(--vp-c-brand-1)"
-      >
-        {{ fm.hero.name }}
-      </h2>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div>
-          <h1
-            v-if="fm.hero?.title"
-            class="text-4xl pb-4 font-semibold"
+          <h2
+            v-if="fm.alpha?.title"
+            class="text-2xl sm:text-4xl pb-4 font-semibold"
             style="color: var(--vp-c-brand-1)"
           >
-            {{ fm.hero.title }}
-          </h1>
-          <p v-if="fm.hero?.text" style="color: var(--vp-c-text-1)">
-            {{ fm.hero.text }}
+            {{ fm.alpha.title }}
+          </h2>
+          <p v-if="fm.alpha?.text" style="color: var(--vp-c-text-1)">
+            {{ fm.alpha.text }}
           </p>
-          <div v-if="fm.hero?.tagline">{{ fm.hero?.tagline }}</div>
+          <div v-if="fm.alpha?.tagline" class="text-lg sm:text-2xl">
+            {{ fm.alpha?.tagline }}
+          </div>
         </div>
         <div class="grid col-span-2">
-          <div v-if="fm.products" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div
+            v-if="fm.alpha.cards"
+            class="grid grid-cols-1 sm:grid-cols-2 gap-4"
+          >
             <div
               v-for="product in fm.alpha.cards"
               :key="product.title"
@@ -109,10 +114,13 @@
               <div
                 class="grid grid-rows-[auto,_1fr,_auto] gap-4 p-6 h-full justify-between"
               >
-                <p class="font-semibold text-2xl">{{ product.title }}</p>
-                <p class="">{{ product.details }}</p>
+                <p class="font-semibold">{{ product.title }}</p>
+                <p class="text-sm">{{ product.details }}</p>
                 <a :href="product.link.href" class="textLink">
-                  <div v-if="product.link" class="flex gap-2 items-center">
+                  <div
+                    v-if="product.link"
+                    class="flex gap-2 items-center text-sm"
+                  >
                     <span>{{ product.link.text }}</span>
                     <ArrowIcon />
                   </div>
@@ -122,7 +130,8 @@
           </div>
         </div>
       </div>
+      <!-- <Content /> -->
     </div>
-    <Content />
   </div>
+  <Footer />
 </template>
