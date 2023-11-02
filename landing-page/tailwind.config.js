@@ -2,7 +2,12 @@
 module.exports = {
   content: ["./**/*.md", "./.vitepress/theme/**/*.{vue,js,ts}"],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        lg: "960px",
+        "2xl": "1440px",
+      },
+    },
   },
   plugins: [],
 };
