@@ -28,7 +28,7 @@
 </style>
 
 <template>
-  <div class="container grid gap-8 px-6 py-16 my-11 mx-auto">
+  <div class="container grid gap-20 px-6 py-16 my-11 mx-auto">
     <div class="grid gap-8">
       <div class="grid grid-cols-1 sm:grid-cols-3">
         <div>

@@ -15,7 +15,6 @@
     "isolatedModules": true,
     "noImplicitThis": true,
     "allowJs": true,
-    "types": ["node"],
     "paths": {
       "@/*": ["../*"],
       "@components/*": ["./.vitepress/components/*"],
@@ -23,7 +22,6 @@
     }
   },
   "include": [
-    "./neon/**/*.ts",
     "./.vitepress/**/*.vue",
     "./.vitepress/**/*.ts",
     "./.vitepress/**/*.css"

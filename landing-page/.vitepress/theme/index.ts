@@ -1,10 +1,11 @@
+import "../../../custom.css";
+
 import type { Theme } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 import HomePage from "@theme/HomePage.vue";
 // import Youtube from "@theme/components/youtube";
 
 import "./tailwind.css";
-import "../../../custom.css";
 
 export default {
   extends: DefaultTheme,
