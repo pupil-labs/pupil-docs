@@ -2,8 +2,8 @@ import "/../custom.css";
 
 import type { Theme } from "vitepress";
 import DefaultTheme from "vitepress/theme";
-import Youtube from "/../components/Youtube.vue";
-import PhotoGrid from "/../components/PhotoGrid.vue";
+import Youtube from "../../../components/Youtube.vue";
+import PhotoGrid from "../../../components/PhotoGrid.vue";
 
 export default {
   extends: DefaultTheme,
