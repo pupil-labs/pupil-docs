@@ -3,7 +3,7 @@ import { useWindowScroll } from "@vueuse/core";
 import { ref, watchPostEffect } from "vue";
 import { useData } from "vitepress";
 import { useSidebar } from "vitepress/theme";
-// import VPNavBarAppearance from 'vitepress/dist/client/theme-default/components/VPNavBarAppearance.vue'
+import VPNavBarAppearance from 'vitepress/dist/client/theme-default/components/VPNavBarAppearance.vue'
 import VPNavBarExtra from "vitepress/dist/client/theme-default/components/VPNavBarExtra.vue";
 import VPNavBarHamburger from "vitepress/dist/client/theme-default/components/VPNavBarHamburger.vue";
 import VPNavBarMenu from "vitepress/dist/client/theme-default/components/VPNavBarMenu.vue";
@@ -24,8 +24,8 @@ defineEmits<{
 // @ts-ignore
 const { y } = useWindowScroll();
 const { hasSidebar } = useSidebar();
-const { frontmatter } = useData();
-
+const { frontmatter, site } = useData();
+console.log(site);
 const classes = ref<Record<string, boolean>>({});
 
 watchPostEffect(() => {
@@ -56,11 +56,12 @@ watchPostEffect(() => {
           <slot name="nav-bar-content-before" />
           <VPNavBarSearch class="search" />
           <VPNavBarMenu class="menu" />
-          <!-- <nav aria-labelledby="main-nav-aria-label" class="VPNavBarMenu menu">
-                        <span id="main-nav-aria-label" class="visually-hidden">Main Navigation</span>
-                        <VPNavBarMenuLink :item="{ text: 'AlphaLab', link: 'https://docs.pupil-labs.com/alpha-lab/' }" />
-                        <VPNavBarMenuLink :item="{ text: 'Feedback', link: 'https://feedback.pupil-labs.com/' }" />
-                    </nav> -->
+          <nav v-if="site.base == '/neon/' || site.base == '/invisible/'" aria-labelledby="main-nav-aria-label"
+            class="VPNavBarMenu menu">
+            <span id="main-nav-aria-label" class="visually-hidden">Main Navigation</span>
+            <VPNavBarMenuLink :item="{ text: 'AlphaLab', link: 'https://docs.pupil-labs.com/alpha-lab/' }" />
+            <VPNavBarMenuLink :item="{ text: 'Feedback', link: 'https://feedback.pupil-labs.com/' }" />
+          </nav>
           <VPNavBarTranslations class="translations" />
           <!-- <VPNavBarAppearance class="appearance" /> -->
           <VPNavBarSocialLinks class="social-links" />

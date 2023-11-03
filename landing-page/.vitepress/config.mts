@@ -1,3 +1,4 @@
+import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from "vitepress";
 
 const url = `https://docs-staging.pupil-labs.com/`;
@@ -19,10 +20,17 @@ const theme_config = { ...default_theme_config, ...theme_config_additions };
 const config_additions = {
   title: "Pupil Labs Documentation",
   description: "Documentation for all Pupil Labs products.",
-  rewrites: {
-    "abc/": "xyz/",
-    "/abc/": "/xyz/",
-    "neon/abc/": "neon/xyz/",
+  vite: {
+    resolve: {
+      alias: [
+        {
+          find: /^.*\/VPNavBar\.vue$/,
+          replacement: fileURLToPath(
+            new URL('./../../components/CustomNavBar.vue', import.meta.url)
+          )
+        }
+      ]
+    }
   },
 };
 
