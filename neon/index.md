@@ -1,11 +1,10 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
-layout: home
+layout: NeonPage
 
 hero:
-  name: "Neon"
-  text: "Documentation"
-  tagline: My great project tagline
+  title: "Neon"
+  tagline: Official docs for users getting started with their Pupil Labs eye tracking glasses and for developers working on eye tracking applications and integrations.
   image: "./Module_Front.png"
   actions:
     - theme: brand
@@ -15,12 +14,23 @@ hero:
       text: Pupil Cloud
       link: /pupil-cloud/
 
-features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+cards:
+  - title: Get started
+    details: Learn how to use Neon and collect real-world data. Connect to Pupil Cloud, manage your data, analyze, and take your research to the next level.
+    link: { text: View, href: "" }
+  - title: General
+    details: Learn how to setup Pupil Invisible eye tracking glasses and collect real world data. Connect to Pupil Cloud, manage your data, analyze, and take your research to the next level.
+    link: { text: View, href: "" }
+  - title: Data Collection
+    details: Learn how to use Neon and collect real-world data. Connect to Pupil Cloud, manage your data, analyze, and take your research to the next level.
+    link: { text: View, href: "" }
+  - title: Pupil Cloud
+    details: Learn how to setup Pupil Invisible eye tracking glasses and collect real world data. Connect to Pupil Cloud, manage your data, analyze, and take your research to the next level.
+    link: { text: View, href: "" }
+  - title: Real-Time API
+    details: Learn how to setup Pupil Invisible eye tracking glasses and collect real world data. Connect to Pupil Cloud, manage your data, analyze, and take your research to the next level.
+    link: { text: View, href: "" }
+  - title: Chat
+    details: Learn how to setup Pupil Invisible eye tracking glasses and collect real world data. Connect to Pupil Cloud, manage your data, analyze, and take your research to the next level.
+    link: { text: View, href: "" }
 ---
-
