@@ -51,6 +51,12 @@ jobs:
       - name: Install dependencies
         working-directory: ./invisible
         run: npm install
+      
+      - name: Copy node_modules (hacked dependencies for shared components)
+        shell: bash
+        run: |
+          cp -r invisible/node_modules .
+          ls -la
 
       - name: Make build
         working-directory: ./invisible
@@ -77,6 +83,12 @@ jobs:
       - name: Install dependencies
         working-directory: ./alpha-lab
         run: npm install
+      
+      - name: Copy node_modules (hacked dependencies for shared components)
+        shell: bash
+        run: |
+          cp -r alpha-lab/node_modules .
+          ls -la
 
       - name: Make build
         working-directory: ./alpha-lab
@@ -103,6 +115,12 @@ jobs:
       - name: Install dependencies
         working-directory: ./landing-page
         run: npm install
+      
+      - name: Copy node_modules (hacked dependencies for shared components)
+        shell: bash
+        run: |
+          cp -r landing-page/node_modules .
+          ls -la
 
       - name: Make build
         working-directory: ./landing-page
@@ -114,19 +132,6 @@ jobs:
           name: landing-page
           path: landing-page/.vitepress/dist
 
-  shared-components:
-    name: Upload shared components
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-      
-      - name: Upload
-        uses: actions/upload-artifact@v3
-        with:
-          name: shared-components
-          path: components
-  
   debugging-info:
     name: Upload debugging info
     runs-on: ubuntu-latest
@@ -150,7 +155,7 @@ jobs:
     environment:
       name: staging
       url: https://docs-staging.pupil-labs.com
-    needs: [neon, invisible, landing-page, alpha-lab, shared-components, debugging-info]
+    needs: [neon, invisible, landing-page, alpha-lab, debugging-info]
 
     steps:
       - uses: actions/checkout@v3
@@ -188,12 +193,6 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: landing-page
-
-      - name: Download shared components
-        uses: actions/download-artifact@v3
-        with:
-          name: shared-components
-          path: components/
 
       - name: Rsync action - Deploy to staging
         uses: burnett01/rsync-deployments@4.1
