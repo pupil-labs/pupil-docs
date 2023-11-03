@@ -107,6 +107,19 @@ jobs:
         with:
           name: landing-page
           path: landing-page/.vitepress/dist
+
+  shared-components:
+    name: Upload shared components
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: shared-components
+          path: components
   
   debugging-info:
     name: Upload debugging info
@@ -168,7 +181,19 @@ jobs:
       - name: Download Landing Page
         uses: actions/download-artifact@v3
         with:
-          name: landing-page  
+          name: landing-page
+
+      - name: Download shared components
+        uses: actions/download-artifact@v3
+        with:
+          name: shared-components
+          path: components/
+        
+      - name: Make copy node_modules in root folder
+        shell: bash
+        run: |
+          cp -r neon/node_modules .
+          ls -la
 
       - name: Rsync action - Deploy to staging
         uses: burnett01/rsync-deployments@4.1
