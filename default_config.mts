@@ -1,19 +1,59 @@
-export let config = {
-    head: [['link', { rel: 'icon', href: './favicon.png' }]],
-    appearance: true,
+type HeadConfig =
+  | [string, Record<string, string>]
+  | [string, Record<string, string>, string];
+
+export interface Outline {
+  level?: number | [number, number] | "deep";
+  label?: string;
 }
 
-export let theme_config = {
-    socialLinks: [
-        { icon: 'discord', link: 'TODO' },
-        { icon: 'youtube', link: 'TODO' },
-        { icon: 'twitter', link: 'TODO' },
+type SocialLinkIcon =
+  | "discord"
+  | "facebook"
+  | "github"
+  | "instagram"
+  | "linkedin"
+  | "mastodon"
+  | "slack"
+  | "twitter"
+  | "youtube"
+  | { svg: string };
 
-    ],
+interface SocialLink {
+  icon: SocialLinkIcon;
+  link: string;
+  ariaLabel?: string;
+}
 
-    search: {
-        provider: 'local'
-    },
+// configs
+type ConfigProps = {
+  head: HeadConfig[];
+  appearance: boolean;
+  cleanUrls: boolean;
+};
 
-    outline: [2, 3],
+type ThemeConfigProps = {
+  socialLinks: SocialLink[];
+  search:
+    | { provider: "local"; options?: any }
+    | { provider: "algolia"; options: any };
+  outline: Outline | Outline["level"] | false;
+};
+
+export const config: ConfigProps = {
+  head: [["link", { rel: "icon", href: "./favicon.png" }]],
+  appearance: true,
+  cleanUrls: true,
+};
+
+export const theme_config: ThemeConfigProps = {
+  socialLinks: [
+    { icon: "discord", link: "https://pupil-labs.com/chat" },
+    { icon: "youtube", link: "https://www.youtube.com/c/PupilLabs" },
+    { icon: "twitter", link: "https://twitter.com/pupil_labs" },
+  ],
+  search: {
+    provider: "local",
+  },
+  outline: [2, 3],
 };
