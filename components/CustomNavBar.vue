@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-  import { useWindowScroll } from "@vueuse/core";
+  import { useWindowScroll } from "../neon/node_modules/@vueuse/core";
   import { ref, watchPostEffect } from "vue";
   import { useData } from "vitepress";
   import { useSidebar } from "vitepress/theme";
@@ -11,7 +11,7 @@
   import VPNavBarSocialLinks from "../neon/node_modules/vitepress/dist/client/theme-default/components/VPNavBarSocialLinks.vue";
   import VPNavBarTitle from "../neon/node_modules/vitepress/dist/client/theme-default/components/VPNavBarTitle.vue";
   import VPNavBarTranslations from "../neon/node_modules/vitepress/dist/client/theme-default/components/VPNavBarTranslations.vue";
-  import VPNavBarMenuLink from "vitepress/dist/client/theme-default/components/VPNavBarMenuLink.vue";
+  import VPNavBarMenuLink from "../neon/node_modules/vitepress/dist/client/theme-default/components/VPNavBarMenuLink.vue";
 
   defineProps<{
     isScreenOpen: boolean;

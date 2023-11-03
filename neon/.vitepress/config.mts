@@ -198,18 +198,28 @@ let config_additions = {
   base: "/neon/",
   title: "Neon",
   description: "Documentation of the Neon eye tracker and it's ecosystem.",
-  // vite: {
-  //   resolve: {
-  //     alias: [
-  //       {
-  //         find: /^.*\/VPNavBar\.vue$/,
-  //         replacement: fileURLToPath(
-  //           new URL('./components/CustomNavBar.vue', import.meta.url)
-  //         )
-  //       }
-  //     ]
-  //   }
-  // },
+  vite: {
+    build: {
+      rollupOptions: {
+        external: ["vue", "vue/server-renderer"],
+        output: {
+          globals: {
+            vue: "Vue",
+          },
+        },
+      },
+    },
+    // resolve: {
+    //   alias: [
+    //     {
+    //       find: /^.*\/VPNavBar\.vue$/,
+    //       replacement: fileURLToPath(
+    //         new URL("./components/CustomNavBar.vue", import.meta.url)
+    //       ),
+    //     },
+    //   ],
+    // },
+  },
 };
 
 export default defineConfig({
