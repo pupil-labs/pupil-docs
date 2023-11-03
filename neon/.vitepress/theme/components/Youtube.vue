@@ -12,9 +12,9 @@
     defineProps<Props>(),
     {
       height: "auto",
-      muted: 1,
-      autoplay: 0,
-      closedCaption: 1,
+      muted: "1",
+      autoplay: "0",
+      closedCaption: "1",
     }
   );
 </script>
