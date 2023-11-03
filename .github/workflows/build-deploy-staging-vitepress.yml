@@ -20,7 +20,7 @@ jobs:
         working-directory: ./neon
         run: npm install
 
-      - name: Copy node_modules in root folder
+      - name: Copy node_modules (hacked dependencies for shared components)
         shell: bash
         run: |
           cp -r neon/node_modules .
@@ -194,12 +194,6 @@ jobs:
         with:
           name: shared-components
           path: components/
-        
-      - name: Make copy node_modules in root folder
-        shell: bash
-        run: |
-          cp -r neon/node_modules .
-          ls -la
 
       - name: Rsync action - Deploy to staging
         uses: burnett01/rsync-deployments@4.1
