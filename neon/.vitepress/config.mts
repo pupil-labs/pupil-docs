@@ -32,7 +32,7 @@ let theme_config_additions = {
           },
           {
             text: "Understand the Ecosystem",
-            link: "/getting-started/ecosystem/",
+            link: "/getting-started/understand-the-ecosystem/",
           },
         ],
       },

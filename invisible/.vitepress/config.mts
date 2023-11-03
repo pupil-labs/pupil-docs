@@ -20,7 +20,7 @@ let theme_config_additions = {
         text: 'Getting Started',
         items: [
           { text: 'Your first Recording', link: '/getting-started/first-recording/' },
-          { text: 'Understand the Ecosystem', link: '/getting-started/ecosystem/' }
+          { text: 'Understand the Ecosystem', link: '/getting-started/understand-the-ecosystem/' }
         ]
       }
     ],
