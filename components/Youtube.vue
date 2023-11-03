@@ -8,7 +8,15 @@
     closedCaption: string;
   }
 
-  const { src, muted, autoplay, closedCaption } = defineProps<Props>();
+  const { src, muted, autoplay, closedCaption } = withDefaults(
+    defineProps<Props>(),
+    {
+      height: "auto",
+      muted: 1,
+      autoplay: 0,
+      closedCaption: 1,
+    }
+  );
 </script>
 
 <template>
@@ -21,10 +29,8 @@
       height="height"
       :src="`https://www.youtube-nocookie.com/embed/${src}?autoplay=${autoplay}&rel=0&modestbranding=1&loop=1&muted=${muted}&cc_load_policy=${closedCaption}`"
       frameborder="0"
-      allow="accelerometer; encrypted-media; gyroscope;
-  picture-in-picture"
+      allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
     />
-    <div>{{ src }}</div>
   </div>
 </template>
