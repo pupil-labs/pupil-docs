@@ -1,4 +1,4 @@
-// import { fileURLToPath, URL } from "node:url";
+import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vitepress";
 
 import { config as default_config } from "./../../default_config.mts";
@@ -198,28 +198,18 @@ let config_additions = {
   base: "/neon/",
   title: "Neon",
   description: "Documentation of the Neon eye tracker and it's ecosystem.",
-  // vite: {
-  // build: {
-  //   rollupOptions: {
-  //     external: ["vue", "vue/server-renderer"],
-  //     output: {
-  //       globals: {
-  //         vue: "Vue",
-  //       },
-  //     },
-  //   },
-  // },
-  // resolve: {
-  //   alias: [
-  //     {
-  //       find: /^.*\/VPNavBar\.vue$/,
-  //       replacement: fileURLToPath(
-  //         new URL("./components/CustomNavBar.vue", import.meta.url)
-  //       ),
-  //     },
-  //   ],
-  // },
-  // },
+  vite: {
+    resolve: {
+      alias: [
+        {
+          find: /^.*\/VPNavBar\.vue$/,
+          replacement: fileURLToPath(
+            new URL('./../../components/CustomNavBar.vue', import.meta.url)
+          )
+        }
+      ]
+    }
+  },
 };
 
 export default defineConfig({
