@@ -6,7 +6,8 @@ permalink: /neon/how-tos/advance-analysis/undistort/
 # Correcting for the lens distortion on Neon's scene camera
 A circumstance that often arises in wearable eye-tracking setups is the presence of distortions on the scene camera. The type of lenses used, with their wide-angle characteristics, allows for a broad field of view, enabling the capture of more information within a single frame. However, this advantage comes at the cost of introducing distortions to the image. <!-- rectilinear distortions -->
 
-While we account for them in Pupil Cloud, and we even give you the possibility to download the undistorted video using the [Gaze Overlay enrichment](/enrichments/gaze-overlay), this is not the case when using the [Realtime API](/neon/real-time-api) or raw data, where you may want to correct it by yourself.
+While we account for them in Pupil Cloud processing — such as when we're aligning gaze data onto reference images or surfaces — it's important to note that the data you download will be in its original, unaltered form.
+We offer you the possibility to download the undistorted video using the [Gaze Overlay enrichment](/enrichments/gaze-overlay), but this is not the case when using the [Realtime API](/neon/real-time-api) or raw data, where you may want to correct it by yourself.
 
 ## When is it beneficial to correct for lens distortion?
 
