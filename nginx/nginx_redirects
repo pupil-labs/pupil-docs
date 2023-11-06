@@ -1,21 +1,21 @@
-        rewrite ^/getting-started/first-recording.html$ /getting-started/first-recording/ permanent;
-        rewrite ^/getting-started/analyse-recordings-in-pupil-cloud/$  /pupil-cloud/tutorials/ permanent;
-        rewrite ^/basic-concepts/(data-streams | events)/$ /general/$1/ permanent;
-        rewrite ^/basic-concepts/recordings-wearers-and-templates/$ /general/recordings/ permanent;
-        rewrite ^/basic-concepts/projects-and-workspaces/$ /pupil-cloud/projects/ permanent;
-        rewrite ^/glasses-and-companion/technical-overview/$ /general/module-technical-overview/ permanent;
-        rewrite ^/glasses-and-companion/companion-device/$ /general/compatible-devices/ permanent;
-        rewrite ^/glasses-and-companion/hardware-handling/frames/$ /general/swapping-frames/ permanent;
-        rewrite ^/glasses-and-companion/hardware-handling/clean-and-disinfect/$ /general/clean-and-disinfect/ permanent;
-        rewrite ^/enrichments/gaze-overlay/$ /pupil-cloud/visualizations/gaze-overlay/ permanent;
-        rewrite ^/enrichments\/?(.*) /pupil-cloud/enrichments/$1 permanent;
-        rewrite ^/how-tos/data-collection/monitor-your-data-collection-in-real-time.html$ /data-collection/monitor-app/ permanent;
-        rewrite ^/how-tos/data-collection/transfer-recordings-via-usb.html$ /data-collection/transfer-recordings-via-usb/ permanent;
-        rewrite ^/how-tos/data-collection/achieve-super-precise-time-sync.html$ /data-collection/time-synchronization/ permanent;
-        rewrite ^/how-tos/data-collection-with-the-companion-app/calibrate-the-imu-for-accurate-yaw-orientation/$ /data-collection/calibrating-the-imu/ permanent;
-        rewrite ^/how-tos/data-collection/using-capture/$ /alpha-lab/neon-with-capture/ permanent;
-        rewrite ^/how-tos/advance-analysis/undistort/$ /alpha-lab/undistort/ permanent;
-        rewrite ^/real-time-api/introduction/$ /real-time-api/tutorials/ permanent;
+        rewrite ^/(neon|invisible)/getting-started/first-recording.html$ /$1/getting-started/first-recording/ permanent;
+        rewrite ^/(neon|invisible)/getting-started/analyse-recordings-in-pupil-cloud/$  /pupil-cloud/tutorials/ permanent;
+        rewrite ^/(neon|invisible)/basic-concepts/(data-streams | events)/$ /$1/general/$1/ permanent;
+        rewrite ^/(neon|invisible)/basic-concepts/recordings-wearers-and-templates/$ /$1/general/recordings/ permanent;
+        rewrite ^/(neon|invisible)/basic-concepts/projects-and-workspaces/$ /$1/pupil-cloud/projects/ permanent;
+        rewrite ^/(neon|invisible)/glasses-and-companion/technical-overview/$ /$1/general/module-technical-overview/ permanent;
+        rewrite ^/(neon|invisible)/glasses-and-companion/companion-device/$ /$1/general/compatible-devices/ permanent;
+        rewrite ^/(neon|invisible)/glasses-and-companion/hardware-handling/frames/$ /$1/general/swapping-frames/ permanent;
+        rewrite ^/(neon|invisible)/glasses-and-companion/hardware-handling/clean-and-disinfect/$ /$1/general/clean-and-disinfect/ permanent;
+        rewrite ^/(neon|invisible)/enrichments/gaze-overlay/$ /$1/pupil-cloud/visualizations/gaze-overlay/ permanent;
+        rewrite ^/(neon|invisible)/enrichments\/?(.*) /pupil-cloud/enrichments/$1 permanent;
+        rewrite ^/(neon|invisible)/how-tos/data-collection/monitor-your-data-collection-in-real-time.html$ /$1/data-collection/monitor-app/ permanent;
+        rewrite ^/(neon|invisible)/how-tos/data-collection/transfer-recordings-via-usb.html$ /$1/data-collection/transfer-recordings-via-usb/ permanent;
+        rewrite ^/(neon|invisible)/how-tos/data-collection/achieve-super-precise-time-sync.html$ /$1/data-collection/time-synchronization/ permanent;
+        rewrite ^/(neon|invisible)/how-tos/data-collection-with-the-companion-app/calibrate-the-imu-for-accurate-yaw-orientation/$ /$1/data-collection/calibrating-the-imu/ permanent;
+        rewrite ^/(neon|invisible)/how-tos/data-collection/using-capture/$ /$1/alpha-lab/neon-with-capture/ permanent;
+        rewrite ^/(neon|invisible)/how-tos/advance-analysis/undistort/$ /$1/alpha-lab/undistort/ permanent;
+        rewrite ^/(neon|invisible)/real-time-api/introduction/$ /$1/real-time-api/tutorials/ permanent;
         
         
         
