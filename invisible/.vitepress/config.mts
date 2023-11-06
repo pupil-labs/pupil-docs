@@ -131,6 +131,7 @@ let theme_config_additions = {
 
         ]
       },
+      { text: 'Legacy API', link: '/real-time-api/legacy-api/' },
     ],
   },
 }
