@@ -4,7 +4,7 @@ layout: NeonPage
 
 hero:
   title: "Neon"
-  tagline: Official docs for users getting started with their Pupil Labs eye tracking glasses and for developers working on eye tracking applications and integrations.
+  tagline: Everything you need to know about Neon & Pupil Cloud to power your eye tracking application!
   image: "./Module_Front.png"
   actions:
     - theme: brand
@@ -15,22 +15,22 @@ hero:
       link: /pupil-cloud/
 
 cards:
-  - title: Get started
-    details: Learn how to use Neon and collect real-world data. Connect to Pupil Cloud, manage your data, analyze, and take your research to the next level.
+  - title: Getting Started
+    details: Learn how to make your first recording with Neon and get an overview of the ecosystem!
     link: { text: View, href: "" }
   - title: General
-    details: Learn how to setup Pupil Invisible eye tracking glasses and collect real world data. Connect to Pupil Cloud, manage your data, analyze, and take your research to the next level.
+    details: Everything you need to know about Neon, frames, data streams, data formats, and other general topics.
     link: { text: View, href: "" }
   - title: Data Collection
-    details: Learn how to use Neon and collect real-world data. Connect to Pupil Cloud, manage your data, analyze, and take your research to the next level.
+    details: Neon comes with a lot of powerful tools for data collection. Learn how to use them here!
     link: { text: View, href: "" }
   - title: Pupil Cloud
-    details: Learn how to setup Pupil Invisible eye tracking glasses and collect real world data. Connect to Pupil Cloud, manage your data, analyze, and take your research to the next level.
+    details: Pupil Cloud is a powerful tool for managing your data, analyzing your recordings, and collaborating with your team. It's our recommended tool for analysis.
     link: { text: View, href: "" }
   - title: Real-Time API
-    details: Learn how to setup Pupil Invisible eye tracking glasses and collect real world data. Connect to Pupil Cloud, manage your data, analyze, and take your research to the next level.
+    details: You can access the data Neon generates in real-time and remote control it using its real-time API. Learn how it works here!
     link: { text: View, href: "" }
   - title: Chat
-    details: Learn how to setup Pupil Invisible eye tracking glasses and collect real world data. Connect to Pupil Cloud, manage your data, analyze, and take your research to the next level.
+    details: Come chat with us on Discord! Do you have an issues or questions? Just wanna say hi? Join the chat and drop us a message!
     link: { text: View, href: "" }
 ---
