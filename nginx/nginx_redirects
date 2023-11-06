@@ -7,6 +7,8 @@
         rewrite ^/(neon|invisible)/glasses-and-companion/companion-device/$ /$1/general/compatible-devices/ permanent;
         rewrite ^/(neon|invisible)/glasses-and-companion/hardware-handling/frames/$ /$1/general/swapping-frames/ permanent;
         rewrite ^/(neon|invisible)/glasses-and-companion/hardware-handling/clean-and-disinfect/$ /$1/general/clean-and-disinfect/ permanent;
+        rewrite ^/invisible/glasses-and-companion/hardware-handling/exchange-lenses/$ /invisible/general/exchange-lenses/ permanent;
+        rewrite ^/invisible/glasses-and-companion/hardware-handling/attach-the-head-strap/$ /invisible/general/attach-the-head-strap/ permanent;
         rewrite ^/(neon|invisible)/enrichments/gaze-overlay/$ /$1/pupil-cloud/visualizations/gaze-overlay/ permanent;
         rewrite ^/(neon|invisible)/enrichments\/?(.*) /pupil-cloud/enrichments/$1 permanent;
         rewrite ^/(neon|invisible)/how-tos/data-collection/monitor-your-data-collection-in-real-time.html$ /$1/data-collection/monitor-app/ permanent;
@@ -16,6 +18,12 @@
         rewrite ^/(neon|invisible)/how-tos/data-collection/using-capture/$ /$1/alpha-lab/neon-with-capture/ permanent;
         rewrite ^/(neon|invisible)/how-tos/advance-analysis/undistort/$ /$1/alpha-lab/undistort/ permanent;
         rewrite ^/(neon|invisible)/real-time-api/introduction/$ /$1/real-time-api/tutorials/ permanent;
+        rewrite ^/export-formats/recording-data/neon/$ /neon/general/data-format/ permanent;
+        rewrite ^/export-formats/enrichment-data/reference-image-mapper/$ /neon/pupil-cloud/enrichments/reference-image-mapper/ permanent;
+        rewrite ^/export-formats/enrichment-data/marker-mapper/$ /neon/pupil-cloud/enrichments/marker-mapper/ permanent;
+        rewrite ^/export-formats/enrichment-data/face-mapper/$ /neon/pupil-cloud/enrichments/face-mapper/ permanent;
+        rewrite ^/export-formats/enrichment-data/gaze-overlay/$ /neon/pupil-cloud/visualizations/video-renderer/ permanent;
+        
         
         
         
