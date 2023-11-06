@@ -19,7 +19,7 @@ Create a new Google account or use an existing Google account during setup.
 Next, install the Neon Companion app on your device:
 
 - Launch the **Google Play Store** app. It is already installed by default on your Companion Device.
-- Search for **Neon Companion** in the Google Play Store and click install.
+- Search for [**Neon Companion**](https://play.google.com/store/apps/details?id=com.pupillabs.neoncomp) in the Google Play Store and click install.
 - Start the Neon Companion app when the installation has finished.
 - A couple of permission prompts will appear, which you need to accept.
 - First-time users need to sign up for a [Pupil Cloud](https://cloud.pupil-labs.com/) account. Sign up using your Google account, or create an account with an email address and password.
@@ -40,7 +40,7 @@ Next, install the Neon Companion app on your device:
 - As part of the setup process, you can enable uploading recordings to [Pupil Cloud](https://cloud.pupil-labs.com/).
 - Pupil Cloud is an online storage and analysis platform for eye tracking recordings. It makes it easy to get recordings off of the phone and includes various algorithms for processing them. Uploading data to Pupil Cloud is optional, but some features are not available without it (e.g. obtaining the 200 Hz gaze or fixations signal).
 - You can change this setting at any time in the app settings.
-- You will also be asked to create your first **wearer profile**. Neon uses wearer profiles to distinguish who is wearing the glasses.
+- You will also be asked to create your first [**wearer profile**](/general/wearers/). Neon uses wearer profiles to distinguish who is wearing the glasses.
 
 ## 4. Open the live Preview
 

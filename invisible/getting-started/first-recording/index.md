@@ -1,46 +1,42 @@
----
-description: Beginner guide to making your first Neon recording.
----
-
 # Make your first recording
 
-Using your Neon eye tracking system for the first time? 
+Using your Pupil Invisible eye tracking system for the first time? 
 
 Follow the steps below to make your first recording!
 
 ## 1. Set up your new Companion Device.
 
-The Companion Device included in your Neon case is a brand-new device. It has never been turned on, so it will require setup.
+The Companion Device included in your Pupil Invisible case is a brand new device. It has never been turned on, so it will require setup.
 
 Create a new Google account or use an existing Google account during setup.
 
-## 2. Install and start the Neon Companion app.
+## 2. Install and start Pupil Invisible Companion App.
 
-Next, install the Neon Companion app on your device:
+Next, install the Pupil Invisible Companion app on your device:
 
 - Launch the **Google Play Store** app. It is already installed by default on your Companion Device.
-- Search for **Neon Companion** in the Google Play Store and click install.
-- Start the Neon Companion app when the installation has finished.
+- Search for **Pupil Invisible Companion** in the Google Play Store and click install.
+- Start the Pupil Invisible Companion app when the installation has finished.
 - A couple of permission prompts will appear, which you need to accept.
 - First-time users need to sign up for a [Pupil Cloud](https://cloud.pupil-labs.com/) account. Sign up using your Google account, or create an account with an email address and password.
 
 <div class="pb-4" style="display: flex; align-items: center; justify-content: center;">
-  <a href="https://play.google.com/store/apps/details?id=com.pupillabs.neoncomp" target="_blank">
+  <a href="https://play.google.com/store/apps/details?id=com.pupillabs.invisiblecomp" target="_blank">
 
   ![Google Play Store](./google-play-badge.png)
 
   </a>
   
-  ![Neon Companion App](./neon_companion.jpg)
+  ![Neon Companion App](./companion_app_logo.jpeg)
   
 </div>
 
-## 3. Follow the Setup Instructions on the Screen
+## 3. Follow the Setup Instructions on Screen
 
-- As part of the setup process, you can enable uploading recordings to [Pupil Cloud](https://cloud.pupil-labs.com/).
-- Pupil Cloud is an online storage and analysis platform for eye tracking recordings. It makes it easy to get recordings off of the phone and includes various algorithms for processing them. Uploading data to Pupil Cloud is optional, but some features are not available without it (e.g. obtaining the 200 Hz gaze or fixations signal).
+- As part of the setup process, you can enable uploading recordings to [**Pupil Cloud**](https://cloud.pupil-labs.com/).
+- Pupil Cloud is an online storage and analysis platform for eye tracking recordings. It makes it easy to get recordings off of the phone and includes various algorithms for processing them. Uploading data to Pupil Cloud is optional, but some features are not available without it (e.g. obtaining the 200 Hz gaze signal).
 - You can change this setting at any time in the app settings.
-- You will also be asked to create your first **wearer profile**. Neon uses wearer profiles to distinguish who is wearing the glasses.
+- You will also be asked to create your first **wearer profile**. Pupil Invisible uses wearer profiles to distinguish who is wearing the glasses.
 
 ## 4. Open the live Preview
 
@@ -51,16 +47,12 @@ Now, let's see some eye tracking in action!
 
 Put on the glasses and give it a try!
 
+![Invisible Companion Homescreen](./PI-Home_UI-white.jpeg)
 
-<div class="pb-4" style="display:flex;justify-content:center;">
-
-  ![Live Preview](./open_the_live_preview.jpg)
-
-</div>
 
 ## 5. Make your first Recording
 
-Press the round record button on the home view to start recording. Once you are done press the button again and tap save.
+Press the big red button on the home view to start recording. Once you are done press the button again and tap save.
 
 ## 6. Playback and download
 
