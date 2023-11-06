@@ -31,6 +31,7 @@ let theme_config_additions = {
           { text: 'Technical Overview', link: '/general/technical-overview/' },
           { text: 'Exchange Lenses', link: '/general/exchange-lenses/' },
           { text: 'Cleaning & Disinfecting', link: '/general/clean-and-disinfect/' },
+          { text: 'Head-Strap', link: '/general/attach-the-head-strap/' },
         ]
       },
       {
