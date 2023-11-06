@@ -29,7 +29,7 @@ USB devices, rendering them incompatible with Neon.
 If you purchased your device from a third-party distributor, you'll need to ensure that the correct Android version is installed. The currently 
 supported Android versions are as follows:
 - On **OnePlus 8** and **8T**: Android 11
-- On **OnePlus 10 Pro**: Android 12
+- On **OnePlus 10 Pro**: Android 12 and 13
 
 :::tip
 Should you have upgraded to an incompatible Android version by accident, you have the
