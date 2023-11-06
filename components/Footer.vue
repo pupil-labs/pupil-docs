@@ -7,7 +7,7 @@
     <div
       class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4"
     >
-      <div><PupilLogo /></div>
+      <a href="https://docs-staging.pupil-labs.com"><PupilLogo /> </a>
       <div class="text-sm">
         <div>info@pupil-labs.com</div>
         <div>Copyright 2023 Pupil Labs GmbH. All rights reserved.</div>
