@@ -20,7 +20,8 @@ jobs:
         working-directory: ./neon
         run: npm install
 
-      - name: Copy node_modules (hacked dependencies for shared components)
+      # Copy node modules to provide dependencies for shared components in root folder
+      - name: Copy node_modules
         shell: bash
         run: |
           cp -r neon/node_modules .
@@ -52,7 +53,8 @@ jobs:
         working-directory: ./invisible
         run: npm install
       
-      - name: Copy node_modules (hacked dependencies for shared components)
+      # Copy node modules to provide dependencies for shared components in root folder
+      - name: Copy node_modules
         shell: bash
         run: |
           cp -r invisible/node_modules .
@@ -67,6 +69,39 @@ jobs:
         with:
           name: invisible
           path: invisible/.vitepress/dist
+ 
+  core:
+    name: Build Core
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        working-directory: ./core
+        run: npm install
+      
+      # Copy node modules to provide dependencies for shared components in root folder
+      - name: Copy node_modules
+        shell: bash
+        run: |
+          cp -r core/node_modules .
+          ls -la
+
+      - name: Make build
+        working-directory: ./core
+        run: npm run docs:build
+      
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: core
+          path: core/.vitepress/dist
   
   alpha-lab:
     name: Build Alpha Lab
@@ -84,7 +119,8 @@ jobs:
         working-directory: ./alpha-lab
         run: npm install
       
-      - name: Copy node_modules (hacked dependencies for shared components)
+      # Copy node modules to provide dependencies for shared components in root folder
+      - name: Copy node_modules
         shell: bash
         run: |
           cp -r alpha-lab/node_modules .
@@ -116,7 +152,8 @@ jobs:
         working-directory: ./landing-page
         run: npm install
       
-      - name: Copy node_modules (hacked dependencies for shared components)
+      # Copy node modules to provide dependencies for shared components in root folder
+      - name: Copy node_modules
         shell: bash
         run: |
           cp -r landing-page/node_modules .
@@ -155,7 +192,7 @@ jobs:
     environment:
       name: staging
       url: https://docs-staging.pupil-labs.com
-    needs: [neon, invisible, landing-page, alpha-lab, debugging-info]
+    needs: [neon, invisible, core, landing-page, alpha-lab, debugging-info]
 
     steps:
       - uses: actions/checkout@v3
