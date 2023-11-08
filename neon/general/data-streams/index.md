@@ -1,5 +1,5 @@
 # Data Streams
-The Neon module contains a number of sensors providing different types of data. Some data is available in real-time (e.g. via the [real-time API](/real-time-api/tutorials/)), while other data is generated post hoc through either [Pupil Cloud](/pupil-cloud/) or [Neon Player](/neon-player/). 
+The Neon module contains a number of sensors providing different types of data (see also [Technical Overview](/general/module-technical-overview/)). Some data is available in real-time (e.g. via the [real-time API](/real-time-api/tutorials/)), while other data is generated post hoc through either [Pupil Cloud](/pupil-cloud/) or [Neon Player](/neon-player/). 
  
 Below you can find a description of all data streams and where they are available. All data is fully accessible and can be downloaded in convenient formats.
 
@@ -54,7 +54,7 @@ During blinks the eye is briefly covered by the eye lids, which serves the purpo
 
 Blinks are detected automatically in Pupil Cloud after uploading a recording and are part of the downloadable data.
 
-The blink detection algorithm is operating directly on the eye video to detect the movement patterns of blinks. Read more about the algorithm in the [Pupil Labs blink detector whitepaper](https://docs.google.com/document/d/1JLBhC7fmBr6BR59IT3cWgYyqiaM8HLpFxv5KImrN-qE/export?format=pdf). The algorithm will soon be released as open-source
+The blink detection algorithm is operating directly on the eye video to detect the movement patterns of blinks. Read more about the algorithm in the [Pupil Labs blink detector whitepaper](https://docs.google.com/document/d/1JLBhC7fmBr6BR59IT3cWgYyqiaM8HLpFxv5KImrN-qE/export?format=pdf). The algorithm will soon be released as open-source.
 
 ## Scene Video
 <Badge>Real-time</Badge><Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>

@@ -10,13 +10,13 @@ The Neon module is a small powerhouse of sensors! It connects to the Companion d
 
 - **IR LEDs**: One infrared LED is located on each arm of the module. The LEDs illuminate the eyes of the wearer to improve image quality in dark environments.
 
-- **Scene Camera**: A front-facing scene camera is located at the center of the module capturing [scene video](/general/data-streams/#scene-video). A **microphone** is integrated in the module to capture [audio](/general/data-streams/#audio). Capturing audio is optional and settable in the Neon Companion app settings.
+- **Scene Camera**: A front-facing scene camera is located at the center of the module capturing [scene video](/general/data-streams/#scene-video). A **microphone** is integrated into the module to capture [audio](/general/data-streams/#audio). Capturing audio is optional and settable in the Neon Companion app settings.
  
 - **IMU**: A 9-degrees-of-freedom IMU is integrated into the module. It captures the [inertia](/general/data-streams/#movement-imu-data) of the glasses, including translational acceleration, rotational speed, magnetic orientation, pitch, yaw, and roll.
 
-- **Data and Power Interface**: A USB connector is located at the front of the module. Through this connector, the module connects to a "nest" which is typically located in a glasses-like frame. Attached to the nest is a USB-C cable which connects to the Companion device.
+- **Data and Power Interface**: A USB connector is located at the front of the module. Through this connector, the module connects to a "nest" which is typically located in a glasses-like frame. Attached to the nest is a USB-C cable that connects to the Companion device.
 
-- **Serial Number QR**: A QR-Code is located at the back of the module, which contains the serial number of the device.
+- **Serial Number QR**: A QR Code is located at the back of the module, which contains the serial number of the device.
 
 - **Mounting Screws**: The module is attached to the nest of a frame with two screws.
 
