@@ -2,11 +2,9 @@
 
 ![Technical Overview](./technical_overview_1.jpg)
 
-Neon connects to the Companion device (Android phone) with a USB-C cable. The Companion device supplies Neon with power and receives the raw sensor data for storage and further processing. Use the Neon Companion app to make recordings, preview real-time gaze and world video, stream data over the network, set up wearers, select templates, and preview and upload recordings to Pupil Cloud.
+The Neon module is a small powerhouse of sensors! It connects to the Companion device (Android phone) with a USB-C cable, which supplies it with electric power and compute power for processing. Find an overview of all components of Neon below!
 
 ![Technical Overview](./technical_overview_2.jpg)
-
-The Neon module is filled with sensors and electronics:
 
 - **Eye Cameras**: A binocular pair of infrared cameras with matching 850nm infrared illuminator **LEDs** are used to capture [eye videos](/general/data-streams/#eye-videos). The raw data is saved with each recording and is used for real-time [gaze](/general/data-streams/#gaze) estimation.
 
