@@ -220,6 +220,12 @@ jobs:
           name: invisible
           path: invisible/
       
+      - name: Download Core
+        uses: actions/download-artifact@v3
+        with:
+          name: core
+          path: core/
+      
       - name: Download AlphaLab
         uses: actions/download-artifact@v3
         with:
