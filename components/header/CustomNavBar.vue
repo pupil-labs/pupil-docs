@@ -4,7 +4,7 @@
   import { useData } from "vitepress";
   import { useSidebar } from "vitepress/theme";
   // import VPNavBarAppearance from 'vitepress/dist/client/theme-default/components/VPNavBarAppearance.vue'
-  import VPNavBarExtra from "vitepress/dist/client/theme-default/components/VPNavBarExtra.vue";
+  // import VPNavBarExtra from "vitepress/dist/client/theme-default/components/VPNavBarExtra.vue";
   // import VPNavBarHamburger from "vitepress/dist/client/theme-default/components/VPNavBarHamburger.vue";
   import VPNavBarMenu from "vitepress/dist/client/theme-default/components/VPNavBarMenu.vue";
   import VPNavBarSearch from "vitepress/dist/client/theme-default/components/VPNavBarSearch.vue";
@@ -14,6 +14,7 @@
   import VPNavBarMenuLink from "vitepress/dist/client/theme-default/components/VPNavBarMenuLink.vue";
 
   import NavBarHamburger from "./NavBarHamburger.vue";
+  import NavBarExtra from "./NavBarExtra.vue";
 
   defineProps<{
     isScreenOpen: boolean;
@@ -82,7 +83,7 @@
           <VPNavBarTranslations class="translations" />
           <!-- <VPNavBarAppearance class="appearance" /> -->
           <VPNavBarSocialLinks class="social-links" />
-          <VPNavBarExtra class="extra" />
+          <NavBarExtra class="extra" />
           <slot name="nav-bar-content-after" />
           <NavBarHamburger
             class="hamburger"
