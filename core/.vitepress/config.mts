@@ -4,6 +4,27 @@ import { defineConfig } from "vitepress";
 import { config as default_config } from "./../../default_config.mts";
 import { theme_config as default_theme_config } from "./../../default_config.mts";
 
+const softwareOtherSideBar = [
+  {
+    text: "Software",
+    items: [
+      { text: "Pupil Capture", link: "/software/pupil-capture/" },
+      { text: "Pupil Player", link: "/software/pupil-player/" },
+      { text: "Pupil Service", link: "/software/pupil-service/" },
+      { text: "Recording Format", link: "/software/recording-format/" },
+    ],
+  },
+  {
+    text: "Other",
+    items: [
+      { text: "Hardware", link: "/hardware/" },
+      { text: "Terminology", link: "/terminology/" },
+      { text: "Best Practices", link: "/best-practices/" },
+      { text: "Academic Citation", link: "/academic-citation/" },
+    ],
+  },
+];
+
 let theme_config_additions = {
   nav: [
     { text: "Getting Started", link: "/getting-started/" },
@@ -14,29 +35,12 @@ let theme_config_additions = {
   ],
 
   sidebar: {
-    "/software": [
-      {
-        text: "Software",
-        items: [
-          { text: "Pupil Capture", link: "/software/pupil-capture/" },
-          { text: "Pupil Player", link: "/software/pupil-player/" },
-          { text: "Pupil Service", link: "/software/pupil-service/" },
-          { text: "Recording Format", link: "/software/recording-format/" },
-        ],
-      },
-      {
-        text: "Other",
-        items: [
-          { text: "Hardware", link: "/hardware/" },
-          { text: "Terminology", link: "/terminology/" },
-          { text: "Best Practices", link: "/best-practices/" },
-          { text: "Academic Citation", link: "/academic-citation/" },
-        ],
-      },
-    ],
+    "/getting-started": [...softwareOtherSideBar],
+    "/software": [...softwareOtherSideBar],
+    "/hardware": [...softwareOtherSideBar],
     "/developer/": [
       { text: "Overview", link: "/developer/" },
-      { text: "Netowork API", link: "/developer/network-api/" },
+      { text: "Network API", link: "/developer/network-api/" },
       { text: "Recording Format", link: "/developer/recording-format/" },
       { text: "Plugin API", link: "/developer/plugin-api/" },
       { text: "py3d Pupil Detection", link: "/developer/pye3d/" },
