@@ -518,3 +518,15 @@
   --vp-local-search-highlight-bg: var(--vp-c-brand-1);
   --vp-local-search-highlight-text: var(--vp-c-neutral-inverse);
 }
+
+@media (min-width: 768px) {
+  #app .VPNavScreen {
+    display: unset;
+  }
+}
+
+@media (min-width: 1146px) {
+  #app .VPNavScreen {
+    display: block;
+  }
+}

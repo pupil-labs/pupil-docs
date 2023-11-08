@@ -30,7 +30,7 @@
 
 <template>
   <div
-    class="container grid gap-20 px-6 pt-9 sm:pb-12 md:pb-16 lg:pb-20 mx-auto"
+    class="container grid gap-6 sm:gap-12 md:gap-16 lg:gap-20 px-6 pt-9 sm:pb-12 md:pb-16 lg:pb-20 mx-auto"
   >
     <div class="grid gap-8">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-center">
@@ -50,8 +50,8 @@
           <img class="w-full" src="https://place-hold.it/600x250" alt="" />
         </div>
       </div>
-      <div class="grid gap-4">
-        <div v-if="fm.products" class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div v-if="fm.products" class="grid gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div
             v-for="product in fm.products"
             :key="product.title"

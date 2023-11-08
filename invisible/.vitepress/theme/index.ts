@@ -1,11 +1,10 @@
-import "../../../custom.css";
-
 import type { Theme } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 import ProductPageLayout from "@components/ProductPageLayout.vue";
 import Youtube from "@components/Youtube.vue";
 import PhotoGrid from "@components/PhotoGrid.vue";
 
+import "../../../custom.css";
 import "./tailwind.css";
 
 export default {

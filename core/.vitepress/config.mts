@@ -68,7 +68,10 @@ let config_additions = {
         {
           find: /^.*\/VPNavBar\.vue$/,
           replacement: fileURLToPath(
-            new URL("./../../components/CustomNavBar.vue", import.meta.url)
+            new URL(
+              "./../../components/header/CustomNavBar.vue",
+              import.meta.url
+            )
           ),
         },
         {
