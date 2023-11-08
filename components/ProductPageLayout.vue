@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import ArrowIcon from "../../../components/ArrowIcon.vue";
-  import Footer from "../../../components/Footer.vue";
+  import ArrowIcon from "./ArrowIcon.vue";
+  import Footer from "./Footer.vue";
 
   import { useData } from "vitepress";
   const { frontmatter } = useData();
@@ -86,7 +86,10 @@
     <div>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div class="grid col-span-3">
-          <div v-if="fm?.cards" class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div
+            v-if="fm?.cards"
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
+          >
             <div
               v-for="product in fm?.cards"
               :key="product.title"

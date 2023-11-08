@@ -162,7 +162,10 @@ let theme_config_additions = {
         text: "Visualizations",
         items: [
           { text: "Heatmap", link: "/pupil-cloud/visualizations/heatmap/" },
-          { text: "Areas of Interest (AOIs)", link: "/pupil-cloud/visualizations/areas-of-interest/" },
+          {
+            text: "Areas of Interest (AOIs)",
+            link: "/pupil-cloud/visualizations/areas-of-interest/",
+          },
           {
             text: "Video Renderer",
             link: "/pupil-cloud/visualizations/video-renderer/",
@@ -205,11 +208,17 @@ let config_additions = {
         {
           find: /^.*\/VPNavBar\.vue$/,
           replacement: fileURLToPath(
-            new URL('./../../components/CustomNavBar.vue', import.meta.url)
-          )
-        }
-      ]
-    }
+            new URL("./../../components/CustomNavBar.vue", import.meta.url)
+          ),
+        },
+        {
+          find: "@components",
+          replacement: fileURLToPath(
+            new URL("./../../components", import.meta.url)
+          ),
+        },
+      ],
+    },
   },
 };
 

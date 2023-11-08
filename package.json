@@ -1,0 +1,11 @@
+{
+  "name": "pupil-docs",
+  "version": "1.0.0",
+  "description": "- When importing images, use markdown-style imports ```markdown ![alt text](/path/to/image.png) ``` - When trying to create a gallery view, consider using the `PhotoGrid` component - Avoid using custom HTML and CSS as much as possible.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
