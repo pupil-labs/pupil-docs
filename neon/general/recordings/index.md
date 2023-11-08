@@ -5,11 +5,11 @@ Recordings are designed to be as robust as possible. If at any point the Neon mo
 
 The Neon Companion app has several more features to ensure robust data collection and will e.g. warn you in case the Companion device's battery is running low or if you run out of storage space.
 
-## Wearers, Templates & Events
-When making a recording you can capture various additional data to record things like meta data or key events that happened during data collection. These will be saved as part of the recording itself.
+## Events, Wearers, & Templates
+When making a recording you can capture various additional data to record things like metadata or key events that happened during data collection. These will be saved as part of the recording itself.
+
+[**Events**](/general/events/) are key points in time in a recording that have been marked.
 
 [**Wearers**](/general/wearers/) are the people who wear the Neon device while recording.
 
-[**Templates**](/general/templates/) are questionnairs that can be filled out at recording time.
-
-[**Events**](/general/events/) are key points in time in a recording that have been marked.
+[**Templates**](/general/templates/) are questionnaires that can be filled out at recording time.
