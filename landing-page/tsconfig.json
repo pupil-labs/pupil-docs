@@ -18,10 +18,12 @@
     "allowJs": true,
     "paths": {
       "@/*": ["../*"],
+      "@components/*": ["../components/*"],
       "@theme/*": ["./.vitepress/theme/*"]
     }
   },
   "include": [
+    "../components/*.vue",
     "./.vitepress/**/*.vue",
     "./.vitepress/**/*.ts",
     "./.vitepress/**/*.mts",

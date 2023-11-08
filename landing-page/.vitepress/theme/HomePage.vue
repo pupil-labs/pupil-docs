@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import ArrowIcon from "@theme/components/ArrowIcon.vue";
-  import Footer from "@theme/components/Footer.vue";
+  import ArrowIcon from "@components/ArrowIcon.vue";
+  import Footer from "@components/Footer.vue";
 
   import { useData } from "vitepress";
   const { frontmatter } = useData();

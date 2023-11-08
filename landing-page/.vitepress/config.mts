@@ -1,4 +1,4 @@
-import { fileURLToPath, URL } from 'node:url'
+import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vitepress";
 
 const url = `https://docs-staging.pupil-labs.com/`;
@@ -26,11 +26,20 @@ const config_additions = {
         {
           find: /^.*\/VPNavBar\.vue$/,
           replacement: fileURLToPath(
-            new URL('./../../components/CustomNavBar.vue', import.meta.url)
-          )
-        }
-      ]
-    }
+            new URL(
+              "./../../components/header/CustomNavBar.vue",
+              import.meta.url
+            )
+          ),
+        },
+        {
+          find: "@components",
+          replacement: fileURLToPath(
+            new URL("./../../components", import.meta.url)
+          ),
+        },
+      ],
+    },
   },
 };
 
