@@ -37,12 +37,9 @@ to the Neon Companion app from your backup location (including Pupil Cloud, a la
 This means that if you delete the recordings prior to uploading them to Pupil Cloud, they cannot be uploaded at a later date.
 
 ::: tip
-<v-icon large color="info">info_outline</v-icon>
 On **macOS**, you need the <a href="https://www.android.com/filetransfer/" alt="Android File Transfer website">Android File Transfer</a> to browse and transfer files between your Mac computer and your Android device.
 :::
 
 :::tip
-<v-icon large color="info">info_outline</v-icon>
-Recordings transferred locally will contain gaze data at **~120 Hz** (estimated in real-time on the Companion Device). Only 
-recordings uploaded to Pupil Cloud are densified to 200 Hz.
+Recordings transferred locally will only contain gaze data that was generated in real-time. On the OnePlus 8 the framerate of the real-time API at can drop to **~120 Hz**. On the One Plus 10 the real-time framerate is ~200 Hz. Only recordings uploaded to Pupil Cloud are always densified to 200 Hz.
 :::

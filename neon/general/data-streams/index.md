@@ -64,7 +64,7 @@ The scene camera can be operated with automatic or manual exposure. In situation
 
 ## Audio
 <Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>
-A microphone is integrated into the Neon module. Recorded audio will be part of the resulting scene video.
+Stereo microphones are integrated into the Neon module. Recorded audio will be part of the resulting scene video.
 
 Audio recording is disabled in the Neon Companion app by default and can be enabled in the settings.
 
