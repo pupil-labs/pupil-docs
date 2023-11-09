@@ -1,9 +1,8 @@
-import "../../../custom.css";
-
 import type { Theme } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 import HomePage from "@theme/HomePage.vue";
 
+import "../../../custom.css";
 import "./tailwind.css";
 
 export default {
