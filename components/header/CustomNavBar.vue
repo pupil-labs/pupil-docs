@@ -62,7 +62,7 @@
           <nav
             v-if="site.base == '/neon/' || site.base == '/invisible/'"
             aria-labelledby="main-nav-aria-label"
-            class="VPNavBarMenu menu"
+            class="VPNavBarMenu menu customNav"
           >
             <span id="main-nav-aria-label" class="visually-hidden"
               >Main Navigation</span
@@ -97,14 +97,36 @@
 </template>
 
 <style scoped>
-  .VPNavBarMenu {
+  .VPNavBarMenu:not(.customNav) {
     display: none;
   }
 
-  /* @media (min-width: 768px) { */
-  @media (min-width: 1146px) {
-    .VPNavBarMenu {
+  .VPNavBarMenu.customNav {
+    display: none;
+  }
+
+  .menu + .menu:before {
+    display: none;
+  }
+
+  @media (min-width: 640px) {
+    .VPNavBarMenu.customNav {
       display: flex;
+    }
+  }
+
+  /* @media (min-width: 768px) {
+    .VPNavBarMenu.customNav {
+      display: flex;
+    }
+  } */
+
+  @media (min-width: 1146px) {
+    .VPNavBarMenu:not(.customNav) {
+      display: flex;
+    }
+    .menu + .menu:before {
+      display: block;
     }
   }
 

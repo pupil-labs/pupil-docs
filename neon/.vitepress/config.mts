@@ -19,6 +19,11 @@ let theme_config_additions = {
       ],
     },
     { text: "Real-Time API", link: "/real-time-api/tutorials/" },
+    {
+      text: "Alpha Lab",
+      link: "https://docs-staging.pupil-labs.com/alpha-lab/",
+    },
+    { text: "Feedback", link: "https://feedback.pupil-labs.com/" },
   ],
 
   sidebar: {
