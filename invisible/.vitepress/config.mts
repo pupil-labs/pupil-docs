@@ -176,7 +176,7 @@ let theme_config = { ...default_theme_config, ...theme_config_additions };
 
 let config_additions = {
   base: "/invisible/",
-  title: "Pupil Invisible",
+  title: "Invisible",
   description:
     "Documentation of the Pupil Invisible eye tracker and it's ecosystem.",
   vite: {

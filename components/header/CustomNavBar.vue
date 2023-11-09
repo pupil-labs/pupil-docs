@@ -62,18 +62,21 @@
           <nav
             v-if="site.base == '/neon/' || site.base == '/invisible/'"
             aria-labelledby="main-nav-aria-label"
-            class="VPNavBarMenu menu customNav"
+            class="customNav menu"
           >
             <span id="main-nav-aria-label" class="visually-hidden"
               >Main Navigation</span
             >
             <VPNavBarMenuLink
+              class="notOutboundLink"
               :item="{
-                text: 'AlphaLab',
-                link: 'https://docs.pupil-labs.com/alpha-lab/',
+                text: 'Alpha Lab',
+                link: 'https://docs-staging.pupil-labs.com/alpha-lab/',
+                target: '_self',
               }"
             />
             <VPNavBarMenuLink
+              class="navLink"
               :item="{
                 text: 'Feedback',
                 link: 'https://feedback.pupil-labs.com/',
@@ -97,11 +100,19 @@
 </template>
 
 <style scoped>
-  .VPNavBarMenu:not(.customNav) {
+  .notOutboundLink::after {
+    display: none !important;
+  }
+
+  .VPNavBarMenu {
     display: none;
   }
 
-  .VPNavBarMenu.customNav {
+  .customNav {
+    display: flex;
+  }
+
+  .customNav .navLink {
     display: none;
   }
 
@@ -109,20 +120,21 @@
     display: none;
   }
 
+  .VPNavBarSearch {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    padding-left: 24px;
+  }
+
   @media (min-width: 640px) {
-    .VPNavBarMenu.customNav {
+    .customNav .navLink {
       display: flex;
     }
   }
 
-  /* @media (min-width: 768px) {
-    .VPNavBarMenu.customNav {
-      display: flex;
-    }
-  } */
-
   @media (min-width: 1146px) {
-    .VPNavBarMenu:not(.customNav) {
+    .VPNavBarMenu {
       display: flex;
     }
     .menu + .menu:before {
