@@ -1,15 +1,15 @@
 # Troubleshooting
 Below you can find a list of issues we have observed in the past and recommendations on how to fix them. If you can not find your issue in the list, please reach out to us on [Discord](https://pupil-labs.com/chat/) or via email to `info@pupil-labs.com`.
 
-## The Companion device is vibrating and a red LED is blinking in the Neon module!
+## The Companion Device Is Vibrating and a Red LED Is Blinking in the Neon Module!
 The vibrations and the blinking LED try to grab the wearer's attention to notify them of a problem that may critically hurt the ongoing recording. To get details on the problem, open the Neon Companion app, which will show an error description.
 
 Potential problems include:
 - Low battery on the Companion Device.
 - Low storage space remaining on the Companion Device.
-- Unstable connection between Neon an the Companion device during a recording.
+- Unstable connection between Neon and the Companion device during a recording.
 
-## I accidentally updated my Companion device to an incompatible Android version!
+## I Accidentally Updated My Companion Device to an Incompatible Android Version!
 You need to rollback the Android version to be compatible again. Please note that all data on the phone will be lost during the rollback, so make backups accordingly.
 
 ::: tip
@@ -43,5 +43,5 @@ If you upgraded to Android 12 or newer and want to roll back, follow these steps
 1. Wait until the system update has been installed successfully
 1. Tap `Reboot`
 
-## The scene camera and eye cameras are not being recorded or recognized in the Neon Companion app!
+## The Scene Camera and Eye Cameras Are Not Being Recorded or Recognized in the Neon Companion App!
 Make sure you use the included black USB-C to USB-C connector cable rather than a third-party cable. Third-party USB cables vary widely in their quality and can lead to loss of connection.

@@ -55,7 +55,7 @@ let theme_config_additions = {
         text: "Frames",
         items: [
           { text: "Swapping Frames", link: "/general/swapping-frames/" },
-          { text: "Make your own", link: "/general/make-your-own-frame/" },
+          { text: "Make Your Own", link: "/general/make-your-own-frame/" },
         ],
       },
       {
@@ -183,11 +183,11 @@ let theme_config_additions = {
         text: "How-To Guides",
         items: [
           {
-            text: "Track your Experiment Progress using Events",
+            text: "Track Your Experiment Progress Using Events",
             link: "/real-time-api/track-your-experiment-progress-using-events/",
           },
           {
-            text: "Track your Experiment in Matlab",
+            text: "Track Your Experiment in MATLAB",
             link: "/real-time-api/track-your-experiment-in-matlab/",
           },
         ],
@@ -201,7 +201,7 @@ let theme_config = { ...default_theme_config, ...theme_config_additions };
 let config_additions = {
   base: "/neon/",
   title: "Neon",
-  description: "Documentation of the Neon eye tracker and it's ecosystem.",
+  description: "Documentation of the Neon Eye Tracker and It’s Ecosystem.",
   vite: {
     resolve: {
       alias: [

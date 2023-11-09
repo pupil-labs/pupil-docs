@@ -1,4 +1,4 @@
-# Calibrate the IMU for accurate yaw orientation
+# Calibrate the IMU for Accurate Yaw Orientation
 
 <Youtube src="kXgAJHavqaM" />
 

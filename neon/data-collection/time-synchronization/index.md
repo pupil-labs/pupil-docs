@@ -1,4 +1,4 @@
-# Achieve super-precise Time Sync
+# Achieve Super-Precise Time Sync
 For some applications, it is critical to accurately synchronize your Neon with another clock. That could be from a second Neon device, an external sensor, or a computer you use for stimulus presentation. 
 
 Neon provides UTC timestamps for all the data it generates, which makes it easy to sync the data to anything. Those timestamps are generated using the clock of the Companion device. However, digital clocks can suffer from drift, meaning that they sometimes run slightly too fast or slow. Over time this error accumulates and can lead to errors when comparing two clocks.

@@ -1,4 +1,4 @@
-# Track your Experiment Progress using Events
+# Track Your Experiment Progress Using Events
 Running a data collection for an experiment can be an organizational challenge. Many experiments are running through different phases and keeping track of what data belongs to what phase can be one of the difficulties.
 
 Using [events](/general/events/), tracking the progress of an experiment becomes very easy and can often be fully automated though.
@@ -11,7 +11,7 @@ To this end we are assuming a minimal experiment setup: we want to record subjec
 You can download the example data used in this guide [here](https://drive.google.com/file/d/1O-HJJbJWRBgcZS1sowCX2srmME5hTub0/view?usp=sharing) and find the code [here](https://github.com/pupil-labs/pupil-docs/tree/master/src/neon/real-time-api/track-your-experiment-progress-using-events/).
 :::
 
-## How to use Events to keep track?
+## How To Use Events To Keep Track?
 Events are essentially timestamps within a recording that have been marked with a name. We need to keep track of when a specific image is shown during a recording, so we can associate the according fixation data with that image. Thus, we will create an event at the start and end of each image presentation to mark this section.
 
 Events can either be created post hoc in the project editor, or at recording time using either the [real-time API](/real-time-api/tutorials/) or [Neon Monitor](/data-collection/monitor-app/). In this example we are interested in fully automating the event creation and will thus use the real-time API to save events, but depending on your use-case you could use either of those methods.

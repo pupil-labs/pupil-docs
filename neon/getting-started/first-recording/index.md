@@ -1,20 +1,16 @@
----
-description: Beginner guide to making your first Neon recording.
----
-
-# Make your first recording
+# Make Your First Recording
 
 Using your Neon eye tracking system for the first time? 
 
 Follow the steps below to make your first recording!
 
-## 1. Set up your new Companion Device.
+## 1. Set Up Your New Companion Device.
 
 The Companion Device included in your Neon case is a brand-new device. It has never been turned on, so it will require setup.
 
 Create a new Google account or use an existing Google account during setup.
 
-## 2. Install and start the Neon Companion app.
+## 2. Install and Start the Neon Companion App.
 
 Next, install the Neon Companion app on your device:
 
@@ -42,7 +38,7 @@ Next, install the Neon Companion app on your device:
 - You can change this setting at any time in the app settings.
 - You will also be asked to create your first [**wearer profile**](/general/wearers/). Neon uses wearer profiles to distinguish who is wearing the glasses.
 
-## 4. Open the live Preview
+## 4. Open the Live Preview
 
 Now, let's see some eye tracking in action!
 
@@ -58,11 +54,11 @@ Put on the glasses and give it a try!
 
 </div>
 
-## 5. Make your first Recording
+## 5. Make Your First Recording
 
 Press the round record button on the home view to start recording. Once you are done press the button again and tap save.
 
-## 6. Playback and download
+## 6. Playback and Download
 
 Navigate to the **Recordings view** and click the recording you just made to play it! If you enabled the upload of recordings to Pupil Cloud, you should see that the recording has already started uploading!
 

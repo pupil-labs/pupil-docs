@@ -36,7 +36,7 @@ Below, gaze is mapped in four very different environments: to a **magazine cover
 ]"/>
 
 Let's take a look at what the Reference Image and Scanning Recording look like to produce these heatmaps.
-### 1. Magazine reading
+### 1. Magazine Reading
 
 <div class="mcontainer">
   <div class="col-mcontainer">
@@ -71,7 +71,7 @@ Let's take a look at what the Reference Image and Scanning Recording look like t
   </div>
 </div>
 
-### 3. Supermarket shelf
+### 3. Supermarket Shelf
 
 <div class="mcontainer">
   <div class="col-mcontainer">
@@ -88,7 +88,7 @@ Let's take a look at what the Reference Image and Scanning Recording look like t
   </div>
 </div>
 
-### 4. An entire building
+### 4. An Entire Building
 
 <div class="mcontainer" display="grid | inline-grid">
   <div class="col-mcontainer">
@@ -105,7 +105,7 @@ Let's take a look at what the Reference Image and Scanning Recording look like t
   </div>
 </div>
 
-## Scanning best practices
+## Scanning Best Practices
 Try to follow these best practices when recording a scanning video:
 - Make the recording while holding Neon in your hand rather than wearing it on your head.
 - Record the object of interest from all possible angles and from all distances a subject may view them. More diversity is better. Collecting sufficiently diverse viewpoints for a large object, like a building, may require you to move accordingly large distances.
@@ -121,7 +121,7 @@ What works and what doesn’t?
 Why not try replicating the above examples? Or even try it with your own use cases! If you haven’t already, we recommend you check out the [Cloud Getting Started Guide](/pupil-cloud/tutorials/), which covers the basics of working with enrichments.
 :::
 
-## Validate the gaze mapping
+## Validate the Gaze Mapping
 
 ![Reference Image Mapper in Pupil Cloud](./rim-in-cloud.png)
 

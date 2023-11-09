@@ -1,4 +1,4 @@
-# Monitor your Data Collection in Real-Time
+# Monitor Your Data Collection in Real-Time
 
 ![Monitor App](./monitor-app.jpg)
 

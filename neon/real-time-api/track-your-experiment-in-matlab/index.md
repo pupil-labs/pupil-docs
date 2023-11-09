@@ -1,4 +1,4 @@
-# Track your experiment in MATLAB
+# Track Your Experiment in MATLAB
 
 MATLAB is often used by researchers to build eye tracking experiments, such as tracking how long participants look at stimuli presented on a computer screen.
 
@@ -29,7 +29,7 @@ Finally, you will need to download the wrapper and demo code by cloning the repo
 git clone https://github.com/pupil-labs/realtime-matlab-experiment.git
 ```
 
-## How to use Events to keep track of your experiment
+## How To Use Events To Keep Track of Your Experiment
 
 Before we dig into how to run the demo and the wrapper, you will need to understand what events are and how to use them to keep track of your experiment.
 
@@ -37,7 +37,7 @@ Events are essentially timestamps within a recording that have been marked with 
 
 Events can be created post-hoc in the project editor or at recording time using either the [real-time API](/real-time-api/tutorials/) or the [Monitor app](/data-collection/monitor-app/). In this example, we are interested in fully automating the event creation within MATLAB. Still, depending on your use case, you could use either of those methods.
 
-## Running the demo
+## Running the Demo
 
 Hands-on!
 Confirm that your Neon device is plugged into the Companion Device.
@@ -48,7 +48,7 @@ Then you can execute the demo code as shown below:
 demo_pupil_labs();
 ```
 
-### Through the demo
+### Through the Demo
 
 Beyond all the steps needed to display an image in Psychtoolbox (which you can find in the demo code), here we will focus on the calls to the Neon real-time API.
 
@@ -97,7 +97,7 @@ project to export them using the "Downloads" view. Within the project editor, we
 
 ![Screenshot Pupil Cloud](./screenshot-matlab-pi-cloud.jpg)
 
-## Analysing the data
+## Analysing the Data
 
 Having the .csv files means we can read them within MATLAB and start doing some magic!
 
@@ -131,7 +131,7 @@ title(['Fixations per image - PI', newline]);
 
 ![Barplot in Matlab](./barplot-matlab-pi-cloud.jpg)
 
-## Can I run the wrapper alone?
+## Can I Run the Wrapper Alone?
 
 Yes, if you are not planning on using Psychtoolbox, you can also use the wrapper alone. Download the `pupil_labs_realtime_api` function and add it to your path. Then, call it as you would typically call a function.
 
@@ -147,7 +147,7 @@ Several arguments can be used to control the wrapper:
 - `EventName`: followed by a string with the annotation name for the event, default is `Test event`.
 - `URLhost`: followed by a string containing the URL of Pupil Invisible, default is `http://neon.local:8080/`. It's generally good practice to call directly to the URL. Nevertheless, Matlab does resolve the DNS and stores it in the cache, so you will only notice a delay in the first call.
 
-## Notes and disclaimers
+## Notes and Disclaimers
 
 :::tip
 The current wrapper function does not support RTSP protocol. Therefore it is not possible to stream video or gaze positions. If you need this feature, please directly use the [Realtime Network API](https://pupil-labs-realtime-api.readthedocs.io/en/stable/guides/under-the-hood.html?highlight=RTSP).
