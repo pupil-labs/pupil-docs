@@ -1,4 +1,4 @@
-# Cleaning and Disinfecting
+# Cleaning & Disinfecting
 
 Neon contains cameras and other sensitive electronic components, so be careful when cleaning. The eye cameras, world camera and USB connection points are especially sensitive to liquid.
 

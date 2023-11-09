@@ -1,4 +1,4 @@
-# Using a USB-C Hub
+# Using a USB Hub
 The capabilities of the Companion device can be extended by connecting it to a USB-C hub. You can still connect Neon to the Companion device through the hub. For this to work, the hub needs to provide a USB-C port that supports data transfer (some USB-C ports only support power delivery!). 
 
 

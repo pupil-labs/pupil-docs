@@ -3,9 +3,9 @@ Running a data collection for an experiment can be an organizational challenge. 
 
 Using [events](/general/events/), tracking the progress of an experiment becomes very easy and can often be fully automated though.
 
-In this guide we will demonstrate how to save events at recording time and how to utilize them later during analysis to easily keep track of what phase a certain section of data was recorded in.
+In this guide, we will demonstrate how to save events at recording time and how to utilize them later during analysis to easily keep track of what phase a certain section of data was recorded in.
 
-To this end we are assuming a minimal experiment setup: we want to record subjects while they observe a series of images of animals and analyse how the average fixation duration differs for each image.
+To this end we are assuming a minimal experiment setup: we want to record subjects while they observe a series of images of animals and analyze how the average fixation duration differs for each image.
 
 ::: tip
 You can download the example data used in this guide [here](https://drive.google.com/file/d/1O-HJJbJWRBgcZS1sowCX2srmME5hTub0/view?usp=sharing) and find the code [here](https://github.com/pupil-labs/pupil-docs/tree/master/src/neon/real-time-api/track-your-experiment-progress-using-events/).
@@ -14,10 +14,10 @@ You can download the example data used in this guide [here](https://drive.google
 ## How To Use Events To Keep Track?
 Events are essentially timestamps within a recording that have been marked with a name. We need to keep track of when a specific image is shown during a recording, so we can associate the according fixation data with that image. Thus, we will create an event at the start and end of each image presentation to mark this section.
 
-Events can either be created post hoc in the project editor, or at recording time using either the [real-time API](/real-time-api/tutorials/) or [Neon Monitor](/data-collection/monitor-app/). In this example we are interested in fully automating the event creation and will thus use the real-time API to save events, but depending on your use-case you could use either of those methods.
+Events can either be created post hoc in the project editor, or at recording time using either the [real-time API](/real-time-api/tutorials/) or [Neon Monitor](/data-collection/monitor-app/). In this example, we are interested in fully automating the event creation and will thus use the real-time API to save events, but depending on your use case you could use either of those methods.
 
 ## Implementation
-The implementation for stimulus presentation is minimal. The images are loaded using OpenCV and are displayed in a full-screen window for fixed amount of time.
+The implementation of stimulus presentation is minimal. The images are loaded using OpenCV and are displayed in a full-screen window for a fixed amount of time.
 
 
 ```python
@@ -42,7 +42,7 @@ def cleanup_stimulus_presentation():
     
 ```
 
-Using the real-time API, we now have to connect to a Neon device for recording. We can remotely start the recording and save events before and after stimulus presentation. The names of the events are chosen as `<animal name>_start` and `<animal name>_end` depending on the animal that is shown.
+Using the real-time API, we now have to connect to a Neon device for recording. We can remotely start the recording and save events before and after the stimulus presentation. The names of the events are chosen as `<animal name>_start` and `<animal name>_end` depending on the animal that is shown.
 
 Once all images have been shown, the recording is stopped remotely.
 
@@ -75,7 +75,7 @@ cleanup_stimulus_presentation()
 device.recording_stop_and_save()
 ```
 
-That is all we have to do during data collection. Once the recordings have uploaded to Pupil Cloud we can already see the events in the timeline for every recording. Next, export the timeseries data of all recordings from Pupil Cloud.
+That is all we have to do during data collection. Once the recordings have been uploaded to Pupil Cloud we can already see the events in the timeline for every recording. Next, export the timeseries data of all recordings from Pupil Cloud.
 
 
 ```python
@@ -414,4 +414,4 @@ plt.ylabel("Number of Fixations")
 
 
 ## Conclusion
-In this guide you saw how to use events to track the progress of an experiment. Note that this approach can be generalized to much more complex setups.
+In this guide, you saw how to use events to track the progress of an experiment. Note that this approach can be generalized to much more complex setups.
