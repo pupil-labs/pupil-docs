@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import ArrowIcon from "@theme/components/ArrowIcon.vue";
-  import Footer from "@theme/components/Footer.vue";
+  import ArrowIcon from "@components/ArrowIcon.vue";
+  import Footer from "@components/Footer.vue";
 
   import { useData } from "vitepress";
   const { frontmatter } = useData();
@@ -18,13 +18,20 @@
   const fm: FM = frontmatter;
 </script>
 
-<style>
+<style scoped>
   .textLink {
     color: var(--vp-c-brand-1);
   }
 
   .textLink:hover {
     color: var(--vp-c-brand-2);
+  }
+  .bg-card {
+    background-color: var(--vp-c-bg-elv);
+  }
+
+  .bg-card:hover {
+    background-color: var(--vp-c-default-3);
   }
 </style>
 
@@ -52,13 +59,13 @@
           <div
             v-for="product in fm.products"
             :key="product.title"
-            class="rounded-lg flex flex-col"
-            style="background-color: var(--vp-c-bg-elv)"
+            class="rounded-lg flex flex-col bg-card"
           >
             <img
-              src="https://place-hold.it/450x300/"
+              :src="
+                product.image ? product.image : `https://place-hold.it/450x300/`
+              "
               class="h-auto w-full rounded-tl-lg rounded-tr-lg"
-              style="aspect-ratio: 1.5"
             />
             <div
               class="grid grid-rows-[auto,_1fr,_auto] gap-4 p-6 h-full justify-between"
@@ -108,8 +115,7 @@
             <div
               v-for="product in fm.alpha.cards"
               :key="product.title"
-              class="rounded-lg flex flex-col"
-              style="background-color: var(--vp-c-bg-elv)"
+              class="rounded-lg flex flex-col bg-card"
             >
               <div
                 class="grid grid-rows-[auto,_1fr,_auto] gap-4 p-6 h-full justify-between"

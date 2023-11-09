@@ -1,12 +1,10 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
-layout: home
+layout: ProductPageLayout
 
 hero:
-  name: "Pupil Invisible"
-  text: "Documentation"
-  tagline: My great project tagline
-  image: "./Module_Front.png"
+  title: "Invisible"
+  tagline: Official docs for users getting started with their Pupil Labs eye tracking glasses and for developers working on eye tracking applications and integrations.
   actions:
     - theme: brand
       text: Getting Started
@@ -15,12 +13,23 @@ hero:
       text: Pupil Cloud
       link: /pupil-cloud/
 
-features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+cards:
+  - title: Getting Started
+    details: Learn how to make your first recording with Neon and get an overview of the ecosystem!
+    link: { text: View, href: "" }
+  - title: General
+    details: Everything you need to know about Neon, frames, data streams, data formats, and other general topics.
+    link: { text: View, href: "" }
+  - title: Data Collection
+    details: Neon comes with a lot of powerful tools for data collection. Learn how to use them here!
+    link: { text: View, href: "" }
+  - title: Pupil Cloud
+    details: Pupil Cloud is a powerful tool for managing your data, analyzing your recordings, and collaborating with your team. It's our recommended tool for analysis.
+    link: { text: View, href: "" }
+  - title: Real-Time API
+    details: You can access the data Neon generates in real-time and remote control it using its real-time API. Learn how it works here!
+    link: { text: View, href: "" }
+  - title: Chat
+    details: Come chat with us on Discord! Do you have an issues or questions? Just wanna say hi? Join the chat and drop us a message!
+    link: { text: View, href: "" }
 ---
-

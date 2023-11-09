@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import ArrowIcon from "../../../components/ArrowIcon.vue";
-  import Footer from "../../../components/Footer.vue";
+  import ArrowIcon from "./ArrowIcon.vue";
+  import Footer from "./Footer.vue";
 
   import { useData } from "vitepress";
   const { frontmatter } = useData();
@@ -18,7 +18,7 @@
   const fm: FM = frontmatter;
 </script>
 
-<style>
+<style scoped>
   .textLink {
     color: var(--vp-c-brand-1);
   }
@@ -26,11 +26,18 @@
   .textLink:hover {
     color: var(--vp-c-brand-2);
   }
+  .bg-card {
+    background-color: var(--vp-c-bg-elv);
+  }
+
+  .bg-card:hover {
+    background-color: var(--vp-c-default-3);
+  }
 </style>
 
 <template>
   <div
-    class="container grid gap-20 px-6 pt-9 sm:pb-12 md:pb-16 lg:pb-20 mx-auto"
+    class="container grid gap-6 sm:gap-12 md:gap-16 lg:gap-20 px-6 pt-9 sm:pb-12 md:pb-16 lg:pb-20 mx-auto"
   >
     <div class="grid gap-8">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-center">
@@ -46,20 +53,30 @@
             {{ fm.hero?.tagline }}
           </div>
         </div>
-        <div class="col-span-2 order-1 sm:order-2">
-          <img class="w-full" src="https://place-hold.it/600x250" alt="" />
+        <div class="col-span-2 order-1 sm:order-2 flex justify-end">
+          <img
+            class="w-full"
+            :src="
+              fm.hero.image ? fm.hero.image : `https://place-hold.it/600x250`
+            "
+            width="100%"
+            height="auto"
+            style="aspect-ratio: 1.15; max-width: 320px"
+            alt="Neon hero image"
+          />
         </div>
       </div>
-      <div class="grid gap-4">
-        <div v-if="fm.products" class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div v-if="fm.products" class="grid gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div
             v-for="product in fm.products"
             :key="product.title"
-            class="rounded-lg flex flex-col"
-            style="background-color: var(--vp-c-bg-elv)"
+            class="rounded-lg flex flex-col bg-card"
           >
             <img
-              src="https://place-hold.it/450x300/"
+              :src="
+                product.image ? product.image : `https://place-hold.it/450x300/`
+              "
               class="h-auto w-full rounded-tl-lg rounded-tr-lg"
               style="aspect-ratio: 1.5"
             />
@@ -86,12 +103,14 @@
     <div>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div class="grid col-span-3">
-          <div v-if="fm?.cards" class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div
+            v-if="fm?.cards"
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
+          >
             <div
               v-for="product in fm?.cards"
               :key="product.title"
-              class="rounded-lg flex flex-col"
-              style="background-color: var(--vp-c-bg-elv)"
+              class="rounded-lg flex flex-col bg-card"
             >
               <div
                 class="grid grid-rows-[auto,_1fr,_auto] gap-4 p-6 h-full justify-between"
