@@ -53,8 +53,17 @@
             {{ fm.hero?.tagline }}
           </div>
         </div>
-        <div class="col-span-2 order-1 sm:order-2">
-          <img class="w-full" src="https://place-hold.it/600x250" alt="" />
+        <div class="col-span-2 order-1 sm:order-2 flex justify-end">
+          <img
+            class="w-full"
+            :src="
+              fm.hero.image ? fm.hero.image : `https://place-hold.it/600x250`
+            "
+            width="100%"
+            height="auto"
+            style="aspect-ratio: 1.15; max-width: 320px"
+            alt="Neon hero image"
+          />
         </div>
       </div>
       <div v-if="fm.products" class="grid gap-4">
