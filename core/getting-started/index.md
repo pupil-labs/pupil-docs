@@ -1,5 +1,7 @@
 ---
-description: Welcome to Pupil Core! This section will guide you through setup (software and hardware) in order for you to make your first recording with Pupil Core. 
+description: Welcome to Pupil Core! This section will guide you through setup (software and hardware) in order for you to make your first recording with Pupil Core.
+
+sidebar: false 
 ---
 
 # Getting Started
