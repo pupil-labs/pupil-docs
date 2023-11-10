@@ -3,7 +3,7 @@ For some applications it is critical to have access to eye tracking data in real
 
 In other cases it may be important to automatically start or stop a recording and save [events](/general/events/). For example, you might want to launch a screen-based experiment and have the recording start automatically when the stimulus presentation begins. Additionally, you might want to save the timestamps of when the subject interacted with the screen.
 
-All of this is possible for developers using the [Realtime Network API](https://github.com/pupil-labs/realtime-network-api). It allows you to stream gaze data and scene video to any device connected to the same local network. Further, you can control all devices remotely to start and stop recordings or save events.
+All of this is possible for developers using the real-time API. It allows you to stream gaze data and scene video to any device connected to the same local network. Further, you can control all devices remotely to start and stop recordings or save events.
 
 If you are not a developer and simply need a tool to monitor and control all your devices in real-time, check out [Neon Monitor](/data-collection/monitor-app/).
 
