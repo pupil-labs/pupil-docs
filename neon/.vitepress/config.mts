@@ -11,14 +11,14 @@ let theme_config_additions = {
     { text: "General", link: "/general/module-technical-overview/" },
     { text: "Data Collection", link: "/data-collection/" },
     {
-      text: "Software",
+      text: "Analysis",
       items: [
         { text: "Pupil Cloud", link: "/pupil-cloud/" },
         { text: "Neon Player", link: "/neon-player/" },
-        { text: "Neon XR", link: "/neon-xr/" },
       ],
     },
     { text: "Real-Time API", link: "/real-time-api/tutorials/" },
+    { text: "Neon XR", link: "/neon-xr/" },
   ],
 
   sidebar: {
@@ -85,19 +85,15 @@ let theme_config_additions = {
     ],
     "/data-collection/": [
       {
-        text: "Tutorials",
+        text: "Neon Compannion App",
         items: [
           {
             text: "Offset Correction",
             link: "/data-collection/offset-correction/",
           },
           {
-            text: "Measuring the IED",
+            text: "Backlight Compensation",
             link: "/data-collection/measuring-the-IED/",
-          },
-          {
-            text: "Calibrating the IMU",
-            link: "/data-collection/calibrating-the-imu/",
           },
         ],
       },
@@ -122,6 +118,14 @@ let theme_config_additions = {
           {
             text: "Time Synchronization",
             link: "/data-collection/time-synchronization/",
+          },
+          {
+            text: "Measuring the IED",
+            link: "/data-collection/measuring-the-IED/",
+          },
+          {
+            text: "Calibrating the IMU",
+            link: "/data-collection/calibrating-the-imu/",
           },
         ],
       },
