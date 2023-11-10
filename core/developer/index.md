@@ -314,7 +314,6 @@ original topic and its timestamp.
 }
 ```
 
-<v-divider></v-divider>
 
 ## Running From Source
 
