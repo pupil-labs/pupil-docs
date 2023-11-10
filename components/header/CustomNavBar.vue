@@ -68,6 +68,10 @@ watchPostEffect(() => {
               target: '_self',
             }" />
             <VPNavBarMenuLink class="notOutboundLink" :item="{
+              text: 'Chat',
+              link: 'https://pupil-labs.com/chat',
+            }" />
+            <VPNavBarMenuLink class="notOutboundLink" :item="{
               text: 'Feedback',
               link: 'https://feedback.pupil-labs.com/',
             }" />

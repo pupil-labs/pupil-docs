@@ -35,8 +35,8 @@ type ConfigProps = {
 type ThemeConfigProps = {
   socialLinks: SocialLink[];
   search:
-    | { provider: "local"; options?: any }
-    | { provider: "algolia"; options: any };
+  | { provider: "local"; options?: any }
+  | { provider: "algolia"; options: any };
   outline: Outline | Outline["level"] | false;
 };
 
@@ -47,11 +47,11 @@ export const config: ConfigProps = {
 };
 
 export const theme_config: ThemeConfigProps = {
-  socialLinks: [
-    { icon: "discord", link: "https://pupil-labs.com/chat" },
-    { icon: "youtube", link: "https://www.youtube.com/c/PupilLabs" },
-    { icon: "twitter", link: "https://twitter.com/pupil_labs" },
-  ],
+  // socialLinks: [
+  //   { icon: "discord", link: "https://pupil-labs.com/chat" },
+  //   { icon: "youtube", link: "https://www.youtube.com/c/PupilLabs" },
+  //   { icon: "twitter", link: "https://twitter.com/pupil_labs" },
+  // ],
   search: {
     provider: "local",
   },
