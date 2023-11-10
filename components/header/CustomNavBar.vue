@@ -81,6 +81,18 @@ watchPostEffect(() => {
               target: '_self',
             }" />
           </nav>
+          <nav v-if="site.base == '/core/'" aria-labelledby="main-nav-aria-label" class="customNav menu">
+            <span id="main-nav-aria-label" class="visually-hidden">Main Navigation</span>
+            <VPNavBarMenuLink class="notOutboundLink" :item="{
+              text: 'Chat',
+              link: 'https://pupil-labs.com/chat',
+            }" />
+            <VPNavBarMenuLink class="notOutboundLink" :item="{
+              text: 'Home',
+              link: 'https://docs-staging.pupil-labs.com/',
+              target: '_self',
+            }" />
+          </nav>
           <VPNavBarTranslations class="translations" />
           <!-- <VPNavBarAppearance class="appearance" /> -->
           <VPNavBarSocialLinks class="social-links" />
