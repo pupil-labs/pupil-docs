@@ -71,6 +71,11 @@ watchPostEffect(() => {
               text: 'Feedback',
               link: 'https://feedback.pupil-labs.com/',
             }" />
+            <VPNavBarMenuLink class="notOutboundLink" :item="{
+              text: 'Home',
+              link: 'https://docs-staging.pupil-labs.com/',
+              target: '_self',
+            }" />
           </nav>
           <VPNavBarTranslations class="translations" />
           <!-- <VPNavBarAppearance class="appearance" /> -->
