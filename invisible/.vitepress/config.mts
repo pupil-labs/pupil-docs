@@ -65,6 +65,7 @@ let theme_config_additions = {
           { text: "Templates", link: "/general/templates/" },
         ],
       },
+      { text: "Publications & Citation", link: "/general/publications-and-citation/" },
     ],
     "/data-collection/": [
       {
