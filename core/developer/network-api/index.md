@@ -29,7 +29,6 @@ pupil_remote.connect('tcp://127.0.0.1:50020')
 ```
 
 :::tip
-<v-icon large color="info">info_outline</v-icon>
 Pupil Remote accepts requests via a `REP` socket, by default on port `50020`.
 Alternatively, you can provide a custom port via the `--port` application argument.
 :::
@@ -279,13 +278,11 @@ interface. Here is an example annotation.
 ```
 
 ::: tip
-<v-icon large color="info">info_outline</v-icon>
 You can add custom fields to your annotation which will be included in the
 [csv export](/software/pupil-player/#annotation-export).
 :::
 
 ::: tip
-<v-icon large color="info">info_outline</v-icon>
 <a href="https://github.com/pupil-labs/pupil-helpers/blob/master/python/remote_annotations.py" title="remote annotation script">This script</a> demonstrates how to send remote annotations. Use this script as a starting point for your integrations.
 :::
 

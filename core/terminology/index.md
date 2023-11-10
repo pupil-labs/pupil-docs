@@ -103,7 +103,6 @@ relation to a fixed starting point (referred to as an epoch – the point where 
 * **Pupil Time** uses an arbitrary epoch. It counts forward from a random point in time (timestamps can be negative).
   
 ::: tip
-<v-icon large color="info">info_outline</v-icon>
 You can convert Pupil Time to System Time with some simple calculations. [Check 
 out this tutorial](/developer/#convert-pupil-time-to-system-time).
 :::
@@ -137,7 +136,6 @@ There are three coordinate systems for each camera:
     - [Reference](https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html)
 
 ::: tip
-<v-icon large color="info">info_outline</v-icon>
 You can use the [_Camera Intrinsics_](#camera-intrinsics) to project a _3d camera
 location_ to _2d pixel location_, and vice versa.
 :::
@@ -159,7 +157,6 @@ location_ to _2d pixel location_, and vice versa.
         (eye0) as the right eye camera is physically upside down
 
 ::: tip
-<v-icon large color="info">info_outline</v-icon>
 In situations where the eye model fails to estimate `phi` or `theta`, such as during
 blinks, it will set these two fields and the `model_confidence` to `0.0`. We recommend
 discarding these data points.

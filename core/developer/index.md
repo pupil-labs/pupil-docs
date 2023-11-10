@@ -98,7 +98,6 @@ and the [matching evaluation here](https://github.com/pupil-labs/pupil-matching-
 
 ## Convert Pupil Time to System Time
 ::: tip
-<v-icon large color="info">info_outline</v-icon>
 Converting Pupil Time to System Time can helpful if you have other data recorded using System Time on the same 
 machine. However, be aware that the accuracy of System Time is variable and depends on the device's network time 
 protocol. Before using System Time for synchronization purposes, read our [Best Practices](/best-practices/#sychronization).
@@ -322,7 +321,6 @@ original topic and its timestamp.
 Follow the setup instructions for your OS on the Pupil Core [Github repo](https://github.com/pupil-labs/pupil)
 
 ::: warning
-<v-icon large color="warning">info_outline</v-icon>
 When running from source, the [user settings](#installation) are not placed in the user's
 home directory but in the root directory of the cloned repository.
 :::

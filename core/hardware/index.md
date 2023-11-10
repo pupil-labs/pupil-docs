@@ -53,7 +53,6 @@ You can also tighten the set screw to fix the eye camera in place.
 </video>
 
 ::: tip
-<v-icon large color="info">info_outline</v-icon>
 Before you calibrate, make sure to properly adjust the headset to get optimal eye detection and world camera FOV.
 :::
 
@@ -69,7 +68,6 @@ Set the focus for the distance at which you will be calibrating by rotating the 
 ### No Focus 200Hz Eye Camera
 
 ::: warning
-<v-icon large color="warning">error_outline</v-icon>
 200Hz eye cameras **do not** need to be focused, and **can not be focused**. The lens of the 200Hz eye camera is arrested using glue. Twisting the lens will risk breaking the mount.
 :::
 
