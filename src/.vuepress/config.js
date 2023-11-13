@@ -440,6 +440,11 @@ module.exports = {
             "Build gaze-contingent assistive applications with Neon",
           path: "gaze-contingency-assistive",
         },
+        {
+          title:
+            "Run Neon's blink detection pipeline offline or in real-time",
+          path: "blink-detection",
+        },
       ],
     },
     sidebarDepth: 1,

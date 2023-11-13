@@ -130,6 +130,12 @@ export default {
           to: "/alpha-lab/gaze-contingency-assistive",
           img: "gaze-cont-main-page.png",
         },
+        {
+          title: "Blink and you'll miss it!",
+          text: "Run our blink detection pipeline offline and/or in real-time with Neon",
+          to: "/alpha-lab/blink-detection",
+          img: "eye_blinks_anim.gif",
+        },
       ],
       banner: this.loadRandomImage(),
     };
