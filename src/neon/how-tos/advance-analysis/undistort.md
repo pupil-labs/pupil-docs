@@ -4,9 +4,10 @@ description: "Undistorting Neon's scene camera video and gaze data, using the in
 permalink: /neon/how-tos/advance-analysis/undistort/
 ---
 # Correcting for the lens distortion on Neon's scene camera
-A circumstance that often arises in wearable eye tracking setups is the presence of distortions on the scene camera. The type of lenses used, with their wide-angle characteristics, allow for a broad field of view, enabling the capture of more information within a single frame. However, this advantage comes at the cost of introducing distortions to the image. <!-- rectilinear distortions -->
+A circumstance that often arises in wearable eye-tracking setups is the presence of distortions on the scene camera. The type of lenses used, with their wide-angle characteristics, allows for a broad field of view, enabling the capture of more information within a single frame. However, this advantage comes at the cost of introducing distortions to the image. <!-- rectilinear distortions -->
 
-While we account for them in Pupil Cloud, and we even give you the possibility to download the undistorted video using the [Gaze Overlay enrichment](/enrichments/gaze-overlay), this is not the case when using the [Realtime API](/neon/real-time-api) or raw data, where you may want to correct it by yourself.
+While we account for them in Pupil Cloud processing — such as when we're aligning gaze data onto reference images or surfaces — it's important to note that the data you download will be in its original, unaltered form.
+We offer you the possibility to download the undistorted video using the [Gaze Overlay enrichment](/enrichments/gaze-overlay), but this is not the case when using the [Realtime API](/neon/real-time-api) or raw data, where you may want to correct it by yourself.
 
 ## When is it beneficial to correct for lens distortion?
 
@@ -41,13 +42,13 @@ keyboard=enabled
 </div>
 
 :::tip
-**TLDR**; Correcting for lens distortions is crutial for spatial analysis and comparability across studies.
+**TLDR**; Correcting for lens distortions is crucial for spatial analysis and comparability across studies.
 :::
 
 ## How to correct for the lens distortions?
 In this tutorial, we will cover how to read the provided intrinsic and extrinsic camera parameters and correct for the lens distortions in Neon's scene camera. We will also show you how to undistort the gaze data, so that you can map the gaze position onto the undistorted scene camera video.
 
-We will be using Python and OpenCV to perform the undistortion but the same principles apply to other programming languages and libraries.
+We will be using Python and OpenCV to perform the undistortion, but the same principles apply to other programming languages and libraries.
 
 ## Requirements
 To follow this guide, you will need to have the following libraries installed on your python environment:
@@ -69,7 +70,7 @@ def read_from_json(path):
         data = json.load(f)
     return data
 ```
-Where **path** points to the **scene_camera.json** file. Then, we will store the scene camera matrix, distortion coefficients in variables for later use.
+Where **path** points to the **scene_camera.json** file. Then, we will store the scene camera matrix, and distortion coefficients in variables for later use.
 
 ```python
 calibration = read_from_json(path)
@@ -106,7 +107,7 @@ def read_instrinsics_neon(path):
     )
 ```
 
-Where **path** points to the calibration file, which is located in the same folder as the raw data with the name **calibration.bin**. Then, we will store the scene camera matrix, distortion coefficients in variables for later use.
+Where **path** points to the calibration file, which is located in the same folder as the raw data with the name **calibration.bin**. Then, we will store the scene camera matrix, and distortion coefficients in variables for later use.
 
 ``` python
 calibration = read_instrinsics_neon(path)
@@ -176,7 +177,7 @@ xy_undist = cv2.undistortPoints(xy.reshape(-1, 1, 2).astype(np.float32),
     K, D, P=K)
 xy_undist = xy_undist.reshape(-1, 2)
 ```
-On the examplme below, we show the original gaze points overlaid ove the undistorted frame (in red) and the undistorted point positions (in yellow):
+On the example below, we show the original gaze points overlaid over the undistorted frame (in red) and the undistorted point positions (in yellow):
 
 <div class="mb-4" style="display:flex;justify-content:center;">
   <v-img class="rounded" :src="require('../../../media/neon/undist/undist_neon_with_gaze.jpg')"
