@@ -6,8 +6,8 @@ permalink: /alpha-lab/
 # Welcome to Alpha Lab!
 
 <div class="mb-4" style="display:flex;justify-content:center;">
-  <v-img class="rounded" :src="banner.img_name" 
-  width="100%" 
+  <v-img class="rounded" :src="banner.img_name"
+  width="100%"
   :alt="banner.alt_text"
   :title="banner.alt_text" />
 </div>
@@ -134,7 +134,7 @@ export default {
           title: "Blink and you'll miss it!",
           text: "Run our blink detection pipeline offline and/or in real-time with Neon",
           to: "/alpha-lab/blink-detection",
-          img: "eye_blinks_anim.gif",
+          img: "eye_blink.gif",
         },
       ],
       banner: this.loadRandomImage(),
