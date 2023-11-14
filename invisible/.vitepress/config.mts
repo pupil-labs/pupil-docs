@@ -66,6 +66,8 @@ let theme_config_additions = {
         ],
       },
       { text: "Publications & Citation", link: "/general/publications-and-citation/" },
+      { text: "Troubleshooting", link: "/general/troubleshooting/" },
+
     ],
     "/data-collection/": [
       {
@@ -101,7 +103,6 @@ let theme_config_additions = {
           },
         ],
       },
-      { text: "Troubleshooting", link: "/data-collection/troubleshooting/" },
     ],
     "/pupil-cloud/": [
       {

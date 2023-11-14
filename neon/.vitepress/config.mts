@@ -81,7 +81,7 @@ let theme_config_additions = {
           { text: "Templates", link: "/general/templates/" },
         ],
       },
-      { text: "Troubleshooting", link: "/pupil-cloud/troubleshooting/" },
+      { text: "Troubleshooting", link: "/general/troubleshooting/" },
     ],
     "/data-collection/": [
       {
@@ -129,7 +129,6 @@ let theme_config_additions = {
           },
         ],
       },
-      { text: "Troubleshooting", link: "/data-collection/troubleshooting/" },
     ],
     "/pupil-cloud/": [
       {
