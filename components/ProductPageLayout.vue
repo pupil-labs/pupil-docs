@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import ArrowIcon from "./ArrowIcon.vue";
+  import CardLink from "./cards/CardLink.vue";
   import Footer from "./Footer.vue";
 
   import { useData } from "vitepress";
@@ -52,41 +52,6 @@
           />
         </div>
       </div>
-      <div v-if="fm.products" class="grid gap-4">
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <a
-            v-for="product in fm.products"
-            :href="product.link.href"
-            :key="product.title"
-            class="textLink"
-          >
-            <div class="rounded-lg flex flex-col h-full bg-card">
-              <img
-                :src="
-                  product.image
-                    ? product.image
-                    : `https://place-hold.it/450x300/`
-                "
-                class="h-auto w-full rounded-tl-lg rounded-tr-lg"
-                style="aspect-ratio: 1.5"
-              />
-              <div
-                class="grid grid-rows-[auto,_1fr,_auto] gap-4 p-6 h-full justify-between"
-              >
-                <p class="text-1 font-semibold">{{ product.title }}</p>
-                <p class="text-2 text-sm">{{ product.details }}</p>
-                <div
-                  v-if="product.link"
-                  class="flex gap-2 items-center text-sm"
-                >
-                  <span>{{ product.link.text }}</span>
-                  <ArrowIcon />
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
     </div>
     <hr style="border-color: var(--vp-c-divider)" />
     <div>
@@ -96,28 +61,11 @@
             v-if="fm?.cards"
             class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
           >
-            <a
-              v-for="product in fm?.cards"
-              :key="product.title"
-              :href="product.link.href"
-              class="textLink"
-            >
-              <div class="rounded-lg flex flex-col h-full bg-card">
-                <div
-                  class="grid grid-rows-[auto,_1fr,_auto] gap-4 p-6 h-full justify-between"
-                >
-                  <p class="text-1 font-semibold">{{ product.title }}</p>
-                  <p class="text-2 text-sm">{{ product.details }}</p>
-                  <div
-                    v-if="product.link"
-                    class="flex gap-2 items-center text-sm"
-                  >
-                    <span>{{ product.link.text }}</span>
-                    <ArrowIcon />
-                  </div>
-                </div>
-              </div>
-            </a>
+            <CardLink
+              v-for="(product, index) in fm?.cards"
+              :key="index"
+              :product="product"
+            />
           </div>
         </div>
       </div>
