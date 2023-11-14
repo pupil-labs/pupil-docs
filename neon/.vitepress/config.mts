@@ -129,7 +129,6 @@ let theme_config_additions = {
           },
         ],
       },
-      { text: "Troubleshooting", link: "/data-collection/troubleshooting/" },
     ],
     "/pupil-cloud/": [
       {
