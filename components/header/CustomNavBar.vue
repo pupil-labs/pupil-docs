@@ -28,7 +28,6 @@ defineEmits<{
 const { y } = useWindowScroll();
 const { hasSidebar } = useSidebar();
 const { frontmatter, site } = useData();
-console.log(site);
 const classes = ref<Record<string, boolean>>({});
 
 watchPostEffect(() => {

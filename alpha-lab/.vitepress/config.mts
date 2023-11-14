@@ -62,6 +62,15 @@ let config_additions = {
             )
           ),
         },
+        {
+          find: /^.*\/VPDocFooter\.vue$/,
+          replacement: fileURLToPath(
+            new URL(
+              "./../../components/CustomDocFooter.vue",
+              import.meta.url
+            )
+          ),
+        },
       ],
     },
   },
