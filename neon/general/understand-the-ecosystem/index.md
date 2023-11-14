@@ -2,7 +2,7 @@
 The Neon ecosystem contains a range of tools that support you during data collection and data analysis. This overview introduces all the key components so you can become familiar with the tools at your disposal.
 
 ## Neon Companion App
-You should have already used the Neon Companion app to [make your first recording](/getting-started/first-recording/). This app is the core of every Neon data collection.
+You should have already used the Neon Companion app to [make your first recording](/data-collection/first-recording/). This app is the core of every Neon data collection.
 
 When your Neon is connected to the Companion device, it supplies it with power and enables it to generate a real-time gaze signal as well as several other [data streams](/general/data-streams/). When making a [recording](/general/recordings/), all generated data is saved on the Companion device.
 

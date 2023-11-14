@@ -7,37 +7,23 @@ import { theme_config as default_theme_config } from "./../../default_config.mts
 let theme_config_additions = {
   // https://vitepress.dev/reference/default-theme-config
   nav: [
-    { text: "Getting Started", link: "/getting-started/first-recording/" },
     { text: "General", link: "/general/module-technical-overview/" },
     { text: "Data Collection", link: "/data-collection/" },
-    {
-      text: "Analysis",
-      items: [
-        { text: "Pupil Cloud", link: "/pupil-cloud/" },
-        { text: "Neon Player", link: "/neon-player/" },
-      ],
-    },
+    { text: "Pupil Cloud", link: "/pupil-cloud/" },
+    { text: "Neon Player", link: "/neon-player/" },
     { text: "Real-Time API", link: "/real-time-api/tutorials/" },
     { text: "Neon XR", link: "/neon-xr/" },
   ],
 
   sidebar: {
     "/getting-started/": [
-      {
-        text: "Getting Started",
-        items: [
-          {
-            text: "Your first Recording",
-            link: "/getting-started/first-recording/",
-          },
-          {
-            text: "Understand the Ecosystem",
-            link: "/getting-started/understand-the-ecosystem/",
-          },
-        ],
-      },
+
     ],
     "/general/": [
+      {
+        text: "Ecosystem Overview",
+        link: "/general/understand-the-ecosystem/",
+      },
       {
         text: "Neon Module",
         items: [
@@ -84,6 +70,15 @@ let theme_config_additions = {
       { text: "Troubleshooting", link: "/general/troubleshooting/" },
     ],
     "/data-collection/": [
+      {
+        text: "Tutorials",
+        items: [
+          {
+            text: "Your first Recording",
+            link: "/data-collection/first-recording/",
+          },
+        ],
+      },
       {
         text: "Neon Compannion App",
         items: [

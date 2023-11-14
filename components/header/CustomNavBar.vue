@@ -58,40 +58,6 @@ watchPostEffect(() => {
           <slot name="nav-bar-content-before" />
           <VPNavBarSearch class="search" />
           <VPNavBarMenu class="menu" />
-          <nav v-if="site.base == '/neon/' || site.base == '/invisible/'" aria-labelledby="main-nav-aria-label"
-            class="customNav menu">
-            <span id="main-nav-aria-label" class="visually-hidden">Main Navigation</span>
-            <VPNavBarMenuLink class="notOutboundLink" :item="{
-              text: 'Alpha Lab',
-              link: 'https://docs-staging.pupil-labs.com/alpha-lab/',
-              target: '_self',
-            }" />
-            <VPNavBarMenuLink class="notOutboundLink" :item="{
-              text: 'Chat',
-              link: 'https://pupil-labs.com/chat',
-            }" />
-            <VPNavBarMenuLink class="notOutboundLink" :item="{
-              text: 'Feedback',
-              link: 'https://feedback.pupil-labs.com/',
-            }" />
-            <VPNavBarMenuLink class="notOutboundLink" :item="{
-              text: 'Home',
-              link: 'https://docs-staging.pupil-labs.com/',
-              target: '_self',
-            }" />
-          </nav>
-          <nav v-if="site.base == '/core/'" aria-labelledby="main-nav-aria-label" class="customNav menu">
-            <span id="main-nav-aria-label" class="visually-hidden">Main Navigation</span>
-            <VPNavBarMenuLink class="notOutboundLink" :item="{
-              text: 'Chat',
-              link: 'https://pupil-labs.com/chat',
-            }" />
-            <VPNavBarMenuLink class="notOutboundLink" :item="{
-              text: 'Home',
-              link: 'https://docs-staging.pupil-labs.com/',
-              target: '_self',
-            }" />
-          </nav>
           <VPNavBarTranslations class="translations" />
           <!-- <VPNavBarAppearance class="appearance" /> -->
           <VPNavBarSocialLinks class="social-links" />
