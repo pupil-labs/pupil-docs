@@ -519,6 +519,41 @@
   --vp-local-search-highlight-text: var(--vp-c-neutral-inverse);
 }
 
+/**
+  * Custom
+  * -------------------------------------------------------------------------- */
+
+.text-1 {
+  color: var(--vp-c-text-1);
+}
+
+.text-2 {
+  color: var(--vp-c-text-2);
+}
+
+.textLink {
+  color: var(--vp-c-brand-1);
+}
+
+.textLink:hover {
+  color: var(--vp-c-brand-2);
+}
+.bg-card {
+  background-color: var(--vp-c-bg-elv);
+}
+
+.bg-card:hover {
+  background-color: var(--vp-c-default-3);
+}
+
+.action-button {
+  background-color: var(--vp-c-default-3);
+}
+
+.action-button:hover {
+  background-color: var(--vp-c-bg-elv);
+}
+
 @media (min-width: 768px) {
   #app .VPNavScreen {
     display: unset;

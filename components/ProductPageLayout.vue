@@ -18,23 +18,6 @@
   const fm: FM = frontmatter;
 </script>
 
-<style scoped>
-  .textLink {
-    color: var(--vp-c-brand-1);
-  }
-
-  .textLink:hover {
-    color: var(--vp-c-brand-2);
-  }
-  .bg-card {
-    background-color: var(--vp-c-bg-elv);
-  }
-
-  .bg-card:hover {
-    background-color: var(--vp-c-default-3);
-  }
-</style>
-
 <template>
   <div
     class="container grid gap-6 sm:gap-12 md:gap-16 lg:gap-20 px-6 pt-9 sm:pb-12 md:pb-16 lg:pb-20 mx-auto"
@@ -49,7 +32,10 @@
           >
             {{ fm.hero.title }}
           </h1>
-          <div v-if="fm.hero?.tagline" class="text-lg md:text-xl lg:text-2xl">
+          <div
+            v-if="fm.hero?.tagline"
+            class="text-lg md:text-xl lg:text-2xl text-2"
+          >
             {{ fm.hero?.tagline }}
           </div>
         </div>
@@ -87,8 +73,8 @@
               <div
                 class="grid grid-rows-[auto,_1fr,_auto] gap-4 p-6 h-full justify-between"
               >
-                <p class="font-semibold">{{ product.title }}</p>
-                <p class="text-sm">{{ product.details }}</p>
+                <p class="text-1 font-semibold">{{ product.title }}</p>
+                <p class="text-2 text-sm">{{ product.details }}</p>
                 <div
                   v-if="product.link"
                   class="flex gap-2 items-center text-sm"
@@ -120,8 +106,8 @@
                 <div
                   class="grid grid-rows-[auto,_1fr,_auto] gap-4 p-6 h-full justify-between"
                 >
-                  <p class="font-semibold">{{ product.title }}</p>
-                  <p class="text-sm">{{ product.details }}</p>
+                  <p class="text-1 font-semibold">{{ product.title }}</p>
+                  <p class="text-2 text-sm">{{ product.details }}</p>
                   <div
                     v-if="product.link"
                     class="flex gap-2 items-center text-sm"
