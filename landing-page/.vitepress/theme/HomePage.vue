@@ -18,23 +18,6 @@
   const fm: FM = frontmatter;
 </script>
 
-<style scoped>
-  .textLink {
-    color: var(--vp-c-brand-1);
-  }
-
-  .textLink:hover {
-    color: var(--vp-c-brand-2);
-  }
-  .bg-card {
-    background-color: var(--vp-c-bg-elv);
-  }
-
-  .bg-card:hover {
-    background-color: var(--vp-c-default-3);
-  }
-</style>
-
 <template>
   <div
     class="container grid gap-20 px-6 pt-9 sm:pb-12 md:pb-16 lg:pb-20 mx-auto"
@@ -49,30 +32,37 @@
           >
             {{ fm.hero.title }}
           </h1>
-          <div v-if="fm.hero?.tagline" class="text-lg md:text-xl lg:text-2xl">
+          <div
+            v-if="fm.hero?.tagline"
+            class="text-lg md:text-xl lg:text-2xl text-2"
+          >
             {{ fm.hero?.tagline }}
           </div>
         </div>
       </div>
       <div class="grid gap-4">
         <div v-if="fm.products" class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div
+          <a
             v-for="product in fm.products"
             :key="product.title"
-            class="rounded-lg flex flex-col bg-card"
+            :href="product.link.href"
+            class="textLink"
           >
-            <img
-              :src="
-                product.image ? product.image : `https://place-hold.it/450x300/`
-              "
-              class="h-auto w-full rounded-tl-lg rounded-tr-lg"
-            />
-            <div
-              class="grid grid-rows-[auto,_1fr,_auto] gap-4 p-6 h-full justify-between"
-            >
-              <p class="font-semibold">{{ product.title }}</p>
-              <p class="text-sm">{{ product.details }}</p>
-              <a :href="product.link.href" class="textLink">
+            <div class="rounded-lg flex flex-col h-full bg-card">
+              <img
+                :src="
+                  product.image
+                    ? product.image
+                    : `https://place-hold.it/450x300/`
+                "
+                class="h-auto w-full rounded-tl-lg rounded-tr-lg"
+              />
+              <div
+                class="grid grid-rows-[auto,_1fr,_auto] gap-4 p-6 h-full justify-between"
+              >
+                <p class="text-1 font-semibold">{{ product.title }}</p>
+                <p class="text-2 text-sm">{{ product.details }}</p>
+
                 <div
                   v-if="product.link"
                   class="flex gap-2 items-center text-sm"
@@ -80,9 +70,9 @@
                   <span>{{ product.link.text }}</span>
                   <ArrowIcon />
                 </div>
-              </a>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </div>
@@ -99,12 +89,16 @@
           </h2>
           <div
             v-if="fm.alpha?.tagline"
-            class="text-lg md:text-xl lg:text-2xl pb-6"
+            class="text-lg md:text-xl lg:text-2xl pb-6 text-2"
           >
             {{ fm.alpha?.tagline }}
           </div>
           <div v-if="fm.alpha?.action" class="text-lg md:text-xl lg:text-2xl">
-            <button>{{ fm.alpha?.action.text }}</button>
+            <button
+              class="text-white py-2 px-4 text-sm font-medium rounded-full action-button"
+            >
+              <p>{{ fm.alpha?.action.text }}</p>
+            </button>
           </div>
         </div>
         <div class="grid col-span-2">
@@ -112,17 +106,18 @@
             v-if="fm.alpha.cards"
             class="grid grid-cols-1 sm:grid-cols-2 gap-4"
           >
-            <div
+            <a
               v-for="product in fm.alpha.cards"
               :key="product.title"
-              class="rounded-lg flex flex-col bg-card"
+              :href="product.link.href"
+              class="textLink"
             >
-              <div
-                class="grid grid-rows-[auto,_1fr,_auto] gap-4 p-6 h-full justify-between"
-              >
-                <p class="font-semibold">{{ product.title }}</p>
-                <p class="text-sm">{{ product.details }}</p>
-                <a :href="product.link.href" class="textLink">
+              <div class="rounded-lg flex flex-col h-full bg-card">
+                <div
+                  class="grid grid-rows-[auto,_1fr,_auto] gap-4 p-6 h-full justify-between"
+                >
+                  <p class="text-1 font-semibold">{{ product.title }}</p>
+                  <p class="text-2 text-sm">{{ product.details }}</p>
                   <div
                     v-if="product.link"
                     class="flex gap-2 items-center text-sm"
@@ -130,9 +125,9 @@
                     <span>{{ product.link.text }}</span>
                     <ArrowIcon />
                   </div>
-                </a>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </div>

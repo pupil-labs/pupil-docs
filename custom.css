@@ -117,7 +117,7 @@
 :root {
   --vp-c-bg: #fefbff;
   --vp-c-bg-alt: #f2f0f4;
-  --vp-c-bg-elv: #fefbff;
+  --vp-c-bg-elv: #f2f0f4;
   --vp-c-bg-soft: #f2f0f4;
 }
 
@@ -517,6 +517,41 @@
   --vp-local-search-result-selected-border: var(--vp-c-brand-1);
   --vp-local-search-highlight-bg: var(--vp-c-brand-1);
   --vp-local-search-highlight-text: var(--vp-c-neutral-inverse);
+}
+
+/**
+  * Custom
+  * -------------------------------------------------------------------------- */
+
+.text-1 {
+  color: var(--vp-c-text-1);
+}
+
+.text-2 {
+  color: var(--vp-c-text-2);
+}
+
+.textLink {
+  color: var(--vp-c-brand-1);
+}
+
+.textLink:hover {
+  color: var(--vp-c-brand-2);
+}
+.bg-card {
+  background-color: var(--vp-c-bg-elv);
+}
+
+.bg-card:hover {
+  background-color: var(--vp-c-default-3);
+}
+
+.action-button {
+  background-color: var(--vp-c-default-3);
+}
+
+.action-button:hover {
+  background-color: var(--vp-c-bg-elv);
 }
 
 @media (min-width: 768px) {
