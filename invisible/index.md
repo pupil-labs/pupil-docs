@@ -14,7 +14,7 @@ hero:
       link: /pupil-cloud/
 
 cards:
-   - title: Getting Started
+  - title: Getting Started
     details: Learn how to make your first recording with Neon and get an overview of the ecosystem!
     link: { text: View, href: "/getting-started/first-recording/" }
   - title: General
