@@ -16,17 +16,17 @@ hero:
 cards:
   - title: Getting Started
     details: Learn how to make your first recording with Pupil Core!
-    link: { text: View, href: "" }
+    link: { text: View, href: "/core/getting-started/" }
   - title: User Guide
     details: Everything you need to know about the available software and hardware.
-    link: { text: View, href: "" }
+    link: { text: View, href: "/core/software/pupil-capture/" }
   - title: DIY
     details: Instructions on building the non-commercial do-it-yourself headset.
-    link: { text: View, href: "" }
+    link: { text: View, href: "/core/diy/" }
   - title: Developer
     details: Documentation on all the developer-oriented features of Pupil Core including the network and plugin API.
-    link: { text: View, href: "" }
+    link: { text: View, href: "/core/developer/" }
   - title: VR/AR
     details: Instructions on how to use the VR/AR add-ons based on Pupil Core technology.
-    link: { text: View, href: "" }
+    link: { text: View, href: "/core/vr-ar/" }
 ---
