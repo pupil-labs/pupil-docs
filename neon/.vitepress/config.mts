@@ -7,7 +7,7 @@ import { theme_config as default_theme_config } from "./../../default_config.mts
 let theme_config_additions = {
   // https://vitepress.dev/reference/default-theme-config
   nav: [
-    { text: "General", link: "/general/module-technical-overview/" },
+    { text: "Hardware", link: "/hardware/module-technical-overview/" },
     { text: "Data Collection", link: "/data-collection/" },
     { text: "Pupil Cloud", link: "/pupil-cloud/" },
     { text: "Neon Player", link: "/neon-player/" },
@@ -19,55 +19,34 @@ let theme_config_additions = {
     "/getting-started/": [
 
     ],
-    "/general/": [
-      {
-        text: "Ecosystem Overview",
-        link: "/general/understand-the-ecosystem/",
-      },
+    "/hardware/": [
       {
         text: "Neon Module",
         items: [
           {
             text: "Technical Overview",
-            link: "/general/module-technical-overview/",
+            link: "/hardware/module-technical-overview/",
           },
           {
             text: "Cleaning & Disinfecting",
-            link: "/general/clean-and-disinfect/",
+            link: "/hardware/clean-and-disinfect/",
           },
         ],
       },
       {
         text: "Frames",
         items: [
-          { text: "Swapping Frames", link: "/general/swapping-frames/" },
-          { text: "Make Your Own", link: "/general/make-your-own-frame/" },
+          { text: "Swapping Frames", link: "/hardware/swapping-frames/" },
+          { text: "Make Your Own", link: "/hardware/make-your-own-frame/" },
         ],
       },
       {
         text: "Companion Device",
         items: [
-          { text: "Compatible Devices", link: "/general/compatible-devices/" },
-          { text: "Using a USB Hub", link: "/general/using-a-usb-hub/" },
+          { text: "Compatible Devices", link: "/hardware/compatible-devices/" },
+          { text: "Using a USB Hub", link: "/hardware/using-a-usb-hub/" },
         ],
       },
-      {
-        text: "Recordings",
-        items: [
-          { text: "Overview", link: "/general/recordings/" },
-          { text: "Data Streams", link: "/general/data-streams/" },
-          { text: "Data Format", link: "/general/data-format/" },
-        ],
-      },
-      {
-        text: "Additional Data",
-        items: [
-          { text: "Events", link: "/general/events/" },
-          { text: "Wearers", link: "/general/wearers/" },
-          { text: "Templates", link: "/general/templates/" },
-        ],
-      },
-      { text: "Troubleshooting", link: "/general/troubleshooting/" },
     ],
     "/data-collection/": [
       {
@@ -80,6 +59,22 @@ let theme_config_additions = {
         ],
       },
       {
+        text: "Recordings",
+        items: [
+          { text: "Overview", link: "/data-collection/recordings/" },
+          { text: "Data Streams", link: "/data-collection/data-streams/" },
+          { text: "Data Format", link: "/data-collection/data-format/" },
+        ],
+      },
+      {
+        text: "Additional Data",
+        items: [
+          { text: "Events", link: "/data-collection/events/" },
+          { text: "Wearers", link: "/data-collection/wearers/" },
+          { text: "Templates", link: "/data-collection/templates/" },
+        ],
+      },
+      {
         text: "Neon Compannion App",
         items: [
           {
@@ -88,7 +83,7 @@ let theme_config_additions = {
           },
           {
             text: "Backlight Compensation",
-            link: "/data-collection/measuring-the-IED/",
+            link: "/data-collection/backlight-compensation/",
           },
         ],
       },
@@ -124,6 +119,7 @@ let theme_config_additions = {
           },
         ],
       },
+      { text: "Troubleshooting", link: "/data-collection/troubleshooting/" },
     ],
     "/pupil-cloud/": [
       {

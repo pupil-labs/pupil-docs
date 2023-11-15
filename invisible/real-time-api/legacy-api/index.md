@@ -111,7 +111,7 @@ main()  # Execute example
 Starting and stopping recordings on Pupil Invisible Companion App can be controlled remotely by another device that is in the same network and follows the NDSI v4 protocol.
 
 
- - The Pupil Invisible Companion App has to be ready for recording and the active [template](/general/templates/) must have no required fields to avoid incomplete templates or force input on the remotely controlled phone.
+ - The Pupil Invisible Companion App has to be ready for recording and the active [template](/data-collection/templates/) must have no required fields to avoid incomplete templates or force input on the remotely controlled phone.
  - The remote device can set the `local_capture` control of the hardware sensor after attaching to it, to start and stop a recording, see the example below for more details.
 
 ```py
