@@ -17,7 +17,7 @@ hero:
 cards:
   - title: Getting Started
     details: Learn how to make your first recording with Neon and get an overview of the ecosystem!
-    link: { text: View, href: "/getting-started/first-recording/" }
+    link: { text: View, href: "/general/understand-the-ecosystem/" }
   - title: General
     details: Everything you need to know about Neon, frames, data streams, data formats, and other general topics.
     link: { text: View, href: "/general/module-technical-overview/" }
