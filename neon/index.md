@@ -20,7 +20,7 @@ cards:
     link: { text: View, href: "/getting-started/first-recording/" }
   - title: General
     details: Everything you need to know about Neon, frames, data streams, data formats, and other general topics.
-    link: { text: View, href: "/general/module-technical-overview/" }
+    link: { text: View, href: "/hardware/module-technical-overview/" }
   - title: Data Collection
     details: Neon comes with a lot of powerful tools for data collection. Learn how to use them here!
     link: { text: View, href: "/data-collection/" }

@@ -1,5 +1,5 @@
 # Data Streams
-The Neon module contains a number of sensors providing different types of data (see also [Technical Overview](/general/module-technical-overview/)). Some data is available in real-time (e.g. via the [real-time API](/real-time-api/tutorials/)), while other data is generated post hoc through either [Pupil Cloud](/pupil-cloud/) or [Neon Player](/neon-player/). 
+The Neon module contains a number of sensors providing different types of data (see also [Technical Overview](/hardware/module-technical-overview/)). Some data is available in real-time (e.g. via the [real-time API](/real-time-api/tutorials/)), while other data is generated post hoc through either [Pupil Cloud](/pupil-cloud/) or [Neon Player](/neon-player/). 
  
 Below you can find a description of all data streams and where they are available. All data is fully accessible and can be downloaded in convenient formats.
 

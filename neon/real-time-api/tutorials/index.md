@@ -1,7 +1,7 @@
 # Introduction
 For some applications it is critical to have access to eye tracking data in real time. Imagine for example an application utilizing gaze interaction to allow users to press a button using only their eyes.
 
-In other cases it may be important to automatically start or stop a recording and save [events](/general/events/). For example, you might want to launch a screen-based experiment and have the recording start automatically when the stimulus presentation begins. Additionally, you might want to save the timestamps of when the subject interacted with the screen.
+In other cases it may be important to automatically start or stop a recording and save [events](/data-collection/events/). For example, you might want to launch a screen-based experiment and have the recording start automatically when the stimulus presentation begins. Additionally, you might want to save the timestamps of when the subject interacted with the screen.
 
 All of this is possible for developers using the real-time API. It allows you to stream gaze data and scene video to any device connected to the same local network. Further, you can control all devices remotely to start and stop recordings or save events.
 
@@ -68,7 +68,7 @@ device.recording_stop_and_save()
 
 
 ## Saving Events
-While a recording is running, you can save [events](/general/events/)
+While a recording is running, you can save [events](/data-collection/events/)
 using the [`send_event`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.send_event) method.
 By default, the Neon device receiving the event will assign a timestamp to it,
 using the time of arrival. Optionally, you can set a custom nanosecond timestamp for your event instead.
