@@ -26,7 +26,7 @@ Two primary types of eye movements exhibited by the visual system are fixations 
 
 ![Fixations](./fixations.jpg)
 
-Fixations are calculated automatically in Pupil Cloud after uploading a recording. They are available as part of the [recording exports](/general/data-format/). The downloads for gaze mapping enrichments ([Reference Image Mapper](/pupil-cloud/enrichments/reference-image-mapper/#fixations-csv), [Marker Mapper](/pupil-cloud/enrichments/marker-mapper/#fixations-csv)) also include "mapped fixations".
+Fixations are calculated automatically in Pupil Cloud after uploading a recording. They are available as part of the [recording exports](/data-collection/data-format/). The downloads for gaze mapping enrichments ([Reference Image Mapper](/pupil-cloud/enrichments/reference-image-mapper/#fixations-csv), [Marker Mapper](/pupil-cloud/enrichments/marker-mapper/#fixations-csv)) also include "mapped fixations".
 
 The fixation detection algorithm employed in Pupil Cloud was developed by us, and was specifically designed for head-mounted eye trackers. 
 
@@ -39,7 +39,7 @@ Our algorithm explicitly compensates for VOR eye movements and thus correctly cl
 ## Blinks
 During blinks the eye is briefly covered by the eye lids, which serves the purpose of spreading tears across the cornea. The blink rate and blink duration are however also correlated with cognitive processes, which makes it an interesting physiological signal.
 
-Blinks are detected automatically in Pupil Cloud after uploading a recording. They are available as part of the [recording exports](/general/data-format/).
+Blinks are detected automatically in Pupil Cloud after uploading a recording. They are available as part of the [recording exports](/data-collection/data-format/).
 
 The blink detection algorithm is operating directly on the eye video to detect the movement patterns of blinks. Read more about the algorithm in the [Pupil Labs blink detector whitepaper](https://docs.google.com/document/d/1JLBhC7fmBr6BR59IT3cWgYyqiaM8HLpFxv5KImrN-qE/export?format=pdf). The algorithm will soon be released as open-source.
 

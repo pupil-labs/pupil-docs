@@ -6,68 +6,33 @@ import { theme_config as default_theme_config } from "./../../default_config.mts
 
 let theme_config_additions = {
   nav: [
-    { text: "Getting Started", link: "/getting-started/first-recording/" },
-    { text: "General", link: "/general/technical-overview/" },
+    { text: "Hardware", link: "/hardware/technical-overview/" },
     { text: "Data Collection", link: "/data-collection/" },
     { text: "Pupil Cloud", link: "/pupil-cloud/" },
     { text: "Real-Time API", link: "/real-time-api/tutorials/" },
   ],
 
   sidebar: {
-    "/getting-started/": [
-      {
-        text: "Getting Started",
-        items: [
-          {
-            text: "Your first Recording",
-            link: "/getting-started/first-recording/",
-          },
-          {
-            text: "Understand the Ecosystem",
-            link: "/getting-started/understand-the-ecosystem/",
-          },
-        ],
-      },
-    ],
-    "/general/": [
+    "/hardware/": [
       {
         text: "Pupil Invisible",
         items: [
-          { text: "Technical Overview", link: "/general/technical-overview/" },
-          { text: "Exchange Lenses", link: "/general/exchange-lenses/" },
+          { text: "Technical Overview", link: "/hardware/technical-overview/" },
+          { text: "Exchange Lenses", link: "/hardware/exchange-lenses/" },
           {
             text: "Cleaning & Disinfecting",
-            link: "/general/clean-and-disinfect/",
+            link: "/hardware/clean-and-disinfect/",
           },
-          { text: "Head-Strap", link: "/general/attach-the-head-strap/" },
+          { text: "Head-Strap", link: "/hardware/attach-the-head-strap/" },
         ],
       },
       {
         text: "Companion Device",
         items: [
-          { text: "Compatible Devices", link: "/general/compatible-devices/" },
-          { text: "Using a USB Hub", link: "/general/using-a-usb-hub/" },
+          { text: "Compatible Devices", link: "/hardware/compatible-devices/" },
+          { text: "Using a USB Hub", link: "/hardware/using-a-usb-hub/" },
         ],
       },
-      {
-        text: "Recordings",
-        items: [
-          { text: "Overview", link: "/general/recordings/" },
-          { text: "Data Streams", link: "/general/data-streams/" },
-          { text: "Data Format", link: "/general/data-format/" },
-        ],
-      },
-      {
-        text: "Additional Data",
-        items: [
-          { text: "Events", link: "/general/events/" },
-          { text: "Wearers", link: "/general/wearers/" },
-          { text: "Templates", link: "/general/templates/" },
-        ],
-      },
-      { text: "Publications & Citation", link: "/general/publications-and-citation/" },
-      { text: "Troubleshooting", link: "/general/troubleshooting/" },
-
     ],
     "/data-collection/": [
       {
@@ -77,6 +42,22 @@ let theme_config_additions = {
             text: "Offset Correction",
             link: "/data-collection/offset-correction/",
           },
+        ],
+      },
+      {
+        text: "Recordings",
+        items: [
+          { text: "Overview", link: "/hardware/recordings/" },
+          { text: "Data Streams", link: "/data-collection/data-streams/" },
+          { text: "Data Format", link: "/data-collection/data-format/" },
+        ],
+      },
+      {
+        text: "Additional Data",
+        items: [
+          { text: "Events", link: "/data-collection/events/" },
+          { text: "Wearers", link: "/data-collection/wearers/" },
+          { text: "Templates", link: "/data-collection/templates/" },
         ],
       },
       {
@@ -103,6 +84,8 @@ let theme_config_additions = {
           },
         ],
       },
+      { text: "Publications & Citation", link: "/hardware/publications-and-citation/" },
+      { text: "Troubleshooting", link: "/data-collection/troubleshooting/" },
     ],
     "/pupil-cloud/": [
       {

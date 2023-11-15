@@ -16,7 +16,7 @@ Once the page has loaded, you will be presented with a live stream of the scene 
 
 If you have multiple Pupil Invisible devices connected to the network, you can switch between devices using the switch button.
 
-Using the various event buttons, you can remotely save an [event](https://docs-staging.pupil-labs.com/neon/general/events/) in a recording to mark points of interest. In the settings view you can customize the according event names.
+Using the various event buttons, you can remotely save an [event](https://docs-staging.pupil-labs.com/neon/data-collection/events/) in a recording to mark points of interest. In the settings view you can customize the according event names.
 
 ![Monitor App UI](./monitor-ui.png)
 
