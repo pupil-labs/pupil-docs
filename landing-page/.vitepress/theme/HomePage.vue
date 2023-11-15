@@ -68,11 +68,13 @@
             {{ fm.alpha?.tagline }}
           </div>
           <div v-if="fm.alpha?.action" class="text-lg md:text-xl lg:text-2xl">
-            <button
-              class="text-white py-2 px-4 text-sm font-medium rounded-full action-button"
-            >
-              <p>{{ fm.alpha?.action.text }}</p>
-            </button>
+            <a :href="fm.alpha.action.link">
+              <button
+                class="py-2 px-4 text-sm font-medium rounded-full action-button"
+              >
+                <p>{{ fm.alpha?.action.text }}</p>
+              </button>
+            </a>
           </div>
         </div>
         <div class="grid col-span-2">
