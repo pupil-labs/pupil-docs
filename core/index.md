@@ -5,6 +5,7 @@ layout: ProductPageLayout
 hero:
   title: "Core"
   tagline: Official docs for users getting started with their Pupil Labs eye tracking glasses and for developers working on eye tracking applications and integrations.
+  image: "/core/core-doc.png"
   actions:
     - theme: brand
       text: Getting Started
