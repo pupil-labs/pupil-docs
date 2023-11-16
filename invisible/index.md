@@ -5,6 +5,7 @@ layout: ProductPageLayout
 hero:
   title: "Invisible"
   tagline: Official docs for users getting started with their Pupil Labs eye tracking glasses and for developers working on eye tracking applications and integrations.
+  image: "/invisible/pi-docs_overview_card.jpg"
   actions:
     - theme: brand
       text: Getting Started
