@@ -68,7 +68,7 @@
             {{ fm.alpha?.tagline }}
           </div>
           <div v-if="fm.alpha?.action" class="text-lg md:text-xl lg:text-2xl">
-            <a :href="fm.alpha.action.link">
+            <a :href="fm.alpha.action.link" target="_self">
               <button
                 class="py-2 px-4 text-sm font-medium rounded-full action-button"
               >
