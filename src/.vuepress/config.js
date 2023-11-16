@@ -436,9 +436,12 @@ module.exports = {
           path: "phone-screens",
         },
         {
-          title:
-            "Build gaze-contingent assistive applications with Neon",
+          title: "Build gaze-contingent assistive applications with Neon",
           path: "gaze-contingency-assistive",
+        },
+        {
+          title: "AI vision assistant",
+          path: "gpt-4-eyes",
         },
       ],
     },

@@ -130,6 +130,12 @@ export default {
           to: "/alpha-lab/gaze-contingency-assistive",
           img: "gaze-cont-main-page.png",
         },
+        {
+          title: "AI vision assistant",
+          text:"Exploring the use of OpenAI's GPT-4-V and real-time APIs from Neon or Invisible to assist individuals with low vision or communication disabilities.",
+          to: "/alpha-lab/gpt-4-eyes",
+          img: "gpt-eyes-banner.png"
+        },
       ],
       banner: this.loadRandomImage(),
     };
