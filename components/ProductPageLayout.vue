@@ -47,8 +47,8 @@
             "
             width="100%"
             height="auto"
-            style="aspect-ratio: 1.15; max-width: 320px"
-            alt="Neon hero image"
+            style="max-width: 320px"
+            alt="Product hero image"
           />
         </div>
       </div>

@@ -20,7 +20,7 @@
 </script>
 
 <template>
-  <a :href="product.link.href" class="textLink">
+  <a :href="product.link.href" class="textLink" target="_self">
     <div class="rounded-lg flex flex-col h-full bg-card">
       <img
         v-if="product.image"
