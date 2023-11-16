@@ -13,7 +13,7 @@ An IR LED is located just above each camera, which guarantees good illumination 
 
 
 ## Gaze
-The Neon Companion app can provide gaze data in real-time. When using a OnePlus 8 Companion device, the available framerate is +120 Hz (the achieved framerate varies from ~200Hz in the first minute of a recording to ~120Hz for longer recordings. This is due to restrictions in resource consumption applied by the Android operating system). Other apps running simultaneously on the phone may decrease the framerate.
+The Neon Companion app can provide gaze data in real-time. When using a OnePlus 8 Companion device, the available framerate is +120 Hz (the achieved framerate varies from ~200 Hz in the first minute of a recording to ~120 Hz for longer recordings. This is due to restrictions in resource consumption applied by the Android operating system). Other apps running simultaneously on the phone may decrease the framerate.
 
 After a recording is uploaded to Pupil Cloud, gaze data is automatically re-computed at the full framerate of 200 Hz and can be downloaded from there.
 
@@ -27,10 +27,10 @@ After a recording is uploaded to Pupil Cloud, gaze data is automatically re-comp
 
 Gaze data is output in pixel space of the scene camera image, which has a resolution of 1600x1200 px. The origin is in the top-left corner of the image.
 
-The gaze estimation algorithm is based on end-2-end deep learning and provides gaze data robustly without requiring a calibration. We are currently working on a white paper that thoroughly evaluated the algorithm and will link it here once it is published.
+The gaze estimation algorithm is based on end-2-end deep learning and provides gaze data robustly without requiring calibration. We are currently working on a white paper that thoroughly evaluated the algorithm and will link it here once it is published.
 
 ## Fixations
-The two primary types of eye movements exhibited by the visual system are fixations and saccades. During fixations, the eyes are directed at a specific point in the environment. A saccade is a very quick movement where the eyes jump from one fixation to the next. Properties like the fixation duration are of significant importance for studying gaze behaviour.
+The two primary types of eye movements exhibited by the visual system are fixations and saccades. During fixations, the eyes are directed at a specific point in the environment. A saccade is a very quick movement where the eyes jump from one fixation to the next. Properties like the fixation duration are of significant importance for studying gaze behavior.
 
 
 <div style="display:flex;justify-content:center;" class="pb-4">
@@ -43,7 +43,7 @@ The two primary types of eye movements exhibited by the visual system are fixati
 
 Fixations are calculated automatically in Pupil Cloud after uploading a recording and are included in relevant downloads. The downloads for gaze mapping enrichments ([Reference Image Mapper](/export-formats/enrichment-data/marker-mapper/#fixations-csv), [Marker Mapper](/export-formats/enrichment-data/reference-image-mapper/#fixations-csv)) also include "mapped fixations".
 
-The deployed fixation detection algorithm was specifically designed for head-mounted eye trackers and offers increased robustness in the presence of head-movements. Especially movements due to vestibulo-ocular reflex are compensated for, which is not the case for most other fixation detection algorithms. Read more about that in the [Pupil Labs fixation detector whitepaper](https://docs.google.com/document/d/1dTL1VS83F-W1AZfbG-EogYwq2PFk463HqwGgshK3yJE/export?format=pdf)
+The deployed fixation detection algorithm was specifically designed for head-mounted eye trackers and offers increased robustness in the presence of head movements. Especially movements due to vestibulo-ocular reflex are compensated for, which is not the case for most other fixation detection algorithms. Read more about that in the [Pupil Labs fixation detector whitepaper](https://docs.google.com/document/d/1dTL1VS83F-W1AZfbG-EogYwq2PFk463HqwGgshK3yJE/export?format=pdf)
 
 ## 3D Eye States
 After uploading a recording to Pupil Cloud, 3D eye states are computed automatically at 200 Hz. The 3D eye states are a time series of each eye's position and orientation in 3D space, given by the location of the eyeball center and the optical axis of each eye. 
@@ -52,15 +52,15 @@ The coordinate system is depicted below. The origin corresponds to the scene cam
 
 ![Coordinate systems of 3D eye states](../../media/neon/3d_eye_states.png)
 
-You can specify the inter eye distance (IED) of a wearer in the wearer profile before making a recording to further improve the accuracy of the measurements. If no IED value is specified, the population average of 63 mm is used.
+You can specify the inter-eye distance (IED) of a wearer in the wearer profile before making a recording to further improve the accuracy of the measurements. If no IED value is specified, the population average of 63 mm is used.
 
 ## Pupil Diameters
-After uploading a recording to Pupil Cloud, pupil diameters are computed automatically at 200 Hz. The computed pupil diameters correspond to the actual physical diameter of the real pupil, rather than the apparent pupil diameter in the eye video. The algorithm does not provide independent measurements per eye but reports a single value for both eyes.
+After uploading a recording to Pupil Cloud, pupil diameters are computed automatically at 200 Hz. The computed pupil diameters correspond to the physical pupil size in mm, rather than the apparent pupil size in pixels as observed in the eye videos. The algorithm does not provide independent measurements per eye but reports a single value for both eyes.
 
 Similar to the 3D eye states, the accuracy of the pupil diameter measurements improves when supplying the wearer's IED in the wearer profile before making a recording.
 
 ## Blinks
-During blinks the eye is briefly covered by the eye lids, which serves the purpose of spreading tears across the cornea. The blink rate and blink duration are also correlated with cognitive processes, which makes them interesting physiological signals.
+During blinks the eye is briefly covered by the eyelids, which serves the purpose of spreading tears across the cornea. The blink rate and blink duration are also correlated with cognitive processes, which makes them interesting physiological signals.
 
 Blinks are detected automatically in Pupil Cloud after uploading a recording and are part of the downloadable data.
 
@@ -69,7 +69,7 @@ The blink detection algorithm is operating directly on the eye video to detect t
 ## Scene Video
 The front-facing scene camera is located in the center of the Neon Module. It records video at 30 Hz and 1600x1200 px resolution with a field of view of 132°x81°.
 
-The scene camera can be operated with automatic or manual exposure. In situations with challenging lighting condition, e.g. when recordings a screen, optimizing the exposure manually can improve the quality of the scene video.
+The scene camera can be operated with automatic or manual exposure. In situations with challenging lighting conditions, e.g. when recording a screen, optimizing the exposure manually can improve the quality of the scene video.
 
 ## Audio
 A microphone is integrated into the Neon module. Recorded audio will be part of the resulting scene video.
@@ -81,7 +81,7 @@ The Neon module is equipped with a 9-DoF [inertial measurement unit](https://inv
 
 The IMU is sampled at 110 Hz. When downloading recordings from Pupil Cloud the IMU's orientation in Euler angles (i.e. roll, pitch, and yaw) is also available.
 
-The IMU is located in the top bar of the module and it's coordinate system is oriented with the x-axis pointing to the right, the y-axis pointing in front, and the z-axis pointing upwards.
+The IMU is located in the top bar of the module and its coordinate system is oriented with the x-axis pointing to the right, the y-axis pointing in front, and the z-axis pointing upwards.
 
 <div style="display:flex;justify-content:center;" class="pb-4">
   <v-img
