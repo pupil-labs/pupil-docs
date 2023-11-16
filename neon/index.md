@@ -5,7 +5,7 @@ layout: ProductPageLayout
 hero:
   title: "Neon"
   tagline: Everything you need to know about Neon & Pupil Cloud to power your eye tracking application!
-  image: "/Module_Front.png"
+  image: "/neon/Module_Front.png"
   actions:
     - theme: brand
       text: Getting Started
