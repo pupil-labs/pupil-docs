@@ -24,13 +24,13 @@ The gaze estimation algorithm is based on end-2-end deep learning and provides g
 
 ## Fixations
 <Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>
-The two primary types of eye movements exhibited by the visual system are fixations and saccades. During fixations, the eyes are directed at a specific point in the environment. A saccade is a very quick movement where the eyes jump from one fixation to the next. Properties like the fixation duration are of significant importance for studying gaze behaviour.
+The two primary types of eye movements exhibited by the visual system are fixations and saccades. During fixations, the eyes are directed at a specific point in the environment. A saccade is a very quick movement where the eyes jump from one fixation to the next. Properties like the fixation duration are of significant importance for studying gaze behavior.
 
 ![Fixations](./fixations.jpg)
 
 Fixations are calculated automatically in Pupil Cloud after uploading a recording and are included in relevant downloads. The downloads for gaze mapping enrichments ([Reference Image Mapper](/pupil-cloud/enrichments/reference-image-mapper/#export-format), [Marker Mapper](/pupil-cloud/enrichments/marker-mapper/#export-format)) also include "mapped fixations".
 
-The deployed fixation detection algorithm was specifically designed for head-mounted eye trackers and offers increased robustness in the presence of head-movements. Especially movements due to vestibulo-ocular reflex are compensated for, which is not the case for most other fixation detection algorithms. Read more about that in the [Pupil Labs fixation detector whitepaper](https://docs.google.com/document/d/1dTL1VS83F-W1AZfbG-EogYwq2PFk463HqwGgshK3yJE/export?format=pdf)
+The deployed fixation detection algorithm was specifically designed for head-mounted eye trackers and offers increased robustness in the presence of head movements. Especially movements due to vestibulo-ocular reflex are compensated for, which is not the case for most other fixation detection algorithms. Read more about that in the [Pupil Labs fixation detector whitepaper](https://docs.google.com/document/d/1dTL1VS83F-W1AZfbG-EogYwq2PFk463HqwGgshK3yJE/export?format=pdf)
 
 ## 3D Eye States
 <Badge>Pupil Cloud</Badge>
@@ -40,17 +40,17 @@ The coordinate system is depicted below. The origin corresponds to the scene cam
 
 ![Coordinate systems of 3D eye states](./3d_eye_states.png)
 
-You can specify the inter eye distance (IED) of a wearer in the wearer profile before making a recording to further improve the accuracy of the measurements. If no IED value is specified, the population average of 63 mm is used.
+You can specify the inter-eye distance (IED) of a wearer in the wearer profile before making a recording to further improve the accuracy of the measurements. If no IED value is specified, the population average of 63 mm is used.
 
 ## Pupil Diameters
 <Badge>Pupil Cloud</Badge>
-After uploading a recording to Pupil Cloud, pupil diameters are computed automatically at 200 Hz. The computed pupil diameters correspond to the actual physical diameter of the real pupil, rather than the apparent pupil diameter in the eye video. The algorithm does not provide independent measurements per eye but reports a single value for both eyes.
+After uploading a recording to Pupil Cloud, pupil diameters are computed automatically at 200 Hz. The computed pupil diameters correspond to the physical pupil size in mm, rather than the apparent pupil size in pixels as observed in the eye videos. The algorithm does not provide independent measurements per eye but reports a single value for both eyes.
 
 Similar to the 3D eye states, the accuracy of the pupil diameter measurements improves when supplying the wearer's IED in the wearer profile before making a recording.
 
 ## Blinks
 <Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>
-During blinks the eye is briefly covered by the eye lids, which serves the purpose of spreading tears across the cornea. The blink rate and blink duration are also correlated with cognitive processes, which makes them interesting physiological signals.
+During blinks the eye is briefly covered by the eyelids, which serves the purpose of spreading tears across the cornea. The blink rate and blink duration are also correlated with cognitive processes, which makes them interesting physiological signals.
 
 Blinks are detected automatically in Pupil Cloud after uploading a recording and are part of the downloadable data.
 
@@ -60,7 +60,7 @@ The blink detection algorithm is operating directly on the eye video to detect t
 <Badge>Real-time</Badge><Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>
 The front-facing scene camera is located in the center of the Neon Module. It records video at 30 Hz and 1600x1200 px resolution with a field of view of 132°x81°.
 
-The scene camera can be operated with automatic or manual exposure. In situations with challenging lighting condition, e.g. when recordings a screen, optimizing the exposure manually can improve the quality of the scene video.
+The scene camera can be operated with automatic or manual exposure. In situations with challenging lighting conditions, e.g. when recording a screen, optimizing the exposure manually can improve the quality of the scene video.
 
 ## Audio
 <Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>
@@ -74,7 +74,7 @@ The Neon module is equipped with a 9-DoF [inertial measurement unit](https://inv
 
 A fusion engine also combines these values with magnetometer readings to estimate the module's absolute orientation relative to magnetic north and gravity as a quaternion. Note that in order to obtain precise absolute yaw readings, the magnetometer needs to be [calibrated](/data-collection/calibrating-the-imu/).
 
-The IMU is located in the top bar of the module and is sampled at 220 Hz. It's coordinate system is oriented with the x-axis pointing to the right, the y-axis pointing in front, and the z-axis pointing upwards.
+The IMU is located in the top bar of the module and is sampled at 220 Hz. Its coordinate system is oriented with the x-axis pointing to the right, the y-axis pointing in front, and the z-axis pointing upwards.
 
 ![IMU Coordinate System](./imu_coordinate_system.jpg)
 
