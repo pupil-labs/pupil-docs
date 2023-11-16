@@ -7,18 +7,36 @@ import { theme_config as default_theme_config } from "./../../default_config.mts
 let theme_config_additions = {
   // https://vitepress.dev/reference/default-theme-config
   nav: [
-    { text: "Hardware", link: "/hardware/module-technical-overview/" },
-    { text: "Data Collection", link: "/data-collection/" },
-    { text: "Pupil Cloud", link: "/pupil-cloud/" },
-    { text: "Neon Player", link: "/neon-player/" },
-    { text: "Real-Time API", link: "/real-time-api/tutorials/" },
-    { text: "Neon XR", link: "/neon-xr/" },
+    {
+      text: "Hardware",
+      link: "/hardware/module-technical-overview/",
+      activeMatch: "/hardware/",
+    },
+    {
+      text: "Data Collection",
+      link: "/data-collection/",
+      activeMatch: "/data-collection/",
+    },
+    {
+      text: "Pupil Cloud",
+      link: "/pupil-cloud/",
+      activeMatch: "/pupil-cloud/",
+    },
+    {
+      text: "Neon Player",
+      link: "/neon-player/",
+      activeMatch: "/neon-player/",
+    },
+    {
+      text: "Real-Time API",
+      link: "/real-time-api/tutorials/",
+      activeMatch: "/real-time-api/",
+    },
+    { text: "Neon XR", link: "/neon-xr/", activeMatch: "/neon-xr/" },
   ],
 
   sidebar: {
-    "/getting-started/": [
-
-    ],
+    "/getting-started/": [],
     "/hardware/": [
       {
         text: "Neon Module",
@@ -211,10 +229,7 @@ let config_additions = {
         {
           find: /^.*\/VPDocFooter\.vue$/,
           replacement: fileURLToPath(
-            new URL(
-              "./../../components/CustomDocFooter.vue",
-              import.meta.url
-            )
+            new URL("./../../components/CustomDocFooter.vue", import.meta.url)
           ),
         },
         {

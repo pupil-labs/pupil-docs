@@ -6,10 +6,26 @@ import { theme_config as default_theme_config } from "./../../default_config.mts
 
 let theme_config_additions = {
   nav: [
-    { text: "Hardware", link: "/hardware/technical-overview/" },
-    { text: "Data Collection", link: "/data-collection/" },
-    { text: "Pupil Cloud", link: "/pupil-cloud/" },
-    { text: "Real-Time API", link: "/real-time-api/tutorials/" },
+    {
+      text: "Hardware",
+      link: "/hardware/technical-overview/",
+      activeMatch: "/hardware/",
+    },
+    {
+      text: "Data Collection",
+      link: "/data-collection/",
+      activeMatch: "/data-collection/",
+    },
+    {
+      text: "Pupil Cloud",
+      link: "/pupil-cloud/",
+      activeMatch: "/pupil-cloud/",
+    },
+    {
+      text: "Real-Time API",
+      link: "/real-time-api/tutorials/",
+      activeMatch: "/real-time-api/",
+    },
   ],
 
   sidebar: {
@@ -84,7 +100,10 @@ let theme_config_additions = {
           },
         ],
       },
-      { text: "Publications & Citation", link: "/hardware/publications-and-citation/" },
+      {
+        text: "Publications & Citation",
+        link: "/hardware/publications-and-citation/",
+      },
       { text: "Troubleshooting", link: "/data-collection/troubleshooting/" },
     ],
     "/pupil-cloud/": [
@@ -179,10 +198,7 @@ let config_additions = {
         {
           find: /^.*\/VPDocFooter\.vue$/,
           replacement: fileURLToPath(
-            new URL(
-              "./../../components/CustomDocFooter.vue",
-              import.meta.url
-            )
+            new URL("./../../components/CustomDocFooter.vue", import.meta.url)
           ),
         },
         {
