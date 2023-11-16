@@ -1,41 +1,42 @@
 <script lang="ts" setup>
-import { useWindowScroll } from "@vueuse/core";
-import { ref, watchPostEffect } from "vue";
-import { useData } from "vitepress";
-import { useSidebar } from "vitepress/theme";
-// import VPNavBarAppearance from 'vitepress/dist/client/theme-default/components/VPNavBarAppearance.vue'
-// import VPNavBarExtra from "vitepress/dist/client/theme-default/components/VPNavBarExtra.vue";
-// import VPNavBarHamburger from "vitepress/dist/client/theme-default/components/VPNavBarHamburger.vue";
-import VPNavBarMenu from "vitepress/dist/client/theme-default/components/VPNavBarMenu.vue";
-import VPNavBarSearch from "vitepress/dist/client/theme-default/components/VPNavBarSearch.vue";
-import VPNavBarSocialLinks from "vitepress/dist/client/theme-default/components/VPNavBarSocialLinks.vue";
-import VPNavBarTitle from "vitepress/dist/client/theme-default/components/VPNavBarTitle.vue";
-import VPNavBarTranslations from "vitepress/dist/client/theme-default/components/VPNavBarTranslations.vue";
-import VPNavBarMenuLink from "vitepress/dist/client/theme-default/components/VPNavBarMenuLink.vue";
+  import { useWindowScroll } from "@vueuse/core";
+  import { ref, watchPostEffect } from "vue";
+  import { useData } from "vitepress";
+  import { useSidebar } from "vitepress/theme";
+  // import VPNavBarAppearance from 'vitepress/dist/client/theme-default/components/VPNavBarAppearance.vue'
+  // import VPNavBarExtra from "vitepress/dist/client/theme-default/components/VPNavBarExtra.vue";
+  // import VPNavBarHamburger from "vitepress/dist/client/theme-default/components/VPNavBarHamburger.vue";
+  import VPNavBarMenu from "vitepress/dist/client/theme-default/components/VPNavBarMenu.vue";
+  import VPNavBarSearch from "vitepress/dist/client/theme-default/components/VPNavBarSearch.vue";
+  // import VPNavBarSocialLinks from "vitepress/dist/client/theme-default/components/VPNavBarSocialLinks.vue";
+  import VPNavBarTitle from "vitepress/dist/client/theme-default/components/VPNavBarTitle.vue";
+  import VPNavBarTranslations from "vitepress/dist/client/theme-default/components/VPNavBarTranslations.vue";
+  import VPNavBarMenuLink from "vitepress/dist/client/theme-default/components/VPNavBarMenuLink.vue";
 
-import NavBarHamburger from "./NavBarHamburger.vue";
-import NavBarExtra from "./NavBarExtra.vue";
+  import NavBarSocialLinks from "./socialLinks/NavBarSocialLinks.vue";
+  import NavBarHamburger from "./NavBarHamburger.vue";
+  import NavBarExtra from "./NavBarExtra.vue";
 
-defineProps<{
-  isScreenOpen: boolean;
-}>();
+  defineProps<{
+    isScreenOpen: boolean;
+  }>();
 
-defineEmits<{
-  (e: "toggle-screen"): void;
-}>();
+  defineEmits<{
+    (e: "toggle-screen"): void;
+  }>();
 
-// @ts-ignore
-const { y } = useWindowScroll();
-const { hasSidebar } = useSidebar();
-const { frontmatter, site } = useData();
-const classes = ref<Record<string, boolean>>({});
+  // @ts-ignore
+  const { y } = useWindowScroll();
+  const { hasSidebar } = useSidebar();
+  const { frontmatter, site } = useData();
+  const classes = ref<Record<string, boolean>>({});
 
-watchPostEffect(() => {
-  classes.value = {
-    "has-sidebar": hasSidebar.value,
-    top: frontmatter.value.layout === "home" && y.value === 0,
-  };
-});
+  watchPostEffect(() => {
+    classes.value = {
+      "has-sidebar": hasSidebar.value,
+      top: frontmatter.value.layout === "home" && y.value === 0,
+    };
+  });
 </script>
 
 <template>
@@ -60,10 +61,14 @@ watchPostEffect(() => {
           <VPNavBarMenu class="menu" />
           <VPNavBarTranslations class="translations" />
           <!-- <VPNavBarAppearance class="appearance" /> -->
-          <VPNavBarSocialLinks class="social-links" />
+          <NavBarSocialLinks class="social-links" />
           <NavBarExtra class="extra" />
           <slot name="nav-bar-content-after" />
-          <NavBarHamburger class="hamburger" :active="isScreenOpen" @click="$emit('toggle-screen')" />
+          <NavBarHamburger
+            class="hamburger"
+            :active="isScreenOpen"
+            @click="$emit('toggle-screen')"
+          />
         </div>
       </div>
     </div>
@@ -71,224 +76,234 @@ watchPostEffect(() => {
 </template>
 
 <style scoped>
-.notOutboundLink::after {
-  display: none !important;
-}
-
-.VPNavBarMenu {
-  display: none;
-}
-
-.customNav {
-  display: flex;
-}
-
-.customNav .navLink {
-  display: none;
-}
-
-.menu+.menu:before {
-  display: none;
-}
-
-.VPNavBarSearch {
-  display: flex;
-  align-items: center;
-  flex-grow: 1;
-  padding-left: 24px;
-}
-
-@media (min-width: 640px) {
-  .customNav .navLink {
-    display: flex;
+  .notOutboundLink::after {
+    display: none !important;
   }
-}
 
-@media (min-width: 1146px) {
   .VPNavBarMenu {
+    display: none;
+  }
+
+  .customNav {
     display: flex;
   }
 
-  .menu+.menu:before {
-    display: block;
+  .customNav .navLink {
+    display: none;
   }
-}
 
-.VPNavBar {
-  position: relative;
-  border-bottom: 1px solid transparent;
-  padding: 0 8px 0 24px;
-  height: var(--vp-nav-height);
-  pointer-events: none;
-  white-space: nowrap;
-}
+  .menu + .menu:before {
+    display: none;
+  }
 
-@media (min-width: 1146px) {
+  .VPNavBarSearch {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    padding-left: 24px;
+  }
+
+  @media (min-width: 640px) {
+    .customNav .navLink {
+      display: flex;
+    }
+  }
+
+  @media (min-width: 1146px) {
+    .VPNavBarMenu {
+      display: flex;
+    }
+
+    .menu + .menu:before {
+      display: block;
+    }
+  }
+
   .VPNavBar {
-    padding: 0 32px;
-  }
-}
-
-@media (min-width: 960px) {
-  .VPNavBar.has-sidebar {
-    padding: 0;
-  }
-
-  .VPNavBar:not(.has-sidebar):not(.top) {
-    border-bottom-color: var(--vp-c-gutter);
-    background-color: var(--vp-nav-bg-color);
-  }
-}
-
-.container {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-  max-width: calc(var(--vp-layout-max-width) - 64px);
-  height: var(--vp-nav-height);
-  pointer-events: none;
-}
-
-.container>.title,
-.container>.content {
-  pointer-events: none;
-}
-
-.container :deep(*) {
-  pointer-events: auto;
-}
-
-@media (min-width: 960px) {
-  .VPNavBar.has-sidebar .container {
-    max-width: 100%;
-  }
-}
-
-.title {
-  flex-shrink: 0;
-  height: calc(var(--vp-nav-height) - 1px);
-  transition: background-color 0.5s;
-}
-
-@media (min-width: 960px) {
-  .VPNavBar.has-sidebar .title {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    padding: 0 32px;
-    width: var(--vp-sidebar-width);
+    position: relative;
+    border-bottom: 1px solid transparent;
+    padding: 0 8px 0 24px;
     height: var(--vp-nav-height);
-    background-color: transparent;
+    pointer-events: none;
+    white-space: nowrap;
   }
-}
 
-@media (min-width: 1440px) {
-  .VPNavBar.has-sidebar .title {
-    padding-left: max(32px,
-        calc((100% - (var(--vp-layout-max-width) - 64px)) / 2));
-    width: calc((100% - (var(--vp-layout-max-width) - 64px)) / 2 + var(--vp-sidebar-width) - 32px);
+  @media (min-width: 1146px) {
+    .VPNavBar {
+      padding: 0 32px;
+    }
   }
-}
 
-.content {
-  flex-grow: 1;
-}
+  @media (min-width: 960px) {
+    .VPNavBar.has-sidebar {
+      padding: 0;
+    }
 
-@media (min-width: 960px) {
-  .VPNavBar.has-sidebar .content {
-    position: relative;
-    z-index: 1;
-    padding-right: 32px;
-    padding-left: var(--vp-sidebar-width);
+    .VPNavBar:not(.has-sidebar):not(.top) {
+      border-bottom-color: var(--vp-c-gutter);
+      background-color: var(--vp-nav-bg-color);
+    }
   }
-}
 
-@media (min-width: 1440px) {
-  .VPNavBar.has-sidebar .content {
-    padding-right: calc((100vw - var(--vp-layout-max-width)) / 2 + 32px);
-    padding-left: calc((100vw - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width));
+  .container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: calc(var(--vp-layout-max-width) - 64px);
+    height: var(--vp-nav-height);
+    pointer-events: none;
   }
-}
 
-.content-body {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: calc(var(--vp-nav-height) - 1px);
-  transition: background-color 0.5s;
-}
-
-@media (min-width: 960px) {
-  .VPNavBar:not(.top) .content-body {
-    position: relative;
-    background-color: var(--vp-nav-bg-color);
+  .container > .title,
+  .container > .content {
+    pointer-events: none;
   }
-}
 
-@media (max-width: 767px) {
+  .container :deep(*) {
+    pointer-events: auto;
+  }
+
+  @media (min-width: 960px) {
+    .VPNavBar.has-sidebar .container {
+      max-width: 100%;
+    }
+  }
+
+  .title {
+    flex-shrink: 0;
+    height: calc(var(--vp-nav-height) - 1px);
+    transition: background-color 0.5s;
+  }
+
+  @media (min-width: 960px) {
+    .VPNavBar.has-sidebar .title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      padding: 0 32px;
+      width: var(--vp-sidebar-width);
+      height: var(--vp-nav-height);
+      background-color: transparent;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .VPNavBar.has-sidebar .title {
+      padding-left: max(
+        32px,
+        calc((100% - (var(--vp-layout-max-width) - 64px)) / 2)
+      );
+      width: calc(
+        (100% - (var(--vp-layout-max-width) - 64px)) / 2 +
+          var(--vp-sidebar-width) - 32px
+      );
+    }
+  }
+
+  .content {
+    flex-grow: 1;
+  }
+
+  @media (min-width: 960px) {
+    .VPNavBar.has-sidebar .content {
+      position: relative;
+      z-index: 1;
+      padding-right: 32px;
+      padding-left: var(--vp-sidebar-width);
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .VPNavBar.has-sidebar .content {
+      padding-right: calc((100vw - var(--vp-layout-max-width)) / 2 + 32px);
+      padding-left: calc(
+        (100vw - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width)
+      );
+    }
+  }
+
   .content-body {
-    column-gap: 0.5rem;
-  }
-}
-
-.menu+.translations::before,
-.menu+.appearance::before,
-.menu+.social-links::before,
-.translations+.appearance::before,
-.appearance+.social-links::before {
-  margin-right: 8px;
-  margin-left: 8px;
-  width: 1px;
-  height: 24px;
-  background-color: var(--vp-c-divider);
-  content: "";
-}
-
-.menu+.menu::before {
-  margin-right: 8px;
-  margin-left: 8px;
-  margin-top: 20px;
-  width: 1px;
-  height: 24px;
-  background-color: var(--vp-c-divider);
-  content: "";
-}
-
-.menu+.appearance::before,
-.translations+.appearance::before {
-  margin-right: 16px;
-}
-
-.appearance+.social-links::before {
-  margin-left: 16px;
-}
-
-.social-links {
-  margin-right: -8px;
-}
-
-@media (min-width: 960px) {
-  .VPNavBar.has-sidebar .curtain {
-    position: absolute;
-    right: 0;
-    bottom: -31px;
-    width: calc(100% - var(--vp-sidebar-width));
-    height: 32px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: calc(var(--vp-nav-height) - 1px);
+    transition: background-color 0.5s;
   }
 
-  .VPNavBar.has-sidebar .curtain::before {
-    display: block;
-    width: 100%;
-    height: 32px;
-    background: linear-gradient(var(--vp-c-bg), transparent 70%);
+  @media (min-width: 960px) {
+    .VPNavBar:not(.top) .content-body {
+      position: relative;
+      background-color: var(--vp-nav-bg-color);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .content-body {
+      column-gap: 0.5rem;
+    }
+  }
+
+  .menu + .translations::before,
+  .menu + .appearance::before,
+  .menu + .social-links::before,
+  .translations + .appearance::before,
+  .appearance + .social-links::before {
+    margin-right: 8px;
+    margin-left: 8px;
+    width: 1px;
+    height: 24px;
+    background-color: var(--vp-c-divider);
     content: "";
   }
-}
 
-@media (min-width: 1440px) {
-  .VPNavBar.has-sidebar .curtain {
-    width: calc(100% - ((100vw - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width)));
+  .menu + .menu::before {
+    margin-right: 8px;
+    margin-left: 8px;
+    margin-top: 20px;
+    width: 1px;
+    height: 24px;
+    background-color: var(--vp-c-divider);
+    content: "";
   }
-}
+
+  .menu + .appearance::before,
+  .translations + .appearance::before {
+    margin-right: 16px;
+  }
+
+  .appearance + .social-links::before {
+    margin-left: 16px;
+  }
+
+  .social-links {
+    margin-right: -8px;
+  }
+
+  @media (min-width: 960px) {
+    .VPNavBar.has-sidebar .curtain {
+      position: absolute;
+      right: 0;
+      bottom: -31px;
+      width: calc(100% - var(--vp-sidebar-width));
+      height: 32px;
+    }
+
+    .VPNavBar.has-sidebar .curtain::before {
+      display: block;
+      width: 100%;
+      height: 32px;
+      background: linear-gradient(var(--vp-c-bg), transparent 70%);
+      content: "";
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .VPNavBar.has-sidebar .curtain {
+      width: calc(
+        100% -
+          ((100vw - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width))
+      );
+    }
+  }
 </style>

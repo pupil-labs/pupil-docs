@@ -1,7 +1,7 @@
 <script lang="ts" setup>
   import { computed } from "vue";
   import VPFlyout from "vitepress/dist/client/theme-default/components/VPFlyout.vue";
-  import VPMenuLink from "vitepress/dist/client/theme-default/components//VPMenuLink.vue";
+  import VPMenuLink from "vitepress/dist/client/theme-default/components/VPMenuLink.vue";
   import VPSwitchAppearance from "vitepress/dist/client/theme-default/components/VPSwitchAppearance.vue";
   import VPSocialLinks from "vitepress/dist/client/theme-default/components/VPSocialLinks.vue";
   import { useData } from "vitepress/dist/client/theme-default/composables/data";

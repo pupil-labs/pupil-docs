@@ -7,7 +7,7 @@ export interface Outline {
   label?: string;
 }
 
-type SocialLinkIcon =
+export type SocialLinkIcon =
   | "discord"
   | "facebook"
   | "github"
@@ -19,7 +19,7 @@ type SocialLinkIcon =
   | "youtube"
   | { svg: string };
 
-interface SocialLink {
+export interface SocialLink {
   icon: SocialLinkIcon;
   link: string;
   ariaLabel?: string;
