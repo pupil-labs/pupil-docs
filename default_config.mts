@@ -41,7 +41,7 @@ type ThemeConfigProps = {
 };
 
 export const config: ConfigProps = {
-  head: [["link", { rel: "icon", href: "./favicon.png" }]],
+  head: [["link", { rel: "icon", href: "/favicon.png" }]],
   appearance: true,
   cleanUrls: true,
 };

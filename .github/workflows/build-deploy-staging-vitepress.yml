@@ -168,7 +168,20 @@ jobs:
         with:
           name: landing-page
           path: landing-page/.vitepress/dist
+  
+  favicon:
+    name: Upload favicon
+    runs-on: ubuntu-latest
 
+    steps:
+      - uses: actions/checkout@v3         
+
+      - name: Favicon upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: favicon
+          path: favicon.png
+          
   debugging-info:
     name: Upload debugging info
     runs-on: ubuntu-latest
@@ -192,7 +205,7 @@ jobs:
     environment:
       name: staging
       url: https://docs-staging.pupil-labs.com
-    needs: [neon, invisible, core, landing-page, alpha-lab, debugging-info]
+    needs: [neon, invisible, core, landing-page, alpha-lab, favicon, debugging-info]
 
     steps:
       - uses: actions/checkout@v3
@@ -207,6 +220,12 @@ jobs:
         with:
           name: gitcommit
           path: gitcommit.txt
+
+      - name: Download favicon
+        uses: actions/download-artifact@v3
+        with:
+          name: favicon
+          path: favicon.png
       
       - name: Download Neon
         uses: actions/download-artifact@v3
