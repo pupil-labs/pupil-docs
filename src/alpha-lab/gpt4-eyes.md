@@ -66,6 +66,6 @@ With this example we did not It not only demonstrates the capabilities of these 
 
 
 ::: tip
-Need assistance implementing a real-time API based application? Reach out to us via email at [info@alpha-lab.com](mailto:info@alpha-lab.com), on our [Discord server](https://alpha-lab.com/chat/), or visit our [Support Page](https://alpha-lab.com/products/support/) for formal support options.
+Need assistance implementing a real-time API based application? Reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-lab.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for formal support options.
 :::
 
