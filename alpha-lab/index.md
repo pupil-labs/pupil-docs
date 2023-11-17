@@ -11,13 +11,13 @@ hero:
       "Alpha Lab is not a place for official product documentation. Everything you find here should be considered a work in progress, and may even be a bit rough around the edges. That is the nature of exploration!",
       "We encourage you to read through the results and go further - play around, build from the ideas here, hack away!",
     ]
-  image: "/alpha-lab/ai-landing.png"
+  image: "/alpha-lab/ai-landing.webp"
 
 cards:
   - title: Define AOIs and Calculate Gaze Metrics
     details: Here we demonstrate how to make areas of interest using data downloaded from Pupil Cloud’s Reference Image Mapper.
     link: { text: View, href: "/alpha-lab/" }
-    image: "/alpha-lab/aoi-demo.png"
+    image: "/alpha-lab/aoi-demo.webp"
   - title: Map and visualise gaze onto a display content using the Reference Image Mapper
     details: Here we show you how you can use Pupil Cloud’s Reference Image Mapper to map gaze onto dynamic on-screen content - like a video.
     link: { text: View, href: "/alpha-lab/" }
