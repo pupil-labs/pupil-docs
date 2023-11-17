@@ -9,7 +9,7 @@ hero:
 products:
   - title: Neon
     details: Learn how to use Neon and collect real-world data. Connect to Pupil Cloud, manage your data, analyze, and take your research to the next level.
-    image: "/neon-doc.png"
+    image: "/neon-doc.webp"
     link:
       {
         text: "Enter Documentation",
@@ -17,7 +17,7 @@ products:
       }
   - title: Invisible
     details: Learn how to setup Pupil Invisible eye tracking glasses and collect real world data. Connect to Pupil Cloud, manage your data, analyze, and take your research to the next level.
-    image: "/invisible-doc.png"
+    image: "/invisible-doc.webp"
     link:
       {
         text: "Enter Documentation",
@@ -25,7 +25,7 @@ products:
       }
   - title: Core
     details: Learn how to setup Pupil Core eye tracking headset and collect data with Pupil Capture. Use Pupil Player to explore your data in greater detail.
-    image: "/core-doc.png"
+    image: "/core-doc.webp"
     link:
       {
         text: "Enter Documentation",
