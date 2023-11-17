@@ -23,7 +23,8 @@
   <a :href="product.link.href" class="textLink" target="_self">
     <div class="rounded-lg flex flex-col h-full bg-card">
       <img
-        :src="product.image ? product.image : `https://place-hold.it/450x270/`"
+        v-if="product.image"
+        :src="product.image"
         style="aspect-ratio: 1.6296; object-fit: cover"
         class="h-auto w-full rounded-tl-lg rounded-tr-lg"
       />
