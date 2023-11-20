@@ -21,7 +21,7 @@
     class="VPSocialLink no-icon"
     :href="link"
     :aria-label="ariaLabel ?? (typeof icon === 'string' ? icon : '')"
-    :target="target"
+    :target="target || '_blank'"
     rel="noopener"
     v-html="svg"
   >
