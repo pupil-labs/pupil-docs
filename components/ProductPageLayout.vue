@@ -47,7 +47,7 @@
             "
             width="100%"
             height="auto"
-            style="max-width: 320px"
+            style="max-width: 420px"
             alt="Product hero image"
           />
         </div>
