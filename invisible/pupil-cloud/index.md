@@ -1,16 +1,10 @@
 ---
 aside: false
-
-hero:
-  name: "Pupil Cloud"
-  text: "Analysis Platform"
-  tagline: "Data Logistics, Analysis & Visualization."
-  actions:
-    - text: "Tutorial"
-      link: "/pupil-cloud/tutorials/"
 ---
 
-<img src="./hero.webp" style="max-width: 500px; width: 100%; height: auto; margin: auto; padding-bottom: 24px;">
+# Pupil Cloud
+
+<img src="./hero.webp" style="max-width: 500px; width: 100%; height: auto; margin: auto; padding: 24px 0;">
 
 [Pupil Cloud](https://cloud.pupil-labs.com) is a web-based eye tracking platform for data logistics, analysis, and visualization. It is the recommended tool for processing your Neon recordings. It makes it easy to store all your data securely in one place and it offers a variety of options for analysis.
 

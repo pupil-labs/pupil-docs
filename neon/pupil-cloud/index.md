@@ -1,14 +1,8 @@
 ---
 aside: false
-
-hero:
-  name: "Pupil Cloud"
-  text: "Analysis Platform"
-  tagline: "Data Logistics, Analysis & Visualization."
-  actions:
-    - text: "Tutorial"
-      link: "/pupil-cloud/tutorials/"
 ---
+
+# Pupil Cloud
 
 <img src="./hero.webp" style="max-width: 500px; width: 100%; height: auto; margin: auto; padding-bottom: 24px;">
 
