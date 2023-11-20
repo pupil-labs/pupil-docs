@@ -42,15 +42,31 @@ alpha:
     }
   cards:
     - title: Define AOIs and Calculate Gaze Metrics
-      details: Learn how to use Neon and collect real-world data. Connect to Pupil Cloud, manage your data, analyze, and take your research to the next level.
-      link: { text: View, href: "" }
-    - title: Using multiple Reference Image Mapper enrichments
-      details: Learn how to setup Pupil Invisible eye tracking glasses and collect real world data. Connect to Pupil Cloud, manage your data, analyze, and take your research to the next level.
-      link: { text: View, href: "" }
-    - title: Define AOIs and Calculate Gaze Metrics
-      details: Learn how to use Neon and collect real-world data. Connect to Pupil Cloud, manage your data, analyze, and take your research to the next level.
-      link: { text: View, href: "" }
-    - title: Using multiple Reference Image Mapper enrichments
-      details: Learn how to setup Pupil Invisible eye tracking glasses and collect real world data. Connect to Pupil Cloud, manage your data, analyze, and take your research to the next level.
-      link: { text: View, href: "" }
+      details: Here we demonstrate how to make areas of interest using data downloaded from Pupil Cloud’s Reference Image Mapper.
+      link:
+        {
+          text: View,
+          href: "https://docs-staging.pupil-labs.com/alpha-lab/gaze-metrics-in-aois/#define-aois-and-calculate-gaze-metrics",
+        }
+    - title: Map and visualise gaze onto a display content using the Reference Image Mapper
+      details: Here we show you how you can use Pupil Cloud’s Reference Image Mapper to map gaze onto dynamic on-screen content - like a video.
+      link:
+        {
+          text: View,
+          href: "https://docs-staging.pupil-labs.com/alpha-lab/map-your-gaze-to-a-2d-screen/#map-and-visualise-gaze-onto-a-display-content-using-the-reference-image-mapper",
+        }
+    - title: Map gaze onto body parts using DensePose
+      details: Use detectron's densepose AI to segment and know at which part of a body a person is looking.
+      link:
+        {
+          text: View,
+          href: "https://docs-staging.pupil-labs.com/alpha-lab/dense-pose/#map-gaze-onto-body-parts-using-densepose",
+        }
+    - title: Map and visualize gaze on multiple reference images taken from the same environment
+      details: We pushed the limits of markerless mapping with Pupil Cloud’s Reference Image Mapper - scanning an entire apartment.
+      link:
+        {
+          text: View,
+          href: "https://docs-staging.pupil-labs.com/alpha-lab/multiple-rim/#map-and-visualize-gaze-on-multiple-reference-images-taken-from-the-same-environment",
+        }
 ---
