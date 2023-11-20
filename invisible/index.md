@@ -15,12 +15,9 @@ hero:
       link: /pupil-cloud/
 
 cards:
-  - title: Getting Started
-    details: Learn how to make your first recording with Neon and get an overview of the ecosystem!
-    link: { text: View, href: "/data-collection/first-recording/" }
-  - title: General
-    details: Everything you need to know about Neon, frames, data streams, data formats, and other general topics.
-    link: { text: View, href: "/hardware/module-technical-overview/" }
+  - title: Hardware
+    details: Learn about Invisible hardware and Companion device, which controls recordings, data streaming, and uploads to Pupil Cloud.
+    link: { text: View, href: "/invisible/hardware/technical-overview/" }
   - title: Data Collection
     details: Neon comes with a lot of powerful tools for data collection. Learn how to use them here!
     link: { text: View, href: "/invisible/data-collection/" }

@@ -30,4 +30,7 @@ cards:
   - title: VR/AR
     details: Instructions on how to use the VR/AR add-ons based on Pupil Core technology.
     link: { text: View, href: "/core/vr-ar/" }
+  - title: Chat
+    details: Come chat with us on Discord! Do you have an issues or questions? Just wanna say hi? Join the chat and drop us a message!
+    link: { text: View, href: "https://pupil-labs.com/chat", target: "_blank" }
 ---
