@@ -3,9 +3,29 @@
     active: boolean;
   }>();
 
-  defineEmits<{
+  const emit = defineEmits<{
     (e: "click"): void;
   }>();
+
+  const handleOnClick = () => {
+    emit("click");
+    setTimeout(() => {
+      const navEl = document.querySelector(".VPNavScreen");
+      const socialEls = navEl.querySelectorAll(".VPSocialLink");
+
+      socialEls.forEach((socialEl) => {
+        if (
+          // @ts-ignore
+          socialEl.href !== "https://docs-staging.pupil-labs.com/" ||
+          // @ts-ignore
+          socialEl.href !== "https://docs-staging.pupil-labs.com/alpha-lab"
+        ) {
+          socialEl.setAttribute("target", "_self");
+          socialEl.setAttribute("rel", "noopener");
+        }
+      });
+    }, 100);
+  };
 </script>
 
 <template>
@@ -15,8 +35,8 @@
     :class="{ active }"
     aria-label="mobile navigation"
     :aria-expanded="active"
-    aria-controls="VPNavScreen"
-    @click="$emit('click')"
+    aria-controls="NavScreen"
+    @click="handleOnClick"
   >
     <span class="container">
       <span class="top" />
