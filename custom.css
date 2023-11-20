@@ -44,9 +44,9 @@
  * -------------------------------------------------------------------------- */
 
 :root {
-  --vp-c-gray-1: #e3e2e6;
-  --vp-c-gray-2: #f2f0f4;
-  --vp-c-gray-3: #f9f8fa;
+  --vp-c-gray-1: #c7c6ca;
+  --vp-c-gray-2: #e3e2e6;
+  --vp-c-gray-3: #f2f0f4;
   --vp-c-gray-soft: rgba(142, 150, 170, 0.14);
 
   --vp-c-indigo-1: #005bbf;
@@ -73,9 +73,9 @@
 }
 
 .dark {
-  --vp-c-gray-1: #5e5e62;
-  --vp-c-gray-2: #46464a;
-  --vp-c-gray-3: #2f3033;
+  --vp-c-gray-1: #46464a;
+  --vp-c-gray-2: #2f3033;
+  --vp-c-gray-3: #1b1b1f;
   --vp-c-gray-soft: rgba(94, 94, 98, 0.16);
 
   --vp-c-indigo-1: #acc7ff;
@@ -542,19 +542,19 @@
   color: var(--vp-c-brand-2);
 }
 .bg-card {
-  background-color: var(--vp-c-bg-elv);
+  background-color: var(--vp-c-default-3);
 }
 
 .bg-card:hover {
-  background-color: var(--vp-c-default-3);
+  background-color: var(--vp-c-default-2);
 }
 
 .action-button {
-  background-color: var(--vp-c-default-3);
+  background-color: var(--vp-c-default-2);
 }
 
 .action-button:hover {
-  background-color: var(--vp-c-bg-elv);
+  background-color: var(--vp-c-default-1);
 }
 
 @media (min-width: 768px) {
