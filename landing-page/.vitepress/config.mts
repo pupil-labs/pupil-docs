@@ -31,7 +31,8 @@ const theme_config_additions = {
 const theme_config = { ...default_theme_config, ...theme_config_additions };
 
 const config_additions = {
-  title: "Pupil Labs Documentation",
+  title: "Home",
+  titleTemplate: ":title - Pupil Labs Docs",
   description: "Documentation for all Pupil Labs products.",
   vite: {
     resolve: {

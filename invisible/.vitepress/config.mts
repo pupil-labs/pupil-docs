@@ -180,9 +180,10 @@ let theme_config = { ...default_theme_config, ...theme_config_additions };
 
 let config_additions = {
   base: "/invisible/",
-  title: "Invisible",
+  title: "Home",
+  titleTemplate: "Invisible - :title - Pupil Labs Docs",
   description:
-    "Documentation of the Pupil Invisible eye tracker and it's ecosystem.",
+    "Documentation of the Pupil Invisible eye tracker and ecosystem.",
   vite: {
     resolve: {
       alias: [

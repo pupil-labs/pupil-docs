@@ -78,9 +78,9 @@ let theme_config = { ...default_theme_config, ...theme_config_additions };
 
 let config_additions = {
   base: "/core/",
-  title: "Pupil Core",
-  description:
-    "Documentation of the Pupil Core eye tracker and it's ecosystem.",
+  title: "Home",
+  titleTemplate: "Core - :title - Pupil Labs Docs",
+  description: "Documentation of Pupil Core eye tracker and ecosystem.",
   vite: {
     resolve: {
       alias: [

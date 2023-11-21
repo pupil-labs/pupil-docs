@@ -55,8 +55,10 @@ let theme_config = { ...default_theme_config, ...theme_config_additions };
 
 let config_additions = {
   base: "/alpha-lab/",
-  title: "Alpha Lab",
-  description: "Documentation of the Neon eye tracker and it's ecosystem.",
+  title: "Home",
+  titleTemplate: "Alpha Lab - :title - Pupil Labs Docs",
+  description:
+    "Documentation for Pupil Labs prototypes and demos to explore our curiosities.",
   vite: {
     resolve: {
       alias: [
