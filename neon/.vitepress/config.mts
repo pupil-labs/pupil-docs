@@ -67,6 +67,7 @@ let theme_config_additions = {
       },
     ],
     "/data-collection/": [
+      { text: "Overview", link: "/data-collection/" },
       {
         text: "Tutorials",
         items: [
@@ -140,6 +141,7 @@ let theme_config_additions = {
       { text: "Troubleshooting", link: "/data-collection/troubleshooting/" },
     ],
     "/pupil-cloud/": [
+      { text: "Overview", link: "/pupil-cloud/" },
       {
         text: "Tutorials",
         items: [
