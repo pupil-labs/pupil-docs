@@ -3,9 +3,7 @@ aside: false
 
 hero:
   name: "Neon Player"
-  # text: "Coming soon!"
   tagline: "Offline Recording Playback & Export."
-  img: "./ui.png"
 ---
 <script setup>
   import { VPHomeHero } from "vitepress/theme"
