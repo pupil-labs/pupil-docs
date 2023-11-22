@@ -18,7 +18,13 @@ meta:
 tags: [Neon]
 ---
 
+<script setup>
+import TagLinks from '@components/TagLinks.vue'
+</script>
+
 # A practical guide to implementing gaze contingency for assistive technology
+
+<TagLinks :tags="$frontmatter.tags" />
 
 <Youtube src="cuvWqVOAc5M"/>
 

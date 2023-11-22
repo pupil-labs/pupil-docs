@@ -4,13 +4,21 @@ description: "Nerfing your eye tracking recordings: use nerfstudio to create 3D 
 permalink: /alpha-lab/nerfs
 tags: [Pupil Invisible, Neon, Cloud]
 ---
+
+<script setup>
+import TagLinks from '@components/TagLinks.vue'
+</script>
+
 <!-- <head> <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script> </head> -->
+
 # Create 3D Models of your environment using Reference Image Mapper and nerfstudio
+
+<TagLinks :tags="$frontmatter.tags" />
 
 <Youtube src="7W2DCkPfFLE"/>
 
 ::: danger
-🕰️ - *Great Scott! This content is highly experimental. Using it will take you on a wild ride into the future, but beware - you'll be going solo. Consider yourself warned!* 🎢
+🕰️ - _Great Scott! This content is highly experimental. Using it will take you on a wild ride into the future, but beware - you'll be going solo. Consider yourself warned!_ 🎢
 :::
 
 If you watched the accompanying video, you have witnessed 3D environment reconstructions based on eye tracking recordings. In essence, we have explored how to augment the output of our [Reference Image Mapper enrichment](https://docs-staging.pupil-labs.com/pupil-cloud/enrichments/reference-image-mapper/) to show a third person view of an eye tracking recording. Other wordly, huh?
@@ -41,7 +49,7 @@ Under the hood, nerfstudio is built on top of PyTorch and PyQt, and uses ZeroMQ,
 
 ## Great, how can I generate my own?
 
-This is not gonna be an easy path... 
+This is not gonna be an easy path...
 
 <details>
     <summary>But if you insist...</summary><br>
@@ -55,10 +63,11 @@ This is not gonna be an easy path...
 
 ### Get your development environment ready
 
-Follow nerfstudio [installation guide](https://docs.nerf.studio/en/latest/quickstart/installation.html), to install the dependencies and nerfstudio from source. 
-Alternatively, here is the basic code to create a [*conda*](https://anaconda.org/) environment that can run this:
+Follow nerfstudio [installation guide](https://docs.nerf.studio/en/latest/quickstart/installation.html), to install the dependencies and nerfstudio from source.
+Alternatively, here is the basic code to create a [_conda_](https://anaconda.org/) environment that can run this:
 
 Creating the CONDA environment and installing COLMAP:
+
 ```bash
 conda create --name {ENV_NAME} python=3.8
 conda activate {ENV_NAME}
@@ -68,7 +77,7 @@ pip install -U pip setuptools
 
 Checkout which CUDA version you have and install the appropiate pytorch and torchvision wheels.
 
-```bash 
+```bash
 pip install torch torchvision functorch --extra-index-url https://download.pytorch.org/whl/cu117
 pip install git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch
 ```
@@ -93,7 +102,7 @@ pip install -e .
 ```
 
 Cloning the nerfstudio repository at 0.1.19, and installing it:
-  
+
 ```bash
 cd ..
 git clone https://github.com/nerfstudio-project/nerfstudio.git nerfstudio_git #Clone it at 0.1.16
@@ -103,20 +112,21 @@ pip install -e .
 ```
 
 If everything went sucessfully, it will take you around 20 minutes to install everything.
-    
+
 ### Generate a token
+
 Now, you will need a developer token from Pupil Cloud, so click on your profile picture at the top right of the page, select "Account Settings" on the drop-down. On the left side panel click on the "Developer" section and "New Token".
 
 Once showing, copy the token. Note that you won't be able to see it again, so please store it securely and if you ever doubt if you expose it, delete it and create a new one.
 
 <!-- <div class="mb-4" style="display:flex;justify-content:center;">
-  <v-img class="rounded" :src="require('../media/alpha-lab/generate-token.png')" 
-  width="100%" 
+  <v-img class="rounded" :src="require('../media/alpha-lab/generate-token.png')"
+  width="100%"
   alt="Screenshot of Cloud Developer's page with tokens generated"
   title="Screenshot of Cloud Developer's page with tokens generated" />
 </div> -->
 <!-- TODO: UPDATE IMAGE -->
-    
+
 ### Time to define your parameters
 
 Navigate to your `pyflux` folder. Inside the `pyflux` repository folder you will find a `config.json` file where you can directly change the paths, IDs and token to your own. See the description below for a better understanding of each field.
@@ -126,7 +136,7 @@ Navigate to your `pyflux` folder. Inside the `pyflux` repository folder you will
     "NERFSTUDIO_PATH": "/nerfstudio", # Path to your nerfstudio git clone
     "BASE_PATH": "/nerf_dir", # Path for a working directory, whichever you want
     "API_KEY": "XgZUjCbXbZwjg2v4JzCs6hbkygjsYWHTBSooXXXXXXXX", # API key from Pupil Cloud
-    "WORKSPACE_ID": "f66d330c-1fa1-425d-938a-36be565XXXXX", 
+    "WORKSPACE_ID": "f66d330c-1fa1-425d-938a-36be565XXXXX",
     "PROJECT_ID": "29119766-3635-4f0f-af57-db0896dXXXXX",
     "ENRICHMENT_ID": "95882476-0a10-4d8e-9941-fe0f77eXXXXX",
     "EXPERIMENT_NAME": "building", # The experiment name of your choice
@@ -134,33 +144,32 @@ Navigate to your `pyflux` folder. Inside the `pyflux` repository folder you will
     "far_plane": 7.0 # Far plane clip for the OpenGL visualisation
 }
 ```
-    
+
 ### Time to run it.
-    
+
 With the conda environment active, the ids set on the config file and on the pyflux folder, we will run the following comands in the terminal:
-    
+
 `python prepare_enrichment.py`
 
 This will download ALL recordings in the enrichment to `{BASE_PATH}/{EXPERIMENT_NAME}` that we defined on the JSON file. It will also prepare a set of frames to be used by NERF.
-    
+
 #### Time to "cherry pick" frames
-    
+
 It's time for some manual labour, so navigate to `{BASE_PATH}/{EXPERIMENT_NAME}/raw_frames` and remove all those frames where there is any occlusion, such as the Companion Device (phone) or body parts (like your hands). Otherwise, you will end up with a weird mesh or fancy piece of abstract art.
 
 ### Continue running it
-    
+
 Run `python pyflux/consolidate_raw_frames.py` in your terminal, to reorganise the frames.
-    
-Run `python pyflux/run_nerfstudio.py`, this will run colmap on the selected frames, train the NeRF and export the mesh. 
-    
+
+Run `python pyflux/run_nerfstudio.py`, this will run colmap on the selected frames, train the NeRF and export the mesh.
+
 ::: warning
-Depending on amount of GPU RAM, running the mesh export from the same run as the NeRF training causes problems. <br> In that case run `run_nerfstudio.py` again, only for the export (set flags in code). <br> You will also have to get the right value for timestamp from the `{BASE_PATH}/outputs/{EXPERIMENT_NAME}/nerfacto` folder. 
+Depending on amount of GPU RAM, running the mesh export from the same run as the NeRF training causes problems. <br> In that case run `run_nerfstudio.py` again, only for the export (set flags in code). <br> You will also have to get the right value for timestamp from the `{BASE_PATH}/outputs/{EXPERIMENT_NAME}/nerfacto` folder.
 :::
 
 If you got to here, congrats! You are almost there. By now, you should already have a 3D model, like the one below:
 
 ![An example of a 3D model generated by NeRF of a building faccade in Berlin](./nerf.png)
-
 
 <!-- <template>
   <div>
@@ -175,20 +184,18 @@ If you got to here, congrats! You are almost there. By now, you should already h
   </div>
 </template> -->
 
-
 ### To Blender!
-    
+
 Now it's time again for more manual fine-tuning, you will need to use [Blender](https://www.blender.org/) or Maya to open the mesh export `.obj` `({BASE_PATH}/exports/{EXPERIMENT_NAME}/mesh.obj)`, prune it if necesary, and export it as `.ply` format.
 
-    
 ### Almost there!
-    
+
 The only step missing now is to generate a video like the one on the header of this article. Let's create the visualisation!
-    
+
 `python pyflux/viz/rimviz.py`
-    
-This will open a new window on your computer with OpenGL and create a visualisation. So there you go! 
-    
+
+This will open a new window on your computer with OpenGL and create a visualisation. So there you go!
+
 You can close anytime the visualisation by pressing `ESC` or it will close after the recording is over.
 
 ::: warning

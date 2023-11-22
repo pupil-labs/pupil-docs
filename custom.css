@@ -526,6 +526,10 @@
   text-decoration: none;
 }
 
+.vp-doc h1 {
+  margin-bottom: 1rem;
+}
+
 .text-1 {
   color: var(--vp-c-text-1);
 }

@@ -4,7 +4,13 @@ permalink: /alpha-lab/map-your-gaze-to-a-2d-screen/
 tags: [Pupil Invisible, Neon, Cloud]
 ---
 
+<script setup>
+import TagLinks from '@components/TagLinks.vue'
+</script>
+
 # Map and visualise gaze onto a display content using the Reference Image Mapper
+
+<TagLinks :tags="$frontmatter.tags" />
 
 <Youtube src="OXIUjIzCplc"/>
 

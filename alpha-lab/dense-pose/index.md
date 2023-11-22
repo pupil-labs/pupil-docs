@@ -17,11 +17,18 @@ meta:
     content: "https://i.ytimg.com/vi/nt_zNSBMJWI/maxresdefault.jpg"
 tags: [Pupil Invisible, Neon, Cloud]
 ---
+
+<script setup>
+import TagLinks from '@components/TagLinks.vue'
+</script>
+
 # Map gaze onto body parts using DensePose
+
+<TagLinks :tags="$frontmatter.tags" />
 
 <Youtube src="nt_zNSBMJWI"/>
 
-**Act 3, Scene 1:**  *"To be or not to be?"* But where is the audience looking? At the hand, the face or the arm? <br>
+**Act 3, Scene 1:** _"To be or not to be?"_ But where is the audience looking? At the hand, the face or the arm? <br>
 
 ::: tip
 Have you ever wondered which body parts we gaze upon while conversing with others? Where a professional basketball player looks just before passing? Does hand movement play a role when delivering a speech? This guide will show you how to get data that can be used to answer these questions!
@@ -29,9 +36,9 @@ Have you ever wondered which body parts we gaze upon while conversing with other
 
 ## Understanding visual behaviour on body parts
 
-Understanding which body parts people look at during interactions, whether visual or otherwise, is an important topic in 
-fields ranging from sports science to psycholinguistics. This guide shows you how to use Neon or Pupil Invisible eye 
-tracking with [DensePose](https://github.com/facebookresearch/DensePose) (Github repository of [Dense Human Pose Estimation In The Wild](https://arxiv.org/abs/1802.00434)) 
+Understanding which body parts people look at during interactions, whether visual or otherwise, is an important topic in
+fields ranging from sports science to psycholinguistics. This guide shows you how to use Neon or Pupil Invisible eye
+tracking with [DensePose](https://github.com/facebookresearch/DensePose) (Github repository of [Dense Human Pose Estimation In The Wild](https://arxiv.org/abs/1802.00434))
 to characterise gaze behaviour on body parts that appear in the scene video, as shown above.
 
 ## What tools enable this?
@@ -60,15 +67,16 @@ After executing the code, new files will be generated. Check the new DensePoseCo
 2. An image showing the body segments and the number of frames in which they were gazed, as shown below:
 
 ![Densepose Results](./densepose-result.png)
-    
+
 3. Two files are also stored:
-- `parts_count.csv` - shows the number of times each body part is gazed 
+
+- `parts_count.csv` - shows the number of times each body part is gazed
 - `densepose.csv` - follows a structure similar to `gaze.csv`, but also with a new column indicating gazed body parts
 
 ## Running locally
 
 You can also run everything on your local machine. However, this option is only available for Linux and MacOS users as detectron2 does not support Windows 😕. If you do not have a GPU on your computer, we strongly recommend using our Google Colab notebook. Detailed instructions on running locally can be found in the [Github repository](https://github.com/pupil-labs/densepose-module) and the associated [read the docs](https://densepose-module.readthedocs.io/).
 
-::: tip 
+::: tip
 Need assistance implementing your own DensePose + gaze tracking application? Reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for formal support options.
 :::
