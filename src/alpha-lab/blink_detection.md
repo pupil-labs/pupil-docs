@@ -1,5 +1,5 @@
 ---
-title: "Detecting eye blinks using Pupil Lab’s blink detection pipeline"
+title: "Detecting eye blinks with Neon"
 description: Perform posthoc and real-time blink detection
 permalink: /alpha-lab/blink-detection/
 tags: [Neon, Realtime Python API]
@@ -18,16 +18,16 @@ tags: [Neon, Realtime Python API]
   </v-img>
 </div>
 
-### Eye blinks: artifacts and information
+### Blinks: artifacts and information
 
-The accurate detection of eye blinks serves a vital role in numerous eye tracking applications. Its importance is twofold: firstly, it helps identify time periods affected by blink-related artifacts, and secondly, isolate key physiological, cognitive, and clinical parameters, such as blink rate and blink duration. Blink detection can even be utilized in order to control external devices, for example by detecting a sequence of blinks made in quick succession. In order to show you how to achieve all of this, we have put together this guide.
+The accurate detection of blinks serves a vital role in many eye tracking applications. Its importance is twofold: firstly, it helps identify time periods affected by blink-related artifacts, and secondly, blink statistics can serve as relevant physiological, cognitive, and clinical parameters. Blink detection can even be utilized in order to control external devices, for example by detecting a sequence of blinks made in quick succession.
 
 ### Running blink detection locally
 
-Eye blinks are automatically detected once your recording is uploaded to Pupil Cloud. This guide shows how to apply Pupil Labs' blink detection algorithm to Neon recordings <i>offline</i> (i.e., without using Pupil Cloud) or <i>in real-time</i> (using [Pupil Lab's Realtime Python API](https://github.com/pupil-labs/realtime-network-api)). This allows you to build novel applications or simply satisfy your curiosity and develop a deeper understanding of the underlying algorithms.
+Blinks are automatically detected once your recording is uploaded to Pupil Cloud. This guide shows how to apply Pupil Labs' blink detection algorithm to Neon recordings <i>offline</i> (i.e., without using Pupil Cloud) or <i>in real-time</i> (using [Pupil Lab's Realtime Python API](https://github.com/pupil-labs/realtime-network-api)). This allows you to build novel applications or simply satisfy your curiosity and develop a deeper understanding of the underlying algorithms.
 
 ::: tip
-If you are interested in learning more about the technical details of the underlying blink detection pipeline, we invite you to also have a look at our [**white paper**](https://docs.google.com/document/d/1JLBhC7fmBr6BR59IT3cWgYyqiaM8HLpFxv5KImrN-qE/export?format=pdf).
+If you are interested in learning more about the technical details of the underlying blink detection pipeline, we invite you to also have a look at our [**white paper**](https://assets.pupil-labs.com/pdf/Pupil_Labs_Blink_Detector.pdf).
 :::
 
 ### Getting started
@@ -59,11 +59,13 @@ You will additionally get a visual representation of the detected blinks, provid
 ![Visual blink representation](../media/alpha-lab/eye_blinks_timeline.png)
 <font size=2>**Figure 2.** Visual representation of the detected blinks in the example Neon recording. Green shaded areas depict detected blink events.</font>
 
-When examining blink durations and the eyelid closing and re-opening times, you may notice that the total blink duration doesn't consistently equate to the sum of the durations of the closing and re-opening phases. This discrepancy arises because there are some frames during the period between closing and reopening of the eyelids where there is negligible movement, and thus, they are not classified as part of either the opening or the closing phase. However, blink duration is calculated from the start time of the eyelid closing to the last frame identified as part of the re-opening sequence and will, thus, almost always be marginally longer than the sum of the individual events.<br>
+The blink detector is designed to classify samples into eye lid opening and closing phases.
+
+Note that, due to the design of the blink detector, the total blink duration doesn't (necessarily) equate to the sum of the durations of the closing and re-opening phases. This discrepancy arises because there are some frames during the period between closing and reopening of the eyelids where there is negligible movement, and thus, they are not classified as part of either the opening or the closing phase. As the total blink duration is calculated from the start time of the eyelid closing to the last frame identified as part of the re-opening sequence, it will, thus, almost always be marginally longer than the sum of the individual events.<br>
 
 #### Part 2.1: Real-time blink detection
 
-In the first section of Part 2 of the guide, you will learn how to estimate blink rate in quasi real-time. From this, you will obtain a graph, as shown below, that is updated with every blink and shows an estimate of the current blink rate.
+In the first section of Part 2 of the guide, you will learn how to estimate blink rate in real-time. From this, you will obtain a graph, as shown below, that is updated with every blink and shows an estimate of the current blink rate.
 
 <div class="pb-4" style="display:flex;justify-content:left;">
   <v-img
@@ -76,9 +78,9 @@ In the first section of Part 2 of the guide, you will learn how to estimate blin
 
 <font size=2>**Figure 3.** Realtime blink rate estimation. Shown is the blink rate estimated over the last 30 s (solid line) as well as the average blink rate for the entire recording (dashed line). </b></font>
 
-#### Part 2.2: Toggling recordings remotely through eye blinks
+#### Part 2.2: Toggling recordings remotely through blinks
 
-In the last section of the guide, you will learn how to control a Neon device through a rapid sequence of three eye blinks. Upon detection of said sequence, the companion device will initiate a new recording or stop an ongoing one, as illustrated in the video below:
+In the last section of the guide, you will learn how to control a Neon device through a rapid sequence of three blinks. Upon detection of said sequence, the companion device will initiate a new recording or stop an ongoing one, as illustrated in the video below:
 
 <div class="pb-4" style="display:flex;justify-content:left;">
   <v-img
