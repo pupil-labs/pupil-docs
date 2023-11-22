@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import CardLink from "./cards/CardLink.vue";
   import Footer from "./Footer.vue";
-  import RandomBanner from "./banner/randomBanner.vue";
+  import RandomBanner from "./banner/RandomBanner.vue";
 
   import { useData } from "vitepress";
   const { frontmatter } = useData();
