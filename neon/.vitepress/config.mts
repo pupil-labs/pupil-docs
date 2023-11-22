@@ -214,7 +214,7 @@ let theme_config = { ...default_theme_config, ...theme_config_additions };
 
 let config_additions = {
   base: "/neon/",
-  title: "Home",
+  title: "Neon",
   titleTemplate: "Neon - :title - Pupil Labs Docs",
   description: "Documentation of Neon eye tracker and ecosystem.",
   vite: {

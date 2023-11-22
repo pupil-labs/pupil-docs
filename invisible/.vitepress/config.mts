@@ -180,7 +180,7 @@ let theme_config = { ...default_theme_config, ...theme_config_additions };
 
 let config_additions = {
   base: "/invisible/",
-  title: "Home",
+  title: "Invisible",
   titleTemplate: "Invisible - :title - Pupil Labs Docs",
   description:
     "Documentation of the Pupil Invisible eye tracker and ecosystem.",

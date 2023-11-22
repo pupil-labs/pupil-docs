@@ -2,6 +2,7 @@
 # https://vitepress.dev/reference/default-theme-home-page
 layout: AlphaPageLayout
 sidebar: false
+title: Home
 
 hero:
   title: "Alpha Lab"

@@ -55,7 +55,7 @@ let theme_config = { ...default_theme_config, ...theme_config_additions };
 
 let config_additions = {
   base: "/alpha-lab/",
-  title: "Home",
+  title: "Alpha Lab",
   titleTemplate: "Alpha Lab - :title - Pupil Labs Docs",
   description:
     "Documentation for Pupil Labs prototypes and demos to explore our curiosities.",

@@ -1,6 +1,7 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
 layout: ProductPageLayout
+title: Home
 
 hero:
   title: "Neon"
