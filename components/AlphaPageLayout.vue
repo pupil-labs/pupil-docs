@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import CardLink from "./cards/CardLink.vue";
   import Footer from "./Footer.vue";
+  import RandomBanner from "./banner/randomBanner.vue";
 
   import { useData } from "vitepress";
   const { frontmatter } = useData();
@@ -47,16 +48,7 @@
           </p>
         </div>
         <div class="col-span-2 order-1 sm:order-2 flex justify-end">
-          <img
-            class="w-full rounded-lg"
-            :src="
-              fm.hero.image ? fm.hero.image : `https://place-hold.it/600x250`
-            "
-            width="100%"
-            height="auto"
-            style="max-width: 700px"
-            alt="Product hero image"
-          />
+          <RandomBanner />
         </div>
       </div>
     </div>

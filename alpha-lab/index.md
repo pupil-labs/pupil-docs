@@ -12,7 +12,6 @@ hero:
       "Alpha Lab is not a place for official product documentation. Everything you find here should be considered a work in progress, and may even be a bit rough around the edges. That is the nature of exploration!",
       "We encourage you to read through the results and go further - play around, build from the ideas here, hack away!",
     ]
-  image: "/alpha-lab/ai-landing.webp"
 
 cards:
   - title: Define AOIs and Calculate Gaze Metrics
