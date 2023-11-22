@@ -43,7 +43,7 @@ Once you have made a recording, it is not known where the camera was during each
 
 ## Now, what is nerfstudio?
 
-[nerfstudio](https://docs.nerf.studio/en/latest/) 🚜 is an open-source package that allows users to interactively create, visualise and edit NeRFs, and bundles several tools including a way to generate 3D meshes from the NeRF.
+[nerfstudio](https://docs.nerf.studio/) 🚜 is an open-source package that allows users to interactively create, visualise and edit NeRFs, and bundles several tools including a way to generate 3D meshes from the NeRF.
 
 Under the hood, nerfstudio is built on top of PyTorch and PyQt, and uses ZeroMQ, ThreeJS and ReactJS for real-time rendering. It leverages the NeRF codebase to load and manipulate the models, and provides a high-level interface to interact with them. nerfstudio is still in active development, and new features and improvements are being added regularly.
 
@@ -63,7 +63,7 @@ This is not gonna be an easy path...
 
 ### Get your development environment ready
 
-Follow nerfstudio [installation guide](https://docs.nerf.studio/en/latest/quickstart/installation.html), to install the dependencies and nerfstudio from source.
+Follow nerfstudio [installation guide](https://docs.nerf.studio/quickstart/installation.html), to install the dependencies and nerfstudio from source.
 Alternatively, here is the basic code to create a [_conda_](https://anaconda.org/) environment that can run this:
 
 Creating the CONDA environment and installing COLMAP:
