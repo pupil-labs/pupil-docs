@@ -40,8 +40,8 @@
           </div>
         </div>
       </div>
-      <div class="grid gap-4">
-        <div v-if="fm.products" class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div>
+        <div v-if="fm.products" class="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <CardLink
             v-for="(product, index) in fm.products"
             :key="index"
@@ -78,7 +78,7 @@
           </div>
         </div>
         <div class="grid col-span-2">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <CardLink
               v-for="(product, index) in fm.alpha.cards"
               :key="index"

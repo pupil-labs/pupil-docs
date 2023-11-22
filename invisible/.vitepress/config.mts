@@ -107,6 +107,7 @@ let theme_config_additions = {
       { text: "Troubleshooting", link: "/data-collection/troubleshooting/" },
     ],
     "/pupil-cloud/": [
+      { text: "Overview", link: "/pupil-cloud/" },
       {
         text: "Tutorials",
         items: [

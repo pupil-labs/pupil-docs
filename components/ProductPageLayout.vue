@@ -55,19 +55,15 @@
     </div>
     <hr style="border-color: var(--vp-c-divider)" />
     <div>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div class="grid col-span-3">
-          <div
-            v-if="fm?.cards"
-            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
-          >
-            <CardLink
-              v-for="(product, index) in fm?.cards"
-              :key="index"
-              :product="product"
-            />
-          </div>
-        </div>
+      <div
+        v-if="fm?.cards"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+      >
+        <CardLink
+          v-for="(product, index) in fm?.cards"
+          :key="index"
+          :product="product"
+        />
       </div>
       <!-- <Content /> -->
     </div>
