@@ -59,7 +59,7 @@
         <div class="grid col-span-3">
           <div
             v-if="fm?.cards"
-            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
           >
             <CardLink
               v-for="(product, index) in fm?.cards"
