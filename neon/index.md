@@ -17,7 +17,7 @@ hero:
 
 cards:
   - title: Hardware
-    details: Learn about Neon hardware and Companion device, which controls recordings, data streaming, and uploads to Pupil Cloud.
+    details: The Neon Module, Neon frames, the Companion Device, and everything you need to know about them.
     link: { text: View, href: "/neon/hardware/module-technical-overview/" }
   - title: Data Collection
     details: Neon comes with a lot of powerful tools for data collection. Learn how to use them here!
@@ -26,13 +26,13 @@ cards:
     details: Pupil Cloud is a powerful tool for managing your data, analyzing your recordings, and collaborating with your team. It's our recommended tool for analysis.
     link: { text: View, href: "/neon/pupil-cloud/" }
   - title: Neon Player
-    details: Learn about Neon Player, an offline tool for playing back and exporting recordings.
+    details: Neon Player is an offline tool for playing back and exporting recordings.
     link: { text: View, href: "/neon/neon-player/" }
   - title: Real-Time API
     details: You can access the data Neon generates in real-time and remote control it using its real-time API. Learn how it works here!
     link: { text: View, href: "/neon/real-time-api/tutorials/" }
   - title: Neon XR
-    details: Learn about VR integration for Neon in Unity.
+    details: Neon is can be integrated with VR, AR and other devices. Learn how it works here!
     link: { text: View, href: "/neon/neon-xr/" }
   - title: Chat
     details: Come chat with us on Discord! Do you have an issues or questions? Just wanna say hi? Join the chat and drop us a message!

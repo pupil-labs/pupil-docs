@@ -17,10 +17,10 @@ hero:
 
 cards:
   - title: Hardware
-    details: Learn about Invisible hardware and Companion device, which controls recordings, data streaming, and uploads to Pupil Cloud.
+    details: The Pupil Invisible Glasses frame, scene camera module, Companion device, and everything you need to know about them.
     link: { text: View, href: "/invisible/hardware/technical-overview/" }
   - title: Data Collection
-    details: Neon comes with a lot of powerful tools for data collection. Learn how to use them here!
+    details: Pupil Invisible comes with a lot of powerful tools for data collection. Learn how to use them here!
     link: { text: View, href: "/invisible/data-collection/" }
   - title: Pupil Cloud
     details: Pupil Cloud is a powerful tool for managing your data, analyzing your recordings, and collaborating with your team. It's our recommended tool for analysis.

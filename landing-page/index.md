@@ -8,23 +8,23 @@ hero:
 
 products:
   - title: Neon
-    details: Learn how to use Neon and collect real-world data. Connect to Pupil Cloud, manage your data, analyze, and take your research to the next level.
+    details: Neon is our most powerful eye tracker. It features research-grade gaze and pupil diameter estimation, industry-leading robustness in real-world applications, and a pleasent calibration-free user experience.
     image: "/neon-doc.webp"
     link:
       {
         text: "Enter Documentation",
         href: "https://docs-staging.pupil-labs.com/neon/",
       }
-  - title: Invisible
-    details: Learn how to setup Pupil Invisible eye tracking glasses and collect real world data. Connect to Pupil Cloud, manage your data, analyze, and take your research to the next level.
+  - title: Pupil Invisible
+    details: Pupil Invisible was the world's first calibration-free eye tracker and set new standards for robustness in real-world applications. It is now deprecated and replaced by Neon.
     image: "/invisible-doc.webp"
     link:
       {
         text: "Enter Documentation",
         href: "https://docs-staging.pupil-labs.com/invisible/",
       }
-  - title: Core
-    details: Learn how to setup Pupil Core eye tracking headset and collect data with Pupil Capture. Use Pupil Player to explore your data in greater detail.
+  - title: Pupil Core
+    details: Pupil Core is a modular and more affordable eye tracker. It comes with open-source software and was the first eye tracker Pupil Labs created.
     image: "/core-doc.webp"
     link:
       {
