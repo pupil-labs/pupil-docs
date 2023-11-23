@@ -60,14 +60,14 @@ export const theme_config: ThemeConfigProps = {
       icon: {
         svg: '<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M200-120q-51 0-72.5-45.5T138-250l222-270v-240h-40q-17 0-28.5-11.5T280-800q0-17 11.5-28.5T320-840h320q17 0 28.5 11.5T680-800q0 17-11.5 28.5T640-760h-40v240l222 270q32 39 10.5 84.5T760-120H200Zm80-120h400L544-400H416L280-240Z"/></svg>',
       },
-      link: "https://docs-staging.pupil-labs.com/alpha-lab",
+      link: "https://docs.pupil-labs.com/alpha-lab",
       target: "_self",
     },
     {
       icon: {
         svg: '<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M160-200v-360q0-19 8.5-36t23.5-28l240-180q21-16 48-16t48 16l240 180q15 11 23.5 28t8.5 36v360q0 33-23.5 56.5T720-120H600q-17 0-28.5-11.5T560-160v-200q0-17-11.5-28.5T520-400h-80q-17 0-28.5 11.5T400-360v200q0 17-11.5 28.5T360-120H240q-33 0-56.5-23.5T160-200Z"/></svg>',
       },
-      link: "https://docs-staging.pupil-labs.com/",
+      link: "https://docs.pupil-labs.com/",
       target: "_self",
     },
   ],

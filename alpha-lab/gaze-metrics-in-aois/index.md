@@ -12,7 +12,7 @@ import TagLinks from '@components/TagLinks.vue'
 
 <TagLinks :tags="$frontmatter.tags" />
 
-After mapping gaze to the environment, e.g. by using the [Reference Image Mapper](https://docs-staging.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/), it is a common goal to compare gaze behavior on different objects of interest within the environment. An easy way to facilitate this using the Reference Image Mapper is to define areas of interest (AOIs), also known as regions of interest (ROIs), in the reference image, and to compare them with various gaze metrics like e.g. dwell time.
+After mapping gaze to the environment, e.g. by using the [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/), it is a common goal to compare gaze behavior on different objects of interest within the environment. An easy way to facilitate this using the Reference Image Mapper is to define areas of interest (AOIs), also known as regions of interest (ROIs), in the reference image, and to compare them with various gaze metrics like e.g. dwell time.
 
 In this guide, we will show you how to mark AOIs on a reference image, how to label which AOI a fixation was made on, and how to aggregate metrics from fixation data inside these AOIs.
 

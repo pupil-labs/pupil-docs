@@ -1,6 +1,6 @@
 # Make your first recording
 
-Using your Pupil Invisible eye tracking system for the first time? 
+Using your Pupil Invisible eye tracking system for the first time?
 
 Follow the steps below to make your first recording!
 
@@ -23,11 +23,11 @@ Next, install the Pupil Invisible Companion app on your device:
 <div class="pb-4" style="display: flex; align-items: center; justify-content: center;">
   <a href="https://play.google.com/store/apps/details?id=com.pupillabs.invisiblecomp" target="_blank">
 
-  ![Google Play Store](./google-play-badge.png)
+![Google Play Store](./google-play-badge.png)
 
   </a>
   
-  ![Neon Companion App](./companion_app_logo.jpeg)
+![Invisible Companion App](/pi-companion_app_logo-bg.png)
   
 </div>
 
@@ -48,7 +48,6 @@ Now, let's see some eye tracking in action!
 Put on the glasses and give it a try!
 
 ![Invisible Companion Homescreen](./PI-Home_UI-white.jpeg)
-
 
 ## 5. Make your first Recording
 

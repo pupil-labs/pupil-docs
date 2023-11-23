@@ -43,7 +43,7 @@ to characterise gaze behaviour on body parts that appear in the scene video, as 
 
 ## What tools enable this?
 
-Pupil Cloud currently offers a [Face Mapper enrichment](https://docs-staging.pupil-labs.com/neon/pupil-cloud/enrichments/face-mapper/), which tracks faces in scene video and determines whether they were gazed at. However, tracking the rest of the body is currently not available in Cloud. This is where our guide comes in. By following our instructions, you will be able to automatically detect and track body parts of people visible in the scene video of your recordings, and map gaze onto tracked body parts. This approach can enable a deeper understanding of how subjects (wearing the eye tracker) visually interacted with other people.
+Pupil Cloud currently offers a [Face Mapper enrichment](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/face-mapper/), which tracks faces in scene video and determines whether they were gazed at. However, tracking the rest of the body is currently not available in Cloud. This is where our guide comes in. By following our instructions, you will be able to automatically detect and track body parts of people visible in the scene video of your recordings, and map gaze onto tracked body parts. This approach can enable a deeper understanding of how subjects (wearing the eye tracker) visually interacted with other people.
 
 Until recently, existing methods for tracking body parts in eye tracking scene video were not very robust or accurate. However, [DensePose](https://github.com/facebookresearch/DensePose) promises to solve many of these problems, so we have decided to incorporate it into our guide.
 

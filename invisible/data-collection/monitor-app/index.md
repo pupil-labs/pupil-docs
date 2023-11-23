@@ -10,19 +10,20 @@ To access the Monitor app make sure the Pupil Invisible Companion app is running
 The Pupil Invisible Companion app can display a QR code that gets you straight to the monitor website. Just select `Streaming` in the menu!
 :::
 
-
 ## The App's User Interface
+
 Once the page has loaded, you will be presented with a live stream of the scene camera with a gaze overlay. On the right-hand side you can find a record button, that allows you to remotely start and stop a recording on the device.
 
 If you have multiple Pupil Invisible devices connected to the network, you can switch between devices using the switch button.
 
-Using the various event buttons, you can remotely save an [event](https://docs-staging.pupil-labs.com/neon/data-collection/events/) in a recording to mark points of interest. In the settings view you can customize the according event names.
+Using the various event buttons, you can remotely save an [event](https://docs.pupil-labs.com/neon/data-collection/events/) in a recording to mark points of interest. In the settings view you can customize the according event names.
 
 ![Monitor App UI](./monitor-ui.png)
 
 ## Connection Problems?
 
 In case you have trouble connecting to your Pupil Invisible please consider the following:
+
 - First, make sure the Companion phone and the device you are using for monitoring are both connected to the same network.
 - The local network must allow MDNS and UDP traffic for the app to work. In large public networks, this may be prohibited for security reasons. You can circumvent this by running a separate WiFi using the phone's hot spot functionality or an extra router.
 
