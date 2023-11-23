@@ -71,7 +71,28 @@ For the analysis, we will need the following:
 
 1. **Capture Reference Images:** Take pictures of the areas or objects within the environment you wish to investigate. Here are some example pictures of different areas and pieces of furniture in our environment (a living room, dining area, and kitchen):
 
-<ImageGrid cols="3" :images="$frontmatter.refImages" />
+<!-- <ImageGrid cols="5" :images="$frontmatter.refImages" /> -->
+
+<div class="grid grid-cols-3 gap-4">
+    <div class="image-column">
+        <img src="./desk.jpeg" alt="Desk" class="image">
+    </div>
+    <div class="image-column">
+        <img src="./tv1.jpeg" alt="TV1" class="image">
+    </div>
+    <div class="image-column">
+        <img src="./tv2.jpeg" alt="TV2" class="image">
+    </div>
+    <div class="image-column">
+        <img src="./table.jpeg" alt="Table" class="image">
+    </div>
+    <div class="image-column">
+        <img src="./kitchen.jpeg" alt="Kitchen" class="image">
+    </div>
+    <div class="image-column">
+        <img src="./cupboard.jpeg" alt="Cupboard" class="image">
+    </div>
+</div>
 
 <div style="margin-bottom: 50px;"></div>
 
