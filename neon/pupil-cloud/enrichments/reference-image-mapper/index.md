@@ -38,15 +38,15 @@ Below, gaze is mapped in four very different environments: to a **magazine cover
 Let's take a look at what the Reference Image and Scanning Recording look like to produce these heatmaps.
 ### 1. Magazine Reading
 
-<div class="mcontainer">
-  <div class="col-mcontainer">
+<div class="grid grid-cols-2 gap-4">
+  <div>
   <h4>Reference image</h4>
     
   ![Magazine Reference Image](./magazine-img.jpg)
 
   First, we need a high-resolution .jpeg of the page.
   </div>
-  <div class="col-mcontainer">
+  <div>
     <h4>Scanning video</h4>
     <Youtube src="SplYZK-ZzE8"/>
     Then, we need a scanning recording, about <i>15 s</i> long, taken on a blank background and in good lighting (natural light works well). Note that the magazine page is clear with good contrast
@@ -56,15 +56,15 @@ Let's take a look at what the Reference Image and Scanning Recording look like t
 
 ### 2. Basketball
 
-<div class="mcontainer">
-  <div class="col-mcontainer">
+<div class="grid grid-cols-2 gap-4">
+  <div>
   <h4>Reference image</h4>
   
   ![Basketball Reference Image](./basketball-img.jpg)
 
   Here we can take a photo of the basketball hoop and court background.
   </div>
-  <div class="col-mcontainer">
+  <div>
     <h4>Scanning video</h4>
     <Youtube src="4MB5o4W_XJo"/>
     The scanning recording, in this case, is about 45 s long – note that the angles and distances cover what a player might see when dribbling towards the basket or taking a shot
@@ -73,15 +73,15 @@ Let's take a look at what the Reference Image and Scanning Recording look like t
 
 ### 3. Supermarket Shelf
 
-<div class="mcontainer">
-  <div class="col-mcontainer">
+<div class="grid grid-cols-2 gap-4">
+  <div>
   <h4>Reference image</h4>
   
   ![Supermarket Reference Image](./supermarket-img.jpg)
   
   This photo captures the assortment of packagíng in the coffee aisle of a supermarket.
   </div>
-  <div class="col-mcontainer">
+  <div>
     <h4>Scanning video</h4>
     <Youtube src="d3Yk3nKDIOQ"/>
     Notice that the scanning recording is fairly slow to reduce motion blur for this feature-rich shelf.
@@ -90,15 +90,15 @@ Let's take a look at what the Reference Image and Scanning Recording look like t
 
 ### 4. An Entire Building
 
-<div class="mcontainer" display="grid | inline-grid">
-  <div class="col-mcontainer">
+<div class="grid grid-cols-2 gap-4">
+  <div>
   <h4>Reference image</h4>
   
   ![Building Reference Image](./building-img.jpg)
     
   This is a photo of the <i>entire</i> building
   </div>
-  <div class="col-mcontainer">
+  <div>
     <h4>Scanning video</h4>
     <Youtube src="0U4H-uOIHlw"/>
     We take a longer scanning recording, about 2 min. The angles and distances cover what a person might see whilst walking past or standing in front of the building.
