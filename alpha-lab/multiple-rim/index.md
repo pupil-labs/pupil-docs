@@ -1,10 +1,29 @@
 ---
 description: A living space - working with multiple reference images
 tags: [Pupil Invisible, Neon, Cloud]
+refImages:
+  [
+    { url: "./desk.webp", alt: "Desk" },
+    { url: "./tv1.webp", alt: "TV1" },
+    { url: "./tv2.webp", alt: "TV2" },
+    { url: "./table.webp", alt: "Table" },
+    { url: "./kitchen.webp", alt: "Kitchen" },
+    { url: "./cupboard.webp", alt: "Cupboard" },
+  ]
+refHeatmapImages:
+  [
+    { url: "./desk-heatmap.webp", alt: "Desk heatmap" },
+    { url: "./tv1-heatmap.webp", alt: "TV1 heatmap" },
+    { url: "./tv2-heatmap.webp", alt: "TV2 heatmap" },
+    { url: "./table-heatmap.webp", alt: "Table heatmap" },
+    { url: "./kitchen-heatmap.webp", alt: "Kitchen heatmap" },
+    { url: "./cupboard-heatmap.webp", alt: "Cupboard heatmap" },
+  ]
 ---
 
 <script setup>
 import TagLinks from '@components/TagLinks.vue'
+import ImageGrid from '@components/ImageGrid.vue'
 </script>
 
 # Map and visualize gaze on multiple reference images taken from the same environment
@@ -52,26 +71,7 @@ For the analysis, we will need the following:
 
 1. **Capture Reference Images:** Take pictures of the areas or objects within the environment you wish to investigate. Here are some example pictures of different areas and pieces of furniture in our environment (a living room, dining area, and kitchen):
 
-<div class="grid grid-cols-3 gap-4">
-  <div>
-    <img src="./desk.webp" alt="Desk">
-  </div>
-  <div>
-    <img src="./tv1.webp" alt="TV1">
-  </div>
-  <div>
-    <img src="./tv2.webp" alt="TV2">
-  </div>
-  <div>
-    <img src="./table.webp" alt="Table">
-  </div>
-  <div>
-    <img src="./kitchen.webp" alt="Kitchen">
-  </div>
-  <div>
-    <img src="./cupboard.webp" alt="Cupboard">
-  </div>
-</div>
+<ImageGrid cols="3" :images="$frontmatter.refImages" />
 
 <div style="margin-bottom: 50px;"></div>
 
@@ -146,23 +146,4 @@ consider placing some strategic items within the environment to increase the cha
 
 Once the enrichments are completed, you can view the heatmaps which illustrate areas which attracted more gaze. Additionally, you'll have the option to download gaze and fixation data mapped within the bounds of the pictures, enabling you to conduct further in-depth analyses.
 
-<div class="grid grid-cols-3 gap-4">
-  <div>
-    <img src="./desk-heatmap.webp" alt="Desk heatmap">
-  </div>
-  <div>
-    <img src="./tv1-heatmap.webp" alt="TV1 heatmap">
-  </div>
-  <div>
-    <img src="./tv2-heatmap.webp" alt="TV2 heatmap">
-  </div>
-  <div>
-    <img src="./table-heatmap.webp" alt="Table heatmap">
-  </div>
-  <div>
-    <img src="./kitchen-heatmap.webp" alt="Kitchen heatmap">
-  </div>
-  <div>
-    <img src="./cupboard-heatmap.webp" alt="Cupboard heatmap">
-  </div>
-</div>
+<ImageGrid cols="3" :images="$frontmatter.refHeatmapImages" />
