@@ -1,6 +1,6 @@
         rewrite ^/(neon|invisible)/getting-started/first-recording.html$ /$1/data-collection/first-recording/ permanent;
         rewrite ^/(neon|invisible)/getting-started/analyse-recordings-in-pupil-cloud/$  /pupil-cloud/tutorials/ permanent;
-        rewrite ^/(neon|invisible)/basic-concepts/(data-streams | events)/$ /$1/data-collection/$1/ permanent;
+        rewrite ^/(neon|invisible)/basic-concepts/(data-streams|events)/$ /$1/data-collection/$1/ permanent;
         rewrite ^/(neon|invisible)/basic-concepts/recordings-wearers-and-templates/$ /$1/data-collection/recordings/ permanent;
         rewrite ^/(neon|invisible)/basic-concepts/projects-and-workspaces/$ /$1/pupil-cloud/projects/ permanent;
         rewrite ^/(neon|invisible)/glasses-and-companion/technical-overview/$ /$1/hardware/module-technical-overview/ permanent;
