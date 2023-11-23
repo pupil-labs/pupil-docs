@@ -41,5 +41,5 @@ On **macOS**, you need the <a href="https://www.android.com/filetransfer/" alt="
 :::
 
 :::tip
-Recordings transferred locally will only contain gaze data that was generated in real-time. On the OnePlus 8 the framerate of the real-time API at can drop to **~120 Hz**. On the One Plus 10 the real-time framerate is ~200 Hz. Only recordings uploaded to Pupil Cloud are always densified to 200 Hz.
+Recordings transferred locally will only contain gaze data that was generated in real-time. On the OnePlus 8 the framerate of real-time gaze can drop to **~120 Hz**. On the One Plus 10 the framerate is ~200 Hz unless there is additional load on the phone. Only recordings uploaded to Pupil Cloud are always densified to 200 Hz.
 :::
