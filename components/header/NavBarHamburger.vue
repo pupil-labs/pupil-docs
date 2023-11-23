@@ -16,9 +16,9 @@
       socialEls.forEach((socialEl) => {
         if (
           // @ts-ignore
-          socialEl.href === "https://docs-staging.pupil-labs.com/" ||
+          socialEl.href === "https://docs.pupil-labs.com/" ||
           // @ts-ignore
-          socialEl.href === "https://docs-staging.pupil-labs.com/alpha-lab"
+          socialEl.href === "https://docs.pupil-labs.com/alpha-lab"
         ) {
           socialEl.setAttribute("target", "_self");
           socialEl.setAttribute("rel", "noopener");

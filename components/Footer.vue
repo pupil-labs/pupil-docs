@@ -7,7 +7,7 @@
     <div
       class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4"
     >
-      <a href="https://docs-staging.pupil-labs.com" style="color(--vp-c-text-1)"
+      <a href="https://docs.pupil-labs.com" style="color(--vp-c-text-1)"
         ><PupilLogo />
       </a>
       <div class="text-sm">

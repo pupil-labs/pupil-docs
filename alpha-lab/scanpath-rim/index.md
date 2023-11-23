@@ -19,7 +19,9 @@ Picture this: Build and customize scanpath visualizations with your Reference Im
 :::
 
 ## Visualizing gaze exploration with scanpaths
+
 Scanpaths are graphical representations of gaze over time. They provide a glimpse into how the observer has focused their attention on different aspects of a scene, making them a valuable tool for understanding a person's visual attention and perception. The video above illustrates this concept. It shows:
+
 - Fixation locations, visualized as blue numbered circles
 - Fixation durations, which are mapped to the size of the circles. Longer fixations correspond to larger circles
 - Saccades, represented by blue lines connecting the fixations
@@ -29,13 +31,13 @@ In this guide, we will show you how to generate both static and dynamic scanpath
 Image Mapper exported data.
 
 ::: tip
-Before continuing, ensure you are familiar with the [Reference Image Mapper](https://docs-staging.pupil-labs.com/pupil-cloud/enrichments/reference-image-mapper/)
+Before continuing, ensure you are familiar with the [Reference Image Mapper](https://docs.pupil-labs.com/pupil-cloud/enrichments/reference-image-mapper/)
 enrichment. Check out [this explainer video](https://www.youtube.com/watch?v=ygqzQEzUIS4&t=56s) for reference.
 :::
 
 ## Extending current tools
 
-The [Reference Image Mapper](https://docs-staging.pupil-labs.com/pupil-cloud/enrichments/reference-image-mapper/) enrichment available in Pupil Cloud is a tool that maps gaze onto
+The [Reference Image Mapper](https://docs.pupil-labs.com/pupil-cloud/enrichments/reference-image-mapper/) enrichment available in Pupil Cloud is a tool that maps gaze onto
 2D images and can subsequently generate heatmaps. However, it currently does not support the production of scanpath visualizations.
 Thus, we chose to develop a script that shows you how to build your own scanpaths using Reference Image Mapped data.
 

@@ -30,7 +30,7 @@ your own applications.
 
 ### Cloud enrichment
 
-- [Reference Image Mapper](https://docs-staging.pupil-labs.com/pupil-cloud/enrichments/reference-image-mapper/)
+- [Reference Image Mapper](https://docs.pupil-labs.com/pupil-cloud/enrichments/reference-image-mapper/)
 
 ### Alpha Lab tutorials
 
@@ -46,7 +46,7 @@ We first used the Reference Image Mapper enrichment to create a 3D model of a ph
 :bulb:
 When preparing the Reference Image Mapper Enrichment, make sure your phone is stable on a phone mount or stand. The
 scanning video needed for this tool requires relatively static features in the environment. If there is a lot of movement
-or the objects change in appearance or shape, the mapping can fail. More on this [in the docs](https://docs-staging.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/#setup)!
+or the objects change in appearance or shape, the mapping can fail. More on this [in the docs](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/#setup)!
 :::
 
 ## Gaze behaviour on mobile apps: Insights from Neon
