@@ -27,7 +27,7 @@ Next, install the Neon Companion app on your device:
 
   </a>
   
-![Neon Companion App](/neon/ne-companion_app_logo-bg.png)
+![Neon Companion App](/ne-companion_app_logo-bg.png)
   
 </div>
 

@@ -27,7 +27,7 @@ Next, install the Pupil Invisible Companion app on your device:
 
   </a>
   
-![Invisible Companion App](/invisible/pi-companion_app_logo-bg.png)
+![Invisible Companion App](/pi-companion_app_logo-bg.png)
   
 </div>
 
