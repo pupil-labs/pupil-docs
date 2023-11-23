@@ -51,9 +51,14 @@ let theme_config_additions = {
       },
     ],
     "/data-collection/": [
+      { text: "Overview", link: "/data-collection/" },
       {
         text: "Tutorials",
         items: [
+          {
+            text: "Your first Recording",
+            link: "/data-collection/first-recording/",
+          },
           {
             text: "Offset Correction",
             link: "/data-collection/offset-correction/",
