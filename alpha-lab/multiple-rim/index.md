@@ -52,39 +52,24 @@ For the analysis, we will need the following:
 
 1. **Capture Reference Images:** Take pictures of the areas or objects within the environment you wish to investigate. Here are some example pictures of different areas and pieces of furniture in our environment (a living room, dining area, and kitchen):
 
-<div class="image-row">
-  <div class="image-column">
-
-![desk](./desk.jpeg)
-
+<div class="grid grid-cols-3 gap-4">
+  <div>
+    <img src="./desk.webp" alt="Desk">
   </div>
-  <div class="image-column">
-
-![tv1](./tv1.jpeg)
-
+  <div>
+    <img src="./tv1.webp" alt="TV1">
   </div>
-  <div class="image-column">
-
-![tv2](./tv2.jpeg)
-
+  <div>
+    <img src="./tv2.webp" alt="TV2">
   </div>
-</div>
-<div class="image-row">
-  <div class="image-column">
-    
-  ![table](./table.jpeg)
-
+  <div>
+    <img src="./table.webp" alt="Table">
   </div>
-
-  <div class="image-column">
-
-![kitchen](./kitchen.jpeg)
-
+  <div>
+    <img src="./kitchen.webp" alt="Kitchen">
   </div>
-  <div class="image-column">
-
-![cupboard](./cupboard.jpeg)
-
+  <div>
+    <img src="./cupboard.webp" alt="Cupboard">
   </div>
 </div>
 
@@ -99,34 +84,47 @@ The Reference Image Mapper prefers feature-rich environments. If you have large 
 consider placing some strategic items within the environment to increase the chances of successful mapping.
 :::
 
-<div style="display: flex;">
-  <div style="flex: 50%; padding: 5px;">
-    <div style="position: relative; padding-bottom: 75%; height: 0;">
-      <iframe style="position: absolute; width: 100%; height: 100%; border: none;" src="https://www.youtube.com/embed/jeL8gs053lg?si=6wlx4fjxlfiqrbRq"></iframe>
-    </div>
+<div class="grid grid-cols-2 gap-4">
+  <div>
+    <iframe
+      class="w-full aspect-[4/3]" 
+      src="https://www.youtube.com/embed/jeL8gs053lg?si=6wlx4fjxlfiqrbRq" frameborder="0"
+      allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
   </div>
-  <div style="flex: 50%; padding: 5px;">
-    <div style="position: relative; padding-bottom: 75%; height: 0;">
-      <iframe style="position: absolute; width: 100%; height: 100%; border: none;" src="https://www.youtube.com/embed/zksTzVkGifk?si=3bxl0eKOgRbfoes-"></iframe>
-    </div>
+  <div>
+    <iframe
+      class="w-full aspect-[4/3]"
+      src="https://www.youtube.com/embed/zksTzVkGifk?si=3bxl0eKOgRbfoes-" frameborder="0"
+      allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
   </div>
-</div>
-
-<div style="display: flex;">
-  <div style="flex: 50%; padding: 5px;">
-    <div style="position: relative; padding-bottom: 75%; height: 0;">
-      <iframe style="position: absolute; width: 100%; height: 100%; border: none;" src="https://www.youtube.com/embed/Bg_SiFByceY?si=d2koC7-V7bbrYL3h"></iframe>
-    </div>
+  <div>
+    <iframe
+      class="w-full aspect-[4/3]"
+      src="https://www.youtube.com/embed/Bg_SiFByceY?si=d2koC7-V7bbrYL3h" frameborder="0"
+      allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
   </div>
-  <div style="flex: 50%; padding: 5px;">
-    <div style="position: relative; padding-bottom: 75%; height: 0;">
-      <iframe style="position: absolute; width: 100%; height: 100%; border: none;" src="https://www.youtube.com/embed/0r8oAn2AZMQ?si=SbSVHedGTJ4Zshfw"></iframe>
-    </div>
+  <div>
+    <iframe
+      class="w-full aspect-[4/3]"
+      src="https://www.youtube.com/embed/0r8oAn2AZMQ?si=SbSVHedGTJ4Zshfw" frameborder="0"
+      allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
   </div>
-</div>
-
-<div class="iframe-container2">
-  <iframe src="https://www.youtube.com/embed/fmy9F8Q9eW0?si=F7q399iZHGW2kArv" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <div>
+    <iframe
+      class="w-full aspect-[4/3]"
+      src="https://www.youtube.com/embed/fmy9F8Q9eW0?si=F7q399iZHGW2kArv" frameborder="0"
+      allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>
 </div>
 
 3. **Eye Tracking Recordings:** Make an eye tracking recording while the participant(s) freely explore and visually interact with various elements within the environment. (You can of course make these prior to the reference images and scanning recordings).
@@ -148,138 +146,23 @@ consider placing some strategic items within the environment to increase the cha
 
 Once the enrichments are completed, you can view the heatmaps which illustrate areas which attracted more gaze. Additionally, you'll have the option to download gaze and fixation data mapped within the bounds of the pictures, enabling you to conduct further in-depth analyses.
 
-<div class="image-row">
-  <div class="image-column">
-
-![desk](./desk-heatmap.jpeg)
-
+<div class="grid grid-cols-3 gap-4">
+  <div>
+    <img src="./desk-heatmap.webp" alt="Desk heatmap">
   </div>
-  <div class="image-column">
-  
-  ![tv1](./tv1-heatmap.jpeg)
-
+  <div>
+    <img src="./tv1-heatmap.webp" alt="TV1 heatmap">
   </div>
-  <div class="image-column">
-  
-  ![tv2](./tv2-heatmap.jpeg)
-
+  <div>
+    <img src="./tv2-heatmap.webp" alt="TV2 heatmap">
   </div>
-</div>
-<div class="image-row">
-  <div class="image-column">
-
-![table](./table-heatmap.jpeg)
-
+  <div>
+    <img src="./table-heatmap.webp" alt="Table heatmap">
   </div>
-  <div class="image-column">
-
-![kitchen](./kitchen-heatmap.jpeg)
-
+  <div>
+    <img src="./kitchen-heatmap.webp" alt="Kitchen heatmap">
   </div>
-  <div class="image-column">
-
-![cupboard](./cupboard-heatmap.jpeg)
-
+  <div>
+    <img src="./cupboard-heatmap.webp" alt="Cupboard heatmap">
   </div>
 </div>
-
-<div style="margin-bottom: 50px;"></div>
-
-<style scoped>
-
-table, tr, td, th {
-    overflow: hidden;
-    background: none!important;
-    border: none!important;
-    table-layout: fixed;
-    box-sizing: border-box;
-    padding: 5px;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    box-sizing: border-box;
-}
-
- .iframe-container{
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.1%; 
-  height: 0;
-  margin-left:auto;
-  margin-right:auto;
-}
-.iframe-container iframe{
-  position: absolute;
-  top:0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.iframe-container2{
-  position: relative;
-  width: 50%;
-  height: 50%;
-  padding-bottom: 37.5%;
-  height: auto;
-  margin-left:auto;
-  margin-right:auto;
-  margin-bottom: 50px;
-}
-
-.iframe-container2 iframe{
-  position: absolute;
-  top:0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  
-}
-
-.image-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px; /* Add spacing between rows */
-}
-
-.image-column {
-    flex: 1;
-    margin-right: 10px; /* Add spacing between images */
-}
-
-/* Style for the images */
-.image {
-    width: 100%;
-    height: auto;
-    display: block; /* Remove extra space below images */
-}
-
-.video-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.test-container {
-  justify-content: center;
-  align-items: center;
-  height: 100%; /* Adjust the height as needed */
-}
-
-.test {
-  width: 50%;
-  height: 50%;
-  position: relative;
-}
-
-.test iframe {
-  position: absolute;
-  width: 80%;
-  height: 80%;
-}
- 
-</style>
