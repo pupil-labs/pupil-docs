@@ -1,6 +1,6 @@
 # Make Your First Recording
 
-Using your Neon eye tracking system for the first time? 
+Using your Neon eye tracking system for the first time?
 
 Follow the steps below to make your first recording!
 
@@ -23,11 +23,11 @@ Next, install the Neon Companion app on your device:
 <div class="pb-4" style="display: flex; align-items: center; justify-content: center;">
   <a href="https://play.google.com/store/apps/details?id=com.pupillabs.neoncomp" target="_blank">
 
-  ![Google Play Store](./google-play-badge.png)
+![Google Play Store](./google-play-badge.png)
 
   </a>
   
-  ![Neon Companion App](./neon_companion.jpg)
+![Neon Companion App](/neon/ne-companion_app_logo-bg.png)
   
 </div>
 
@@ -47,10 +47,9 @@ Now, let's see some eye tracking in action!
 
 Put on the glasses and give it a try!
 
-
 <div class="pb-4" style="display:flex;justify-content:center;">
 
-  ![Live Preview](./open_the_live_preview.jpg)
+![Live Preview](./open_the_live_preview.jpg)
 
 </div>
 
