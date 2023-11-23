@@ -8,7 +8,7 @@ In this guide, we will demonstrate how to save events at recording time and how 
 To this end we are assuming a minimal experiment setup: we want to record subjects while they observe a series of images of animals and analyze how the average fixation duration differs for each image.
 
 ::: tip
-You can download the example data used in this guide [here](https://drive.google.com/file/d/1O-HJJbJWRBgcZS1sowCX2srmME5hTub0/view?usp=sharing) and find the code [here](https://github.com/pupil-labs/pupil-docs/tree/master/src/neon/real-time-api/track-your-experiment-progress-using-events/).
+You can download the example data used in this guide [here](https://drive.google.com/file/d/1O-HJJbJWRBgcZS1sowCX2srmME5hTub0/view?usp=sharing).
 :::
 
 ## How To Use Events To Keep Track?
