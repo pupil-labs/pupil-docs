@@ -37,3 +37,5 @@
         rewrite ^/invisible/how-tos/integrate-with-the-real-time-api/track-your-experiment-progress-using-events/$ /invisible/real-time-api/track-your-experiment-progress-using-events/ permanent;
         rewrite ^/invisible/how-tos/integrate-with-the-real-time-api/track-your-experiment-in-matlab/$ /invisible/real-time-api/track-your-experiment-in-matlab/ permanent;
         rewrite ^/invisible/how-tos/integrate-with-the-real-time-api/legacy-api.html$ /invisible/real-time-api/legacy-api/ permanent;
+        rewrite ^/neon/hardware$ /neon/hardware/module-technical-overview/ permanent;
+        rewrite ^/invisible/hardware$ /invisible/hardware/technical-overview/ permanent;
