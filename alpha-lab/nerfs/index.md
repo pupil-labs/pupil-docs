@@ -63,8 +63,8 @@ This is not gonna be an easy path...
 
 ### Get your development environment ready
 
-Follow nerfstudio [installation guide](https://docs.nerf.studio/quickstart/installation.html), to install the dependencies and nerfstudio from source.
-Alternatively, here is the basic code to create a [_conda_](https://anaconda.org/) environment that can run this:
+Follow nerfstudio [installation guide](https://docs.nerf.studio/quickstart/installation.html), to install the dependencies and nerfstudio from source. 
+Alternatively, here is the basic code to create a [*conda*](https://anaconda.org/) environment that can run this:
 
 Creating the CONDA environment and installing COLMAP:
 
