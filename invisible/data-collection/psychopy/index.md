@@ -1,3 +1,0 @@
-# PsychoPy
-
-TODO
