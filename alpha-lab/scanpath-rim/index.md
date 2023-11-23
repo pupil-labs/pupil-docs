@@ -8,10 +8,7 @@ tags: [Pupil Invisible, Neon, Cloud]
 
 <TagLinks />
 
-<div class="iframe-container2">
-    <iframe width="2000" height="1500" src="https://www.youtube.com/embed/7V3X4XmbRAM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div> 
-<br>
+<Youtube src="7V3X4XmbRAM"/>
 
 ::: tip
 Picture this: Build and customize scanpath visualizations with your Reference Image Mapper exports!
@@ -43,10 +40,7 @@ Thus, we chose to develop a script that shows you how to build your own scanpath
 2. Download [this script](https://gist.github.com/elepl94/9f669c4d81e455cf2095957831219664) and follow the [installation instructions](https://gist.github.com/elepl94/9f669c4d81e455cf2095957831219664#installation)
 
 ## Review the scanpaths
-<div class="iframe-container2">
-    <iframe width="2000" height="1500" src="https://www.youtube.com/embed/X43aTIRjwgQ?si=aTzAkRrYNqdOEf0T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div> 
-<br>
+<Youtube src="X43aTIRjwgQ" />
 
 After the script has completed its execution, you'll find the resulting scanpath visualizations stored in a newly created 
 sub-folder named "scanpath." For each participant, you will obtain a reference image with the scanpath superimposed on it. 
