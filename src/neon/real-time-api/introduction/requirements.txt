@@ -1,9 +1,0 @@
-# main dependency
-pupil-labs-realtime-api
-
-# introduction code dependencies
-matplotlib
-opencv-python-headless
-
-# make simple mode work in Jupyter notebooks
-nest-asyncio

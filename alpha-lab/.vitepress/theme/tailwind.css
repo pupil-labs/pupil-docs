@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .vp-external-link-icon::after {
+  content: unset;
+} */

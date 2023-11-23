@@ -4,52 +4,187 @@ on:
   workflow_dispatch: # this makes the action manual
 
 jobs:
-  build:
-    name: Install dependencies and generate static site
+  neon:
+    name: Build Neon
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
 
-      - uses: actions/setup-python@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v3
         with:
-          python-version: '3.x'
-      - run: pip install nbconvert==7.0.0 packaging
-      - name: Convert Jupyter notebooks
-        run: |
-          shopt -s globstar
-          jupyter-nbconvert --to markdown **/*.ipynb --ExtractOutputPreprocessor.enabled=False
-          shopt -u globstar
+          node-version: 18
+
+      - name: Install dependencies
+        working-directory: ./neon
+        run: npm install
+
+      # Copy node modules to provide dependencies for shared components in root folder
+      - name: Copy node_modules
         shell: bash
+        run: |
+          cp -r neon/node_modules .
+          ls -la
+
+      - name: Make build
+        working-directory: ./neon
+        run: npm run docs:build
+      
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: neon
+          path: neon/.vitepress/dist
+  
+  invisible:
+    name: Build Invisible
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
 
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
 
-      - name: Install vuepress
-        run: yarn global add vuepress
-      - name: Install package.json
-        run: yarn
-      - name: Build static site with vuepress
-        # alias for vuepress build src defined in package.json
-        run: yarn build
-
-      - name: Write commit SHA to gitcommit.txt in dist
+      - name: Install dependencies
+        working-directory: ./invisible
+        run: npm install
+      
+      # Copy node modules to provide dependencies for shared components in root folder
+      - name: Copy node_modules
         shell: bash
         run: |
-          echo $GITHUB_SHA > src/.vuepress/dist/gitcommit.txt
+          cp -r invisible/node_modules .
+          ls -la
 
-      - name: Get size of files in dist
-        shell: bash
-        run: |
-          du -ah src/.vuepress/dist
-
-      - name: Archive build artifacts
-        uses: actions/upload-artifact@v2
+      - name: Make build
+        working-directory: ./invisible
+        run: npm run docs:build
+      
+      - name: Upload
+        uses: actions/upload-artifact@v3
         with:
-          name: vuepress-dist
-          path: src/.vuepress/dist
+          name: invisible
+          path: invisible/.vitepress/dist
+ 
+  core:
+    name: Build Core
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        working-directory: ./core
+        run: npm install
+      
+      # Copy node modules to provide dependencies for shared components in root folder
+      - name: Copy node_modules
+        shell: bash
+        run: |
+          cp -r core/node_modules .
+          ls -la
+
+      - name: Make build
+        working-directory: ./core
+        run: npm run docs:build
+      
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: core
+          path: core/.vitepress/dist
+  
+  alpha-lab:
+    name: Build Alpha Lab
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        working-directory: ./alpha-lab
+        run: npm install
+      
+      # Copy node modules to provide dependencies for shared components in root folder
+      - name: Copy node_modules
+        shell: bash
+        run: |
+          cp -r alpha-lab/node_modules .
+          ls -la
+
+      - name: Make build
+        working-directory: ./alpha-lab
+        run: npm run docs:build
+      
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: alpha-lab
+          path: alpha-lab/.vitepress/dist
+
+  landing-page:
+    name: Upload landing page
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        working-directory: ./landing-page
+        run: npm install
+      
+      # Copy node modules to provide dependencies for shared components in root folder
+      - name: Copy node_modules
+        shell: bash
+        run: |
+          cp -r landing-page/node_modules .
+          ls -la
+
+      - name: Make build
+        working-directory: ./landing-page
+        run: npm run docs:build
+      
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: landing-page
+          path: landing-page/.vitepress/dist
+          
+  debugging-info:
+    name: Upload debugging info
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3         
+      - name: Write commit SHA to gitcommit.txt
+        shell: bash
+        run: |
+          echo $GITHUB_SHA > gitcommit.txt
+
+      - name: Gitcommit - upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: gitcommit
+          path: gitcommit.txt
 
   deploy-staging:
     name: Deploy to staging
@@ -57,22 +192,56 @@ jobs:
     environment:
       name: staging
       url: https://docs-staging.pupil-labs.com
-    needs: build
+    needs: [neon, invisible, core, landing-page, alpha-lab, debugging-info]
 
     steps:
       - uses: actions/checkout@v3
 
-      - name: Download generated website dist dir
-        uses: actions/download-artifact@v2
+      - name: Get size of files
+        shell: bash
+        run: |
+          du -ah .
+      
+      - name: Download gitcommit
+        uses: actions/download-artifact@v3
         with:
-          name: vuepress-dist
-          path: src/.vuepress/dist
+          name: gitcommit
+          path: gitcommit.txt
+      
+      - name: Download Neon
+        uses: actions/download-artifact@v3
+        with:
+          name: neon
+          path: neon/
+
+      - name: Download Invisible
+        uses: actions/download-artifact@v3
+        with:
+          name: invisible
+          path: invisible/
+      
+      - name: Download Core
+        uses: actions/download-artifact@v3
+        with:
+          name: core
+          path: core/
+      
+      - name: Download AlphaLab
+        uses: actions/download-artifact@v3
+        with:
+          name: alpha-lab
+          path: alpha-lab/
+
+      - name: Download Landing Page
+        uses: actions/download-artifact@v3
+        with:
+          name: landing-page
 
       - name: Rsync action - Deploy to staging
         uses: burnett01/rsync-deployments@4.1
         with:
           switches: -hrvz --delete --exclude=".htaccess"
-          path: src/.vuepress/dist/
+          path: .
           remote_path: ${{ secrets.REMOTE_PATH }}
           remote_host: ${{ secrets.REMOTE_HOST}}
           remote_user: ${{ secrets.REMOTE_USER }}
