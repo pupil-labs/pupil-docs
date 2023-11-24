@@ -189,7 +189,7 @@ Make sure to always use the **v0.4 marker design** for best detection performanc
 </div>
 </div>
 
-[Download Pupil Labs Calibration Marker v0.4](http://docs.pupil-labs.com/core/software/pupil-capture/v0.4_marker.pdf') to print or display on smartphone/tablet screen.
+[Download Pupil Labs Calibration Marker v0.4](/core/software/pupil-capture/v0.4_marker.pdf') to print or display on smartphone/tablet screen.
 
 
 #### Single Marker Calibration Choreography

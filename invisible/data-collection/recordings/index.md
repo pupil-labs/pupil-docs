@@ -8,7 +8,7 @@ The Pupil Invisible Companion app has several more features to ensure robust dat
 ## Wearers, Templates & Events
 When making a recording you can capture various additional data to record things like meta data or key events that happened during data collection. These will be saved as part of the recording itself.
 
-[**Wearers**](/data-collection/wearers/) are the people who wear the Neon device while recording.
+[**Wearers**](/data-collection/wearers/) are the people who wear the Invisible device while recording.
 
 [**Templates**](/data-collection/templates/) are questionnairs that can be filled out at recording time.
 
