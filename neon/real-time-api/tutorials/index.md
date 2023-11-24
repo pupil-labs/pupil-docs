@@ -36,12 +36,13 @@ print(f"Battery level: {device.battery_level_percent}%")
 print(f"Free storage: {device.memory_num_free_bytes / 1024**3:.1f} GB")
 print(f"Serial number of connected glasses: {device.serial_number_glasses}")
 ```
-
-    Phone IP address: 192.168.1.168
-    Phone name: OnePlus8
-    Battery level: 43%
-    Free storage: 92.4 GB
-    Serial number of connected glasses: h4gcf
+```
+Phone IP address: 192.168.1.168
+Phone name: OnePlus8
+Battery level: 43%
+Free storage: 92.4 GB
+Serial number of connected glasses: h4gcf
+```
 
 ## Starting & Stopping Recordings
 
@@ -61,8 +62,9 @@ print(f"Started recording with id {recording_id}")
 time.sleep(5)
 
 device.recording_stop_and_save()
-
-# output: Started recording with id 2f99d9f9-f009-4015-97dd-eb253de443b0
+```
+```
+Started recording with id 2f99d9f9-f009-4015-97dd-eb253de443b0
 ```
 
 ## Saving Events
@@ -87,9 +89,7 @@ print(device.send_event("test event 2", event_timestamp_unix_ns=time.time_ns()))
 
 device.recording_stop_and_save()
 ```
-
-```python
-
+```
 Event(name=None recording_id=None timestamp_unix_ns=1642599117043000000 datetime=2022-01-19 14:31:57.043000)
 Event(name=None recording_id=fd8c98ca-cd6c-4d3f-9a05-fbdb0ef42668 timestamp_unix_ns=1642599122555200500 datetime=2022-01-19 14:32:02.555201)
 
@@ -139,8 +139,6 @@ print(imu_sample.accel_data)
 
 print(f"Gyro data:")
 print(imu_sample.gyro_data)
-```
-
 ```
 This IMU sample was recorded at 2023-05-25 11:23:05.749155
 It contains the following data:
