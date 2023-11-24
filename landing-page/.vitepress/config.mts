@@ -34,6 +34,22 @@ const config_additions = {
   title: "Home",
   titleTemplate: ":title - Pupil Labs Docs",
   description: "Documentation for all Pupil Labs products.",
+  head: [
+    'script',
+    {},
+    `
+    if (navigator.serviceWorker) {
+      navigator.serviceWorker.getRegistrations().then(
+        function (registrations) {
+            for (let idx in registrations) {
+                registrations[idx].unregister()
+            }
+        }
+      )
+    }
+
+    `
+  ],
   vite: {
     resolve: {
       alias: [
