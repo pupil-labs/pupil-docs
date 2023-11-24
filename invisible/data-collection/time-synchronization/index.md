@@ -1,5 +1,5 @@
 # Achieve super-precise Time Sync
-For some applications, it is critical to accurately synchronize your Pupil Invisible device with another clock. That could be from a second Pupil Invisible device, an external sensor, or a computer you use for stimulus presentation. 
+For some applications, it is critical to accurately synchronize your Pupil Invisible device with another clock. That could be from a second Pupil Invisible device, an external sensor, or a computer you use for stimulus presentation.
 
 Pupil Invisible provides UTC timestamps for all the data it generates, which makes it easy to sync the data to anything. Those timestamps are generated using the clock of the Companion device. However, digital clocks can suffer from drift, meaning that they sometimes run slightly too fast or slow. Over time this error accumulates and can lead to errors when comparing two clocks.
 
@@ -27,7 +27,7 @@ NTP_SERVER=north-america.pool.ntp.org
 ### Improving Synchronization further
 While an error of `<20 ms` is sufficient for most applications, some require even better synchronization. To achieve this, you can estimate the offset between the clock used by Pupil Invisible and the external clock down to single millisecond accuracy.
 
-This can be done using the `TimeOffsetEstimator` of the [real-time API](https://docs.pupil-labs.com/invisible/real-time-api/introduction/). Using the following code, you can estimate the offset between the Pupil Invisible clock and the clock of the host executing the code.
+This can be done using the `TimeOffsetEstimator` of the [real-time API](/real-time-api/tutorials/). Using the following code, you can estimate the offset between the Pupil Invisible clock and the clock of the host executing the code.
 ::: tip
 **Dependency**: `pip install "pupil-labs-realtime-api>=1.1.0"`
 :::

@@ -13,11 +13,11 @@ A heatmap of gaze data mapped onto the reference image can be generated, and map
 
 As described in the setup video, you will need two things in addition to your eye tracking recording(s) to produce a Reference Image Mapper enrichment:
 1. A reference image
-2. A scanning video of the object/feature(s) taken with Invisible/Neon’s scene camera
+2. A scanning video of the object/feature(s) taken with Neon’s scene camera
 
 :::tip
 **Reference Image**<br/>
-Only the scanning recording needs to be taken with Invisible/Neon. The reference image can be taken with any camera. It can be also be a scanned image.
+Only the scanning recording needs to be taken with Neon. The reference image can be taken with any camera. It can be also be a scanned image.
 <br/>
 <br/>
 <b>Duration</b><br/>
