@@ -57,7 +57,7 @@ This file contains the timestamps of every world video frame.
 
 ## events.csv
 
-This file contains [event](https://docs.pupil-labs.com/neon/data-collection/events/) data for all recordings. It contains both project event annotations and real-time recording events.
+This file contains [event](/neon/data-collection/events/) data for all recordings. It contains both project event annotations and real-time recording events.
 
 | Field              | Description                                               |
 | ------------------ | --------------------------------------------------------- |
