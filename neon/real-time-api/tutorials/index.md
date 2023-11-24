@@ -61,9 +61,9 @@ print(f"Started recording with id {recording_id}")
 time.sleep(5)
 
 device.recording_stop_and_save()
-```
 
-    Started recording with id 2f99d9f9-f009-4015-97dd-eb253de443b0
+# output: Started recording with id 2f99d9f9-f009-4015-97dd-eb253de443b0
+```
 
 ## Saving Events
 

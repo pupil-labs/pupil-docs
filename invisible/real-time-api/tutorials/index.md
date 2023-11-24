@@ -68,9 +68,9 @@ print(f"Started recording with id {recording_id}")
 time.sleep(5)
 
 device.recording_stop_and_save()
-```
 
-    Started recording with id 2f99d9f9-f009-4015-97dd-eb253de443b0
+# output: Started recording with id 2f99d9f9-f009-4015-97dd-eb253de443b0
+```
 
 While a recording is running, you can save [events](https://docs.pupil-labs.com/neon/data-collection/events/)
 using the [`send_event`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.send_event) method.
