@@ -12,7 +12,7 @@ The app automatically saves [UTC timestamps](https://en.wikipedia.org/wiki/Coord
 
 ## Pupil Cloud
 
-Pupil Cloud is our web-based storage and analysis platform located at [cloud.pupil-labs.com](https://cloud.pupil-labs.com/). It is the recommended tool for handling your Invisible recordings.
+Pupil Cloud is our web-based storage and analysis platform located at [cloud.pupil-labs.com](https://cloud.pupil-labs.com/). It is the recommended tool for handling your Pupil Invisible recordings.
 It makes it easy to store all your data securely in one place and it offers a variety of options for analysis.
 
 ![Pupil Cloud](./pupil_cloud.jpg)
@@ -23,7 +23,7 @@ From here, you can either download the raw data in a convenient format or use so
 
 We have a strict [privacy policy](https://pupil-labs.com/legal/) that ensures your recording data is accessible only by you and those you explicitly grant access to. Pupil Labs will never access your recording data unless you explicitly instruct us to.
 
-If Cloud upload is enabled in the Invisible Companion app, then recordings will be uploaded automatically to Pupil Cloud. No additional effort is required for data logistics.
+If Cloud upload is enabled in the Pupil Invisible Companion app, then recordings will be uploaded automatically to Pupil Cloud. No additional effort is required for data logistics.
 
 ## Pupil Invisible Monitor
 

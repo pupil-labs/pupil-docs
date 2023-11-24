@@ -26,7 +26,7 @@ cards:
     details: Pupil Cloud is a powerful tool for managing your data, analyzing your recordings, and collaborating with your team. It's our recommended tool for analysis.
     link: { text: View, href: "/invisible/pupil-cloud/" }
   - title: Real-Time API
-    details: You can access the data Invisible generates in real-time and remote control it using its real-time API. Learn how it works here!
+    details: You can access the data Pupil Invisible generates in real-time and remote control it using its real-time API. Learn how it works here!
     link: { text: View, href: "/invisible/real-time-api/tutorials/" }
   - title: Chat
     details: Come chat with us on Discord! Do you have an issues or questions? Just wanna say hi? Join the chat and drop us a message!
