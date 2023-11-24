@@ -27,7 +27,7 @@ NTP_SERVER=north-america.pool.ntp.org
 ### Improving Synchronization further
 While an error of `<20 ms` is sufficient for most applications, some require even better synchronization. To achieve this, you can estimate the offset between the clock used by Pupil Invisible and the external clock down to single millisecond accuracy.
 
-This can be done using the `TimeOffsetEstimator` of the [real-time API](/real-time-api/introduction/). Using the following code, you can estimate the offset between the Pupil Invisible clock and the clock of the host executing the code.
+This can be done using the `TimeOffsetEstimator` of the [real-time API](/real-time-api/tutorials/). Using the following code, you can estimate the offset between the Pupil Invisible clock and the clock of the host executing the code.
 ::: tip
 **Dependency**: `pip install "pupil-labs-realtime-api>=1.1.0"`
 :::
