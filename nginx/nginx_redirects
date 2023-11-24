@@ -39,5 +39,5 @@
         rewrite ^/invisible/how-tos/integrate-with-the-real-time-api/legacy-api.html$ /invisible/real-time-api/legacy-api/ permanent;
         rewrite ^/neon/hardware$ /neon/hardware/module-technical-overview/ permanent;
         rewrite ^/invisible/hardware$ /invisible/hardware/technical-overview/ permanent;
-        rewrite ^/(neon|invisible)/getting-started/understand-the-ecosystem/$ /$1/understand-the-ecosystem/ permanent;
+        rewrite ^/(neon|invisible)/getting-started/understand-the-ecosystem/$ /$1/data-collection/ecosystem-overview/ permanent;
 

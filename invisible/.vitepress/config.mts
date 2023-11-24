@@ -60,6 +60,10 @@ let theme_config_additions = {
             link: "/data-collection/first-recording/",
           },
           {
+            text: "Ecosystem Overview",
+            link: "/data-collection/ecosystem-overview/",
+          },
+          {
             text: "Offset Correction",
             link: "/data-collection/offset-correction/",
           },

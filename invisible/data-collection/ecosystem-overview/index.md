@@ -1,4 +1,4 @@
-# Understand the Ecosystem
+# Ecosystem Overview
 
 The Pupil Invisible ecosystem contains a range of tools that support you during data collection and data analysis. This overview introduces all the key components so you can become familiar with all tools at your disposal.
 
