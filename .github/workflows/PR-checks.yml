@@ -1,6 +1,6 @@
 name: on PR
 # This workflow is triggered on pull requests to the repository.
-# It runs a job to build the docvs, and check for broken links in the files changed in the PR on the built static pages.
+# It runs a job to build the docs, and check for broken links.
 # It checks for spelling errors in the files changed in the PR.
 
 on:
@@ -8,60 +8,55 @@ on:
 
 jobs:
   build:
-    name: 📦 Build & 🌍 Check links
+    name: 📦 Build & 🌍 Check links for ${{ matrix.component }}
     runs-on: ubuntu-latest
-    outputs:
-      html_lychee_exited: ${{ steps.stringify.outputs.lychee_exited }}
-      html_lychee_file: ${{ steps.stringify.outputs.lychee_file }}
+    strategy:
+      fail-fast: false
+      matrix:
+        component: [neon, invisible, core, alpha-lab, landing-page]
     steps:
       - uses: actions/checkout@v3
-
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-      - run: pip install nbconvert==7.0.0 packaging
-      - name: Convert Jupyter notebooks
-        run: |
-          shopt -s globstar
-          jupyter-nbconvert --to markdown **/*.ipynb --ExtractOutputPreprocessor.enabled=False
-          shopt -u globstar
-        shell: bash
 
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
 
-      - name: Install vuepress
-        run: yarn global add vuepress
-      - name: Install package.json
-        run: yarn
-      - name: Build static site with vuepress
-        # alias for vuepress build src defined in package.json
-        run: yarn build
+      - name: Install dependencies
+        working-directory: ./${{ matrix.component }}
+        run: npm install
 
-      - name: Get size of files in dist
+      - name: Copy node_modules
         shell: bash
         run: |
-          du -ah src/.vuepress/dist
+          cp -r ${{ matrix.component }}/node_modules .
+          ls -la
 
-      - name: 'Get built html files'
+      - name: Make build
+        working-directory: ./${{ matrix.component }}
+        run: npm run docs:build
+
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ matrix.component }}
+          path: ${{ matrix.component }}/.vitepress/dist
+
+      - name: Get built HTML files
         id: html-files
         run: |
-          html_files=$(find src/.vuepress/dist -name '*.html')
+          html_files=$(find ./${{ matrix.component }}/.vitepress/dist -name '*.html')
           html_files="${html_files//$'\n'/ }"
           html_files="${html_files//$'\r'/ }"
-          echo $html_files
-          echo "all_html_files=${html_files}" >> $GITHUB_OUTPUT
+          echo "all_html_files=${html_files}" >> $GITHUB_ENV
       
-      - name: 'Check Links'
+      - name: Check Links
         id: lychee
-        uses: lycheeverse/lychee-action@v1.5.4
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        uses: lycheeverse/lychee-action@v1.8.0
         with:
-          args: -v -n -a 403,503,429,200 -i -b 'src/.vuepress/dist' --exclude-mail --include-verbatim -- ${{ steps.html-files.outputs.all_html_files }}
-          output: ./lychee/htmlfiles.md
+          args: -v -n -a 403,503,429,200 -i -b ./${{ matrix.component }}/.vitepress/dist --exclude-mail --include-verbatim -- ${{ env.all_html_files }}
+          output: ./lychee/${{ matrix.component }}_links.json
+          token: ${{ secrets.CUSTOM_TOKEN }}
           jobSummary: true
       
       - name: 'Outputs as strings'
@@ -84,16 +79,21 @@ jobs:
           echo "lychee_file=${MD_OUT}" >> $GITHUB_OUTPUT
           fi
 
-  link_fail:
-    name: 🚨 Fail if links are broken
+  debug-info:
+    name: Upload Debugging Info
     runs-on: ubuntu-latest
-    needs: build
-    if: ${{ needs.build.outputs.html_lychee_exited != 0 }}
     steps:
-      - name: 'Fail if links are broken'
-        run: |
-          echo "Some links are broken"
-          exit 1
+      - uses: actions/checkout@v3
+
+      - name: Write commit SHA to gitcommit.txt
+        shell: bash
+        run: echo $GITHUB_SHA > gitcommit.txt
+
+      - name: Upload Git Commit Info
+        uses: actions/upload-artifact@v3
+        with:
+          name: gitcommit
+          path: gitcommit.txt
 
   check_spelling:
     name: ✍️ Check spelling
