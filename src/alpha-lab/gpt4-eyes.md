@@ -35,9 +35,9 @@ The combination of these two technologies forms a powerful tool that can help in
 
 OpenAI has recently announced the new APIs at their [DevDay event,](https://openai.com/blog/new-models-and-developer-products-announced-at-devday) introducing GPT-4V, an advanced iteration of the renowned GPT-4 model that is [capable of understanding images](https://platform.openai.com/docs/guides/vision).
 
-With this example, we demonstrate how straightforward it is to work with these technologies, showcasing the versatility and user-friendliness of both OpenAI and our [real-time APIs](../neon/real-time-api/introduction/).
+With this example, we showcase how straightforward it is to work with these technologies, showcasing the versatility and user-friendliness of both OpenAI and our [real-time APIs](../neon/real-time-api/introduction/).
 
-The code shows with few lines how to stream your Neon/Invisible device scene camera with gaze, take a snap of it upon pressing the "Spacebar" and send it to GPT-4 together with some instructions to either describe what the person is looking at, check if there are any potential risks on their field of view or try to get the intention of the wearer.
+The code illustrates with a few lines how to stream your Neon/Invisible device scene camera with gaze, take a snap of it upon pressing the "Spacebar" and send it to GPT-4 together with some instructions to either describe what the person is looking at, check if there are any potential risks on their field of view or try to get the intention of the wearer.
 
 To wrap it all up, the script will use the newest text-to-speech (TTS) API to give you this response in viva-voice.
 
@@ -82,4 +82,3 @@ Through this integration, users with low vision can receive descriptive informat
 ::: tip
 Need assistance implementing a real-time API based application? Reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-lab.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for formal support options.
 :::
-
