@@ -50,12 +50,6 @@ jobs:
           html_files="${html_files//$'\r'/ }"
           echo "all_html_files=${html_files}" >> $GITHUB_ENV
 
-      - name: Upload HTML files
-        uses: actions/upload-artifact@v3
-        with:
-          name: html-files-${{ matrix.component }}
-          path: ./${{ matrix.component }}/.vitepress/dist/**/*.html
-
   check-links:
     name: 🖇️ Check Links on Merged HTML
     needs: build
@@ -63,22 +57,20 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Download all HTML file artifacts
+      - name: Download all dist artifacts
         uses: actions/download-artifact@v3
         with:
-          path: merged-html
+          path: docs_merged
 
-      - name: Merge HTML files
-        run: |
-          mkdir all-html
-          find merged-html -name '*.html' -exec cp {} all-html/ \;
+      - name: Display structure of downloaded files
+        run: ls -R docs_merged
 
       - name: Check Links
         uses: lycheeverse/lychee-action@v1.8.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: -v -n -a 403,503,429,200 -i -b all-html/ --exclude-mail --include-verbatim -- $(find all-html -name '*.html')
+          args: -v -n -a 403,503,429,200 -i -b docs_merged/ --exclude-mail --include-verbatim -- $(find docs_merged -name '*.html')
           jobSummary: true
           output: ./lychee/link_errors.md
           fail: true
@@ -110,7 +102,7 @@ jobs:
           fetch-depth: 2
       - name: 'Check Grammar'
         id: cspell
-        uses: streetsidesoftware/cspell-action@v2
+        uses: streetsidesoftware/cspell-action@v5
         with:
           files: |
             **/*.{md,html,ipynb}
