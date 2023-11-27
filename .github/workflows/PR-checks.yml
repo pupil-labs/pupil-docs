@@ -50,11 +50,11 @@ jobs:
           html_files="${html_files//$'\r'/ }"
           echo "all_html_files=${html_files}" >> $GITHUB_ENV
 
-        - name: Upload HTML files
-          uses: actions/upload-artifact@v3
-          with:
-            name: html-files-${{ matrix.component }}
-            path: ./${{ matrix.component }}/.vitepress/dist/**/*.html
+      - name: Upload HTML files
+        uses: actions/upload-artifact@v3
+        with:
+          name: html-files-${{ matrix.component }}
+          path: ./${{ matrix.component }}/.vitepress/dist/**/*.html
 
   check-links:
     name: 🖇️ Check Links on Merged HTML
