@@ -210,6 +210,10 @@ let theme_config_additions = {
         ],
       },
     ],
+    "/neon-xr/": [
+      { text: "Overview", link: "/neon-xr/" },
+      { text: "Build Your Own Mount", link: "/neon-xr/TODO/" },
+    ],
   },
 };
 
