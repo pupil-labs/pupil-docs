@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: 📦 Build & 🌍 Check links for ${{ matrix.component }}
+    name: 📦 🌍 ${{ matrix.component }} Build & Check links 
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -56,7 +56,7 @@ jobs:
         with:
           args: -v -n -a 403,503,429,200 -i -b ./${{ matrix.component }}/.vitepress/dist --exclude-mail --include-verbatim -- ${{ env.all_html_files }}
           output: ./lychee/${{ matrix.component }}_links.json
-          token: ${{ secrets.CUSTOM_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           jobSummary: true
       
       - name: 'Outputs as strings'
@@ -69,7 +69,7 @@ jobs:
             exit 0
           fi
           if [ $EXIT_CODE_STRING -eq 1 ]; then
-          MD_OUT="$( cat ./lychee/htmlfiles.md )"
+          MD_OUT="$( cat ./lychee/${{ matrix.component }}_links.json )"
           MD_OUT="${MD_OUT//'%'/'%25'}"
           MD_OUT="${MD_OUT//$'\n'/'%0A'}"
           MD_OUT="${MD_OUT//$'\r'/'%0D'}" 
