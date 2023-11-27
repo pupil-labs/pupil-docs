@@ -20,10 +20,7 @@
 </script>
 
 <template>
-  <div
-    class="pb-4"
-    style="display: flex; justify-content: center; aspect-ratio: 16 / 9"
-  >
+  <div style="display: flex; justify-content: center; aspect-ratio: 16 / 9">
     <iframe
       width="100%"
       height="height"
