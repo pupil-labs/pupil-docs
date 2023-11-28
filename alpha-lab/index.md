@@ -78,4 +78,12 @@ cards:
         href: "/alpha-lab/gaze-contingency-assistive/#a-practical-guide-to-implementing-gaze-contingency-for-assistive-technology",
       }
     image: "/alpha-lab/build-gaze-assistive-neon.webp"
+  - title: Run our blink detection pipeline offline and/or in real-time with Neon
+    details:
+    link:
+      {
+        text: View,
+        href: "/alpha-lab/blink-detection/",
+      }
+    image: "/alpha-lab/eye_blink.webp"
 ---
