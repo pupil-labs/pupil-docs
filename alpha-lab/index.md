@@ -83,7 +83,7 @@ cards:
     link:
       {
         text: View,
-        href: "/alpha-lab/blink-detection/",
+        href: "/alpha-lab/blink-detection/#detecting-eye-blinks-using-pupil-labs-blink-detection-pipeline",
       }
     image: "/alpha-lab/eye_blink.webp"
 ---
