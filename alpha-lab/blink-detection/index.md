@@ -21,7 +21,7 @@ The accurate detection of blinks serves a vital role in many eye tracking applic
 
 ## Running blink detection locally
 
-Blinks are automatically detected once your recording is uploaded to Pupil Cloud. This guide shows how to apply Pupil Labs' blink detection algorithm to Neon recordings *offline* (i.e., without using Pupil Cloud) or *in real-time* (using [Pupil Lab's Realtime Python API](../../neon/real-time-api/)). This allows you to build novel applications or simply satisfy your curiosity and develop a deeper understanding of the underlying algorithms.
+Blinks are automatically detected once your recording is uploaded to Pupil Cloud. This guide shows how to apply Pupil Labs' blink detection algorithm to Neon recordings *offline* (i.e., without using Pupil Cloud) or *in real-time* (using [Pupil Lab's Realtime Python API](https://docs.pupil-labs.com/neon/real-time-api/)). This allows you to build novel applications or simply satisfy your curiosity and develop a deeper understanding of the underlying algorithms.
 
 ::: tip
 If you are interested in learning more about the technical details of the underlying blink detection pipeline, we invite you to also have a look at our [**white paper**](https://assets.pupil-labs.com/pdf/Pupil_Labs_Blink_Detector.pdf).
