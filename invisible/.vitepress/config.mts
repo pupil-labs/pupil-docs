@@ -72,7 +72,7 @@ let theme_config_additions = {
       {
         text: "Recordings",
         items: [
-          { text: "Overview", link: "/hardware/recordings/" },
+          { text: "Overview", link: "/data-collection/recordings/" },
           { text: "Data Streams", link: "/data-collection/data-streams/" },
           { text: "Data Format", link: "/data-collection/data-format/" },
         ],
@@ -111,7 +111,7 @@ let theme_config_additions = {
       },
       {
         text: "Publications & Citation",
-        link: "/hardware/publications-and-citation/",
+        link: "/data-collection/publications-and-citation/",
       },
       { text: "Troubleshooting", link: "/data-collection/troubleshooting/" },
     ],
