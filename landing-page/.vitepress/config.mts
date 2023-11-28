@@ -35,6 +35,19 @@ const config_additions = {
   titleTemplate: ":title - Pupil Labs Docs",
   description: "Documentation for all Pupil Labs products.",
   head: [
+    ["link", { rel: "icon", href: "/favicon.png" }],
+    [
+      "script",
+      {
+        async: "",
+        src: "https://www.googletagmanager.com/gtag/js?id=G-YSCHB0T6ML",
+      },
+    ],
+    [
+      "script",
+      {},
+      "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-YSCHB0T6ML');",
+    ],
     [
       "script",
       {},

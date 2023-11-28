@@ -110,7 +110,7 @@ let theme_config_additions = {
       },
       {
         text: "Publications & Citation",
-        link: "/hardware/publications-and-citation/",
+        link: "/data-collection/publications-and-citation/",
       },
       { text: "Troubleshooting", link: "/data-collection/troubleshooting/" },
     ],

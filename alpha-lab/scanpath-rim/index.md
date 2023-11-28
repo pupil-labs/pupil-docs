@@ -36,7 +36,7 @@ Thus, we chose to develop a script that shows you how to build your own scanpath
 
 
 ## Steps
-1. Run a [Reference Image Mapper enrichment](https://docs.pupil-labs.com/enrichments/reference-image-mapper/) and download the results
+1. Run a [Reference Image Mapper enrichment](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/) and download the results
 2. Download [this script](https://gist.github.com/elepl94/9f669c4d81e455cf2095957831219664) and follow the [installation instructions](https://gist.github.com/elepl94/9f669c4d81e455cf2095957831219664#installation)
 
 ## Review the scanpaths

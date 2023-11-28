@@ -42,7 +42,21 @@ type ThemeConfigProps = {
 };
 
 export const config: ConfigProps = {
-  head: [["link", { rel: "icon", href: "/favicon.png" }]],
+  head: [
+    ["link", { rel: "icon", href: "/favicon.png" }],
+    [
+      "script",
+      {
+        async: "",
+        src: "https://www.googletagmanager.com/gtag/js?id=G-YSCHB0T6ML",
+      },
+    ],
+    [
+      "script",
+      {},
+      "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-YSCHB0T6ML');",
+    ],
+  ],
   appearance: true,
   cleanUrls: true,
 };

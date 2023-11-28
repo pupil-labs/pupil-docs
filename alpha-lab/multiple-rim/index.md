@@ -39,21 +39,21 @@ Level-up your Reference Image Mapper workflow to extract insights from participa
 ## Exploring gaze patterns in multiple regions of an environment
 
 Understanding where people focus their gaze while exploring their environment is a topic of interest for researchers in
-diverse fields, ranging from Art and Architecture to Zoology. The [Reference Image Mapper](https://docs.pupil-labs.com/pupil-cloud/enrichments/reference-image-mapper/)
+diverse fields, ranging from Art and Architecture to Zoology. The [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/)
 enrichment in Pupil Cloud makes it possible to map gaze onto 3D real-world environments and generate heatmaps. These provide
 an informative overview of visual exploration patterns and also pave the way for further analysis, such as region of interest analysis.
 
-In this guide, we will demonstrate how to use the [Reference Image Mapper](https://docs.pupil-labs.com/pupil-cloud/enrichments/reference-image-mapper/) to map a
+In this guide, we will demonstrate how to use the [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/) to map a
 participant's gaze onto various regions of a living environment as they freely navigate through it.
 
 ::: tip
-Before continuing, ensure you are familiar with the [Reference Image Mapper](https://docs.pupil-labs.com/pupil-cloud/enrichments/reference-image-mapper/) enrichment.
+Before continuing, ensure you are familiar with the [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/) enrichment.
 Check out [this explainer video](https://www.youtube.com/watch?v=ygqzQEzUIS4&t=56s) for reference.
 :::
 
 ## The tools at hand
 
-The [Reference Image Mapper](https://docs.pupil-labs.com/pupil-cloud/enrichments/reference-image-mapper/) enables mapping of gaze onto a
+The [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/) enables mapping of gaze onto a
 _single_ reference image of an environment. However, there is often a need to analyze _multiple_ regions for a more in-depth
 understanding of visual exploration. This guide demonstrates how to accomplish this by applying the enrichment multiple
 times during the same recording to generate mappings and heatmaps for different regions.
@@ -66,7 +66,7 @@ For the analysis, we will need the following:
 - Single or multiple scanning recordings. The choice of whether to use single or multiple scanning recordings depends on
   the dimensions of the space to be explored (see below for examples)
 - An eye tracking recording taken as the participant(s) move freely within the environment
-- User-inputted [events](https://docs.pupil-labs.com/neon/general/events/) to segment the recording(s) into [sections](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/#enrichment-sections) based on
+- User-inputted [events](https://docs.pupil-labs.com/neon/data-collection/events/) to segment the recording(s) into [sections](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/#enrichment-sections) based on
   the areas the person was looking at
 
 1. **Capture Reference Images:** Take pictures of the areas or objects within the environment you wish to investigate. Here are some example pictures of different areas and pieces of furniture in our environment (a living room, dining area, and kitchen):
@@ -152,7 +152,7 @@ consider placing some strategic items within the environment to increase the cha
 
 <div style="margin-bottom: 5px;"></div>
 
-4. **Add Custom Events:** During the eye tracking recording, users may focus on a specific region once or multiple times. I.e. they may revisit that region. By adding custom [event](https://docs.pupil-labs.com/neon/general/events/) annotations corresponding to these periods, you can create [sections](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/#enrichment-sections) for the enrichments to be computed. This enables you to run each enrichment only on the section(s) of recording where a certain region is being gazed at. For this guide, we used the following event annotations to run five Reference Image Mapper enrichments:
+4. **Add Custom Events:** During the eye tracking recording, users may focus on a specific region once or multiple times. I.e. they may revisit that region. By adding custom [event](https://docs.pupil-labs.com/neon/data-collection/events/) annotations corresponding to these periods, you can create [sections](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/#enrichment-sections) for the enrichments to be computed. This enables you to run each enrichment only on the section(s) of recording where a certain region is being gazed at. For this guide, we used the following event annotations to run five Reference Image Mapper enrichments:
 
    - Desk: `desk.begin` and `desk.end`
    - TV area 1: `tv1.begin` and `tv1.end`
