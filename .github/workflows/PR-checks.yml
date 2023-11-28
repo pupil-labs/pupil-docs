@@ -4,7 +4,8 @@ name: on PR
 # It checks for spelling errors in the files changed in the PR.
 
 on:
-  pull_request
+  workflow_dispatch: # this makes the action manual
+  pull_request:
 
 jobs:
   build:
