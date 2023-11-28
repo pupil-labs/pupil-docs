@@ -20,7 +20,7 @@ As an example we will use the recordings and enrichment of the art gallery study
 
 ## Dependencies of this Guide
 
-You can find all code from this guide as well as the used example data [here](https://github.com/pupil-labs/pupil-docs/tree/master/src/alpha-lab/gaze-metrics-in-aois/). The example data originates from the Reference Image Mapper enrichment called `multiple_paintings_standing` located in the demo workspace [here](https://cloud.pupil-labs.com/workspace/78cddeee-772e-4e54-9963-1cc2f62825f9/project/cdfde655-3c8a-45c5-b6e2-5d5754d7a4f0/enrich?search=multiple_paintings_standing).
+The example data originates from the Reference Image Mapper enrichment called `multiple_paintings_standing` located in the demo workspace [here](https://cloud.pupil-labs.com/workspace/78cddeee-772e-4e54-9963-1cc2f62825f9/project/cdfde655-3c8a-45c5-b6e2-5d5754d7a4f0/enrich?search=multiple_paintings_standing).
 
 To execute it you need to have the following libraries installed:
 

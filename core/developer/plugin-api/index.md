@@ -229,7 +229,7 @@ Conceptually, pupil detection plugins are wrappers around pupil detectors to mak
 Custom pupil detectors must subclass the [DetectorBase class](https://github.com/pupil-labs/pupil-detectors/blob/master/src/pupil_detectors/detector_base.pyx), while custom pupil detection plugins must subclass the [PupilDetectorPlugin class](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/pupil_detector_plugins/detector_base_plugin.py).
 
 ::: tip
-See [Pupil Datum Format](https://docs.pupil-labs.com/developer/#pupil-datum-format) for a list of required keys of the pupil datum dictionary returned by the `detect` method.
+See [Pupil Datum Format](https://docs.pupil-labs.com/core/developer/#pupil-datum-format) for a list of required keys of the pupil datum dictionary returned by the `detect` method.
 :::
 
 ```py
@@ -268,7 +268,7 @@ class MyCustomPupilDetectorPlugin(PupilDetectorPlugin):
         #
         # Returns a pupil datum dictionary containing the pupil location and related metadata.
         # See Pupil Datum Format for a list of required keys:
-        # https://docs.pupil-labs.com/developer/overview/#pupil-datum-format
+        # https://docs.pupil-labs.com/core/developer/#pupil-datum-format
         pass
 ```
 

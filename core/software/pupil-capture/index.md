@@ -307,7 +307,7 @@ For this to work your network needs to allow `UDP` transport. If the nodes do no
 
 ::: tip
 Pupil Groups can easily be integrated in your own app or device.
-Take a look at <a href="/developer/network-api/#pupil-groups">the developer docs</a> to get started.
+Take a look at [the developer docs](/developer/network-api/) to get started.
 :::
 
 #### Pupil Time Sync
