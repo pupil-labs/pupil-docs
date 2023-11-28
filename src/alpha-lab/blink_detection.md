@@ -96,7 +96,6 @@ In the last section of the guide, you will learn how to control a Neon device th
     </iframe>
 </div> -->
 
-### Conclusion
 In this Alpha Lab guide, we have shown you how you can use our blink detection pipeline, both offline as well as in real-time, and how you can build simple applications with it. We're excited to see what you will build using these tools.
 :::tip
 If you need assistance in implementing or building your own application, reach out to us via email ([info@pupil-labs.com](mailto:info@pupil-labs.com)), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for dedicated support options.
