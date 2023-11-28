@@ -20,10 +20,6 @@ pip install pupil-labs-realtime-api
 
 The client comes in two modes, `simple` and `async`. The simple mode is very easy to use and is the one we will focus on in this tutorial.
 
-::: tip
-You can download the code for this guide [here](https://github.com/pupil-labs/pupil-docs/tree/master/src/invisible/real-time-api/introduction).
-:::
-
 The async mode is using Python's [asyncio](https://docs.python.org/3/library/asyncio.html) in order to implement non-blocking asynchronous communication. The calls made using the simple mode are blocking. If you don't know what any of this means, that's okay! The simple mode suffices for most use-cases and you usually do not need to understand the differences!
 
 The simple client is located in [`pupil_labs.realtime_api.simple`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#simple-api). Using the [`discover_one_device`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.discover_one_device) function, we can connect to a Pupil Invisible device connected to your local network. Make sure the Invisible Companion app is running! If no device can be found, please check [this section](#i-can-not-connect-to-devices-using-the-real-time-api) in our troubleshooting area!

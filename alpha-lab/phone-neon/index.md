@@ -30,7 +30,7 @@ your own applications.
 
 ### Cloud enrichment
 
-- [Reference Image Mapper](https://docs.pupil-labs.com/pupil-cloud/enrichments/reference-image-mapper/)
+- [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/)
 
 ### Alpha Lab tutorials
 
