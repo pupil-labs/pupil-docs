@@ -70,7 +70,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: -v -n -a 403,503,429,200 --header "accept=*/*" -i -b docs_merged/ --exclude-mail --include-verbatim -- $(find docs_merged -name '*.html')
+          args: -v -n -a 403,503,429,200 --header "accept=*/*" --remap "https://www.youtube-nocookie.com/embed https://youtu.be" -i -b docs_merged/ --exclude-mail --include-verbatim -- $(find docs_merged -name '*.html')
           jobSummary: true
           output: ./lychee/link_errors.md
           fail: true
