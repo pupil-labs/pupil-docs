@@ -31,6 +31,10 @@ file:///**/*.js
 # Ignore all .py files
 ./*.py
 
+# More files
+./*.webp
+./*.woff2
+
 # Subscribe email, needs right post request to the endpoint
 https://mailchimp.us3.list-manage.com/subscribe/post
 
