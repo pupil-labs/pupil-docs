@@ -4,7 +4,9 @@ http://neon.local:8080/
 localhost:%25s
 file:///home/runner/work/pupil-docs/pupil-docs/src/alpha-lab/ws:/localhost:XXXX
 file:///home/runner/work/pupil-docs/pupil-docs/src/.vuepress/dist/alpha-lab/map-your-gaze-to-a-2d-screen/ws:/localhost:XXXX
+file:///home/runner/work/pupil-docs/pupil-docs/docs_merged/alpha-lab/map-your-gaze-to-a-2d-screen/ws:/localhost:XXXX
 ws://localhost:XXXX/
+ws:/*
 
 # Ignore all .js files
 file:///**/*.js
@@ -34,6 +36,7 @@ file:///**/*.js
 # More files
 ./*.webp
 ./*.woff2
+./*.pdf
 
 # Subscribe email, needs right post request to the endpoint
 https://mailchimp.us3.list-manage.com/subscribe/post
