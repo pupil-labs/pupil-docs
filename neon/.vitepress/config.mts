@@ -191,6 +191,45 @@ let theme_config_additions = {
         ],
       },
     ],
+    "/neon-player/": [
+      {
+        text: "Overview",
+        link: "/neon-player/",
+      },
+      {
+        text: "Plugins",
+        items: [
+          {
+            text: "Visualization Plugins",
+            link: "/neon-player/visualization-plugins/",
+          },
+          {
+            text: "Surface Tracker",
+            link: "/neon-player/surface-tracker/",
+          },
+          {
+            text: "Fixation & Blink Detectors",
+            link: "/neon-player/fixation-and-blink-detectors/",
+          },
+          {
+            text: "Head Pose Tracker",
+            link: "/neon-player/head-pose-tracker/",
+          },
+          {
+            text: "IMU Timeline",
+            link: "/neon-player/imu-timeline/",
+          },
+          {
+            text: "Plugin API",
+            link: "/neon-player/plugin-api/",
+          },
+        ],
+      },
+      {
+        text: "Export",
+        link: "/neon-player/export/",
+      },
+    ],
     "/real-time-api/": [
       {
         text: "Tutorials",
