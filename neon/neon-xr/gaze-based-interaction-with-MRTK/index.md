@@ -1,9 +1,13 @@
-## Add Gaze-Based Interaction to Your Unity Project
+# Add Gaze-Interaction to Your Project
 Gaze-Based interaction is of interest to many XR developers. It allows users to interact with virtual objects simply by looking at them. Often this is combined with hand interactions to e.g. select an object by fixating it and executing a pinching motion with one hand. 
 
 To make adding gaze-based interactions to your project easier, we have integrated Neon XR with the [Mixed Reality Toolkit](https://learn.microsoft.com/en-us/windows/mixed-reality/mrtk-unity/mrtk3-overview/) (MRTK). The MRTK is a collection of scripts and components that make it easy to build XR applications for a variety of platforms. It also includes a gaze-based interaction system that can be used to interact with virtual objects.
 
-To get started use our fork of the MRTK repository, which contains a template project, following these steps:
+<Youtube id="2e8kRTn3NJI" />
+
+## Setup
+
+To get started use our [fork of the MRTK repository](https://github.com/pupil-labs/MixedRealityToolkit-Unity), which contains a template project:
 1. Clone the repository
     ```
     git clone git@github.com:pupil-labs/MixedRealityToolkit-Unity.git
@@ -28,7 +32,7 @@ To get started use our fork of the MRTK repository, which contains a template pr
 1. In the `Addressable Groups` window, select `Build -> New Build -> Default Build Script`.
 1. Import `TMP resources` by clicking `Window -> TextMeshPro -> Import TMP Essential Resources`.
 
-**Additional Build Settings**
+### Additional Build Settings
 The following settings are required to build the project for the Pico 4 headset:
 1. Click `Edit->Project Settings`.
 1. In the `XR Plug-in Management` section, set `Plug-in Providers` to `PICO`. No other options should be selected.

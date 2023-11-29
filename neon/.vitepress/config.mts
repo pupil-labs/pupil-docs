@@ -212,6 +212,7 @@ let theme_config_additions = {
     ],
     "/neon-xr/": [
       { text: "Overview", link: "/neon-xr/" },
+      { text: "Gaze-Based Interaction", link: "/neon-xr/gaze-based-interaction-with-MRTK/" },
       { text: "Build Your Own Mount", link: "/neon-xr/build-your-own-mount/" },
     ],
   },
