@@ -1,7 +1,9 @@
 # Build Your Own Mount for Neon
 If you want to integrate Neon into a headset that we do not support yet, you can build your own mount! Thanks to the small form factor of the Neon module, this is possible for a wide range of headsets. The only requirement is that the headset provides a sufficient amount of space to place the Neon module such that it sits correctly above the wearers nose. Especially for headsets that are  compatible with regular glasses, this is typically the case.
 
-The process consists of two steps, 1) building the mount and 2) calibrating the mount inside of the headset.
+The process consists of two steps:
+1. Building the mount
+2. Calibrating the mount inside of the headset.
 
 
 ## Building the Mount

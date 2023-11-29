@@ -1,9 +1,11 @@
 # Neon XR
 
+<!-- 
 #### Remaining Todos
 - [ ] Add system overview
 - [ ] Add instructions regarding pre-generated calibrations and how to use them
-- [ ] Complete guide on how to build you own mount including calibration instructions.
+- [ ] Complete guide on how to build you own mount including calibration instructions. 
+-->
 
 Neon XR allows you to equip XR devices with research-grade eye tracking powered by Neon. This equally enables gaze-based interaction for XR applications and visual behaviour analysis in XR environments.
 
