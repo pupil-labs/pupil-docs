@@ -208,6 +208,11 @@ let theme_config_additions = {
       },
     ],
   },
+
+  editLink: {
+    pattern: 'https://github.dev/pupil-labs/pupil-docs/tree/master/neon/:path',
+    text: 'Edit this page on GitHub'
+  }
 };
 
 let theme_config = { ...default_theme_config, ...theme_config_additions };

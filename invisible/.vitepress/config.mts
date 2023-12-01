@@ -180,6 +180,11 @@ let theme_config_additions = {
       { text: "Legacy API", link: "/real-time-api/legacy-api/" },
     ],
   },
+
+  editLink: {
+    pattern: 'https://github.dev/pupil-labs/pupil-docs/tree/master/invisible/:path',
+    text: 'Edit this page on GitHub'
+  }
 };
 
 let theme_config = { ...default_theme_config, ...theme_config_additions };
