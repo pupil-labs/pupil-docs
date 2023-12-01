@@ -36,7 +36,6 @@ let theme_config_additions = {
   ],
 
   sidebar: {
-    "/getting-started/": [],
     "/hardware/": [
       {
         text: "Neon Module",
@@ -74,6 +73,10 @@ let theme_config_additions = {
           {
             text: "Your first Recording",
             link: "/data-collection/first-recording/",
+          },
+          {
+            text: "Ecosystem Overview",
+            link: "/data-collection/ecosystem-overview/",
           },
         ],
       },

@@ -14,4 +14,11 @@ module.exports = {
     },
   },
   plugins: [],
+  safelist: [
+    {
+      pattern: /grid-cols-(1|2|3|4|5)/,
+    },
+    "^sm:grid-cols-",
+    "m-auto",
+  ],
 };

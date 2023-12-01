@@ -73,7 +73,7 @@ Follow the steps in the next section to be able to use your gaze to navigate a w
 ## Steps
 
 1. Follow the instructions in [Gaze-controlled Cursor Demo](https://github.com/pupil-labs/gaze-controlled-cursor-demo) to download and run it locally on your computer.
-2. Start up [Neon](https://docs.pupil-labs.com/neon/getting-started/first-recording/), make sure it’s detected in the demo window, then check out the settings:
+2. Start up [Neon](https://docs.pupil-labs.com/neon/data-collection/first-recording/), make sure it’s detected in the demo window, then check out the settings:
    - Adjust the `Tag Size` and `Tag Brightness` settings as necessary until all four AprilTag markers are successfully tracked (markers that are not tracked will display a red border as shown in the image below).
    - Modify the `Dwell Radius` and `Dwell Time` values to customize the size of the gaze circle and the dwell time required for gaze to trigger a mouse action.
    - Click on `Mouse Control` and embark on your journey into the realm of gaze contingency.

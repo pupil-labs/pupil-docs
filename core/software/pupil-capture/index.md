@@ -15,14 +15,14 @@ The World window is the main control center for Pupil Capture. It displays a liv
 
 ### Keyboard Shortcuts
 
-| Keyboard Shortcut   | Description                                                  |
-|:--------------------|:-------------------------------------------------------------|
-| `r`                 | Start and stop recording                                     |
-| `c`                 | Start and stop calibration                                   |
-| `t`                 | Start and stop validation                                    |
-| `a`                 | Surface tracker: Add new surface                             |
-| `x`                 | Add annotation (default keyboard shortcut)                   |
-| `i`                 | Camera intrinsic estimation: Take snapshot of circle pattern |
+| Keyboard Shortcut | Description                                                  |
+| :---------------- | :----------------------------------------------------------- |
+| `r`               | Start and stop recording                                     |
+| `c`               | Start and stop calibration                                   |
+| `t`               | Start and stop validation                                    |
+| `a`               | Surface tracker: Add new surface                             |
+| `x`               | Add annotation (default keyboard shortcut)                   |
+| `i`               | Camera intrinsic estimation: Take snapshot of circle pattern |
 
 ## Video Source Selection
 By default Pupil Capture will use Local USB as the capture source.
@@ -64,11 +64,11 @@ sudo usermod -a -G plugdev $USER
 
 Due to new [technical limitations](https://github.com/libusb/libusb/issues/1014), Pupil Capture and Pupil Service need to be started with administrator privileges to get access to the video camera feeds. To do that, copy the applications into your /Applications folder and run the corresponding command from the terminal:
 
-Pupil Capture: 
+Pupil Capture:
 ``` zsh
 sudo /Applications/Pupil\ Capture.app/Contents/MacOS/pupil_capture
 ```
-Pupil Service: 
+Pupil Service:
 ``` zsh
 sudo /Applications/Pupil\ Service.app/Contents/MacOS/pupil_service
 ```
@@ -135,7 +135,7 @@ Before starting a calibration, ensure that the participant's pupil is robustly d
 
 <p>Your Pupil is properly detected by the camera.</p>
 </div>
-    
+
 <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
 
 ![Focus](focus.jpg)
@@ -189,7 +189,7 @@ Make sure to always use the **v0.4 marker design** for best detection performanc
 </div>
 </div>
 
-[Download Pupil Labs Calibration Marker v0.4](http://docs.pupil-labs.com/core/software/pupil-capture/v0.4_marker.pdf') to print or display on smartphone/tablet screen.
+[Download Pupil Labs Calibration Marker v0.4](./v0.4_marker.pdf) to print or display on smartphone/tablet screen.
 
 
 #### Single Marker Calibration Choreography
@@ -307,7 +307,7 @@ For this to work your network needs to allow `UDP` transport. If the nodes do no
 
 ::: tip
 Pupil Groups can easily be integrated in your own app or device.
-Take a look at <a href="/developer/network-api/#pupil-groups">the developer docs</a> to get started.
+Take a look at [the developer docs](/developer/network-api/) to get started.
 :::
 
 #### Pupil Time Sync
@@ -385,7 +385,7 @@ Apriltags ready to use:
 
   </a>
   <a download="apriltags_tag36h11_24-47.jpg" href="../../../media/shared/imgs/apriltags_tag36h11_24-47.jpg" title="AprilTags 0-23">
-    
+
   ![Apriltags 24 - 47](./apriltags_tag36h11_24-47.jpg)
 
   </a>
@@ -462,8 +462,8 @@ For all new projects we strongly recommend using Apriltags!
 
 
 ### Blink Detector
-The online blink detector classifies [blinks](/terminology/#blinks) according to onset and offset thresholds 
-associated with [2D pupil confidence](/terminology/#confidence). See the 
+The online blink detector classifies [blinks](/terminology/#blinks) according to onset and offset thresholds
+associated with [2D pupil confidence](/terminology/#confidence). See the
 [Blink Detector documentation](/software/pupil-player/#blink-detector) for more information.
 
 Read more about accessing blink detection results in real-time in the [developer documentation](/developer/network-api/#blink-messages).
@@ -507,13 +507,13 @@ Specifically, the intrinsics are saved to a file with the name pattern `<camera 
 
 Pupil Capture provides [prerecorded intrinsics](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/camera_models.py#L26-L152) for the following cameras:
 
-| Camera name           | Resolutions                              | Notes                                                     |
-| :---                  | :---:                                    | :---                                                      |
+| Camera name           |               Resolutions                | Notes                                                     |
+| :-------------------- | :--------------------------------------: | :-------------------------------------------------------- |
 | Pupil Cam1 ID2        | `640x480`<br/>`1280x720`<br/>`1920x1080` | Pupil Core high-speed scene camera                        |
-| Pupil Cam2 ID0/1      | `192x192`<br/>`400x400`                  | Core headset eye camera;<br/>max. 200 Hz sampling rate    |
-| Pupil Cam3 ID0/1      | `192x192`<br/>`400x400`                  | HTC Vive add-on eye camera;<br/>max. 200 Hz sampling rate |
+| Pupil Cam2 ID0/1      |         `192x192`<br/>`400x400`          | Core headset eye camera;<br/>max. 200 Hz sampling rate    |
+| Pupil Cam3 ID0/1      |         `192x192`<br/>`400x400`          | HTC Vive add-on eye camera;<br/>max. 200 Hz sampling rate |
 | Logitech Webcam C930e | `640x480`<br/>`1280x720`<br/>`1920x1080` | Pupil Core high-definition scene camera (discontinued)    |
-| Pupil Cam1 ID0/1      | `320x240`<br/>`640x480`                  | eye camera (discontinued);<br/>max. 120 Hz sampling rate  | 
+| Pupil Cam1 ID0/1      |         `320x240`<br/>`640x480`          | eye camera (discontinued);<br/>max. 120 Hz sampling rate  |
 
 When a recording is started in Pupil Capture, the application saves the active camera intrinsics to the `world.intrinsics`, `eye0.intrinsics`, and `eye1.intrinsics` files within the recording.
 
@@ -532,19 +532,19 @@ Based on the estimated intrinsics, one can calculate the camera's field of view 
 
 **Field of view in degrees:**
 | Camera name                                | Resolution  | Horizontal | Vertical | Diagonal |
-| :---                                       | :---:       | :---:      | :---:    | :---:    |
-| Pupil Cam1 ID2 (default – wide-angle lens) | `1920x1080` | 155°       | 85°      | ---      |
-|                                            | `1280x720`  | 103°       | 54°      | 122°     |
-|                                            | `640x480`   | 103°       | 73°      | 134°     |
-| Pupil Cam1 ID2 (narrow-angle lens)         | `1920x1080` | 88°        | 54°      | 106°     |
-|                                            | `1280x720`  | 63°        | 37°      | 70°      |
-|                                            | `640x480`   | 42°        | 32°      | 51°      |
-| Pupil Cam2 ID0/1                           | `400x400`   | 39°        | 39°      | 53°      |
-|                                            | `192x192`   | 37°        | 37°      | 51°      |
-| Pupil Cam3 ID0/1                           | `400x400`   | 71°        | 71°      | 91°      |
-|                                            | `192x192`   | 69°        | 69°      | 88°      |
-| Logitech Webcam C930e (discontinued)       | `1920x1080` | 82°        | 53°      | 91°      |
-|                                            | `1280x720`  | 80°        | 51°      | 89°      |
-|                                            | `640x480`   | 64°        | 52°      | 77°      |
-| Pupil Cam1 ID0/1 (discontinued)            | `640x480`   | 51°        | 39°      | 62°      |
-|                                            | `320x240`   | 51°        | 39°      | 61°      |
+| :----------------------------------------- | :---------: | :--------: | :------: | :------: |
+| Pupil Cam1 ID2 (default – wide-angle lens) | `1920x1080` |    155°    |   85°    |   ---    |
+|                                            | `1280x720`  |    103°    |   54°    |   122°   |
+|                                            |  `640x480`  |    103°    |   73°    |   134°   |
+| Pupil Cam1 ID2 (narrow-angle lens)         | `1920x1080` |    88°     |   54°    |   106°   |
+|                                            | `1280x720`  |    63°     |   37°    |   70°    |
+|                                            |  `640x480`  |    42°     |   32°    |   51°    |
+| Pupil Cam2 ID0/1                           |  `400x400`  |    39°     |   39°    |   53°    |
+|                                            |  `192x192`  |    37°     |   37°    |   51°    |
+| Pupil Cam3 ID0/1                           |  `400x400`  |    71°     |   71°    |   91°    |
+|                                            |  `192x192`  |    69°     |   69°    |   88°    |
+| Logitech Webcam C930e (discontinued)       | `1920x1080` |    82°     |   53°    |   91°    |
+|                                            | `1280x720`  |    80°     |   51°    |   89°    |
+|                                            |  `640x480`  |    64°     |   52°    |   77°    |
+| Pupil Cam1 ID0/1 (discontinued)            |  `640x480`  |    51°     |   39°    |   62°    |
+|                                            |  `320x240`  |    51°     |   39°    |   61°    |

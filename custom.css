@@ -561,6 +561,10 @@
   background-color: var(--vp-c-default-1);
 }
 
+.subgrid {
+  grid-template-rows: subgrid;
+}
+
 @media (min-width: 768px) {
   #app .VPNavScreen {
     display: unset;

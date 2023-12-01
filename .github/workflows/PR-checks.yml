@@ -1,99 +1,96 @@
 name: on PR
 # This workflow is triggered on pull requests to the repository.
-# It runs a job to build the docvs, and check for broken links in the files changed in the PR on the built static pages.
+# It runs a job to build the docs, and check for broken links.
 # It checks for spelling errors in the files changed in the PR.
 
 on:
-  pull_request
+  workflow_dispatch: # this makes the action manual
+  pull_request:
 
 jobs:
   build:
-    name: 📦 Build & 🌍 Check links
+    name: 📦 ${{ matrix.component }} build 
     runs-on: ubuntu-latest
-    outputs:
-      html_lychee_exited: ${{ steps.stringify.outputs.lychee_exited }}
-      html_lychee_file: ${{ steps.stringify.outputs.lychee_file }}
+    strategy:
+      fail-fast: false
+      matrix:
+        component: [neon, invisible, core, alpha-lab, landing-page]
     steps:
       - uses: actions/checkout@v3
-
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-      - run: pip install nbconvert==7.0.0 packaging
-      - name: Convert Jupyter notebooks
-        run: |
-          shopt -s globstar
-          jupyter-nbconvert --to markdown **/*.ipynb --ExtractOutputPreprocessor.enabled=False
-          shopt -u globstar
-        shell: bash
 
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
 
-      - name: Install vuepress
-        run: yarn global add vuepress
-      - name: Install package.json
-        run: yarn
-      - name: Build static site with vuepress
-        # alias for vuepress build src defined in package.json
-        run: yarn build
+      - name: Install dependencies
+        working-directory: ./${{ matrix.component }}
+        run: npm install
 
-      - name: Get size of files in dist
+      - name: Copy node_modules
         shell: bash
         run: |
-          du -ah src/.vuepress/dist
+          cp -r ${{ matrix.component }}/node_modules .
+          ls -la
 
-      - name: 'Get built html files'
+      - name: Make build
+        working-directory: ./${{ matrix.component }}
+        run: npm run docs:build
+
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ matrix.component }}
+          path: ${{ matrix.component }}/.vitepress/dist
+
+      - name: Get built HTML files
         id: html-files
         run: |
-          html_files=$(find src/.vuepress/dist -name '*.html')
+          html_files=$(find ./${{ matrix.component }}/.vitepress/dist -name '*.html')
           html_files="${html_files//$'\n'/ }"
           html_files="${html_files//$'\r'/ }"
-          echo $html_files
-          echo "all_html_files=${html_files}" >> $GITHUB_OUTPUT
-      
-      - name: 'Check Links'
-        id: lychee
-        uses: lycheeverse/lychee-action@v1.5.4
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        with:
-          args: -v -n -a 403,503,429,200 -i -b 'src/.vuepress/dist' --exclude-mail --include-verbatim -- ${{ steps.html-files.outputs.all_html_files }}
-          output: ./lychee/htmlfiles.md
-          jobSummary: true
-      
-      - name: 'Outputs as strings'
-        id: stringify
-        run: |
-          EXIT_CODE_STRING="$( printf '%d' "${{ env.lychee_exit_code }}" )"
-          echo "lychee_exited=${EXIT_CODE_STRING}" >> $GITHUB_OUTPUT
-          if [ $EXIT_CODE_STRING -eq 0 ]; then
-            echo "lychee_file=No broken links found" >> $GITHUB_OUTPUT
-            exit 0
-          fi
-          if [ $EXIT_CODE_STRING -eq 1 ]; then
-          MD_OUT="$( cat ./lychee/htmlfiles.md )"
-          MD_OUT="${MD_OUT//'%'/'%25'}"
-          MD_OUT="${MD_OUT//$'\n'/'%0A'}"
-          MD_OUT="${MD_OUT//$'\r'/'%0D'}" 
-          echo "text<<EOF" >> $GITHUB_OUTPUT
-          echo "$MD_OUT" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
-          echo "lychee_file=${MD_OUT}" >> $GITHUB_OUTPUT
-          fi
+          echo "all_html_files=${html_files}" >> $GITHUB_ENV
 
-  link_fail:
-    name: 🚨 Fail if links are broken
-    runs-on: ubuntu-latest
+  check-links:
+    name: 🖇️ Check Links on Merged HTML
     needs: build
-    if: ${{ needs.build.outputs.html_lychee_exited != 0 }}
+    runs-on: ubuntu-latest
     steps:
-      - name: 'Fail if links are broken'
-        run: |
-          echo "Some links are broken"
-          exit 1
+      - uses: actions/checkout@v3
+
+      - name: Download all dist artifacts
+        uses: actions/download-artifact@v3
+        with:
+          path: docs_merged
+
+      - name: Display structure of downloaded files
+        run: ls -R docs_merged
+
+      - name: Check Links
+        uses: lycheeverse/lychee-action@v1.8.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: -v -n -a 403,503,429,200 --header "accept=*/*" --remap "https://www.youtube-nocookie.com/embed https://youtu.be" -i -b docs_merged/ --exclude-mail --include-verbatim -- $(find docs_merged -name '*.html')
+          jobSummary: true
+          output: ./lychee/link_errors.md
+          fail: true
+
+  debug-info:
+    name: Upload Debugging Info
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Write commit SHA to gitcommit.txt
+        shell: bash
+        run: echo $GITHUB_SHA > gitcommit.txt
+
+      - name: Upload Git Commit Info
+        uses: actions/upload-artifact@v3
+        with:
+          name: gitcommit
+          path: gitcommit.txt
 
   check_spelling:
     name: ✍️ Check spelling
@@ -106,7 +103,7 @@ jobs:
           fetch-depth: 2
       - name: 'Check Grammar'
         id: cspell
-        uses: streetsidesoftware/cspell-action@v2
+        uses: streetsidesoftware/cspell-action@v5
         with:
           files: |
             **/*.{md,html,ipynb}

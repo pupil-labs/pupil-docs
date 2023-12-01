@@ -1,8 +1,7 @@
 import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vitepress";
 
-import { config as default_config } from "./../../default_config.mts";
-import { theme_config as default_theme_config } from "./../../default_config.mts";
+import { config as default_config, theme_config as default_theme_config } from "./../../default_config.mts";
 
 let theme_config_additions = {
   nav: [
@@ -60,6 +59,10 @@ let theme_config_additions = {
             link: "/data-collection/first-recording/",
           },
           {
+            text: "Ecosystem Overview",
+            link: "/data-collection/ecosystem-overview/",
+          },
+          {
             text: "Offset Correction",
             link: "/data-collection/offset-correction/",
           },
@@ -68,7 +71,7 @@ let theme_config_additions = {
       {
         text: "Recordings",
         items: [
-          { text: "Overview", link: "/hardware/recordings/" },
+          { text: "Overview", link: "/data-collection/recordings/" },
           { text: "Data Streams", link: "/data-collection/data-streams/" },
           { text: "Data Format", link: "/data-collection/data-format/" },
         ],
@@ -107,7 +110,7 @@ let theme_config_additions = {
       },
       {
         text: "Publications & Citation",
-        link: "/hardware/publications-and-citation/",
+        link: "/data-collection/publications-and-citation/",
       },
       { text: "Troubleshooting", link: "/data-collection/troubleshooting/" },
     ],
