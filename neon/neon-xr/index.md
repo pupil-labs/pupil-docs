@@ -16,6 +16,8 @@ Neon XR includes software integration with Unity. This allows you to receive eye
 ## System Overview
 TODO
 
+![System Overview](./system_overview.png)
+
 ## Adding Neon XR to Your Project
 The [**Neon XR Unity package**](https://github.com/pupil-labs/neon-xr) enables you to receive eye tracking data from a Neon module in your Unity project in real-time. 
 
