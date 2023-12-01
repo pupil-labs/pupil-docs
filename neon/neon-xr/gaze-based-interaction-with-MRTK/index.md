@@ -21,16 +21,16 @@ To get started use our [fork of the MRTK repository](https://github.com/pupil-la
     ```
     git checkout neon
     ```
-1. Download PICO Unity Integration SDK from [here](https://developer-global.pico-interactive.com/resources/) and extract it to the root folder of the MRTK repository. This should create a folder called `PICO Unity Integration SDK 230`.
+1. Download the PICO Unity Integration SDK from [here](https://developer-global.pico-interactive.com/resources/) and extract it to the root folder of the MRTK repository. This should create a folder called `PICO Unity Integration SDK 240` or similar with version number at the end. Remove the version from the folder name, such that the folder is called `PICO Unity Integration SDK`.
 1. Open the Unity sample project located in `UnityProjects\MRTKDevTemplate` using Unity Hub.
 1. When the project loads for the first time, a `PXR SDK Settings` window will pop up. Click `Apply`. Once finished click `Close`.
 1. Create default Addressables settings.
     1. Select `Window -> Asset Management -> Addressables -> Groups`.
-    2. Click `Create Addressables Settings`.
+    2. Click on `Create Addressables Settings`.
     3. If legacy bundles are detected click on `Ignore`.
 1. In menu, click on `Pupil Labs -> Addressables -> Import Groups`. After this step the `NeonXR Group` should appear in the `Addressables Groups` window (you can open this window again following step 2.1).
 1. In the `Addressable Groups` window, select `Build -> New Build -> Default Build Script`.
-1. Import `TMP resources` by clicking `Window -> TextMeshPro -> Import TMP Essential Resources`.
+1. Import `TMP resources` by clicking `Window -> TextMeshPro -> Import TMP Essential Resources`. In the opening window, keep everything selected and click `Import`.
 
 ### Additional Build Settings
 The following settings are required to build the project for the Pico 4 headset:
