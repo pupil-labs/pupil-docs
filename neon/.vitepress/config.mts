@@ -132,8 +132,8 @@ let theme_config_additions = {
             link: "/data-collection/time-synchronization/",
           },
           {
-            text: "Measuring the IED",
-            link: "/data-collection/measuring-the-IED/",
+            text: "Offset Correction",
+            link: "/data-collection/offset-correction/",
           },
           {
             text: "Calibrating the IMU",

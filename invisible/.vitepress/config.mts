@@ -62,10 +62,6 @@ let theme_config_additions = {
             text: "Ecosystem Overview",
             link: "/data-collection/ecosystem-overview/",
           },
-          {
-            text: "Offset Correction",
-            link: "/data-collection/offset-correction/",
-          },
         ],
       },
       {
@@ -105,6 +101,10 @@ let theme_config_additions = {
           {
             text: "Time Synchronization",
             link: "/data-collection/time-synchronization/",
+          },
+          {
+            text: "Offset Correction",
+            link: "/data-collection/offset-correction/",
           },
         ],
       },
