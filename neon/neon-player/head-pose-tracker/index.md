@@ -1,4 +1,7 @@
 # Head Pose Tracker
+
+TODO: Need to provide links to marker downloads.
+
 This plugin uses fiducial markers ([apriltag](https://april.eecs.umich.edu/software/apriltag.html)) to build a 3d model 
 of the environment and track the headset's pose within it. Note, only markers of the default `tag36h11` family are currently 
 supported by the head pose tracker plugin.
@@ -8,8 +11,6 @@ The markers used must be unique and of the same size. You may not use multiple i
 :::
 
 <Youtube src="9x9h98tywFI"/>
-
-See the [surface tracking section](/software/pupil-capture/#surface-tracking) for images of the markers to download.
 
 Head pose tracking works best in a well lit environment with an even distribution of light, so that the tracking markers 
 are clearly visible. Try to avoid situations where the world-camera faces into bright light, such as sunlight entering 

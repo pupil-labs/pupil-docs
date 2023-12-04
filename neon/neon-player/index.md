@@ -1,17 +1,14 @@
 # Neon Player
-Pupil Player is the second tool you will use after Pupil Capture. It is a media and data visualizer at its core. You will use it to look at Pupil Capture recordings. Visualize your data and export it.
-
-![Pupil Player Icon](./pp.png)
+Neon Player is a desktop application for playing back and exporting Neon recording. 
 
 ## Load a recording
-Drag the recording folder (the triple digit one) directly onto the app icon **or** launch the application and drag + drop the recording folder into the Pupil Player window.
+To open a Neon recording in Neon Player, you first need to download it to your computer. You can either pull a recording directly [off of the Neon Companion Device](/data-collection/transfer-recordings-via-usb/), or download it from the [Pupil Cloud](/pupil-cloud/). When downloading from Pupil Cloud, make sure to download the "Raw Android Data" format and not the "Time Series + Video" format. Note, that this format will only become available after enabling it in your workspace settings.
+
+Drag the recording folder directly onto the app icon **or** launch the application and drag + drop the recording folder into the Pupil Player window.
 
 ![Drag and drop recording folder](./pp-start.jpg)
 
-Don't have a recording yet? [Download a sample recording](https://drive.google.com/file/d/1vzjZkjoi8kESw8lBnsa_k_8hXPf3fMMC/view?usp=sharing "Download sample recording to use in Pupil Player").
-
-## Player Window
-The Player window is the main control center for `Pupil Player`. It displays video and data recorded by [Pupil Capture](/software/pupil-capture/) or [Pupil Invisible](https://docs.pupil-labs.com/invisible/).
+## Neon Player Window
 
 ![Pupil Player Callout](./pp-callout.jpg)
 
@@ -44,11 +41,11 @@ The Player window is the main control center for `Pupil Player`. It displays vid
 
 ## Workflow
 
-Pupil Player is similar to a video player. You can playback recordings and can load plugins to build visualizations.
+Neon Player is similar to a video player. You can playback recordings and can load plugins to build visualizations.
 
 Here is an example workflow:
 
-- Start Pupil Player
+- Start Neon Player
 - Open a Plugin - From the `Plugin Manager` GUI menu load the `Vis Circle` plugin.
 - Playback - press the play button or `space` bar on your keyboard to view the video playback with visualization overlay, or drag the playhead in the seek bar to scrub through the dataset.
 - Set trim marks - you can drag the green rounded rectangle at the beginning and end of the seekbar to set the trim marks. This will set the start and end frame for the exporter and for other plugins.
@@ -56,17 +53,13 @@ Here is an example workflow:
 - Check out exported data in the `exports` directory within your recording directory
 
 ::: tip
-Pupil Player will <strong>never</strong> remove or overwrite any of your raw data gathered during capture. All exports are isolated within a sub-directory named <code>exports</code>. Exports will never be overwritten.
+Neon Player will <strong>never</strong> remove or overwrite any of your raw data gathered during capture. All exports are isolated within a sub-directory named <code>exports</code>. Exports will never be overwritten.
 :::
 
 ## Plugins
-Pupil Player uses the same Plugin framework found in Pupil Capture to add functionality.
-
-Visualizations, marker tracking, and the exporter are all implemented using this structure. Very little work (often no work) needs to be done to make a Capture Plugin work for the Pupil Player and vice versa.
+Neon Player uses a plugin framework to add functionality. Visualizations, marker tracking, and the exporter are all implemented using this structure. 
 
 There are two general types of plugins:
 
 - **Unique**: You can only launch one instance of this plugin.
 - **Not unique**: You can launch multiple instances of this type of plugin. For example, you can load one `Vis Circle` plugin to render the gaze position with a translucent green circle, and another `Vis Circle` plugin to render the gaze circle with a green stroke of 3 pixel thickness. You can think of these types of plugins as _additive_.
-
-In the following sections we provide a summary of plugins currently available and in Pupil Player.

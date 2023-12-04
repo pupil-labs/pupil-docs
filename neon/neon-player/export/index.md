@@ -1,11 +1,14 @@
 # Export
-You can export data and videos by pressing `e` on your keyboard or the `e` hot key button in the Pupil Player window.
+
+TODO: Is the export format actually correct?
+
+You can export data and videos by pressing `e` on your keyboard or the `e` hot key button in the Neon Player window.
 
 All open plugins that have export capability will export when you press `e`.
 Exports are separated from your raw data and contained in the `exports` sub-directory.
 The exports directory lives within your recording directory.
 
-Active video exporters will run in the background and you can see the progress bar of the export in the GUI. While exporting, you can continue working with Pupil Player and even launch new exports. Each video export creates at least one `mp4` and its respective file timestamp file. See the [Data Format](/developer/recording-format/ "Pupil Core recording format") section for details.
+Active video exporters will run in the background and you can see the progress bar of the export in the GUI. While exporting, you can continue working with Neon Player and even launch new exports. Each video export creates at least one `mp4` and its respective file timestamp file.
 
 ## Export Directory
 Every export creates a new folder within the `exports` sub-directory of your recording. All data from the export is saved to this folder.
@@ -23,12 +26,12 @@ The `World Video Exporter` is loaded by default.
 
 ![Export](./export.jpg)
 
-The export saves the world video as shown in Player, including all currently active visualizations (see  [Visualization Plugins](#visualization-plugins "Pupil Player visualization plugins documentation")). 
+The export saves the world video as shown in Player, including all currently active visualizations (see  [Visualization Plugins](/neon-player/visualization-plugins/)). 
 
 General overview for exported video files:
 
 The World and Eye video exporter saves the scene video file, together with [numpy](https://numpy.org/devdocs/reference/generated/numpy.lib.format.html) and csv files containing timestamps corresponding to each frame. 
-The timestamps follow the [Pupil Time](/terminology/#timestamps) convention. The csv timestamp files include an additional `pts` column. `pts` is an abbreviation for _presentation timestamps_ and refers to the media file's internal time representation. It can be used to seek or identify specific frames within the media file. See this [tutorial on how to extract individual frame images from the world video](https://github.com/pupil-labs/pupil-tutorials/blob/master/09_frame_identification.ipynb). 
+The csv timestamp files include an additional `pts` column. `pts` is an abbreviation for _presentation timestamps_ and refers to the media file's internal time representation. It can be used to seek or identify specific frames within the media file. See this [tutorial on how to extract individual frame images from the world video](https://github.com/pupil-labs/pupil-tutorials/blob/master/09_frame_identification.ipynb). 
 
 
 ## Eye Video Exporter
