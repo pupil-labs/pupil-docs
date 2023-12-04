@@ -1,5 +1,5 @@
 # IMU Timeline
-This plugin visualizes accelerometer and gyroscope data from Pupil Invisible recordings. It also fuses the 
+This plugin visualizes accelerometer and gyroscope data from Neon recordings. It also fuses the 
 data using [Madgwick's algorithm](https://github.com/xioTechnologies/Fusion) to yield drift-free orientation estimates in the pitch and roll axes.
 
 ![IMU](./pp-imu.jpg)
@@ -33,5 +33,3 @@ Read more about [Pupil Invisible's coordinate systems here](/developer/invisible
 
 This Plugin does not estimate orientation about the yaw axis (head rotation from left to right). This is 
 because the IMU has no magnetometer to monitor heading. The Plugin therefore implements a version of Madgwick's algorithm that only estimates Pitch and Roll.
-
-Note that this Plugin [will not be loaded](/software/pupil-player/#product-specific-plugins) with Pupil Core recordings.

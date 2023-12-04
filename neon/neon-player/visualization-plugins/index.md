@@ -31,8 +31,9 @@ Visualize the gaze positions with a cross for each gaze position. This plugin is
 
 Here we show an example of how you could use **2** instances of the `Vis Cross` Plugin. The first instance renders the gaze position as a red cross with that extends to the boundaries of the screen. The second instance renders the gaze position as a green cross, with a heavier stroke weight.
 
-## Vis Fixation
-TODO
+<!-- ## Vis Fixation
+TODO -->
+
 ## Vis Light Points
 Visualize the gaze positions as a point of light for each gaze position. The `falloff` of the light from the gaze position is specified by the user.
 
@@ -60,8 +61,8 @@ This plugin is **not unique**, therefore you can add multiple instances of the p
 
 An example showing `Vis Polyline` used with `Vis Circle`. The polyline enables one to visualize the sequence of the gaze positions over a single world frame.
 
-## Vis Watermark
-TODO
+<!-- ## Vis Watermark
+TODO -->
 
 <!-- ## Vis Eye Video Overlay
 Here is an example of the `Eye Video Overlay` with binocular eye videos.

@@ -1,5 +1,6 @@
 # Fixation & Blink Detectors
-TODO
+
+TODO: This content need to be largely reworked as Neon Player uses very different fixation and blink detectors.
 
 ## Fixation Detector
 The post-hoc fixation detector calculates fixations for the whole recording. The menu gives feedback about the progress of the detection, how many fixations were found, and shows detailed information about the current fixation. Press `f` or click the `f` hot key button on the left hand side of the window to seek forward to the next fixation.
@@ -8,14 +9,13 @@ The post-hoc fixation detector calculates fixations for the whole recording. The
 
 Toggle `Show fixations` to show a visualization of fixations. The blue number is the number of the fixation (0 being the first fixation). You can export fixation reports for your current trim section by pressing `e` on your keyboard or the `e` hot key button on the left hand side of the window.
 
-You can find more information in our [dedicated fixation detection section](/terminology/#fixations "Pupil Core terminology - fixations").
 
 ## Blink Detector
-Pupil Core's Blink Detector leverages the fact that [2D pupil confidence](/terminology/#confidence) drops rapidly 
-in both eyes during a [blink](/terminology/#blinks) as the pupil becomes obscured by the eyelid, followed by a rapid 
+Pupil Core's Blink Detector leverages the fact that 2D pupil confidence drops rapidly 
+in both eyes during a blink as the pupil becomes obscured by the eyelid, followed by a rapid 
 rise in confidence as the pupil becomes visible again.
 
-The Blink Detector processes [2D pupil confidence](/terminology/#confidence) values by convolving them with a 
+The Blink Detector processes 2D pupil confidencevalues by convolving them with a 
 [filter](https://github.com/pupil-labs/pupil/blob/eb8c2324f3fd558858ce33f3816972d93e02fcc6/pupil_src/shared_modules/blink_detection.py#L360). 
 The filter response – called 'activity' – spikes the sharper the confidence drop is and *vice versa* for confidence 
 increases. 
@@ -35,7 +35,7 @@ line, characterised by a step function where blinks have been classified.
 ![Blinks](./pp-blinks.jpg)
 
 :::tip
-See our [Best Practices](/best-practices/#blink-detector-thresholds) for tips on choosing 
+See our Best Practices] for tips on choosing 
 appropriate Blink Detector thresholds
 :::
 

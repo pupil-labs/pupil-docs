@@ -1,5 +1,7 @@
 # Surface Tracker
-This plugin is a post-hoc version of the [Surface Tracking](/software/pupil-capture/#surface-tracking) plugin for Pupil Capture.
+
+TODO: There are no references to where to get markers and how to place them. This is only explained in the Capture docs.
+
 You can use this plugin to detect markers in the recording, define surfaces, edit surfaces, and create and export visualizations of gaze data within the defined surfaces.
 
 ![Offline surface tracker](./offline-srf-tracker.jpg)
