@@ -3,7 +3,7 @@ The [Mixed Reality Toolkit 3 (MRTK3)](https://learn.microsoft.com/en-us/windows/
 
 The template contains several demo scenes that showcase how to use Neon XR with MRTK3, including e.g. the following scenes demonstrating gaze-based interaction:
 
-<Youtube id="2e8kRTn3NJI" />
+<Youtube src="2e8kRTn3NJI" />
 
 ## Running the Template Project
 If you just want to try out the demo scenes included in the template project in action, you can download and install a pre-built APK. The APKs a platform-specific and we currently only offer one for the Pico 4 headset. You can download it at this link: 
