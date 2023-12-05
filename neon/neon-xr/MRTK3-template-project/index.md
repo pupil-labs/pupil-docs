@@ -5,7 +5,15 @@ The template contains several demo scenes that showcase how to use Neon XR with 
 
 <Youtube id="2e8kRTn3NJI" />
 
-## Setup
+## Running the Template Project
+If you just want to try out the demo scenes included in the template project in action, you can download and install a pre-built APK. The APKs a platform-specific and we currently only offer one for the Pico 4 headset. You can download it at this link: 
+
+[Link to download]()
+
+To install it, simply open the link in the browser of your Pico 4 headset, download the file and open it.
+<!-- TODO: Double-check this works and potentially elaborate. -->
+
+## Building the Project
 
 To get started use our [fork of the MRTK repository](https://github.com/pupil-labs/MixedRealityToolkit-Unity), which contains the template project.
 
@@ -14,7 +22,7 @@ Clone the repository using e.g. this command:
 git clone git@github.com:pupil-labs/MixedRealityToolkit-Unity.git
 ```
 
-Depending on your target platform the required setup may slightly differ as some platforms require e.g. specific SDKs. Here we provide instructions for the Pico 4 as well as generic instructions that can be adapted to other platforms.
+Depending on your target platform the required setup may differ slightly as some platforms require e.g. specific SDKs. Here we provide instructions for the Pico 4 as well as generic instructions that can be adapted to other platforms.
 
 
 ### Pico 4
@@ -59,3 +67,4 @@ Adapt the following steps to setup the template project for other platforms:
 ## Usage
 
 All the pre-configured sampe scenes that work with Neon XR start with a `PL_` prefix, e.g. `PL_HandInteractionExamples`. Check them out!
+<!-- TODO: Add descriptions of all available scenes. Add instructions on how to switch between scenes when running the app. -->

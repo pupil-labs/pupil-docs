@@ -7,11 +7,11 @@
 - [ ] Complete guide on how to build you own mount including calibration instructions. 
 -->
 
-Neon XR allows you to equip XR devices with research-grade eye tracking powered by Neon. This equally enables gaze-based interaction for XR applications and visual behaviour analysis in XR environments.
+Neon XR allows you to equip XR devices with research-grade eye tracking powered by Neon. This enables both gaze-based interaction for XR applications and visual behaviour analysis in XR environments.
 
 Thanks to the small form factor of the [Neon module](/hardware/module-technical-overview/), it can easily be integrated into a variety of XR devices. A hardware mount for the [Pico 4](https://pupil-labs.com/products/vr-ar) headset is available for purchase and additional mounts for other headsets are in development. You can also [build a mount yourself](/neon-xr/build-your-own-mount/) for any headset!
 
-Neon XR includes software integration with Unity. This allows you to receive eye tracking data from a Neon module in your Unity project in real-time. We also provide a [template project](/neon-xr/MRTK3-template-project/) for the [Mixed Reality Toolkit 3.0](https://learn.microsoft.com/en-us/windows/mixed-reality/mrtk-unity/mrtk3-overview/) that makes it easy to add gaze-based interaction to your XR application.
+Neon XR includes software integration with Unity. This allows you to receive eye tracking data from a Neon module in your Unity project in real-time. We also provide a [template project](/neon-xr/MRTK3-template-project/) for the [Mixed Reality Toolkit 3.0](https://learn.microsoft.com/en-us/windows/mixed-reality/mrtk-unity/mrtk3-overview/) that makes it easy to get started with the development of your XR application.
 
 ## System Overview
 TODO
