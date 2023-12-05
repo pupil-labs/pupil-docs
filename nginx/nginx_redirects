@@ -41,4 +41,6 @@
         rewrite ^/invisible/hardware$ /invisible/hardware/technical-overview/ permanent;
         rewrite ^/(neon|invisible)/getting-started/understand-the-ecosystem/$ /$1/data-collection/ecosystem-overview/ permanent;
         rewrite ^/vr-ar/developer.html$ /core/vr-ar/developer/ permanent;
+        rewrite ^/enrichments$ /neon/pupil-cloud/ permanent;
+        
 
