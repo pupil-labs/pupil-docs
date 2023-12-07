@@ -8,13 +8,13 @@ meta:
   - name: twitter:image
     content: "https://example.com/article_image.jpg"
   - name: twitter:player
-    content: "https://www.youtube.com/embed/UU4CF1rXTVI"
+    content: "https://www.youtube.com/embed/_k5QbpC84H8"
   - name: twitter:width
     content: "1280"
   - name: twitter:height
     content: "720"
   - property: og:image
-    content: "https://i.ytimg.com/vi/UU4CF1rXTVI/maxresdefault.jpg"
+    content: "https://i.ytimg.com/vi/_k5QbpC84H8/maxresdefault.jpg"
 tags: [Pupil Invisible, Neon]
 ---
 <script setup>
@@ -25,7 +25,7 @@ import TagLinks from '@components/TagLinks.vue'
 
 <TagLinks :tags="$frontmatter.tags" />
 
-<Youtube src="UU4CF1rXTVI"/>
+<Youtube src="_k5QbpC84H8"/>
 
 **🔉 Play the video above with audio!**
 
