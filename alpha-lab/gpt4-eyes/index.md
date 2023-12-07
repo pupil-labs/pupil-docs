@@ -65,5 +65,5 @@ After running the example and pressing the `Space` key when you’re gazing at s
 In this early exploration, we found that GPT4-V is generally good at detecting what is being gazed at or trying to guess the intention of the wearer. But not fast or accurate enough to detect immediate dangers. There was some network latency, but generally, it worked quite well. You can modify the prompt in the code to tailor it to your specific needs. We ultimately can’t say just how useful this will be for assistive users. For that, we need your feedback!
 
 ::: tip
-Need assistance implementing a real-time API based application? Reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-lab.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for formal support options.
+Need assistance implementing a real-time API based application? Reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for formal support options.
 :::
