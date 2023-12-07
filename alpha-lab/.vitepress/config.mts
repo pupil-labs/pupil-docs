@@ -1,8 +1,7 @@
 import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vitepress";
 
-import { config as default_config } from "./../../default_config.mts";
-import { theme_config as default_theme_config } from "./../../default_config.mts";
+import { config as default_config, theme_config as default_theme_config } from "./../../default_config.mts";
 
 let theme_config_additions = {
   sidebar: [
@@ -25,12 +24,21 @@ let theme_config_additions = {
       ],
     },
     {
-      text: "Other",
+      text: "Assitive tools",
       items: [
         {
           text: "Gaze-Contingent Assistive Applications",
           link: "/gaze-contingency-assistive/",
         },
+        {
+          text: "AI vision assistant",
+          link: "/gpt4-eyes/",
+        }
+      ],
+    },
+    {
+      text: "Other",
+      items: [
         { text: "Undistort Video and Gaze Data", link: "/undistort/" },
         { text: "Use Neon with Pupil Capture", link: "/neon-with-capture/" },
       ],
