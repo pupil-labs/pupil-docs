@@ -23,6 +23,8 @@ The Neon Companion Device provides power to the module and runs the the **Neon C
 Depending on the XR device used, the **Unity application** is running on the XR device itself or on a separate computer the XR device is tethered to. 
 It communicates with the Neon Companion App over the network, receives gaze data in real-time, and projects it into the virtual world thanks to the **Neon XR Core** Unity Package.
 
+<br />
+
 ![System Overview](./system_overview.png)
 
 ## Getting Started
