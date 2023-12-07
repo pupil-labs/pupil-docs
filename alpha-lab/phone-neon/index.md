@@ -22,7 +22,7 @@ tags: [Neon, Cloud]
 import TagLinks from '@components/TagLinks.vue'
 </script>
 
-# Uncover gaze behaviour on phone screens with Neon
+# Uncover Gaze Behaviour on Phone Screens With Neon
 
 <TagLinks :tags="$frontmatter.tags" />
 
@@ -30,15 +30,15 @@ import TagLinks from '@components/TagLinks.vue'
 
 What catches your attention and how do you visually navigate through the interface/page of a mobile app? This article shows you the tools you can use to address these questions. 
 
-## Gaze behaviour during mobile app engagement
+## Gaze Behaviour During Mobile App Engagement
 
 Researchers in fields such as UI/UX and neuromarketing frequently investigate user visual engagement with mobile applications. Wearable eye tracking is sometimes used for this purpose as it can provide valuable insights into user experience during mobile browsing. In this article, we used our latest wearable eye tracker, Neon, to capture and analyse users' viewing behaviour when focusing on small icons and features of mobile applications.
 
-## Overcoming usability challenges with Neon
+## Overcoming Usability Challenges With Neon
 
 In the past, wearable eye tracking faced challenges in usability primarily due to calibration limitations, which may have made mobile browsing measurements difficult and/or time-consuming in practice. However, we believe that Neon overcomes these obstacles by offering calibration-free gaze estimation with very good accuracy. For this reason, we wanted to try out Neon when tracking gaze during mobile browsing, and put together an article so you can replicate what we did.
 
-## Leveraging Pupil Cloud and Alpha Lab Tutorials to explore user gaze dynamics
+## Leveraging Pupil Cloud and Alpha Lab Tutorials To Explore User Gaze Dynamics
 
 In order to characterise viewing behaviour on mobile phones using Neon, we first needed to make some eye tracking recordings whilst a user was engaging with a phone. We then leveraged Pupil Cloud and Alpha Lab tutorials to interpret the data and compute further metrics.
 
@@ -50,7 +50,7 @@ Subsequently, we exported the data to analyse offline for a more in-depth explor
 
 The following section presents the results of our analyses, each accompanied by a brief description for clarity.
 
-### Heatmaps and scanpaths
+### Heatmaps and Scanpaths
 
 <div style="margin-top: 20px;"></div>
 
@@ -71,7 +71,7 @@ Heatmaps visually represent the app areas that receive the most attention, with 
 
 Meanwhile, scanpaths depict the sequence of eye movements and fixations during visual exploration. The circle size in the scanpath corresponds to fixation duration; larger circles indicate longer user focus on specific screen areas. In the example provided, the focus was primarily on the top panel of the app, as indicated by the largest fixation circle among the three fixations used to generate this scanpath. For those interested in generating this visualisation, our [scanpath tutorial](/scanpath-rim/) provides a step-by-step guide.
 
-### Calculation of gaze metrics on AOIs
+### Calculation of Gaze Metrics on AOIs
 
 ![Graph showing dwell time on defined AOIs over the phone screen](./3.phone-dwell-time.png)
 
@@ -85,7 +85,7 @@ As shown in this example, there are clear differences between the areas of inter
 
 For a detailed explanation and visual representation of these metrics, you can refer to our [AOI tutorial](/gaze-metrics-in-aois/), which provides step-by-step instructions and charts for your analysis.
 
-### Map your gaze onto dynamic phone screen content
+### Map Your Gaze Onto Dynamic Phone Screen Content
 
 <Youtube src="RKrf3YQjzao"/>
 
@@ -95,7 +95,7 @@ Upon reviewing the recording, Neon demonstrated good accuracy in capturing gaze 
 
 Another very useful facet of this tool is its ability to generate a CSV file containing gaze data mapped onto the screen, represented in 2D x, y coordinates. This feature opens avenues for extensive customisation and more in-depth analysis, which we don’t cover here.
 
-## Let's wrap it up!
+## Let’s Wrap It Up!
 
 Overall, we were impressed by Neon's capability to effectively characterise viewing behaviour on mobile apps, especially considering its calibration-free nature. The techniques outlined in this tutorial are not confined to our specific application; they hold significant value for various UI/UX and neuromarketing research endeavours. By integrating Neon with the methodologies discussed here, researchers can acquire invaluable insights into user engagement.
 
