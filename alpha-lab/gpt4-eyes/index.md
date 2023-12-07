@@ -29,11 +29,11 @@ import TagLinks from '@components/TagLinks.vue'
 
 **🔉 Play the video above with audio!**
 
-## Combining Eye Tracking With AI for Assistive Applications
-
 ::: tip
 Imagine an AI assistant that not only talks but also *“sees”* for you. Welcome to the era of Large Multimodal Models (LMMs)! 
 :::
+
+## Combining Eye Tracking With AI for Assistive Applications
 
 Unlike popular Large Language Models (LLMs), which can only interpret and interact with text, LMMs are also able to understand images. This means chatbots, like GPT, can understand, describe and interpret the content of real-world scenes, including identifying different objects and how people might interact with them.
 
