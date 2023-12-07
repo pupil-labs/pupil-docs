@@ -26,8 +26,7 @@ The calibration process is contained in one of the scenes of the [MRTK3 template
 In this scene, the wearer is presented with a set of gaze targets distributed over their field of view. The wearer must gaze at each target in turn and perform a pinch-gesture to confirm that they are looking at a target. After each pinch-gesture, the target that was gazed upon should disapear. Once all targets have been gazed upon, the calibration process is complete and can be saved to the configuration file.
 <!-- TODO: add image -->
 
-The configuration file is called `config.json` and it is located on the XR device's filesystem at the path `TODO`. It contains the following fields:
-<!-- TODO: Add path -->
+The configuration file is called `config.json` and it is located on the XR device's filesystem at the path `\Android\data\com.MixedRealityToolkitOrganization.MRTK3Sample\files\config.json`. It contains the following fields:
 
 | Field | Description |
 | --- | --- |
