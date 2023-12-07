@@ -1,5 +1,5 @@
 ---
-title: A practical guide to implementing gaze contingency in assistive technology
+title: A Practical Guide to Implementing Gaze Contingency in Assistive Technology
 description: "Gaze contingent systems for assistive technology"
 permalink: /alpha-lab/gaze-contingency-assistive
 meta:
@@ -22,7 +22,7 @@ tags: [Neon]
 import TagLinks from '@components/TagLinks.vue'
 </script>
 
-# A practical guide to implementing gaze contingency for assistive technology
+# A Practical Guide to Implementing Gaze Contingency for Assistive Technology
 
 <TagLinks :tags="$frontmatter.tags" />
 
@@ -32,19 +32,19 @@ import TagLinks from '@components/TagLinks.vue'
 Imagine a world where transformative assistive solutions enable you to browse the internet with a mere glance or write an email using only your eyes. This is not science fiction; it is the realm of gaze-contingent technology.
 :::
 
-## Hacking the eyes with gaze contingency
+## Hacking the Eyes With Gaze Contingency
 
 'Gaze contingency' refers to a type of human–computer interaction where interfaces or display systems adjust their content based on the user's gaze. It's commonly used for assistive applications as it enables people to interact with a computer or device using their eyes instead of a mouse or keyboard, like in the video above. This is particularly valuable for individuals with physical disabilities and offers new opportunities for communication, education, and overall digital empowerment.
 
-## Limitations and current prospects
+## Limitations and Current Prospects
 
 Gaze-contingent assistive technologies have become much easier to use recently thanks to advancements in the field of eye tracking. Traditional assistive systems require frequent calibration, which can be problematic in practice, as highlighted in the story of [Gary Godfrey](https://pupil-labs.com/blog/community/cycling-for-als/). Modern calibration-free approaches like [Neon](https://pupil-labs.com/products/neon/) overcome this issue and provide a more robust and user-friendly input modality for producing gaze data.
 
 We have prepared a guide to aid you in creating your very own gaze-contingent assistive applications using [Neon](https://pupil-labs.com/products/neon/).
 
-## How to use a head-mounted eye tracker for screen-based interaction
+## How To Use a Head-Mounted Eye Tracker for Screen-Based Interaction
 
-**Mapping gaze to screen**
+**Mapping Gaze To Screen**
 
 Neon is a wearable eye tracker that provides gaze data in scene camera coordinates, i.e., relative to its forward-facing
 camera. We therefore need to transform gaze from _scene-camera_ to _screen-based_ coordinates in real time, such that
@@ -58,7 +58,7 @@ coordinates using a [homography](<https://en.m.wikipedia.org/wiki/Homography_(co
 enrichment we offer in Pupil Cloud as a post-hoc solution. The heavy lifting of all this is handled by
 our [Real-time Screen Gaze](https://github.com/pupil-labs/realtime-screen-gaze/) package (written for this guide).
 
-**Gaze-controlling a mouse**
+**Gaze-Controlling a Mouse**
 
 The second challenge is using screen-mapped gaze to control an input device, e.g., a mouse. To demonstrate how to do this, we
 wrote the [Gaze-controlled Cursor Demo](https://github.com/pupil-labs/gaze-controlled-cursor-demo). This demo leverages the
@@ -66,7 +66,7 @@ wrote the [Gaze-controlled Cursor Demo](https://github.com/pupil-labs/gaze-contr
 that to control a mouse in a custom browser window, as shown in the video above. A simple dwell-time filter implemented
 in the demo enables mouse clicks when gaze hovers over different elements of the browser.
 
-**It’s your turn…**
+**It’s Your Turn…**
 
 Follow the steps in the next section to be able to use your gaze to navigate a website and fixate on different parts to trigger a mouse click with your eyes.
 
@@ -81,7 +81,7 @@ Follow the steps in the next section to be able to use your gaze to navigate a w
 
 ![Gaze-controlled Cursor Demo settings](./Settings-gaze-controlled-cursor-demo.png)
 
-## What's next?
+## What’s Next?
 
 The packages we created contain code that you can build on to fashion your own custom implementations, opening up
 possibilities for navigation, typing on a virtual keyboard, and much more.

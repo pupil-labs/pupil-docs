@@ -37,7 +37,7 @@ Imagine an AI assistant that not only talks but also *“sees”* for you. Welco
 
 Unlike popular Large Language Models (LLMs), which can only interpret and interact with text, LMMs are also able to understand images. This means chatbots, like GPT, can understand, describe and interpret the content of real-world scenes, including identifying different objects and how people might interact with them.
 
-When combined with eye-tracking, this holds potential for assistive technologies. For example, it could help individuals with low vision to identify the objects at which they are gazing, highlight potential hazards in their surroundings, or assist people with ALS who face significant communication challenges.
+When combined with eye tracking, this holds potential for assistive technologies. For example, it could help individuals with low vision to identify the objects at which they are gazing, highlight potential hazards in their surroundings, or assist people with ALS who face significant communication challenges.
 
 Here, we show you how to build a simple, explorative, gaze-based assistive tool using Neon or Pupil Invisible and a new LMM, GPT-4V.
 
@@ -52,7 +52,7 @@ Our [real-time API](https://docs.pupil-labs.com/neon/real-time-api/introduction/
 
 To try this demo, you'll need a Neon or Pupil Invisible device, a computer/laptop with internet access, and an OpenAI key that has access to the latest GPT4-V model. 
 
-::: warning
+::: tip
 [Don’t have access to `gpt-4-vision-preview model`?](https://help.openai.com/en/articles/7102672-how-can-i-access-gpt-4) You may have to spend 1$ on their APIs to get access to this model.
 :::
 
@@ -60,7 +60,7 @@ Head to this [script](https://gist.github.com/mikelgg93/46a02823e1e271087c3eb6b2
 
 ## Play Around
 
-After running the example and pressing the `Space` key when you’re gazing at something, a snapshot of what you’re looking at will be sent to GPT-4, and you will receive a vocal response. The nature of the AI assistant's response will depend on the selected model **("ASDF")**. This could be `A`, a description of what you're gazing at; `S`, any potential danger; `D`, a guess of your intentions; or `F`, a more detailed description of the environment. 
+After running the example and pressing the `Space` key when you’re gazing at something, a snapshot of what you’re looking at will be sent to GPT-4V, and you will receive a vocal response. The nature of the AI assistant's response will depend on the selected model **("ASDF")**. This could be `A`, a description of what you're gazing at; `S`, any potential danger; `D`, a guess of your intentions; or `F`, a more detailed description of the environment. 
 
 In this early exploration, we found that GPT4-V is generally good at detecting what is being gazed at or trying to guess the intention of the wearer. But not fast or accurate enough to detect immediate dangers. There was some network latency, but generally, it worked quite well. You can modify the prompt in the code to tailor it to your specific needs. We ultimately can’t say just how useful this will be for assistive users. For that, we need your feedback!
 

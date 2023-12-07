@@ -1,5 +1,5 @@
 ---
-title: "Map your gaze onto body parts with DensePose"
+title: "Map Your Gaze Onto Body Parts With DensePose"
 description: "Using densepose to map gaze onto body parts. To be or not to be? proclaims Prince Hamlet while holding a skull in his hand. But, where is the audience looking? At the hand, at the arm, or the face?"
 permalink: /alpha-lab/dense-pose/
 meta:
@@ -22,7 +22,7 @@ tags: [Pupil Invisible, Neon, Cloud]
 import TagLinks from '@components/TagLinks.vue'
 </script>
 
-# Map gaze onto body parts using DensePose
+# Map Gaze Onto Body Parts Using DensePose
 
 <TagLinks :tags="$frontmatter.tags" />
 
@@ -34,14 +34,14 @@ import TagLinks from '@components/TagLinks.vue'
 Have you ever wondered which body parts we gaze upon while conversing with others? Where a professional basketball player looks just before passing? Does hand movement play a role when delivering a speech? This guide will show you how to get data that can be used to answer these questions!
 :::
 
-## Understanding visual behaviour on body parts
+## Understanding Visual Behaviour on Body Parts
 
 Understanding which body parts people look at during interactions, whether visual or otherwise, is an important topic in
 fields ranging from sports science to psycholinguistics. This guide shows you how to use Neon or Pupil Invisible eye
 tracking with [DensePose](https://github.com/facebookresearch/DensePose) (Github repository of [Dense Human Pose Estimation In The Wild](https://arxiv.org/abs/1802.00434))
 to characterise gaze behaviour on body parts that appear in the scene video, as shown above.
 
-## What tools enable this?
+## What Tools Enable This?
 
 Pupil Cloud currently offers a [Face Mapper enrichment](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/face-mapper/), which tracks faces in scene video and determines whether they were gazed at. However, tracking the rest of the body is currently not available in Cloud. This is where our guide comes in. By following our instructions, you will be able to automatically detect and track body parts of people visible in the scene video of your recordings, and map gaze onto tracked body parts. This approach can enable a deeper understanding of how subjects (wearing the eye tracker) visually interacted with other people.
 
@@ -73,7 +73,7 @@ After executing the code, new files will be generated. Check the new DensePoseCo
 - `parts_count.csv` - shows the number of times each body part is gazed
 - `densepose.csv` - follows a structure similar to `gaze.csv`, but also with a new column indicating gazed body parts
 
-## Running locally
+## Running Locally
 
 You can also run everything on your local machine. However, this option is only available for Linux and MacOS users as detectron2 does not support Windows 😕. If you do not have a GPU on your computer, we strongly recommend using our Google Colab notebook. Detailed instructions on running locally can be found in the [Github repository](https://github.com/pupil-labs/densepose-module) and the associated [read the docs](https://densepose-module.readthedocs.io/).
 

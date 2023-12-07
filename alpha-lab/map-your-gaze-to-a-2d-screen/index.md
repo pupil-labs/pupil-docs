@@ -1,5 +1,5 @@
 ---
-description: Map your gaze to a screen surface using RIM
+description: Map and Visualise Gaze Onto a Display Content Using the Reference Image Mapper
 permalink: /alpha-lab/map-your-gaze-to-a-2d-screen/
 tags: [Pupil Invisible, Neon, Cloud]
 ---
@@ -8,7 +8,7 @@ tags: [Pupil Invisible, Neon, Cloud]
 import TagLinks from '@components/TagLinks.vue'
 </script>
 
-# Map and visualise gaze onto a display content using the Reference Image Mapper
+# Map and Visualise Gaze Onto a Display Content Using the Reference Image Mapper
 
 <TagLinks :tags="$frontmatter.tags" />
 
@@ -20,7 +20,7 @@ In this guide, we will show you how to map and visualise gaze onto a screen with
 **Note:** This tutorial requires some technical knowledge, but don't worry. We made it almost click and run for you! You can learn as much or as little as you like.
 :::
 
-## What you'll need
+## What You’ll Need
 
 Before continuing, ensure you are familiar with the [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/) enrichment. Check out [this explainer video](https://www.youtube.com/watch?v=ygqzQEzUIS4&t=56s) for reference.
 
@@ -28,14 +28,14 @@ We recommend you run the enrichment, e.g. with a short recording of your desktop
 
 You will also need to know how to record your screen's content (check out the [screen recording](#Screen-recording) section to learn how you can do this using the free and open-source program [OBS](https://obsproject.com/)).
 
-### Software requirements
+### Software Requirements
 
 - You will need Python 3.7 or higher installed on your computer.
 - Execute the following command `pip install pupil-labs-dynamic-rim` in the console to install the required libraries.
 
 If you have the checklist completed, you are ready for the next steps.
 
-## Making the recording
+## Making the Recording
 
 Let's assume you have everything ready to go – your participant is sat infront of the screen wearing the eye tracker, your screen content is ready to play.
 
@@ -55,7 +55,7 @@ By looking at the screen when you press the button, you'll have a visual referen
 **Recap**: Eye tracking **first**; screen recording **second**
 :::
 
-## Once you have everything recorded
+## Once You Have Everything Recorded
 
 - Create a new [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/) enrichment, or add your new eye tracking recordings to an existing enrichment. Run the enrichment, and download the results by right-clicking the enrichment in Cloud once it's computed (see the screenshot below).
 
@@ -63,7 +63,7 @@ By looking at the screen when you press the button, you'll have a visual referen
 
 - Now you'll need to get the raw data from your new recording(s). Download the raw data by clicking on downloads at the bottom left side of the page in the project's view.
 
-## Running the code
+## Running the Code
 
 Now you can run the code by executing the following command in your console:
 
@@ -97,7 +97,7 @@ And that's all required from you! Grab a coffee or a tea and chill. When finishe
 You might find some libav.mp4 warnings. These warnings are due to some issues with the aac codec and timestamping. These messages only appear when adding the audio stream. You can safely ignore them, or you can disable audio within the code.
 :::
 
-## How the code works
+## How the Code Works
 
 If you only want the final visualisation and the data, there is nothing else you need to do. However, if you want to dig deeper into how the code works under the hood, continue reading by clicking on the dropdown below.
 
@@ -113,7 +113,7 @@ In summary, we read the .csv files into Pandas data frames. We use pyav to obtai
 
 You can find below a short description of the main functions.
 
-### Reading timestamps
+### Reading Timestamps
 
 ```python
 # on video/read.py
@@ -122,7 +122,7 @@ def read_screen_video()
 
 This function takes the video path and decodes every frame from the stream, reading their presentation and decoding timestamps and frame index. It returns these values together with an estimate of the frames per second. An optional argument can be given to read audio streams rather than video.
 
-### Merging timestamps
+### Merging Timestamps
 
 ```python
 # on dynamic_rim.py
@@ -131,7 +131,7 @@ def merge_tables()
 
 Once the timestamps files have been read into Pandas Dataframes, we can match them using the function <a href="https://pandas.pydata.org/pandas-docs/version/0.25.0/reference/api/pandas.merge_asof.html"> pd.merge_asof()</a>. The function above (merge_tables) merges all the sources: screen, scene, reference image gaze coordinates, frames indexes, etc., in the proper order so that all of them match in the final video.
 
-### Getting the coordinates of the screen and the perspective transformation
+### Getting the Coordinates of the Screen and the Perspective Transformation
 
 ```python
 # on uitools/get_corners.py
@@ -147,7 +147,7 @@ def get_perspective_transform()
 
 With the corners selected, this function uses OpenCV’s function cv2.getPerspectiveTransform to obtain the transformation matrix, which is later applied in the main function using cv2.perspectiveTransform to remap the RIM’s gaze coordinates into screen’s coordinates.
 
-### Saving the video
+### Saving the Video
 
 ```python
 # on dynamic_rim.py
@@ -173,7 +173,7 @@ With the frame withdrawn in the previous function and converted to an image, the
 </details>
 <!-- empty line   -->
 
-## Screen recording
+## Screen Recording
 
 You can use any software of your choice to record your screen, but if you do not know how to do so, here is a small guide from Gauging Gadgets.
 
@@ -193,7 +193,7 @@ It is at this moment that you should create the annotation in your eye tracking 
 
 5. To stop recording, click the stop button in OBS. You can find your recording in the output directory.
 
-### Like a pro
+### Like a Pro
 
 If you want to start your screen and eye tracking recordings automatically (no visual reference required) using network event annotations, we've got you covered!
 

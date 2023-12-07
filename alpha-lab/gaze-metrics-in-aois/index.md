@@ -18,7 +18,7 @@ In this guide, we will show you how to mark AOIs on a reference image, how to la
 
 As an example we will use the recordings and enrichment of the art gallery study available in the [demo workspace](https://cloud.pupil-labs.com/workspace/78cddeee-772e-4e54-9963-1cc2f62825f9/project/cdfde655-3c8a-45c5-b6e2-5d5754d7a4f0/edit). We will address questions like "How many visitors looked at each painting?", "How soon after arriving did visitors look at each painting?", and "How long did visitors look at each painting?".
 
-## Dependencies of this Guide
+## Dependencies of This Guide
 
 The example data originates from the Reference Image Mapper enrichment called `multiple_paintings_standing` located in the demo workspace [here](https://cloud.pupil-labs.com/workspace/78cddeee-772e-4e54-9963-1cc2f62825f9/project/cdfde655-3c8a-45c5-b6e2-5d5754d7a4f0/enrich?search=multiple_paintings_standing).
 

@@ -1,5 +1,5 @@
 ---
-title: Create 3D Models of your environment using Reference Image Mapper and nerfstudio
+title: Create 3D Models of Your Environment Using Reference Image Mapper and Nerfstudio
 description: "Nerfing your eye tracking recordings: use nerfstudio to create 3D models of your environment and plot gaze in 3D."
 permalink: /alpha-lab/nerfs
 tags: [Pupil Invisible, Neon, Cloud]
@@ -11,7 +11,7 @@ import TagLinks from '@components/TagLinks.vue'
 
 <!-- <head> <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script> </head> -->
 
-# Create 3D Models of your environment using Reference Image Mapper and nerfstudio
+# Create 3D Models of Your Environment Using Reference Image Mapper and Nerfstudio
 
 <TagLinks :tags="$frontmatter.tags" />
 
@@ -25,29 +25,29 @@ If you watched the accompanying video, you have witnessed 3D environment reconst
 
 A third person view allows you to see more of the environment and how your partipant explores and visually interacts with it. Let's break it down – in the video, the green points (actually camera frustrums) denote where the “user’s head” was during the recording, while the yellow line illustrates a gaze ray from the head to the object that's looked at. You can also see a 3D heat-map showing which areas attracted attention.
 
-## A 3D view?
+## A 3D View?
 
 We perceive the world around us in 3D and for many years, we have tried to capture and reconstruct this 3D world using photogrammetry or special cameras. This approach was traditionally quite expensive and/or required specific types of cameras capable of recording depth and localising themselves in the scene.
 
 But nowadays, thanks to recent advances in deep learning, we have an easier way to reconstruct 3D environments. Isn't that exciting?!
 
-## What are NeRFs and how do they work?
+## What Are NeRFs and How Do They Work?
 
 That advance we are talking about is [Neural Radiance Fields](https://arxiv.org/pdf/2003.08934.pdf) or NeRFs 🔫. NeRFs are a novel method that use deep neural networks. They learn how light and colour vary based on the viewer's location and direction. By providing them with a set of images of a scene from different angles, it can generate novel views that were never actually captured by the camera.
 
 With this technique, we can create high-fidelity and photorealistic 3D models that can be used for various applications such as virtual reality, robotics, urban mapping, or in our case, to understand how a person was moving and looking in their environment. This approach doesn't need endless pictures of the environment, just a small set of frames and camera poses (where the camera was located and where it pointed to).
 
-## That sounds cool! How do we get those?
+## That Sounds Cool! How Do We Get Those?
 
 Once you have made a recording, it is not known where the camera was during each frame, and this is crucial information needed to train the NeRF. No worries, COLMAP to the rescue! You can think of COLMAP as a puzzle solver. It takes your frames and figures out where the camera was located and where it was pointing. Something similar is used within our Reference Image Mapper enrichment. In fact, we use the poses this enrichment produces, and transform them to something nerfstudio can understand.
 
-## Now, what is nerfstudio?
+## Now, What Is Nerfstudio?
 
 [nerfstudio](https://docs.nerf.studio/) 🚜 is an open-source package that allows users to interactively create, visualise and edit NeRFs, and bundles several tools including a way to generate 3D meshes from the NeRF.
 
 Under the hood, nerfstudio is built on top of PyTorch and PyQt, and uses ZeroMQ, ThreeJS and ReactJS for real-time rendering. It leverages the NeRF codebase to load and manipulate the models, and provides a high-level interface to interact with them. nerfstudio is still in active development, and new features and improvements are being added regularly.
 
-## Great, how can I generate my own?
+## Great, How Can I Generate My Own?
 
 This is not gonna be an easy path...
 
@@ -55,13 +55,13 @@ This is not gonna be an easy path...
     <summary>But if you insist...</summary><br>
 <!-- This is collapsed   -->
     
-### What you'll need
+### What You’ll Need
 
 - A powerful computer with CUDA support (e.g. an Nvidia GPU) is a **must** for this to work
 - A completed Reference Image Mapper enrichment (static environments work best here, like in the accompanying videos)
 - Your computer needs to support [openGL](https://www.opengl.org/), which sadly excludes Macs.
 
-### Get your development environment ready
+### Get Your Development Environment Ready
 
 Follow nerfstudio [installation guide](https://docs.nerf.studio/quickstart/installation.html), to install the dependencies and nerfstudio from source. 
 Alternatively, here is the basic code to create a [*conda*](https://anaconda.org/) environment that can run this:
@@ -113,7 +113,7 @@ pip install -e .
 
 If everything went sucessfully, it will take you around 20 minutes to install everything.
 
-### Generate a token
+### Generate a Token
 
 Now, you will need a developer token from Pupil Cloud, so click on your profile picture at the top right of the page, select "Account Settings" on the drop-down. On the left side panel click on the "Developer" section and "New Token".
 
@@ -127,7 +127,7 @@ Once showing, copy the token. Note that you won't be able to see it again, so pl
 </div> -->
 <!-- TODO: UPDATE IMAGE -->
 
-### Time to define your parameters
+### Time To Define Your Parameters
 
 Navigate to your `pyflux` folder. Inside the `pyflux` repository folder you will find a `config.json` file where you can directly change the paths, IDs and token to your own. See the description below for a better understanding of each field.
 
@@ -145,7 +145,7 @@ Navigate to your `pyflux` folder. Inside the `pyflux` repository folder you will
 }
 ```
 
-### Time to run it.
+### Time To Run It.
 
 With the conda environment active, the ids set on the config file and on the pyflux folder, we will run the following comands in the terminal:
 
@@ -153,11 +153,11 @@ With the conda environment active, the ids set on the config file and on the pyf
 
 This will download ALL recordings in the enrichment to `{BASE_PATH}/{EXPERIMENT_NAME}` that we defined on the JSON file. It will also prepare a set of frames to be used by NERF.
 
-#### Time to "cherry pick" frames
+#### Time To “Cherry Pick” Frames
 
 It's time for some manual labour, so navigate to `{BASE_PATH}/{EXPERIMENT_NAME}/raw_frames` and remove all those frames where there is any occlusion, such as the Companion Device (phone) or body parts (like your hands). Otherwise, you will end up with a weird mesh or fancy piece of abstract art.
 
-### Continue running it
+### Continue Running It
 
 Run `python pyflux/consolidate_raw_frames.py` in your terminal, to reorganise the frames.
 
@@ -188,7 +188,7 @@ If you got to here, congrats! You are almost there. By now, you should already h
 
 Now it's time again for more manual fine-tuning, you will need to use [Blender](https://www.blender.org/) or Maya to open the mesh export `.obj` `({BASE_PATH}/exports/{EXPERIMENT_NAME}/mesh.obj)`, prune it if necesary, and export it as `.ply` format.
 
-### Almost there!
+### Almost There!
 
 The only step missing now is to generate a video like the one on the header of this article. Let's create the visualisation!
 
@@ -204,6 +204,6 @@ The code right now will generate the visualisation, taking all recordings from t
 
 </details>
 
-## Why is this not a Cloud feature?
+## Why Is This Not a Cloud Feature?
 
 While showing gaze heat-maps in 3D as demonstrated in this tutorial is a very exciting and promising tool, it is still in an experimental stage and not quite reliable. The tool uses advanced AI techniques like NeRFs and requires a powerful computer with CUDA support to generate 3D models, which can be expensive, and it would fail with occlusions. Therefore, although the tool is visually impressive, it is not yet a reliable or practical solution for most research or commercial applications.
