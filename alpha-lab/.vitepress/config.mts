@@ -24,14 +24,14 @@ let theme_config_additions = {
       ],
     },
     {
-      text: "Assitive tools",
+      text: "Real-Time Applications",
       items: [
         {
           text: "Gaze-Contingent Assistive Applications",
           link: "/gaze-contingency-assistive/",
         },
         {
-          text: "AI vision assistant",
+          text: "AI Vision Assistant",
           link: "/gpt4-eyes/",
         }
       ],
