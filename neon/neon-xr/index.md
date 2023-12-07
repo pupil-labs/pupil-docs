@@ -1,12 +1,4 @@
 # Neon XR
-
-<!-- 
-#### Remaining Todos
-- [ ] Add system overview
-- [ ] Add instructions regarding pre-generated calibrations and how to use them
-- [ ] Complete guide on how to build you own mount including calibration instructions. 
--->
-
 Neon XR allows you to equip XR devices with research-grade eye tracking powered by Neon. This enables both gaze-based interaction for XR applications and visual behaviour analysis in XR environments.
 
 Thanks to the small form factor of the [Neon module](/hardware/module-technical-overview/), it can easily be integrated into a variety of XR devices. A hardware mount for the [Pico 4](https://pupil-labs.com/products/vr-ar) headset is available for purchase and additional mounts for other headsets are in development. You can also [build a mount yourself](/neon-xr/build-your-own-mount/) for any headset!

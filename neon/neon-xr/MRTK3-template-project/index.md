@@ -8,10 +8,9 @@ The template contains several demo scenes that showcase how to use Neon XR with 
 ## Running the Template Project
 If you just want to try out the demo scenes included in the template project in action, you can download and install a pre-built APK. The APKs a platform-specific and we currently only offer one for the Pico 4 headset. You can download it at this link: 
 
-[Link to download]()
+[Pico 4 - MRTK3 Template Project](https://drive.google.com/file/d/1WaJxx6wgQNKFfpGUAPKxbOfHZ49kXJgW/view?usp=sharing)
 
 To install it, simply open the link in the browser of your Pico 4 headset, download the file and open it.
-<!-- TODO: Double-check this works and potentially elaborate. -->
 
 ## Building the Project
 
