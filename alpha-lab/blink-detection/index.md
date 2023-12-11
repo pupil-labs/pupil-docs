@@ -13,7 +13,7 @@ import TagLinks from '@components/TagLinks.vue'
 
 <TagLinks :tags="$frontmatter.tags" />
 
-![Eye blink animation](./eye_blinks_anim.gif)
+<img src="./eye_blinks_anim.gif" alt="Eye blink animation" style="display: block; margin-left: auto; margin-right: auto;">
 
 ## Blinks: artifacts and information
 
@@ -39,14 +39,14 @@ If you don't have a recording at hand, worry not! The GitHub repository comes wi
 
 Once you have run the first part of the notebook, you will get an output from which you can derive a number of statistics that provide various insights about your recording: the total number of detected blinks, the estimated blink rate (in Hz), and the average blink duration (in seconds), as well as eyelid closing and re-opening durations (in seconds).
 
-![Blinks statistics](./eye_blinks_statistics.png)
+<img src="./eye_blinks_statistics.png" alt="Blinks statistics" style="display: block; margin-left: auto; margin-right: auto;">
 
 <font size=2><b>Figure 1.</b> Blink statistics extracted from the provided example Neon recording.</font>
 
 You will additionally get a visual representation of the detected blinks, providing an overview of their temporal distribution:
 
 
-![Visual blink representation](./eye_blinks_timeline.png)
+<img src="./eye_blinks_timeline.png" alt="Visual blink representation" style="display: block; margin-left: auto; margin-right: auto;">
 <font size=2><b>Figure 2.</b> Visual representation of the detected blinks in the example Neon recording. Green shaded areas depict detected blink events.</font>
 
 The blink detector is designed to classify samples into eye lid opening and closing phases.
@@ -57,7 +57,7 @@ Note that, due to the design of the blink detector, the total blink duration doe
 
 In the first section of Part 2 of the guide, you will learn how to estimate blink rate in real-time. From this, you will obtain a graph, as shown below, that is updated with every blink and shows an estimate of the current blink rate.
 
-![Blink rate test](./eye_blinks_blinkrateest.png)
+<img src="./eye_blinks_blinkrateest.png" alt="Blink rate test" style="display: block; margin-left: auto; margin-right: auto;">
 
 <font size=2><b>Figure 3.</b> Realtime blink rate estimation. Shown is the blink rate estimated over the last 30 s (solid line) as well as the average blink rate for the entire recording (dashed line). </font>
 
@@ -65,7 +65,7 @@ In the first section of Part 2 of the guide, you will learn how to estimate blin
 
 In the last section of the guide, you will learn how to control a Neon device through a rapid sequence of three blinks. Upon detection of said sequence, the companion device will initiate a new recording or stop an ongoing one, as illustrated in the video below:
 
-![Toggling a recording on/off with blinks](./eye_blinks_toggle_recording.gif)
+<img src="./eye_blinks_toggle_recording.gif" alt="Toggling a recording on/off with blinks" style="display: block; margin-left: auto; margin-right: auto;">
 
 :::tip
 If you need assistance in implementing or building your own application, reach out to us via email ([info@pupil-labs.com](mailto:info@pupil-labs.com)), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for dedicated support options.
