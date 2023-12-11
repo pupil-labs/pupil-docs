@@ -63,7 +63,7 @@ Head to this [script](https://gist.github.com/mikelgg93/46a02823e1e271087c3eb6b2
 After running the example and pressing the `Space` key when you’re gazing at something, a snapshot of what you’re looking at will be sent to GPT-4V, and you will receive a vocal response. The nature of the AI assistant's response will depend on the selected model **("ASDF")**. This could be `A`, a description of what you're gazing at; `S`, any potential danger; `D`, a guess of your intentions; or `F`, a more detailed description of the environment. 
 
 In this early exploration, we found that GPT-4V is generally good at detecting what is being gazed at or trying to guess the intention of the wearer. But not fast or accurate enough to detect immediate dangers. There was some network latency, but generally, it worked quite well. You can modify the prompt in the code to tailor it to your specific needs. We ultimately can’t say just how useful this will be for assistive users. For that, we need your feedback!
-~~~~
+
 ::: tip
 Need assistance implementing a real-time API based application? Reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for formal support options.
 :::
