@@ -62,10 +62,6 @@ let theme_config_additions = {
             text: "Ecosystem Overview",
             link: "/data-collection/ecosystem-overview/",
           },
-          {
-            text: "Offset Correction",
-            link: "/data-collection/offset-correction/",
-          },
         ],
       },
       {
@@ -105,6 +101,10 @@ let theme_config_additions = {
           {
             text: "Time Synchronization",
             link: "/data-collection/time-synchronization/",
+          },
+          {
+            text: "Offset Correction",
+            link: "/data-collection/offset-correction/",
           },
         ],
       },
@@ -183,6 +183,11 @@ let theme_config_additions = {
       { text: "Legacy API", link: "/real-time-api/legacy-api/" },
     ],
   },
+
+  editLink: {
+    pattern: 'https://github.dev/pupil-labs/pupil-docs/tree/master/invisible/:path',
+    text: 'Edit this page on GitHub'
+  }
 };
 
 let theme_config = { ...default_theme_config, ...theme_config_additions };

@@ -26,6 +26,10 @@ const theme_config_additions = {
   search: {
     provider: false,
   },
+  editLink: {
+    pattern: 'https://github.dev/pupil-labs/pupil-docs/tree/master/landing-page/:path',
+    text: 'Edit this page on GitHub'
+  }
 };
 
 const theme_config = { ...default_theme_config, ...theme_config_additions };

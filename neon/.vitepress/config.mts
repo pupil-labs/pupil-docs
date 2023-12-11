@@ -132,8 +132,8 @@ let theme_config_additions = {
             link: "/data-collection/time-synchronization/",
           },
           {
-            text: "Measuring the IED",
-            link: "/data-collection/measuring-the-IED/",
+            text: "Offset Correction",
+            link: "/data-collection/offset-correction/",
           },
           {
             text: "Calibrating the IMU",
@@ -210,7 +210,18 @@ let theme_config_additions = {
         ],
       },
     ],
+    "/neon-xr/": [
+      { text: "Overview", link: "/neon-xr/" },
+      { text: "MRTK3 Template Project", link: "/neon-xr/MRTK3-template-project/" },
+      { text: "Neon XR Core Package", link: "/neon-xr/neon-xr-core-package/" },
+      { text: "Build Your Own Mount", link: "/neon-xr/build-your-own-mount/" },
+    ],
   },
+
+  editLink: {
+    pattern: 'https://github.dev/pupil-labs/pupil-docs/tree/master/neon/:path',
+    text: 'Edit this page on GitHub'
+  }
 };
 
 let theme_config = { ...default_theme_config, ...theme_config_additions };

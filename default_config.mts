@@ -36,8 +36,8 @@ type ConfigProps = {
 type ThemeConfigProps = {
   socialLinks: SocialLink[];
   search:
-    | { provider: "local"; options?: any }
-    | { provider: "algolia"; options: any };
+  | { provider: "local"; options?: any }
+  | { provider: "algolia"; options: any };
   outline: Outline | Outline["level"] | false;
 };
 
