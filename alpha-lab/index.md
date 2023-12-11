@@ -78,8 +78,8 @@ cards:
         href: "/alpha-lab/gaze-contingency-assistive/#a-practical-guide-to-implementing-gaze-contingency-for-assistive-technology",
       }
     image: "/alpha-lab/build-gaze-assistive-neon.webp"
-  - title: AI vision assistant,
-    details: Exploring the use of OpenAI's GPT-4-V and real-time APIs from Neon or Invisible to assist individuals with low vision or communication disabilities,
+  - title: AI Vision Assistant
+    details: Explore the use of GPT-4V and Neon or Pupil Invisible eye tracking to build assistive scene understanding applications.
     link:
       {
         text: View,
