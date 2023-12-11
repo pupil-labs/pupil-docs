@@ -78,8 +78,8 @@ cards:
         href: "/alpha-lab/gaze-contingency-assistive/#a-practical-guide-to-implementing-gaze-contingency-for-assistive-technology",
       }
     image: "/alpha-lab/build-gaze-assistive-neon.webp"
-  - title: Run our blink detection pipeline offline and/or in real-time with Neon
-    details:
+  - title: Eye Blinks With Neon
+    details: Apply Pupil Labs blink detection algorithm to Neon recordings offline, or in real-time using Pupil Labs real-time Python API.
     link:
       {
         text: View,

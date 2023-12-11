@@ -35,7 +35,7 @@ let theme_config_additions = {
         },
         { text: "Undistort Video and Gaze Data", link: "/undistort/" },
         { text: "Use Neon with Pupil Capture", link: "/neon-with-capture/" },
-        { text: "Run Neon's blink detection pipeline offline or in real-time", link: "/blink-detection/" },
+        { text: "Eye Blinks With Neon", link: "/blink-detection/" },
       ],
     },
   ],
