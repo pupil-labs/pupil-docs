@@ -26,13 +26,13 @@ let theme_config_additions = {
     {
       text: "Other",
       items: [
+        { text: "Real-Time Eye Blinks With Neon", link: "/blink-detection/" },
         {
           text: "Gaze-Contingent Assistive Applications",
           link: "/gaze-contingency-assistive/",
         },
         { text: "Undistort Video and Gaze Data", link: "/undistort/" },
         { text: "Use Neon with Pupil Capture", link: "/neon-with-capture/" },
-        { text: "Eye Blinks With Neon", link: "/blink-detection/" },
       ],
     },
   ],

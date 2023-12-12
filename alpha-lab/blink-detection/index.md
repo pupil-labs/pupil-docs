@@ -1,6 +1,6 @@
 ---
-title: "Detecting eye blinks with Neon"
-description: "Perform posthoc and real-time blink detection with Neon"
+title: "Real-Time Eye Blinks With Neon"
+description: "Apply Pupil Labs blink detection algorithm to Neon recordings in real-time using Pupil Labs real-time Python API, to assess tiredness and cognitive load."
 permalink: /alpha-lab/blink-detection/
 tags: [Neon, Realtime API]
 ---
