@@ -210,6 +210,12 @@ let theme_config_additions = {
         ],
       },
     ],
+    "/neon-xr/": [
+      { text: "Overview", link: "/neon-xr/" },
+      { text: "MRTK3 Template Project", link: "/neon-xr/MRTK3-template-project/" },
+      { text: "Neon XR Core Package", link: "/neon-xr/neon-xr-core-package/" },
+      { text: "Build Your Own Mount", link: "/neon-xr/build-your-own-mount/" },
+    ],
   },
 
   editLink: {

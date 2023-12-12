@@ -78,4 +78,12 @@ cards:
         href: "/alpha-lab/gaze-contingency-assistive/#a-practical-guide-to-implementing-gaze-contingency-for-assistive-technology",
       }
     image: "/alpha-lab/build-gaze-assistive-neon.webp"
+  - title: Real-Time Eye Blinks With Neon
+    details: Apply Pupil Labs blink detection algorithm to Neon recordings in real-time using Pupil Labs real-time Python API.
+    link:
+      {
+        text: View,
+        href: "/alpha-lab/blink-detection/#detecting-eye-blinks-using-pupil-labs-blink-detection-pipeline",
+      }
+    image: "/alpha-lab/eye_blink.webp"
 ---
