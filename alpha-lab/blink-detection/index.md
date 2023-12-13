@@ -9,7 +9,7 @@ tags: [Neon]
 import TagLinks from '@components/TagLinks.vue'
 </script>
 
-# Detecting Eye Blinks Using Pupil Lab’s Blink Detection Pipeline
+# Detect Eye Blinks With Neon
 
 <TagLinks :tags="$frontmatter.tags" />
 
