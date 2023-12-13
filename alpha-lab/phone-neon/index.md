@@ -40,7 +40,7 @@ In the past, wearable eye tracking faced challenges in usability primarily due t
 
 ## Leveraging Pupil Cloud and Alpha Lab Tutorials To Explore User Gaze Dynamics
 
-1. We placed the phone in a static position on a desk, allowing us to interact with the app. This setup was crucial for utilizing our [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/) enrichment which specifically requires the scene to have relatively static features in the environment.
+1. We placed the phone in a static position on a desk, allowing us to interact with the app. This setup was crucial for utilizing our [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/) enrichment which specifically requires the scene to have relatively static features in the environment and for enabling comparisons between subjects.
 
 2. We used Pupil Cloud's [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/) to map gaze onto a 2D reference image of the environment that contained our test phone, like in the videos and snapshots.
 
@@ -91,7 +91,7 @@ Until now, the tools that we have used have been limited to mapping gaze onto st
 
 Upon reviewing the recording, Neon demonstrated good accuracy in capturing gaze behaviour, offering a useful high-level overview of the wearer's focal points.
 
-Another very useful facet of this tool is its ability to generate a CSV file containing gaze data mapped onto the screen, represented in 2D x, y coordinates. Although this feature is beyond the scope of the present article, it opens avenues for extensive customisation and more in-depth analysis, such as creating dynamic heatmaps overlaid on the screen recording.
+Another very useful facet of this tool is its ability to generate a CSV file with 2D x, y coordinates for gaze data on the screen, enabling extensive customisation and in-depth analysis, though beyond this article's scope.
 
 ## Let’s Wrap It Up!
 
