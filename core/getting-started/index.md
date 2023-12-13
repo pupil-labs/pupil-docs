@@ -8,6 +8,7 @@ sidebar: false
 Welcome to Pupil Core! The first thing you need to do is download the latest Pupil Core software.
 
 <!-- <DownloadLinks/> -->
+[Download it here](https://github.com/pupil-labs/pupil/releases/tag/v3.5)
 
 Follow the steps below to get up and running and become familiar with the workflow.
 
