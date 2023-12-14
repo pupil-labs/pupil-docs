@@ -83,7 +83,7 @@ The Neon module is equipped with a 9-DoF [inertial measurement unit](https://inv
 
 A fusion engine also combines these values with magnetometer readings to estimate the module's absolute orientation relative to magnetic north and gravity as a quaternion. Note that in order to obtain precise absolute yaw readings, the magnetometer needs to be [calibrated](/data-collection/calibrating-the-imu/).
 
-The IMU is located in the top bar of the module and is sampled at 220 Hz. Its coordinate system is oriented with the x-axis pointing to the right, the y-axis pointing in front, and the z-axis pointing upwards.
+The IMU is located in the top bar of the module and is sampled at 110 Hz. Its coordinate system is oriented with the x-axis pointing to the right, the y-axis pointing in front, and the z-axis pointing upwards.
 
 ![IMU Coordinate System](./imu-xyz-black.jpg)
 
