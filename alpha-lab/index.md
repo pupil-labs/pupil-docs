@@ -54,8 +54,8 @@ cards:
         href: "/alpha-lab/scanpath-rim/#generate-static-and-dynamic-scanpaths-with-reference-image-mapper",
       }
     image: "/alpha-lab/gen-scanpath-rim.webp"
-  - title: Uncover gaze behaviour on phone screens with Neon
-    details: Use Neon and existing Alpha Lab content to capture and characterise viewing behaviour on mobile phone screens.
+  - title: Uncover Gaze Behaviour on Phones
+    details: Capture and analyze users' viewing behaviour when focusing on small icons and features of mobile applications using Neon eye tracking alongside existing Cloud and Alpha Lab tools.
     link:
       {
         text: View,

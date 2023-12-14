@@ -22,7 +22,7 @@ tags: [Neon, Cloud]
 import TagLinks from '@components/TagLinks.vue'
 </script>
 
-# Uncover Gaze Behaviour on Phone Screens With Neon
+# Uncover Gaze Behaviour on Phones
 
 <TagLinks :tags="$frontmatter.tags" />
 
@@ -97,8 +97,10 @@ Another very useful facet of this tool is its ability to generate a CSV file wit
 
 In this article, we assessed whether Neon is capable of characterizing viewing behaviour on mobile apps. The techniques outlined in this tutorial are not confined to our specific application; they hold significant value for various UI/UX and neuromarketing research endeavours. By integrating Neon with the methodologies discussed here, researchers can acquire invaluable insights into user engagement.
 
+:::tip
 Curious about how Neon can fit into your work? Need assistance in implementing your own analysis pipelines? Reach out to
 us [by email](mailto:info@pupil-labs.com) or visit our [Support Page](https://pupil-labs.com/products/support/)!
+:::
 
 <style scoped>
 .mcontainer{
