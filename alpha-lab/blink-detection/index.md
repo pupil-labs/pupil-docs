@@ -37,7 +37,7 @@ If you don't have a recording at hand, worry not! The GitHub repository comes wi
 
 ### 1. Offline Blink Detection
 
-Once you have run the first part of the notebook, you will get an output from which you can derive a number of statistics that provide various insights about your recording: the total number of detected blinks, the estimated blink rate (in Hz), and the average blink duration (in seconds), as well as eyelid closing and re-opening durations (in seconds).
+Once you have run the first part of the [notebook](https://github.com/pupil-labs/real-time-blink-detection/blob/main/blink_detection.ipynb), you will get an output from which you can derive a number of statistics that provide various insights about your recording: the total number of detected blinks, the estimated blink rate (in Hz), and the average blink duration (in seconds), as well as eyelid closing and re-opening durations (in seconds).
 
 <img src="./eye_blinks_statistics.png" alt="Blinks statistics" style="display: block; margin-left: auto; margin-right: auto;">
 
@@ -55,7 +55,7 @@ Note that, due to the design of the blink detector, the total blink duration doe
 
 ### 2.1. Real-Time Blink Detection
 
-In the first section of Part 2 of the guide, you will learn how to estimate blink rate in real-time. From this, you will obtain a graph, as shown below, that is updated with every blink and shows an estimate of the current blink rate.
+In the first section of Part 2 of the [notebook](https://github.com/pupil-labs/real-time-blink-detection/blob/main/blink_detection.ipynb), you will learn how to estimate blink rate in real-time. From this, you will obtain a graph, as shown below, that is updated with every blink and shows an estimate of the current blink rate.
 
 <img src="./eye_blinks_blinkrateest.png" alt="Blink rate test" style="display: block; margin-left: auto; margin-right: auto;">
 
@@ -63,7 +63,7 @@ In the first section of Part 2 of the guide, you will learn how to estimate blin
 
 ### 2.2. Toggling Recordings Remotely Through Blinks
 
-In the last section of the guide, you will learn how to control a Neon device through a rapid sequence of three blinks. Upon detection of said sequence, the companion device will initiate a new recording or stop an ongoing one, as illustrated in the video below:
+In the last section of the [notebook](https://github.com/pupil-labs/real-time-blink-detection/blob/main/blink_detection.ipynb), you will learn how to control a Neon device through a rapid sequence of three blinks. Upon detection of said sequence, the companion device will initiate a new recording or stop an ongoing one, as illustrated in the video below:
 
 <img src="./eye_blinks_toggle_recording.gif" alt="Toggling a recording on/off with blinks" style="display: block; margin-left: auto; margin-right: auto;">
 
