@@ -37,7 +37,7 @@ If you don't have a recording at hand, worry not! The GitHub repository comes wi
 
 ### 1. Offline Blink Detection
 
-Once you have run the first part of the notebook, you will get an output from which you can derive a number of statistics that provide various insights about your recording: the total number of detected blinks, the estimated blink rate (in Hz), and the average blink duration (in seconds), as well as eyelid closing and re-opening durations (in seconds).
+Once you have run the first part of the [notebook](https://github.com/pupil-labs/real-time-blink-detection/blob/main/blink_detection.ipynb), you will get an output from which you can derive a number of statistics that provide various insights about your recording: the total number of detected blinks, the estimated blink rate (in Hz), and the average blink duration (in seconds), as well as eyelid closing and re-opening durations (in seconds).
 
 <img src="./eye_blinks_statistics.png" alt="Blinks statistics" style="display: block; margin-left: auto; margin-right: auto;">
 
