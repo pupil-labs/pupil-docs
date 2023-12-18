@@ -1,8 +1,8 @@
 # Fixation & Blink Detectors
 <!-- TODO: Add new visuals -->
-Neon Player runs the same [fixation](./../data-collection/data-streams/#fixations) and [blink detectors](./../data-collection/data-streams/#blinks) that are employed in Pupil Cloud. 
+Neon Player runs the same [fixation](./../../data-collection/data-streams/#fixations) and [blink detectors](./../../data-collection/data-streams/#blinks) that are employed in Pupil Cloud. 
 
-The exported data follows the same structure as reported in the [Data Format](./../data-collection/data-format/).
+The exported data follows the same structure as reported in the [Data Format](./../../data-collection/data-format/).
 
 ## Fixation Detector
 The fixation detector calculates fixations for the whole recording. The menu gives feedback about the progress of the detection, how many fixations were found, and shows detailed information about the current fixation. Press `f` or click the `f` hot key button on the left hand side of the window to seek forward to the next fixation.
@@ -13,7 +13,7 @@ Toggle `Show fixations` to show a visualization of fixations. The blue number is
 
 
 ## Blink Detector
-Read more information about our blink detector [here](./../data-collection/data-streams/#blinks).
+Read more information about our blink detector [here](./../../data-collection/data-streams/#blinks).
 
 ![Blinks](./pp-blinks.jpg)
 
