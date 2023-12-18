@@ -3,11 +3,19 @@ description: Welcome to Pupil Core! This section will guide you through setup (s
 
 sidebar: false 
 ---
+<script setup>
+import DownloadLinks from '../../components/DownloadLinks.vue/'
+</script>
 
 # Getting Started
 Welcome to Pupil Core! The first thing you need to do is download the latest Pupil Core software.
 
-<!-- <DownloadLinks/> -->
+<download-links
+  src="https://api.github.com/repos/pupil-labs/pupil/releases/latest"
+  text="Download Pupil Core Bundles"
+  icon="../public/bundle-core.svg"
+/>
+
 
 Follow the steps below to get up and running and become familiar with the workflow.
 

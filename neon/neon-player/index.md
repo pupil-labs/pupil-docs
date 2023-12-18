@@ -1,18 +1,38 @@
 # Neon Player
-Neon Player is a desktop application for playing back and exporting Neon recording. 
+Neon Player is a cross-platform desktop application for playing back and exporting Neon recordings.
+
+<script setup>
+import DownloadLinks from '../../components/DownloadLinks.vue/'
+</script>
+
+<download-links
+  src="https://api.github.com/repos/pupil-labs/neon-player/releases/latest"
+  text="Download Neon Player"
+  icon="../public/neon-player.svg"
+/>
 
 ## Load a recording
-To open a Neon recording in Neon Player, you first need to download it to your computer. You can either pull a recording directly [off of the Neon Companion Device](/data-collection/transfer-recordings-via-usb/), or download it from the [Pupil Cloud](/pupil-cloud/). When downloading from Pupil Cloud, make sure to download the "Raw Android Data" format and not the "Time Series + Video" format. Note, that this format will only become available after enabling it in your workspace settings.
+To open a Neon recording in Neon Player, you first need to download it to your computer. You can either pull a recording directly [off of the Neon Companion Device](/data-collection/transfer-recordings-via-usb/), or download it from the [Pupil Cloud](/pupil-cloud/). When downloading from Pupil Cloud, make sure to download the "Native Recording Data" format and not the "Time Series + Video" format. 
 
-Drag the recording folder directly onto the app icon **or** launch the application and drag + drop the recording folder into the Pupil Player window.
+Note, that this format will only become available after enabling it in your workspace settings.
+
+Drag the recording folder directly onto the app icon **or** launch the application and drag + drop the recording folder into the Neon Player window.
 
 ![Drag and drop recording folder](./pp-start.jpg)
 
+::: warning
+
+Recordings extracted from the phone do not contain yet [eye state](../data-collection/data-streams/#_3d-eye-states) or [pupillometry](../data-collection/data-streams/#pupil-diameters) and the sampling rate would be the one chosen at the time of recording.
+
+Recordings downloaded from [Pupil Cloud](./../pupil-cloud/) would be at 200Hz and contain pupil size and eye state.
+
+:::
+
 ## Neon Player Window
 
-![Pupil Player Callout](./pp-callout.jpg)
+![Neon Player Callout](./pp-callout.jpg)
 
-1. **Graphs**: This area contains performance graphs. The graphs display `CPU`, `FPS`, and pupil algorithm detection confidence.
+1. **Graphs**: This area contains performance graphs. The graphs display `CPU` and `FPS`. TODO: is FPS actually correct?
 1. **Hot keys**: This area contains clickable buttons for plugins.
 1. **Timeline Events**: Plugins can add temporal events to this expandable panel.
 1. **Timeline**: Control the playback of the video with the play/pause button (or spacebar on your keyboard). Drag the playhead (vertical line) to the desired point in time.
@@ -52,7 +72,7 @@ Here is an example workflow:
 - Export Video & Raw Data - From the `Plugin Manager` view, load the `World Video Exporter` plugin and the `Raw Data Exporter` plugin. Press `e` on your keyboard or the `download icon` button in the left hand side of the window to start the export.
 - Check out exported data in the `exports` directory within your recording directory
 
-::: tip
+::: info
 Neon Player will <strong>never</strong> remove or overwrite any of your raw data gathered during capture. All exports are isolated within a sub-directory named <code>exports</code>. Exports will never be overwritten.
 :::
 
@@ -63,3 +83,7 @@ There are two general types of plugins:
 
 - **Unique**: You can only launch one instance of this plugin.
 - **Not unique**: You can launch multiple instances of this type of plugin. For example, you can load one `Vis Circle` plugin to render the gaze position with a translucent green circle, and another `Vis Circle` plugin to render the gaze circle with a green stroke of 3 pixel thickness. You can think of these types of plugins as _additive_.
+
+::: tip
+Looking for a command line interface that allow you to export recordings as CSV files programmatically? `pl-rec-export` is available [here](https://github.com/pupil-labs/pl-rec-export).
+:::
