@@ -8,7 +8,7 @@ import DownloadLinks from '../../components/DownloadLinks.vue/'
 <download-links
   src="https://api.github.com/repos/pupil-labs/neon-player/releases/latest"
   text="Download Neon Player"
-  icon="../public/neon-player.svg"
+  icon="./../public/neon-player.svg"
 />
 
 ## Load a recording

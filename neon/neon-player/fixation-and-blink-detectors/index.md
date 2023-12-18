@@ -18,5 +18,6 @@ Read more information about our blink detector [here](./../../data-collection/da
 ![Blinks](./pp-blinks.jpg)
 
 :::tip
-Want to compute blink rate or use this detector in realtime? Have a look at [Detect Exe Blinks With Neon](./../../../alpha-lab/blink-detection/#detecting-eye-blinks-using-pupil-labs-blink-detection-pipeline)
+Want to compute blink rate or use this detector in realtime? Have a look at [Detect Eye Blinks With Neon]
+<!-- (./../../../alpha-lab/blink-detection/#detecting-eye-blinks-using-pupil-labs-blink-detection-pipeline) -->
 :::
