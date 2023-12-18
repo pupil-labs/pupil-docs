@@ -55,7 +55,7 @@ let theme_config_additions = {
     ],
     "/vr-ar/": [
       { text: "Overview", link: "/vr-ar/" },
-      { text: "HTC-Vice Add-On", link: "/vr-ar/vive/" },
+      { text: "HTC-Vive Add-On", link: "/vr-ar/vive/" },
       { text: "HoloLens Add-On", link: "/vr-ar/hololens/" },
       { text: "Oculus Rift DK2 Add-On", link: "/vr-ar/rift/" },
       { text: "Developer", link: "/vr-ar/developer/" },

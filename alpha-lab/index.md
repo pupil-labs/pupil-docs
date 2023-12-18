@@ -54,8 +54,8 @@ cards:
         href: "/alpha-lab/scanpath-rim/#generate-static-and-dynamic-scanpaths-with-reference-image-mapper",
       }
     image: "/alpha-lab/gen-scanpath-rim.webp"
-  - title: Uncover gaze behaviour on phone screens with Neon
-    details: Use Neon and existing Alpha Lab content to capture and characterise viewing behaviour on mobile phone screens.
+  - title: Uncover Gaze Behaviour on Phones
+    details: Capture and analyze users' viewing behaviour when focusing on small icons and features of mobile applications using Neon eye tracking alongside existing Cloud and Alpha Lab tools.
     link:
       {
         text: View,
@@ -78,4 +78,12 @@ cards:
         href: "/alpha-lab/gaze-contingency-assistive/#a-practical-guide-to-implementing-gaze-contingency-for-assistive-technology",
       }
     image: "/alpha-lab/build-gaze-assistive-neon.webp"
+  - title: Detect Eye Blinks With Neon
+    details: Apply Pupil Labs blink detection algorithm to Neon recordings programmatically, offline or in real-time using Pupil Labs real-time Python API.
+    link:
+      {
+        text: View,
+        href: "/alpha-lab/blink-detection/#detecting-eye-blinks-using-pupil-labs-blink-detection-pipeline",
+      }
+    image: "/alpha-lab/eye_blink.webp"
 ---

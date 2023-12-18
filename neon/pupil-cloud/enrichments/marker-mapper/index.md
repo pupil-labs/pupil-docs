@@ -10,12 +10,12 @@ For robust detection, you should place enough markers on your surface such that 
 You can use these images as a template for printing markers:
 
 <div class="pb-4" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
-  <a download="apriltags_tag36h11_0-23.jpg" href="../../media/shared/imgs/apriltags_tag36h11_0-23.jpg" title="AprilTags 0-23">
+  <a download="apriltags_tag36h11_0-23.jpg" href="/neon/pupil-cloud/enrichments/marker-mapper/apriltags_tag36h11_0-23.jpg" title="AprilTags 0-23">
 
   ![Apriltags 0 - 23](./apriltags_tag36h11_0-23.jpg)
 
   </a>
-  <a download="apriltags_tag36h11_24-47.jpg" href="../../../media/shared/imgs/apriltags_tag36h11_24-47.jpg" title="AprilTags 0-23">
+  <a download="apriltags_tag36h11_24-47.jpg" href="/neon/pupil-cloud/enrichments/marker-mapper/apriltags_tag36h11_24-47.jpg" title="AprilTags 0-23">
     
   ![Apriltags 24 - 47](./apriltags_tag36h11_24-47.jpg)
 
