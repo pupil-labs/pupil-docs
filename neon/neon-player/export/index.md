@@ -1,6 +1,6 @@
 # Export
 
-TODO: Is the export format actually correct?
+<!-- TODO: Is the export format actually correct? -->
 
 You can export data and videos by pressing `e` on your keyboard or the `e` hot key button in the Neon Player window.
 
@@ -38,7 +38,8 @@ The csv timestamp files include an additional `pts` column. `pts` is an abbrevia
 The `Eye Video Exporter` needs to be loaded explicitly through the Plugin Manager.
 It includes the option to render the 2d pupil detection result into the exported video.
 
-## iMotions Exporter
+## iMotions Exporter 
+THIS IS NO LONGER TRUE; THE FORMAT IS RAW NATIVE FOR IMOTIONS, we needto remove it.
 The iMotions Exporter creates data that can be used with [https://imotions.com/](https://imotions.com/ "iMotions website").
 
 Specifically, it undistorts the world video images using the camera intrinsics. Gaze data is also undistorted and exported to the `gaze.tlv` file.
@@ -48,6 +49,8 @@ The `Raw Data Exporter` exports pupil and gaze data to `.csv` files and is activ
 
 ![Raw export](./raw-export.jpg)
 
+
+NOT RELEVANT, NEEDS TO BE REMOVED
 ### pupil_positions.csv
 * `pupil_timestamp` - timestamp of the source image frame
 * `world_index` - associated_frame: closest world video frame
@@ -153,7 +156,7 @@ file. If it is not found or invalid, the last known set of annotation definition
 session settings.
 
 ## Fixation Export
-
+# POINT TO NORMAL FIXATION EXPORTS
 Fixations are exported to `fixations.csv`, containing the following fields:
 
 * `start_timestamp` - Timestamp of the first related gaze datum

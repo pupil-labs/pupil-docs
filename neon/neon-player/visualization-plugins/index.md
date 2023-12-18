@@ -1,4 +1,5 @@
 # Visualization Plugins
+  <!-- TODO: NEW VISUALS -->
 We will call plugins with the `Vis` prefix **visualization** plugins. These plugins are simple plugins, are mostly additive (or *not unique*), and directly operate on the gaze positions to produce visualizations. Other plugins like `Surface Tracker` also produces visualizations, but will be discussed elsewhere due to the extent of its features.
 
 ## Vis Circle

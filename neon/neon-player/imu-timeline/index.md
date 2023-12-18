@@ -1,15 +1,12 @@
 # IMU Timeline
-This plugin visualizes accelerometer and gyroscope data from Neon recordings. It also fuses the 
-data using [Madgwick's algorithm](https://github.com/xioTechnologies/Fusion) to yield drift-free orientation estimates in the pitch and roll axes.
+<!-- TODO: Needs revisit -->
+This plugin visualizes accelerometer and gyroscope data from Neon recordings along with Euler angles (pitch, yaw and roll).
 
 ![IMU](./pp-imu.jpg)
 
-Why fuse the data? Numerical integration of angular rate is subject to position errors that grow with time. Accurate 
-estimates of orientation therefore require drift correction. Madgwick's algorithm removes orientation drift in the pitch
-and roll axes using accelerometer feedback to monitor position relative to gravity.
+Why fuse the data? Numerical integration of angular rate is subject to position errors that grow with time. Accurate estimates of orientation therefore require drift correction. Madgwick's algorithm removes orientation drift in the pitch and roll axes using accelerometer feedback to monitor position relative to gravity.
 
-In the Plugin's menu, toggle `View raw timeline` to view the accelerometer and gyroscope readings and `View orientation
-timeline` for pitch and roll. You can also change `Madgwick's beta`. This value is associated with gyroscope mean error.
+In the Plugin's menu, toggle `View raw timeline` to view the accelerometer and gyroscope readings and `View orientation timeline` for pitch and roll. You can also change `Madgwick's beta`. This value is associated with gyroscope mean error.
 Increasing the beta will lead to faster drift corrections but with more sensitivity to lateral accelerations. Read more about [Madgwick's algorithm here](https://x-io.co.uk/downloads/madgwick_internal_report.pdf).
 
 Results are exported in `imu_timeline.csv` with the following columns:

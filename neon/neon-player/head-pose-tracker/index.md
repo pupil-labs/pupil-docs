@@ -1,9 +1,8 @@
 # Head Pose Tracker
 
-TODO: Need to provide links to marker downloads.
+<!-- TODO: Need to provide links to marker downloads. -->
 
-This plugin uses fiducial markers ([apriltag](https://april.eecs.umich.edu/software/apriltag.html)) to build a 3d model 
-of the environment and track the headset's pose within it. Note, only markers of the default `tag36h11` family are currently 
+This plugin uses fiducial markers ([apriltag](https://april.eecs.umich.edu/software/apriltag.html)) to build a 3d model of the environment and track the headset's pose within it. Note, only markers of the default `tag36h11` family are currently 
 supported by the head pose tracker plugin.
 
 ::: tip
@@ -55,7 +54,5 @@ upwards:
 ![Head Pose](./pp-hp-marker.jpg)
 
 :::tip
-Euler angles are an intuitive representation of rotation. However, they can be subject to the effects of 
-[gimbal lock](https://en.wikipedia.org/wiki/Gimbal_lock). Luckily, most head movements associated with eye tracking
-*should* not lead to this situation with correct positioning of the origin marker
+Euler angles are an intuitive representation of rotation. However, they can be subject to the effects of [gimbal lock](https://en.wikipedia.org/wiki/Gimbal_lock). Luckily, most head movements associated with eye tracking *should* not lead to this situation with correct positioning of the origin marker.
 :::

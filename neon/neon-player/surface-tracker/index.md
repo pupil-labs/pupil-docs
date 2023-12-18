@@ -1,10 +1,15 @@
 # Surface Tracker
-
-TODO: There are no references to where to get markers and how to place them. This is only explained in the Capture docs.
+<!-- TODO: Coordinates differ from marker mapper, top-left/ botom-left origin -->
 
 You can use this plugin to detect markers in the recording, define surfaces, edit surfaces, and create and export visualizations of gaze data within the defined surfaces.
 
 ![Offline surface tracker](./offline-srf-tracker.jpg)
+
+## Setup
+
+First of all you want to ensure that your recording contains AprilTag Markers, like the ones you would use with the [Marker Mapper](./../pupil-cloud/enrichments/marker-mapper/#setup).
+
+## Workflow
 
 Here is an example workflow for using the `Surface Tracker` plugin to generate heatmap visualizations and export surface data reports:
 
