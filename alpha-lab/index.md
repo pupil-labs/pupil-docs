@@ -94,4 +94,20 @@ cards:
         href: "/alpha-lab/gpt4-eyes/",
       }
     image: "/alpha-lab/gpt4-eyes.webp"
+  - title: Undistort Video and Gaze Data
+    details: Learn how to undistort the scene camera distortions and apply it to gaze positions.
+    link: 
+      {
+        text: View,
+        href: "/alpha-lab/undistort/",
+      }
+    image: "/alpha-lab/undist.webp"
+  - title: Use Neon with Pupil Capture
+    details: Use your Neon module as if you were using Pupil Core. Connect it to a laptop, and record using Pupil Capture.
+    link: 
+      {
+        text: View,
+        href: "/alpha-lab/neon-with-capture/",
+      }
+    image: "/alpha-lab/neon-capture.webp"
 ---

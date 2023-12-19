@@ -3,8 +3,7 @@ title: Undistorting Video and Gaze Data
 description: "Undistorting Neon's scene camera video and gaze data, using the intrinsic and extrinsic camera parameters."
 permalink: /neon/how-tos/advance-analysis/undistort/
 ---
-
-# Correcting for the Lens Distortion on Neon’s Scene Camera
+# Undistort Video and Gaze Data
 
 A circumstance that often arises in wearable eye tracking setups is the presence of distortions on the scene camera. The type of lenses used, with their wide-angle characteristics, allows for a broad field of view, enabling the capture of more information within a single frame. However, this advantage comes at the cost of introducing distortions to the image. <!-- rectilinear distortions -->
 
