@@ -51,9 +51,7 @@ Under the hood, nerfstudio is built on top of PyTorch and PyQt, and uses ZeroMQ,
 
 This is not gonna be an easy path...
 
-<details>
-    <summary>But if you insist...</summary><br>
-<!-- This is collapsed   -->
+:::: details But if you insist...
     
 ### What You’ll Need
 
@@ -202,7 +200,7 @@ You can close anytime the visualisation by pressing `ESC` or it will close after
 The code right now will generate the visualisation, taking all recordings from the enrichment. If you want to generate a visualisation for a specific recording, you will have to change the code of pyflux.
 :::
 
-</details>
+::::
 
 ## Why Is This Not a Cloud Feature?
 
