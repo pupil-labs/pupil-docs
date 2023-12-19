@@ -4,20 +4,20 @@ description: "Undistorting Neon's scene camera video and gaze data, using the in
 permalink: /neon/how-tos/advance-analysis/undistort/
 ---
 
-# Correcting for the lens distortion on Neon's scene camera
+# Correcting for the Lens Distortion on Neon’s Scene Camera
 
 A circumstance that often arises in wearable eye tracking setups is the presence of distortions on the scene camera. The type of lenses used, with their wide-angle characteristics, allows for a broad field of view, enabling the capture of more information within a single frame. However, this advantage comes at the cost of introducing distortions to the image. <!-- rectilinear distortions -->
 
 While we account for them in Pupil Cloud processing — such as when we're aligning gaze data onto reference images or surfaces — it's important to note that the data you download will be in its original, unaltered form.
 We offer you the possibility to download the undistorted video using the [Video Renderer Visualization](https://docs.pupil-labs.com/neon/pupil-cloud/visualizations/video-renderer/), but this is not the case when using the [Realtime API](https://docs.pupil-labs.com/neon/real-time-api/tutorials/) or raw data, where you may want to correct it by yourself.
 
-## When is it beneficial to correct for lens distortion?
+## When Is It Beneficial To Correct for Lens Distortion?
 
 ![Side by side comparison of a distorted and undistorted image with gaze positions overlaid.](./sidebyside_neon_with_gaze.jpg)
 
 The lens distortion in Neon's scene camera is not very strong, but correcting for it can have benefits for some applications. The undistorted image may be a more realistic or appealing representation of the observer's visual perspective (e.g. parallel lines will also be parallel in the undistorted image). Some computer vision algorithms also perform better on undistorted images.
 
-## How to correct for the lens distortions?
+## How To Correct for the Lens Distortions?
 
 In this tutorial, we will cover how to read the provided intrinsic and extrinsic camera parameters and correct for the lens distortions in Neon's scene camera. We will also show you how to undistort the gaze data, so that you can map the gaze position onto the undistorted scene camera video.
 
@@ -34,7 +34,7 @@ To follow this guide, you will need to have the following libraries installed on
 pip install opencv-python numpy
 ```
 
-### Reading from the Cloud download JSON file
+### Reading From the Cloud Download JSON File
 
 We measure the intrinsics and extrinsics parameters from the cameras for you, such that you do not need to do it by yourself. If you are using the [Cloud download](https://docs.pupil-labs.com/neon/general/data-format/#scene-camera-json) format, you can find the intrinsic parameters in the **scene_camera.json** file which you can read using the following function:
 
@@ -53,10 +53,10 @@ K = np.array(calibration["camera_matrix"])
 D = np.array(calibration["distortion_coefficients"])[0]
 ```
 
-### Reading from the raw file
+### Reading From the Raw File
 
-<details><summary>Click to see how to read it from the raw format</summary><br>
-<!-- This is collapsed   -->
+::: details Click To See How To Read It From the Raw Formats
+
 If you are using the RAW data, this data is also stored there. The calibration parameters are stored in a binary file, and you can read it using the following function:
 
 ```python
@@ -89,9 +89,7 @@ calibration = read_instrinsics_neon(path)
 K = calibration["scene_camera_matrix"][0]
 D = calibration["scene_distortion_coefficients"][0]
 ```
-
-</details>
-<!-- empty line   -->
+:::
 
 ## Understanding the variables
 

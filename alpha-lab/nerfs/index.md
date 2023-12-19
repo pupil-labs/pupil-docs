@@ -207,3 +207,7 @@ The code right now will generate the visualisation, taking all recordings from t
 ## Why Is This Not a Cloud Feature?
 
 While showing gaze heat-maps in 3D as demonstrated in this tutorial is a very exciting and promising tool, it is still in an experimental stage and not quite reliable. The tool uses advanced AI techniques like NeRFs and requires a powerful computer with CUDA support to generate 3D models, which can be expensive, and it would fail with occlusions. Therefore, although the tool is visually impressive, it is not yet a reliable or practical solution for most research or commercial applications.
+
+::: info
+If you need assistance in implementing or building your own application, reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for dedicated support options.
+:::

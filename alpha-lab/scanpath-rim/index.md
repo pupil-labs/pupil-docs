@@ -4,7 +4,7 @@ permalink: /alpha-lab/scanpath-rim/
 tags: [Pupil Invisible, Neon, Cloud]
 ---
 
-# Generate static and dynamic scanpaths with Reference Image Mapper
+# Generate Static and Dynamic Scanpaths With Reference Image Mapper
 
 <TagLinks />
 
@@ -14,7 +14,7 @@ tags: [Pupil Invisible, Neon, Cloud]
 Picture this: Build and customize scanpath visualizations with your Reference Image Mapper exports!
 :::
 
-## Visualizing gaze exploration with scanpaths
+## Visualizing Gaze Exploration With Scanpaths
 Scanpaths are graphical representations of gaze over time. They provide a glimpse into how the observer has focused their attention on different aspects of a scene, making them a valuable tool for understanding a person's visual attention and perception. The video above illustrates this concept. It shows:
 - Fixation locations, visualized as blue numbered circles
 - Fixation durations, which are mapped to the size of the circles. Longer fixations correspond to larger circles
@@ -29,7 +29,7 @@ Before continuing, ensure you are familiar with the [Reference Image Mapper](htt
 enrichment. Check out [this explainer video](https://www.youtube.com/watch?v=ygqzQEzUIS4&t=56s) for reference.
 :::
 
-## Extending current tools
+## Extending Current Tools
 The [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/) enrichment available in Pupil Cloud is a tool that maps gaze onto
 2D images and can subsequently generate heatmaps. However, it currently does not support the production of scanpath visualizations.
 Thus, we chose to develop a script that shows you how to build your own scanpaths using Reference Image Mapped data.
@@ -39,7 +39,7 @@ Thus, we chose to develop a script that shows you how to build your own scanpath
 1. Run a [Reference Image Mapper enrichment](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/) and download the results
 2. Download [this script](https://gist.github.com/elepl94/9f669c4d81e455cf2095957831219664) and follow the [installation instructions](https://gist.github.com/elepl94/9f669c4d81e455cf2095957831219664#installation)
 
-## Review the scanpaths
+## Review the Scanpaths
 <Youtube src="X43aTIRjwgQ" />
 
 After the script has completed its execution, you'll find the resulting scanpath visualizations stored in a newly created 
@@ -63,6 +63,10 @@ gaze behavior.
         </div>
     </div>
 </div>
+
+::: info
+If you need assistance in using this application, reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for dedicated support options.
+:::
 
 <style scoped>
     img, iframe {

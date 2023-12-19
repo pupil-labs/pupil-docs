@@ -47,7 +47,6 @@ The [event annotation](https://docs.pupil-labs.com/neon/data-collection/events/)
 Check [here](https://docs.pupil-labs.com/neon/data-collection/events/) how you can create these events in the Cloud.
 
 ::: tip
-**Tip:**
 When you initiate your recordings, you'll need to know when the screen recording started, relative to your eye tracking recording. Thus, start your eye tracker recording first, and make sure that the eye tracker scene camera faces the OBS program on the screen. Then, start the screen recording.
 
 By looking at the screen when you press the button, you'll have a visual reference to create the [event annotation](https://docs.pupil-labs.com/neon/data-collection/events/) later in Cloud.
@@ -93,7 +92,6 @@ Use the left button on your mouse to select the points. A red dot will let you k
 And that's all required from you! Grab a coffee or a tea and chill. When finished, you will get a video like the one at the top of this how-to, in addition to a CSV file with your gaze mapped to the screen.
 
 ::: warning
-**Tip:**
 You might find some libav.mp4 warnings. These warnings are due to some issues with the aac codec and timestamping. These messages only appear when adding the audio stream. You can safely ignore them, or you can disable audio within the code.
 :::
 
@@ -101,10 +99,8 @@ You might find some libav.mp4 warnings. These warnings are due to some issues wi
 
 If you only want the final visualisation and the data, there is nothing else you need to do. However, if you want to dig deeper into how the code works under the hood, continue reading by clicking on the dropdown below.
 
-<details>
-<summary>Read more</summary>
-<!-- This is collapsed   -->
-<br>
+::: details Read More
+
 The code is hosted at <a href="https://github.com/pupil-labs/dynamic-rim-module">https://github.com/pupil-labs/dynamic-rim-module</a>.
 
 Navigate to `src/pupil_labs/dynamic_content_on_rim/`. You will first notice that we split the code into several modules. The core functionality is in the script `dynamic_rim.py`. Under the uitools folder, you will find the code used to ask for paths, directories or even to ask for the screen corners. And under the video/read folder is the script to read the timestamps or find a frame for specific timestamps.
@@ -169,9 +165,7 @@ def prepare_image()
 ```
 
 With the frame withdrawn in the previous function and converted to an image, the gaze will be plotted on top, it will be resized if needed, and the screen patch will be drawn. The different steps to be performed will depend on the source of the frame.
-
-</details>
-<!-- empty line   -->
+:::
 
 ## Screen Recording
 
@@ -187,7 +181,6 @@ You can use any software of your choice to record your screen, but if you do not
 4. Configure your settings and click start recording on the bottom right.
 
 ::: tip
-**Tip:**
 It is at this moment that you should create the annotation in your eye tracking recording (but don’t worry, you can create it later in the Cloud, just be sure the eye tracking is facing the button, so you have a visual reference for later.)
 :::
 
@@ -197,10 +190,8 @@ It is at this moment that you should create the annotation in your eye tracking 
 
 If you want to start your screen and eye tracking recordings automatically (no visual reference required) using network event annotations, we've got you covered!
 
-<details>
-<summary>Click here to learn about recording your screen like a pro</summary>
-<!-- This is collapsed   -->
-<br>
+:::: details Click Here To Learn About Recording Your Screen Like a Pro
+
 Assuming you have <b>OBS</b> installed and correctly set up, you will need to install the <a href="https://github.com/obsproject/obs-websocket"><b>OBS WebSocket plugin</b></a>.
 <br>
 Follow the installer's instructions, and click on "Tools > obs-websocket Settings" when finished. A pop-up will appear and let you modify the settings. There are two parameters we will need for later, the port and the password.
@@ -220,11 +211,15 @@ Go to lines **76 & 77** and modify them according to the parameters we had in th
 **Do not use 8080!** Pupil Invisible uses this one for the real-time API.
 :::
 
+
 - **L77:** Password -> Obvious, isn't it?
 
 Once everything is set, you only have to run _recording.py_.
 
 This will automatically connect to Pupil Invisible, launch OBS in your system, wait (5s) for it to be fully open, and then send a signal to start recording in OBS along with a "start.video" annotation to your Pupil Invisible.
 
-</details>
-<!-- empty line   -->
+::::
+
+::: info
+If you need assistance in implementing this guide, reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for dedicated support options.
+:::

@@ -168,3 +168,7 @@ consider placing some strategic items within the environment to increase the cha
 Once the enrichments are completed, you can view the heatmaps which illustrate areas which attracted more gaze. Additionally, you'll have the option to download gaze and fixation data mapped within the bounds of the pictures, enabling you to conduct further in-depth analyses.
 
 <ImageGrid cols="3" :images="$frontmatter.refHeatmapImages" />
+
+::: info
+If you need assistance in running the Reference Image Mapper, reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for dedicated support options.
+:::

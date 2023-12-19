@@ -85,7 +85,7 @@ cards:
         text: View,
         href: "/alpha-lab/blink-detection/#detecting-eye-blinks-using-pupil-labs-blink-detection-pipeline",
       }
-    image: "/alpha-lab/eye_blink.webp"
+    image: "/alpha-lab/blink.webp"
   - title: Build an AI Vision Assistant
     details: Experiment with assistive scene understanding applications using GPT-4V (an extension of GPT4 that can interpret images) and Pupil Labs eye tracking.
     link:

@@ -52,7 +52,7 @@ We used the [real-time API](https://docs.pupil-labs.com/neon/real-time-api/intro
 
 To try this demo, you'll need a Neon or Pupil Invisible eye tracker, a computer with internet access, and an OpenAI key that has access to the latest GPT-4V model. 
 
-::: tip
+::: tip TIP
 [Don’t have access to `gpt-4-vision-preview model`?](https://help.openai.com/en/articles/7102672-how-can-i-access-gpt-4) You may have to spend 1$ on their APIs to get access to this model.
 :::
 
@@ -70,6 +70,6 @@ The nature of the AI assistant's response will depend on the selected model. We 
 
 In this initial exploration, GPT-4V was generally good at identifying what was being gazed at or trying to predict the wearer's intentions. However, it wasn't fast enough to detect immediate dangers due to network latency. The great thing about GPT-4V is that you can modify the prompts to suit your specific needs. Rapid advancements in the field suggest that we might soon see these types of models operating [locally](https://android-developers.googleblog.com/2023/12/a-new-foundation-for-ai-on-android.html) and with virtually no latency. How useful could this be? We would love to hear your feedback!
 
-::: tip
+::: info
 Need assistance implementing a real-time API based application? Reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for formal support options.
 :::
