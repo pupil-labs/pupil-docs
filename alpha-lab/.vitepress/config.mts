@@ -98,6 +98,7 @@ export default defineConfig({
       tipLabel: ' ',
       warningLabel: ' ',
       dangerLabel: ' ',
+      infoLabel: ' ',
     }
   }
 });
