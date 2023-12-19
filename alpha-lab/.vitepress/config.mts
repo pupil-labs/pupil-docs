@@ -26,6 +26,7 @@ let theme_config_additions = {
     {
       text: "Real-Time Applications",
       items: [
+        { text: "Real-Time Eye Blinks With Neon", link: "/blink-detection/" },
         {
           text: "Gaze-Contingent Assistive Applications",
           link: "/gaze-contingency-assistive/",

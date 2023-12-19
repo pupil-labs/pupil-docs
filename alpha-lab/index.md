@@ -78,6 +78,14 @@ cards:
         href: "/alpha-lab/gaze-contingency-assistive/#a-practical-guide-to-implementing-gaze-contingency-for-assistive-technology",
       }
     image: "/alpha-lab/build-gaze-assistive-neon.webp"
+  - title: Detect Eye Blinks With Neon
+    details: Apply Pupil Labs blink detection algorithm to Neon recordings programmatically, offline or in real-time using Pupil Labs real-time Python API.
+    link:
+      {
+        text: View,
+        href: "/alpha-lab/blink-detection/#detecting-eye-blinks-using-pupil-labs-blink-detection-pipeline",
+      }
+    image: "/alpha-lab/eye_blink.webp"
   - title: Build an AI Vision Assistant
     details: Experiment with assistive scene understanding applications using GPT-4V (an extension of GPT4 that can interpret images) and Pupil Labs eye tracking.
     link:
