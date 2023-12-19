@@ -44,7 +44,7 @@ Here, we show you how to build a simple, explorative, gaze-based assistive tool 
 ## What Tools Enable This
 
 OpenAI recently unveiled a set of new APIs at their [DevDay event,](https://openai.com/blog/new-models-and-developer-products-announced-at-devday) introducing GPT-4V, an extension of their most advanced large language model capable of [understanding images](https://platform.openai.com/docs/guides/vision). 
-We got access to the preview and decided to see what is capable of when integrated with our eye trackers. We used Neon and Pupil Invisible because they remove the barrier of calibration, making them more suitable for real-life applications, longer recording sessions, and thus use alongside GPT-4V for experimenting with assistive applications.
+We gained access to the preview and decided to see what their model is capable of when integrated with our eye trackers. We used Neon and Pupil Invisible since they remove the barrier of calibration, making them more suitable for longer sessions and real-life scenarios and, therefore, in a good position to experiment with assistive applications.
 
 We used the [real-time API](https://docs.pupil-labs.com/neon/real-time-api/introduction/) to stream scene camera video and gaze positions over the network. We grab a frame from the real-time stream and send it to GPT4-V for processing. We get back text that can be used to inform the wearer about what they were looking at or whatever we wanted to ask about the scene.
 
@@ -68,7 +68,7 @@ The nature of the AI assistant's response will depend on the selected model. We 
 3. `D`: a guess about your intentions.
 4. `F`: a more detailed description of the environment. 
 
-In this early exploration, we found that GPT-4V is generally good at detecting what is being gazed at or trying to guess the intention of the wearer. But not fast or accurate enough to detect immediate dangers. There was some network latency, but generally, it worked quite well. You can modify the prompt in the code to tailor it to your specific needs. We ultimately can’t say just how useful this will be for assistive users. For that, we need your feedback!
+In this initial exploration, GPT-4V was generally good at identifying what was being gazed at or trying to predict the wearer's intentions. However, it wasn't fast enough to detect immediate dangers due to network latency. The great thing about GPT-4V is that you can modify the prompts to suit your specific needs. Rapid advancements in the field suggest that we might soon see these types of models operating [locally](https://android-developers.googleblog.com/2023/12/a-new-foundation-for-ai-on-android.html) and with virtually no latency. How useful could this be? We would love to hear your feedback!
 
 ::: tip
 Need assistance implementing a real-time API based application? Reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for formal support options.
