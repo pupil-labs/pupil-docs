@@ -92,4 +92,11 @@ export default defineConfig({
   ...default_config,
   ...config_additions,
   themeConfig: theme_config,
+  markdown:{
+    container:{
+      tipLabel: ' ',
+      warningLabel: ' ',
+      dangerLabel: ' ',
+    }
+  }
 });
