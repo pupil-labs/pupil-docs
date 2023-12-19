@@ -26,7 +26,7 @@ import TagLinks from '@components/TagLinks.vue'
 import ImageGrid from '@components/ImageGrid.vue'
 </script>
 
-# Map and Visualize Gaze on Multiple Reference Images Taken From the Same Environment
+# Map Gaze Throughout an Entire Room
 
 <TagLinks :tags="$frontmatter.tags" />
 
@@ -169,6 +169,6 @@ Once the enrichments are completed, you can view the heatmaps which illustrate a
 
 <ImageGrid cols="3" :images="$frontmatter.refHeatmapImages" />
 
-::: info
+::: tip
 If you need assistance in running the Reference Image Mapper, reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for dedicated support options.
 :::

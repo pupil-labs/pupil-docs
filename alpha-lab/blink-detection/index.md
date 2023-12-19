@@ -13,11 +13,11 @@ import TagLinks from '@components/TagLinks.vue'
 
 <TagLinks :tags="$frontmatter.tags" />
 
-<img src="./blink_banner.webp" alt="Eye blink animation" style="display: block; margin-left: auto; margin-right: auto; width:100%;">
+<img src="./eye_blinks_anim.webp" alt="Eye blink animation" style="display: block; margin-left: auto; margin-right: auto; width:100%;">
 
 ## Blinks: Artifacts and Information
 
-<img src="./eye_blink.webp" alt="Image of an eye blinking" style="float: left; margin-right: 30px; margin-bottom: 30px; width: 30%;">
+<!-- <img src="./eye_blink.webp" alt="Image of an eye blinking" style="float: left; margin-right: 30px; margin-bottom: 30px; width: 30%;"> -->
 
 The accurate detection of blinks serves a vital role in many eye tracking applications. Its importance is twofold: firstly, it helps identify time periods affected by blink-related artifacts, and secondly, blink statistics can serve as relevant physiological, cognitive, and clinical parameters. Blink detection can even be utilized in order to control external devices, for example by detecting a sequence of blinks made in quick succession.
 
@@ -69,6 +69,6 @@ In the last section of the [notebook](https://github.com/pupil-labs/real-time-bl
 
 <img src="./eye_blinks_toggle_recording.webp" alt="Toggling a recording on/off with blinks" style="display: block; margin-left: auto; margin-right: auto;">
 
-::: info
+::: tip
 If you need assistance in implementing or building your own application, reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for dedicated support options.
 :::

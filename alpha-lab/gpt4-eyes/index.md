@@ -21,7 +21,7 @@ tags: [Pupil Invisible, Neon]
 import TagLinks from '@components/TagLinks.vue'
 </script>
 
-# Assistive Scene Understanding With GPT-4V
+# Build an AI Vision Assistant
 
 <TagLinks :tags="$frontmatter.tags" />
 
@@ -70,6 +70,6 @@ The nature of the AI assistant's response will depend on the selected model. We 
 
 In this initial exploration, GPT-4V was generally good at identifying what was being gazed at or trying to predict the wearer's intentions. However, it wasn't fast enough to detect immediate dangers due to network latency. The great thing about GPT-4V is that you can modify the prompts to suit your specific needs. Rapid advancements in the field suggest that we might soon see these types of models operating [locally](https://android-developers.googleblog.com/2023/12/a-new-foundation-for-ai-on-android.html) and with virtually no latency. How useful could this be? We would love to hear your feedback!
 
-::: info
+::: tip
 Need assistance implementing a real-time API based application? Reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for formal support options.
 :::

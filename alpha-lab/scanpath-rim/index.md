@@ -4,7 +4,7 @@ permalink: /alpha-lab/scanpath-rim/
 tags: [Pupil Invisible, Neon, Cloud]
 ---
 
-# Generate Static and Dynamic Scanpaths With Reference Image Mapper
+# Generate Scanpath Visualisations
 
 <TagLinks />
 
@@ -64,7 +64,7 @@ gaze behavior.
     </div>
 </div>
 
-::: info
+::: tip
 If you need assistance in using this application, reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for dedicated support options.
 :::
 

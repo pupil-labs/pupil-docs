@@ -8,7 +8,7 @@ tags: [Pupil Invisible, Neon, Cloud]
 import TagLinks from '@components/TagLinks.vue'
 </script>
 
-# Map and Visualise Gaze Onto a Display Content Using the Reference Image Mapper
+# Map Gaze Onto Dynamic Screen Content
 
 <TagLinks :tags="$frontmatter.tags" />
 
@@ -220,6 +220,6 @@ This will automatically connect to Pupil Invisible, launch OBS in your system, w
 
 ::::
 
-::: info
+::: tip
 If you need assistance in implementing this guide, reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for dedicated support options.
 :::

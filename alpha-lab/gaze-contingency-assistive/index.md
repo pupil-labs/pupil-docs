@@ -22,7 +22,7 @@ tags: [Neon]
 import TagLinks from '@components/TagLinks.vue'
 </script>
 
-# A Practical Guide to Implementing Gaze Contingency for Assistive Technology
+# Build Gaze-Contingent Assistive Applications
 
 <TagLinks :tags="$frontmatter.tags" />
 
@@ -88,6 +88,6 @@ possibilities for navigation, typing on a virtual keyboard, and much more.
 
 Dig in and hack away. The potential is boundless. Let us know what you build!
 
-::: info
+::: tip
 Need assistance in implementing your gaze-contingent task? Reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com) or on our [Discord server](https://pupil-labs.com/chat/) or visit our [Support Page](https://pupil-labs.com/products/support/) for dedicated support options.
 :::
