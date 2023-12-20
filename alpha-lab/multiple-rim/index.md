@@ -1,5 +1,5 @@
 ---
-description: A living space - working with multiple reference images
+description: A Living Space – Working With Multiple Reference Images
 tags: [Pupil Invisible, Neon, Cloud]
 refImages:
   [
@@ -26,7 +26,7 @@ import TagLinks from '@components/TagLinks.vue'
 import ImageGrid from '@components/ImageGrid.vue'
 </script>
 
-# Map and visualize gaze on multiple reference images taken from the same environment
+# Map Gaze Throughout an Entire Room
 
 <TagLinks :tags="$frontmatter.tags" />
 
@@ -36,7 +36,7 @@ import ImageGrid from '@components/ImageGrid.vue'
 Level-up your Reference Image Mapper workflow to extract insights from participants freely exploring their environment!
 :::
 
-## Exploring gaze patterns in multiple regions of an environment
+## Exploring Gaze Patterns in Multiple Regions of an Environment
 
 Understanding where people focus their gaze while exploring their environment is a topic of interest for researchers in
 diverse fields, ranging from Art and Architecture to Zoology. The [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/)
@@ -51,7 +51,7 @@ Before continuing, ensure you are familiar with the [Reference Image Mapper](htt
 Check out [this explainer video](https://www.youtube.com/watch?v=ygqzQEzUIS4&t=56s) for reference.
 :::
 
-## The tools at hand
+## The Tools at Hand
 
 The [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/) enables mapping of gaze onto a
 _single_ reference image of an environment. However, there is often a need to analyze _multiple_ regions for a more in-depth
@@ -161,10 +161,14 @@ consider placing some strategic items within the environment to increase the cha
    - Kitchen: `kitchen.begin` and `kitchen.end`
    - Cupboard: `cupboard.begin` and `cupboard.end`
 
-5. **Create and run the enrichments:** You will need to create a separate enrichment for each reference image. A reasonable naming scheme _could_ correspond to each area of the environment, like ‘cupboard’, ‘desk’ etc. In the temporal selection of each enrichment, be sure to use the appropriate events labels. E.g. for ‘cupboard’, you would use `cupboard.begin` and `cupboard.end`. Now, run the enrichments to map the subject's gaze from the recording onto the multiple reference images you captured.
+5. **Create and Run the Enrichments:** You will need to create a separate enrichment for each reference image. A reasonable naming scheme _could_ correspond to each area of the environment, like ‘cupboard’, ‘desk’ etc. In the temporal selection of each enrichment, be sure to use the appropriate events labels. E.g. for ‘cupboard’, you would use `cupboard.begin` and `cupboard.end`. Now, run the enrichments to map the subject's gaze from the recording onto the multiple reference images you captured.
 
-## Final results
+## Final Results
 
 Once the enrichments are completed, you can view the heatmaps which illustrate areas which attracted more gaze. Additionally, you'll have the option to download gaze and fixation data mapped within the bounds of the pictures, enabling you to conduct further in-depth analyses.
 
 <ImageGrid cols="3" :images="$frontmatter.refHeatmapImages" />
+
+::: tip
+If you need assistance in running the Reference Image Mapper, reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for dedicated support options.
+:::

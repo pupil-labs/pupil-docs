@@ -9,28 +9,37 @@ let theme_config_additions = {
     {
       text: "Gaze Mapping",
       items: [
-        { text: "Onto screen content", link: "/map-your-gaze-to-a-2d-screen/" },
-        { text: "Onto body parts", link: "/dense-pose/" },
-        { text: "Onto 3D models with NerfStudio", link: "/nerfs/" },
+        { text: "Map Gaze Onto Dynamic Screen Content", link: "/map-your-gaze-to-a-2d-screen/" },
+        { text: "Map Gaze Onto Body Parts", link: "/dense-pose/" },
+        { text: "Map Gaze Onto a 3D Model of an Environment", link: "/nerfs/" },
       ],
     },
     {
       text: "Reference Image Mapper",
       items: [
-        { text: "AOIs and Gaze Metrics", link: "/gaze-metrics-in-aois/" },
-        { text: "Mapping a whole Room", link: "/multiple-rim/" },
-        { text: "Scanpaths on Reference Images", link: "/scanpath-rim/" },
-        { text: "Gaze Behaviour on Phone Screens", link: "/phone-neon/" },
+        { text: "Define Areas of Interest and Gaze Metrics", link: "/gaze-metrics-in-aois/" },
+        { text: "Map Gaze Throughout an Entire Room", link: "/multiple-rim/" },
+        { text: "Generate Scanpath Visualisations", link: "/scanpath-rim/" },
+        { text: "Uncover Gaze Behaviour on Phones", link: "/phone-neon/" },
+      ],
+    },
+    {
+      text: "Real-Time Applications",
+      items: [
+        { text: "Detect Eye Blinks With Neon", link: "/blink-detection/" },
+        {
+          text: "Build Gaze-Contingent Assistive Applications",
+          link: "/gaze-contingency-assistive/",
+        },
+        {
+          text: "Build an AI Vision Assistant",
+          link: "/gpt4-eyes/",
+        }
       ],
     },
     {
       text: "Other",
       items: [
-        { text: "Real-Time Eye Blinks With Neon", link: "/blink-detection/" },
-        {
-          text: "Gaze-Contingent Assistive Applications",
-          link: "/gaze-contingency-assistive/",
-        },
         { text: "Undistort Video and Gaze Data", link: "/undistort/" },
         { text: "Use Neon with Pupil Capture", link: "/neon-with-capture/" },
       ],

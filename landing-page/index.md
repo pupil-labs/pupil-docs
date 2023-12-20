@@ -32,29 +32,29 @@ alpha:
   action:
     { text: View all articles, link: "/alpha-lab/" }
   cards:
-    - title: Define AOIs and Calculate Gaze Metrics
-      details: Here we demonstrate how to make areas of interest using data downloaded from Pupil Cloud’s Reference Image Mapper.
+    - title: Define Areas of Interest and Gaze Metrics
+      details: Define areas of interest and compute gaze metrics, such as dwell time and time to first fixation, with data downloaded from Pupil Cloud's Reference Image Mapper.
       link:
         {
           text: View,
           href: "/alpha-lab/gaze-metrics-in-aois/#define-aois-and-calculate-gaze-metrics",
         }
-    - title: Map and visualise gaze onto a display content using the Reference Image Mapper
-      details: Here we show you how you can use Pupil Cloud’s Reference Image Mapper to map gaze onto dynamic on-screen content - like a video.
+    - title: Map Gaze Onto Dynamic Screen
+      details: Map and visualise gaze onto a screen with dynamic content, e.g. a video, web browsing, or other, using Pupil Cloud's Reference Image Mapper and screen recording software.
       link:
         {
           text: View,
           href: "/alpha-lab/map-your-gaze-to-a-2d-screen/#map-and-visualise-gaze-onto-a-display-content-using-the-reference-image-mapper",
         }
-    - title: Map gaze onto body parts using DensePose
-      details: Use detectron's densepose AI to segment and know at which part of a body a person is looking.
+    - title: Map Gaze Onto Body Parts
+      details: Map gaze behaviour on body parts that appear in the scene video of Neon or Pupil Invisible eye tracking footage.
       link:
         {
           text: View,
           href: "/alpha-lab/dense-pose/#map-gaze-onto-body-parts-using-densepose",
         }
-    - title: Map and visualize gaze on multiple reference images taken from the same environment
-      details: We pushed the limits of markerless mapping with Pupil Cloud’s Reference Image Mapper - scanning an entire apartment.
+    - title: Map Gaze Throughout an Entire Room
+      details: Use Pupil Cloud's Reference Image Mapper to Map gaze onto multiple areas of an entire room as participants freely navigate around it.
       link:
         {
           text: View,

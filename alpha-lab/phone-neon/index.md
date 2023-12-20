@@ -28,7 +28,9 @@ import TagLinks from '@components/TagLinks.vue'
 
 <Youtube src="gp5O1uskDME"/>
 
+::: tip
 What catches your attention and how do you visually navigate through the interface of a mobile app? In this article, we use Neon, our wearable eye tracker, and all the other tools you need to address these questions. 
+:::
 
 ## Gaze Behaviour During Mobile App Engagement
 
@@ -97,7 +99,7 @@ Another very useful facet of this tool is its ability to generate a CSV file wit
 
 In this article, we assessed whether Neon is capable of characterizing viewing behaviour on mobile apps. The techniques outlined in this tutorial are not confined to our specific application; they hold significant value for various UI/UX and neuromarketing research endeavours. By integrating Neon with the methodologies discussed here, researchers can acquire invaluable insights into user engagement.
 
-:::tip
+::: tip
 Curious about how Neon can fit into your work? Need assistance in implementing your own analysis pipelines? Reach out to
 us [by email](mailto:info@pupil-labs.com) or visit our [Support Page](https://pupil-labs.com/products/support/)!
 :::
