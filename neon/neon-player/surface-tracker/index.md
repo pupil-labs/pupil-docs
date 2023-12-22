@@ -7,7 +7,7 @@ You can use this plugin to detect markers in the recording, define surfaces, edi
 
 ## Setup
 
-First of all you want to ensure that your recording contains AprilTag Markers, like the ones you would use with the [Marker Mapper](./../../pupil-cloud/enrichments/marker-mapper/#setup).
+Ensure that your recording contains AprilTag Markers, like the ones you would use with the [Marker Mapper](./../../pupil-cloud/enrichments/marker-mapper/#setup).
 
 ## Workflow
 

@@ -5,25 +5,19 @@
 This plugin uses fiducial markers ([apriltag](https://april.eecs.umich.edu/software/apriltag.html)) to build a 3d model of the environment and track the headset's pose within it. Note, only markers of the default `tag36h11` family are currently 
 supported by the head pose tracker plugin.
 
-::: tip
-The markers used must be unique and of the same size. You may not use multiple instances of the same marker ID within your environment.
+::: warning
+The markers used must be **unique and of the same size**. You may **not** use multiple instances of the same marker ID within your environment.
 :::
 
 <Youtube src="9x9h98tywFI"/>
 
-Head pose tracking works best in a well lit environment with an even distribution of light, so that the tracking markers 
-are clearly visible. Try to avoid situations where the world-camera faces into bright light, such as sunlight entering 
-through a window in an otherwise dim room.
+Head pose tracking works best in a well lit environment with an even distribution of light, so that the tracking markers are clearly visible. Try to avoid situations where the world-camera faces into bright light, such as sunlight entering through a window in an otherwise dim room.
 
-By default, the location of the first visible marker will be used as the origin of the 3d model's coordinate system. In 
-the plugin's menu, you can change the marker that is being used as the origin. The unit of the coordinate system is 
-defined as the physical length of the tracking markers.
+By default, the location of the first visible marker will be used as the origin of the 3d model's coordinate system. In the plugin's menu, you can change the marker that is being used as the origin. The unit of the coordinate system is defined as the physical length of the tracking markers.
 
 Results are exported in the following files:
-- `head_pose_tracker_model.csv`: A list of all markers used to generate the 3d model and the 3d locations of the marker 
-  vertices.
-- `head_pose_tracker_poses.csv`: The world camera's pose within the 3d model coordinate system for each recorded world 
-  frame with the following columns:
+- `head_pose_tracker_model.csv`: A list of all markers used to generate the 3d model and the 3d locations of the marker vertices.
+- `head_pose_tracker_poses.csv`: The world camera's pose within the 3d model coordinate system for each recorded world frame with the following columns:
   
 | Key                 | Description                                                                            |
 |:--------------------|:---------------------------------------------------------------------------------------|

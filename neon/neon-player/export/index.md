@@ -24,7 +24,7 @@ Completed tasks are kept in the list for reference.
 ## World Video Exporter
 The `World Video Exporter` is loaded by default.
 
-![Export](./export.jpg)
+![Export](./np-export.webp)
 
 The export saves the world video as shown in Player, including all currently active visualizations (see  [Visualization Plugins](/neon-player/visualization-plugins/)). 
 
@@ -47,7 +47,7 @@ Specifically, it undistorts the world video images using the camera intrinsics. 
 ## Raw Data Exporter
 The `Raw Data Exporter` exports pupil and gaze data to `.csv` files and is active by default.
 
-![Raw export](./raw-export.jpg)
+![Raw export](./np-raw-export.webp)
 
 
 NOT RELEVANT, NEEDS TO BE REMOVED
@@ -125,7 +125,7 @@ This plugin loads any annotations generated during the recording, as well as all
 effect. With the Pupil Player interface, you can assign hotkeys to your annotations to ensure efficient labelling 
 of important events in your recordings.
 
-![Annotations](./pp-annotation.jpg)
+![Annotations](./np-annotation.webp)
 
 On export, the annotation plugin writes the annotation data to `annotations.csv`. It includes at least the
 following keys:

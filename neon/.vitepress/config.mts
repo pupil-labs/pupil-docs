@@ -1,8 +1,7 @@
 import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vitepress";
 
-import { config as default_config } from "./../../default_config.mts";
-import { theme_config as default_theme_config } from "./../../default_config.mts";
+import { config as default_config, theme_config as default_theme_config } from "./../../default_config.mts";
 
 let theme_config_additions = {
   // https://vitepress.dev/reference/default-theme-config
@@ -219,6 +218,10 @@ let theme_config_additions = {
             text: "IMU Timeline",
             link: "/neon-player/imu-timeline/",
           },
+          {
+            text: "Gaze Offset Correction",
+            link: "/neon-player/gaze-offset-correction/"
+          }, 
           {
             text: "Plugin API",
             link: "/neon-player/plugin-api/",

@@ -2,7 +2,7 @@
 <!-- TODO: Needs revisit -->
 This plugin visualizes accelerometer and gyroscope data from Neon recordings along with Euler angles (pitch, yaw and roll).
 
-![IMU](./pp-imu.jpg)
+![IMU](./np-imu.webp)
 
 Why fuse the data? Numerical integration of angular rate is subject to position errors that grow with time. Accurate estimates of orientation therefore require drift correction. Madgwick's algorithm removes orientation drift in the pitch and roll axes using accelerometer feedback to monitor position relative to gravity.
 
