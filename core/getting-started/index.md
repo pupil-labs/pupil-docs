@@ -13,7 +13,7 @@ Welcome to Pupil Core! The first thing you need to do is download the latest Pup
 <download-links
   src="https://api.github.com/repos/pupil-labs/pupil/releases/latest"
   text="Download Pupil Core Bundles"
-  icon="./../public/bundle-core.svg"
+  icon="/bundle-core.svg"
 />
 
 

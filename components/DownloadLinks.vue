@@ -87,6 +87,10 @@ export default {
   font-size: 24px;
   box-shadow: inset 0 0 0 2px #455a64;
 }
+.download-button:hover {
+  box-shadow: inset 0 0 0 3px #455a64;
+  font-weight: 530;
+}
 
 .button-icon {
   height: 30px;
