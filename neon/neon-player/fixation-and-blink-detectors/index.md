@@ -14,9 +14,11 @@ Toggle `Show fixations` to show a visualization of fixations. The blue number is
 You can also modify the appearance of the fixation. 
 
 ## Blink Detector
-Read more information about our blink detector [here](./../../data-collection/data-streams/#blinks). data format, text inc you can double check blinks detector 
+Read more information about our blink detector [here](./../../data-collection/data-streams/#blinks). 
 
 ![Blinks](./np-blinks.webp)
+
+You can see a graph on the bottom as a timeline of blinks, this will allow you to visualise.
 
 :::tip
 Want to compute blink rate or use this detector in realtime? Have a look at [Detect Eye Blinks With Neon]

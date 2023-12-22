@@ -5,7 +5,7 @@
 This plugin uses fiducial markers ([apriltag](https://april.eecs.umich.edu/software/apriltag.html)) to build a 3d model of the environment and track the headset's pose within it. Note, only markers of the default `tag36h11` family are currently 
 supported by the head pose tracker plugin.
 
-::: warning
+::: info
 The markers used must be **unique and of the same size**. You may **not** use multiple instances of the same marker ID within your environment.
 :::
 

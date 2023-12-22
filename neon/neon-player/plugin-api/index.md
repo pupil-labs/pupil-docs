@@ -1,18 +1,11 @@
 # Plugin API
 
-TODO: Do we want to link to pupil-community?
+Plugins are distributed as Python files that are loaded and executed at runtime. To be recognized as such, they need to be installed in the [correct place](#adding-a-plugin) and implement the [Plugin API](#development).
 
-Plugins are distributed as Python files that are loaded and executed at
-runtime. To be recognized as such, they need to be installed in the [correct place](#adding-a-plugin)
-and implement the [Plugin API](#development).
-
-The usage of plugins has multiple advantages. For the user, they make it
-easy to turn features on and off as required. For the developer, it increases maintainability
-through separation.
+The usage of plugins has multiple advantages. For the user, they make it easy to turn features on and off as required. For the developer, it increases maintainability through separation.
 
 Plugins can also be loaded at runtime, extending Pupil's functionality by sharing a
-simple Python file. See our [pupil-community](https://github.com/pupil-labs/pupil-community#plugins)
-repository for a list of third-party plugins. See below [on how to add them](#adding-a-plugin).
+simple Python file. See below [on how to add them](#adding-a-plugin).
 
 ## Adding A Plugin
 
@@ -34,7 +27,7 @@ installed into the `plugins` folder, next to the plugin.
 For the plugin development process, we recommend to [run from source](https://github.com/pupil-labs/neon-player).
 
 ### Language
-Neon Player is written in `Python 3.6`, but no "heavy lifting" is done in Python. High performance computer vision, media compression, display libraries, and custom functions are written in external libraries or c/c++ and accessed though [cython](http://cython.org/). Python plays the role of "glue" that sticks all the pieces together.
+Neon Player is written in `Python 3.11`, but no "heavy lifting" is done in Python. High performance computer vision, media compression, display libraries, and custom functions are written in external libraries or c/c++ and accessed though [cython](http://cython.org/). Python plays the role of "glue" that sticks all the pieces together.
 
 We also like writing code in Python because it's *quick and easy* to move from initial idea to working proof-of-concept. If proof-of-concept code is slow, optimization and performance enhancement can happen in iterations of code.
 
@@ -94,12 +87,12 @@ three categories: Startup/cleanup, processing, and UI interactions.
 
 Callbacks of this kind are only called once in the life cycle of a plugin.
 
-| Callback                           | Description                                                                                                                                                                                                                                                                                                                         |
-|------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `__init__(self, g_pool, **kwargs)` | Called when a plugin instance is started. `g_pool` provides access to the application. Calling `super().__init__(g_pool)` is strongly recommended. `kwargs` can be used for user preferences. See example below.                                                                                                                    |
-| `init_ui(self)`                    | Called after `__init__` if the calling process provides a user interface. Allows the plugin to setup its settings menu, quick access buttons, etc.                                                                                                                                                                                  |
-| `cleanup(self)`                    | Called when `Plugin.alive` is set to `True`, i.e. on application shutdown or if the plugin is being disabled                                                                                                                                                                                                                        |
-| `deinit_ui(self)`                  | Called before `cleanup` and the calling process provides a user interface. The plugin is responsible for removing any UI elements added in `init_ui`.                                                                                                                                                                               |
+| Callback | Description |
+|----------| ---------- |
+| `__init__(self, g_pool, **kwargs)` | Called when a plugin instance is started. `g_pool` provides access to the application. Calling `super().__init__(g_pool)` is strongly recommended. `kwargs` can be used for user preferences. See example below. |
+| `init_ui(self)`                    | Called after `__init__` if the calling process provides a user interface. Allows the plugin to setup its settings menu, quick access buttons, etc. |
+| `cleanup(self)`                    | Called when `Plugin.alive` is set to `True`, i.e. on application shutdown or if the plugin is being disabled |
+| `deinit_ui(self)`                  | Called before `cleanup` and the calling process provides a user interface. The plugin is responsible for removing any UI elements added in `init_ui`. |
 | `get_init_dict(self)`              | Called on each active plugin instance on application shutdown. Returns a dictionary which is stored in the application's persistent session settings. On the next application launch, all previously active plugins will be restored by calling `__init__` and passing the dictionary as the `kwargs` arguments. See example below. |
 
 A typical use case of the session settings is to persistently store plugin parameters,
@@ -136,10 +129,10 @@ data in each iteration, the so called "application event cycle". Data is fetched
 generated, or processed by calling the plugin processing callbacks below in increasing
 `Plugin.order`. 
 
-| Callback                        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-|---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Callback | Description |
+|----------|-------------|
 | `recent_events(self, events)`   | Called once per application event cycle. `events` is a dictionary with string-keys and built-in python typed values, e.g. lists, dicts, etc. Plugins can add new entries to propagate data to plugins with higher `order`. |
-| `gl_display(self)`              | Called once per application event cycle if the calling process has a user interface. Plugins should implement any custom OpenGL visualizations here.                                                                                                                                                                                                                                                                                                 |                                                                                                                                                                                                                                                                                                                                                   |
+| `gl_display(self)`              | Called once per application event cycle if the calling process has a user interface. Plugins should implement any custom OpenGL visualizations here. |
 
 Custom data example:
 ```python
@@ -160,20 +153,20 @@ class CustomDataExample(Plugin):
         events[CUSTOM_TOPIC] = [custom_datum]
 ```
 
-| UI interaction callbacks                    | Description                                                                                                                                                                                                                                                                               |
-|---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `on_click(self, pos, button, action)`       | Gets called when the user clicks in the window screen and the event has not been consumed by the GUI. Return `True` if the event was consumed and should not be propagated to any other plugin.                                                                                           |
-| `on_pos(self, pos)`                         | Gets called when the user moves the mouse in the window screen.                                                                                                                                                                                                                           |
-| `on_key(self, key, scancode, action, mods)` | Gets called on key events that were not consumed by the GUI.  Return `True` if the event was consumed and should not be propagated to any other plugin.  See [the GLFW documentation](http://www.glfw.org/docs/latest/input_guide.html#input_key) for more information on key events.       |
-| `on_char(self, character)`                  | Gets called on char events that were not consumed by the GUI.          Return True if the event was consumed and should not be propagated         to any other plugin.          See [the GLFW documentation](http://www.glfw.org/docs/latest/input_guide.html#input_char) for         more information on char events. |
-| `on_drop(self, paths)`                      | Gets called on dropped paths of files and/or directories on the window.          Return True if the event was consumed and should not be propagated         to any other plugin.          See [the GLFW documentation](http://www.glfw.org/docs/latest/input_guide.html#path_drop) for         more information on path drop events.    |
-| `on_window_resize(self, window, w, h)`      | Gets called when user resizes window                                                                                                                                                                                                                                                      |
+| UI interaction callbacks | Description |
+|--------------------------|-------------|
+| `on_click(self, pos, button, action)` | Gets called when the user clicks in the window screen and the event has not been consumed by the GUI. Return `True` if the event was consumed and should not be propagated to any other plugin. |
+| `on_pos(self, pos)` | Gets called when the user moves the mouse in the window screen. |
+| `on_key(self, key, scancode, action, mods)` | Gets called on key events that were not consumed by the GUI.  Return `True` if the event was consumed and should not be propagated to any other plugin.  See [the GLFW documentation](http://www.glfw.org/docs/latest/input_guide.html#input_key) for more information on key events. |
+| `on_char(self, character)` | Gets called on char events that were not consumed by the GUI.          Return True if the event was consumed and should not be propagated         to any other plugin.          See [the GLFW documentation](http://www.glfw.org/docs/latest/input_guide.html#input_char) for more information on char events. |
+| `on_drop(self, paths)`  | Gets called on dropped paths of files and/or directories on the window. Return True if the event was consumed and should not be propagated         to any other plugin. See [the GLFW documentation](http://www.glfw.org/docs/latest/input_guide.html#path_drop) for more information on path drop events.    |
+| `on_window_resize(self, window, w, h)` | Gets called when user resizes window |
 
 ### Plugin utility methods
 
 In addition to the callbacks, the plugin implements a series of useful functions to
 interact with the application.
-| Utility methods                 | Description                                                                                     |
-|---------------------------------|-------------------------------------------------------------------------------------------------|
-| `self.add_menu()`               | Creates a settings menu. Typically called within  `self.init_ui()`.                             |
-| `self.remove_menu()`            | Removes `self.menu`. Typically called within `self.deinit_ui()`                                 |
+| Utility methods | Description |
+|-----------------|-------------|
+| `self.add_menu()` | Creates a settings menu. Typically called within  `self.init_ui()`. |
+| `self.remove_menu()` | Removes `self.menu`. Typically called within `self.deinit_ui()` |
