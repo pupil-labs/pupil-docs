@@ -8,7 +8,7 @@ hero:
 
 products:
   - title: Neon
-    details: Neon is our most powerful eye tracker. It features research-grade gaze and pupil diameter estimation, industry-leading robustness in real-world applications, and a pleasent calibration-free user experience.
+    details: Neon is our most powerful eye tracker. It features research-grade gaze and pupil diameter estimation, industry-leading robustness in real-world applications, and a pleasant calibration-free user experience.
     image: "/neon-doc.webp"
     link:
       { text: "Enter Documentation", href: "/neon/" }
