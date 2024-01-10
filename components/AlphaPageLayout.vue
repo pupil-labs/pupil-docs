@@ -61,7 +61,7 @@ const cards = computed(() => alphaCards.slice().reverse());
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
       >
         <CardLink
-          v-for="(product, index) in cards.reverse()"
+          v-for="(product, index) in cards"
           :key="index"
           :product="product"
         />
