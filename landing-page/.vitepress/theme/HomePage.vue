@@ -1,21 +1,31 @@
 <script setup lang="ts">
-  import CardLink from "@components/cards/CardLink.vue";
-  import Footer from "@components/Footer.vue";
+import CardLink from "@components/cards/CardLink.vue";
+import Footer from "@components/Footer.vue";
 
-  import { useData } from "vitepress";
-  const { frontmatter } = useData();
+import { computed } from "vue";
+import alphaCards from "./../../../alpha-lab/cards.json";
 
-  type FrontMatter = typeof frontmatter;
+import { useData } from "vitepress";
+const { frontmatter } = useData();
 
-  interface FM extends FrontMatter {
-    hero?: {
-      title?: string;
-      text?: string;
-      tagline?: string;
-    };
-  }
+type FrontMatter = typeof frontmatter;
 
-  const fm: FM = frontmatter;
+interface FM extends FrontMatter {
+  hero?: {
+    title?: string;
+    text?: string;
+    tagline?: string;
+  };
+}
+
+const fm: FM = frontmatter;
+const cards = computed(() => {
+  return alphaCards
+    .slice()
+    .reverse()
+    .slice(0, 4)
+    .map(({ image, ...rest }) => rest);
+});
 </script>
 
 <template>
@@ -80,7 +90,7 @@
         <div class="grid col-span-2">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <CardLink
-              v-for="(product, index) in fm.alpha.cards"
+              v-for="(product, index) in cards"
               :key="index"
               :product="product"
             />
