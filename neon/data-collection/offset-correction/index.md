@@ -4,5 +4,5 @@ For some wearers, you may find a constant offset in their gaze estimates. To com
 <Youtube src="7weK8UPLOzo" />
 
 ::: info
-You will only need to do this once for your wearers. Gaze offset correction information is contained in the wearer profile.
+Offset correction has to be performed only once per wearer. The offset value is saved in the wearer profile.
 :::
