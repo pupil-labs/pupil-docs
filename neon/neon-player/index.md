@@ -1,4 +1,5 @@
 # Neon Player
+
 Neon Player is a cross-platform desktop application for playing back and exporting Neon recordings offline.
 
 <script setup>
@@ -12,10 +13,18 @@ import DownloadLinks from '../../components/DownloadLinks.vue/'
 />
 
 ## Why Neon Player?
-There could be times when using Pupil Cloud is not an option (e.g. no internet conection), but you would like to still be able to visualize, explore and export your data in an easy way. Hence, **Neon Player**!
 
-## Load a Recording
-To load a recording into Neon Player, you first need to download or export it to your computer. This can be done in two ways:
+There could be times when using Pupil Cloud is not an option (e.g. no internet conection), but you may still need to visualize, explore and export your data in an easy way. Hence, Neon Player!
+
+## First steps
+
+After you download it from the button above and install it, if you have used Pupil Player you will find the interface quite familiar.
+
+A gray screen will welcome you indicating how to [load a recording](#loading-a-recording).
+
+## Loading a Recording
+
+To load a recording into Neon Player, you first need to download or export this recording it to your computer. This can be done in two ways:
 
 1. Directly transferring it from the Neon Companion Device. For detailed instructions on this method, refer to our [guide](/data-collection/transfer-recordings-via-usb/).
 2. Downloading it from the [Pupil Cloud](/pupil-cloud/). To do this, right-click on a recording in Pupil Cloud, select **Download**, and ensure you choose the **"Native Recording Data"** format. This option is distinct from the **"Time Series + Video"** format and becomes available only after activation in your workspace settings.
@@ -39,25 +48,26 @@ Recordings downloaded from [Pupil Cloud](./../pupil-cloud/) would be at 200Hz.
 1. **Hot keys**: This area contains clickable buttons for plugins.
 1. **Timeline Events**: Plugins can add temporal events to this expandable panel.
 1. **Timeline**: Control the playback of the video with the play/pause button (or spacebar on your keyboard). Drag the playhead (vertical line) to the desired point in time.
-    - **Trimming**: Drag either end of the timeline to set a trim beginning and ending trim marks. The trim section marks directly inform the section of video/data to export.
-    - **Frame Stepping**: You can use the arrow keys on your keyboard or the `<<` `>>` buttons to advance one frame at a time while the playback is paused.
-    - **Playback Speed**: To change the playback speed, use the arrow keys on your keyboard or the `<<` `>>` buttons during playback. There are 5 available playback speeds: `0.25x`, `0.5x`, `1x` (default), `2x`, `4x`.
+
+   - **Trimming**: Drag either end of the timeline to set a trim beginning and ending trim marks. The trim section marks directly inform the section of video/data to export.
+   - **Frame Stepping**: You can use the arrow keys on your keyboard or the `<<` `>>` buttons to advance one frame at a time while the playback is paused.
+   - **Playback Speed**: To change the playback speed, use the arrow keys on your keyboard or the `<<` `>>` buttons during playback. There are 5 available playback speeds: `0.25x`, `0.5x`, `1x` (default), `2x`, `4x`.
 
 1. **Menu**: This area contains settings and contextual information for each plugin.
 1. **Sidebar**: This area contains clickable buttons for each plugin. System plugins are loaded in the top and user added plugins are added below the horizontal separator.
 
 ### Keyboard Shortcuts
 
-| Keyboard Shortcut   | Description                                            |
-|:--------------------|:-------------------------------------------------------|
-| `<space>`           | Play and pause video                                   |
-| `<arrow left>`      | Step to previous frame\* / Decrease playback speed\*\* |
-| `<arrow right>`     | Step to next frame\* / Increase playback speed\*\*     |
-| `e`                 | Start export                                           |
-| `a`                 | Surface tracker: Add new surface                       |
-| `x`                 | Add annotation (default keyboard shortcut)             |
-| `f`                 | Fixation: Show next                                    |
-| `F`                 | Fixation: Show previous                                |
+| Keyboard Shortcut | Description                                            |
+| :---------------- | :----------------------------------------------------- |
+| `<space>`         | Play and pause video                                   |
+| `<arrow left>`    | Step to previous frame\* / Decrease playback speed\*\* |
+| `<arrow right>`   | Step to next frame\* / Increase playback speed\*\*     |
+| `e`               | Start export                                           |
+| `a`               | Surface tracker: Add new surface                       |
+| `x`               | Add annotation (default keyboard shortcut)             |
+| `f`               | Fixation: Show next                                    |
+| `F`               | Fixation: Show previous                                |
 
 \* While paused
 \*\* During playback
@@ -80,7 +90,8 @@ Neon Player will **never** remove or overwrite any of your raw data gathered dur
 :::
 
 ## Plugins
-Neon Player uses a plugin framework to add functionality. Visualizations, marker tracking, and the exporter are all implemented using this structure. 
+
+Neon Player uses a plugin framework to add functionality. Visualizations, marker tracking, and the exporter are all implemented using this structure.
 
 There are two general types of plugins:
 
