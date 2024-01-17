@@ -16,7 +16,7 @@ import DownloadLinks from '../../components/DownloadLinks.vue/'
 
 There could be times when using Pupil Cloud is not an option (e.g. no internet conection), but you may still need to visualize, explore and export your data in an easy way. Hence, Neon Player!
 
-## First steps
+## First Steps
 
 After you download it from the button above and install it, if you have used Pupil Player you will find the interface quite familiar.
 
@@ -24,7 +24,7 @@ A gray screen will welcome you indicating how to [load a recording](#loading-a-r
 
 ## Loading a Recording
 
-To load a recording into Neon Player, you first need to download or export this recording it to your computer. This can be done in two ways:
+To load a recording into Neon Player, you first need to download or export it to your computer. This can be done in two ways:
 
 1. Directly transferring it from the Neon Companion Device. For detailed instructions on this method, refer to our [guide](/data-collection/transfer-recordings-via-usb/).
 2. Downloading it from the [Pupil Cloud](/pupil-cloud/). To do this, right-click on a recording in Pupil Cloud, select **Download**, and ensure you choose the **"Native Recording Data"** format. This option is distinct from the **"Time Series + Video"** format and becomes available only after activation in your workspace settings.
@@ -35,7 +35,7 @@ Once you have the recording, simply drag the recording folder onto the Neon Play
 
 ::: info
 
-Recordings extracted from the phone do not contain [eye state](../data-collection/data-streams/#_3d-eye-states) or [pupillometry](../data-collection/data-streams/#pupil-diameters) yet and the sampling rate matches be the one chosen at the time of recording.
+Recordings extracted from the phone do not contain [eye state](../data-collection/data-streams/#_3d-eye-states) or [pupillometry](../data-collection/data-streams/#pupil-diameters) yet, and the sampling rate matches the one chosen at the time of recording.
 
 Recordings downloaded from [Pupil Cloud](./../pupil-cloud/) would be at 200Hz.
 :::
@@ -45,7 +45,7 @@ Recordings downloaded from [Pupil Cloud](./../pupil-cloud/) would be at 200Hz.
 ![Neon Player Callout](./pp-callout.jpg)
 
 1. **Graphs**: This area contains performance graphs. The graphs display `CPU` and `FPS` (Video playback speed).
-1. **Hot keys**: This area contains clickable buttons for plugins.
+1. **Hot Keys**: This area contains clickable buttons for plugins.
 1. **Timeline Events**: Plugins can add temporal events to this expandable panel.
 1. **Timeline**: Control the playback of the video with the play/pause button (or spacebar on your keyboard). Drag the playhead (vertical line) to the desired point in time.
 
@@ -83,10 +83,11 @@ Here is an example workflow:
 - Playback - press the play button or `space` bar on your keyboard to view the video playback with visualization overlay, or drag the playhead in the seek bar to scrub through the dataset.
 - Set trim marks - you can drag the green rounded rectangle at the beginning and end of the seekbar to set the trim marks. This will set the start and end frame for the exporter and for other plugins.
 - Export Video & Raw Data - From the `Plugin Manager` view, load the `World Video Exporter` plugin and the `Raw Data Exporter` plugin. Press `e` on your keyboard or the `download icon` button in the left hand side of the window to start the export.
-- Check out exported data in the `exports` directory within your recording directory
+- Check out exported data in the `exports` directory within your recording directory.
 
 ::: info
-Neon Player will **never** remove or overwrite any of your raw data gathered during capture, it will create a new folder `neon_player` which contains the Neon Player compatible files. All exports are isolated within a sub-directory named `exports`. Exports will never be overwritten.
+Neon Player will **never** remove or overwrite any of your raw data gathered during capture. Instead, it will create a new folder, `neon_player`, which contains the Neon Player compatible files.
+All exports are isolated within a sub-directory named `exports` and will never be overwritten.
 :::
 
 ## Plugins
