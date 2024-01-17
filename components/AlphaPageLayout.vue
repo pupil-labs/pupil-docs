@@ -1,28 +1,30 @@
 <script setup lang="ts">
-  import CardLink from "./cards/CardLink.vue";
-  import Footer from "./Footer.vue";
-  import RandomBanner from "./banner/RandomBanner.vue";
+import { useData } from "vitepress";
+import { computed } from "vue";
+import alphaCards from "./../alpha-lab/cards.json";
+import Footer from "./Footer.vue";
+import RandomBanner from "./banner/RandomBanner.vue";
+import CardLink from "./cards/CardLink.vue";
+const { frontmatter } = useData();
 
-  import { useData } from "vitepress";
-  const { frontmatter } = useData();
+type FrontMatter = typeof frontmatter;
 
-  type FrontMatter = typeof frontmatter;
+interface FM extends FrontMatter {
+  hero?: {
+    title?: string;
+    text?: string;
+    tagline?: string;
+  };
+}
 
-  interface FM extends FrontMatter {
-    hero?: {
-      title?: string;
-      text?: string;
-      tagline?: string;
-    };
-  }
-
-  const fm: FM = frontmatter;
+const fm: FM = frontmatter;
+const cards = computed(() => alphaCards.slice().reverse());
 </script>
 
 <style scoped>
-  .text-padding:not(:last-child) {
-    padding-bottom: 16px;
-  }
+.text-padding:not(:last-child) {
+  padding-bottom: 16px;
+}
 </style>
 
 <template>
@@ -55,11 +57,11 @@
     <hr style="border-color: var(--vp-c-divider)" />
     <div>
       <div
-        v-if="fm?.cards"
+        v-if="cards"
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
       >
         <CardLink
-          v-for="(product, index) in fm?.cards"
+          v-for="(product, index) in cards"
           :key="index"
           :product="product"
         />

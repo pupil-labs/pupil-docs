@@ -4,18 +4,20 @@
 
 Pupil Labs products are being used in various areas of academic research and hundreds of publications have been made with them. You can find a list containing most of the existing publications [here](https://pupil-labs.com/publications/).
 
-If you are using **Pupil Invisible** in your own research, please cite the following paper in your publications!
+If you are using **Neon** in your own research, please cite the following paper in your publications!
 
-[_A High-Level Description and Performance Evaluation of Pupil Invisible_ ](https://arxiv.org/pdf/2009.00508.pdf)
+[_Neon Accuracy Test Report_ ](https://doi.org/10.5281/zenodo.10420388)
 
 > BibTeX Style Citation
 
 ```
-@article{tonsen2020high,
-  title={A High-Level Description and Performance Evaluation of Pupil Invisible},
-  author={Tonsen, Marc and Baumann, Chris Kay and Dierkes, Kai},
-  journal={arXiv preprint arXiv:2009.00508},
-  year={2020}
+@article{baumann2023neon,
+	title        = {Neon Accuracy Test Report},
+	author       = {Baumann,  Chris and Dierkes,  Kai},
+	year         = 2023,
+	publisher    = {Pupil Labs},
+	doi          = {10.5281/ZENODO.10420388},
+	url          = {https://zenodo.org/doi/10.5281/zenodo.10420388}
 }
 ```
 

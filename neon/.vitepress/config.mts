@@ -140,6 +140,10 @@ let theme_config_additions = {
           },
         ],
       },
+      {
+        text: "Publications & Citation",
+        link: "/data-collection/publications-and-citation/",
+      },
       { text: "Troubleshooting", link: "/data-collection/troubleshooting/" },
     ],
     "/pupil-cloud/": [
