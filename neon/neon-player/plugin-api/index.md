@@ -5,7 +5,7 @@ Plugins are distributed as Python files that are loaded and executed at runtime.
 The usage of plugins has multiple advantages. For the user, they make it easy to turn features on and off as required. For the developer, it increases maintainability through separation.
 
 Plugins can also be loaded at runtime, extending Pupil's functionality by sharing a
-simple Python file. See below [on how to add them](#adding-a-plugin).
+simple Python file. See below on how to add them.
 
 ## Adding a Plugin
 
@@ -24,7 +24,7 @@ installed into the `plugins` folder, next to the plugin.
 
 ## Development
 
-For the plugin development process, we recommend to [run from source](https://github.com/pupil-labs/neon-player).
+For the plugin development process, we recommend to [run Neon Player from source](https://github.com/pupil-labs/neon-player).
 
 ### Language
 
@@ -48,7 +48,7 @@ class MyCustomPlugin(Plugin):
     pass
 ```
 
-Plugins are automatically listed in the Plugin Manager] unless they inherit from a set of special classes (`System_Plugin_Base`, `Base_Manager`, `Base_Source`, `CalibrationChoreographyPlugin`, `GazerBase`).
+Plugins are automatically listed in the Plugin Manager unless they inherit from a set of special classes (`System_Plugin_Base`, `Base_Manager`, `Base_Source`, `CalibrationChoreographyPlugin`, `GazerBase`).
 
 ### Plugin Class Attributes
 
@@ -127,7 +127,7 @@ values must be primitive Python types that can be encoded by [msgpack](https://m
 
 Neon Player launches several processes. Each is driven by an infinite loop that processes
 data in each iteration, the so called "application event cycle". Data is fetched,
-generated, or processed by calling the plugin processing callbacks below in increasing
+generated, or processed by calling the plugin processing callbacks below in increasing order as defined by
 `Plugin.order`.
 
 | Callback                      | Description                                                                                                                                                                                                                |

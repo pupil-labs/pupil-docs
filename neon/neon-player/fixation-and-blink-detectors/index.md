@@ -18,11 +18,11 @@ You can also modify the appearance of the fixation.
 
 ## Blink Detector
 
-Read more information about our blink detector [here](./../../data-collection/data-streams/#blinks).
+Read more about our blink detector [here](./../../data-collection/data-streams/#blinks).
 
 ![Blinks](./np-blinks.webp)
 
-You can see a graph on the bottom as a timeline of blinks, this will allow you to visualise.
+You can see a graph on the bottom as a timeline of blinks.
 
 :::tip
 Want to compute blink rate or use this detector in realtime? Have a look at <a href="../../../../alpha-lab/blink-detection/#detecting-eye-blinks-using-pupil-labs-blink-detection-pipeline" target="_self">Detect Eye Blinks With Neon</a>
