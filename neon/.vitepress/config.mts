@@ -207,12 +207,16 @@ let theme_config_additions = {
             link: "/neon-player/visualization-plugins/",
           },
           {
-            text: "Surface Tracker",
-            link: "/neon-player/surface-tracker/",
+            text: "Fixation Detector",
+            link: "/neon-player/fixation-detector/",
           },
           {
-            text: "Fixation & Blink Detectors",
-            link: "/neon-player/fixation-and-blink-detectors/",
+            text: "Blink Detector",
+            link: "/neon-player/blink-detector/",
+          },
+          {
+            text: "Surface Tracker",
+            link: "/neon-player/surface-tracker/",
           },
           {
             text: "Head Pose Tracker",
@@ -225,16 +229,24 @@ let theme_config_additions = {
           {
             text: "Gaze Offset Correction",
             link: "/neon-player/gaze-offset-correction/"
-          }, 
+          },
           {
-            text: "Plugin API",
-            link: "/neon-player/plugin-api/",
+            text: "Annotation Player",
+            link: "/neon-player/annotation-player/"
+          },
+          {
+            text: "Raw Data Exporter",
+            link: "/neon-player/raw-data-exporter/",
+          },
+          {
+            text: "World Video Exporter",
+            link: "/neon-player/world-video-exporter/",
           },
         ],
       },
       {
-        text: "Export",
-        link: "/neon-player/export/",
+        text: "Plugin API",
+        link: "/neon-player/plugin-api/",
       },
     ],
     "/real-time-api/": [

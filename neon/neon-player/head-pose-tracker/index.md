@@ -2,7 +2,7 @@
 
 <!-- TODO: Need to provide links to marker downloads. -->
 
-This plugin uses fiducial markers ([apriltag](https://april.eecs.umich.edu/software/apriltag.html)) to build a 3d model of the environment and track the headset's pose within it. Note, only markers of the default `tag36h11` family are currently 
+This plugin uses [AprilTag markers](https://april.eecs.umich.edu/software/apriltag.html) to build a 3d model of the environment and track the headset's pose within it. Note, only markers of the default `tag36h11` family are currently 
 supported by the head pose tracker plugin.
 
 ::: info
@@ -15,22 +15,23 @@ Head pose tracking works best in a well lit environment with an even distributio
 
 By default, the location of the first visible marker will be used as the origin of the 3d model's coordinate system. In the plugin's menu, you can change the marker that is being used as the origin. The unit of the coordinate system is defined as the physical length of the tracking markers.
 
-Results are exported in the following files:
+## Export Format
+Results exported to the following files:
 - `head_pose_tracker_model.csv`: A list of all markers used to generate the 3d model and the 3d locations of the marker vertices.
-- `head_pose_tracker_poses.csv`: The world camera's pose within the 3d model coordinate system for each recorded world frame with the following columns:
+- `head_pose_tracker_poses.csv`: The world camera's pose within the 3d model coordinate system for each recorded world frame with the following fields:
   
-| Key                 | Description                                                                            |
-|:--------------------|:---------------------------------------------------------------------------------------|
-| `timestamp`         | World timestamp                                                                        |
-| `rotation_x`        | Rodrigues' rotation vector x-component <sup>1</sup>                                     |
-| `rotation_y`        | Rodrigues' rotation vector y-component <sup>1</sup>                                     |
-| `rotation_z`        | Rodrigues' rotation vector z-component <sup>1</sup>                                     |
-| `translation_x`     | Translation vector x-component <sup>2</sup>                                            |
-| `translation_y`     | Translation vector y-component <sup>2</sup>                                            |
-| `translation_z`     | Translation vector z-component <sup>2</sup>                                            |
-| `pitch`             | Orientation about the x-axis (head tilt from front to back) in degrees <sup>3</sup>    |
-| `yaw`               | Orientation about the y-axis (head rotation from side to side) in degrees <sup>3</sup> |            
-| `roll`              | Orientation about the z-axis (head tilt from side to side) in degrees <sup>3</sup>     |     
+| Field           | Description                                                                            |
+|:----------------|:---------------------------------------------------------------------------------------|
+| `timestamp`     | World timestamp                                                                        |
+| `rotation_x`    | Rodrigues' rotation vector x-component <sup>1</sup>                                     |
+| `rotation_y`    | Rodrigues' rotation vector y-component <sup>1</sup>                                     |
+| `rotation_z`    | Rodrigues' rotation vector z-component <sup>1</sup>                                     |
+| `translation_x` | Translation vector x-component <sup>2</sup>                                            |
+| `translation_y` | Translation vector y-component <sup>2</sup>                                            |
+| `translation_z` | Translation vector z-component <sup>2</sup>                                            |
+| `pitch`         | Orientation about the x-axis (head tilt from front to back) in degrees <sup>3</sup>    |
+| `yaw`           | Orientation about the y-axis (head rotation from side to side) in degrees <sup>3</sup> |            
+| `roll`          | Orientation about the z-axis (head tilt from side to side) in degrees <sup>3</sup>     |     
 
 1. The Rodrigues' rotation vector describes the rotation axis, and its length encodes the angle to rotate in radians
 2. Units are scaled to the length of the tracking markers

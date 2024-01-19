@@ -1,6 +1,7 @@
 # Neon Player
 
-Neon Player is a cross-platform desktop application for playing back and exporting Neon recordings offline.
+Neon Player is a cross-platform desktop application for playing back and exporting Neon recordings. It runs in an
+offline context; no interaction with Pupil Cloud is required.
 
 <script setup>
 import DownloadLinks from '@components/DownloadLinks.vue'
@@ -12,39 +13,32 @@ import DownloadLinks from '@components/DownloadLinks.vue'
   icon="./neon-player.svg"
 />
 
-## Why Neon Player?
-
-There could be times when using Pupil Cloud is not an option (e.g. no internet conection), but you may still need to visualize, explore and export your data in an easy way. Hence, Neon Player!
-
-## First Steps
-
-After you download it from the button above and install it, if you have used Pupil Player you will find the interface quite familiar.
-
-A gray screen will welcome you indicating how to [load a recording](#loading-a-recording).
-
 ## Loading a Recording
+To load a recording, you first need to download or export it to your computer:
 
-To load a recording into Neon Player, you first need to download or export it to your computer. This can be done in two ways:
+1. Direct transfer from Neon Companion Device – For detailed instructions, refer to [this guide](/data-collection/transfer-recordings-via-usb/).
+2. Download from [Pupil Cloud](/pupil-cloud/) – Right-click on a recording in Pupil Cloud, select **Download**, and ensure you choose the **"Native Recording Data"** format.
 
-1. Directly transferring it from the Neon Companion Device. For detailed instructions on this method, refer to our [guide](/data-collection/transfer-recordings-via-usb/).
-2. Downloading it from the [Pupil Cloud](/pupil-cloud/). To do this, right-click on a recording in Pupil Cloud, select **Download**, and ensure you choose the **"Native Recording Data"** format. This option is distinct from the **"Time Series + Video"** format and becomes available only after activation in your workspace settings.
+Once you have the recording, open Neon Player and drag-and-drop the folder into the application window.
 
-Once you have the recording, simply drag the recording folder onto the Neon Player app icon, or open Neon Player and drag-and-drop the folder into the application window.
+::: info
+Neon Player will **never** remove or overwrite any of your raw data gathered at the time of recording. Instead, it will create a new folder, `neon_player`, which contains the Neon Player compatible files.
+:::
 
 ![Drag and drop recording folder](./pp-start.jpg)
 
 ::: info
 
-Recordings extracted from the phone do not contain [eye state](../data-collection/data-streams/#_3d-eye-states) or [pupillometry](../data-collection/data-streams/#pupil-diameters) yet, and the sampling rate matches the one chosen at the time of recording.
+Recordings extracted from the phone do not contain [eye state](../data-collection/data-streams/#_3d-eye-states) or [pupillometry](../data-collection/data-streams/#pupil-diameters), and the sampling rate matches that at the time of recording.
 
-Recordings downloaded from [Pupil Cloud](./../pupil-cloud/) would be at 200Hz.
+Recordings downloaded from [Pupil Cloud](./../pupil-cloud/) will be at 200Hz.
 :::
 
 ## Neon Player Window
 
 ![Neon Player Callout](./pp-callout.jpg)
 
-1. **Graphs**: This area contains performance graphs. The graphs display `CPU` and `FPS` (Video playback speed).
+1. **Graphs**: This area contains performance graphs. The graphs display `CPU` and `FPS` (FPS = Video playback speed).
 1. **Hot Keys**: This area contains clickable buttons for plugins.
 1. **Timeline Events**: Plugins can add temporal events to this expandable panel.
 1. **Timeline**: Control the playback of the video with the play/pause button (or spacebar on your keyboard). Drag the playhead (vertical line) to the desired point in time.
@@ -74,12 +68,30 @@ Recordings downloaded from [Pupil Cloud](./../pupil-cloud/) would be at 200Hz.
 
 ## Plugins
 
-Neon Player uses a plugin framework to add functionality. Visualizations, marker tracking, and the exporter are all implemented using this structure.
+Neon Player uses a plugin framework to add functionality. Visualizations, fixations, blinks, and data exports are 
+all implemented using this structure.
 
 There are two general types of plugins:
 
 - **Unique**: You can only launch one instance of this plugin.
 - **Not unique**: You can launch multiple instances of this type of plugin. For example, you can load one `Vis Circle` plugin to render the gaze position with a translucent green circle, and another `Vis Circle` plugin to render the gaze circle with a green stroke of 3 pixel thickness. You can think of these types of plugins as _additive_.
+
+## Exports
+You can export data and videos by pressing `e` on your keyboard, or use the download button in the **Neon Player** window. 
+
+Upon activation, all loaded plugins with export capabilities will initiate the export process. Some exports operate in the background, 
+you can monitor their progress via a GUI progress bar. This allows you to continue working with Neon Player.
+
+### Export Directory
+Exports are separated from your raw data and contained in the `exports` subdirectory. Multiple exports will create a new 
+folders, which are auto-named according to their creation order, e.g. `000`, `001` etc.
+
+### Export Handling
+You can select the frame range to export by setting trim marks in the seek bar or directly in the `General Settings` menu.
+
+Longer running exports, e.g. video exports, go through three phases: Queued, Running, and Completed.
+Export tasks can be cancelled while being queued or running.
+Completed tasks are kept in the list for reference.
 
 ## Workflow
 
@@ -90,15 +102,6 @@ Here is an example workflow:
 - Start **Neon Player** and load a recording.
 - Open a Plugin - From the `Plugin Manager` GUI menu (which can be found in the Sidebar), toggle any Plugin of your choice. The `Vis Circle` plugin is activated by default.
 - Playback - press the play button or `space` bar on your keyboard to view the video playback with visualization overlay, or drag the playhead in the seek bar to scrub through the dataset.
-- Set trim marks - you can drag the green rounded rectangle at the beginning and end of the seekbar to set the trim marks. This will set the start and end frame for the exporter and for other plugins.
+- Set trim marks - drag the green rounded rectangle at the beginning and end of the seekbar to set the trim marks. This will set the start and end frame for the exporter and for other plugins.
 - Export Video & Raw Data - From the `Plugin Manager` view, load the `World Video Exporter` plugin and the `Raw Data Exporter` plugin. Press `e` on your keyboard or the ⬇ `download icon` button in the left hand side of the window to start the export.
-- Check out exported data in the `exports` directory within your recording directory.
-
-::: info
-Neon Player will **never** remove or overwrite any of your raw data gathered during capture. Instead, it will create a new folder, `neon_player`, which contains the Neon Player compatible files.
-All exports are isolated within a sub-directory named `exports` and will never be overwritten.
-:::
-
-::: tip
-Looking for a command line interface that allow you to export recordings as CSV files programmatically? `pl-rec-export` is available [here](https://github.com/pupil-labs/pl-rec-export).
-:::
+- View the exported data in the `exports` directory.

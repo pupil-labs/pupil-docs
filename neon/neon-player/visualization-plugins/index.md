@@ -8,8 +8,6 @@ Visualize the gaze positions with a circle for each gaze position. This plugin i
 
 ![Circle Visualizations](./vis-circle.webp)
 
-Here we show an example of how you could use **2** instances of the `Vis Circle` Plugin. The first instance renders the gaze position as a filled blue circle. The second instance renders the same gaze position as yellow stroke circle.
-
 You can set the following parameters:
 
 | Parameter    | Description                                                                                                 |
@@ -19,13 +17,13 @@ You can set the following parameters:
 | Fill         | Toggle on for a circle with solid fill. Toggle off for a circle with only stroke.                           |
 | Color        | Define the `Red`, `Green`, and `Blue` values for color. `Alpha` defines the opacity of the stroke and fill. |
 
+The above example shows how you could use **2** instances of the `Vis Circle` Plugin. The first instance renders the gaze position as a filled blue circle. The second instance renders the same gaze position as yellow stroke circle.
+
 ## Vis Cross
 
 Visualize the gaze positions with a cross for each gaze position. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization.
 
 ![Cross Visualizations](./vis-cross.webp)
-
-Here we show an example of how you could use **2** instances of the `Vis Cross` Plugin. The first instance renders the gaze position as a blue cross and the second instance renders the gaze position as a yellow cross, in the outer area.
 
 You can set the following parameters:
 
@@ -36,13 +34,13 @@ You can set the following parameters:
 | Stroke width        | The thickness or width of the stoke in pixels.                                                                                                                                                     |
 | Color               | Define the `Red`, `Green`, and `Blue` values for color.                                                                                                                                            |
 
+The above example shows how you could use **2** instances of the `Vis Cross` Plugin. The first instance renders the gaze position as a blue cross and the second instance renders the gaze position as a yellow cross, in the outer area.
+
 ## Vis Light Points
 
 Visualize the gaze positions as a point of light for each gaze position. The `falloff` of the light from the gaze position is specified by the user. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization.
 
 ![Lightpoints Visualizations](./vis-lightpoints.webp)
-
-Here we show an example demonstrating `Vis Light Points` with a falloff of 39.
 
 You can set the following parameters:
 
@@ -50,13 +48,13 @@ You can set the following parameters:
 | :-------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Falloff   | The distance (in pixels) at which the light begins to fall off (fade to black). A very low number will result in a very dark visualization with tiny white light points. A very large number will result in a visualization of the world view with little or no emphasis on the gaze positions. |
 
+The above example demonstrates `Vis Light Points` with a falloff of 39.
+
 ## Vis Polyline
 
 Visualize the gaze positions with a polyline for each gaze position. This plugin is **not unique**, therefore you can add multiple instances of the plugin to build your visualization.
 
 ![Polyline Visualizations](./vis-polyline.webp)
-
-The example above shows a `Vis Polyline` used with `Vis Circle`. The polyline enables one to visualize the sequence of the gaze positions over a single world frame.
 
 You can set the following parameters:
 
@@ -65,13 +63,13 @@ You can set the following parameters:
 | Line thickness | The thickness or width of the polyline stroke in pixels. |
 | Color          | Define the `Red`, `Green`, and `Blue` values for color.  |
 
+The example above shows a `Vis Polyline` used with `Vis Circle`. The polyline enables one to visualize the sequence of the gaze positions over a single world frame.
+
 ## Vis Eye Video Overlay
 
 Visualize the eye cameras video feed. This plugin is **unique**, therefore you can only load one instance of this plugin.
 
 ![Eye overlay Visualizations](./vis-eyeoverlay.webp)
-
-Here is an example of the `Eye Video Overlay` with binocular eye videos.
 
 This plugin can be used to overlay the eye video on top of the world video.
 
@@ -84,3 +82,5 @@ You can set the following parameters:
 | Move overlay          | Drag the eye videos to move around in the player window. Toggle `off` when done moving the video frames. |
 | Show                  | Show or hide eye video overlays.                                                                         |
 | Horiz. and vert. flip | Flip eye videos vertically or horizontally.                                                              |
+
+The above example shows the `Eye Video Overlay` with binocular eye videos.

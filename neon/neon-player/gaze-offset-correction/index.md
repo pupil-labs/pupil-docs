@@ -1,9 +1,10 @@
-# Post-Hoc Gaze Offset Correction
+# Post-Hoc Offset Correction
 
-There might be times where the operator may have forgotten to set the [offset correction](../../data-collection/offset-correction/) at the time of the recording, and you would like to adjust it post-hoc.
-
-While this is not yet possible in Cloud, you can achieve this, in Neon Player.
+Post-hoc [Offset Correction](../../data-collection/offset-correction/) is possible with Neon Player. The offset 
+correction is a simple two-dimensional translation of the raw gaze signal. To use this feature,
+navigate to the 'Gaze Data' plugin and drag the sliders until the gaze offset is correctly applied. Offset corrected gaze
+will subsequently be used by any plugins that leverage gaze data, such as the Fixation Detector and Surface Tracker Plugins.
 
 ![Gaze offset correction screen in Neon Player](./np-gaze-offset.webp)
 
-This gaze offset correction is a simple two dimensional translation that corrects for the offset in the gaze estimation.
+
