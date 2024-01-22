@@ -96,7 +96,7 @@ let theme_config_additions = {
         ],
       },
       {
-        text: "Neon Compannion App",
+        text: "Neon Companion App",
         items: [
           {
             text: "Offset Correction",
