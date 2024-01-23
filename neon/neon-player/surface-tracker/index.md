@@ -30,9 +30,7 @@ Each surface has a name, which can be manually set as described above.
 This name is augmented by an automatically generated numerical identifier.
 
   + `gaze_positions_on_surface_<surface_name>.csv` - A list of gaze datums on the surface.
-  The values include the gaze point in two different coordinates systems.
   `x_norm` and `y_norm` are coordinates between 0 and 1, where `(0,0)` is the top left corner of the surface and `(1,1)` is the bottom right corner.
-  `x_scaled` and `y_scaled` contain the same coordinates but scaled with the size defined for the surface.
   + `fixations_on_surface_<surface_name>.csv` - A list of fixations on the surface.
   The values include fixation locations as normalized coordinates and a confidence value between 0.0 and 1.0, indicating gaze on/off surface.
   + `surf_positions_<surface_name>` - List of surface positions in 3D.
