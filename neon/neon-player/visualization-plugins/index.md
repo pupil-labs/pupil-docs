@@ -12,10 +12,10 @@ You can set the following parameters:
 
 | Parameter    | Description                                                                                                 |
 | :----------- | :---------------------------------------------------------------------------------------------------------- |
-| Radius       | The radius of the circle around the gaze point.                                                             |
-| Stroke width | The thickness or width of the stoke in pixels.                                                              |
-| Fill         | Toggle on for a circle with solid fill. Toggle off for a circle with only stroke.                           |
-| Color        | Define the `Red`, `Green`, and `Blue` values for color. `Alpha` defines the opacity of the stroke and fill. |
+| **Radius**       | The radius of the circle around the gaze point.                                                             |
+| **Stroke width** | The thickness or width of the stoke in pixels.                                                              |
+| **Fill**         | Toggle on for a circle with solid fill. Toggle off for a circle with only stroke.                           |
+| **Color**        | Define the `Red`, `Green`, and `Blue` values for color. `Alpha` defines the opacity of the stroke and fill. |
 
 The above example shows how you could use **2** instances of the `Vis Circle` Plugin. The first instance renders the gaze position as a filled blue circle. The second instance renders the same gaze position as yellow stroke circle.
 
@@ -29,10 +29,10 @@ You can set the following parameters:
 
 | Parameter           | Description                                                                                                                                                                                        |
 | :------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Inner offset length | The distance in pixels to offset the interior cross endpoints from the gaze position. A value of `0` will make the crosshairs intersect the gaze position.                                         |
-| Outer length        | The length of the cross lines in pixels from the gaze position. Note - equal values of `inner offset length` and `outer length` will result in a cross with no length, and therefore not rendered. |
-| Stroke width        | The thickness or width of the stoke in pixels.                                                                                                                                                     |
-| Color               | Define the `Red`, `Green`, and `Blue` values for color.                                                                                                                                            |
+| **Inner offset length** | The distance in pixels to offset the interior cross endpoints from the gaze position. A value of `0` will make the crosshairs intersect the gaze position.                                         |
+| **Outer length**        | The length of the cross lines in pixels from the gaze position. Note - equal values of `inner offset length` and `outer length` will result in a cross with no length, and therefore not rendered. |
+| **Stroke width**        | The thickness or width of the stoke in pixels.                                                                                                                                                     |
+| **Color**               | Define the `Red`, `Green`, and `Blue` values for color.                                                                                                                                            |
 
 The above example shows how you could use **2** instances of the `Vis Cross` Plugin. The first instance renders the gaze position as a blue cross and the second instance renders the gaze position as a yellow cross, in the outer area.
 
@@ -46,7 +46,7 @@ You can set the following parameters:
 
 | Parameter | Description                                                                                                                                                                                                                                                                                     |
 | :-------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Falloff   | The distance (in pixels) at which the light begins to fall off (fade to black). A very low number will result in a very dark visualization with tiny white light points. A very large number will result in a visualization of the world view with little or no emphasis on the gaze positions. |
+| **Falloff**   | The distance (in pixels) at which the light begins to fall off (fade to black). A very low number will result in a very dark visualization with tiny white light points. A very large number will result in a visualization of the world view with little or no emphasis on the gaze positions. |
 
 The above example demonstrates `Vis Light Points` with a falloff of 39.
 
@@ -60,8 +60,8 @@ You can set the following parameters:
 
 | Parameter      | Description                                              |
 | :------------- | :------------------------------------------------------- |
-| Line thickness | The thickness or width of the polyline stroke in pixels. |
-| Color          | Define the `Red`, `Green`, and `Blue` values for color.  |
+| **Line thickness** | The thickness or width of the polyline stroke in pixels. |
+| **Color**          | Define the `Red`, `Green`, and `Blue` values for color.  |
 
 The example above shows a `Vis Polyline` used with `Vis Circle`. The polyline enables one to visualize the sequence of the gaze positions over a single world frame.
 
@@ -77,10 +77,10 @@ You can set the following parameters:
 
 | Parameter             | Description                                                                                              |
 | :-------------------- | :------------------------------------------------------------------------------------------------------- |
-| Opacity               | the opacity of the overlay eye video image. `1.0` is opaque and `0.0` is transparent.                    |
-| Video scale           | Use the slider to increase or decrease the size of the eye videos.                                       |
-| Move overlay          | Drag the eye videos to move around in the player window. Toggle `off` when done moving the video frames. |
-| Show                  | Show or hide eye video overlays.                                                                         |
-| Horiz. and vert. flip | Flip eye videos vertically or horizontally.                                                              |
+| **Opacity**               | the opacity of the overlay eye video image. `1.0` is opaque and `0.0` is transparent.                    |
+| **Video scale**           | Use the slider to increase or decrease the size of the eye videos.                                       |
+| **Move overlay**          | Drag the eye videos to move around in the player window. Toggle `off` when done moving the video frames. |
+| **Show**                  | Show or hide eye video overlays.                                                                         |
+| **Horiz. and vert. flip** | Flip eye videos vertically or horizontally.                                                              |
 
 The above example shows the `Eye Video Overlay` with binocular eye videos.

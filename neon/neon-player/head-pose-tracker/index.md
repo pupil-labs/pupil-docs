@@ -20,18 +20,18 @@ Results exported to the following files:
 - `head_pose_tracker_model.csv`: A list of all markers used to generate the 3d model and the 3d locations of the marker vertices.
 - `head_pose_tracker_poses.csv`: The world camera's pose within the 3d model coordinate system for each recorded world frame with the following fields:
   
-| Field           | Description                                                                            |
-|:----------------|:---------------------------------------------------------------------------------------|
-| `timestamp`     | World timestamp                                                                        |
-| `rotation_x`    | Rodrigues' rotation vector x-component <sup>1</sup>                                     |
-| `rotation_y`    | Rodrigues' rotation vector y-component <sup>1</sup>                                     |
-| `rotation_z`    | Rodrigues' rotation vector z-component <sup>1</sup>                                     |
-| `translation_x` | Translation vector x-component <sup>2</sup>                                            |
-| `translation_y` | Translation vector y-component <sup>2</sup>                                            |
-| `translation_z` | Translation vector z-component <sup>2</sup>                                            |
-| `pitch`         | Orientation about the x-axis (head tilt from front to back) in degrees <sup>3</sup>    |
-| `yaw`           | Orientation about the y-axis (head rotation from side to side) in degrees <sup>3</sup> |            
-| `roll`          | Orientation about the z-axis (head tilt from side to side) in degrees <sup>3</sup>     |     
+| Field         | Description                                                                            |
+|:--------------|:---------------------------------------------------------------------------------------|
+| **timestamp**     | World timestamp                                                                        |
+| **rotation_x**    | Rodrigues' rotation vector x-component <sup>1</sup>                                     |
+| **rotation_y**    | Rodrigues' rotation vector y-component <sup>1</sup>                                     |
+| **rotation_z**    | Rodrigues' rotation vector z-component <sup>1</sup>                                     |
+| **translation_x** | Translation vector x-component <sup>2</sup>                                            |
+| **translation_y** | Translation vector y-component <sup>2</sup>                                            |
+| **translation_z** | Translation vector z-component <sup>2</sup>                                            |
+| **pitch**         | Orientation about the x-axis (head tilt from front to back) in degrees <sup>3</sup>    |
+| **yaw**           | Orientation about the y-axis (head rotation from side to side) in degrees <sup>3</sup> |            
+| **roll**          | Orientation about the z-axis (head tilt from side to side) in degrees <sup>3</sup>     |     
 
 1. The Rodrigues' rotation vector describes the rotation axis, and its length encodes the angle to rotate in radians
 2. Units are scaled to the length of the tracking markers

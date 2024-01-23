@@ -57,13 +57,13 @@ recommended. `alive` is an exception and should only be set to `False` if you wa
 plugin to close autonomously. Otherwise, this attribute is managed by the enclosing
 application.
 
-| Name         | Possible values                                                                                        | Default value | Meaning                                                              |
-| ------------ | ------------------------------------------------------------------------------------------------------ | ------------- | -------------------------------------------------------------------- |
-| `uniqueness` | `"not_unique"`, `"by_class"`, `"by_base_class"`                                                        | `"by_class"`  | Plugin instance replacement behavior. See below.                     |
-| `order`      | float in the range of [0.0, 1.0]                                                                       | `0.5`         | Defines the order in which plugins are loaded and called             |
-| `icon_font`  | `"roboto"`, `"pupil_icons"`, `"opensans"`, any other font registered via `Plugin.g_pool.ui.add_font()` | `"roboto"`    | Menu icon font                                                       |
-| `icon_chr`   | Any string whose letters are present in `icon_font`. Recommended to use a single letter string.        | `"?"`         | Menu icon                                                            |
-| `alive`      | `True`, `False`                                                                                        | `True`        | Setting to `False` will shutdown the plugin in the next event cycle. |
+| Name     | Possible values                                                                                        | Default value | Meaning                                                              |
+| -------- | ------------------------------------------------------------------------------------------------------ | ------------- | -------------------------------------------------------------------- |
+| **uniqueness** | `"not_unique"`, `"by_class"`, `"by_base_class"`                                                        | `"by_class"`  | Plugin instance replacement behavior. See below.                     |
+| **order**   | float in the range of [0.0, 1.0]                                                                       | `0.5`         | Defines the order in which plugins are loaded and called             |
+| **icon_font** | `"roboto"`, `"pupil_icons"`, `"opensans"`, any other font registered via `Plugin.g_pool.ui.add_font()` | `"roboto"`    | Menu icon font                                                       |
+| **icon_chr** | Any string whose letters are present in `icon_font`. Recommended to use a single letter string.        | `"?"`         | Menu icon                                                            |
+| **alive**   | `True`, `False`                                                                                        | `True`        | Setting to `False` will shutdown the plugin in the next event cycle. |
 
 #### Plugin Uniqueness
 
@@ -87,12 +87,12 @@ three categories: Startup/cleanup, processing, and UI interactions.
 #### Startup/Cleanup Callbacks
 
 Callbacks of this kind are only called once in the life cycle of a plugin.
-
+"called when Plugin.alive is set to True"? Should it be when alive is set to False, which triggers shutdown of plugin in next event cycle?
 | Callback                           | Description                                                                                                                                                                                                                                                                                                                         |
 | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `__init__(self, g_pool, **kwargs)` | Called when a plugin instance is started. `g_pool` provides access to the application. Calling `super().__init__(g_pool)` is strongly recommended. `kwargs` can be used for user preferences. See example below.                                                                                                                    |
 | `init_ui(self)`                    | Called after `__init__` if the calling process provides a user interface. Allows the plugin to setup its settings menu, quick access buttons, etc.                                                                                                                                                                                  |
-| `cleanup(self)`                    | Called when `Plugin.alive` is set to `True`, i.e. on application shutdown or if the plugin is being disabled                                                                                                                                                                                                                        |
+| `cleanup(self)`                    | Called when `alive` is set to `False`; can be done programmatically by the plugin itself or another plugin; user can also trigger by turning the plugin off in the UI.                                                                                                                                                                                                                       |
 | `deinit_ui(self)`                  | Called before `cleanup` and the calling process provides a user interface. The plugin is responsible for removing any UI elements added in `init_ui`.                                                                                                                                                                               |
 | `get_init_dict(self)`              | Called on each active plugin instance on application shutdown. Returns a dictionary which is stored in the application's persistent session settings. On the next application launch, all previously active plugins will be restored by calling `__init__` and passing the dictionary as the `kwargs` arguments. See example below. |
 
