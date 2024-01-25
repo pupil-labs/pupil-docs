@@ -96,7 +96,7 @@ let theme_config_additions = {
         ],
       },
       {
-        text: "Neon Compannion App",
+        text: "Neon Companion App",
         items: [
           {
             text: "Offset Correction",
@@ -192,6 +192,61 @@ let theme_config_additions = {
             link: "/pupil-cloud/visualizations/video-renderer/",
           },
         ],
+      },
+    ],
+    "/neon-player/": [
+      {
+        text: "Overview",
+        link: "/neon-player/",
+      },
+      {
+        text: "Plugins",
+        items: [
+          {
+            text: "Visualization Plugins",
+            link: "/neon-player/visualization-plugins/",
+          },
+          {
+            text: "Fixation Detector",
+            link: "/neon-player/fixation-detector/",
+          },
+          {
+            text: "Blink Detector",
+            link: "/neon-player/blink-detector/",
+          },
+          {
+            text: "Surface Tracker",
+            link: "/neon-player/surface-tracker/",
+          },
+          {
+            text: "Head Pose Tracker",
+            link: "/neon-player/head-pose-tracker/",
+          },
+          {
+            text: "IMU Timeline",
+            link: "/neon-player/imu-timeline/",
+          },
+          {
+            text: "Gaze Offset Correction",
+            link: "/neon-player/gaze-offset-correction/"
+          },
+          {
+            text: "Annotation Player",
+            link: "/neon-player/annotation-player/"
+          },
+          {
+            text: "Raw Data Exporter",
+            link: "/neon-player/raw-data-exporter/",
+          },
+          {
+            text: "World Video Exporter",
+            link: "/neon-player/world-video-exporter/",
+          },
+        ],
+      },
+      {
+        text: "Plugin API",
+        link: "/neon-player/plugin-api/",
       },
     ],
     "/real-time-api/": [
