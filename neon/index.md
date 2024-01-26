@@ -6,7 +6,7 @@ title: Home
 hero:
   title: "Neon"
   tagline: Everything you need to know about Neon & Pupil Cloud to power your eye tracking application!
-  image: "/neon/neon-overview.webp"
+  image: "/neon/neon-family.webp"
   actions:
     - theme: brand
       text: Getting Started
