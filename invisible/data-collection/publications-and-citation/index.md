@@ -1,11 +1,12 @@
 # Publications & Citation
 
 ## Publications from the Community
+
 Pupil Labs products are being used in various areas of academic research and hundreds of publications have been made with them. You can find a list containing most of the existing publications [here](https://pupil-labs.com/publications/).
 
 If you are using **Pupil Invisible** in your own research, please cite the following paper in your publications!
 
-[*A High-Level Description and Performance Evaluation of Pupil Invisible* ](https://arxiv.org/pdf/2009.00508.pdf)
+[_A High-Level Description and Performance Evaluation of Pupil Invisible_ ](https://arxiv.org/pdf/2009.00508.pdf)
 
 > BibTeX Style Citation
 
@@ -19,6 +20,7 @@ If you are using **Pupil Invisible** in your own research, please cite the follo
 ```
 
 ## Publications from Pupil Labs
+
 Pupil Labs has published several papers including white papers as well as peer-reviewed papers on eye tracking algorithms. Below they are listed chronologically:
 
 #### [Pupil: an open source platform for pervasive eye tracking and mobile gaze-based interaction](https://arxiv.org/pdf/1405.0006)
@@ -30,3 +32,5 @@ Pupil Labs has published several papers including white papers as well as peer-r
 #### [A High-Level Description and Performance Evaluation of Pupil Invisible](https://arxiv.org/pdf/2009.00508)
 
 #### [Gaze-angle dependency of pupil-size measurements in head-mounted eye tracking](https://link.springer.com/article/10.3758/s13428-021-01657-8)
+
+#### [Neon Accuracy Test Report](https://zenodo.org/doi/10.5281/zenodo.10420388)

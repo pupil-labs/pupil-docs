@@ -32,25 +32,4 @@ alpha:
           text: View,
           href: "/alpha-lab/gaze-metrics-in-aois/#define-aois-and-calculate-gaze-metrics",
         }
-    - title: Map Gaze Onto Dynamic Screen
-      details: Map and visualise gaze onto a screen with dynamic content, e.g. a video, web browsing, or other, using Pupil Cloud's Reference Image Mapper and screen recording software.
-      link:
-        {
-          text: View,
-          href: "/alpha-lab/map-your-gaze-to-a-2d-screen/#map-and-visualise-gaze-onto-a-display-content-using-the-reference-image-mapper",
-        }
-    - title: Map Gaze Onto Body Parts
-      details: Map gaze behaviour on body parts that appear in the scene video of Neon or Pupil Invisible eye tracking footage.
-      link:
-        {
-          text: View,
-          href: "/alpha-lab/dense-pose/#map-gaze-onto-body-parts-using-densepose",
-        }
-    - title: Map Gaze Throughout an Entire Room
-      details: Use Pupil Cloud's Reference Image Mapper to Map gaze onto multiple areas of an entire room as participants freely navigate around it.
-      link:
-        {
-          text: View,
-          href: "/alpha-lab/multiple-rim/#map-and-visualize-gaze-on-multiple-reference-images-taken-from-the-same-environment",
-        }
 ---

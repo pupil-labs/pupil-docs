@@ -9,7 +9,7 @@ To integrate it in your project, follow these steps:
 1. Add the `Neon XR` package in the Package Manager.
     1. Select `Window -> Package Manager`
     2. Select `+ -> Add Package from git URL…`
-    3. Insert `https://github.com/pupil-labs/neon-xr.git`.
+    3. Insert ` https://github.com/pupil-labs/neon-xr.git?path=/com.pupil-labs.neon-xr.core`.
 1. If your project does not use Addressables, create default Addressables settings.
     1. Select `Window -> Asset Management -> Addressables -> Groups`.
     2. Click on `Create Addressables Settings`.
