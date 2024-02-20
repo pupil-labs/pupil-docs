@@ -4,7 +4,7 @@
 
 The Neon module is a small powerhouse of sensors! It connects to the Companion device (Android phone) with a USB-C cable, which supplies it with electric power and compute power for processing. Find an overview of all components of Neon below!
 
-![Technical Overview](./technical_overview_2.jpg)
+![Technical Overview](./technical_overview_2.webp)
 
 - **Eye Cameras**: A binocular pair of infrared cameras with matching 850nm infrared illuminator **LEDs** are used to capture [eye videos](/data-collection/data-streams/#eye-videos). The raw data is saved with each recording and is used for real-time [gaze](/data-collection/data-streams/#gaze) estimation.
 
@@ -16,7 +16,7 @@ The Neon module is a small powerhouse of sensors! It connects to the Companion d
 
 - **Data and Power Interface**: A USB connector is located at the front of the module. Through this connector, the module connects to a "nest" which is typically located in a glasses-like frame. Attached to the nest is a USB-C cable that connects to the Companion device.
 
-- **Serial Number QR**: A QR Code is located at the back of the module, which contains the serial number of the device.
+- **Serial Number Data Matrix**: A Data Matrix is located at the back of the module, which contains the serial number of the device.
 
 - **Mounting Screws**: The module is attached to the nest of a frame with two screws.
 
