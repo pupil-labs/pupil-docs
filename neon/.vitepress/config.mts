@@ -193,6 +193,7 @@ let theme_config_additions = {
           },
         ],
       },
+      { text: "Troubleshooting", link: "/pupil-cloud/troubleshooting/" },
     ],
     "/neon-player/": [
       {
