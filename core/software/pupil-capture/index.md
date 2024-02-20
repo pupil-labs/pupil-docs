@@ -1,9 +1,11 @@
 # Pupil Capture
+
 Pupil Capture is the software used with your Pupil Core Headset. The software reads the video streams coming in from the world camera and the eye camera(s). Pupil Capture uses the video streams to detect your pupil, track your gaze, detect and track markers in your environment, record video and events, and stream data in realtime.
 
 ![Pupil Capture](./pc.png)
 
 ## World Window
+
 The World window is the main control center for Pupil Capture. It displays a live world camera video feed from your Pupil Core headset.
 
 ![Pupil Captuere callout](./capture-callout.jpg)
@@ -25,6 +27,7 @@ The World window is the main control center for Pupil Capture. It displays a liv
 | `i`               | Camera intrinsic estimation: Take snapshot of circle pattern |
 
 ## Video Source Selection
+
 By default Pupil Capture will use Local USB as the capture source.
 If you have a Pupil Core headset connected to your computer you will see videos displayed from your Pupil Core headset in the World and Eye windows.
 If no headset is connected or Pupil Capture is unable to open capture devices it will simply display a gray screen.
@@ -34,7 +37,6 @@ If no headset is connected or Pupil Capture is unable to open capture devices it
   <source src="../../media/core/videos/backend-manager.mp4" type="video/mp4">
 </video>
 -->
-
 
 ## Troubleshooting
 
@@ -54,8 +56,10 @@ Still having trouble? [Chat with us.](https://pupil-labs.com/chat "Pupil Labs ch
 ### Linux
 
 If the cameras are listed as `unknown` and you are not able to access cameras in Pupil Capture. Please try the following:
+
 1. Shut down Pupil Capture if it is still running.
 2. Add your user to the `plugdev` group by executing the following command in the terminal:
+
 ```sh
 sudo usermod -a -G plugdev $USER
 ```
@@ -65,11 +69,14 @@ sudo usermod -a -G plugdev $USER
 Due to new [technical limitations](https://github.com/libusb/libusb/issues/1014), Pupil Capture and Pupil Service need to be started with administrator privileges to get access to the video camera feeds. To do that, copy the applications into your /Applications folder and run the corresponding command from the terminal:
 
 Pupil Capture:
-``` zsh
+
+```zsh
 sudo /Applications/Pupil\ Capture.app/Contents/MacOS/pupil_capture
 ```
+
 Pupil Service:
-``` zsh
+
+```zsh
 sudo /Applications/Pupil\ Service.app/Contents/MacOS/pupil_service
 ```
 
@@ -78,6 +85,7 @@ sudo /Applications/Pupil\ Service.app/Contents/MacOS/pupil_service
 **Note**: When recording with administrator privileges, the resulting folder inherits admin file permissions. Pupil Player will detect these and ask you for the administrator password to reset the file permissions. This will be only necessary once per recording.
 
 ## Pupil Detection
+
 Pupil Core's algorithms automatically detect the participant's pupil. It runs two detection pipelines in parallel, the 2D and the 3D pupil detection.
 
 2D detection uses computer vision technology to detect the pupil location in the camera image.
@@ -89,14 +97,15 @@ Pupil Core's algorithms automatically detect the participant's pupil. It runs tw
 </video>
 
 ### Fine-tuning Pupil Detection
+
 As a first step it is recommended to check the eye camera resolution as some parameters are resolution dependent.
 
 #### Pupil Detector 2D Settings
 
 Some settings of the 2D pupil detector can be adjusted to improve pupil detection. For a better visualization of these settings, go to the `General Settings` menu of the eye windows and enable the `Algorithm Mode` view. The detector settings can be adjusted in the `Pupil Detector 2D` plugin.
 
-* `Pupil Min/Max` : In `Algorithm Mode` the two red circles represent the min and max pupil size settings. The green circle visualizes the current apparent pupil size. Set the min and max values so the green circle (current pupil size) is within the min/max range for _all_ eye movements.
-* `Intensity Range` : Defines the minimum "darkness" of a pixel to be considered as the pupil. The pixels considered for pupil detection are visualized in blue when in `Algorithm Mode`. Try to minimize the range so that the pupil is always fully covered while having as little leakage as possible outside of the pupil. Be aware that this is dependent on the brightness and therefore has a strong interaction with `Video Source/Sensor Settings/Absolute Exposure Time`.
+- `Pupil Min/Max` : In `Algorithm Mode` the two red circles represent the min and max pupil size settings. The green circle visualizes the current apparent pupil size. Set the min and max values so the green circle (current pupil size) is within the min/max range for _all_ eye movements.
+- `Intensity Range` : Defines the minimum "darkness" of a pixel to be considered as the pupil. The pixels considered for pupil detection are visualized in blue when in `Algorithm Mode`. Try to minimize the range so that the pupil is always fully covered while having as little leakage as possible outside of the pupil. Be aware that this is dependent on the brightness and therefore has a strong interaction with `Video Source/Sensor Settings/Absolute Exposure Time`.
 
 ::: tip
 Keep in mind that pupil size values are defined in pixels and are therefore dependent on the resolution settings of your sensor.
@@ -127,7 +136,6 @@ Pupil Core headsets come in a variety of configurations. Calibration can be cond
 
 Before starting a calibration, ensure that the participant's pupil is robustly detected and tracked, and that the headset is comfortable for the participant. Make sure that the world camera is in focus for the distance at which you want to calibrate, and that you can see the entire area you want to calibrate within the world camera's field of view (FOV).
 
-
 <div style="display:flex; flex-wrap: wrap;" class="pb-4">
 <div style="flex-grow:1;display:flex;flex-direction:column;align-items:center;" class="pa-2">
 
@@ -149,6 +157,7 @@ Before starting a calibration, ensure that the participant's pupil is robustly d
 All calibrations require a participant to look at a specific point in the real world or on screen. The way in which markers are presented is called a `Choreography`. Pupil Core provides different choreographies for common use cases.
 
 #### Screen Marker Calibration Choreography
+
 This is the default choreography, and a quick way to get started.
 
 <video width="100%" controls>
@@ -191,27 +200,27 @@ Make sure to always use the **v0.4 marker design** for best detection performanc
 
 [Download Pupil Labs Calibration Marker v0.4](./v0.4_marker.pdf) to print or display on smartphone/tablet screen.
 
-
 #### Single Marker Calibration Choreography
+
 Calibrate using a single marker, either with a printed (physical) markers or a digital marker displayed on screen. Gaze at the center of the marker and move your head in a spiral motion. You can also move your head in other patterns. This choreography enables you to quickly sample a wide range of gaze angles and cover a large range of your FOV.
 
 1. Select `Single Marker` choreography
 2. Press `c` on your keyboard or click the blue circular `C` button on the left hand side of the world window to start calibration.
 3. Look at the center of the marker.
 4. Slowly move your head while gazing at the center of the marker. We have found that a spiral pattern is an efficient way to cover a large area of the FOV.
-5. Press the `C` button on your keyboard  or show the stop marker to stop calibrating.
+5. Press the `C` button on your keyboard or show the stop marker to stop calibrating.
 
 ::: tip
 This paper introduces and evaluates this type of single marker calibration - <code>CalibMe: Fast and Unsupervised Eye Tracker Calibration for Gaze-Based Pervasive Human-Computer Interaction</code>
 :::
 
 #### Natural Features Calibration Choreography
+
 This choregraphy is used only in special situations.
 
 <video width="100%" controls>
   <source src="./clb-natural.mp4" type="video/mp4">
 </video>
-
 
 1. Select `Natural Features Calibration`
 1. Press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to start calibration.
@@ -221,15 +230,14 @@ This choregraphy is used only in special situations.
 1. Repeat until you have covered the subject's field of view (generally about 9 points should suffice)
 1. Press `c` on your keyboard or click the blue circular `C` button in the left hand side of the world window to stop calibration.
 
-
 ### Gaze Mapping and Accuracy
 
 With the 2D Gaze Mapping, you should easily be able to achieve tracking accuracy within the physiological limits (sub 1 deg visual degrees). Using the 3D Gaze Mapping you should achieve 1.5-2.5 deg of accuracy.
 
-* Any monocular calibration is accurate only at its depth level relative to the eye (parallax error).
-* Any calibration is only accurate inside the field of view (in the world video) you have calibrated. For example: If during your calibration you only looked at markers or natural features (depending on your calibration choreography) that are in the left half, you will not have good accuracy in the right half.
-* Calibration accuracy can be visualized with the `Accuracy Visualizer` plugin. If the `Accuracy Visualizer` plugin is loaded, it will display the residual between reference points and matching gaze positions that were recorded during calibration.
-* Gaze Prediction Accuracy can be estimated with an accuracy test. Start the accuracy by running a normal calibration procedure but press the `T` button in the world window and **not** the `C` button. After completing the test, the plugin will display the error between reference points and matching gaze positions that were recorded during the accuracy test.
+- Any monocular calibration is accurate only at its depth level relative to the eye (parallax error).
+- Any calibration is only accurate inside the field of view (in the world video) you have calibrated. For example: If during your calibration you only looked at markers or natural features (depending on your calibration choreography) that are in the left half, you will not have good accuracy in the right half.
+- Calibration accuracy can be visualized with the `Accuracy Visualizer` plugin. If the `Accuracy Visualizer` plugin is loaded, it will display the residual between reference points and matching gaze positions that were recorded during calibration.
+- Gaze Prediction Accuracy can be estimated with an accuracy test. Start the accuracy by running a normal calibration procedure but press the `T` button in the world window and **not** the `C` button. After completing the test, the plugin will display the error between reference points and matching gaze positions that were recorded during the accuracy test.
 
 **Accuracy** is calculated as the average angular offset (distance) (in degrees of visual angle)
 between fixation locations and the corresponding locations of the fixation targets.
@@ -238,6 +246,7 @@ between fixation locations and the corresponding locations of the fixation targe
 between successive samples during a fixation.
 
 ## Recording
+
 <video width="100%" controls>
   <source src="./rec.mp4" type="video/mp4">
 </video>
@@ -251,9 +260,11 @@ Note - you must specify an existing folder, otherwise the `Path to recordings` w
 :::
 
 ### Recording files
+
 If you open up a recording session folder you will see a collection of video(s) and data files. Take a look at [Recording format](/software/recording-format/)/ for an overview.
 
 ## Plugins
+
 Open the `Plugin Manager` menu on the right.
 
 ![Pupil Capture Plugins](./capture-plugin.jpg)
@@ -262,22 +273,26 @@ It lists all available plugins.
 Click the button next to the plugin's name to turn on or off the plugin.
 
 ### Third-party plugins
+
 You can easily load third party plugins. Third party plugins will appear in the
 Pupil Capture or Pupil Player plugin list. Copy the plugin to the plugins folder
 within the `pupil_capture_settings` or `pupil_player_settings` folder.
 
 ### Fixation Detector
+
 The online fixation detector classifies fixations based on the dispersion-duration principle. A fixation is visualized as a yellow circle around the gaze point that is shown in the Pupil Capture `world` window.
 
 You can find more information in our [dedicated fixation detection section](/terminology/#fixations "Pupil Core terminology - fixations").
 
 ### Network plugins
+
 Pupil Capture has a built-in data broadcast functionality. It is based on the network library [ZeroMQ](http://zeromq.org/)
 and follows the [`PUB-SUB` pattern](http://zguide.zeromq.org/php:chapter1#Getting-the-Message-Out). Data is published with an affiliated topic.
 Clients need to subscribe to their topic of interest to receive the respective data. To reduce network traffic, only data
 with at least one subscription is transferred.
 
 #### Network API plugin
+
 The `Network API` plugin provides a high level interface to control Pupil Capture over the network (e.g. start/stop a recording). It also functions as the entry point to the broadcast infrastructure.
 
 <video width="100%" controls>
@@ -295,11 +310,12 @@ The `Network API` plugin also broadcasts video frames from the world and eye cam
 For a demonstration of how to receive and decode world frames, please take a look at the `recv_world_video_frames` helper scripts in [the pupil-helpers repository](https://github.com/pupil-labs/pupil-helpers/tree/47ce5d4f99488492a4481a629fc7325c6107fbb6/python).
 
 #### Pupil Groups
+
 `Pupil Groups` can help you to collect data from different devices and control an experiment with multiple actors (data generators and sensors) or use more than one Pupil device simultaneously:
 
-* Load the `Pupil Groups` plugin from the `General` sub-menu in the GUI.
-* Once the plugin is active it will show all other local network Pupil Group nodes in the GUI
-* Furthermore, actions like starting and stopping a recording on one device will be mirrored instantly on all other devices.
+- Load the `Pupil Groups` plugin from the `General` sub-menu in the GUI.
+- Once the plugin is active it will show all other local network Pupil Group nodes in the GUI
+- Furthermore, actions like starting and stopping a recording on one device will be mirrored instantly on all other devices.
 
 ::: tip
 For this to work your network needs to allow `UDP` transport. If the nodes do not find each other, create a local wifi network and use that instead.
@@ -311,6 +327,7 @@ Take a look at [the developer docs](/developer/network-api/) to get started.
 :::
 
 #### Pupil Time Sync
+
 If you want to record data from multiple sensors (e.g. multiple Pupil Capture instances)
 with different sampling rates it is important to synchronize the clock of each sensor.
 You will not be able to reliably correlate the data without the synchronization.
@@ -346,6 +363,7 @@ settings. The `Remote Recorder` plugin extends this list with the possibility
 to start and stop recording on the Android device.
 
 ### Surface Tracking
+
 The `Surface Tracker` plugin allows you to define planar surfaces within your environment to track areas of interest (AOI). Surfaces are defined with [Apriltag Markers](https://april.eecs.umich.edu/software/apriltag.html).
 
 ::: tip
@@ -355,6 +373,7 @@ You can find more information on the legacy markers below.
 :::
 
 #### Markers
+
 There are many different Apriltag types, currently we support 7 families listed below. You can click on the links to download the individual markers from the [AprilTags repository](https://github.com/AprilRobotics/apriltag-imgs/tree/master/ "April Tags Github Repository"). For your convenience we have also prepared some tags from the **tag36h11** family in the two images below.
 
 Additionally, we created a PDF with one page per tag for all 587 tags from the **tag36h11** family here: [tag36h11_full.pdf](https://github.com/pupil-labs/pupil-helpers/blob/master/markers_stickersheet/tag36h11_full.pdf?raw=True).
@@ -368,47 +387,47 @@ If you want to generate your own marker sheets or similar PDFs of other families
 
 Supported Apriltag families:
 
-* [tag25h9](https://github.com/AprilRobotics/apriltag-imgs/tree/master/tag25h9)
-* [**tag36h11 (default)**](https://github.com/AprilRobotics/apriltag-imgs/tree/master/tag36h11)
-* [tagCircle21h7](https://github.com/AprilRobotics/apriltag-imgs/tree/master/tagCircle21h7)
-* [tagCircle49h12](https://github.com/AprilRobotics/apriltag-imgs/tree/master/tagCircle49h12)
-* [tagCustom48h12](https://github.com/AprilRobotics/apriltag-imgs/tree/master/tagCustom48h12)
-* [tagStandard41h12](https://github.com/AprilRobotics/apriltag-imgs/tree/master/tagStandard41h12)
-* [tagStandard52h13](https://github.com/AprilRobotics/apriltag-imgs/tree/master/tagStandard52h13)
+- [tag25h9](https://github.com/AprilRobotics/apriltag-imgs/tree/master/tag25h9)
+- [**tag36h11 (default)**](https://github.com/AprilRobotics/apriltag-imgs/tree/master/tag36h11)
+- [tagCircle21h7](https://github.com/AprilRobotics/apriltag-imgs/tree/master/tagCircle21h7)
+- [tagCircle49h12](https://github.com/AprilRobotics/apriltag-imgs/tree/master/tagCircle49h12)
+- [tagCustom48h12](https://github.com/AprilRobotics/apriltag-imgs/tree/master/tagCustom48h12)
+- [tagStandard41h12](https://github.com/AprilRobotics/apriltag-imgs/tree/master/tagStandard41h12)
+- [tagStandard52h13](https://github.com/AprilRobotics/apriltag-imgs/tree/master/tagStandard52h13)
 
 Apriltags ready to use:
 
 <div class="pb-4" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
-  <a download="apriltags_tag36h11_0-23.jpg" href="../../media/shared/imgs/apriltags_tag36h11_0-23.jpg" title="AprilTags 0-23">
+  <a download="apriltags_tag36h11_0-23.jpg" href="/core/software/pupil-capture/apriltags_tag36h11_0-23.jpg" title="AprilTags 0-23">
 
-  ![Apriltags 0 - 23](./apriltags_tag36h11_0-23.jpg)
+![Apriltags 0 - 23](./apriltags_tag36h11_0-23.jpg)
 
   </a>
-  <a download="apriltags_tag36h11_24-47.jpg" href="../../../media/shared/imgs/apriltags_tag36h11_24-47.jpg" title="AprilTags 0-23">
+  <a download="apriltags_tag36h11_24-47.jpg" href="/core/software/pupil-capture/apriltags_tag36h11_24-47.jpg" title="AprilTags 0-23">
 
-  ![Apriltags 24 - 47](./apriltags_tag36h11_24-47.jpg)
+![Apriltags 24 - 47](./apriltags_tag36h11_24-47.jpg)
 
   </a>
 </div>
 
 Markers can be printed on paper, stickers, or displayed on a screen.
 
-
 #### Preparing your Environment
+
 A surface can be based on one or more markers.
 The markers need to be placed in close proximity or within your desired AOI.
 If your AOI is for example a computer monitor, you could display your markers in the corners of the screen or place them somewhere on the bezel.
 If your AOI is a magazine page, you could place the markers in the corners of the page, or anywhere else on the page where they are not occluding the content.
 When placing your markers please follow the guidelines:
 
-*   All markers of a surface need to lie within the same two dimensional plane.
-*   An individual marker can be part of multiple surfaces.
-*   The used markers need to be unique, i.e. you may not use multiple instances of the same marker in your environment.
-*   Using more markers to define a surface yields greater robustness in the tracking of that surface.
-*   Surfaces defined with more than 2 markers are detected even if some markers lie outside of the camera image or are obscured.
-
+- All markers of a surface need to lie within the same two dimensional plane.
+- An individual marker can be part of multiple surfaces.
+- The used markers need to be unique, i.e. you may not use multiple instances of the same marker in your environment.
+- Using more markers to define a surface yields greater robustness in the tracking of that surface.
+- Surfaces defined with more than 2 markers are detected even if some markers lie outside of the camera image or are obscured.
 
 #### Defining a Surface
+
 Surfaces can be defined with Pupil Capture in real-time, or post-hoc with Pupil Player.
 In both cases the necessary steps are as follows:
 
@@ -416,18 +435,18 @@ In both cases the necessary steps are as follows:
   <source src="./srf-tracking.mp4" type="video/mp4">
 </video>
 
-*   Prepare your environment as described above.
-*   Turn on the `Surface Tracker` plugin .
-*   Make sure the camera is pointing at your AOI and the markers are well detected.
-    In the post-hoc case (using Pupil Player) seek to a frame that contains a good view of your desired AOI.
-*   Add a new surface by clicking the `Add surface` button.
-*   Give your surface a name.
-*   Click the `edit surface` button and move the corners of your surface into the desired position.
-    In the real-time case (using Pupil Capture) this is much easier if you freeze the video by clicking the `Freeze Scene` button.
-*   If markers have been erroneously added or left out, click the `add/remove markers` button and afterwards onto the according marker to add/remove them from your surface.
-
+- Prepare your environment as described above.
+- Turn on the `Surface Tracker` plugin .
+- Make sure the camera is pointing at your AOI and the markers are well detected.
+  In the post-hoc case (using Pupil Player) seek to a frame that contains a good view of your desired AOI.
+- Add a new surface by clicking the `Add surface` button.
+- Give your surface a name.
+- Click the `edit surface` button and move the corners of your surface into the desired position.
+  In the real-time case (using Pupil Capture) this is much easier if you freeze the video by clicking the `Freeze Scene` button.
+- If markers have been erroneously added or left out, click the `add/remove markers` button and afterwards onto the according marker to add/remove them from your surface.
 
 #### Reusing Surface Definitions
+
 Your surfaces are automatically saved in a file called `surface_definitions` in the `pupil_capture_settings` directory.
 
 If you restart Pupil Capture or the Surface Tracker plugin, your surface definitions from previous sessions will be loaded.
@@ -435,33 +454,36 @@ If you restart Pupil Capture or the Surface Tracker plugin, your surface definit
 The `surface_definitions` file is copied into each recording folder as well, so you will have access to your surface definitions in Pupil Player.
 You can copy & paste this file to move definitions from one session or recording to another.
 
-
 #### Gaze Heatmaps for Surfaces
+
 You can display gaze heatmaps for each surface by enabling `Show Heatmap` in the `Surface Tracker` menu.
 Two heatmap modes are supported:
-* `Gaze within each surface`: Visualizes the distribution of gaze points that lie within each surface.
-* `Gaze across different surfaces`: Color codes the surfaces to visualize the amount of time spend gazing on each surface in relation to other surfaces.
-Red color represents a lot of gaze points or time spent. Blue color represents few gaze points or little time spent.
+
+- `Gaze within each surface`: Visualizes the distribution of gaze points that lie within each surface.
+- `Gaze across different surfaces`: Color codes the surfaces to visualize the amount of time spend gazing on each surface in relation to other surfaces.
+  Red color represents a lot of gaze points or time spent. Blue color represents few gaze points or little time spent.
 
 The smoothness of the heatmap in `Gaze within each surface` mode can be set using the `Heatmap Smoothness` slider, which will effectively change the bin size of the underlying histogram.
 In the online case the heatmap is computed over the most recent data.
 The exact time window to consider can be set using the `Gaze History Length` field.
 
 #### Performance Settings
+
 The detector for Apriltag Markers offers two parameters `Use high resolution` and `Sharpen image` that are turned on by default. If you are experiencing high CPU load you can try turning off those settings. This will result in less CPU load but also decreases the detection rate.
 
 #### Further Functionality
-* You can click the `Open Surface in Window` button to open a view of the surface in a separate window. Gaze positions on the surface will be visualized in this window in real-time.
-* Streaming Surfaces with Pupil Capture - Detected surfaces as well as gaze positions relative to the surface are broadcast under the `surface` topic. Check out [this video](http://youtu.be/qHmfMxGST7A) for a demonstration.
-* Surface Metrics with Pupil Player - if you have defined surfaces, you can generate surface visibility reports or gaze count per surface.
+
+- You can click the `Open Surface in Window` button to open a view of the surface in a separate window. Gaze positions on the surface will be visualized in this window in real-time.
+- Streaming Surfaces with Pupil Capture - Detected surfaces as well as gaze positions relative to the surface are broadcast under the `surface` topic. Check out [this video](http://youtu.be/qHmfMxGST7A) for a demonstration.
+- Surface Metrics with Pupil Player - if you have defined surfaces, you can generate surface visibility reports or gaze count per surface.
 
 #### Legacy Markers
+
 The legacy surface system used simple square markers, which are less robust to detect.
 For all new projects we strongly recommend using Apriltags!
 
-
-
 ### Blink Detector
+
 The online blink detector classifies [blinks](/terminology/#blinks) according to onset and offset thresholds
 associated with [2D pupil confidence](/terminology/#confidence). See the
 [Blink Detector documentation](/software/pupil-player/#blink-detector) for more information.
@@ -469,6 +491,7 @@ associated with [2D pupil confidence](/terminology/#confidence). See the
 Read more about accessing blink detection results in real-time in the [developer documentation](/developer/network-api/#blink-messages).
 
 ### Annotations
+
 The `Annotation Capture` plugin allows you to mark timestamps with a label -- sometimes
 referred to as triggers. These labels can be created by pressing their respective hotkey
 or by sending a message with the topic `annotation`. This is useful to mark external
@@ -481,6 +504,7 @@ events programmatically and send them to Pupil Capture via the
 [Pupil Core Network API](/developer/network-api/).
 
 ### Camera Intrinsics Estimation
+
 This plugin is used to calculate [camera intrinsics](/terminology/#camera-intrinsics), which will enable one to correct camera distortion. Pupil Capture has built in, default camera intrinsics models for the high speed world camera and the high resolution world camera. You can re-calibrate your camera and/or calibrate a camera that is not supplied by Pupil Labs by running this calibration routine. We support two different distortion models, radial distortion and fisheye distortion. For cameras with a FOV of 100 degrees or greater (like e.g. the high speed world camera) the fisheye distortion model usually performs better, for cameras with a smaller FOV (e.g. the high resolution world camera) we recommend the radial distortion model.
 
 1. Select `Camera Intrinsics Estimation`
@@ -501,9 +525,10 @@ If you are having trouble estimating camera intrinsics, [Chat with us.](https://
 #### Camera Intrinsics Persistency
 
 Newly estimated camera intrinsics are saved to the Pupil Capture session settings folder:
+
 - From bundle: `Home directory -> pupil_capture_settings`
 - From source: `repository directory -> capture_settings`
-Specifically, the intrinsics are saved to a file with the name pattern `<camera name>.intrinsics` which includes the relevant intrinsics for each calibrated resolution. See the [developer docs](/developer/recording-format/#other-files) on how to read these files manually.
+  Specifically, the intrinsics are saved to a file with the name pattern `<camera name>.intrinsics` which includes the relevant intrinsics for each calibrated resolution. See the [developer docs](/developer/recording-format/#other-files) on how to read these files manually.
 
 Pupil Capture provides [prerecorded intrinsics](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/camera_models.py#L26-L152) for the following cameras:
 
@@ -520,6 +545,7 @@ When a recording is started in Pupil Capture, the application saves the active c
 #### Camera Intrinsics Selection
 
 Pupil Capture selects the active camera intrinsics following these priorities:
+
 1. Active camera name and resolution match a **custom** intrinsics estimation.
 1. Active camera name and resolution match a **prerecorded** intrinsics estimation.
 1. Fallback to a "dummy calibration" ([pinhole camera model without distortion, focal length 1000px](https://github.com/pupil-labs/pupil/blob/master/pupil_src/shared_modules/camera_models.py#L659-L664)).
@@ -531,20 +557,20 @@ Pupil Player follows the same priorities as Pupil Capture but expects the custom
 Based on the estimated intrinsics, one can calculate the camera's field of view (FOV).
 
 **Field of view in degrees:**
-| Camera name                                | Resolution  | Horizontal | Vertical | Diagonal |
+| Camera name | Resolution | Horizontal | Vertical | Diagonal |
 | :----------------------------------------- | :---------: | :--------: | :------: | :------: |
-| Pupil Cam1 ID2 (default – wide-angle lens) | `1920x1080` |    155°    |   85°    |   ---    |
-|                                            | `1280x720`  |    103°    |   54°    |   122°   |
-|                                            |  `640x480`  |    103°    |   73°    |   134°   |
-| Pupil Cam1 ID2 (narrow-angle lens)         | `1920x1080` |    88°     |   54°    |   106°   |
-|                                            | `1280x720`  |    63°     |   37°    |   70°    |
-|                                            |  `640x480`  |    42°     |   32°    |   51°    |
-| Pupil Cam2 ID0/1                           |  `400x400`  |    39°     |   39°    |   53°    |
-|                                            |  `192x192`  |    37°     |   37°    |   51°    |
-| Pupil Cam3 ID0/1                           |  `400x400`  |    71°     |   71°    |   91°    |
-|                                            |  `192x192`  |    69°     |   69°    |   88°    |
-| Logitech Webcam C930e (discontinued)       | `1920x1080` |    82°     |   53°    |   91°    |
-|                                            | `1280x720`  |    80°     |   51°    |   89°    |
-|                                            |  `640x480`  |    64°     |   52°    |   77°    |
-| Pupil Cam1 ID0/1 (discontinued)            |  `640x480`  |    51°     |   39°    |   62°    |
-|                                            |  `320x240`  |    51°     |   39°    |   61°    |
+| Pupil Cam1 ID2 (default – wide-angle lens) | `1920x1080` | 155° | 85° | --- |
+| | `1280x720` | 103° | 54° | 122° |
+| | `640x480` | 103° | 73° | 134° |
+| Pupil Cam1 ID2 (narrow-angle lens) | `1920x1080` | 88° | 54° | 106° |
+| | `1280x720` | 63° | 37° | 70° |
+| | `640x480` | 42° | 32° | 51° |
+| Pupil Cam2 ID0/1 | `400x400` | 39° | 39° | 53° |
+| | `192x192` | 37° | 37° | 51° |
+| Pupil Cam3 ID0/1 | `400x400` | 71° | 71° | 91° |
+| | `192x192` | 69° | 69° | 88° |
+| Logitech Webcam C930e (discontinued) | `1920x1080` | 82° | 53° | 91° |
+| | `1280x720` | 80° | 51° | 89° |
+| | `640x480` | 64° | 52° | 77° |
+| Pupil Cam1 ID0/1 (discontinued) | `640x480` | 51° | 39° | 62° |
+| | `320x240` | 51° | 39° | 61° |
