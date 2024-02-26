@@ -36,10 +36,10 @@ If you upgraded to Android 12 or newer and want to roll back, follow these steps
 
 1. Download the ROM package for your corresponding phone model to your computer
 
-   - [OnePlus 8](https://oxygenos.oneplus.net/OnePlus8Oxygen_15.E.42_OTA_0420_all_2202141439_a219946519874834.zip)
-   - [OnePlus 8T](https://oxygenos.oneplus.net/OnePlus8TOxygen_15.E.31_OTA_0310_all_2202182356_edc3927f4900402e.zip)
+   - [OnePlus 8](https://drive.google.com/file/d/1sWZN8K7p64q9wzW06fDtMeyqOMukqk9M/view?usp=drive_link)
+   - [OnePlus 8T](https://drive.google.com/file/d/1_Fbyk8nznjrJwVF6WgegjJj1xevgvn3R/view?usp=drive_link)
 
-1. Download the [official Rollback APK](https://oxygenos.oneplus.net/OPLocalUpdate_For_Android12.apk) to your computer
+1. Download the [official Rollback APK](https://drive.google.com/file/d/1QY0J_h9Ds-A_zNp6Rmm9Li4DgRSizj7P/view?usp=drive_link) to your computer
 1. Copy the downloaded ROM and APK to the top level of the device's Internal Storage (do not put it inside of any folders)
 1. On the phone,
 
