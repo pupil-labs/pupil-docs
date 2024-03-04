@@ -131,10 +131,6 @@ let theme_config_additions = {
             link: "/data-collection/time-synchronization/",
           },
           {
-            text: "Offset Correction",
-            link: "/data-collection/offset-correction/",
-          },
-          {
             text: "Calibrating the IMU",
             link: "/data-collection/calibrating-the-imu/",
           },
