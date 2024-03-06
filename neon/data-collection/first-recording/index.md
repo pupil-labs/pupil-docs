@@ -42,14 +42,14 @@ Next, install the Neon Companion app on your device:
 
 Now, let's see some eye tracking in action!
 
-- The **scene and eye camera icons** in the app's home screen should be colored, indicating that the glasses are connected (otherwise the icons would be gray).
-- You can see a live stream of the scene video with a gaze overlay by clicking the **Preview** button.
+- An image of your Neon system will be shown once connected.
+- You can see a live stream of the scene video with a gaze overlay by clicking the **Preview** button.
 
 Put on the glasses and give it a try!
 
 <div class="pb-4" style="display:flex;justify-content:center;">
 
-![Live Preview](./open_the_live_preview.jpg)
+![Live Preview](./open_the_live_preview.webp)
 
 </div>
 
