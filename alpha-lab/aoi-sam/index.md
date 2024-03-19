@@ -75,8 +75,9 @@ Then, follow these steps:
 
 Upon completing the automated AOI mask creation process, you'll achieve pixel-perfect masks for your enrichments. These precision-crafted masks are then ready for use in Cloud. See below some examples:
 
-![An AOI heatmap showing time to first fixation over 150 bottles in a supermarket.](./bottles.webp)
-![Perfectly segmented Areas Of Interest over cars and a flag.](./cars.webp)
+| ![An AOI heatmap showing time to first fixation over 150 bottles in a supermarket.](./bottles.webp) | ![Perfectly segmented Areas Of Interest over cars and a flag.](./cars.webp) |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| An AOI heatmap showing time to first fixation over 150 bottles in a supermarket.                    | Perfectly segmented Areas Of Interest over cars and a flag.                 |
 
 ## Running Locally
 
