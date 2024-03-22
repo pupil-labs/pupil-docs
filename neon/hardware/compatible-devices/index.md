@@ -5,7 +5,7 @@ The model we currently support are Motorola Edge 40 Pro.
 
 If you want to replace or add an extra Companion device you can purchase it [directly from us](https://pupil-labs.com/products/neon) or from any other distributor. The Neon Companion app is free and can be downloaded from the [Play Store](https://play.google.com/store/apps/details?id=com.pupillabs.neoncomp).
 
-Using a fully charged OnePlus 10 device you get around 4 hours of continuous recording time. You can extend this duration by simultaneously charging the phone during a recording [using a powered USB-C hub](/hardware/using-a-usb-hub/).
+Using a fully charged Motorola Edge 40 Pro device you get around 4 hours of continuous recording time. You can extend this duration by simultaneously charging the phone during a recording [using a powered USB-C hub](/hardware/using-a-usb-hub/).
 
 ## Companion Device Updates
 
