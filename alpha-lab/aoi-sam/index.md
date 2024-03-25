@@ -1,20 +1,20 @@
 ---
-title: "Automate AOI Masking in the Cloud"
+title: "Automate AOI Masking in Pupil Cloud"
 description: "Discover how to get the most from our AOI tool by automatically segmenting and drawing masks using natural language."
-permalink: /alpha-lab/gaze-metrics-in-aois/
+permalink: /alpha-lab/gaze-metrics-in-aois
 meta:
   - name: twitter:card
     content: player
   - name: twitter:image
-    content: "https://i.ytimg.com/vi/UgB0fk5fgpE/maxresdefault.jpg"
+    content: "https://i.ytimg.com/vi/jAWeogYLfXE/maxresdefault.jpg"
   - name: twitter:player
-    content: "https://www.youtube.com/embed/UgB0fk5fgpE"
+    content: "https://www.youtube.com/embed/jAWeogYLfXE"
   - name: twitter:width
     content: "1280"
   - name: twitter:height
     content: "720"
   - property: og:image
-    content: "https://i.ytimg.com/vi/UgB0fk5fgpE/maxresdefault.jpg"
+    content: "https://i.ytimg.com/vi/jAWeogYLfXE/maxresdefault.jpg"
 tags: [Cloud]
 ---
 
@@ -26,32 +26,29 @@ import TagLinks from '@components/TagLinks.vue'
 
 <TagLinks :tags="$frontmatter.tags" />
 
-<Youtube src="UgB0fk5fgpE"/>
+<Youtube src="jAWeogYLfXE"/>
 
 ::: tip
-Are you tired of manually drawing masks? Give your wrist a break and effortlessly automate segmenting the areas of interest in the Cloud.
+Are you tired of manually drawing masks for your areas of interest? Fully automate the process using the Pupil Cloud API!
 :::
 
-## AOI Mask Drawing
+Pupil Cloud's [Areas Of Interest tool](https://docs.pupil-labs.com/neon/pupil-cloud/visualizations/areas-of-interest/) allows you to segment AOIs within a reference image or surface, as part of our [Reference Image](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/) and [Marker Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/marker-mapper/) enrichments. This facilitates the computation of metrics, such as fixation count and total fixation duration within each AOI, that can provide insights into how participants visually engaged with their environment.
 
-Pupil Cloud's new [Areas Of Interest tool](https://docs.pupil-labs.com/neon/pupil-cloud/visualizations/areas-of-interest/) allows you to collide information about the number, average duration or total time an object has been fixated and gain insights about participant engagement with specific objects.
+Drawing AOI masks in Cloud is a manual process where the user can outline AOIs freehand or generate polygons (with straight lines), allowing detailed shapes of the AOIs to be drawn within the image. That said, it can be time-consuming depending on the number of AOIs to be drawn, and potentially prone to human error.
 
-Traditionally, after employing the [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/) or [Marker Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/marker-mapper/), the process of drawing AOI masks remained manual. This manual drawing, essential for data analysis, poses challenges in terms of time and precision, especially with numerous or complex objects in the image.
-
-In this article, we introduce a way to automate your mask creation, streamlining the workflow and improving accuracy in defining areas for analysis.
+In this article, we introduce a way to automate your mask creation, speeding up the workflow in defining areas for analysis.
 
 ## What Tools Enable This?
 
-Recent developments in AI have made automating such image segmentation easier. Not only are new models fast and accurate at masking different objects, but now, you can also prompt them using natural language.
+Recent developments in AI have made automating image segmentation easier. Not only are new models fast and accurate at masking different objects; now, you can also prompt them using natural language. For example, you can simply type _“bottle,”_ and you will get a mask for every bottle in the image, or you can type _“label . shelf . bottle”_ and get all of these complex shapes automatically segmented.
 
-So you can simply type _“bottle,”_ and you will get a mask for every bottle in the image, or you can type _“flag . car”_ and get these complex shapes automatically segmented. Today, we bring you the power of [Grounded Segment Anything](https://arc.net/l/quote/okiwpscx), which, combined with our [Cloud API](https://api.cloud.pupil-labs.com/v2), allows you to get metrics over finely segmented objects.
+In this guide, we harness the power of [Grounded Segment Anything](https://arxiv.org/abs/2401.14159) (SAM). First, we load our reference image, specify which objects/regions we want to segment, and let Grounded SAM do its magic. Then, we use our [Pupil Cloud API](https://api.cloud.pupil-labs.com/v2) to upload the generated segmentation masks and their corresponding labels. The masks and labels are added to the Pupil Cloud enrichment and will appear as AOIs ready for computation of metrics.
 
 ## Steps
 
-To utilise this tool, you will need:
+Download a successful **Reference Image Mapper** or **Marker Mapper** enrichment and the corresponding reference image.
 
-1. A successful **Reference Image Mapper** or **Marker Mapper** enrichment and the corresponding reference image.
-2. You will also need a **developer token** from Cloud. Simply click on the upper right profile picture to go to the Profile Settings and be able to generate a token.
+Obtain a **developer token** from Pupil Cloud (click [here](https://cloud.pupil-labs.com/settings/developer) to obtain yours).
 
 Then, follow these steps:
 
@@ -68,12 +65,12 @@ Then, follow these steps:
 </a>
 </div>
 
-2. Upload your reference image, type the objects, you would like to segment, separated by a dot (e.g. car . flag) and press on the segment button.
-3. After previewing the results, you can write your enrichment URL and your token, then click on submit to Cloud.
+2. Upload your reference image, prompt the objects you would like to segment, separated by a dot (e.g. bottle . label) and press on the segment button.
+3. After previewing the results, write your enrichment URL and token, then click on submit to Pupil Cloud.
 
-## Results
+## Segmented AOIs Ready To Go in Cloud
 
-Upon completing the automated AOI mask creation process, you'll achieve pixel-perfect masks for your enrichments. These precision-crafted masks are then ready for use in Cloud. See below some examples:
+Upon completing the automated AOI mask creation process, you'll achieve finely segmented masks for your enrichments. These precision-crafted masks are then ready for use in Cloud. See below some examples:
 
 | ![An AOI heatmap showing time to first fixation over 150 bottles in a supermarket.](./bottles.webp) | ![Perfectly segmented Areas Of Interest over cars and a flag.](./cars.webp) |
 | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
@@ -81,7 +78,7 @@ Upon completing the automated AOI mask creation process, you'll achieve pixel-pe
 
 ## Running Locally
 
-You can also run everything on your local machine. We have made a Docker container and Python package bundle with a web interface to make it easier to interact with. Detailed instructions on running locally can be found in the Github repository.
+You can also use this tool on your own computer, without needing Google Colab. We've put everything you need into a package that includes a Docker container and a Python package. It comes with a simple web interface to make it easy for anyone to use. Detailed instructions on running locally can be found in the [Github repository](https://github.com/pupil-labs/aois_module).
 
 ::: tip
 Need assistance implementing your automatic segmentation in your application? Reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for formal support options.

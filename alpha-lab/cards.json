@@ -100,7 +100,7 @@
     },
     {
         "title": "Automate AOI Masking in the Cloud",
-        "details": "Discover how to get the most from our AOI tool by automatically segmenting and drawing masks using natural language.",
+        "details": "Extend the capabilities of Pupil Cloud’s AOI tool by automatically segmenting and drawing masks using natural language.",
         "link": {
             "text": "View",
             "href": "/alpha-lab/gaze-metrics-in-aois/"
