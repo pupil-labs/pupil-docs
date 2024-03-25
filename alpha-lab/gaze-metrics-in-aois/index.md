@@ -1,7 +1,7 @@
 ---
 title: "Automate AOI Masking in Pupil Cloud"
 description: "Discover how to get the most from our AOI tool by automatically segmenting and drawing masks using natural language."
-permalink: /alpha-lab/gaze-metrics-in-aois
+permalink: /alpha-lab/gaze-metrics-in-aois/
 meta:
   - name: twitter:card
     content: player
