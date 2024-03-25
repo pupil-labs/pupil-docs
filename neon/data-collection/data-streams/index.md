@@ -18,7 +18,7 @@ The Neon Companion app can provide gaze data in real-time at up to 200 Hz. Gaze 
 
 ![Gaze](./gaze.jpg)
 
-The achieved framerate can vary based on what Companion device is used and environmental conditions. One the OnePlus 10 the full 200 Hz can generally be achieved outside of especially hot environments. On the OnePlus 8 the framerate typically drops to ~120 Hz within a few minutes of starting a recording. Other apps running simultaneously on the phone may decrease the framerate.
+The achieved framerate can vary based on what Companion device is used and environmental conditions. On the OnePlus 10, the full 200 Hz can generally be achieved outside of especially hot environments. On the OnePlus 8, the framerate typically drops to ~120 Hz within a few minutes of starting a recording. Other apps running simultaneously on the phone may decrease the framerate.
 
 After a recording is uploaded to Pupil Cloud, gaze data is automatically re-computed at the full 200 Hz framerat and can be downloaded from there.
 
