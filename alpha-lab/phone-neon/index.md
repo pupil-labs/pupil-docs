@@ -46,7 +46,7 @@ In the past, wearable eye tracking faced challenges in usability primarily due t
 
 2. We used Pupil Cloud's [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/) to map gaze onto a 2D reference image of the environment that contained our test phone, like in the videos and snapshots.
 
-3. We exported the data to analyse offline for a more in-depth exploration. For the offline analysis, we used existing Alpha Lab tutorials that allowed us to [generate scanpaths](/scanpath-rim/), [define areas of interest (AOIs) and calculate gaze metrics](/aoi-sam/), and [map gaze onto dynamic content](/map-your-gaze-to-a-2d-screen/).
+3. We exported the data to analyse offline for a more in-depth exploration. For the offline analysis, we used existing Alpha Lab tutorials that allowed us to [generate scanpaths](/scanpath-rim/), [define areas of interest (AOIs) and calculate gaze metrics](/gaze-metrics-in-aois/), and [map gaze onto dynamic content](/map-your-gaze-to-a-2d-screen/).
 
 The following section presents the results of our analyses, each accompanied by a brief description for clarity.
 
@@ -83,7 +83,7 @@ Dwell time signifies the total duration of fixation on a specific AOI, serving a
 
 As shown in this example, there are clear differences between the areas of interest in both attentional allocation and salience that became evident thanks to the quantitative analysis that focused on the measures mentioned earlier. In line with the heatmap and scanpath visualizations, it is evident that dwell time is higher in AOI-1 compared to the other two areas of interest. Additionally, the time to first contact metric revealed that users directed their attention more swiftly towards AOI-0.
 
-For a detailed explanation and visual representation of these metrics, you can refer to our [AOI tutorial](/aoi-sam/), which provides step-by-step instructions and charts for your analysis.
+For a detailed explanation and visual representation of these metrics, you can refer to our [AOI tutorial](/gaze-metrics-in-aois/), which provides step-by-step instructions and charts for your analysis.
 
 ### Map Your Gaze Onto Dynamic Phone Screen Content
 
