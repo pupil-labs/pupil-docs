@@ -1,7 +1,7 @@
 # Companion Device
 The Companion device is a flagship Android smartphone. It is a regular phone that is not customized or modified in any way. To ensure maximum stability and performance we can only support a small number of carefully selected and tested models. The Neon Companion app is tuned to work with these particular models as we require full control over various low-level functions of the hardware. 
 
-The model we currently support are Motorola Edge 40 Pro.
+The currently supported model is the Motorola Edge 40 Pro. Previously supported models are the OnePlus 8, OnePlus 8T, and OnePlus 10 Pro. 
 
 If you want to replace or add an extra Companion device you can purchase it [directly from us](https://pupil-labs.com/products/neon) or from any other distributor. The Neon Companion app is free and can be downloaded from the [Play Store](https://play.google.com/store/apps/details?id=com.pupillabs.neoncomp).
 
