@@ -99,7 +99,7 @@
         "image": "/alpha-lab/gpt4-eyes.webp"
     },
     {
-        "title": "Automate AOI Masking in the Cloud",
+        "title": "Automate AOI Masking in Pupil Cloud",
         "details": "Extend the capabilities of Pupil Cloud’s AOI tool by automatically segmenting and drawing masks using natural language.",
         "link": {
             "text": "View",
