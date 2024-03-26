@@ -6,15 +6,15 @@ meta:
   - name: twitter:card
     content: player
   - name: twitter:image
-    content: "https://i.ytimg.com/vi/jAWeogYLfXE/maxresdefault.jpg"
+    content: "https://i.ytimg.com/vi/5pJQyiojNT0/maxresdefault.jpg"
   - name: twitter:player
-    content: "https://www.youtube.com/embed/jAWeogYLfXE"
+    content: "https://www.youtube.com/embed/5pJQyiojNT0"
   - name: twitter:width
     content: "1280"
   - name: twitter:height
     content: "720"
   - property: og:image
-    content: "https://i.ytimg.com/vi/jAWeogYLfXE/maxresdefault.jpg"
+    content: "https://i.ytimg.com/vi/5pJQyiojNT0/maxresdefault.jpg"
 tags: [Cloud]
 ---
 
@@ -26,7 +26,7 @@ import TagLinks from '@components/TagLinks.vue'
 
 <TagLinks :tags="$frontmatter.tags" />
 
-<Youtube src="jAWeogYLfXE"/>
+<Youtube src="5pJQyiojNT0"/>
 
 ::: tip
 Are you tired of manually drawing masks for your areas of interest? Fully automate the process using the Pupil Cloud API!
