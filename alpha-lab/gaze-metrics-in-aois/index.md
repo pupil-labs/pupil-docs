@@ -40,7 +40,7 @@ In this article, we introduce a way to automate your mask creation, speeding up 
 
 ## What Tools Enable This?
 
-Recent developments in AI have made automating image segmentation easier. Not only are new models fast and accurate at masking different objects, but now, you can also prompt them using natural language. For example, you can simply type _“bottle,”_ and you will get a mask for every bottle in the image, or you can type _“label . shelf . bottle”_ and get all of these complex shapes automatically segmented.
+Recent developments in AI have made automating image segmentation easier. Not only are new models fast and accurate at masking different objects, but now, you can also prompt them using natural language. For example, you can simply type _“bottle”_ and you will get a mask for every bottle in the image, or you can type _“table . chair . clock . dish”_ and get all of these complex shapes automatically segmented.
 
 In this guide, we harness the power of [Grounded Segment Anything](https://arxiv.org/abs/2401.14159) (SAM). First, we load our reference image, specify which objects/regions we want to segment, and let Grounded SAM do its magic. Then, we use our [Pupil Cloud API](https://api.cloud.pupil-labs.com/v2) to upload the generated segmentation masks and their corresponding labels. The masks and labels are added to the Pupil Cloud enrichment and will appear as AOIs ready for computation of metrics.
 
