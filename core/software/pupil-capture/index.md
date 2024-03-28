@@ -55,6 +55,7 @@ Still having trouble? [Chat with us.](https://pupil-labs.com/chat "Pupil Labs ch
 
 ### Linux
 
+#### Cameras listed as unknown
 If the cameras are listed as `unknown` and you are not able to access cameras in Pupil Capture. Please try the following:
 
 1. Shut down Pupil Capture if it is still running.
@@ -63,6 +64,13 @@ If the cameras are listed as `unknown` and you are not able to access cameras in
 ```sh
 sudo usermod -a -G plugdev $USER
 ```
+
+#### Buttons not clickable
+If you can't click on any button please check if you are using wayland.
+```sh
+echo $XDG_SESSION_TYPE
+```
+If this command outputs "wayland" please change to xserver in the login screen of your OS.
 
 ### macOS 12 Monterey and newer
 
