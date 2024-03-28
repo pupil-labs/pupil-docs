@@ -12,6 +12,11 @@ Potential problems include:
 - Low storage space remaining on the Companion Device.
 - Unstable connection between Neon and the Companion device during a recording.
 
+## The Permissions Dialog "Open Neon Companion to handle Neon Scene Camera v1?" keeps popping up!
+This is due to a bug in Android 12. There is a simple workaround though!
+
+While you should grant all the permission requests that start with "Allow Neon Companion to access...", you should hit "Cancel" on the request that starts with "Open Neon Companion to handle Neon Scene Camera v1?".
+
 ## I Accidentally Updated My Companion Device to an Incompatible Android Version!
 
 You need to rollback the Android version to be compatible again. Please note that all data on the phone will be lost during the rollback, so make backups accordingly.
