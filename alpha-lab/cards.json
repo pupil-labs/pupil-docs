@@ -18,15 +18,6 @@
         "image": "/alpha-lab/neon-capture.webp"
     },
     {
-        "title": "Define Areas of Interest and Gaze Metrics",
-        "details": "Define areas of interest and compute gaze metrics, such as dwell time and time to first fixation, with data downloaded from Pupil Cloud's Reference Image Mapper.",
-        "link": {
-            "text": "View",
-            "href": "/alpha-lab/gaze-metrics-in-aois/#define-aois-and-calculate-gaze-metrics"
-        },
-        "image": "/alpha-lab/aoi-demo.webp"
-    },
-    {
         "title": "Map Gaze Onto Dynamic Screen Content",
         "details": "Map and visualise gaze onto a screen with dynamic content, e.g. a video, web browsing, or other, using Pupil Cloud's Reference Image Mapper and screen recording software.",
         "link": {
@@ -106,5 +97,14 @@
             "href": "/alpha-lab/gpt4-eyes/"
         },
         "image": "/alpha-lab/gpt4-eyes.webp"
+    },
+    {
+        "title": "Automate AOI Masking in Pupil Cloud",
+        "details": "Extend the capabilities of Pupil Cloud’s AOI tool by automatically segmenting and drawing masks using natural language.",
+        "link": {
+            "text": "View",
+            "href": "/alpha-lab/gaze-metrics-in-aois/"
+        },
+        "image": "/alpha-lab/aoi-demo.webp"
     }
 ]

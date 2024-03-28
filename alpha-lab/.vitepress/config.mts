@@ -17,7 +17,7 @@ let theme_config_additions = {
     {
       text: "Reference Image Mapper",
       items: [
-        { text: "Define Areas of Interest and Gaze Metrics", link: "/gaze-metrics-in-aois/" },
+        { text: "Automate AOI Masking in Pupil Cloud", link: "/gaze-metrics-in-aois/" },
         { text: "Map Gaze Throughout an Entire Room", link: "/multiple-rim/" },
         { text: "Generate Scanpath Visualisations", link: "/scanpath-rim/" },
         { text: "Uncover Gaze Behaviour on Phones", link: "/phone-neon/" },
