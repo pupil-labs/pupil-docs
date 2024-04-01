@@ -56,11 +56,9 @@ By looking at the screen when you press the button, you'll have a visual referen
 
 ## Once You Have Everything Recorded
 
-- Create a new [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/) enrichment, or add your new eye tracking recordings to an existing enrichment. Run the enrichment, and download the results by right-clicking the enrichment in Cloud once it's computed (see the screenshot below).
+- Create a new [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/) enrichment, or add your new eye tracking recordings to an existing enrichment. Run the enrichment, and download the results of the enrichment from Cloud once it's computed.
 
-![Download Reference Image Mapper results](./download_rim.png)
-
-- Now you'll need to get the raw data from your new recording(s). Download the raw data by clicking on downloads at the bottom left side of the page in the project's view.
+- Now you'll need to get the timeseries and scene video from your new recording(s). Download them by clicking on downloads at the bottom left side of the page in the project's view.
 
 ## Running the Code
 
@@ -71,7 +69,7 @@ Now you can run the code by executing the following command in your console:
 The application/script will prompt for a series of user inputs:
 
 1. Select the folder path to the Reference Image Mapper download. This folder should contain gaze.csv, sections.csv files and the reference image
-2. Select the subfolder corresponding to raw data export of the eye tracking recording you are using. This directory should contain event.csv, gaze.csv, world_timestamps.csv, and video files (don't select the folder with the scanning recording you made of the scene)
+2. Select the subfolder corresponding to Timeseries & Scene Video export of the eye tracking recording you are using. This directory should contain event.csv, gaze.csv, world_timestamps.csv, and video files (don't select the folder with the scanning recording you made of the scene)
 3. Select the video from the screen display
 
 ::: danger
@@ -210,7 +208,6 @@ Go to lines **76 & 77** and modify them according to the parameters we had in th
 ::: danger
 **Do not use 8080!** Pupil Invisible uses this one for the real-time API.
 :::
-
 
 - **L77:** Password -> Obvious, isn't it?
 
