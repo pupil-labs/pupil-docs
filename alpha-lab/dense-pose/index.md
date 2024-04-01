@@ -49,8 +49,8 @@ Until recently, existing methods for tracking body parts in eye tracking scene v
 
 ## Steps
 
-1. Download a [Raw data export]() from your project in Pupil Cloud.
-2. Upload (uncompressed) one of the subfolders (recording folder) that you're interested in to Google Drive from the raw data export.
+1. Download a recording from your project in Pupil Cloud (in Timeseries & Scene Video Format).
+2. Upload (uncompressed) one of the recording folders that you're interested to your Google Drive Account. (Don't want to use Google Drive? Check out how to [run it locally](#running-locally).)
 3. Access our [Google Colab Notebook](https://colab.research.google.com/drive/1s6mBNAhcnxhJlqxeaQ2IZMk_Ca381p25?usp=sharing) and carefully follow the instructions.
 
 <div class="mb-4" style="display:flex;justify-content:center;">
