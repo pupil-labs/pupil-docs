@@ -64,7 +64,7 @@ Consider applying [offset correction](https://docs.pupil-labs.com/neon/data-coll
 
 ## Explore the Gaze Mapping Output
 
-After running the code, new files will be generated. These files will be automatically saved within the folder that contains the Face Mapper enrichment data. Specifically, you will get:
+After running the code, new files will be generated and automatically saved within the folder that contains the Face Mapper enrichment data. Specifically, you will get:
 
 1. The scene video of your recording rendered to show a bounding box of the detected face, a blue shaded circle over the eyes and nose and a blue shaded ellipse over the mouth, as well as the typical red circle for the gaze position. Facial landmarks that are gazed at are highlighted with a green mask. 
 2. A newly generated file named `merged_data.csv`, containing all the relevant information you need, including the gaze data point information (gaze x and y coordinates), the coordinates of all facial landmarks, along with their associated timestamps, as well as the outcome of the mapping (field: `landmark`). 
