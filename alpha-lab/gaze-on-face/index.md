@@ -75,3 +75,4 @@ After running the code, new files will be generated and automatically saved with
 ::: tip
 Need guidance in adapting or extending this guide to match your custom analysis pipeline? Reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for dedicated support options.
 :::
+
