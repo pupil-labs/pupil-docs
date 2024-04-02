@@ -70,9 +70,11 @@ After running the code, new files will be generated and automatically saved with
 2. A newly generated file named `merged_data.csv`, containing all the relevant information you need, including the gaze data point information (gaze x and y coordinates), the coordinates of all facial landmarks, along with their associated timestamps, as well as the outcome of the mapping (field: `landmark`). 
 3. A newly generated file named `percentages.csv`, along with a barplot showing the percentage of gaze data mapped on each facial landmark.
 
-![Mapping gaze on facial landmarks results](./barplot.png)
+![Mapping gaze on facial landmarks results](./barplot1.png)
 
 ::: tip
 Need guidance in adapting or extending this guide to match your custom analysis pipeline? Reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for dedicated support options.
 :::
+
+
 
