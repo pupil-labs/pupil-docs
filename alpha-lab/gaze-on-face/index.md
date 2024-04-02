@@ -8,7 +8,7 @@ meta:
   - name: twitter:image
     content: "https://i.ytimg.com/vi/nt_zNSBMJWI/maxresdefault.jpg"
   - name: twitter:player
-    content: "https://www.youtube.com/embed/bWCLXPZa8zs"
+    content: "https://www.youtube.com/embed/KRkgtGqLENk"
   - name: twitter:width
     content: "1280"
   - name: twitter:height
@@ -26,7 +26,7 @@ import TagLinks from '@components/TagLinks.vue'
 
 <TagLinks :tags="$frontmatter.tags" />
 
-<Youtube src="bWCLXPZa8zs"/>
+<Youtube src="KRkgtGqLENk"/>
 
 ::: tip
 Decode the cues of social interactions and cognition: Does your attention drift towards your friend's eyes, or do you gaze at their lips as they talk? This guide provides a roadmap to map gaze on facial landmarks using the output of our Face Mapper enrichment.
@@ -46,14 +46,14 @@ This guide introduces a tool to generate Areas of Interest (AOIs) around each fa
 
 ## Setting Up Your Study
 
-When setting up your experiment, accurate mapping of gaze on facial landmarks depends on two crucial factors: the proximity between the wearer and the target face, and the viewing angle.
+When setting up your experiment, precise mapping of gaze on facial landmarks hinges on two crucial factors: the proximity between the wearer and the target face, and the viewing angle.
 
 For example, a wearer too far from the target face can result in facial landmarks appearing too small in the scene video. At the same time, sub-optimal viewing angles can cause AOIs on facial landmarks to be too small, and/or overlap. A wearer that is both close and directly facing the target face is therefore more optimal.
 
 It is also important to optimize the AOI radius depending on the target’s proximity and viewing angle. A small AOI radius might not cover the whole facial landmark of interest. Conversely, a larger AOI radius might cause AOIs to overlap. Overlap can make it difficult to distinguish exactly which landmark was being gazed at.
 
 ## Steps To Recreate
-1. Download a [Timeseries Data + Scene video]() from your project in Pupil Cloud.
+1. Download a [Timeseries Data + Scene video](https://docs.pupil-labs.com/neon/data-collection/data-format/) from your project in Pupil Cloud.
 2. Download the [Face Mapper export](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/face-mapper/) from your project in Pupil Cloud.
 Upload (uncompressed) one of the subfolders (recording folder) that you're interested in to Google Drive from the raw data export.
 3. Follow the instructions of this [Github repository](https://github.com/pupil-labs/gaze-on-facial-landmarks) and start mapping gaze on facial landmarks.
