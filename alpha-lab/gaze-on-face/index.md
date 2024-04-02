@@ -40,7 +40,7 @@ In this guide, we'll show you how to map gaze onto facial landmarks using data e
 
 ## Introducing AOI Mapping for Facial Landmarks 
 
-Pupil Cloud offers a [Face Mapper enrichment](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/face-mapper/) that tracks faces in scene videos, determines if they were gazed at, and provides coordinates for facial landmarks of the faces. However, it does not reveal which facial landmarks the wearer's gaze targets. That is, do they look at the mouth, eyes, or nose?
+Pupil Cloud offers a [Face Mapper enrichment](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/face-mapper/) that tracks faces in scene videos, determines if they were gazed at, and provides coordinates for facial landmarks. However, it does not reveal _which_ facial landmarks were gazed at. That is, did they look at the mouth, eyes, or nose?
 
 This guide addresses this by introducing a tool that can generate Areas of Interest (AOIs) around each facial landmark (like in the video above) and correlate the wearer's gaze with these. This enables automatic identification of which specific locations the wearer looked at on their interlocutor's face.
 
