@@ -50,7 +50,7 @@ When setting up your experiment, accurate mapping of gaze on facial landmarks de
 
 For example, a wearer too far from the target face can result in facial landmarks appearing too small in the scene video. At the same time, sub-optimal viewing angles can cause AOIs on facial landmarks to be too small, and/or overlap. A wearer that is both close and directly facing the target face is therefore more optimal.
 
-It is therefore important to optimize the AOI radius depending on the target’s proximity and viewing angle. A small AOI radius might not cover the whole facial landmark of interest, leading to inaccurate gaze mapping. Conversely, a larger AOI radius might cause AOIs to overlap. Overlap can make it difficult to distinguish exactly which landmark was being gazed at.
+It is also important to optimize the AOI radius depending on the target’s proximity and viewing angle. A small AOI radius might not cover the whole facial landmark of interest. Conversely, a larger AOI radius might cause AOIs to overlap. Overlap can make it difficult to distinguish exactly which landmark was being gazed at.
 
 ## Steps To Recreate
 1. Download a [Timeseries Data + Scene video]() from your project in Pupil Cloud.
