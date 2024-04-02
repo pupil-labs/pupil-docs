@@ -34,7 +34,7 @@ Decode the cues of social interactions and cognition: Does your attention drift 
 
 ## Analyzing Social Interactions: Mapping Gaze Onto Facial Landmarks 
 
-Understanding where individuals direct their attention during social interactions is of significant importance across various research domains. From developmental research, exploring how infants and children focus on specific facial features at different developmental stages, to clinical psychology and the study of atypical behaviours, such as autism spectrum disorder.
+Understanding where individuals direct their attention during social interactions is of significant importance across various research domains. From developmental research, exploring how infants and children focus on facial features at different developmental stages, to clinical psychology and the study of atypical behaviours, such as autism spectrum disorder.
 
 In this guide, we'll show you how to map gaze onto facial landmarks using data exported from Pupil Cloud's Face Mapper enrichment.
 
