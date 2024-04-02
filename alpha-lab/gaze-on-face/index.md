@@ -59,7 +59,7 @@ Upload (uncompressed) one of the subfolders (recording folder) that you're inter
 3. Follow the instructions of this [Github repository](https://github.com/pupil-labs/gaze-on-facial-landmarks) and start mapping gaze on facial landmarks.
 
 ::: tip
-Consider applying [offset correction](https://docs.pupil-labs.com/neon/data-collection/offset-correction/#using-offset-correction-to-improve-gaze-accuracy) for even more accurate mapping of gaze on facial landmarks. 
+Consider applying [offset correction](https://docs.pupil-labs.com/neon/data-collection/offset-correction/#using-offset-correction-to-improve-gaze-accuracy) before the recording(s) for even more accurate mapping of gaze on facial landmarks. 
 :::
 
 ## Explore the Gaze Mapping Output
