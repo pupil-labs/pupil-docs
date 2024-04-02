@@ -48,7 +48,7 @@ This guide introduces a tool to generate Areas of Interest (AOIs) around each fa
 
 When setting up your experiment, precise mapping of gaze on facial landmarks depends on two crucial factors: the proximity between the wearer and the target face, and the viewing angle directed towards the face.
 
-For example, closer proximity results in facial landmarks appearing larger in the scene video; while viewing angle can cause AOIs on facial landmarks to overlap. 
+For example, a wearer too far from the target face can result in facial landmarks appearing too small in the scene video. At the same time, sub-optimal viewing angles can cause AOIs on facial landmarks to be too small, and/or overlap. A wearer that is both close and directly facing the target face is therefore more optimal.
 
 It is therefore important to optimize the AOI radius depending on the target’s proximity and viewing angle. A small AOI radius might not cover the whole facial landmark of interest, leading to inaccurate gaze mapping. Conversely, a larger AOI radius might cause AOIs to overlap. Overlap can make it difficult to distinguish exactly which landmark was being gazed at.
 
