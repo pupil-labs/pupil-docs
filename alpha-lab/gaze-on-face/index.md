@@ -1,5 +1,5 @@
 ---
-title: "Mapping Gaze Onto Facial Landmarks"
+title: "Map Gaze Onto Facial Landmarks"
 description: "Map gaze onto facial landmarks using Pupil Cloud’s Face Mapper exported data."
 permalink: /alpha-lab/gaze-on-face/
 meta:
