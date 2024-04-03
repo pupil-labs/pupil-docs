@@ -108,7 +108,7 @@
         "image": "/alpha-lab/aoi-demo.webp"
     },
     {
-        "title": "Mapping Gaze Onto Facial Landmarks",
+        "title": "Map Gaze Onto Facial Landmarks",
         "details": "Map gaze onto facial landmarks using Pupil Cloud’s Face Mapper exported data.",
         "link": {
             "text": "View",
