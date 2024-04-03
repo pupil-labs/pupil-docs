@@ -8,7 +8,7 @@ meta:
   - name: twitter:image
     content: "https://i.ytimg.com/vi/nt_zNSBMJWI/maxresdefault.jpg"
   - name: twitter:player
-    content: "https://www.youtube.com/embed/KRkgtGqLENk"
+    content: "https://www.youtube.com/embed/aWkFag5Z8LU"
   - name: twitter:width
     content: "1280"
   - name: twitter:height
@@ -26,7 +26,7 @@ import TagLinks from '@components/TagLinks.vue'
 
 <TagLinks :tags="$frontmatter.tags" />
 
-<Youtube src="KRkgtGqLENk"/>
+<Youtube src="aWkFag5Z8LU"/>
 
 ::: tip
 Decode the cues of social interactions and cognition: Does your attention drift towards your friend's eyes, or do you gaze at their lips as they talk? This guide shows how to map gaze on facial landmarks using the output of our Face Mapper enrichment.
