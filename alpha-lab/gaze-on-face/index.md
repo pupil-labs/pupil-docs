@@ -8,7 +8,7 @@ meta:
   - name: twitter:image
     content: "https://i.ytimg.com/vi/nt_zNSBMJWI/maxresdefault.jpg"
   - name: twitter:player
-    content: "https://www.youtube.com/embed/aWkFag5Z8LU"
+    content: "https://www.youtube.com/embed/vEshPxgWs3E"
   - name: twitter:width
     content: "1280"
   - name: twitter:height
@@ -26,7 +26,7 @@ import TagLinks from '@components/TagLinks.vue'
 
 <TagLinks :tags="$frontmatter.tags" />
 
-<Youtube src="aWkFag5Z8LU"/>
+<Youtube src="vEshPxgWs3E"/>
 
 ::: tip
 Decode the cues of social interactions and cognition: Does your attention drift towards your friend's eyes, or do you gaze at their lips as they talk? This guide shows how to map gaze on facial landmarks using the output of our Face Mapper enrichment.
@@ -48,6 +48,8 @@ reveal _which_ facial landmarks were gazed at. That is, did they look at the mou
 
 This guide introduces a tool to generate Areas of Interest (AOIs) around each facial landmark (like in the video above) and 
 correlate the wearer's gaze with these. In other words, it automatically identifies which facial landmarks were gazed at on the interlocutor's face.
+
+It also computes the percentage of gaze mapped on each facial landmark, but you can use the results to compute your own outcome metrics.
 
 ## Setting Up Your Experiment
 
