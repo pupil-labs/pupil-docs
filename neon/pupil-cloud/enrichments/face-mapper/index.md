@@ -32,7 +32,7 @@ This file contains all the individual face detections.
 |	**nose y [px]** | Y coordinate of the nose in image coordinates in pixels. | 
 |	**mouth left x [px]** | X coordinate of the left mouth corner in image coordinates in pixels. |
 |	**mouth left y [px]** | Y coordinate of the left mouth corner in image coordinates in pixels. |
-|	**mouth right x [px]** | X coordinate of the right mouth corner in image coordinates in pixels. |
+|	**mouth&nbsp;right&nbsp;x&nbsp;[px]** | X coordinate of the right mouth corner in image coordinates in pixels. |
 |	**mouth right y [px]** | Y coordinate of the right mouth corner in image coordinates in pixels. |
 
 ### gaze_on_face.csv
@@ -53,9 +53,6 @@ This file indicates which fixations are on faces (within the bounding box of det
 | **section id**                        | Unique identifier of the corresponding section.     |
 | **recording id**                      | Unique identifier of the recording this sample belongs to.     |
 | **fixation id**                       | Identifier of the fixation. The counter starts at the beginning of the recording.     |
-| **start&nbsp;timestamp&nbsp;[ns]**    | UTC timestamp in nanoseconds of the start of the fixation.     |
+| **start&nbsp;timestamp&nbsp;[ns]**              | UTC timestamp in nanoseconds of the start of the fixation.     |
 | **end timestamp [ns]**                | UTC timestamp in nanoseconds of the end of the fixation.     |
-| **duration [ms]**                     | Duration of the fixation in milliseconds.     |
 | **fixation on face**                  | Boolean indicating whether the fixation is on a face.     |
-| **fixation x [px]**                   | Float value representing the x-coordinate of the fixation in world camera pixel coordinates. This position is the average of all gaze samples within the fixation.     |
-| **fixation y [px]**                   | Same as "fixation x [px]" but for the 
