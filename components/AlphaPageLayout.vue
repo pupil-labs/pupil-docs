@@ -1,30 +1,62 @@
 <script setup lang="ts">
-import { useData } from "vitepress";
-import { computed } from "vue";
-import alphaCards from "./../alpha-lab/cards.json";
-import Footer from "./Footer.vue";
-import RandomBanner from "./banner/RandomBanner.vue";
-import CardLink from "./cards/CardLink.vue";
-const { frontmatter } = useData();
+  import { useData } from "vitepress";
+  import { ref, computed } from "vue";
+  import alphaCards from "./../alpha-lab/cards.json";
+  import Footer from "./Footer.vue";
+  import CardLink from "./cards/CardLink.vue";
+  const { frontmatter } = useData();
 
-type FrontMatter = typeof frontmatter;
+  type FrontMatter = typeof frontmatter;
 
-interface FM extends FrontMatter {
-  hero?: {
-    title?: string;
-    text?: string;
-    tagline?: string;
-  };
-}
+  interface FM extends FrontMatter {
+    hero?: {
+      title?: string;
+      text?: string;
+      tagline?: string;
+    };
+    tags?: string[];
+  }
 
-const fm: FM = frontmatter;
-const cards = computed(() => alphaCards.slice().reverse());
+  const fm: FM = frontmatter;
+
+  const cards = computed(() => alphaCards.slice().reverse());
+
+  const categories: any = cards.value.map((element) => {
+    return element.category;
+  });
+
+  const unqiueCategories: any = new Set(categories);
+  console.log(unqiueCategories);
+
+  const category = ref(""); // initial category is empty
+
+  const filteredCards = computed(() => {
+    if (!category.value) {
+      return cards.value; // if no category is selected, return all cards
+    }
+    return cards.value.filter((card) => card.category === category.value);
+  });
 </script>
 
 <style scoped>
-.text-padding:not(:last-child) {
-  padding-bottom: 16px;
-}
+  .text-padding:not(:last-child) {
+    padding-bottom: 16px;
+  }
+  .category-chip {
+    padding: 10px 16px;
+    border-radius: 9999px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: medium;
+    font-family: Inter, "Helvetica Neue", sans-serif;
+  }
+  .category-chip:hover {
+    background-color: var(--vp-c-default-1);
+  }
+  .selected {
+    background-color: var(--vp-c-default-2);
+  }
 </style>
 
 <template>
@@ -49,19 +81,34 @@ const cards = computed(() => alphaCards.slice().reverse());
             {{ tagline }}
           </p>
         </div>
-        <div class="col-span-2 order-1 sm:order-2 flex justify-end">
-          <RandomBanner />
-        </div>
       </div>
     </div>
     <hr style="border-color: var(--vp-c-divider)" />
+    <div style="display: flex; gap: 16px; flex-wrap: wrap">
+      <span
+        class="category-chip"
+        :class="{ selected: category === '' }"
+        @click="category = ''"
+      >
+        All Categories
+      </span>
+      <span
+        v-for="cat in unqiueCategories"
+        :key="cat"
+        class="category-chip"
+        :class="{ selected: category === cat }"
+        @click="category = cat"
+      >
+        {{ cat }}
+      </span>
+    </div>
     <div>
       <div
         v-if="cards"
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14"
       >
         <CardLink
-          v-for="(product, index) in cards"
+          v-for="(product, index) in filteredCards"
           :key="index"
           :product="product"
         />

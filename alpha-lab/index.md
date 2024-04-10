@@ -8,9 +8,7 @@ hero:
   title: "Alpha Lab"
   tagline:
     [
-      "Pupil Labs is made up of people who are curious by nature. We are researchers, designers, toolmakers, and professional tinkerers. We enjoy building quick prototypes and demos to explore our curiosities. We built Alpha  Lab so that we can have a centralized place to collect the results of our explorations and to share it with the world.",
-      "Alpha Lab is not a place for official product documentation. Everything you find here should be considered a work in progress, and may even be a bit rough around the edges. That is the nature of exploration!",
-      "We encourage you to read through the results and go further - play around, build from the ideas here, hack away!",
+      "Pupil Labs is made up of people who are curious by nature. We are researchers, designers, toolmakers, and professional tinkerers. We enjoy building quick prototypes and demos to explore our curiosities.",
     ]
 
 cards:
