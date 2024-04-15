@@ -4,6 +4,7 @@
   import alphaCards from "./../alpha-lab/cards.json";
   import Footer from "./Footer.vue";
   import CardLink from "./cards/CardLink.vue";
+  import ArrowIcon from "./ArrowIcon.vue";
   const { frontmatter } = useData();
 
   type FrontMatter = typeof frontmatter;
@@ -57,6 +58,9 @@
   .selected {
     background-color: var(--vp-c-default-2);
   }
+  .text-link-color {
+    color: var(--vp-c-brand-2);
+  }
 </style>
 
 <template>
@@ -80,6 +84,9 @@
           >
             {{ tagline }}
           </p>
+          <a href="/alpha-lab" class="flex items-center gap-2 text-link-color"
+            >More about Alpha Lab <ArrowIcon
+          /></a>
         </div>
       </div>
     </div>
