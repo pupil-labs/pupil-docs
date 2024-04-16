@@ -49,7 +49,7 @@ You can specify the inter-eye distance (IED) of a wearer in the wearer profile b
 ## Pupil Diameters
 
 <Badge>Pupil Cloud</Badge>
-After uploading a recording to Pupil Cloud, pupil diameters are computed automatically at 200 Hz. The computed pupil diameters correspond to the physical pupil size in mm, rather than the apparent pupil size in pixels as observed in the eye videos. The algorithm does not provide independent measurements per eye but reports a single value for both eyes.
+After uploading a recording to Pupil Cloud, pupil diameters are computed automatically at 200 Hz, separately for the left and right eye. The computed pupil diameters correspond to the physical pupil size in mm, rather than the apparent pupil size in pixels as observed in the eye videos. 
 
 Similar to the 3D eye states, the accuracy of the pupil diameter measurements improves when supplying the wearer's IED in the wearer profile before making a recording.
 
