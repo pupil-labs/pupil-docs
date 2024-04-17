@@ -138,7 +138,7 @@
             third-party software integrations, custom analysis, custom code
             implementation, and more.
           </p>
-          <div class="flex flex-wrap gap-4 mt-4">
+          <div class="flex flex-wrap gap-4 mt-4 sm:mb-4 mb-0">
             <a
               href="mailto:sales@pupil-labs.com"
               class="flex items-center gap-2 text-link-color"
