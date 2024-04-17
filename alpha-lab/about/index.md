@@ -17,18 +17,15 @@ content:
     [
       {
         title: "We are builders",
-        icon: "BuilderIcon",
         text: "We innovate in eye tracking technology and tools, offering expertise and custom solutions tailored to your specific needs.",
       },
       {
         title: "We speak research",
-        icon: "ResearchIcon",
-        text: "We innovate in eye tracking technology and tools, offering expertise and custom solutions tailored to your specific needs.",
+        text: "Our team of PhDs, engineers, and scientists stays at the forefront of academic trends, bridging academia and industry with expertise in research language.",
       },
       {
         title: "We are vision experts",
-        icon: "ExpertIcon",
-        text: "We innovate in eye tracking technology and tools, offering expertise and custom solutions tailored to your specific needs.",
+        text: "Our expertise in vision science and eye tracking enables us to tackle fundamental and experimental questions.",
       },
     ]
 ---
