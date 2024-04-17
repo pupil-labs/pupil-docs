@@ -24,7 +24,7 @@
       // If it's not December, pick a random banner from the 7 available banners
       const numberOfImages = 7;
       const randomImageNumber = Math.trunc(Math.random() * numberOfImages) + 1;
-      console.log(randomImageNumber);
+      // console.log(randomImageNumber);
       var randomImage = `img${randomImageNumber.toString()}`;
       var randomImageAltText = "img" + randomImageNumber.toString();
 

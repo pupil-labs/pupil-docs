@@ -27,7 +27,7 @@
   });
 
   const unqiueCategories: any = new Set(categories);
-  console.log(unqiueCategories);
+  // console.log(unqiueCategories);
 
   const category = ref(""); // initial category is empty
 
