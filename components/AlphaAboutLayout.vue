@@ -7,6 +7,9 @@
   import ExpertIcon from "./ExpertIcon.vue";
   const { frontmatter } = useData();
 
+  // @ts-ignore
+  import officeImage from "../alpha-lab/public/office.webp";
+
   type FrontMatter = typeof frontmatter;
 
   interface FM extends FrontMatter {
@@ -158,7 +161,7 @@
         </div>
         <div class="col-span-2 order-1 sm:order-2 h-full">
           <img
-            src="/alpha-lab/public/office.webp"
+            :src="officeImage"
             alt="Pupil Labs Office"
             style="object-fit: cover; object-position: right"
             class="w-full h-full rounded-lg"
