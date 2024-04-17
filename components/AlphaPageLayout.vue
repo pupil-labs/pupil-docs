@@ -59,6 +59,9 @@
     background-color: var(--vp-c-default-2);
   }
   .text-link-color {
+    color: var(--vp-c-brand-1);
+  }
+  .text-link-color:hover {
     color: var(--vp-c-brand-2);
   }
 </style>
@@ -84,7 +87,9 @@
           >
             {{ tagline }}
           </p>
-          <a href="/alpha-lab" class="flex items-center gap-2 text-link-color"
+          <a
+            href="/alpha-lab/about/"
+            class="flex items-center gap-2 text-link-color"
             >More about Alpha Lab <ArrowIcon
           /></a>
         </div>
