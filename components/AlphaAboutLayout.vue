@@ -158,7 +158,7 @@
         </div>
         <div class="col-span-2 order-1 sm:order-2 h-full">
           <img
-            src="/alpha-lab/about/office.png"
+            src="/alpha-lab/public/office.webp"
             alt="Pupil Labs Office"
             style="object-fit: cover; object-position: right"
             class="w-full h-full rounded-lg"
