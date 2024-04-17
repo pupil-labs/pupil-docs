@@ -103,6 +103,7 @@
             v-if="fm.hero?.tagline"
             v-for="tagline in fm.hero?.tagline"
             class="text-base text-2 text-padding"
+            style="color: var(--vp-c-text-1)"
           >
             {{ tagline }}
           </p>
@@ -113,11 +114,11 @@
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-center">
         <div class="order-2 sm:order-1">
           <h1
-            v-if="fm.hero?.title"
+            v-if="fm.content?.title"
             class="text-2xl sm:text-4xl pb-4 md:pb-9 lg:pb-6 font-semibold"
             style="color: var(--vp-c-brand-1)"
           >
-            {{ fm.hero.title }}
+            {{ fm.content.title }}
           </h1>
           <div
             v-if="fm.content?.list"

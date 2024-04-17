@@ -23,7 +23,7 @@
 <style scoped>
   .category-name {
     font-size: 14px;
-    font-weight: medium;
+    font-weight: 500;
     font-family: Inter, "Helvetica Neue", sans-serif;
     color: var(--vp-c-text-3);
   }
@@ -55,8 +55,13 @@
           <div v-if="product.category" class="category-name">
             {{ product.category }}
           </div>
-          <div v-if="product.link" class="flex gap-2 items-center text-sm">
-            <span v-if="product.link.text">{{ product.link.text }}</span>
+          <div
+            v-if="product.link"
+            class="flex gap-2 items-center text-sm font-medium"
+          >
+            <span v-if="product.link.text" class="font-medium">{{
+              product.link.text
+            }}</span>
             <ArrowIcon />
           </div>
         </div>

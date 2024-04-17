@@ -49,7 +49,7 @@
     color: white;
     cursor: pointer;
     font-size: 14px;
-    font-weight: medium;
+    font-weight: 500;
     font-family: Inter, "Helvetica Neue", sans-serif;
   }
   .category-chip:hover {
@@ -63,6 +63,10 @@
   }
   .text-link-color:hover {
     color: var(--vp-c-brand-2);
+  }
+  a,
+  p {
+    font-family: Inter, "Helvetica Neue", sans-serif;
   }
 </style>
 
@@ -89,7 +93,7 @@
           </p>
           <a
             href="/alpha-lab/about/"
-            class="flex items-center gap-2 text-link-color"
+            class="flex items-center gap-2 text-link-color font-medium text-sm"
             >More about Alpha Lab <ArrowIcon
           /></a>
         </div>
