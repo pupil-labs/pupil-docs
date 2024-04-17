@@ -154,7 +154,7 @@
               class="flex items-center gap-2 text-link-color"
             >
               <button class="dark">
-                <span>Learn more</span>
+                <span>Learn More</span>
                 <ArrowIcon />
               </button>
             </a>
