@@ -75,12 +75,12 @@
     background-color: var(--vp-c-brand-2);
   }
 
-  button.dark {
+  button.darkButton {
     background-color: var(--vp-c-default-2);
     color: var(--vp-c-text-1);
   }
 
-  button.dark:hover {
+  button.darkButton:hover {
     background-color: var(--vp-c-default-1);
   }
 </style>
@@ -90,8 +90,8 @@
     class="container grid gap-6 sm:gap-12 md:gap-16 lg:gap-20 px-6 pt-9 sm:pb-12 md:pb-16 lg:pb-20 mx-auto"
   >
     <div class="grid gap-8">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-center">
-        <div class="order-2 sm:order-1">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="order-2 sm:order-1 col-auto lg:col-span-5 h-full">
           <h1
             v-if="fm.hero?.title"
             class="text-2xl sm:text-4xl pb-4 md:pb-9 lg:pb-6 font-semibold"
@@ -108,11 +108,19 @@
             {{ tagline }}
           </p>
         </div>
+        <div class="order-1 sm:order-2 h-full col-span-7">
+          <img
+            :src="officeImage"
+            alt="Pupil Labs Office"
+            style="object-fit: cover; object-position: right"
+            class="w-full h-full rounded-lg"
+          />
+        </div>
       </div>
     </div>
     <div class="grid gap-8">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-center">
-        <div class="order-2 sm:order-1">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
+        <div class="order-2 sm:order-1 col-auto lg:col-span-5">
           <h1
             v-if="fm.content?.title"
             class="text-2xl sm:text-4xl pb-4 md:pb-9 lg:pb-6 font-semibold"
@@ -153,20 +161,12 @@
               target="_blank"
               class="flex items-center gap-2 text-link-color"
             >
-              <button class="dark">
+              <button class="darkButton">
                 <span>Learn More</span>
                 <ArrowIcon />
               </button>
             </a>
           </div>
-        </div>
-        <div class="col-span-2 order-1 sm:order-2 h-full">
-          <img
-            :src="officeImage"
-            alt="Pupil Labs Office"
-            style="object-fit: cover; object-position: right"
-            class="w-full h-full rounded-lg"
-          />
         </div>
       </div>
     </div>

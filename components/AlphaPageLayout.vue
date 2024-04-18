@@ -46,7 +46,7 @@
   .category-chip {
     padding: 10px 16px;
     border-radius: 9999px;
-    color: white;
+    color: var(--vp-c-text-1);
     cursor: pointer;
     font-size: 14px;
     font-weight: 500;
@@ -72,11 +72,11 @@
 
 <template>
   <div
-    class="container grid gap-6 sm:gap-12 md:gap-16 lg:gap-20 px-6 pt-9 sm:pb-12 md:pb-16 lg:pb-20 mx-auto"
+    class="container grid gap-6 sm:gap-12 md:gap-16 lg:gap-14 px-6 pt-9 sm:pb-12 md:pb-16 lg:pb-20 mx-auto"
   >
     <div class="grid gap-8">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-center">
-        <div class="order-2 sm:order-1">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="order-2 sm:order-1 col-auto lg:col-span-5">
           <h1
             v-if="fm.hero?.title"
             class="text-2xl sm:text-4xl pb-4 md:pb-9 lg:pb-6 font-semibold"
