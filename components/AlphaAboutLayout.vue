@@ -108,7 +108,7 @@
             {{ tagline }}
           </p>
         </div>
-        <div class="order-1 sm:order-2 h-full col-span-7">
+        <div class="order-1 sm:order-2 h-full col-span-6 col-start-7">
           <img
             :src="officeImage"
             alt="Pupil Labs Office"
