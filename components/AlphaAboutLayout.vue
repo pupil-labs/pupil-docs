@@ -119,7 +119,7 @@
       </div>
     </div>
     <div class="grid gap-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         <div class="order-2 sm:order-1 col-auto lg:col-span-5">
           <h1
             v-if="fm.content?.title"
@@ -128,7 +128,7 @@
           >
             {{ fm.content.title }}
           </h1>
-          <div
+          <!-- <div
             v-if="fm.content?.list"
             v-for="(list, index) in fm.content?.list"
             class="text-base text-2 text-padding"
@@ -138,13 +138,23 @@
               <p class="font-semibold">{{ list.title }}</p>
             </div>
             <p class="pt-2">{{ list.text }}</p>
-          </div>
+          </div> -->
+          <p style="color: var(--vp-c-text-2)">
+            We are researchers, designers, toolmakers, and professional
+            tinkerers. We're constantly working behind the scenes to innovate
+            our products, and in doing so, we've acquired knowledge in diverse
+            areas, from spatial gaze mapping, to multi-sensor fusion, to
+            building gaze-contingent applications. We love putting our skills
+            into action in Alpha Lab!
+          </p>
           <hr class="mt-2 mb-8" style="border-color: var(--vp-c-divider)" />
           <p class="text-xl font-semibold mb-2">Need help?</p>
           <p style="color: var(--vp-c-text-2)">
-            We can help you with product development and prototyping,
-            third-party software integrations, custom analysis, custom code
-            implementation, and more.
+            We hope the guides in Alpha Lab are accessible to most users.
+            However, there may come a time when you need something modified,
+            built upon, or even tailored specifically to your research project.
+            Maybe you need something completely bespoke. We can help you with
+            that!
           </p>
           <div class="flex flex-wrap gap-4 mt-4 sm:mb-4 mb-0">
             <a
