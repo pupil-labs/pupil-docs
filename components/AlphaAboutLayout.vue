@@ -91,7 +91,7 @@
   >
     <div class="grid gap-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        <div class="order-2 sm:order-1 col-auto lg:col-span-5 h-full">
+        <div class="order-2 sm:order-1 col-span-full lg:col-span-5 h-full">
           <h1
             v-if="fm.hero?.title"
             class="text-2xl sm:text-4xl pb-4 md:pb-9 lg:pb-6 font-semibold"
@@ -108,7 +108,9 @@
             {{ tagline }}
           </p>
         </div>
-        <div class="order-1 sm:order-2 h-full col-span-6 col-start-7">
+        <div
+          class="order-1 sm:order-2 h-full lg:col-span-7 xl:col-span-6 xl:col-start-7"
+        >
           <img
             :src="officeImage"
             alt="Pupil Labs Office"
