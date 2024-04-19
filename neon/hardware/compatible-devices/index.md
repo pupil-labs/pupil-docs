@@ -26,7 +26,7 @@ supported Android versions are as follows:
 
 - On **Moto Edge 40 Pro**: Android 13
 - On **Moto Edge + (2023)**: Android 13
-- On **Moto X40 Pro**: Android 13
+- On **Moto X40 Pro**: Android 13 (global ROM required)
 
 :::tip
 Should you have upgraded to an incompatible Android version by accident, you have the
