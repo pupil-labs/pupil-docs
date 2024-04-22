@@ -8,7 +8,7 @@ For example, below and to the left is a view of a kitchen that was used as a ref
 
 The Heatmap is a Gaussian blurred 2D histogram of gaze data from all selected recordings. No normalization for recording time is performed, so longer recordings will carry more weight and contribute more to the Heatmap.
 
-The colors in the Visualization map to the range 0-100%, as shown by the color bar to the right of the Visualization, where 0 means a point was never gazed at and 100% means it had the longest gaze duration.
+The colors in the heatmap range from 0 to 100%, as indicated by the color bar to the right. A value of 0% means a point was never gazed at and 100% means it had the longest gaze duration.
 
 The output of the Heatmap Visualization is two image files: one image with just the Heatmap and another where it is overlayed on the reference image.
 
