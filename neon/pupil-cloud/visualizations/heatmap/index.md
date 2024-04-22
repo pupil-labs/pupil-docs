@@ -12,7 +12,7 @@ The colors in the heatmap range from 0 to 100%, as indicated by the color bar to
 
 The output of the Heatmap Visualization is two image files: one image with just the Heatmap and another where it is overlayed on the reference image.
 
-:::: details Click for implementation steps
+:::: details Implementation Details
 
 1. Compute the 2D histogram over the raw gaze data of all recordings. The histogram has the same aspect ratio as the reference image, with the wider side set to 300 bins:
     
