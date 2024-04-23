@@ -92,47 +92,34 @@
     <div class="grid gap-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         <div class="order-2 lgd:order-1 col-span-full lg:col-span-5 h-full">
-          <h1
-            v-if="fm.hero?.title"
-            class="text-2xl sm:text-4xl pb-4 md:pb-9 lg:pb-6 font-semibold"
-            style="color: var(--vp-c-brand-1)"
-          >
-            {{ fm.hero.title }}
-          </h1>
-          <p
-            v-if="fm.hero?.tagline"
-            v-for="tagline in fm.hero?.tagline"
-            class="text-base text-2 text-padding"
-            style="color: var(--vp-c-text-1)"
-          >
-            {{ tagline }}
-          </p>
           <div>
-            <!-- <h1
-              v-if="fm.content?.title"
+            <h1
+              v-if="fm.hero?.title"
               class="text-2xl sm:text-4xl pb-4 md:pb-9 lg:pb-6 font-semibold"
               style="color: var(--vp-c-brand-1)"
             >
-              {{ fm.content.title }}
-            </h1> -->
-            <!-- <p style="color: var(--vp-c-text-2)">
-              We are researchers, designers, toolmakers, and professional
-              tinkerers. We're constantly working behind the scenes to innovate
-              our products, and in doing so, we've acquired knowledge in diverse
-              areas, from spatial gaze mapping, to multi-sensor fusion, to
-              building gaze-contingent applications. We love putting our skills
-              into action in Alpha Lab!
-            </p> -->
-            <hr class="mt-2 mb-8" style="border-color: var(--vp-c-divider)" />
+              {{ fm.hero.title }}
+            </h1>
+            <p
+              v-if="fm.hero?.tagline"
+              v-for="tagline in fm.hero?.tagline"
+              class="text-base text-2 text-padding"
+              style="color: var(--vp-c-text-1)"
+            >
+              {{ tagline }}
+            </p>
+          </div>
+          <div class="mt-16">
+            <!-- <hr class="mt-2 mb-8" style="border-color: var(--vp-c-divider)" /> -->
             <p class="text-xl font-semibold mb-2">Need help?</p>
-            <p style="color: var(--vp-c-text-2)">
+            <p style="color: var(--vp-c-text-1)">
               We hope the guides in Alpha Lab are accessible to most users.
               However, there may come a time when you need something modified,
               built upon, or even tailored specifically to your research
               project. Maybe you need something completely bespoke. We can help
               you with that!
             </p>
-            <div class="flex flex-wrap gap-4 mt-4 sm:mb-4 mb-0">
+            <div class="flex flex-wrap gap-4 mt-6 sm:mb-4 mb-0">
               <a
                 href="mailto:sales@pupil-labs.com"
                 class="flex items-center gap-2 text-link-color"
@@ -162,7 +149,7 @@
             :src="officeImage"
             alt="Pupil Labs Office"
             style="object-fit: cover; object-position: right"
-            class="w-full h-full rounded-lg"
+            class="w-full h-full rounded-2xl"
           />
         </div>
       </div>
