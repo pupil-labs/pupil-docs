@@ -121,7 +121,8 @@
             </p>
             <div class="flex flex-wrap gap-4 mt-6 sm:mb-4 mb-0">
               <a
-                href="mailto:sales@pupil-labs.com"
+                href="https://calendly.com/pupil-labs/research-consultancy-intro"
+                target="_blank"
                 class="flex items-center gap-2 text-link-color"
               >
                 <button class="primary">

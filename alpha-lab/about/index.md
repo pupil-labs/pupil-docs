@@ -8,12 +8,8 @@ hero:
   title: "About Alpha Lab"
   tagline:
     [
-      "Pupil Labs is made up of naturally curious people. We enjoy building prototypes, trialling novel ideas, and creating demos to explore our curiosities.",
-      "We also regularly speak with and learn from our users, gaining insights about what’s in demand, requested features, and so on. Sometimes, we like to action these.",
-      "Alpha Lab is where we collect the results of these explorations and share them with the world.",
-      "Alpha Lab is not a place for official product documentation. Everything you find here should be considered a work in progress, and may even be rough around the edges.",
-      "That's the nature of exploration! But with some careful work, you can do great things with these tools.",
-      "We encourage you to read, play, and build from the ideas – hack away!",
+      "Alpha Lab is not a place for official product documentation. Everything you find here should be considered a work in progress. We encourage you to read, play, and build from the ideas – hack away!",
+      "Pupil Labs is made up of naturally curious people. We enjoy building prototypes, testing out novel ideas, and creating demos to explore our curiosities. We regularly speak with and learn from our users, gaining insights about what’s in demand. Sometimes, these develop into prototypes that you will find here!",
     ]
 content:
   title: "Behind Alpha Lab"
