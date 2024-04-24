@@ -1,39 +1,82 @@
 <script setup lang="ts">
-import { useData } from "vitepress";
-import { computed } from "vue";
-import alphaCards from "./../alpha-lab/cards.json";
-import Footer from "./Footer.vue";
-import RandomBanner from "./banner/RandomBanner.vue";
-import CardLink from "./cards/CardLink.vue";
-const { frontmatter } = useData();
+  import { useData } from "vitepress";
+  import { ref, computed } from "vue";
+  import alphaCards from "./../alpha-lab/cards.json";
+  import Footer from "./Footer.vue";
+  import CardLink from "./cards/CardLink.vue";
+  import ArrowIcon from "./ArrowIcon.vue";
+  const { frontmatter } = useData();
 
-type FrontMatter = typeof frontmatter;
+  type FrontMatter = typeof frontmatter;
 
-interface FM extends FrontMatter {
-  hero?: {
-    title?: string;
-    text?: string;
-    tagline?: string;
-  };
-}
+  interface FM extends FrontMatter {
+    hero?: {
+      title?: string;
+      text?: string;
+      tagline?: string;
+    };
+    tags?: string[];
+  }
 
-const fm: FM = frontmatter;
-const cards = computed(() => alphaCards.slice().reverse());
+  const fm: FM = frontmatter;
+
+  const cards = computed(() => alphaCards.slice().reverse());
+
+  const categories: any = cards.value.map((element) => {
+    return element.category;
+  });
+
+  const unqiueCategories: any = new Set(categories);
+  // console.log(unqiueCategories);
+
+  const category = ref(""); // initial category is empty
+
+  const filteredCards = computed(() => {
+    if (!category.value) {
+      return cards.value; // if no category is selected, return all cards
+    }
+    return cards.value.filter((card) => card.category === category.value);
+  });
 </script>
 
 <style scoped>
-.text-padding:not(:last-child) {
-  padding-bottom: 16px;
-}
+  .text-padding:not(:last-child) {
+    padding-bottom: 16px;
+  }
+  .category-chip {
+    padding: 10px 16px;
+    border-radius: 9999px;
+    color: var(--vp-c-text-1);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Inter, "Helvetica Neue", sans-serif;
+  }
+  .category-chip:hover {
+    background-color: var(--vp-c-default-1);
+  }
+  .selected {
+    background-color: var(--vp-c-default-2);
+  }
+  .text-link-color {
+    color: var(--vp-c-brand-1);
+  }
+  .text-link-color:hover {
+    color: var(--vp-c-brand-2);
+  }
+  a,
+  p {
+    font-family: Inter, "Helvetica Neue", sans-serif;
+  }
 </style>
 
 <template>
   <div
-    class="container grid gap-6 sm:gap-12 md:gap-16 lg:gap-20 px-6 pt-9 sm:pb-12 md:pb-16 lg:pb-20 mx-auto"
+    class="container grid gap-6 sm:gap-12 md:gap-16 lg:gap-14 px-6 pt-9 sm:pb-12 md:pb-16 lg:pb-20 mx-auto"
   >
     <div class="grid gap-8">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-center">
-        <div class="order-2 sm:order-1">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="order-2 sm:order-1 col-auto lg:col-span-5">
           <h1
             v-if="fm.hero?.title"
             class="text-2xl sm:text-4xl pb-4 md:pb-9 lg:pb-6 font-semibold"
@@ -48,20 +91,40 @@ const cards = computed(() => alphaCards.slice().reverse());
           >
             {{ tagline }}
           </p>
-        </div>
-        <div class="col-span-2 order-1 sm:order-2 flex justify-end">
-          <RandomBanner />
+          <a
+            href="/alpha-lab/about/"
+            class="flex items-center gap-2 text-link-color font-medium text-sm"
+            >More about Alpha Lab <ArrowIcon
+          /></a>
         </div>
       </div>
     </div>
     <hr style="border-color: var(--vp-c-divider)" />
+    <div style="display: flex; gap: 16px; flex-wrap: wrap">
+      <span
+        class="category-chip"
+        :class="{ selected: category === '' }"
+        @click="category = ''"
+      >
+        All Categories
+      </span>
+      <span
+        v-for="cat in unqiueCategories"
+        :key="cat"
+        class="category-chip"
+        :class="{ selected: category === cat }"
+        @click="category = cat"
+      >
+        {{ cat }}
+      </span>
+    </div>
     <div>
       <div
         v-if="cards"
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14"
       >
         <CardLink
-          v-for="(product, index) in cards"
+          v-for="(product, index) in filteredCards"
           :key="index"
           :product="product"
         />
