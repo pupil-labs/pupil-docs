@@ -106,6 +106,24 @@ The corresponding gaze samples that belong to each fixation can be determined fr
 | **azimuth [deg]** | The [azimuth](https://en.wikipedia.org/wiki/Horizontal_coordinate_system) of the gaze ray corresponding to the fixation location in relation to the scene camera in degrees.     |
 | **elevation [deg]** | The [elevation](https://en.wikipedia.org/wiki/Horizontal_coordinate_system) of the gaze ray corresponding to the fixation location in relation to the scene camera in degrees.     |
 
+## saccades.csv
+This file contains [saccades](/data-collection/data-streams/#fixations) detected by the fixation detector.
+
+
+| Field | Description | 
+| -------- | -------- | 
+| **section id** | Unique identifier of the corresponding section.     |
+| **recording id** | Unique identifier of the recording this sample belongs to.     |
+| **saccade id** | Identifier of the saccade. The counter starts at the beginning of the recording.     |
+| **start&nbsp;timestamp&nbsp;[ns]** | UTC timestamp in nanoseconds of the start of the saccade.     |
+| **end&nbsp;timestamp&nbsp;[ns]** | UTC timestamp in nanoseconds of the end of the saccade.     |
+| **duration [ms]** | Duration of the saccade in milliseconds.     |
+| **amplitude [px]** | Float value representing the amplitude of the saccade in world camera pixel coordinates. |
+| **amplitude [deg]** | Float value representing the amplitude of the saccade in degrees of visual angle. |
+| **mean&nbsp;velocity&nbsp;[px/s]** | Float value representing the mean velocity of the saccade in world camera pixel coordinates per second. |
+| **peak&nbsp;velocity&nbsp;[px/s]** | Float value representing the peak velocity of the saccade in world camera pixel coordinates per second. |
+
+
 ## 3d_eye_states.csv
 This file contains [3D eye states](/data-collection/data-streams/#_3d-eye-states) as well as [pupil diameter](/data-collection/data-streams/#pupil-diamaters) data.
 
