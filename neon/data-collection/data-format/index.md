@@ -89,7 +89,7 @@ This file contains [gaze](/data-collection/data-streams/#gaze) data in world cam
 
 
 ## fixations.csv
-This file contains [fixations](/data-collection/data-streams/#fixations--saccades) detected in the gaze data stream.
+This file contains [fixations](/data-collection/data-streams/#fixations-saccades) detected in the gaze data stream.
 The corresponding gaze samples that belong to each fixation can be determined from the `gaze.csv` file using the `fixation id` field.
 
 
@@ -107,7 +107,7 @@ The corresponding gaze samples that belong to each fixation can be determined fr
 | **elevation [deg]** | The [elevation](https://en.wikipedia.org/wiki/Horizontal_coordinate_system) of the gaze ray corresponding to the fixation location in relation to the scene camera in degrees.     |
 
 ## saccades.csv
-This file contains [saccades](/data-collection/data-streams/#fixations--saccades) detected by the fixation detector.
+This file contains [saccades](/data-collection/data-streams/#fixations-saccades) detected by the fixation detector.
 
 
 | Field | Description | 
