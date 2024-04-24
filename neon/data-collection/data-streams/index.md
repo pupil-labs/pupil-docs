@@ -24,7 +24,7 @@ After a recording is uploaded to Pupil Cloud, gaze data is automatically re-comp
 
 The gaze estimation algorithm is based on end-2-end deep learning and provides gaze data robustly without requiring a calibration. We are currently working on a white paper that thoroughly evaluated the algorithm and will link it here once it is published.
 
-## Fixations
+## Fixations & Saccades
 
 <Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>
 The two primary types of eye movements exhibited by the visual system are fixations and saccades. During fixations, the eyes are directed at a specific point in the environment. A saccade is a very quick movement where the eyes jump from one fixation to the next. Properties like the fixation duration are of significant importance for studying gaze behavior.
@@ -33,7 +33,9 @@ The two primary types of eye movements exhibited by the visual system are fixati
 
 Fixations are calculated automatically in Pupil Cloud after uploading a recording and are included in relevant downloads. The downloads for gaze mapping enrichments ([Reference Image Mapper](/pupil-cloud/enrichments/reference-image-mapper/#export-format), [Marker Mapper](/pupil-cloud/enrichments/marker-mapper/#export-format)) also include "mapped fixations".
 
-The deployed fixation detection algorithm was specifically designed for head-mounted eye trackers and offers increased robustness in the presence of head movements. Especially movements due to vestibulo-ocular reflex are compensated for, which is not the case for most other fixation detection algorithms. Read more about that in the [Pupil Labs fixation detector whitepaper](https://docs.google.com/document/d/1dTL1VS83F-W1AZfbG-EogYwq2PFk463HqwGgshK3yJE/export?format=pdf)
+Saccades are defined as the fragments between fixations. They are also calculated automatically on Pupil Cloud after uploading a recording and are included in relevant downloads. Because the fixation detector is built to compensate for head-motion, not for smooth pursuit, blinks and smooth pursuit eye movements would break fixations, introducing more "gaps".
+
+The deployed fixation detection algorithm was specifically designed for head-mounted eye trackers and offers increased robustness in the presence of head movements. Especially movements due to vestibulo-ocular reflex are compensated for, which is not the case for most other fixation detection algorithms. Read more about that in the [Pupil Labs fixation detector whitepaper](https://docs.google.com/document/d/1dTL1VS83F-W1AZfbG-EogYwq2PFk463HqwGgshK3yJE/export?format=pdf) and in this [publication](https://link.springer.com/article/10.3758/s13428-024-02360-0) that discusses our approach.
 
 ## 3D Eye States
 
