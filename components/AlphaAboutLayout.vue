@@ -18,17 +18,7 @@
       text?: string;
       tagline?: string;
     };
-    content?: {
-      title?: string;
-      list?: {
-        icon?: string;
-        title?: string;
-        text?: string;
-      }[];
-    };
   }
-
-  const listIcons = [BuilderIcon, ResearchIcon, ExpertIcon];
 
   const fm: FM = frontmatter;
 </script>
@@ -105,19 +95,16 @@
               v-for="tagline in fm.hero?.tagline"
               class="text-base text-2 text-padding"
               style="color: var(--vp-c-text-1)"
-            >
-              {{ tagline }}
-            </p>
+              v-html="tagline"
+            ></p>
           </div>
           <div class="mt-16">
             <!-- <hr class="mt-2 mb-8" style="border-color: var(--vp-c-divider)" /> -->
             <p class="text-xl font-semibold mb-2">Need help?</p>
             <p style="color: var(--vp-c-text-1)">
-              We hope the guides in Alpha Lab are accessible to most users.
-              However, there may come a time when you need something modified,
-              built upon, or even tailored specifically to your research
-              project. Maybe you need something completely bespoke. We can help
-              you with that!
+              We are happy to help integrate examples into your workflow, or
+              even partner up to build something fully customized to your
+              requirements.
             </p>
             <div class="flex flex-wrap gap-4 mt-6 sm:mb-4 mb-0">
               <a
