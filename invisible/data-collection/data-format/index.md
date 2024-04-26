@@ -84,21 +84,40 @@ This file contains [gaze](/data-collection/data-streams/#gaze) data in world cam
 | **elevation [deg]** | The [elevation](https://en.wikipedia.org/wiki/Horizontal_coordinate_system) of the gaze ray in relation to the scene camera in degrees.                                                                                                    |
 
 ## fixations.csv
-
-This file contains [fixations](/data-collection/data-streams/#fixations) detected in the gaze data stream.
+This file contains [fixations](/data-collection/data-streams/#fixations-saccades) detected in the gaze data stream.
 The corresponding gaze samples that belong to each fixation can be determined from the `gaze.csv` file using the `fixation id` field.
 
-| Field                    | Description                                                                                                                                                        |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **section id**           | Unique identifier of the corresponding section.                                                                                                                    |
-| **recording id**         | Unique identifier of the recording this sample belongs to.                                                                                                         |
-| **fixation id**          | Identifier of the fixation. The counter starts at the beginning of the recording.                                                                                  |
-| **start timestamp [ns]** | UTC timestamp in nanoseconds of the start of the fixation.                                                                                                         |
-| **end timestamp [ns]**   | UTC timestamp in nanoseconds of the end of the fixation.                                                                                                           |
-| **duration [ms]**        | Duration of the fixation in milliseconds.                                                                                                                          |
-| **fixation x [px]**      | Float value representing the x-coordinate of the fixation in world camera pixel coordinates. This position is the average of all gaze samples within the fixation. |
-| **fixation y [px]**      | Same as "fixation x [px]" but for the y-coordinate.                                                                                                                |
 
+| Field | Description | 
+| -------- | -------- | 
+| **section id** | Unique identifier of the corresponding section.     |
+| **recording id** | Unique identifier of the recording this sample belongs to.     |
+| **fixation id** | Identifier of the fixation. The counter starts at the beginning of the recording.     |
+| **start&nbsp;timestamp&nbsp;[ns]** | UTC timestamp in nanoseconds of the start of the fixation.     |
+| **end timestamp [ns]** | UTC timestamp in nanoseconds of the end of the fixation.     |
+| **duration [ms]** | Duration of the fixation in milliseconds.     |
+| **fixation x [px]** | Float value representing the x-coordinate of the fixation in world camera pixel coordinates. This position is the average of all gaze samples within the fixation.     |
+| **fixation y [px]** | Same as "fixation x [px]" but for the y-coordinate.     |
+| **azimuth [deg]** | The [azimuth](https://en.wikipedia.org/wiki/Horizontal_coordinate_system) of the gaze ray corresponding to the fixation location in relation to the scene camera in degrees.     |
+| **elevation [deg]** | The [elevation](https://en.wikipedia.org/wiki/Horizontal_coordinate_system) of the gaze ray corresponding to the fixation location in relation to the scene camera in degrees.     |
+
+## saccades.csv
+This file contains [saccades](/data-collection/data-streams/#fixations-saccades) detected by the fixation detector.
+
+
+| Field | Description | 
+| -------- | -------- | 
+| **section id** | Unique identifier of the corresponding section.     |
+| **recording id** | Unique identifier of the recording this sample belongs to.     |
+| **saccade id** | Identifier of the saccade. The counter starts at the beginning of the recording.     |
+| **start&nbsp;timestamp&nbsp;[ns]** | UTC timestamp in nanoseconds of the start of the saccade.     |
+| **end&nbsp;timestamp&nbsp;[ns]** | UTC timestamp in nanoseconds of the end of the saccade.     |
+| **duration [ms]** | Duration of the saccade in milliseconds.     |
+| **amplitude [px]** | Float value representing the amplitude of the saccade in world camera pixel coordinates. |
+| **amplitude [deg]** | Float value representing the amplitude of the saccade in degrees of visual angle. |
+| **mean&nbsp;velocity&nbsp;[px/s]** | Float value representing the mean velocity of the saccade in world camera pixel coordinates per second. |
+| **peak&nbsp;velocity&nbsp;[px/s]** | Float value representing the peak velocity of the saccade in world camera pixel coordinates per second. |
+                                                                                                        
 ## blinks.csv
 
 This file contains [blinks](/data-collection/data-streams/#blinks) detected in the eye video.

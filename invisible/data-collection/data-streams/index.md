@@ -21,20 +21,19 @@ Gaze data is output in pixel space of the scene camera image, which has a resolu
 
 The gaze estimation algorithm is based on end-2-end deep learning and provides gaze data robustly without requiring a calibration. You can find a high-level description as well as a thorough evaluation of the accuracy and robustness of the algorithm in our [white paper](https://arxiv.org/pdf/2009.00508).
 
-## Fixations
-Two primary types of eye movements exhibited by the visual system are fixations and saccades. During fixations, the eyes are directed at a specific point in the environment. A saccade is a very quick movement where the eyes jump from one fixation to the next. Properties like fixation duration are of significant importance for studying gaze behaviour.
+## Fixations & Saccades
+
+<Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>
+The two primary types of eye movements exhibited by the visual system are fixations and saccades. During fixations, the eyes are directed at a specific point in the environment. A saccade is a very quick movement where the eyes jump from one fixation to the next. Properties like the fixation duration are of significant importance for studying gaze behavior.
 
 ![Fixations](./fixations.jpg)
 
-Fixations are calculated automatically in Pupil Cloud after uploading a recording. They are available as part of the [recording exports](/data-collection/data-format/). The downloads for gaze mapping enrichments ([Reference Image Mapper](/pupil-cloud/enrichments/reference-image-mapper/#fixations-csv), [Marker Mapper](/pupil-cloud/enrichments/marker-mapper/#fixations-csv)) also include "mapped fixations".
+Fixations and saccades are calculated automatically in Pupil Cloud after uploading a recording and are included in the recording downloads. The deployed fixation detection algorithm was specifically designed for head-mounted eye trackers and offers increased robustness in the presence of head movements. Especially movements due to vestibulo-ocular reflex are compensated for, which is not the case for most other fixation detection algorithms. You can learn more about it in the [Pupil Labs fixation detector whitepaper](https://docs.google.com/document/d/1dTL1VS83F-W1AZfbG-EogYwq2PFk463HqwGgshK3yJE/export?format=pdf) and in our [publication](https://link.springer.com/article/10.3758/s13428-024-02360-0) in *Behavior Research Methods* discussing fixation detection strategies.
 
-The fixation detection algorithm employed in Pupil Cloud was developed by us, and was specifically designed for head-mounted eye trackers. 
+We detect saccades based on the fixation results, considering the gaps between fixations to be saccades. Note, that this assumption is only true in the absence of smooth pursuit eye movements. Additionally, the fixation detector does not compensate for blinks, which can cause a break in a fixation and thus introduce a false saccade.
 
-Traditionally, fixation detection algorithms assumed the head of the subject to be stationary, which is usually not the case when using head-mounted eye trackers. 
-If head movements occur during a fixation, compensatory eye movements are required to keep gaze stable on the point of fixation. These are initiated by the 
-vestibulo-ocular reflex (VOR). 
+The downloads for gaze mapping enrichments ([Reference Image Mapper](/pupil-cloud/enrichments/reference-image-mapper/#export-format), [Marker Mapper](/pupil-cloud/enrichments/marker-mapper/#export-format)) also include mapped fixations, i.e. fixations in reference image or surface coordinates respectively.
 
-Our algorithm explicitly compensates for VOR eye movements and thus correctly classifies fixations in more dynamic scenarios! Read more about that in the [Pupil Labs fixation detector whitepaper](https://docs.google.com/document/d/1dTL1VS83F-W1AZfbG-EogYwq2PFk463HqwGgshK3yJE/export?format=pdf)
 
 ## Blinks
 During blinks the eye is briefly covered by the eye lids, which serves the purpose of spreading tears across the cornea. The blink rate and blink duration are however also correlated with cognitive processes, which makes it an interesting physiological signal.
