@@ -2,7 +2,7 @@
 
 <!-- TODO: Add tunable parameters in the fixation as table -->
 
-Neon Player runs the same [Fixation Detector](./../../data-collection/data-streams/#fixations) employed in Pupil Cloud.
+Neon Player runs the same [Fixation Detector](./../../data-collection/data-streams/#fixations-saccades) employed in Pupil Cloud.
 It calculates fixations for the whole recording. The menu gives feedback about the progress of the detection, how many 
 fixations were found, and shows detailed information about the current fixation. 
 
