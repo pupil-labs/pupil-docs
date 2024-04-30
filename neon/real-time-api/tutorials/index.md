@@ -121,28 +121,7 @@ scene_image_rgb = cv2.cvtColor(scene_sample.bgr_pixels, cv2.COLOR_BGR2RGB)
 plt.imshow(scene_image_rgb)
 plt.scatter(gaze_sample.x, gaze_sample.y, s=200, facecolors='none', edgecolors='r')
 ```
-
-Alternatively, you could also use the [`receive_scene_video_frame`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.receive_scene_video_frame) and [`receive_gaze_datum`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.receive_gaze_datum) methods to obtain each sample separately. The [`receive_matched_scene_video_frame_and_gaze`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.receive_matched_scene_video_frame_and_gaze) method does however also ensure that both samples are matched temporally.
-
-## Gaze, Pupil Diameter, and Eye State Data
-Gaze, pupil diameter, and eye state data can be received using the [`receive_gaze_datum`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.receive_gaze_datum) method. It returns a UTC timestamp in seconds, the gaze coordinates, the pupil diameter, and the eye state data. An example provided below:
-
-```python
-from pupil_labs.realtime_api.simple import discover_one_device
-from datetime import datetime
-
-device = discover_one_device()
-gaze_datum_sample = device.receive_gaze_datum()
-
-dt = datetime.fromtimestamp(gaze_datum_sample.timestamp_unix_seconds)
-print(f"This sample was recorded at {dt}\n")
-print("It contains the following data:\n")
-print(f"Gaze x and y coordinates: {gaze_datum_sample.x}, {gaze_datum_sample.y}\n")
-print(f"Pupil diameter in millimeters for the left eye: {gaze_datum_sample.pupil_diameter_left} and the right eye: {gaze_datum_sample.pupil_diameter_right}\n")
-print("Location of left and right eye ball centers in millimeters in relation to the scene camera of the Neon module.")
-print(f"For the left eye x, y, z: {gaze_datum_sample.eyeball_center_left_x}, {gaze_datum_sample.eyeball_center_left_y}, {gaze_datum_sample.eyeball_center_left_z} and for the right eye x, y, z: {gaze_datum_sample.eyeball_center_right_x}, {gaze_datum_sample.eyeball_center_right_y}, {gaze_datum_sample.eyeball_center_right_z}.\n")
-print("Directional vector describing the optical axis of the left and right eye.")
-print(f"For the left eye x, y, z: {gaze_datum_sample.optical_axis_left_x}, {gaze_datum_sample.optical_axis_left_y}, {gaze_datum_sample.optical_axis_left_z} and for the right eye x, y, z: {gaze_datum_sample.optical_axis_right_x}, {gaze_datum_sample.optical_axis_right_y}, {gaze_datum_sample.optical_axis_right_z}.")
+The output data would look as follows:
 ```
 This sample contains the following data:
 
