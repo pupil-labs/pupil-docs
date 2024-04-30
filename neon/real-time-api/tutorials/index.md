@@ -117,7 +117,7 @@ plt.scatter(gaze_sample.x, gaze_sample.y, s=200, facecolors='none', edgecolors='
 Alternatively, you could also use the [`receive_scene_video_frame`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.receive_scene_video_frame) and [`receive_gaze_datum`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.receive_gaze_datum) methods to obtain each sample separately. The [`receive_matched_scene_video_frame_and_gaze`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.receive_matched_scene_video_frame_and_gaze) method does however also ensure that both samples are matched temporally.
 
 ## Gaze, Pupil Diameter, and Eye State Data
-Gaze, pupil diameter, and eye state data can be received using the [`receive_gaze_datum`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.receive_gaze_datum) method. It returns a UTC timestamp in seconds, the gaze coordinates, the pupil diameter, and the eye state data. An example provided below:
+Gaze, pupil diameter, and eye state data can be received using the [`receive_gaze_datum`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.receive_gaze_datum) method. An example is provided below:
 
 ```python
 from pupil_labs.realtime_api.simple import discover_one_device
