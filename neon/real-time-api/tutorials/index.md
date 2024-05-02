@@ -95,9 +95,9 @@ Event(name=None recording_id=fd8c98ca-cd6c-4d3f-9a05-fbdb0ef42668 timestamp_unix
 
 ```
 
-## Scene Video and Gaze Data
+## Scene Video and Gaze, Pupil Diameter, and Eye State Data
 
-You can receive the current scene camera frame as well as the current gaze sample using the [`receive_matched_scene_video_frame_and_gaze`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.receive_matched_scene_video_frame_and_gaze) method.
+You can receive the current scene camera frame as well as the current gaze sample using the [`receive_matched_scene_video_frame_and_gaze`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.receive_matched_scene_video_frame_and_gaze) method. This method also provides pupil diameter and eye state data, separately for each eye. An example is provided below:
 
 ```python
 from datetime import datetime
@@ -109,11 +109,32 @@ device = discover_one_device()
 
 scene_sample, gaze_sample = device.receive_matched_scene_video_frame_and_gaze()
 
+print("This sample contains the following data:\n")
+print(f"Gaze x and y coordinates: {gaze_sample.x}, {gaze_sample.y}\n")
+print(f"Pupil diameter in millimeters for the left eye: {gaze_sample.pupil_diameter_left} and the right eye: {gaze_sample.pupil_diameter_right}\n")
+print("Location of left and right eye ball centers in millimeters in relation to the scene camera of the Neon module.")
+print(f"For the left eye x, y, z: {gaze_sample.eyeball_center_left_x}, {gaze_sample.eyeball_center_left_y}, {gaze_sample.eyeball_center_left_z} and for the right eye x, y, z: {gaze_sample.eyeball_center_right_x}, {gaze_sample.eyeball_center_right_y}, {gaze_sample.eyeball_center_right_z}.\n")
+print("Directional vector describing the optical axis of the left and right eye.")
+print(f"For the left eye x, y, z: {gaze_sample.optical_axis_left_x}, {gaze_sample.optical_axis_left_y}, {gaze_sample.optical_axis_left_z} and for the right eye x, y, z: {gaze_sample.optical_axis_right_x}, {gaze_sample.optical_axis_right_y}, {gaze_sample.optical_axis_right_z}.")
+
 scene_image_rgb = cv2.cvtColor(scene_sample.bgr_pixels, cv2.COLOR_BGR2RGB)
 plt.imshow(scene_image_rgb)
 plt.scatter(gaze_sample.x, gaze_sample.y, s=200, facecolors='none', edgecolors='r')
 ```
+The output data would look as follows:
+```
+This sample contains the following data:
 
+Gaze x and y coordinates: 724.7685546875, 528.932861328125
+
+Pupil diameter in millimeters for the left eye: 4.263330459594727 and the right eye: 3.3228392601013184
+
+Location of left and right eye ball centers in millimeters in relation to the scene camera of the Neon module.
+For the left eye x, y, z: -30.087890625, 10.048828125, -52.4462890625 and for the right eye x, y, z: 31.9189453125, 14.375, -48.6309814453125.
+
+Directional vector describing the optical axis of the left and right eye.
+For the left eye x, y, z: -0.05339553952217102, 0.12345726788043976, 0.9909123182296753 and for the right eye x, y, z: -0.40384653210639954, 0.11708031594753265, 0.9073038101196289.
+```
 Alternatively, you could also use the [`receive_scene_video_frame`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.receive_scene_video_frame) and [`receive_gaze_datum`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.receive_gaze_datum) methods to obtain each sample separately. The [`receive_matched_scene_video_frame_and_gaze`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.receive_matched_scene_video_frame_and_gaze) method does however also ensure that both samples are matched temporally.
 
 ## IMU Data
@@ -139,6 +160,8 @@ print(imu_sample.accel_data)
 
 print(f"Gyro data:")
 print(imu_sample.gyro_data)
+```
+The output data would look as follows:
 ```
 This IMU sample was recorded at 2023-05-25 11:23:05.749155
 It contains the following data:
