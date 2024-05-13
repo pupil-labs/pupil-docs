@@ -21,6 +21,8 @@ To load a recording, you first need to download or export it to your computer:
 
 Once you have the recording, open Neon Player and drag-and-drop the folder into the application window.
 
+Don't have a recording yet? [Download a sample recording](https://api.cloud.pupil-labs.com/v2/workspaces/3d240903-cbf7-485a-84b1-3498f00e236c/recordings.zip?id=7c141c32-7a8d-411c-9428-70d16de9a9ea&share-key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJmY2Q5NWJkYS1lZjVhLTRlN2YtOWZiYi01NTc1NWFhYWQzZTAiLCJtZXRob2QiOiJHRVQiLCJwYXRoIjoiL3YyL3dvcmtzcGFjZXMvM2QyNDA5MDMtY2JmNy00ODVhLTg0YjEtMzQ5OGYwMGUyMzZjL3JlY29yZGluZ3MuemlwIiwicXVlcnkiOiJpZD03YzE0MWMzMi03YThkLTQxMWMtOTQyOC03MGQxNmRlOWE5ZWEiLCJleHAiOjE4NjkyMjA3NzkuMjEzMDEzNn0.xfR9ZqOWmql1EmAkqc_mszL63hER_s8HziAzfn89-QI "Download sample recording to use in Neon Player").
+
 ::: info
 Neon Player will **never** remove or overwrite any of your raw data gathered at the time of recording. Instead, it will create a new folder, `neon_player`, which contains the Neon Player compatible files.
 :::
