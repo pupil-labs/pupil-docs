@@ -61,4 +61,4 @@ This file contains standard fixation and gaze metrics on AOIs.
 | **time&nbsp;to&nbsp;first&nbsp;fixation&nbsp;[ms]**      | Average time in milliseconds until the corresponding area of interest gets fixated on for the first time in a recording.                                                                                             |
 | **time&nbsp;to&nbsp;first&nbsp;gaze&nbsp;[ms]**      | Average time in milliseconds until the corresponding area of interest gets gazed at for the first time in a recording.                                                               |
 | **total&nbsp;fixation&nbsp;duration&nbsp;[ms]**     | Total fixation duration for the corresponding area of interest in milliseconds.   |
-| **total&nbsp;gaze&nbsp;duration&nbsp;[ms]**         | Total fixation duration for the corresponding area of interest in milliseconds.   |
+| **total&nbsp;gaze&nbsp;duration&nbsp;[ms]**         | Total gaze duration for the corresponding area of interest in milliseconds.   |
