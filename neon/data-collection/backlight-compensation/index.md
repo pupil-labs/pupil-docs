@@ -1,2 +1,0 @@
-# Backlight Compensation
-Coming soon!
