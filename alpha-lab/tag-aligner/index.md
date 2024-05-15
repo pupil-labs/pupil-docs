@@ -40,7 +40,7 @@ It's often important to know the position of an observer in an environment, and 
 
 With a digital twin of a real-world environment, you can visualize an observer's trajectory, and how they direct their gaze spatially onto objects within the scene, by mapping Neon’s gaze + head pose into the digital twin.
 
-In this guide, we'll show you how to do this using data from Neon + Reference Image Mapper (RIM) and the digital twin of your choice.
+In this guide, we'll show you how to do this using data from Neon + Reference Image Mapper (RIM) and the digital twin of your choice. If you're not already familiar with our RIM enrichment, be sure to check out [the RIM documentation](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/).
 
 ## Transforming Poses from RIM Data
 
@@ -58,7 +58,7 @@ These aligned poses could be used for analysis or to visualize observer motion a
 
 ## Steps to recreate
 
-1. AprilTags are the key to Tag Aligner, hence the name, so make sure you have one printed and at the ready! You will want a tag from the “tag36h11” family, printed at a good, visible size. We have already prepared [a PDF of them](https://github.com/pupil-labs/pupil-helpers/blob/master/markers_stickersheet/tag36h11_full.pdf?raw=True) for you. Note that you need to include a white border around the printed AprilTag.
+1. AprilTags are the key to Tag Aligner, hence the name, so make sure you have one printed and at the ready! You will want a tag from the “tag36h11” family. We have already prepared [a PDF of them](https://github.com/pupil-labs/pupil-helpers/blob/master/markers_stickersheet/tag36h11_full.pdf?raw=True) for you. The marker will need to be clearly visible to the scene camera for this tool to work, so you'll need to think about the necessary size of the marker for your environment. Note that you need to include a white border around the printed AprilTag.
 2. Grab a copy of [Tag Aligner](https://github.com/pupil-labs/tag-aligner) and follow the instructions in the README.
 3. If you have a glTF model of your environment and want to visualize the aligned poses and gaze, then be sure to check out the “Bonus” section of the Tag Aligner repo, where we offer a real-time visualization, a Blender plugin, and a Python notebook with some basic analysis.
 
@@ -69,7 +69,7 @@ You have now expanded the analysis possibilities of Neon + RIM to the third dime
 
 After running the Tag Aligner tool, you will find a file in the recording folder, called "aligned_poses.csv", with the scaled and aligned poses of the scene camera over time.
 
-If you run the bonus section, you will also have a pop-up interactive window that renders a glTF model of your environment that you can use to visualize the aligned poses and gaze.
+If you run the bonus section, you will also have a pop-up interactive window that renders a glTF model of your environment that you can use to visualize the aligned poses and gaze. We also provide a Blender Add-on to import the Tag Aligner data as an animation track. It is found in [the Github repo](https://github.com/pupil-labs/tag-aligner).
 
 Finally, you can analyze the results further to gain other insights. For example, you might want to plot an overhead view of the wearer’s trajectory. To get you started, we plotted the “translation_z” against the “translation_x” columns - check out the result below.
 
