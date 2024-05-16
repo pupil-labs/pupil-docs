@@ -2,10 +2,10 @@
 The [scene camera’s](https://docs.pupil-labs.com/neon/data-collection/data-streams/#scene-video) exposure modes can be adjusted to improve image quality in different lighting conditions. There are four modes:
 
 - **Manual:** This mode lets you set the exposure value manually.
-- **Automatic**: `Highlights`, `Balanced`, and `Shadows` modes automatically adjust exposure according to the surrounding lighting.
-    - `Highlights` mode optimizes the exposure to capture bright areas in the environment, while potentially underexposing dark areas.
-    - `Balanced` mode optimizes the exposure to capture brighter and darker areas in the environment equally.
-    - `Shadows` mode optimizes the exposure to capture darker areas in the environment, while potentially overexposing bright areas.
+- **Automatic**: `Highlights`, `Balanced`, and `Shadows` automatically adjust exposure according to the surrounding lighting.
+    - `Highlights`- optimizes the exposure to capture bright areas in the environment, while potentially underexposing dark areas.
+    - `Balanced` - optimizes the exposure to capture brighter and darker areas in the environment equally.
+    - `Shadows` - optimizes the exposure to capture darker areas in the environment, while potentially overexposing bright areas.
 
 ::: tip 
 The mode you choose should depend on the environment. The images below provide an example and some caveats.
