@@ -1,7 +1,7 @@
 # Scene Camera Exposure
-The [scene camera’s](https://docs.pupil-labs.com/neon/data-collection/data-streams/#scene-video) exposure modes can be adjusted to improve image quality in different lighting conditions. There are four modes:
+The [scene camera’s](https://docs.pupil-labs.com/neon/data-collection/data-streams/#scene-video) exposure can be adjusted to improve image quality in different lighting conditions. There are four modes:
 
-- **Manual:** This mode lets you set the exposure value manually.
+- **Manual:** This mode lets you set the exposure time manually.
 - **Automatic**: `Highlights`, `Balanced`, and `Shadows` automatically adjust exposure according to the surrounding lighting.
 
 ::: tip 
