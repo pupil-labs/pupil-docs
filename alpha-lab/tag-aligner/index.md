@@ -1,5 +1,5 @@
 ---
-title: "Map Gaze into a Reference 3D Coordinate System"
+title: "Map Gaze Into a User-Supplied 3D Model"
 description: "Map gaze, head pose, and observer position into a 3D coordinate system of your choice using our Tag Aligner tool."
 permalink: /alpha-lab/tag-aligner/
 meta:
@@ -8,7 +8,7 @@ meta:
   - name: twitter:image
     content: "https://i.ytimg.com/vi/nt_zNSBMJWI/maxresdefault.jpg"
   - name: twitter:player
-    content: "https://www.youtube.com/embed/vEshPxgWs3E"
+    content: "https://www.youtube.com/embed/jag9EQB7840"
   - name: twitter:width
     content: "1280"
   - name: twitter:height
@@ -22,14 +22,14 @@ tags: [Neon, Cloud]
 import TagLinks from '@components/TagLinks.vue'
 </script>
 
-# Map Gaze into a Reference 3D Coordinate System
+# Map Gaze Into a User-Supplied 3D Model
 
 <TagLinks :tags="$frontmatter.tags" />
 
-<Youtube src="FuzhGwN5t8U"/>
+<Youtube src="jag9EQB7840"/>
 
 ::: tip
-Experience your participants' journey and gaze direction in a real-world environment, digitally reimagined, using Tag Aligner! Our new tool combines Neon eye tracking and headpose data with a user-supplied third-party 3D model.
+Experience your participants' journey and gaze direction in a real-world environment, digitally reimagined! Use Tag Aligner to combine Neon eye tracking and headpose data with a 3D model of your choice.
 :::
 
 ## Real-world Positions and Rotations
@@ -38,29 +38,42 @@ Experience your participants' journey and gaze direction in a real-world environ
 
 It's often important to know the position of an observer in an environment, and how they orient their head and gaze while navigating it. For example, to understand when museum-goers pause in thought while viewing artworks, or how engineers move about and gaze at the surrounding environment during mission-critical tasks.
 
-With a digital twin of a real-world environment, you can visualize an observer's trajectory, and how they direct their gaze spatially onto objects within the scene, by mapping Neon’s gaze + head pose into the digital twin.
+With a 3D model of a real-world environment, you can visualize an observer's trajectory, and how they direct their gaze 
+spatially onto objects within the scene, by mapping Neon’s gaze + head pose into the 3D model.
 
-In this guide, we'll show you how to do this using data from Neon + Reference Image Mapper (RIM) and the digital twin of your choice. If you're not already familiar with our RIM enrichment, be sure to check out [the RIM documentation](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/).
+In this guide, we'll show you how to do this using data from Neon + Reference Image Mapper (RIM) and the 3D model of your choice. If you're not already familiar with our RIM enrichment, be sure to check out [the RIM documentation](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/).
 
 ## Transforming Poses from RIM Data
+The first step is to create a successful RIM enrichment within the environment of interest. Subsequently, 
+the camera poses from the RIM 3D model are transformed to a user-supplied 3D model. 
 
-The first step, as in the title, is to transform camera poses from the RIM 3D model to the Digital twin. For context, our RIM enrichment uses 3D features of a scene to map gaze onto a reference image regardless of the subject’s position or orientation. Under the hood, RIM builds a sparse 3D model of the environment and calculates camera poses relative to the 3D features of the scene. However, the origin, scaling, and orientation of the coordinate system for these camera poses is arbitrary and cannot be used directly for any real-world metrics or visualizations.
+For context, our RIM enrichment uses 3D features 
+of a scene to map gaze onto a reference image regardless of the subject’s position or orientation. Under the hood, RIM 
+builds a sparse 3D model of the environment and calculates camera poses relative to it. However, 
+the origin, scaling, and orientation of the coordinate system for these camera poses is arbitrary and cannot be used directly 
+for any real-world metrics or visualizations. Thus, building a transform between the RIM model and a user-supplied model 
+can enable richer visualizations and open up a wealth of analysis possibilities.
 
 ![Depiction of the sparse 3D model produced by our Reference Image Mapper](./rim_3d_model.png)
 
-The white dots on this image (statue of [Theodor Koch-Grünberg](https://en.wikipedia.org/wiki/Theodor_Koch-Grunberg)) represent key points of a sparse 3D model built from a RIM enrichment scanning recording. The model is used by RIM to calculate scene camera positions in an arbitrary coordinate system.
+The white dots on this image (statue of [Theodor Koch-Grünberg](https://en.wikipedia.org/wiki/Theodor_Koch-Grunberg)) represent 
+key points of the sparse 3D model built by the RIM enrichment. The model is used by RIM to calculate scene camera positions 
+in an arbitrary coordinate system.
 
-Rather usefully, we found that a stationary AprilTag marker with a known size, position, and rotation, placed in a RIM-enriched recording, can be used to align the camera poses to a useful coordinate system, such as that of a digital twin or real-world measures. So we implemented this in a transformation function, and put it into a package called ‘Tag Aligner’.
+By placing a stationary AprilTag marker with a known size, position, and rotation, in a RIM-enriched recording, and applying some
+math, we can determine a transformation that aligns the camera poses to a useful coordinate system, such as that of a user-supplied 3D model.
 
-After calculating the transformation to convert from the RIM enrichment’s arbitrary coordinate system to your desired coordinate system, the transformation can then be applied to all of the recordings’ poses from that enrichment.
+After calculating the transformation to convert from the RIM enrichment’s arbitrary coordinate system to the desired 3D model, 
+the transformation can then be applied to all of the recordings’ poses from that enrichment. So essentially, the AprilTag marker
+only needs to be present in one recording.
 
-These aligned poses could be used for analysis or to visualize observer motion and gaze within a digital twin. The Tag Aligner package includes a simple 3D viewer that can load a glTF model and allow you to explore the scene while playing back the recording. A set of Neon frames and the gaze ray are also added to the scene for visualization.
+The aligned poses can then be used for analysis or to visualize observer motion and gaze within the 3D model!
 
 ## Steps to recreate
 
-1. AprilTags are the key to Tag Aligner, hence the name, so make sure you have one printed and at the ready! You will want a tag from the “tag36h11” family. We have already prepared [a PDF of them](https://github.com/pupil-labs/pupil-helpers/blob/master/markers_stickersheet/tag36h11_full.pdf?raw=True) for you. The marker will need to be clearly visible to the scene camera for this tool to work, so you'll need to think about the necessary size of the marker for your environment. Note that you need to include a white border around the printed AprilTag.
+1. AprilTags are the key to Tag Aligner, hence the name, so make sure you have one printed and at the ready! You will want a tag from the “tag36h11” family. We have already prepared [a PDF of them](https://github.com/pupil-labs/pupil-helpers/blob/master/markers_stickersheet/tag36h11_full.pdf?raw=True) for you. The marker will need to be clearly visible to the scene camera for this tool to work, so you'll need to think about the necessary size of the marker for your environment. Make sure to include a white border around the printed AprilTag.
 2. Grab a copy of [Tag Aligner](https://github.com/pupil-labs/tag-aligner) and follow the instructions in the README.
-3. If you have a glTF model of your environment and want to visualize the aligned poses and gaze, then be sure to check out the “Bonus” section of the Tag Aligner repo, where we offer a real-time visualization, a Blender plugin, and a Python notebook with some basic analysis.
+3. If you want to visualize the aligned poses and gaze, then be sure to check out the “Bonus” section of the Tag Aligner repo, where we offer a real-time visualization, a Blender plugin, and a Python notebook with some basic analysis.
 
 
 ## Working with Aligned Poses
