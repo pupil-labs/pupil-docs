@@ -128,5 +128,15 @@
     },
     "image": "/alpha-lab/map-gaze-nadia.webp",
     "category": "Gaze Mapping"
+  },
+  {
+    "title": "Gaze Mapping Onto Website AOIs",
+    "details": "Define areas of interest on a website and map gaze onto them using our Web-AOI tool.",
+    "link": {
+      "text": "View",
+      "href": "/alpha-lab/web-aois/"
+    },
+    "image": "/alpha-lab/web-aoi.webp",
+    "category": "Gaze Mapping"
   }
 ]
