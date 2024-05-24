@@ -1,5 +1,5 @@
 ---
-title: Gaze Mapping Onto Website AOIs
+title: Map Gaze Onto Website AOIs
 description: "Define areas of interest on a website and map gaze onto them using our Web-AOI tool. "
 permalink: /alpha-lab/web-aois
 meta:
@@ -8,7 +8,7 @@ meta:
   - name: twitter:image
     content: "https://i.ytimg.com/vi/1yJfhtdJoMA/maxresdefault.jpg"
   - name: twitter:player
-    content: "https://www.youtube.com/embed/1yJfhtdJoMA"
+    content: "https://www.youtube.com/embed/DzK055NbRPM"
   - name: twitter:width
     content: "1280"
   - name: twitter:height
@@ -22,11 +22,11 @@ tags: [Neon]
 import TagLinks from '@components/TagLinks.vue'
 </script>
 
-# Gaze Mapping Onto Website AOIs 
+# Map Gaze Onto Website AOIs 
 
 <TagLinks :tags="$frontmatter.tags" />
 
-<Youtube src="1yJfhtdJoMA"/>
+<Youtube src="DzK055NbRPM"/>
 
 ::: tip
 Want to see your website through your users' eyes? Discover what really captures their attention as they scroll using our website AOI Tool + Neon eye tracking! 
@@ -44,11 +44,9 @@ In this guide, we will introduce a desktop application featuring an integrated b
 
 Pupil Cloud offers powerful tools like the [Marker Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/marker-mapper/) and [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/) enrichments, which enable users to map gaze onto areas of interest. However, they do not provide a turnkey solution for defining AOIs on a website and importantly, maintaining gaze mapping even during scrolling—a behavior typical of regular website usage.
 
-Enter this guide.
+By following this guide, you can easily define AOIs on websites of your choice and record Neon data. Importantly, with this tool, the AOIs are not lost as you scroll. Afterward, you'll receive gaze mapping for each AOI, including individual AOI heatmaps and a full-page heatmap.
 
-By following its instructions, you can easily define AOIs on websites of your choice and record Neon data. Importantly, with this tool, the AOIs are not lost as you scroll. Afterward, you'll receive gaze mapping for each AOI, including individual AOI heatmaps and a full-page heatmap.
-
-How does this tool work?
+### How Does This Tool Work?
 
 We leverage [Playwright](https://playwright.dev/), an open-source automation library for browser testing and web scraping, alongside AprilTags automatically placed on the webpage within the browser interface. Through Playwright, we generate AOIs using selectable web elements, while the AprilTags facilitate the real-time transformation of gaze data from *scene-camera* to *screen-based* coordinates. For a deeper understanding of this transformation, refer to [the documentation](https://docs.pupil-labs.com/alpha-lab/gaze-contingency-assistive/#how-to-use-a-head-mounted-eye-tracker-for-screen-based-interaction).
 
@@ -87,7 +85,7 @@ You can find a detailed list of the outputs [in this section of our Github repos
 This data can be used to generate outcome metrics like time to first gaze (e.g., how long it took for the user to gaze at each AOI for the first time) or dwell time/total gaze duration (e.g., sum of the gaze sample durations, defined as the period between the timestamps of consecutive gaze samples).
 
 ::: tip
-Need guidance in calculating even more metrics for your website AOIs? Reach out to us via email at [by email](mailto:info@pupil-labs.com), on our Discord server, or visit our [Support Page](https://pupil-labs.com/products/support/) for dedicated support options.
+Need guidance in calculating even more metrics for your website AOIs? Reach out to us [by email](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for dedicated support options.
 :::
 
 <style scoped>

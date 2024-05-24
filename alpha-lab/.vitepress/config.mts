@@ -13,7 +13,7 @@ let theme_config_additions = {
         { text: "Map Gaze Onto Body Parts", link: "/dense-pose/" },
         { text: "Map Gaze Onto a 3D Model of an Environment", link: "/nerfs/" },
         { text: "Map Gaze Onto Facial Landmarks", link: "/gaze-on-face/" },
-        { text: "Gaze Mapping Onto Website AOIs", link: "/web-aois/" },
+        { text: "Map Gaze Onto Website AOIs", link: "/web-aois/" },
       ],
     },
     {
