@@ -18,11 +18,11 @@ The Neon Companion app can provide gaze data in real-time at up to 200 Hz. Gaze 
 
 ![Gaze](./gaze.jpg)
 
-The achieved framerate can vary based on what Companion device is used and environmental conditions. On the OnePlus 10, the full 200 Hz can generally be achieved outside of especially hot environments. On the OnePlus 8, the framerate typically drops to ~120 Hz within a few minutes of starting a recording. Other apps running simultaneously on the phone may decrease the framerate.
+The achieved framerate can vary based on what Companion device is used and environmental conditions. On the OnePlus 10 and Motorola Edge 40 Pro, the full 200 Hz can generally be achieved outside of especially hot environments. On the OnePlus 8, the framerate typically drops to ~120 Hz within a few minutes of starting a recording. Other apps running simultaneously on the phone may decrease the framerate.
 
-After a recording is uploaded to Pupil Cloud, gaze data is automatically re-computed at the full 200 Hz framerat and can be downloaded from there.
+After a recording is uploaded to Pupil Cloud, gaze data is automatically re-computed at the full 200 Hz framerate and can be downloaded from there.
 
-The gaze estimation algorithm is based on end-2-end deep learning and provides gaze data robustly without requiring a calibration. We are currently working on a white paper that thoroughly evaluated the algorithm and will link it here once it is published.
+The gaze estimation algorithm is based on end-2-end deep learning and provides gaze data robustly without requiring a calibration. You can find a high-level description as well as a thorough evaluation of the accuracy and robustness of the algorithm in our [white paper](https://zenodo.org/doi/10.5281/zenodo.10420388). 
 
 ## Fixations & Saccades
 
