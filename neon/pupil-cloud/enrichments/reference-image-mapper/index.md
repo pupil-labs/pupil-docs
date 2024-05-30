@@ -177,6 +177,10 @@ This file contains all the mapped gaze data from all sections.
 | **fixation id**                             | If this gaze sample belongs to a fixation event, this is the corresponding id of the fixation. Otherwise, this field is empty.                                                       |
 | **blink id**                                | If this gaze samples belongs to a blink event, this is the corresponding id of the blink. Otherwise this field is empty.                                                             |
 
+::: info
+This CSV file only contains data-points where the reference image has been localised in the scene. Looking for all the gaze points? Check [this file.](/data-collection/data-format/#gaze-csv)
+:::
+
 ### fixations.csv
 
 This file contains fixation events detected in the gaze data stream and mapped to the reference image.
