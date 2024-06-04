@@ -47,7 +47,7 @@ In this guide, we'll show you how to do this using data from Neon + Reference Im
 For context, our RIM enrichment uses 3D features of a scene to map gaze onto a reference image. Under the hood, RIM builds a sparse 3D model of the environment and calculates camera poses relative to it. However, the origin, scaling, and orientation of the coordinate system for these camera poses is arbitrary (e.g., they are not specified in meters or feet). Thus, building a transform between the RIM model and a user-supplied model can enable richer visualizations and open up a wealth of analysis possibilities.
 
 ![Depiction of the sparse 3D model produced by our Reference Image Mapper](./rim_3d_model.png)
-<font size=2><b>Figure 1.</b> The white dots on this image (statue of [Theodor Koch-Grünberg](https://en.wikipedia.org/wiki/Theodor_Koch-Grunberg)) represent key points of a sparse 3D model built from a RIM enrichment scanning recording. The model is used by RIM to calculate scene camera positions in an arbitrary coordinate system.</font>
+<font size=2><b>Figure 1.</b> The white dots on this image (statue of <a href="https://en.wikipedia.org/wiki/Theodor_Koch-Grunberg">Theodor Koch-Grünberg</a>) represent key points of a sparse 3D model built from a RIM enrichment scanning recording. The model is used by RIM to calculate scene camera positions in an arbitrary coordinate system.</font>
 
 By placing a stationary AprilTag marker with a known size, position, and rotation, in a RIM-enriched recording, we can determine a transformation that aligns the camera poses to your coordinate system,
 
