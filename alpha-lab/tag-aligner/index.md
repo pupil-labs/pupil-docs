@@ -36,42 +36,28 @@ Experience your participants' journey and gaze direction in a real-world environ
 
 ![Comparison of the different ways to project Neon data into various coordinate systems](./coord-sys-comparisons.png)
 
-It's often important to know the position of an observer in an environment, and how they orient their head and gaze while navigating it. For example, to understand when museum-goers pause in thought while viewing artworks, or how engineers move about and gaze at the surrounding environment during mission-critical tasks.
+It’s often useful to know the position of an observer in an environment and how they orient their head and gaze while navigating it. For example, consider museum goers viewing artwork. Knowing their precise position and gaze direction, and being able to replay their actions, can provide vital insights into how they engage with different pieces, whether they follow a particular sequence, or how they interact with informational displays. This may help identify areas for improving exhibit design and optimizing the overall visitor experience, in addition to shedding light on how people choose to experience museums, or other spaces, in general.
 
-With a 3D model of a real-world environment, you can visualize an observer's trajectory, and how they direct their gaze 
-spatially onto objects within the scene, by mapping Neon’s gaze + head pose into the 3D model.
+Given a 3D model of a real-world environment, you can map gaze and head-pose data from Neon into the 3D model. This allows you to visualize the observers trajectory and how they direct their gaze within the scene.
 
 In this guide, we'll show you how to do this using data from Neon + Reference Image Mapper (RIM) and the 3D model of your choice. If you're not already familiar with our RIM enrichment, be sure to check out [the RIM documentation](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/).
 
 ## Transforming Poses from RIM Data
-The first step is to create a successful RIM enrichment within the environment of interest. Subsequently, 
-the camera poses from the RIM 3D model are transformed to a user-supplied 3D model. 
 
-For context, our RIM enrichment uses 3D features 
-of a scene to map gaze onto a reference image regardless of the subject’s position or orientation. Under the hood, RIM 
-builds a sparse 3D model of the environment and calculates camera poses relative to it. However, 
-the origin, scaling, and orientation of the coordinate system for these camera poses is arbitrary and cannot be used directly 
-for any real-world metrics or visualizations. Thus, building a transform between the RIM model and a user-supplied model 
-can enable richer visualizations and open up a wealth of analysis possibilities.
+For context, our RIM enrichment uses 3D features of a scene to map gaze onto a reference image. Under the hood, RIM builds a sparse 3D model of the environment and calculates camera poses relative to it. However, the origin, scaling, and orientation of the coordinate system for these camera poses is arbitrary (e.g., they are not specified in meters or feet). Thus, building a transform between the RIM model and a user-supplied model can enable richer visualizations and open up a wealth of analysis possibilities.
 
 ![Depiction of the sparse 3D model produced by our Reference Image Mapper](./rim_3d_model.png)
+<font size=2><b>Figure 1.</b> The white dots on this image (statue of [Theodor Koch-Grünberg](https://en.wikipedia.org/wiki/Theodor_Koch-Grunberg)) represent key points of a sparse 3D model built from a RIM enrichment scanning recording. The model is used by RIM to calculate scene camera positions in an arbitrary coordinate system.</font>
 
-The white dots on this image (statue of [Theodor Koch-Grünberg](https://en.wikipedia.org/wiki/Theodor_Koch-Grunberg)) represent 
-key points of the sparse 3D model built by the RIM enrichment. The model is used by RIM to calculate scene camera positions 
-in an arbitrary coordinate system.
+By placing a stationary AprilTag marker with a known size, position, and rotation, in a RIM-enriched recording, we can determine a transformation that aligns the camera poses to your coordinate system,
 
-By placing a stationary AprilTag marker with a known size, position, and rotation, in a RIM-enriched recording, and applying some
-math, we can determine a transformation that aligns the camera poses to a useful coordinate system, such as that of a user-supplied 3D model.
-
-After calculating the transformation to convert from the RIM enrichment’s arbitrary coordinate system to the desired 3D model, 
-the transformation can then be applied to all of the recordings’ poses from that enrichment. So essentially, the AprilTag marker
-only needs to be present in one recording.
+The AprilTag marker only needs to be present in one recording, to compute the transformation. It can then be applied to all other recordings from that Enrichment.
 
 The aligned poses can then be used for analysis or to visualize observer motion and gaze within the 3D model!
 
 ## Steps to recreate
 
-1. AprilTags are the key to Tag Aligner, hence the name, so make sure you have one printed and at the ready! You will want a tag from the “tag36h11” family. We have already prepared [a PDF of them](https://github.com/pupil-labs/pupil-helpers/blob/master/markers_stickersheet/tag36h11_full.pdf?raw=True) for you. The marker will need to be clearly visible to the scene camera for this tool to work, so you'll need to think about the necessary size of the marker for your environment. Make sure to include a white border around the printed AprilTag.
+1. AprilTags are the key to Tag Aligner, hence the name, so make sure you have one printed and at the ready! You will want a tag from the “tag36h11” family. We have already prepared [a PDF of them](https://github.com/pupil-labs/pupil-helpers/blob/master/markers_stickersheet/tag36h11_full.pdf?raw=True) for you. The marker will need to be clearly visible to the scene camera for this tool to work, so you'll need to make it large enough. Make sure to include a white border around the printed AprilTag.
 2. Grab a copy of [Tag Aligner](https://github.com/pupil-labs/tag-aligner) and follow the instructions in the README.
 3. If you want to visualize the aligned poses and gaze, then be sure to check out the “Bonus” section of the Tag Aligner repo, where we offer a real-time visualization, a Blender plugin, and a Python notebook with some basic analysis.
 
