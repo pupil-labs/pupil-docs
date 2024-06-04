@@ -42,27 +42,27 @@ Given a 3D model of a real-world environment, you can map gaze and head-pose dat
 
 In this guide, we'll show you how to do this using data from Neon + Reference Image Mapper (RIM) and the 3D model of your choice. If you're not already familiar with our RIM enrichment, be sure to check out [the RIM documentation](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/).
 
-## Transforming Poses from RIM Data
+## Transforming Poses From RIM Data
 
-For context, our RIM enrichment uses 3D features of a scene to map gaze onto a reference image. Under the hood, RIM builds a sparse 3D model of the environment and calculates camera poses relative to it. However, the origin, scaling, and orientation of the coordinate system for these camera poses is arbitrary (e.g., they are not specified in meters or feet). Thus, building a transform between the RIM model and a user-supplied model can enable richer visualizations and open up a wealth of analysis possibilities.
+For context, our RIM enrichment uses 3D features of a scene to map gaze onto a reference image. Under the hood, RIM builds a sparse 3D model of the environment and calculates camera poses relative to it. However, the origin, scaling, and orientation of the coordinate system for these camera poses is arbitrary (e.g., they are not specified in meters or feet). Thus, building a transformation between the RIM model and a user-supplied model can enable richer visualizations and open up a wealth of analysis possibilities.
 
 ![Depiction of the sparse 3D model produced by our Reference Image Mapper](./rim_3d_model.png)
 <font size=2><b>Figure 1.</b> The white dots on this image (statue of <a href="https://en.wikipedia.org/wiki/Theodor_Koch-Grunberg">Theodor Koch-Grünberg</a>) represent key points of a sparse 3D model built from a RIM enrichment scanning recording. The model is used by RIM to calculate scene camera positions in an arbitrary coordinate system.</font>
 
-By placing a stationary AprilTag marker with a known size, position, and rotation, in a RIM-enriched recording, we can determine a transformation that aligns the camera poses to your coordinate system,
+By placing a stationary AprilTag marker with a known size, position, and rotation, in a RIM-enriched recording, we can determine a transformation that aligns the camera poses to your coordinate system.
 
 The AprilTag marker only needs to be present in one recording, to compute the transformation. It can then be applied to all other recordings from that Enrichment.
 
 The aligned poses can then be used for analysis or to visualize observer motion and gaze within the 3D model!
 
-## Steps to recreate
+## Steps To Recreate
 
 1. AprilTags are the key to Tag Aligner, hence the name, so make sure you have one printed and at the ready! You will want a tag from the “tag36h11” family. We have already prepared [a PDF of them](https://github.com/pupil-labs/pupil-helpers/blob/master/markers_stickersheet/tag36h11_full.pdf?raw=True) for you. The marker will need to be clearly visible to the scene camera for this tool to work, so you'll need to make it large enough. Make sure to include a white border around the printed AprilTag.
 2. Grab a copy of [Tag Aligner](https://github.com/pupil-labs/tag-aligner) and follow the instructions in the README.
 3. If you want to visualize the aligned poses and gaze, then be sure to check out the “Bonus” section of the Tag Aligner repo, where we offer a real-time visualization, a Blender plugin, and a Python notebook with some basic analysis.
 
 
-## Working with Aligned Poses
+## Working With Aligned Poses
 
 You have now expanded the analysis possibilities of Neon + RIM to the third dimension!
 
