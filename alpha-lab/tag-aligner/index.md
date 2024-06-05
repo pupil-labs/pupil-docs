@@ -26,7 +26,7 @@ import TagLinks from '@components/TagLinks.vue'
 
 <TagLinks :tags="$frontmatter.tags" />
 
-<Youtube src="jag9EQB7840"/>
+<Youtube src="3N8jGLYCrNk"/>
 
 ::: tip
 Experience your participants' journey and gaze direction in a real-world environment, digitally reimagined! Use Tag Aligner to combine Neon eye tracking and headpose data with a 3D model of your choice.
