@@ -130,6 +130,16 @@
     "category": "Gaze Mapping"
   },
   {
+    "title": "Map Gaze Onto Website AOIs",
+    "details": "Define areas of interest on a website and map gaze onto them using our Web-AOI tool.",
+    "link": {
+      "text": "View",
+      "href": "/alpha-lab/web-aois/"
+    },
+    "image": "/alpha-lab/web-aoi.webp",
+    "category": "Gaze Mapping"
+  },
+  {
     "title": "Map Gaze Into a User-Supplied 3D Model",
     "details": "Map gaze, head pose, and observer position into a 3D coordinate system of your choice using our Tag Aligner tool.",
     "link": {
