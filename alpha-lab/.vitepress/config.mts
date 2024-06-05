@@ -14,6 +14,7 @@ let theme_config_additions = {
         { text: "Map Gaze Onto a 3D Model of an Environment", link: "/nerfs/" },
         { text: "Map Gaze Into a User-Supplied 3D Model", link: "/tag-aligner/" },
         { text: "Map Gaze Onto Facial Landmarks", link: "/gaze-on-face/" },
+        { text: "Map Gaze Onto Website AOIs", link: "/web-aois/" },
       ],
     },
     {

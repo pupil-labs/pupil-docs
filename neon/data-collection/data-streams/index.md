@@ -18,11 +18,11 @@ The Neon Companion app can provide gaze data in real-time at up to 200 Hz. Gaze 
 
 ![Gaze](./gaze.jpg)
 
-The achieved framerate can vary based on what Companion device is used and environmental conditions. On the OnePlus 10, the full 200 Hz can generally be achieved outside of especially hot environments. On the OnePlus 8, the framerate typically drops to ~120 Hz within a few minutes of starting a recording. Other apps running simultaneously on the phone may decrease the framerate.
+The achieved framerate can vary based on what Companion device is used and environmental conditions. On the OnePlus 10 and Motorola Edge 40 Pro, the full 200 Hz can generally be achieved outside of especially hot environments. On the OnePlus 8, the framerate typically drops to ~120 Hz within a few minutes of starting a recording. Other apps running simultaneously on the phone may decrease the framerate.
 
-After a recording is uploaded to Pupil Cloud, gaze data is automatically re-computed at the full 200 Hz framerat and can be downloaded from there.
+After a recording is uploaded to Pupil Cloud, gaze data is automatically re-computed at the full 200 Hz framerate and can be downloaded from there.
 
-The gaze estimation algorithm is based on end-2-end deep learning and provides gaze data robustly without requiring a calibration. We are currently working on a white paper that thoroughly evaluated the algorithm and will link it here once it is published.
+The gaze estimation algorithm is based on end-2-end deep learning and provides gaze data robustly without requiring a calibration. You can find a high-level description as well as a thorough evaluation of the accuracy and robustness of the algorithm in our [white paper](https://zenodo.org/doi/10.5281/zenodo.10420388). 
 
 ## Fixations & Saccades
 
@@ -31,7 +31,7 @@ The two primary types of eye movements exhibited by the visual system are fixati
 
 ![Fixations](./fixations.jpg)
 
-Fixations and saccades are calculated automatically in Pupil Cloud after uploading a recording and are included in the recording downloads. The deployed fixation detection algorithm was specifically designed for head-mounted eye trackers and offers increased robustness in the presence of head movements. Especially movements due to vestibulo-ocular reflex are compensated for, which is not the case for most other fixation detection algorithms. You can learn more about it in the [Pupil Labs fixation detector whitepaper](https://docs.google.com/document/d/1dTL1VS83F-W1AZfbG-EogYwq2PFk463HqwGgshK3yJE/export?format=pdf) and in our [publication](https://link.springer.com/article/10.3758/s13428-024-02360-0) in *Behavior Research Methods* discussing fixation detection strategies.
+Fixations and saccades are calculated automatically in Pupil Cloud after uploading a recording and are included in the recording downloads. The deployed fixation detection algorithm was specifically designed for head-mounted eye trackers and offers increased robustness in the presence of head movements. Especially movements due to vestibulo-ocular reflex are compensated for, which is not the case for most other fixation detection algorithms. You can learn more about it in the [Pupil Labs fixation detector whitepaper](https://docs.google.com/document/d/1CZnjyg4P83QSkfHi_bjwSceWCTWvlVtbGWtuyajv5Jc/export?format=pdf) and in our [publication](https://link.springer.com/article/10.3758/s13428-024-02360-0) in *Behavior Research Methods* discussing fixation detection strategies.
 
 We detect saccades based on the fixation results, considering the gaps between fixations to be saccades. Note, that this assumption is only true in the absence of smooth pursuit eye movements. Additionally, the fixation detector does not compensate for blinks, which can cause a break in a fixation and thus introduce a false saccade.
 
