@@ -12,6 +12,7 @@ let theme_config_additions = {
         { text: "Map Gaze Onto Dynamic Screen Content", link: "/map-your-gaze-to-a-2d-screen/" },
         { text: "Map Gaze Onto Body Parts", link: "/dense-pose/" },
         { text: "Map Gaze Onto a 3D Model of an Environment", link: "/nerfs/" },
+        { text: "Map Gaze Into a User-Supplied 3D Model", link: "/tag-aligner/" },
         { text: "Map Gaze Onto Facial Landmarks", link: "/gaze-on-face/" },
         { text: "Map Gaze Onto Website AOIs", link: "/web-aois/" },
       ],

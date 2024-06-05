@@ -138,5 +138,15 @@
     },
     "image": "/alpha-lab/web-aoi.webp",
     "category": "Gaze Mapping"
+  },
+  {
+    "title": "Map Gaze Into a User-Supplied 3D Model",
+    "details": "Map gaze, head pose, and observer position into a 3D coordinate system of your choice using our Tag Aligner tool.",
+    "link": {
+      "text": "View",
+      "href": "/alpha-lab/tag-aligner/"
+    },
+    "image": "/alpha-lab/tag-aligner.webp",
+    "category": "Gaze Mapping"
   }
 ]
