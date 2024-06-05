@@ -40,16 +40,16 @@ It’s often useful to know the position of an observer in an environment and ho
 
 Given a 3D model of a real-world environment, you can map gaze and head-pose data from Neon into the 3D model. This allows you to visualize the observers trajectory and how they direct their gaze within the scene.
 
-In this guide, we'll show you how to do this using data from Neon + Reference Image Mapper (RIM) and the 3D model of your choice. If you're not already familiar with our RIM enrichment, be sure to check out [the RIM documentation](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/).
+In this guide, we'll show you how to do this using data from Neon + Reference Image Mapper and the 3D model of your choice. If you're not already familiar with our Reference Image Mapper enrichment, be sure to check out [the Reference Image Mapper documentation](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/).
 
-## Transforming Poses From RIM Data
+## Transforming Poses From Reference Image Mapper Data
 
-For context, our RIM enrichment uses 3D features of a scene to map gaze onto a reference image. Under the hood, RIM builds a sparse 3D model of the environment and calculates camera poses relative to it. However, the origin, scaling, and orientation of the coordinate system for these camera poses is arbitrary (e.g., they are not specified in meters or feet). Thus, building a transformation between the RIM model and a user-supplied model can enable richer visualizations and open up a wealth of analysis possibilities.
+For context, our Reference Image Mapper enrichment uses 3D features of a scene to map gaze onto a reference image. Under the hood, Reference Image Mapper builds a sparse 3D model of the environment and calculates camera poses relative to it. However, the origin, scaling, and orientation of the coordinate system for these camera poses is arbitrary (e.g., they are not specified in meters or feet). Thus, building a transformation between the Reference Image Mapper model and a user-supplied model can enable richer visualizations and open up a wealth of analysis possibilities.
 
 ![Depiction of the sparse 3D model produced by our Reference Image Mapper](./rim_3d_model.png)
-<font size=2><b>Figure 1.</b> The white dots on this image (statue of <a href="https://en.wikipedia.org/wiki/Theodor_Koch-Grunberg">Theodor Koch-Grünberg</a>) represent key points of a sparse 3D model built from a RIM enrichment scanning recording. The model is used by RIM to calculate scene camera positions in an arbitrary coordinate system.</font>
+<font size=2><b>Figure 1.</b> The white dots on this image (statue of <a href="https://en.wikipedia.org/wiki/Theodor_Koch-Grunberg">Theodor Koch-Grünberg</a>) represent key points of a sparse 3D model built from a Reference Image Mapper enrichment scanning recording. The model is used by Reference Image Mapper to calculate scene camera positions in an arbitrary coordinate system.</font>
 
-By placing a stationary AprilTag marker with a known size, position, and rotation, in a RIM-enriched recording, we can determine a transformation that aligns the camera poses to your coordinate system.
+By placing a stationary AprilTag marker with a known size, position, and rotation, in a Reference Image Mapper-enriched recording, we can determine a transformation that aligns the camera poses to your coordinate system.
 
 The AprilTag marker only needs to be present in one recording, to compute the transformation. It can then be applied to all other recordings from that Enrichment.
 
@@ -64,7 +64,7 @@ The aligned poses can then be used for analysis or to visualize observer motion 
 
 ## Working With Aligned Poses
 
-You have now expanded the analysis possibilities of Neon + RIM to the third dimension!
+You have now expanded the analysis possibilities of Neon + Reference Image Mapper to the third dimension!
 
 After running the Tag Aligner tool, you will find a file in the recording folder, called "aligned_poses.csv", with the scaled and aligned poses of the scene camera over time.
 
@@ -79,5 +79,5 @@ Finally, you can analyze the results further to gain other insights. For example
 Be sure to check out our AlphaLab article about how to [Map Gaze Onto a 3D Model of an Environment](https://docs.pupil-labs.com/alpha-lab/nerfs/) using Neural Radiance Fields.
 
 ::: tip
-Need assistance with aligning your AprilTags or applying the transformations to your RIM recordings? Or do you have something more custom in mind? Reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for dedicated support options.
+Need assistance with aligning your AprilTags or applying the transformations to your Reference Image Mapper recordings? Or do you have something more custom in mind? Reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for dedicated support options.
 :::
