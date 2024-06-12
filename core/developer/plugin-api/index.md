@@ -272,4 +272,74 @@ class MyCustomPupilDetectorPlugin(PupilDetectorPlugin):
         pass
 ```
 
+### Plugin inheritance from Pupil Plugins
+
+If you want to build upon existing solutions, you can create a plugin by inheritance from an existing Pupil Plugin. This development alternative requires an import of all necessary dependencies to the Plugin's scope.
+
+The following template shows how to inherit from the `Surface_Tracker` class, the base class of Pupil's `Surface Tracker` plugin. A quick look at the source code shows that this class lives inside the `surface_tracker.surface_tracker` module. So, you can import it this way:
+
+```python
+from surface_tracker.surface_tracker import Surface_Tracker
+from surface_tracker.surface_online import Surface_Online
+from surface_tracker.gui import Heatmap_Mode
+
+class Custom_Surface_Tracker_Online(Surface_Tracker):
+    """
+    Describe your plugin here
+    """
+    @classmethod
+    def parse_pretty_class_name(cls) -> str:
+        """
+        A pretty name to show at the plugin manager list
+        """
+        return "Custom Surface Tracker"
+
+    def __init__(self, g_pool, *args, **kwargs):
+        self.freeze_scene = False
+        self.frozen_scene_frame = None
+        self.frozen_scene_tex = None
+        super().__init__(g_pool, *args, use_online_detection=True, **kwargs)
+
+        self.menu = None
+        self.button = None
+        self.add_button = None
+
+    @property
+    def Surface_Class(self):
+        """
+        A plugin for surfaces running in pupil capture
+        """
+        return Surface_Online
+
+    @property
+    def supported_heatmap_modes(self):
+        """
+        Heatmap mode
+        """
+        return [Heatmap_Mode.WITHIN_SURFACE]
+
+    @property
+    def ui_info_text(self):
+        return (
+            "Write your presentation text here"
+        )
+
+del Surface_Tracker # to avoid duplicates at the plugin manager list
+```
+::: tip
+If you are not sure where a class lives to import it, you can figure it out using Python instrospection utilities. For example:
+
+```python
+# {desired-settings-path}/plugin/MyPlugin.py
+
+# to inspect top-level modules
+import pkgutil
+print([tup[1] for tup in pkgutil.iter_modules()])
+
+# to inspect a specific module
+import surface_tracker
+print(dir(surface_tracker))
+```
+:::
+
 See examples of custom pupil detection plugins [here](https://github.com/pupil-labs/pupil-community/blob/master/README.md#pupil-detector-plugins).
