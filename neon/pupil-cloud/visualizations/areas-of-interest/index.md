@@ -14,6 +14,10 @@ From there, you will enter the AOI editing view and you are ready to start drawi
 
 <Youtube src="7-9m3Mq-fio"/>
 
+::: tip
+Would you like to automatically segment your areas of interest? Check out our [Alpha-Lab tutorial](https://docs.pupil-labs.com/alpha-lab/gaze-metrics-in-aois/).
+:::
+
 ### AOI Heatmap and Metrics
 
 To visualize your AOI heatmap:
@@ -30,7 +34,7 @@ Within the AOI Heatmap view, users can specify the recordings to be included, th
 
 ## Export Format
 
-Through the **`Visualizations`** tab, in the AOI Heatmap view, you can download the final visualization displaying the metric of your interest in **`.png`** format. 
+Through the **`Visualizations`** tab, in the AOI Heatmap view, you can download the final visualization displaying the metric of your interest in **`.png`** format.
 
 Through the **`Downloads`** tab, you can download the AOI-related files as part of the enrichment folder. Note, that the following CSV files will be empty if no AOIs are defined for a specific enrichment.
 
@@ -38,26 +42,25 @@ Through the **`Downloads`** tab, you can download the AOI-related files as part 
 
 This file contains fixation events mapped on each area of interest.
 
-| Field                                    | Description                                                                                                                                                            |
-| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **aoi id**                           | Unique identifier of the corresponding area of interest.                                               |
-| **section id**                       | Unique identifier of the corresponding section.                                                        |
-| **recording id**                     | Unique identifier of the recording this sample belongs to.                                             |
-| **fixation id**                      | Identifier of fixation within the section. The counter starts at the beginning of the recording.       |
-| **fixation&nbsp;duration&nbsp;[ms]**           | Duration of the fixation in milliseconds.                                                              |
+| Field                                | Description                                                                                      |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| **aoi id**                           | Unique identifier of the corresponding area of interest.                                         |
+| **section id**                       | Unique identifier of the corresponding section.                                                  |
+| **recording id**                     | Unique identifier of the recording this sample belongs to.                                       |
+| **fixation id**                      | Identifier of fixation within the section. The counter starts at the beginning of the recording. |
+| **fixation&nbsp;duration&nbsp;[ms]** | Duration of the fixation in milliseconds.                                                        |
 
 ### aoi_metrics.csv
 
 This file contains standard fixation and gaze metrics on AOIs.
 
-| Field                                    | Description                                                                                                                                                            |
-| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **aoi id**                           | Unique identifier of the corresponding area of interest.                           |
-| **recording id**                     | Unique identifier of the recording this sample belongs to.                         |
-| **recording name**                   | Name of the recording this sample belongs to.                                      |
-| **aoi name**                         | Name of the corresponding area of interest.                                        |
-| **average&nbsp;fixation&nbsp;duration&nbsp;[ms]**   | Average fixation duration for the corresponding area of interest in milliseconds.  |
-| **total fixations**                  | Total number of fixations for the corresponding area of interest in milliseconds.  |
-| **time&nbsp;to&nbsp;first&nbsp;fixation&nbsp;[ms]**      | Average time in milliseconds until the corresponding area of interest gets fixated on for the first time in a recording.                                                                                             |
-| **total&nbsp;fixation&nbsp;duration&nbsp;[ms]**     | Total fixation duration for the corresponding area of interest in milliseconds.   |
-
+| Field                                               | Description                                                                                                              |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| **aoi id**                                          | Unique identifier of the corresponding area of interest.                                                                 |
+| **recording id**                                    | Unique identifier of the recording this sample belongs to.                                                               |
+| **recording name**                                  | Name of the recording this sample belongs to.                                                                            |
+| **aoi name**                                        | Name of the corresponding area of interest.                                                                              |
+| **average&nbsp;fixation&nbsp;duration&nbsp;[ms]**   | Average fixation duration for the corresponding area of interest in milliseconds.                                        |
+| **total fixations**                                 | Total number of fixations for the corresponding area of interest in milliseconds.                                        |
+| **time&nbsp;to&nbsp;first&nbsp;fixation&nbsp;[ms]** | Average time in milliseconds until the corresponding area of interest gets fixated on for the first time in a recording. |
+| **total&nbsp;fixation&nbsp;duration&nbsp;[ms]**     | Total fixation duration for the corresponding area of interest in milliseconds.                                          |
