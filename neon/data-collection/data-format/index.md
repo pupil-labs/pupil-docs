@@ -60,14 +60,14 @@ This file contains the timestamps of every world video frame.
 
 
 ## events.csv
-This file contains [event](/data-collection/events/) data for all recordings. It contains both project event annotations and real-time recording events.
+This file contains [event](/data-collection/events/) data for all recordings. It contains both event annotations on Pupil Cloud and real-time recording events.
 
 | Field | Description | 
 | -------- | -------- | 
 | **recording id** | Unique identifier of the recording this event belongs to.     |
 | **timestamp [ns]** | UTC timestamp of the event. |
 | **name** | Name of the event.     |
-| **type** | Type of the event. Possible values: project, recording     |
+| **type** | Type of the event. Possible values: cloud, recording     |
 
 
 ## gaze.csv
