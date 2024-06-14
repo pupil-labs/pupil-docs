@@ -96,7 +96,6 @@ When relating data from the IMU to things visible in the scene camera, it may be
 
 ### Euler Angles
 
-<Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>
 When exporting recordings from Pupil Cloud or Neon Player the IMU's orientation in Euler angles (i.e. roll, pitch, and yaw) is also available.
 
 Pitch is defined as a rotation around the x-axis with a value range of -90° to +90°. Yaw and roll are rotations around the y- and z-axis, respectively, with value ranges of -180° to +180°.
