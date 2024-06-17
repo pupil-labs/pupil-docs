@@ -60,7 +60,7 @@ This file contains the timestamps of every world video frame.
 
 
 ## events.csv
-This file contains [event](/data-collection/events/) data for all recordings. It contains both event annotations on Pupil Cloud and real-time recording events.
+This file contains [event](/data-collection/events/) data for all recordings. It contains both event annotations from Pupil Cloud and real-time recording events.
 
 | Field | Description | 
 | -------- | -------- | 
