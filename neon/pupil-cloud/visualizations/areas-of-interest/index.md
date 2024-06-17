@@ -52,7 +52,7 @@ This file contains fixation events mapped on each area of interest.
 
 ### aoi_metrics.csv
 
-This file contains standard fixation and gaze metrics on AOIs.
+This file contains standard fixation metrics on AOIs.
 
 | Field                                               | Description                                                                                                              |
 | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
