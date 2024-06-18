@@ -92,7 +92,7 @@ The IMU is located in the top bar of the module and is sampled at 110 Hz. Its co
 
 When relating data from the IMU to things visible in the scene camera, it may be necessary to align their respective 3D coordinate systems. The IMU's coordinate system is rotated by 102° around the x-axis in relation to the scene camera's coordinate system.
 
-![IMU Scene Camera](./imu-scene_camera-black.jpg)
+![IMU Scene Camera](./imu-combined.png)
 
 ### Euler Angles
 
