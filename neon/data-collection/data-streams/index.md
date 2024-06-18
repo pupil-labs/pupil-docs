@@ -95,7 +95,7 @@ When relating data from the IMU to things visible in the scene camera, it may be
 ![IMU Scene Camera](./imu_scenecam_sidepose.png)
 
 ::: tip 
-Due to the handedness of the two coordinate systems, leftward rotations in the IMU coordinate system are positive and rightward rotations in the scene camera and 3D eye state coordinate systems are also positive.
+Gaze data for the 3D eye states are given in scene camera coordinates. Due to the handedness of the two coordinate systems, leftward rotations in the IMU coordinate system are positive and rightward rotations in the 3D eye states are also positive. 
 :::
 
 ### Euler Angles
@@ -103,5 +103,7 @@ Due to the handedness of the two coordinate systems, leftward rotations in the I
 When exporting recordings from Pupil Cloud or Neon Player the IMU's orientation in Euler angles (i.e. roll, pitch, and yaw) is also available.
 
 Pitch is defined as a rotation around the x-axis with a value range of -90° to +90°. Yaw and roll are rotations around the y- and z-axis, respectively, with value ranges of -180° to +180°.
+
+Once the IMU is properly [calibrated](https://docs.pupil-labs.com/neon/data-collection/calibrating-the-imu/), then a yaw value of 0° is aligned with magnetic north.
 
 ![IMU Pitch, Yaw, Roll](./imu-pitch_yaw_roll-black.jpg)
