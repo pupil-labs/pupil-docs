@@ -95,7 +95,7 @@ When relating data from the IMU to things visible in the scene camera, it may be
 ![IMU Scene Camera](./imu_scenecam_sidepose.png)
 
 ::: tip 
-Gaze data for the 3D eye states are given in scene camera coordinates. Due to the handedness of the two coordinate systems, leftward rotations in the IMU coordinate system are positive and rightward rotations in the 3D eye states are also positive. 
+Gaze data for the 3D eye states are given in scene camera coordinates. Due to the handedness of the two coordinate systems, leftward rotations in the IMU coordinate system are positive and rightward rotations in the scene camera are also positive. 
 :::
 
 ### Euler Angles
