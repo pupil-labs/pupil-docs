@@ -45,6 +45,7 @@ This file contains fixation events mapped on each area of interest.
 | Field                                | Description                                                                                      |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------ |
 | **aoi id**                           | Unique identifier of the corresponding area of interest.                                         |
+| **aoi name**                         | Name of the corresponding area of interest.                                                                              |
 | **section id**                       | Unique identifier of the corresponding section.                                                  |
 | **recording id**                     | Unique identifier of the recording this sample belongs to.                                       |
 | **fixation id**                      | Identifier of fixation within the section. The counter starts at the beginning of the recording. |
