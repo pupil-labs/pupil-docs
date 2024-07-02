@@ -7,7 +7,7 @@ The Manual Mapper offers a simple interface for manually mapping fixations to a 
 ## Setup
 
 - **Upload a Reference Image:** Upload the image you want to map fixations on. 
-- **Map Fixations:** Begin mapping the recorded fixations onto the reference image by clicking the corresponding location on the image. If a fixation does not fall on the reference image, use the keyboard shortcut `<kbd>S</kbd>`.
+- **Map Fixations:** Begin mapping the recorded fixations onto the reference image by clicking the corresponding location on the image. If a fixation does not fall on the reference image, use the keyboard shortcut <kbd>S</kbd>.
     - The field `Fixation` shows the ID of the current fixation.
     - The field `Recording Mapping Progress` indicates how many fixations have been mapped within the specified enrichment section.
 
@@ -30,8 +30,8 @@ This file contains fixation events detected in the gaze data stream and mapped t
 | **section id**                   | Unique identifier of the corresponding section.                                                                                                                |
 | **recording id**                 | Unique identifier of the recording this sample belongs to.                                                                                                     |
 | **fixation id**                  | Identifier of fixation within the section. The id corresponds to the fixation id of the raw unmapped data.                                                     |
-| **start timestamp [ns]**         | UTC timestamp in nanoseconds of the start of the fixation.                                                                                                     |
-| **end timestamp [ns]**           | UTC timestamp in nanoseconds of the end of the fixation.                                                                                                       |
-| **duration [ms]**                | Duration of the fixation in milliseconds.                                                                                                                      |
-| **fixation status** | Boolean indicating whether the fixation was inside or outside of the reference image. `Not mapped` for fixations that were left without mapping.|
+| **start&nbsp;timestamp&nbsp;[ns]**         | UTC timestamp in nanoseconds of the start of the fixation.                                                                                                     |
+| **end&nbsp;timestamp&nbsp;[ns]**           | UTC timestamp in nanoseconds of the end of the fixation.                                                                                                       |
+| **duration&nbsp;[ms]**                | Duration of the fixation in milliseconds.                                                                                                                      |
+| **fixation&nbsp;status** | Boolean indicating whether the fixation was inside or outside of the reference image. `Not mapped` for fixations that were left without mapping.|
 
