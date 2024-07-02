@@ -173,6 +173,10 @@ let theme_config_additions = {
             text: "Face Mapper",
             link: "/pupil-cloud/enrichments/face-mapper/",
           },
+          {
+            text: "Manual Mapper",
+            link: "/pupil-cloud/enrichments/manual-mapper/",
+          },
         ],
       },
       {
