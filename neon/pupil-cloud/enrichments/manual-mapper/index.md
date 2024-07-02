@@ -33,5 +33,5 @@ This file contains fixation events detected in the gaze data stream and mapped t
 | **start&nbsp;timestamp&nbsp;[ns]**         | UTC timestamp in nanoseconds of the start of the fixation.                                                                                                     |
 | **end&nbsp;timestamp&nbsp;[ns]**           | UTC timestamp in nanoseconds of the end of the fixation.                                                                                                       |
 | **duration&nbsp;[ms]**                | Duration of the fixation in milliseconds.                                                                                                                      |
-| **fixation&nbsp;status** | Boolean indicating whether the fixation was inside or outside of the reference image. `Not mapped` for fixations that were left without mapping.|
+| **fixation&nbsp;status** | `True` if the fixation was mapped inside the reference image, `False` if it was marked as outside of the reference image, and `Not mapped` if the fixation was not mapped at all.|
 
