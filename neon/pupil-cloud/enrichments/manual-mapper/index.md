@@ -11,7 +11,7 @@ The Manual Mapper offers a simple interface for manually mapping fixations to a 
     - The field `Fixation` shows the ID of the current fixation.
     - The field `Recording Mapping Progress` indicates how many fixations have been mapped within the specified enrichment section.
 
-In the example below, we manually map the fixations detected between the `epoch_start` and `epoch_end` events. This period includes 44 fixations in total, and we currently map the fixation with ID 72.
+In the example below, we manually map the fixations detected between the `epoch_start` and `epoch_end` events. This section includes 44 fixations in total, and we currently map the fixation with ID 72.
 
 ![Manual Mapper image one](./image_1_mapper.png)
 
