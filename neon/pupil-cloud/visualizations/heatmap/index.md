@@ -1,6 +1,6 @@
 # Heatmap
 
-The output of the [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/) and [Marker Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/marker-mapper/) Enrichments can be visualized as a traditional Heatmap. This shows you which parts of your reference image or surface were gazed at more often by an observer.
+The output of the [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/), [Marker Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/marker-mapper/), and [Manual Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/manual-mapper/) Enrichments can be visualized as a traditional Heatmap. This shows you which parts of your reference image or surface were gazed at more often by an observer.
 
 For example, below and to the left is a view of a kitchen that was used as a reference image. On the right, you can see the output of the Heatmap Visualization for a recording that was made while the observer was preparing ingredients.
 

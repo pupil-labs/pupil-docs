@@ -1,12 +1,12 @@
 # Areas of Interest (AOIs)
 
-The AOI Editor allows you to draw areas of interest (AOIs) on top of the reference image or surface. You can draw anything from simple polygons to multiple disconnected shapes. This tool is available for use after a [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/) or a [Marker Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/marker-mapper/) enrichment is completed.
+The AOI Editor allows you to draw areas of interest (AOIs) on top of the reference image or surface. You can draw anything from simple polygons to multiple disconnected shapes. This tool is available for use after a [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/), a [Marker Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/marker-mapper/), or a [Manual Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/manual-mapper/) enrichment is completed.
 
 ## Setup
 
 ### AOI Editing and Drawing
 
-Upon completion of the Reference Image Mapper or Marker Mapper enrichment, access the main view of the enrichment by navigating to the **`Enrichments`** tab and selecting **`Edit AOIs`** under the section **`Tools`**.
+Upon completion of the enrichment, access the main view of the enrichment by navigating to the **`Enrichments`** tab and selecting **`Edit AOIs`** under the section **`Tools`**.
 
 ![Edit AOIs](./AOI_enrichment_view.png)
 
