@@ -155,6 +155,7 @@ let theme_config_additions = {
         items: [
           { text: "Projects", link: "/pupil-cloud/projects/" },
           { text: "Workspaces", link: "/pupil-cloud/workspaces/" },
+          { text: "Offset Correction", link: "/pupil-cloud/offset-correction/" },
         ],
       },
       {
@@ -172,6 +173,10 @@ let theme_config_additions = {
           {
             text: "Face Mapper",
             link: "/pupil-cloud/enrichments/face-mapper/",
+          },
+          {
+            text: "Manual Mapper",
+            link: "/pupil-cloud/enrichments/manual-mapper/",
           },
         ],
       },
