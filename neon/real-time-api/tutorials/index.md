@@ -243,7 +243,7 @@ questionnaire = {
 device.post_template_data(questionnaire)
 ```
 
-You can also retrieve individual questions by their ID using the [`get_question_by_id`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.get_question_by_id) method and check the validity of a response using the [`validate_answer`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Question.validate_answer) method.
+You can also retrieve individual questions by their ID using the [`get_question_by_id`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/models.html#pupil_labs.realtime_api.models.Template.get_question_by_id) method and check the validity of a response using the [`validate_answer`]( https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/models.html#pupil_labs.realtime_api.models.TemplateItem.validate_answer) method.
 
 ```python
 question = template.get_question_by_id("6169276c-91f4-4ef9-8e03-45759ff61477")
