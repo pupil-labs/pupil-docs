@@ -199,6 +199,65 @@ print("\nLeft distortion coefficients:")
 print(calibration["left_distortion_coefficients"][0])
 ```
 
+## Template Data
+You can access the response data entered into the template questionnaire on the phone and also set those responses remotely.
+
+Using the [`get_template`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.get_template) method, you can receive the definition of the template containing all questions and sections.
+
+```python
+template = device.get_template()
+fstring = "{i.id}\t{i.title}\t{i.widget_type} \t{i.choices}"
+print("\n".join(fstring.format(i=i) for i in template.items))
+```
+```
+e3b94cc7-dce4-4781-a818-f769574c31d2    Section 1       SECTION_HEADER  []
+a54e85aa-5474-42f8-90c0-19f40e9ca825    Question 1      TEXT            []
+59c01ff9-972e-42c7-8b6f-5ef4e11df5d8    Section 2       SECTION_HEADER  []
+3c7d620f-9f98-4556-92dd-b66df329999c    Question 2      PARAGRAPH       []
+6169276c-91f4-4ef9-8e03-45759ff61477    Question 3      CHECKBOX_LIST   ['a', 'b', 'c']
+33059b82-63b7-4c4e-9bab-a27f7724bd1e    Question 4      RADIO_LIST      ['1', '2', '3']
+```
+
+Using the [`get_template_data`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.get_template_data) method, you can receive the responses currently saved in the template.
+
+```python
+data = device.get_template_data()
+print("\n".join(f"{k}\t{v}" for k, v in data.items()))
+```
+```
+6169276c-91f4-4ef9-8e03-45759ff61477    ['a']
+3c7d620f-9f98-4556-92dd-b66df329999c    An example paragraph.
+a54e85aa-5474-42f8-90c0-19f40e9ca825    An example short text.
+33059b82-63b7-4c4e-9bab-a27f7724bd1e    ['1']
+```
+
+Using the [`post_template_data`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.post_template_data) method, you can set the template responses remotely.
+
+```python
+questionnaire = {
+    "6169276c-91f4-4ef9-8e03-45759ff61477": "b",
+    "3c7d620f-9f98-4556-92dd-b66df329999c": "A different paragraph.",
+    "a54e85aa-5474-42f8-90c0-19f40e9ca825": "Another short text.",
+    "33059b82-63b7-4c4e-9bab-a27f7724bd1e": "3",
+}
+device.post_template_data(questionnaire)
+```
+
+You can also retrieve individual questions by their ID using the [`get_question_by_id`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.get_question_by_id) method and check the validity of a response using the [`validate_answer`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Question.validate_answer) method.
+
+```python
+question = template.get_question_by_id("6169276c-91f4-4ef9-8e03-45759ff61477")
+question.validate_answer(["invalid_option"])
+```
+```
+pupil_labs/realtime_api/models.py", line 346, in validate_answer
+    raise InvalidTemplateAnswersError(self, answers, errors)
+pupil_labs.realtime_api.models.InvalidTemplateAnswersError: Question 3 (6169276c-91f4-4ef9-8e03-45759ff61477) validation errors:
+   location: ('6169276c-91f4-4ef9-8e03-45759ff61477', 0)
+     input: invalid_option
+     message: Value error, 'invalid_option' is not a valid choice from: ['a', 'b', 'c']
+```
+
 ## Troubleshooting
 
 If you are having trouble connecting to your Neon device via the real-time API, consider the following points:
