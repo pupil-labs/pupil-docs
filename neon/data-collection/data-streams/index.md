@@ -41,7 +41,7 @@ The downloads for gaze mapping enrichments ([Reference Image Mapper](/pupil-clou
 ## 3D Eye States
 
 <Badge>Real-time</Badge><Badge>Pupil Cloud</Badge>
-After uploading a recording to Pupil Cloud, 3D eye states are computed automatically at 200 Hz. The 3D eye states are a time series of each eye's position and orientation in 3D space, given by the location of the eyeball center and the optical axis of each eye.
+The Neon Companion app can provide  3D eye states data in real-time at up to 200 Hz. The 3D eye states are a time series of each eye's position and orientation in 3D space, given by the location of the eyeball center and the optical axis of each eye. The units are milimeters.
 
 The coordinate system is depicted below. The origin corresponds to the scene camera of the Neon Module.
 
@@ -52,7 +52,7 @@ You can specify the inter-eye distance (IED) of a wearer in the wearer profile b
 ## Pupil Diameters
 
 <Badge>Real-time</Badge><Badge>Pupil Cloud</Badge>
-After uploading a recording to Pupil Cloud, pupil diameters are computed automatically at 200 Hz, separately for the left and right eye. The computed pupil diameters correspond to the physical pupil size in mm, rather than the apparent pupil size in pixels as observed in the eye videos. You can find a high-level description as well as a thorough evaluation of the accuracy and robustness of Neon’s pupil-size measurements in our [white paper](https://zenodo.org/records/10057185).
+The Neon Companion app can provide pupil diameter data in real-time at up to 200 Hz. Separately for the left and right eye. The computed pupil diameters correspond to the physical pupil size in mm, rather than the apparent pupil size in pixels as observed in the eye videos. You can find a high-level description as well as a thorough evaluation of the accuracy and robustness of Neon’s pupil-size measurements in our [white paper](https://zenodo.org/records/10057185).
 
 Similar to the 3D eye states, the accuracy of the pupil diameter measurements improves when supplying the wearer's IED in the wearer profile before making a recording.
 
