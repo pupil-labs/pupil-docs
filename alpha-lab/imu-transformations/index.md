@@ -165,6 +165,8 @@ def gaze_scene_to_world(gaze_elevations, gaze_azimuths, imu_quaternions):
     
   # The IMU and scene camera coordinate systems have a fixed
   # 102 degree rotation offset.
+  # See:
+  # https://docs.pupil-labs.com/neon/data-collection/data-streams/#movement-imu-data
   imu_scene_rotation_diff = np.deg2rad(-90 - 12)
   
   # This matrix send points in the scene camera coordinate
