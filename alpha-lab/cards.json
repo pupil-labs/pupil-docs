@@ -148,5 +148,15 @@
     },
     "image": "/alpha-lab/tag-aligner.webp",
     "category": "Gaze Mapping"
+  },
+  {
+    "title": "IMU Coordinate System Snippets",
+    "details": "Use values from the IMU to express your data in a world reference frame.",
+    "link": {
+      "text": "View",
+      "href": "/alpha-lab/imu-transformations/"
+    },
+    "image": "/alpha-lab/imu-transformations.webp",
+    "category": "Coordinate Systems"
   }
 ]
