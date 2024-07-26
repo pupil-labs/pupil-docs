@@ -167,8 +167,8 @@ def gaze_scene_to_world(gaze_elevations, gaze_azimuths, imu_quaternions):
   # 102 degree rotation offset.
   imu_scene_rotation_diff = np.deg2rad(-90 - 12)
   
-  # This matrix takes points in the scene camera coordinate
-  # system and returns their corresponding coordinates in the
+  # This matrix send points in the scene camera coordinate
+  # system to their corresponding coordinates in the
   # IMU coordinate system.
   scene_to_imu = np.array(
       [
