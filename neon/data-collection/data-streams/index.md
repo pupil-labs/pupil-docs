@@ -6,15 +6,22 @@ Below you can find a description of all data streams and where they are availabl
 
 ## Eye Videos
 
-<Badge>Real-time</Badge><Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>
+Available in: <Badge>Real-time</Badge><Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>
 The Neon module features two eye cameras, one for each eye. They are located at the tip of the small arms of the module. The sensors record IR video at 200 Hz with a resolution of 192x192px. The two sensors are synced in hardware, such that they record images at the exact same time. The resulting images are concatenated in a single video stream of 384x192px resolution.
 
 An IR LED is located just above each camera, which guarantees good illumination of the eye in dark environments.
 
+## Scene Video
+
+Available in: <Badge>Real-time</Badge><Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>
+The front-facing scene camera is located in the center of the Neon Module. It records video at 30 Hz and 1600x1200 px resolution with a field of view of 132°x81°.
+
+The scene camera can be operated with automatic or manual exposure. In situations with challenging lighting conditions, e.g. when recording a screen, optimizing the exposure manually can improve the quality of the scene video.
+
 ## Gaze
 
-<Badge>Real-time</Badge><Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>
-The Neon Companion app can provide gaze data in real-time at up to 200 Hz. Gaze data is output in pixel space of the scene camera image, which has a resolution of 1600x1200 px. The origin is in the top-left corner of the image.
+Available in: <Badge>Real-time</Badge><Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>
+The Neon Companion app can provide gaze data in real-time at up to 200 Hz. Gaze data is output in pixel space of the scene camera image. The origin is in the top-left corner of the image.
 
 ![Gaze](./gaze.jpg)
 
@@ -26,7 +33,7 @@ The gaze estimation algorithm is based on end-2-end deep learning and provides g
 
 ## Fixations & Saccades
 
-<Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>
+Available in: <Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>
 The two primary types of eye movements exhibited by the visual system are fixations and saccades. During fixations, the eyes are directed at a specific point in the environment. A saccade is a very quick movement where the eyes jump from one fixation to the next. Properties like the fixation duration are of significant importance for studying gaze behavior.
 
 ![Fixations](./fixations.jpg)
@@ -40,7 +47,7 @@ The downloads for gaze mapping enrichments ([Reference Image Mapper](/pupil-clou
 
 ## 3D Eye States
 
-<Badge>Real-time</Badge><Badge>Pupil Cloud</Badge>
+Available in: <Badge>Real-time</Badge><Badge>Pupil Cloud</Badge>
 The Neon Companion app provides  3D eye state data in real-time at up to 200 Hz. The 3D eye states are a time series of each eye's position and orientation in 3D space, given by the location of the eyeball center and the optical axis of each eye. The units are millimeters.
 
 The coordinate system is depicted below. The origin corresponds to the scene camera of the Neon Module.
@@ -51,37 +58,30 @@ You can specify the inter-eye distance (IED) of a wearer in the wearer profile b
 
 ## Pupil Diameters
 
-<Badge>Real-time</Badge><Badge>Pupil Cloud</Badge>
+Available in: <Badge>Real-time</Badge><Badge>Pupil Cloud</Badge>
 The Neon Companion app provides pupil diameter data in real-time at up to 200 Hz. Separately for the left and right eye. The computed pupil diameters correspond to the physical pupil size in mm, rather than the apparent pupil size in pixels as observed in the eye videos. You can find a high-level description as well as a thorough evaluation of the accuracy and robustness of Neon’s pupil-size measurements in our [white paper](https://zenodo.org/records/10057185).
 
 Similar to the 3D eye states, the accuracy of the pupil diameter measurements improves when supplying the wearer's IED in the wearer profile before making a recording.
 
 ## Blinks
 
-<Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>
+Available in: <Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>
 During blinks the eye is briefly covered by the eyelids, which serves the purpose of spreading tears across the cornea. The blink rate and blink duration are also correlated with cognitive processes, which makes them interesting physiological signals.
 
 Blinks are detected automatically in Pupil Cloud after uploading a recording and are part of the downloadable data.
 
 The blink detection algorithm is operating directly on the eye video to detect the movement patterns of blinks. Read more about the algorithm in the [Pupil Labs blink detector whitepaper](https://docs.google.com/document/d/1JLBhC7fmBr6BR59IT3cWgYyqiaM8HLpFxv5KImrN-qE/export?format=pdf). The algorithm will soon be released as open-source.
 
-## Scene Video
-
-<Badge>Real-time</Badge><Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>
-The front-facing scene camera is located in the center of the Neon Module. It records video at 30 Hz and 1600x1200 px resolution with a field of view of 132°x81°.
-
-The scene camera can be operated with automatic or manual exposure. In situations with challenging lighting conditions, e.g. when recording a screen, optimizing the exposure manually can improve the quality of the scene video.
-
 ## Audio
 
-<Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>
+Available in: <Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>
 Stereo microphones are integrated into the Neon module. Recorded audio will be part of the resulting scene video.
 
 Audio recording is disabled in the Neon Companion app by default and can be enabled in the settings.
 
 ## Movement (IMU Data)
 
-<Badge>Real-time</Badge><Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>
+Available in: <Badge>Real-time</Badge><Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>
 The Neon module is equipped with a 9-DoF [inertial measurement unit](https://invensense.tdk.com/products/motion-tracking/9-axis/icm-20948/) (IMU) featuring an accelerometer, gyroscope, and magnetometer. The accelerometer and gyroscope measure linear acceleration and angular velocity, respectively, and are provided as raw values.
 
 A fusion engine also combines these values with magnetometer readings to estimate the module's absolute orientation relative to magnetic north and gravity as a quaternion. Note that in order to obtain precise absolute yaw readings, the magnetometer needs to be [calibrated](/data-collection/calibrating-the-imu/).
