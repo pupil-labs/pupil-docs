@@ -7,7 +7,7 @@ Below you can find a description of all data streams and where they are availabl
 ## Eye Videos
 
 <Badge>Real-time</Badge><Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>
-The Neon module features two eye cameras, one for each eye. They are located at the tip of the small arms of the module. The sensors record IR video at 200 Hz with a resolution of 192x192px. The two sensors are synced in hardware, such that they record images at the exact same time. The resulting images a concatenated in a single video stream of 384x192px resolution.
+The Neon module features two eye cameras, one for each eye. They are located at the tip of the small arms of the module. The sensors record IR video at 200 Hz with a resolution of 192x192px. The two sensors are synced in hardware, such that they record images at the exact same time. The resulting images are concatenated in a single video stream of 384x192px resolution.
 
 An IR LED is located just above each camera, which guarantees good illumination of the eye in dark environments.
 
@@ -18,7 +18,7 @@ The Neon Companion app can provide gaze data in real-time at up to 200 Hz. Gaze 
 
 ![Gaze](./gaze.jpg)
 
-The achieved framerate can vary based on what Companion device is used and environmental conditions. On the OnePlus 10 and Motorola Edge 40 Pro, the full 200 Hz can generally be achieved outside of especially hot environments. On the OnePlus 8, the framerate typically drops to ~120 Hz within a few minutes of starting a recording. Other apps running simultaneously on the phone may decrease the framerate.
+The achieved framerate can vary based on the Companion device used and environmental conditions. On the OnePlus 10 and Motorola Edge 40 Pro, the full 200 Hz can generally be achieved outside of especially hot environments. On the OnePlus 8, the framerate typically drops to ~120 Hz within a few minutes of starting a recording. Other apps running simultaneously on the phone may decrease the framerate.
 
 After a recording is uploaded to Pupil Cloud, gaze data is automatically re-computed at the full 200 Hz framerate and can be downloaded from there.
 
@@ -41,7 +41,7 @@ The downloads for gaze mapping enrichments ([Reference Image Mapper](/pupil-clou
 ## 3D Eye States
 
 <Badge>Real-time</Badge><Badge>Pupil Cloud</Badge>
-The Neon Companion app can provide  3D eye states data in real-time at up to 200 Hz. The 3D eye states are a time series of each eye's position and orientation in 3D space, given by the location of the eyeball center and the optical axis of each eye. The units are milimeters.
+The Neon Companion app provides  3D eye state data in real-time at up to 200 Hz. The 3D eye states are a time series of each eye's position and orientation in 3D space, given by the location of the eyeball center and the optical axis of each eye. The units are millimeters.
 
 The coordinate system is depicted below. The origin corresponds to the scene camera of the Neon Module.
 
@@ -52,7 +52,7 @@ You can specify the inter-eye distance (IED) of a wearer in the wearer profile b
 ## Pupil Diameters
 
 <Badge>Real-time</Badge><Badge>Pupil Cloud</Badge>
-The Neon Companion app can provide pupil diameter data in real-time at up to 200 Hz. Separately for the left and right eye. The computed pupil diameters correspond to the physical pupil size in mm, rather than the apparent pupil size in pixels as observed in the eye videos. You can find a high-level description as well as a thorough evaluation of the accuracy and robustness of Neon’s pupil-size measurements in our [white paper](https://zenodo.org/records/10057185).
+The Neon Companion app provides pupil diameter data in real-time at up to 200 Hz. Separately for the left and right eye. The computed pupil diameters correspond to the physical pupil size in mm, rather than the apparent pupil size in pixels as observed in the eye videos. You can find a high-level description as well as a thorough evaluation of the accuracy and robustness of Neon’s pupil-size measurements in our [white paper](https://zenodo.org/records/10057185).
 
 Similar to the 3D eye states, the accuracy of the pupil diameter measurements improves when supplying the wearer's IED in the wearer profile before making a recording.
 
