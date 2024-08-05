@@ -14,7 +14,7 @@ An IR LED is located just above each camera, which guarantees good illumination 
 ## Scene Video
 
 Available in: <Badge>Real-time</Badge><Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>
-The front-facing scene camera is located in the center of the Neon Module. It records video at 30 Hz and 1600x1200 px resolution with a field of view of 132°x81°.
+The front-facing scene camera is located in the center of the Neon Module. It records video at 30 Hz and 1600x1200 px resolution with a field of view of 103°x77°.
 
 The scene camera can be operated with automatic or manual exposure. In situations with challenging lighting conditions, e.g. when recording a screen, optimizing the exposure manually can improve the quality of the scene video.
 
