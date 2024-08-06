@@ -165,7 +165,7 @@ This file contains data recorded by the integrated [IMU](/data-collection/data-s
 | **recording id** | Unique identifier of the recording this sample belongs to.     |
 | **timestamp [ns]** | UTC timestamp in nanoseconds of the sample.    |
 | **gyro x [deg/s]**<br />**gyro y [deg/s]**<br />**gyro z [deg/s]** | Rotation speed around x, y or z-axis respectively in degrees/s.    |
-| **acceleration&nbsp;x&nbsp;[g]**<br />**acceleration&nbsp;y&nbsp;[g]**<br />**acceleration z [g]** | Translational acceleration along the x, y or z-axis respectively in units of [g-force](https://en.m.wikipedia.org/wiki/G-force). Note `1 g-force = 9.80665 m/s^2`.|
+| **acceleration&nbsp;x&nbsp;[g]**<br />**acceleration&nbsp;y&nbsp;[g]**<br />**acceleration z [g]** | Translational acceleration (in terms of [g-force](https://en.m.wikipedia.org/wiki/G-force)) along the x, y or z-axis respectively. Note `1 g = 9.80665 m/s^2`.|
 | **roll [deg]** | Drift-free estimate of the roll (head tilt from side to side) in degrees. The output range is -180 to +180 degrees. Added in version 2 of this enrichment.    |
 | **pitch [deg]** | Drift-free estimate of the pitch (head tilt from front to back) in degrees. The output range is -90 to +90 degrees. Added in version 2 of this enrichment. |
 | **yaw [deg]** | Drift-free estimate of the yaw (horizontal head rotation) in degrees. The output range is -180 to +180 degrees. Added in version 2 of this enrichment. |
