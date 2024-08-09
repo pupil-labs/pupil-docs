@@ -51,13 +51,13 @@
   },
   {
     "title": "Generate Scanpath Visualisations",
-    "details": "Generate both static and dynamic scanpath visualisations using exported data from Pupil Cloud's Reference Image Mapper.",
+    "details": "Generate both static and dynamic scanpath visualisations using exported data from Pupil Cloud's Reference Image Mapper or Manual Mapper.",
     "link": {
       "text": "View",
-      "href": "/alpha-lab/scanpath-rim/#generate-static-and-dynamic-scanpaths-with-reference-image-mapper"
+      "href": "/alpha-lab/scanpath-rim/#generate-static-and-dynamic-scanpaths"
     },
-    "image": "/alpha-lab/gen-scanpath-rim.webp",
-    "category": "Reference Image Mapper"
+    "image": "/alpha-lab/gen-scanpath.webp",
+    "category": "Gaze Mapping"
   },
   {
     "title": "Uncover Gaze Behaviour on Phones",
