@@ -86,13 +86,17 @@ The Neon module is equipped with a 9-DoF [inertial measurement unit](https://inv
 
 A fusion engine also combines these values with magnetometer readings to estimate the module's absolute orientation relative to magnetic north and gravity as a quaternion. Note that in order to obtain precise absolute yaw readings, the magnetometer needs to be [calibrated](/data-collection/calibrating-the-imu/).
 
-The IMU is located in the top bar of the module and is sampled at 110 Hz. Its coordinate system is oriented with the x-axis pointing to the right, the y-axis pointing in front, and the z-axis pointing upwards.
+The IMU is located in the top bar of the module and samples at 110 Hz. Its coordinate system is oriented with the x-axis pointing to the right, the y-axis pointing in front, and the z-axis pointing upwards.
 
 ![IMU Coordinate System](./imu-xyz-black.jpg)
 
 When relating data from the IMU to things visible in the scene camera, it may be necessary to align their respective 3D coordinate systems. The IMU's coordinate system is rotated by 102° around the x-axis in relation to the scene camera's coordinate system.
 
-![IMU Scene Camera](./imu-scene_camera-black.jpg)
+![IMU Scene Camera](./imu-scene-camera-black.jpg)
+
+::: tip
+Note that leftward rotations in the IMU coordinate system are positive, whereas they are negative in the scene camera and 3D eye state coordinate systems.
+:::
 
 ### Euler Angles
 
@@ -100,4 +104,4 @@ When exporting recordings from Pupil Cloud or Neon Player the IMU's orientation 
 
 Pitch is defined as a rotation around the x-axis with a value range of -90° to +90°. Yaw and roll are rotations around the y- and z-axis, respectively, with value ranges of -180° to +180°.
 
-![IMU Pitch, Yaw, Roll](./imu-pitch_yaw_roll-black.jpg)
+![IMU Pitch, Yaw, Roll](./imu-pitch-yaw-roll-black.jpg)
