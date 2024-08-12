@@ -276,6 +276,103 @@ def spherical_to_cartesian(elevations, azimuths):
 ```
 ::::
 
+## Represent IMU and 3D Eyestate data in the same coordinate system
+
+The [3D eyestate estimates](https://docs.pupil-labs.com/neon/data-collection/data-streams/#_3d-eye-states) provided by Neon are aligned with the scene camera coordinate system. This means we can reuse elements of the `gaze_scene_to_world` function to reconstruct the pose of the eyes as a wearer rotates their head. Essentially, you would be representing eyestate in the world coordinate system of the IMU.
+
+The function below performs that transformation for you, returning eyeball centers and optical axes in the world coordinate system.
+
+:::: details Code
+```python
+def eyestate_to_world(eyeball_centers, optical_axes, imu_quaternions):
+  """
+  Transforms 3D eyestate data to the world coordinate system of the IMU.
+  
+  Note that the 3D eyestate data and the IMU quaternions should be sampled 
+  at the same timestamps. You can linearly interpolate the IMU data
+  to ensure this.
+    
+  The origin of the IMU coordinate system is the same as the
+  origin of the world coordinate system.
+    
+  The code in this function is adapted from the `plimu` visualization utility:
+  https://github.com/pupil-labs/plimu/blob/8b94302982363b203dddea2b15f43c6da60e787e/src/pupil_labs/plimu/visualizer.py#L274-L279
+    
+  Inputs:
+    - eyeball_centers (Nx3 np.array): A timeseries of eyeball center
+    estimates (mm) for one eye, as provided by Neon's 3D eyestate data stream.
+    - optical_axes (Nx3 np.array): A timeseries of optical axis estimates
+    (3D unit vectors) for the same eye, as provided by Neon's 3D eyestate data stream.
+    - imu_quaternions (Nx4 np.array): A timeseries of quaternion values from
+    Neon's IMU.
+    
+  Returns:
+    - eyeball_centers_in_world (Nx3 np.array): A timeseries of eyeball center
+    estimates (mm) for one eye, transformed to the world coordinate system of the IMU.
+    - optical_axes_in_world (Nx3 np.array): A timeseries of optical axis estimates
+    (3D unit vectors) for the same eye, transformed to the world coordinate system of the IMU.
+  """
+  
+  # The eyeball centers are specified in terms of their distance from
+  # the center of the scene camera, so to accurately convert them to
+  # world coordinates, we need the position of the scene camera in
+  # the IMU coordinate system. Here, we express that position
+  # in millimeters.
+  scene_camera_position_in_imu = np.array([[0.0, -3.996, -11.172]])
+
+  # The coordinate system of 3D eyestate is aligned with
+  # the coordinate system of the scene camera, so we can
+  # make use of the scene->to->IMU transformation procedure.
+  #
+  # The IMU and scene camera coordinate systems have a fixed
+  # 102 degree rotation offset. See here:
+  # https://docs.pupil-labs.com/neon/data-collection/data-streams/#movement-imu-data
+  imu_scene_rotation_diff = np.deg2rad(-90 - 12)
+  
+  # This matrix is used to transform points in the scene
+  # camera coordinate system to their corresponding coordinates
+  # in the IMU coordinate system.
+  scene_to_imu = np.array(
+      [
+        [1.0, 0.0, 0.0],
+        [
+          0.0,
+          np.cos(imu_scene_rotation_diff),
+          -np.sin(imu_scene_rotation_diff),
+        ],
+        [
+          0.0,
+          np.sin(imu_scene_rotation_diff),
+          np.cos(imu_scene_rotation_diff),
+        ],
+      ]
+  )
+  
+  # Convert the coordinates of the eyeball center and optical axes
+  # to the IMU coordinate system.
+  eyeball_centers_in_imu = scene_to_imu @ eyeball_centers.T
+  optical_axes_in_imu = scene_to_imu @ optical_axes.T
+    
+  # Take into account that the scene camera is offset from the IMU.
+  eyeball_centers_in_imu[0, :] += scene_cam_in_imu[0]
+  eyeball_centers_in_imu[1, :] += scene_cam_in_imu[1]
+  eyeball_centers_in_imu[2, :] += scene_cam_in_imu[2]
+  
+  # This array contains a timeseries of transformation matrices,
+  # as calculated from the IMU's timeseries of quaternions values.
+  # Each of these matrices are used to transform points in the IMU
+  # coordinate system to their corresponding coordinates in the world
+  # coordinate system.
+  imu_to_world_matrices = R.from_quat(imu_quaternions).as_matrix()
+  
+  # Apply the transformations from the IMU to the world coordinate system.
+  eyeball_centers_in_world = [imu_to_world @ eye_center for imu_to_world, eye_center in zip(imu_to_world_matrices, eyeball_centers_in_imu.T)]
+  optical_axes_in_world = [imu_to_world @ optical_axis for imu_to_world, optical_axis in zip(imu_to_world_matrices, optical_axes_in_imu.T)]
+    
+  return eyeball_centers_in_world, optical_axes_in_world
+```
+::::
+
 ## Analysis example
 
 Below is a brief example of running these commands on values from Pupil Cloud.
@@ -285,9 +382,11 @@ Below is a brief example of running these commands on values from Pupil Cloud.
 import pandas as pd
 
 gaze = pd.read_csv("gaze.csv")
+eye3d = pd.read_csv("3d_eye_states.csv")
 imu = pd.read_csv("imu.csv")
 
 gaze_ts = gaze["timestamp [ns]"]
+eye3d_ts = eye3d["timestamp [ns]"]
 imu_ts = imu["timestamp [ns]"]
 
 # We have more gaze datapoints (sampled at 200Hz) than
@@ -306,6 +405,18 @@ accelerations_resampled = np.array([
   np.interp(gaze_ts, imu_ts, imu["acceleration z [g]"]),
 ]).T
 
+optical_axes_left = np.array([
+  eye3d["optical axis left x"],
+  eye3d["optical axis left y"],
+  eye3d["optical axis left z"],
+]).T
+
+eyeball_centers_left = np.array([
+  eye3d["eyeball center left x [mm]"],
+  eye3d["eyeball center left y [mm]"],
+  eye3d["eyeball center left z [mm]"],
+]).T
+
 # Now, we can apply the functions.
 
 imu_headings = imu_heading_in_world(quaternions_resampled)
@@ -313,6 +424,12 @@ imu_headings = imu_heading_in_world(quaternions_resampled)
 world_gazes = gaze_scene_to_world(
   gaze["elevation [deg]"],
   gaze["azimuth [deg]"],
+  quaternions_resampled,
+)
+
+eye_centers_left_world, optical_axes_left_world = eyestate_to_world(
+  eyeball_centers_left,
+  optical_axes_left,
   quaternions_resampled,
 )
 
