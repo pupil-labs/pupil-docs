@@ -103,6 +103,10 @@ let theme_config_additions = {
             link: "/data-collection/offset-correction/",
           },
           {
+            text: "Measuring the IED",
+            link: "/data-collection/measuring-the-ied/",
+          },
+          {
             text: "Scene Camera Exposure",
             link: "/data-collection/scene-camera-exposure/",
           },
