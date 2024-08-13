@@ -129,7 +129,7 @@ This file contains [saccades](/data-collection/data-streams/#fixations-saccades)
 
 
 ## 3d_eye_states.csv
-This file contains [3D eye states](/data-collection/data-streams/#_3d-eye-states) as well as [pupil diameter](/data-collection/data-streams/#pupil-diamaters) data.
+This file contains [3D eye states](/data-collection/data-streams/#_3d-eye-states) as well as [pupil diameter](/data-collection/data-streams/#pupil-diameters) data.
 
 
 | Field                     | Description | 
