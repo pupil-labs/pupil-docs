@@ -104,7 +104,7 @@ let theme_config_additions = {
           },
           {
             text: "Measuring the IED",
-            link: "/data-collection/measuring-the-ied/",
+            link: "/data-collection/measuring-ied/",
           },
           {
             text: "Scene Camera Exposure",
