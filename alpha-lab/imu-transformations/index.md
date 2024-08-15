@@ -216,7 +216,7 @@ def gaze_scene_to_world(gaze_elevations, gaze_azimuths, imu_quaternions):
   # Neon provides 3D gaze in spherical coordinates by default, 
   # so we first transform the gaze data from spherical coordinates
   # to Cartesian coordinates.
-  cart_gazes_in_scene = spherical_to_cartesian(gaze_elevations, gaze_azimuths)
+  cart_gazes_in_scene = spherical_to_cartesian_scene(gaze_elevations, gaze_azimuths)
     
   # Apply the transformation from the scene camera to the IMU coordinate system.
   gazes_in_imu = scene_to_imu @ cart_gazes_in_scene.T
@@ -233,7 +233,7 @@ def gaze_scene_to_world(gaze_elevations, gaze_azimuths, imu_quaternions):
   return np.array(gazes_in_world)
 
 
-def spherical_to_cartesian(elevations, azimuths):
+def spherical_to_cartesian_scene(elevations, azimuths):
   """
   Convert Neon's spherical representation of 3D gaze to Cartesian coordinates.
     
@@ -318,7 +318,7 @@ def eyestate_to_world(eyeball_centers, optical_axes, imu_quaternions):
   # world coordinates, we need the position of the scene camera in
   # the IMU coordinate system. Here, we express that position
   # in millimeters.
-  scene_camera_position_in_imu = np.array([[0.0, -3.996, -11.172]])
+  scene_camera_position_in_imu = np.array([0.0, -3.996, -11.172])
 
   # The coordinate system of 3D eyestate is aligned with
   # the coordinate system of the scene camera, so we can
@@ -354,9 +354,9 @@ def eyestate_to_world(eyeball_centers, optical_axes, imu_quaternions):
   optical_axes_in_imu = scene_to_imu @ optical_axes.T
     
   # Take into account that the scene camera is offset from the IMU.
-  eyeball_centers_in_imu[0, :] += scene_cam_in_imu[0]
-  eyeball_centers_in_imu[1, :] += scene_cam_in_imu[1]
-  eyeball_centers_in_imu[2, :] += scene_cam_in_imu[2]
+  eyeball_centers_in_imu[0, :] += scene_camera_position_in_imu[0]
+  eyeball_centers_in_imu[1, :] += scene_camera_position_in_imu[1]
+  eyeball_centers_in_imu[2, :] += scene_camera_position_in_imu[2]
   
   # This array contains a timeseries of transformation matrices,
   # as calculated from the IMU's timeseries of quaternions values.
@@ -369,7 +369,59 @@ def eyestate_to_world(eyeball_centers, optical_axes, imu_quaternions):
   eyeball_centers_in_world = [imu_to_world @ eye_center for imu_to_world, eye_center in zip(imu_to_world_matrices, eyeball_centers_in_imu.T)]
   optical_axes_in_world = [imu_to_world @ optical_axis for imu_to_world, optical_axis in zip(imu_to_world_matrices, optical_axes_in_imu.T)]
     
-  return eyeball_centers_in_world, optical_axes_in_world
+  return np.array(eyeball_centers_in_world), np.array(optical_axes_in_world)
+```
+::::
+
+## Convert (Cartesian) world points to spherical coordinates
+
+When studying head orientation and gaze orientation as observers navigate a 3D environment, it can be useful to know how much these quantities deviate from pointing at a given landmark. For instance, you might want to know when someone’s gaze or heading deviates from pointing at the horizon. This can be simplified by representing data in spherical coordinates. The orientation values from the IMU are already in such a format. For the values returned by  gaze_scene_to_world, the function below will do the necessary transformation. When wearing Neon normally, then an elevation and azimuth of 0 degrees corresponds to keeping your head neutral while gazing at the horizon.
+
+:::: details Code
+```python
+def cartesian_to_spherical_world(world_points_3d):
+  """
+  Convert points 3D Cartesian world coordinates to spherical coordinates.
+
+  The origin of world coordinate system is the same as the origin of the
+  IMU coordinate system.
+
+  When wearing Neon normally, then an elevation and azimuth of 0 degrees corresponds to keeping your head neutral while gazing at the horizon.
+
+  Inputs:
+    - world_points_3d (Nx3 np.array): A collection of 3D points in 
+    Cartesian world coordinates.
+        
+  Returns:
+    - elevation (Nx1 np.array): The corresponding elevation value, in radians,
+    for each 3D world point (i.e., vertical rotation away from neutral orientation).
+    Note: neutral orientation = 0 elevation; orientation upwards is positive;
+    orientation downwards is negative.
+    - azimuth (Nx1 np.array): The corresponding azimuth value, in radians, for
+    each 3D world point (i.e., horizontal rotation away from neutral orientation).
+    Note: neutral orientation = 0 azimuth, orientation rightwards is negative;
+    orientation leftwards is positive.
+  """
+
+  x = world_points_3d[:, 0]
+  y = world_points_3d[:, 1]
+  z = world_points_3d[:, 2]
+
+  radii = np.sqrt(x**2 + y**2 + z**2)
+
+  elevation = -(np.arccos(z / radii) - np.pi / 2)
+  azimuth = np.arctan2(y, x) - np.pi/2
+  
+  # Keep all azimuth values in the range of [-180, 180] to remain consistent
+  # with the yaw orientation values provided by the IMU
+  azimuth[azimuth < -np.pi] += 2 * np.pi
+  azimuth[azimuth > np.pi] -= 2 * np.pi
+
+  # Convert from radians to degrees
+  elevation = np.rad2deg(elevation)
+  azimuth = np.rad2deg(azimuth)
+
+  return elevation, azimuth
 ```
 ::::
 
@@ -437,6 +489,8 @@ world_accelerations = imu_acceleration_in_world(
   accelerations_resampled,
   quaternions_resampled,
 )
+
+gaze_elevations_world, gaze_azimuths_world = cartesian_to_spherical_world(world_gazes)
 ```
 ::::
 
