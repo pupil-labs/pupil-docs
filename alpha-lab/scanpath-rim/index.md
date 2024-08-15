@@ -15,9 +15,11 @@ Picture this: Build and customise scanpath visualisations with your Reference Im
 :::
 
 ## Visualising Gaze Exploration With Scanpaths
-Scanpaths are graphical representations of gaze over time. They show how an observer has focused attention on different aspects of a scene, making them a valuable tool for understanding a person's visual attention and perception. The video above illustrates this concept. It shows:
-- Fixation locations, visualised as numbered circles
-- Fixation durations, which are mapped to the size of the circles. Longer fixations correspond to larger circles.
+Scanpaths are graphical representations of gaze behaviour over time. They show how an observer has focused attention on different aspects of a scene, making them a valuable tool for understanding a person's visual attention and perception. The video above illustrates this concept. It shows:
+- Fixation locations - Visualised as numbered circles
+- Fixation durations - Mapped to the size of the circles. Longer fixations correspond to larger circles
+- Saccades - Represented by lines connecting sequential fixations
+- Saccade distances (between sequential fixations) - Reflected by the length of the lines. Longer lines correspond to bigger gaze shifts
 
 In this guide, we will show you how to generate static and dynamic scanpath visualisations using your Reference Image Mapper or Manual Mapper exported data.
 
@@ -32,9 +34,9 @@ To automate the process as much as possible, you can download your data directly
 
 ## Steps
 1. Run a [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/) or a [Manual Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/manual-mapper/) enrichment.
-2. Data from your enrichment needs to be loaded onto Google Drive. You can choose between one of the two options:
-- Use a Pupil Cloud API token to have the enrichment loaded into Google Drive automatically. You simply need to obtain a developer token from Pupil Cloud (click [here](https://cloud.pupil-labs.com/settings/developer) to obtain yours).
-- Download the enrichment manually from Pupil Cloud and then upload it to your Google Drive.
+2. Data from your enrichment needs to be loaded onto Google Drive. You can choose between one of two options:
+   1. Use a Pupil Cloud API token to have the enrichment loaded into Google Drive automatically. You need to obtain a developer token from Pupil Cloud (click [here](https://cloud.pupil-labs.com/settings/developer) to obtain yours).
+   2. Download the enrichment manually from Pupil Cloud and then upload it to your Google Drive.
 3. Access our **[Google Colab Notebook](https://colab.research.google.com/drive/13FIZroc7ckyOs7APSSskqo7ew2JAZR-q?usp=sharing)** and carefully follow the instructions.
 
 <div class="mb-4" style="display:flex;justify-content:center;">
@@ -48,7 +50,7 @@ To automate the process as much as possible, you can download your data directly
 </a>
 </div>
 
-If you want to work with the code locally, feel free to download it [here](https://gist.github.com/nadje/7a8f1e5590ab9022be4253a5b0d8d238).
+If you want to work with the code locally, feel free to download it from this [GitHub Repository](https://gist.github.com/nadje/7a8f1e5590ab9022be4253a5b0d8d238).
 
 ## Review the Scanpaths
 After running the notebook, you'll find the following files in your folder:
@@ -59,9 +61,8 @@ After running the notebook, you'll find the following files in your folder:
 ![Static scanpath](./scanpath_image_nad.png)
 
 ::: tip
-Need guidance in further customising your scanpath visualisations? You can refer to our [legacy scanpath visualisation](https://gist.github.com/elepl94/9f669c4d81e455cf2095957831219664) or reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for dedicated support options.
+Need guidance in further customising your scanpath visualisations? Reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for dedicated support options.
 :::
-
 
 <style scoped>
     img, iframe {
