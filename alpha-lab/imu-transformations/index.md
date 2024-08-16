@@ -55,7 +55,7 @@ system and the world coordinate system.
 ::: tip
 💡 Note that Neon can sit differently on each wearer’s face, such that the headset is not necessarily in 
 line with a given plane. For example, if the wearer is facing magnetic North, the IMU might 
-still report some deviation from neural orientation.
+still report some deviation from a neutral orientation.
 :::
 
 The gyroscope values give the rotational velocity of roll, yaw, and pitch in degrees/s (i.e., they provide the change 
