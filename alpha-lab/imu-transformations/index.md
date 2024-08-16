@@ -40,7 +40,7 @@ The [orientation readings of the calibrated IMU](https://docs.pupil-labs.com/neo
 are specified with respect to magnetic North and gravity. We will refer to this as the 'world coordinate system'.
 
 To be exact, the 'world coordinate system' is distinct from the 'IMU coordinate system' - as the Neon module rotates, 
-the IMU coordinate system rotates with it. The IMU actually measures the rotational difference between its coordinate 
+the IMU coordinate system rotates with it. The IMU's orientation readings actually specify the rotational difference between its coordinate 
 system and the world coordinate system.
 
 - Y axis = vector pointing towards magnetic North.
@@ -58,14 +58,12 @@ line with a given plane. For example, if the wearer is facing magnetic North, th
 still report some deviation from a neutral orientation.
 :::
 
-The gyroscope values give the rotational velocity of roll, yaw, and pitch in degrees/s (i.e., they provide the change 
-over time of each of these quantities).
+The raw gyroscope values give the rotational velocity about the X, Y, and Z axes of the IMU’s coordinate system. Their units are degrees/s (i.e., they provide the change 
+over time of each of these quantities). The reference frame for specifying rotational velocities rotates with the IMU.
 
-The acceleration values measure translational (i.e., linear) acceleration, in terms of g-force (units of g), 
+The raw acceleration values measure translational (i.e., linear) acceleration, in terms of g-force (units of g), 
 along the X, Y, and Z axes of the IMU’s coordinate system. The reference frame for specifying acceleration values 
 rotates with the IMU.
-
-
 
 ::: tip
 💡 [g-force](https://en.wikipedia.org/wiki/G-force) is not the same as free-fall acceleration due 
