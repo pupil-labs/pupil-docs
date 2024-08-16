@@ -150,8 +150,8 @@
     "category": "Gaze Mapping"
   },
   {
-    "title": "IMU Coordinate System Snippets",
-    "details": "Use values from the IMU to express your data in a world reference frame.",
+    "title": "IMU Transformations",
+    "details": "Transform IMU data into different representations and coordinate systems with these code snippets.",
     "link": {
       "text": "View",
       "href": "/alpha-lab/imu-transformations/"

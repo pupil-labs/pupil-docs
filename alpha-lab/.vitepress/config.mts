@@ -7,6 +7,12 @@ let theme_config_additions = {
   sidebar: [
     { text: "Welcome", link: "/" },
     {
+      text: "Coordinate Systems",
+      items: [
+        { text: "IMU Transformations", link: "/imu-transformations/" },
+      ],
+    },
+    {
       text: "Gaze Mapping",
       items: [
         { text: "Map Gaze Onto Dynamic Screen Content", link: "/map-your-gaze-to-a-2d-screen/" },

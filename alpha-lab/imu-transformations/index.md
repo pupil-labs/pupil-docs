@@ -1,6 +1,6 @@
 ---
-title: "IMU Coordinate System Snippets"
-description: "Use values from the IMU to express your data in a world reference frame."
+title: "Transform IMU Data"
+description: "Transform IMU data into different representations and coordinate systems."
 permalink: /alpha-lab/imu-transformations/
 meta:
   - name: twitter:card
@@ -22,59 +22,73 @@ tags: [Neon, Cloud]
 import TagLinks from '@components/TagLinks.vue'
 </script>
 
-# IMU Coordinate System Snippets
+# IMU Transformations
 
 <TagLinks :tags="$frontmatter.tags" />
 
 <!-- <Youtube src="3N8jGLYCrNk"/> -->
 
 ::: tip
-Compare IMU and gaze data in the same coordinate system to better understand how people coordinate head and eye movements.
+Want to compare IMU and gaze data in the same coordinate system to better understand how people coordinate 
+head and eye movements? The transformation functions in this tutorial will show you how!
 :::
 
-Neon comes equipped with an IMU that can be used to determine head pose. Here, we will provide some code snippets that can assist when analyzing the IMU data from Neon.
+This guide contains various transformation functions that can assist when analysing Neon's IMU data.
 
-We will use Python with the NumPy and SciPy packages for the code snippets below. Let’s start by loading those:
+First, it's important to understand how the IMU data should be interpreted. 
+The [orientation readings of the calibrated IMU](https://docs.pupil-labs.com/neon/data-collection/data-streams/#movement-imu-data) 
+are specified with respect to magnetic North and gravity. We will refer to this as the 'world coordinate system'.
+
+To be exact, the 'world coordinate system' is distinct from the 'IMU coordinate system' - as the Neon module rotates, 
+the IMU coordinate system rotates with it. The IMU actually measures the rotational difference between its coordinate 
+system and the world coordinate system.
+
+- Y axis = vector pointing towards magnetic North.
+  - Rotations about this axis are called “roll” and range from -180 to +180 degrees. Wearing Neon normally in an upright position roughly corresponds to a roll of 0 degrees. Rightward head tilt is positive roll; leftward head tilt is negative roll.
+- Z axis = vector pointing upwards, opposite to the direction of gravity.
+  - Rotations about this axis are called “yaw” and range from -180 to +180 degrees. When the IMU is calibrated, a Neon module oriented at magnetic North corresponds to a yaw of 0 degrees. Leftward head turn is positive yaw; rightward head turn is negative yaw.
+- X axis = cross-product of Y and Z, which is a vector pointing rightwards.
+  - Rotations about this axis are called “pitch” and range from -90 to +90 degrees. Wearing Neon normally in an upright position roughly corresponds to a pitch of 0 degrees. Backward head tilt is positive pitch; forward head tilt is negative pitch
+
+![Diagram of the three Euler orientation angles measured by Neon's IMU](./imu-pitch-yaw-roll-black.png)
+
+::: tip
+💡 Note that Neon can sit differently on each wearer’s face, such that the headset is not necessarily in 
+line with a given plane. For example, if the wearer is facing magnetic North, the IMU might 
+still report some deviation from neural orientation.
+:::
+
+The gyroscope values give the rotational velocity of roll, yaw, and pitch in degrees/s (i.e., they provide the change 
+over time of each of these quantities).
+
+The acceleration values measure translational (i.e., linear) acceleration, in terms of g-force (units of g), 
+along the X, Y, and Z axes of the IMU’s coordinate system. The reference frame for specifying acceleration values 
+rotates with the IMU.
+
+
+
+::: tip
+💡 [g-force](https://en.wikipedia.org/wiki/G-force) is not the same as free-fall acceleration due 
+to gravity. For example, if you are standing on the surface of the Earth, then the g-force is equal and 
+opposite to gravity, keeping you at rest. In that case, if you were wearing Neon normally in an upright position, then 
+acceleration along the Z axis would be +1g, while it would be 0g along the X and Y axes.
+:::
+
+It can be helpful to also try out our IMU visualization utility, [plimu](https://github.com/pupil-labs/plimu). This can assist in understanding the IMU data and the various coordinate systems.
+
+Now that we have laid out the relationship between the IMU and world coordinate systems, and how to interpret the
+readings, we can do some useful transformations.
+
+We will use Python with the NumPy and SciPy packages for the code snippets below. Let’s start by importing those:
 
 ```python
 import numpy as np
 from scipy.spatial.transform import Rotation as R
 ```
 
-First, it is important to understand how the IMU data should be interpreted. The [orientation readings of the calibrated IMU](https://docs.pupil-labs.com/neon/data-collection/data-streams/#movement-imu-data) are specified with respect to magnetic North and gravity:
-
-- Y axis = vector pointing towards magnetic North.
-  - Rotations about this axis are called “roll” and range from -180 to +180 degrees. Wearing Neon normally and sitting or standing upright roughly corresponds to a roll of 0 degrees. Rightward head tilt is positive roll; leftward head tilt is negative roll.
-- Z axis = vector pointing upwards, opposite to the direction of gravity.
-  - Rotations about this axis are called “yaw” and range from -180 to +180 degrees. When the IMU is calibrated, a Neon module oriented at magnetic North corresponds to a yaw of 0 degrees. Leftward head turn is positive yaw; rightward head turn is negative yaw.
-- X axis = cross-product of Y and Z, which is a vector pointing rightwards.
-  - Rotations about this axis are called “pitch” and range from -90 to +90 degrees. Wearing Neon normally and sitting or standing upright roughly corresponds to a pitch of 0 degrees. Backward head tilt is positive pitch; forward head tilt is negative pitch
-
-![Diagram of the three Euler orientation angles measured by Neon's IMU](./imu-pitch-yaw-roll-black.png)
-
-This coordinate system is known as the “global reference frame”. Here, we will refer to it as the world coordinate system. To be very exact, it is distinct from the IMU coordinate system - as the Neon module rotates, the IMU coordinate system rotates with it. The IMU actually measures the rotational difference between its coordinate system and the world coordinate system.
-
-::: tip
-💡 Note that Neon can sit differently on each wearer’s face, such that the headset is not necessarily in line with the naso-occipital plane. For example, if the wearer is looking at magnetic North, the IMU might still report some deviation from neural orientation.
-:::
-
-The gyroscope values give the rotational velocity of roll, yaw, and pitch in degrees/s (i.e., they provide the change over time of each of these quantities).
-
-The acceleration values measure translational (i.e., linear) acceleration, in terms of g-force (units of g), along the X, Y, and Z axes of the IMU’s coordinate system. That is, the reference frame for specifying acceleration values rotates with the IMU.
-
-::: tip
-💡 Note that [g-force](https://en.wikipedia.org/wiki/G-force) is not the same as free-fall acceleration due to gravity. For example, if you are standing on the surface of the Earth, then the g-force is equal and opposite to gravity, keeping you at rest. In that case, if you were wearing Neon normally and standing or sitting upright, then acceleration along the Z axis would be +1g, while it would be 0g along the X and Y axes.
-:::
-
-It can be helpful to also try out our IMU visualization utility, [plimu](https://github.com/pupil-labs/plimu). This can assist in understanding the IMU data and the various coordinate systems.
-
-Now that we have laid out the relationship between the IMU and world coordinate systems, we can do some useful transformations.
-
-## Obtain IMU heading vectors
+## Obtain IMU Heading Vectors
 
 An alternate representation of IMU data is a heading vector that points outwards from the center of the IMU. Neutral orientation of the IMU would correspond to a heading vector that points at magnetic North and that is oriented perpendicular to the line of gravity.
-
-Note that a neutral IMU heading vector is unlikely to be perfectly aligned with the floor.
 
 :::: details Code
 ```python
@@ -110,7 +124,7 @@ def imu_heading_in_world(imu_quaternions):
 ```
 ::::
 
-## Transform IMU acceleration data to world coordinates
+## Transform IMU Acceleration Data to World Coordinates
 
 We mentioned above that the IMU’s acceleration data are specified with respect to the IMU’s coordinate system. Sometimes, it can be useful to have the acceleration data specified in the world coordinate system instead. The function below will perform this transformation.
 
@@ -148,13 +162,10 @@ def imu_acceleration_in_world(imu_accelerations, imu_quaternions):
 
 ## Represent IMU and Gaze Data in the Same Coordinate System
 
-Neon simultaneously records gaze and IMU data, making it possible to study the relationship between head and eye movements.
+Neon simultaneously records gaze and IMU data, making it possible to study the relationship between head and 
+eye movements.
 
-To facilitate comparison of gaze and head rotations, it can sometimes be easier to represent them in the same coordinate system. The coordinates of gaze are specified with respect to the scene camera coordinate system and the function below, `gaze_scene_to_world`, uses data from the IMU to transform gaze to the world coordinate system.
-
-::: tip
-💡 Reminder: The world coordinate system is defined by the direction away from the center of gravity, as well as the direction towards magnetic North.
-:::
+To facilitate the comparison, it can be useful to represent them in the same coordinate system. The coordinates of gaze are specified with respect to the scene camera coordinate system and the function below, `gaze_scene_to_world`, uses data from the IMU to transform gaze to the world coordinate system.
 
 :::: details Code
 ```python
@@ -276,17 +287,17 @@ def spherical_to_cartesian_scene(elevations, azimuths):
 ```
 ::::
 
-## Represent IMU and 3D Eyestate data in the same coordinate system
+## Represent IMU and 3D Eyestate in the Same Coordinate System
 
-The [3D eyestate estimates](https://docs.pupil-labs.com/neon/data-collection/data-streams/#_3d-eye-states) provided by Neon are aligned with the scene camera coordinate system. This means we can reuse elements of the `gaze_scene_to_world` function to reconstruct the pose of the eyes as a wearer rotates their head. Essentially, you would be representing eyestate in the world coordinate system of the IMU.
-
-The function below performs that transformation for you, returning eyeball centers and optical axes in the world coordinate system.
+The [3D eyestate estimates](https://docs.pupil-labs.com/neon/data-collection/data-streams/#_3d-eye-states) 
+provided by Neon are aligned with the scene camera coordinate system. This means we can reuse elements of 
+the `gaze_scene_to_world` function to reconstruct the pose of the eyes in the world coordinate system.
 
 :::: details Code
 ```python
 def eyestate_to_world(eyeball_centers, optical_axes, imu_quaternions):
   """
-  Transforms 3D eyestate data to the world coordinate system of the IMU.
+  Transforms 3D eyestate data to the world coordinate system.
   
   Note that the 3D eyestate data and the IMU quaternions should be sampled 
   at the same timestamps. You can linearly interpolate the IMU data
@@ -373,9 +384,15 @@ def eyestate_to_world(eyeball_centers, optical_axes, imu_quaternions):
 ```
 ::::
 
-## Convert (Cartesian) world points to spherical coordinates
+## Convert (Cartesian) World Points to Spherical Coordinates
 
-When studying head orientation and gaze orientation as observers navigate a 3D environment, it can be useful to know how much these quantities deviate from pointing at a given landmark. For instance, you might want to know when someone’s gaze or heading deviates from pointing at the horizon. This can be simplified by representing data in spherical coordinates. The orientation values from the IMU are already in such a format. For the values returned by  gaze_scene_to_world, the function below will do the necessary transformation. When wearing Neon normally, then an elevation and azimuth of 0 degrees corresponds to keeping your head neutral while gazing at the horizon.
+When studying head orientation and gaze orientation as observers navigate a 3D environment, it can be useful 
+to know how much these quantities deviate from pointing at a given landmark. For instance, you might want to 
+know when someone’s gaze or heading deviates from pointing at the horizon. This can be simplified by 
+representing data in spherical coordinates. The orientation values from the IMU are already in such a format. 
+For the values returned by  `gaze_scene_to_world`, the function below will do the necessary transformation. 
+When wearing Neon normally, then an elevation and azimuth of 0 degrees corresponds to keeping your head 
+neutral while gazing at the horizon.
 
 :::: details Code
 ```python
@@ -427,12 +444,10 @@ def cartesian_to_spherical_world(world_points_3d):
 
 ## Analysis example
 
-Below is a brief example of running these commands on values from Pupil Cloud.
+Below is a brief example of how to run the functions on this page using IMU data downloaded from Pupil Cloud.
 
 :::: details Code
 ```python
-import pandas as pd
-
 gaze = pd.read_csv("gaze.csv")
 eye3d = pd.read_csv("3d_eye_states.csv")
 imu = pd.read_csv("imu.csv")
