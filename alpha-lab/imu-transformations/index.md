@@ -26,8 +26,6 @@ import TagLinks from '@components/TagLinks.vue'
 
 <TagLinks :tags="$frontmatter.tags" />
 
-<Youtube src="expAuDaIllU"/>
-
 ::: tip
 Want to compare IMU and gaze data in the same coordinate system to better understand how people coordinate 
 head and eye movements? The transformation functions in this tutorial will show you how!
