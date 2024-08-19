@@ -97,8 +97,8 @@ def imu_heading_in_world(imu_quaternions):
     from Neon's IMU stream.
         
   Returns:
-    - headings_in_world (Nx3 np.array): A timeseries of IMU heading vectors
-    in the world coordinate system.
+    - headings_in_world (Nx3 np.array): The corresponding timeseries of
+    IMU heading vectors in the world coordinate system.
   """
 
   # We start by specifying the direction of a neutral heading vector
@@ -140,8 +140,8 @@ def imu_acceleration_in_world(imu_accelerations, imu_quaternions):
     from Neon's IMU stream.
     
   Returns:
-    - accelerations_world (Nx3 np.array): Timeseries of acceleration data,
-    expressed in the world coordinate system.
+    - accelerations_world (Nx3 np.array): The corresponding timeseries of
+    acceleration data, expressed in the world coordinate system.
   """
     
   # This array contains a timeseries of transformation matrices,
@@ -179,7 +179,7 @@ def gaze_scene_to_world(gaze_elevations, gaze_azimuths, imu_quaternions):
   The code in this function is adapted from the `plimu` visualization utility:
   https://github.com/pupil-labs/plimu/blob/8b94302982363b203dddea2b15f43c6da60e787e/src/pupil_labs/plimu/visualizer.py#L274-L279
     
-  This function makes use of the spherical_to_cartesian function,
+  This function makes use of the spherical_to_cartesian_scene function,
   defined below, that converts 3D gaze rays from spherical coordinates
   to Cartesian coordinates.
     
@@ -192,8 +192,8 @@ def gaze_scene_to_world(gaze_elevations, gaze_azimuths, imu_quaternions):
     from Neon's IMU.
     
   Returns:
-    - gazes_in_world (Nx3 np.array): A timeseries of 3D Cartesian gaze
-    unit vectors, specified in the world coordinate system.
+    - gazes_in_world (Nx3 np.array): The corresponding timeseries of
+    3D Cartesian gaze unit vectors, specified in the world coordinate system.
   """
     
   # The IMU and scene camera coordinate systems have a fixed
@@ -314,10 +314,12 @@ def eyestate_to_world(eyeball_centers, optical_axes, imu_quaternions):
     Neon's IMU.
     
   Returns:
-    - eyeball_centers_in_world (Nx3 np.array): A timeseries of eyeball center
-    estimates (mm) for one eye, transformed to the world coordinate system of the IMU.
-    - optical_axes_in_world (Nx3 np.array): A timeseries of optical axis estimates
-    (3D unit vectors) for the same eye, transformed to the world coordinate system of the IMU.
+    - eyeball_centers_in_world (Nx3 np.array): The corresponding timeseries of
+    eyeball center estimates (mm) for one eye, transformed to the world coordinate
+    system of the IMU.
+    - optical_axes_in_world (Nx3 np.array): The corresponding timeseries of optical
+    axis estimates (3D unit vectors) for the same eye, transformed to the world
+    coordinate system of the IMU.
   """
   
   # The eyeball centers are specified in terms of their distance from
@@ -325,7 +327,7 @@ def eyestate_to_world(eyeball_centers, optical_axes, imu_quaternions):
   # world coordinates, we need the position of the scene camera in
   # the IMU coordinate system. Here, we express that position
   # in millimeters.
-  scene_camera_position_in_imu = np.array([0.0, -3.996, -11.172])
+  scene_camera_position_in_imu = np.array([0.0, -1.3, -6.62])
 
   # The coordinate system of 3D eyestate is aligned with
   # the coordinate system of the scene camera, so we can
@@ -385,10 +387,10 @@ def eyestate_to_world(eyeball_centers, optical_axes, imu_quaternions):
 When studying head orientation and gaze orientation as observers navigate a 3D environment, it can be useful 
 to know how much these quantities deviate from pointing at a given landmark. For instance, you might want to 
 know when someone’s gaze or heading deviates from pointing at the horizon. This can be simplified by 
-representing data in spherical coordinates. The orientation values from the IMU are already in such a format. 
+converting world points from Cartesian to spherical coordinates. The orientation values from the IMU are already in such a format. 
 For the values returned by  `gaze_scene_to_world`, the function below will do the necessary transformation. 
-When wearing Neon normally, then an elevation and azimuth of 0 degrees corresponds to keeping your head 
-neutral while gazing at the horizon.
+When wearing Neon normally, then an elevation and azimuth of 0 degrees corresponds to a neutral orientation:
+i.e., aimed at magnetic North and parallel to the horizon.
 
 :::: details Code
 ```python
@@ -396,24 +398,25 @@ def cartesian_to_spherical_world(world_points_3d):
   """
   Convert points 3D Cartesian world coordinates to spherical coordinates.
 
-  The origin of world coordinate system is the same as the origin of the
+  The origin of the world coordinate system is the same as the origin of the
   IMU coordinate system.
 
-  When wearing Neon normally, then an elevation and azimuth of 0 degrees corresponds to keeping your head neutral while gazing at the horizon.
+  When wearing Neon normally, then an elevation and azimuth of 0 degrees corresponds
+  to a neutral orientation: i.e., aimed at magnetic North and parallel to the horizon.
 
   Inputs:
     - world_points_3d (Nx3 np.array): A collection of 3D points in 
     Cartesian world coordinates.
         
   Returns:
-    - elevation (Nx1 np.array): The corresponding elevation value, in radians,
+    - elevation (Nx1 np.array): The corresponding elevation value, in degrees,
     for each 3D world point (i.e., vertical rotation away from neutral orientation).
     Note: neutral orientation = 0 elevation; orientation upwards is positive;
     orientation downwards is negative.
-    - azimuth (Nx1 np.array): The corresponding azimuth value, in radians, for
+    - azimuth (Nx1 np.array): The corresponding azimuth value, in degrees, for
     each 3D world point (i.e., horizontal rotation away from neutral orientation).
-    Note: neutral orientation = 0 azimuth, orientation rightwards is negative;
-    orientation leftwards is positive.
+    Note: neutral orientation = 0 azimuth, orientation leftwards is positive;
+    orientation rightwards is negative.
   """
 
   x = world_points_3d[:, 0]
@@ -468,6 +471,8 @@ accelerations_resampled = np.array([
   np.interp(gaze_ts, imu_ts, imu["acceleration z [g]"]),
 ]).T
 
+# Put the eyestate data in a format that is compatible with
+# the transformation functions from this article.
 optical_axes_left = np.array([
   eye3d["optical axis left x"],
   eye3d["optical axis left y"],
