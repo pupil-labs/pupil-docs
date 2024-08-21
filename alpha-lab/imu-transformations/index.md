@@ -77,22 +77,41 @@ readings, we can do some useful transformations.
 
 ## Obtain IMU Heading Vectors
 
-An alternate representation of IMU data is a heading vector that points outwards from the center of the IMU. Neutral orientation of the IMU would correspond to a heading vector that points at magnetic North and that is oriented perpendicular to the line of gravity.
+An alternate representation of IMU data is a heading vector that points outwards from the center of the IMU. Neutral orientation of the IMU would correspond to a heading vector that points at magnetic North and that is oriented perpendicular to the line of gravity:
 
-We start by specifying a neutral heading vector:
+- **Rob Variant 1:** Write out scipy module reference in full:
 
-<<< @/47303f69efcff77bd634c82c86612b84/pl_imu_transformations.py#L20
+```python
+imu_neutral_heading = np.array([0.0, 1.0, 0.0])
+world_rotation_matrices = scipy.spatial.transform.Rotation.from_quat(imu_quaternions).as_matrix()
+headings_in_world = world_rotation_matrices @ imu_neutral_heading
+```
 
-Then, we can obtain a timeseries of transformation matrices, using the timeseries of quaternion values
-obtained from the IMU. These matrices can be used to transform points the local IMU coordinate system
-to the world coordinate system:
+- **Rob Variant 2:** Show conventional way to import Rotation sub-module of scipy:
 
-<<< @/imu-transformations/pl_imu_transformations.py#imu_world_matrices
+```python
+from scipy.spatial.transform import Rotation as R
 
-Finally, we obtain a timeseries of heading vectors by applying each transformation matrix, in turn,
-to the neutral heading vector:
+imu_neutral_heading = np.array([0.0, 1.0, 0.0])
+world_rotation_matrices = R.from_quat(imu_quaternions).as_matrix()
+headings_in_world = world_rotation_matrices @ imu_neutral_heading
+```
 
-<<< @/imu-transformations/pl_imu_transformations.py#heading_in_world
+- **Rob Variant 3:** Just write the conventional way without showing the import:
+
+```python
+imu_neutral_heading = np.array([0.0, 1.0, 0.0])
+world_rotation_matrices = R.from_quat(imu_quaternions).as_matrix()
+headings_in_world = world_rotation_matrices @ imu_neutral_heading
+```
+
+- **Rob Variant 4:** Do it as Python-esque pseudo-code:
+
+```python
+imu_neutral_heading = np.array([0.0, 1.0, 0.0])
+world_rotation_matrices = rotation_matrices_from_quaternions(imu_quaternions)
+headings_in_world = world_rotation_matrices @ imu_neutral_heading
+```
 
 ## Transform IMU Acceleration Data to World Coordinates
 
@@ -137,125 +156,52 @@ eye movements.
 
 To facilitate the comparison, it can be useful to represent them in the same coordinate system. The coordinates of gaze are specified with respect to the scene camera coordinate system and the function below, `gaze_scene_to_world`, uses data from the IMU to transform gaze to the world coordinate system.
 
-:::: details Code
-```python
-def gaze_scene_to_world(gaze_elevations, gaze_azimuths, imu_quaternions):
-  """
-  Transform a 3D gaze ray to the world coordinate system.
-    
-  Note that the gaze data and the IMU quaternion should be sampled 
-  at the same timestamps. You can linearly interpolate the IMU data
-  to ensure this.
-    
-  The origin of the IMU coordinate system is the same as the
-  origin of the world coordinate system.
+The IMU and scene camera coordinate systems have [a fixed 102 degree rotation offset](https://docs.pupil-labs.com/neon/data-collection/data-streams/#movement-imu-data). Knowing this, we can build a matrix to transform points in the scene camera coordinate system to their corresponding coordinates in the IMU coordinate system:
 
-  The code in this function is adapted from the `plimu` visualization utility:
-  https://github.com/pupil-labs/plimu/blob/8b94302982363b203dddea2b15f43c6da60e787e/src/pupil_labs/plimu/visualizer.py#L274-L279
-    
-  This function makes use of the spherical_to_cartesian_scene function,
-  defined below, that converts 3D gaze rays from spherical coordinates
-  to Cartesian coordinates.
-    
-  Inputs:
-    - gaze_elevations (Nx1 np.array): A timeseries of gaze elevations (degrees),
-    specified in the scene camera coordinate system.
-    - gaze_azimuths (Nx1 np.array): A timeseries of gaze azimuths (degrees),
-    specified in the scene camera coordinate system.
-    - imu_quaternions (Nx4 np.array): A timeseries of quaternion values
-    from Neon's IMU.
-    
-  Returns:
-    - gazes_in_world (Nx3 np.array): The corresponding timeseries of
-    3D Cartesian gaze unit vectors, specified in the world coordinate system.
-  """
-    
-  # The IMU and scene camera coordinate systems have a fixed
-  # 102 degree rotation offset. See:
-  # https://docs.pupil-labs.com/neon/data-collection/data-streams/#movement-imu-data
-  imu_scene_rotation_diff = np.deg2rad(-90 - 12)
-  
-  # This matrix is used to transform points in the scene
-  # camera coordinate system to their corresponding coordinates
-  # in the IMU coordinate system.
-  scene_to_imu = np.array(
-      [
-          [1.0, 0.0, 0.0],
-          [
-            0.0,
-            np.cos(imu_scene_rotation_diff),
-            -np.sin(imu_scene_rotation_diff),
-          ],
-          [
-            0.0,
-            np.sin(imu_scene_rotation_diff),
-            np.cos(imu_scene_rotation_diff),
-          ],
-      ]
-  )
-  
-  # Neon provides 3D gaze in spherical coordinates by default, 
-  # so we first transform the gaze data from spherical coordinates
-  # to Cartesian coordinates.
-  cart_gazes_in_scene = spherical_to_cartesian_scene(gaze_elevations, gaze_azimuths)
-    
-  # Apply the transformation from the scene camera to the IMU coordinate system.
-  gazes_in_imu = scene_to_imu @ cart_gazes_in_scene.T
-  
-  # This array contains a timeseries of transformation matrices,
-  # as calculated from the IMU's timeseries of quaternions values.
-  # Each of these matrices are used to transform points in the IMU coordinate
-  # system to their corresponding coordinates in the world coordinate system.
-  imu_to_world_matrices = R.from_quat(imu_quaternions).as_matrix()
-  
-  # Apply the transformations from the IMU to the world coordinate system.
-  gazes_in_world = [imu_to_world @ gaze for imu_to_world, gaze in zip(imu_to_world_matrices, gazes_in_imu.T)]
-  
-  return np.array(gazes_in_world)
-
-
-def spherical_to_cartesian_scene(elevations, azimuths):
-  """
-  Convert Neon's spherical representation of 3D gaze to Cartesian coordinates.
-    
-  Inputs:
-    - elevations (Nx1 np.array): A timeseries of gaze elevations (degrees),
-    specified in the scene camera coordinate system.
-    - azimuths (Nx1 np.array): A timeseries of gaze azimuths (degrees),
-    specified in the scene camera coordinate system.
-    
-  Returns:
-    - cartesian_unit_vectors (Nx3 np.array): A timeseries of gaze unit
-    vectors, in Cartesian coordinates, specified in the scene camera
-    coordinate system.
-  """
-
-  elevations_rad = np.deg2rad(elevations)
-  azimuths_rad = np.deg2rad(azimuths)
-
-  # Elevation of 0 in Neon system corresponds to Y = 0, but
-  # an elevation of 0 in traditional spherical coordinates would
-  # correspond to Y = 1, so first we convert elevation to the
-  # more traditional format.
-  elevations_rad += np.pi / 2
- 
-  # Azimuth of 0 in Neon system corresponds to X = 0, but
-  # an azimuth of 0 in traditional spherical coordinates would
-  # correspond to X = 1. Also, azimuth to the right in Neon is
-  # more positive, whereas it is more negative in traditional spherical coordiantes.
-  # So, first we convert azimuth to the more traditional format.
-  azimuths_rad *= -1.0
-  azimuths_rad += np.pi / 2
-
-  cartesian_unit_vectors = np.array([
-    np.sin(elevations_rad) * np.cos(azimuths_rad),
-    np.cos(elevations_rad),
-    np.sin(elevations_rad) * np.sin(azimuths_rad),
-  ]).T
-
-  return cartesian_unit_vectors
 ```
-::::
+imu_scene_rotation_diff = deg2rad(-90 - 12)
+
+scene_to_imu = array(
+  [
+    [1.0, 0.0, 0.0],
+    [
+      0.0,
+      cos(imu_scene_rotation_diff),
+      -sin(imu_scene_rotation_diff),
+    ],
+    [
+      0.0,
+      sin(imu_scene_rotation_diff),
+      cos(imu_scene_rotation_diff),
+    ],
+  ]
+)
+```
+  
+Neon provides 3D gaze in spherical coordinates by default, so we first need to transform the gaze data from spherical coordinates to Cartesian coordinates.
+
+```
+cart_gazes_in_scene = spherical_to_cartesian_scene(gaze_elevations, gaze_azimuths)
+```
+
+Now, we can apply the transformation from the scene camera to the IMU coordinate system:
+
+```
+gazes_in_imu = scene_to_imu @ cart_gazes_in_scene.T
+```
+
+Using the timeseries of quaternion values from the IMU, we can construct a timeseries of transformation matrices.
+Each of these matrices are used to transform points in the IMU coordinate system to their corresponding coordinates in the world coordinate system:
+
+```
+imu_to_world_matrices = rotation_matrices_from_quaternions(imu_quaternions)
+```
+  
+Finally, we can apply the transformations from the IMU to the world coordinate system:
+
+```
+gazes_in_world = [imu_to_world @ gaze for imu_to_world, gaze in zip(imu_to_world_matrices, gazes_in_imu.T)]
+```
 
 ## Represent IMU and 3D Eyestate in the Same Coordinate System
 

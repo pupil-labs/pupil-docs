@@ -16,24 +16,18 @@ def imu_heading_in_world(imu_quaternions):
 
     # We start by specifying the direction of a neutral heading vector
     # in the IMU's coordinate system.
-    # region neutral_heading
-    heading_neutral_in_imu_coords = np.array([0.0, 1.0, 0.0])
-    # endregion neutral_heading
+    imu_neutral_heading = np.array([0.0, 1.0, 0.0])
 
     # This array contains a timeseries of transformation matrices,
     # as calculated from the IMU's timeseries of quaternions values.
     # Each of these matrices are used to transform points in the IMU
     # coordinate system to their corresponding coordinates in the world
     # coordinate system.
-    # region imu_world_matrices
-    imu_to_world_matrices = R.from_quat(imu_quaternions).as_matrix()
-    # endregion imu_world_matrices
+    world_rotation_matrices = R.from_quat(imu_quaternions).as_matrix()
 
     # We now apply each transformation matrix to the neutral IMU heading vector
     # to obtain a timeseries of heading vectors in the world coordinate system.
-    # region heading_in_world
-    headings_in_world = imu_to_world_matrices @ heading_neutral_in_imu_coords
-    # endregion heading_in_world
+    headings_in_world = world_rotation_matrices @ imu_neutral_heading
     
     return headings_in_world
 
