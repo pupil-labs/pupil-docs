@@ -75,7 +75,7 @@ the `gaze_scene_to_world` function to reconstruct the pose of the eyes in the wo
 
 When studying head orientation and gaze orientation as observers navigate a 3D environment, it can be useful 
 to know how much these quantities deviate from pointing at a given landmark. For instance, you might want to 
-know when someone’s gaze or heading deviates from pointing at the horizon. This can be simplified by 
+know when someone’s gaze or heading deviates from parallel with the horizon. This can be simplified by 
 converting world points from Cartesian to spherical coordinates. The orientation values from the IMU are already in such a format. 
 For the values returned by  `gaze_scene_to_world`, the function below will do the necessary transformation. 
 When wearing Neon normally, then an elevation and azimuth of 0 degrees corresponds to a neutral orientation:
@@ -96,7 +96,6 @@ eye3d = pd.read_csv("3d_eye_states.csv")
 imu = pd.read_csv("imu.csv")
 
 gaze_ts = gaze["timestamp [ns]"]
-eye3d_ts = eye3d["timestamp [ns]"]
 imu_ts = imu["timestamp [ns]"]
 
 # We have more gaze datapoints (sampled at 200Hz) than
@@ -133,6 +132,11 @@ eyeball_centers_left = np.array([
 
 imu_headings = imu_heading_in_world(quaternions_resampled)
 
+world_accelerations = imu_acceleration_in_world(
+  accelerations_resampled,
+  quaternions_resampled,
+)
+
 world_gazes = gaze_scene_to_world(
   gaze["elevation [deg]"],
   gaze["azimuth [deg]"],
@@ -142,11 +146,6 @@ world_gazes = gaze_scene_to_world(
 eye_centers_left_world, optical_axes_left_world = eyestate_to_world(
   eyeball_centers_left,
   optical_axes_left,
-  quaternions_resampled,
-)
-
-world_accelerations = imu_acceleration_in_world(
-  accelerations_resampled,
   quaternions_resampled,
 )
 
