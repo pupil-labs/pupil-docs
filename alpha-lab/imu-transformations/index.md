@@ -81,7 +81,7 @@ An alternate representation of IMU data is a heading vector that points outwards
 
 We start by specifying a neutral heading vector:
 
-<<< @/imu-transformations/pl_imu_transformations.py#neutral_heading
+<<< @/47303f69efcff77bd634c82c86612b84/pl_imu_transformations.py#L20
 
 Then, we can obtain a timeseries of transformation matrices, using the timeseries of quaternion values
 obtained from the IMU. These matrices can be used to transform points the local IMU coordinate system
