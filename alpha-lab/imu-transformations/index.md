@@ -79,39 +79,17 @@ readings, we can do some useful transformations.
 
 An alternate representation of IMU data is a heading vector that points outwards from the center of the IMU. Neutral orientation of the IMU would correspond to a heading vector that points at magnetic North and that is oriented perpendicular to the line of gravity:
 
-- **Rob Variant 1:** Write out scipy module reference in full:
+::: code-group
 
-```python
-imu_neutral_heading = np.array([0.0, 1.0, 0.0])
-world_rotation_matrices = scipy.spatial.transform.Rotation.from_quat(imu_quaternions).as_matrix()
-headings_in_world = world_rotation_matrices @ imu_neutral_heading
+```python:line-numbers {16,23,27} [imu_heading_in_world()]
+<!--@include: ./pl_imu_transformations_no_comments.py{2,8}-->
 ```
 
-- **Rob Variant 2:** Show conventional way to import Rotation sub-module of scipy:
-
-```python
-from scipy.spatial.transform import Rotation as R
-
-imu_neutral_heading = np.array([0.0, 1.0, 0.0])
-world_rotation_matrices = R.from_quat(imu_quaternions).as_matrix()
-headings_in_world = world_rotation_matrices @ imu_neutral_heading
+```python:line-numbers {18,25,29} [(with comments)]
+<!--@include: ./pl_imu_transformations.py{2,32}-->
 ```
-
-- **Rob Variant 3:** Just write the conventional way without showing the import:
-
-```python
-imu_neutral_heading = np.array([0.0, 1.0, 0.0])
-world_rotation_matrices = R.from_quat(imu_quaternions).as_matrix()
-headings_in_world = world_rotation_matrices @ imu_neutral_heading
-```
-
-- **Rob Variant 4:** Do it as Python-esque pseudo-code:
-
-```python
-imu_neutral_heading = np.array([0.0, 1.0, 0.0])
-world_rotation_matrices = rotation_matrices_from_quaternions(imu_quaternions)
-headings_in_world = world_rotation_matrices @ imu_neutral_heading
-```
+:::
+ 
 
 ## Transform IMU Acceleration Data to World Coordinates
 
