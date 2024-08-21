@@ -75,50 +75,24 @@ It can be helpful to also try out our IMU visualization utility, [plimu](https:/
 Now that we have laid out the relationship between the IMU and world coordinate systems, and how to interpret the
 readings, we can do some useful transformations.
 
-We will use Python with the NumPy and SciPy packages for the code snippets below. Let’s start by importing those:
-
-```python
-import numpy as np
-from scipy.spatial.transform import Rotation as R
-```
-
 ## Obtain IMU Heading Vectors
 
 An alternate representation of IMU data is a heading vector that points outwards from the center of the IMU. Neutral orientation of the IMU would correspond to a heading vector that points at magnetic North and that is oriented perpendicular to the line of gravity.
 
-:::: details Code
-```python
-def imu_heading_in_world(imu_quaternions):
-  """
-  Construct heading vectors from the IMU's quaternion values.
-        
-  Inputs:
-    - imu_quaternions (Nx4 np.array): A timeseries of quaternions
-    from Neon's IMU stream.
-        
-  Returns:
-    - headings_in_world (Nx3 np.array): The corresponding timeseries of
-    IMU heading vectors in the world coordinate system.
-  """
+We start by specifying a neutral heading vector:
 
-  # We start by specifying the direction of a neutral heading vector
-  # in the IMU's coordinate system.
-  heading_neutral_in_imu_coords = np.array([0.0, 1.0, 0.0])
+<<< @/imu-transformations/pl_imu_transformations.py#neutral_heading
 
-  # This array contains a timeseries of transformation matrices,
-  # as calculated from the IMU's timeseries of quaternions values.
-  # Each of these matrices are used to transform points in the IMU
-  # coordinate system to their corresponding coordinates in the world
-  # coordinate system.
-  imu_to_world_matrices = R.from_quat(imu_quaternions).as_matrix()
-    
-  # We now apply each transformation matrix to the neutral IMU heading vector
-  # to obtain a timeseries of heading vectors in the world coordinate system.
-  headings_in_world = imu_to_world_matrices @ heading_neutral_in_imu_coords
+Then, we can obtain a timeseries of transformation matrices, using the timeseries of quaternion values
+obtained from the IMU. These matrices can be used to transform points the local IMU coordinate system
+to the world coordinate system:
 
-  return headings_in_world
-```
-::::
+<<< @/imu-transformations/pl_imu_transformations.py#imu_world_matrices
+
+Finally, we obtain a timeseries of heading vectors by applying each transformation matrix, in turn,
+to the neutral heading vector:
+
+<<< @/imu-transformations/pl_imu_transformations.py#heading_in_world
 
 ## Transform IMU Acceleration Data to World Coordinates
 
