@@ -27,9 +27,10 @@ jobs:
         working-directory: ./${{ matrix.component }}
         run: npm install
 
-      - name: Copy node_modules
+      - name: Copy node_modules & init submodules
         shell: bash
         run: |
+          git submodule update --init --recursive
           cp -r ${{ matrix.component }}/node_modules .
           ls -la
 

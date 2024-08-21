@@ -120,9 +120,10 @@ jobs:
         run: npm install
       
       # Copy node modules to provide dependencies for shared components in root folder
-      - name: Copy node_modules
+      - name: Copy node_modules & init submodules
         shell: bash
         run: |
+          git submodule update --init --recursive
           cp -r alpha-lab/node_modules .
           ls -la
 
