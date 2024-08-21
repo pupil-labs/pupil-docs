@@ -160,25 +160,10 @@ The IMU and scene camera coordinate systems have [a fixed 102 degree rotation of
 
 ```
 imu_scene_rotation_diff = deg2rad(-90 - 12)
-
-scene_to_imu = array(
-  [
-    [1.0, 0.0, 0.0],
-    [
-      0.0,
-      cos(imu_scene_rotation_diff),
-      -sin(imu_scene_rotation_diff),
-    ],
-    [
-      0.0,
-      sin(imu_scene_rotation_diff),
-      cos(imu_scene_rotation_diff),
-    ],
-  ]
-)
+scene_to_imu = yz_rotation_matrix_from_angle(imu_scene_rotation_diff)
 ```
   
-Neon provides 3D gaze in spherical coordinates by default, so we first need to transform the gaze data from spherical coordinates to Cartesian coordinates.
+Neon provides 3D gaze in spherical coordinates by default, so next, we need to transform the gaze data from spherical coordinates to Cartesian coordinates.
 
 ```
 cart_gazes_in_scene = spherical_to_cartesian_scene(gaze_elevations, gaze_azimuths)
@@ -187,7 +172,7 @@ cart_gazes_in_scene = spherical_to_cartesian_scene(gaze_elevations, gaze_azimuth
 Now, we can apply the transformation from the scene camera to the IMU coordinate system:
 
 ```
-gazes_in_imu = scene_to_imu @ cart_gazes_in_scene.T
+gazes_in_imu = scene_to_imu @ cart_gazes_in_scene
 ```
 
 Using the timeseries of quaternion values from the IMU, we can construct a timeseries of transformation matrices.
@@ -200,7 +185,7 @@ imu_to_world_matrices = rotation_matrices_from_quaternions(imu_quaternions)
 Finally, we can apply the transformations from the IMU to the world coordinate system:
 
 ```
-gazes_in_world = [imu_to_world @ gaze for imu_to_world, gaze in zip(imu_to_world_matrices, gazes_in_imu.T)]
+gazes_in_world = [imu_to_world @ gaze for imu_to_world, gaze in zip(imu_to_world_matrices, gazes_in_imu)]
 ```
 
 ## Represent IMU and 3D Eyestate in the Same Coordinate System
