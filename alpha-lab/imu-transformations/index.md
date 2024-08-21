@@ -81,7 +81,7 @@ An alternate representation of IMU data is a heading vector that points outwards
 
 ::: code-group
 
-```python:line-numbers {16,23,27} [imu_heading_in_world()]
+```python [imu_heading_in_world()]
 <!--@include: ./pl_imu_transformations_no_comments.py{2,8}-->
 ```
 
@@ -134,37 +134,16 @@ eye movements.
 
 To facilitate the comparison, it can be useful to represent them in the same coordinate system. The coordinates of gaze are specified with respect to the scene camera coordinate system and the function below, `gaze_scene_to_world`, uses data from the IMU to transform gaze to the world coordinate system.
 
-The IMU and scene camera coordinate systems have [a fixed 102 degree rotation offset](https://docs.pupil-labs.com/neon/data-collection/data-streams/#movement-imu-data). Knowing this, we can build a matrix to transform points in the scene camera coordinate system to their corresponding coordinates in the IMU coordinate system:
+::: code-group
 
-```
-imu_scene_rotation_diff = deg2rad(-90 - 12)
-scene_to_imu = yz_rotation_matrix_from_angle(imu_scene_rotation_diff)
-```
-  
-Neon provides 3D gaze in spherical coordinates by default, so next, we need to transform the gaze data from spherical coordinates to Cartesian coordinates.
-
-```
-cart_gazes_in_scene = spherical_to_cartesian_scene(gaze_elevations, gaze_azimuths)
+```python [gaze_scene_to_world() & spherical_to_cartesian_scene()]
+<!--@include: ./pl_imu_transformations_no_comments.py{11,57}-->
 ```
 
-Now, we can apply the transformation from the scene camera to the IMU coordinate system:
-
+```python:line-numbers {34,39-53,58,61,67,70-75,94,95,101,108-119} [(with comments)]
+<!--@include: ./pl_imu_transformations.py{35,153}-->
 ```
-gazes_in_imu = scene_to_imu @ cart_gazes_in_scene
-```
-
-Using the timeseries of quaternion values from the IMU, we can construct a timeseries of transformation matrices.
-Each of these matrices are used to transform points in the IMU coordinate system to their corresponding coordinates in the world coordinate system:
-
-```
-imu_to_world_matrices = rotation_matrices_from_quaternions(imu_quaternions)
-```
-  
-Finally, we can apply the transformations from the IMU to the world coordinate system:
-
-```
-gazes_in_world = [imu_to_world @ gaze for imu_to_world, gaze in zip(imu_to_world_matrices, gazes_in_imu)]
-```
+:::
 
 ## Represent IMU and 3D Eyestate in the Same Coordinate System
 
