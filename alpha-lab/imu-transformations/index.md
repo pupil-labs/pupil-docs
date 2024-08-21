@@ -33,216 +33,43 @@ head and eye movements? The transformation functions in this tutorial will show 
 
 This guide contains various transformation functions that can assist when analysing Neon's IMU data.
 
-First, it's important to understand how the IMU data should be interpreted. 
-The [orientation readings of the calibrated IMU](https://docs.pupil-labs.com/neon/data-collection/data-streams/#movement-imu-data) 
-are specified with respect to magnetic North and gravity. We will refer to this as the 'world coordinate system'.
-
-To be exact, the 'world coordinate system' is distinct from the 'IMU coordinate system' - as the Neon module rotates, 
-the IMU coordinate system rotates with it. The IMU's orientation readings actually specify the rotational difference between its coordinate 
-system and the world coordinate system.
-
-- Y axis = vector pointing towards magnetic North.
-  - Rotations about this axis are called “roll” and range from -180 to +180 degrees. Wearing Neon normally in an upright position roughly corresponds to a roll of 0 degrees. Rightward head tilt is positive roll; leftward head tilt is negative roll.
-- Z axis = vector pointing upwards, opposite to the direction of gravity.
-  - Rotations about this axis are called “yaw” and range from -180 to +180 degrees. When the IMU is calibrated, a Neon module oriented at magnetic North corresponds to a yaw of 0 degrees. Leftward head turn is positive yaw; rightward head turn is negative yaw.
-- X axis = cross-product of Y and Z, which is a vector pointing rightwards.
-  - Rotations about this axis are called “pitch” and range from -90 to +90 degrees. Wearing Neon normally in an upright position roughly corresponds to a pitch of 0 degrees. Backward head tilt is positive pitch; forward head tilt is negative pitch
-
-![Diagram of the three Euler orientation angles measured by Neon's IMU](./imu-pitch-yaw-roll-black.png)
-
-::: tip
-💡 Note that Neon can sit differently on each wearer’s face, such that the headset is not necessarily in 
-line with a given plane. For example, if the wearer is facing magnetic North, the IMU might 
-still report some deviation from a neutral orientation.
-:::
-
-The raw gyroscope values give the rotational velocity about the X, Y, and Z axes of the IMU’s coordinate system. Their units are degrees/s (i.e., they provide the change 
-over time of each of these quantities). The reference frame for specifying rotational velocities rotates with the IMU.
-
-The raw acceleration values measure translational (i.e., linear) acceleration, in terms of g-force (units of g), 
-along the X, Y, and Z axes of the IMU’s coordinate system. The reference frame for specifying acceleration values 
-rotates with the IMU.
-
-::: tip
-💡 [g-force](https://en.wikipedia.org/wiki/G-force) is not the same as free-fall acceleration due 
-to gravity. For example, if you are standing on the surface of the Earth, then the g-force is equal and 
-opposite to gravity, keeping you at rest. In that case, if you were wearing Neon normally in an upright position, then 
-acceleration along the Z axis would be +1g, while it would be 0g along the X and Y axes.
-:::
-
-It can be helpful to also try out our IMU visualization utility, [plimu](https://github.com/pupil-labs/plimu). This can assist in understanding the IMU data and the various coordinate systems.
-
-Now that we have laid out the relationship between the IMU and world coordinate systems, and how to interpret the
-readings, we can do some useful transformations.
+While working through this guide, it can be helpful to try out our IMU visualization utility, [plimu](https://github.com/pupil-labs/plimu). This can assist in understanding the IMU data and the various coordinate systems.
 
 ## Obtain IMU Heading Vectors
 
 An alternate representation of IMU data is a heading vector that points outwards from the center of the IMU. Neutral orientation of the IMU would correspond to a heading vector that points at magnetic North and that is oriented perpendicular to the line of gravity:
 
-::: code-group
-
-```python [imu_heading_in_world()]
-<!--@include: ./pl_imu_transformations_no_comments.py{2,8}-->
+```python
+<!--@include: ./pl-imu-transformations/pl_imu_transformations_no_comments.py{2,8}-->
 ```
-
-```python:line-numbers {18,25,29} [(with comments)]
-<!--@include: ./pl_imu_transformations.py{2,32}-->
-```
-:::
  
-
 ## Transform IMU Acceleration Data to World Coordinates
 
-We mentioned above that the IMU’s acceleration data are specified with respect to the IMU’s coordinate system. Sometimes, it can be useful to have the acceleration data specified in the world coordinate system instead. The function below will perform this transformation.
+We mentioned above that the IMU’s acceleration data are specified with respect to the IMU’s coordinate system. Sometimes, it can be useful to have the acceleration data specified in the world coordinate system instead. The function below will perform this transformation:
 
-### 
-
-:::: details Code
 ```python
-def imu_acceleration_in_world(imu_accelerations, imu_quaternions):
-  """
-  Transform the IMU's acceleration values to the world coordinate system.
-    
-  Inputs:
-    - accelerations_imu (Nx3 np.array): A timeseries of acceleration data
-    from the IMU, where columns are in the order: "acceleration x",
-    "acceleration y", "acceleration z".
-    - imu_quaternions (Nx4 np.array): A timeseries of quaternions
-    from Neon's IMU stream.
-    
-  Returns:
-    - accelerations_world (Nx3 np.array): The corresponding timeseries of
-    acceleration data, expressed in the world coordinate system.
-  """
-    
-  # This array contains a timeseries of transformation matrices,
-  # as calculated from the IMU's timeseries of quaternions values.
-  # Each of these matrices sends points in the IMU coordinate system to their
-  # corresponding coordinates in the world coordinate system.
-  imu_to_world_matrices = R.from_quat(imu_quaternions).as_matrix()
-    
-  accelerations_world = [imu_to_world @ imu_acceleration for imu_to_world, imu_acceleration in zip(imu_to_world_matrices, imu_accelerations)]
-    
-  return np.array(accelerations_world)
+<!--@include: ./pl-imu-transformations/pl_imu_transformations_no_comments.py{11,21}-->
 ```
-::::
 
 ## Represent IMU and Gaze Data in the Same Coordinate System
 
-Neon simultaneously records gaze and IMU data, making it possible to study the relationship between head and 
-eye movements.
+Neon simultaneously records gaze and IMU data, making it possible to study the relationship between head and eye movements.
 
-To facilitate the comparison, it can be useful to represent them in the same coordinate system. The coordinates of gaze are specified with respect to the scene camera coordinate system and the function below, `gaze_scene_to_world`, uses data from the IMU to transform gaze to the world coordinate system.
+To facilitate the comparison, it can be useful to represent them in the same coordinate system. The coordinates of gaze are specified with respect to the scene camera coordinate system and the function below, `gaze_scene_to_world`, uses data from the IMU to transform gaze to the world coordinate system:
 
-::: code-group
-
-```python [gaze_scene_to_world() & spherical_to_cartesian_scene()]
-<!--@include: ./pl_imu_transformations_no_comments.py{11,57}-->
+```python
+<!--@include: ./pl-imu-transformations/pl_imu_transformations_no_comments.py{24,73}-->
 ```
-
-```python:line-numbers {34,39-53,58,61,67,70-75,94,95,101,108-119} [(with comments)]
-<!--@include: ./pl_imu_transformations.py{35,153}-->
-```
-:::
 
 ## Represent IMU and 3D Eyestate in the Same Coordinate System
 
 The [3D eyestate estimates](https://docs.pupil-labs.com/neon/data-collection/data-streams/#_3d-eye-states) 
 provided by Neon are aligned with the scene camera coordinate system. This means we can reuse elements of 
-the `gaze_scene_to_world` function to reconstruct the pose of the eyes in the world coordinate system.
+the `gaze_scene_to_world` function to reconstruct the pose of the eyes in the world coordinate system:
 
-:::: details Code
 ```python
-def eyestate_to_world(eyeball_centers, optical_axes, imu_quaternions):
-  """
-  Transforms 3D eyestate data to the world coordinate system.
-  
-  Note that the 3D eyestate data and the IMU quaternions should be sampled 
-  at the same timestamps. You can linearly interpolate the IMU data
-  to ensure this.
-    
-  The origin of the IMU coordinate system is the same as the
-  origin of the world coordinate system.
-    
-  The code in this function is adapted from the `plimu` visualization utility:
-  https://github.com/pupil-labs/plimu/blob/8b94302982363b203dddea2b15f43c6da60e787e/src/pupil_labs/plimu/visualizer.py#L274-L279
-    
-  Inputs:
-    - eyeball_centers (Nx3 np.array): A timeseries of eyeball center
-    estimates (mm) for one eye, as provided by Neon's 3D eyestate data stream.
-    - optical_axes (Nx3 np.array): A timeseries of optical axis estimates
-    (3D unit vectors) for the same eye, as provided by Neon's 3D eyestate data stream.
-    - imu_quaternions (Nx4 np.array): A timeseries of quaternion values from
-    Neon's IMU.
-    
-  Returns:
-    - eyeball_centers_in_world (Nx3 np.array): The corresponding timeseries of
-    eyeball center estimates (mm) for one eye, transformed to the world coordinate
-    system of the IMU.
-    - optical_axes_in_world (Nx3 np.array): The corresponding timeseries of optical
-    axis estimates (3D unit vectors) for the same eye, transformed to the world
-    coordinate system of the IMU.
-  """
-  
-  # The eyeball centers are specified in terms of their distance from
-  # the center of the scene camera, so to accurately convert them to
-  # world coordinates, we need the position of the scene camera in
-  # the IMU coordinate system. Here, we express that position
-  # in millimeters.
-  scene_camera_position_in_imu = np.array([0.0, -1.3, -6.62])
-
-  # The coordinate system of 3D eyestate is aligned with
-  # the coordinate system of the scene camera, so we can
-  # make use of the scene->to->IMU transformation procedure.
-  #
-  # The IMU and scene camera coordinate systems have a fixed
-  # 102 degree rotation offset. See here:
-  # https://docs.pupil-labs.com/neon/data-collection/data-streams/#movement-imu-data
-  imu_scene_rotation_diff = np.deg2rad(-90 - 12)
-  
-  # This matrix is used to transform points in the scene
-  # camera coordinate system to their corresponding coordinates
-  # in the IMU coordinate system.
-  scene_to_imu = np.array(
-      [
-        [1.0, 0.0, 0.0],
-        [
-          0.0,
-          np.cos(imu_scene_rotation_diff),
-          -np.sin(imu_scene_rotation_diff),
-        ],
-        [
-          0.0,
-          np.sin(imu_scene_rotation_diff),
-          np.cos(imu_scene_rotation_diff),
-        ],
-      ]
-  )
-  
-  # Convert the coordinates of the eyeball center and optical axes
-  # to the IMU coordinate system.
-  eyeball_centers_in_imu = scene_to_imu @ eyeball_centers.T
-  optical_axes_in_imu = scene_to_imu @ optical_axes.T
-    
-  # Take into account that the scene camera is offset from the IMU.
-  eyeball_centers_in_imu[0, :] += scene_camera_position_in_imu[0]
-  eyeball_centers_in_imu[1, :] += scene_camera_position_in_imu[1]
-  eyeball_centers_in_imu[2, :] += scene_camera_position_in_imu[2]
-  
-  # This array contains a timeseries of transformation matrices,
-  # as calculated from the IMU's timeseries of quaternions values.
-  # Each of these matrices are used to transform points in the IMU
-  # coordinate system to their corresponding coordinates in the world
-  # coordinate system.
-  imu_to_world_matrices = R.from_quat(imu_quaternions).as_matrix()
-  
-  # Apply the transformations from the IMU to the world coordinate system.
-  eyeball_centers_in_world = [imu_to_world @ eye_center for imu_to_world, eye_center in zip(imu_to_world_matrices, eyeball_centers_in_imu.T)]
-  optical_axes_in_world = [imu_to_world @ optical_axis for imu_to_world, optical_axis in zip(imu_to_world_matrices, optical_axes_in_imu.T)]
-    
-  return np.array(eyeball_centers_in_world), np.array(optical_axes_in_world)
+<!--@include: ./pl-imu-transformations/pl_imu_transformations_no_comments.py{76,119}-->
 ```
-::::
 
 ## Convert (Cartesian) World Points to Spherical Coordinates
 
@@ -254,60 +81,15 @@ For the values returned by  `gaze_scene_to_world`, the function below will do th
 When wearing Neon normally, then an elevation and azimuth of 0 degrees corresponds to a neutral orientation:
 i.e., aimed at magnetic North and parallel to the horizon.
 
-:::: details Code
+
 ```python
-def cartesian_to_spherical_world(world_points_3d):
-  """
-  Convert points 3D Cartesian world coordinates to spherical coordinates.
-
-  The origin of the world coordinate system is the same as the origin of the
-  IMU coordinate system.
-
-  When wearing Neon normally, then an elevation and azimuth of 0 degrees corresponds
-  to a neutral orientation: i.e., aimed at magnetic North and parallel to the horizon.
-
-  Inputs:
-    - world_points_3d (Nx3 np.array): A collection of 3D points in 
-    Cartesian world coordinates.
-        
-  Returns:
-    - elevation (Nx1 np.array): The corresponding elevation value, in degrees,
-    for each 3D world point (i.e., vertical rotation away from neutral orientation).
-    Note: neutral orientation = 0 elevation; orientation upwards is positive;
-    orientation downwards is negative.
-    - azimuth (Nx1 np.array): The corresponding azimuth value, in degrees, for
-    each 3D world point (i.e., horizontal rotation away from neutral orientation).
-    Note: neutral orientation = 0 azimuth, orientation leftwards is positive;
-    orientation rightwards is negative.
-  """
-
-  x = world_points_3d[:, 0]
-  y = world_points_3d[:, 1]
-  z = world_points_3d[:, 2]
-
-  radii = np.sqrt(x**2 + y**2 + z**2)
-
-  elevation = -(np.arccos(z / radii) - np.pi / 2)
-  azimuth = np.arctan2(y, x) - np.pi/2
-  
-  # Keep all azimuth values in the range of [-180, 180] to remain consistent
-  # with the yaw orientation values provided by the IMU
-  azimuth[azimuth < -np.pi] += 2 * np.pi
-  azimuth[azimuth > np.pi] -= 2 * np.pi
-
-  # Convert from radians to degrees
-  elevation = np.rad2deg(elevation)
-  azimuth = np.rad2deg(azimuth)
-
-  return elevation, azimuth
+<!--@include: ./pl-imu-transformations/pl_imu_transformations_no_comments.py{122,138}-->
 ```
-::::
 
 ## Analysis example
 
 Below is a brief example of how to run the functions on this page using IMU data downloaded from Pupil Cloud.
 
-:::: details Code
 ```python
 gaze = pd.read_csv("gaze.csv")
 eye3d = pd.read_csv("3d_eye_states.csv")
@@ -370,7 +152,6 @@ world_accelerations = imu_acceleration_in_world(
 
 gaze_elevations_world, gaze_azimuths_world = cartesian_to_spherical_world(world_gazes)
 ```
-::::
 
 ::: tip
 Need assistance with the IMU code in this article? Or do you have something more custom in mind? Reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for dedicated support options.
