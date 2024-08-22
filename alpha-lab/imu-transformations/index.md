@@ -89,7 +89,7 @@ Neon simultaneously records gaze and IMU data, making it possible to study the r
 
 To facilitate the comparison, it can be useful to represent these data streams in the same coordinate system. An important step is accounting for [the fixed 102 degree rotation offset between the scene camera and IMU coordinate systems](https://docs.pupil-labs.com/neon/data-collection/data-streams/#movement-imu-data), as depicted below.
 
-![Diagrams showing the 102 degree rotation offset between the IMU and scene camera coordinate systems.](./imu-scene_camera_offset-black.jpg)
+![Diagrams showing the 102 degree rotation offset between the IMU and scene camera coordinate systems.](./imu-scene_camera_offset-black.png)
 
 We can use data from the IMU to transform gaze from scene camera coordinates to world coordinates. This is facilitated by the `transform_scene_to_imu` and `spherical_to_cartesian_scene` functions:
 
