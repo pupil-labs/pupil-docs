@@ -117,10 +117,10 @@ def transform_scene_to_imu(coords_in_scene, translation = None):
         scene_to_imu_homogeneous[:3, :3] = scene_to_imu
         scene_to_imu_homogeneous[:3, 3] = translation
 
-        coords_in_scene_homogeneous = cv2.convertPointsToHomogeneous(coords_in_scene)
-        return cv2.convertPointsFromHomogeneous(
-            scene_to_imu_homogeneous @ coords_in_scene_homogeneous
-        )
+        coords_in_scene_homogeneous = cv2.convertPointsToHomogeneous(coords_in_scene.T)
+        coords_in_imu_homogeneous = scene_to_imu_homogeneous @ coords_in_scene_homogeneous.reshape(-1, 4).T
+        coords_in_imu = cv2.convertPointsFromHomogeneous(coords_in_imu_homogeneous.T)
+        return coords_in_imu.reshape(-1, 3).T
     else:
         return scene_to_imu @ coords_in_scene
 
@@ -193,7 +193,7 @@ eyeball_centers_in_world = transform_imu_to_world(
 )
 
 optical_axes_in_imu = transform_scene_to_imu(
-    optical_axes.T, translation=scene_camera_position_in_imu,
+    optical_axes.T,
 )
 optical_axes_in_world = transform_imu_to_world(
     optical_axes_in_imu.T, imu_quaternions,
