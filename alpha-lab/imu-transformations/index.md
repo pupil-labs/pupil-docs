@@ -42,12 +42,14 @@ One of the key steps when dealing with the IMU is the transformation that takes 
 Note that the origin of the IMU coordinate system is the same as the origin of the world coordinate system.
 
 ```python
+from scipy.spatial.transform import Rotation as R
+
 def transform_imu_to_world(imu_coordinates, imu_quaternions):
     # This array contains a timeseries of transformation matrices,
     # as calculated from the IMU's timeseries of quaternions values.
     imu_to_world_matrices = R.from_quat(imu_quaternions).as_matrix()
     
-    if len(imu_coordinates) == 1:
+    if np.ndim(imu_coordinates) == 1:
         return imu_to_world_matrices @ imu_coordinates
     else:
         return np.array([
