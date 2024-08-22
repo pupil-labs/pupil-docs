@@ -69,8 +69,7 @@ An alternative representation of IMU orientation data is a heading vector that p
 ```python
 heading_neutral_in_imu_coords = np.array([0.0, 1.0, 0.0])
 headings_in_world = transform_imu_to_world(
-    heading_neutral_in_imu_coords,
-    imu_quaternions,
+    heading_neutral_in_imu_coords, imu_quaternions,
 )
 ```
 
@@ -80,8 +79,7 @@ The IMU’s acceleration data are specified in its local coordinate system. Some
 
 ```python
 accelerations_in_world = transform_imu_to_world(
-    imu_accelerations,
-    imu_quaternions,
+    imu_accelerations, imu_quaternions,
 )
 ```
 
@@ -188,21 +186,17 @@ The [3D eyestate estimates](https://docs.pupil-labs.com/neon/data-collection/dat
 scene_camera_position_in_imu = np.array([0.0, -1.3, -6.62])
 
 eyeball_centers_in_imu = transform_scene_to_imu(
-    eyeball_centers.T,
-    translation=scene_camera_position_in_imu,
+    eyeball_centers.T, translation=scene_camera_position_in_imu,
 )
 eyeball_centers_in_world = transform_imu_to_world(
-    eyeball_centers_in_imu.T,
-    imu_quaternions,
+    eyeball_centers_in_imu.T, imu_quaternions,
 )
 
 optical_axes_in_imu = transform_scene_to_imu(
-    optical_axes.T,
-    translation=scene_camera_position_in_imu,
+    optical_axes.T, translation=scene_camera_position_in_imu,
 )
 optical_axes_in_world = transform_imu_to_world(
-    optical_axes_in_imu.T,
-    imu_quaternions
+    optical_axes_in_imu.T, imu_quaternions,
 )
 ```
 
