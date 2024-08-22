@@ -37,7 +37,7 @@ While working through this guide, it can be helpful to try out our IMU visualiza
 
 ## Transform to World Coordinates
 
-One of the key steps when dealing with the IMU is the transformation that takes coordinates in the local IMU coordinate system to their corresponding coordinates in the world coordinate system. The quaternion values provided by the IMU can be used to convert between the two coordinate systems. The `transform_imu_to_world` function is defined below and will be used throughout this article.
+One of the key steps when dealing with the IMU is the transformation that takes coordinates in the local IMU coordinate system to their corresponding coordinates in the world coordinate system. The quaternion values provided by the IMU can be used to convert between the two coordinate systems. The `transform_imu_to_world` function, defined below, will be used throughout this article.
 
 Note that the origin of the IMU coordinate system is the same as the origin of the world coordinate system.
 
@@ -206,7 +206,7 @@ optical_axes_in_world = transform_imu_to_world(
 
 ## World Spherical Coordinates
 
-When studying head orientation and gaze orientation as observers navigate a 3D environment, it can be useful to know how much these quantities deviate from pointing at a given landmark or direction. For instance, you might want to know when someone’s gaze or heading deviates from parallel with the horizon. This can be simplified by converting world points from Cartesian to spherical coordinates. The orientation values from the IMU are already in such a format. For gaze data in world coordinates, the function below will do the necessary transformation. When wearing Neon normally, an elevation and azimuth of 0 degrees corresponds to a neutral orientation: i.e., aimed at magnetic North and parallel to the horizon.
+When studying head orientation and gaze orientation as observers navigate a 3D environment, it can be useful to know how much these quantities deviate from pointing at a given landmark or direction. For instance, you might want to know when someone’s gaze or heading deviates from parallel with the horizon. This can be simplified by converting world points from Cartesian to spherical coordinates. The [Euler angles from the IMU](https://docs.pupil-labs.com/neon/data-collection/data-streams/#euler-angles) are already in a compatible format. For gaze data in world coordinates, the `cartesian_to_spherical_world` function below will do the necessary transformation. When wearing Neon normally, an elevation and azimuth of 0 degrees corresponds to a neutral orientation: i.e., aimed at magnetic North and parallel to the horizon.
 
 ```python
 def cartesian_to_spherical_world(world_points_3d):
