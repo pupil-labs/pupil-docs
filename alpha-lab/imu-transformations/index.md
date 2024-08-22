@@ -94,7 +94,7 @@ To facilitate the comparison, it can be useful to represent these data streams i
 We can use data from the IMU to transform gaze from scene camera coordinates to world coordinates. This is facilitated by the `transform_scene_to_imu` and `spherical_to_cartesian_scene` functions:
 
 ```python
-def transform_scene_to_imu(coords_in_scene, translation=None):
+def transform_scene_to_imu(coords_in_scene, translation=np.zeros((3,))):
     imu_scene_rotation_diff = np.deg2rad(-90 - 12)
     scene_to_imu = np.array(
         [
@@ -112,16 +112,14 @@ def transform_scene_to_imu(coords_in_scene, translation=None):
         ]
     )
 
-    if translation is not None:
-        scene_to_imu_homogeneous = np.zeros((4, 4))
-        scene_to_imu_homogeneous[:3, :3] = scene_to_imu
-        scene_to_imu_homogeneous[:3, 3] = translation
+    scene_to_imu_homogeneous = np.zeros((4, 4))
+    scene_to_imu_homogeneous[:3, :3] = scene_to_imu
+    scene_to_imu_homogeneous[:3, 3] = translation
+    scene_to_imu_homogeneous[3, 3] = 1.0
 
-        coords_in_scene_homogeneous = cv2.convertPointsToHomogeneous(coords_in_scene)
-        coords_in_imu_homogeneous = scene_to_imu_homogeneous @ coords_in_scene_homogeneous.reshape(-1, 4).T
-        coords_in_imu = cv2.convertPointsFromHomogeneous(coords_in_imu_homogeneous.T).reshape(-1, 3)
-    else:
-        coords_in_imu = (scene_to_imu @ coords_in_scene.T).T
+    coords_in_scene_homogeneous = cv2.convertPointsToHomogeneous(coords_in_scene)
+    coords_in_imu_homogeneous = scene_to_imu_homogeneous @ coords_in_scene_homogeneous.reshape(-1, 4).T
+    coords_in_imu = cv2.convertPointsFromHomogeneous(coords_in_imu_homogeneous.T).reshape(-1, 3)
 
     return coords_in_imu
 
@@ -161,7 +159,7 @@ def spherical_to_cartesian_scene(elevations, azimuths):
 Putting these together, we can build a general `transform_scene_to_world` function:
 
 ```python
-def transform_scene_to_world(coords_in_scene, imu_quaternions, translation=None):
+def transform_scene_to_world(coords_in_scene, imu_quaternions, translation=np.zeros((3,))):
     coords_in_imu = transform_scene_to_imu(coords_in_scene, translation)
     return transform_imu_to_world(coords_in_imu, imu_quaternions)
 ```
