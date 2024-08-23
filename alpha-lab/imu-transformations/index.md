@@ -35,7 +35,7 @@ This guide contains various transformation functions that can assist when analys
 
 While working through this guide, it can be helpful to try out our IMU visualization utility, [plimu](https://github.com/pupil-labs/plimu). This can assist in understanding the IMU data and the various coordinate systems. For example, some of the code in this article is [adapted from it](https://github.com/pupil-labs/plimu/blob/8b94302982363b203dddea2b15f43c6da60e787e/src/pupil_labs/plimu/visualizer.py#L274-L279).
 
-## Transform to World Coordinates
+## IMU to World Coordinates
 
 One of the key steps when dealing with the IMU is the transformation that takes coordinates in the local IMU coordinate system to their corresponding coordinates in the world coordinate system. The quaternion values provided by the IMU can be used to convert between the two coordinate systems. The `transform_imu_to_world` function, defined below, will be used throughout this article.
 
@@ -60,41 +60,25 @@ def transform_imu_to_world(imu_coordinates, imu_quaternions):
         ])
 ```
 
-Now that we have the `transform_imu_to_world` function, let's use it!
+Now that we have the `transform_imu_to_world` function, let's build on it!
 
-## Obtain IMU Heading Vectors
+## Scene Camera to World Coordinates
 
-An alternative representation of IMU orientation data is a heading vector that points outwards from the center of the IMU. Neutral orientation of the IMU would correspond to a heading vector that points at magnetic North and that is oriented perpendicular to the line of gravity:
-
-```python
-heading_neutral_in_imu_coords = np.array([0.0, 1.0, 0.0])
-headings_in_world = transform_imu_to_world(
-    heading_neutral_in_imu_coords, imu_quaternions
-)
-```
-
-## Acceleration in World
-
-The IMU’s acceleration data are specified in its local coordinate system. Sometimes, it can be useful to have the acceleration data specified in the world coordinate system instead:
-
-```python
-accelerations_in_world = transform_imu_to_world(
-    imu_accelerations, imu_quaternions
-)
-```
-
-## Gaze to World Coordinates
-
-Neon simultaneously records gaze and IMU data, making it possible to study the relationship between head and eye movements.
+Neon simultaneously records data in the scene camera and IMU coordinate systems, making it possible to study the relationship between head and eye movements.
 
 To facilitate the comparison, it can be useful to represent these data streams in the same coordinate system. An important step is accounting for [the fixed 102 degree rotation offset between the scene camera and IMU coordinate systems](https://docs.pupil-labs.com/neon/data-collection/data-streams/#movement-imu-data), as depicted below.
 
 ![Diagrams showing the fixed 102 degree rotation offset between the IMU and scene camera coordinate systems.](./imu-scene_camera_offset-black.png)
 
-We can use data from the IMU to transform gaze in scene camera coordinates to world coordinates. We proceed by building a `transform_scene_to_imu` function:
+We can use data from the IMU to transform gaze in scene camera coordinates to world coordinates. We proceed by building a `transform_scene_to_imu` function that handles the rotation between the two coordinate systems. It also accepts a `translation_in_imu` keyword argument to specify if points should be shifted in the IMU system. This will be relevant when converting 3D eyestate to world coordinates.
+
+- ***Rob note:*** Keep this next bit if we decide to use homogeneous coordinates:
+
+We implement the rotation and translation as [a single affine transformation](https://en.wikipedia.org/wiki/Affine_transformation):
+
 
 ```python
-def transform_scene_to_imu(coords_in_scene, translation=np.zeros((3,))):
+def transform_scene_to_imu(coords_in_scene, translation_in_imu=np.zeros((3,))):
     imu_scene_rotation_diff = np.deg2rad(-90 - 12)
     scene_to_imu = np.array(
         [
@@ -112,35 +96,123 @@ def transform_scene_to_imu(coords_in_scene, translation=np.zeros((3,))):
         ]
     )
 
-    scene_to_imu_homogeneous = np.zeros((4, 4))
-    scene_to_imu_homogeneous[:3, :3] = scene_to_imu
-    scene_to_imu_homogeneous[:3, 3] = translation
-    scene_to_imu_homogeneous[3, 3] = 1.0
+    # The homogeneous approach, for comparison
+    #
+    # scene_to_imu_homogeneous = np.zeros((4, 4))
+    # scene_to_imu_homogeneous[:3, :3] = scene_to_imu
+    # scene_to_imu_homogeneous[:3, 3] = translation_in_imu
+    # scene_to_imu_homogeneous[3, 3] = 1.0
 
-    coords_in_scene_homogeneous = cv2.convertPointsToHomogeneous(coords_in_scene)
-    coords_in_imu_homogeneous = scene_to_imu_homogeneous @ coords_in_scene_homogeneous.reshape(-1, 4).T
-    coords_in_imu = cv2.convertPointsFromHomogeneous(coords_in_imu_homogeneous.T).reshape(-1, 3)
+    # coords_in_scene_homogeneous = cv2.convertPointsToHomogeneous(coords_in_scene)
+    # coords_in_imu_homogeneous = scene_to_imu_homogeneous @ coords_in_scene_homogeneous.reshape(-1, 4).T
+    # coords_in_imu = cv2.convertPointsFromHomogeneous(coords_in_imu_homogeneous.T).reshape(-1, 3)
 
-    return coords_in_imu
+    # Rob-Blob approach
+    coords_in_imu = scene_to_imu @ coords_in_scene.T
+
+    coords_in_imu[0, :] += translation_in_imu[0]
+    coords_in_imu[1, :] += translation_in_imu[1]
+    coords_in_imu[2, :] += translation_in_imu[2]
+
+    return coords_in_imu.T
 ```
 
-Putting together the `transform_scene_to_imu` and `transform_imu_to_world` functions, we can build a general `transform_scene_to_world` function:
+Putting together the `transform_scene_to_imu` and `transform_imu_to_world` functions, we can build a composite `transform_scene_to_world` function:
 
 ```python
-def transform_scene_to_world(coords_in_scene, imu_quaternions, translation=np.zeros((3,))):
-    coords_in_imu = transform_scene_to_imu(coords_in_scene, translation)
+def transform_scene_to_world(coords_in_scene, imu_quaternions, translation_in_imu=np.zeros((3,))):
+    coords_in_imu = transform_scene_to_imu(coords_in_scene, translation_in_imu)
     return transform_imu_to_world(coords_in_imu, imu_quaternions)
 ```
 
-Now we have the tools to convert 3D gaze data to world coordinates, but first, we need to convert 2D gaze to 3D by undistorting and unprojecting the image coordinates:
+We can now apply this function to some data!
+
+## Eyestate to World Coordinates
+
+The [3D eyestate estimates](https://docs.pupil-labs.com/neon/data-collection/data-streams/#_3d-eye-states) provided by Neon are aligned with the scene camera coordinate system. This means we can use the `transform_scene_to_world` function above to reconstruct the pose of the eyes in the world coordinate system. We just need to consider that the scene camera is displaced a bit from the IMU.
+Since the eyeball center and optical axis values provided by the 3D eyestate estimates are intrinsically linked, we provide the `eyestate_to_world` function to simplify doing the conversions:
+
+```python
+# The 3D eyestate data and the IMU quaternions should be sampled
+# at the same timestamps. You can linearly interpolate the IMU data,
+# for example.
+
+def eyestate_to_world(eyeball_centers, optical_axes, imu_quaternions)
+    """
+    The eyeball_centers and optical_axes inputs are for the same eye.
+    """
+
+    # The eyeball centers are specified in terms of their distance from
+    # the center of the scene camera, so to accurately convert them to
+    # world coordinates, we need to account for the position of the
+    # scene camera in the IMU coordinate system. Here, we express that
+    # position in millimeters.
+    scene_camera_position_in_imu = np.array([0.0, -1.3, -6.62])
+    eyeball_centers_in_world = transform_scene_to_world(
+        eyeball_centers, imu_quaternions, translation=scene_camera_position_in_imu
+    )
+
+    # The optical axes are unit vectors originating at the eyeball centers,
+    # so they should not be to translated.
+    optical_axes_in_world = transform_scene_to_world(
+        optical_axes, imu_quaternions
+    )
+
+    return eyeball_centers_in_world, optical_axes_in_world
+```
+
+## 3D Gaze to World Coordinates
+
+Neon provides 3D gaze data in the scene camera system in terms of [spherical coordinates (i.e., `azimuth/elevation [deg]`)](https://docs.pupil-labs.com/neon/data-collection/data-format/#gaze-csv). The `transform_scene_to_world` function above expects 3D Cartesian coordinates, so to convert spherical 3D gaze to world coordinates, we will need the `spherical_to_cartesian_scene` function:
+
+```python
+def spherical_to_cartesian_scene(elevations, azimuths):
+    """
+    Convert Neon's spherical representation of 3D gaze to Cartesian coordinates.
+    """
+
+    elevations_rad = np.deg2rad(elevations)
+    azimuths_rad = np.deg2rad(azimuths)
+
+    # Elevation of 0 in Neon system corresponds to Y = 0, but
+    # an elevation of 0 in traditional spherical coordinates would
+    # correspond to Y = 1, so we convert elevation to the
+    # more traditional format.
+    elevations_rad += np.pi / 2
+
+    # Azimuth of 0 in Neon system corresponds to X = 0, but
+    # an azimuth of 0 in traditional spherical coordinates would
+    # correspond to X = 1. Also, azimuth to the right in Neon is
+    # more positive, whereas it is more negative in traditional
+    # spherical coordiantes. So, we convert azimuth to the more
+    # traditional format.
+    azimuths_rad *= -1.0
+    azimuths_rad += np.pi / 2
+
+    return np.array(
+        [
+            np.sin(elevations_rad) * np.cos(azimuths_rad),
+            np.cos(elevations_rad),
+            np.sin(elevations_rad) * np.sin(azimuths_rad),
+        ]
+    ).T
+```
+
+Now we have the tools to convert 3D gaze data to world coordinates:
+
+```python
+cart_gazes_in_scene = spherical_to_cartesian_scene(gaze_elevation_resampled, gaze_azimuth_resampled)
+cart_gazes_in_world = transform_scene_to_world(cart_gazes_in_scene, quaternions_resampled)
+```
+
+## 2D Gaze to World Coordinates
+
+If you are starting from [the 2D gaze values in scene image coordinates (i.e., `gaze x/y [px]`)](https://docs.pupil-labs.com/neon/data-collection/data-format/#gaze-csv), then you will need to first [undistort](https://docs.pupil-labs.com/alpha-lab/undistort/) and unproject those points to obtain the corresponding 3D gaze vectors. Note that this requires [loading the scene camera calibration data](https://docs-staging.pupil-labs.com/alpha-lab/undistort/#reading-from-the-cloud-download-json-file).
 
 ```python
 def unproject_2d_gaze(gaze_points_2d, scene_camera_matrix, scene_distortion_coefficients):
     """
     Transform the 2D gaze values from Neon to 3D gaze vectors.
-    
-    See the associated Alpha Labs article for a tutorial on undistorting:
-    https://docs.pupil-labs.com/alpha-lab/undistort/
     """
 
     gaze_points_2d_undist = cv2.undistortPoints(gaze_points_2d, scene_camera_matrix, scene_distortion_coefficients)
@@ -150,21 +222,12 @@ def unproject_2d_gaze(gaze_points_2d, scene_camera_matrix, scene_distortion_coef
     return gaze_vectors_3d
 ```
 
-Putting all of this together, we can convert 2D gaze data in scene image coordinates to 3D gaze data in world coordinates:
+Then, we can use the functions from [the previous section](#3d-gaze-to-world-coordinates) to convert 2D gaze to 3D world coordinates:
 
 ```python
 # The gaze data and the IMU quaternions should be sampled at the
 # same timestamps. You can linearly interpolate the IMU data to
 # ensure this.
-
-# I'm not sure if we want to show how to load the camera calib data
-#
-# scene_camera_info = []
-# with open(rec_dir + "scene_camera.json") as f:
-#     scene_camera_info = json.load(f)
-#
-# scene_camera_matrix = np.array(scene_camera_info["camera_matrix"])
-# scene_distortion_coefficients = np.array(scene_camera_info["distortion_coefficients"])
 
 gaze_points_2d = gaze[["gaze x [px]", "gaze y [px]"]].to_numpy()
 cart_gazes_in_scene = undistort_and_unproject(
@@ -175,29 +238,26 @@ cart_gazes_in_world = transform_scene_to_world(
 )
 ```
 
-## Eyestate to World Coordinates
+## Obtain IMU Heading Vectors
 
-The [3D eyestate estimates](https://docs.pupil-labs.com/neon/data-collection/data-streams/#_3d-eye-states) provided by Neon are aligned with the scene camera coordinate system. To reconstruct the pose of the eyes in the world coordinate system, we need to also consider that the scene camera coordinate system is positioned downwards and a bit back from the IMU:
+An alternative representation of IMU orientation data is a heading vector that points outwards from the center of the IMU. It can be useful to compare this heading vector with the 3D gaze vectors in world coordinates.
 
 ```python
-# The 3D eyestate data and the IMU quaternions should be sampled
-# at the same timestamps. You can linearly interpolate the IMU data
-# to ensure this.
-
-# The eyeball centers are specified in terms of their distance from
-# the center of the scene camera, so to accurately convert them to
-# world coordinates, we need to account for the position of the
-# scene camera in the IMU coordinate system. Here, we express that
-# position in millimeters.
-scene_camera_position_in_imu = np.array([0.0, -1.3, -6.62])
-eyeball_centers_in_world = transform_scene_to_world(
-    eyeball_centers, imu_quaternions, translation=scene_camera_position_in_imu
+heading_neutral_in_imu_coords = np.array([0.0, 1.0, 0.0])
+headings_in_world = transform_imu_to_world(
+    heading_neutral_in_imu_coords, imu_quaternions
 )
+```
 
-# The optical axes are unit vectors originating at the eyeball centers,
-# so there is no need to translate them.
-optical_axes_in_world = transform_scene_to_world(
-    optical_axes, imu_quaternions
+Neutral orientation of the IMU would correspond to a heading vector that points at magnetic North and that is oriented perpendicular to the line of gravity.
+
+## IMU Acceleration in World
+
+The IMU’s acceleration data are specified in its local coordinate system. If you want to understand how the observer is accelerating through their environment, then it can be easier to have the acceleration data specified in the world coordinate system:
+
+```python
+accelerations_in_world = transform_imu_to_world(
+    imu_accelerations, imu_quaternions
 )
 ```
 
@@ -240,6 +300,12 @@ def cartesian_to_spherical_world(world_points_3d):
 
     return elevation, azimuth
 ```
+
+## Application Example
+
+Below, we present a video showing how some of the functions in this article where used to visualize different combinations of head and eye movements in world coordinates. The code for producing the visualization [can be found here](https://gist.github.com/rennis250/8a684ea1e2f92c79fa2104b7a0f30e20).
+
+- ***Rob Note***: Video currently [here](https://drive.google.com/file/d/1UhZ9GAHacVQ8jLwkI7bLZHykeF7OpOwa/view?usp=sharing)
 
 ::: tip
 Need assistance with the IMU code in this article? Or do you have something more custom in mind? Reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for dedicated support options.
