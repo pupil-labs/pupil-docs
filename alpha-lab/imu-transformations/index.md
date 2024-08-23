@@ -62,7 +62,7 @@ def transform_imu_to_world(imu_coordinates, imu_quaternions):
 
 Now that we have the `transform_imu_to_world` function, let's build on it!
 
-## Scene Camera to World Coordinates
+## Scene to World Coordinates
 
 Neon simultaneously records data in the scene camera and IMU coordinate systems, making it possible to study the relationship between head and eye movements.
 
