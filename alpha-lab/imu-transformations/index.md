@@ -83,7 +83,7 @@ accelerations_in_world = transform_imu_to_world(
 )
 ```
 
-## Scene to World Coordinates
+## Gaze to World Coordinates
 
 Neon simultaneously records gaze and IMU data, making it possible to study the relationship between head and eye movements.
 
