@@ -290,7 +290,7 @@ def cartesian_to_spherical_world(world_points_3d):
 
 Below, we present a video showing how some of the functions in this article where used to visualize different combinations of head and eye movements in world coordinates. The code for producing the visualization [can be found here](https://gist.github.com/rennis250/8a684ea1e2f92c79fa2104b7a0f30e20).
 
-<Youtube src="uFNsKCJAxyo"/>
+<Youtube src="lbmyBgpS2OE"/>
 
 ## Related content
 
