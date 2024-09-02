@@ -82,15 +82,9 @@ Audio recording is disabled in the Neon Companion app by default and can be enab
 ## Movement (IMU Data)
 
 <Badge>Real-time</Badge><Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>
-The Neon module is equipped with a 9-DoF [inertial measurement unit](https://invensense.tdk.com/products/motion-tracking/9-axis/icm-20948/) (IMU) featuring an accelerometer, gyroscope, and magnetometer. The accelerometer and gyroscope measure linear acceleration and angular velocity, respectively, and are provided as raw values. Acceleration is reported in terms of [g-force](https://en.wikipedia.org/wiki/G-force), which differs from free-fall acceleration due to gravity. For instance, when standing upright on Earth, acceleration along the Z-axis would be +1g, with 0g on the X and Y axes.
+The Neon module is equipped with a 9-DoF [inertial measurement unit](https://invensense.tdk.com/products/motion-tracking/9-axis/icm-20948/) (IMU) featuring an accelerometer, gyroscope, and magnetometer. The accelerometer and gyroscope measure linear acceleration and angular velocity, respectively, and are provided as raw values.
 
-A fusion engine also combines these values with magnetometer readings to estimate the module's absolute orientation in the world coordinate system as a quaternion:
-
-- World y-axis: Points towards magnetic north.
-- World z-axis: Points upwards, opposite gravity.
-- World x-axis: Points rightwards, defined by the cross-product of Y and Z.
-
-Note that in order to obtain precise absolute yaw readings, the magnetometer needs to be [calibrated](/data-collection/calibrating-the-imu/).
+A fusion engine also combines these values with magnetometer readings to estimate the module's absolute orientation relative to magnetic north (positive world y-axis), gravity (negative world z-axis), and a rightward pointing vector (positive world x-axis) as a quaternion. We refer to this as the world coordinate system. It is important to note that this is not the same as the local IMU coordinate system.
 
 The IMU is located in the top bar of the module and is sampled at 110 Hz. Its local coordinate system is oriented with the x-axis pointing to the right, the y-axis pointing in front, and the z-axis pointing upwards.
 

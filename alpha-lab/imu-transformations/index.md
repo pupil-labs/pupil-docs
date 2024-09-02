@@ -34,7 +34,7 @@ This guide contains various transformation functions that can assist when workin
 
 ## IMU to World Coordinates
 
-One of the key steps when dealing with the IMU is the transformation that takes coordinates in the local IMU coordinate system to their corresponding coordinates in [the world coordinate system](http://docs.pupil-labs.com/neon/data-collection/data-streams/#movement-imu-data). The quaternion values provided by the IMU can be used to convert between the two coordinate systems. The `transform_imu_to_world` function, defined below, will be used throughout this article.
+One of the key steps when working with IMU data is the transformation that takes coordinates in the local IMU coordinate system to their corresponding coordinates in [the world coordinate system](http://docs.pupil-labs.com/neon/data-collection/data-streams/#movement-imu-data). The quaternion values provided by the IMU can be used to convert between the two coordinate systems. The `transform_imu_to_world` function, defined below, will be used throughout this article.
 
 Note that the origin of the IMU coordinate system is the same as the origin of the world coordinate system.
 
