@@ -59,7 +59,7 @@ def transform_imu_to_world(imu_coordinates, imu_quaternions):
 
 Now that we have the `transform_imu_to_world` function, let's use it!
 
-## Obtain IMU Heading Vectors
+### Obtain IMU Heading Vectors
 
 An alternative representation of IMU orientation data is a heading vector that points outwards from the center of the IMU. It can be useful to compare this heading vector with the 3D gaze vectors in world coordinates.
 
@@ -73,7 +73,7 @@ def imu_heading_in_world(imu_quaternions):
 
 Neutral orientation of the IMU would correspond to a heading vector that points at magnetic North and that is oriented perpendicular to the line of gravity.
 
-## IMU Acceleration in World
+### IMU Acceleration in World
 
 The IMU’s acceleration data are specified in its local coordinate system. If you want to understand how the observer is accelerating through their environment, then it can be easier to have the acceleration data specified in the world coordinate system:
 
