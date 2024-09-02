@@ -95,7 +95,7 @@ When relating data from the IMU to things visible in the scene camera, it may be
 ![IMU Scene Camera](./imu-scene_camera_offset-black.png)
 
 ::: tip
-Note that leftward rotations for the yaw values reported by the IMU are positive, whereas leftward rotations about the y-axis of the scene camera and 3D eye state coordinate systems are negative.
+Note that leftward rotations for the yaw values reported by the IMU are positive, whereas leftward rotations about the y-axis of the scene camera coordinate system are negative.
 :::
 
 ### Euler Angles
