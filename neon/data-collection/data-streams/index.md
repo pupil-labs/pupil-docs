@@ -94,10 +94,6 @@ When relating data from the IMU to things visible in the scene camera, it may be
 
 ![IMU Scene Camera](./imu-scene_camera_offset-black.png)
 
-::: tip
-Note that leftward rotations for the yaw values reported by the IMU are positive, whereas leftward rotations about the y-axis of the scene camera coordinate system are negative.
-:::
-
 ### Euler Angles
 
 When exporting recordings from Pupil Cloud or Neon Player the IMU's orientation in Euler angles (i.e. pitch, yaw, and roll) is also available:
@@ -107,7 +103,7 @@ When exporting recordings from Pupil Cloud or Neon Player the IMU's orientation 
 - Roll is a rotations around the world y-axis with a value range of -180° to +180°. Wearing Neon upright with a neutral head pose roughly corresponds to a roll of 0°. Rightward tilt is positive, leftward is negative.
 
 ::: tip
-Neon may sit differently on each wearer’s face, causing deviations from a neutral orientation even when facing magnetic north.
+Neon may sit differently on each wearer’s face, causing deviations from a neutral orientation even when facing magnetic north. Also, leftward rotations for the yaw values reported by the IMU are positive, whereas leftward rotations about the y-axis of the scene camera coordinate system are negative.
 :::
 
 ![IMU Pitch, Yaw, Roll](./imu-pitch-yaw-roll-black.png)
