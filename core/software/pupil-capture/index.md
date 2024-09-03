@@ -364,7 +364,7 @@ to start and stop recording on the Android device.
 
 ### Surface Tracking
 
-The `Surface Tracker` plugin allows you to define planar surfaces within your environment to track areas of interest (AOI). Surfaces are defined with [Apriltag Markers](https://april.eecs.umich.edu/software/apriltag.html).
+The `Surface Tracker` plugin allows you to define planar surfaces within your environment to track areas of interest (AOI). Surfaces are defined with [Apriltag Markers](https://github.com/AprilRobotics/apriltag).
 
 ::: tip
 The legacy surface tracker used simple square markers, which are less robust to detect.
