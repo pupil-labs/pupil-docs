@@ -129,7 +129,7 @@ def transform_scene_to_world(coords_in_scene, imu_quaternions, translation_in_im
 
 ### Example: Eyestate in World Coordinates
 
-The `transform_scene_to_world` function allows us easily convert [eye state data](](https://docs.pupil-labs.com/neon/data-collection/data-streams/#_3d-eye-states)) given in scene camera coordinates to world coordinates.
+The `transform_scene_to_world` function allows us easily convert [eye state data](https://docs.pupil-labs.com/neon/data-collection/data-streams/#_3d-eye-states) given in scene camera coordinates to world coordinates.
 
 ::: warning
 Note, to do this right in practice you need to make sure you sample the quaternions and eye state data from the same timestamps. Since both data streams are generated independently and do not share the same set of timestamps, this is a challenge in itself. 
