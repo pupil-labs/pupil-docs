@@ -89,7 +89,7 @@ The rotation is a 102 degree rotation around the x-axis of the IMU coordinate sy
 
 ![Diagrams showing the fixed 102 degree rotation offset between the IMU and scene camera coordinate systems.](./imu-scene_camera_offset-black.png)
 
-We can define a `transform_scene_to_imu` function that handles the rotation between the two coordinate systems. 
+We can define a `transform_scene_to_imu` function that handles the rotation between the two coordinate systems.
 
 ```python
 def transform_scene_to_imu(coords_in_scene, translation_in_imu=np.array([0.0, -1.3, -6.62])):
@@ -146,15 +146,14 @@ def eyestate_to_world(eyeball_centers, optical_axes, imu_quaternions):
     # The eyeball centers are specified relative to the center of the scene
     # camera, so we need to account for the position of the scene camera in
     # the IMU coordinate system. Here, we express that position in millimeters.
-    scene_camera_position_in_imu = np.array([0.0, -1.3, -6.62])
     eyeball_centers_in_world = transform_scene_to_world(
-        eyeball_centers, imu_quaternions, translation=scene_camera_position_in_imu
+        eyeball_centers, imu_quaternions
     )
 
     # The optical axes are unit vectors originating at the eyeball centers,
     # so they should not be translated.
     optical_axes_in_world = transform_scene_to_world(
-        optical_axes, imu_quaternions
+        optical_axes, imu_quaternions, translation=np.zeros(3)
     )
 
     return eyeball_centers_in_world, optical_axes_in_world
