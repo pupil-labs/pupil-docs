@@ -102,8 +102,4 @@ When exporting recordings from Pupil Cloud or Neon Player the IMU's orientation 
 - Yaw is a rotation around the world z-axis with a value range of -180° to +180°. With a calibrated IMU, a yaw of 0° indicates alignment with magnetic north. Leftward turn is positive, rightward is negative.
 - Roll is a rotations around the world y-axis with a value range of -180° to +180°. Wearing Neon upright with a neutral head pose roughly corresponds to a roll of 0°. Rightward tilt is positive, leftward is negative.
 
-::: tip
-Neon may sit differently on each wearer’s face, causing deviations from a neutral orientation even when facing magnetic north. Also, leftward rotations for the yaw values reported by the IMU are positive, whereas leftward rotations about the y-axis of the scene camera coordinate system are negative.
-:::
-
 ![IMU Pitch, Yaw, Roll](./imu-pitch-yaw-roll-black.png)
