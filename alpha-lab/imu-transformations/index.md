@@ -204,6 +204,49 @@ def gaze_3d_to_world(gaze_elevation, gaze_azimuth, imu_quaternions):
     return transform_scene_to_world(cart_gazes_in_scene, imu_quaternions, translation_in_imu=np.zeros(3))
 ```
 
+## World Spherical Coordinates
+Using the transformations introduced above, we can transform various data into cartesian world coordinates. For some things it is more intuitive to have the data in spherical coordinates though. For instance, you might want to know when someone’s gaze or heading deviates from parallel with the horizon, i.e. if they are looking/facing upwards or downwards. 
+
+Converting data into spherical world coordinates makes these things obvious. When wearing Neon, an elevation and azimuth of 0 degrees corresponds to a neutral orientation: i.e., aimed at magnetic North and parallel to the horizon. A positive elevation corresponds to looking upwards, and a negative elevation corresponds to looking downwards.
+
+The [Euler angles from the IMU](https://docs.pupil-labs.com/neon/data-collection/data-streams/#euler-angles) are already in a compatible format. For gaze data in world coordinates, the `cartesian_to_spherical_world` function below will do the necessary transformation. 
+
+```python
+def cartesian_to_spherical_world(world_points_3d):
+    """
+    Convert points in 3D Cartesian world coordinates to spherical coordinates.
+    
+    For elevation:
+      - Neutral orientation = 0 (i.e., parallel with horizon)
+      - Upwards is positive
+      - Downwards is negative
+
+    For azimuth:
+      - Neutral orientation = 0 (i.e., aligned with magnetic North)
+      - Leftwards is positive
+      - Rightwards is negative
+    """
+
+    x = world_points_3d[:, 0]
+    y = world_points_3d[:, 1]
+    z = world_points_3d[:, 2]
+
+    radii = np.sqrt(x**2 + y**2 + z**2)
+
+    elevation = -(np.arccos(z / radii) - np.pi / 2)
+    azimuth = np.arctan2(y, x) - np.pi / 2
+
+    # Keep all azimuth values in the range of [-180, 180] to remain
+    # consistent with the yaw orientation values provided by the IMU.
+    azimuth[azimuth < -np.pi] += 2 * np.pi
+    azimuth[azimuth > np.pi] -= 2 * np.pi
+
+    elevation = np.rad2deg(elevation)
+    azimuth = np.rad2deg(azimuth)
+
+    return elevation, azimuth
+```
+
 ## Application Example
 
 Below, we present a video showing how some of the functions in this article were used to visualize different combinations of head and eye movements in world coordinates. The code for producing the visualization [can be found here](https://gist.github.com/rennis250/8a684ea1e2f92c79fa2104b7a0f30e20).
