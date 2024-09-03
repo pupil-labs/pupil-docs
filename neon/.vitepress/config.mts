@@ -103,6 +103,10 @@ let theme_config_additions = {
             link: "/data-collection/offset-correction/",
           },
           {
+            text: "Measuring the IED",
+            link: "/data-collection/measuring-ied/",
+          },
+          {
             text: "Scene Camera Exposure",
             link: "/data-collection/scene-camera-exposure/",
           },
@@ -227,6 +231,10 @@ let theme_config_additions = {
           {
             text: "IMU Timeline",
             link: "/neon-player/imu-timeline/",
+          },
+          {
+            text: "Eye State Timeline",
+            link: "/neon-player/eye-state-timeline/",
           },
           {
             text: "Gaze Offset Correction",

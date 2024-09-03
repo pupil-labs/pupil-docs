@@ -129,7 +129,7 @@ This file contains [saccades](/data-collection/data-streams/#fixations-saccades)
 
 
 ## 3d_eye_states.csv
-This file contains [3D eye states](/data-collection/data-streams/#_3d-eye-states) as well as [pupil diameter](/data-collection/data-streams/#pupil-diamaters) data.
+This file contains [3D eye states](/data-collection/data-streams/#_3d-eye-states) as well as [pupil diameter](/data-collection/data-streams/#pupil-diameters) data.
 
 
 | Field                     | Description | 
@@ -165,7 +165,7 @@ This file contains data recorded by the integrated [IMU](/data-collection/data-s
 | **recording id** | Unique identifier of the recording this sample belongs to.     |
 | **timestamp [ns]** | UTC timestamp in nanoseconds of the sample.    |
 | **gyro x [deg/s]**<br />**gyro y [deg/s]**<br />**gyro z [deg/s]** | Rotation speed around x, y or z-axis respectively in degrees/s.    |
-| **acceleration&nbsp;x&nbsp;[G]**<br />**acceleration&nbsp;y&nbsp;[G]**<br />**acceleration z [G]** | Translational acceleration along the x, y or z-axis respectively in G. Note `1 G = 9.80665 m/s^2`.|
+| **acceleration&nbsp;x&nbsp;[g]**<br />**acceleration&nbsp;y&nbsp;[g]**<br />**acceleration z [g]** | Translational acceleration (in terms of [g-force](https://en.m.wikipedia.org/wiki/G-force)) along the x, y or z-axis respectively. Note `1 g = 9.80665 m/s^2`.|
 | **roll [deg]** | Drift-free estimate of the roll (head tilt from side to side) in degrees. The output range is -180 to +180 degrees. Added in version 2 of this enrichment.    |
 | **pitch [deg]** | Drift-free estimate of the pitch (head tilt from front to back) in degrees. The output range is -90 to +90 degrees. Added in version 2 of this enrichment. |
 | **yaw [deg]** | Drift-free estimate of the yaw (horizontal head rotation) in degrees. The output range is -180 to +180 degrees. Added in version 2 of this enrichment. |
