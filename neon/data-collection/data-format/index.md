@@ -1,7 +1,7 @@
 # Recording Format
 The page describes the data format when downloading Neon recordings from Pupil Cloud in the "Timeseries Data" and "Timeseries Data + Scene Video" formats. In this format the Data from the Neon Companion is augmented by adding gaze and eye state estimates whenever they had not been computed in realtime. Futhermore fixations and blink data as well as some IMU transformations are computed.
 
-When downloading Native Recording Data from cloud or direclty [extracting it via usb from the companion device](/data-collection/transfer-recordings-via-usb/), use the [pl-neon-recording](https://github.com/pupil-labs/pl-neon-recording) python library to read and access the data. This data format will contain all video data as well as all data that had been computed in realtime on the companion device.
+When downloading Native Recording Data from the Cloud or directly [extracting it via USB from the companion device](/data-collection/transfer-recordings-via-usb/), you can use the [pl-neon-recording](https://github.com/pupil-labs/pl-neon-recording) python library to read and access the data or load it onto [Neon Player](/neon-player). This data format will contain all video data as well as all data that has been computed in realtime on the companion device.
 
 
 ## Recording Folders
