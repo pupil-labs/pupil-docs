@@ -16,7 +16,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 22
 
       - name: Install dependencies
         working-directory: ./neon
@@ -32,13 +32,13 @@ jobs:
       - name: Make build
         working-directory: ./neon
         run: npm run docs:build
-      
+
       - name: Upload
         uses: actions/upload-artifact@v3
         with:
           name: neon
           path: neon/.vitepress/dist
-  
+
   invisible:
     name: Build Invisible
     runs-on: ubuntu-latest
@@ -49,12 +49,12 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 22
 
       - name: Install dependencies
         working-directory: ./invisible
         run: npm install
-      
+
       # Copy node modules to provide dependencies for shared components in root folder
       - name: Copy node_modules
         shell: bash
@@ -65,13 +65,13 @@ jobs:
       - name: Make build
         working-directory: ./invisible
         run: npm run docs:build
-      
+
       - name: Upload
         uses: actions/upload-artifact@v3
         with:
           name: invisible
           path: invisible/.vitepress/dist
-  
+
   core:
     name: Build Core
     runs-on: ubuntu-latest
@@ -82,12 +82,12 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 22
 
       - name: Install dependencies
         working-directory: ./core
         run: npm install
-      
+
       # Copy node modules to provide dependencies for shared components in root folder
       - name: Copy node_modules
         shell: bash
@@ -98,13 +98,13 @@ jobs:
       - name: Make build
         working-directory: ./core
         run: npm run docs:build
-      
+
       - name: Upload
         uses: actions/upload-artifact@v3
         with:
           name: core
           path: core/.vitepress/dist
-  
+
   alpha-lab:
     name: Build Alpha Lab
     runs-on: ubuntu-latest
@@ -115,12 +115,12 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 22
 
       - name: Install dependencies
         working-directory: ./alpha-lab
         run: npm install
-      
+
       # Copy node modules to provide dependencies for shared components in root folder
       - name: Copy node_modules
         shell: bash
@@ -131,7 +131,7 @@ jobs:
       - name: Make build
         working-directory: ./alpha-lab
         run: npm run docs:build
-      
+
       - name: Upload
         uses: actions/upload-artifact@v3
         with:
@@ -148,12 +148,12 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 22
 
       - name: Install dependencies
         working-directory: ./landing-page
         run: npm install
-      
+
       # Copy node modules to provide dependencies for shared components in root folder
       - name: Copy node_modules
         shell: bash
@@ -164,19 +164,19 @@ jobs:
       - name: Make build
         working-directory: ./landing-page
         run: npm run docs:build
-      
+
       - name: Upload
         uses: actions/upload-artifact@v3
         with:
           name: landing-page
           path: landing-page/.vitepress/dist
-          
+
   debugging-info:
     name: Upload debugging info
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3         
+      - uses: actions/checkout@v3
       - name: Write commit SHA to gitcommit.txt
         shell: bash
         run: |
@@ -203,13 +203,13 @@ jobs:
         shell: bash
         run: |
           du -ah .
-      
+
       - name: Download gitcommit
         uses: actions/download-artifact@v3
         with:
           name: gitcommit
           path: gitcommit.txt
-      
+
       - name: Download Neon
         uses: actions/download-artifact@v3
         with:
@@ -221,13 +221,13 @@ jobs:
         with:
           name: invisible
           path: invisible/
-      
+
       - name: Download Core
         uses: actions/download-artifact@v3
         with:
           name: core
           path: core/
-      
+
       - name: Download AlphaLab
         uses: actions/download-artifact@v3
         with:
@@ -248,7 +248,6 @@ jobs:
           remote_host: ${{ secrets.REMOTE_HOST}}
           remote_user: ${{ secrets.REMOTE_USER }}
           remote_key: ${{ secrets.DEPLOY_KEY }}
-  
 
   deploy-production:
     name: Deploy to production
@@ -272,13 +271,13 @@ jobs:
         with:
           name: invisible
           path: invisible/
-      
+
       - name: Download Core
         uses: actions/download-artifact@v3
         with:
           name: core
           path: core/
-      
+
       - name: Download AlphaLab
         uses: actions/download-artifact@v3
         with:

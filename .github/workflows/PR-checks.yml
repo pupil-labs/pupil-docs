@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    name: 📦 ${{ matrix.component }} build 
+    name: 📦 ${{ matrix.component }} build
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -21,7 +21,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 22
 
       - name: Install dependencies
         working-directory: ./${{ matrix.component }}
@@ -101,7 +101,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 2
-      - name: 'Check Grammar'
+      - name: "Check Grammar"
         id: cspell
         uses: streetsidesoftware/cspell-action@v5
         with:
