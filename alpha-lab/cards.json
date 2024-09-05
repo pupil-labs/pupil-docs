@@ -148,5 +148,15 @@
     },
     "image": "/alpha-lab/tag-aligner.webp",
     "category": "Gaze Mapping"
+  },
+  {
+    "title": "IMU Transformations",
+    "details": "Transform IMU data into different representations and coordinate systems with these code snippets.",
+    "link": {
+      "text": "View",
+      "href": "/alpha-lab/imu-transformations/"
+    },
+    "image": "/alpha-lab/imu-transformations.webp",
+    "category": "Coordinate Systems"
   }
 ]
