@@ -28,6 +28,8 @@ import TagLinks from '@components/TagLinks.vue'
 
 This guide contains various transformation functions that help with relating [Neon's IMU data](https://docs.pupil-labs.com/neon/data-collection/data-streams/#movement-imu-data) with other data streams.
 
+As you work through this guide, you may want to check out the [Application Example](#application-example) to see the code in action.
+
 ## Rotation between the IMU and the World
 
 The IMU data includes a description of how the IMU is rotated in relation to the world. Concretely, the IMU data contains quaternions that define a rotation transformation between the [the world coordinate system](http://docs.pupil-labs.com/neon/data-collection/data-streams/#movement-imu-data) and the IMU's local coordinate system at different points in time. 
@@ -248,7 +250,7 @@ def cartesian_to_spherical_world(world_points_3d):
 
 ## Application Example
 
-Below, we present a video showing how some of the functions in this article were used to visualize different combinations of head and eye movements in world coordinates. The code for producing the visualization [can be found here](https://gist.github.com/rennis250/8a684ea1e2f92c79fa2104b7a0f30e20).
+Below, we present a video showing how some of the functions in this article were used to visualize different combinations of head and eye movements in world coordinates. The code for producing the visualization [can be found here](https://github.com/pupil-labs/pupil-docs/tree/master/alpha-lab/imu-transformations/imu_heading_visualization.ipynb).
 
 <Youtube src="n0SjQzTqu3U"/>
 
