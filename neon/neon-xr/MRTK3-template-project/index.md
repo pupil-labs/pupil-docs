@@ -65,5 +65,5 @@ Adapt the following steps to setup the template project for other platforms:
 
 ## Usage
 
-All the pre-configured sampe scenes that work with Neon XR start with a `PL_` prefix, e.g. `PL_HandInteractionExamples`. Check them out!
+All the pre-configured sample scenes that work with Neon XR start with a `PL_` prefix, e.g. `PL_HandInteractionExamples`. Check them out!
 <!-- TODO: Add descriptions of all available scenes. Add instructions on how to switch between scenes when running the app. -->
