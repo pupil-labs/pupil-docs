@@ -173,15 +173,15 @@ def spherical_to_cartesian_scene(elevations, azimuths):
     elevations_rad = np.deg2rad(elevations)
     azimuths_rad = np.deg2rad(azimuths)
 
-    # Elevation of 0 in Neon system corresponds to Y = 0, but
+    # Elevation of 0 in Neon's system corresponds to Y = 0, but
     # an elevation of 0 in traditional spherical coordinates would
     # correspond to Y = 1, so we convert elevation to the
     # more traditional format.
     elevations_rad += np.pi / 2
 
-    # Azimuth of 0 in Neon system corresponds to X = 0, but
+    # Azimuth of 0 in Neon's system corresponds to X = 0, but
     # an azimuth of 0 in traditional spherical coordinates would
-    # correspond to X = 1. Also, azimuth to the right in Neon is
+    # correspond to X = 1. Also, azimuth to the right for Neon is
     # more positive, whereas it is more negative in traditional
     # spherical coordiantes. So, we convert azimuth to the more
     # traditional format.
