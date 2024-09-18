@@ -139,5 +139,5 @@ The Neon-MATLAB integration mirrors [the Python implementation](https://docs.pup
 ## Performance
 
 :::tip
-All tested systems have passed a small stress test. For example, on a late 2013 Macbook Pro with Python 3.7 and MATLAB R2019a, the speed of the `receive_gaze_datum` function call was 0.0055 seconds on average (0.0038 seconds median), matching the speed of the Python implementation on modern systems.
+The speed of the `receive_gaze_datum` function call has been measured to be 0.0055 seconds on average (0.0038 seconds median), matching the speed of the Python implementation on modern systems.
 :::
