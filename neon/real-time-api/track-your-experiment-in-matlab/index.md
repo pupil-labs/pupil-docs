@@ -6,7 +6,7 @@ When working with head-mounted eye trackers like Neon, it can be useful to synch
 
 In this guide, we will build a simple MATLAB experiment. The experiment will show you how to automatically and conveniently track stimulus presentation as part of your eye tracking recording using [events](/data-collection/events/) and [Neon's real-time API](/real-time-api/tutorials/). Finally, you will see how those events enable the segmentation of eye tracking data per stimulus during the analysis.
 
-While MATLAB is not officially supported by [Neon's real-time API](/real-time-api/tutorials/), we have created a simple wrapper to enable some of the available functions required for this application.
+We will use our [pl-neon-matlab](https://github.com/pupil-labs/pl-neon-matlab) integration in this guide. See that link for installation instructions.
 
 ::: tip
 A similar guide for tracking an experiment in Python can be found [here](/real-time-api/track-your-experiment-progress-using-events/).
@@ -14,24 +14,19 @@ A similar guide for tracking an experiment in Python can be found [here](/real-t
 
 ## Requirements
 
-This wrapper uses the [.net.http package from MATLAB](https://mathworks.com/help/matlab/ref/matlab.net.http-package.html#), which was introduced in the MATLAB 2016b release. Before starting, please ensure you use this or a newer version of MATLAB.
+First, make sure that the Neon-MATLAB integration is installed and working.
 
-You can use any library that you want to present your stimulus or even [run the wrapper alone](#can-i-run-the-wrapper-alone?). However, if you plan on running the current demo to its full extent, you will need to install [Psychtoolbox](http://www.psychtoolbox.org/download.html) and ensure it runs before continuing.
+You can use any library that you want to present your stimulus or even [run the integration alone](#can-i-run-the-integration-alone?). However, if you plan on running the current demo to its full extent, you will need to install [Psychtoolbox](http://www.psychtoolbox.org/download.html) and ensure it runs before continuing.
 
 [Psychtoolbox](http://www.psychtoolbox.org/) is a free set of MATLAB and GNU Octave functions for vision and neuroscience research, which makes it easy to show accurately controlled visual stimuli on-screen. You can learn more about it [here](http://www.psychtoolbox.org/).
 
 All images used in the demo are from [Unsplash](https://unsplash.com/), but we do not include the photos in the demo files. Therefore, you will need internet access so MATLAB can read them from the web.
 
-Finally, you will need to download the wrapper and demo code by cloning the repository or downloading the .zip file from
-[here](https://github.com/pupil-labs/realtime-matlab-experiment/archive/refs/heads/main.zip).
-
-```git
-git clone https://github.com/pupil-labs/realtime-matlab-experiment.git
-```
+Finally, you will need to download the demo code, which can be found [here](https://github.com/pupil-labs/pl-neon-matlab/blob/main/matlab/examples/demo_pupil_labs.m).
 
 ## How To Use Events To Keep Track of Your Experiment
 
-Before we dig into how to run the demo and the wrapper, you will need to understand what events are and how to use them to keep track of your experiment.
+Before we dig into how to run the demo and the integration, you will need to understand what events are and how to use them to keep track of your experiment.
 
 Events are essentially timestamps within a recording that have been marked with a name. In this demo, we need to track when a specific image is shown during a recording to associate the fixation data with that image. Thus, we will create an event at the start and end of each image presentation to mark this section.
 
@@ -45,25 +40,25 @@ Check that the Companion Device and the MATLAB computer are connected to the sam
 Then you can execute the demo code as shown below:
 
 ```matlab
-demo_pupil_labs();
+demo_pupil_labs;
 ```
 
-### Through the Demo
+### Walkthrough of the Demo
 
 Beyond all the steps needed to display an image in Psychtoolbox (which you can find in the demo code), here we will focus on the calls to the Neon real-time API.
 
-First, we start with a call to check if the connection is working.
+First, we initiate a connection to the Neon Companion Device.
 
 ```matlab
-r = pupil_labs_realtime_api();
+device = Device();
 ```
 
-A proper connection will return the code 200 on the `r.StatusCode` property.
+A proper connection will return without errors.
 
 Then, the demo script will load the images, and several steps will follow to prepare a Psychtoolbox call to the screen. After that, the recording is initialised.
 
 ```matlab
-pupil_labs_realtime_api('Command', 'start');
+device.recording_start();
 ```
 
 It's good practice to start the recording before drawing anything on the screen, as the device might start the recording with a small delay.
@@ -71,31 +66,31 @@ It's good practice to start the recording before drawing anything on the screen,
 In the demo, a logo is shown, and a keystroke is required to start displaying the images when the participant is ready. When an image is shown `(Screen('Flip'))`, a starting event call is made to annotate the beginning of the image presentation.
 
 ```matlab
-pupil_labs_realtime_api('Command', 'event', 'EventName', ['Picture_',num2str(n, '%02.0f'),'_start']);
+device.send_event(['Picture_',num2str(n, '%02.0f'),'_start']);
 ```
 
 After 4 seconds, another event call is performed to mark the end of the section.
 
 ```matlab
-pupil_labs_realtime_api('Command', 'event', 'EventName', ['Picture_',num2str(n, '%02.0f'),'_end']);
+device.send_event(['Picture_',num2str(n, '%02.0f'),'_end']);
 ```
 
 Finally, the recording is stopped and saved after iterating through all the images.
 
 ```matlab
-pupil_labs_realtime_api('Command', 'save');
+device.recording_stop_and_save();
 ```
 
 Additionally, a cancel command was included in our catch routine, so the recording is discarded if any error occurs.
 
 ```matlab
-pupil_labs_realtime_api('Command', 'cancel');
+device.recording_cancel();
 ```
 
 That is all we have to do during data collection. Once all recordings have been uploaded to Pupil Cloud, we create a
 project to export them using the "Downloads" view. Within the project editor, we can already see the events in every recording.
 
-![Screenshot Pupil Cloud](./screenshot-matlab-pi-cloud.jpg)
+![Screenshot Pupil Cloud](./screenshot-matlab-neon-cloud.png)
 
 ## Analysing the Data
 
@@ -109,7 +104,7 @@ events = readtable("events.csv");
 fixations = readtable("fixations.csv");
 
 % Take only those events with Picture in the name as this is what we used
-% in demo_PI to target our events.
+% in demo_pupil_labs to target our events.
 events = events(contains(events.name, "Picture"), :);
 start_events = events(contains(events.name, "start"), :);
 end_events = events(contains(events.name, "end"), :);
@@ -126,35 +121,23 @@ bar(imIndex,fixperIm);
 axis square; grid minor;
 ylim([0 max(fixperIm)+1]);
 xlabel('Image'); ylabel(['Number of fixations', newline]);
-title(['Fixations per image - PI', newline]);
+title(['Fixations per image - Neon', newline]);
 ```
 
-![Barplot in Matlab](./barplot-matlab-pi-cloud.jpg)
+![Barplot in Matlab](./barplot-matlab-neon-cloud.png)
 
-## Can I Run the Wrapper Alone?
+## Can I Run the Integration Alone?
 
-Yes, if you are not planning on using Psychtoolbox, you can also use the wrapper alone. Download the `pupil_labs_realtime_api` function and add it to your path. Then, call it as you would typically call a function.
+Yes, nothing about the Neon-MATLAB integration depends on Psychtoolbox. Simply follow [the installation instructions](https://github.com/pupil-labs/pl-neon-matlab) and then, initiate a connection to the Neon Companion Device.
 
 ```matlab
-r = pupil_labs_realtime_api('Command','status');
+device = Device();
 ```
 
-Several arguments can be used to control the wrapper:
+The Neon-MATLAB integration mirrors [the Python implementation](https://docs.pupil-labs.com/neon/real-time-api/tutorials/), so many of the functions have the same name and signature. Check [the MATLAB examples](https://github.com/pupil-labs/pl-neon-matlab/tree/main/matlab/examples) to see other ways you can use it.
 
-- `Command`: followed by one of the following commands, `status`, `start`, `stop`, `save`, `cancel`, or `event`.
-- The default is `status`.
-  See the section [Running the demo](#running-the-demo) on how to use them.
-- `EventName`: followed by a string with the annotation name for the event, default is `Test event`.
-- `URLhost`: followed by a string containing the URL of Neon, default is `http://neon.local:8080/`. It's generally good practice to call directly to the URL. Nevertheless, Matlab does resolve the DNS and stores it in the cache, so you will only notice a delay in the first call.
-
-## Notes and Disclaimers
+## Performance
 
 :::tip
-The current wrapper function does not support RTSP protocol. Therefore it is not possible to stream video or gaze positions. If you need this feature, please directly use the [Realtime Network API](https://pupil-labs-realtime-api.readthedocs.io/en/stable/guides/under-the-hood.html?highlight=RTSP).
-:::
-
-::: warning
-The average response time for HTTP requests to Neon in MATLAB is 0.33 +- 0.14 seconds (on a 1000 requests test).
-This time might vary depending on your connection and computer load. If you need better time accuracy, check out our
-[Python API](https://pupil-labs-realtime-api.readthedocs.io/en/stable/examples/index.html).
+The speed of the `receive_gaze_datum` function call has been measured to be 0.0055 seconds on average (0.0038 seconds median), matching the speed of the Python implementation on modern systems.
 :::
