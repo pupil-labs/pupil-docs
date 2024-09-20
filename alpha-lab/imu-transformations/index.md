@@ -252,7 +252,7 @@ def cartesian_to_spherical_world(world_points_3d):
 
 Below, we present a video showing how some of the functions in this article were used to visualize different combinations of head and eye movements in world coordinates. The code for producing the visualization [can be found here](https://github.com/pupil-labs/pupil-docs/tree/master/alpha-lab/imu-transformations/imu_heading_visualization.ipynb).
 
-<Youtube src="n0SjQzTqu3U"/>
+<Youtube src="3OdkHo3ThAE"/>
 
 ## Related content
 
