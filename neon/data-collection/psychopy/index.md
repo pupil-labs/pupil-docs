@@ -9,7 +9,9 @@ PsychoPy users have two options for designing their experiments.
 
 ## Using PsychoPy with Neon
 
-When using PsychoPy with Neon, we recommend making a recording in the Neon Companion app for the duration of the experiment. PsychoPy’s standard "Eyetracker Record" component can be used to start and stop recordings accordingly. For experiments that do not require screen-based gaze coordinates (e.g., pupillometry/eye state), this is all that is required.
+When using PsychoPy with Neon, we recommend making a recording in the Neon Companion app for the duration of the experiment. PsychoPy’s standard "Eyetracker Record" component can be used to start and stop recordings accordingly. To save eyetracking data in PsychoPy's hdf5 format, enable the "Save hdf5 file" option within the experiment settings.
+
+For experiments that only require pupillometry/eye state, make sure the "Compute Eye State" setting is enabled in the companion app. For experiments that do not require screen-based gaze coordinates, this is all that is required.
 
 To use Neon for screen-based work in PsychoPy, the screen needs to be robustly located within the scene camera’s field of view, and Neon’s gaze data subsequently transformed from scene camera-based coordinates to screen-based coordinates. The Pupil Labs eyetracker plugin for PsychoPy achieves this with the use of AprilTag Markers and the [real-time-screen-gaze](https://github.com/pupil-labs/real-time-screen-gaze) Python package (installed automatically with the plugin).
 
@@ -42,6 +44,18 @@ Two new Builder components will be available in the components list under the Ey
 ### Data
 
 [PsychoPy saves eyetracking data in its own format](https://psychopy.org/hardware/eyeTracking.html#what-about-the-data), but we also recommend that you record your sessions with the Companion app. You can use the "Eyetracker Record" component in Builder to automate starting and stopping/saving your recordings.
+
+When processing eyetracking data in PsychoPy's data format, please note that PsychoPy doesn’t have distinct record types for gaze data versus eye state. If you’re collecting screen-gaze coordinates and pupillometry data, their records they will be intermixed, but they can be distinguished.
+
+- For screen gaze records
+    - `[left|right]_gaze_[x|y]` will be the screen coordinates in PsychoPy’s display units `[left|right]_gaze_z` will be `0`
+    - `[left|right]_eye_cam_[x|y|z]` will be `0`
+    - `left_pupil_measure1` and `left_pupil_measure1_type` will be `0`
+- For eye state records
+    - `[left|right]_gaze_[x|y|z]` will be the optical axis vector
+    - `[left|right]_eye_cam_[x|y|z]` will be eye position
+    - `left_pupil_measure1` will be pupil diameter in mm
+    - `left_pupil_measure1_type` will be `77`
 
 ### Example
 
