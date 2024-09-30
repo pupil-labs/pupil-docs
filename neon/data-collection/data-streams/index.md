@@ -29,7 +29,7 @@ The achieved framerate can vary based on the Companion device used and environme
 
 After a recording is uploaded to Pupil Cloud, gaze data is automatically re-computed at the full 200 Hz framerate and can be downloaded from there.
 
-The gaze estimation algorithm is based on end-2-end deep learning and provides gaze data robustly without requiring a calibration. You can find a high-level description as well as a thorough evaluation of the accuracy and robustness of the algorithm in our [white paper](https://zenodo.org/doi/10.5281/zenodo.10420388). 
+The gaze estimation algorithm is based on end-2-end deep learning and provides gaze data robustly without requiring a calibration. You can find a high-level description as well as a thorough evaluation of the accuracy and robustness of the algorithm in our [white paper](https://zenodo.org/doi/10.5281/zenodo.10420388).
 
 ## Fixations & Saccades
 
@@ -38,23 +38,28 @@ The two primary types of eye movements exhibited by the visual system are fixati
 
 ![Fixations](./fixations.jpg)
 
-Fixations and saccades are calculated automatically in Pupil Cloud after uploading a recording and are included in the recording downloads. The deployed fixation detection algorithm was specifically designed for head-mounted eye trackers and offers increased robustness in the presence of head movements. Especially movements due to vestibulo-ocular reflex are compensated for, which is not the case for most other fixation detection algorithms. You can learn more about it in the [Pupil Labs fixation detector whitepaper](https://docs.google.com/document/d/1CZnjyg4P83QSkfHi_bjwSceWCTWvlVtbGWtuyajv5Jc/export?format=pdf) and in our [publication](https://link.springer.com/article/10.3758/s13428-024-02360-0) in *Behavior Research Methods* discussing fixation detection strategies.
+Fixations and saccades are calculated automatically in Pupil Cloud after uploading a recording and are included in the recording downloads. The deployed fixation detection algorithm was specifically designed for head-mounted eye trackers and offers increased robustness in the presence of head movements. Especially movements due to vestibulo-ocular reflex are compensated for, which is not the case for most other fixation detection algorithms. You can learn more about it in the [Pupil Labs fixation detector whitepaper](https://docs.google.com/document/d/1CZnjyg4P83QSkfHi_bjwSceWCTWvlVtbGWtuyajv5Jc/export?format=pdf) and in our [publication](https://link.springer.com/article/10.3758/s13428-024-02360-0) in _Behavior Research Methods_ discussing fixation detection strategies.
 
 We detect saccades based on the fixation results, considering the gaps between fixations to be saccades. Note, that this assumption is only true in the absence of smooth pursuit eye movements. Additionally, the fixation detector does not compensate for blinks, which can cause a break in a fixation and thus introduce a false saccade.
 
 The downloads for gaze mapping enrichments ([Reference Image Mapper](/pupil-cloud/enrichments/reference-image-mapper/#export-format), [Marker Mapper](/pupil-cloud/enrichments/marker-mapper/#export-format)) also include mapped fixations, i.e. fixations in reference image or surface coordinates respectively.
 
-
 ## 3D Eye States
 
 Available in: <Badge>Real-time</Badge><Badge>Pupil Cloud</Badge>
-The Neon Companion app provides  3D eye state data in real-time at up to 200 Hz. The 3D eye states are a time series of each eye's position and orientation in 3D space, given by the location of the eyeball center and the optical axis of each eye. The units are millimeters.
+The Neon Companion app provides 3D eye state data in real-time at up to 200 Hz. The 3D eye states are a time series of each eye's position and orientation in 3D space, given by the location of the eyeball center and the optical axis of each eye. The units are millimeters.
 
 The coordinate system is depicted below. The origin corresponds to the scene camera of the Neon Module.
 
 ![Coordinate systems of 3D eye states](./3d_eye_states.png)
 
 You can specify the inter-eye distance (IED) of a wearer in the wearer profile before making a recording to further improve the accuracy of the measurements. If no IED value is specified, the population average of 63 mm is used.
+
+::: warning
+Enabling real-time estimation of 3D eye states and pupillometry on older Companion Devices (OnePlus 8, 8T, 10 Pro) can affect the sampling rates of other sensors due to the greater computational resources required for these tasks. We recommend keeping it off or lowering the sample rate and obtaining the data from Pupil Cloud unless real-time processing is necessary.
+
+If 200 Hz real-time data is essential, consider upgrading to a newer[Companion Device model](/neon/hardware/compatible-devices/).
+:::
 
 ## Pupil Diameters
 
