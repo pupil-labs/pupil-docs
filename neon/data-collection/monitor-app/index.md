@@ -12,11 +12,11 @@ The Neon Companion app can display a QR code that gets you straight to the monit
 
 ## The App's User Interface
 
-Once the page has loaded, you will be presented with a live stream of the scene camera with a gaze overlay. On the bottom you can find a record button, that allows you to remotely start and stop a recording on the device.
+The majority of the app interface is dedicated to a live stream of Neon's scene camera with a gaze overlay. A record button is at the bottom and can be used to remotely start and stop a recording on the device.
 
-If you have multiple Neons connected to the network, you can switch between devices using the switch button.
+If you have multiple Neon eye trackers connected to the network, you can switch between them from the main app menu.
 
-You can remotely save an [event](/data-collection/events/) in a recording to mark points of interest. Events can be accessed from the menu located in the bottom right. You can also customize the according event names from this menu.
+You can also remotely annotate or mark points of interest in your recordings by using [events](/data-collection/events/). Events can be sent using the event buttons located at the bottom right of the interface. You can add, remove, and customize events from this menu.
 
 ![Monitor App UI](./monitor-ui.png)
 
