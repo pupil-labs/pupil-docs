@@ -58,7 +58,7 @@ You can specify the inter-eye distance (IED) of a wearer in the wearer profile b
 ::: warning
 Enabling real-time estimation of 3D eye states and pupillometry on older Companion Devices (OnePlus 8, 8T, 10 Pro) can affect the sampling rates of other sensors due to the greater computational resources required for these tasks. We recommend keeping it off or lowering the sample rate and obtaining the data from Pupil Cloud unless real-time processing is necessary.
 
-If 200 Hz real-time data is essential, consider upgrading to a newer[Companion Device model](/neon/hardware/compatible-devices/).
+If 200 Hz real-time data is essential, consider upgrading to a newer [Companion Device model](/hardware/compatible-devices/).
 :::
 
 ## Pupil Diameters
