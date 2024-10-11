@@ -562,8 +562,8 @@ Based on the estimated intrinsics, one can calculate the camera's field of view 
 | Pupil Cam1 ID2 (default – wide-angle lens) | `1920x1080` | 155° | 85° | --- |
 | | `1280x720` | 103° | 54° | 122° |
 | | `640x480` | 103° | 73° | 134° |
-| Pupil Cam1 ID2 (narrow-angle lens) | `1920x1080` | 88° | 54° | 106° |
-| | `1280x720` | 63° | 37° | 70° |
+| Pupil Cam1 ID2 (narrow-angle lens) | `1920x1080` | 62° | 36° | 69° |
+| | `1280x720` | 42° | 24° | 47.5° |
 | | `640x480` | 42° | 32° | 51° |
 | Pupil Cam2 ID0/1 | `400x400` | 39° | 39° | 53° |
 | | `192x192` | 37° | 37° | 51° |
