@@ -16,19 +16,18 @@ Make sure to update the Neon Companion app on a regular basis. The latest versio
 ### Android OS
 We ship each Companion Device with a specific Android Version, carefully tested to ensure robustness and stability.
 
-:::danger
-We recommend that you don't allow Android system updates on your device. Some Android versions have issues with accessing 
-USB devices, rendering them incompatible with Neon.
-:::
 
-If you purchased your device from a third-party distributor, you'll need to ensure that the correct Android version is installed. The currently 
-supported Android versions are as follows:
+The currently supported Android versions are as follows:
 
 - On **OnePlus 8** and **8T**: Android 11
 - On **OnePlus 10 Pro**: Android 12 and 13
 - On **Moto Edge 40 Pro**: Android 13 and 14
 - On **Moto Edge + (2023)**: Android 13 and 14
 - On **Moto X40 Pro**: Android 13 and 14 (global ROM required)
+
+:::danger
+We recommend that you don't allow Android system updates on your device that are not listed above. Some Android versions have issues with accessing USB devices, rendering them incompatible with Neon.
+:::
 
 :::tip
 Should you have upgraded to an incompatible Android version by accident, you have the
