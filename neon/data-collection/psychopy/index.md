@@ -73,26 +73,36 @@ Check out our simple but complete [gaze contingent demo designed in PsychoPy Bui
 
 ## Coder
 
-To use Neon with PsychoPy coder, we recommend interfacing directly with the [real-time API](https://docs.pupil-labs.com/neon/real-time-api/tutorials/) 
-and, for screen-based tasks, using the [real-time-screen-gaze](https://github.com/pupil-labs/real-time-screen-gaze) package. 
-`AprilTagFrameStim` and `AprilTagStim` classes are provided to more easily display screen markers and configure a screen-based gaze mapper.
+To use Neon with PsychoPy coder, you'll need to configure ioHub, add AprilTag markers to the screen, and register the screen surface with the eyetracker. The example below shows how to collect realtime gaze position and pupil diameter in PsychoPy Coder.
 
 ### Example Coder Experiment
 ```python
+from psychopy import visual, event
+from psychopy.core import getTime
+from psychopy.iohub import launchHubServer
+from psychopy.tools.monitorunittools import convertToPix
+
 import numpy as np
 
-from psychopy import visual, event
-from psychopy.tools.monitorunittools import convertToPix
 from psychopy_eyetracker_pupil_labs.pupil_labs.stimuli import AprilTagFrameStim
 
-from pupil_labs.realtime_api.simple import discover_one_device
-from pupil_labs.real_time_screen_gaze.gaze_mapper import GazeMapper
 
-win = visual.Window(fullscr=True, units='height', checkTiming=False)
+# Set up iohub
+iohub_config = {
+    'eyetracker.hw.pupil_labs.neon.EyeTracker': {
+        'name': 'tracker',
+        'runtime_settings': {
+            'companion_address': '192.168.1.228',
+            'companion_port': 8080,
+        },
+    }
+}
 
-gaze_circle = visual.Circle(win, radius=.02, color="red")
-text = visual.TextStim(win, text='Press "ESCAPE" to exit', height=0.05)
+win = visual.Window(fullscr=True, units='height', checkTiming=False, color='black')
+io = launchHubServer(window=win, **iohub_config)
+eyetracker = io.devices.tracker
 
+# Add a frame of AprilTag markers to the screen
 tag_frame = AprilTagFrameStim(
     win=win,
     name='tag_frame', units='norm',
@@ -101,26 +111,42 @@ tag_frame = AprilTagFrameStim(
     marker_size=0.125, marker_units='height',
     contrast=1.0,
 )
+
+# Use a red circle to show the gaze location
+gaze_circle = visual.Circle(win, radius=.02, color="red")
+
+# Register the screen surface with the eyetracker
 win_size_pix = convertToPix(np.array([2, 2]), [0, 0], 'norm', win)
+eyetracker.register_surface(tag_frame.marker_verts, win_size_pix)
 
-neon_device = discover_one_device()
-gaze_mapper = GazeMapper(neon_device.get_calibration())
-screen_surface = gaze_mapper.add_surface(tag_frame.marker_verts, win_size_pix)
+# Start a recording
+eyetracker.setRecordingState(True)
 
-while True:
-    frame, gaze = neon_device.receive_matched_scene_video_frame_and_gaze()
-    result = gaze_mapper.process_frame(frame, gaze)
+# Run for 30 seconds
+start_time = getTime()
+while getTime() - start_time < 30:
+    # exit on escape key
+    if event.getKeys(keyList=['escape']):
+        break
 
-    for surface_gaze in result.mapped_gaze[screen_surface.uid]:
-        gaze_circle.pos = surface_gaze.x, surface_gaze.y
-        gaze_circle.draw()
+    # Update gaze circle radius to reflect pupil diameter
+    for eye_event in eyetracker.getEvents():
+        if eye_event.left_pupil_measure1_type == 77:
+            mean_pupil_diameter = (eye_event.left_pupil_measure1 + eye_event.right_pupil_measure1) / 2
+            gaze_circle.radius = (mean_pupil_diameter**1.5) / 100
 
-    text.draw()
+    # Update gaze circle position to reflect gaze position
+    gaze_circle.pos = eyetracker.getLastGazePosition()
+
+    # Update the screen
+    gaze_circle.draw()
     tag_frame.draw()
     win.flip()
 
-    if 'escape' in event.getKeys():
-        break
+# Stop recording
+eyetracker.setRecordingState(False)
 
-neon_device.close()
+win.close()
+io.quit()
+
 ```
