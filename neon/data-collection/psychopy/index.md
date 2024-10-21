@@ -1,26 +1,26 @@
 # PsychoPy
 
-[PsychoPy](https://psychopy.org/) is widely used open-source software for creating and running psychophysics experiments. 
+[PsychoPy](https://psychopy.org/) is widely used open-source software for creating and running psychophysics experiments.
 It enables users to present stimuli, collect data, and interface with a variety of hardware and software applications.
 
-We have created a dedicated plugin for PsychoPy that enables Neon to be used in PsychoPy experiments. PsychoPy 
+We have created a dedicated plugin for PsychoPy that enables Neon to be used in PsychoPy experiments. PsychoPy
 users have two options for designing their experiments, both of which can be used alongside Neon:
 
 - [Builder](https://www.psychopy.org/builder/) – Gives users a graphical interface with little or no need to write code - although it does support custom code when necessary.
 - [Coder](https://psychopy.org/coder/index.html) – Gives users the option to generate experiments or do other things programmatically, [using Psychopy like any other Python package](https://psychopy.org/api/).
 
 ## Using PsychoPy with Neon
-When using PsychoPy with Neon, you can save eyetracking data in PsychoPy's hdf5 format, by enabling the "Save hdf5 file" 
-option within the experiment settings. But we also recommend recording in the Neon Companion app for the duration of 
+When using PsychoPy with Neon, you can save eyetracking data in PsychoPy's hdf5 format, by enabling the "Save hdf5 file"
+option within the experiment settings. But we also recommend recording in the Neon Companion app for the duration of
 the experiment for data redundancy. PsychoPy’s standard "Eyetracker Record" component can be used to start and stop recordings
 on the Companion Device accordingly.
 
-For experiments that only require pupillometry/eye state, make sure the "Compute Eye State" setting is enabled in the companion app. 
+For experiments that only require pupillometry/eye state, make sure the "Compute Eye State" setting is enabled in the companion app.
 For experiments that do not require screen-based gaze coordinates, this is all that is required.
 
-To use Neon for screen-based work in PsychoPy, the screen needs to be robustly located within the scene camera’s field of view, 
-and Neon’s gaze data subsequently transformed from scene camera-based coordinates to screen-based coordinates. The plugin for 
-PsychoPy achieves this with the use of AprilTag Markers and the 
+To use Neon for screen-based work in PsychoPy, the screen needs to be robustly located within the scene camera’s field of view,
+and Neon’s gaze data subsequently transformed from scene camera-based coordinates to screen-based coordinates. The plugin for
+PsychoPy achieves this with the use of AprilTag Markers and the
 [real-time-screen-gaze](https://github.com/pupil-labs/real-time-screen-gaze) Python package (installed automatically with the plugin).
 
 ## Builder
@@ -51,21 +51,21 @@ Two new Builder components will be available in the components list under the Ey
 
 ### Data Format
 
-[PsychoPy saves eyetracking data in its own format](https://psychopy.org/hardware/eyeTracking.html#what-about-the-data). 
+[PsychoPy saves eyetracking data in its own format](https://psychopy.org/hardware/eyeTracking.html#what-about-the-data).
 
-When processing eyetracking data in PsychoPy's data format, please note that PsychoPy doesn’t have distinct record types 
-for gaze data versus eye state. If you’re collecting screen-gaze coordinates and pupillometry data, their records they will 
+When processing eyetracking data in PsychoPy's data format, please note that PsychoPy doesn’t have distinct record types
+for gaze data versus eye state. If you’re collecting screen-gaze coordinates and pupillometry data, their records they will
 be intermixed, but they can be distinguished.
 
 - For screen gaze records
     - `[left|right]_gaze_[x|y]` will be the screen coordinates in PsychoPy’s display units `[left|right]_gaze_z` will be `0`
     - `[left|right]_eye_cam_[x|y|z]` will be `0`
-    - `left_pupil_measure1` and `left_pupil_measure1_type` will be `0`
+    - `[left|right]_pupil_measure1` and `[left|right]_pupil_measure1_type` will be `0`
 - For eye state records
     - `[left|right]_gaze_[x|y|z]` will be the optical axis vector
     - `[left|right]_eye_cam_[x|y|z]` will be eye position
-    - `left_pupil_measure1` will be pupil diameter in mm
-    - `left_pupil_measure1_type` will be `77`
+    - `[left|right]_pupil_measure1` will be pupil diameter in mm
+    - `[left|right]_pupil_measure1_type` will be `77`
 
 ### Example Builder Experiment
 
