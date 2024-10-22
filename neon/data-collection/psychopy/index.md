@@ -51,20 +51,13 @@ Two new Builder components will be available in the components list under the Ey
 
 ### Data Format
 
-[PsychoPy saves eyetracking data in its own format](https://psychopy.org/hardware/eyeTracking.html#what-about-the-data).
+[PsychoPy saves eyetracking data in its own format](https://psychopy.org/hardware/eyeTracking.html#what-about-the-data). Screen gaze data will be saved as `MonocularEyeSampleEvent` records (even when using the binocular gaze mode). Eye state data, if enabled, will appear in `BinocularEyeSampleEvent` records.
 
-When processing eyetracking data in PsychoPy's data format, please note that PsychoPy doesn’t have distinct record types
-for gaze data versus eye state. If you’re collecting screen-gaze coordinates and pupillometry data, their records they will
-be intermixed, but they can be distinguished.
-
-- For screen gaze records
-    - `[left|right]_gaze_[x|y]` will be the screen coordinates in PsychoPy’s display units `[left|right]_gaze_z` will be `0`
-    - `[left|right]_eye_cam_[x|y|z]` will be `0`
-    - `[left|right]_pupil_measure1` and `[left|right]_pupil_measure1_type` will be `0`
+For eye state data in`BinocularEyeSampleEvent` records:
 - For eye state records
-    - `[left|right]_gaze_[x|y|z]` will be the optical axis vector
-    - `[left|right]_eye_cam_[x|y|z]` will be eye position
-    - `[left|right]_pupil_measure1` will be pupil diameter in mm
+    - `[left|right]_gaze_[x|y|z]` will be the optical axis vectors
+    - `[left|right]_eye_cam_[x|y|z]` will be eye positions
+    - `[left|right]_pupil_measure1` will be pupil diameters in mm
     - `[left|right]_pupil_measure1_type` will be `77`
 
 ### Example Builder Experiment
