@@ -6,7 +6,7 @@ Starting from version 2.8.33, the Neon Companion App allows you to select betwee
 
 - `Binocular` _(default)_: Utilizes images from both the right and left eyes to infer gaze position. This mode offers higher accuracy and robustness by leveraging information from both eyes.
 - `Mono Right`: Uses only the right eye's image to infer gaze position. This mode may be useful in scenarios where one eye can only be used.
-- `Mono Left`: Uses only the left eye's image to infer gaze position. Similar to Mono Right but using the right eye.
+- `Mono Left`: Uses only the left eye's image to infer gaze position. Similar to Mono Right but using the left eye.
 
 ::: warning
 **Monocular gaze is less accurate and robust** since it relies on a single eye image. Use this mode only if binocular tracking is not feasible or if there's a specific need for single-eye tracking.
