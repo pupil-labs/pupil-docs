@@ -1,27 +1,18 @@
 # PsychoPy
 
-[PsychoPy](https://psychopy.org/) is widely used open-source software for creating and running psychophysics experiments.
-It enables users to present stimuli, collect data, and interface with a variety of hardware and software applications.
+[PsychoPy](https://psychopy.org/) is widely used open-source software for creating and running psychophysics experiments. It enables users to present stimuli, collect data, and interface with a variety of hardware and software applications.
 
-We have created a dedicated plugin for PsychoPy that enables Neon to be used in PsychoPy experiments. PsychoPy
-users have two options for designing their experiments, both of which can be used alongside Neon:
+We have created a dedicated plugin for PsychoPy that enables Neon to be used in PsychoPy experiments. PsychoPy users have two options for designing their experiments, both of which can be used alongside Neon:
 
 - [Builder](https://www.psychopy.org/builder/) – Gives users a graphical interface with little or no need to write code - although it does support custom code when necessary.
 - [Coder](https://psychopy.org/coder/index.html) – Gives users the option to generate experiments or do other things programmatically, [using Psychopy like any other Python package](https://psychopy.org/api/).
 
 ## Using PsychoPy with Neon
-When using PsychoPy with Neon, you can save eyetracking data in PsychoPy's hdf5 format, by enabling the "Save hdf5 file"
-option within the experiment settings. But we also recommend recording in the Neon Companion app for the duration of
-the experiment for data redundancy. PsychoPy’s standard "Eyetracker Record" component can be used to start and stop recordings
-on the Companion Device accordingly.
+When using PsychoPy with Neon, you can save eyetracking data in PsychoPy's hdf5 format, by enabling the "Save hdf5 file" option within the experiment settings. But we also recommend recording in the Neon Companion app for the duration of the experiment for data redundancy. PsychoPy’s standard "Eyetracker Record" component can be used to start and stop recordings on the Companion Device accordingly. If desired, custom timestamped events can be triggered from PsychoPy and saved in the Neon recording.
 
-For experiments that only require pupillometry/eye state, make sure the "Compute Eye State" setting is enabled in the companion app.
-For experiments that do not require screen-based gaze coordinates, this is all that is required.
+* For experiments that only require pupillometry/eye state, make sure the "Compute Eye State" setting is enabled in the companion app. For experiments that do not require screen-based gaze coordinates, this is all that is required.
 
-To use Neon for screen-based work in PsychoPy, the screen needs to be robustly located within the scene camera’s field of view,
-and Neon’s gaze data subsequently transformed from scene camera-based coordinates to screen-based coordinates. The plugin for
-PsychoPy achieves this with the use of AprilTag Markers and the
-[real-time-screen-gaze](https://github.com/pupil-labs/real-time-screen-gaze) Python package (installed automatically with the plugin).
+* To use Neon for screen-based work in PsychoPy, the screen needs to be robustly located within the scene camera’s field of view, and Neon’s gaze data subsequently transformed from scene camera-based coordinates to screen-based coordinates. The plugin for PsychoPy achieves this with the use of AprilTag Markers and the [real-time-screen-gaze](https://github.com/pupil-labs/real-time-screen-gaze) Python package (installed automatically with the plugin).
 
 ## Builder
 
@@ -42,12 +33,18 @@ PsychoPy achieves this with the use of AprilTag Markers and the
 
 The standard "Eyetracker Record" and "Region of Interest" components work with Neon. Because Neon is calibration-free, the Calibration and Validation components are unused.
 
-Two new Builder components will be available in the components list under the Eyetracking section: "April Tag Frame" and "April Tag" (necessary for screen-based work).
+Three new Builder components will be available in the components list under the Eyetracking section.
 
-- April Tag Frame: this component is recommended for most users. Using it in your Builder experiment will display an array of AprilTag markers around the edge of the screen. You can configure the number of markers to display along the horizontal and vertical edges of the screen, the size and contrast of the markers, and (optionally) the marker IDs. A minimum of four markers (2 horizontally by 2 vertically) is recommended, but more markers will provide more robust detection and accurate mapping.
-![AprilTag Frame](./apriltag-frame.png)
+- April Tag Markers: for screen-based work, you will need to render AprilTag markers on your display. These components make it easy to do so. We recommend at least four markers, but more markers will improve gaze mapping.
 
-- April Tag: this component will add a single AprilTag marker to your display. It is intended for use when the April Tag Frame component cannot be used (e.g., you need to display stimuli on the edges of the display where the April Tag Frame component would place markers in the way).
+  - **April Tag Frame**: this component is recommended for most users. Using it in your Builder experiment will display an array of AprilTag markers around the edge of the screen. You can configure the number of markers to display along the horizontal and vertical edges of the screen, the size and contrast of the markers, and (optionally) the marker IDs. A minimum of four markers (2 horizontally by 2 vertically) is recommended, but more markers will provide more robust detection and accurate mapping. Marker IDs are automatically chosen but can be manually specified if needed.
+  ![AprilTag Frame](./apriltag-frame.png)
+
+  - **April Tag**: this component will add a single AprilTag marker to your display. It is intended for use when the April Tag Frame component cannot be used (e.g., you need to display stimuli on the edges of the display where the April Tag Frame component would place markers in the way). Using this component will give you control over the size and position of each marker. You will need to ensure that a unique marker ID is assigned to each AprilTag marker.
+
+- **Neon Event**: use this component to send a timestamped event annotation to the Neon Recording. You can mark the start and end of an experiment, the start and end of a trial, the timing of a stimulus presentation, etc. A timestamp can be manually specified or, if set to `0`, automatically assigned when the component start is triggered.
+
+  Events can only be saved to an active recording. You can use PsychoPy's standard "Eyetracking Record" component to start/stop a recording or manually start a recording from the Companion App.
 
 ### Data Format
 
@@ -116,10 +113,12 @@ eyetracker.register_surface(tag_frame.marker_verts, win_size_pix)
 eyetracker.setRecordingState(True)
 
 # Run for 30 seconds
+eyetracker.send_event('exp-start')
 start_time = getTime()
 while getTime() - start_time < 30:
     # exit on escape key
     if event.getKeys(keyList=['escape']):
+        eyetracker.send_event('user-exit')
         break
 
     # Update gaze circle radius to reflect pupil diameter
