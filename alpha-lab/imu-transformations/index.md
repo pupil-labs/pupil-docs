@@ -42,8 +42,11 @@ from scipy.spatial.transform import Rotation as R
 def transform_imu_to_world(imu_coordinates, imu_quaternions):
     # This array contains a timeseries of transformation matrices,
     # as calculated from the IMU's timeseries of quaternions values.
-    imu_to_world_matrices = R.from_quat(imu_quaternions).as_matrix()
-    
+    imu_to_world_matrices = R.from_quat(
+        imu_quaternions,
+        scalar_first=True,
+    ).as_matrix()
+
     if np.ndim(imu_coordinates) == 1:
         return imu_to_world_matrices @ imu_coordinates
     else:
@@ -210,13 +213,13 @@ Using the transformations introduced above, we can transform various data into c
 
 Converting data into spherical world coordinates makes this obvious. When wearing Neon, an elevation and azimuth of 0 degrees corresponds to a neutral orientation: i.e., aimed at magnetic North and parallel to the horizon. A positive elevation corresponds to looking upwards, and a negative elevation corresponds to looking downwards.
 
-The [Euler angles from the IMU](https://docs.pupil-labs.com/neon/data-collection/data-streams/#euler-angles) are already in a compatible format. For gaze data in world coordinates, the `cartesian_to_spherical_world` function below will do the necessary transformation. 
+The [Euler angles from the IMU](https://docs.pupil-labs.com/neon/data-collection/data-streams/#euler-angles) are already in a compatible format. For gaze data in world coordinates, the `cartesian_to_spherical_world` function below will do the necessary transformation.
 
 ```python
 def cartesian_to_spherical_world(world_points_3d):
     """
     Convert points in 3D Cartesian world coordinates to spherical coordinates.
-    
+
     For elevation:
       - Neutral orientation = 0 (i.e., parallel with horizon)
       - Upwards is positive
