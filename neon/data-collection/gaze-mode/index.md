@@ -1,12 +1,12 @@
 # Binocular vs. Monocular Gaze Mode
 
-Starting from version 2.8.33, the Neon Companion App allows you to select between using both eyes (binocular) or a single eye (monocular) images for outputing gaze positions. This flexibiliy enables you to isolate gaze from a specific eye, e.g. when recording from participants/wearers with phorias, or other experimental paradgims that require monocular gaze.
+Starting from version 2.8.34-prod, the Neon Companion App allows you to select between using both eyes (binocular) or a single eye (monocular) images for outputing gaze positions. This option enables you to isolate gaze from a specific eye, e.g. when recording participants with strabismus, or other experimental paradgims that require monocular gaze.
 
 ## Modes
 
 - `Binocular` _(default)_: Utilizes images from both the right and left eyes to infer gaze position. This mode offers higher accuracy and robustness by leveraging information from both eyes.
 - `Mono Right`: Uses only the right eye's image to infer gaze position. This mode may be useful in scenarios where one eye can only be used.
-- `Mono Left`: Uses only the left eye's image to infer gaze position. Similar to Mono Right but using the left eye.
+- `Mono Left`: Uses only the left eye's image to infer gaze position. Similar to `Mono Right` but using the left eye.
 
 ::: warning
 **Monocular gaze is less accurate and robust** since it relies on a single eye image. Use this mode only if binocular tracking is not feasible or if there's a specific need for single-eye tracking.
