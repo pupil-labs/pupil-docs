@@ -32,7 +32,7 @@ As you work through this guide, you may want to check out the [Application Examp
 
 ## Rotation between the IMU and the World
 
-The IMU data includes a description of how the IMU is rotated in relation to the world. Concretely, the IMU data contains quaternions that define a rotation transformation between the [the world coordinate system](http://docs.pupil-labs.com/neon/data-collection/data-streams/#movement-imu-data) and the IMU's local coordinate system at different points in time. 
+The IMU data includes a description of how the IMU is rotated in relation to the world. Concretely, the IMU data contains quaternions that define a rotation transformation between [the world coordinate system](http://docs.pupil-labs.com/neon/data-collection/data-streams/#movement-imu-data) and the IMU's local coordinate system at different points in time.
 
 The `transform_imu_to_world` function below demonstrates how to use these quaternions to transform data from the IMU's local coordinate system to the world coordinate system.
 
@@ -42,8 +42,11 @@ from scipy.spatial.transform import Rotation as R
 def transform_imu_to_world(imu_coordinates, imu_quaternions):
     # This array contains a timeseries of transformation matrices,
     # as calculated from the IMU's timeseries of quaternions values.
-    imu_to_world_matrices = R.from_quat(imu_quaternions).as_matrix()
-    
+    imu_to_world_matrices = R.from_quat(
+        imu_quaternions,
+        scalar_first=True,
+    ).as_matrix()
+
     if np.ndim(imu_coordinates) == 1:
         return imu_to_world_matrices @ imu_coordinates
     else:
@@ -75,7 +78,7 @@ Neutral orientation (i.e. an identity rotation in the quaternion) of the IMU wou
 
 ### Example: Acceleration in World Coordinates
 
-The IMU’s translational acceleration data is given in the IMU's local coordinate system. To understand how the observer is accelerating through the world it can be helpful to transform the data into the world coordinate system:
+The IMU’s translational acceleration data is given in the IMU's local coordinate system. To understand how the observer is accelerating through the world, it can be helpful to transform the data into the world coordinate system:
 
 ```python
 accelerations_in_world = transform_imu_to_world(
@@ -121,7 +124,7 @@ def transform_scene_to_imu(coords_in_scene, translation_in_imu=np.array([0.0, -1
     return coords_in_imu.T
 ```
 
-Combining the `transform_scene_to_imu` function with the `transform_imu_to_world` function allows us to go all the way from scene camera coordinate system to world coordinate system
+Combining the `transform_scene_to_imu` function with the `transform_imu_to_world` function allows us to go all the way from the scene camera coordinate system to the world coordinate system.
 
 ```python
 def transform_scene_to_world(coords_in_scene, imu_quaternions, translation_in_imu=np.array([0.0, -1.3, -6.62])):
@@ -131,10 +134,10 @@ def transform_scene_to_world(coords_in_scene, imu_quaternions, translation_in_im
 
 ### Example: Eyestate in World Coordinates
 
-The `transform_scene_to_world` function allows us easily convert [eye state data](https://docs.pupil-labs.com/neon/data-collection/data-streams/#_3d-eye-states) given in scene camera coordinates to world coordinates.
+The `transform_scene_to_world` function allows us to easily convert [eye state data](https://docs.pupil-labs.com/neon/data-collection/data-streams/#_3d-eye-states) given in scene camera coordinates to world coordinates.
 
 ::: warning
-Note, to do this right in practice you need to make sure you sample the quaternions and eye state data from the same timestamps. Since both data streams are generated independently and do not share the same set of timestamps, this is a challenge in itself. 
+Note, to do this right in practice you need to make sure you sample the quaternions and eye state data at the same timestamps. Since both data streams are generated independently and do not share the same set of timestamps, this is a challenge in itself.
 
 We are glossing over this here, but one possible solution to this is interpolating the IMU data to match the timestamps of the eye state data, which is demonstrated [here](http://docs.pupil-labs.com/alpha-lab/imu-transformations/#application-example).
 :::
@@ -173,15 +176,15 @@ def spherical_to_cartesian_scene(elevations, azimuths):
     elevations_rad = np.deg2rad(elevations)
     azimuths_rad = np.deg2rad(azimuths)
 
-    # Elevation of 0 in Neon system corresponds to Y = 0, but
+    # Elevation of 0 in Neon's system corresponds to Y = 0, but
     # an elevation of 0 in traditional spherical coordinates would
     # correspond to Y = 1, so we convert elevation to the
     # more traditional format.
     elevations_rad += np.pi / 2
 
-    # Azimuth of 0 in Neon system corresponds to X = 0, but
+    # Azimuth of 0 in Neon's system corresponds to X = 0, but
     # an azimuth of 0 in traditional spherical coordinates would
-    # correspond to X = 1. Also, azimuth to the right in Neon is
+    # correspond to X = 1. Also, azimuth to the right for Neon is
     # more positive, whereas it is more negative in traditional
     # spherical coordiantes. So, we convert azimuth to the more
     # traditional format.
@@ -206,17 +209,17 @@ def gaze_3d_to_world(gaze_elevation, gaze_azimuth, imu_quaternions):
 ```
 
 ## World Spherical Coordinates
-Using the transformations introduced above, we can transform various data into cartesian world coordinates. For some things it is more intuitive to have the data in spherical coordinates though. For instance, you might want to know when someone’s gaze or heading deviates from parallel with the horizon, i.e. if they are looking/facing upwards or downwards. 
+Using the transformations introduced above, we can transform various data into cartesian world coordinates. For some purposes, it is more intuitive to have the data in spherical coordinates though. For instance, you might want to know when someone’s gaze or heading deviates from parallel with the horizon, i.e. if they are looking/facing upwards or downwards.
 
-Converting data into spherical world coordinates makes these things obvious. When wearing Neon, an elevation and azimuth of 0 degrees corresponds to a neutral orientation: i.e., aimed at magnetic North and parallel to the horizon. A positive elevation corresponds to looking upwards, and a negative elevation corresponds to looking downwards.
+Converting data into spherical world coordinates makes this obvious. When wearing Neon, an elevation and azimuth of 0 degrees corresponds to a neutral orientation: i.e., aimed at magnetic North and parallel to the horizon. A positive elevation corresponds to looking upwards, and a negative elevation corresponds to looking downwards.
 
-The [Euler angles from the IMU](https://docs.pupil-labs.com/neon/data-collection/data-streams/#euler-angles) are already in a compatible format. For gaze data in world coordinates, the `cartesian_to_spherical_world` function below will do the necessary transformation. 
+The [Euler angles from the IMU](https://docs.pupil-labs.com/neon/data-collection/data-streams/#euler-angles) are already in a compatible format. For gaze data in world coordinates, the `cartesian_to_spherical_world` function below will do the necessary transformation.
 
 ```python
 def cartesian_to_spherical_world(world_points_3d):
     """
     Convert points in 3D Cartesian world coordinates to spherical coordinates.
-    
+
     For elevation:
       - Neutral orientation = 0 (i.e., parallel with horizon)
       - Upwards is positive
