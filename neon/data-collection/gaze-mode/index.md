@@ -1,56 +1,15 @@
-# Binocular vs. Monocular Gaze Mode
+# Gaze Mode
 
-Starting from version 2.8.34-prod, the Neon Companion App allows you to select between using both eyes (binocular) or a single eye (monocular) images for outputing gaze positions. This option enables you to isolate gaze from a specific eye, e.g. when recording participants with strabismus, or other experimental paradgims that require monocular gaze.
-
-## Modes
-
-- `Binocular` _(default)_: Utilizes images from both the right and left eyes to infer gaze position. This mode offers higher accuracy and robustness by leveraging information from both eyes.
-- `Mono Right`: Uses only the right eye's image to infer gaze position. This mode may be useful in scenarios where one eye can only be used.
-- `Mono Left`: Uses only the left eye's image to infer gaze position. Similar to `Mono Right` but using the left eye.
-
-::: warning
-**Monocular gaze is less accurate and robust** since it relies on a single eye image. Use this mode only if binocular tracking is not feasible or if there's a specific need for single-eye tracking.
-:::
+In the Neon Companion App, you can select between Binocular (default) or Monocular (left or right) gaze modes. Binocular mode captures gaze data from both eyes, and is recommended for most users. Monocular mode generates gaze data from a single eye (left or right, as chosen by the user), and is advisable only for those who specifically need it.
 
 ## Changing Gaze Modes
 
-To switch between gaze modes, follow these steps:
+You can switch between gaze modes in the Companion App settings. After selecting a new gaze mode, be sure to unplug and re-plug the Neon device.
 
-1. From the home screen of the Neon Companion App, tap the gear icon located at the top-right corner to open **Companion Settings**.
-2. Scroll down to the **NeonNet** section.
-3. Choose your desired **Gaze Mode** (`Binocular`, `Mono Right`, or `Mono Left`).
-4. After selecting the new gaze mode, **unplug and re-plug** the Neon device to apply the changes.
+## Considerations When Switching to Monocular Gaze
 
-::: tip
-After altering the gaze mode to monocular, it's recommended to perform a new [Offset Correction](/data-collection/offset-correction/) to improve accuracy.
-:::
+- Switching to Monocular gaze mode alters the existing gaze stream without creating an additional one. This means that all downstream processes, including fixations and enrichments, will utilise this monocular gaze data.
 
-## Other Considerations
+- [Eye State](/data-collection/data-streams/#_3d-eye-states) and [Pupillometry](/data-collection/data-streams/#pupil-diameters) are unaffected by changes to the gaze mode and will continue to measure data for both eyes as usual.
 
-- Changing the gaze mode modifies the existing gaze stream. It does **not** create an additional stream.
-- All downstream processes, including fixations and enrichments, will utilize this monocular gaze data.
-- Eye State and Pupillometry remain unaffected by changes to the gaze mode and will output the data for each eye.
-
-## In Pupil Cloud:
-
-Pupil Cloud handles gaze data processing as follows:
-
-- **Default Behavior**: Pupil Cloud reprocesses recordings to maintain a consistent sampling rate of **200Hz**, regardless of the real-time sampling rate set in the app.
-
-- **Monocular Mode**: If a monocular gaze mode is selected, Pupil Cloud **will not** reprocess the recordings. Ensure that this aligns with your data analysis requirements.
-
-## Where Can I Find Which Mode Was Used on a Recording?
-
-On the recording's view in the Neon Companion App, you can tap on the three dots to visualize the metadata.
-
-Additionally, the [info.json](/data-collection/data-format/#info-json) file now includes a new field `gaze_mode`.
-
----
-
-### Best Practices / Additional Recommendations
-
-- **Testing**: After changing the gaze mode, perform tests to verify that the gaze tracking meets your accuracy and performance needs.
-
-- **Update your Team**: Keep your team informed about changes in gaze modes to ensure consistency in data collection and analysis.
-
----
+- Pupil Cloud will **not** re-process recordings at 200 Hz as with default binocular recordings. Only real-time recorded monocular gaze will be saved for processing with enrichments.

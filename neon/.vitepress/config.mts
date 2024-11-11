@@ -107,7 +107,7 @@ let theme_config_additions = {
             link: "/data-collection/measuring-ied/",
           },
           {
-            text: "Monocular Gaze",
+            text: "Gaze Mode",
             link: "/data-collection/gaze-mode/",
           },
           {
