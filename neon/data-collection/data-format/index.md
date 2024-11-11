@@ -19,9 +19,9 @@ This file contains meta-information on the recording.
 | **android_device_id**    | Unique identifier of the Android device used as Companion.                                                                     |
 | **android_device_model** | Model name of the Companion device.                                                                                            |
 | **android_device_name**  | Device name of the Companion device.                                                                                           |
-| **app_version**          | Version of the Neon Companion app used to make the recording.                                                                  |
-| **calib_version**        | Version of the offset correction used by the Neon Companion app.                                                               |
-| **data_format_version**  | Version of the data format used by the Neon Companion app.                                                                     |
+| **app_version**          | Version of the Neon Companion App used to make the recording.                                                                  |
+| **calib_version**        | Version of the offset correction used by the Neon Companion App.                                                               |
+| **data_format_version**  | Version of the data format used by the Neon Companion App.                                                                     |
 | **duration**             | Duration of the recording in nanoseconds                                                                                       |
 | **firmware_version**     | Version numbers of the firmware and FPGA.                                                                                      |
 | **frame_id**             | Number identifying the type of frame used for this recording.                                                                  |
@@ -29,7 +29,7 @@ This file contains meta-information on the recording.
 | **gaze_offset**          | Gaze offset applied to this recording using the offset correction. Values are in pixels.                                       |
 | **module_serial_number** | Serial number of the Neon module used for the recording. This number is encoded in the QR code on the back of the Neon module. |
 | **os_version**           | Version of the Android OS that was installed on the recording Companion device.                                                |
-| **pipeline_version**     | Version of the gaze estimation pipeline used by the Neon Companion app.                                                        |
+| **pipeline_version**     | Version of the gaze estimation pipeline used by the Neon Companion App.                                                        |
 | **recording_id**         | Unique identifier of the recording.                                                                                            |
 | **start_time**           | Timestamp of when the recording was started. Given as UTC timestamp in nanoseconds.                                            |
 | **template_data**        | Data regarding the selected template for the recording as well as the response values.                                         |

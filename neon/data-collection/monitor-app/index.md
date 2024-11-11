@@ -4,10 +4,10 @@
 
 Using the **Neon Monitor** app you can easily monitor your data collection in real-time and remote control all your Neons from another device. It's a web-app that can be opened in any browser on a computer, tablet or phone! The only requirement is that the Neon Companion device and the device you use to access the Monitor app are connected to the same network.
 
-To access the Monitor app make sure the Neon Companion app is running and visit the page [neon.local:8080](http://neon.local:8080) on your monitoring device.
+To access the Monitor app make sure the Neon Companion App is running and visit the page [neon.local:8080](http://neon.local:8080) on your monitoring device.
 
 ::: tip
-The Neon Companion app can display a QR code that gets you straight to the monitor website. Just select `Streaming` on the home screen!
+The Neon Companion App can display a QR code that gets you straight to the monitor website. Just select `Streaming` on the home screen!
 :::
 
 ## The App's User Interface

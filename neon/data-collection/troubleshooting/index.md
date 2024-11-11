@@ -4,7 +4,7 @@ Below you can find a list of issues we have observed in the past and recommendat
 
 ## The Companion Device Is Vibrating and a Red LED Is Blinking in the Neon Module!
 
-The vibrations and the blinking LED try to grab the wearer's attention to notify them of a problem that may critically hurt the ongoing recording. To get details on the problem, open the Neon Companion app, which will show an error description.
+The vibrations and the blinking LED try to grab the wearer's attention to notify them of a problem that may critically hurt the ongoing recording. To get details on the problem, open the Neon Companion App, which will show an error description.
 
 Potential problems include:
 
