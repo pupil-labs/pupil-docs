@@ -21,7 +21,7 @@ The scene camera can be operated with automatic or manual exposure. In situation
 ## Gaze
 
 Available in: <Badge>Real-time</Badge><Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>
-The Neon Companion App can provide gaze data in real-time at up to 200 Hz. Gaze data is output in pixel space of the scene camera image. The origin is in the top-left corner of the image.
+The Neon Companion app can provide gaze data in real-time at up to 200 Hz. Gaze data is output in pixel space of the scene camera image. The origin is in the top-left corner of the image.
 
 ![Gaze](./gaze.jpg)
 
@@ -47,7 +47,7 @@ The downloads for gaze mapping enrichments ([Reference Image Mapper](/pupil-clou
 ## 3D Eye States
 
 Available in: <Badge>Real-time</Badge><Badge>Pupil Cloud</Badge>
-The Neon Companion App provides 3D eye state data in real-time at up to 200 Hz. The 3D eye states are a time series of each eye's position and orientation in 3D space, given by the location of the eyeball center and the optical axis of each eye. The units are millimeters.
+The Neon Companion app provides 3D eye state data in real-time at up to 200 Hz. The 3D eye states are a time series of each eye's position and orientation in 3D space, given by the location of the eyeball center and the optical axis of each eye. The units are millimeters.
 
 The coordinate system is depicted below. The origin corresponds to the scene camera of the Neon Module.
 
@@ -64,7 +64,7 @@ If 200 Hz real-time data is essential, consider upgrading to a newer [Companion 
 ## Pupil Diameters
 
 Available in: <Badge>Real-time</Badge><Badge>Pupil Cloud</Badge>
-The Neon Companion App provides pupil diameter data in real-time at up to 200 Hz. Separately for the left and right eye. The computed pupil diameters correspond to the physical pupil size in mm, rather than the apparent pupil size in pixels as observed in the eye videos. You can find a high-level description as well as a thorough evaluation of the accuracy and robustness of Neon’s pupil-size measurements in our [white paper](https://zenodo.org/records/10057185).
+The Neon Companion app provides pupil diameter data in real-time at up to 200 Hz. Separately for the left and right eye. The computed pupil diameters correspond to the physical pupil size in mm, rather than the apparent pupil size in pixels as observed in the eye videos. You can find a high-level description as well as a thorough evaluation of the accuracy and robustness of Neon’s pupil-size measurements in our [white paper](https://zenodo.org/records/10057185).
 
 Similar to the 3D eye states, the accuracy of the pupil diameter measurements improves when supplying the wearer's IED in the wearer profile before making a recording.
 
@@ -82,7 +82,7 @@ The blink detection algorithm is operating directly on the eye video to detect t
 Available in: <Badge>Pupil Cloud</Badge><Badge>Neon Player</Badge>
 Stereo microphones are integrated into the Neon module. Recorded audio will be part of the resulting scene video.
 
-Audio recording is disabled in the Neon Companion App by default and can be enabled in the settings.
+Audio recording is disabled in the Neon Companion app by default and can be enabled in the settings.
 
 ## Movement (IMU Data)
 

@@ -5,7 +5,7 @@ This plugin visualizes [3D eye state](/data-collection/data-streams/#_3d-eye-sta
 ![Eye State Timeline](./eye-state-timeline.webp)
 
 ::: info
-The data will only be visualized if Eye State computation was enabled in the Neon Companion App during recording.
+The data will only be visualized if Eye State computation was enabled in the Neon Companion app during recording.
 :::
 
 ## Export Format

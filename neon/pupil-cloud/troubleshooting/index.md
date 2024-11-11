@@ -4,7 +4,7 @@ Below you can find a list of issues we have observed in the past and recommendat
 
 ## Recordings Are Not Uploading to Pupil Cloud Successfully
 
-1. Make sure **Cloud upload** is enabled in the Neon Companion App's settings.
+1. Make sure **Cloud upload** is enabled in the Neon Companion app's settings.
 1. Try logging out of the app and back in.
 
 ## My Enrichment Download Contains Only an ‘info.json’ File and Nothing Else!

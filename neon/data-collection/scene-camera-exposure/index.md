@@ -12,7 +12,7 @@ examples and important considerations.
 
 ## Changing Exposure Modes
 
-From the home screen of the Neon Companion App, tap
+From the home screen of the Neon Companion app, tap
 the [Scene and Eye Camera preview](/data-collection/first-recording/#_4-open-the-live-preview),
 and then select `Balanced` to reveal all four modes.
 

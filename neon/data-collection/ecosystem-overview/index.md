@@ -4,7 +4,7 @@ The Neon ecosystem contains a range of tools that support you during data collec
 
 ## Neon Companion App
 
-You should have already used the Neon Companion App to [make your first recording](/data-collection/first-recording/). This app is the core of every Neon data collection.
+You should have already used the Neon Companion app to [make your first recording](/data-collection/first-recording/). This app is the core of every Neon data collection.
 
 When your Neon is connected to the Companion device, it supplies it with power and enables it to generate a real-time gaze signal as well as several other [data streams](/data-collection/data-streams/). When making a [recording](/data-collection/recordings/), all generated data is saved on the Companion device.
 
@@ -12,7 +12,7 @@ The app automatically saves [UTC timestamps](https://en.wikipedia.org/wiki/Coord
 
 ## Other Data Collection Tools
 
-Several other tools complement the Neon Companion App and can make data collection much easier in some scenarios.
+Several other tools complement the Neon Companion app and can make data collection much easier in some scenarios.
 
 ### Neon Monitor
 
@@ -40,7 +40,7 @@ Neon is compatible with LSL and you can learn more about how to use Neon with LS
 
 [Pupil Cloud](/pupil-cloud/) is our web-based storage and analysis platform located at [cloud.pupil-labs.com](https://cloud.pupil-labs.com/). It makes it easy to store all your data securely in one place and offers a variety of options for data analysis and visualization.
 
-Pupil Cloud is the recommended tool for processing your Neon recordings and if you enable uploads in the Neon Companion App all recordings can be uploaded automatically.
+Pupil Cloud is the recommended tool for processing your Neon recordings and if you enable uploads in the Neon Companion app all recordings can be uploaded automatically.
 
 ![Pupil Cloud](./pupil_cloud.webp)
 

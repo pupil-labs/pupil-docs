@@ -16,5 +16,5 @@ To get started with Neon in Capture, follow these steps:
 5. Select either `Neon 3D` or `2D` as the **Gaze Mapping** option in the **Calibration** tab.
 
 ::: warning
-Recordings made with the Neon Companion App (rather than Pupil Capture) are **NOT** compatible with Pupil Player.
+Recordings made with the Neon Companion app (rather than Pupil Capture) are **NOT** compatible with Pupil Player.
 :::

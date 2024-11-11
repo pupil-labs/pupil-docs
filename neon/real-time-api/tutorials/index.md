@@ -20,7 +20,7 @@ The client comes in two modes, `simple` and `async`. The simple mode is very eas
 
 ## Connecting to a Neon Device
 
-Using the [`discover_one_device`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.discover_one_device) function, we can connect to a Neon device connected to your local network. Make sure the Neon Companion App is running! If no device can be found, please check the [troubleshooting section](#troubleshooting) at the end.
+Using the [`discover_one_device`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.discover_one_device) function, we can connect to a Neon device connected to your local network. Make sure the Neon Companion app is running! If no device can be found, please check the [troubleshooting section](#troubleshooting) at the end.
 
 ```python
 from pupil_labs.realtime_api.simple import discover_one_device
@@ -274,7 +274,7 @@ pupil_labs.realtime_api.models.InvalidTemplateAnswersError: Question 3 (6169276c
 
 If you are having trouble connecting to your Neon device via the real-time API, consider the following points:
 
-1. Make sure the Neon Companion App and the device you are using to access the API are connected to the same local network.
+1. Make sure the Neon Companion app and the device you are using to access the API are connected to the same local network.
 1. For discovery the local network must allow MDNS and UDP traffic. In large public networks this may be prohibited for security reasons.
 
    - You may still be able to connect to Neon using its IP address. You can find the IP address in the WiFi settings of the phone. Once you have it, you can connect like this:
