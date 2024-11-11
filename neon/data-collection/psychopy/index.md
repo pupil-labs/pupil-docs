@@ -1,28 +1,18 @@
 # PsychoPy
 
-[PsychoPy](https://psychopy.org/) is widely used open-source software for creating and running psychophysics experiments.
-It enables users to present stimuli, collect data, and interface with a variety of hardware and software applications.
+[PsychoPy](https://psychopy.org/) is widely used open-source software for creating and running psychophysics experiments. It enables users to present stimuli, collect data, and interface with a variety of hardware and software applications.
 
-We have created a dedicated plugin for PsychoPy that enables Neon to be used in PsychoPy experiments. PsychoPy
-users have two options for designing their experiments, both of which can be used alongside Neon:
+We have created a dedicated plugin for PsychoPy that enables Neon to be used in PsychoPy experiments. PsychoPy users have two options for designing their experiments, both of which can be used alongside Neon:
 
 - [Builder](https://www.psychopy.org/builder/) – Gives users a graphical interface with little or no need to write code - although it does support custom code when necessary.
 - [Coder](https://psychopy.org/coder/index.html) – Gives users the option to generate experiments or do other things programmatically, [using Psychopy like any other Python package](https://psychopy.org/api/).
 
 ## Using PsychoPy with Neon
+When using PsychoPy with Neon, you can save eyetracking data in PsychoPy's hdf5 format, by enabling the "Save hdf5 file" option within the experiment settings. But we also recommend recording in the Neon Companion app for the duration of the experiment for data redundancy. PsychoPy’s standard "Eyetracker Record" component can be used to start and stop recordings on the Companion Device accordingly. If desired, custom timestamped events can be triggered from PsychoPy and saved in the Neon recording.
 
-When using PsychoPy with Neon, you can save eyetracking data in PsychoPy's hdf5 format, by enabling the "Save hdf5 file"
-option within the experiment settings. But we also recommend recording in the Neon Companion App for the duration of
-the experiment for data redundancy. PsychoPy’s standard "Eyetracker Record" component can be used to start and stop recordings
-on the Companion Device accordingly.
+* For experiments that only require pupillometry/eye state, make sure the "Compute Eye State" setting is enabled in the companion app. For experiments that do not require screen-based gaze coordinates, this is all that is required.
 
-For experiments that only require pupillometry/eye state, make sure the "Compute Eye State" setting is enabled in the companion app.
-For experiments that do not require screen-based gaze coordinates, this is all that is required.
-
-To use Neon for screen-based work in PsychoPy, the screen needs to be robustly located within the scene camera’s field of view,
-and Neon’s gaze data subsequently transformed from scene camera-based coordinates to screen-based coordinates. The plugin for
-PsychoPy achieves this with the use of AprilTag Markers and the
-[real-time-screen-gaze](https://github.com/pupil-labs/real-time-screen-gaze) Python package (installed automatically with the plugin).
+* To use Neon for screen-based work in PsychoPy, the screen needs to be robustly located within the scene camera’s field of view, and Neon’s gaze data subsequently transformed from scene camera-based coordinates to screen-based coordinates. The plugin for PsychoPy achieves this with the use of AprilTag Markers and the [real-time-screen-gaze](https://github.com/pupil-labs/real-time-screen-gaze) Python package (installed automatically with the plugin).
 
 ## Builder
 
@@ -43,30 +33,31 @@ PsychoPy achieves this with the use of AprilTag Markers and the
 
 The standard "Eyetracker Record" and "Region of Interest" components work with Neon. Because Neon is calibration-free, the Calibration and Validation components are unused.
 
-Two new Builder components will be available in the components list under the Eyetracking section: "April Tag Frame" and "April Tag" (necessary for screen-based work).
+Three new Builder components will be available in the components list under the Eyetracking section.
 
-- April Tag Frame: this component is recommended for most users. Using it in your Builder experiment will display an array of AprilTag markers around the edge of the screen. You can configure the number of markers to display along the horizontal and vertical edges of the screen, the size and contrast of the markers, and (optionally) the marker IDs. A minimum of four markers (2 horizontally by 2 vertically) is recommended, but more markers will provide more robust detection and accurate mapping.
+- April Tag Markers: for screen-based work, you will need to render AprilTag markers on your display. These components make it easy to do so. We recommend at least four markers, but more markers will improve gaze mapping.
+
+
+  - **April Tag Frame**: this component is recommended for most users. Using it in your Builder experiment will display an array of AprilTag markers around the edge of the screen. You can configure the number of markers to display along the horizontal and vertical edges of the screen, the size and contrast of the markers, and (optionally) the marker IDs. A minimum of four markers (2 horizontally by 2 vertically) is recommended, but more markers will provide more robust detection and accurate mapping. Marker IDs are automatically chosen but can be manually specified if needed.
   ![AprilTag Frame](./apriltag-frame.png)
 
-- April Tag: this component will add a single AprilTag marker to your display. It is intended for use when the April Tag Frame component cannot be used (e.g., you need to display stimuli on the edges of the display where the April Tag Frame component would place markers in the way).
+  - **April Tag**: this component will add a single AprilTag marker to your display. It is intended for use when the April Tag Frame component cannot be used (e.g., you need to display stimuli on the edges of the display where the April Tag Frame component would place markers in the way). Using this component will give you control over the size and position of each marker. You will need to ensure that a unique marker ID is assigned to each AprilTag marker.
+
+  - **Neon Event**: use this component to send a timestamped event annotation to the Neon Recording. You can mark the start and end of an experiment, the start and end of a trial, the timing of a stimulus presentation, etc. A timestamp can be manually specified or, if set to `0`, automatically assigned when the component start is triggered.
+
+  Events can only be saved to an active recording. You can use PsychoPy's standard "Eyetracking Record" component to start/stop a recording or manually start a recording from the Companion App.
 
 ### Data Format
 
-[PsychoPy saves eyetracking data in its own format](https://psychopy.org/hardware/eyeTracking.html#what-about-the-data).
+[PsychoPy saves eyetracking data in its own format](https://psychopy.org/hardware/eyeTracking.html#what-about-the-data). Screen gaze data will be saved as `MonocularEyeSampleEvent` records (even when using the binocular gaze mode). Eye state data, if enabled, will appear in `BinocularEyeSampleEvent` records.
 
-When processing eyetracking data in PsychoPy's data format, please note that PsychoPy doesn’t have distinct record types
-for gaze data versus eye state. If you’re collecting screen-gaze coordinates and pupillometry data, their records they will
-be intermixed, but they can be distinguished.
-
-- For screen gaze records
-  - `[left|right]_gaze_[x|y]` will be the screen coordinates in PsychoPy’s display units `[left|right]_gaze_z` will be `0`
-  - `[left|right]_eye_cam_[x|y|z]` will be `0`
-  - `left_pupil_measure1` and `left_pupil_measure1_type` will be `0`
+For eye state data in`BinocularEyeSampleEvent` records:
 - For eye state records
-  - `[left|right]_gaze_[x|y|z]` will be the optical axis vector
-  - `[left|right]_eye_cam_[x|y|z]` will be eye position
-  - `left_pupil_measure1` will be pupil diameter in mm
-  - `left_pupil_measure1_type` will be `77`
+    - `[left|right]_gaze_[x|y|z]` will be the optical axis vectors
+    - `[left|right]_eye_cam_[x|y|z]` will be eye positions
+    - `[left|right]_pupil_measure1` will be pupil diameters in mm
+    - `[left|right]_pupil_measure1_type` will be `77`
+
 
 ### Example Builder Experiment
 
@@ -74,27 +65,37 @@ Check out our simple but complete [gaze contingent demo designed in PsychoPy Bui
 
 ## Coder
 
-To use Neon with PsychoPy coder, we recommend interfacing directly with the [real-time API](https://docs.pupil-labs.com/neon/real-time-api/tutorials/)
-and, for screen-based tasks, using the [real-time-screen-gaze](https://github.com/pupil-labs/real-time-screen-gaze) package.
-`AprilTagFrameStim` and `AprilTagStim` classes are provided to more easily display screen markers and configure a screen-based gaze mapper.
+To use Neon with PsychoPy coder, you'll need to configure ioHub, add AprilTag markers to the screen, and register the screen surface with the eyetracker. The example below shows how to collect realtime gaze position and pupil diameter in PsychoPy Coder.
 
 ### Example Coder Experiment
 
 ```python
+from psychopy import visual, event
+from psychopy.core import getTime
+from psychopy.iohub import launchHubServer
+from psychopy.tools.monitorunittools import convertToPix
+
 import numpy as np
 
-from psychopy import visual, event
-from psychopy.tools.monitorunittools import convertToPix
 from psychopy_eyetracker_pupil_labs.pupil_labs.stimuli import AprilTagFrameStim
 
-from pupil_labs.realtime_api.simple import discover_one_device
-from pupil_labs.real_time_screen_gaze.gaze_mapper import GazeMapper
 
-win = visual.Window(fullscr=True, units='height', checkTiming=False)
+# Set up iohub
+iohub_config = {
+    'eyetracker.hw.pupil_labs.neon.EyeTracker': {
+        'name': 'tracker',
+        'runtime_settings': {
+            'companion_address': '192.168.1.228',
+            'companion_port': 8080,
+        },
+    }
+}
 
-gaze_circle = visual.Circle(win, radius=.02, color="red")
-text = visual.TextStim(win, text='Press "ESCAPE" to exit', height=0.05)
+win = visual.Window(fullscr=True, units='height', checkTiming=False, color='black')
+io = launchHubServer(window=win, **iohub_config)
+eyetracker = io.devices.tracker
 
+# Add a frame of AprilTag markers to the screen
 tag_frame = AprilTagFrameStim(
     win=win,
     name='tag_frame', units='norm',
@@ -103,26 +104,44 @@ tag_frame = AprilTagFrameStim(
     marker_size=0.125, marker_units='height',
     contrast=1.0,
 )
+
+# Use a red circle to show the gaze location
+gaze_circle = visual.Circle(win, radius=.02, color="red")
+
+# Register the screen surface with the eyetracker
 win_size_pix = convertToPix(np.array([2, 2]), [0, 0], 'norm', win)
+eyetracker.register_surface(tag_frame.marker_verts, win_size_pix)
 
-neon_device = discover_one_device()
-gaze_mapper = GazeMapper(neon_device.get_calibration())
-screen_surface = gaze_mapper.add_surface(tag_frame.marker_verts, win_size_pix)
+# Start a recording
+eyetracker.setRecordingState(True)
 
-while True:
-    frame, gaze = neon_device.receive_matched_scene_video_frame_and_gaze()
-    result = gaze_mapper.process_frame(frame, gaze)
+# Run for 30 seconds
+eyetracker.send_event('exp-start')
+start_time = getTime()
+while getTime() - start_time < 30:
+    # exit on escape key
+    if event.getKeys(keyList=['escape']):
+        eyetracker.send_event('user-exit')
+        break
 
-    for surface_gaze in result.mapped_gaze[screen_surface.uid]:
-        gaze_circle.pos = surface_gaze.x, surface_gaze.y
-        gaze_circle.draw()
+    # Update gaze circle radius to reflect pupil diameter
+    for eye_event in eyetracker.getEvents():
+        if eye_event.left_pupil_measure1_type == 77:
+            mean_pupil_diameter = (eye_event.left_pupil_measure1 + eye_event.right_pupil_measure1) / 2
+            gaze_circle.radius = (mean_pupil_diameter**1.5) / 100
 
-    text.draw()
+    # Update gaze circle position to reflect gaze position
+    gaze_circle.pos = eyetracker.getLastGazePosition()
+
+    # Update the screen
+    gaze_circle.draw()
     tag_frame.draw()
     win.flip()
 
-    if 'escape' in event.getKeys():
-        break
+# Stop recording
+eyetracker.setRecordingState(False)
 
-neon_device.close()
+win.close()
+io.quit()
+
 ```
