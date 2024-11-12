@@ -12,7 +12,7 @@ You can switch between gaze modes in the Companion App settings. After selecting
 
 ## Considerations When Switching to Monocular Gaze
 
-- Switching to Monocular gaze mode alters the existing gaze stream without creating an additional one. This means that all downstream processes, including fixations and enrichments, will utilise this monocular gaze data.
+- If a monocular gaze mode is selected, no binocular gaze signal will be generated. This means all downstream data, including fixations and enrichment data, will be based on monocular gaze data.
 
 - [Eye State](/data-collection/data-streams/#_3d-eye-states) and [Pupillometry](/data-collection/data-streams/#pupil-diameters) are unaffected by changes to the gaze mode and will continue to measure data for both eyes as usual.
 
