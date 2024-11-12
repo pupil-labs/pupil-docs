@@ -1,14 +1,20 @@
 # Gaze Mode
+You can configure Neon to generate binocular or monocular gaze data by changing the `Gaze Mode` in the Neon Companion app 
+settings.
 
-You can configure Neon to generate binocular or monocular gaze data by changing the `Gaze Mode` in the Neon Companion app settings.
+In `Binocular` mode, gaze data is generated using images from both the left and right eyes. This is the default setting 
+and is recommended for most users.
 
-In `Binocular` mode, gaze data is generated based on images of both the left and right eye. This is the default mode and it is recommended for most users.
-
-Some applications, e.g. some medical ones, require gaze data that is generated only based on data of one the eyes though. This can be achieved by switching to a `Monocular` gaze mode. `Monocular Left` will generate gaze data using only images of the left eye, and `Monocular Right` will only use images of the right eye.
+Some specialist applications, like ophthalmic testing, require gaze data to be generated from just one eye. This can 
+be achieved by switching to `Monocular` gaze mode. `Monocular Left` generates gaze data using only images of the left 
+eye, while `Monocular Right` uses only images of the right eye.
 
 ## Changing Gaze Modes
+You can switch between gaze modes in the Neon Companion app settings. 
 
-You can switch between gaze modes in the Companion App settings. After selecting a new gaze mode, be sure to unplug and re-plug the Neon device.
+:::info
+After selecting a new gaze mode, be sure to unplug and re-plug the Neon device.
+:::
 
 ## Considerations When Switching to Monocular Gaze
 
@@ -16,4 +22,4 @@ You can switch between gaze modes in the Companion App settings. After selecting
 
 - [Eye State](/data-collection/data-streams/#_3d-eye-states) and [Pupillometry](/data-collection/data-streams/#pupil-diameters) are unaffected by the gaze mode configuration and will always be generated using images from **both** eyes.
 
-- If a monocular gaze mode is selected, Pupil Cloud will **not** re-process a recording to obtain a 200 Hz signal. Instead, Pupil Cloud will use the real-time signal, which may be lower than 200 Hz depending on which Companion device is used.
+- If a monocular gaze mode is selected, Pupil Cloud will **not** re-process a recording to obtain a 200 Hz signal. Instead, Pupil Cloud will use the real-time signal, which may be lower than 200 Hz depending on which Companion device was used, and which gaze rate was selected in the Neon Companion app settings.
