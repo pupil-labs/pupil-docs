@@ -1,6 +1,10 @@
 # Gaze Mode
 
-In the Neon Companion App, you can select between Binocular (default) or Monocular (left or right) gaze modes. Binocular mode captures gaze data from both eyes, and is recommended for most users. Monocular mode generates gaze data from a single eye (left or right, as chosen by the user), and is advisable only for those who specifically need it.
+You can configure Neon to generate binocular or monocular gaze data by changing the `Gaze Mode` in the Neon Companion app settings.
+
+In `Binocular` mode, gaze data is generated based on images of both the left and right eye. This is the default mode and it is recommended for most users.
+
+Some applications, e.g. some medical ones, require gaze data that is generated only based on data of one the eyes though. This can be achieved by switching to a `Monocular` gaze mode. `Monocular Left` will generate gaze data using only images of the left eye, and `Monocular Right` will only use images of the right eye.
 
 ## Changing Gaze Modes
 
