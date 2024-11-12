@@ -34,6 +34,7 @@ This file contains meta-information on the recording.
 | **start_time**           | Timestamp of when the recording was started. Given as UTC timestamp in nanoseconds.                                            |
 | **template_data**        | Data regarding the selected template for the recording as well as the response values.                                         |
 | **wearer_id**            | Unique identifier of the wearer selected for this recording.                                                                   |
+| **gaze_mode**            | Indicates whether binocular or monocular (right/ left) pipeline was used to infer gaze.                                        |
 | **wearer_name**          | Name of the wearer selected for this recording.                                                                                |
 | **workspace_id**         | The ID of the Pupil Cloud workspace this recording has been assigned to.                                                       |
 

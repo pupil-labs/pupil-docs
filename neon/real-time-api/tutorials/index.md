@@ -36,6 +36,7 @@ print(f"Battery level: {device.battery_level_percent}%")
 print(f"Free storage: {device.memory_num_free_bytes / 1024**3:.1f} GB")
 print(f"Serial number of connected glasses: {device.serial_number_glasses}")
 ```
+
 ```
 Phone IP address: 192.168.1.168
 Phone name: OnePlus8
@@ -63,6 +64,7 @@ time.sleep(5)
 
 device.recording_stop_and_save()
 ```
+
 ```
 Started recording with id 2f99d9f9-f009-4015-97dd-eb253de443b0
 ```
@@ -89,6 +91,7 @@ print(device.send_event("test event 2", event_timestamp_unix_ns=time.time_ns()))
 
 device.recording_stop_and_save()
 ```
+
 ```
 Event(name=None recording_id=None timestamp_unix_ns=1642599117043000000 datetime=2022-01-19 14:31:57.043000)
 Event(name=None recording_id=fd8c98ca-cd6c-4d3f-9a05-fbdb0ef42668 timestamp_unix_ns=1642599122555200500 datetime=2022-01-19 14:32:02.555201)
@@ -121,7 +124,9 @@ scene_image_rgb = cv2.cvtColor(scene_sample.bgr_pixels, cv2.COLOR_BGR2RGB)
 plt.imshow(scene_image_rgb)
 plt.scatter(gaze_sample.x, gaze_sample.y, s=200, facecolors='none', edgecolors='r')
 ```
+
 The output data would look as follows:
+
 ```
 This sample contains the following data:
 
@@ -135,6 +140,7 @@ For the left eye x, y, z: -30.087890625, 10.048828125, -52.4462890625 and for th
 Directional vector describing the optical axis of the left and right eye.
 For the left eye x, y, z: -0.05339553952217102, 0.12345726788043976, 0.9909123182296753 and for the right eye x, y, z: -0.40384653210639954, 0.11708031594753265, 0.9073038101196289.
 ```
+
 Alternatively, you could also use the [`receive_scene_video_frame`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.receive_scene_video_frame) and [`receive_gaze_datum`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.receive_gaze_datum) methods to obtain each sample separately. The [`receive_matched_scene_video_frame_and_gaze`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.receive_matched_scene_video_frame_and_gaze) method does however also ensure that both samples are matched temporally.
 
 ## IMU Data
@@ -161,7 +167,9 @@ print(imu_sample.accel_data)
 print(f"Gyro data:")
 print(imu_sample.gyro_data)
 ```
+
 The output data would look as follows:
+
 ```
 This IMU sample was recorded at 2023-05-25 11:23:05.749155
 It contains the following data:
@@ -200,6 +208,7 @@ print(calibration["left_distortion_coefficients"][0])
 ```
 
 ## Template Data
+
 You can access the response data entered into the template questionnaire on the phone and also set those responses remotely.
 
 Using the [`get_template`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.get_template) method, you can receive the definition of the template containing all questions and sections.
@@ -209,6 +218,7 @@ template = device.get_template()
 fstring = "{i.id}\t{i.title}\t{i.widget_type} \t{i.choices}"
 print("\n".join(fstring.format(i=i) for i in template.items))
 ```
+
 ```
 e3b94cc7-dce4-4781-a818-f769574c31d2    Section 1       SECTION_HEADER  []
 a54e85aa-5474-42f8-90c0-19f40e9ca825    Question 1      TEXT            []
@@ -224,6 +234,7 @@ Using the [`get_template_data`](https://pupil-labs-realtime-api.readthedocs.io/e
 data = device.get_template_data()
 print("\n".join(f"{k}\t{v}" for k, v in data.items()))
 ```
+
 ```
 6169276c-91f4-4ef9-8e03-45759ff61477    ['a']
 3c7d620f-9f98-4556-92dd-b66df329999c    An example paragraph.
@@ -243,12 +254,13 @@ questionnaire = {
 device.post_template_data(questionnaire)
 ```
 
-You can also retrieve individual questions by their ID using the [`get_question_by_id`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/models.html#pupil_labs.realtime_api.models.Template.get_question_by_id) method and check the validity of a response using the [`validate_answer`]( https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/models.html#pupil_labs.realtime_api.models.TemplateItem.validate_answer) method.
+You can also retrieve individual questions by their ID using the [`get_question_by_id`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/models.html#pupil_labs.realtime_api.models.Template.get_question_by_id) method and check the validity of a response using the [`validate_answer`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/models.html#pupil_labs.realtime_api.models.TemplateItem.validate_answer) method.
 
 ```python
 question = template.get_question_by_id("6169276c-91f4-4ef9-8e03-45759ff61477")
 question.validate_answer(["invalid_option"])
 ```
+
 ```
 pupil_labs/realtime_api/models.py", line 346, in validate_answer
     raise InvalidTemplateAnswersError(self, answers, errors)

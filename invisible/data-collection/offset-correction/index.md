@@ -1,7 +1,8 @@
 # Using Offset Correction to Improve Gaze Accuracy
-For some wearers, you may find a constant offset in their gaze estimates. Especially in setups where wearers gaze at somethings that is less than 1 meter away from them this can happen due to parallax error. 
 
-To compensate for those offsets, you can use the Offset Correction feature in the Pupil Invisible Companion App. See the video below to learn how it works! The video is using demonstrating the feature within the Neon Companion App, but the approach is very similar.
+For some wearers, you may find a constant offset in their gaze estimates. Especially in setups where wearers gaze at somethings that is less than 1 meter away from them this can happen due to parallax error.
+
+To compensate for those offsets, you can use the Offset Correction feature in the Pupil Invisible Companion App. See the video below to learn how it works! The video is using demonstrating the feature within the Neon Companion app, but the approach is very similar.
 
 <Youtube src="7weK8UPLOzo" />
 

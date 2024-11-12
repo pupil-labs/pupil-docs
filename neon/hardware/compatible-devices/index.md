@@ -1,7 +1,8 @@
 # Companion Device
-The Companion device is a flagship Android smartphone. It is a regular phone that is not customized or modified in any way. To ensure maximum stability and performance we can only support a small number of carefully selected and tested models. The Neon Companion app is tuned to work with these particular models as we require full control over various low-level functions of the hardware. 
 
-The supported models are:  OnePlus 8, OnePlus 8T, OnePlus 10 Pro, and Motorola Edge 40 Pro. Currently, Neon ships with a Motorola Edge 40 Pro. We highly recommend the Edge 40 Pro, giving you the best performance, endurance and stability.
+The Companion device is a flagship Android smartphone. It is a regular phone that is not customized or modified in any way. To ensure maximum stability and performance we can only support a small number of carefully selected and tested models. The Neon Companion app is tuned to work with these particular models as we require full control over various low-level functions of the hardware.
+
+The supported models are: OnePlus 8, OnePlus 8T, OnePlus 10 Pro, and Motorola Edge 40 Pro. Currently, Neon ships with a Motorola Edge 40 Pro. We highly recommend the Edge 40 Pro, giving you the best performance, endurance and stability.
 
 If you want to replace or add an extra Companion device you can purchase it [directly from us](https://pupil-labs.com/products/neon) or from any other distributor. The Neon Companion app is free and can be downloaded from the [Play Store](https://play.google.com/store/apps/details?id=com.pupillabs.neoncomp).
 
@@ -9,13 +10,14 @@ Using a fully charged Motorola Edge 40 Pro device you get around 4 hours of cont
 
 ## Companion Device Updates
 
-### Neon Companion app
-Make sure to update the Neon Companion app on a regular basis. The latest version will always be available on the 
+### Neon Companion App
+
+Make sure to update the Neon Companion app on a regular basis. The latest version will always be available on the
 [Play Store](https://play.google.com/store/apps/details?id=com.pupillabs.neoncomp).
 
 ### Android OS
-We ship each Companion Device with a specific Android Version, carefully tested to ensure robustness and stability.
 
+We ship each Companion Device with a specific Android Version, carefully tested to ensure robustness and stability.
 
 The currently supported Android versions are as follows:
 
