@@ -14,6 +14,6 @@ You can switch between gaze modes in the Companion App settings. After selecting
 
 - If a monocular gaze mode is selected, no binocular gaze signal will be generated. This means all downstream data, including fixations and enrichment data, will be based on monocular gaze data.
 
-- [Eye State](/data-collection/data-streams/#_3d-eye-states) and [Pupillometry](/data-collection/data-streams/#pupil-diameters) are unaffected by changes to the gaze mode and will continue to measure data for both eyes as usual.
+- [Eye State](/data-collection/data-streams/#_3d-eye-states) and [Pupillometry](/data-collection/data-streams/#pupil-diameters) are unaffected by the gaze mode configuration and will always be generated using images from **both** eyes.
 
 - Pupil Cloud will **not** re-process recordings at 200 Hz as with default binocular recordings. Only real-time recorded monocular gaze will be saved for processing with enrichments.
