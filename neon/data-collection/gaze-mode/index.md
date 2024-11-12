@@ -6,7 +6,7 @@ In `Binocular` mode, gaze data is generated using images from both the left and 
 and is recommended for most users.
 
 Some specialist applications, like ophthalmic testing, require gaze data to be generated from just one eye. This can 
-be achieved by switching to `Monocular` gaze mode. `Monocular Left` generates gaze data using only images of the left 
+be achieved by switching to a `Monocular` gaze mode. `Monocular Left` generates gaze data using only images of the left 
 eye, while `Monocular Right` uses only images of the right eye.
 
 ## Changing Gaze Modes
