@@ -51,6 +51,7 @@ let theme_config_additions = {
       items: [
         { text: "Undistort Video and Gaze Data", link: "/undistort/" },
         { text: "Use Neon with Pupil Capture", link: "/neon-with-capture/" },
+        { text: "Automate Event Annotations with Pupil Cloud and GPT", link: "/event-automation-gpt/" }
       ],
     },
   ],

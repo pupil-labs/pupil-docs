@@ -57,7 +57,7 @@
       "href": "/alpha-lab/scanpath-rim/#generate-static-and-dynamic-scanpaths"
     },
     "image": "/alpha-lab/scanpath_image_nad.webp",
-    "category": "Gaze Mapping"
+    "category": "Reference Image Mapper"
   },
   {
     "title": "Uncover Gaze Behaviour on Phones",
@@ -158,5 +158,15 @@
     },
     "image": "/alpha-lab/imu-transformations.webp",
     "category": "Coordinate Systems"
-  }
+  },
+  {
+    "title": "Automate Event Annotations with Pupil Cloud and GPT",
+    "details": "Automatically annotate important activities and events in your Pupil Cloud recordings with GPT-4o.",
+    "link": {
+        "text": "View",
+        "href": "/alpha-lab/event-automation-gpt/"
+    },
+    "image": "/alpha-lab/event-annotation.webp",
+    "category": "Other"
+}
 ]
