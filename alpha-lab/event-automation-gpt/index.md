@@ -39,7 +39,7 @@ demonstrate how to build your own GPT-based personal annotation assistant!
 In eye tracking research, analyzing recordings and identifying key moments—such as when users interact with specific 
 objects—has typically required a tedious, frame-by-frame review. This manual process is time-consuming and limits scalability.
 
-In this article, we explore how automation can overcome these challenges. Using a Large Multimodal Model (GPT-4o), we 
+In this article, we explore how automation can overcome these challenges. Using a Large Multimodal Model (OpenAI's GPT-4o), we 
 experiment with prompts to detect specific actions, such as reaching for an object, or what features of the environment 
 were being gazed at, and automatically add the respective annotations to [Pupil Cloud](https://pupil-labs.com/products/cloud) 
 recordings via the Pupil Cloud API. While still in its early stages, this approach shows promise in making the annotation 
