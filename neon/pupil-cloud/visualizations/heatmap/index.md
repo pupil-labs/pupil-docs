@@ -6,7 +6,7 @@ For example, below and to the left is a view of a kitchen that was used as a ref
 
 ![An example of a heatmap from Pupil Cloud. On the left is a photo of a kitchen countertop. On the right is the same photo with a fixation heatmap overlayed.](heatmap_example.png)
 
-The Heatmap is a Gaussian blurred 2D histogram of fixation data from all selected recordings. No normalization for recording time is performed, so longer recordings will carry more weight and contribute more to the Heatmap.
+The Heatmap is a Gaussian blurred 2D histogram of fixation data from all selected recordings mapped to the reference image. No normalization for recording time is performed, so longer recordings will carry more weight and contribute more to the Heatmap.
 
 The colors in the heatmap range from 0 to 100%, as indicated by the color bar to the right. A value of 0% means a point was never fixated and 100% means it had the longest fixation duration.
 
