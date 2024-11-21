@@ -163,10 +163,20 @@
     "title": "Automate Event Annotations with Pupil Cloud and GPT",
     "details": "Automatically annotate important activities and events in your Pupil Cloud recordings with GPT-4o.",
     "link": {
-        "text": "View",
-        "href": "/alpha-lab/event-automation-gpt/"
+      "text": "View",
+      "href": "/alpha-lab/event-automation-gpt/"
     },
     "image": "/alpha-lab/event-annotation.webp",
     "category": "Other"
-}
+  },
+  {
+    "title": "Map Gaze Onto an Alternative Egocentric Video",
+    "details": "Automatically map gaze from Neon scene camera to an alternative concurrent egocentric video.",
+    "link": {
+      "text": "View",
+      "href": "/alpha-lab/egocentric-video-mapper/"
+    },
+    "image": "/alpha-lab/egocentric-video-mapper.webp",
+    "category": "Gaze Mapping"
+  }
 ]
