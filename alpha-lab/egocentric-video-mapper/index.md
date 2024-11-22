@@ -10,7 +10,7 @@ meta:
   - name: twitter:image
     content: "https://i.ytimg.com/vi/YT_VIDEO_CODE/maxresdefault.jpg"
   - name: twitter:player
-    content: "https://www.youtube.com/embed/YT_VIDEO_CODE"
+    content: "https://www.youtube.com/embed/dhcN1erSTfo"
   - name: twitter:width
     content: "1280"
   - name: twitter:height
