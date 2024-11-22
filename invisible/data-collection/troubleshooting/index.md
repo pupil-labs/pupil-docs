@@ -32,7 +32,11 @@ If you upgraded to Android 10 or newer and want to roll back, follow these steps
 
 **OnePlus 8/8T**
 
-If you upgraded to Android 12 or newer and want to roll back, follow these steps:
+::: tip
+If you upgraded to Android 13 or newer and want to roll back, please reach out to info@pupil-labs.com
+:::
+
+If you upgraded to Android 12 and want to roll back, follow these steps:
 
 1. Download the ROM package for your corresponding phone model to your computer
 
