@@ -28,7 +28,7 @@ import TagLinks from '@components/TagLinks.vue'
 
 <TagLinks :tags="$frontmatter.tags" />
 
-<Youtube src="YT_VIDEO_CODE"/>
+<Youtube src="dhcN1erSTfo"/>
 
 **Desc for video**
 
