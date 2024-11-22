@@ -30,8 +30,6 @@ import TagLinks from '@components/TagLinks.vue'
 
 <Youtube src="dhcN1erSTfo"/>
 
-**Desc for video**
-
 ::: tip
 Ever wanted to integrate egocentric video streams from specialized third-party cameras into your eye-tracking experiments? This Alpha Lab article shows you how! Just ensure Neon and the additional camera have similar views, then hit record.Our software will do the rest. 
 :::
