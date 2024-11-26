@@ -8,7 +8,7 @@ meta:
   - name: twitter:card
     content: player
   - name: twitter:image
-    content: "https://i.ytimg.com/vi/YT_VIDEO_CODE/maxresdefault.jpg"
+    content: "https://i.ytimg.com/vi/dhcN1erSTfo/maxresdefault.jpg"
   - name: twitter:player
     content: "https://www.youtube.com/embed/dhcN1erSTfo"
   - name: twitter:width
@@ -16,7 +16,7 @@ meta:
   - name: twitter:height
     content: "720"
   - property: og:image
-    content: "https://i.ytimg.com/vi/YT_VIDEO_CODE/maxresdefault.jpg"
+    content: "https://i.ytimg.com/vi/dhcN1erSTfo/maxresdefault.jpg"
 
 tags: [Neon]
 ---
@@ -31,7 +31,7 @@ import TagLinks from '@components/TagLinks.vue'
 <Youtube src="dhcN1erSTfo"/>
 
 ::: tip
-Ever wanted to integrate egocentric video streams from specialized third-party cameras into your eye-tracking experiments? This Alpha Lab article shows you how! Just ensure Neon and the additional camera have similar views, then hit record.Our software will do the rest. 
+Ever wanted to integrate egocentric video streams from specialized third-party cameras into your eye-tracking experiments? This Alpha Lab article shows you how! Just ensure Neon and the additional camera have similar views, then hit record. Our software will do the rest. 
 :::
 
 ## Combine Neon With Specialized Egocentric Cameras
