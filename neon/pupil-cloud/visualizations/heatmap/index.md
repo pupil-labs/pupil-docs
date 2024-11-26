@@ -14,7 +14,7 @@ The output of the Heatmap Visualization is two image files: one image with just 
 
 :::: details Implementation Details
 
-1. Compute the 2D histogram over the raw fixation data of all recordings. The histogram has the same aspect ratio as the reference image, with the wider side set to 300 bins:
+1. Compute the 2D histogram over the fixation data of all selected recordings. The histogram has the same aspect ratio as the reference image, with the wider side set to 300 bins:
     
     ```
     fixation_histogram2d = hist2d(fixation_x, fixation_y, bins=[nbins_x, nbins_y])
