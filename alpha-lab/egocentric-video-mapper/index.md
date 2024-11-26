@@ -101,7 +101,7 @@ After executing the code, the following files will be generated:
 - When mapping fixations only:
   - `alternative_camera_fixations.csv` - follows a similar structure as fixations.csv. This way you can easily integrate it into your existing pipelines.
 - When mapping the full gaze signal at 200Hz:
-  - `alternative_camera_gaze.csv `- follows a similiar structure as gaze.csv, with the frequency of the gaze signal (200Hz) being preserved. This way you can easily integrate it into your existing pipelines.
+  - `alternative_camera_gaze.csv `- follows a similar structure as gaze.csv, with the frequency of the gaze signal (200Hz) being preserved. This way you can easily integrate it into your existing pipelines.
   - `alternative_camera_gaze_overlay.mp4` (optional) - A video rendering of an alternative camera recording displaying a circle for the mapped gaze position. This video will preserve the original frame rate of the alternative camera recording.
   - `alternative_camera-neon_comparison.mp4` (optional) - A comparison video showing side by side the Neon scene camera video and the alternative camera video with their respective gaze signal overlaid.
 - Mapping both the fixations and the gaze signal will result in all the files mentioned above.
