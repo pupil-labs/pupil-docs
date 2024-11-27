@@ -12,8 +12,10 @@ Only accounts that have been invited to become members of a workspace are grante
 Public sharing of data with people outside of a workspace is **not** currently possible.
 
 ### Workspace privacy settings
-Privacy settings can be set up upon workspace creation, and cannot be changed once the workspace has been created. Find more information Face Blurring [here](/pupil-cloud/add-on/).
+Privacy settings can be set up upon workspace creation, and cannot be changed once the workspace has been created. F
 ![Workspace settings](./workspace_settings.png)
+
+### Frequently Asked Questions
 
 **When should I use workspaces?**
 
