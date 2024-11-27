@@ -14,10 +14,6 @@ The face detection algorithm used under the hood for this enrichment is [RetinaF
 
 After the enrichment is successfully run, the recording timeline contains visualizations that indicate when faces were detected.
 
-<video width="100%" controls>
-  <source src="./validate_facemapper.mp4" type="video/mp4">
-</video>
-
 ## Export Format
 
 ### face_positions.csv
