@@ -31,6 +31,10 @@ Note that the markers require a white border around them to be robustly detected
 
 ## Selecting Markers in the Cloud
 
+<video width="100%" controls>
+  <source src="./mm_define.mp4" type="video/mp4">
+</video>
+
 By default, all visible markers are used for surface definition when creating a surface. You can add or remove markers by clicking on them. Markers that are part of the definition are shown in green, while others are shown in red.
 
 Note that when adding a new marker to the surface definition, another marker that is already part of the definition has to be visible within the same video frame.
@@ -46,8 +50,24 @@ The Marker Mapper maps gaze points to a 2D surface and returns them in surface c
 The mapper may return values outside of the surface, which yields values smaller than 0 or larger than 1, indicating that the corresponding gaze was not on the surface at that time.
 
 ::: tip
-**Orientation:** The red border marks the top edge of the surface. You can rotate the surface by clicking on the "Rotate Surface" button.
+**Orientation:** The red border marks the top edge of the surface. You can rotate the surface by clicking on "Rotate Surface" under the ellipsis next to 'Surface Defined'.
 :::
+
+## Select image to be used in Marker Mapper visualizations
+
+<video width="100%" controls>
+  <source src="./mm_imageupload.mp4" type="video/mp4">
+</video>
+
+You can select the image to be used in Marker Mapper visualizations. You can either pick a frame from a scene video, or you can upload a dedicated image that contains the surface. Images should contain the selected markers, and will be cropped according to the surface definition. The selected image will be used in the side-by-side view and as the background for AOI and heat map visualizations.
+
+## Validate the Mapping
+
+After the enrichment is successfully run, the recording timeline contains visualizations that indicate when surface was localized, and when gaze was on the surface.
+
+<video width="100%" controls>
+  <source src="./mm_enrichment_viz.mp4" type="video/mp4">
+</video>
 
 ## Export Format
 

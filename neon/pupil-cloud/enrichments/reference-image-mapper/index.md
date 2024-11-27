@@ -129,7 +129,9 @@ Why not try replicating the above examples? Or even try it with your own use cas
 
 ## Validate the Gaze Mapping
 
-![Reference Image Mapper in Pupil Cloud](./rim-in-cloud.png)
+<video width="100%" controls>
+  <source src="./validate_rim.mp4" type="video/mp4">
+</video>
 
 To check if gaze has been mapped successfully, use the side-by-side view:
 
