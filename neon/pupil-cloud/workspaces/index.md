@@ -9,7 +9,7 @@ Only accounts that have been invited to become members of a workspace are grante
 - **Admin**: Has all permissions of an editor and additionally can invite and remove workspace members and change workspace members' roles.
 - **Owner**: The owner of a workspace is the one who initially created the workspace. Owners have all permissions of an Admin. The owner of a workspace can not be changed.
 
-Public sharing of data with people outside of a workspace is **not** currently possible.### Access Control
+Public sharing of data with people outside of a workspace is **not** currently possible.
 
 ### Workspace privacy settings
 Privacy settings can be set up upon workspace creation, and cannot be changed once the workspace has been created. Find more information Face Blurring [here](/pupil-cloud/add-on/).
