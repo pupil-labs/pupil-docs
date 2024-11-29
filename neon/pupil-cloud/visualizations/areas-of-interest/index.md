@@ -6,7 +6,7 @@ The AOI Editor allows you to draw areas of interest (AOIs) on top of the referen
 
 ### AOI Editing and Drawing
 
-Upon completion of the enrichment, access the main view of the enrichment by navigating to the **`Enrichments`** tab and selecting **`Edit AOIs`** under the section **`Tools`**.
+Upon completion of the enrichment, access the main view of the enrichment by navigating to the **`Enrichments`** tab and selecting **`Edit`** next to **`Areas of Interest`**.
 
 ![Edit AOIs](./AOI_enrichment_view.png)
 

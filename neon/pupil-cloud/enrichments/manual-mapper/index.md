@@ -1,6 +1,8 @@
 # Manual Mapper
 
-![Manual Mapper header image](./manual_mapper_header.png)
+<video width="100%" controls>
+  <source src="./manualmapper_header.mp4" type="video/mp4">
+</video>
 
 The Manual Mapper offers a simple interface for manually mapping fixations to a reference image, aiding gaze data visualization and analysis. Click on the reference image to map a fixation and the recording auto-advances to the next one. Fixations outside the image can be marked by clicking beyond the image boundary.
 
@@ -11,7 +13,7 @@ The Manual Mapper offers a simple interface for manually mapping fixations to a 
     - The field `Fixation` shows the ID of the current fixation.
     - The field `Recording Mapping Progress` indicates how many fixations have been mapped within the specified enrichment section.
 
-In the example below, we manually map the fixations detected between the `epoch_start` and `epoch_end` events. This section includes 44 fixations in total, and we currently map the fixation with ID 72.
+In the example below, we manually map the fixations detected between the `manual.start` and `manual.end` events. This section includes 101 fixations in total, and we currently map the fixation with ID 15.
 
 ![Manual Mapper image one](./image_1_mapper.png)
 
@@ -19,6 +21,10 @@ You will see all fixations and their durations visualized in the timeline below.
 
 ![Manual Mapper image two](./image_2_mapper.png)
 
+::: tip
+**Move between unmapped fixations**<br>
+Use <kbd>Shift+A</kbd> to move to the previous unmapped fixation, and <kbd>Shift+D</kbd> to move to the next unmapped fixation. 
+:::
 
 ## Export Format
 

@@ -1,6 +1,10 @@
 # What Are Enrichments?
 Enrichments are tools that allow you to explore and visualize your data in new ways. These tools require complex algorithms and significant computational resources. Now, we put them at your fingertips, as you can run them with just a few clicks in Pupil Cloud. With enrichments, you can add new dimensions and derive new insights from your data. We can't wait to see how you use them!
 
+<video width="100%" controls>
+  <source src="./create_enrichment.mp4" type="video/mp4">
+</video>
+
 ## What Can I Do With Enrichments?
 From mapping your gaze to real-world features of the environment, like surfaces, 3d objects, and faces, to aggregating and visualizing your data, enrichments can help you get the most out of your recordings. See below for a list of all available enrichments and their use cases.
 

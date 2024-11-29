@@ -10,6 +10,14 @@ Additionally, this enrichment also calculates the location of the most important
 
 The face detection algorithm used under the hood for this enrichment is [RetinaFace](https://github.com/deepinsight/insightface/tree/master/detection/retinaface).
 
+## Validate the Mapping
+
+After the enrichment is successfully run, the recording timeline contains visualizations that indicate when faces were detected.
+
+<video width="100%" controls>
+  <source src="./validate_facemapper.mp4" type="video/mp4">
+</video>
+
 ## Export Format
 
 ### face_positions.csv
