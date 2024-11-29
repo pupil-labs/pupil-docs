@@ -1,7 +1,7 @@
 # What Are Add-ons?
-Pupil Cloud Add-ons allow you to selectively upgrade services for your eye tracking device. Add-ons can be purchased through the Pupil Labs [website](https://pupil-labs.com/products/cloud/pricing). Each add-on is bound to a Neon device.
+Pupil Cloud add-ons allow you to selectively upgrade services for your eye tracking device. Add-ons can be purchased through the Pupil Labs [website](https://pupil-labs.com/products/cloud/pricing). Each add-on is bound to a device.
 
-# Register an add-on
+## Register an Add-on
 Typically registering an add-on can be done by clicking on a link that we send in an email when you purchase the add-on.
 
 To manually register an add-on: 
@@ -15,32 +15,27 @@ To manually register an add-on:
   <source src="./register_addon.mp4" type="video/mp4">
 </video>
 
-# Devices
+## Link a Device
 
-## Link a device
+Depending on the add-on you purchased, they can be linked with a fixed number of eye tracking device. Linking a device with an add-on unlocks the functionality of the add-on for the device. 
 
-Add-ons must be linked to at least Neon eye tracking device. If you have an Add-on with multiple devices, you can add more than one eye tracking device. After adding your add-on, click Link device in the table. Find your device ID from your Companion App; if your device has been added or has been used to make a recording in a Workspace you own, it will automatically show up in the dropdown.
+To link a device with a registered add-on, click `Link device` in the table. The drop-down menu for the hardware serial will contain the serials of all the devices that have uploaded recordings to one of your workspaces before. You can also obtain the serial of a new device via the Neon Companion app and enter it here.
 
 <video width="100%" controls>
   <source src="./link_device.mp4" type="video/mp4">
 </video>
 
-## Devices view
+## Devices View
 
-The Devices view shows devices that have uploaded to any workspace that you own. Here you can check how much storage each device that has uploaded to your workspaces has used out of your quota. 
+The Devices view shows devices that have uploaded to workspaces you own. Here you can check how much storage each device is using in and compare this to their quota. 
 
-You can also see workspaces to which your device has uploaded by double clicking on the device in the table, and jump to that workspace.
+You can also the workspaces each device has uploaded to by double clicking on a device in the table.
 
 ![Devices Linking Devices](./link_device.png)
 
 ![Devices Storage](./device_storage.png)
 
 ::: info
-**To blur faces in recordings on upload:**<br>
-Blurring faces on upload requires an Anonymization Add-on. If you have already purchased an anonymization add-on, you can set it up:
-
-1. Register your Anonymization add-on (see Registering an add-on)
-2. Link your device to the add-on
-3. [Create a workspace] with Face Blurring **On**. Important note: you can not undo this option after a workspace has been created. 
-4. Upload to that workspace.
+**Enabling recording anonymization on upload:**<br>
+Anonymizing recording on upload requires an Anonymization Add-on. If you have registered an Anonymization Add-on and linked a device to it you can you create a new workspace and enable `Face Blurring`. Any recording uploaded to this workspace will be anonymized.
 :::

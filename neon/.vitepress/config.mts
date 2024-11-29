@@ -164,6 +164,7 @@ let theme_config_additions = {
           { text: "Projects", link: "/pupil-cloud/projects/" },
           { text: "Workspaces", link: "/pupil-cloud/workspaces/" },
           { text: "Offset Correction", link: "/pupil-cloud/offset-correction/" },
+          { text: "Add-ons", link: "/pupil-cloud/add-ons/" },
         ],
       },
       {
