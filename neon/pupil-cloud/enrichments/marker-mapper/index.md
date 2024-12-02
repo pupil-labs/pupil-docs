@@ -41,8 +41,6 @@ Note that when adding a new marker to the surface definition, another marker tha
 
 A surface definition always needs to contain at least 2 markers. Thus, at least 2 markers have to be visible in the video frame when initially creating the surface, and you cannot remove further markers from the surface definition when the marker count is down to 2.
 
-![Marker Mapper marker selection](./marker_mapper_additional.png)
-
 ## Surface Coordinates
 
 The Marker Mapper maps gaze points to a 2D surface and returns them in surface coordinates. The top left corner of the surface is defined as `(0, 0)`, and the bottom right corner is defined as `(1, 1)`. The orientation of the surface can be set in the enrichment settings.
