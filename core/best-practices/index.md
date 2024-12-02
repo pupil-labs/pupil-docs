@@ -122,7 +122,7 @@ that have unreasonable durations
 ### Pupil Detection and Blinks
 It is worth noting that poor pupil detection in general can lead to false negatives. In such instances, adjusting the 
 thresholds can make it easier to detect blinks, but also increases the chance of false positives. It is worth taking the 
-time to ensure an optimal setup with regards to [eye camera positioning](/#_3-check-pupil-detection) and 
+time to ensure an optimal setup with regards to [eye camera positioning](/getting-started/#_3-check-pupil-detection) and 
 [2d detector settings](/software/pupil-capture/#fine-tuning-pupil-detection) so that the pupils are well-detected
 when the eyes are open.
 
