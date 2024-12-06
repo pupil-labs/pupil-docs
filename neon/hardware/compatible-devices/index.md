@@ -26,6 +26,7 @@ The currently supported Android versions are as follows:
 - On **Moto Edge 40 Pro**: Android 13 and 14
 - On **Moto Edge + (2023)**: Android 13 and 14
 - On **Moto X40 Pro**: Android 13 and 14 (global ROM required)
+- On **Samsung Galaxy Tab S9** (experimental device)
 
 :::danger
 We recommend that you don't allow Android system updates on your device that are not listed above. Some Android versions have issues with accessing USB devices, rendering them incompatible with Neon.
