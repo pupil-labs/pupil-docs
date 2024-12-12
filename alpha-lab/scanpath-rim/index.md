@@ -63,30 +63,3 @@ After running the notebook, you'll find the following files in your folder:
 ::: tip
 Need guidance in further customising your scanpath visualisations? Reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for dedicated support options.
 :::
-
-<style scoped>
-    img, iframe {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        box-sizing: border-box;
-    }
-
-    .iframe-container2 {
-        position: relative;
-        width: 100%;
-        padding-bottom: 75%;
-        margin-bottom: 10px;
-        height: 0;
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    .iframe-container2 iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-</style>
