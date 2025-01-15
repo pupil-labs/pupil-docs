@@ -1,10 +1,12 @@
 # What Are Add-ons?
+
 Pupil Cloud add-ons allow you to selectively upgrade services for your eye tracking device. Add-ons can be purchased through the Pupil Labs [website](https://pupil-labs.com/products/cloud/pricing). Each add-on is bound to a device.
 
 ## Register an Add-on
+
 Typically registering an add-on can be done by clicking on a link that we send in an email when you purchase the add-on.
 
-To manually register an add-on: 
+To manually register an add-on:
 
 1. Click on the top right account avatar in the navigation bar, and then “Account Settings”
 2. In the Cloud Add-ons tab, click on “Register Add-on”
@@ -17,7 +19,7 @@ To manually register an add-on:
 
 ## Link a Device
 
-Depending on the add-on you purchased, they can be linked with a fixed number of eye tracking device. Linking a device with an add-on unlocks the functionality of the add-on for the device. 
+Depending on the add-on you purchased, they can be linked with a fixed number of eye tracking device. Linking a device with an add-on unlocks the functionality of the add-on for the device.
 
 To link a device with a registered add-on, click `Link device` in the table. The drop-down menu for the hardware serial will contain the serials of all the devices that have uploaded recordings to one of your workspaces before. You can also obtain the serial of a new device via the Companion app and enter it here.
 
@@ -27,7 +29,7 @@ To link a device with a registered add-on, click `Link device` in the table. The
 
 ## Devices View
 
-The Devices view shows devices that have uploaded to workspaces you own. Here you can check how much storage each device is using in and compare this to their quota. 
+The Devices view shows devices that have uploaded to workspaces you own. Here you can check how much storage each device is using in and compare this to their quota.
 
 You can also the workspaces each device has uploaded to by double clicking on a device in the table.
 
@@ -39,3 +41,7 @@ You can also the workspaces each device has uploaded to by double clicking on a 
 **Enabling recording anonymization on upload:**<br>
 Anonymizing recording on upload requires an Anonymization Add-on. If you have registered an Anonymization Add-on and linked a device to it you can you create a new workspace and enable `Face Blurring`. Any recording uploaded to this workspace will be anonymized.
 :::
+
+## Sharing Add-on Benefits
+
+If you have activated an Add-on for a given device, then you can [invite Collaborators to the Workspaces](https://docs.pupil-labs.com/neon/pupil-cloud/workspaces/) where that device is used and they will also benefit from the Add-on. For example, if you have a device linked to a registered Unlimited Storage Add-on, then Collaborators in the respective Workspace will also see all recordings from that device and can run Enrichments on them, as well as download the data, even if the Collaborators have free accounts. The Collaborators will also experience the Add-on benefits if they use their account in the [Neon Companion app](https://docs.pupil-labs.com/neon/data-collection/ecosystem-overview/#neon-companion-app) with the linked device, provided they upload to the appropriate Workspace.
