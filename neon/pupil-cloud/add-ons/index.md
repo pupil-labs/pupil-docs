@@ -4,7 +4,7 @@ Pupil Cloud add-ons allow you to selectively upgrade services for your eye track
 
 ## Register an Add-on
 
-Typically registering an add-on can be done by clicking on a link that we send in an email when you purchase the add-on.
+Add-ons are registered with a single user account. Typically registering an add-on can be done by clicking on a link that we send in an email when you purchase the add-on.
 
 To manually register an add-on:
 
@@ -19,7 +19,7 @@ To manually register an add-on:
 
 ## Link a Device
 
-Depending on the add-on you purchased, they can be linked with a fixed number of eye tracking device. Linking a device with an add-on unlocks the functionality of the add-on for the device.
+Depending on the add-on you purchased, they can be linked with a fixed number of eye tracking devices. Linking a device with an add-on unlocks the functionality of the add-on for the device.
 
 To link a device with a registered add-on, click `Link device` in the table. The drop-down menu for the hardware serial will contain the serials of all the devices that have uploaded recordings to one of your workspaces before. You can also obtain the serial of a new device via the Companion app and enter it here.
 
@@ -29,9 +29,9 @@ To link a device with a registered add-on, click `Link device` in the table. The
 
 ## Devices View
 
-The Devices view shows devices that have uploaded to workspaces you own. Here you can check how much storage each device is using in and compare this to their quota.
+The Devices view shows devices that have uploaded to workspaces you own. Here you can check how much storage each device is using and compare this to their quota.
 
-You can also the workspaces each device has uploaded to by double clicking on a device in the table.
+You can also check the workspaces each device has uploaded to by double clicking on a device in the table.
 
 ![Devices Linking Devices](./link_device.png)
 
@@ -44,8 +44,8 @@ Anonymizing recording on upload requires an Anonymization Add-on. If you have re
 
 ## Sharing Add-on Benefits
 
-When an Add-on is activated for a specific device, then you can [invite collaborators to the workspaces](https://docs.pupil-labs.com/neon/pupil-cloud/workspaces/) associated with that device, allowing them to benefit from it as well.
+When an add-on is activated for a specific device, then you can [invite collaborators to any workspaces](https://docs.pupil-labs.com/neon/pupil-cloud/workspaces/) associated with that device, allowing them to benefit from it as well.
 
-For example, if you have linked a device to an Unlimited Storage Add-on, then collaborators in the corresponding workspace can access all recordings from that device, run Enrichments on them, and download the data, even if they have free accounts.
+For example, if you have linked a device to an Unlimited Storage add-on, then collaborators in the corresponding workspace can access all recordings from that device, run Enrichments on them, and download the data, even if they have free accounts.
 
-Additionally, collaborators using the [Neon Companion app](https://docs.pupil-labs.com/neon/data-collection/ecosystem-overview/#neon-companion-app) with the linked device will also enjoy the Add-on benefits, provided they upload to the appropriate Workspace.
+Additionally, collaborators using the [Neon Companion app](https://docs.pupil-labs.com/neon/data-collection/ecosystem-overview/#neon-companion-app) with free account and the linked device will also enjoy the add-on benefits, provided they upload to the appropriate Workspace.
