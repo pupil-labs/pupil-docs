@@ -44,8 +44,14 @@ Anonymizing recording on upload requires an Anonymization Add-on. If you have re
 
 ## Sharing Add-on Benefits
 
-When an add-on is activated for a specific device, then you can [invite collaborators](https://docs.pupil-labs.com/neon/pupil-cloud/workspaces/) to _any_ workspaces associated with that device, allowing them to benefit from it as well, even if they have free accounts.
+### Workspace Management
 
-For example, if you have linked a device to an Unlimited Storage add-on, then collaborators in the corresponding workspaces can access all recordings from that device, run Enrichments on them, and download the data.
+You can create multiple workspaces within the user account registered with an add-on. This allows you to share the benefits of your add-on with other users without them needing to purchase their own add-ons.
 
-Additionally, collaborators using the [Neon Companion app](https://docs.pupil-labs.com/neon/data-collection/ecosystem-overview/#neon-companion-app) with a free account and the linked device will enjoy the add-on benefits, provided they upload to an appropriate workspace.
+### Inviting Users
+
+You can invite other users to [join your workspaces](https://docs.pupil-labs.com/neon/pupil-cloud/workspaces/). As part of your workspaces, invited users can, for example, view, edit, enrich, and download recordings based on the role assigned to them.
+
+### Device Access
+
+Other users can also log into the [Companion App](https://docs.pupil-labs.com/neon/data-collection/ecosystem-overview/#neon-companion-app) on the device linked to your add-on using their own accounts. They can then upload recordings to your workspaces, thereby benefiting from the add-on features.
