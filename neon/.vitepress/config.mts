@@ -222,7 +222,7 @@ let theme_config_additions = {
             link: "/neon-player/fixation-detector/",
           },
           {
-            text: "Saccade Exoprt",
+            text: "Saccade Export",
             link: "/neon-player/saccade-export/",
           },
           {
