@@ -38,7 +38,7 @@ Saccade results exported to `saccades.csv` with the following fields:
 | **start&nbsp;timestamp&nbsp;[ns]** | UTC timestamp in nanoseconds of the start of the saccade. |
 | **end timestamp [ns]** | UTC timestamp in nanoseconds of the end of the saccade. |
 | **duration [ms]** | Duration of the saccade in milliseconds. |
-| **amplitude [px]** | The saccade's amplitude in the scene camera coordinate system (pixels). |
-| **amplitude [deg]** | The saccade's amplitude in the scene camera coordinate system (degrees). |
-| **mean velocity [px/s]** | The mean (average) velocity over the saccade's trajectory. |
-| **peak velocity [px/s]** | The peak (maximum) velocity over the saccade's trajectory. |
+| **amplitude [px]** | Float value representing the amplitude of the saccade in world camera pixel coordinates. |
+| **amplitude [deg]** | Float value representing the amplitude of the saccade in degrees of visual angle. |
+| **mean velocity [px/s]** | Float value representing the mean velocity of the saccade in world camera pixel coordinates per second. |
+| **peak velocity [px/s]** | Float value representing the peak velocity of the saccade in world camera pixel coordinates per second. |
