@@ -222,10 +222,6 @@ let theme_config_additions = {
             link: "/neon-player/fixation-detector/",
           },
           {
-            text: "Saccade Export",
-            link: "/neon-player/saccade-export/",
-          },
-          {
             text: "Blink Detector",
             link: "/neon-player/blink-detector/",
           },
