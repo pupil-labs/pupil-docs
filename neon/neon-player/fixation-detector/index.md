@@ -17,6 +17,8 @@ Press `f` or click the arrow buttons on the left-hand side of the window to seek
 
 ## Export Format
 
+### Fixations
+
 Fixation results exported to `fixations.csv` with the following fields:
 | Field | Description |
 | -------- | -------- |
@@ -26,6 +28,8 @@ Fixation results exported to `fixations.csv` with the following fields:
 | **duration [ms]** | Duration of the fixation in milliseconds. |
 | **fixation x [px]** | Float value representing the x-coordinate of the fixation in world camera pixel coordinates. This position is the average of all gaze samples within the fixation. |
 | **fixation y [px]** | Same as "fixation x [px]" but for the y-coordinate. |
+
+### Saccades
 
 Saccade results exported to `saccades.csv` with the following fields:
 | Field | Description |
