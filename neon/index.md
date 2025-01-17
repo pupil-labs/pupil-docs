@@ -32,7 +32,7 @@ cards:
     details: You can access the data Neon generates in real-time and remote control it using its real-time API. Learn how it works here!
     link: { text: View, href: "/neon/real-time-api/tutorials/" }
   - title: Neon XR
-    details: Neon is can be integrated with VR, AR and other devices. Learn how it works here!
+    details: Neon can be integrated with VR, AR, and other devices. Learn how it works here!
     link: { text: View, href: "/neon/neon-xr/" }
   - title: Chat
     details: Come chat with us on Discord! Do you have an issues or questions? Just wanna say hi? Join the chat and drop us a message!
