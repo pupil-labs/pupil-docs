@@ -1,7 +1,7 @@
 # Saccade Export
 
-Neon Player extracts [saccades from detected fixations](./../../data-collection/data-streams/#fixations-saccades) in the same way as Pupil Cloud.
-It extracts saccades across the whole recording. The progress is shown on Neon Player's [Fixation Detector](../fixation-detector/) menu button.
+Neon Player extracts [saccades from detected fixations](./../../data-collection/data-streams/#fixations-saccades) in the same way as Pupil Cloud. The [Fixation Detector](../fixation-detector/) needs to be enabled for saccades to be computed.
+Saccades are extracted across the whole recording. The progress is shown on Neon Player's Fixation Detector menu button.
 
 ## Export Format
 
