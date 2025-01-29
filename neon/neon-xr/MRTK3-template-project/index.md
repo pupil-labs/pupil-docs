@@ -87,6 +87,12 @@ Adapt the following steps to setup the template project for other platforms:
 
 ## Usage
 
-All the pre-configured sampe scenes that work with Neon XR start with a `PL_` prefix, e.g. `PL_HandInteractionExamples`. Check them out!
+All the pre-configured sample scenes that work with Neon XR start with a `PL_` prefix.
 
-<!-- TODO: Add descriptions of all available scenes. Add instructions on how to switch between scenes when running the app. -->
+The `PL_HandInteractionExamples` scene is the main entry point to all of the sample scenes. You typically want to start here.
+
+You navigate to the other scenes by holding up your right hand, palm open and facing you, until the MRTK3 navigation menu appears. You interact with buttons by reaching forward with your left index finger until you "push" a button.
+
+If you plan to run a single scene indepedently, such as the `PL_Calibration` scene, then you need to first add a `MRTK NeonXR Variant` Prefab to the scene. This Prefab is found in Unity's `Project Browser` under `Assets -> PupilLabs -> MRTK -> Prefabs`.
+
+<!-- TODO: Add descriptions of all available scenes. -->
