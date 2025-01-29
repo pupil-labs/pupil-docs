@@ -27,4 +27,4 @@ The easiest starting point for building XR applications with Neon is to use our 
 
 If you don't want to use MRTK3, you can also integrate the [`Neon XR Core` Unity Package](/neon-xr/neon-xr-core-package/) into your project directly, which contains only the ability to receive gaze data in real-time in Unity and to map it into the virtual world.
 
-If the available Pico 4 mount does not fit your needs, [build your own mount](/neon-xr/build-your-own-mount/)!
+If the available Pico 4 or Quest 3 mounts do not fit your needs, [build your own mount](/neon-xr/build-your-own-mount/)!
