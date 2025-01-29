@@ -35,6 +35,8 @@ Clone the repository using e.g. this command:
 git clone git@github.com:pupil-labs/MixedRealityToolkit-Unity.git
 ```
 
+Currently, the best supported development environment is Unity 2021.3.21f1 on Windows.
+
 Depending on your target platform the required setup may differ slightly as some platforms require e.g. specific SDKs. Here we provide instructions for the Pico 4 as well as generic instructions that can be adapted to other platforms.
 
 ::: tip
