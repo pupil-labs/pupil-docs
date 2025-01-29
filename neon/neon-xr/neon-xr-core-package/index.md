@@ -35,7 +35,7 @@ You can run a recording in parallel, but just note that the data saved on the Co
 You can configure the connection behaviour by editing the `config.json` file of the app, which is located at the following path:
 
 ```
-\Android\data\com.MixedRealityToolkitOrganization.MRTK3Sample\files\config.json
+\Android\data\org.MixedRealityToolkit.MRTK3Sample\files\config.json
 ```
 
 You can edit this file by copying it to your computer, modifying the values, and then copying it back to the headset.

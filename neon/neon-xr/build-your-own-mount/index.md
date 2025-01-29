@@ -33,7 +33,7 @@ In this scene, the wearer is presented with a set of gaze targets distributed ov
 The configuration file is called `config.json` and is located on the XR device's filesystem at the following path:
 
 ```
-\Android\data\com.MixedRealityToolkitOrganization.MRTK3Sample\files\config.json
+\Android\data\org.MixedRealityToolkit.MRTK3Sample\files\config.json
 ```
 
 It has a `sensorCalibration.offset` field that contains the results:
