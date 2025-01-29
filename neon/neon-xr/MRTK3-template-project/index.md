@@ -41,6 +41,8 @@ Depending on your target platform the required setup may differ slightly as some
 
 ::: tip
 The generic [Other Platforms](#other-platforms) instructions apply to the Quest 3, except you want to disable `Google ARCore` under `Project Settings -> XR Plug-in Management`, before building & installing the APK. You also want to set `Android` as the `Build Target`.
+
+On Quest 3, the installed APK will be found under `Library -> Applications -> Unknown Sources`.
 :::
 
 ### Pico 4
