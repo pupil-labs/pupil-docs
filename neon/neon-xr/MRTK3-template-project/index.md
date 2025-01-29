@@ -87,7 +87,7 @@ Adapt the following steps to setup the template project for other platforms:
 
 ## Usage
 
-All the pre-configured sample scenes that work with Neon XR start with a `PL_` prefix.
+All the pre-configured sample scenes that work with Neon XR start with a `PL_` prefix and are found in `Assets -> PupilLabs -> Scenes`.
 
 The `PL_HandInteractionExamples` scene is the main entry point to all of the sample scenes. You typically want to start here.
 
