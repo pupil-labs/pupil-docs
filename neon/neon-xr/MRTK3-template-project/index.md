@@ -89,7 +89,7 @@ Adapt the following steps to setup the template project for other platforms:
 
 All the pre-configured sample scenes that work with Neon XR start with a `PL_` prefix and are found in `Assets -> PupilLabs -> Scenes`.
 
-The `PL_HandInteractionExamples` scene is the main entry point to all of the sample scenes. You typically want to start here.
+The `PL_HandInteractionExamples` scene is the main entry point to all of the sample scenes. The default build of the MRTK3 APK will start in this scene.
 
 You navigate to the other scenes by holding up your right hand, palm open and facing you, until the MRTK3 navigation menu appears. You interact with buttons by reaching forward with your left index finger until you "push" a button.
 

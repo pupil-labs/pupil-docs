@@ -29,7 +29,7 @@ The Neon Companion app publishes the data it generates to the local network usin
 ::: tip
 You do not need to start a recording in the Neon Companion app to stream & receive data in your Unity program. However, if you plan to collect gaze data at the Neon Companion app's full estimation rate, then please note that the real-time reception rate will be limited by Unity's update rate.
 
-You can run a recording in parallel, but just note that the data saved on the Companion device will be in Neon's scene camera coordinate system. It is possible to transform this data to the VR coordinate system, if you save the pose of the VR camera over time during an experiment and post-hoc apply it, taking into account [the mount calibration](../build-your-own-mount/index.md#calibrating-the-mount) for your headset.
+You can run a recording in parallel, but just note that the data saved on the Companion device will be in Neon's scene camera coordinate system. It is possible to transform this data to the VR coordinate system, if you save the pose of the VR camera over time during an experiment and post-hoc apply it, taking into account [the position & rotation of the mount calibration](../build-your-own-mount/index.md#calibrating-the-mount) for your headset.
 :::
 
 You can configure the connection behaviour by editing the `config.json` file of the app, which is located at the following path:
