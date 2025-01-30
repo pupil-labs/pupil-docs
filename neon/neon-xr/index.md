@@ -12,7 +12,7 @@ Neon XR includes software integration with Unity. The [Neon XR Core Unity Packag
 
 The **Neon Module** is attached to it's **mount**, which is in turn attached to the **XR device**. Similar to regular Neon frames, the mount is tethered to the **Neon Companion Device** with a USB-C cable.
 
-The Neon Companion Device provides power to the module and runs the the **Neon Companion app**, which does all the real-time computation.
+The Neon Companion Device provides power to the module and runs the **Neon Companion app**, which does all the real-time computation.
 
 Depending on the XR device used, the **Unity application** is running on the XR device itself or on a separate computer the XR device is tethered to.
 It communicates with the Neon Companion app over the network, receives gaze data in real-time, and projects it into the virtual world thanks to the **Neon XR Core** Unity Package.
@@ -28,3 +28,9 @@ The easiest starting point for building XR applications with Neon is to use our 
 If you don't want to use MRTK3, you can also integrate the [`Neon XR Core` Unity Package](/neon-xr/neon-xr-core-package/) into your project directly, which contains only the ability to receive gaze data in real-time in Unity and to map it into the virtual world.
 
 If the available Pico 4 or Quest 3 mounts do not fit your needs, [build your own mount](/neon-xr/build-your-own-mount/)!
+
+## Installing the Quest 3 mount
+
+Printed instructions for the Quest 3 mount are included with the package. While following those instructions, it is useful to know that the mount should be set to level 3, to ensure that Neon is positioned above the headset's lenses correctly.
+
+![Quest 3 mount at level 3](./quest3_mount.png)

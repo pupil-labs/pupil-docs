@@ -27,9 +27,7 @@ To integrate it in your project, follow these steps:
 The Neon Companion app publishes the data it generates to the local network using the [real-time API](/real-time-api/tutorials/). The Neon XR Core package contains a client to receive this data and map it into the 3D virtual world. By default, it tries to connect the first Neon device it detects on the network.
 
 ::: tip
-You do not need to start a recording in the Neon Companion app to stream & receive data in your Unity program. However, if you plan to collect gaze data at the Neon Companion app's full estimation rate, then please note that the real-time reception rate will be limited by Unity's update rate.
-
-You can run a recording in parallel, but just note that the data saved on the Companion device will be in Neon's scene camera coordinate system. It is possible to transform this data to the VR coordinate system, if you save the pose of the VR camera over time during an experiment and post-hoc apply it, taking into account [the position & rotation of the mount calibration](../build-your-own-mount/index.md#calibrating-the-mount) for your headset.
+You can stream & receive data in your Unity program without starting a recording. Note that the real-time reception rate will be determined by Unity's update rate.
 :::
 
 You can configure the connection behaviour by editing the `config.json` file of the app, which is located at the following path:

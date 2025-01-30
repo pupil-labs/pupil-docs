@@ -8,21 +8,32 @@ The template contains several demo scenes that showcase how to use Neon XR with 
 
 ## Running the Template Project
 
-If you just want to try out the demo scenes included in the template project in action, you can download and install a pre-built APK. The APKs are platform-specific and we currently only offer them for the Pico 4 and Quest 3 headsets. You can download them at these links:
+If you just want to try out the demo scenes included in the template project in action, you can download and install a pre-built APK. The APKs are platform-specific and we currently only offer them for the Pico 4 and Quest 3 headsets.
+
+### Pico 4
+
+You can download the Pico 4 APK at this link:
 
 - [Pico 4 - MRTK3 Template Project](https://drive.google.com/file/d/1WaJxx6wgQNKFfpGUAPKxbOfHZ49kXJgW/view?usp=sharing)
+
+To install it, simply open the link in the headset's browser, download the file and open it.
+
+### Quest 3
+
+You can download the Quest 3 APK at this link:
+
 - [Quest 3 - MRTK3 Template Project](https://drive.google.com/file/d/1oqItPeX0NtCI47RWGdbHfSkEHezwsmPz/view?usp=sharing)
 
-On Pico 4, to install the APK, simply open the link in the headset's browser, download the file and open it.
-
-On Quest 3, [enable Developer Mode](https://developers.meta.com/horizon/documentation/native/android/mobile-device-setup/#enable-developer-mode) on the headset and use [the `adb` tool to install](https://developer.android.com/tools/adb#move):
+To install it, [enable Developer Mode](https://developers.meta.com/horizon/documentation/native/android/mobile-device-setup/#enable-developer-mode) on the headset and use [the `adb` tool to install](https://developer.android.com/tools/adb#move):
 
 ```shell
 adb install neon-quest3.apk
 ```
 
+The installed APK will be found under `Library -> Applications -> Unknown Sources`.
+
 ::: tip
-With Quest 3, a typical approach is to tether the headset to your computer via USB-C cable when installing with `adb`. You may need to use `adb devices -l` and `adb shell ip route`, as well as `adb tcpip 5555`, to establish a connection and collect connection details, if the Quest 3 headset is not automatically found. If so, then additionally specify the `-s <ip-address /or/ serial-# of headset>` command line agument to `adb install`. See [the official adb documentation](https://developer.android.com/tools/adb#devicestatus) for more details.
+See [the official Quest 3 documentation](https://developers.meta.com/horizon/documentation/native/android/ts-adb/) for more details on how to install with `adb`.
 :::
 
 ## Building the Project
@@ -37,13 +48,7 @@ git clone git@github.com:pupil-labs/MixedRealityToolkit-Unity.git
 
 Currently, the best supported development environment is Unity 2021.3.21f1 on Windows.
 
-Depending on your target platform the required setup may differ slightly as some platforms require e.g. specific SDKs. Here we provide instructions for the Pico 4 as well as generic instructions that can be adapted to other platforms.
-
-::: tip
-The generic [Other Platforms](#other-platforms) instructions apply to the Quest 3, except you want to disable `Google ARCore` under `Project Settings -> XR Plug-in Management`, before building & installing the APK. You also want to set `Android` as the `Build Target`.
-
-On Quest 3, the installed APK will be found under `Library -> Applications -> Unknown Sources`.
-:::
+Depending on your target platform the required setup may differ slightly as some platforms require e.g. specific SDKs. Here we provide instructions for the Pico 4 and Quest 3.
 
 ### Pico 4
 
@@ -72,7 +77,7 @@ The following settings are required to build the project for the Pico 4 headset:
 1. In the `XR Plug-in Management` section, set `Plug-in Providers` to `PICO`. No other options should be selected.
 1. Set your App ID in `PXR_SDK -> Platform Settings`.
 
-### Other Platforms
+### Quest 3
 
 Adapt the following steps to setup the template project for other platforms:
 
@@ -88,6 +93,10 @@ Adapt the following steps to setup the template project for other platforms:
 1. From the menu, select `Pupil Labs -> Addressables -> Import Groups`. After this step, the `NeonXR Group` should appear in the `Addressables Groups` window (you can open this window again following step 2.1).
 1. In the `Addressable Groups` window, select `Build -> New Build -> Default Build Script`.
 1. Import `TMP resources` by clicking `Window -> TextMeshPro -> Import TMP Essential Resources`. In the opening window, keep everything selected and click `Import`.
+1. Disable `Google ARCore` under `Project Settings -> XR Plug-in Management`.
+1. Before building, set `Android` as the `Build Target`.
+
+Use `adb` to install the resulting APK onto the headset, following the instructions [here](#running-the-template-project).
 
 ## Usage
 
