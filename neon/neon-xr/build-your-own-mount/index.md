@@ -44,5 +44,5 @@ It has a `sensorCalibration.offset` field that contains the results:
 | `rotation` | The rotation of the Neon Module relative to the origin of the headset. |
 
 ::: tip
-It should suffice to execute the calibration procedure just once for a new mount design. When using the same mount design on multiple headsets, you can copy the configuration file from one headset to another.
+It should suffice to execute the calibration procedure just once for a new mount design. When using the same mount design on multiple headsets, you can copy the configuration file from one headset to another. Simply place the file at the corresponding [`persistent Data Path` of your application](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Application-persistentDataPath.html), similar to the default MRTK3 path for `config.json` shown above. This will also work if you only use the [Neon XR Core Package](../neon-xr-core-package/).
 :::
