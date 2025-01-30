@@ -1,6 +1,6 @@
 # The Neon XR Core Package
 
-Using Neon XR Core Package in your Unity project enables you to receive eye tracking data from a Neon device over the local network in real-time.
+Using the Neon XR Core Package in your Unity project enables you to receive eye tracking data from a Neon device over the local network in real-time.
 
 ## Adding Neon XR to Your Project
 
@@ -24,13 +24,21 @@ To integrate it in your project, follow these steps:
 
 ## Connecting to Neon
 
-The Neon Companion app publishes the data it generates to the local network using the [real-time API](/real-time-api/tutorials/). The Neon XR Core package contains a client to receive this data and map it into the 3D virtual world. By default, it tries to connect the first Neon device it detects on the network.
+The Neon Companion app publishes the data it generates to the local network using the [real-time API](/real-time-api/tutorials/). The Neon XR Core package contains a client to receive this data and map it into the 3D virtual world. By default, it tries to connect to the first Neon device it detects on the network.
 
-Thie behavior can be further configured by editing the `config.json` file of the app, which is located at the following path:
+::: tip
+You can stream & receive data in your Unity program without starting a recording in the Neon Companion app.
+
+Note that the real-time reception rate will be determined by Unity's update rate, so if you need a higher sample rate, then you can run a recording in parallel.
+:::
+
+You can configure the connection behaviour by editing the `config.json` file of the app, which is located at the following path:
 
 ```
-\Android\data\com.MixedRealityToolkitOrganization.MRTK3Sample\files\config.json
+\Android\data\org.MixedRealityToolkit.MRTK3Sample\files\config.json
 ```
+
+You can edit this file by copying it to your computer, modifying the values, and then copying it back to the headset.
 
 It contains a field `rtspSettings` with the following keys:
 
@@ -38,4 +46,4 @@ It contains a field `rtspSettings` with the following keys:
 | ------------ | ----------------------------------------------------------------------------------------------------------------------- |
 | `autoIP`     | Enables the automatic discovery of Neon devices connected to the local network. The first detected device will be used. |
 | `deviceName` | If not empty, only devices with the provided name can be discovered.                                                    |
-| `ip`         | The IP address that will be used if automatic discovery is disabled.                                                    |
+| `ip`         | This IP address that will be used if automatic discovery is disabled.                                                   |
