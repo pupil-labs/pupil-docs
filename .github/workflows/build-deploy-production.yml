@@ -34,7 +34,7 @@ jobs:
         run: npm run docs:build
 
       - name: Upload
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: neon
           path: neon/.vitepress/dist
@@ -67,7 +67,7 @@ jobs:
         run: npm run docs:build
 
       - name: Upload
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: invisible
           path: invisible/.vitepress/dist
@@ -100,7 +100,7 @@ jobs:
         run: npm run docs:build
 
       - name: Upload
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: core
           path: core/.vitepress/dist
@@ -133,7 +133,7 @@ jobs:
         run: npm run docs:build
 
       - name: Upload
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: alpha-lab
           path: alpha-lab/.vitepress/dist
@@ -166,7 +166,7 @@ jobs:
         run: npm run docs:build
 
       - name: Upload
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: landing-page
           path: landing-page/.vitepress/dist
@@ -183,7 +183,7 @@ jobs:
           echo $GITHUB_SHA > gitcommit.txt
 
       - name: Gitcommit - upload
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: gitcommit
           path: gitcommit.txt
@@ -205,37 +205,37 @@ jobs:
           du -ah .
 
       - name: Download gitcommit
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: gitcommit
           path: gitcommit.txt
 
       - name: Download Neon
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: neon
           path: neon/
 
       - name: Download Invisible
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: invisible
           path: invisible/
 
       - name: Download Core
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: core
           path: core/
 
       - name: Download AlphaLab
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: alpha-lab
           path: alpha-lab/
 
       - name: Download Landing Page
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: landing-page
 
@@ -261,31 +261,31 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Download Neon
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: neon
           path: neon/
 
       - name: Download Invisible
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: invisible
           path: invisible/
 
       - name: Download Core
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: core
           path: core/
 
       - name: Download AlphaLab
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: alpha-lab
           path: alpha-lab/
 
       - name: Download Landing Page
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: landing-page
 
