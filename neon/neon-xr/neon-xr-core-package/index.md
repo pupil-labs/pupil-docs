@@ -46,4 +46,4 @@ It contains a field `rtspSettings` with the following keys:
 | ------------ | ----------------------------------------------------------------------------------------------------------------------- |
 | `autoIP`     | Enables the automatic discovery of Neon devices connected to the local network. The first detected device will be used. |
 | `deviceName` | If not empty, only devices with the provided name can be discovered.                                                    |
-| `ip`         | This IP address that will be used if automatic discovery is disabled.                                                   |
+| `ip`         | This IP address will be used if automatic discovery is disabled.                                                        |

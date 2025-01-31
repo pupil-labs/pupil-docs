@@ -24,7 +24,7 @@ You can download the Quest 3 APK at this link:
 
 - [Quest 3 - MRTK3 Template Project](https://drive.google.com/file/d/1oqItPeX0NtCI47RWGdbHfSkEHezwsmPz/view?usp=sharing)
 
-To install it, [enable Developer Mode](https://developers.meta.com/horizon/documentation/native/android/mobile-device-setup/#enable-developer-mode) on the headset and use [the `adb` tool](https://developer.android.com/tools/adb) to install it:
+To install it, [enable Developer Mode](https://developers.meta.com/horizon/documentation/native/android/mobile-device-setup/#enable-developer-mode) on the headset and use [the `adb` tool](https://developer.android.com/tools/adb):
 
 ```shell
 adb install neon-quest3.apk
