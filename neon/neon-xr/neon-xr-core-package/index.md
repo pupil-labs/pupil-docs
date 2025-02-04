@@ -26,6 +26,8 @@ To integrate it in your project, follow these steps:
 
 The Neon Companion app publishes the data it generates to the local network using the [real-time API](/real-time-api/tutorials/). The Neon XR Core package contains a client to receive this data and map it into the 3D virtual world. By default, it tries to connect to the first Neon device it detects on the network.
 
+You will know when the Neon XR Core package has established a successful connection when you see `[RTSPClientWS] X messages processed` repeating in the Unity Console.
+
 ::: tip
 You can stream & receive data in your Unity program without starting a recording in the Neon Companion app.
 
@@ -38,7 +40,7 @@ You can configure the connection behaviour by editing the `config.json` file of 
 \Android\data\org.MixedRealityToolkit.MRTK3Sample\files\config.json
 ```
 
-If you have already done a [Mount Calibration](../build-your-own-mount/index.md#calibrating-the-mount), then you can copy this file to your custom app's `persistent Data Path` and the `Neon XR Core Package` will automatically detect it. The `Neon XR Core Package` also provides [a default `config.json` file](https://github.com/pupil-labs/neon-xr/blob/main/com.pupil-labs.neon-xr.core/Runtime/Addressables/config.json) that assumes Neon is mounted in a Pico 4 headset.
+If you have already done a [Mount Calibration](../build-your-own-mount/index.md#calibrating-the-mount), then you can copy this file to your custom app's `persistent Data Path` and the Neon XR Core package will automatically detect it. The `Neon XR Core Package` also provides [a default `config.json` file](https://github.com/pupil-labs/neon-xr/blob/main/com.pupil-labs.neon-xr.core/Runtime/Addressables/config.json) that assumes Neon is mounted in a Pico 4 headset.
 
 You can also edit the `config.json` by copying it to your computer, modifying the values, and then copying it back to the headset.
 
