@@ -28,9 +28,11 @@ The calibration process is contained in one of the scenes of the [MRTK3 template
 
 In this scene, the wearer is presented with a set of gaze targets distributed over their field of view. The wearer must gaze at each target in turn and perform a pinch-gesture to confirm that they are looking at a target. After each pinch-gesture, the target that was gazed upon should disapear. Once all targets have been gazed upon, the calibration process is complete and can be saved to the configuration file.
 
-<!-- TODO: add image -->
+Below is an image showing a successful mount calibration.
 
-The configuration file is called `config.json` and is located on the XR device's filesystem at the following path:
+![A successful Neon-XR mount calibration](./successful_calibration.png)
+
+When you click `Save`, the mount calibration values are witten to the configuration file, which is called `config.json` and is located on the XR device's filesystem at the following path:
 
 ```
 \Android\data\org.MixedRealityToolkit.MRTK3Sample\files\config.json
