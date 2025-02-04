@@ -26,7 +26,7 @@ To integrate it in your project, follow these steps:
 
 The Neon Companion app publishes the data it generates to the local network using the [real-time API](/real-time-api/tutorials/). The Neon XR Core package contains a client to receive this data and map it into the 3D virtual world. By default, it tries to connect to the first Neon device it detects on the network.
 
-You will know when the Neon XR Core package has established a successful connection when you see `[RTSPClientWS] X messages processed` repeating in the Unity Console.
+You will know when the Neon XR Core package has established a successful connection when you see `[DnsDiscovery] received response from: ...` and `[RTSPClientWS] X messages processed` in the Unity Console.
 
 ::: tip
 You can stream & receive data in your Unity program without starting a recording in the Neon Companion app.
