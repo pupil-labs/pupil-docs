@@ -98,6 +98,10 @@ Follow these steps to setup the template project for the Quest 3 headset:
 
 Once built, use `adb` to install the resulting APK onto the headset, following the instructions [here](#running-the-template-project).
 
+::: tip
+On Quest 3, if you re-build the APK, make sure to first delete the app that is already installed on the headest before installing the new build, including when you encounter a `signature mismatch` error.
+:::
+
 ## Usage
 
 All the pre-configured sample scenes that work with Neon XR start with a `PL_` prefix and are found in the Project Browser under `Assets -> PupilLabs -> Scenes`.
