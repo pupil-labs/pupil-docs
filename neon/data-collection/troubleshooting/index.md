@@ -23,7 +23,9 @@ with this procedure, see steps 1-5 from [these instructions](/data-collection/tr
 
 **OnePlus 8/8T**
 
-::: tip If you upgraded to Android 13 or newer and want to roll back, please reach out to info@pupil-labs.com :::
+::: tip
+If you upgraded to Android 13 or newer and want to roll back, please reach out to info@pupil-labs.com
+:::
 
 If you upgraded to Android 12 and want to roll back, follow these steps:
 
