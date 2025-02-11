@@ -40,7 +40,7 @@ You can configure the connection behaviour by editing the `config.json` file of 
 \Android\data\org.MixedRealityToolkit.MRTK3Sample\files\config.json
 ```
 
-If you have already done a [Mount Calibration](../build-your-own-mount/index.md#calibrating-the-mount), then you can copy this file to your custom app's `persistent Data Path` and the Neon XR Core package will automatically detect it. The `Neon XR Core Package` also provides [a default `config.json` file](https://github.com/pupil-labs/neon-xr/blob/main/com.pupil-labs.neon-xr.core/Runtime/Addressables/config.json) that assumes Neon is mounted in a Pico 4 headset.
+If you have already done a [Mount Calibration](../build-your-own-mount/index.md#calibrating-the-mount), then you can copy this file to your custom app's `persistent Data Path` and the Neon XR Core package will automatically detect it.
 
 You can also edit the `config.json` by copying it to your computer, modifying the values, and then copying it back to the headset.
 
