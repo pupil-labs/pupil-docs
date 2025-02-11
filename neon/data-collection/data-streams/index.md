@@ -42,13 +42,16 @@ The downloads for gaze mapping enrichments ([Reference Image Mapper](/pupil-clou
 
 ## 3D Eye Poses
 
-The Neon Companion app provides 3D eye poses data in real-time at up to 200 Hz. The 3D eye poses are a time series of each eye's position and orientation in 3D space, given by the location of the eyeball center and the optical axis of each eye. The units are millimeters.
+The Neon Companion app provides 3D eye poses in real-time at up to 200 Hz. The 3D eye poses are a time series of each eye's 
+position and orientation in 3D space, given by the location of the eyeball center and the optical axis of each eye. 
+The units are millimeters.
 
 The coordinate system is depicted below. The origin corresponds to the scene camera of the Neon Module.
 
 ![Coordinate systems of 3D eye poses](./3d_eye_states.png)
 
-You can specify the inter-eye distance (IED) of a wearer in the wearer profile before making a recording to further improve the accuracy of the measurements. If no IED value is specified, the population average of 63 mm is used.
+You can specify the inter-eye distance (IED) of a wearer in the wearer profile before making a recording to further 
+improve the accuracy of the measurements. If no IED value is specified, the population average of 63 mm is used.
 
 ::: warning
 Enabling real-time estimation of 3D eye poses and pupillometry on older Companion Devices (OnePlus 8, 8T, 10 Pro) can affect the sampling rates of other sensors due to the greater computational resources required for these tasks. We recommend keeping it off or lowering the sample rate and obtaining the data from Pupil Cloud unless real-time processing is necessary.
@@ -64,7 +67,9 @@ Similar to the 3D eye poses, the accuracy of the pupil diameter measurements imp
 
 ## Eye Openness
 
-The Neon Companion app offers real-time eye openness data at up to 200 Hz, measured separately for the left and right eyes. Eye openness indicates how much the eyelids are open during a recording, providing valuable insights into emotional, cognitive, and physiological states.
+The Neon Companion app offers real-time eye openness data at up to 200 Hz, measured separately for the left and right eyes. 
+Eye openness comprises eyelid angle, and opening aperture, indicating how much the eyelids are open during a recording. 
+These measurements offer valuable insights into factors such as emotional, cognitive, and physiological states.
 
 ## Blinks
 
