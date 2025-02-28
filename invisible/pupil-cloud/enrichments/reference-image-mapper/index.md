@@ -34,37 +34,37 @@ Let's take a look at what the Reference Image and Scanning Recording look like t
 
 ### 1. Magazine Reading
 
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-  <div class="grid subgrid" style="grid-row: 1 / 4">
-    <h4>Reference image</h4>
-    <img src="./magazine-img.jpg" alt="Magazine Reference Image">
-    <div>First, we need a high-resolution .jpeg of the page.</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div>
+    <h4 class="my-2">Reference image</h4>
+    <img src="./magazine-img.jpg" alt="Magazine Reference Image" class="max-h-96 rounded-sm">
+    <div class="my-2">First, we need a high-resolution .jpeg of the page.</div>
   </div>
-  <div class="grid subgrid" style="grid-row: 1 / 4">
-    <h4>Scanning video</h4>
+  <div>
+    <h4 class="my-2">Scanning video</h4>
     <div class="m-auto">
       <Youtube src="SplYZK-ZzE8"/>
     </div>
-    <div>
-      Then, we need a scanning recording, about <i>15 s</i> long, taken on a blank background and in good lighting (natural light works well). Note that the magazine page is clear with good contrast
+    <div class="my-2">
+      Then, we need a scanning recording, about <i>15 s</i> long, taken on a blank background and in good lighting (natural light works well). Note that the magazine page is clear with good contrast.
     </div>
   </div>
 </div>
 
 ### 2. Basketball
 
-<div class="grid grid-cols-2 gap-4">
-  <div class="grid subgrid" style="grid-row: 1 / 4">
-    <h4>Reference image</h4>
-    <img src="./basketball-img.jpg" alt="Basketball Reference Image">
-    <div>Here we can take a photo of the basketball hoop and court background.</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div>
+    <h4 class="my-2">Reference image</h4>
+      <img src="./basketball-img.jpg" alt="Basketball Reference Image" class="max-h-96 rounded-sm">
+    <div class="my-2">Here we can take a photo of the basketball hoop and court background.</div>
   </div>
-  <div class="grid subgrid" style="grid-row: 1 / 4">
-    <h4>Scanning video</h4>
+  <div>
+    <h4 class="my-2">Scanning video</h4>
     <div class="m-auto">
       <Youtube src="4MB5o4W_XJo"/>
     </div>
-    <div>
+    <div class="my-2">
       The scanning recording, in this case, is about 45 s long – note that the angles and distances cover what a player might see when dribbling towards the basket or taking a shot
     </div>
   </div>
@@ -72,18 +72,18 @@ Let's take a look at what the Reference Image and Scanning Recording look like t
 
 ### 3. Supermarket Shelf
 
-<div class="grid grid-cols-2 gap-4">
-  <div class="grid subgrid" style="grid-row: 1 / 4">
-    <h4>Reference image</h4>
-    <img src="./supermarket-img.jpg" alt="Supermarket Reference Image">
-    <div>This photo captures the assortment of packagíng in the coffee aisle of a supermarket.</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div>
+    <h4 class="my-2">Reference image</h4>
+    <img src="./supermarket-img.jpg" alt="Supermarket Reference Image" class="max-h-96 rounded-sm">
+    <div class="my-2">This photo captures the assortment of packagíng in the coffee aisle of a supermarket.</div>
   </div>
-  <div class="grid subgrid" style="grid-row: 1 / 4">
-    <h4>Scanning video</h4>
+  <div>
+    <h4 class="my-2">Scanning video</h4>
     <div class="m-auto">
       <Youtube src="d3Yk3nKDIOQ"/>
     </div>
-    <div>
+    <div class="my-2">
       Notice that the scanning recording is fairly slow to reduce motion blur for this feature-rich shelf.
     </div>
   </div>
@@ -91,18 +91,18 @@ Let's take a look at what the Reference Image and Scanning Recording look like t
 
 ### 4. An Entire Building
 
-<div class="grid grid-cols-2 gap-4">
-  <div class="grid subgrid" style="grid-row: 1 / 4">
-    <h4>Reference image</h4>
-    <img src="./building-img.jpg" alt="Building Reference Image">
-    <div>This is a photo of the <i>entire</i> building</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div>
+    <h4 class="my-2">Reference image</h4>
+    <img src="./building-img.jpg" alt="Building Reference Image" class="max-h-96 rounded-sm">
+    <div class="my-2">This is a photo of the <i>entire</i> building</div>
   </div>
-  <div class="grid subgrid" style="grid-row: 1 / 4">
-    <h4>Scanning video</h4>
+  <div>
+    <h4 class="my-2">Scanning video</h4>
     <div class="m-auto">
       <Youtube src="0U4H-uOIHlw"/>
     </div>
-    <div>
+    <div class="my-2">
       We take a longer scanning recording, about 2 min. The angles and distances cover what a person might see whilst walking past or standing in front of the building.
     </div>
   </div>
@@ -173,7 +173,7 @@ This file contains all the mapped gaze data from all sections.
 | **section id**                              | Unique identifier of the corresponding section.                                                                                                                                      |
 | **recording id**                            | Unique identifier of the recording this sample belongs to.                                                                                                                           |
 | **timestamp [ns]**                          | UTC timestamp in nanoseconds of the sample. Equal to the timestamp of the original gaze sample before mapping.                                                                       |
-| **gaze detected in reference image**        | Boolean indicating whether the gaze point was detected inside or outside of the reference image.                                                                              |
+| **gaze detected in reference image**        | Boolean indicating whether the gaze point was detected inside or outside of the reference image.                                                                                     |
 | **gaze position in reference image x [px]** | Float value representing the x-coordinate of the mapped gaze point in pixel coordinates. If the reference image was not detected in the scene at the given time this value is empty. |
 | **gaze position in reference image y [px]** | Same as "gaze position in reference image x [px]" but for the y-coordinate.                                                                                                          |
 | **fixation id**                             | If this gaze sample belongs to a fixation event, this is the corresponding id of the fixation. Otherwise, this field is empty.                                                       |
@@ -192,10 +192,10 @@ This file contains fixation events detected in the gaze data stream and mapped t
 | **section id**                           | Unique identifier of the corresponding section.                                                                                                                        |
 | **recording id**                         | Unique identifier of the recording this sample belongs to.                                                                                                             |
 | **fixation id**                          | Identifier of fixation within the section. The id corresponds to the fixation id of the raw unmapped data.                                                             |
-| **start&nbsp;timestamp&nbsp;[ns]**                 | UTC timestamp in nanoseconds of the start of the fixation.                                                                                                             |
-| **end&nbsp;timestamp&nbsp;[ns]**                   | UTC timestamp in nanoseconds of the end of the fixation.                                                                                                               |
-| **duration&nbsp;[ms]**                        | Duration of the fixation in milliseconds.                                                                                                                              |
-| **fixation detected in reference image** | Boolean indicating whether the fixation was inside or outside of the reference image.                                                                           |
+| **start&nbsp;timestamp&nbsp;[ns]**       | UTC timestamp in nanoseconds of the start of the fixation.                                                                                                             |
+| **end&nbsp;timestamp&nbsp;[ns]**         | UTC timestamp in nanoseconds of the end of the fixation.                                                                                                               |
+| **duration&nbsp;[ms]**                   | Duration of the fixation in milliseconds.                                                                                                                              |
+| **fixation detected in reference image** | Boolean indicating whether the fixation was inside or outside of the reference image.                                                                                  |
 | **fixation x [px]**                      | Float value representing the x-coordinate of the fixation in reference image coordinates. This position is the average of all mapped gaze samples within the fixation. |
 | **fixation y [px]**                      | Same as "fixation x [px]" but for the y-coordinate.                                                                                                                    |
 
