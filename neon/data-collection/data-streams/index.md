@@ -36,8 +36,8 @@ OnePlus 10 and Motorola Edge 40 Pro, the full 200 Hz can generally be achieved o
 On the OnePlus 8, the framerate typically drops to ~120 Hz within a few minutes of starting a recording. Other apps 
 running simultaneously on the phone may decrease the framerate.
 
-After a recording is uploaded to Pupil Cloud, gaze data is automatically re-computed at the full 200 Hz framerate and 
-can be downloaded from there.
+After a recording is uploaded to Pupil Cloud, gaze data is automatically re-computed at the full 200 Hz framerate if 
+required, and can be downloaded from there.
 
 The gaze estimation algorithm is based on end-2-end deep learning and provides gaze data robustly without requiring a 
 calibration. You can find a high-level description as well as a thorough evaluation of the accuracy and robustness of 
@@ -52,9 +52,8 @@ behavior.
 
 ![Fixations](./fixations.jpg)
 
-Fixations and saccades are calculated automatically in Pupil Cloud after uploading a recording and are included in the 
-recording downloads. The deployed fixation detection algorithm was specifically designed for head-mounted eye trackers 
-and offers increased robustness in the presence of head movements. Especially movements due to vestibulo-ocular reflex 
+Fixations and saccades are calculated automatically and are included in the recording downloads. The deployed fixation
+detection algorithm was specifically designed for head-mounted eye trackers and offers increased robustness in the presence of head movements. Especially movements due to vestibulo-ocular reflex 
 are compensated for, which is not the case for most other fixation detection algorithms. You can learn more about it in 
 the [Pupil Labs fixation detector whitepaper](https://docs.google.com/document/d/1CZnjyg4P83QSkfHi_bjwSceWCTWvlVtbGWtuyajv5Jc/export?format=pdf) and in our [publication](https://link.springer.com/article/10.3758/s13428-024-02360-0) in _Behavior Research Methods_ discussing fixation detection strategies.
 
@@ -77,7 +76,7 @@ You can specify the inter-eye distance (IED) of a wearer in the wearer profile b
 improve the accuracy of the measurements. If no IED value is specified, the population average of 63 mm is used.
 
 ::: warning
-Enabling real-time estimation of 3D eye poses and pupillometry on older Companion Devices (OnePlus 8, 8T, 10 Pro) can affect the sampling rates of other sensors due to the greater computational resources required for these tasks. We recommend keeping it off or lowering the sample rate and obtaining the data from Pupil Cloud unless real-time processing is necessary.
+Enabling real-time estimation of 3D eye poses and pupil diameter on older Companion Devices (OnePlus 8, 8T, 10 Pro) can affect the sampling rates of other sensors due to the greater computational resources required for these tasks. We recommend keeping it off or lowering the sample rate and obtaining the data from Pupil Cloud unless real-time processing is necessary.
 
 If 200 Hz real-time data is essential, consider upgrading to a newer [Companion Device model](/hardware/compatible-devices/).
 :::
@@ -85,19 +84,21 @@ If 200 Hz real-time data is essential, consider upgrading to a newer [Companion 
 ## Pupil Diameters
 
 Pupil diameter is provided separately for the left and right eye. The computed pupil diameters correspond to the 
-physical pupil size in mm, rather than the apparent pupil size in pixels as observed in the eye videos. You can find a high-level description as well as a thorough evaluation of the accuracy and robustness of Neon’s pupil-size measurements in our [white paper](https://zenodo.org/records/10057185).
+physical pupil size in mm, rather than the apparent pupil size in pixels as observed in the eye videos. You can find a high-level description as well as a thorough evaluation of the accuracy and robustness of Neon’s pupil size measurements in our [white paper](https://zenodo.org/records/10057185).
 
 Similar to the 3D eye poses, the accuracy of the pupil diameter measurements improves when supplying the wearer's IED in the wearer profile before making a recording.
 
 ## Eye Openness
 
-Eye openness comprises eyelid angle, and opening aperture, indicating how much the eyelids are open during a recording.
-These measurements can enable research into factors such as emotional, cognitive, and physiological states.
-Eye openness is provided separately for the left and right eyes. 
+Eye openness measurements comprise of eyelid opening angles for the upper and lower eyelids relative to the scene camera’s 
+horizontal plane, and eye opening aperture in millimeters, quantifying the maximum vertical distance between the upper and 
+lower eyelids. These measurements are provided separately for the left and right eye, and enable research into factors such 
+as emotional, cognitive, and physiological states.
 
 ## Blinks
 
-During blinks the eye is briefly covered by the eyelids, which serves the purpose of spreading tears across the cornea. The blink rate and blink duration are also correlated with cognitive processes, which makes them interesting physiological signals.
+During blinks the eye is briefly covered by the eyelids, which serves the purpose of spreading tears across the cornea. 
+The blink rate and blink duration are also correlated with cognitive processes, which makes them interesting physiological signals.
 
 The blink detection algorithm is operating directly on the eye video to detect the movement patterns of blinks. 
 Read more about the algorithm in the [Pupil Labs blink detector whitepaper](https://docs.google.com/document/d/1JLBhC7fmBr6BR59IT3cWgYyqiaM8HLpFxv5KImrN-qE/export?format=pdf).
