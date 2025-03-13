@@ -1,29 +1,22 @@
 # Data Streams
 
 The Neon module contains a number of sensors providing different types of data
-(see also [Technical Overview](/hardware/module-technical-overview/)). Data is available in real-time (e.g. via
-the [real-time API](/real-time-api/tutorials/)), and post-hoc through either [Pupil Cloud](/pupil-cloud/) or
-[Neon Player](/neon-player/).
+(see also [Technical Overview](/hardware/module-technical-overview/)). Data is available in real-time (e.g. via the [real-time API](/real-time-api/tutorials/)), and post-hoc through either [Pupil Cloud](/pupil-cloud/) or [Neon Player](/neon-player/).
 
-Below you can find a description of all data streams. All data is fully accessible and can be downloaded in convenient
-formats.
+Below you can find a description of all data streams. All data is fully accessible and can be downloaded in convenient formats.
 
 ## Eye Videos
 
 The Neon module features two eye cameras, one for each eye. They are located at the tip of the small arms of the module.
-The sensors record IR video at 200 Hz with a resolution of 192x192px. The two sensors are synced in hardware, such that
-they record images at the exact same time. The resulting images are concatenated in a single video stream of 384x192px
-resolution.
+The sensors record IR video at 200 Hz with a resolution of 192x192px. The two sensors are synced in hardware, such that they record images at the exact same time. The resulting images are concatenated in a single video stream of 384x192px resolution.
 
 An IR LED is located just above each camera, which guarantees good illumination of the eye in dark environments.
 
 ## Scene Video
 
-The front-facing scene camera is located in the center of the Neon Module. It records video at 30 Hz and 1600x1200 px
-resolution with a field of view of 103°x77°.
+The front-facing scene camera is located in the center of the Neon Module. It records video at 30 Hz and 1600x1200 px resolution with a field of view of 103°x77°.
 
-The scene camera can be operated with automatic or manual exposure. In situations with challenging lighting conditions,
-e.g. when recording a screen, optimizing the exposure manually can improve the quality of the scene video.
+The scene camera can be operated with automatic or manual exposure. In situations with challenging lighting conditions, e.g. when recording a screen, optimizing the exposure manually can improve the quality of the scene video.
 
 ## Gaze
 
@@ -31,49 +24,35 @@ Gaze data is output in pixel space of the scene camera image. The origin is in t
 
 ![Gaze](./gaze.webp)
 
-The achieved _real-time_ framerate can vary based on the Companion device used and environmental conditions. On the
-OnePlus 10 and Motorola Edge 40 Pro, the full 200 Hz can generally be achieved outside of especially hot environments.
-On the OnePlus 8, the framerate typically drops to ~120 Hz within a few minutes of starting a recording. Other apps
-running simultaneously on the phone may decrease the framerate.
+The achieved _real-time_ framerate can vary based on the Companion device used and environmental conditions. On the OnePlus 10 and Motorola Edge 40 Pro, the full 200 Hz can generally be achieved outside of especially hot environments.
+On the OnePlus 8, the framerate typically drops to ~120 Hz within a few minutes of starting a recording. Other apps running simultaneously on the phone may decrease the framerate.
 
-After a recording is uploaded to Pupil Cloud, gaze data is automatically re-computed at the full 200 Hz framerate if
-required, and can be downloaded from there.
+After a recording is uploaded to Pupil Cloud, gaze data is automatically re-computed at the full 200 Hz framerate if required, and can be downloaded from there.
 
-The gaze estimation algorithm is based on end-2-end deep learning and provides gaze data robustly without requiring a
-calibration. You can find a high-level description as well as a thorough evaluation of the accuracy and robustness of
-the algorithm in our [white paper](https://zenodo.org/doi/10.5281/zenodo.10420388).
+The gaze estimation algorithm is based on end-2-end deep learning and provides gaze data robustly without requiring a calibration. You can find a high-level description as well as a thorough evaluation of the accuracy and robustness of the algorithm in our [white paper](https://zenodo.org/doi/10.5281/zenodo.10420388).
 
 ## Fixations & Saccades
 
-The two primary types of eye movements exhibited by the visual system are fixations and saccades. During fixations,
-the eyes are directed at a specific point in the environment. A saccade is a very quick movement where the eyes jump
-from one fixation to the next. Properties like the fixation duration are of significant importance for studying gaze
+The two primary types of eye movements exhibited by the visual system are fixations and saccades. During fixations, the eyes are directed at a specific point in the environment. A saccade is a very quick movement where the eyes jump from one fixation to the next. Properties like the fixation duration are of significant importance for studying gaze
 behavior.
 
 ![Fixations](./fixations.webp)
 
-Fixations and saccades are calculated automatically and are included in the recording downloads. The deployed fixation
-detection algorithm was specifically designed for head-mounted eye trackers and offers increased robustness in the presence of head movements. Especially movements due to vestibulo-ocular reflex
-are compensated for, which is not the case for most other fixation detection algorithms. You can learn more about it in
-the [Pupil Labs fixation detector whitepaper](https://docs.google.com/document/d/1CZnjyg4P83QSkfHi_bjwSceWCTWvlVtbGWtuyajv5Jc/export?format=pdf) and in our [publication](https://link.springer.com/article/10.3758/s13428-024-02360-0) in _Behavior Research Methods_ discussing fixation detection strategies.
+Fixations and saccades are calculated automatically and are included in the recording downloads. The deployed fixation detection algorithm was specifically designed for head-mounted eye trackers and offers increased robustness in the presence of head movements. Especially movements due to vestibulo-ocular reflex are compensated for, which is not the case for most other fixation detection algorithms. You can learn more about it in the [Pupil Labs fixation detector whitepaper](https://docs.google.com/document/d/1CZnjyg4P83QSkfHi_bjwSceWCTWvlVtbGWtuyajv5Jc/export?format=pdf) and in our [publication](https://link.springer.com/article/10.3758/s13428-024-02360-0) in _Behavior Research Methods_ discussing fixation detection strategies.
 
-We detect saccades based on the fixation results, considering the gaps between fixations to be saccades. Note, that
-this assumption is only true in the absence of smooth pursuit eye movements. Additionally, the fixation detector does
-not compensate for blinks, which can cause a break in a fixation and thus introduce a false saccade.
+We detect saccades based on the fixation results, considering the gaps between fixations to be saccades. Note, that this assumption is only true in the absence of smooth pursuit eye movements. Additionally, the fixation detector does not compensate for blinks, which can cause a break in a fixation and thus introduce a false saccade.
 
 The downloads for gaze mapping enrichments ([Reference Image Mapper](/pupil-cloud/enrichments/reference-image-mapper/#export-format), [Marker Mapper](/pupil-cloud/enrichments/marker-mapper/#export-format)) also include mapped fixations, i.e. fixations in reference image or surface coordinates respectively.
 
 ## 3D Eye Poses
 
-3D eye poses are a time series of each eye's position and orientation in 3D space, given by the location of the
-eyeball center and the optical axis of each eye. The units are millimeters.
+3D eye poses are a time series of each eye's position and orientation in 3D space, given by the location of the eyeball center and the optical axis of each eye. The units are millimeters.
 
 The coordinate system is depicted below. The origin corresponds to the scene camera of the Neon Module.
 
 ![Coordinate systems of 3D eye poses](./3d_eye_poses.webp)
 
-You can specify the inter-eye distance (IED) of a wearer in the wearer profile before making a recording to further
-improve the accuracy of the measurements. If no IED value is specified, the population average of 63 mm is used.
+You can specify the inter-eye distance (IED) of a wearer in the wearer profile before making a recording to further improve the accuracy of the measurements. If no IED value is specified, the population average of 63 mm is used.
 
 ::: warning
 Enabling real-time estimation of 3D eye poses and pupil diameter on older Companion Devices (OnePlus 8, 8T, 10 Pro) can affect the sampling rates of other sensors due to the greater computational resources required for these tasks. We recommend keeping it off or lowering the sample rate and obtaining the data from Pupil Cloud unless real-time processing is necessary.
@@ -83,16 +62,13 @@ If 200 Hz real-time data is essential, consider upgrading to a newer [Companion 
 
 ## Pupil Diameters
 
-Pupil diameter is provided separately for the left and right eye. The computed pupil diameters correspond to the
-physical pupil size in mm, rather than the apparent pupil size in pixels as observed in the eye videos. You can find a high-level description as well as a thorough evaluation of the accuracy and robustness of Neon’s pupil size measurements in our [white paper](https://zenodo.org/records/10057185).
+Pupil diameter is provided separately for the left and right eye. The computed pupil diameters correspond to the physical pupil size in mm, rather than the apparent pupil size in pixels as observed in the eye videos. You can find a high-level description as well as a thorough evaluation of the accuracy and robustness of Neon’s pupil size measurements in our [white paper](https://zenodo.org/records/10057185).
 
 Similar to the 3D eye poses, the accuracy of the pupil diameter measurements improves when supplying the wearer's IED in the wearer profile before making a recording.
 
 ## Eye Openness
 
-Eye openness enables research into factors such as emotional, cognitive, and physiological states. Neon's eye openness measurements
-comprise of eyelid opening angles for the upper and lower eyelids relative to the scene camera’s horizontal plane, and eye
-opening aperture in millimeters, quantifying the maximum vertical distance between the upper and lower eyelids. These measurements
+Eye openness enables research into factors such as emotional, cognitive, and physiological states. Neon's eye openness measurements comprise of eyelid opening angles for the upper and lower eyelids relative to the scene camera’s horizontal plane, and eye opening aperture in millimeters, quantifying the maximum vertical distance between the upper and lower eyelids. These measurements
 are provided separately for the left and right eyes.
 
 ![Eye openness visualisation](./eye_openness.webp)
