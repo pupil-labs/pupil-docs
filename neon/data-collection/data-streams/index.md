@@ -70,7 +70,7 @@ eyeball center and the optical axis of each eye. The units are millimeters.
 
 The coordinate system is depicted below. The origin corresponds to the scene camera of the Neon Module.
 
-![Coordinate systems of 3D eye poses](./3d_eye_states.png)
+![Coordinate systems of 3D eye poses](./3d_eye_poses.jpg)
 
 You can specify the inter-eye distance (IED) of a wearer in the wearer profile before making a recording to further 
 improve the accuracy of the measurements. If no IED value is specified, the population average of 63 mm is used.
@@ -90,10 +90,13 @@ Similar to the 3D eye poses, the accuracy of the pupil diameter measurements imp
 
 ## Eye Openness
 
-Eye openness measurements comprise of eyelid opening angles for the upper and lower eyelids relative to the scene camera’s 
-horizontal plane, and eye opening aperture in millimeters, quantifying the maximum vertical distance between the upper and 
-lower eyelids. These measurements are provided separately for the left and right eye, and enable research into factors such 
-as emotional, cognitive, and physiological states.
+Eye openness enables research into factors such as emotional, cognitive, and physiological states. Neon's eye openness measurements
+comprise of eyelid opening angles for the upper and lower eyelids relative to the scene camera’s horizontal plane, and eye 
+opening aperture in millimeters, quantifying the maximum vertical distance between the upper and lower eyelids. These measurements 
+are provided separately for the left and right eyes.
+
+![Eye openness visualisation](./eye_openness.jpg)
+
 
 ## Blinks
 
