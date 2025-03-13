@@ -43,8 +43,8 @@ We detect saccades based on the fixation results, considering the gaps between f
 
 The downloads for gaze mapping enrichments ([Reference Image Mapper](/pupil-cloud/enrichments/reference-image-mapper/#export-format), [Marker Mapper](/pupil-cloud/enrichments/marker-mapper/#export-format)) also include mapped fixations, i.e. fixations in reference image or surface coordinates respectively.
 
-::: warning
-The fixation detector runs on the device in realtime, if enabled. If not enabled, fixations and saccades are computed during post-processing on Pupil Cloud.
+::: info Real-Time Fixation Detection & Fixations on the Native Recording Format
+The fixation detector runs on the device in realtime (if enabled). Fixations and saccades are also computed during post-processing on Pupil Cloud.
 :::
 
 ## 3D Eye Poses
@@ -57,12 +57,6 @@ The coordinate system is depicted below. The origin corresponds to the scene cam
 
 You can specify the inter-eye distance (IED) of a wearer in the wearer profile before making a recording to further improve the accuracy of the measurements. If no IED value is specified, the population average of 63 mm is used.
 
-::: warning A note on real-time processing
-Enabling real-time estimation of 3D eye poses and pupil diameter on older Companion Devices (OnePlus 8, 8T, 10 Pro) can affect the sampling rates of other sensors due to the greater computational resources required for these tasks. We recommend keeping it off or lowering the sample rate and obtaining the data from Pupil Cloud unless real-time processing is necessary.
-
-If 200 Hz real-time data is essential, consider upgrading to a newer [Companion Device model](/hardware/compatible-devices/).
-:::
-
 ## Pupil Diameters
 
 Pupil diameter is provided separately for the left and right eye. The computed pupil diameters correspond to the physical pupil size in mm, rather than the apparent pupil size in pixels as observed in the eye videos. You can find a high-level description as well as a thorough evaluation of the accuracy and robustness of Neon’s pupil size measurements in our [white paper](https://zenodo.org/records/10057185).
@@ -74,6 +68,12 @@ Similar to the 3D eye poses, the accuracy of the pupil diameter measurements imp
 Eye openness enables research into factors such as emotional, cognitive, and physiological states. Neon's eye openness measurements comprise of eyelid opening angles for the upper and lower eyelids relative to the optical axis plane in radians, and eye opening aperture in millimeters, quantifying the maximum vertical distance between the upper and lower eyelids. These measurements are provided separately for the left and right eyes.
 
 ![Eye openness visualisation](./eye_openness.webp)
+
+::: warning A Note on Real-Time Processing
+Enabling real-time estimation of 3D eye poses, pupil diameter and eye openness on older Companion Devices (OnePlus 8, 8T, 10 Pro) can affect the sampling rates of other sensors due to the greater computational resources required for these tasks. We recommend keeping it off or lowering the sample rate and obtaining the data from Pupil Cloud unless real-time processing is necessary.
+
+If 200 Hz real-time data is essential, consider upgrading to a newer [Companion Device model](/hardware/compatible-devices/).
+:::
 
 ## Blinks
 
