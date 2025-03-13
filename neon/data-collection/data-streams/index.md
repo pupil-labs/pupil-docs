@@ -33,8 +33,7 @@ The gaze estimation algorithm is based on end-2-end deep learning and provides g
 
 ## Fixations & Saccades
 
-The two primary types of eye movements exhibited by the visual system are fixations and saccades. During fixations, the eyes are directed at a specific point in the environment. A saccade is a very quick movement where the eyes jump from one fixation to the next. Properties like the fixation duration are of significant importance for studying gaze
-behavior.
+The two primary types of eye movements exhibited by the visual system are fixations and saccades. During fixations, the eyes are directed at a specific point in the environment. A saccade is a very quick movement where the eyes jump from one fixation to the next. Properties like the fixation duration are of significant importance for studying gaze behavior.
 
 ![Fixations](./fixations.webp)
 
@@ -43,6 +42,10 @@ Fixations and saccades are calculated automatically and are included in the reco
 We detect saccades based on the fixation results, considering the gaps between fixations to be saccades. Note, that this assumption is only true in the absence of smooth pursuit eye movements. Additionally, the fixation detector does not compensate for blinks, which can cause a break in a fixation and thus introduce a false saccade.
 
 The downloads for gaze mapping enrichments ([Reference Image Mapper](/pupil-cloud/enrichments/reference-image-mapper/#export-format), [Marker Mapper](/pupil-cloud/enrichments/marker-mapper/#export-format)) also include mapped fixations, i.e. fixations in reference image or surface coordinates respectively.
+
+::: warning
+The fixation detector runs on the device in realtime, if enabled. If not enabled, fixations and saccades are computed during post-processing on Pupil Cloud.
+:::
 
 ## 3D Eye Poses
 
@@ -54,7 +57,7 @@ The coordinate system is depicted below. The origin corresponds to the scene cam
 
 You can specify the inter-eye distance (IED) of a wearer in the wearer profile before making a recording to further improve the accuracy of the measurements. If no IED value is specified, the population average of 63 mm is used.
 
-::: warning
+::: warning A note on real-time processing
 Enabling real-time estimation of 3D eye poses and pupil diameter on older Companion Devices (OnePlus 8, 8T, 10 Pro) can affect the sampling rates of other sensors due to the greater computational resources required for these tasks. We recommend keeping it off or lowering the sample rate and obtaining the data from Pupil Cloud unless real-time processing is necessary.
 
 If 200 Hz real-time data is essential, consider upgrading to a newer [Companion Device model](/hardware/compatible-devices/).
@@ -68,8 +71,7 @@ Similar to the 3D eye poses, the accuracy of the pupil diameter measurements imp
 
 ## Eye Openness
 
-Eye openness enables research into factors such as emotional, cognitive, and physiological states. Neon's eye openness measurements comprise of eyelid opening angles for the upper and lower eyelids relative to the scene camera’s horizontal plane, and eye opening aperture in millimeters, quantifying the maximum vertical distance between the upper and lower eyelids. These measurements
-are provided separately for the left and right eyes.
+Eye openness enables research into factors such as emotional, cognitive, and physiological states. Neon's eye openness measurements comprise of eyelid opening angles for the upper and lower eyelids relative to the optical axis plane in radians, and eye opening aperture in millimeters, quantifying the maximum vertical distance between the upper and lower eyelids. These measurements are provided separately for the left and right eyes.
 
 ![Eye openness visualisation](./eye_openness.webp)
 
@@ -78,16 +80,13 @@ are provided separately for the left and right eyes.
 During blinks the eye is briefly covered by the eyelids, which serves the purpose of spreading tears across the cornea.
 The blink rate and blink duration are also correlated with cognitive processes, which makes them interesting physiological signals.
 
-The blink detection algorithm is operating directly on the eye video to detect the movement patterns of blinks.
-Read more about the algorithm in the [Pupil Labs blink detector whitepaper](https://docs.google.com/document/d/1JLBhC7fmBr6BR59IT3cWgYyqiaM8HLpFxv5KImrN-qE/export?format=pdf).
-The algorithm is open-source. See our [Real-Time Blink Detector article](https://docs.pupil-labs.com/alpha-lab/blink-detection/#detect-eye-blinks-with-neon)
-for an example of how to run it programmatically.
+The blink detection is derived from the eye openness signal, if eye state is disabled on the device this stream will only be available in Cloud.
 
 ## Audio
 
 Stereo microphones are integrated into the Neon module. Recorded audio is part of the resulting scene video.
 
-Audio recording is disabled in the Neon Companion app by default and can be enabled in the settings.
+Audio recording is disabled in the Neon Companion app by default and can be enabled in Companion App main page.
 
 ## Movement (IMU Data)
 
