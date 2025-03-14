@@ -65,7 +65,7 @@ Similar to the 3D eye poses, the accuracy of the pupil diameter measurements imp
 
 ## Eye Openness
 
-Eye openness enables research into factors such as emotional, cognitive, and physiological states. Neon's eye openness measurements comprise of eyelid opening angles for the upper and lower eyelids relative to the optical axis plane in radians, and eye opening aperture in millimeters, quantifying the maximum vertical distance between the upper and lower eyelids. These measurements are provided separately for the left and right eyes.
+Eye openness enables research into factors such as emotional, cognitive, and physiological states. Neon’s eye openness measurements comprise eyelid opening angles for the upper and lower eyelids, defined relative to the eyeball’s horizontal plane (in scene camera coordinates), with values provided in radians. It also measures eye opening aperture in millimeters, quantifying the maximum vertical distance between the upper and lower eyelids. These measurements are provided separately for the left and right eyes.
 
 ![Eye openness visualisation](./eye_openness.webp)
 
