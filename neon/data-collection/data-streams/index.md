@@ -33,7 +33,7 @@ The gaze estimation algorithm is based on end-2-end deep learning and provides g
 
 ## Fixations & Saccades
 
-The two primary types of eye movements exhibited by the visual system are fixations and saccades. During fixations, the eyes are directed at a specific point in the environment. A saccade is a very quick movement where the eyes jump from one fixation to the next. Properties like the fixation duration are of significant importance for studying gaze behavior.
+The two primary types of [eye movements](https://pupil-labs.com/blog/what-is-eye-tracking#how-are-eye-movements-classified) exhibited by the visual system are fixations and saccades. During fixations, the eyes are directed at a specific point in the environment. A saccade is a very quick movement where the eyes jump from one fixation to the next. Properties like the fixation duration are of significant importance for studying gaze behavior.
 
 ![Fixations](./fixations.webp)
 
@@ -65,7 +65,8 @@ Similar to the 3D eye poses, the accuracy of the pupil diameter measurements imp
 
 ## Eye Openness
 
-Eye openness enables research into factors such as emotional, cognitive, and physiological states. Neon’s eye openness measurements comprise eyelid opening angles for the upper and lower eyelids, defined relative to the eyeball’s horizontal plane (in scene camera coordinates), with values provided in radians. It also measures eyelid aperture in millimeters, quantifying the maximum arc length between the upper and lower eyelids. These measurements are provided separately for the left and right eyes.
+Eye openness enables research into factors such as emotional, cognitive, and physiological states. Neon's eye openness measurements
+comprise of eyelid opening angles for the upper and lower eyelids relative to the scene camera’s horizontal plane with values provided in radians. It also measures eyelid aperture in millimeters, quantifying the maximum arc length between the upper and lower eyelids. These measurements are provided separately for the left and right eyes.
 
 ![Eye openness visualisation](./eye_openness.webp)
 
