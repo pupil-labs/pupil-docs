@@ -2,7 +2,7 @@
 
 For some applications it is critical to have access to eye tracking data in real time. Imagine for example an application utilizing gaze interaction to allow users to press a button using only their eyes.
 
-In other cases it may be important to automatically start or stop a recording and save [events](/data-collection/events/). For example, you might want to launch a screen-based experiment and have the recording start automatically when the stimulus presentation begins. Additionally, you might want to save the timestamps of when the subject interacted with the screen.
+In other cases, it may be important to automatically start or stop a recording and save [events](/data-collection/events/). For example, you might want to launch a screen-based experiment and have the recording start automatically when the stimulus presentation begins. Additionally, you might want to save the timestamps of when the subject interacted with the screen.
 
 All of this is possible for developers using the real-time API. It allows you to stream gaze data and scene video to any device connected to the same local network. Further, you can control all devices remotely to start and stop recordings or save events.
 
@@ -98,14 +98,13 @@ Event(name=None recording_id=fd8c98ca-cd6c-4d3f-9a05-fbdb0ef42668 timestamp_unix
 
 ```
 
-## Scene Video and Gaze, Pupil Diameter, and Eye State Data
+## Scene Video and Gaze, Pupil Diameter, and Eye Poses and Eyelid Openness Data
 
-You can receive the current scene camera frame as well as the current gaze sample using the [`receive_matched_scene_video_frame_and_gaze`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.receive_matched_scene_video_frame_and_gaze) method. This method also provides pupil diameter and eye state data, separately for each eye. An example is provided below:
+You can receive the current scene camera frame as well as the current gaze sample using the [`receive_matched_scene_video_frame_and_gaze`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.receive_matched_scene_video_frame_and_gaze) method. This method also provides [pupil diameter](/data-collection/data-streams/#pupil-diameters) and [eye poses](/data-collection/data-streams/#_3d-eye-poses) and [eye openness data](/data-collection/data-streams/#eye-openness), separately for each eye. An example is provided below:
 
 ```python
-from datetime import datetime
-import matplotlib.pyplot as plt
 import cv2
+import matplotlib.pyplot as plt
 from pupil_labs.realtime_api.simple import discover_one_device
 
 device = discover_one_device()
@@ -114,15 +113,29 @@ scene_sample, gaze_sample = device.receive_matched_scene_video_frame_and_gaze()
 
 print("This sample contains the following data:\n")
 print(f"Gaze x and y coordinates: {gaze_sample.x}, {gaze_sample.y}\n")
-print(f"Pupil diameter in millimeters for the left eye: {gaze_sample.pupil_diameter_left} and the right eye: {gaze_sample.pupil_diameter_right}\n")
-print("Location of left and right eye ball centers in millimeters in relation to the scene camera of the Neon module.")
-print(f"For the left eye x, y, z: {gaze_sample.eyeball_center_left_x}, {gaze_sample.eyeball_center_left_y}, {gaze_sample.eyeball_center_left_z} and for the right eye x, y, z: {gaze_sample.eyeball_center_right_x}, {gaze_sample.eyeball_center_right_y}, {gaze_sample.eyeball_center_right_z}.\n")
+print(
+    f"Pupil diameter in millimeters for the left eye: {gaze_sample.pupil_diameter_left} and the right eye: {gaze_sample.pupil_diameter_right}\n"
+)
+print(
+    "Location of left and right eye ball centers in millimeters in relation to the scene camera of the Neon module."
+)
+print(
+    f"For the left eye x, y, z: {gaze_sample.eyeball_center_left_x}, {gaze_sample.eyeball_center_left_y}, {gaze_sample.eyeball_center_left_z} and for the right eye x, y, z: {gaze_sample.eyeball_center_right_x}, {gaze_sample.eyeball_center_right_y}, {gaze_sample.eyeball_center_right_z}.\n"
+)
 print("Directional vector describing the optical axis of the left and right eye.")
-print(f"For the left eye x, y, z: {gaze_sample.optical_axis_left_x}, {gaze_sample.optical_axis_left_y}, {gaze_sample.optical_axis_left_z} and for the right eye x, y, z: {gaze_sample.optical_axis_right_x}, {gaze_sample.optical_axis_right_y}, {gaze_sample.optical_axis_right_z}.")
+print(
+    f"For the left eye x, y, z: {gaze_sample.optical_axis_left_x}, {gaze_sample.optical_axis_left_y}, {gaze_sample.optical_axis_left_z} and for the right eye x, y, z: {gaze_sample.optical_axis_right_x}, {gaze_sample.optical_axis_right_y}, {gaze_sample.optical_axis_right_z}.\n"
+)
+print("Angles and aperture describing the eyelid openness of the left and right eye.")
+print(
+    f"For the left eye upper lid angle, lower lid angle, and aperture: {gaze_sample.eyelid_angle_top_left}, {gaze_sample.eyelid_angle_bottom_left}, {gaze_sample.eyelid_aperture_left} and for the right eye: {gaze_sample.eyelid_angle_top_right}, {gaze_sample.eyelid_angle_bottom_right}, {gaze_sample.eyelid_aperture_right}."
+)
 
 scene_image_rgb = cv2.cvtColor(scene_sample.bgr_pixels, cv2.COLOR_BGR2RGB)
 plt.imshow(scene_image_rgb)
-plt.scatter(gaze_sample.x, gaze_sample.y, s=200, facecolors='none', edgecolors='r')
+plt.scatter(gaze_sample.x, gaze_sample.y, s=200, facecolors="none", edgecolors="r")
+device.close()
+plt.show()
 ```
 
 The output data would look as follows:
@@ -130,15 +143,18 @@ The output data would look as follows:
 ```
 This sample contains the following data:
 
-Gaze x and y coordinates: 724.7685546875, 528.932861328125
+Gaze x and y coordinates: 732.8187255859375, 604.2568359375
 
-Pupil diameter in millimeters for the left eye: 4.263330459594727 and the right eye: 3.3228392601013184
+Pupil diameter in millimeters for the left eye: 3.873124122619629 and the right eye: 3.441348075866699
 
 Location of left and right eye ball centers in millimeters in relation to the scene camera of the Neon module.
-For the left eye x, y, z: -30.087890625, 10.048828125, -52.4462890625 and for the right eye x, y, z: 31.9189453125, 14.375, -48.6309814453125.
+For the left eye x, y, z: -30.625, 14.09375, -33.96875 and for the right eye x, y, z: 32.4375, 14.375, -33.9375.
 
 Directional vector describing the optical axis of the left and right eye.
-For the left eye x, y, z: -0.05339553952217102, 0.12345726788043976, 0.9909123182296753 and for the right eye x, y, z: -0.40384653210639954, 0.11708031594753265, 0.9073038101196289.
+For the left eye x, y, z: -0.015054119750857353, 0.10672548413276672, 0.9941745400428772 and for the right eye x, y, z: -0.06556398421525955, 0.09701070189476013, 0.9931215047836304.
+
+Angles and aperture describing the eyelid openness of the left and right eye.
+For the left eye upper lid angle, lower lid angle, and aperture: 0.39990234375, -0.5849609375, 10.859789848327637 and for the right eye: 0.396484375, -0.609375, 11.100102424621582.
 ```
 
 Alternatively, you could also use the [`receive_scene_video_frame`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.receive_scene_video_frame) and [`receive_gaze_datum`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.receive_gaze_datum) methods to obtain each sample separately. The [`receive_matched_scene_video_frame_and_gaze`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.receive_matched_scene_video_frame_and_gaze) method does however also ensure that both samples are matched temporally.
@@ -269,6 +285,10 @@ pupil_labs.realtime_api.models.InvalidTemplateAnswersError: Question 3 (6169276c
      input: invalid_option
      message: Value error, 'invalid_option' is not a valid choice from: ['a', 'b', 'c']
 ```
+
+## Fixations, Saccades and Blinks
+
+You can also stream the detected fixations, saccades, and blinks in real-time please refer to [the real-time examples](https://github.com/pupil-labs/realtime-python-api/blob/main/examples/async/stream_eye_events.py).
 
 ## Troubleshooting
 
