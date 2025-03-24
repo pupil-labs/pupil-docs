@@ -1,7 +1,7 @@
 media/
 .DS_Store
 */.vitepress/cache/
-
+.vscode/*
 
 # Logs
 logs
