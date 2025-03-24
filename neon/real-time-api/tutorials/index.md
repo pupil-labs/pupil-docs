@@ -98,7 +98,7 @@ Event(name=None recording_id=fd8c98ca-cd6c-4d3f-9a05-fbdb0ef42668 timestamp_unix
 
 ```
 
-## Scene Video and Gaze, Pupil Diameter, and Eye Poses and Eyelid Openness Data
+## Scene Video and Gaze, Pupil Diameter, Eye Poses, and Eye Openness Data
 
 You can receive the current scene camera frame as well as the current gaze sample using the [`receive_matched_scene_video_frame_and_gaze`](https://pupil-labs-realtime-api.readthedocs.io/en/stable/api/simple.html#pupil_labs.realtime_api.simple.Device.receive_matched_scene_video_frame_and_gaze) method. This method also provides [pupil diameter](/data-collection/data-streams/#pupil-diameters) and [eye poses](/data-collection/data-streams/#_3d-eye-poses) and [eye openness data](/data-collection/data-streams/#eye-openness), separately for each eye. An example is provided below:
 
