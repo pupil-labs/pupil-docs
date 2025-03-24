@@ -44,7 +44,7 @@ We detect saccades based on the fixation results, considering the gaps between f
 The downloads for gaze mapping enrichments ([Reference Image Mapper](/pupil-cloud/enrichments/reference-image-mapper/#export-format), [Marker Mapper](/pupil-cloud/enrichments/marker-mapper/#export-format)) also include mapped fixations, i.e. fixations in reference image or surface coordinates respectively.
 
 ::: info Real-Time Fixation Detection
-The fixation detector runs on the device in realtime (if enabled). Fixations and saccades are also computed during post-processing on Pupil Cloud.
+The fixation detector runs on the device in real-time (if enabled). Fixations and saccades are also computed during post-processing in Pupil Cloud.
 :::
 
 ## 3D Eye Poses
