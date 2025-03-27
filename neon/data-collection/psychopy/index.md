@@ -82,10 +82,10 @@ from psychopy_eyetracker_pupil_labs.pupil_labs.stimuli import AprilTagFrameStim
 
 # Set up iohub
 iohub_config = {
-    'eyetracker.hw.pupil_labs.neon.EyeTracker': {
+    'eyetracker.neon.EyeTracker': {
         'name': 'tracker',
         'runtime_settings': {
-            'companion_address': '192.168.1.228',
+            'companion_address': 'neon.local',
             'companion_port': 8080,
         },
     }
