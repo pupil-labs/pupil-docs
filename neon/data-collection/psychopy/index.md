@@ -49,15 +49,14 @@ Three new Builder components will be available in the components list under the 
 
 ### Data Format
 
-[PsychoPy saves eyetracking data in its own format](https://psychopy.org/hardware/eyeTracking.html#what-about-the-data). Screen gaze data will be saved as `MonocularEyeSampleEvent` records (even when using the binocular gaze mode). Eye state data, if enabled, will appear in `BinocularEyeSampleEvent` records.
+[PsychoPy saves eyetracking data in its own format](https://psychopy.org/hardware/eyeTracking.html#what-about-the-data). Screen gaze data will be saved as `MonocularEyeSampleEvent` records (even when using the binocular gaze mode). [Eye state data](https://docs.pupil-labs.com/neon/data-collection/data-streams/#_3d-eye-states), if enabled, will appear in `BinocularEyeSampleEvent` records.
 
-For eye state data in`BinocularEyeSampleEvent` records:
+For [eye state data](https://docs.pupil-labs.com/neon/data-collection/data-streams/#_3d-eye-states) in `BinocularEyeSampleEvent` records:
 
-- For eye state records
-  - `[left|right]_gaze_[x|y|z]` will be the optical axis vectors
-  - `[left|right]_eye_cam_[x|y|z]` will be eye positions
-  - `[left|right]_pupil_measure1` will be pupil diameters in mm
-  - `[left|right]_pupil_measure1_type` will be `77`
+- `[left|right]_gaze_[x|y|z]` will be the optical axis vectors
+- `[left|right]_eye_cam_[x|y|z]` will be eye positions
+- `[left|right]_pupil_measure1` will be pupil diameters in mm
+- `[left|right]_pupil_measure1_type` will be `77`
 
 ### Example Builder Experiment
 
