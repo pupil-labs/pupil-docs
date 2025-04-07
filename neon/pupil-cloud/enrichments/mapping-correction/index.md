@@ -6,7 +6,7 @@
 
 You can use the Mapping Correction interface to adjust mis-mapped or unmapped fixations.
 
-In the majority of cases, Reference Image Mapper and Marker Mapper will successfully and accurately map gaze from your recording to your Reference Image. For some fixations, though, the mapping may not be successful, or fixations it can be somewhat misplaced. This can happen if the view of the Reference Image is partially obscured in the recording or the wearer briefly moves to a viewpoint that was not adequately scanned, for instance.
+In the majority of cases, [**Reference Image Mapper**](/enrichments/reference-image-mapper/) and [**Manual Mapper**](/enrichments/manual-mapper/) will successfully and accurately map gaze from your recording to your Reference Image. For some fixations, though, the mapping may not be successful, or fixations it can be somewhat misplaced. This can happen if the view of the Reference Image is partially obscured in the recording or the wearer briefly moves to a viewpoint that was not adequately scanned, for instance.
 
 ## Setup
 
