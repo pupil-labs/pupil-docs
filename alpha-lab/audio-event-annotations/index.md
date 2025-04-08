@@ -34,7 +34,7 @@ Eye tracking isn't just about following gazes anymore—it's about listening to 
 
 ## Event Annotations With Audio-based Detection
 
-Eye tracking analysis often focuses on visual data, whereby researchers identify and annotate events after watching the eye tracking footage. This tool introduces an alternative approach that leverages Neon's audio recordings to detect and annotate events based on auditory cues. By integrating OpenAI's automatic speech recognition system, Whisper, with the Pupil Cloud API, we can automatically detect key spoken events and align them with eye tracking data in [Pupil Cloud](https://pupil-labs.com/products/cloud).
+Eye tracking analysis often focuses on visual data, whereby researchers identify and annotate events after watching the eye tracking footage. This tool introduces an alternative approach that leverages [Neon's](https://pupil-labs.com/products/neon) audio recordings to detect and annotate events based on auditory cues. By integrating OpenAI's automatic speech recognition system, Whisper, with the Pupil Cloud API, we can automatically detect key spoken events and align them with eye tracking data in [Pupil Cloud](https://pupil-labs.com/products/cloud).
 
 This method might be particularly useful in experiments where speech plays a crucial role. For example, if your research involves extended speech interactions, you may want to automatically tag key words and phrases, and subsequently correlate them with gaze patterns and fixation behavior. Or you could use this approach to speed up your testing workflow, by marking the beginning and end of trials using a specific keyword or phrase, e.g. 'trial one begin', making your experiment easier to run in practice.
 
