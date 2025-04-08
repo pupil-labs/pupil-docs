@@ -150,12 +150,13 @@ This file contains data recorded by the integrated [IMU](/data-collection/data-s
 
 This file contains the responses entered for a [Template](/data-collection/templates/index.md).
 
-| Field            | Description                                                                                |
-| ---------------- | ------------------------------------------------------------------------------------------ |
-| **section id**   | Unique identifier of the corresponding section.                                            |
-| **recording id** | Unique identifier of the recording this filled Template belongs to.                        |
-| **title**        | The name of a specific entry widget in the respective Template.                            |
-| **answer**       | The input for the entry widget.                                                            |
-| **widget_type**  | The entry widget type; can be one of `TEXT`, `PARAGRAPH`, `RADIO_LIST`, or `CHECKBOX_LIST` |
-| **required**     | Boolean value denoting if input for the entry was required or not.                         |
-| **choices**      | For `RADIO_LIST` or `CHECKBOX_LIST` entries, a list of the choices that were presented.    |
+| Field                 | Description                                                                                |
+| --------------------- | ------------------------------------------------------------------------------------------ |
+| **recording&nbsp;id** | Unique identifier of the recording this filled Template belongs to.                        |
+| **item&nbsp;id**      | Unique identifier of a specific entry widget in the respective Template.                   |
+| **title**             | The name of the entry widget.                                                              |
+| **answer**            | The input for the entry widget.                                                            |
+| **widget&nbsp;type**  | The entry widget type; can be one of `TEXT`, `PARAGRAPH`, `RADIO_LIST`, or `CHECKBOX_LIST` |
+| **required**          | Boolean value denoting if input for the entry was required or not.                         |
+| **help&nbsp;text**    | For `TEXT` or `PARAGRAPH` entries, a placeholder text to assist the user.                  |
+| **choices**           | For `RADIO_LIST` or `CHECKBOX_LIST` entries, a list of the choices that were presented.    |
