@@ -183,5 +183,5 @@ This file contains the responses entered for a [Template](/data-collection/templ
 | **answer**            | The input for the entry widget.                                                            |
 | **widget&nbsp;type**  | The entry widget type; can be one of `TEXT`, `PARAGRAPH`, `RADIO_LIST`, or `CHECKBOX_LIST` |
 | **required**          | Boolean value denoting if input for the entry was required or not.                         |
-| **help&nbsp;text**    | For `TEXT` or `PARAGRAPH` entries, a placeholder text to assist the user.                  |
+| **help&nbsp;text**    | For `TEXT` entries, a placeholder text to assist the user.                                 |
 | **choices**           | For `RADIO_LIST` or `CHECKBOX_LIST` entries, a list of the choices that were presented.    |
