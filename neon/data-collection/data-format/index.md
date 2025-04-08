@@ -170,3 +170,18 @@ This file contains data recorded by the integrated [IMU](/data-collection/data-s
 | **pitch [deg]**                                                                                    | Drift-free estimate of the pitch (head tilt from front to back) in degrees. The output range is -90 to +90 degrees. Added in version 2 of this enrichment.     |
 | **yaw [deg]**                                                                                      | Drift-free estimate of the yaw (horizontal head rotation) in degrees. The output range is -180 to +180 degrees. Added in version 2 of this enrichment.         |
 | **quaternion w**<br />**quaternion x**<br />**quaternion y**<br />**quaternion z**                 | Quaternion describing the rotation of the Neon module.                                                                                                         |
+
+## template.csv
+
+This file contains the responses entered for a [Template](/data-collection/templates/index.md).
+
+| Field                 | Description                                                                                |
+| --------------------- | ------------------------------------------------------------------------------------------ |
+| **recording&nbsp;id** | Unique identifier of the recording this filled Template belongs to.                        |
+| **item&nbsp;id**      | Unique identifier of a specific entry widget in the respective Template.                   |
+| **title**             | The name of the entry widget.                                                              |
+| **answer**            | The input for the entry widget.                                                            |
+| **widget&nbsp;type**  | The entry widget type; can be one of `TEXT`, `PARAGRAPH`, `RADIO_LIST`, or `CHECKBOX_LIST` |
+| **required**          | Boolean value denoting if input for the entry was required or not.                         |
+| **help&nbsp;text**    | For `TEXT` entries, a placeholder text to assist the user.                                 |
+| **choices**           | For `RADIO_LIST` or `CHECKBOX_LIST` entries, a list of the choices that were presented.    |
