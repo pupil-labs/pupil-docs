@@ -160,7 +160,7 @@
     "category": "Coordinate Systems"
   },
   {
-    "title": "Automate Event Annotations with Pupil Cloud and GPT",
+    "title": "Automate Event Annotations With Pupil Cloud and GPT",
     "details": "Automatically annotate important activities and events in your Pupil Cloud recordings with GPT-4o.",
     "link": {
       "text": "View",
@@ -178,5 +178,15 @@
     },
     "image": "/alpha-lab/egocentric-video-mapper.webp",
     "category": "Gaze Mapping"
+  },
+  {
+    "title": "Audio-Based Event Detection With Pupil Cloud and OpenAI's Whisper",
+    "details": "Automatically annotate important events in your Pupil Cloud recordings using Neon's audio capture and OpenAI's Whisper.",
+    "link": {
+      "text": "View",
+      "href": "/alpha-lab/audio-event-annotations/"
+    },
+    "image": "/alpha-lab/audio-events-img.webp",
+    "category": "Other"
   }
 ]
