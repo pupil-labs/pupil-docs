@@ -180,6 +180,10 @@ let theme_config_additions = {
             link: "/pupil-cloud/enrichments/marker-mapper/",
           },
           {
+            text: "Mapping Correction",
+            link: "/pupil-cloud/enrichments/mapping-correction/",
+          },
+          {
             text: "Face Mapper",
             link: "/pupil-cloud/enrichments/face-mapper/",
           },
