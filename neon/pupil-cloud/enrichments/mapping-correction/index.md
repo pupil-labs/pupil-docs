@@ -6,7 +6,7 @@
 
 You can use the Mapping Correction interface to adjust mis-mapped or unmapped fixations.
 
-In the majority of cases, [**Reference Image Mapper**](/enrichments/reference-image-mapper/) and [**Manual Mapper**](/enrichments/manual-mapper/) will successfully and accurately map gaze from your recording to your Reference Image. For some fixations, though, the mapping may not be successful, or fixations can be misplaced. This can happen if the view of the Reference Image is partially obscured in the recording or the wearer briefly moves to a viewpoint that was not adequately scanned, for instance.
+In the majority of cases, [**Reference Image Mapper**](/pupil-cloud/enrichments/reference-image-mapper/) and [**Manual Mapper**](/pupil-cloud/enrichments/manual-mapper/) will successfully and accurately map gaze from your recording to your Reference Image. For some fixations, though, the mapping may not be successful, or fixations can be misplaced. This can happen if the view of the Reference Image is partially obscured in the recording or the wearer briefly moves to a viewpoint that was not adequately scanned, for instance.
 
 ## Setup
 
@@ -36,5 +36,5 @@ Use the <kbd>A</kbd> and <kbd>S</kbd> keyboard shortcuts to move back and fort
 
 Once you are done with Mapping Correction, then the output of the Enrichment is automatically updated and can be downloaded. Please refer to each Enrichment’s respective Export Format Documentation:
 
-- [Reference Image Mapper Export Format](/enrichments/reference-image-mapper/#export-format)
-- [Marker Mapper Export Format](/enrichments/marker-mapper/#export-format)
+- [Reference Image Mapper Export Format](/pupil-cloud/enrichments/reference-image-mapper/#export-format)
+- [Marker Mapper Export Format](/pupil-cloud/enrichments/marker-mapper/#export-format)

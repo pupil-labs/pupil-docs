@@ -68,7 +68,7 @@ After the enrichment is successfully run, the recording timeline contains visual
 </video>
 
 ::: tip
-If you find that any fixations or unmapped or mis-mapped, then make use of [the Mapping Correction tool](/enrichments/mapping-correction/)!
+If you find that any fixations or unmapped or mis-mapped, then make use of [the Mapping Correction tool](/pupil-cloud/enrichments/mapping-correction/)!
 :::
 
 ## Export Format
