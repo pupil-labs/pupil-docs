@@ -19,7 +19,7 @@ In the majority of cases, [**Reference Image Mapper**](/enrichments/reference-im
   - You can `Revert` any accepted fixations with the corresponding button or the `R` keyboard shortcut.
   - Click `Done` once you are finished.
 
-You will see the total number of accepted & corrected fixations in the Mapping Correction panel. It shows the fixation currently being mapped (fixation ID 25 in this case), and you can enter a number to jump to a specific fixation. In the example below, the predictions for 80 fixations were accepted, and the other 9 were corrected.
+You will see the total number of accepted & corrected fixations in the Mapping Correction panel. It shows the fixation currently being mapped (fixation ID 25 in this case), and you can enter a number to jump to a specific fixation. In the example below, the predictions for 63 fixations were accepted, and the other 38 were corrected.
 
 ![Mapping correction image one](./image_1_correction.png)
 
