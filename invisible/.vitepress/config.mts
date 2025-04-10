@@ -151,6 +151,10 @@ let theme_config_additions = {
             text: "Manual Mapper",
             link: "/pupil-cloud/enrichments/manual-mapper/",
           },
+          {
+            text: "Mapping Correction",
+            link: "/pupil-cloud/enrichments/mapping-correction/",
+          },
         ],
       },
       {
