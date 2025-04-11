@@ -13,6 +13,12 @@ import DownloadLinks from '@components/DownloadLinks.vue'
   icon="./neon-player.svg"
 />
 
+::: info
+Starting with version `v2.9.0-prod` of the Neon Companion app, blinks, fixations, and saccades can be computed at recording time. These data can be analyzed in Neon Player `v5.0.0` or later.
+
+To analyze blinks or fixations in recordings made prior to `v2.9.0-prod` of the Neon Companion app, you will instead need to use [Neon Player `v4.x`](https://github.com/pupil-labs/neon-player/releases) instead.
+:::
+
 ## Loading a Recording
 To load a recording, you first need to download or export it to your computer:
 
@@ -70,7 +76,7 @@ Recordings downloaded from [Pupil Cloud](./../pupil-cloud/) will be at 200Hz.
 
 ## Plugins
 
-Neon Player uses a plugin framework to add functionality. Visualizations, fixations, blinks, and data exports are 
+Neon Player uses a plugin framework to add functionality. Visualizations, fixations, blinks, and data exports are
 all implemented using this structure.
 
 There are two general types of plugins:
@@ -79,13 +85,13 @@ There are two general types of plugins:
 - **Not unique**: You can launch multiple instances of this type of plugin. For example, you can load one `Vis Circle` plugin to render the gaze position with a translucent green circle, and another `Vis Circle` plugin to render the gaze circle with a green stroke of 3 pixel thickness. You can think of these types of plugins as _additive_.
 
 ## Exports
-You can export data and videos by pressing `e` on your keyboard, or use the download button in the **Neon Player** window. 
+You can export data and videos by pressing `e` on your keyboard, or use the download button in the **Neon Player** window.
 
-Upon activation, all loaded plugins with export capabilities will initiate the export process. Some exports operate in the background, 
+Upon activation, all loaded plugins with export capabilities will initiate the export process. Some exports operate in the background,
 you can monitor their progress via a GUI progress bar. This allows you to continue working with Neon Player.
 
 ### Export Directory
-Exports are separated from your raw data and contained in the `exports` subdirectory. Multiple exports will create a new 
+Exports are separated from your raw data and contained in the `exports` subdirectory. Multiple exports will create a new
 folders, which are auto-named according to their creation order, e.g. `000`, `001` etc.
 
 ### Export Handling
