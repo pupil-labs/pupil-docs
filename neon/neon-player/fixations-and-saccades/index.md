@@ -1,12 +1,11 @@
-# Fixation Detector
+# Fixations & Saccades
 
 <!-- TODO: Add tunable parameters in the fixation as table -->
 
-Neon Player runs the same [Fixation Detector](./../../data-collection/data-streams/#fixations-saccades) employed in Pupil Cloud.
-It calculates fixations for the whole recording. The menu gives feedback about the progress of the detection, how many
-fixations were found, and shows detailed information about the current fixation.
+[Fixations](./../../data-collection/data-streams/#fixations-saccades) are provided for the whole recording. 
+The menu gives feedback about the total number of fixations, and shows detailed information about the current fixation.
 
-With this plugin enabled, Neon Player also extracts [saccades from detected fixations](./../../data-collection/data-streams/#fixations-saccades) across the whole recording, again in the same way as Pupil Cloud.
+With this plugin enabled, Neon Player also exports [saccades](./../../data-collection/data-streams/#fixations-saccades).
 
 ![Fixations](./np-fixation.webp)
 

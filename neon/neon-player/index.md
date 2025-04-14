@@ -14,9 +14,11 @@ import DownloadLinks from '@components/DownloadLinks.vue'
 />
 
 ::: info
-Starting with version `v2.9.0-prod` of the Neon Companion app, blinks, fixations, and saccades can be computed at recording time. These data can be analyzed in Neon Player `v5.0.0` or later.
+Starting with version `v2.9.0-prod` of the Neon Companion app, blinks, and fixations & saccades, can be computed at 
+recording time. These data can be loaded in Neon Player `v5.0.0` or later.
 
-To analyze blinks or fixations in recordings made prior to `v2.9.0-prod` of the Neon Companion app, you will instead need to use [Neon Player `v4.x`](https://github.com/pupil-labs/neon-player/releases) instead.
+To load blinks or fixations & saccades in recordings made prior to `v2.9.0-prod` of the Neon 
+Companion app, use [Neon Player `v4.x`](https://github.com/pupil-labs/neon-player/releases) instead.
 :::
 
 ## Loading a Recording

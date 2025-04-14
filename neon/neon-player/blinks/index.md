@@ -1,14 +1,11 @@
-# Blink Detector
+# Blinks
 
-Neon Player runs the same [Blink Detector](./../../data-collection/data-streams/#blinks) employed in Pupil Cloud. There
-are no tunable parameters; simply enable the blink detector plugin to start the blink detection process. The menu gives 
-feedback about the progress of the detection and how many blinks were found.
+[Blinks](./../../data-collection/data-streams/#blinks) are provided for the whole recording. The menu shows the total number
+of blinks.
 
-To learn more about the blink detector, read the dedicated [Blink Detector Documentation](./../../data-collection/data-streams/#blinks).
+![Blinks](./np-blinks.webp)
 
-![Blinks](../blink-detector/np-blinks.webp)
-
-Blink detection results are visualized as a red step-function plot in the timeline at the bottom of the window.
+Blinks are visualized as a red step-function plot in the timeline at the bottom of the window.
 
 ## Export Format
 Results exported to `blinks.csv` with the following fields:

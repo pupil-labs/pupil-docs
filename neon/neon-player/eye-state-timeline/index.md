@@ -1,11 +1,13 @@
 # Eye State Timeline
 
-This plugin visualizes [3D eye state](/data-collection/data-streams/#_3d-eye-states) and [pupil diameter](/data-collection/data-streams/#pupil-diameters) data.
+This plugin loads and visualizes [3D eye poses](/data-collection/data-streams/#_3d-eye-poses),
+[pupil diameters](/data-collection/data-streams/#pupil-diameters), and
+[eye openness](/data-collection/data-streams/#eye-openness) data.
 
 ![Eye State Timeline](./eye-state-timeline.webp)
 
 ::: info
-The data will only be visualized if Eye State computation was enabled in the Neon Companion app during recording.
+The data will only be loaded if Eye State computation was enabled in the Neon Companion app during recording.
 :::
 
 ## Export Format
