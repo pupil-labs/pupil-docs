@@ -218,12 +218,12 @@ let theme_config_additions = {
             link: "/neon-player/visualization-plugins/",
           },
           {
-            text: "Fixation Detector",
-            link: "/neon-player/fixation-detector/",
+            text: "Fixations & Saccades",
+            link: "/neon-player/fixations-and-saccades/",
           },
           {
-            text: "Blink Detector",
-            link: "/neon-player/blink-detector/",
+            text: "Blinks",
+            link: "/neon-player/blinks/",
           },
           {
             text: "Surface Tracker",
