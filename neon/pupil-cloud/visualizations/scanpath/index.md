@@ -30,7 +30,7 @@ The following configuration options are available for customizing the scanpath v
 Additionally, within the **Scanpath** view, you can select which recordings to include, allowing you to create visualizations for a single recording or combine multiple recordings in one overview.
 
 ::: tip
-Note that only fixations mapped _within_ the reference image or surface are displayed in the scanpath. Fixations located outside of the image are not shown. As a result, the visualized fixation IDs may not increase sequentially on the image if an observer fixated off and then back on the reference image or surface. In the case of Marker Mapper, if the wearer fixates outside the surface and then fixates back on the surface, the scanpath will reflect this.
+Note that only fixations mapped _within_ the reference image or surface are displayed in the scanpath. The first and final fixations of a scanpath are marked with a colored border. Fixations located outside of the image are not shown. As a result, the visualized fixation IDs may not increase sequentially on the image if an observer fixated off and then back on the reference image or surface. If the wearer fixates outside the reference or surface and then fixates back, the scanpath will reflect this with a line to the off image/surface fixation. If a fixation was not localized at all, then it is not visualized and no line will connect to it.
 :::
 
 ## Export Format
