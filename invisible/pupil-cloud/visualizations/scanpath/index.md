@@ -1,5 +1,7 @@
 # Scanpath
 
+<Youtube src="6xn2ehOLS94"/>
+
 The output of the [**Reference Image Mapper**](/pupil-cloud/enrichments/reference-image-mapper/), [**Marker Mapper**](/pupil-cloud/enrichments/marker-mapper/), and [**Manual Mapper**](/pupil-cloud/enrichments/manual-mapper/) enrichments can be visualized as a scanpath over the reference image or surface.
 
 A scanpath is a graphical representation of fixations over time, showing how a participant’s visual attention moves across a scene. Scanpaths are a great tool for analyzing visual attention and perception, as they reveal which parts of a scene drew focus and in what order.
