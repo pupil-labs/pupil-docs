@@ -2,16 +2,15 @@
 
 <Youtube src="WcCwCVo1_lg"/>
 
-There are cases where even the most advanced machine learning powered gaze mapping algorithms, such as those 
-found in our [**Reference Image Mapper**](/pupil-cloud/enrichments/reference-image-mapper/) and 
-[**Marker Mapper**](/pupil-cloud/enrichments/marker-mapper/) enrichments struggle, such as motion blur and occlusions.
-The Manual Correction tool puts a "human in the loop" to fill in missing fixations or adjust mapped 
-fixation locations.
+There are cases where even the most advanced machine learning-powered gaze mapping algorithms, such as those found in 
+our [**Reference Image Mapper**](/pupil-cloud/enrichments/reference-image-mapper/) and [**Marker Mapper**](/pupil-cloud/enrichments/marker-mapper/) 
+enrichments, struggle due to motion blur and occlusions. The Manual Correction tool puts a "human in the loop" to fill in 
+missing fixations or adjust mapped fixation locations.
 
 ## Setup
 
 - **Enrich:** First, run your Reference Image Mapper or Manual Mapper Enrichment, if not already done.
-- **Correct:** After the Enrichment has completed, open it and validate the mapping results. Click `Edit` next to Mapping Correction to start the interface.
+- **Correct:** After the Enrichment has completed, open it and validate the mapping results. If you need to make corrections, click `Edit` next to Mapping Correction to start the interface.
   - Initially, all fixations are in their default mapped state; i.e., the result of the Enrichment’s automatic mapping process.
   - You can `Skip to next` or `previous` fixation with the corresponding buttons. Similarly, you can click on the Recording Timeline to navigate fixations.
   - You can click on the Reference Image to fill in missing fixations or adjust mapped fixations, and then `Accept` them. You can also use the `D` keyboard shortcut.
