@@ -2,10 +2,8 @@
 
 <Youtube src="WcCwCVo1_lg"/>
 
-There are cases where even the most advanced machine learning-powered gaze mapping algorithms, such as those found in 
-our [**Reference Image Mapper**](/pupil-cloud/enrichments/reference-image-mapper/) and [**Marker Mapper**](/pupil-cloud/enrichments/marker-mapper/) 
-enrichments, struggle due to motion blur and occlusions. The Manual Correction tool puts a "human in the loop" to fill in 
-missing fixations or adjust mapped fixation locations.
+Using the Mapping Correction, you can correct errors in the results of the [**Reference Image Mapper**](/pupil-cloud/enrichments/reference-image-mapper/) and [**Marker Mapper**](/pupil-cloud/enrichments/marker-mapper/), which may have happened due to e.g. motion blur or occlusions.
+It allows you to add missing fixations and adjust the locations of mapped fixations.
 
 ## Setup
 
