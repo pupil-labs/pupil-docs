@@ -7,10 +7,10 @@ The output of the [**Reference Image Mapper**](/pupil-cloud/enrichments/referen
 A scanpath is a graphical representation of fixations over time, showing how a participant’s visual attention moves across a scene. 
 Scanpaths are a great tool for analyzing visual attention and perception, as they reveal which parts of a scene attracted focus and in what order.
 
-- Fixation locations - Visualised as numbered circles.
-- Fixation durations - Mapped to the size of the circles. Longer fixations correspond to larger circles.
-- First and final fixations - Marked with a colored border.
-- Saccades - Represented by lines connecting sequential fixations. Saccade distances between sequential fixations are reflected by the length of the lines. Longer lines correspond to bigger gaze shifts. Note this assumes a task without smooth pursuit movements.
+- **Fixation location**s - Visualised as numbered circles.
+- **Fixation durations** - Mapped to the size of the circles. Longer fixations correspond to larger circles.
+- **First and final fixations** - Marked with a colored border.
+- **Saccades** - Represented by lines connecting sequential fixations. Saccade distances between sequential fixations are reflected by the length of the lines. Longer lines correspond to bigger gaze shifts. Note this assumes a task without smooth pursuit movements.
 
 ![Edit scanpaths](./scanpath_view.png)
 
