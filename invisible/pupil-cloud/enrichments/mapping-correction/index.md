@@ -1,29 +1,30 @@
 # Mapping Correction
 
-<video width="100%" controls>
-  <source src="./mappingcorrection_header.mp4" type="video/mp4">
-</video>
+<Youtube src="WcCwCVo1_lg"/>
 
-You can use the Mapping Correction interface to adjust mis-mapped or unmapped fixations.
-
-In the majority of cases, [**Reference Image Mapper**](/pupil-cloud/enrichments/reference-image-mapper/) and [**Manual Mapper**](/pupil-cloud/enrichments/manual-mapper/) will successfully and accurately map gaze from your recording to your Reference Image. For some fixations, though, the mapping may not be successful, or fixations can be misplaced. This can happen if the view of the Reference Image is partially obscured in the recording or the wearer briefly moves to a viewpoint that was not adequately scanned, for instance.
+There are cases where even the most advanced machine learning powered gaze mapping algorithms, such as those 
+found in our [**Reference Image Mapper**](/pupil-cloud/enrichments/reference-image-mapper/) and 
+[**Marker Mapper**](/pupil-cloud/enrichments/marker-mapper/) enrichments struggle, such as motion blur and occlusions.
+The Manual Correction tool puts a "human in the loop" to fill in missing fixations or adjust mapped 
+fixation locations.
 
 ## Setup
 
 - **Enrich:** First, run your Reference Image Mapper or Manual Mapper Enrichment, if not already done.
-- **Correct:** After the Enrichment has completed, open it and validate the mapping results. If you notice mis-mapped or unmapped fixations, click `Edit` next to Mapping Correction to start the interface.
-  - Initially, all fixations are in their default Predicted state; i.e., the result of the Enrichment’s automatic mapping process.
+- **Correct:** After the Enrichment has completed, open it and validate the mapping results. Click `Edit` next to Mapping Correction to start the interface.
+  - Initially, all fixations are in their default mapped state; i.e., the result of the Enrichment’s automatic mapping process.
   - You can `Skip to next` or `previous` fixation with the corresponding buttons. Similarly, you can click on the Recording Timeline to navigate fixations.
-  - You can click on the Reference Image to correct mis-mapped fixations and then `Accept` them. You can also use the `D` keyboard shortcut.
-  - If a fixation does not fall on the Reference Image, then click outside of the Image.
+  - You can click on the Reference Image to fill in missing fixations or adjust mapped fixations, and then `Accept` them. You can also use the `D` keyboard shortcut.
+  - If a fixation does not fall on the Reference Image, then click outside of the image.
   - You can `Revert` any accepted fixations with the corresponding button or the `R` keyboard shortcut.
   - Click `Done` once you are finished.
 
-You will see the total number of accepted & corrected fixations in the Mapping Correction panel. It shows the fixation currently being mapped (fixation ID 25 in this case), and you can enter a number to jump to a specific fixation. In the example below, the predictions for 63 fixations were accepted, and the other 38 were corrected.
+You will see the total number of accepted & corrected fixations in the Mapping Correction panel. It shows the fixation 
+currently being mapped, and you can enter a number to jump to a specific fixation.
 
 ![Mapping correction image one](./image_1_correction.png)
 
-You will see all fixations and their durations visualized in the timeline below.
+You will also see all fixations and their durations visualized in the timeline below.
 
 ![Mapping correction image two](./image_2_correction.png)
 
