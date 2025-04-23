@@ -161,6 +161,7 @@ let theme_config_additions = {
             text: "Areas of Interest (AOIs)",
             link: "/pupil-cloud/visualizations/areas-of-interest/",
           },
+          { text: "Scanpath", link: "/pupil-cloud/visualizations/scanpath/" },
           {
             text: "Video Renderer",
             link: "/pupil-cloud/visualizations/video-renderer/",
