@@ -9,7 +9,8 @@ Scanpaths are a great tool for analyzing visual attention and perception, as the
 
 - Fixation locations - Visualised as numbered circles.
 - Fixation durations - Mapped to the size of the circles. Longer fixations correspond to larger circles.
-- Saccades - Saccades are represented by lines connecting sequential fixations. Saccade distances between sequential fixations are reflected by the length of the lines. Longer lines correspond to bigger gaze shifts. Note this assumes a task without smooth pursuit movements.
+- First and final fixations - Marked with a colored border.
+- Saccades - Represented by lines connecting sequential fixations. Saccade distances between sequential fixations are reflected by the length of the lines. Longer lines correspond to bigger gaze shifts. Note this assumes a task without smooth pursuit movements.
 
 ![Edit scanpaths](./scanpath_view.png)
 
@@ -31,14 +32,13 @@ The following configuration options are available for customizing the scanpath v
 Additionally, within the **Scanpath** view, you can select which recordings to include, allowing you to create visualizations for a single recording or combine multiple recordings in one overview.
 
 ::: tip
-Only fixations mapped _within_ the reference image or surface are displayed in the scanpath. The first and final 
-fixations of each scanpath are marked with a colored border. Fixations located outside of the image are not shown. 
-As a result, the visualized fixation IDs may not increase sequentially on the image if an observer fixated off and then 
-back on the reference image or surface. 
+Only fixations mapped _within_ the reference image or surface are displayed in the scanpath. Fixations located _outside_ 
+of the image are not shown. As a result, the visualized fixation IDs may not increase sequentially on the image if an 
+observer fixated off and then back on the reference image or surface. 
 
-If the wearer fixates outside the reference image or surface to a localized fixation, then the scanpath will reflect this 
-with lines off the image/surface fixation and back. If a fixation was not localized at all, then they are not visualized 
-and no line will connect to them.
+Fixations that are mapped _outside_ the reference image or surface are still connected by the scanpath. The lines will 
+leave the reference image or surface and subsquently return. If a fixation was not mapped at all, then no scanpath 
+lines will connect them.
 :::
 
 ## Export Format
