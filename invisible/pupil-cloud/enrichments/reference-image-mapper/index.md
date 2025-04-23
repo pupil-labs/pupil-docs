@@ -142,6 +142,10 @@ To check if gaze has been mapped successfully, use the side-by-side view:
 
 Now when you play back the recording you can see where gaze is mapped to on your reference image for validation.
 
+::: tip
+If you find that any fixations or unmapped or mis-mapped, then make use of [the Mapping Correction tool](/pupil-cloud/enrichments/mapping-correction/)!
+:::
+
 ## Occlusions
 
 ![Basketball Occlusion](./basketball-occlusion.png)
