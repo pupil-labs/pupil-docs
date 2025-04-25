@@ -200,7 +200,7 @@ But for now, let's go back to your Python console and install the following pack
 
 The first package will help us access the WebSocket API from OBS, and the second is our real-time API wrapper for Python.
 
-Download the script [recording.py](https://raw.githubusercontent.com/pupil-labs/dynamic-rim-module/main/src/pupil_labs/dynamic_content_on_rim/recording/recording.py?token=GHSAT0AAAAAABXIQHJWQYOPFDTO36JXC5N6YZNSEUQ). As you can see, the script uses asynchronous calls to send WebSockets without blocking each other.
+Download the script [recording.py](https://github.com/pupil-labs/dynamic-rim-module/blob/main/src/pupil_labs/dynamic_content_on_rim/recording/recording.py). As you can see, the script uses asynchronous calls to send WebSockets without blocking each other.
 Go to lines **76 & 77** and modify them according to the parameters we had in the obs-websocket settings.
 
 - **L76:** `url="ws://localhost:XXXX/"`where XXXX is the port number you use, defaults to 4455.
