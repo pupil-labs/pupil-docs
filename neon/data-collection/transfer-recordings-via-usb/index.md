@@ -20,7 +20,7 @@ Recordings downloaded directly from the phone will be in a raw binary format.
 
 #### Transfer Exported Recordings to a Computer
 
-1. Connect your OnePlus device to a PC via USB (using the USB cable supplied)
+1. Connect your Companion device to a PC via USB (using the USB cable supplied)
 2. Slide down from the top of the device's home-screen and click on 'Android System - USB charging this device'
 3. Click on 'Tap for more options'
 4. Select 'Transfer Files'
@@ -41,5 +41,5 @@ On **macOS**, you need the <a href="https://www.android.com/filetransfer/" alt="
 :::
 
 :::tip
-Recordings transferred locally will only contain gaze data that was generated in real-time. On the OnePlus 8 the framerate of real-time gaze can drop to **~120 Hz**. On the One Plus 10/Moto Edge 40 Pro the framerate is ~200 Hz unless its reduced in the settings. Recordings uploaded to Pupil Cloud are always densified to 200 Hz.
+Recordings transferred locally will only contain gaze data that was generated in real-time. On the OnePlus 8 the framerate of real-time gaze can drop to **~120 Hz**. On the One Plus 10/Moto Edge 40 Pro/Samsung Galaxy S25 the framerate is ~200 Hz unless its reduced in the settings. Recordings uploaded to Pupil Cloud are always densified to 200 Hz.
 :::
