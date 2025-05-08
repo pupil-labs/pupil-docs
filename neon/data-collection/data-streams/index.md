@@ -24,7 +24,7 @@ Gaze data is output in pixel space of the scene camera image. The origin is in t
 
 ![Gaze](./gaze.webp)
 
-The achieved _real-time_ framerate can vary based on the Companion device used and environmental conditions. On the OnePlus 10 and Motorola Edge 40 Pro, the full 200 Hz can generally be achieved outside of especially hot environments.
+The achieved _real-time_ framerate can vary based on the Companion device used and environmental conditions. On the OnePlus 10, Motorola Edge 40 Pro, and Samsung Galaxy S25 the full 200 Hz can generally be achieved outside of especially hot environments.
 On the OnePlus 8, the framerate typically drops to ~120 Hz within a few minutes of starting a recording. Other apps running simultaneously on the phone may decrease the framerate.
 
 After a recording is uploaded to Pupil Cloud, gaze data is automatically re-computed at the full 200 Hz framerate if required, and can be downloaded from there.
