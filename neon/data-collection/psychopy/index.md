@@ -64,7 +64,7 @@ Check out our simple but complete [gaze contingent demo designed in PsychoPy Bui
 
 ## Coder
 
-To use Neon with PsychoPy coder, you'll need to configure ioHub, add AprilTag markers to the screen, and register the screen surface with the eyetracker. The example below shows how to collect realtime gaze position and pupil diameter in PsychoPy Coder.
+The PsychoPy team doesn't recommend using Coder for eyetracking experiments and suggests that users employ Builder instead. Of course, Builder doesn't suit all needs, so please keep in mind that the [Realtime Python API](https://docs.pupil-labs.com/neon/real-time-api/tutorials/) is fully usable within PsychoPy, as is the [real-time screen gaze package](https://github.com/pupil-labs/real-time-screen-gaze). Some users may find these APIs easier to work with than PsychoPy's common eyetracker interface, but using the Realtime API directly won't provide gaze to PsychoPy's data logging or eyetracking components (e.g., areas-of-interest). If you need gaze data fully integrated with PsychoPy's software stack and need to use Coder, then it will be necessary to configure ioHub, add AprilTag markers to the screen, and register the screen surface with the eyetracker. The example below shows how to collect and visualize real-time gaze position and pupil diameter in PsychoPy Coder.
 
 ### Example Coder Experiment
 
@@ -73,6 +73,7 @@ from psychopy import visual, event
 from psychopy.core import getTime
 from psychopy.iohub import launchHubServer
 from psychopy.tools.monitorunittools import convertToPix
+from psychopy.iohub.devices.eyetracker.eye_events import BinocularEyeSampleEvent
 
 import numpy as np
 
@@ -125,7 +126,7 @@ while getTime() - start_time < 30:
 
     # Update gaze circle radius to reflect pupil diameter
     for eye_event in eyetracker.getEvents():
-        if eye_event.left_pupil_measure1_type == 77:
+        if isinstance(eye_event, BinocularEyeSampleEvent) and  eye_event.left_pupil_measure1_type == 77:
             mean_pupil_diameter = (eye_event.left_pupil_measure1 + eye_event.right_pupil_measure1) / 2
             gaze_circle.radius = (mean_pupil_diameter**1.5) / 100
 
