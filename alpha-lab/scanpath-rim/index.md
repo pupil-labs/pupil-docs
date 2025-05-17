@@ -27,8 +27,13 @@ In this guide, we will show you how to generate static and dynamic scanpath visu
 Before continuing, ensure you are familiar with the [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/), the [Marker Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/marker-mapper/), and the [Manual Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/manual-mapper/) enrichments.
 :::
 
-## Extending Current Tools
-The [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/), the [Marker Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/marker-mapper/), and the [Manual Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/manual-mapper/) enrichments available in Pupil Cloud are tools that map fixations onto 2D images or surfaces. Following the completion of these enrichments, you can generate heatmaps and Areas of Interest. However, they currently do not support the production of scanpath visualisations. Thus, we chose to provide an easy click-and-run solution that allows you to build your own scanpaths using the enrichment data. 
+## Current Tools and Extended Possibilities
+The [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/), 
+[Marker Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/marker-mapper/), and 
+[Manual Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/manual-mapper/) enrichments in Pupil 
+Cloud are tools that map fixations onto 2D images or surfaces. Following the completion of these enrichments, you can 
+generate heatmaps, Areas of Interest, and also scanpath visualisations. Perhaps you're curious to build your own, or want 
+something more bespoke? You can use this guide to make it so!
 
 To automate the process as much as possible, you can download your data directly via the Pupil Cloud API. Alternatively, you can manually download the data and upload the unzipped folder to your Google Drive. 
 
