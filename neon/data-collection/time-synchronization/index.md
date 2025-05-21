@@ -4,7 +4,7 @@ For some applications, it is critical to accurately synchronize your Neon with a
 
 Neon provides UTC timestamps for all the data it generates, which makes it easy to sync the data to anything. Those timestamps are generated using the clock of the Companion device. However, digital clocks can suffer from drift, meaning that they sometimes run slightly too fast or slow. Over time, this error accumulates and can lead to errors when comparing two clocks.
 
-Therefore digital clocks regularly readjust themselves by syncing to a master clock over the internet every other day or so. Two freshly synced clocks should have <10 ms of an offset, often <3 ms. From there, the offset increases at different rates, depending on Operating System and other factors, with Linux (e.g., Ubuntu) exhibiting the most stable timing and the least drift. After 24 hours, the drift can reach about 700ms to 1 second.
+Therefore digital clocks regularly readjust themselves by syncing to a master clock over the internet every other day or so. Two freshly synced clocks should usually have <10 ms of an offset, sometimes even <3 ms. From there, the offset increases at different rates, depending on Operating System and other factors, with Linux (e.g., Ubuntu) exhibiting the most stable timing and the least drift. After 24 hours, the drift can reach about 700ms to 1 second.
 
 ### Force Syncing to the Master Clock on Demand
 
