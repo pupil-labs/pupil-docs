@@ -24,6 +24,10 @@ Then, on your computer, do the following:
 - Wait 5 seconds, then re-enable automatic time
 - If you are using MacOS, then as a last step, you need to open a terminal and run `sudo sntp -sS time.apple.com`
 
+Note that MacOS has shown the most un-stable timing, sometimes exhibiting step changes on the order of 50 to 80ms, along with sudden reversals in drift slope. Windows 11 is more stable, exhibiting a linear drift, and Linux has been the most stable, with a slow, linear drift. On a desktop with latest Ubuntu LTS and the Samsung S25 Companion device, it has been possible to reach an offset of 1ms, with a relative drift between the two devices of <=1ms over an hour.
+
+Depending on your needs, you may want to measure the specific drift of your system.
+
 ::: tip
 If you are familiar with [the `adb` tool](https://developer.android.com/tools/adb), then instead of restarting the phone, you can also connect it via USB cable to your computer and run the following command:
 
