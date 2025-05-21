@@ -14,14 +14,15 @@ import DownloadLinks from '@components/DownloadLinks.vue'
 />
 
 ::: info
-Starting with version `v2.9.0-prod` of the Neon Companion app, blinks, and fixations & saccades, can be computed at 
+Starting with version `v2.9.0-prod` of the Neon Companion app, blinks, and fixations & saccades, can be computed at
 recording time. These data can be loaded in Neon Player `v5.0.0` or later.
 
-To load blinks or fixations & saccades in recordings made prior to `v2.9.0-prod` of the Neon 
+To load blinks or fixations & saccades in recordings made prior to `v2.9.0-prod` of the Neon
 Companion app, use [Neon Player `v4.x`](https://github.com/pupil-labs/neon-player/releases) instead.
 :::
 
 ## Loading a Recording
+
 To load a recording, you first need to download or export it to your computer:
 
 1. Direct transfer from Neon Companion Device – For detailed instructions, refer to [this guide](/data-collection/transfer-recordings-via-usb/).
@@ -29,7 +30,7 @@ To load a recording, you first need to download or export it to your computer:
 
 Once you have the recording, open Neon Player and drag-and-drop the folder into the application window.
 
-Don't have a recording yet? [Download a sample recording](https://api.cloud.pupil-labs.com/v2/workspaces/3d240903-cbf7-485a-84b1-3498f00e236c/recordings.zip?id=7c141c32-7a8d-411c-9428-70d16de9a9ea&share-key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJmY2Q5NWJkYS1lZjVhLTRlN2YtOWZiYi01NTc1NWFhYWQzZTAiLCJtZXRob2QiOiJHRVQiLCJwYXRoIjoiL3YyL3dvcmtzcGFjZXMvM2QyNDA5MDMtY2JmNy00ODVhLTg0YjEtMzQ5OGYwMGUyMzZjL3JlY29yZGluZ3MuemlwIiwicXVlcnkiOiJpZD03YzE0MWMzMi03YThkLTQxMWMtOTQyOC03MGQxNmRlOWE5ZWEiLCJleHAiOjE4NjkyMjA3NzkuMjEzMDEzNn0.xfR9ZqOWmql1EmAkqc_mszL63hER_s8HziAzfn89-QI "Download sample recording to use in Neon Player").
+Don't have a recording yet? [Download a sample recording](https://drive.google.com/file/d/14YE4jnpHI6SCYNpjhsBhPkPQTNxzrwSG/view?usp=sharing "Download sample recording to use in Neon Player").
 
 ::: info
 Neon Player will **never** remove or overwrite any of your raw data gathered at the time of recording. Instead, it will create a new folder, `neon_player`, which contains the Neon Player compatible files.
@@ -87,16 +88,19 @@ There are two general types of plugins:
 - **Not unique**: You can launch multiple instances of this type of plugin. For example, you can load one `Vis Circle` plugin to render the gaze position with a translucent green circle, and another `Vis Circle` plugin to render the gaze circle with a green stroke of 3 pixel thickness. You can think of these types of plugins as _additive_.
 
 ## Exports
+
 You can export data and videos by pressing `e` on your keyboard, or use the download button in the **Neon Player** window.
 
 Upon activation, all loaded plugins with export capabilities will initiate the export process. Some exports operate in the background,
 you can monitor their progress via a GUI progress bar. This allows you to continue working with Neon Player.
 
 ### Export Directory
+
 Exports are separated from your raw data and contained in the `exports` subdirectory. Multiple exports will create a new
 folders, which are auto-named according to their creation order, e.g. `000`, `001` etc.
 
 ### Export Handling
+
 You can select the frame range to export by setting trim marks in the seek bar or directly in the `General Settings` menu.
 
 Longer running exports, e.g. video exports, go through three phases: Queued, Running, and Completed.
