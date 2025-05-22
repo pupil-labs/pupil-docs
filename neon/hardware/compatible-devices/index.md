@@ -27,6 +27,7 @@ The currently supported Android versions are as follows:
 - On **Moto Edge + (2023)**: Android 13 and 14
 - On **Moto X40 Pro**: Android 13 and 14 (global ROM required)
 - On **Samsung Galaxy S25**: Android 15
+- On **Samsung Galaxy S25 Ultra**: (experimental device)
 - On **Samsung Galaxy Tab S9** (experimental device)
 
 :::danger
