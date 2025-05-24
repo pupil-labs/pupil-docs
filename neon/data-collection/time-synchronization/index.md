@@ -14,13 +14,14 @@ A sync-up can be forced on Android as follows:
 
 - Restart the phone before initiating a sync
 - Go to `Settings > System > Date & time`
-- Turn off `Set time automatically`, and set the time one hour _wrong_
+- Turn off `Set time automatically`, and change the time by one hour
+  - This ensures that we follow the NTP specification to achieve minimal clock offsets
 - Wait 5 seconds, then re-enable `Set time automatically`
 
 Then, on your computer, do the following:
 
 - Go to your Operating System's `Date & Time` settings
-- Disable automatic time, and set the time one hour _wrong_
+- Disable automatic time, and change the time by one hour
 - Wait 5 seconds, then re-enable automatic time
 - If you are using MacOS, then as a last step, you need to open a terminal and run `sudo sntp -sS time.apple.com`
 
