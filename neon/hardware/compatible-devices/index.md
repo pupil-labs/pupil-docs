@@ -23,9 +23,9 @@ The currently supported Android versions are as follows:
 
 - On **OnePlus 8** and **8T**: Android 11
 - On **OnePlus 10 Pro**: Android 12 and 13
-- On **Moto Edge 40 Pro**: Android 13 and 14
-- On **Moto Edge + (2023)**: Android 13 and 14
-- On **Moto X40 Pro**: Android 13 and 14 (global ROM required)
+- On **Moto Edge 40 Pro**: Android 13, 14 and 15
+- On **Moto Edge + (2023)**: Android 13, 14 and 15
+- On **Moto X40 Pro**: Android 13, 14 and 15 (global ROM required)
 - On **Samsung Galaxy S25**: Android 15
 - On **Samsung Galaxy S25 Ultra**: (experimental device)
 - On **Samsung Galaxy Tab S9** (experimental device)
