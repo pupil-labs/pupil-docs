@@ -14,18 +14,19 @@ A sync-up can be forced on Android as follows:
 
 - Restart the phone before initiating a sync
 - Go to `Settings > System > Date & time`
-- Turn off `Set time automatically`, and change the time by one hour
-  - This ensures that we follow the NTP specification to achieve minimal clock offsets
+- Turn off `Set time automatically`, and change the time by one hour forwards or backwards.
 - Wait 5 seconds, then re-enable `Set time automatically`
+
+This sequence of disabling the automatic time setting, manually adjusting by an hour, then re-enabling automatic time setting, is based on the NTP specification. Doing this will help achieve a minimal clock offset once the NTP sync-up has been forced.
 
 Then, on your computer, do the following:
 
 - Go to your Operating System's `Date & Time` settings
-- Disable automatic time, and change the time by one hour
-- Wait 5 seconds, then re-enable automatic time
+- Disable automatic time setting, and change the time by one hour forwards or backwards.
+- Wait 5 seconds, then re-enable automatic time setting
 - If you are using MacOS, then as a last step, you need to open a terminal and run `sudo sntp -sS time.apple.com`
 
-Note that MacOS has shown the most un-stable timing, sometimes exhibiting step changes on the order of 50 to 80ms, along with sudden reversals in drift slope. Windows 11 is more stable, exhibiting a linear drift, and Linux has been the most stable, with a slow, linear drift. On a desktop with latest Ubuntu LTS and the Samsung S25 Companion device, it has been possible to reach an offset of 1ms, with a relative drift between the two devices of <=1ms over an hour.
+Note that MacOS has shown the most unstable timing, along with sudden reversals in drift slope. Windows 11 is more stable, exhibiting a linear drift, and Linux has been the most stable, with a slow, linear drift. On a desktop with Ubuntu 24.04.2 LTS and the Samsung S25 Companion device, it has been possible to reach an offset of ~1ms, with a relative drift between the two devices of <=1.5ms over an hour.
 
 Depending on your needs, you may want to measure the specific drift of your system.
 
