@@ -188,5 +188,15 @@
     },
     "image": "/alpha-lab/audio-events-img.webp",
     "category": "Other"
+  },
+  {
+    "title": "Use a GPS with Neon to measure the wearer's location, eye, and head movements",
+    "details": "Use a GPS, like the one in Neon's Companion Device, to record synchronized location, eye, and head movement data. Visualize it on a map and click to jump there in your recording!",
+    "link": {
+      "text": "View",
+      "href": "/alpha-lab/gps/"
+    },
+    "image": "",
+    "category": "Other"
   }
 ]
