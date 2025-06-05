@@ -8,7 +8,7 @@ All of this is possible for developers using the real-time API. It allows you to
 
 If you are not a developer and simply need a tool to monitor and control all your devices in real-time, check out [Neon Monitor](/data-collection/monitor-app/).
 
-We have created a Python client library for the API that makes it very easy to use. If you require access to the API from a different programming language, you will have to write your own client. Please see the documentation [here](https://pupil-labs.github.io/pl-realtime-api/dev/guides/under-the-hood/).
+We have created a Python client library for the API that makes it very easy to use. If you require access to the API from a different programming language, you will have to write your own client. Please see the documentation [here](https://pupil-labs.github.io/pl-realtime-api/dev/).
 
 To install the client library execute the following command in a terminal:
 
@@ -314,7 +314,7 @@ If you are having trouble connecting to your Neon device via the real-time API, 
 
 Using the simple mode of the real-time API client you can easily access scene video and gaze data in real-time as well as remote control your Neon devices.
 
-You can find the full API reference [here](https://pupil-labs.github.io/pl-realtime-api/dev/methods/simple/).
+You can find the full API reference [here](https://pupil-labs.github.io/pl-realtime-api/dev/modules/).
 
 For an example implementation on how to use the real-time API in action, please see [Track your Experiment Progress using Events](/real-time-api/track-your-experiment-progress-using-events/).
 
