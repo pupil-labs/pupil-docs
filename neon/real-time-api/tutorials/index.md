@@ -8,7 +8,7 @@ All of this is possible for developers using the real-time API. It allows you to
 
 If you are not a developer and simply need a tool to monitor and control all your devices in real-time, check out [Neon Monitor](/data-collection/monitor-app/).
 
-We have created a Python client library for the API that makes it very easy to use. If you require access to the API from a different programming language, you will have to write your own client. Please see the documentation [here](https://pupil-labs.github.io/pl-realtime-api/dev/).
+We have created a [Python client library](https://pupil-labs.github.io/pl-realtime-api/dev/) for the API that makes it very easy to use. If you require access to the API from a different programming language, you will have to write your own client. Please see the documentation [here](https://pupil-labs.github.io/pl-realtime-api/dev/guides/under-the-hood/).
 
 To install the client library execute the following command in a terminal:
 
@@ -20,7 +20,7 @@ The client comes in two modes, `simple` and `async`. The simple mode is very eas
 
 ## Connecting to a Neon Device
 
-Using the [`discover_one_device`](https://pupil-labs.github.io/pl-realtime-api/dev/api/simple/#pupil_labs.realtime_api.simple.discover_one_device) function, we can connect to a Neon device connected to your local network. Make sure the Neon Companion app is running! If no device can be found, please check the [troubleshooting section](#troubleshooting) at the end.
+Using the [`discover_one_device`](https://pupil-labs.github.io/pl-realtime-api/dev/methods/simple/connect-to-a-device/) function, we can connect to a Neon device connected to your local network. Make sure the Neon Companion app is running! If no device can be found, please check the [troubleshooting section](#troubleshooting) at the end.
 
 ```python
 from pupil_labs.realtime_api.simple import discover_one_device
@@ -47,8 +47,8 @@ Serial number of connected glasses: h4gcf
 
 ## Starting & Stopping Recordings
 
-Use the [`recording_start`](https://pupil-labs.github.io/pl-realtime-api/dev/api/simple/#pupil_labs.realtime_api.simple.Device.recording_start)
-and [`recording_stop_and_save`](https://pupil-labs.github.io/pl-realtime-api/dev/api/simple/#pupil_labs.realtime_api.simple.Device.recording_stop_and_save)
+Use the [`recording_start`](https://pupil-labs.github.io/pl-realtime-api/dev/methods/simple/remote-control/#start-a-recording)
+and [`recording_stop_and_save`](https://pupil-labs.github.io/pl-realtime-api/dev/methods/simple/remote-control/#stop-save-a-recording)
 methods to remotely start and stop recordings.
 
 ```python
@@ -72,7 +72,7 @@ Started recording with id 2f99d9f9-f009-4015-97dd-eb253de443b0
 ## Saving Events
 
 While a recording is running, you can save [events](/data-collection/events/)
-using the [`send_event`](https://pupil-labs.github.io/pl-realtime-api/dev/api/simple/#pupil_labs.realtime_api.simple.Device.send_event) method.
+using the [`send_event`](https://pupil-labs.github.io/pl-realtime-api/dev/methods/simple/remote-control/#save-events) method.
 By default, the Neon device receiving the event will assign a timestamp to it,
 using the time of arrival. Optionally, you can set a custom nanosecond timestamp for your event instead.
 
@@ -100,7 +100,7 @@ Event(name=None recording_id=fd8c98ca-cd6c-4d3f-9a05-fbdb0ef42668 timestamp_unix
 
 ## Scene Video and Gaze, Pupil Diameter, Eye Poses, and Eye Openness Data
 
-You can receive the current scene camera frame as well as the current gaze sample using the [`receive_matched_scene_video_frame_and_gaze`](https://pupil-labs.github.io/pl-realtime-api/dev/api/simple/#pupil_labs.realtime_api.simple.Device.receive_matched_scene_video_frame_and_gaze) method. This method also provides [pupil diameter](/data-collection/data-streams/#pupil-diameters) and [eye poses](/data-collection/data-streams/#_3d-eye-poses) and [eye openness data](/data-collection/data-streams/#eye-openness), separately for each eye. An example is provided below:
+You can receive the current scene camera frame as well as the current gaze sample using the [`receive_matched_scene_video_frame_and_gaze`](https://pupil-labs.github.io/pl-realtime-api/dev/methods/simple/streaming/scene-camera/#scene-camera-video-with-overlaid-gaze) method. This method also provides [pupil diameter](/data-collection/data-streams/#pupil-diameters) and [eye poses](/data-collection/data-streams/#_3d-eye-poses) and [eye openness data](/data-collection/data-streams/#eye-openness), separately for each eye. An example is provided below:
 
 ```python
 import cv2
@@ -157,7 +157,7 @@ Angles and aperture describing the eyelid openness of the left and right eye.
 For the left eye upper lid angle, lower lid angle, and aperture: 0.39990234375, -0.5849609375, 10.859789848327637 and for the right eye: 0.396484375, -0.609375, 11.100102424621582.
 ```
 
-Alternatively, you could also use the [`receive_scene_video_frame`](https://pupil-labs.github.io/pl-realtime-api/dev/api/simple/#pupil_labs.realtime_api.simple.Device.receive_scene_video_frame) and [`receive_gaze_datum`](https://pupil-labs.github.io/pl-realtime-api/dev/api/simple/#pupil_labs.realtime_api.simple.Device.receive_gaze_datum) methods to obtain each sample separately. The [`receive_matched_scene_video_frame_and_gaze`](https://pupil-labs.github.io/pl-realtime-api/dev/api/simple/#pupil_labs.realtime_api.simple.Device.receive_matched_scene_video_frame_and_gaze) method does however also ensure that both samples are matched temporally.
+Alternatively, you could also use the [`receive_scene_video_frame`](https://pupil-labs.github.io/pl-realtime-api/dev/methods/simple/streaming/scene-camera/#scene-camera-video) and [`receive_gaze_datum`](https://pupil-labs.github.io/pl-realtime-api/dev/methods/simple/streaming/gaze/) methods to obtain each sample separately. The [`receive_matched_scene_video_frame_and_gaze`](https://pupil-labs.github.io/pl-realtime-api/dev/api/simple/#pupil_labs.realtime_api.simple.Device.receive_matched_scene_video_frame_and_gaze) method does however also ensure that both samples are matched temporally.
 
 ## IMU Data
 

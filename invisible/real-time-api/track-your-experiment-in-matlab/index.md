@@ -150,11 +150,11 @@ Several arguments can be used to control the wrapper:
 ## Notes and disclaimers
 
 :::tip
-The current wrapper function does not support RTSP protocol. Therefore it is not possible to stream video or gaze positions. If you need this feature, please directly use the [Realtime Network API](https://pupil-labs-realtime-api.readthedocs.io/en/stable/guides/under-the-hood.html?highlight=RTSP).
+The current wrapper function does not support RTSP protocol. Therefore it is not possible to stream video or gaze positions. If you need this feature, please directly use the [Realtime Network API](https://pupil-labs.github.io/pl-realtime-api/dev/guides/under-the-hood/#rtsp).
 :::
 
 ::: warning
 The average response time for HTTP requests to Pupil Invisible in MATLAB is 0.33 +- 0.14 seconds (on a 1000 requests test).
 This time might vary depending on your connection and computer load. If you need better time accuracy, check out our
-[Python API](https://pupil-labs-realtime-api.readthedocs.io/en/stable/examples/index.html).
+[Python API](https://pupil-labs.github.io/pl-realtime-api/dev/).
 :::
