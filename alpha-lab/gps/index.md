@@ -1,5 +1,5 @@
 ---
-title: "Use a GPS with Neon to measure the wearer's location, eye, and head movements"
+title: "Use a GPS With Neon to Measure a Wearer's Location, Eye, and Head Movements"
 description: "Use a GPS, like the one in Neon's Companion Device, to record synchronized location, eye, and head movement data. Visualize it on a map and click to jump there in your recording!"
 permalink: /alpha-lab/gps/
 meta:
@@ -22,7 +22,7 @@ tags: [Neon, Cloud]
 import TagLinks from '@components/TagLinks.vue'
 </script>
 
-# Use a GPS with Neon to measure the wearer's location, eye, and head movements
+# Use a GPS With Neon to Measure a Wearer's Location, Eye, and Head Movements
 
 <!-- <TagLinks :tags="$frontmatter.tags" /> -->
 
@@ -36,9 +36,11 @@ Trying to find that moment when a participant reaches a key landmark, like an in
 
 Neon lets you easily measure combined head and eye movements—but that's not all! The Companion Device also comes with an onboard GPS.
 
-Here, we show you how to merge GPS positioning data (from the Companion Device or another GPS device) with Neon's gaze and IMU readings, and plot them onto a map for easy review. This allows you to track where participants move in the real world, in addition to where they direct their gaze and head. For example, you might want to know where a participant was looking when approaching a street intersection or as they jog past a key point on each lap of a race. Rather than searching for the appropriate segment in the recorded video, with this guide, you can simply click on the map and jump right to it!
+Here, we show you how to merge GPS positioning data (from the Companion Device or another GPS device) with Neon's gaze and IMU readings. This allows you to track where participants move in the real world, in addition to where they direct their gaze and head.
 
-We also provide automatically reverse-geocoded GPS Events. Participants can tap a button on the phone to save an event in the Neon recording that corresponds to their current location. This makes it more natural for participants to mark key landmarks, like street intersections, without needing to follow a predefined route.
+We provide a visualization tool to plot these datastreams onto a map for easy review. For example, you might want to know where a participant was looking when approaching a street intersection or as they jog past a key point on each lap of a race. Rather than searching for the appropriate segment in the recorded video, with this guide, you can simply click on the map and jump right to it!
+
+We also provide automatically reverse-geocoded GPS Events. Participants can tap a button on the phone to save an [Event](https://docs.pupil-labs.com/neon/data-collection/events/) in the Neon recording that corresponds to their current location. This makes it more natural for participants to mark when they have reached key landmarks, like street intersections, without needing to follow a predefined route.
 
 ## Steps to recreate
 
