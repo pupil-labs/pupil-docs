@@ -64,7 +64,7 @@ This is the same format that is used by the GPS app.
 
 Once you've made your recording, you can now load the GPS data and corresponding Neon recording into the visualization tool. Just follow the steps at [the Github repository](https://github.com/pupil-labs/gps-alpha-lab).
 
-As an example, see the video in this guide. Once loaded, the Neon recording is played and the wearer's position, head orientation, and gaze update in real-time. On the map, you will also see two arrows:
+As an example, see the video in this guide above. It shows a recording from a participant in an orientiering course. Once loaded, we play the Neon recording and the wearer's position, head orientation, and gaze update in real-time. On the map, you will also see two arrows:
 
 - A black arrow for the wearer's head orientation, as measured by [Neon's IMU](https://docs.pupil-labs.com/neon/data-collection/data-streams/#movement-imu-data)
 - A red arrow for the wearer's gaze in world coordinates, as obtained with the functions in our [IMU Transformations](https://docs.pupil-labs.com/alpha-lab/imu-transformations/) Alpha Lab guide
