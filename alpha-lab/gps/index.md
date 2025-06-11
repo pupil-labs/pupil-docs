@@ -46,7 +46,7 @@ We also provide automatically reverse-geocoded GPS Events. Participants can tap 
 
 ### Recording the data
 
-If you are using your own GPS device, then you can skip to the GPS Data Format section below. Otherwise, to get you up & running, we have developed a small Android app, pl-gps, that runs in tandem with the Neon Companion app. When the app is installed on the same phone, you can use it to start & stop a GPS recording in parallel. Within the app, simply tap a button to send a GPS Event to Neon.
+If you are using your own GPS device, then you can skip to the GPS Data Format section below. Otherwise, to get you up & running, we have developed [a small Android app, pl-gps,](https://github.com/pupil-labs/pl_gps) that runs in tandem with the Neon Companion app. When the app is installed on the same phone, you can use it to start & stop a GPS recording in parallel. Within the app, simply tap a button to send a GPS Event to Neon.
 
 ### GPS Data Format
 
@@ -62,20 +62,20 @@ This is the same format that is used by the pl-gps app.
 
 ## Contribution
 
-Once you've made your recording, you can now load the GPS data and corresponding Neon recording into the visualization tool. Just follow the steps at the Github repository.
+Once you've made your recording, you can now load the GPS data and corresponding Neon recording into the visualization tool. Just follow the steps at [the Github repository](https://github.com/pupil-labs/pl_gps).
 
 As an example, see the video in this guide. Once loaded, the Neon recording is played and the wearer's position, head orientation, and gaze update in real-time. On the map, you will also see two arrows:
 
 - A black arrow for the wearer's head orientation, as measured by [Neon's IMU](https://docs.pupil-labs.com/neon/data-collection/data-streams/#movement-imu-data)
 - A red arrow for the wearer's gaze in world coordinates, as obtained with the functions in our [IMU Transformations](https://docs.pupil-labs.com/alpha-lab/imu-transformations/) Alpha Lab guide
 
-After a moment, we click on the blue trajectory to jump to the corresponding point in the recording. Next, we click on the recording's timeline to jump to the corresponding position on the map. Clicking on an Event listed in the rightmost panel then jumps to the corresponding moment.
+After a moment, we click on the recording's timeline to jump to the corresponding position on the map. Next, we click on the blue trajectory to jump to the corresponding point in the recording. Clicking on an Event listed in the rightmost panel then jumps to the corresponding moment.
 
 At the bottom are two drop-down selectors for `Start event` and `End event`. These are used to focus on a given segment of the recording and the GPS trajectory is trimmed accordingly.
 
 Taken together, the pl-gps app and visualization tool expand the capabilities of a standard Neon bundle. In addition, the visualization tool presents a user interface that simplifies post-hoc review of Neon + GPS recordings. Overall, it adds a new data stream to your studies of human behaviour and can be used with other GPS devices, if you prefer.
 
-Feel free to share your fun & inspiring routes in the #show-and-tell channel on our Discord server!
+Feel free to share your fun & inspiring routes in the #[show-and-tell](https://discord.com/channels/285728493612957698/1238043619999617125) channel on our Discord server!
 
 ::: tip
 Need assistance with the pl-gps app? Or, having trouble loading your GPS data into the visualization tool? Reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for dedicated support options.
