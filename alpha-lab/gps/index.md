@@ -24,9 +24,9 @@ import TagLinks from '@components/TagLinks.vue'
 
 # Use a GPS With Neon to Measure a Wearer's Location, Eye, and Head Movements
 
-<!-- <TagLinks :tags="$frontmatter.tags" /> -->
+<TagLinks :tags="$frontmatter.tags" />
 
-<!-- <Youtube src="3N8jGLYCrNk"/> -->
+<Youtube src="lOSBCY8X4jw"/>
 
 ::: tip
 Trying to find that moment when a participant reaches a key landmark, like an intersection or the summit of a hill, and visualize how their head and gaze were oriented at this moment in time? Now, you can see a bird's eye view of these data, and simply click on a map to jump to that point in the recording. Expand your insights from Neon with GPS!
