@@ -1,5 +1,5 @@
 ---
-title: "Measure eye tracking data, head pose, and GPS"
+title: "Where did I see that? Eye Tracking & GPS"
 description: "Use a GPS, like the one in Neon's Companion Device, to record synchronized location, eye, and head movement data. Visualize it on a map and click to jump there in your recording!"
 permalink: /alpha-lab/gps/
 meta:
@@ -22,7 +22,7 @@ tags: [Neon, Cloud]
 import TagLinks from '@components/TagLinks.vue'
 </script>
 
-# Measure eye tracking data, head pose, and GPS
+# Where did I see that? Eye Tracking & GPS
 
 <TagLinks :tags="$frontmatter.tags" />
 

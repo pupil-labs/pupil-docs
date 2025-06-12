@@ -190,7 +190,7 @@
     "category": "Other"
   },
   {
-    "title": "Measure eye tracking data, head pose, and GPS",
+    "title": "Where did I see that? Eye Tracking & GPS",
     "details": "Use a GPS, like the one in Neon's Companion Device, to record synchronized location, eye, and head movement data. Visualize it on a map and click to jump there in your recording!",
     "link": {
       "text": "View",
