@@ -198,5 +198,15 @@
     },
     "image": "/alpha-lab/gps.webp",
     "category": "Other"
+  },
+  {
+    "title": "Real-Time Eyelid Dynamics with PERCLOS and Neon",
+    "details": "Calculate PERCLOS (percentage of eye closure) in real time using Neon and its Real-Time API. ",
+    "link": {
+      "text": "View",
+      "href": "/alpha-lab/perclos/"
+    },
+    "image": "/alpha-lab/perclos.webp",
+    "category": "Real-Time Applications"
   }
 ]

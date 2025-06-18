@@ -44,6 +44,10 @@ let theme_config_additions = {
         {
           text: "Build an AI Vision Assistant",
           link: "/gpt4-eyes/",
+        },
+         {
+          text: "Real-Time Eyelid Dynamics with PERCLOS and Neon",
+          link: "/perclos/",
         }
       ],
     },
