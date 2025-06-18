@@ -26,7 +26,7 @@ import TagLinks from '@components/TagLinks.vue'
 
 <TagLinks :tags="$frontmatter.tags" />
 
-<Youtube src="lOSBCY8X4jw"/>
+<Youtube src="Yjos2JzpD-I"/>
 
 <font size=2><b>Neon data on a map:</b> The video above shows a recording from a participant in an orienteering course. When played, the wearer's position, head orientation, and gaze update on the map in real-time. On the map are also a blue arc, representing the orientation of Neon's FoV (measured by <a href="https://docs.pupil-labs.com/neon/data-collection/data-streams/#movement-imu-data">Neon's IMU</a>) and a red arrow for <a href="https://docs.pupil-labs.com/alpha-lab/imu-transformations/">the wearer's gaze direction in world coordinates</a>. Clicking on the recording's timeline or the blue GPS trace jumps to the corresponding position on the map. Clicking on an Event also jumps to the corresponding moment.</font>
 
