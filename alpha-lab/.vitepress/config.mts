@@ -53,8 +53,8 @@ let theme_config_additions = {
         { text: "Undistort Video and Gaze Data", link: "/undistort/" },
         { text: "Use Neon With Pupil Capture", link: "/neon-with-capture/" },
         { text: "Automate Event Annotations With Pupil Cloud and GPT", link: "/event-automation-gpt/" },
-        { text: "Audio-Based Event Detection With Pupil Cloud and OpenAI's Whisper", link: "/audio-event-annotations/" }
-
+        { text: "Audio-Based Event Detection With Pupil Cloud and OpenAI's Whisper", link: "/audio-event-annotations/" },
+        { text: "Use a GPS with Neon to measure the wearer's location, eye, and head movements", link: "/gps/" }
       ],
     },
   ],
