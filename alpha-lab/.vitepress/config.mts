@@ -7,54 +7,53 @@ let theme_config_additions = {
   sidebar: [
     { text: "Welcome", link: "/" },
     {
-      text: "Coordinate Systems",
+      text: "Building with AI",
       items: [
-        { text: "IMU Transformations", link: "/imu-transformations/" },
-      ],
-    },
-    {
-      text: "Gaze Mapping",
-      items: [
-        { text: "Map Gaze Onto Dynamic Screen Content", link: "/map-your-gaze-to-a-2d-screen/" },
-        { text: "Map Gaze Onto Body Parts", link: "/dense-pose/" },
-        { text: "Map Gaze Onto a 3D Model of an Environment", link: "/nerfs/" },
-        { text: "Map Gaze Into a User-Supplied 3D Model", link: "/tag-aligner/" },
-        { text: "Map Gaze Onto Facial Landmarks", link: "/gaze-on-face/" },
-        { text: "Map Gaze Onto Website AOIs", link: "/web-aois/" },
-        {text: "Map Gaze Onto an Alternative Egocentric Video", link: "/egocentric-video-mapper/"}
-      ],
-    },
-    {
-      text: "Reference Image Mapper",
-      items: [
-        { text: "Automate AOI Masking in Pupil Cloud", link: "/gaze-metrics-in-aois/" },
-        { text: "Map Gaze Throughout an Entire Room", link: "/multiple-rim/" },
-        { text: "Generate Scanpath Visualisations", link: "/scanpath-rim/" },
-        { text: "Uncover Gaze Behaviour on Phones", link: "/phone-neon/" },
-      ],
-    },
-    {
-      text: "Real-Time Applications",
-      items: [
-        { text: "Detect Eye Blinks With Neon", link: "/blink-detection/" },
-        {
-          text: "Build Gaze-Contingent Assistive Applications",
-          link: "/gaze-contingency-assistive/",
-        },
-        {
-          text: "Build an AI Vision Assistant",
-          link: "/gpt4-eyes/",
+        { text: "Audio Event Detection", link: "/audio-event-annotations/" },
+        { text: "Annotations with GPT", link: "/event-automation-gpt/" },
+        { text: "AOI Masking", link: "/gaze-metrics-in-aois/" },
+        {text: "AI Vision Assistant", link: "/gpt4-eyes/",
         }
       ],
     },
     {
-      text: "Other",
+      text: "3D Spaces",
       items: [
-        { text: "Undistort Video and Gaze Data", link: "/undistort/" },
-        { text: "Use Neon With Pupil Capture", link: "/neon-with-capture/" },
-        { text: "Automate Event Annotations With Pupil Cloud and GPT", link: "/event-automation-gpt/" },
-        { text: "Audio-Based Event Detection With Pupil Cloud and OpenAI's Whisper", link: "/audio-event-annotations/" },
-        { text: "Use a GPS with Neon to measure the wearer's location, eye, and head movements", link: "/gps/" }
+        { text: "GPS with Neon", link: "/gps/" },
+        { text: "IMU Transformations", link: "/imu-transformations/" },
+        { text: "Map to a User 3D Model", link: "/tag-aligner/" },
+        { text: "Map Gaze to Alternate Video", link: "/egocentric-video-mapper/"},
+        { text: "Gaze with NeRFs", link: "/nerfs/" },
+        { text: "Map Gaze in a Room", link: "/multiple-rim/" },
+      ],
+    },
+    {
+      text: "Screens & Interfaces",
+      items: [
+        { text: "Website AOIs", link: "/web-aois/" },
+        { text: "Gaze on Phones", link: "/phone-neon/" },
+        { text: "Map to Dynamic Screen Content", link: "/map-your-gaze-to-a-2d-screen/" },      ],
+    },
+    {
+      text: "Real Time & Interactive",
+      items: [
+        { text: "Gaze-Contingent Apps", link: "/gaze-contingency-assistive/"},
+        { text: "Detect Eye Blinks", link: "/blink-detection/" },
+      ],
+    },
+    {
+      text: "Around People",
+      items: [
+        { text: "Map to Facial Landmarks", link: "/gaze-on-face/" },
+        { text: "Map to Body Parts", link: "/dense-pose/" },
+      ],
+    },
+    {
+      text: "Other/Core ",
+      items: [
+        { text: "Scanpath Visualisations", link: "/scanpath-rim/"},
+        { text: "Undistort Video and Gaze", link: "/undistort/" },
+        { text: "Neon With Pupil Capture", link: "/neon-with-capture/" },
       ],
     },
   ],
