@@ -8,7 +8,7 @@ meta:
   - name: twitter:image
     content: "https://i.ytimg.com/vi/cuvWqVOAc5M/maxresdefault.jpg"
   - name: twitter:player
-    content: "https://www.youtube.com/embed/SerY5r2LHB0"
+    content: "https://www.youtube.com/embed/v4FHA8jTmAA"
   - name: twitter:width
     content: "1280"
   - name: twitter:height
@@ -26,7 +26,7 @@ import TagLinks from '@components/TagLinks.vue'
 
 <TagLinks :tags="$frontmatter.tags" />
 
-<Youtube src="SerY5r2LHB0"/>
+<Youtube src="v4FHA8jTmAA"/>
 
 ::: tip
 From subtle blinks to sustained closure, the story of alertness is written on your eyelids — now you can read it in real time.
@@ -52,8 +52,7 @@ Access this script [here](https://gist.github.com/nadje/0831d8d0c80db27897cff57e
 uv run -s calculate_perclos_real_time.py
 ```
 
-::: info
-**About the Rolling Window** 
+::: info 
 
 The rolling window size determines the duration (in seconds) over which the PERCLOS value is continuously updated. For example, a 10-second window means that at every moment, the tool computes how much of the past 10 seconds the eye has been ≥80% closed. We chose 10 seconds as the default to balance sensitivity and stability, but this value can be adjusted based on your specific research goals or responsiveness needs. A shorter window makes the system more reactive to recent changes, while a longer one smooths out rapid fluctuations.
 :::
