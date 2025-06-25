@@ -39,6 +39,7 @@ let theme_config_additions = {
       items: [
         { text: "Gaze-Contingent Apps", link: "/gaze-contingency-assistive/"},
         { text: "Detect Eye Blinks", link: "/blink-detection/" },
+        { text: "Cognitive Load Monitoring", link: "/cognitive-load-monitoring/" },
       ],
     },
     {
