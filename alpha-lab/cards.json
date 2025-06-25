@@ -7,7 +7,7 @@
       "href": "/alpha-lab/undistort/"
     },
     "image": "/alpha-lab/undist.webp",
-    "category": "Other"
+    "category": "Other/Core"
   },
   {
     "title": "Use Neon with Pupil Capture",
@@ -17,7 +17,7 @@
       "href": "/alpha-lab/neon-with-capture/"
     },
     "image": "/alpha-lab/neon-capture.webp",
-    "category": "Other"
+    "category": "Other/Core"
   },
   {
     "title": "Map Gaze Onto Dynamic Screen Content",
@@ -27,7 +27,7 @@
       "href": "/alpha-lab/map-your-gaze-to-a-2d-screen/#map-and-visualise-gaze-onto-a-display-content-using-the-reference-image-mapper"
     },
     "image": "/alpha-lab/map-gaze-screen.webp",
-    "category": "Gaze Mapping"
+    "category": "Screens & Interfaces"
   },
   {
     "title": "Map Gaze Onto Body Parts",
@@ -37,7 +37,7 @@
       "href": "/alpha-lab/dense-pose/#map-gaze-onto-body-parts-using-densepose"
     },
     "image": "/alpha-lab/map-gaze-body.webp",
-    "category": "Gaze Mapping"
+    "category": "Around People"
   },
   {
     "title": "Map Gaze Throughout an Entire Room",
@@ -47,7 +47,7 @@
       "href": "/alpha-lab/multiple-rim/#map-and-visualize-gaze-on-multiple-reference-images-taken-from-the-same-environment"
     },
     "image": "/alpha-lab/multiple-ref-mapper-enrich.webp",
-    "category": "Reference Image Mapper"
+    "category": "3D Spaces"
   },
   {
     "title": "Generate Scanpath Visualisations",
@@ -57,7 +57,7 @@
       "href": "/alpha-lab/scanpath-rim/#generate-static-and-dynamic-scanpaths"
     },
     "image": "/alpha-lab/scanpath_image_nad.webp",
-    "category": "Reference Image Mapper"
+    "category": "Other/Core"
   },
   {
     "title": "Uncover Gaze Behaviour on Phones",
@@ -67,7 +67,7 @@
       "href": "/alpha-lab/phone-neon/#uncover-gaze-behaviour-on-phone-screens-with-neon"
     },
     "image": "/alpha-lab/gaze-behavior-phone-neon.webp",
-    "category": "Reference Image Mapper"
+    "category": "Screens & Interfaces"
   },
   {
     "title": "Map Gaze Onto a 3D Model of an Environment",
@@ -77,7 +77,7 @@
       "href": "/alpha-lab/nerfs/#create-3d-models-of-your-environment-using-reference-image-mapper-and-nerfstudio"
     },
     "image": "/alpha-lab/map-gaze-3d-nerf.webp",
-    "category": "Gaze Mapping"
+    "category": "3D Spaces"
   },
   {
     "title": "Build Gaze-Contingent Assistive Applications",
@@ -87,7 +87,7 @@
       "href": "/alpha-lab/gaze-contingency-assistive/#a-practical-guide-to-implementing-gaze-contingency-for-assistive-technology"
     },
     "image": "/alpha-lab/build-gaze-assistive-neon.webp",
-    "category": "Real-Time Applications"
+    "category": "Real Time & Interactive"
   },
   {
     "title": "Detect Eye Blinks With Neon",
@@ -97,7 +97,7 @@
       "href": "/alpha-lab/blink-detection/#detecting-eye-blinks-using-pupil-labs-blink-detection-pipeline"
     },
     "image": "/alpha-lab/blink.webp",
-    "category": "Real-Time Applications"
+    "category": "Real Time & Interactive"
   },
   {
     "title": "Build an AI Vision Assistant",
@@ -107,7 +107,7 @@
       "href": "/alpha-lab/gpt4-eyes/"
     },
     "image": "/alpha-lab/gpt4-eyes.webp",
-    "category": "Real-Time Applications"
+    "category": "Building with AI"
   },
   {
     "title": "Automate AOI Masking in Pupil Cloud",
@@ -117,7 +117,7 @@
       "href": "/alpha-lab/gaze-metrics-in-aois/"
     },
     "image": "/alpha-lab/aoi-demo.webp",
-    "category": "Reference Image Mapper"
+    "category": "Building with AI"
   },
   {
     "title": "Map Gaze Onto Facial Landmarks",
@@ -127,7 +127,7 @@
       "href": "/alpha-lab/gaze-on-face/"
     },
     "image": "/alpha-lab/map-gaze-nadia.webp",
-    "category": "Gaze Mapping"
+    "category": "Around People"
   },
   {
     "title": "Map Gaze Onto Website AOIs",
@@ -137,7 +137,7 @@
       "href": "/alpha-lab/web-aois/"
     },
     "image": "/alpha-lab/web-aoi.webp",
-    "category": "Gaze Mapping"
+    "category": "Screens & Interfaces"
   },
   {
     "title": "Map Gaze Into a User-Supplied 3D Model",
@@ -147,7 +147,7 @@
       "href": "/alpha-lab/tag-aligner/"
     },
     "image": "/alpha-lab/tag-aligner.webp",
-    "category": "Gaze Mapping"
+    "category": "3D Spaces"
   },
   {
     "title": "IMU Transformations",
@@ -157,7 +157,7 @@
       "href": "/alpha-lab/imu-transformations/"
     },
     "image": "/alpha-lab/imu-transformations.webp",
-    "category": "Coordinate Systems"
+    "category": "3D Spaces"
   },
   {
     "title": "Automate Event Annotations With Pupil Cloud and GPT",
@@ -167,7 +167,7 @@
       "href": "/alpha-lab/event-automation-gpt/"
     },
     "image": "/alpha-lab/event-annotation.webp",
-    "category": "Other"
+    "category": "Building with AI"
   },
   {
     "title": "Map Gaze Onto an Alternative Egocentric Video",
@@ -177,7 +177,7 @@
       "href": "/alpha-lab/egocentric-video-mapper/"
     },
     "image": "/alpha-lab/egocentric-video-mapper.webp",
-    "category": "Gaze Mapping"
+    "category": "3D Spaces"
   },
   {
     "title": "Audio-Based Event Detection With Pupil Cloud and OpenAI's Whisper",
@@ -187,7 +187,7 @@
       "href": "/alpha-lab/audio-event-annotations/"
     },
     "image": "/alpha-lab/audio-events-img.webp",
-    "category": "Other"
+    "category": "Building with AI"
   },
   {
     "title": "Where did I see that? Eye Tracking & GPS",
@@ -197,7 +197,7 @@
       "href": "/alpha-lab/gps/"
     },
     "image": "/alpha-lab/gps.webp",
-    "category": "Other"
+    "category": "3D Spaces"
   },
   {
     "title": "Real-Time Eyelid Dynamics with PERCLOS and Neon",
@@ -207,6 +207,6 @@
       "href": "/alpha-lab/perclos/"
     },
     "image": "/alpha-lab/perclos.webp",
-    "category": "Real-Time Applications"
+    "category": "Real Time & Interactive"
   }
 ]
