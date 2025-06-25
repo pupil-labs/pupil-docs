@@ -34,3 +34,7 @@ Exposure duration is inversely related to camera frame rate. Exposure values abo
 
 `Shadows` - optimizes the exposure to capture darker areas in the environment, while potentially overexposing brighter areas.
 ![This mode optimizes the exposure to capture darker areas in the environment, while potentially overexposing bright areas.](Shadow.webp)
+
+::: tip
+If your setup requires a specialized camera to handle challenging lighting conditions, this [Alpha Lab article](https://docs.pupil-labs.com/alpha-lab/egocentric-video-mapper/) shows you how you can add a third-party egocentric camera.
+:::
