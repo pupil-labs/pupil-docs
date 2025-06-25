@@ -26,7 +26,9 @@ import TagLinks from '@components/TagLinks.vue'
 
 <TagLinks :tags="$frontmatter.tags" />
 
-<Youtube src="lWTMZpOrLuY"/>
+<video width="100%" controls>
+  <source src="./somarealities-surgery_training-shortened.mp4" type="video/mp4">
+</video>
 
 
 ## Motivation  
