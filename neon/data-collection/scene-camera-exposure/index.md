@@ -36,5 +36,5 @@ Exposure duration is inversely related to camera frame rate. Exposure values abo
 ![This mode optimizes the exposure to capture darker areas in the environment, while potentially overexposing bright areas.](Shadow.webp)
 
 ::: tip
-If your set-up requires a specialized camera to handle very challenging light conditions, this [alpha-lab article](https://docs.pupil-labs.com/alpha-lab/egocentric-video-mapper/) shows you how you can add a third-party egocentric camera.
+If your set-up requires a specialized camera to handle challenging light conditions, this [alpha-lab article](https://docs.pupil-labs.com/alpha-lab/egocentric-video-mapper/) shows you how you can add a third-party egocentric camera.
 :::
