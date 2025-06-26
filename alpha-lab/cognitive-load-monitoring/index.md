@@ -39,7 +39,7 @@ In this Alpha Lab, we explore how [Neon](https://pupil-labs.com/products/neon), 
 
 ## Setup  
 
-Researchers from the Centre for Biomedical Research and Translational Surgery at the University of Vienna used Neon to record eye data during the implantation of a cochlear implant. The eye tracker captured both pupil size and scene video from the surgeon’s perspective. Cognitive load was modeled continuously using SOMAREALITY’s algorithm. 
+Researchers from the [Centre for Biomedical Research and Translational Surgery at the University of Vienna](https://biomed-forschung.meduniwien.ac.at/en/) used Neon to record eye data during the implantation of a cochlear implant. The eye tracker captured both pupil size and scene video from the surgeon’s perspective. Cognitive load was modeled continuously using SOMAREALITY’s algorithm. 
 
 ### Hardware:  
 - Neon eye tracker with two eye cameras to track pupil dilation at 200 Hz, and a scene camera for the surgeon’s perspective
