@@ -203,9 +203,10 @@
     "title": "Invisible Effort: What Pupil Size Reveals About Cognitive Load",
     "details": "Track real-time cognitive effort during surgical training using Neon’s pupil size data and a novel algorithm from SOMAREALITY",
     "link": {
-        "text": "View",
-        "href": "/alpha-lab/cognitive-load-monitoring/"
+      "text": "View",
+      "href": "/alpha-lab/cognitive-load-monitoring/"
     },
-    "image": "/alpha-lab/cognitive-load.webp"
+    "image": "/alpha-lab/cognitive-load.webp",
+    "category": "Integration"
   }
 ]
