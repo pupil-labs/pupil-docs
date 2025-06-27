@@ -4,7 +4,7 @@ MATLAB is often used by researchers to build eye tracking experiments, such as t
 
 When working with head-mounted eye trackers like Neon, it can be useful to synchronize stimuli presentation with the eye tracking recording. This enables you to, a) keep track of when a stimulus is shown, and b) segment the eye tracking data accordingly.
 
-In this guide, we will build a simple MATLAB experiment. The experiment will show you how to automatically and conveniently track stimulus presentation as part of your eye tracking recording using [events](/data-collection/events/) and [Neon's real-time API](/real-time-api/tutorials/). Finally, you will see how those events enable the segmentation of eye tracking data per stimulus during the analysis.
+In this guide, we will build a simple MATLAB experiment. The experiment will show you how to automatically and conveniently track stimulus presentation as part of your eye tracking recording using [events](/data-collection/events/) and [Neon's real-time API](/real-time-api/). Finally, you will see how those events enable the segmentation of eye tracking data per stimulus during the analysis.
 
 We will use our [pl-neon-matlab](https://github.com/pupil-labs/pl-neon-matlab) integration in this guide. See that link for installation instructions.
 
@@ -30,7 +30,7 @@ Before we dig into how to run the demo and the integration, you will need to und
 
 Events are essentially timestamps within a recording that have been marked with a name. In this demo, we need to track when a specific image is shown during a recording to associate the fixation data with that image. Thus, we will create an event at the start and end of each image presentation to mark this section.
 
-Events can be created post-hoc in the project editor or at recording time using either the [real-time API](/real-time-api/tutorials/) or the [Monitor app](/data-collection/monitor-app/). In this example, we are interested in fully automating the event creation within MATLAB. Still, depending on your use case, you could use either of those methods.
+Events can be created post-hoc in the project editor or at recording time using either the [real-time API](/real-time-api/) or the [Monitor app](/data-collection/monitor-app/). In this example, we are interested in fully automating the event creation within MATLAB. Still, depending on your use case, you could use either of those methods.
 
 ## Running the Demo
 
@@ -134,7 +134,7 @@ Yes, nothing about the Neon-MATLAB integration depends on Psychtoolbox. Simply f
 device = Device();
 ```
 
-The Neon-MATLAB integration mirrors [the Python implementation](https://docs.pupil-labs.com/neon/real-time-api/tutorials/), so many of the functions have the same name and signature. Check [the MATLAB examples](https://github.com/pupil-labs/pl-neon-matlab/tree/main/matlab/examples) to see other ways you can use it.
+The Neon-MATLAB integration mirrors [the Python implementation](https://docs.pupil-labs.com/neon/real-time-api//), so many of the functions have the same name and signature. Check [the MATLAB examples](https://github.com/pupil-labs/pl-neon-matlab/tree/main/matlab/examples) to see other ways you can use it.
 
 ## Performance
 

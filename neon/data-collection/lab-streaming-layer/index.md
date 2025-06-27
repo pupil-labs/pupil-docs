@@ -8,7 +8,7 @@ The Neon Companion app has built-in support for LSL, streaming Neon’s real-tim
 
 LSL streaming can be initiated in the Companion App by enabling the "Stream over LSL" setting.
 
-When enabled, data will be streamed over the LSL network, and subsequently, to any connected LSL inlet (such as the LSL LabRecorder App, or another third-party system with inlet functionality) which is listening. Like the [Real-Time API](https://docs.pupil-labs.com/neon/real-time-api/tutorials/), it is not necessary for the Companion App to be actively recording, but simultaneously streaming LSL data while making a recording is supported.
+When enabled, data will be streamed over the LSL network, and subsequently, to any connected LSL inlet (such as the LSL LabRecorder App, or another third-party system with inlet functionality) which is listening. Like the [Real-Time API](https://docs.pupil-labs.com/neon/real-time-api/), it is not necessary for the Companion App to be actively recording, but simultaneously streaming LSL data while making a recording is supported.
 
 Note that you'll need to ensure the Neon Companion app is connected to the same network as the other devices streaming via LSL.
 

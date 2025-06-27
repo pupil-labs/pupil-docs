@@ -28,7 +28,7 @@ let theme_config_additions = {
     },
     {
       text: "Real-Time API",
-      link: "/real-time-api/tutorials/",
+      link: "/real-time-api/",
       activeMatch: "/real-time-api/",
     },
     { text: "Neon XR", link: "/neon-xr/", activeMatch: "/neon-xr/" },
@@ -271,7 +271,7 @@ let theme_config_additions = {
     ],
     "/real-time-api/": [
       {
-        items: [{ text: "Overview", link: "/real-time-api/tutorials/" }],
+        items: [{ text: "Overview", link: "/real-time-api//" }],
       },
     ],
     "/neon-xr/": [

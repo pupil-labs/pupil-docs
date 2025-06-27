@@ -44,7 +44,7 @@ Then, follow the remaining steps for Android above.
 
 While an error of `<10 ms` is sufficient for most applications, some require even better synchronization. To achieve this, you can estimate the offset between the clock used by Neon and the external clock down to single millisecond accuracy.
 
-This can be done using the `TimeOffsetEstimator` of the [real-time API](/real-time-api/tutorials/). Using the following code, you can estimate the offset between the Neon clock and the clock of the host executing the code.
+This can be done using the `TimeOffsetEstimator` of the [real-time API](/real-time-api/). Using the following code, you can estimate the offset between the Neon clock and the clock of the host executing the code.
 ::: tip
 **Dependency**: `pip install "pupil-labs-realtime-api>=1.1.0"`
 :::

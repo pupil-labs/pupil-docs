@@ -33,6 +33,6 @@ If you still have trouble, please reach out to us in [chat](https://pupil-labs.c
 
 The Neon Monitor app allows you to easily monitor your data collection and remotely control all your Neons.
 
-If you want to go further and get real-time access to the generated data for custom processing, please check out our [real-time API](/real-time-api/tutorials/).
+If you want to go further and get real-time access to the generated data for custom processing, please check out our [real-time API](/real-time-api/).
 
 If you want to save events programmatically in real-time during your data collection, check out our how-to guide on [Tracking your Experiment Progress using Events](/real-time-api/track-your-experiment-progress-using-events/) using the real-time API.

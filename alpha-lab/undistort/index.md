@@ -8,7 +8,7 @@ permalink: /neon/how-tos/advance-analysis/undistort/
 A circumstance that often arises in wearable eye tracking setups is the presence of distortions on the scene camera. The type of lenses used, with their wide-angle characteristics, allows for a broad field of view, enabling the capture of more information within a single frame. However, this advantage comes at the cost of introducing distortions to the image. <!-- rectilinear distortions -->
 
 While we account for them in Pupil Cloud processing — such as when we're aligning gaze data onto reference images or surfaces — it's important to note that the data you download will be in its original, unaltered form.
-We offer you the possibility to download the undistorted video using the [Video Renderer Visualization](https://docs.pupil-labs.com/neon/pupil-cloud/visualizations/video-renderer/), but this is not the case when using the [Realtime API](https://docs.pupil-labs.com/neon/real-time-api/tutorials/) or raw data, where you may want to correct it by yourself.
+We offer you the possibility to download the undistorted video using the [Video Renderer Visualization](https://docs.pupil-labs.com/neon/pupil-cloud/visualizations/video-renderer/), but this is not the case when using the [Realtime API](https://docs.pupil-labs.com/neon/real-time-api/) or raw data, where you may want to correct it by yourself.
 
 ## When Is It Beneficial To Correct for Lens Distortion?
 
