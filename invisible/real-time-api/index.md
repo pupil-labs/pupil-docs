@@ -18,6 +18,9 @@ are invaluable.
 
 While Python is our most feature-rich client, we also provide a **[MATLAB Wrapper](https://github.com/pupil-labs/pl-neon-matlab)**.
 
+If you need to write your own client, please refer to the [Under the Hood](https://pupil-labs.github.io/pl-realtime-api/dev/guides/under-the-hood/) 
+section of the API documentation for low-level details.
+
 ### For Non-Developers
 
 If you are not a developer and simply need a tool to monitor and control your devices in real-time, check out our
