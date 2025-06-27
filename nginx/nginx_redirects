@@ -35,13 +35,17 @@
         rewrite ^/invisible/how-tos/pupil-invisible-glasses/exchange-lenses.html$ /invisible/hardware/exchange-lenses/ permanent;
         rewrite ^/invisible/how-tos/pupil-invisible-glasses/clean-and-disinfect.html$ /invisible/hardware/clean-and-disinfect/ permanent;
         rewrite ^/invisible/how-tos/integrate-with-the-real-time-api/introduction/$ /invisible/real-time-api/ permanent;
-        rewrite ^/invisible/how-tos/integrate-with-the-real-time-api/track-your-experiment-progress-using-events/$ /invisible/real-time-api/track-your-experiment-progress-using-events/ permanent;
-        rewrite ^/invisible/how-tos/integrate-with-the-real-time-api/track-your-experiment-in-matlab/$ /invisible/real-time-api/track-your-experiment-in-matlab/ permanent;
+        rewrite ^/invisible/how-tos/integrate-with-the-real-time-api/track-your-experiment-progress-using-events/$ https://pupil-labs.github.io/pl-realtime-api/dev/cookbook/track-your-experiment-progress-using-events/ permanent;
+        rewrite ^/invisible/real-time-api/track-your-experiment-progress-using-events/$ https://pupil-labs.github.io/pl-realtime-api/dev/cookbook/track-your-experiment-progress-using-events/ permanent;
+        rewrite ^/invisible/how-tos/integrate-with-the-real-time-api/track-your-experiment-in-matlab/$ https://github.com/pupil-labs/pl-neon-matlab/blob/main/track-your-experiment-progress-using-events.md permanent;
+        rewrite ^/invisible/real-time-api/track-your-experiment-in-matlab/?$ https://github.com/pupil-labs/pl-neon-matlab/blob/main/track-your-experiment-progress-using-events.md permanent;
         rewrite ^/invisible/how-tos/integrate-with-the-real-time-api/legacy-api.html$ /invisible/real-time-api/legacy-api/ permanent;
         rewrite ^/neon/hardware$ /neon/hardware/module-technical-overview/ permanent;
         rewrite ^/invisible/hardware$ /invisible/hardware/technical-overview/ permanent;
         rewrite ^/(neon|invisible)/getting-started/understand-the-ecosystem/$ /$1/data-collection/ecosystem-overview/ permanent;
         rewrite ^/vr-ar/developer.html$ /core/vr-ar/developer/ permanent;
         rewrite ^/enrichments$ /neon/pupil-cloud/ permanent;
-        
+        rewrite ^/neon/real-time-api/track-your-experiment-progress-using-events/$ https://pupil-labs.github.io/pl-realtime-api/dev/cookbook/track-your-experiment-progress-using-events/ permanent;
+        rewrite ^/neon/real-time-api/track-your-experiment-in-matlab/?$ https://github.com/pupil-labs/pl-neon-matlab/blob/main/track-your-experiment-progress-using-events.md permanent;
+
 
