@@ -34,7 +34,7 @@
         rewrite ^/invisible/explainers/glasses-and-companion-device/$ /invisible/hardware/compatible-devices/ permanent;
         rewrite ^/invisible/how-tos/pupil-invisible-glasses/exchange-lenses.html$ /invisible/hardware/exchange-lenses/ permanent;
         rewrite ^/invisible/how-tos/pupil-invisible-glasses/clean-and-disinfect.html$ /invisible/hardware/clean-and-disinfect/ permanent;
-        rewrite ^/invisible/how-tos/integrate-with-the-real-time-api/introduction/$ /invisible/real-time-api/tutorials/ permanent;
+        rewrite ^/invisible/how-tos/integrate-with-the-real-time-api/introduction/$ /invisible/real-time-api/ permanent;
         rewrite ^/invisible/how-tos/integrate-with-the-real-time-api/track-your-experiment-progress-using-events/$ /invisible/real-time-api/track-your-experiment-progress-using-events/ permanent;
         rewrite ^/invisible/how-tos/integrate-with-the-real-time-api/track-your-experiment-in-matlab/$ /invisible/real-time-api/track-your-experiment-in-matlab/ permanent;
         rewrite ^/invisible/how-tos/integrate-with-the-real-time-api/legacy-api.html$ /invisible/real-time-api/legacy-api/ permanent;
