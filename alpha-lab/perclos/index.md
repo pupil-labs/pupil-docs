@@ -29,7 +29,7 @@ import TagLinks from '@components/TagLinks.vue'
 <Youtube src="v4FHA8jTmAA"/>
 
 ::: tip
-From subtle blinks to sustained closure, the story of alertness is written on your eyelids — now you can read it in real time.
+From subtle blinks to sustained closure, the story of alertness is written on your eyelids. Now you can read it in real time.
 :::
 
 ## Tracking of Eye Openness for Real-World Demands

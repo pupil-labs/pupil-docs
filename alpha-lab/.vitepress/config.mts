@@ -39,22 +39,21 @@ let theme_config_additions = {
       items: [
         { text: "Gaze-Contingent Apps", link: "/gaze-contingency-assistive/"},
         { text: "Detect Eye Blinks", link: "/blink-detection/" },
-        { text: "Cognitive Load Monitoring", link: "/cognitive-load-monitoring/" },
         { text: "PERCLOS Calculation", link: "/perclos/" }
       ],
     },
     {
       text: "Around People",
       items: [
-        { text: "Detect Eye Blinks With Neon", link: "/blink-detection/" },
-        {
-          text: "Build Gaze-Contingent Assistive Applications",
-          link: "/gaze-contingency-assistive/",
-        },
-        {
-          text: "Build an AI Vision Assistant",
-          link: "/gpt4-eyes/",
-        }
+        { text: "Map to Facial Landmarks", link: "/gaze-on-face/" },
+        { text: "Map to Body Parts", link: "/dense-pose/" },
+      ],
+    },
+    
+    {
+      text: "Integrations",
+      items: [
+        { text: "Cognitive Load Monitoring", link: "/cognitive-load-monitoring/" },
       ],
     },
     {
