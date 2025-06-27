@@ -41,4 +41,4 @@ This enables you to e.g. implement Human Computer Interaction (HCI) applications
 
 Check-out out our [real-time API tutorial](/real-time-api/) to learn more!
 
-For a concrete usage example, see [Track your Experiment Progress using Events](/real-time-api/track-your-experiment-progress-using-events/)!
+For a concrete usage example, see [Track your Experiment Progress using Events](https://pupil-labs.github.io/pl-realtime-api/dev/cookbook/track-your-experiment-progress-using-events/)!

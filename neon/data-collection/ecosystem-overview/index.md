@@ -66,4 +66,4 @@ This enables you to e.g. implement applications with gaze-interaction or to stre
 
 Check out the [Real-Time API](/real-time-api/) section to learn more!
 
-For a concrete usage example, see [Track your Experiment Progress using Events](/real-time-api/track-your-experiment-progress-using-events/)!
+For a concrete usage example, see [Track your Experiment Progress using Events](https://pupil-labs.github.io/pl-realtime-api/dev/cookbook/track-your-experiment-progress-using-events/)!
