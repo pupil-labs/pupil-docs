@@ -17,7 +17,8 @@
         rewrite ^/(neon|invisible)/how-tos/data-collection-with-the-companion-app/calibrate-the-imu-for-accurate-yaw-orientation/$ /$1/data-collection/calibrating-the-imu/ permanent;
         rewrite ^/(neon|invisible)/how-tos/data-collection/using-capture/$ /$1/alpha-lab/neon-with-capture/ permanent;
         rewrite ^/(neon|invisible)/how-tos/advance-analysis/undistort/$ /$1/alpha-lab/undistort/ permanent;
-        rewrite ^/(neon|invisible)/real-time-api/introduction/$ /$1/real-time-api/tutorials/ permanent;
+        rewrite ^/(neon|invisible)/real-time-api/introduction/$ /$1/real-time-api/ permanent;
+        rewrite ^/(neon|invisible)/real-time-api/tutorials/$ /$1/real-time-api/ permanent;
         rewrite ^/export-formats/recording-data/neon/$ /neon/data-collection/data-format/ permanent;
         rewrite ^/export-formats/enrichment-data/reference-image-mapper/$ /neon/pupil-cloud/enrichments/reference-image-mapper/ permanent;
         rewrite ^/export-formats/enrichment-data/marker-mapper/$ /neon/pupil-cloud/enrichments/marker-mapper/ permanent;
