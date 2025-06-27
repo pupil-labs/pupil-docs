@@ -271,21 +271,7 @@ let theme_config_additions = {
     ],
     "/real-time-api/": [
       {
-        text: "Tutorials",
-        items: [{ text: "Tutorial", link: "/real-time-api/tutorials/" }],
-      },
-      {
-        text: "How-To Guides",
-        items: [
-          {
-            text: "Track Your Experiment Progress Using Events",
-            link: "/real-time-api/track-your-experiment-progress-using-events/",
-          },
-          {
-            text: "Track Your Experiment in MATLAB",
-            link: "/real-time-api/track-your-experiment-in-matlab/",
-          },
-        ],
+        items: [{ text: "Overview", link: "/real-time-api/tutorials/" }],
       },
     ],
     "/neon-xr/": [
