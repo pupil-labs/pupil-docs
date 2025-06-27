@@ -27,7 +27,7 @@ cards:
     link: { text: View, href: "/invisible/pupil-cloud/" }
   - title: Real-Time API
     details: You can access the data Pupil Invisible generates in real-time and remote control it using its real-time API. Learn how it works here!
-    link: { text: View, href: "/invisible/real-time-api/tutorials/" }
+    link: { text: View, href: "/invisible/real-time-api/" }
   - title: Chat
     details: Come chat with us on Discord! Do you have an issues or questions? Just wanna say hi? Join the chat and drop us a message!
     link: { text: View, href: "https://pupil-labs.com/chat", target: "_blank" }

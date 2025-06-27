@@ -14,7 +14,7 @@ You can download the example data used in this guide [here](https://drive.google
 ## How To Use Events To Keep Track?
 Events are essentially timestamps within a recording that have been marked with a name. We need to keep track of when a specific image is shown during a recording, so we can associate the according fixation data with that image. Thus, we will create an event at the start and end of each image presentation to mark this section.
 
-Events can either be created post hoc in the project editor, or at recording time using either the [real-time API](/real-time-api/tutorials/) or the [Pupil Invisible Monitor](/data-collection/monitor-app/) app. In this example, we are interested in fully automating the event creation and will thus use the real-time API to save events, but depending on your use case you could use either of those methods.
+Events can either be created post hoc in the project editor, or at recording time using either the [real-time API](/real-time-api/) or the [Pupil Invisible Monitor](/data-collection/monitor-app/) app. In this example, we are interested in fully automating the event creation and will thus use the real-time API to save events, but depending on your use case you could use either of those methods.
 
 ## Implementation
 The implementation of stimulus presentation is minimal. The images are loaded using OpenCV and are displayed in a full-screen window for a fixed amount of time.
