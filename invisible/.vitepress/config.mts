@@ -175,21 +175,7 @@ let theme_config_additions = {
     ],
     "/real-time-api/": [
       {
-        text: "Tutorials",
         items: [{ text: "Overview", link: "/real-time-api/tutorials/" }],
-      },
-      {
-        text: "How-To Guides",
-        items: [
-          {
-            text: "Track your Experiment Progress using Events",
-            link: "/real-time-api/track-your-experiment-progress-using-events/",
-          },
-          {
-            text: "Track your Experiment in Matlab",
-            link: "/real-time-api/track-your-experiment-in-matlab/",
-          },
-        ],
       },
       { text: "Legacy API", link: "/real-time-api/legacy-api/" },
     ],

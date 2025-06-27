@@ -271,7 +271,7 @@ let theme_config_additions = {
     ],
     "/real-time-api/": [
       {
-        items: [{ text: "Overview", link: "/real-time-api//" }],
+        items: [{ text: "Overview", link: "/real-time-api/" }],
       },
     ],
     "/neon-xr/": [
