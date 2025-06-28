@@ -6,7 +6,7 @@ An event is essentially a timestamp in a recording with an assigned name. All ev
 In [Pupil Cloud](/pupil-cloud/), events can also be used in the definition of [enrichments](/pupil-cloud/enrichments/) to indicate what sections of your recordings should get processed. See [here](/pupil-cloud/enrichments/) for details.
 
 ## Creating Events
-**At recording time**, you can use the [Monitor App](/data-collection/monitor-app/) to create events manually. Alternatively, you can use the [real-time API](/real-time-api/tutorials/) to create events programmatically. See for example [this guide](/real-time-api/track-your-experiment-progress-using-events/) on using the real-time API to automatically track progress of an experiment.
+**At recording time**, you can use the [Monitor App](/data-collection/monitor-app/) to create events manually. Alternatively, you can use the [real-time API](/real-time-api/) to create events programmatically. See for example [this guide](https://pupil-labs.github.io/pl-realtime-api/dev/cookbook/track-your-experiment-progress-using-events/) on using the real-time API to automatically track progress of an experiment.
 
 **Post hoc** you can add events to recordings in [Pupil Cloud](/pupil-cloud/).
 

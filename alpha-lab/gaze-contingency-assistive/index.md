@@ -53,7 +53,7 @@ computer, and map gaze into the coordinate system of the screen.
 
 To locate the screen, we use [AprilTags](https://april.eecs.umich.edu/software/apriltag) to identify the image of the
 screen as it appears in Neon’s scene camera. Gaze data is transferred to the computer via Neon's
-[Real-time API](https://docs.pupil-labs.com/neon/real-time-api/tutorials/). We then transform gaze from _scene camera_ to _screen-based_
+[Real-time API](https://docs.pupil-labs.com/neon/real-time-api/). We then transform gaze from _scene camera_ to _screen-based_
 coordinates using a [homography](<https://en.m.wikipedia.org/wiki/Homography_(computer_vision)>) approach like the [Marker Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/marker-mapper/)
 enrichment we offer in Pupil Cloud as a post-hoc solution. The heavy lifting of all this is handled by
 our [Real-time Screen Gaze](https://github.com/pupil-labs/realtime-screen-gaze/) package (written for this guide).

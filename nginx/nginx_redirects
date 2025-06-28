@@ -17,7 +17,8 @@
         rewrite ^/(neon|invisible)/how-tos/data-collection-with-the-companion-app/calibrate-the-imu-for-accurate-yaw-orientation/$ /$1/data-collection/calibrating-the-imu/ permanent;
         rewrite ^/(neon|invisible)/how-tos/data-collection/using-capture/$ /$1/alpha-lab/neon-with-capture/ permanent;
         rewrite ^/(neon|invisible)/how-tos/advance-analysis/undistort/$ /$1/alpha-lab/undistort/ permanent;
-        rewrite ^/(neon|invisible)/real-time-api/introduction/$ /$1/real-time-api/tutorials/ permanent;
+        rewrite ^/(neon|invisible)/real-time-api/introduction/?$ /$1/real-time-api/ permanent;
+        rewrite ^/(neon|invisible)/real-time-api/tutorials/?$ /$1/real-time-api/ permanent;
         rewrite ^/export-formats/recording-data/neon/$ /neon/data-collection/data-format/ permanent;
         rewrite ^/export-formats/enrichment-data/reference-image-mapper/$ /neon/pupil-cloud/enrichments/reference-image-mapper/ permanent;
         rewrite ^/export-formats/enrichment-data/marker-mapper/$ /neon/pupil-cloud/enrichments/marker-mapper/ permanent;
@@ -33,14 +34,16 @@
         rewrite ^/invisible/explainers/glasses-and-companion-device/$ /invisible/hardware/compatible-devices/ permanent;
         rewrite ^/invisible/how-tos/pupil-invisible-glasses/exchange-lenses.html$ /invisible/hardware/exchange-lenses/ permanent;
         rewrite ^/invisible/how-tos/pupil-invisible-glasses/clean-and-disinfect.html$ /invisible/hardware/clean-and-disinfect/ permanent;
-        rewrite ^/invisible/how-tos/integrate-with-the-real-time-api/introduction/$ /invisible/real-time-api/tutorials/ permanent;
-        rewrite ^/invisible/how-tos/integrate-with-the-real-time-api/track-your-experiment-progress-using-events/$ /invisible/real-time-api/track-your-experiment-progress-using-events/ permanent;
-        rewrite ^/invisible/how-tos/integrate-with-the-real-time-api/track-your-experiment-in-matlab/$ /invisible/real-time-api/track-your-experiment-in-matlab/ permanent;
+        rewrite ^/invisible/how-tos/integrate-with-the-real-time-api/introduction/$ /invisible/real-time-api/ permanent;
+        rewrite ^/invisible/how-tos/integrate-with-the-real-time-api/track-your-experiment-progress-using-events/$ https://pupil-labs.github.io/pl-realtime-api/dev/cookbook/track-your-experiment-progress-using-events/ permanent;
+        rewrite ^/invisible/real-time-api/track-your-experiment-progress-using-events/$ https://pupil-labs.github.io/pl-realtime-api/dev/cookbook/track-your-experiment-progress-using-events/ permanent;
+        rewrite ^/invisible/how-tos/integrate-with-the-real-time-api/track-your-experiment-in-matlab/$ https://github.com/pupil-labs/pl-neon-matlab/blob/main/track-your-experiment-progress-using-events.md permanent;
+        rewrite ^/invisible/real-time-api/track-your-experiment-in-matlab/?$ https://github.com/pupil-labs/pl-neon-matlab/blob/main/track-your-experiment-progress-using-events.md permanent;
         rewrite ^/invisible/how-tos/integrate-with-the-real-time-api/legacy-api.html$ /invisible/real-time-api/legacy-api/ permanent;
         rewrite ^/neon/hardware$ /neon/hardware/module-technical-overview/ permanent;
         rewrite ^/invisible/hardware$ /invisible/hardware/technical-overview/ permanent;
         rewrite ^/(neon|invisible)/getting-started/understand-the-ecosystem/$ /$1/data-collection/ecosystem-overview/ permanent;
         rewrite ^/vr-ar/developer.html$ /core/vr-ar/developer/ permanent;
         rewrite ^/enrichments$ /neon/pupil-cloud/ permanent;
-        
-
+        rewrite ^/neon/real-time-api/track-your-experiment-progress-using-events/?$ https://pupil-labs.github.io/pl-realtime-api/dev/cookbook/track-your-experiment-progress-using-events/ permanent;
+        rewrite ^/neon/real-time-api/track-your-experiment-in-matlab/?$ https://github.com/pupil-labs/pl-neon-matlab/blob/main/track-your-experiment-progress-using-events.md permanent;

@@ -1,7 +1,7 @@
 # Legacy API
 
 :::danger
-Our previous real-time API called NDSI is now deprecated! We recommend using the new real-time API client introduced [here](/real-time-api/tutorials/).
+Our previous real-time API called NDSI is now deprecated! We recommend using the new real-time API client introduced [here](/real-time-api/).
 :::
 
 Pupil Invisible Companion app uses
