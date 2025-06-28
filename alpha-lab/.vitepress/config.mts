@@ -39,6 +39,7 @@ let theme_config_additions = {
       items: [
         { text: "Gaze-Contingent Apps", link: "/gaze-contingency-assistive/"},
         { text: "Detect Eye Blinks", link: "/blink-detection/" },
+        { text: "PERCLOS Calculation", link: "/perclos/" }
       ],
     },
     {
@@ -48,6 +49,7 @@ let theme_config_additions = {
         { text: "Map to Body Parts", link: "/dense-pose/" },
       ],
     },
+    
     {
       text: "Integrations",
       items: [
