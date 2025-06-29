@@ -11,9 +11,19 @@ import TagLinks from '@components/TagLinks.vue'
 
 # Detect Eye Blinks With Neon
 
+::: warning
+This guide describes a deprecated blink detection pipeline and is kept only for legacy purposes.
+
+Neon's blink detector now leverages eye openness, and is automatically run in real time from the Neon 
+Companion app; blinks are also saved with the recording.
+
+**Ensure you have eye state enabled in the Companion app to access real-time eye blinks.**
+:::
+
 <TagLinks :tags="$frontmatter.tags" />
 
 <img src="./eye_blinks_anim.webp" alt="Eye blink animation" style="display: block; margin-left: auto; margin-right: auto; width:100%;">
+
 
 ## Blinks: Artifacts and Information
 
