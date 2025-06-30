@@ -49,13 +49,6 @@ let theme_config_additions = {
         { text: "Map to Body Parts", link: "/dense-pose/" },
       ],
     },
-    
-    {
-      text: "Integrations",
-      items: [
-        { text: "Cognitive Load Monitoring", link: "/cognitive-load-monitoring/" },
-      ],
-    },
     {
       text: "Other/Core ",
       items: [
