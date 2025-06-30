@@ -199,16 +199,6 @@
     "image": "/alpha-lab/gps.webp",
     "category": "3D Spaces"
   },
-   {
-    "title": "Invisible Effort: What Pupil Size Reveals About Cognitive Load",
-    "details": "Track real-time cognitive effort during surgical training using Neon’s pupil size data and a novel algorithm from SOMAREALITY",
-    "link": {
-      "text": "View",
-      "href": "/alpha-lab/cognitive-load-monitoring/"
-    },
-    "image": "/alpha-lab/cognitive-load.webp",
-    "category": "Integrations"
-  },
   {
     "title": "Real-Time Eyelid Dynamics with PERCLOS and Neon",
     "details": "Calculate PERCLOS (percentage of eye closure) in real time using Neon and its Real-Time API. ",
