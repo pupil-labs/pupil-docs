@@ -13,17 +13,16 @@ interface Props {
   list?: string;
 }
 
-const { src, muted, autoplay, closedCaption } = withDefaults(
-  defineProps<Props>(),
-  {
-    height: "auto",
-    muted: "1",
-    autoplay: "0",
-    closedCaption: "1",
-    iv_load_policy: "1",
-    loop: "1",
-  }
-);
+const {
+  src,
+  height = "auto",
+  muted = "1",
+  autoplay = "0",
+  closedCaption = "1",
+  iv_load_policy = "1",
+  loop = "1",
+  controls = "1",
+} = defineProps<Props>();
 </script>
 
 <template>
