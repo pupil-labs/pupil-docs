@@ -1,29 +1,11 @@
 ---
 description: A Living Space – Working With Multiple Reference Images
 tags: [Pupil Invisible, Neon, Cloud]
-refImages:
-  [
-    { url: "./desk.webp", alt: "Desk" },
-    { url: "./tv1.webp", alt: "TV1" },
-    { url: "./tv2.webp", alt: "TV2" },
-    { url: "./table.webp", alt: "Table" },
-    { url: "./kitchen.webp", alt: "Kitchen" },
-    { url: "./cupboard.webp", alt: "Cupboard" },
-  ]
-refHeatmapImages:
-  [
-    { url: "./desk-heatmap.webp", alt: "Desk heatmap" },
-    { url: "./tv1-heatmap.webp", alt: "TV1 heatmap" },
-    { url: "./tv2-heatmap.webp", alt: "TV2 heatmap" },
-    { url: "./table-heatmap.webp", alt: "Table heatmap" },
-    { url: "./kitchen-heatmap.webp", alt: "Kitchen heatmap" },
-    { url: "./cupboard-heatmap.webp", alt: "Cupboard heatmap" },
-  ]
 ---
 
 <script setup>
 import TagLinks from '@components/TagLinks.vue'
-import ImageGrid from '@components/ImageGrid.vue'
+import Youtube from '@components/Youtube.vue'
 </script>
 
 # Map Gaze Throughout an Entire Room
@@ -71,27 +53,25 @@ For the analysis, we will need the following:
 
 1. **Capture Reference Images:** Take pictures of the areas or objects within the environment you wish to investigate. Here are some example pictures of different areas and pieces of furniture in our environment (a living room, dining area, and kitchen):
 
-<!-- <ImageGrid cols="5" :images="$frontmatter.refImages" /> -->
-
 <div class="grid grid-cols-3 gap-4">
-    <div class="image-column">
-        <img src="./desk.jpeg" alt="Desk" class="image">
-    </div>
-    <div class="image-column">
-        <img src="./tv1.jpeg" alt="TV1" class="image">
-    </div>
-    <div class="image-column">
-        <img src="./tv2.jpeg" alt="TV2" class="image">
-    </div>
-    <div class="image-column">
-        <img src="./table.jpeg" alt="Table" class="image">
-    </div>
-    <div class="image-column">
-        <img src="./kitchen.jpeg" alt="Kitchen" class="image">
-    </div>
-    <div class="image-column">
-        <img src="./cupboard.jpeg" alt="Cupboard" class="image">
-    </div>
+  <div>
+    <img src="./desk.webp" alt="Desk" class="image rounded-md" />
+  </div>
+  <div>
+    <img src="./tv1.webp" alt="TV1" class="image rounded-md" />
+  </div>
+  <div>
+    <img src="./tv2.webp" alt="TV2" class="image rounded-md" />
+  </div>
+  <div>
+    <img src="./table.webp" alt="Table" class="image rounded-md" />
+  </div>
+  <div>
+    <img src="./kitchen.webp" alt="Kitchen" class="image rounded-md" />
+  </div>
+  <div>
+    <img src="./cupboard.webp" alt="Cupboard" class="image rounded-md" />
+  </div>
 </div>
 
 <div style="margin-bottom: 50px;"></div>
@@ -167,7 +147,26 @@ consider placing some strategic items within the environment to increase the cha
 
 Once the enrichments are completed, you can view the heatmaps which illustrate areas which attracted more gaze. Additionally, you'll have the option to download gaze and fixation data mapped within the bounds of the pictures, enabling you to conduct further in-depth analyses.
 
-<ImageGrid cols="3" :images="$frontmatter.refHeatmapImages" />
+<div class="grid grid-cols-3 gap-4">
+  <div class="image-column">
+    <img src="./desk-heatmap.webp" alt="Desk heatmap" class="image rounded-md" />
+  </div>
+  <div class="image-column">
+    <img src="./tv1-heatmap.webp" alt="TV1 heatmap" class="image rounded-md" />
+  </div>
+  <div class="image-column">
+    <img src="./tv2-heatmap.webp" alt="TV2 heatmap" class="image rounded-md" />
+  </div>
+  <div class="image-column">
+    <img src="./table-heatmap.webp" alt="Table heatmap" class="image rounded-md" />
+  </div>
+  <div class="image-column">
+    <img src="./kitchen-heatmap.webp" alt="Kitchen heatmap" class="image rounded-md" />
+  </div>
+  <div class="image-column">
+    <img src="./cupboard-heatmap.webp" alt="Cupboard heatmap" class="image rounded-md" />
+  </div>
+</div>
 
 ::: tip
 If you need assistance in running the Reference Image Mapper, reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for dedicated support options.
