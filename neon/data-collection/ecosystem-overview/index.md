@@ -50,7 +50,7 @@ From here, you can either download the raw recording data in a convenient format
 
 We have a strict [privacy policy](https://pupil-labs.com/legal/) that ensures your recording data is accessible only by you and those you explicitly grant access to. Pupil Labs will **never** access your recording data unless you explicitly instruct us to. This implies that your recording data is not used for any product development. Of course, Pupil Cloud is fully GDPR-compliant.
 
-You can find a tutorial on how to get started with Pupil Cloud [here](/pupil-cloud/tutorials/).
+You can find a tutorial on how to get started with Pupil Cloud [here](/pupil-cloud/).
 
 ## Neon Player
 
