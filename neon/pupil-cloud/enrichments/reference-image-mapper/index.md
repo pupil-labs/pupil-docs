@@ -124,7 +124,7 @@ What works and what doesn’t?
 
 ::: tip
 **Ready to go?**<br>
-Why not try replicating the above examples? Or even try it with your own use cases! If you haven’t already, we recommend you check out the [Cloud Getting Started Guide](/pupil-cloud/tutorials/), which covers the basics of working with enrichments.
+Why not try replicating the above examples? Or even try it with your own use cases! If you haven’t already, we recommend you check out the [Cloud Getting Started Guide](/pupil-cloud/), which covers the basics of working with enrichments.
 :::
 
 ## Validate the Gaze Mapping
