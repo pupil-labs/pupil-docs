@@ -2,7 +2,7 @@
 
 The Companion device is a flagship Android smartphone. It is a regular phone that is not customized or modified in any way. To ensure maximum stability and performance we can only support a small number of carefully selected and tested models. The Neon Companion app is tuned to work with these particular models as we require full control over various low-level functions of the hardware.
 
-The supported models are: Motorola Edge 40 Pro and Samsung Galaxy S25. Currently, Neon ships with a Samsung Galaxy S25. Previously Neon shipped with OnePlus 8, OnePlus 8T, or OnePlus 10 Pro. We highly recommend Samsung Galaxy S25 for it's superior performance, edurance, and stability. We have also tested the Samsung Galaxy Tab S9, which performed well in our limited testing. However, it should be considered an experimental device and is not officially supported.
+Currently, Neon ships with a Samsung Galaxy S25 or Motorola Edge 40 Pro. We highly recommend using these models due to their superior performance, edurance, and stability. We have also tested the Samsung Galaxy Tab S9, which performed well in our limited testing. However, it should be considered an experimental device and is not officially supported. The full list of compatible devices can be found below.
 
 If you want to replace or add an extra Companion device you can purchase it [directly from us](https://pupil-labs.com/products/neon) or from any other distributor. The Neon Companion app is free and can be downloaded from the [Play Store](https://play.google.com/store/apps/details?id=com.pupillabs.neoncomp).
 
