@@ -208,5 +208,15 @@
     },
     "image": "/alpha-lab/perclos.webp",
     "category": "Real Time & Interactive"
+  },
+  {
+    "title": "Map Gaze Onto Anything",
+    "details": "Combine gaze with object and pose recognition in minutes. Learn how to augment your eye-tracking data using powerful, open-source computer vision models, in real time or after the fact.",
+    "link": {
+      "text": "View",
+      "href": "/alpha-lab/map-onto-anything/"
+    },
+    "image": "/alpha-lab/perclos.webp",
+    "category": "Real Time & Interactive"
   }
 ]
