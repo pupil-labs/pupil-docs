@@ -1,5 +1,6 @@
 import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vitepress";
+import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons';
 
 import { config as default_config, theme_config as default_theme_config } from "./../../default_config.mts";
 
@@ -32,14 +33,16 @@ let theme_config_additions = {
       items: [
         { text: "Website AOIs", link: "/web-aois/" },
         { text: "Gaze on Phones", link: "/phone-neon/" },
-        { text: "Map to Dynamic Screen Content", link: "/map-your-gaze-to-a-2d-screen/" },      ],
+        { text: "Map to Dynamic Screen Content", link: "/map-your-gaze-to-a-2d-screen/" },
+      ],
     },
     {
       text: "Real Time & Interactive",
       items: [
         { text: "Gaze-Contingent Apps", link: "/gaze-contingency-assistive/"},
         { text: "Detect Eye Blinks", link: "/blink-detection/" },
-        { text: "PERCLOS Calculation", link: "/perclos/" }
+        { text: "PERCLOS Calculation", link: "/perclos/" },
+        { text: "Map Gaze Onto Anything", link: "/map-onto-anything/" },
       ],
     },
     {
@@ -73,6 +76,11 @@ let config_additions = {
   titleTemplate: "Alpha Lab - :title - Pupil Labs Docs",
   description:
     "Documentation for Pupil Labs prototypes and demos to explore our curiosities.",
+  markdown: {
+    config(md) {
+      md.use(groupIconMdPlugin)
+    },
+  },
   vite: {
     resolve: {
       alias: [
@@ -99,6 +107,14 @@ let config_additions = {
         },
       ],
     },
+    plugins: [
+      groupIconVitePlugin({
+        customIcon:{
+          'uv':'https://raw.githubusercontent.com/astral-sh/uv/refs/heads/main/docs/assets/logo-letter.svg',
+          'vanilla': 'vscode-icons:file-type-python'
+        },
+      })
+    ],
   },
 };
 

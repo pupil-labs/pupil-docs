@@ -11,5 +11,8 @@
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview"
+  },
+  "dependencies": {
+    "vitepress-plugin-group-icons": "^1.6.0"
   }
 }
