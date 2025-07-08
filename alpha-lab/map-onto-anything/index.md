@@ -91,11 +91,11 @@ Note that you can pass different Ultralytics models, configure thresholds, defin
 
 ::: code-group
 
-```sh [test.py]
+```sh [uv]
 uv run -s https://gist.githubusercontent.com/mikelgg93/7355a22d3502249328b43ad150b2e2d9/raw/8802398a3337ed5e94cd6c54441e6b072a4c113e/ball_hand_plnr.py
 ```
 
-```sh [npm]
+```sh [vanilla]
 python3 ball_hand_plnr.py
 ```
 
@@ -107,234 +107,235 @@ python3 ball_hand_plnr.py
 
 ### Entrypoints
 
-::: details
-::: code-group
+::: details Using YOLO in Real-Time
 
-    ```py:line-numbers [yolo_rt.py]
-    # /// script
-    # requires-python = ">=3.10"
-    # dependencies = [
-    #     "opencv-python",
-    #     "pupil-labs-realtime-api",
-    #     "ultralytics",
-    #     "click",
-    #     "lap",
-    # ]
-    # ///
+```py [yolo_rt.py]
+# /// script
+# requires-python = ">=3.10"
+# dependencies = [
+#     "opencv-python",
+#     "pupil-labs-realtime-api",
+#     "ultralytics",
+#     "click",
+#     "lap",
+# ]
+# ///
 
-    import click
-    import cv2
-    from pupil_labs.realtime_api.simple import Device, discover_one_device
-    from ultralytics import YOLO
-
-
-    class DetectMode(click.ParamType):
-        """Custom Click type for validating the --detect argument.
-
-        It accepts 'all', 'gazed', or a comma-separated list of integers.
-        The conversion returns a tuple: (mode_string, class_list_or_None).
-        """
-
-        name = "detect_mode"
-
-        def convert(self, value, param, ctx):
-            val_lower = str(value).lower()
-            if val_lower in ("all", "gazed"):
-                return (val_lower, None)
-
-            try:
-                classes = [int(p.strip()) for p in value.split(",")]
-                if not classes and value.strip() != "0":
-                    self.fail(
-                        f"'{value}' is not a valid non-empty list of class IDs.", param, ctx
-                    )
-            except ValueError:
-                self.fail(
-                    f"""Value '{value}' for --plot is not 'all', 'gazed', or a
-                    comma-separated list of integers.""",
-                    param,
-                    ctx,
-                )
-            return ("specific", classes)
+import click
+import cv2
+from pupil_labs.realtime_api.simple import Device, discover_one_device
+from ultralytics import YOLO
 
 
-    @click.command()
-    @click.option(
-        "--model",
-        type=click.Choice(["n", "s", "m"]),
-        default="n",
-        help="Specify YOLO model variant: 'n' (nano), 's' (small), 'm' (medium).",
-    )
-    @click.option("--track", is_flag=True, help="Enable YOLO tracking.")
-    @click.option(
-        "--detect",
-        default="gazed",
-        type=DetectMode(),
-        help="Plotting mode: 'gazed', 'all', or comma-separated specific class IDs from"
-        "coco.yaml (e.g., '0,15,16').",
-    )
-    @click.option("--ip", default=None, help="IP address of the Pupil Labs device.")
-    @click.option("--port", default=8080, help="Port of the Pupil Labs device.")
-    def main(model, track, detect, ip, port):
-        """YOLO-based detection over Neon streaming."""
-        detector = YOLO(f"yolo11{model}-seg.pt")
-        device = None
+class DetectMode(click.ParamType):
+    """Custom Click type for validating the --detect argument.
 
-        if ip is None:
-            print("IP address not provided. Attempting to discover device via mDNS...")
-            try:
-                device = discover_one_device(max_search_duration_seconds=10)
-                if device:
-                    print(f"Discovered device: {device}")
-            except Exception as e:
-                print(f"mDNS discovery failed: {e}")
-        else:
-            print(f"Attempting to connect to device at {ip}:{port}...")
-            try:
-                device = Device(address=ip, port=port)
-            except Exception as e:
-                print(f"Failed to connect to device at {ip}:{port}. Error: {e}")
+    It accepts 'all', 'gazed', or a comma-separated list of integers.
+    The conversion returns a tuple: (mode_string, class_list_or_None).
+    """
 
-        if device is None:
-            print(
-                "Could not find or connect to a device. "
-                "Please check the connection or provide a valid IP address using --ip."
-            )
-            raise SystemExit(-1)
+    name = "detect_mode"
 
-        print(f"Connecting to {device}...")
-
-        mode, target_classes = detect
-        print(f"Detection mode: {mode}, Target classes: {target_classes}")
+    def convert(self, value, param, ctx):
+        val_lower = str(value).lower()
+        if val_lower in ("all", "gazed"):
+            return (val_lower, None)
 
         try:
-            while True:
-                matched = device.receive_matched_scene_and_eyes_video_frames_and_gaze() // [!code focus]
-                if not matched:
-                    print(
-                        "Not able to find a match! Note: Pupil Invisible does not support "
-                        "streaming eyes video"
-                    )
-                    continue
-                gaze_x = int(matched.gaze.x)
-                gaze_y = int(matched.gaze.y)
-
-                if track:
-                    detection = detector.track(
-                        matched.scene.bgr_pixels, classes=target_classes
-                    )
-                else:
-                    detection = detector(matched.scene.bgr_pixels, classes=target_classes)
-
-                frame = matched.scene.bgr_pixels.copy()
-                if mode in ["all", "specific"]:
-                # We plot all detections
-                    frame = detection[0].plot()
-                elif mode == "gazed":
-                # Here we plot only if gazed
-                    for result in detection[0]:
-                        if result.boxes:
-                            for box in result.boxes.xyxy:
-                                x1, y1, x2, y2 = box
-                                if x1 < gaze_x < x2 and y1 < gaze_y < y2:
-                                    frame = result.plot()
-
-                cv2.circle(
-                    frame,
-                    (int(matched.gaze.x), int(matched.gaze.y)),
-                    radius=10,
-                    color=(0, 0, 255),
-                    thickness=5,
+            classes = [int(p.strip()) for p in value.split(",")]
+            if not classes and value.strip() != "0":
+                self.fail(
+                    f"'{value}' is not a valid non-empty list of class IDs.", param, ctx
                 )
-
-                # Render eyes video into the scene video
-                if matched.eyes is not None and matched.eyes.bgr_pixels is not None:
-                    height, width, _ = matched.eyes.bgr_pixels.shape
-                    frame[0:height, 0:width] = matched.eyes.bgr_pixels
-
-                cv2.imshow("Scene camera with eyes and gaze overlay", frame)
-                if cv2.waitKey(1) & 0xFF == 27:  # Press ESC to exit
-                    break
-        except KeyboardInterrupt:
-            print("\nScript interrupted by user.")
-        finally:
-            print("Stopping...")
-            if device:
-                device.close()  # Explicitly stop auto-update
-            cv2.destroyAllWindows()
-
-
-    if __name__ == "__main__":
-        main()
-    ```
-
-    ```py:line-numbers [yolo_plnr.py]
-    # /// script
-    # requires-python = ">=3.10"
-    # dependencies = [
-    #     "opencv-python",
-    #     "pupil-labs-video",
-    #     "pupil-labs-neon-recording",
-    #     "ultralytics",
-    # ]
-    # ///
-
-    from pathlib import Path
-
-    import cv2
-    import pupil_labs.neon_recording as nr
-    from tqdm import tqdm
-    from ultralytics import YOLO
-
-    RECORDING_DIR = Path(
-        "path/to/recording"
-    )  # Replace with your actual recording directory
-
-
-    def main():
-        detector = YOLO("yolo11n-seg.pt")  # Load the YOLO model
-
-        recording = nr.load(RECORDING_DIR)
-        combined_data = zip(
-            recording.scene.ts,
-            recording.scene.sample(recording.scene.ts),
-            recording.gaze.sample(recording.scene.ts),
-            strict=False,
-        )
-        for ts, scene_frame, gaze_datum in tqdm(
-            combined_data, total=len(recording.scene.ts)
-        ):
-            frame_pixels = scene_frame.bgr
-            detection = detector(frame_pixels)
-            # Here you can pass classes if needed, e.g., detector(frame_pixels, classes=[0, 1])
-            # For example, to detect only person and car classes, you can use:
-            # detection = detector(frame_pixels, classes=[0, 2])  # 0 for person, 2 for car
-
-            frame_with_detection = detection[0].plot()
-            # Here you can get iterate through the results if needed
-            # for result in detection[0]:
-            #     print(result.boxes.xyxy)  # Bounding box coordinates
-            #     print(result.boxes.conf)  # Confidence scores
-            #     print(result.boxes.cls)  # Class IDs
-
-            # Draw the gaze point on the frame
-            final_frame = cv2.circle(
-                frame_with_detection,
-                (int(gaze_datum.x), int(gaze_datum.y)),
-                10,
-                (0, 0, 255),
-                5,
+        except ValueError:
+            self.fail(
+                f"""Value '{value}' for --plot is not 'all', 'gazed', or a
+                comma-separated list of integers.""",
+                param,
+                ctx,
             )
-            cv2.imshow("YOLO detection", final_frame)
+        return ("specific", classes)
+
+
+@click.command()
+@click.option(
+    "--model",
+    type=click.Choice(["n", "s", "m"]),
+    default="n",
+    help="Specify YOLO model variant: 'n' (nano), 's' (small), 'm' (medium).",
+)
+@click.option("--track", is_flag=True, help="Enable YOLO tracking.")
+@click.option(
+    "--detect",
+    default="gazed",
+    type=DetectMode(),
+    help="Plotting mode: 'gazed', 'all', or comma-separated specific class IDs from"
+    "coco.yaml (e.g., '0,15,16').",
+)
+@click.option("--ip", default=None, help="IP address of the Pupil Labs device.")
+@click.option("--port", default=8080, help="Port of the Pupil Labs device.")
+def main(model, track, detect, ip, port):
+    """YOLO-based detection over Neon streaming."""
+    detector = YOLO(f"yolo11{model}-seg.pt")
+    device = None
+
+    if ip is None:
+        print("IP address not provided. Attempting to discover device via mDNS...")
+        try:
+            device = discover_one_device(max_search_duration_seconds=10)
+            if device:
+                print(f"Discovered device: {device}")
+        except Exception as e:
+            print(f"mDNS discovery failed: {e}")
+    else:
+        print(f"Attempting to connect to device at {ip}:{port}...")
+        try:
+            device = Device(address=ip, port=port)
+        except Exception as e:
+            print(f"Failed to connect to device at {ip}:{port}. Error: {e}")
+
+    if device is None:
+        print(
+            "Could not find or connect to a device. "
+            "Please check the connection or provide a valid IP address using --ip."
+        )
+        raise SystemExit(-1)
+
+    print(f"Connecting to {device}...")
+
+    mode, target_classes = detect
+    print(f"Detection mode: {mode}, Target classes: {target_classes}")
+
+    try:
+        while True:
+            matched = device.receive_matched_scene_and_eyes_video_frames_and_gaze() // [!code focus]
+            if not matched:
+                print(
+                    "Not able to find a match! Note: Pupil Invisible does not support "
+                    "streaming eyes video"
+                )
+                continue
+            gaze_x = int(matched.gaze.x)
+            gaze_y = int(matched.gaze.y)
+
+            if track:
+                detection = detector.track(
+                    matched.scene.bgr_pixels, classes=target_classes
+                )
+            else:
+                detection = detector(matched.scene.bgr_pixels, classes=target_classes)
+
+            frame = matched.scene.bgr_pixels.copy()
+            if mode in ["all", "specific"]:
+            # We plot all detections
+                frame = detection[0].plot()
+            elif mode == "gazed":
+            # Here we plot only if gazed
+                for result in detection[0]:
+                    if result.boxes:
+                        for box in result.boxes.xyxy:
+                            x1, y1, x2, y2 = box
+                            if x1 < gaze_x < x2 and y1 < gaze_y < y2:
+                                frame = result.plot()
+
+            cv2.circle(
+                frame,
+                (int(matched.gaze.x), int(matched.gaze.y)),
+                radius=10,
+                color=(0, 0, 255),
+                thickness=5,
+            )
+
+            # Render eyes video into the scene video
+            if matched.eyes is not None and matched.eyes.bgr_pixels is not None:
+                height, width, _ = matched.eyes.bgr_pixels.shape
+                frame[0:height, 0:width] = matched.eyes.bgr_pixels
+
+            cv2.imshow("Scene camera with eyes and gaze overlay", frame)
             if cv2.waitKey(1) & 0xFF == 27:  # Press ESC to exit
                 break
+    except KeyboardInterrupt:
+        print("\nScript interrupted by user.")
+    finally:
+        print("Stopping...")
+        if device:
+            device.close()  # Explicitly stop auto-update
+        cv2.destroyAllWindows()
 
 
-    if __name__ == "__main__":
-        main()
-    ```
+if __name__ == "__main__":
+    main()
+```
 
-    :::
+:::
+
+::: details Using YOLO in Post-Hoc Analysis
+
+```py [yolo_plnr.py]
+# /// script
+# requires-python = ">=3.10"
+# dependencies = [
+#     "opencv-python",
+#     "pupil-labs-video",
+#     "pupil-labs-neon-recording",
+#     "ultralytics",
+# ]
+# ///
+
+from pathlib import Path
+
+import cv2
+import pupil_labs.neon_recording as nr
+from tqdm import tqdm
+from ultralytics import YOLO
+
+RECORDING_DIR = Path(
+    "path/to/recording"
+)  # Replace with your actual recording directory
+
+
+def main():
+    detector = YOLO("yolo11n-seg.pt")  # Load the YOLO model
+
+    recording = nr.load(RECORDING_DIR)
+    combined_data = zip(
+        recording.scene.ts,
+        recording.scene.sample(recording.scene.ts),
+        recording.gaze.sample(recording.scene.ts),
+        strict=False,
+    )
+    for ts, scene_frame, gaze_datum in tqdm(
+        combined_data, total=len(recording.scene.ts)
+    ):
+        frame_pixels = scene_frame.bgr
+        detection = detector(frame_pixels)
+        # Here you can pass classes if needed, e.g., detector(frame_pixels, classes=[0, 1])
+        # For example, to detect only person and car classes, you can use:
+        # detection = detector(frame_pixels, classes=[0, 2])  # 0 for person, 2 for car
+
+        frame_with_detection = detection[0].plot()
+        # Here you can get iterate through the results if needed
+        # for result in detection[0]:
+        #     print(result.boxes.xyxy)  # Bounding box coordinates
+        #     print(result.boxes.conf)  # Confidence scores
+        #     print(result.boxes.cls)  # Class IDs
+
+        # Draw the gaze point on the frame
+        final_frame = cv2.circle(
+            frame_with_detection,
+            (int(gaze_datum.x), int(gaze_datum.y)),
+            10,
+            (0, 0, 255),
+            5,
+        )
+        cv2.imshow("YOLO detection", final_frame)
+        if cv2.waitKey(1) & 0xFF == 27:  # Press ESC to exit
+            break
+
+
+if __name__ == "__main__":
+    main()
+```
 
 :::
 
