@@ -8,7 +8,7 @@ A heatmap of gaze data mapped onto the reference image can be generated, and map
 
 ## Setup
 
-<Youtube src="ygqzQEzUIS4"/>
+<Youtube src="99y_m0DforY"/>
 
 As described in the setup video, you will need two things in addition to your eye tracking recording(s) to produce a Reference Image Mapper enrichment:
 
