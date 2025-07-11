@@ -153,12 +153,6 @@ let theme_config_additions = {
     "/pupil-cloud/": [
       { text: "Overview", link: "/pupil-cloud/" },
       {
-        text: "Tutorials",
-        items: [
-          { text: "Analysis in Pupil Coud", link: "/pupil-cloud/tutorials/" },
-        ],
-      },
-      {
         text: "General",
         items: [
           { text: "Projects", link: "/pupil-cloud/projects/" },

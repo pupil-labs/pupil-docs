@@ -4,7 +4,7 @@ aside: false
 
 # Pupil Cloud
 
-<img src="./hero.webp" style="max-width: 500px; width: 100%; height: auto; margin: auto; padding: 24px 0;">
+<Youtube src="KFDAavyIhaE"/>
 
 [Pupil Cloud](https://cloud.pupil-labs.com) is a web-based eye tracking platform for data logistics, analysis, and visualization. It is the recommended tool for processing your Pupil Invisible recordings. It makes it easy to store all your data securely in one place and it offers a variety of options for analysis.
 

@@ -8,7 +8,7 @@ A heatmap of gaze data mapped onto the reference image can be generated, and map
 
 ## Setup
 
-<Youtube src="ygqzQEzUIS4"/>
+<Youtube src="99y_m0DforY"/>
 
 As described in the setup video, you will need two things in addition to your eye tracking recording(s) to produce a Reference Image Mapper enrichment:
 
@@ -124,7 +124,7 @@ What works and what doesn’t?
 
 ::: tip
 **Ready to go?**<br>
-Why not try replicating the above examples? Or even try it with your own use cases! If you haven’t already, we recommend you check out the [Cloud Getting Started Guide](/pupil-cloud/tutorials/), which covers the basics of working with enrichments.
+Why not try replicating the above examples? Or even try it with your own use cases! If you haven’t already, we recommend you check out the [Cloud Getting Started Guide](/pupil-cloud/), which covers the basics of working with enrichments.
 :::
 
 ## Validate the Gaze Mapping
