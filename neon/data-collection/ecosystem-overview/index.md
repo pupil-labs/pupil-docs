@@ -54,9 +54,7 @@ You can find a tutorial on how to get started with Pupil Cloud [here](/pupil-clo
 
 ## Neon Player
 
-[Neon Player](/neon-player/) is a desktop application that allows you to easily play back Neon recordings locally. It also allows you to export recordings in convenient formats without having to go through Pupil Cloud.
-
-Neon Player is only able to provide a subset of the raw data streams available for export from Pupil Cloud. For example, pupil diameter and 3D eye state data is not included. You can find a full overview of which data streams are available where [here](/data-collection/data-streams/).
+[Neon Player](/neon-player/) is a desktop application that allows you to easily play back Neon recordings locally. It also allows you to export recordings in convenient formats without having to go through Pupil Cloud. You can find a full overview of which data streams are available [here](/data-collection/data-streams/).
 
 ## Real-Time API
 
