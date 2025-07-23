@@ -8,9 +8,13 @@ The Neon Companion app has built-in support for LSL, streaming Neon’s real-tim
 
 LSL streaming can be initiated in the Companion App by enabling the "Stream over LSL" setting.
 
-When enabled, data will be streamed over the LSL network, and subsequently, to any connected LSL inlet (such as the LSL LabRecorder App, or another third-party system with inlet functionality) which is listening. Like the [Real-Time API](https://docs.pupil-labs.com/neon/real-time-api/), it is not necessary for the Companion App to be actively recording, but simultaneously streaming LSL data while making a recording is supported.
+When enabled, data will be streamed over the LSL network, and subsequently, to any connected LSL inlet (such as the LSL LabRecorder App, or another third-party system with inlet functionality) which is listening. Like the [Real-Time API](https://docs.pupil-labs.com/neon/real-time-api/), the Companion App does not need to be actively recording to stream eye-tracking data (e.g., gaze, pupil diameter, eye state) over LSL. However, simultaneous recording and streaming is fully supported. That said, as with the Real-Time API, an active recording is required for Neon Events to be used and saved. If no recording is running, the Companion App will discard the events and they will not be streamed via LSL. You can find more info [here](https://pupil-labs.github.io/pl-realtime-api/dev/methods/simple/remote-control/#save-events). 
 
 Note that you'll need to ensure the Neon Companion app is connected to the same network as the other devices streaming via LSL.
+
+::: tip
+While the Companion App doesn't need to be actively recording to stream eye-tracking data over LSL, we strongly recommend recording with the Neon Companion App whenever possible. Recording ensures you have a complete, reliable copy of all data for backup and post-processing.
+:::
 
 ## **LSL Outlets**
 
