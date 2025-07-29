@@ -29,45 +29,36 @@ import TagLinks from '@components/TagLinks.vue'
 <Youtube src="NjXLBsynUkg"/>
 
 ::: tip
-🏀 Ever wanted to know not just _where_ a person is looking, but also _what_ they're looking at? This guide shows you how to build a flexible bridge between Neon's eye tracking data and any computer vision model.
+🏀 Ever wanted to know not just *where* a person is looking, but also *what* they're looking at? This guide shows you how to build a flexible bridge between Neon's eye tracking data and any computer vision model.
 :::
 
-## Gaze Alone Is Not Enough
+## When Gaze Alone Is Not Enough
 
-Eye-tracking offers a powerful window into human behavior, but raw gaze data only tells part of the story. Truly understanding attention means comprehending the visual environment, what objects a person engages with, what they overlook, or how eye-hand coordination plays out.
+Eye tracking offers a powerful window into human behavior, but raw gaze data only tells part of the story. Truly understanding attention means comprehending the visual environment: what objects a person engages with, what they overlook, or how eye-hand coordination plays out.
 
-Neon provides rich data streams alongside video, but users are often left wondering how to interpret them in the context of the visual scene. Humans can effortlessly turn images into concepts, recognizing a hand, a person or a coffee cup in the scene and intuitively understanding their spatial relationships. Computers, however, often need help bridging that gap from pixels to meaning.
+Neon provides rich data streams alongside video, but users often wonder how to interpret them in the context of the visual scene. While humans can effortlessly turn images into concepts, recognizing a hand, a person, or a coffee cup, and intuitively understand their spatial relationships, computers, however, need help bridging the gap from pixels to meaning.
+
+This is where our guide comes in. It shows you how to connect computer vision tools with Neon’s data streams, through practical examples, such as running object and hand-pose detection models in both real-time and post-hoc, turning raw data into meaningful insights.
 
 ## Adding New Layers of Data
 
-Pupil Cloud already bridges that gap with many enrichments like the [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/) or the [Face Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/face-mapper/), which are excellent for static scenes or tracking faces. We’ve also explored here, mapping onto [dense human body parts](../dense-pose/), [screens](../gaze-contingency-assistive/) or using [LMMs for object recognition and visual understanding](../gpt4-eyes/), but we’ve only just scratched the surface.
+Pupil Cloud offers powerful built-in enrichments, like [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/) or [Face Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/face-mapper/), which are excellent for static scenes or tracking faces.
 
-The last few years have seen an explosion in accessible, highly accurate, and real-time capable models from different research labs. Some models even go beyond object tracking, to depth estimation, segmentation, and even full scene understanding. These powerful algorithms are becoming increasingly efficient, allowing them to be run more effectively on consumer hardware and opening up new possibilities for research.
+In Alpha Lab, we’ve also explored how to map gaze [dense human body parts](../dense-pose/), [screens](../gaze-contingency-assistive/) and using [large multimodal models for object recognition and scene understanding](../gpt4-eyes/). But we’ve only just scratched the surface.
 
-However, researchers often struggle to connect these external tools with Neon's data streams. This guide provides the missing link. It shows how easy is to apply these state-of-the-art tools directly to your recordings.
+The last few years have seen an explosion in accessible, highly accurate, and real-time capable models from different research labs. These powerful algorithms are becoming increasingly efficient, allowing them to be run more effectively on consumer hardware and opening up new possibilities for research.
 
-## What You’ll Find Here
-
-Accessing a scene camera frame with corresponding gaze data is relatively easy, both in [real-time](https://pupil-labs.github.io/pl-realtime-api/dev/methods/simple/streaming/scene-camera/#scene-camera-video-with-overlayed-gaze) and [post-hoc](https://pupil-labs.github.io/pl-neon-recording/dev/#gaze-overlay) analysis. But let’s go beyond that, here we present a few examples augmenting this data:
-
-- First, using our real-time API, we capture video and gaze data, and overlay it with hand pose and ball detections. As a final step, we calculate the spatial relationship between the user’s gaze and these dynamically tracked objects in the scene camera space.
-
-  For this task, we've chosen two powerful and lightweight solutions, [Google's MediaPipe](https://ai.google.dev/edge/mediapipe/solutions/guide) for robust real-time hand tracking and the Ultralytics framework for high-performance object detection using state-of-the-art [YOLO model](https://docs.ultralytics.com/) or [Baidu’s RT-DTER](https://docs.ultralytics.com/models/rtdetr/).
-
-- Next, we demonstrate a post-hoc workflow using pl-neon-recording, a library that simplifies access to native Neon data. In this example, we process recorded video and gaze streams with a more demanding YOLO model to run instance segmentation and Google’s Mediapipe for hand tracking.
-
-- Finally, we include two simple snippets using YOLO as your entry point, to demonstrate how you can plug your own models, while less optimized, they are kept simpe and just show you how to use a simple YOLO in real-time and post-hoc analysis.
-
-::: warning 🐌 WARNING
-Even though these models are quite light and heavily optimized, you’ll still need a powerful computer with a GPU to run them in real time without frame drops.
-:::
+However, researchers often struggle to connect these external tools with Neon's data streams. This guide provides the missing link. It shows how easy it is to apply these state-of-the-art tools directly to your recordings.
 
 ## Running the Examples
 
-Do you simply want to try the examples and start tracking your hands and ball? See what these models are capable of? We make it easy:
-If using [uv](https://docs.astral.sh/uv/) you can run the command below—no setup or dependency management needed. Alternatively, download the script from the gist, set up a Python environment, install the dependencies listed at the top, and run the script manually.
+### Real-Time
 
-### Real-Time Example
+Accessing a scene camera frame with corresponding gaze data is [relatively easy](https://pupil-labs.github.io/pl-realtime-api/dev/methods/simple/streaming/scene-camera/#scene-camera-video-with-overlayed-gaze). But let’s go beyond that.
+
+First, we capture video and gaze data. Then, we run computer vision models (described below), and overlay the video frames with resulting hand pose and object detections (e.g. a sports ball). As a final step, we calculate the spatial relationship between the wearer’s gaze and these dynamically tracked objects in the scene camera video.
+
+If you are using [Astral's uv](https://docs.astral.sh/uv/), you can run the command below; no setup or dependency management needed. Alternatively, download the script from the gist, set up a Python environment, install the dependencies listed at the top, and run the script manually.
 
 ::: code-group
 
@@ -81,15 +72,19 @@ python3 ball_hand_rt.py
 
 :::
 
-Note that you can pass different Ultralytics models, configure thresholds, define the IP address it should connect to, etc, through the arguments. Use the flag `--help` to see all the options.
+For this task, we've chosen two powerful and lightweight tools: [Google's MediaPipe](https://ai.google.dev/edge/mediapipe/solutions/guide) for robust real-time hand tracking, and the Ultralytics framework for high-performance object detection using state-of-the-art [YOLO model](https://docs.ultralytics.com/) or [**Baidu’s RT-DTER**](https://docs.ultralytics.com/models/rtdetr/).
 
-::: info
-[View the code](https://gist.github.com/mikelgg93/cedc064a1b065bd1e9d8b9aa1f05e53d)
+The script is highly configurable via command-line arguments. You can specify options such as the Ultralytics model, which [object classes](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/coco.yaml) to detect, confidence detection thresholds, or the device's IP address. To see a full list of available options, use the `--help` flag. For implementation details on performance optimizations, check out the [source code](https://gist.github.com/mikelgg93/cedc064a1b065bd1e9d8b9aa1f05e53d).
+
+::: warning 🐌 INFO
+Even though these models are relatively lightweight and heavily optimized, you’ll still need a powerful computer with a GPU to run them in real time without frame drops.
 :::
 
-### Post-Hoc Example
+### Post-Hoc
 
-These models can run in real-time, but sometimes you want to run them on recorded data, for example, to analyze past experiments or to run more complex models that require more computational resources. See how to run it on one of your recordings:
+Next, we demonstrate a post-hoc workflow using [pl-neon-recording](https://github.com/pupil-labs/pl-neon-recording), a library that simplifies access to native Neon recordings.
+
+We process recorded video and gaze streams with a more demanding YOLO model to run instance segmentation and the same Google’s Mediapipe for hand tracking. Check out the [code](https://gist.github.com/mikelgg93/7355a22d3502249328b43ad150b2e2d9) here.
 
 ::: code-group
 
@@ -103,19 +98,17 @@ python3 ball_hand_plnr.py HERE_YOUR_RECORDING_DIR
 
 :::
 
-::: info  
-[View the code](https://gist.github.com/mikelgg93/7355a22d3502249328b43ad150b2e2d9)
-:::
+As you’ve seen, these models can run in real time, but we also provide a post-hoc example for cases where you want to analyze recorded data, whether to revisit past experiments, use more computationally demanding models, or simply because your hardware can’t handle the workload in real time.
 
-## How To Plug Your Own Models
+## Bring Your Own Models
 
-As you have seen, the code snippets above are easy to run, and have many options to configure, but they can also be a bit overwhelming if you are not familiar with the code. If you want to learn how to plug your own models, here we have two more examples that keep it simple, they contain comments and highlights certain lines to help you navigate the code.
+The code snippets above are easy to run, and have many configurable options, but they can also be a bit overwhelming if you are not familiar with code. If you want to learn how to plug in your own models, we have two more examples that keep it simple. They contain comments and highlight certain lines to help you navigate.
 
-The first one shows how to use an object detection model (YOLO) in post-hoc analysis, using the [pl-neon-recording](https://docs.pupil-labs.com/neon/pl-neon-recording/) library to access the recording data.
+The first one how to use an object detection model (YOLO) in post-hoc analysis, using the [**pl-neon-recording**](https://docs.pupil-labs.com/neon/pl-neon-recording/) library to access the recording data.
 
-::: details Using YOLO in Post-Hoc Analysis
+::: details Using a Model in Post-Hoc Analysis
 
-```py{24,26,36-40,42-47} [yolo_plnr.py]
+```py{16-17,25-26,40-41,46-47} [yolo_plnr.py]
 # /// script
 # requires-python = ">=3.10"
 # dependencies = [
@@ -131,6 +124,7 @@ from pathlib import Path
 import cv2
 import pupil_labs.neon_recording as nr
 from tqdm import tqdm
+# Import YOLO or any other model you want to use
 from ultralytics import YOLO
 
 RECORDING_DIR = Path(
@@ -139,7 +133,8 @@ RECORDING_DIR = Path(
 
 
 def main():
-    detector = YOLO("yolo11n-seg.pt")  # Load the YOLO model
+    # Load the model
+    detector = YOLO("yolo11n-seg.pt")
 
     recording = nr.load(RECORDING_DIR)
     combined_data = zip(
@@ -152,11 +147,14 @@ def main():
         combined_data, total=len(recording.scene.ts)
     ):
         frame_pixels = scene_frame.bgr
+
+        # Run the detector over the scene camera frame
         detection = detector(frame_pixels)
         # Here you can pass classes if needed, e.g., detector(frame_pixels, classes=[0, 1])
         # For example, to detect only person and car classes, you can use:
         # detection = detector(frame_pixels, classes=[0, 2])  # 0 for person, 2 for car
 
+        # Plot the detections over the frame
         frame_with_detection = detection[0].plot()
         # Here you can get iterate through the results if needed
         # for result in detection[0]:
@@ -174,7 +172,8 @@ def main():
             (0, 0, 255),
             5,
         )
-        cv2.imshow("YOLO detection", final_frame)
+        # Show the image
+        cv2.imshow("Frame with detection", final_frame)
         if cv2.waitKey(1) & 0xFF == 27:  # Press ESC to exit
             break
 
@@ -185,11 +184,13 @@ if __name__ == "__main__":
 
 :::
 
-The second one shows how to use YOLO in real-time, and also includes arguments to configure tracking an specific class, gazed objects, or all objects.
+Depending on the model that you want to implement, check out their documentation and examples.
 
-::: details Using YOLO in Real-Time
+The second example shows how to use YOLO in real-time. This is a semi-advanced implementation. We do not dive into how to optimise the code. Rather, we show you how to implement more options, like using the gaze point to detect the gazed object or to specify specific classes. Those options are implemented through arguments.
 
-```py{99,110-112,114,119,122-128} [yolo_rt.py]
+::: details Using a Model in Real-Time
+
+```py{67-68,111-113,115,119-120,122-128} [yolo_rt.py]
 # /// script
 # requires-python = ">=3.10"
 # dependencies = [
@@ -256,6 +257,7 @@ class DetectMode(click.ParamType):
 @click.option("--port", default=8080, help="Port of the Pupil Labs device.")
 def main(model, track, detect, ip, port):
     """YOLO-based detection over Neon streaming."""
+    # Instantiate the model
     detector = YOLO(f"yolo11{model}-seg.pt")
     device = None
 
@@ -297,7 +299,7 @@ def main(model, track, detect, ip, port):
                 continue
             gaze_x = int(matched.gaze.x)
             gaze_y = int(matched.gaze.y)
-
+            # Run the detector over the scene camera frame
             if track:
                 detection = detector.track(
                     matched.scene.bgr_pixels, classes=target_classes
@@ -349,13 +351,13 @@ if __name__ == "__main__":
 
 :::
 
-## Contribution
+## Your Turn to Build
 
-Once running these examples you would have new metrics such as ball, hand detection and distance between these objects and the gaze point.
+Once you’ve run these examples, you will have new metrics such as ball, hand detection and distance between these objects and the gaze point.
 
 More importantly, you’ll have the building blocks for your own custom computer vision pipeline. You now have a clear path to integrate other state-of-the-art models with your Neon data. Dive into the code snippets, tweak them for your needs, and start tracking what's truly important to your research.
 
-Now is your turn, dive into those snippets and tweak them to your needs. Choose a different [category](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/coco.yaml), [fine tune your models](https://docs.ultralytics.com/guides/model-evaluation-insights/#accessing-yolo11-metrics) or use completely different ones. You now have the building blocks for your own custom computer vision pipeline.
+Now is your turn, choose a different [category](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/coco.yaml), [fine tune your models](https://docs.ultralytics.com/guides/model-evaluation-insights/#accessing-yolo11-metrics) or use [completely different ones](https://huggingface.co/models?sort=trending). You’ve got the foundation, now build on it.
 
 ::: tip
 Need assistance implementing a model? Reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for formal support options.
