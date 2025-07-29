@@ -21,9 +21,9 @@ You will see all fixations and their durations visualized in the timeline below.
 
 ![Manual Mapper image two](./image_2_mapper.png)
 
-::: tip
-**Move between unmapped fixations**<br>
-Use <kbd>Shift+A</kbd> to move to the previous unmapped fixation, and <kbd>Shift+D</kbd> to move to the next unmapped fixation. 
+::: tip TIP Move between fixations
+Use <kbd>Shift+A</kbd> to move to the **previous unmapped** fixation, and <kbd>Shift+S</kbd> to move to the **next unmapped** fixation.<br>
+Use <kbd>A</kbd> and <kbd>S</kbd> to move across all fixations.
 :::
 
 ## Export Format
