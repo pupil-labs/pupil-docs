@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { DefaultTheme } from "vitepress/theme";
-import { computed, nextTick, onMounted, useSSRContext } from "vue";
+import { computed, nextTick, onMounted, ref, useSSRContext } from "vue";
 import type { SSGContext } from "../../shared";
 
 const props = defineProps<{
@@ -10,9 +10,12 @@ const props = defineProps<{
   target?: string;
 }>();
 
+const el = ref<HTMLAnchorElement>();
+
 onMounted(async () => {
   await nextTick();
   const span = el.value?.children[0];
+  console.log(span);
   if (
     span instanceof HTMLElement &&
     span.className.startsWith("vpi-social-") &&
@@ -39,6 +42,7 @@ if (import.meta.env.SSR) {
 
 <template>
   <a
+    ref="el"
     class="VPSocialLink no-icon"
     :href="link"
     :aria-label="ariaLabel ?? (typeof icon === 'string' ? icon : '')"
@@ -65,7 +69,8 @@ if (import.meta.env.SSR) {
   transition: color 0.25s;
 }
 
-.VPSocialLink > :deep(svg) {
+.VPSocialLink > :deep(svg),
+.VPSocialLink > :deep([class^="vpi-social-"]) {
   width: 20px;
   height: 20px;
   fill: currentColor;
