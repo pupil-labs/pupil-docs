@@ -104,7 +104,7 @@ As you’ve seen, these models can run in real time, but we also provide a post-
 
 The code snippets above are easy to run, and have many configurable options, but they can also be a bit overwhelming if you are not familiar with code. If you want to learn how to plug in your own models, we have two more examples that keep it simple. They contain comments and highlight certain lines to help you navigate.
 
-The first one how to use an object detection model (YOLO) in post-hoc analysis, using the [**pl-neon-recording**](https://docs.pupil-labs.com/neon/pl-neon-recording/) library to access the recording data.
+The first one how to use an object detection model (YOLO) in post-hoc analysis, using the [**pl-neon-recording**](https://pupil-labs.github.io/pl-neon-recording/dev/) library to access the recording data.
 
 ::: details Using a Model in Post-Hoc Analysis
 
