@@ -8,13 +8,13 @@ meta:
   - name: twitter:image
     content: "https://example.com/article_image.jpg"
   - name: twitter:player
-    content: "https://www.youtube.com/embed/NjXLBsynUkg"
+    content: "https://www.youtube.com/embed/_mmFz2_7j0w"
   - name: twitter:width
     content: "1280"
   - name: twitter:height
     content: "720"
   - property: og:image
-    content: "https://i.ytimg.com/vi/NjXLBsynUkg/maxresdefault.jpg"
+    content: "https://i.ytimg.com/vi/_mmFz2_7j0w/maxresdefault.jpg"
 tags: [Neon, Pupil Invisible]
 ---
 
@@ -26,7 +26,7 @@ import TagLinks from '@components/TagLinks.vue'
 
 <TagLinks :tags="$frontmatter.tags" />
 
-<Youtube src="NjXLBsynUkg"/>
+<Youtube src="_mmFz2_7j0w"/>
 
 ::: tip
 🏀 Ever wanted to know not just *where* a person is looking, but also *what* they're looking at? This guide shows you how to build a flexible bridge between Neon's eye tracking data and any computer vision model.
