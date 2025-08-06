@@ -1,6 +1,6 @@
 ---
 title: "Map Gaze Onto Anything"
-description: "Combine gaze with object and pose recognition in minutes. Learn how to augment your eye-tracking data using powerful, open-source computer vision models, in real time or after the fact."
+description: "Combine gaze with object and pose recognition in minutes. Learn how to augment your eye tracking data using powerful, open-source computer vision models, in real time or after the fact."
 permalink: /alpha-lab/map-onto-anything/
 meta:
   - name: twitter:card
@@ -36,7 +36,7 @@ import TagLinks from '@components/TagLinks.vue'
 
 Eye tracking offers a powerful window into human behavior, but raw gaze data only tells part of the story. Truly understanding attention means comprehending the visual environment: what objects a person engages with, what they overlook, or how eye-hand coordination plays out.
 
-Neon provides rich data streams alongside video, but users often wonder how to interpret them in the context of the visual scene. While humans can effortlessly turn images into concepts, recognizing a hand, a person, or a coffee cup, and intuitively understand their spatial relationships, computers, however, need help bridging the gap from pixels to meaning.
+Neon provides rich data streams alongside video, but users often wonder how to interpret them in the context of the visual scene. While humans can effortlessly turn images into concepts, recognizing a hand, a person, or a coffee cup, and intuitively understand their spatial relationships, computers need help bridging the gap from pixels to meaning.
 
 This is where our guide comes in. It shows you how to connect computer vision tools with Neon’s data streams, through practical examples, such as running object and hand-pose detection models in both real-time and post-hoc, turning raw data into meaningful insights.
 
@@ -44,11 +44,11 @@ This is where our guide comes in. It shows you how to connect computer vision to
 
 Pupil Cloud offers powerful built-in enrichments, like [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/) or [Face Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/face-mapper/), which are excellent for static scenes or tracking faces.
 
-In Alpha Lab, we’ve also explored how to map gaze [dense human body parts](../dense-pose/), [screens](../gaze-contingency-assistive/) and using [large multimodal models for object recognition and scene understanding](../gpt4-eyes/). But we’ve only just scratched the surface.
+In Alpha Lab, we’ve also explored how to map gaze onto [dense human body parts](../dense-pose/), [screens](../gaze-contingency-assistive/) and using [large multimodal models for object recognition and scene understanding](../gpt4-eyes/). But we’ve only just scratched the surface.
 
 The last few years have seen an explosion in accessible, highly accurate, and real-time capable models from different research labs. These powerful algorithms are becoming increasingly efficient, allowing them to be run more effectively on consumer hardware and opening up new possibilities for research.
 
-However, researchers often struggle to connect these external tools with Neon's data streams. This guide provides the missing link. It shows how easy it is to apply these state-of-the-art tools directly to your recordings.
+This guide shows how easy it is to apply these state-of-the-art tools directly to your eye tracking data.
 
 ## Running the Examples
 
@@ -98,13 +98,11 @@ python3 ball_hand_plnr.py HERE_YOUR_RECORDING_DIR
 
 :::
 
-As you’ve seen, these models can run in real time, but we also provide a post-hoc example for cases where you want to analyze recorded data, whether to revisit past experiments, use more computationally demanding models, or simply because your hardware can’t handle the workload in real time.
-
 ## Bring Your Own Models
 
-The code snippets above are easy to run, and have many configurable options, but they can also be a bit overwhelming if you are not familiar with code. If you want to learn how to plug in your own models, we have two more examples that keep it simple. They contain comments and highlight certain lines to help you navigate.
+We have two more examples that keep it simple; to show how to plug in in your own models. They contain comments and highlight certain lines to help you navigate.
 
-The first one how to use an object detection model (YOLO) in post-hoc analysis, using the [**pl-neon-recording**](https://pupil-labs.github.io/pl-neon-recording/dev/) library to access the recording data.
+The first one shows how to use an object detection model (YOLO) in post-hoc analysis, using the [**pl-neon-recording**](https://pupil-labs.github.io/pl-neon-recording/dev/) library to access the recording data.
 
 ::: details Using a Model in Post-Hoc Analysis
 
@@ -184,9 +182,7 @@ if __name__ == "__main__":
 
 :::
 
-Depending on the model that you want to implement, check out their documentation and examples.
-
-The second example shows how to use YOLO in real-time. This is a semi-advanced implementation. We do not dive into how to optimise the code. Rather, we show you how to implement more options, like using the gaze point to detect the gazed object or to specify specific classes. Those options are implemented through arguments.
+The second example shows how to use YOLO in real-time. We show you how to implement a few more options here, like using the gaze point to detect the gazed object or to specify specific classes. Those options are implemented through arguments.
 
 ::: details Using a Model in Real-Time
 
@@ -351,13 +347,18 @@ if __name__ == "__main__":
 
 :::
 
+:::tip
+When you've chosen a model to implement, it's always worth checking out their documentation and examples.
+:::
+
 ## Your Turn to Build
 
 Once you’ve run these examples, you will have new metrics such as ball, hand detection and distance between these objects and the gaze point.
 
-More importantly, you’ll have the building blocks for your own custom computer vision pipeline. You now have a clear path to integrate other state-of-the-art models with your Neon data. Dive into the code snippets, tweak them for your needs, and start tracking what's truly important to your research.
+More importantly, you’ll have the building blocks for your own custom computer vision pipeline. You now have a clear path to integrate state-of-the-art models with your Neon data. 
 
-Now is your turn, choose a different [category](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/coco.yaml), [fine tune your models](https://docs.ultralytics.com/guides/model-evaluation-insights/#accessing-yolo11-metrics) or use [completely different ones](https://huggingface.co/models?sort=trending). You’ve got the foundation, now build on it.
+So now it's your turn! Choose a different [category](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/coco.yaml), [fine tune your models](https://docs.ultralytics.com/guides/model-evaluation-insights/#accessing-yolo11-metrics) or use [completely different ones](https://huggingface.co/models?sort=trending). 
+You’ve got the foundation, now build on it and start tracking what's truly important to your research.
 
 ::: tip
 Need assistance implementing a model? Reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for formal support options.
