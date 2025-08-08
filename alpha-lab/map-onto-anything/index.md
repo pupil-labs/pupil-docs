@@ -100,7 +100,7 @@ python3 ball_hand_plnr.py HERE_YOUR_RECORDING_DIR
 
 ## Bring Your Own Models
 
-We have two more examples that keep it simple; to show how to plug in in your own models. They contain comments and highlight certain lines to help you navigate.
+We have two more examples that keep it simple; to show how to plug in your own models. They contain comments and highlight certain lines to help you navigate.
 
 The first one shows how to use an object detection model (YOLO) in post-hoc analysis, using the [**pl-neon-recording**](https://pupil-labs.github.io/pl-neon-recording/dev/) library to access the recording data.
 
