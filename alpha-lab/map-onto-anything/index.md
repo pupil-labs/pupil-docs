@@ -353,7 +353,7 @@ When you've chosen a model to implement, it's always worth checking out their do
 
 ## Your Turn to Build
 
-Once you’ve run these examples, you will have new metrics such as ball, hand detection and distance between these objects and the gaze point.
+Once you’ve run these examples, you will have new metrics such as ball and hand detections, and distance between these objects and the gaze point.
 
 More importantly, you’ll have the building blocks for your own custom computer vision pipeline. You now have a clear path to integrate state-of-the-art models with your Neon data. 
 
