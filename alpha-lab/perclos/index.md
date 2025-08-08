@@ -1,6 +1,6 @@
 ---
-title: 
-description: ""
+title: Real-Time Eyelid Dynamics with PERCLOS and Neon
+description: "Calculate PERCLOS (percentage of eye closure) in real time using Neon and its Real-Time API."
 permalink: /alpha-lab/perclos
 meta:
   - name: twitter:card
@@ -40,7 +40,7 @@ In this tutorial, we introduce a real-time tool for computing and visualizing PE
 
 ## From Raw Signal to Actionable Metric: PERCLOS With Neon
 
-Neon provides [Eye Openness](https://docs.pupil-labs.com/neon/data-collection/data-streams/#eye-openness) as one of its native data streams, offering a continuous measure of eyelid aperture in millimetres by capturing the maximum arc length between the upper and lower eyelids. With recent updates to the Neon Companion App and [Real-Time API](https://pupil-labs.github.io/pl-realtime-api/dev/), these signals are now accessible in real time, opening the door to the live computation of cognitive and physiological state indicators. 
+Neon provides [Eye Openness](https://docs.pupil-labs.com/neon/data-collection/data-streams/#eye-openness) as one of its native data streams, offering a continuous measure of eyelid aperture in millimetres by capturing the maximum arc length between the upper and lower eyelids. With recent updates to the Neon Companion App and [Real-Time API](https://pupil-labs.github.io/pl-realtime-api/dev/), these signals are now accessible in real time, opening the door to the live computation of cognitive and physiological state indicators.
 
 We therefore created this script to demonstrate how to compute PERCLOS in real time. It displays rolling plots of percent eye closure and PERCLOS alongside a live eye camera feed to support intuitive monitoring and interpretation.
 
@@ -48,11 +48,19 @@ We therefore created this script to demonstrate how to compute PERCLOS in real t
 
 Access this script [here](https://gist.github.com/nadje/0831d8d0c80db27897cff57e308574bd), connect your Companion Device and your computer to the same network, and then run the following command in your terminal:
 
-```bash
+::: code-group
+
+```sh [uv]
 uv run -s calculate_perclos_real_time.py
 ```
 
-::: info 
+```sh [vanilla]
+python3 calculate_perclos_real_time.py
+```
+
+:::
+
+::: info
 
 The rolling window size determines the duration (in seconds) over which the PERCLOS value is continuously updated. For example, a 10-second window means that at every moment, the tool computes how much of the past 10 seconds the eye has been ≥80% closed. We chose 10 seconds as the default to balance sensitivity and stability, but this value can be adjusted based on your specific research goals or responsiveness needs. A shorter window makes the system more reactive to recent changes, while a longer one smooths out rapid fluctuations.
 :::

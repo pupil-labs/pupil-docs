@@ -7,7 +7,7 @@ import PhotoGrid from "@components/PhotoGrid.vue";
 
 import "/../custom.css";
 import "./tailwind.css";
-
+import "virtual:group-icons.css"
 export default {
   extends: DefaultTheme,
   enhanceApp({ app }) {
