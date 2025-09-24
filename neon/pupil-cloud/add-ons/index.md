@@ -19,7 +19,7 @@ To manually register an add-on:
 
 ## Link a Device
 
-Depending on the add-on you purchased, they can be linked with a fixed number of eye tracking devices. Linking a device with an add-on unlocks the functionality of the add-on for the device.
+When purchasing any number of add-ons, you receive an activation key that can be linked with one device for each add-on purchased. Linking a device with an add-on unlocks the functionality of the add-on for the device.
 
 To link a device with a registered add-on, click `Link device` in the table. The drop-down menu for the hardware serial will contain the serials of all the devices that have uploaded recordings to one of your workspaces before. You can also obtain the serial of a new device via the Companion app and enter it here.
 
