@@ -221,7 +221,7 @@
   },
   {
     "title": "Real-time Visualizations",
-    "details": "See what Neon is measuring by visualizing it’s data streams in real-time. Gain deeper insights & an intuitive feel for wearable eyetracking.",
+    "details": "See what Neon is measuring by visualizing its data streams in real-time. Gain deeper insights & an intuitive feel for wearable eyetracking.",
     "link": {
       "text": "View",
       "href": "/alpha-lab/rt-visualizations/"
