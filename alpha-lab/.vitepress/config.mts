@@ -43,6 +43,7 @@ let theme_config_additions = {
         { text: "Detect Eye Blinks", link: "/blink-detection/" },
         { text: "PERCLOS Calculation", link: "/perclos/" },
         { text: "Map Gaze Onto Anything", link: "/map-onto-anything/" },
+        { text: "Real-time Visualizations", link: "/rt-visualizations/" },
       ],
     },
     {
