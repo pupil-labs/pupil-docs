@@ -12,7 +12,7 @@ Upon completion of the enrichment, access the main view of the enrichment by nav
 
 From there, you will enter the AOI editing view and you are ready to start drawing AOIs on your reference image or surface.
 
-<Youtube src="7-9m3Mq-fio"/>
+<Youtube src="tSzbBHG4Nag"/>
 
 ::: tip
 Would you like to automatically segment your areas of interest? Check out our [Alpha-Lab tutorial](https://docs.pupil-labs.com/alpha-lab/gaze-metrics-in-aois/).
@@ -45,7 +45,7 @@ This file contains fixation events mapped on each area of interest.
 | Field                                | Description                                                                                      |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------ |
 | **aoi id**                           | Unique identifier of the corresponding area of interest.                                         |
-| **aoi name**                         | Name of the corresponding area of interest.                                                                              |
+| **aoi name**                         | Name of the corresponding area of interest.                                                      |
 | **section id**                       | Unique identifier of the corresponding section.                                                  |
 | **recording id**                     | Unique identifier of the recording this sample belongs to.                                       |
 | **fixation id**                      | Identifier of fixation within the section. The counter starts at the beginning of the recording. |
