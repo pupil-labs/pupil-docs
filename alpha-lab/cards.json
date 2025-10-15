@@ -220,7 +220,7 @@
     "category": "Real Time & Interactive"
   },
   {
-    "title": "Dynamic AOIs with SAM2",
+    "title": "Dynamic AOI Tracking with Neon and SAM2 Segmentation",
     "details": "Segment and map gaze onto any moving area of interest using Neon and SAM2",
     "link": {
       "text": "View",

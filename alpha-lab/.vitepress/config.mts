@@ -14,7 +14,7 @@ let theme_config_additions = {
         { text: "Annotations with GPT", link: "/event-automation-gpt/" },
         { text: "AOI Masking", link: "/gaze-metrics-in-aois/" },
         {text: "AI Vision Assistant", link: "/gpt4-eyes/"},
-        {text: "Dynamic AOIs with SAM2", link: "/dynamic-aoi-sam2/",
+        {text: "Dynamic AOI Tracking with Neon and SAM2 Segmentation ", link: "/dynamic-aoi-sam2/",
         }
       ],
     },
