@@ -157,7 +157,9 @@ let theme_config_additions = {
         items: [
           { text: "Projects", link: "/pupil-cloud/projects/" },
           { text: "Workspaces", link: "/pupil-cloud/workspaces/" },
+          { text: "Playback & Timeline", link: "/pupil-cloud/playback-timeline" },
           { text: "Offset Correction", link: "/pupil-cloud/offset-correction/" },
+          { text: "Events", link: "/pupil-cloud/events" },
           { text: "Add-ons", link: "/pupil-cloud/add-ons/" },
         ],
       },
