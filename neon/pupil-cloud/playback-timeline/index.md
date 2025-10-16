@@ -6,7 +6,7 @@ Pupil Cloud provides a fully featured video player with a timeline for visualizi
 
 <Youtube src="AWLpFRwYVmo"/>
 
-The playback speed can be adjusted in Settings.
+Playback speed can be adjusted in Settings.
 
 ::: tip
 You can modify the speed also by pressing <kbd>Shift</kbd> + <kbd>.</kbd> to increase speed and <kbd>Shift</kbd> + <kbd>,</kbd> to decrease speed.
