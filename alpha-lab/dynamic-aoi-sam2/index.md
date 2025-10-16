@@ -8,7 +8,7 @@ meta:
   - name: twitter:image
     content: "https://i.ytimg.com/vi/cuvWqVOAc5M/maxresdefault.jpg"
   - name: twitter:player
-    content: "https://www.youtube.com/embed/PG0mGpusNK4"
+    content: "https://www.youtube.com/embed/rLKx1Ma2xVE"
   - name: twitter:width
     content: "1280"
   - name: twitter:height
@@ -26,7 +26,7 @@ import TagLinks from '@components/TagLinks.vue'
 
 <TagLinks :tags="$frontmatter.tags" />
 
-<Youtube src="PG0mGpusNK4"/>
+<Youtube src="rLKx1Ma2xVE"/>
 
 ::: tip
 Click. Segment. Track. Dynamic object tracking made easy with Neon and SAM2 segmentation.
