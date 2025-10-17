@@ -218,5 +218,15 @@
     },
     "image": "/alpha-lab/map-gaze-anything.webp",
     "category": "Real Time & Interactive"
+  },
+  {
+    "title": "Dynamic AOI Tracking with Neon and SAM2 Segmentation",
+    "details": "Segment and map gaze onto any moving area of interest using Neon and SAM2",
+    "link": {
+      "text": "View",
+      "href": "/alpha-lab/dynamic-aoi-sam2/"
+    },
+    "image": "/alpha-lab/sam2.webp",
+    "category": "Building with AI"
   }
 ]
