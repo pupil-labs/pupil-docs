@@ -12,7 +12,7 @@ Upon completion of the enrichment, access the main view of the enrichment by nav
 
 From there, you will enter the AOI editing view and you are ready to start drawing AOIs on your reference image or surface.
 
-<Youtube src="tSzbBHG4Nag"/>
+<Youtube src="lQoaN3EhngA"/>
 
 ::: tip
 Would you like to automatically segment your areas of interest? Check out our [Alpha-Lab tutorial](https://docs.pupil-labs.com/alpha-lab/gaze-metrics-in-aois/).
