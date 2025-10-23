@@ -58,12 +58,12 @@ Accessing a scene camera frame with corresponding gaze data is [relatively easy]
 
 First, we capture video and gaze data. Then, we run computer vision models (described below), and overlay the video frames with resulting hand pose and object detections (e.g. a sports ball). As a final step, we calculate the spatial relationship between the wearer’s gaze and these dynamically tracked objects in the scene camera video.
 
-If you are using [Astral's uv](https://docs.astral.sh/uv/), you can run the command below; no setup or dependency management needed. Alternatively, download the script from the gist, set up a Python environment, install the dependencies listed at the top, and run the script manually.
+If you are using [Astral's uv](https://docs.astral.sh/uv/), you can run the command below; no setup or dependency management needed. Alternatively, download the [script](https://gist.github.com/mikelgg93/cedc064a1b065bd1e9d8b9aa1f05e53d) from the gist, set up a Python environment, install the dependencies listed at the top, and run the script manually.
 
 ::: code-group
 
 ```sh [uv]
-uv run -s https://gist.githubusercontent.com/mikelgg93/cedc064a1b065bd1e9d8b9aa1f05e53d/raw/af67f5686f8bbbf94345dbcab80e99827ae0f29b/ball_hand_rt.py
+uv run -s https://gist.githubusercontent.com/mikelgg93/cedc064a1b065bd1e9d8b9aa1f05e53d/raw/83f9681111675325cb05b7e9809bf85dde32baec/ball_hand_rt.py
 ```
 
 ```sh [vanilla]
@@ -89,7 +89,7 @@ We process recorded video and gaze streams with a more demanding YOLO model to r
 ::: code-group
 
 ```sh [uv]
-uv run -s https://gist.githubusercontent.com/mikelgg93/7355a22d3502249328b43ad150b2e2d9/raw/8802398a3337ed5e94cd6c54441e6b072a4c113e/ball_hand_plnr.py HERE_YOUR_RECORDING_DIR
+uv run -s https://gist.githubusercontent.com/mikelgg93/7355a22d3502249328b43ad150b2e2d9/raw/a9b9763cb582324d4fdc233c058f73eeab6edf47/ball_hand_plnr.py HERE_YOUR_RECORDING_DIR
 ```
 
 ```sh [vanilla]
@@ -106,7 +106,7 @@ The first one shows how to use an object detection model (YOLO) in post-hoc anal
 
 ::: details Using a Model in Post-Hoc Analysis
 
-```py{16-17,25-26,40-41,46-47} [yolo_plnr.py]
+```py{18-19,27-28,41-42,47-48} [yolo_plnr.py]
 # /// script
 # requires-python = ">=3.10"
 # dependencies = [
@@ -114,9 +114,11 @@ The first one shows how to use an object detection model (YOLO) in post-hoc anal
 #     "pupil-labs-video",
 #     "pupil-labs-neon-recording",
 #     "ultralytics",
+#     "tqdm",
 # ]
 # ///
 
+import time
 from pathlib import Path
 
 import cv2
@@ -136,16 +138,15 @@ def main():
 
     recording = nr.load(RECORDING_DIR)
     combined_data = zip(
-        recording.scene.ts,
-        recording.scene.sample(recording.scene.ts),
-        recording.gaze.sample(recording.scene.ts),
+        recording.scene.time,
+        recording.scene.sample(recording.scene.time),
+        recording.gaze.sample(recording.scene.time),
         strict=False,
     )
-    for ts, scene_frame, gaze_datum in tqdm(
-        combined_data, total=len(recording.scene.ts)
+    for timestamp, scene_frame, gaze_datum in tqdm(
+        combined_data, total=len(recording.scene.time)
     ):
         frame_pixels = scene_frame.bgr
-
         # Run the detector over the scene camera frame
         detection = detector(frame_pixels)
         # Here you can pass classes if needed, e.g., detector(frame_pixels, classes=[0, 1])
@@ -160,18 +161,28 @@ def main():
         #     print(result.boxes.conf)  # Confidence scores
         #     print(result.boxes.cls)  # Class IDs
 
-        # Here you can compute distances, store the position, or perform any other analysis
-
-        # Draw the gaze point on the frame
+        # Draw the gaze point and time on the frame
         final_frame = cv2.circle(
             frame_with_detection,
-            (int(gaze_datum.x), int(gaze_datum.y)),
+            (int(gaze_datum.point[0]), int(gaze_datum.point[1])),
             10,
             (0, 0, 255),
             5,
         )
+        format_time = time.strftime(
+            "%Y/%m/%d %H:%M:%S", time.localtime(timestamp / 1e9)
+        )
+        final_frame = cv2.putText(
+            final_frame,
+            f"{format_time}",
+            (10, 40),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            0.7,
+            (0, 255, 0),
+            2,
+        )
         # Show the image
-        cv2.imshow("Frame with detection", final_frame)
+        cv2.imshow("YOLO detection", final_frame)
         if cv2.waitKey(1) & 0xFF == 27:  # Press ESC to exit
             break
 
@@ -355,9 +366,9 @@ When you've chosen a model to implement, it's always worth checking out their do
 
 Once you’ve run these examples, you will have new metrics such as ball and hand detections, and distance between these objects and the gaze point.
 
-More importantly, you’ll have the building blocks for your own custom computer vision pipeline. You now have a clear path to integrate state-of-the-art models with your Neon data. 
+More importantly, you’ll have the building blocks for your own custom computer vision pipeline. You now have a clear path to integrate state-of-the-art models with your Neon data.
 
-So now it's your turn! Choose a different [category](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/coco.yaml), [fine tune your models](https://docs.ultralytics.com/guides/model-evaluation-insights/#accessing-yolo11-metrics) or use [completely different ones](https://huggingface.co/models?sort=trending). 
+So now it's your turn! Choose a different [category](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/coco.yaml), [fine tune your models](https://docs.ultralytics.com/guides/model-evaluation-insights/#accessing-yolo11-metrics) or use [completely different ones](https://huggingface.co/models?sort=trending).
 You’ve got the foundation, now build on it and start tracking what's truly important to your research.
 
 ::: tip
