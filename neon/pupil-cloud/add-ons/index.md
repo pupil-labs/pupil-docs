@@ -24,7 +24,7 @@ You can also manually activate a plan or feature:
 4. Confirm your activation
 
 <video width="100%" controls>
-  <source src="./register_addon.mp4" type="video/mp4">
+  <source src="./Register.mp4" type="video/mp4">
 </video>
 
 ## Link Your Devices to a Plan
@@ -36,7 +36,7 @@ the serial numbers of all devices that have previously uploaded recordings to yo
 serial of a new device via the Companion app and enter it here.
 
 <video width="100%" controls>
-  <source src="./link_device.mp4" type="video/mp4">
+  <source src="./Link.mp4" type="video/mp4">
 </video>
 
 ## Devices View
