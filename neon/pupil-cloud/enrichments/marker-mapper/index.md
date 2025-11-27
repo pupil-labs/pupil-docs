@@ -29,6 +29,10 @@ If you need more markers or higher resolution please see [here](https://github.c
 Note that the markers require a white border around them to be robustly detected. In our experience, this border should be at least equal to the width of the smallest white square or rectangle shown in the marker. Therefore, please make sure to include a sufficient border when displaying or printing them.
 :::
 
+::: tip
+If presenting the markers on a digital display (tablet, monitor or through PsychoPy), you may need to tweak the display brightness, and Neon's exposure settings, to improve marker detection. Typically, dimming the screen helps avoid overexposure and improves marker visibility.
+:::
+
 ## Selecting Markers in the Cloud
 
 <video width="100%" controls>
