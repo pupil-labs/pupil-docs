@@ -30,7 +30,7 @@ Note that the markers require a white border around them to be robustly detected
 :::
 
 ::: tip
-If presenting the markers on a digital display (tablet, monitor or through PsychoPy), you may need to tweak the display brightness and exposure settings to improve marker detection. Typically, dimming the screen helps avoid overexposure and improves marker visibility.
+If presenting the markers on a digital display (tablet, monitor or through PsychoPy), you may need to tweak the display brightness, and Neon's exposure settings, to improve marker detection. Typically, dimming the screen helps avoid overexposure and improves marker visibility.
 :::
 
 ## Selecting Markers in the Cloud
