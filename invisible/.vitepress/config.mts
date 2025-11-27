@@ -123,8 +123,8 @@ let theme_config_additions = {
           { text: "Workspaces", link: "/pupil-cloud/workspaces/" },
           { text: "Playback & Timeline", link: "/pupil-cloud/playback-timeline/" },
           { text: "Offset Correction", link: "/pupil-cloud/offset-correction/" },
-          { text: "Events", link: "/pupil-cloud/events/" },
-          { text: "Add-ons", link: "/pupil-cloud/add-ons/" },
+          { text: "Events", link: "/pupil-cloud/events" },
+          { text: "Cloud Plans", link: "/pupil-cloud/add-ons/" },
         ],
       },
       {

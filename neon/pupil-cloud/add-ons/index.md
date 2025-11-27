@@ -1,35 +1,49 @@
-# What Are Add-ons?
+# What Are Cloud Plans?
 
-Pupil Cloud add-ons allow you to selectively upgrade services for your eye tracking device. Add-ons can be purchased through the Pupil Labs [website](https://pupil-labs.com/products/cloud/pricing). Each add-on is bound to a device.
+Pupil Cloud offers different plans to fit your needs:
+- **Free Plan:** Lets you explore Pupil Cloud and run small-scale studies with two hours of active analysis
+- **Unlimited Analysis Plan:** Built for comprehensive research, this plan unlocks unlimited active analysis and supports multiple devices for labs, universities, and enterprise projects.
 
-## Register an Add-on
+You can purchase or configure your plan through the [Pupil Labs website](https://pupil-labs.com/products/cloud/pricing).
 
-Add-ons are registered with a single user account. Typically registering an add-on can be done by clicking on a link that we send in an email when you purchase the add-on.
+Plans are registered to a single user account and can be configured to support one or
+multiple eye tracking devices. You can also enhance your plan with optional features, like Anonymization.
 
-To manually register an add-on:
+Active analysis refers to the duration of recordings that can be processed through Pupil Cloud’s analysis and visualization 
+pipelines.
 
+## Activate Your Plan and Features
+
+Your plan and any additional features need to be registered with your user account. This can be 
+done by clicking the link sent in your purchase confirmation email.
+
+You can also manually register a plan or feature in Pupil Cloud:
 1. Click on the top right account avatar in the navigation bar, and then “Account Settings”
-2. In the Cloud Add-ons tab, click on “Register Add-on”
-3. Enter your activation key and your activation date
-4. Confirm your add-on activation
+2. In the Cloud Plans tab, click on “Register Cloud Plan”
+3. Enter your Activation Key and your Cloud Plan start date
+4. Click "Confirm" and then "Activate"
 
 <video width="100%" controls>
-  <source src="./register_addon.mp4" type="video/mp4">
+  <source src="./Register.mp4" type="video/mp4">
 </video>
 
-## Link a Device
+## Link Your Devices to a Plan
 
-Depending on the add-on you purchased, they can be linked with a fixed number of eye tracking devices. Linking a device with an add-on unlocks the functionality of the add-on for the device.
+Linking a device or devices to your plan unlocks the benefits of the plan for those devices. You can 
+link devices to your plan in the same Cloud Plans tab of your Account Settings.
 
-To link a device with a registered add-on, click `Link device` in the table. The drop-down menu for the hardware serial will contain the serials of all the devices that have uploaded recordings to one of your workspaces before. You can also obtain the serial of a new device via the Companion app and enter it here.
+Click 'Link device' in the table. The drop-down menu will contain the serial numbers of all devices
+that have previously uploaded recordings to your workspaces. You can also obtain the 
+serial of a new device via the Companion app and enter it here.
 
 <video width="100%" controls>
-  <source src="./link_device.mp4" type="video/mp4">
+  <source src="./Link.mp4" type="video/mp4">
 </video>
 
-## Devices View
+## Devices Tab
 
-The Devices view shows devices that have uploaded to workspaces you own. Here you can check how much storage each device is using and compare this to their quota.
+The Devices tab shows all devices that have uploaded to workspaces you own. Here you can check which plan each device 
+is linked to (Free or Unlimited) and monitor storage.
 
 You can also check the workspaces each device has uploaded to by double clicking on a device in the table.
 
@@ -38,20 +52,22 @@ You can also check the workspaces each device has uploaded to by double clicking
 ![Devices Storage](./device_storage.png)
 
 ::: info
-**Enabling recording anonymization on upload:**<br>
-Anonymizing recording on upload requires an Anonymization Add-on. If you have registered an Anonymization Add-on and linked a device to it you can you create a new workspace and enable `Face Blurring`. Any recording uploaded to this workspace will be anonymized.
+If you have purchased the Anonymization feature, you can you create a new workspace and enable `Face Blurring`. Any recordings uploaded to this workspace will be anonymized.
 :::
 
-## Sharing Add-on Benefits
+## Sharing Your Plan's Benefits
 
 ### Workspace Management
 
-You can create multiple workspaces within the user account registered with an add-on. This allows you to share the benefits of your add-on with other users without them needing to purchase their own add-ons.
+You can create multiple [workspaces](https://docs.pupil-labs.com/neon/pupil-cloud/workspaces/) within the user account that your plan is registered to. This allows you to share the 
+benefits of your Unlimited Analysis Plan (and privacy features if appropriate) with collaborators without them needing to purchase their own plan.
 
 ### Inviting Users
 
-You can invite other users to [join your workspaces](https://docs.pupil-labs.com/neon/pupil-cloud/workspaces/). As part of your workspaces, invited users can, for example, view, edit, enrich, and download recordings based on the role assigned to them.
+You can invite other users to [join your workspaces](https://docs.pupil-labs.com/neon/pupil-cloud/workspaces/). As part of your workspaces, invited users can, for example, 
+view, edit, enrich, and download recordings based on the role assigned to them.
 
 ### Device Access
 
-Other users can also log into the [Companion App](https://docs.pupil-labs.com/neon/data-collection/ecosystem-overview/#neon-companion-app) on the device linked to your add-on using their own accounts. They can then upload recordings to your workspaces, thereby benefiting from the add-on features.
+Other users can also log into the [Companion App](https://docs.pupil-labs.com/neon/data-collection/ecosystem-overview/#neon-companion-app) on the device linked to your plan using their own accounts. They 
+can then upload recordings to your workspaces, thereby benefiting from your plan's features.
