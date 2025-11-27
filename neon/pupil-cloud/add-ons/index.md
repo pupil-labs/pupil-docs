@@ -6,7 +6,7 @@ Pupil Cloud offers different plans to fit your needs:
 
 You can purchase or configure your plan through the [Pupil Labs website](https://pupil-labs.com/products/cloud/pricing).
 
-Plans are registered to a single user account, and an Unlimited Analysis Plan can be configured to support one or
+Plans are registered to a single user account and can be configured to support one or
 multiple eye tracking devices. You can also enhance your plan with optional features, like Anonymization.
 
 Active analysis refers to the duration of recordings that can be processed through Pupil Cloud’s analysis and visualization 
@@ -17,11 +17,11 @@ pipelines.
 Your plan and any additional features need to be registered with your user account. This can be 
 done by clicking the link sent in your purchase confirmation email.
 
-You can also manually activate a plan or feature:
+You can also manually register a plan or feature in Pupil Cloud:
 1. Click on the top right account avatar in the navigation bar, and then “Account Settings”
-2. In the Cloud Add-ons tab, click on “Register Add-on”
-3. Enter your activation key and your activation date
-4. Confirm your activation
+2. In the Cloud Plans tab, click on “Register Cloud Plan”
+3. Enter your Activation Key and your Cloud Plan start date
+4. Click "Confirm" and then "Activate"
 
 <video width="100%" controls>
   <source src="./Register.mp4" type="video/mp4">
@@ -29,19 +29,20 @@ You can also manually activate a plan or feature:
 
 ## Link Your Devices to a Plan
 
-Liking a device or devices to your plan unlocks the benefits of the plan for those devices.
+Linking a device or devices to your plan unlocks the benefits of the plan for those devices. You can 
+link devices to your plan in the same Cloud Plans tab of your Account Settings.
 
-Click 'Link device' in the table. The drop-down menu will contain 
-the serial numbers of all devices that have previously uploaded recordings to your workspaces. You can also obtain the 
+Click 'Link device' in the table. The drop-down menu will contain the serial numbers of all devices
+that have previously uploaded recordings to your workspaces. You can also obtain the 
 serial of a new device via the Companion app and enter it here.
 
 <video width="100%" controls>
   <source src="./Link.mp4" type="video/mp4">
 </video>
 
-## Devices View
+## Devices Tab
 
-The Devices view shows all devices that have uploaded to workspaces you own. Here you can check which plan each device 
+The Devices tab shows all devices that have uploaded to workspaces you own. Here you can check which plan each device 
 is linked to (Free or Unlimited) and monitor storage.
 
 You can also check the workspaces each device has uploaded to by double clicking on a device in the table.
