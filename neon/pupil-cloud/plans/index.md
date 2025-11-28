@@ -59,17 +59,16 @@ If you have purchased the Anonymization feature, you can you create a new worksp
 
 ## Sharing Your Plan's Benefits
 
-### Workspace Management
+An Unlimited Analysis Plan is tied to both **your Pupil Cloud account** and **the device(s) you linked to it**. This means, any recording created on a linked device and uploaded to a [workspace](https://docs.pupil-labs.com/neon/pupil-cloud/workspaces/) owned by that account will automatically receive the benefits of your plan, regardless of who uploads it.
 
-You can create multiple [workspaces](https://docs.pupil-labs.com/neon/pupil-cloud/workspaces/) within the user account that your plan is registered to. This allows you to share the
-benefits of your Unlimited Analysis Plan (and privacy features if appropriate) with collaborators without them needing to purchase their own plan.
+If you want to collaborate with other accounts, it can help to view the account that registers the plan as a _master account_. This _master account_ is responsible for registering the plan, linking devices, and if you want other accounts to benefit, creating [workspaces](https://docs.pupil-labs.com/neon/pupil-cloud/workspaces/) and inviting collaborators to them.
 
-### Inviting Users
+Invited users can view, edit, enrich, and download recordings according to their assigned roles. When they upload recordings from a linked device into one of these workspaces, they also benefit from the plan. This setup allows your team to share the features of your Unlimited Analysis Plan (and privacy features, where applicable) without requiring additional plans.
 
-You can invite other users to [join your workspaces](https://docs.pupil-labs.com/neon/pupil-cloud/workspaces/). As part of your workspaces, invited users can, for example,
-view, edit, enrich, and download recordings based on the role assigned to them.
+::: tip
+Registered the plan on the wrong account? Need to transfer a workspace from from your team member to your master account? No problem! Just reach out to our [support team](mailto:info@pupil-labs.com) and we'll be happy to help
+:::
 
 ### Device Access
 
-Other users can also log into the [Companion App](https://docs.pupil-labs.com/neon/data-collection/ecosystem-overview/#neon-companion-app) on the device linked to your plan using their own accounts. They
-can then upload recordings to your workspaces, thereby benefiting from your plan's features.
+Upon inviting other users to your workspace, they can keep using their credentials to log into the [Companion App](https://docs.pupil-labs.com/neon/data-collection/ecosystem-overview/#neon-companion-app), they simply need to select the appropiate workspace before making the recording.
