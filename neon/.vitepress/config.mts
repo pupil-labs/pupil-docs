@@ -160,7 +160,7 @@ let theme_config_additions = {
           { text: "Playback & Timeline", link: "/pupil-cloud/playback-timeline/" },
           { text: "Offset Correction", link: "/pupil-cloud/offset-correction/" },
           { text: "Events", link: "/pupil-cloud/events" },
-          { text: "Cloud Plans", link: "/pupil-cloud/add-ons/" },
+          { text: "Cloud Plans", link: "/pupil-cloud/plans/" },
         ],
       },
       {
