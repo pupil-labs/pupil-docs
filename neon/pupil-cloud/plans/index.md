@@ -61,12 +61,12 @@ If you have purchased the Anonymization feature, you can you create a new worksp
 
 An Unlimited Analysis Plan is tied to both **your Pupil Cloud account** and **the device(s) you linked to it**. This means, any recording created on a linked device and uploaded to a [workspace](../workspaces/) **created/owned** by that account will automatically receive the benefits of your plan, regardless of who uploads it.
 
-If you want to collaborate with other accounts, it can help to view the account that registers the plan as a **master account**. This **master account** is responsible for registering the plan, linking devices, and if you want other accounts to benefit, creating [workspaces](../workspaces/) and inviting collaborators to them.
+If you want to collaborate with other accounts, it can help to view the account that registers the plan as a **manager account**. This **manager account** is responsible for registering the plan, linking devices, and if you want other accounts to benefit, creating [workspaces](../workspaces/) and inviting collaborators to them.
 
 Invited users can view, edit, enrich, and download recordings according to their assigned roles. When they upload recordings from a linked device into one of these workspaces, they also benefit from the plan. This setup allows your team to share the features of your **Unlimited Analysis Plan** (and privacy features, where applicable) without requiring additional plans, and while keeping your data organized in dedicated workspaces with specific [access permissions](../workspaces/#access-control).
 
 ::: tip
-Registered the plan on the wrong account? Need to transfer a workspace from from your team member to your master account? No problem! Just reach out to our [support team](mailto:info@pupil-labs.com) and we'll be happy to help
+Registered the plan on the wrong account? Need to transfer a workspace from a team member to your account? No problem! Just reach out to our [support team](mailto:info@pupil-labs.com) and we'll be happy to help
 :::
 
 ### Device Access
