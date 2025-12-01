@@ -60,8 +60,8 @@ If you have purchased the Anonymization feature, you can you create a new worksp
 ## Sharing Your Plan's Benefits
 
 An Unlimited Analysis Plan is tied to both the Pupil Cloud account it was registered with **and** the device(s) you linked it to. 
-This means recordings created on a linked device and uploaded to a [workspace](../workspaces/) **created/owned** by that account will automatically 
-receive the benefits of the plan, regardless of who uploads it.
+This means that recordings created on a linked device and uploaded to a [workspace](../workspaces/) **created/owned** by that account will automatically 
+receive the benefits of the plan, regardless of who uploads them.
 
 If you want to collaborate with other accounts, it can help to view the account that registers the plan as a **manager account**. 
 This **manager account** is responsible for registering the plan, linking devices, and if you want other accounts to benefit, 
@@ -73,7 +73,7 @@ features of your Unlimited Analysis Plan (and privacy features, where applicable
 and while keeping your data organized in dedicated workspaces with specific [access permissions](../workspaces/#access-control).
 
 ::: tip
-Registered the plan on the wrong account? Need to transfer a workspace from a team member to your account? No problem! Just reach out to our [support team](mailto:info@pupil-labs.com) and we'll be happy to help
+Registered the plan on the wrong account? Need to transfer a workspace from a team member to your account? No problem! Just reach out to our [support team](mailto:info@pupil-labs.com) and we'll be happy to help.
 :::
 
 ### Device Access
