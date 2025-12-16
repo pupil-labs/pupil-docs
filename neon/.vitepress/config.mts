@@ -47,6 +47,7 @@ let theme_config_additions = {
             text: "Cleaning & Disinfecting",
             link: "/hardware/clean-and-disinfect/",
           },
+          { text: "Serial Number", link: "/hardware/serial-number/" },
         ],
       },
       {
