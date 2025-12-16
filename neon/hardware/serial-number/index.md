@@ -1,4 +1,4 @@
-# How to find your Neon Serial Number?
+# Finding Your Neon Serial Number
 
 ### On the Companion App
 
