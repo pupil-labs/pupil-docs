@@ -1,11 +1,13 @@
 <script setup lang="ts">
-  import { useData } from "vitepress";
-  import { ref, computed } from "vue";
+  import { useData, useRoute, useRouter } from "vitepress";
+  import { ref, computed, watch, onMounted } from "vue";
   import alphaCards from "./../alpha-lab/cards.json";
   import Footer from "./Footer.vue";
   import CardLink from "./cards/CardLink.vue";
   import ArrowIcon from "./ArrowIcon.vue";
   const { frontmatter } = useData();
+  const route = useRoute();
+  const router = useRouter();
 
   type FrontMatter = typeof frontmatter;
 
@@ -20,22 +22,181 @@
 
   const fm: FM = frontmatter;
 
-  const cards = computed(() => alphaCards.slice().reverse());
+  // Category mapping from old to new
+  const categoryMapping: Record<string, string> = {
+    "Building with AI": "Behavior Detection & Annotation",
+    "3D Spaces": "Eye Tracking in Physical Spaces",
+    "Screens & Interfaces": "Gaze on Screens & Interfaces",
+    "Real Time & Interactive": "Behavior Detection & Annotation",
+    "Around People": "Social Gaze & Interactions",
+    "Other/Core": "Data Processing & Workflows",
+  };
 
-  const categories: any = cards.value.map((element) => {
-    return element.category;
+  // New category definitions
+  const categories = [
+    {
+      id: "",
+      title: "All Categories",
+      description: "All articles.",
+    },
+    {
+      id: "Behavior Detection & Annotation",
+      title: "Behavior Detection & Annotation",
+      description: "Detect and classify human behaviour using gaze and context.",
+    },
+    {
+      id: "Eye Tracking in Physical Spaces",
+      title: "Eye Tracking in Physical Spaces",
+      description: "Map gaze onto physical environments and 3D spaces.",
+    },
+    {
+      id: "Data Processing & Workflows",
+      title: "Data Processing & Workflows",
+      description: "Workflows for processing, synchronizing, and transforming gaze data.",
+    },
+    {
+      id: "Gaze on Screens & Interfaces",
+      title: "Gaze on Screens & Interfaces",
+      description: "Detect and classify human behaviour using gaze and context.",
+    },
+    {
+      id: "Social Gaze & Interactions",
+      title: "Social Gaze & Interactions",
+      description: "Analyze gaze patterns during social interactions and communication.",
+    },
+  ];
+
+  // Available filters
+  const availableFilters = [
+    "Real-Time Analysis",
+    "3D Reconstruction",
+    "AI/Deep Learning",
+    "AOI Mapping",
+    "Assistive Technology",
+    "Metric Extraction",
+    "Multimodal Data",
+    "Neon",
+    "Offline Processing",
+    "Pupil Cloud",
+    "Pupil Invisible",
+  ];
+
+  // Map cards to new category system
+  const cards = computed(() => {
+    return alphaCards.slice().reverse().map((card) => {
+      const newCategory = categoryMapping[card.category] || card.category;
+      return {
+        ...card,
+        mappedCategory: newCategory,
+      };
+    });
   });
 
-  const unqiueCategories: any = new Set(categories);
-  // console.log(unqiueCategories);
+  // Get unique categories from cards
+  const uniqueCategories = computed(() => {
+    const cats = new Set(cards.value.map((card) => card.mappedCategory));
+    return Array.from(cats).sort();
+  });
 
-  const category = ref(""); // initial category is empty
+  // State from query params
+  const selectedCategory = ref("");
+  const selectedFilters = ref<string[]>([]);
+  const isUpdatingFromQuery = ref(false);
 
-  const filteredCards = computed(() => {
-    if (!category.value) {
-      return cards.value; // if no category is selected, return all cards
+  // Initialize from query params
+  const updateFromQuery = () => {
+    isUpdatingFromQuery.value = true;
+    const categoryParam = route.query.category as string;
+    const filtersParam = route.query.filters as string | string[];
+
+    if (categoryParam) {
+      selectedCategory.value = categoryParam;
+    } else {
+      selectedCategory.value = "";
     }
-    return cards.value.filter((card) => card.category === category.value);
+
+    if (filtersParam) {
+      if (Array.isArray(filtersParam)) {
+        selectedFilters.value = filtersParam;
+      } else {
+        selectedFilters.value = filtersParam.split(",").filter(f => f);
+      }
+    } else {
+      selectedFilters.value = [];
+    }
+    // Reset flag after a tick to allow watchers to run
+    setTimeout(() => {
+      isUpdatingFromQuery.value = false;
+    }, 0);
+  };
+
+  onMounted(() => {
+    updateFromQuery();
+  });
+
+  // Watch for route changes (browser back/forward)
+  watch(() => route.query, () => {
+    if (!isUpdatingFromQuery.value) {
+      updateFromQuery();
+    }
+  }, { deep: true });
+
+  // Update URL when filters/category change
+  watch([selectedCategory, selectedFilters], () => {
+    if (isUpdatingFromQuery.value) return;
+    
+    const query: Record<string, string> = {};
+    
+    if (selectedCategory.value) {
+      query.category = selectedCategory.value;
+    }
+    
+    if (selectedFilters.value.length > 0) {
+      query.filters = selectedFilters.value.join(",");
+    }
+
+    const queryString = Object.keys(query).length > 0 
+      ? '?' + new URLSearchParams(query).toString() 
+      : '';
+    
+    const newUrl = route.path + queryString;
+    const currentUrl = route.path + (route.query && Object.keys(route.query).length > 0 
+      ? '?' + new URLSearchParams(route.query as Record<string, string>).toString() 
+      : '');
+    
+    if (currentUrl !== newUrl) {
+      router.replace(newUrl);
+    }
+  }, { deep: true });
+
+  // Toggle filter
+  const toggleFilter = (filter: string) => {
+    const index = selectedFilters.value.indexOf(filter);
+    if (index > -1) {
+      selectedFilters.value.splice(index, 1);
+    } else {
+      selectedFilters.value.push(filter);
+    }
+  };
+
+  // Filter cards based on category and filters (AND logic)
+  const filteredCards = computed(() => {
+    let result = cards.value;
+
+    // Filter by category
+    if (selectedCategory.value) {
+      result = result.filter((card) => card.mappedCategory === selectedCategory.value);
+    }
+
+    // Filter by selected filters (AND logic - card must have ALL selected filters)
+    if (selectedFilters.value.length > 0) {
+      result = result.filter((card) => {
+        const cardFilters = card.filters || [];
+        return selectedFilters.value.every((filter) => cardFilters.includes(filter));
+      });
+    }
+
+    return result;
   });
 </script>
 
@@ -43,21 +204,64 @@
   .text-padding:not(:last-child) {
     padding-bottom: 16px;
   }
-  .category-chip {
-    padding: 10px 16px;
+  
+  .category-button {
+    padding: 16px 20px;
+    border-radius: 8px;
+    background-color: var(--vp-c-bg-soft);
+    border: 1px solid var(--vp-c-divider);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: left;
+  }
+  
+  .category-button:hover {
+    background-color: var(--vp-c-default-1);
+    border-color: var(--vp-c-brand-1);
+  }
+  
+  .category-button.selected {
+    background-color: var(--vp-c-default-2);
+    border-color: var(--vp-c-brand-1);
+  }
+  
+  .category-button-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--vp-c-text-1);
+    margin-bottom: 8px;
+    font-family: Inter, "Helvetica Neue", sans-serif;
+  }
+  
+  .category-button-description {
+    font-size: 14px;
+    color: var(--vp-c-text-2);
+    font-family: Inter, "Helvetica Neue", sans-serif;
+  }
+  
+  .filter-chip {
+    padding: 8px 16px;
     border-radius: 9999px;
     color: var(--vp-c-text-1);
     cursor: pointer;
     font-size: 14px;
     font-weight: 500;
     font-family: Inter, "Helvetica Neue", sans-serif;
+    background-color: var(--vp-c-bg-soft);
+    border: 1px solid var(--vp-c-divider);
+    transition: all 0.2s;
   }
-  .category-chip:hover {
+  
+  .filter-chip:hover {
     background-color: var(--vp-c-default-1);
   }
-  .selected {
+  
+  .filter-chip.selected {
     background-color: var(--vp-c-default-2);
+    border-color: var(--vp-c-brand-1);
+    color: var(--vp-c-brand-1);
   }
+  
   .text-link-color {
     color: var(--vp-c-brand-1);
   }
@@ -100,24 +304,47 @@
       </div>
     </div>
     <hr style="border-color: var(--vp-c-divider)" />
-    <div style="display: flex; gap: 16px; flex-wrap: wrap">
-      <span
-        class="category-chip"
-        :class="{ selected: category === '' }"
-        @click="category = ''"
+    
+    <!-- Categories Section -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div
+        v-for="cat in categories"
+        :key="cat.id"
+        class="category-button"
+        :class="{ selected: selectedCategory === cat.id }"
+        @click="selectedCategory = cat.id"
       >
-        All Categories
-      </span>
-      <span
-        v-for="cat in unqiueCategories"
-        :key="cat"
-        class="category-chip"
-        :class="{ selected: category === cat }"
-        @click="category = cat"
-      >
-        {{ cat }}
-      </span>
+        <div class="category-button-title">{{ cat.title }}</div>
+        <div class="category-button-description">{{ cat.description }}</div>
+      </div>
     </div>
+    
+    <!-- Filters Section -->
+    <div>
+      <div class="mb-4 text-sm font-medium" style="color: var(--vp-c-text-2); margin-bottom: 12px;">
+        Filters
+      </div>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap">
+        <span
+          class="filter-chip"
+          :class="{ selected: selectedFilters.length === 0 }"
+          @click="selectedFilters = []"
+        >
+          All Filters
+        </span>
+        <span
+          v-for="filter in availableFilters"
+          :key="filter"
+          class="filter-chip"
+          :class="{ selected: selectedFilters.includes(filter) }"
+          @click="toggleFilter(filter)"
+        >
+          {{ filter }}
+        </span>
+      </div>
+    </div>
+    
+    <!-- Cards Section -->
     <div>
       <div
         v-if="cards"
@@ -129,7 +356,6 @@
           :product="product"
         />
       </div>
-      <!-- <Content /> -->
     </div>
   </div>
   <Footer />
