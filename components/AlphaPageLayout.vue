@@ -130,7 +130,7 @@
     // Read from URL search params directly (works reliably on refresh)
     const urlParams = new URLSearchParams(window.location.search);
     const categoryParam = urlParams.get("category");
-    const filtersParam = urlParams.get("filters");
+    const filtersParams = urlParams.getAll("filters");
 
     // Update category from query param (convert from kebab-case)
     if (categoryParam) {
@@ -141,12 +141,11 @@
       selectedCategory.value = "";
     }
 
-    // Update filters from query param (convert from kebab-case)
-    if (filtersParam) {
-      selectedFilters.value = filtersParam
-        .split(",")
+    // Update filters from query params (convert from kebab-case)
+    if (filtersParams.length > 0) {
+      selectedFilters.value = filtersParams
         .map((f) => {
-          const decoded = decodeURIComponent(f.trim());
+          const decoded = decodeURIComponent(f);
           return fromKebabCase(decoded, filterKebabMap);
         })
         .filter((f): f is string => f !== null);
@@ -164,21 +163,20 @@
     // Also update URL on mount if there are initial values
     nextTick(() => {
       if (selectedCategory.value || selectedFilters.value.length > 0) {
-        const query: Record<string, string> = {};
+        const params = new URLSearchParams();
         if (selectedCategory.value) {
-          query.category = toKebabCase(selectedCategory.value);
+          params.set("category", toKebabCase(selectedCategory.value));
         }
         if (selectedFilters.value.length > 0) {
-          query.filters = selectedFilters.value
-            .map((f) => toKebabCase(f))
-            .join(",");
+          selectedFilters.value.forEach((filter) => {
+            params.append("filters", toKebabCase(filter));
+          });
         }
-        const queryString =
-          Object.keys(query).length > 0
-            ? "?" + new URLSearchParams(query).toString()
-            : "";
+        const queryString = params.toString();
         const newUrl =
-          window.location.pathname + queryString + (window.location.hash || "");
+          window.location.pathname +
+          (queryString ? "?" + queryString : "") +
+          (window.location.hash || "");
         window.history.replaceState({ ...window.history.state }, "", newUrl);
       }
     });
@@ -201,29 +199,28 @@
       if (isUpdatingFromQuery.value) return;
 
       nextTick(() => {
-        const query: Record<string, string> = {};
+        const params = new URLSearchParams();
 
         if (selectedCategory.value) {
           // Convert to kebab-case for URL
-          query.category = toKebabCase(selectedCategory.value);
+          params.set("category", toKebabCase(selectedCategory.value));
         }
 
         if (selectedFilters.value.length > 0) {
-          // Convert filters to kebab-case for URL
-          query.filters = selectedFilters.value
-            .map((f) => toKebabCase(f))
-            .join(",");
+          // Convert filters to kebab-case and append each as separate param
+          selectedFilters.value.forEach((filter) => {
+            params.append("filters", toKebabCase(filter));
+          });
         }
 
         // Build query string
-        const queryString =
-          Object.keys(query).length > 0
-            ? "?" + new URLSearchParams(query).toString()
-            : "";
+        const queryString = params.toString();
 
         // Update URL using window.history (works reliably in VitePress)
         const newUrl =
-          window.location.pathname + queryString + (window.location.hash || "");
+          window.location.pathname +
+          (queryString ? "?" + queryString : "") +
+          (window.location.hash || "");
 
         // Update URL without page reload
         window.history.replaceState({ ...window.history.state }, "", newUrl);
