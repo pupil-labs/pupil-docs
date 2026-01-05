@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { useData, useRoute, useRouter } from "vitepress";
+  import { useData, useRoute } from "vitepress";
   import { ref, computed, watch, onMounted, nextTick } from "vue";
   import alphaCards from "./../alpha-lab/cards.json";
   import Footer from "./Footer.vue";
@@ -7,7 +7,6 @@
   import ArrowIcon from "./ArrowIcon.vue";
   const { frontmatter } = useData();
   const route = useRoute();
-  const router = useRouter();
 
   type FrontMatter = typeof frontmatter;
 
@@ -153,9 +152,9 @@
       selectedFilters.value = [];
     }
     // Reset flag after a tick to allow watchers to run
-    setTimeout(() => {
+    nextTick(() => {
       isUpdatingFromQuery.value = false;
-    }, 0);
+    });
   };
 
   onMounted(() => {
@@ -183,14 +182,24 @@
   });
 
   // Watch for URL changes (browser back/forward)
+  // Watch route.path for VitePress navigation and set up popstate listener for browser navigation
   watch(
-    () => window.location.search,
+    () => route.path,
     () => {
       if (!isUpdatingFromQuery.value) {
         updateFromQuery();
       }
     }
   );
+
+  // Also listen for popstate events (browser back/forward buttons)
+  onMounted(() => {
+    window.addEventListener("popstate", () => {
+      if (!isUpdatingFromQuery.value) {
+        updateFromQuery();
+      }
+    });
+  });
 
   // Update URL when filters/category change
   watch(
@@ -358,13 +367,15 @@
           >
             {{ fm.hero.title }}
           </h1>
-          <p
-            v-if="fm.hero?.tagline"
-            v-for="tagline in fm.hero?.tagline"
-            class="text-base text-2 text-padding"
-          >
-            {{ tagline }}
-          </p>
+          <template v-if="fm.hero?.tagline">
+            <p
+              v-for="(tagline, index) in fm.hero.tagline"
+              :key="index"
+              class="text-base text-2 text-padding"
+            >
+              {{ tagline }}
+            </p>
+          </template>
           <a
             href="/alpha-lab/about/"
             class="flex items-center gap-2 text-link-color font-medium text-sm"
@@ -434,13 +445,10 @@
           See all articles <ArrowIcon />
         </a>
       </div>
-      <div
-        v-else-if="cards"
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14"
-      >
+      <div v-else class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14">
         <CardLink
-          v-for="(product, index) in filteredCards"
-          :key="index"
+          v-for="product in filteredCards"
+          :key="product.link?.href || product.title"
           :product="product"
         />
       </div>
