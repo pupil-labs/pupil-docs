@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { useData, useRoute } from "vitepress";
-  import { ref, computed, watch, onMounted, nextTick } from "vue";
+  import { ref, computed, watch, onMounted, onUnmounted, nextTick } from "vue";
   import alphaCards from "./../alpha-lab/cards.json";
   import Footer from "./Footer.vue";
   import CardLink from "./cards/CardLink.vue";
@@ -14,7 +14,7 @@
     hero?: {
       title?: string;
       text?: string;
-      tagline?: string;
+      tagline?: string[];
     };
     tags?: string[];
   }
@@ -157,6 +157,13 @@
     });
   };
 
+  // Handle popstate events (browser back/forward buttons)
+  const handlePopState = () => {
+    if (!isUpdatingFromQuery.value) {
+      updateFromQuery();
+    }
+  };
+
   onMounted(() => {
     updateFromQuery();
     // Also update URL on mount if there are initial values
@@ -179,10 +186,18 @@
         window.history.replaceState({ ...window.history.state }, "", newUrl);
       }
     });
+
+    // Set up popstate listener for browser navigation
+    window.addEventListener("popstate", handlePopState);
   });
 
-  // Watch for URL changes (browser back/forward)
-  // Watch route.path for VitePress navigation and set up popstate listener for browser navigation
+  // Clean up event listener on unmount
+  onUnmounted(() => {
+    window.removeEventListener("popstate", handlePopState);
+  });
+
+  // Watch for URL changes (browser back/forward and VitePress navigation)
+  // Watch route.path for VitePress navigation (covers both path and query changes)
   watch(
     () => route.path,
     () => {
@@ -191,15 +206,6 @@
       }
     }
   );
-
-  // Also listen for popstate events (browser back/forward buttons)
-  onMounted(() => {
-    window.addEventListener("popstate", () => {
-      if (!isUpdatingFromQuery.value) {
-        updateFromQuery();
-      }
-    });
-  });
 
   // Update URL when filters/category change
   watch(
@@ -213,6 +219,9 @@
         if (selectedCategory.value) {
           // Convert to kebab-case for URL
           params.set("category", toKebabCase(selectedCategory.value));
+        } else {
+          // Explicitly remove category param when "All Categories" is selected
+          params.delete("category");
         }
 
         if (selectedFilters.value.length > 0) {
@@ -220,6 +229,9 @@
           selectedFilters.value.forEach((filter) => {
             params.append("filters", toKebabCase(filter));
           });
+        } else {
+          // Explicitly remove filters param when no filters are selected
+          params.delete("filters");
         }
 
         // Build query string
@@ -394,6 +406,11 @@
         class="category-button"
         :class="{ selected: selectedCategory === cat.id }"
         @click="selectedCategory = cat.id"
+        role="button"
+        :aria-pressed="selectedCategory === cat.id"
+        tabindex="0"
+        @keydown.enter="selectedCategory = cat.id"
+        @keydown.space.prevent="selectedCategory = cat.id"
       >
         <div class="category-button-title">{{ cat.title }}</div>
         <div class="category-button-description">{{ cat.description }}</div>
@@ -402,10 +419,7 @@
 
     <!-- Filters Section -->
     <div>
-      <div
-        class="mb-4 text-sm font-medium"
-        style="color: var(--vp-c-text-2); margin-bottom: 12px"
-      >
+      <div class="mb-3 text-sm font-medium" style="color: var(--vp-c-text-2)">
         Filters
       </div>
       <div style="display: flex; gap: 12px; flex-wrap: wrap">
@@ -413,6 +427,11 @@
           class="filter-chip"
           :class="{ selected: selectedFilters.length === 0 }"
           @click="selectedFilters = []"
+          role="button"
+          :aria-pressed="selectedFilters.length === 0"
+          tabindex="0"
+          @keydown.enter="selectedFilters = []"
+          @keydown.space.prevent="selectedFilters = []"
         >
           All Filters
         </span>
@@ -422,6 +441,11 @@
           class="filter-chip"
           :class="{ selected: selectedFilters.includes(filter) }"
           @click="toggleFilter(filter)"
+          role="button"
+          :aria-pressed="selectedFilters.includes(filter)"
+          tabindex="0"
+          @keydown.enter="toggleFilter(filter)"
+          @keydown.space.prevent="toggleFilter(filter)"
         >
           {{ filter }}
         </span>
@@ -447,8 +471,8 @@
       </div>
       <div v-else class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14">
         <CardLink
-          v-for="product in filteredCards"
-          :key="product.link?.href || product.title"
+          v-for="(product, index) in filteredCards"
+          :key="product.link?.href || product.title || `card-${index}`"
           :product="product"
         />
       </div>
