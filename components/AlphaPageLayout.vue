@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { useData, useRoute, useRouter } from "vitepress";
-  import { ref, computed, watch, onMounted } from "vue";
+  import { ref, computed, watch, onMounted, nextTick } from "vue";
   import alphaCards from "./../alpha-lab/cards.json";
   import Footer from "./Footer.vue";
   import CardLink from "./cards/CardLink.vue";
@@ -42,7 +42,8 @@
     {
       id: "Behavior Detection & Annotation",
       title: "Behavior Detection & Annotation",
-      description: "Detect and classify human behaviour using gaze and context.",
+      description:
+        "Detect and classify human behaviour using gaze and context.",
     },
     {
       id: "Eye Tracking in Physical Spaces",
@@ -52,17 +53,20 @@
     {
       id: "Data Processing & Workflows",
       title: "Data Processing & Workflows",
-      description: "Workflows for processing, synchronizing, and transforming gaze data.",
+      description:
+        "Workflows for processing, synchronizing, and transforming gaze data.",
     },
     {
       id: "Gaze on Screens & Interfaces",
       title: "Gaze on Screens & Interfaces",
-      description: "Detect and classify human behaviour using gaze and context.",
+      description:
+        "Detect and classify human behaviour using gaze and context.",
     },
     {
       id: "Social Gaze & Interactions",
       title: "Social Gaze & Interactions",
-      description: "Analyze gaze patterns during social interactions and communication.",
+      description:
+        "Analyze gaze patterns during social interactions and communication.",
     },
   ];
 
@@ -83,13 +87,16 @@
 
   // Map cards to new category system
   const cards = computed(() => {
-    return alphaCards.slice().reverse().map((card) => {
-      const newCategory = categoryMapping[card.category] || card.category;
-      return {
-        ...card,
-        mappedCategory: newCategory,
-      };
-    });
+    return alphaCards
+      .slice()
+      .reverse()
+      .map((card) => {
+        const newCategory = categoryMapping[card.category] || card.category;
+        return {
+          ...card,
+          mappedCategory: newCategory,
+        };
+      });
   });
 
   // Get unique categories from cards
@@ -106,8 +113,11 @@
   // Initialize from query params
   const updateFromQuery = () => {
     isUpdatingFromQuery.value = true;
-    const categoryParam = route.query.category as string | undefined;
-    const filtersParam = route.query.filters as string | string[] | undefined;
+
+    // Read from URL search params directly (works reliably on refresh)
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryParam = urlParams.get("category");
+    const filtersParam = urlParams.get("filters");
 
     // Update category from query param
     if (categoryParam) {
@@ -118,13 +128,10 @@
 
     // Update filters from query param
     if (filtersParam) {
-      if (Array.isArray(filtersParam)) {
-        selectedFilters.value = filtersParam.map(f => decodeURIComponent(f));
-      } else {
-        selectedFilters.value = filtersParam.split(",")
-          .map(f => decodeURIComponent(f.trim()))
-          .filter(f => f);
-      }
+      selectedFilters.value = filtersParam
+        .split(",")
+        .map((f) => decodeURIComponent(f.trim()))
+        .filter((f) => f);
     } else {
       selectedFilters.value = [];
     }
@@ -136,35 +143,70 @@
 
   onMounted(() => {
     updateFromQuery();
+    // Also update URL on mount if there are initial values
+    nextTick(() => {
+      if (selectedCategory.value || selectedFilters.value.length > 0) {
+        const query: Record<string, string> = {};
+        if (selectedCategory.value) {
+          query.category = selectedCategory.value;
+        }
+        if (selectedFilters.value.length > 0) {
+          query.filters = selectedFilters.value.join(",");
+        }
+        const queryString =
+          Object.keys(query).length > 0
+            ? "?" + new URLSearchParams(query).toString()
+            : "";
+        const newUrl =
+          window.location.pathname + queryString + (window.location.hash || "");
+        window.history.replaceState({ ...window.history.state }, "", newUrl);
+      }
+    });
   });
 
-  // Watch for route changes (browser back/forward)
-  watch(() => route.query, () => {
-    if (!isUpdatingFromQuery.value) {
-      updateFromQuery();
+  // Watch for URL changes (browser back/forward)
+  watch(
+    () => window.location.search,
+    () => {
+      if (!isUpdatingFromQuery.value) {
+        updateFromQuery();
+      }
     }
-  }, { deep: true });
+  );
 
   // Update URL when filters/category change
-  watch([selectedCategory, selectedFilters], () => {
-    if (isUpdatingFromQuery.value) return;
-    
-    const query: Record<string, string> = {};
-    
-    if (selectedCategory.value) {
-      query.category = selectedCategory.value;
-    }
-    
-    if (selectedFilters.value.length > 0) {
-      query.filters = selectedFilters.value.join(",");
-    }
+  watch(
+    [selectedCategory, selectedFilters],
+    () => {
+      if (isUpdatingFromQuery.value) return;
 
-    // Use router.replace with query object for proper encoding
-    router.replace({
-      path: route.path,
-      query: Object.keys(query).length > 0 ? query : {}
-    });
-  }, { deep: true });
+      nextTick(() => {
+        const query: Record<string, string> = {};
+
+        if (selectedCategory.value) {
+          query.category = selectedCategory.value;
+        }
+
+        if (selectedFilters.value.length > 0) {
+          query.filters = selectedFilters.value.join(",");
+        }
+
+        // Build query string
+        const queryString =
+          Object.keys(query).length > 0
+            ? "?" + new URLSearchParams(query).toString()
+            : "";
+
+        // Update URL using window.history (works reliably in VitePress)
+        const newUrl =
+          window.location.pathname + queryString + (window.location.hash || "");
+
+        // Update URL without page reload
+        window.history.replaceState({ ...window.history.state }, "", newUrl);
+      });
+    },
+    { deep: true }
+  );
 
   // Toggle filter
   const toggleFilter = (filter: string) => {
@@ -188,14 +230,18 @@
 
     // Filter by category
     if (selectedCategory.value) {
-      result = result.filter((card) => card.mappedCategory === selectedCategory.value);
+      result = result.filter(
+        (card) => card.mappedCategory === selectedCategory.value
+      );
     }
 
     // Filter by selected filters (AND logic - card must have ALL selected filters)
     if (selectedFilters.value.length > 0) {
       result = result.filter((card) => {
         const cardFilters = card.filters || [];
-        return selectedFilters.value.every((filter) => cardFilters.includes(filter));
+        return selectedFilters.value.every((filter) =>
+          cardFilters.includes(filter)
+        );
       });
     }
 
@@ -207,7 +253,7 @@
   .text-padding:not(:last-child) {
     padding-bottom: 16px;
   }
-  
+
   .category-button {
     padding: 16px 20px;
     border-radius: 8px;
@@ -217,17 +263,17 @@
     transition: all 0.2s;
     text-align: left;
   }
-  
+
   .category-button:hover {
     background-color: var(--vp-c-default-1);
     border-color: var(--vp-c-brand-1);
   }
-  
+
   .category-button.selected {
     background-color: var(--vp-c-default-2);
     border-color: var(--vp-c-brand-1);
   }
-  
+
   .category-button-title {
     font-size: 16px;
     font-weight: 600;
@@ -235,13 +281,13 @@
     margin-bottom: 8px;
     font-family: Inter, "Helvetica Neue", sans-serif;
   }
-  
+
   .category-button-description {
     font-size: 14px;
     color: var(--vp-c-text-2);
     font-family: Inter, "Helvetica Neue", sans-serif;
   }
-  
+
   .filter-chip {
     padding: 8px 16px;
     border-radius: 9999px;
@@ -254,17 +300,17 @@
     border: 1px solid var(--vp-c-divider);
     transition: all 0.2s;
   }
-  
+
   .filter-chip:hover {
     background-color: var(--vp-c-default-1);
   }
-  
+
   .filter-chip.selected {
     background-color: var(--vp-c-default-2);
     border-color: var(--vp-c-brand-1);
     color: var(--vp-c-brand-1);
   }
-  
+
   .text-link-color {
     color: var(--vp-c-brand-1);
   }
@@ -307,7 +353,7 @@
       </div>
     </div>
     <hr style="border-color: var(--vp-c-divider)" />
-    
+
     <!-- Categories Section -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       <div
@@ -321,10 +367,13 @@
         <div class="category-button-description">{{ cat.description }}</div>
       </div>
     </div>
-    
+
     <!-- Filters Section -->
     <div>
-      <div class="mb-4 text-sm font-medium" style="color: var(--vp-c-text-2); margin-bottom: 12px;">
+      <div
+        class="mb-4 text-sm font-medium"
+        style="color: var(--vp-c-text-2); margin-bottom: 12px"
+      >
         Filters
       </div>
       <div style="display: flex; gap: 12px; flex-wrap: wrap">
@@ -346,11 +395,14 @@
         </span>
       </div>
     </div>
-    
+
     <!-- Cards Section -->
     <div>
-      <div v-if="filteredCards.length === 0" class="flex flex-col items-center justify-center py-16">
-        <p class="text-base mb-4" style="color: var(--vp-c-text-2);">
+      <div
+        v-if="filteredCards.length === 0"
+        class="flex flex-col items-center justify-center py-16"
+      >
+        <p class="text-base mb-4" style="color: var(--vp-c-text-2)">
           There are no articles that match your filters :(
         </p>
         <a
