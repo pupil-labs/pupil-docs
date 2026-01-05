@@ -224,7 +224,7 @@
     selectedFilters.value = [];
   };
 
-  // Filter cards based on category and filters (AND logic)
+  // Filter cards based on category and filters (OR logic for filters)
   const filteredCards = computed(() => {
     let result = cards.value;
 
@@ -235,11 +235,11 @@
       );
     }
 
-    // Filter by selected filters (AND logic - card must have ALL selected filters)
+    // Filter by selected filters (OR logic - card must have ANY of the selected filters)
     if (selectedFilters.value.length > 0) {
       result = result.filter((card) => {
         const cardFilters = card.filters || [];
-        return selectedFilters.value.every((filter) =>
+        return selectedFilters.value.some((filter) =>
           cardFilters.includes(filter)
         );
       });
