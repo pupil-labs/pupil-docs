@@ -75,6 +75,38 @@
     "Pupil Invisible",
   ];
 
+  // Helper function to convert to kebab-case
+  const toKebabCase = (str: string): string => {
+    return str
+      .toLowerCase()
+      .replace(/&/g, "and")
+      .replace(/\//g, "-")
+      .replace(/[^a-z0-9]+/g, "-") // Replace any sequence of non-alphanumeric chars with hyphen
+      .replace(/-+/g, "-") // Replace multiple hyphens with single hyphen
+      .replace(/^-|-$/g, ""); // Remove leading/trailing hyphens
+  };
+
+  // Create mappings from kebab-case to actual names
+  const categoryKebabMap = new Map<string, string>();
+  categories.forEach((cat) => {
+    if (cat.id) {
+      categoryKebabMap.set(toKebabCase(cat.id), cat.id);
+    }
+  });
+
+  const filterKebabMap = new Map<string, string>();
+  availableFilters.forEach((filter) => {
+    filterKebabMap.set(toKebabCase(filter), filter);
+  });
+
+  // Helper to convert from kebab-case back to actual name
+  const fromKebabCase = (
+    kebab: string,
+    map: Map<string, string>
+  ): string | null => {
+    return map.get(kebab) || null;
+  };
+
   // Cards with reversed order
   const cards = computed(() => {
     return alphaCards.slice().reverse();
@@ -100,19 +132,24 @@
     const categoryParam = urlParams.get("category");
     const filtersParam = urlParams.get("filters");
 
-    // Update category from query param
+    // Update category from query param (convert from kebab-case)
     if (categoryParam) {
-      selectedCategory.value = decodeURIComponent(categoryParam);
+      const decoded = decodeURIComponent(categoryParam);
+      const actualCategory = fromKebabCase(decoded, categoryKebabMap);
+      selectedCategory.value = actualCategory || "";
     } else {
       selectedCategory.value = "";
     }
 
-    // Update filters from query param
+    // Update filters from query param (convert from kebab-case)
     if (filtersParam) {
       selectedFilters.value = filtersParam
         .split(",")
-        .map((f) => decodeURIComponent(f.trim()))
-        .filter((f) => f);
+        .map((f) => {
+          const decoded = decodeURIComponent(f.trim());
+          return fromKebabCase(decoded, filterKebabMap);
+        })
+        .filter((f): f is string => f !== null);
     } else {
       selectedFilters.value = [];
     }
@@ -129,10 +166,12 @@
       if (selectedCategory.value || selectedFilters.value.length > 0) {
         const query: Record<string, string> = {};
         if (selectedCategory.value) {
-          query.category = selectedCategory.value;
+          query.category = toKebabCase(selectedCategory.value);
         }
         if (selectedFilters.value.length > 0) {
-          query.filters = selectedFilters.value.join(",");
+          query.filters = selectedFilters.value
+            .map((f) => toKebabCase(f))
+            .join(",");
         }
         const queryString =
           Object.keys(query).length > 0
@@ -165,11 +204,15 @@
         const query: Record<string, string> = {};
 
         if (selectedCategory.value) {
-          query.category = selectedCategory.value;
+          // Convert to kebab-case for URL
+          query.category = toKebabCase(selectedCategory.value);
         }
 
         if (selectedFilters.value.length > 0) {
-          query.filters = selectedFilters.value.join(",");
+          // Convert filters to kebab-case for URL
+          query.filters = selectedFilters.value
+            .map((f) => toKebabCase(f))
+            .join(",");
         }
 
         // Build query string
