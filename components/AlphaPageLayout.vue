@@ -106,20 +106,24 @@
   // Initialize from query params
   const updateFromQuery = () => {
     isUpdatingFromQuery.value = true;
-    const categoryParam = route.query.category as string;
-    const filtersParam = route.query.filters as string | string[];
+    const categoryParam = route.query.category as string | undefined;
+    const filtersParam = route.query.filters as string | string[] | undefined;
 
+    // Update category from query param
     if (categoryParam) {
-      selectedCategory.value = categoryParam;
+      selectedCategory.value = decodeURIComponent(categoryParam);
     } else {
       selectedCategory.value = "";
     }
 
+    // Update filters from query param
     if (filtersParam) {
       if (Array.isArray(filtersParam)) {
-        selectedFilters.value = filtersParam;
+        selectedFilters.value = filtersParam.map(f => decodeURIComponent(f));
       } else {
-        selectedFilters.value = filtersParam.split(",").filter(f => f);
+        selectedFilters.value = filtersParam.split(",")
+          .map(f => decodeURIComponent(f.trim()))
+          .filter(f => f);
       }
     } else {
       selectedFilters.value = [];
@@ -155,18 +159,11 @@
       query.filters = selectedFilters.value.join(",");
     }
 
-    const queryString = Object.keys(query).length > 0 
-      ? '?' + new URLSearchParams(query).toString() 
-      : '';
-    
-    const newUrl = route.path + queryString;
-    const currentUrl = route.path + (route.query && Object.keys(route.query).length > 0 
-      ? '?' + new URLSearchParams(route.query as Record<string, string>).toString() 
-      : '');
-    
-    if (currentUrl !== newUrl) {
-      router.replace(newUrl);
-    }
+    // Use router.replace with query object for proper encoding
+    router.replace({
+      path: route.path,
+      query: Object.keys(query).length > 0 ? query : {}
+    });
   }, { deep: true });
 
   // Toggle filter
@@ -177,6 +174,12 @@
     } else {
       selectedFilters.value.push(filter);
     }
+  };
+
+  // Clear all filters and category
+  const clearAllFilters = () => {
+    selectedCategory.value = "";
+    selectedFilters.value = [];
   };
 
   // Filter cards based on category and filters (AND logic)
@@ -346,8 +349,20 @@
     
     <!-- Cards Section -->
     <div>
+      <div v-if="filteredCards.length === 0" class="flex flex-col items-center justify-center py-16">
+        <p class="text-base mb-4" style="color: var(--vp-c-text-2);">
+          There are no articles that match your filters :(
+        </p>
+        <a
+          @click.prevent="clearAllFilters"
+          href="#"
+          class="text-link-color font-medium text-sm flex items-center gap-2"
+        >
+          See all articles <ArrowIcon />
+        </a>
+      </div>
       <div
-        v-if="cards"
+        v-else-if="cards"
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14"
       >
         <CardLink
