@@ -7,7 +7,7 @@
       "href": "/alpha-lab/undistort/"
     },
     "image": "/alpha-lab/undist.webp",
-    "category": "Other/Core",
+    "category": "Data Processing & Workflows",
     "filters": ["Offline Processing"]
   },
   {
@@ -18,7 +18,7 @@
       "href": "/alpha-lab/neon-with-capture/"
     },
     "image": "/alpha-lab/neon-capture.webp",
-    "category": "Other/Core",
+    "category": "Data Processing & Workflows",
     "filters": ["Neon", "Offline Processing"]
   },
   {
@@ -29,7 +29,7 @@
       "href": "/alpha-lab/map-your-gaze-to-a-2d-screen/#map-and-visualise-gaze-onto-a-display-content-using-the-reference-image-mapper"
     },
     "image": "/alpha-lab/map-gaze-screen.webp",
-    "category": "Screens & Interfaces",
+    "category": "Gaze on Screens & Interfaces",
     "filters": ["Pupil Cloud", "AOI Mapping"]
   },
   {
@@ -40,7 +40,7 @@
       "href": "/alpha-lab/dense-pose/#map-gaze-onto-body-parts-using-densepose"
     },
     "image": "/alpha-lab/map-gaze-body.webp",
-    "category": "Around People",
+    "category": "Social Gaze & Interactions",
     "filters": ["Neon", "Pupil Invisible", "3D Reconstruction"]
   },
   {
@@ -51,7 +51,7 @@
       "href": "/alpha-lab/multiple-rim/#map-and-visualize-gaze-on-multiple-reference-images-taken-from-the-same-environment"
     },
     "image": "/alpha-lab/multiple-ref-mapper-enrich.webp",
-    "category": "3D Spaces",
+    "category": "Eye Tracking in Physical Spaces",
     "filters": ["Pupil Cloud", "3D Reconstruction"]
   },
   {
@@ -62,7 +62,7 @@
       "href": "/alpha-lab/scanpath-rim/#generate-static-and-dynamic-scanpaths"
     },
     "image": "/alpha-lab/scanpath_image_nad.webp",
-    "category": "Other/Core",
+    "category": "Data Processing & Workflows",
     "filters": ["Pupil Cloud", "Metric Extraction", "Offline Processing"]
   },
   {
@@ -73,7 +73,7 @@
       "href": "/alpha-lab/phone-neon/#uncover-gaze-behaviour-on-phone-screens-with-neon"
     },
     "image": "/alpha-lab/gaze-behavior-phone-neon.webp",
-    "category": "Screens & Interfaces",
+    "category": "Gaze on Screens & Interfaces",
     "filters": ["Neon", "Pupil Cloud", "Metric Extraction"]
   },
   {
@@ -84,7 +84,7 @@
       "href": "/alpha-lab/nerfs/#create-3d-models-of-your-environment-using-reference-image-mapper-and-nerfstudio"
     },
     "image": "/alpha-lab/map-gaze-3d-nerf.webp",
-    "category": "3D Spaces",
+    "category": "Eye Tracking in Physical Spaces",
     "filters": ["Pupil Cloud", "3D Reconstruction"]
   },
   {
@@ -95,7 +95,7 @@
       "href": "/alpha-lab/gaze-contingency-assistive/#a-practical-guide-to-implementing-gaze-contingency-for-assistive-technology"
     },
     "image": "/alpha-lab/build-gaze-assistive-neon.webp",
-    "category": "Real Time & Interactive",
+    "category": "Behavior Detection & Annotation",
     "filters": ["Neon", "Real-Time Analysis", "Assistive Technology"]
   },
   {
@@ -106,7 +106,7 @@
       "href": "/alpha-lab/blink-detection/#detecting-eye-blinks-using-pupil-labs-blink-detection-pipeline"
     },
     "image": "/alpha-lab/blink.webp",
-    "category": "Real Time & Interactive",
+    "category": "Behavior Detection & Annotation",
     "filters": [
       "Neon",
       "Real-Time Analysis",
@@ -122,7 +122,7 @@
       "href": "/alpha-lab/gpt4-eyes/"
     },
     "image": "/alpha-lab/gpt4-eyes.webp",
-    "category": "Building with AI",
+    "category": "Behavior Detection & Annotation",
     "filters": ["AI/Deep Learning", "Assistive Technology"]
   },
   {
@@ -133,7 +133,7 @@
       "href": "/alpha-lab/gaze-metrics-in-aois/"
     },
     "image": "/alpha-lab/aoi-demo.webp",
-    "category": "Building with AI",
+    "category": "Behavior Detection & Annotation",
     "filters": ["Pupil Cloud", "AI/Deep Learning", "AOI Mapping"]
   },
   {
@@ -144,7 +144,7 @@
       "href": "/alpha-lab/gaze-on-face/"
     },
     "image": "/alpha-lab/map-gaze-nadia.webp",
-    "category": "Around People",
+    "category": "Social Gaze & Interactions",
     "filters": ["Pupil Cloud", "Metric Extraction"]
   },
   {
@@ -155,7 +155,7 @@
       "href": "/alpha-lab/web-aois/"
     },
     "image": "/alpha-lab/web-aoi.webp",
-    "category": "Screens & Interfaces",
+    "category": "Gaze on Screens & Interfaces",
     "filters": ["AOI Mapping", "Metric Extraction"]
   },
   {
@@ -166,7 +166,7 @@
       "href": "/alpha-lab/tag-aligner/"
     },
     "image": "/alpha-lab/tag-aligner.webp",
-    "category": "3D Spaces",
+    "category": "Eye Tracking in Physical Spaces",
     "filters": ["3D Reconstruction", "Offline Processing"]
   },
   {
@@ -177,7 +177,7 @@
       "href": "/alpha-lab/imu-transformations/"
     },
     "image": "/alpha-lab/imu-transformations.webp",
-    "category": "3D Spaces",
+    "category": "Eye Tracking in Physical Spaces",
     "filters": ["Offline Processing", "Multimodal Data"]
   },
   {
@@ -188,7 +188,7 @@
       "href": "/alpha-lab/event-automation-gpt/"
     },
     "image": "/alpha-lab/event-annotation.webp",
-    "category": "Building with AI",
+    "category": "Behavior Detection & Annotation",
     "filters": ["Pupil Cloud", "AI/Deep Learning", "Offline Processing"]
   },
   {
@@ -199,7 +199,7 @@
       "href": "/alpha-lab/egocentric-video-mapper/"
     },
     "image": "/alpha-lab/egocentric-video-mapper.webp",
-    "category": "3D Spaces",
+    "category": "Eye Tracking in Physical Spaces",
     "filters": ["Neon", "3D Reconstruction", "Offline Processing"]
   },
   {
@@ -210,7 +210,7 @@
       "href": "/alpha-lab/audio-event-annotations/"
     },
     "image": "/alpha-lab/audio-events-img.webp",
-    "category": "Building with AI",
+    "category": "Behavior Detection & Annotation",
     "filters": [
       "Neon",
       "Pupil Cloud",
@@ -227,7 +227,7 @@
       "href": "/alpha-lab/gps/"
     },
     "image": "/alpha-lab/gps.webp",
-    "category": "3D Spaces",
+    "category": "Eye Tracking in Physical Spaces",
     "filters": ["Neon", "Multimodal Data", "Offline Processing"]
   },
   {
@@ -238,7 +238,7 @@
       "href": "/alpha-lab/perclos/"
     },
     "image": "/alpha-lab/perclos.webp",
-    "category": "Real Time & Interactive",
+    "category": "Behavior Detection & Annotation",
     "filters": ["Neon", "Real-Time Analysis", "Metric Extraction"]
   },
   {
@@ -249,7 +249,7 @@
       "href": "/alpha-lab/map-onto-anything/"
     },
     "image": "/alpha-lab/map-gaze-anything.webp",
-    "category": "Real Time & Interactive",
+    "category": "Behavior Detection & Annotation",
     "filters": ["Real-Time Analysis", "Offline Processing", "3D Reconstruction"]
   },
   {
@@ -260,7 +260,7 @@
       "href": "/alpha-lab/dynamic-aoi-sam2/"
     },
     "image": "/alpha-lab/sam2.webp",
-    "category": "Building with AI",
+    "category": "Behavior Detection & Annotation",
     "filters": ["Neon", "AI/Deep Learning", "AOI Mapping", "Real-Time Analysis"]
   }
 ]

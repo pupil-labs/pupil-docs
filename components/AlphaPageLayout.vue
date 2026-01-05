@@ -22,17 +22,7 @@
 
   const fm: FM = frontmatter;
 
-  // Category mapping from old to new
-  const categoryMapping: Record<string, string> = {
-    "Building with AI": "Behavior Detection & Annotation",
-    "3D Spaces": "Eye Tracking in Physical Spaces",
-    "Screens & Interfaces": "Gaze on Screens & Interfaces",
-    "Real Time & Interactive": "Behavior Detection & Annotation",
-    "Around People": "Social Gaze & Interactions",
-    "Other/Core": "Data Processing & Workflows",
-  };
-
-  // New category definitions
+  // Category definitions
   const categories = [
     {
       id: "",
@@ -85,23 +75,14 @@
     "Pupil Invisible",
   ];
 
-  // Map cards to new category system
+  // Cards with reversed order
   const cards = computed(() => {
-    return alphaCards
-      .slice()
-      .reverse()
-      .map((card) => {
-        const newCategory = categoryMapping[card.category] || card.category;
-        return {
-          ...card,
-          mappedCategory: newCategory,
-        };
-      });
+    return alphaCards.slice().reverse();
   });
 
   // Get unique categories from cards
   const uniqueCategories = computed(() => {
-    const cats = new Set(cards.value.map((card) => card.mappedCategory));
+    const cats = new Set(cards.value.map((card) => card.category));
     return Array.from(cats).sort();
   });
 
@@ -231,7 +212,7 @@
     // Filter by category
     if (selectedCategory.value) {
       result = result.filter(
-        (card) => card.mappedCategory === selectedCategory.value
+        (card) => card.category === selectedCategory.value
       );
     }
 
