@@ -20,8 +20,6 @@ meta:
 tags: [Neon, Cloud]
 ---
 
-# Where did I see that? Eye Tracking & GPS
-
 <Youtube src="Yjos2JzpD-I"/>
 
 <font size=2><b>Neon data on a map:</b> Real-time recording of an orienteering course. Left: Map tracks user position, <a href="https://docs.pupil-labs.com/neon/data-collection/data-streams/#movement-imu-data">head orientation</a> (blue arc), and <a href="https://docs.pupil-labs.com/alpha-lab/imu-transformations/">gaze direction</a> (red arrow); Right: Eye tracking footage.</font>

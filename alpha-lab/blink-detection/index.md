@@ -7,8 +7,6 @@ sidebar: false
 tags: [Neon]
 ---
 
-# Detect Eye Blinks With Neon
-
 ::: warning
 This guide describes a deprecated blink detection pipeline and is kept only for legacy purposes.
 

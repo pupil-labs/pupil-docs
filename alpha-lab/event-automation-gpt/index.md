@@ -20,8 +20,6 @@ meta:
 tags: [Neon, Cloud]
 ---
 
-# Automate Event Annotations with Pupil Cloud and GPT
-
 <Youtube src="IFV5hG3HQW8"/>
 
 ::: tip

@@ -21,8 +21,6 @@ meta:
 tags: [Neon]
 ---
 
-# Map Gaze Onto an Alternative Egocentric Video
-
 <Youtube src="dhcN1erSTfo"/>
 
 ::: tip

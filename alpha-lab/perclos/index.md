@@ -20,8 +20,6 @@ meta:
 tags: [Neon]
 ---
 
-# Real-Time Eyelid Dynamics with PERCLOS and Neon
-
 <Youtube src="v4FHA8jTmAA"/>
 
 ::: tip

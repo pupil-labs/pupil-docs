@@ -20,8 +20,6 @@ meta:
 tags: [Neon]
 ---
 
-# Build Gaze-Contingent Assistive Applications
-
 <Youtube src="cuvWqVOAc5M"/>
 
 ::: tip

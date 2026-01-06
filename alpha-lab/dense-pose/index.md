@@ -20,8 +20,6 @@ meta:
 tags: [Pupil Invisible, Neon, Cloud]
 ---
 
-# Map Gaze Onto Body Parts
-
 <Youtube src="nt_zNSBMJWI"/>
 
 **Act 3, Scene 1:** _"To be or not to be?"_ But where is the audience looking? At the hand, the face or the arm? <br>

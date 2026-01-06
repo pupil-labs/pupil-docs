@@ -20,8 +20,6 @@ meta:
 tags: [Cloud]
 ---
 
-# Automate AOI Masking in Pupil Cloud
-
 <Youtube src="dL07qObhuKY"/>
 
 ::: tip

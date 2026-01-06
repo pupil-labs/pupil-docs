@@ -7,8 +7,6 @@ sidebar: false
 tags: [Pupil Invisible, Neon, Cloud]
 ---
 
-# Generate Scanpath Visualisations
-
 <Youtube src="F52WXh1txVs"/>
 
 ::: tip

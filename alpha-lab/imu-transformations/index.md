@@ -20,8 +20,6 @@ meta:
 tags: [Neon, Cloud]
 ---
 
-# IMU Transformations
-
 This guide contains various transformation functions that help with relating [Neon's IMU data](https://docs.pupil-labs.com/neon/data-collection/data-streams/#movement-imu-data) with other data streams.
 
 As you work through this guide, you may want to check out the [Application Example](#application-example) to see the code in action.

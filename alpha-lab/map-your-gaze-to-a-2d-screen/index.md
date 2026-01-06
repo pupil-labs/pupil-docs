@@ -7,8 +7,6 @@ sidebar: false
 tags: [Pupil Invisible, Neon, Cloud]
 ---
 
-# Map Gaze Onto Dynamic Screen Content
-
 <Youtube src="OXIUjIzCplc"/>
 
 In this guide, we will show you how to map and visualise gaze onto a screen with dynamic content, e.g. a video, web browsing or any other content of your choice, using the [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/) enrichment and a few clicks.

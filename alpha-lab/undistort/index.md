@@ -10,8 +10,6 @@ meta:
 tags: [Neon, Offline Processing]
 ---
 
-# Undistort Video and Gaze Data
-
 A circumstance that often arises in wearable eye tracking setups is the presence of distortions on the scene camera. The type of lenses used, with their wide-angle characteristics, allows for a broad field of view, enabling the capture of more information within a single frame. However, this advantage comes at the cost of introducing distortions to the image. <!-- rectilinear distortions -->
 
 While we account for them in Pupil Cloud processing — such as when we're aligning gaze data onto reference images or surfaces — it's important to note that the data you download will be in its original, unaltered form.

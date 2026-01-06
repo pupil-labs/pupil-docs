@@ -20,8 +20,6 @@ meta:
 tags: [Neon, Cloud]
 ---
 
-# Map Gaze Into a User-Supplied 3D Model
-
 <Youtube src="3N8jGLYCrNk"/>
 
 ::: tip

@@ -10,8 +10,6 @@ meta:
 tags: [Neon, Offline Processing]
 ---
 
-# Use Neon with Pupil Capture
-
 It's possible to make recordings using Neon in Pupil Capture under MacOS and Linux. You can use the Neon module as if it was a Pupil Core headset by plugging it into your Computer and running Pupil Capture from [source](https://github.com/pupil-labs/pupil/tree/master).
 
 Note, that in this case gaze estimation will **NOT** be done using **NeonNet**, but using Pupil Core's gaze estimation pipeline. This means you will have to do a calibration and experience a lack of robustness compared to NeonNet.

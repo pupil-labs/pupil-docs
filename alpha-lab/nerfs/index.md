@@ -9,8 +9,6 @@ tags: [Pupil Invisible, Neon, Cloud]
 
 <!-- <head> <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script> </head> -->
 
-# Map Gaze Onto a 3D Model of an Environment
-
 <Youtube src="7W2DCkPfFLE"/>
 
 ::: danger

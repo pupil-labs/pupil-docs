@@ -20,8 +20,6 @@ meta:
 tags: [Pupil Invisible, Neon]
 ---
 
-# Build an AI Vision Assistant
-
 <Youtube src="_k5QbpC84H8"/>
 
 **🔉 Play the video above with audio!**

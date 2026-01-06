@@ -20,8 +20,6 @@ meta:
 tags: [Neon]
 ---
 
-# Map Gaze Onto Website AOIs 
-
 <Youtube src="DzK055NbRPM"/>
 
 ::: tip

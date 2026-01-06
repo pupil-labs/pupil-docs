@@ -20,8 +20,6 @@ meta:
 tags: [Neon, Pupil Invisible]
 ---
 
-# Map Gaze Onto Anything
-
 <Youtube src="_mmFz2_7j0w"/>
 
 ::: tip

@@ -6,8 +6,6 @@ sidebar: false
 tags: [Pupil Invisible, Neon, Cloud]
 ---
 
-# Map Gaze Throughout an Entire Room
-
 <Youtube src="CLNDE0VJVng" />
 
 ::: tip

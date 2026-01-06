@@ -20,8 +20,6 @@ meta:
 tags: [Neon, Cloud]
 ---
 
-# Map Gaze Onto Facial Landmarks
-
 <Youtube src="vEshPxgWs3E"/>
 
 ::: tip

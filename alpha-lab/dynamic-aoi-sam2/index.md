@@ -20,8 +20,6 @@ meta:
 tags: [Neon, Cloud]
 ---
 
-# Dynamic AOI Tracking With Neon and SAM2 Segmentation
-
 <Youtube src="rLKx1Ma2xVE"/>
 
 ::: tip

@@ -20,8 +20,6 @@ meta:
 tags: [Neon, Cloud]
 ---
 
-# Uncover Gaze Behaviour on Phones
-
 <Youtube src="gp5O1uskDME"/>
 
 ::: tip
