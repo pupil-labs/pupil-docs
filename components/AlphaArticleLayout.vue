@@ -7,6 +7,7 @@
   import Footer from "./Footer.vue";
   import CardLink from "./cards/CardLink.vue";
   import TagLinks from "./TagLinks.vue";
+  import ArrowIcon from "./ArrowIcon.vue";
 
   const { frontmatter, page } = useData();
   const route = useRoute();
@@ -27,7 +28,8 @@
   const normalizePath = (path: string) => {
     if (!path) return "";
     if (path === "/") return path;
-    return path.replace(/\/$/, "");
+    // Remove hash fragments and trailing slashes
+    return path.split("#")[0].replace(/\/$/, "");
   };
 
   const currentRoutePath = computed(() => normalizePath(route.path));
@@ -45,6 +47,24 @@
     () => currentArticle.value?.category || null
   );
   const articleFilters = computed(() => currentArticle.value?.filters || []);
+
+  // Helper function to convert to kebab-case
+  const toKebabCase = (str: string): string => {
+    return str
+      .toLowerCase()
+      .replace(/&/g, "and")
+      .replace(/\//g, "-")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/-+/g, "-")
+      .replace(/^-|-$/g, "");
+  };
+
+  // Generate category page link
+  const categoryPageLink = computed(() => {
+    if (!articleCategory.value) return null;
+    const slug = toKebabCase(articleCategory.value);
+    return `/alpha-lab/${slug}/`;
+  });
 
   const relatedArticles = computed(() => {
     const category = articleCategory.value;
@@ -219,6 +239,29 @@
     margin-bottom: 24px;
   }
 
+  .related-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  .category-view-all-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--vp-c-brand-1);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Inter, "Helvetica Neue", sans-serif;
+    transition: color 0.2s;
+  }
+
+  .category-view-all-link:hover {
+    color: var(--vp-c-brand-2);
+  }
+
   a,
   p {
     font-family: Inter, "Helvetica Neue", sans-serif;
@@ -279,6 +322,42 @@
     width: 14px;
     height: 14px;
     fill: currentColor;
+  }
+
+  /* Fix code block overflow - Refined constraint */
+  .content {
+    min-width: 0;
+    width: 100%;
+  }
+
+  /* Force the entire group to stay within the content width */
+  .content :deep(.vp-code-group) {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+  }
+
+  /* Target the tab content container specifically */
+  .content :deep(.vp-code-group > .tabs + div),
+  .content :deep(.vp-code-group div[class*="language-"]) {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important; /* Enable the scrollbar here */
+    margin: 0 !important;
+    border-radius: 8px;
+  }
+
+  /* Ensure the pre tag inside scrolls and doesn't wrap code */
+  .content :deep(pre) {
+    margin: 0 !important;
+    width: 100% !important;
+    overflow-x: visible !important; /* Let the parent handle scrolling */
+    white-space: pre !important;
+    word-break: normal !important;
   }
 </style>
 
@@ -375,9 +454,21 @@
         </aside>
       </div>
 
-      <div v-if="relatedArticles.length > 0">
+      <div v-if="relatedArticles.length > 0 && articleCategory">
         <hr style="border-color: var(--vp-c-divider); margin: 2rem 0" />
-        <h2 class="text-xl sm:text-2xl related-heading">Related Articles</h2>
+        <div class="related-section-header">
+          <h2 class="text-xl sm:text-2xl related-heading" style="margin: 0">
+            {{ articleCategory }}
+          </h2>
+          <a
+            v-if="categoryPageLink"
+            :href="categoryPageLink"
+            class="category-view-all-link"
+          >
+            View all in {{ articleCategory }}
+            <ArrowIcon />
+          </a>
+        </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14">
           <CardLink
             v-for="(article, index) in relatedArticles"

@@ -2,6 +2,7 @@
   import { useData, useRoute } from "vitepress";
   import { ref, computed, watch, onMounted, onUnmounted, nextTick } from "vue";
   import alphaCards from "./../alpha-lab/cards.json";
+  import categoriesData from "./../alpha-lab/categories.json";
   import Footer from "./Footer.vue";
   import CardLink from "./cards/CardLink.vue";
   import ArrowIcon from "./ArrowIcon.vue";
@@ -21,42 +22,14 @@
 
   const fm: FM = frontmatter;
 
-  // Category definitions
+  // Category definitions - add "All Categories" option at the beginning
   const categories = [
     {
       id: "",
       title: "All Categories",
       description: "All articles.",
     },
-    {
-      id: "Behavior Detection & Annotation",
-      title: "Behavior Detection & Annotation",
-      description:
-        "Detect and classify human behaviour using gaze and context.",
-    },
-    {
-      id: "Eye Tracking in Physical Spaces",
-      title: "Eye Tracking in Physical Spaces",
-      description: "Map gaze onto physical environments and 3D spaces.",
-    },
-    {
-      id: "Data Processing & Workflows",
-      title: "Data Processing & Workflows",
-      description:
-        "Workflows for processing, synchronizing, and transforming gaze data.",
-    },
-    {
-      id: "Gaze on Screens & Interfaces",
-      title: "Gaze on Screens & Interfaces",
-      description:
-        "Detect and classify human behaviour using gaze and context.",
-    },
-    {
-      id: "Social Gaze & Interactions",
-      title: "Social Gaze & Interactions",
-      description:
-        "Analyze gaze patterns during social interactions and communication.",
-    },
+    ...categoriesData,
   ];
 
   // Available filters
@@ -109,12 +82,6 @@
   // Cards with reversed order
   const cards = computed(() => {
     return alphaCards.slice().reverse();
-  });
-
-  // Get unique categories from cards
-  const uniqueCategories = computed(() => {
-    const cats = new Set(cards.value.map((card) => card.category));
-    return Array.from(cats).sort();
   });
 
   // State from query params
@@ -266,7 +233,7 @@
     selectedFilters.value = [];
   };
 
-  // Filter cards based on category and filters (OR logic for filters)
+  // Filter cards based on category and filters (AND logic for filters)
   const filteredCards = computed(() => {
     let result = cards.value;
 
@@ -277,17 +244,30 @@
       );
     }
 
-    // Filter by selected filters (OR logic - card must have ANY of the selected filters)
+    // Filter by selected filters (AND logic - card must have ALL of the selected filters)
     if (selectedFilters.value.length > 0) {
       result = result.filter((card) => {
         const cardFilters = card.filters || [];
-        return selectedFilters.value.some((filter) =>
+        return selectedFilters.value.every((filter) =>
           cardFilters.includes(filter)
         );
       });
     }
 
     return result;
+  });
+
+  // Get the selected category object
+  const selectedCategoryData = computed(() => {
+    if (!selectedCategory.value) return null;
+    return categories.find((cat) => cat.id === selectedCategory.value);
+  });
+
+  // Generate category page link
+  const categoryPageLink = computed(() => {
+    if (!selectedCategoryData.value) return null;
+    const slug = toKebabCase(selectedCategoryData.value.id);
+    return `/alpha-lab/${slug}/`;
   });
 </script>
 
@@ -419,9 +399,6 @@
 
     <!-- Filters Section -->
     <div>
-      <div class="mb-3 text-sm font-medium" style="color: var(--vp-c-text-2)">
-        Filters
-      </div>
       <div style="display: flex; gap: 12px; flex-wrap: wrap">
         <span
           class="filter-chip"
@@ -469,12 +446,27 @@
           See all articles <ArrowIcon />
         </a>
       </div>
-      <div v-else class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14">
-        <CardLink
-          v-for="(product, index) in filteredCards"
-          :key="product.link?.href || product.title || `card-${index}`"
-          :product="product"
-        />
+      <div v-else class="relative">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14">
+          <CardLink
+            v-for="(product, index) in filteredCards"
+            :key="product.link?.href || product.title || `card-${index}`"
+            :product="product"
+          />
+        </div>
+        <!-- Category page link in bottom left -->
+        <div
+          v-if="selectedCategoryData && categoryPageLink"
+          class="mt-8 flex items-start"
+        >
+          <a
+            :href="categoryPageLink"
+            class="text-link-color font-medium text-sm"
+            style="text-decoration: underline"
+          >
+            Articles from {{ selectedCategoryData.title }}
+          </a>
+        </div>
       </div>
     </div>
   </div>

@@ -3,6 +3,7 @@ import DefaultTheme from "vitepress/theme";
 import AlphaPageLayout from "@components/AlphaPageLayout.vue";
 import AlphaAboutLayout from "@components/AlphaAboutLayout.vue";
 import AlphaArticleLayout from "@components/AlphaArticleLayout.vue";
+import AlphaCategoryLayout from "@components/AlphaCategoryLayout.vue";
 import Youtube from "@components/Youtube.vue";
 import PhotoGrid from "@components/PhotoGrid.vue";
 
@@ -16,6 +17,7 @@ export default {
     app.component("AlphaPageLayout", AlphaPageLayout);
     app.component("AlphaAboutLayout", AlphaAboutLayout);
     app.component("AlphaArticleLayout", AlphaArticleLayout);
+    app.component("AlphaCategoryLayout", AlphaCategoryLayout);
     app.component("Youtube", Youtube);
     app.component("PhotoGrid", PhotoGrid);
   },
