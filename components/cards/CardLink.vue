@@ -1,6 +1,4 @@
 <script setup lang="ts">
-  import { useRouter } from "vitepress";
-
   interface ProductProps {
     title?: string;
     details?: string;
@@ -19,25 +17,6 @@
   }
 
   const { product } = defineProps<Props>();
-  const router = useRouter();
-
-  const isExternalLink = (href?: string): boolean => {
-    if (!href) return false;
-    return href.startsWith('http://') || href.startsWith('https://') || href.startsWith('//');
-  };
-
-  const handleClick = (e: MouseEvent) => {
-    const href = product.link?.href;
-    const target = product.link?.target;
-    
-    // Only handle internal links (not external, and not opening in new tab/window)
-    if (href && !isExternalLink(href) && (!target || target === '_self')) {
-      e.preventDefault();
-      // Use router.go for navigation to maintain browser history
-      router.go(href);
-    }
-    // Let external links and links with target="_blank" use default behavior
-  };
 </script>
 
 <style scoped>
@@ -67,7 +46,6 @@
     :href="product.link?.href"
     class="textLink"
     :target="product.link?.target || '_self'"
-    @click="handleClick"
   >
     <div class="rounded-lg flex flex-col h-full bg-card">
       <img

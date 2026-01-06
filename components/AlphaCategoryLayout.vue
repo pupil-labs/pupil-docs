@@ -59,7 +59,7 @@
   const backLink = computed(() => {
     if (!currentCategory.value) return "/alpha-lab/";
     const categoryParam = toKebabCase(currentCategory.value.id);
-    return `/alpha-lab/?category=${encodeURIComponent(categoryParam)}`;
+    return `/alpha-lab/?cat=${encodeURIComponent(categoryParam)}`;
   });
 </script>
 
