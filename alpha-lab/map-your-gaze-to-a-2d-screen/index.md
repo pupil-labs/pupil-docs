@@ -1,16 +1,13 @@
 ---
+title: "Map Gaze Onto Dynamic Screen Content"
 description: Map and Visualise Gaze Onto a Display Content Using the Reference Image Mapper
 permalink: /alpha-lab/map-your-gaze-to-a-2d-screen/
+layout: AlphaArticleLayout
+sidebar: false
 tags: [Pupil Invisible, Neon, Cloud]
 ---
 
-<script setup>
-import TagLinks from '@components/TagLinks.vue'
-</script>
-
 # Map Gaze Onto Dynamic Screen Content
-
-<TagLinks :tags="$frontmatter.tags" />
 
 <Youtube src="OXIUjIzCplc"/>
 

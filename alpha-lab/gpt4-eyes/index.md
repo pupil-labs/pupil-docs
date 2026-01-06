@@ -1,7 +1,9 @@
 ---
-title: "Assistive scene understanding with GPT vision"
+title: "Build an AI Vision Assistant"
 description: "Exploring the use of OpenAI's GPT and real-time APIs from Neon or Invisible to assist individuals with low vision or communication disabilities."
 permalink: /alpha-lab/gpt-4-eyes/
+layout: AlphaArticleLayout
+sidebar: false
 meta:
   - name: twitter:card
     content: summary
@@ -18,13 +20,7 @@ meta:
 tags: [Pupil Invisible, Neon]
 ---
 
-<script setup>
-import TagLinks from '@components/TagLinks.vue'
-</script>
-
 # Build an AI Vision Assistant
-
-<TagLinks :tags="$frontmatter.tags" />
 
 <Youtube src="_k5QbpC84H8"/>
 

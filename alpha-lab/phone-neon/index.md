@@ -1,7 +1,9 @@
 ---
-title: Uncover gaze behaviour on phone screens with Neon
+title: "Uncover Gaze Behaviour on Phones"
 description: "Evaluate Neon's accuracy on phone screens"
 permalink: /alpha-lab/phone-neon
+layout: AlphaArticleLayout
+sidebar: false
 meta:
   - name: twitter:card
     content: player
@@ -18,13 +20,7 @@ meta:
 tags: [Neon, Cloud]
 ---
 
-<script setup>
-import TagLinks from '@components/TagLinks.vue'
-</script>
-
 # Uncover Gaze Behaviour on Phones
-
-<TagLinks :tags="$frontmatter.tags" />
 
 <Youtube src="gp5O1uskDME"/>
 

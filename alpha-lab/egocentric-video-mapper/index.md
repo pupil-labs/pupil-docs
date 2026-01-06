@@ -2,8 +2,8 @@
 title: "Map Gaze Onto an Alternative Egocentric Video"
 description: "Integrate egocentric video streams from third-party cameras into your eye-tracking experiments."
 permalink: /alpha-lab/egocentric-video-mapper/
-
-
+layout: AlphaArticleLayout
+sidebar: false
 meta:
   - name: twitter:card
     content: player
@@ -20,13 +20,8 @@ meta:
 
 tags: [Neon]
 ---
-<script setup>
-import TagLinks from '@components/TagLinks.vue'
-</script>
 
 # Map Gaze Onto an Alternative Egocentric Video
-
-<TagLinks :tags="$frontmatter.tags" />
 
 <Youtube src="dhcN1erSTfo"/>
 

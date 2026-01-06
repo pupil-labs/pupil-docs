@@ -1,7 +1,9 @@
 ---
-title: Real-Time Eyelid Dynamics with PERCLOS and Neon
+title: "Real-Time Eyelid Dynamics with PERCLOS and Neon"
 description: "Calculate PERCLOS (percentage of eye closure) in real time using Neon and its Real-Time API."
 permalink: /alpha-lab/perclos
+layout: AlphaArticleLayout
+sidebar: false
 meta:
   - name: twitter:card
     content: player
@@ -18,13 +20,7 @@ meta:
 tags: [Neon]
 ---
 
-<script setup>
-import TagLinks from '@components/TagLinks.vue'
-</script>
-
 # Real-Time Eyelid Dynamics with PERCLOS and Neon
-
-<TagLinks :tags="$frontmatter.tags" />
 
 <Youtube src="v4FHA8jTmAA"/>
 

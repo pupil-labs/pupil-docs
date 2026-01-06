@@ -1,19 +1,15 @@
 ---
-title: Create 3D Models of Your Environment Using Reference Image Mapper and Nerfstudio
+title: "Map Gaze Onto a 3D Model of an Environment"
 description: "Nerfing your eye tracking recordings: use nerfstudio to create 3D models of your environment and plot gaze in 3D."
 permalink: /alpha-lab/nerfs
+layout: AlphaArticleLayout
+sidebar: false
 tags: [Pupil Invisible, Neon, Cloud]
 ---
-
-<script setup>
-import TagLinks from '@components/TagLinks.vue'
-</script>
 
 <!-- <head> <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script> </head> -->
 
 # Map Gaze Onto a 3D Model of an Environment
-
-<TagLinks :tags="$frontmatter.tags" />
 
 <Youtube src="7W2DCkPfFLE"/>
 

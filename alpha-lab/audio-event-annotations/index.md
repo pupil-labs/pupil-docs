@@ -1,7 +1,9 @@
 ---
-title: 
+title: "Audio-Based Event Detection With Pupil Cloud and OpenAI's Whisper"
 description: ""
 permalink: /alpha-lab/audio-event-annotations
+layout: AlphaArticleLayout
+sidebar: false
 meta:
   - name: twitter:card
     content: player
@@ -18,13 +20,7 @@ meta:
 tags: [Neon, Cloud]
 ---
 
-<script setup>
-import TagLinks from '@components/TagLinks.vue'
-</script>
-
 # Audio-Based Event Detection With Pupil Cloud and OpenAI's Whisper
-
-<TagLinks :tags="$frontmatter.tags" />
 
 <Youtube src="YvtlsLHaxu8"/>
 

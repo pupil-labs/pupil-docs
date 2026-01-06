@@ -1,8 +1,15 @@
 ---
-title: Undistorting Video and Gaze Data
-description: "Undistorting Neon's scene camera video and gaze data, using the intrinsic and extrinsic camera parameters."
+title: "Undistort Video and Gaze Data"
+description: "Undistort Neon's scene camera video and gaze data using the intrinsic and extrinsic camera parameters."
 permalink: /neon/how-tos/advance-analysis/undistort/
+layout: AlphaArticleLayout
+sidebar: false
+meta:
+  - name: twitter:card
+    content: summary
+tags: [Neon, Offline Processing]
 ---
+
 # Undistort Video and Gaze Data
 
 A circumstance that often arises in wearable eye tracking setups is the presence of distortions on the scene camera. The type of lenses used, with their wide-angle characteristics, allows for a broad field of view, enabling the capture of more information within a single frame. However, this advantage comes at the cost of introducing distortions to the image. <!-- rectilinear distortions -->
@@ -88,6 +95,7 @@ calibration = read_instrinsics_neon(path)
 K = calibration["scene_camera_matrix"][0]
 D = calibration["scene_distortion_coefficients"][0]
 ```
+
 :::
 
 ## Understanding the variables

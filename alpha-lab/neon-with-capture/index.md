@@ -1,3 +1,15 @@
+---
+title: "Use Neon with Pupil Capture"
+description: "Record with Neon as a Pupil Core headset using Pupil Capture on desktop."
+permalink: /alpha-lab/neon-with-capture/
+layout: AlphaArticleLayout
+sidebar: false
+meta:
+  - name: twitter:card
+    content: summary
+tags: [Neon, Offline Processing]
+---
+
 # Use Neon with Pupil Capture
 
 It's possible to make recordings using Neon in Pupil Capture under MacOS and Linux. You can use the Neon module as if it was a Pupil Core headset by plugging it into your Computer and running Pupil Capture from [source](https://github.com/pupil-labs/pupil/tree/master).

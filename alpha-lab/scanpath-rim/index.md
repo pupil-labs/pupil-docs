@@ -1,12 +1,13 @@
 ---
+title: "Generate Scanpath Visualisations"
 description: Generate static and dynamic scanpaths with Reference Image Mapper, Marker Mapper, and Manual Mapper
 permalink: /alpha-lab/scanpath-rim/
+layout: AlphaArticleLayout
+sidebar: false
 tags: [Pupil Invisible, Neon, Cloud]
 ---
 
 # Generate Scanpath Visualisations
-
-<TagLinks />
 
 <Youtube src="F52WXh1txVs"/>
 

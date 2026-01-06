@@ -2,6 +2,8 @@
 title: "Map Gaze Into a User-Supplied 3D Model"
 description: "Map gaze, head pose, and observer position into a 3D coordinate system of your choice using our Tag Aligner tool."
 permalink: /alpha-lab/tag-aligner/
+layout: AlphaArticleLayout
+sidebar: false
 meta:
   - name: twitter:card
     content: summary
@@ -18,13 +20,7 @@ meta:
 tags: [Neon, Cloud]
 ---
 
-<script setup>
-import TagLinks from '@components/TagLinks.vue'
-</script>
-
 # Map Gaze Into a User-Supplied 3D Model
-
-<TagLinks :tags="$frontmatter.tags" />
 
 <Youtube src="3N8jGLYCrNk"/>
 

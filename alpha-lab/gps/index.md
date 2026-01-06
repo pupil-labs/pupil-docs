@@ -2,6 +2,8 @@
 title: "Where did I see that? Eye Tracking & GPS"
 description: "Use a GPS, like the one in Neon's Companion Device, to record synchronized location, eye, and head movement data. Visualize it on a map and click to jump there in your recording!"
 permalink: /alpha-lab/gps/
+layout: AlphaArticleLayout
+sidebar: false
 meta:
   - name: twitter:card
     content: summary
@@ -18,13 +20,7 @@ meta:
 tags: [Neon, Cloud]
 ---
 
-<script setup>
-import TagLinks from '@components/TagLinks.vue'
-</script>
-
 # Where did I see that? Eye Tracking & GPS
-
-<TagLinks :tags="$frontmatter.tags" />
 
 <Youtube src="Yjos2JzpD-I"/>
 
