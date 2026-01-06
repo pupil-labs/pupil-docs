@@ -95,8 +95,8 @@
 
     // Read from URL search params directly (works reliably on refresh)
     const urlParams = new URLSearchParams(window.location.search);
-    const categoryParam = urlParams.get("category");
-    const filtersParams = urlParams.getAll("filters");
+    const categoryParam = urlParams.get("cat");
+    const filtersParams = urlParams.getAll("tags");
 
     // Update category from query param (convert from kebab-case)
     if (categoryParam) {
@@ -138,11 +138,11 @@
       if (selectedCategory.value || selectedFilters.value.length > 0) {
         const params = new URLSearchParams();
         if (selectedCategory.value) {
-          params.set("category", toKebabCase(selectedCategory.value));
+          params.set("cat", toKebabCase(selectedCategory.value));
         }
         if (selectedFilters.value.length > 0) {
           selectedFilters.value.forEach((filter) => {
-            params.append("filters", toKebabCase(filter));
+            params.append("tags", toKebabCase(filter));
           });
         }
         const queryString = params.toString();
@@ -185,20 +185,20 @@
 
         if (selectedCategory.value) {
           // Convert to kebab-case for URL
-          params.set("category", toKebabCase(selectedCategory.value));
+          params.set("cat", toKebabCase(selectedCategory.value));
         } else {
           // Explicitly remove category param when "All Categories" is selected
-          params.delete("category");
+          params.delete("cat");
         }
 
         if (selectedFilters.value.length > 0) {
           // Convert filters to kebab-case and append each as separate param
           selectedFilters.value.forEach((filter) => {
-            params.append("filters", toKebabCase(filter));
+            params.append("tags", toKebabCase(filter));
           });
         } else {
           // Explicitly remove filters param when no filters are selected
-          params.delete("filters");
+          params.delete("tags");
         }
 
         // Build query string
