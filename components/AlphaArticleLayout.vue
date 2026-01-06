@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { computed, ref, onMounted, onUnmounted, watch, nextTick } from "vue";
-  import { useData, useRoute } from "vitepress";
+  import { useData, useRoute, useRouter } from "vitepress";
   import { useEditLink } from "vitepress/dist/client/theme-default/composables/edit-link";
   import VPIconEdit from "vitepress/dist/client/theme-default/components/icons/VPIconEdit.vue";
   import alphaCards from "./../alpha-lab/cards.json";
@@ -11,6 +11,7 @@
 
   const { frontmatter, page } = useData();
   const route = useRoute();
+  const router = useRouter();
   const editLink = useEditLink();
 
   const activeHeader = ref<string | null>(null);
@@ -466,6 +467,7 @@
             v-if="categoryPageLink"
             :href="categoryPageLink"
             class="category-view-all-link"
+            @click.prevent="router.go(categoryPageLink)"
           >
             View all in {{ articleCategory }}
             <ArrowIcon />
