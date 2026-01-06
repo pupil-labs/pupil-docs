@@ -1,6 +1,8 @@
 <script setup lang="ts">
   import { computed, ref, onMounted, onUnmounted, watch, nextTick } from "vue";
   import { useData, useRoute } from "vitepress";
+  import { useEditLink } from "vitepress/dist/client/theme-default/composables/edit-link";
+  import VPIconEdit from "vitepress/dist/client/theme-default/components/icons/VPIconEdit.vue";
   import alphaCards from "./../alpha-lab/cards.json";
   import Footer from "./Footer.vue";
   import CardLink from "./cards/CardLink.vue";
@@ -8,6 +10,7 @@
 
   const { frontmatter, page } = useData();
   const route = useRoute();
+  const editLink = useEditLink();
 
   const activeHeader = ref<string | null>(null);
   const headerOffset = ref(96);
@@ -250,6 +253,33 @@
     border-left-color: var(--vp-c-brand-1);
     font-weight: 500;
   }
+
+  .edit-page-link {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--vp-c-divider);
+  }
+
+  .edit-link-button {
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--vp-c-brand-1);
+    text-decoration: none;
+    transition: color 0.25s;
+  }
+
+  .edit-link-button:hover {
+    color: var(--vp-c-brand-2);
+  }
+
+  .edit-link-icon {
+    margin-right: 8px;
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+  }
 </style>
 
 <template>
@@ -294,6 +324,14 @@
       <div class="vp-doc flex gap-8 items-start">
         <div class="content flex-1 min-w-0">
           <Content />
+
+          <!-- Edit this page link -->
+          <div v-if="editLink.url" class="edit-page-link">
+            <a :href="editLink.url" class="edit-link-button">
+              <VPIconEdit class="edit-link-icon" aria-label="edit icon" />
+              {{ editLink.text }}
+            </a>
+          </div>
         </div>
         <aside
           v-if="pageHeaders.length > 0"
