@@ -222,10 +222,18 @@
   }
 
   /* Outline link styles matching VitePress default */
+  .outline-container {
+    border-left: 1px solid var(--vp-c-divider);
+  }
+
+  .outline-list {
+    list-style: none;
+  }
+
   .outline-link {
     display: block;
     padding: 4px 12px 4px 16px;
-    margin-left: -16px;
+    margin-left: -21px;
     border-left: 2px solid transparent;
     color: var(--vp-c-text-2);
     text-decoration: none;
@@ -298,31 +306,34 @@
             align-self: start;
           "
         >
-          <div
-            class="text-xs font-semibold uppercase tracking-wider mb-4"
-            style="color: var(--vp-c-text-2)"
-          >
-            On this page
-          </div>
-          <ul class="space-y-1 text-sm">
-            <li
-              v-for="header in pageHeaders"
-              :key="header.slug || header.link"
-              :class="(header.level || header.depth || 0) > 2 ? 'ml-3' : ''"
+          <div class="outline-container">
+            <div
+              class="text-xs font-semibold tracking-wider mb-4"
+              style="color: var(--vp-c-text-1); padding-left: 16px"
             >
-              <a
-                :class="[
-                  'outline-link',
-                  {
-                    active: activeHeader === (header.slug || header.link || ''),
-                  },
-                ]"
-                :href="`#${header.slug || header.link || ''}`"
+              On this page
+            </div>
+            <ul class="outline-list space-y-1 text-sm">
+              <li
+                v-for="header in pageHeaders"
+                :key="header.slug || header.link"
+                :class="(header.level || header.depth || 0) > 2 ? 'ml-3' : ''"
               >
-                {{ header.text || header.title }}
-              </a>
-            </li>
-          </ul>
+                <a
+                  :class="[
+                    'outline-link',
+                    {
+                      active:
+                        activeHeader === (header.slug || header.link || ''),
+                    },
+                  ]"
+                  :href="`#${header.slug || header.link || ''}`"
+                >
+                  {{ header.text || header.title }}
+                </a>
+              </li>
+            </ul>
+          </div>
         </aside>
       </div>
 
