@@ -324,38 +324,40 @@
     fill: currentColor;
   }
 
-  /* Fix code block overflow - Refined constraint */
-  .content {
+  .vp-doc {
     min-width: 0;
+  }
+
+  /* Content constraints */
+  .content {
+    flex: 1;
+    min-width: 0;
+    max-width: 100%;
     width: 100%;
   }
 
-  /* Force the entire group to stay within the content width */
+  /* Force code group to stay inside content */
   .content :deep(.vp-code-group) {
     width: 100% !important;
     max-width: 100% !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
     overflow: hidden !important;
   }
 
-  /* Target the tab content container specifically */
+  /* Scrollbar lives here (code container) */
   .content :deep(.vp-code-group > .tabs + div),
   .content :deep(.vp-code-group div[class*="language-"]) {
     width: 100% !important;
     max-width: 100% !important;
-    overflow-x: auto !important; /* Enable the scrollbar here */
+    overflow-x: auto !important;
     margin: 0 !important;
-    border-radius: 8px;
   }
 
-  /* Ensure the pre tag inside scrolls and doesn't wrap code */
+  /* Code itself: don’t wrap, let parent scroll */
   .content :deep(pre) {
     margin: 0 !important;
     width: 100% !important;
-    overflow-x: visible !important; /* Let the parent handle scrolling */
     white-space: pre !important;
     word-break: normal !important;
   }
