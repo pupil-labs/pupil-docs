@@ -10,7 +10,7 @@
   const route = useRoute();
 
   const activeHeader = ref<string | null>(null);
-  const hasStartedHighlighting = ref(false);
+  const headerOffset = ref(96);
 
   type FrontMatter = typeof frontmatter;
 
@@ -71,130 +71,77 @@
     });
   });
 
+  const updateHeaderOffset = () => {
+    const nav = document.querySelector(".VPNavBar");
+    const layoutTopValue = getComputedStyle(document.documentElement)
+      .getPropertyValue("--vp-layout-top-height")
+      .trim();
+    const layoutTop = parseFloat(layoutTopValue) || 0;
+    const navHeight = nav?.getBoundingClientRect().height || 0;
+    headerOffset.value = navHeight + layoutTop;
+  };
+
   // Scroll-based active link highlighting
   const updateActiveHeader = () => {
-    if (pageHeaders.value.length === 0) return;
-
     const headers = pageHeaders.value;
-    const scrollY = window.scrollY;
-    const viewportTop = scrollY;
-    const viewportBottom = scrollY + window.innerHeight;
-    const offset = 96; // Offset from top (nav height) to consider header "active"
+    if (!headers.length) {
+      activeHeader.value = null;
+      return;
+    }
 
-    // Find the header that's currently in view
+    const scrollY = window.scrollY;
+    const offset = 120; // Fixed offset as requested
+    const threshold = scrollY + offset;
+
+    // Start with null so nothing is highlighted at the very top
     let currentActive: string | null = null;
 
-    // Check headers from bottom to top to find the one that's currently in viewport
-    for (let i = headers.length - 1; i >= 0; i--) {
-      const header = headers[i];
+    for (const header of headers) {
       const slug = header.slug || header.link || "";
       if (!slug) continue;
 
-      const element = document.getElementById(slug);
-      if (element) {
-        const rect = element.getBoundingClientRect();
-        const elementTop = rect.top + scrollY;
-        const elementBottom = elementTop + rect.height;
+      const el = document.getElementById(slug);
+      if (!el) continue;
 
-        // Check if element is in viewport and above the threshold
-        const isInViewport =
-          elementTop < viewportBottom && elementBottom > viewportTop;
-        const isAboveThreshold = elementTop <= viewportTop + offset;
+      const top = el.getBoundingClientRect().top + scrollY;
 
-        if (isInViewport && isAboveThreshold) {
-          currentActive = slug;
-          break;
-        }
+      // If the header is above the threshold line, it becomes the active candidate
+      if (top <= threshold) {
+        currentActive = slug;
+      } else {
+        // Headers are ordered; if this one is below threshold, subsequent ones are too
+        break;
       }
     }
 
-    // Special handling for initial load: only highlight if first header is in view
-    if (!hasStartedHighlighting.value) {
-      if (headers.length > 0) {
-        const firstSlug = headers[0].slug || headers[0].link || "";
-        if (firstSlug) {
-          const firstElement = document.getElementById(firstSlug);
-          if (firstElement) {
-            const rect = firstElement.getBoundingClientRect();
-            const elementTop = rect.top + scrollY;
-            const elementBottom = elementTop + rect.height;
-            const isFirstInViewport =
-              elementTop < viewportBottom && elementBottom > viewportTop;
-            const isFirstAboveThreshold = elementTop <= viewportTop + offset;
-
-            // Only start highlighting if first header is actually in view
-            if (isFirstInViewport && isFirstAboveThreshold) {
-              hasStartedHighlighting.value = true;
-              activeHeader.value = currentActive || firstSlug;
-            } else {
-              // First header not in view yet, don't highlight anything
-              activeHeader.value = null;
-            }
-            return;
-          }
-        }
-      }
-    }
-
-    // After highlighting has started, check if we've scrolled above the first h2
-    if (headers.length > 0) {
-      const firstSlug = headers[0].slug || headers[0].link || "";
-      if (firstSlug) {
-        const firstElement = document.getElementById(firstSlug);
-        if (firstElement) {
-          const rect = firstElement.getBoundingClientRect();
-          const firstElementTop = rect.top + scrollY;
-
-          // If we've scrolled above the first h2, remove highlight completely
-          if (viewportTop < firstElementTop) {
-            activeHeader.value = null;
-            return;
-          }
-        }
-      }
-    }
-
-    // After highlighting has started, always highlight the section in view
-    if (currentActive) {
-      activeHeader.value = currentActive;
-    } else {
-      // If no section is in view, find the closest one above the viewport
-      // This ensures highlighting continues smoothly as you scroll
-      let closestSlug: string | null = null;
-      let closestDistance = Infinity;
-
-      for (const header of headers) {
-        const slug = header.slug || header.link || "";
-        if (!slug) continue;
-
-        const element = document.getElementById(slug);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          const elementTop = rect.top + scrollY;
-
-          // Find the header that's closest to being in view (above viewport)
-          if (elementTop <= viewportTop) {
-            const distance = viewportTop - elementTop;
-            if (distance < closestDistance) {
-              closestDistance = distance;
-              closestSlug = slug;
-            }
-          }
-        }
-      }
-
-      // If we found a closest header, use it. Otherwise keep the last active one.
-      if (closestSlug) {
-        activeHeader.value = closestSlug;
-      }
-    }
+    activeHeader.value = currentActive;
   };
 
   let scrollHandler: (() => void) | null = null;
+  let resizeHandler: (() => void) | null = null;
+  let hashHandler: (() => void) | null = null;
 
   onMounted(() => {
+    updateHeaderOffset();
+
     scrollHandler = () => updateActiveHeader();
     window.addEventListener("scroll", scrollHandler, { passive: true });
+
+    resizeHandler = () => {
+      updateHeaderOffset();
+      updateActiveHeader();
+    };
+    window.addEventListener("resize", resizeHandler);
+
+    hashHandler = () => {
+      // Wait for the browser/VitePress scroll-to-anchor to finish
+      requestAnimationFrame(() => {
+        updateHeaderOffset();
+        updateActiveHeader();
+      });
+    };
+    window.addEventListener("hashchange", hashHandler);
+
     // Initial update after content is rendered
     nextTick(() => {
       updateActiveHeader();
@@ -205,15 +152,21 @@
     if (scrollHandler) {
       window.removeEventListener("scroll", scrollHandler);
     }
+    if (resizeHandler) {
+      window.removeEventListener("resize", resizeHandler);
+    }
+    if (hashHandler) {
+      window.removeEventListener("hashchange", hashHandler);
+    }
   });
 
   // Update active header when route changes
   watch(
     () => route.path,
     () => {
-      hasStartedHighlighting.value = false;
       activeHeader.value = null;
       nextTick(() => {
+        updateHeaderOffset();
         updateActiveHeader();
       });
     }
