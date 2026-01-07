@@ -339,6 +339,12 @@
   .text-link-color:hover {
     color: var(--vp-c-brand-2);
   }
+  .category-link {
+    color: var(--vp-c-text-1);
+  }
+  .category-link:hover {
+    color: var(--vp-c-brand-2);
+  }
   a,
   p {
     font-family: Inter, "Helvetica Neue", sans-serif;
@@ -459,12 +465,11 @@
           v-if="selectedCategoryData && categoryPageLink"
           class="mt-8 flex items-start"
         >
-          <a
-            :href="categoryPageLink"
-            class="text-link-color font-medium text-sm"
-            style="text-decoration: underline"
-          >
-            Articles from {{ selectedCategoryData.title }}
+          <a :href="categoryPageLink" class="category-link font-medium text-sm">
+            Articles from
+            <span style="text-decoration: underline">{{
+              selectedCategoryData.title
+            }}</span>
           </a>
         </div>
       </div>
