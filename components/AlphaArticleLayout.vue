@@ -6,7 +6,6 @@
   import alphaCards from "./../alpha-lab/cards.json";
   import Footer from "./Footer.vue";
   import CardLink from "./cards/CardLink.vue";
-  import TagLinks from "./TagLinks.vue";
   import ArrowIcon from "./ArrowIcon.vue";
 
   const { frontmatter, page } = useData();
@@ -202,9 +201,9 @@
     align-items: center;
     padding: 8px 18px;
     border-radius: 9999px;
-    background-color: var(--vp-c-bg-soft);
-    border: 1px solid var(--vp-c-divider);
-    color: var(--vp-c-text-1);
+    background-color: #acc7ff;
+    border: 1px solid #acc7ff;
+    color: #1b1b1f;
     font-size: 14px;
     font-weight: 600;
     font-family: Inter, "Helvetica Neue", sans-serif;
@@ -394,12 +393,8 @@
               {{ filter }}
             </span>
           </div>
-
-          <TagLinks v-if="fm.tags && fm.tags.length > 0" :tags="fm.tags" />
         </div>
       </div>
-
-      <hr style="border-color: var(--vp-c-divider)" />
 
       <!-- Content and Aside Section (matching VitePress default structure) -->
       <div class="vp-doc flex gap-8 items-start">
@@ -457,7 +452,6 @@
       </div>
 
       <div v-if="relatedArticles.length > 0 && articleCategory">
-        <hr style="border-color: var(--vp-c-divider); margin: 2rem 0" />
         <div class="related-section-header">
           <h2 class="text-xl sm:text-2xl related-heading" style="margin: 0">
             {{ articleCategory }}
