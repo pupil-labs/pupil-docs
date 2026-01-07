@@ -273,11 +273,11 @@
 
 <style scoped>
   .text-padding:not(:last-child) {
-    padding-bottom: 16px;
+    padding-bottom: 8px;
   }
 
   .category-button {
-    padding: 16px 20px;
+    padding: 12px 16px;
     border-radius: 8px;
     background-color: var(--vp-c-bg-soft);
     border: 1px solid var(--vp-c-divider);
@@ -311,7 +311,7 @@
   }
 
   .filter-chip {
-    padding: 8px 16px;
+    padding: 6px 14px;
     border-radius: 9999px;
     color: var(--vp-c-text-1);
     cursor: pointer;
@@ -345,6 +345,12 @@
   .category-link:hover {
     color: var(--vp-c-brand-2);
   }
+  .learn-more-link {
+    color: var(--vp-c-text-2);
+  }
+  .learn-more-link:hover {
+    color: var(--vp-c-brand-2);
+  }
   a,
   p {
     font-family: Inter, "Helvetica Neue", sans-serif;
@@ -353,39 +359,39 @@
 
 <template>
   <div
-    class="container grid gap-6 sm:gap-12 md:gap-16 lg:gap-14 px-6 pt-9 sm:pb-12 md:pb-16 lg:pb-20 mx-auto"
+    class="container grid gap-4 sm:gap-6 md:gap-8 px-6 pt-4 sm:pb-12 md:pb-16 lg:pb-20 mx-auto"
   >
-    <div class="grid gap-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        <div class="order-2 sm:order-1 col-auto lg:col-span-5">
-          <h1
-            v-if="fm.hero?.title"
-            class="text-2xl sm:text-4xl pb-4 md:pb-9 lg:pb-6 font-semibold"
-            style="color: var(--vp-c-brand-1)"
+    <!-- Hero Section - Title with tagline below -->
+    <div>
+      <h1
+        v-if="fm.hero?.title"
+        class="text-2xl sm:text-3xl pb-2 font-semibold"
+        style="color: var(--vp-c-brand-1)"
+      >
+        {{ fm.hero.title }}
+      </h1>
+      <div v-if="fm.hero?.tagline" class="mt-2">
+        <p
+          v-for="(tagline, index) in fm.hero.tagline"
+          :key="index"
+          class="text-sm sm:text-base text-2"
+          :class="{ 'mt-2': Number(index) > 0 }"
+        >
+          {{ tagline
+          }}<span v-if="index === fm.hero.tagline.length - 1" class="ml-1">
+            <a
+              href="/alpha-lab/about/"
+              class="learn-more-link font-medium underline"
+              >Learn more</a
+            ></span
           >
-            {{ fm.hero.title }}
-          </h1>
-          <template v-if="fm.hero?.tagline">
-            <p
-              v-for="(tagline, index) in fm.hero.tagline"
-              :key="index"
-              class="text-base text-2 text-padding"
-            >
-              {{ tagline }}
-            </p>
-          </template>
-          <a
-            href="/alpha-lab/about/"
-            class="flex items-center gap-2 text-link-color font-medium text-sm"
-            >More about Alpha Lab <ArrowIcon
-          /></a>
-        </div>
+        </p>
       </div>
     </div>
-    <hr style="border-color: var(--vp-c-divider)" />
+    <hr style="border-color: var(--vp-c-divider); margin: 0" />
 
     <!-- Categories Section -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
       <div
         v-for="cat in categories"
         :key="cat.id"
@@ -404,7 +410,7 @@
     </div>
 
     <!-- Filters Section -->
-    <div>
+    <div class="mt-6">
       <div style="display: flex; gap: 12px; flex-wrap: wrap">
         <span
           class="filter-chip"
@@ -453,7 +459,7 @@
         </a>
       </div>
       <div v-else class="relative">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           <CardLink
             v-for="(product, index) in filteredCards"
             :key="product.link?.href || product.title || `card-${index}`"
