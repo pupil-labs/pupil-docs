@@ -1,4 +1,4 @@
-## Real-Time API
+# Real-Time API
 
 Our [Real-Time API](https://github.com/pupil-labs/realtime-network-api) offers flexible approaches to access data streams 
 in real time, remote control your device, send/receive trigger events and annotations, and even synchronise with other 
