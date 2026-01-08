@@ -4,7 +4,7 @@ description: Generate static and dynamic scanpaths with Reference Image Mapper, 
 permalink: /alpha-lab/scanpath-rim/
 layout: AlphaArticleLayout
 sidebar: false
-tags: [Pupil Invisible, Neon, Cloud]
+tags: [Neon, Pupil Invisible, Pupil Cloud, Offline Processing, AOI Mapping]
 ---
 
 <Youtube src="F52WXh1txVs"/>

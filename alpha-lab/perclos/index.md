@@ -17,7 +17,7 @@ meta:
     content: "720"
   - property: og:image
     content: "https://i.ytimg.com/vi/cuvWqVOAc5M/maxresdefault.jpg"
-tags: [Neon]
+tags: [Neon, Real-Time Analysis, Metric Extraction]
 ---
 
 <Youtube src="v4FHA8jTmAA"/>

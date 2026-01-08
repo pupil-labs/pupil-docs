@@ -3,7 +3,7 @@ title: "Map Gaze Throughout an Entire Room"
 description: A Living Space – Working With Multiple Reference Images
 layout: AlphaArticleLayout
 sidebar: false
-tags: [Pupil Invisible, Neon, Cloud]
+tags: [Neon, Pupil Invisible, Pupil Cloud, Offline Processing, AOI Mapping]
 ---
 
 <Youtube src="CLNDE0VJVng" />

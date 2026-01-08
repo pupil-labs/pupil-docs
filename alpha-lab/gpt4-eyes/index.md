@@ -17,7 +17,7 @@ meta:
     content: "720"
   - property: og:image
     content: "https://i.ytimg.com/vi/_k5QbpC84H8/maxresdefault.jpg"
-tags: [Pupil Invisible, Neon]
+tags: [Neon, Pupil Invisible, Real-Time Analysis, AI / Deep Learning, Assistive Technology]
 ---
 
 <Youtube src="_k5QbpC84H8"/>

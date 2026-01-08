@@ -17,7 +17,7 @@ meta:
     content: "720"
   - property: og:image
     content: "https://i.ytimg.com/vi/DMvmCpCL1ZQ/maxresdefault.jpg"
-tags: [Neon, Cloud]
+tags: [Neon, Offline Processing, Multimodal Data]
 ---
 
 This guide contains various transformation functions that help with relating [Neon's IMU data](https://docs.pupil-labs.com/neon/data-collection/data-streams/#movement-imu-data) with other data streams.

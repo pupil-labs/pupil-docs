@@ -17,7 +17,7 @@ meta:
     content: "720"
   - property: og:image
     content: "https://i.ytimg.com/vi/dL07qObhuKY/maxresdefault.jpg"
-tags: [Cloud]
+tags: [Neon, Pupil Invisible, Pupil Cloud, Offline Processing, AI / Deep Learning, AOI Mapping]
 ---
 
 <Youtube src="dL07qObhuKY"/>

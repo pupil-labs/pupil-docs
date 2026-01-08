@@ -4,7 +4,7 @@ description: "Nerfing your eye tracking recordings: use nerfstudio to create 3D 
 permalink: /alpha-lab/nerfs
 layout: AlphaArticleLayout
 sidebar: false
-tags: [Pupil Invisible, Neon, Cloud]
+tags: [Neon, Pupil Invisible, Pupil Cloud, Offline Processing, 3D Reconstruction]
 ---
 
 <!-- <head> <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script> </head> -->

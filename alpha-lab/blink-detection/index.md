@@ -4,7 +4,7 @@ description: "Apply Pupil Labs blink detection algorithm to Neon recordings prog
 permalink: /alpha-lab/blink-detection/
 layout: AlphaArticleLayout
 sidebar: false
-tags: [Neon]
+tags: [Neon, Real-Time Analysis, Metric Extraction]
 ---
 
 ::: warning

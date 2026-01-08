@@ -4,7 +4,7 @@ description: Map and Visualise Gaze Onto a Display Content Using the Reference I
 permalink: /alpha-lab/map-your-gaze-to-a-2d-screen/
 layout: AlphaArticleLayout
 sidebar: false
-tags: [Pupil Invisible, Neon, Cloud]
+tags: [Neon, Pupil Invisible, Pupil Cloud, Offline Processing, AOI Mapping]
 ---
 
 <Youtube src="OXIUjIzCplc"/>

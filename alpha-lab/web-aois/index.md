@@ -17,7 +17,7 @@ meta:
     content: "720"
   - property: og:image
     content: "https://i.ytimg.com/vi/1yJfhtdJoMA/maxresdefault.jpg"
-tags: [Neon]
+tags: [Neon, Offline Processing, AOI Mapping]
 ---
 
 <Youtube src="DzK055NbRPM"/>
