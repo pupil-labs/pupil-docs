@@ -17,38 +17,14 @@ The following is a list of the most important projects roughly ordered from low-
 
 Alternatively to reading the native binary format with this library, Neon recordings can also be exported to CSV using Pupil Cloud or Neon Player.
 
-
-Example usage:
-```python
-from pupil_labs import neon_recording as nr
-
-recording = nr.open("path/to/recording_folder")
-
-print(f"Start time (ns): {recording.start_time}")
-print(f"Wearer: {recording.wearer['name']}")
-
-# Access the 100th gaze sample
-gaze = recording.gaze.point[100]
-
-# Get matching scene video frames and gaze samples
-data = zip(
-    recording.scene,
-    recording.gaze.sample(recording.scene.time),
-)
-for scene_frame, gaze_sample in data:
-    print(f"Scene frame at {scene_frame.time} ns has gaze point {gaze_sample.point}")
-
-```
-
-
-
 ## pl-neon-usb
-[pl-neon-usb]() allows interfacing with the Neon eye and scene cameras over USB.
+[pl-neon-usb](https://github.com/pupil-labs/pl-neon-usb) allows interfacing with the Neon eye and scene cameras over USB, allowing to stream images, modify exposure settings, and obtain camera intrinsics values.
 
 ## pl-aac
-[pl-aac]() is implementing an AAC (Assistive and Alternative Communication) tool that allows using Neon for gaze typing. It implements a range of different interaction designs including traditional dwell-time based typing, as well as more advanced methods such as the "Dasher" or "Context Switching".
+[pl-aac](https://github.com/pupil-labs/pl-aac) is implementing an AAC (Assistive and Alternative Communication) tool that allows using Neon for gaze typing. It implements a range of different interaction designs including traditional dwell-time based typing, as well as more advanced methods such as the "Dasher" or "Context Switching".
 
 ## Real-Time API Clients
 All our Real-Time API clients are open-source and could be used as a reference for building your own client applications. Find their documentation [here](/real-time-api/).
 
 ## Neon Player
+[Neon Player](/neon-player/) is a cross-platform desktop application for playing back, analysing, and exporting Neon recordings. It contains gaze mapping and visualization tools, and features a powerful plugin system allowing users to extend its functionality. The source code is available on [GitHub](https://github.com/pupil-labs/neon-player).
