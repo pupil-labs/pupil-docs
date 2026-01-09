@@ -1,4 +1,4 @@
-# Open-Source
+# Libraries & Tools
 Pupil Labs in mainting a number of open-source tools and libraries [on GitHub](https://github.com/pupil-labs) to support the Neon ecosystem. These range from the well-known Neon Player software and Real-Time API clients to lower-level libraries handling and processing eye-tracking data.
 
 In addition to these actively maintained projects, we have also published a number of experimental open-source tools in the [AlphaLab](https://docs.pupil-labs.com/alpha-lab).
