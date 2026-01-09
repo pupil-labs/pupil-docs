@@ -28,13 +28,13 @@ let theme_config_additions = {
     },
     { text: "Neon XR", link: "/neon-xr/", activeMatch: "/neon-xr/" },
     {
-      text: "Open-Source",
+      text: "Developer",
       items: [
         { text: "Real-Time API", link: "/real-time-api/" },
         { text: "Recording API", link: "/recording-api/" },
         { text: "Pupil Cloud API", link: "#" },
         { text: "Neon Player Plugin API", link: "#" },
-        { text: "Libs & Tools", link: "/open-source/" },
+        { text: "Libs & Tools", link: "/libs-tools/" },
       ],
     },
   ],

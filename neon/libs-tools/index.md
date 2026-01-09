@@ -26,5 +26,11 @@ Alternatively to reading the native binary format with this library, Neon record
 ## Real-Time API Clients
 All our Real-Time API clients are open-source and could be used as a reference for building your own client applications. Find their documentation [here](/real-time-api/).
 
+Clients are available for several programming languages:
+- [Python](https://pupil-labs.github.io/pl-realtime-api/dev/)
+- [C++](https://github.com/pupil-labs/pl-realtime-cpp-client)
+- [Unity3D C#](http://localhost:5173/neon/neon-xr/neon-xr-core-package/)
+- [Matlab](https://github.com/pupil-labs/pl-neon-matlab)
+
 ## Neon Player
 [Neon Player](/neon-player/) is a cross-platform desktop application for playing back, analysing, and exporting Neon recordings. It contains gaze mapping and visualization tools, and features a powerful plugin system allowing users to extend its functionality. The source code is available on [GitHub](https://github.com/pupil-labs/neon-player).
