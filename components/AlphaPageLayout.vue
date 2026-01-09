@@ -34,17 +34,17 @@
 
   // Available filters
   const availableFilters = [
+    "Neon",
+    "Pupil Invisible",
+    "Pupil Cloud",
     "Real-Time Analysis",
-    "3D Reconstruction",
+    "Offline Processing",
     "AI/Deep Learning",
     "AOI Mapping",
     "Assistive Technology",
     "Metric Extraction",
     "Multimodal Data",
-    "Neon",
-    "Offline Processing",
-    "Pupil Cloud",
-    "Pupil Invisible",
+    "3D Reconstruction"
   ];
 
   // Helper function to convert to kebab-case
