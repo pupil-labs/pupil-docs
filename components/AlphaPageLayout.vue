@@ -44,7 +44,7 @@
     "Assistive Technology",
     "Metric Extraction",
     "Multimodal Data",
-    "3D Reconstruction"
+    "3D Reconstruction",
   ];
 
   // Helper function to convert to kebab-case
@@ -317,14 +317,20 @@
   .filter-chip {
     padding: 6px 14px;
     border-radius: 9999px;
-    color: var(--vp-c-text-1);
+    color: #3c3c43;
     cursor: pointer;
     font-size: 14px;
     font-weight: 500;
     font-family: Inter, "Helvetica Neue", sans-serif;
+    background-color: #dddde3;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+  }
+
+  .dark .filter-chip {
+    color: var(--vp-c-text-1);
     background-color: var(--vp-c-bg-soft);
     border: 1px solid var(--vp-c-divider);
-    transition: all 0.2s;
   }
 
   .filter-chip:hover {
@@ -332,6 +338,12 @@
   }
 
   .filter-chip.selected {
+    background-color: var(--vp-c-default-2);
+    border-color: #3451b2;
+    color: #3451b2;
+  }
+
+  .dark .filter-chip.selected {
     background-color: var(--vp-c-default-2);
     border-color: var(--vp-c-brand-1);
     color: var(--vp-c-brand-1);
@@ -395,7 +407,9 @@
     <hr style="border-color: var(--vp-c-divider); margin: 0" />
 
     <!-- Categories Section -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:auto-rows-fr">
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:auto-rows-fr"
+    >
       <div
         v-for="cat in categories"
         :key="cat.id"

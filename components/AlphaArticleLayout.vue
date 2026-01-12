@@ -201,13 +201,19 @@
     align-items: center;
     padding: 8px 18px;
     border-radius: 9999px;
-    background-color: #acc7ff;
-    border: 1px solid #acc7ff;
-    color: #1b1b1f;
+    background-color: transparent;
+    border: 1px solid #3451B2;
+    color: #3451B2;
     font-size: 14px;
     font-weight: 600;
     font-family: Inter, "Helvetica Neue", sans-serif;
     margin-bottom: 12px;
+  }
+
+  .dark .category-badge {
+    background-color: #acc7ff;
+    border: 1px solid #acc7ff;
+    color: #1b1b1f;
   }
 
   .filter-chip {
@@ -215,14 +221,20 @@
     align-items: center;
     padding: 6px 16px;
     border-radius: 9999px;
-    background-color: var(--vp-c-bg-soft);
-    border: 1px solid var(--vp-c-divider);
-    color: var(--vp-c-text-1);
+    background-color: #DDDDE3;
+    border: 1px solid transparent;
+    color: #3C3C43;
     font-size: 12px;
     font-weight: 500;
     font-family: Inter, "Helvetica Neue", sans-serif;
     margin-right: 8px;
     margin-bottom: 8px;
+  }
+
+  .dark .filter-chip {
+    background-color: var(--vp-c-bg-soft);
+    border: 1px solid var(--vp-c-divider);
+    color: var(--vp-c-text-1);
   }
 
   .metadata-row {

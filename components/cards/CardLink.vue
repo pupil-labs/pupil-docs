@@ -24,20 +24,29 @@
     font-size: 12px;
     font-weight: 500;
     font-family: Inter, "Helvetica Neue", sans-serif;
-    color: #acc7ff;
+    color: #3451B2;
     padding: 4px 0;
     display: inline-block;
+  }
+
+  .dark .category-tag {
+    color: #acc7ff;
   }
 
   .filter-tag {
     font-size: 11px;
     font-weight: 500;
     font-family: Inter, "Helvetica Neue", sans-serif;
-    color: #e3e2e6;
-    background-color: var(--vp-c-default-1);
+    color: #3C3C43;
+    background-color: #DDDDE3;
     padding: 3px 8px;
     border-radius: 4px;
     display: inline-block;
+  }
+
+  .dark .filter-tag {
+    color: #e3e2e6;
+    background-color: var(--vp-c-default-1);
   }
 </style>
 
