@@ -284,6 +284,10 @@
     cursor: pointer;
     transition: all 0.2s;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 80px;
   }
 
   .category-button:hover {
@@ -391,11 +395,11 @@
     <hr style="border-color: var(--vp-c-divider); margin: 0" />
 
     <!-- Categories Section -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:auto-rows-fr">
       <div
         v-for="cat in categories"
         :key="cat.id"
-        class="category-button"
+        class="category-button h-full flex flex-col"
         :class="{ selected: selectedCategory === cat.id }"
         @click="selectedCategory = cat.id"
         role="button"
