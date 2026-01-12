@@ -33,7 +33,7 @@
   ];
 
   // Available filters
-  const availableFilters = [
+  const allAvailableFilters = [
     "Neon",
     "Pupil Invisible",
     "Pupil Cloud",
@@ -46,6 +46,19 @@
     "Multimodal Data",
     "3D Reconstruction",
   ];
+
+  const availableFilters = computed(() => {
+    if (!selectedCategory.value) return allAvailableFilters;
+
+    const filtersInCat = new Set<string>();
+    alphaCards.forEach((card) => {
+      if (card.category === selectedCategory.value) {
+        card.filters?.forEach((f) => filtersInCat.add(f));
+      }
+    });
+
+    return allAvailableFilters.filter((f) => filtersInCat.has(f));
+  });
 
   // Helper function to convert to kebab-case
   const toKebabCase = (str: string): string => {
@@ -67,7 +80,7 @@
   });
 
   const filterKebabMap = new Map<string, string>();
-  availableFilters.forEach((filter) => {
+  allAvailableFilters.forEach((filter) => {
     filterKebabMap.set(toKebabCase(filter), filter);
   });
 
@@ -173,6 +186,11 @@
       }
     }
   );
+
+  // Watch for category change to reset filters
+  watch(selectedCategory, () => {
+    selectedFilters.value = [];
+  });
 
   // Update URL when filters/category change
   watch(
@@ -349,6 +367,20 @@
     color: var(--vp-c-brand-1);
   }
 
+  .clear-link {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: Inter, "Helvetica Neue", sans-serif;
+    color: var(--vp-c-brand-1);
+    text-decoration: underline;
+    transition: all 0.2s;
+  }
+
+  .clear-link:hover {
+    color: var(--vp-c-brand-2);
+  }
+
   .text-link-color {
     color: var(--vp-c-brand-1);
   }
@@ -429,18 +461,25 @@
 
     <!-- Filters Section -->
     <div class="mt-6">
-      <div style="display: flex; gap: 12px; flex-wrap: wrap">
+      <div
+        style="
+          display: flex;
+          gap: 12px;
+          flex-wrap: wrap;
+          align-items: center;
+          min-height: 32px;
+        "
+      >
         <span
-          class="filter-chip"
-          :class="{ selected: selectedFilters.length === 0 }"
+          v-if="selectedFilters.length > 0"
+          class="clear-link mr-2"
           @click="selectedFilters = []"
           role="button"
-          :aria-pressed="selectedFilters.length === 0"
           tabindex="0"
           @keydown.enter="selectedFilters = []"
           @keydown.space.prevent="selectedFilters = []"
         >
-          All Filters
+          Clear
         </span>
         <span
           v-for="filter in availableFilters"
