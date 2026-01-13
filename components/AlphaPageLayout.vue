@@ -368,17 +368,33 @@
   }
 
   .clear-link {
+    padding: 6px 14px;
+    border-radius: 9999px;
     cursor: pointer;
     font-size: 14px;
     font-weight: 600;
     font-family: Inter, "Helvetica Neue", sans-serif;
     color: var(--vp-c-brand-1);
-    text-decoration: underline;
+    border: 1px solid var(--vp-c-brand-1);
+    background-color: transparent;
     transition: all 0.2s;
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .clear-link:hover {
+  .clear-link:hover:not(.disabled) {
     color: var(--vp-c-brand-2);
+    border-color: var(--vp-c-brand-2);
+    background-color: var(--vp-c-default-1);
+  }
+
+  .clear-link.disabled {
+    cursor: not-allowed;
+    color: var(--vp-c-text-3);
+    border-color: var(--vp-c-divider);
+    opacity: 0.5;
   }
 
   .text-link-color {
@@ -471,13 +487,14 @@
         "
       >
         <span
-          v-if="selectedFilters.length > 0"
           class="clear-link mr-2"
-          @click="selectedFilters = []"
+          :class="{ disabled: selectedFilters.length === 0 && selectedCategory === '' }"
+          @click="selectedFilters.length > 0 || selectedCategory !== '' ? clearAllFilters() : null"
           role="button"
-          tabindex="0"
-          @keydown.enter="selectedFilters = []"
-          @keydown.space.prevent="selectedFilters = []"
+          :aria-disabled="selectedFilters.length === 0 && selectedCategory === ''"
+          :tabindex="selectedFilters.length > 0 || selectedCategory !== '' ? 0 : -1"
+          @keydown.enter="selectedFilters.length > 0 || selectedCategory !== '' ? clearAllFilters() : null"
+          @keydown.space.prevent="selectedFilters.length > 0 || selectedCategory !== '' ? clearAllFilters() : null"
         >
           Clear
         </span>
