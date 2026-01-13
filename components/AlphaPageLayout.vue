@@ -6,6 +6,7 @@
   import Footer from "./Footer.vue";
   import CardLink from "./cards/CardLink.vue";
   import ArrowIcon from "./ArrowIcon.vue";
+  import CloseIcon from "./CloseIcon.vue";
   const { frontmatter } = useData();
   const route = useRoute();
 
@@ -382,6 +383,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 6px;
   }
 
   .clear-link:hover:not(.disabled) {
@@ -488,15 +490,34 @@
       >
         <span
           class="clear-link mr-2"
-          :class="{ disabled: selectedFilters.length === 0 && selectedCategory === '' }"
-          @click="selectedFilters.length > 0 || selectedCategory !== '' ? clearAllFilters() : null"
+          :class="{
+            disabled: selectedFilters.length === 0 && selectedCategory === '',
+          }"
+          @click="
+            selectedFilters.length > 0 || selectedCategory !== ''
+              ? clearAllFilters()
+              : null
+          "
           role="button"
-          :aria-disabled="selectedFilters.length === 0 && selectedCategory === ''"
-          :tabindex="selectedFilters.length > 0 || selectedCategory !== '' ? 0 : -1"
-          @keydown.enter="selectedFilters.length > 0 || selectedCategory !== '' ? clearAllFilters() : null"
-          @keydown.space.prevent="selectedFilters.length > 0 || selectedCategory !== '' ? clearAllFilters() : null"
+          :aria-disabled="
+            selectedFilters.length === 0 && selectedCategory === ''
+          "
+          :tabindex="
+            selectedFilters.length > 0 || selectedCategory !== '' ? 0 : -1
+          "
+          @keydown.enter="
+            selectedFilters.length > 0 || selectedCategory !== ''
+              ? clearAllFilters()
+              : null
+          "
+          @keydown.space.prevent="
+            selectedFilters.length > 0 || selectedCategory !== ''
+              ? clearAllFilters()
+              : null
+          "
         >
           Clear
+          <CloseIcon />
         </span>
         <span
           v-for="filter in availableFilters"
