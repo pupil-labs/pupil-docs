@@ -122,7 +122,7 @@
     },
     "image": "/alpha-lab/gpt4-eyes.webp",
     "category": "Behavior Detection & Annotation",
-    "filters": ["Neon", "Pupil Invisible", "Pupil Cloud", "Real-Time Analysis", "AI/Deep Learning", "Assistive Technology"]
+    "filters": ["Neon", "Pupil Invisible", "Real-Time Analysis", "AI/Deep Learning", "Assistive Technology"]
   },
   {
     "title": "Automate AOI Masking in Pupil Cloud",
