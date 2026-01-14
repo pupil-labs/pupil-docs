@@ -166,7 +166,7 @@
     },
     "image": "/alpha-lab/tag-aligner.webp",
     "category": "Eye Tracking in Physical Spaces",
-    "filters": ["Neon", "Pupil Invisible", "Pupil Cloud", "Offline Processing", "AOI Mapping", "3D Reconstruction"]
+    "filters": ["Neon", "Pupil Invisible", "Pupil Cloud", "Offline Processing", "3D Reconstruction"]
   },
   {
     "title": "IMU Transformations",
@@ -199,7 +199,7 @@
     },
     "image": "/alpha-lab/egocentric-video-mapper.webp",
     "category": "Eye Tracking in Physical Spaces",
-    "filters": ["Neon", "Offline Processing", "AI/Deep Learning"]
+    "filters": ["Neon", "Offline Processing", "AI/Deep Learning", "Multimodal Data"]
   },
   {
     "title": "Audio-Based Event Detection With Pupil Cloud and OpenAI's Whisper",
