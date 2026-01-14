@@ -18,7 +18,7 @@ meta:
   - property: og:image
     content: "https://i.ytimg.com/vi/dhcN1erSTfo/maxresdefault.jpg"
 
-tags: [Neon, Offline Processing, AI / Deep Learning]
+tags: [Neon, Offline Processing, AI / Deep Learning, Multimodal Data]
 ---
 
 <Youtube src="dhcN1erSTfo"/>
