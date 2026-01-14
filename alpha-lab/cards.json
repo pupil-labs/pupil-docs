@@ -132,7 +132,7 @@
       "href": "/alpha-lab/gaze-metrics-in-aois/"
     },
     "image": "/alpha-lab/aoi-demo.webp",
-    "category": "Behavior Detection & Annotation",
+    "category": "Data Processing & Workflows",
     "filters": ["Neon", "Pupil Invisible", "Pupil Cloud", "Offline Processing", "AI/Deep Learning", "AOI Mapping"]
   },
   {
@@ -198,7 +198,7 @@
       "href": "/alpha-lab/egocentric-video-mapper/"
     },
     "image": "/alpha-lab/egocentric-video-mapper.webp",
-    "category": "Eye Tracking in Physical Spaces",
+    "category": "Data Processing & Workflows",
     "filters": ["Neon", "Offline Processing", "AI/Deep Learning", "Multimodal Data"]
   },
   {
@@ -242,7 +242,7 @@
       "href": "/alpha-lab/map-onto-anything/"
     },
     "image": "/alpha-lab/map-gaze-anything.webp",
-    "category": "Behavior Detection & Annotation",
+    "category": "Data Processing & Workflows",
     "filters": ["Neon", "Pupil Cloud", "Offline Processing", "Real-Time Analysis", "AI/Deep Learning", "AOI Mapping"]
   },
   {
@@ -253,7 +253,7 @@
       "href": "/alpha-lab/dynamic-aoi-sam2/"
     },
     "image": "/alpha-lab/sam2.webp",
-    "category": "Behavior Detection & Annotation",
+    "category": "Data Processing & Workflows",
     "filters": ["Neon", "Pupil Cloud", "Offline Processing", "AI/Deep Learning", "AOI Mapping"]
   }
 ]
