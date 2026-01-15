@@ -29,7 +29,7 @@ All our Real-Time API clients are open-source and could be used as a reference f
 Clients are available for several programming languages:
 - [Python](https://pupil-labs.github.io/pl-realtime-api/dev/)
 - [C++](https://github.com/pupil-labs/pl-realtime-cpp-client)
-- [Unity3D C#](http://localhost:5173/neon/neon-xr/neon-xr-core-package/)
+- [Unity3D C#](https://docs.pupil-labs.com/neon/neon-xr/neon-xr-core-package/)
 - [Matlab](https://github.com/pupil-labs/pl-neon-matlab)
 
 ## Neon Player
