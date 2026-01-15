@@ -28,12 +28,12 @@ cards:
   - title: Neon Player
     details: Neon Player is an offline tool for playing back and exporting recordings.
     link: { text: View, href: "/neon/neon-player/" }
-  - title: Real-Time API
-    details: You can access the data Neon generates in real-time and remote control it using its real-time API. Learn how it works here!
-    link: { text: View, href: "/neon/real-time-api/" }
   - title: Neon XR
     details: Neon can be integrated with VR, AR, and other devices. Learn how it works here!
     link: { text: View, href: "/neon/neon-xr/" }
+  - title: Developer
+    details: Are you a developer? Learn how to process Neon recordings, and find an overview about available APIs and open-source libraries!
+    link: { text: View, href: "/neon/developer/" }
   - title: Chat
     details: Come chat with us on Discord! Do you have an issues or questions? Just wanna say hi? Join the chat and drop us a message!
     link: { text: View, href: "https://pupil-labs.com/chat", target: "_blank" }

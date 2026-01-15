@@ -32,9 +32,7 @@ let theme_config_additions = {
       items: [
         { text: "Real-Time API", link: "/real-time-api/" },
         { text: "Recording API", link: "/recording-api/" },
-        { text: "Pupil Cloud API", link: "#" },
-        { text: "Neon Player Plugin API", link: "#" },
-        { text: "Libs & Tools", link: "/libs-tools/" },
+        { text: "Open-Source Libs", link: "/open-source-libs/" },
       ],
     },
   ],
