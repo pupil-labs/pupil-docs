@@ -3,6 +3,12 @@
 Neon Player is a cross-platform desktop application for playing back and exporting Neon recordings. It runs in an
 offline context; no interaction with Pupil Cloud is required.
 
+::: tip
+We have recently released a complete reimplementation of Neon Player in a beta phase. If you are interested in trying the latest and greatest, check it out [here](https://github.com/pupil-labs/neon-player-beta).
+
+Note, that the new Neon Player is still in beta, so a few bugs and a lack of documentation should be expected!
+:::
+
 <script setup>
 import DownloadLinks from '@components/DownloadLinks.vue'
 </script>
