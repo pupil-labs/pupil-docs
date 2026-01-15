@@ -26,12 +26,15 @@ let theme_config_additions = {
       link: "/neon-player/",
       activeMatch: "/neon-player/",
     },
-    {
-      text: "Real-Time API",
-      link: "/real-time-api/",
-      activeMatch: "/real-time-api/",
-    },
     { text: "Neon XR", link: "/neon-xr/", activeMatch: "/neon-xr/" },
+    {
+      text: "Developer",
+      items: [
+        { text: "Real-Time API", link: "/real-time-api/" },
+        { text: "Recording API", link: "/recording-api/" },
+        { text: "Open-Source Libs", link: "/open-source-libs/" },
+      ],
+    },
   ],
 
   sidebar: {
@@ -261,11 +264,6 @@ let theme_config_additions = {
       {
         text: "Plugin API",
         link: "/neon-player/plugin-api/",
-      },
-    ],
-    "/real-time-api/": [
-      {
-        items: [{ text: "Overview", link: "/real-time-api/" }],
       },
     ],
     "/neon-xr/": [
