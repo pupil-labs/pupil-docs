@@ -1,7 +1,9 @@
 ---
-title: 
+title: "Dynamic AOI Tracking With Neon and SAM2 Segmentation"
 description: ""
 permalink: /alpha-lab/dynamic-aoi-sam2
+layout: AlphaArticleLayout
+sidebar: false
 meta:
   - name: twitter:card
     content: player
@@ -15,16 +17,8 @@ meta:
     content: "720"
   - property: og:image
     content: "https://i.ytimg.com/vi/cuvWqVOAc5M/maxresdefault.jpg"
-tags: [Neon, Cloud]
+tags: [Neon, Pupil Cloud, Offline Processing, AI / Deep Learning, AOI Mapping]
 ---
-
-<script setup>
-import TagLinks from '@components/TagLinks.vue'
-</script>
-
-# Dynamic AOI Tracking With Neon and SAM2 Segmentation
-
-<TagLinks :tags="$frontmatter.tags" />
 
 <Youtube src="rLKx1Ma2xVE"/>
 
@@ -32,34 +26,34 @@ import TagLinks from '@components/TagLinks.vue'
 Click. Segment. Track. Dynamic object tracking made easy with Neon and SAM2 segmentation.
 :::
 
-Eye tracking becomes far more powerful when gaze can be mapped onto everything we interact with in a scene, from people 
-to objects, as they move. Traditionally, this required a time-consuming and error-prone process of manually coding where 
+Eye tracking becomes far more powerful when gaze can be mapped onto everything we interact with in a scene, from people
+to objects, as they move. Traditionally, this required a time-consuming and error-prone process of manually coding where
 a user's eyes landed frame-by-frame. This barrier made studying complex, real-world actions challenging.
 
-With this Alpha Lab tutorial, we explore how to integrate the [Segment Anything Model 2 (SAM2)](https://ai.meta.com/sam2/) with Pupil Labs' [Neon](https://pupil-labs.com/products/neon) eye 
-tracker to help solve that problem. The tool lets you define dynamic Areas of Interest (AOIs) with a simple click, 
+With this Alpha Lab tutorial, we explore how to integrate the [Segment Anything Model 2 (SAM2)](https://ai.meta.com/sam2/) with Pupil Labs' [Neon](https://pupil-labs.com/products/neon) eye
+tracker to help solve that problem. The tool lets you define dynamic Areas of Interest (AOIs) with a simple click,
 without being restricted to predefined categories. Once defined, each AOI is automatically tracked across the scene video
 and adapts to the object's movement.
 
-The outcome is a flexible and efficient workflow for studying moving AOIs, bringing gaze analysis closer to the 
+The outcome is a flexible and efficient workflow for studying moving AOIs, bringing gaze analysis closer to the
 realities of naturalistic, real-world interactions in sports, classrooms, clinical settings, or everyday life.
 
 ## Map Gaze Onto Any Moving AOI With a Faster, More Flexible Workflow
 
-[Pupil Cloud](https://pupil-labs.com/products/cloud) currently supports automatic AOI mapping through enrichments such as [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/), 
-which works well for static objects and environments. However, in many real-world applications such as sports, shopper 
-research, surgical workflows, and everyday interactions, objects and people that you want to track are constantly in motion. 
+[Pupil Cloud](https://pupil-labs.com/products/cloud) currently supports automatic AOI mapping through enrichments such as [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/),
+which works well for static objects and environments. However, in many real-world applications such as sports, shopper
+research, surgical workflows, and everyday interactions, objects and people that you want to track are constantly in motion.
 
-Our [existing Alpha Lab tutorial](https://docs.pupil-labs.com/alpha-lab/map-onto-anything/) using detectors like YOLO can track moving categories, but this approach is limited 
-to the predefined classes available within that model. As a result, researchers have often had to choose between 
+Our [existing Alpha Lab tutorial](https://docs.pupil-labs.com/alpha-lab/map-onto-anything/) using detectors like YOLO can track moving categories, but this approach is limited
+to the predefined classes available within that model. As a result, researchers have often had to choose between
 manually annotating videos, relying on static AOIs, or restricting their analysis to broad category labels.
 
-This workflow uses SAM2 segmentation to introduce user-defined, click-based AOIs that can be 
+This workflow uses SAM2 segmentation to introduce user-defined, click-based AOIs that can be
 tracked dynamically across entire recordings. We also make use of a [Gradio Web App](https://www.gradio.app/) in Google Colab, which provides
-easy access to a GPU-powered and user-friendly interface, where AOIs can be defined in just one frame and then propagated 
-automatically throughout the video. 
+easy access to a GPU-powered and user-friendly interface, where AOIs can be defined in just one frame and then propagated
+automatically throughout the video.
 
-This significantly reduces annotation time and opens new opportunities for eye tracking research by enabling precise, 
+This significantly reduces annotation time and opens new opportunities for eye tracking research by enabling precise,
 flexible, and interactive mapping of gaze onto moving targets in naturalistic environments.
 
 ## Run it!

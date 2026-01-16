@@ -1,16 +1,10 @@
 ---
+title: "Map Gaze Throughout an Entire Room"
 description: A Living Space – Working With Multiple Reference Images
-tags: [Pupil Invisible, Neon, Cloud]
+layout: AlphaArticleLayout
+sidebar: false
+tags: [Neon, Pupil Invisible, Pupil Cloud, Offline Processing, AOI Mapping]
 ---
-
-<script setup>
-import TagLinks from '@components/TagLinks.vue'
-import Youtube from '@components/Youtube.vue'
-</script>
-
-# Map Gaze Throughout an Entire Room
-
-<TagLinks :tags="$frontmatter.tags" />
 
 <Youtube src="CLNDE0VJVng" />
 

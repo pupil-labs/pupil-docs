@@ -1,7 +1,9 @@
 ---
-title: "Map Your Gaze Onto Body Parts With DensePose"
+title: "Map Gaze Onto Body Parts"
 description: "Using densepose to map gaze onto body parts. To be or not to be? proclaims Prince Hamlet while holding a skull in his hand. But, where is the audience looking? At the hand, at the arm, or the face?"
 permalink: /alpha-lab/dense-pose/
+layout: AlphaArticleLayout
+sidebar: false
 meta:
   - name: twitter:card
     content: player
@@ -15,16 +17,8 @@ meta:
     content: "720"
   - property: og:image
     content: "https://i.ytimg.com/vi/nt_zNSBMJWI/maxresdefault.jpg"
-tags: [Pupil Invisible, Neon, Cloud]
+tags: [Neon, Pupil Invisible, Pupil Cloud, Offline Processing, AI / Deep Learning]
 ---
-
-<script setup>
-import TagLinks from '@components/TagLinks.vue'
-</script>
-
-# Map Gaze Onto Body Parts
-
-<TagLinks :tags="$frontmatter.tags" />
 
 <Youtube src="nt_zNSBMJWI"/>
 

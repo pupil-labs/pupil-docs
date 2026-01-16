@@ -2,14 +2,10 @@
 title: "Detect Eye Blinks With Neon"
 description: "Apply Pupil Labs blink detection algorithm to Neon recordings programmatically, offline or in real-time using Pupil Labs real-time Python API, to assess tiredness and cognitive load."
 permalink: /alpha-lab/blink-detection/
-tags: [Neon]
+layout: AlphaArticleLayout
+sidebar: false
+tags: [Neon, Real-Time Analysis, Metric Extraction]
 ---
-
-<script setup>
-import TagLinks from '@components/TagLinks.vue'
-</script>
-
-# Detect Eye Blinks With Neon
 
 ::: warning
 This guide describes a deprecated blink detection pipeline and is kept only for legacy purposes.
@@ -19,8 +15,6 @@ Companion app; blinks are also saved with the recording.
 
 **Ensure you have eye state enabled in the Companion app to access real-time eye blinks.**
 :::
-
-<TagLinks :tags="$frontmatter.tags" />
 
 <img src="./eye_blinks_anim.webp" alt="Eye blink animation" style="display: block; margin-left: auto; margin-right: auto; width:100%;">
 

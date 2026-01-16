@@ -1,7 +1,9 @@
 ---
-title: Map Gaze Onto Website AOIs
+title: "Map Gaze Onto Website AOIs"
 description: "Define areas of interest on a website and map gaze onto them using our Web-AOI tool. "
 permalink: /alpha-lab/web-aois
+layout: AlphaArticleLayout
+sidebar: false
 meta:
   - name: twitter:card
     content: player
@@ -15,16 +17,8 @@ meta:
     content: "720"
   - property: og:image
     content: "https://i.ytimg.com/vi/1yJfhtdJoMA/maxresdefault.jpg"
-tags: [Neon]
+tags: [Neon, Offline Processing, AOI Mapping]
 ---
-
-<script setup>
-import TagLinks from '@components/TagLinks.vue'
-</script>
-
-# Map Gaze Onto Website AOIs 
-
-<TagLinks :tags="$frontmatter.tags" />
 
 <Youtube src="DzK055NbRPM"/>
 

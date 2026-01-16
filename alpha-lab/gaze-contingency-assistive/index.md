@@ -1,7 +1,9 @@
 ---
-title: A Practical Guide to Implementing Gaze Contingency in Assistive Technology
+title: "Build Gaze-Contingent Assistive Applications"
 description: "Gaze contingent systems for assistive technology"
 permalink: /alpha-lab/gaze-contingency-assistive
+layout: AlphaArticleLayout
+sidebar: false
 meta:
   - name: twitter:card
     content: player
@@ -15,16 +17,8 @@ meta:
     content: "720"
   - property: og:image
     content: "https://i.ytimg.com/vi/cuvWqVOAc5M/maxresdefault.jpg"
-tags: [Neon]
+tags: [Neon, Real-Time Analysis, Assistive Technology]
 ---
-
-<script setup>
-import TagLinks from '@components/TagLinks.vue'
-</script>
-
-# Build Gaze-Contingent Assistive Applications
-
-<TagLinks :tags="$frontmatter.tags" />
 
 <Youtube src="cuvWqVOAc5M"/>
 

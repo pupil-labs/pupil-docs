@@ -576,3 +576,11 @@
     display: block;
   }
 }
+
+/**
+ * Fix scroll position for anchor links to account for sticky header
+ * -------------------------------------------------------------------------- */
+
+.vp-doc :is(h2, h3) {
+  scroll-margin-top: calc(var(--vp-nav-height) + var(--vp-layout-top-height, 0px) + 16px);
+}

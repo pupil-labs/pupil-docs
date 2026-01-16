@@ -1,7 +1,9 @@
 ---
-title: 
+title: "Audio-Based Event Detection With Pupil Cloud and OpenAI's Whisper"
 description: ""
 permalink: /alpha-lab/audio-event-annotations
+layout: AlphaArticleLayout
+sidebar: false
 meta:
   - name: twitter:card
     content: player
@@ -15,16 +17,8 @@ meta:
     content: "720"
   - property: og:image
     content: "https://i.ytimg.com/vi/cuvWqVOAc5M/maxresdefault.jpg"
-tags: [Neon, Cloud]
+tags: [Neon, Pupil Invisible, Pupil Cloud, Offline Processing, AI / Deep Learning, Multimodal Data]
 ---
-
-<script setup>
-import TagLinks from '@components/TagLinks.vue'
-</script>
-
-# Audio-Based Event Detection With Pupil Cloud and OpenAI's Whisper
-
-<TagLinks :tags="$frontmatter.tags" />
 
 <Youtube src="YvtlsLHaxu8"/>
 
@@ -44,13 +38,13 @@ For a similar tool showcasing how AI can detect actions—such as reaching for a
 
 ## Enhancing Eye Tracking Analysis With Audio Context
 
-Eye tracking data is powerful, but it can gain even more depth when combined with other modalities like speech. With advancements in automatic speech recognition (ASR), systems like OpenAI's Whisper are now more accurate and accessible than ever before. This progress sparked the idea to explore how ASR could be used for event detection, allowing researchers to automate annotations based on spoken cues. 
+Eye tracking data is powerful, but it can gain even more depth when combined with other modalities like speech. With advancements in automatic speech recognition (ASR), systems like OpenAI's Whisper are now more accurate and accessible than ever before. This progress sparked the idea to explore how ASR could be used for event detection, allowing researchers to automate annotations based on spoken cues.
 
 ## Run it!
 
-First, upload your recordings to Pupil Cloud and obtain a developer token by clicking [here](https://cloud.pupil-labs.com/settings/developer). 
+First, upload your recordings to Pupil Cloud and obtain a developer token by clicking [here](https://cloud.pupil-labs.com/settings/developer).
 
-Access **[our Google Colab notebook](https://colab.research.google.com/drive/18_UULU4u0_aM7zL2N-9xEzNiLgKJQ5P7?usp=sharing)** and follow the instructions outlined there. 
+Access **[our Google Colab notebook](https://colab.research.google.com/drive/18_UULU4u0_aM7zL2N-9xEzNiLgKJQ5P7?usp=sharing)** and follow the instructions outlined there.
 
 <div class="mb-4" style="display:flex;justify-content:center;">
  <a
@@ -64,6 +58,7 @@ Access **[our Google Colab notebook](https://colab.research.google.com/drive/18_
 </div>
 
 The notebook will guide you through selecting recording details and entering your desired prompts (you can use prompts of any length!). These prompts represent the words or phrases you want Neon to detect in the audio.
+
 ## Audio-Detected Event Annotations In Pupil Cloud
 
 After running this tool, you'll get the following files within your recording's folder in your Google Drive:

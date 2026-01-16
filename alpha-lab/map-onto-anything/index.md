@@ -2,6 +2,8 @@
 title: "Map Gaze Onto Anything"
 description: "Combine gaze with object and pose recognition in minutes. Learn how to augment your eye tracking data using powerful, open-source computer vision models, in real time or after the fact."
 permalink: /alpha-lab/map-onto-anything/
+layout: AlphaArticleLayout
+sidebar: false
 meta:
   - name: twitter:card
     content: summary
@@ -15,16 +17,8 @@ meta:
     content: "720"
   - property: og:image
     content: "https://i.ytimg.com/vi/_mmFz2_7j0w/maxresdefault.jpg"
-tags: [Neon, Pupil Invisible]
+tags: [Neon, Pupil Cloud, Offline Processing, Real-Time Analysis, AI / Deep Learning, AOI Mapping]
 ---
-
-<script setup>
-import TagLinks from '@components/TagLinks.vue'
-</script>
-
-# Map Gaze Onto Anything
-
-<TagLinks :tags="$frontmatter.tags" />
 
 <Youtube src="_mmFz2_7j0w"/>
 

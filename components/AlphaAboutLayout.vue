@@ -27,6 +27,22 @@
   p {
     font-family: Inter, "Helvetica Neue", sans-serif;
   }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--vp-c-brand-1);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Inter, "Helvetica Neue", sans-serif;
+    margin-bottom: 8px;
+    transition: color 0.2s;
+  }
+
+  .back-link:hover {
+    color: var(--vp-c-brand-2);
+  }
   .text-padding:not(:last-child) {
     padding-bottom: 16px;
   }
@@ -80,6 +96,10 @@
     class="container grid gap-6 sm:gap-12 md:gap-16 lg:gap-20 px-6 pt-9 sm:pb-12 md:pb-16 lg:pb-20 mx-auto"
   >
     <div class="grid gap-8">
+      <a href="/alpha-lab/" class="back-link">
+        <ArrowIcon style="transform: rotate(180deg)" />
+        Back to Alpha Lab
+      </a>
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         <div class="order-2 lgd:order-1 col-span-full lg:col-span-5 h-full">
           <div>

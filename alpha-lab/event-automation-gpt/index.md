@@ -1,7 +1,9 @@
 ---
-title: 
+title: "Automate Event Annotations with Pupil Cloud and GPT"
 description: ""
 permalink: /alpha-lab/event-automation-gpt
+layout: AlphaArticleLayout
+sidebar: false
 meta:
   - name: twitter:card
     content: player
@@ -15,16 +17,8 @@ meta:
     content: "720"
   - property: og:image
     content: "https://i.ytimg.com/vi/cuvWqVOAc5M/maxresdefault.jpg"
-tags: [Neon, Cloud]
+tags: [Neon, Pupil Cloud, Offline Processing, AI / Deep Learning]
 ---
-
-<script setup>
-import TagLinks from '@components/TagLinks.vue'
-</script>
-
-# Automate Event Annotations with Pupil Cloud and GPT
-
-<TagLinks :tags="$frontmatter.tags" />
 
 <Youtube src="IFV5hG3HQW8"/>
 

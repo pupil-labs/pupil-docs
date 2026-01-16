@@ -2,6 +2,8 @@
 title: "Automate AOI Masking in Pupil Cloud"
 description: "Discover how to get the most from our AOI tool by automatically segmenting and drawing masks using natural language."
 permalink: /alpha-lab/gaze-metrics-in-aois/
+layout: AlphaArticleLayout
+sidebar: false
 meta:
   - name: twitter:card
     content: player
@@ -15,16 +17,8 @@ meta:
     content: "720"
   - property: og:image
     content: "https://i.ytimg.com/vi/dL07qObhuKY/maxresdefault.jpg"
-tags: [Cloud]
+tags: [Neon, Pupil Invisible, Pupil Cloud, Offline Processing, AI / Deep Learning, AOI Mapping]
 ---
-
-<script setup>
-import TagLinks from '@components/TagLinks.vue'
-</script>
-
-# Automate AOI Masking in Pupil Cloud
-
-<TagLinks :tags="$frontmatter.tags" />
 
 <Youtube src="dL07qObhuKY"/>
 

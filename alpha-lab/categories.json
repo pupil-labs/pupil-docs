@@ -1,0 +1,27 @@
+[
+  {
+    "id": "Behavior Detection & Annotation",
+    "title": "Behavior Detection & Annotation",
+    "description": "Detect and classify human behaviour using gaze and context."
+  },
+  {
+    "id": "Eye Tracking in Physical Spaces",
+    "title": "Eye Tracking in Physical Spaces",
+    "description": "Map gaze onto physical environments and 3D spaces."
+  },
+  {
+    "id": "Data Processing & Workflows",
+    "title": "Data Processing & Workflows",
+    "description": "Workflows for processing, synchronizing, and transforming gaze data."
+  },
+  {
+    "id": "Gaze on Screens & Interfaces",
+    "title": "Gaze on Screens & Interfaces",
+    "description": "Detect and classify human behaviour using gaze and context."
+  },
+  {
+    "id": "Social Gaze & Interactions",
+    "title": "Social Gaze & Interactions",
+    "description": "Analyze gaze patterns during social interactions and communication."
+  }
+]

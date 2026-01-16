@@ -1,7 +1,9 @@
 ---
-title: "Transform IMU Data"
+title: "IMU Transformations"
 description: "Transform IMU data into different representations and coordinate systems."
 permalink: /alpha-lab/imu-transformations/
+layout: AlphaArticleLayout
+sidebar: false
 meta:
   - name: twitter:card
     content: summary
@@ -15,16 +17,8 @@ meta:
     content: "720"
   - property: og:image
     content: "https://i.ytimg.com/vi/DMvmCpCL1ZQ/maxresdefault.jpg"
-tags: [Neon, Cloud]
+tags: [Neon, Offline Processing, Multimodal Data]
 ---
-
-<script setup>
-import TagLinks from '@components/TagLinks.vue'
-</script>
-
-# IMU Transformations
-
-<TagLinks :tags="$frontmatter.tags" />
 
 This guide contains various transformation functions that help with relating [Neon's IMU data](https://docs.pupil-labs.com/neon/data-collection/data-streams/#movement-imu-data) with other data streams.
 
