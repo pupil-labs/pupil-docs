@@ -58,6 +58,14 @@ For [eye state data](https://docs.pupil-labs.com/neon/data-collection/data-strea
 - `[left|right]_pupil_measure1` will be pupil diameters in mm
 - `[left|right]_pupil_measure1_type` will be `77`
 
+**Time-related Fields**
+
+The Neon plugin for PsychoPy Builder logs multiple timestamps to ensure precise data synchronization:
+
+- `device_time`: Neon timestamp according to the phone's internal clock.
+- `logged_time`: The timestamp from the PC's clock at the moment the datum was received.
+- `time`: The synchronized Neon timestamp, adjusted with an offset to match the PC's time domain.
+
 ### Example Builder Experiment
 
 Check out our simple but complete [gaze contingent demo designed in PsychoPy Builder](https://github.com/pupil-labs/psychopy-gaze-contingent-demo) to see how it all works!
