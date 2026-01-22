@@ -9,7 +9,7 @@ The Pupil DIY Kit is not for commercial use or commercial clients.
 ## Getting all the parts
 
 The 3d-printed headset is the centerpiece of the Pupil core wearable eye tracker.
-You can buy it from Pupil Labs through the [Pupil i.materialise store](https://i.materialise.com/en/shop/designer/pupil-labs).
+The file with the 3d-printed parts is available [here](https://github.com/pupil-labs/pupil-geometry).
 The price for the headset is part production cost and part support to the pupil development team. This enables us to give you support and continue to work on the project.
 
 All other parts of the Pupil DIY kit have been specifically selected with availability and affordability in mind.
