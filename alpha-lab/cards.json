@@ -8,7 +8,10 @@
     },
     "image": "/alpha-lab/undist.webp",
     "category": "Data Processing & Workflows",
-    "filters": ["Neon", "Offline Processing"]
+    "filters": [
+      "Neon",
+      "Offline Processing"
+    ]
   },
   {
     "title": "Use Neon with Pupil Capture",
@@ -19,7 +22,10 @@
     },
     "image": "/alpha-lab/neon-capture.webp",
     "category": "Data Processing & Workflows",
-    "filters": ["Neon", "Offline Processing"]
+    "filters": [
+      "Neon",
+      "Offline Processing"
+    ]
   },
   {
     "title": "Map Gaze Onto Dynamic Screen Content",
@@ -30,7 +36,13 @@
     },
     "image": "/alpha-lab/map-gaze-screen.webp",
     "category": "Gaze on Screens & Interfaces",
-    "filters": ["Neon", "Pupil Invisible", "Pupil Cloud", "Offline Processing", "AOI Mapping"]
+    "filters": [
+      "Neon",
+      "Pupil Invisible",
+      "Pupil Cloud",
+      "Offline Processing",
+      "AOI Mapping"
+    ]
   },
   {
     "title": "Map Gaze Onto Body Parts",
@@ -41,7 +53,13 @@
     },
     "image": "/alpha-lab/map-gaze-body.webp",
     "category": "Social Gaze & Interactions",
-    "filters": ["Neon", "Pupil Invisible", "Pupil Cloud", "Offline Processing", "AI/Deep Learning"]
+    "filters": [
+      "Neon",
+      "Pupil Invisible",
+      "Pupil Cloud",
+      "Offline Processing",
+      "AI/Deep Learning"
+    ]
   },
   {
     "title": "Map Gaze Throughout an Entire Room",
@@ -52,7 +70,13 @@
     },
     "image": "/alpha-lab/multiple-ref-mapper-enrich.webp",
     "category": "Eye Tracking in Physical Spaces",
-    "filters": ["Neon", "Pupil Invisible", "Pupil Cloud", "Offline Processing", "AOI Mapping"]
+    "filters": [
+      "Neon",
+      "Pupil Invisible",
+      "Pupil Cloud",
+      "Offline Processing",
+      "AOI Mapping"
+    ]
   },
   {
     "title": "Generate Scanpath Visualisations",
@@ -63,7 +87,13 @@
     },
     "image": "/alpha-lab/scanpath_image_nad.webp",
     "category": "Data Processing & Workflows",
-    "filters": ["Neon", "Pupil Invisible", "Pupil Cloud", "Offline Processing", "AOI Mapping"]
+    "filters": [
+      "Neon",
+      "Pupil Invisible",
+      "Pupil Cloud",
+      "Offline Processing",
+      "AOI Mapping"
+    ]
   },
   {
     "title": "Uncover Gaze Behaviour on Phones",
@@ -74,7 +104,13 @@
     },
     "image": "/alpha-lab/gaze-behavior-phone-neon.webp",
     "category": "Gaze on Screens & Interfaces",
-    "filters": ["Neon", "Pupil Invisible", "Pupil Cloud", "Offline Processing", "AOI Mapping"]
+    "filters": [
+      "Neon",
+      "Pupil Invisible",
+      "Pupil Cloud",
+      "Offline Processing",
+      "AOI Mapping"
+    ]
   },
   {
     "title": "Map Gaze Onto a 3D Model of an Environment",
@@ -85,7 +121,13 @@
     },
     "image": "/alpha-lab/map-gaze-3d-nerf.webp",
     "category": "Eye Tracking in Physical Spaces",
-    "filters": ["Neon", "Pupil Invisible", "Pupil Cloud", "Offline Processing", "3D Reconstruction"]
+    "filters": [
+      "Neon",
+      "Pupil Invisible",
+      "Pupil Cloud",
+      "Offline Processing",
+      "3D Reconstruction"
+    ]
   },
   {
     "title": "Build Gaze-Contingent Assistive Applications",
@@ -96,7 +138,11 @@
     },
     "image": "/alpha-lab/build-gaze-assistive-neon.webp",
     "category": "Gaze on Screens & Interfaces",
-    "filters": ["Neon", "Real-Time Analysis", "Assistive Technology"]
+    "filters": [
+      "Neon",
+      "Real-Time Analysis",
+      "Assistive Technology"
+    ]
   },
   {
     "title": "Detect Eye Blinks With Neon",
@@ -122,7 +168,13 @@
     },
     "image": "/alpha-lab/gpt4-eyes.webp",
     "category": "Behavior Detection & Annotation",
-    "filters": ["Neon", "Pupil Invisible", "Real-Time Analysis", "AI/Deep Learning", "Assistive Technology"]
+    "filters": [
+      "Neon",
+      "Pupil Invisible",
+      "Real-Time Analysis",
+      "AI/Deep Learning",
+      "Assistive Technology"
+    ]
   },
   {
     "title": "Automate AOI Masking in Pupil Cloud",
@@ -133,7 +185,14 @@
     },
     "image": "/alpha-lab/aoi-demo.webp",
     "category": "Data Processing & Workflows",
-    "filters": ["Neon", "Pupil Invisible", "Pupil Cloud", "Offline Processing", "AI/Deep Learning", "AOI Mapping"]
+    "filters": [
+      "Neon",
+      "Pupil Invisible",
+      "Pupil Cloud",
+      "Offline Processing",
+      "AI/Deep Learning",
+      "AOI Mapping"
+    ]
   },
   {
     "title": "Map Gaze Onto Facial Landmarks",
@@ -144,7 +203,13 @@
     },
     "image": "/alpha-lab/map-gaze-nadia.webp",
     "category": "Social Gaze & Interactions",
-    "filters": ["Neon", "Pupil Invisible", "Pupil Cloud", "Offline Processing", "AOI Mapping"]
+    "filters": [
+      "Neon",
+      "Pupil Invisible",
+      "Pupil Cloud",
+      "Offline Processing",
+      "AOI Mapping"
+    ]
   },
   {
     "title": "Map Gaze Onto Website AOIs",
@@ -155,7 +220,11 @@
     },
     "image": "/alpha-lab/web-aoi.webp",
     "category": "Gaze on Screens & Interfaces",
-    "filters": ["Neon", "Offline Processing", "AOI Mapping"]
+    "filters": [
+      "Neon",
+      "Offline Processing",
+      "AOI Mapping"
+    ]
   },
   {
     "title": "Map Gaze Into a User-Supplied 3D Model",
@@ -166,7 +235,13 @@
     },
     "image": "/alpha-lab/tag-aligner.webp",
     "category": "Eye Tracking in Physical Spaces",
-    "filters": ["Neon", "Pupil Invisible", "Pupil Cloud", "Offline Processing", "3D Reconstruction"]
+    "filters": [
+      "Neon",
+      "Pupil Invisible",
+      "Pupil Cloud",
+      "Offline Processing",
+      "3D Reconstruction"
+    ]
   },
   {
     "title": "IMU Transformations",
@@ -177,7 +252,11 @@
     },
     "image": "/alpha-lab/imu-transformations.webp",
     "category": "Data Processing & Workflows",
-    "filters": ["Neon", "Offline Processing", "Multimodal Data"]
+    "filters": [
+      "Neon",
+      "Offline Processing",
+      "Multimodal Data"
+    ]
   },
   {
     "title": "Automate Event Annotations With Pupil Cloud and GPT",
@@ -188,7 +267,12 @@
     },
     "image": "/alpha-lab/event-annotation.webp",
     "category": "Behavior Detection & Annotation",
-    "filters": ["Neon", "Pupil Cloud", "Offline Processing", "AI/Deep Learning"]
+    "filters": [
+      "Neon",
+      "Pupil Cloud",
+      "Offline Processing",
+      "AI/Deep Learning"
+    ]
   },
   {
     "title": "Map Gaze Onto an Alternative Egocentric Video",
@@ -199,7 +283,12 @@
     },
     "image": "/alpha-lab/egocentric-video-mapper.webp",
     "category": "Data Processing & Workflows",
-    "filters": ["Neon", "Offline Processing", "AI/Deep Learning", "Multimodal Data"]
+    "filters": [
+      "Neon",
+      "Offline Processing",
+      "AI/Deep Learning",
+      "Multimodal Data"
+    ]
   },
   {
     "title": "Audio-Based Event Detection With Pupil Cloud and OpenAI's Whisper",
@@ -210,7 +299,14 @@
     },
     "image": "/alpha-lab/audio-events-img.webp",
     "category": "Behavior Detection & Annotation",
-    "filters": ["Neon", "Pupil Invisible", "Pupil Cloud", "Offline Processing", "AI/Deep Learning", "Multimodal Data"]
+    "filters": [
+      "Neon",
+      "Pupil Invisible",
+      "Pupil Cloud",
+      "Offline Processing",
+      "AI/Deep Learning",
+      "Multimodal Data"
+    ]
   },
   {
     "title": "Where did I see that? Eye Tracking & GPS",
@@ -221,7 +317,13 @@
     },
     "image": "/alpha-lab/gps.webp",
     "category": "Eye Tracking in Physical Spaces",
-    "filters": ["Neon", "Pupil Cloud", "Offline Processing", "3D Reconstruction", "Multimodal Data"]
+    "filters": [
+      "Neon",
+      "Pupil Cloud",
+      "Offline Processing",
+      "3D Reconstruction",
+      "Multimodal Data"
+    ]
   },
   {
     "title": "Real-Time Eyelid Dynamics with PERCLOS and Neon",
@@ -232,7 +334,11 @@
     },
     "image": "/alpha-lab/perclos.webp",
     "category": "Behavior Detection & Annotation",
-    "filters": ["Neon", "Real-Time Analysis", "Metric Extraction"]
+    "filters": [
+      "Neon",
+      "Real-Time Analysis",
+      "Metric Extraction"
+    ]
   },
   {
     "title": "Map Gaze Onto Anything",
@@ -243,7 +349,14 @@
     },
     "image": "/alpha-lab/map-gaze-anything.webp",
     "category": "Data Processing & Workflows",
-    "filters": ["Neon", "Pupil Cloud", "Offline Processing", "Real-Time Analysis", "AI/Deep Learning", "AOI Mapping"]
+    "filters": [
+      "Neon",
+      "Pupil Cloud",
+      "Offline Processing",
+      "Real-Time Analysis",
+      "AI/Deep Learning",
+      "AOI Mapping"
+    ]
   },
   {
     "title": "Dynamic AOI Tracking with Neon and SAM2 Segmentation",
@@ -254,6 +367,27 @@
     },
     "image": "/alpha-lab/sam2.webp",
     "category": "Data Processing & Workflows",
-    "filters": ["Neon", "Pupil Cloud", "Offline Processing", "AI/Deep Learning", "AOI Mapping"]
+    "filters": [
+      "Neon",
+      "Pupil Cloud",
+      "Offline Processing",
+      "AI/Deep Learning",
+      "AOI Mapping"
+    ]
+  },
+  {
+    "title": "A Guide to Multiperson Eye Tracking",
+    "details": "Learn how to control multiple devices simultaneously and send synchronized event markers to align data for multiperson studies.",
+    "link": {
+      "text": "View",
+      "href": "/alpha-lab/a-guide-to-multiperson-eye-tracking/"
+    },
+    "image": "/alpha-lab/pl-deck-use.webp",
+    "category": "Data Processing & Workflows",
+    "filters": [
+      "Neon",
+      "Pupil Invisible",
+      "Real-Time Analysis"
+    ]
   }
 ]
