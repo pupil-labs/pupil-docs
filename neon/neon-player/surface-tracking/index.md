@@ -20,7 +20,7 @@ Here is an example workflow for using the `Surface Tracking` plugin to generate 
     - **Verify Surface Detection**: To visually confirm that the surface is being tracked correctly, you can enable `Draw marker IDs` and/or `Draw names` to overlay marker information on the scene video.
     
       The detected surface outline should remain stable even when the participant or camera moves. Scrub through the timeline to ensure the surface is detected consistently throughout the recording.
-    - **Visualize Gaze on the Surface**: With a surface selected, you can enable `Show heatmap` to overlay a gaze heatmap on the surface. You can adjust: 
+    - **Visualize Gaze on the Surface**: With a surface selected, you can click `Edit` to drag the corners and adjust the surface as needed. Additionally, you can enable `Show heatmap` to overlay a gaze heatmap on the surface. From there, you can adjust: 
       - the `Heatmap smoothness` to control spatial smoothing,
       - the `Heatmap alpha` to change transparency, 
       - the `Heatmap color` to choose a color map that best fits your visualization needs. 
