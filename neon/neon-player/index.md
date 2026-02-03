@@ -3,12 +3,6 @@
 Neon Player is a cross-platform desktop application for playing back and exporting Neon recordings. It runs in an
 offline context; no interaction with Pupil Cloud is required.
 
-::: tip
-We have recently released a complete reimplementation of Neon Player in a beta phase. If you are interested in trying the latest and greatest, check it out [here](https://github.com/pupil-labs/neon-player-beta).
-
-Note, that the new Neon Player is still in beta, so a few bugs and a lack of documentation should be expected!
-:::
-
 <script setup>
 import DownloadLinks from '@components/DownloadLinks.vue'
 </script>
@@ -21,7 +15,7 @@ import DownloadLinks from '@components/DownloadLinks.vue'
 
 ::: info
 Starting with version `v2.9.0-prod` of the Neon Companion app, blinks, and fixations & saccades, can be computed at
-recording time. These data can be loaded in Neon Player `v5.0.0` or later.
+recording time. These data can be loaded in Neon Player `v5.0.0` or later. The current version you can download below is `v6.0.0`
 
 To load blinks or fixations & saccades in recordings made prior to `v2.9.0-prod` of the Neon
 Companion app, use [Neon Player `v4.x`](https://github.com/pupil-labs/neon-player/releases) instead.
@@ -34,12 +28,12 @@ To load a recording, you first need to download or export it to your computer:
 1. Direct transfer from Neon Companion Device – For detailed instructions, refer to [this guide](/data-collection/transfer-recordings-via-usb/).
 2. Download from [Pupil Cloud](/pupil-cloud/) – Right-click on a recording in Pupil Cloud, select **Download**, and ensure you choose the **"Native Recording Data"** format.
 
-Once you have the recording, open Neon Player and drag-and-drop the folder into the application window.
+Once you have the recording, open Neon Player and drag-and-drop the folder into the application window, or click "Choose a recording folder", navigate to the desired folder and click "Open".
 
-Don't have a recording yet? [Download a sample recording](https://drive.google.com/file/d/14YE4jnpHI6SCYNpjhsBhPkPQTNxzrwSG/view?usp=sharing "Download sample recording to use in Neon Player").
+Don't have a recording yet? [Download a sample recording](https://drive.google.com/file/d/1bicOLzmJLzDegNq7qByctsFjmTJgCWPZ/view?usp=sharing "Download sample recording to use in Neon Player").
 
 ::: info
-Neon Player will **never** remove or overwrite any of your raw data gathered at the time of recording. Instead, it will create a new folder, `neon_player`, which contains the Neon Player compatible files.
+Neon Player will **never** remove or overwrite any of your raw data gathered at the time of recording. Instead, it will create a new hidden folder, `neon_player`, which contains the Neon Player compatible files.
 :::
 
 ![Drag and drop recording folder](./pp-start.jpg)
@@ -53,65 +47,47 @@ Recordings downloaded from [Pupil Cloud](./../pupil-cloud/) will be at 200Hz.
 
 ## Neon Player Window
 
-![Neon Player Callout](./pp-callout.jpg)
+![Neon Player Callout](./pp-callout.jpeg)
 
-1. **Graphs**: This area contains performance graphs. The graphs display `CPU` and `FPS` (FPS = Video playback speed).
-1. **Hot Keys**: This area contains clickable buttons for plugins.
-1. **Timeline Events**: Plugins can add temporal events to this expandable panel.
-1. **Timeline**: Control the playback of the video with the play/pause button (or spacebar on your keyboard). Drag the playhead (vertical line) to the desired point in time.
 
-   - **Trimming**: Drag the green rounded rectangles at either end of the timeline to set beginning and ending trim markers. The trim section markers specify the section of the video/data to export.
-   - **Frame Stepping**: You can use the arrow keys on your keyboard or the `<<` `>>` buttons to advance one frame at a time while the playback is paused.
-   - **Playback Speed**: To change the playback speed, use the arrow keys on your keyboard or the `<<` `>>` buttons during playback. There are 5 available playback speeds: `0.25x`, `0.5x`, `1x` (default), `2x`, `4x`.
 
-1. **Menu**: This area contains settings and contextual information for each plugin.
-1. **Sidebar**: This area contains clickable buttons for each plugin. System plugins are loaded in the top and user added plugins are added below the horizontal separator.
+- **Export window**: Control the playback of the video with the play/pause button (or spacebar on your keyboard). Drag the playhead (vertical line) to the desired point in time.
+
+   - **Trimming**: Drag the rounded rectangles at either end of the `Export window` timeline to set beginning and ending trim markers. The trim section markers specify the section of the video/data to export.
+   - **Frame Stepping**: With the arrow keys on your keyboard, you can jump through the recording in steps of 5 seconds. Alternatively, if you hold Shift while pressing the arrow keys, you advance one frame at a time.
+   - **Playback Speed**: To change the playback speed, use the dropdown menu on the right side of the timeline to change playback from `-2x` to `2x`. 
+
+- **Timeline Events**: Plugins can add temporal events to this expandable panel. Below the `Export window`, the following types of events are visible, depending on which plugins are activated:
+   - **Blinks**: White bard indicate eye blinks. Their width indicates the duration of the blink.
+   - **Fixations**: You can jump from one fixation to the next using the `a` and `s` keys.
+   - **Marker Visibility**: This track's colour indicates how many markers were recognised in the scene video at a given time. 
+   - 
+
+- **Sidebar**: This area contains clickable buttons for each plugin. System plugins are loaded in the top and user added plugins are added below the horizontal separator.
 
 ### Keyboard Shortcuts
 
 | Keyboard Shortcut | Description                                                                |
 | :---------------- | :------------------------------------------------------------------------- |
 | `<space>`         | Play and pause video                                                       |
-| `<arrow left>`    | Step to previous frame <sup>1</sup> / Decrease playback speed <sup>2</sup> |
-| `<arrow right>`   | Step to next frame <sup>1</sup> / Increase playback speed <sup>2</sup>     |
-| `e`               | Start export                                                               |
-| `a`               | Surface tracker: Add new surface                                           |
-| `x`               | Add annotation (default keyboard shortcut)                                 |
-| `f`               | Fixation: Show next                                                        |
-| `F`               | Fixation: Show previous                                                    |
+| `<arrow left>`    | Jump 5 seconds backward <sup>1</sup>                                                    |
+| `<arrow right>`   | Jump 5 seconds forward <sup>1</sup>                                                      |
+| `a`               | Jump to previous fixation                                           |
+| `s`               | Jump to next fixation                                           |
+|
 
-<sup>1</sup> While paused
-<sup>2</sup> During playback
+<sup>1</sup> Hold `<shift>` to move one frame at a time
 
 ## Plugins
 
 Neon Player uses a plugin framework to add functionality. Visualizations, fixations, blinks, and data exports are
 all implemented using this structure.
 
-There are two general types of plugins:
-
-- **Unique**: You can only launch one instance of this plugin.
-- **Not unique**: You can launch multiple instances of this type of plugin. For example, you can load one `Vis Circle` plugin to render the gaze position with a translucent green circle, and another `Vis Circle` plugin to render the gaze circle with a green stroke of 3 pixel thickness. You can think of these types of plugins as _additive_.
 
 ## Exports
 
-You can export data and videos by pressing `e` on your keyboard, or use the download button in the **Neon Player** window.
+You can export data for every plugin individually, or you can use the `Export All` plugin to export all data together. Under the `Export All` plugin, you can press the <img src="exporticon.png" width="15" height="15"> symbol, which prompts you to select a location to create a new folder with the title of the current timestamp. All loaded plugins with export capabilities will initiate the export process and save their data to this folder. During the export, you can continue to work with Neon Player.
 
-Upon activation, all loaded plugins with export capabilities will initiate the export process. Some exports operate in the background,
-you can monitor their progress via a GUI progress bar. This allows you to continue working with Neon Player.
-
-### Export Directory
-
-Exports are separated from your raw data and contained in the `exports` subdirectory. Multiple exports will create a new
-folders, which are auto-named according to their creation order, e.g. `000`, `001` etc.
-
-### Export Handling
-
-You can select the frame range to export by setting trim marks in the seek bar or directly in the `General Settings` menu.
-
-Longer running exports, e.g. video exports, go through three phases: Queued, Running, and Completed.
-Export tasks can be cancelled while being queued or running.
-Completed tasks are kept in the list for reference.
 
 ## Workflow
 
@@ -120,8 +96,8 @@ Neon Player is similar to a video player. You can playback recordings and can lo
 Here is an example workflow:
 
 - Start **Neon Player** and load a recording.
-- Open a Plugin - From the `Plugin Manager` GUI menu (which can be found in the Sidebar), toggle any Plugin of your choice. The `Vis Circle` plugin is activated by default.
+- Add required plugins - From the **Plugins** secction, which can be found in the Sidebar, click <img src="AddRemIcon.png" width="50" height="15"> to add any plugin of your choice. A number of plugins are activated by default, but if you are for example interested in pupil size, you would activate the `Eyestate` plugin now. 
 - Playback - press the play button or `space` bar on your keyboard to view the video playback with visualization overlay, or drag the playhead in the seek bar to scrub through the dataset.
-- Set trim marks - drag the green rounded rectangle at the beginning and end of the seekbar to set the trim marks. This will set the start and end frame for the exporter and for other plugins.
-- Export Video & Raw Data - From the `Plugin Manager` view, load the `World Video Exporter` plugin and the `Raw Data Exporter` plugin. Press `e` on your keyboard or the ⬇ `download icon` button in the left hand side of the window to start the export.
-- View the exported data in the `exports` directory.
+- Set trim marks - drag the rounded rectangle at the beginning and end of the `Export window` to set the trim marks. This will set the start and end frame for the exporter and for other plugins.
+- Export Video & Raw Data - From the `Export All` view, click the  <img src="exporticon.png" width="15" height="15"> symbol, and select a location to create the export folder.
+- View the exported data in .csv format in the newly created directory. 
