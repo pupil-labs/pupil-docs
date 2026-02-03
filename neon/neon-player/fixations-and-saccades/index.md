@@ -1,18 +1,16 @@
-# Fixations & Saccades
+# Fixations
 
-<!-- TODO: Add tunable parameters in the fixation as table -->
+<!-- TODO: Check saccades.csv once NP Beta will export them -->
 
 [Fixations](./../../data-collection/data-streams/#fixations-saccades) are provided for the whole recording. 
-The menu gives feedback about the total number of fixations, and shows detailed information about the current fixation.
 
 With this plugin enabled, Neon Player also exports [saccades](./../../data-collection/data-streams/#fixations-saccades).
 
 ![Fixations](./np-fixation.webp)
 
-The `Show fixations` toggle enables or disables visualization of fixations. You can modify the appearance of the fixations
-in the menu. The blue number next to the fixation circle corresponds to the fixation ID.
+The default `Circle` menu enables to customize the appearance of the fixations. The number next to the fixation circle corresponds to the fixation ID.
 
-Press `f` or click the arrow buttons on the left-hand side of the window to seek forward or backward through fixations.
+Press `S` to go to the next fixation, or `A` to go to the previous fixation.
 
 ## Export Format
 
@@ -27,6 +25,8 @@ Fixation results exported to `fixations.csv` with the following fields:
 | **duration [ms]** | Duration of the fixation in milliseconds. |
 | **fixation x [px]** | Float value representing the x-coordinate of the fixation in world camera pixel coordinates. This position is the average of all gaze samples within the fixation. |
 | **fixation y [px]** | Same as "fixation x [px]" but for the y-coordinate. |
+| **azimuth [deg]** | The [azimuth](https://en.wikipedia.org/wiki/Horizontal_coordinate_system) of the gaze ray corresponding to the fixation location in relation to the scene camera in degrees. |
+| **elevation [pdegx]** | The [elevation](https://en.wikipedia.org/wiki/Horizontal_coordinate_system) of the gaze ray corresponding to the fixation location in relation to the scene camera in degrees. |
 
 ### Saccades
 
