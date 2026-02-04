@@ -1,14 +1,12 @@
-# IMU Timeline
-This plugin visualizes accelerometer and gyroscope data from Neon recordings along with Euler angles (pitch, yaw and roll).
+# IMU
+This plugin visualizes accelerometer and gyroscope data from Neon recordings along with Euler angles (pitch, yaw and roll). In the settings of the plugin you can toggle which of the data streams to show. 
 
-![IMU](./np-imu.webp)
-
-You can toggle the sensor readings plots on or off in the menu.
+![IMU](./IMU.webp)
 
 Read more about Neon's IMU and how it works in the dedicated [IMU section of the docs](../../data-collection/data-streams/#movement-imu-data)
 
 ## Export Format
-Results exported to `imu.csv` with the following fields:
+Results are exported to `imu.csv` with the following fields:
 | Field | Description | 
 | -------- | -------- | 
 | **timestamp [ns]** | UTC timestamp in nanoseconds of the sample.    |
