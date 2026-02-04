@@ -249,8 +249,8 @@ let theme_config_additions = {
             link: "/neon-player/events/"
           },
           {
-            text: "Raw Data Exporter",
-            link: "/neon-player/raw-data-exporter/",
+            text: "Gaze Data",
+            link: "/neon-player/gaze-data/",
           },
           {
             text: "World Video Exporter",

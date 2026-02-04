@@ -1,7 +1,7 @@
-# Raw Data Exporter
-The `Raw Data Exporter` exports gaze data and is active by default.
+# Gaze Data
+The `Gaze Data` plugin handles gaze offset correction, and exports gaze data. It is active by default.
 
-![Raw export](./np-raw-export.webp)
+![Gaze Data](./gaze_data.png)
 
 ## Export Format
 Results exported to `gaze.csv` with the following fields:
