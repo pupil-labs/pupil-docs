@@ -237,8 +237,8 @@ let theme_config_additions = {
             link: "/neon-player/imu/",
           },
           {
-            text: "Eye State Timeline",
-            link: "/neon-player/eye-state-timeline/",
+            text: "Eyestate",
+            link: "/neon-player/eyestate/",
           },
           {
             text: "Gaze Offset Correction",

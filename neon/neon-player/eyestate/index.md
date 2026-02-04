@@ -4,7 +4,7 @@ This plugin loads and visualizes [3D eye poses](/data-collection/data-streams/#_
 [pupil diameters](/data-collection/data-streams/#pupil-diameters), and
 [eye openness](/data-collection/data-streams/#eye-openness) data.
 
-![Eye State Timeline](./eye-state-timeline.webp)
+![Eye State Timeline](./eyestate.webp)
 
 ::: info
 The data will only be loaded if Eye State computation was enabled in the Neon Companion app during recording.
@@ -12,11 +12,9 @@ The data will only be loaded if Eye State computation was enabled in the Neon Co
 
 ## Export Format
 
-Results exported to `3d_eye_states.csv` with the following fields:
+Results are exported to `eyestates.csv` with the following fields:
 | Field | Description |
 | ------------------------- | -------- |
-| **section id** | Unique identifier of the corresponding section. |
-| **recording id** | Unique identifier of the recording this sample belongs to. |
 | **timestamp [ns]** | UTC timestamp in nanoseconds of the sample. Equal to the timestamp of the eye video frame this sample was generated with. |
 | **pupil&nbsp;diameter&nbsp;left&nbsp;[mm]** | Physical diameter of the pupil of the left eye. |
 | **pupil&nbsp;diameter&nbsp;right&nbsp;[mm]** | Physical diameter of the pupil of the right eye. |
