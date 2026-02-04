@@ -27,6 +27,17 @@ Here is an example workflow for using the `Surface Tracking` plugin to generate 
 
     These settings only affect visualization and do not alter the underlying data. You can also click `View Surface` to switch from the scene view to a direct, front-facing view of the surface.
 
+## Timeline View
+
+In the timeline view:
+1. `Marker visibility` provides a quick visual indication of how many markers are detected in each video frame. The track is color-coded using the Viridis colormap, where darker colors indicate fewer detected markers and brighter colors indicate more detected markers. This helps identify time segments where surfaces are well supported by visible markers versus segments where detection may be unreliable.
+
+2. `Surface Gaze: <surface name>` highlights, in blue, the segments of the recording where gaze is mapped onto the detected surface.
+
+3. `Surface: <surface name>`indicates the portions of the recording in which the surface is successfully detected.
+
+![Timeline view](./timeline.webp)
+
 ## Export Format
 Once you're satisfied with the surface tracking and visualization, you can click on `Export` within the surface panel to generate surface-based gaze and fixation data. The following files will be exported.
 
