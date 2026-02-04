@@ -1,25 +1,18 @@
 # Events
 
-This plugin allows you to add events to your recording. With the Neon Player interface, you can assign hotkeys to 
-your annotations to ensure efficient labelling of important events in your recordings. The Plugin also loads any events that were created in real-time on the Companion Device using the Monitor app or real-time API.
+The Events plugin lets you add timestamped annotations to your recordings directly in Neon Player. This is useful for marking important moments such as condition start, user actions, or experimental events.
 
-::: tip
-Any custom field encountered in the annotations will be exported as an additional column.
-Their values will be converted to strings using Python's string representation. Therefore, it is recommended to use primitive types (strings, integers, floats) as value types for custom fields.
-:::
+Events created during recording, either via the Neon Monitor app or the Real-Time API—are automatically loaded and displayed when you open the recording in Neon Player.
 
-Annotation hotkey definitions are stored in the recording directory: 
-`<recording dir>/offline_data/annotation_definitions.json` with the format:
-```json
-{
-    "version": 1,
-    "definitions": {
-        "<label>": "<hotkey>"
-    }
-}
-```
-When a new recording is loaded, Neon Player will attempt to load the annotation definitions from the recording-specific file. 
-If it is not found or invalid, the last known set of annotation definitions will be loaded from Neon Player's session settings.
+Adding and using events
+- Open Events in the right-hand panel and click `+Add event type`
+- Give the event a name and assign a keyboard shortcut
+- During playback, press the shortcut to add an event at the current timestamp
+- Events appear immediately on the timeline, aligned with the recording
+
+You can create multiple event types, each with its own shortcut, to label recordings efficiently.
+
+You can also import existing events from a CSV file using the `Import CSV` option. This is useful for bringing in annotations generated externally, such as task logs or behavioral markers. Imported events are placed directly on the timeline and appear alongside any events added manually in Neon Player.
 
 ## Export Format
 Results exported to `events.csv` with the following fields:
