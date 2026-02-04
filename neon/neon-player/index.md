@@ -36,7 +36,7 @@ Don't have a recording yet? [Download a sample recording](https://drive.google.c
 Neon Player will **never** remove or overwrite any of your raw data gathered at the time of recording. Instead, it will create a new hidden folder, `neon_player`, which contains the Neon Player compatible files.
 :::
 
-![Drag and drop recording folder](./pp-start.jpg)
+![Drag and drop recording folder](./pp-start.webp)
 
 ::: info
 
@@ -47,7 +47,7 @@ Recordings downloaded from [Pupil Cloud](./../pupil-cloud/) will be at 200Hz.
 
 ## Neon Player Window
 
-![Neon Player Callout](./pp-callout.jpeg)
+![Neon Player Callout](./pp-callout.webp)
 
 
 
@@ -61,7 +61,6 @@ Recordings downloaded from [Pupil Cloud](./../pupil-cloud/) will be at 200Hz.
    - **Blinks**: White bard indicate eye blinks. Their width indicates the duration of the blink.
    - **Fixations**: You can jump from one fixation to the next using the `a` and `s` keys.
    - **Marker Visibility**: This track's colour indicates how many markers were recognised in the scene video at a given time. 
-   - 
 
 - **Sidebar**: This area contains clickable buttons for each plugin. System plugins are loaded in the top and user added plugins are added below the horizontal separator.
 
@@ -86,7 +85,7 @@ all implemented using this structure.
 
 ## Exports
 
-You can export data for every plugin individually, or you can use the `Export All` plugin to export all data together. Under the `Export All` plugin, you can press the <img src="exporticon.png" width="15" height="15"> symbol, which prompts you to select a location to create a new folder with the title of the current timestamp. All loaded plugins with export capabilities will initiate the export process and save their data to this folder. During the export, you can continue to work with Neon Player.
+You can export data for every plugin individually, or you can use the `Export All` plugin to export all data together. Under the `Export All` plugin, you can press the <img src="./exporticon.webp" width="20" height="20"> symbol, which prompts you to select a location to create a new folder with the title of the current timestamp. All loaded plugins with export capabilities will initiate the export process and save their data to this folder. During the export, you can continue to work with Neon Player.
 
 
 ## Workflow
@@ -96,8 +95,8 @@ Neon Player is similar to a video player. You can playback recordings and can lo
 Here is an example workflow:
 
 - Start **Neon Player** and load a recording.
-- Add required plugins - From the **Plugins** secction, which can be found in the Sidebar, click <img src="AddRemIcon.png" width="50" height="15"> to add any plugin of your choice. A number of plugins are activated by default, but if you are for example interested in pupil size, you would activate the `Eyestate` plugin now. 
+- Add required plugins - From the **Plugins** secction, which can be found in the Sidebar, click <img src="./AddRemIcon.webp" width="50" height="50"> to add any plugin of your choice. A number of plugins are activated by default, but if you are for example interested in pupil size, you would activate the `Eyestate` plugin now. 
 - Playback - press the play button or `space` bar on your keyboard to view the video playback with visualization overlay, or drag the playhead in the seek bar to scrub through the dataset.
 - Set trim marks - drag the rounded rectangle at the beginning and end of the `Export window` to set the trim marks. This will set the start and end frame for the exporter and for other plugins.
-- Export Video & Raw Data - From the `Export All` view, click the  <img src="exporticon.png" width="15" height="15"> symbol, and select a location to create the export folder.
+- Export Video & Raw Data - From the `Export All` view, click the  <img src="./exporticon.webp" width="20" height="20"> symbol, and select a location to create the export folder.
 - View the exported data in .csv format in the newly created directory. 
