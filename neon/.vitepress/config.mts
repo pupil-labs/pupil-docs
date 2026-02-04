@@ -228,16 +228,13 @@ let theme_config_additions = {
             link: "/neon-player/blinks/",
           },
           {
-            text: "Surface Tracker",
-            link: "/neon-player/surface-tracker/",
+            text: "Surface Tracking",
+            link: "/neon-player/surface-tracking/",
           },
+        
           {
-            text: "Head Pose Tracker",
-            link: "/neon-player/head-pose-tracker/",
-          },
-          {
-            text: "IMU Timeline",
-            link: "/neon-player/imu-timeline/",
+            text: "IMU",
+            link: "/neon-player/imu/",
           },
           {
             text: "Eye State Timeline",
@@ -248,8 +245,8 @@ let theme_config_additions = {
             link: "/neon-player/gaze-offset-correction/"
           },
           {
-            text: "Annotation Player",
-            link: "/neon-player/annotation-player/"
+            text: "Events",
+            link: "/neon-player/events/"
           },
           {
             text: "Raw Data Exporter",
