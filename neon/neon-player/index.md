@@ -47,7 +47,7 @@ Recordings downloaded from [Pupil Cloud](./../pupil-cloud/) will be at 200Hz.
 
 ## Neon Player Window
 
-![Neon Player Callout](./pp-callout.webp)
+![Neon Player Callout](./pp-callout_np6.webp)
 
 
 
@@ -95,8 +95,8 @@ Neon Player is similar to a video player. You can playback recordings and can lo
 Here is an example workflow:
 
 - Start **Neon Player** and load a recording.
-- Add required plugins - From the **Plugins** secction, which can be found in the Sidebar, click <img src="./AddRemIcon.webp" width="50" height="50"> to add any plugin of your choice. A number of plugins are activated by default, but if you are for example interested in pupil size, you would activate the `Eyestate` plugin now. 
+- Add required plugins - From the **Plugins** secction, which can be found in the Sidebar, click `Add/Remove` to add any plugin of your choice. A number of plugins are activated by default, but if you are for example interested in pupil size, you would activate the `Eyestate` plugin now. 
 - Playback - press the play button or `space` bar on your keyboard to view the video playback with visualization overlay, or drag the playhead in the seek bar to scrub through the dataset.
 - Set trim marks - drag the rounded rectangle at the beginning and end of the `Export window` to set the trim marks. This will set the start and end frame for the exporter and for other plugins.
-- Export Video & Raw Data - From the `Export All` view, click the  <img src="./exporticon.webp" width="20" height="20"> symbol, and select a location to create the export folder.
+- Export Video & Raw Data - From the `Export All` view, click the  export symbol, and select a location to create the export folder.
 - View the exported data in .csv format in the newly created directory. 
