@@ -208,59 +208,34 @@ let theme_config_additions = {
       { text: "Troubleshooting", link: "/pupil-cloud/troubleshooting/" },
     ],
     "/neon-player/": [
+      { text: "Overview", link: "/neon-player/" },
       {
-        text: "Overview",
-        link: "/neon-player/",
+        text: "General",
+        items: [
+          { text: "First Steps", link: "/neon-player/first-steps/" },
+          { text: "Neon Player Interface", link: "/neon-player/interface/" },
+          { text: "Playback & Timeline", link: "/neon-player/playback-timeline/"},
+          { text: "Sidebar", link: "/neon-player/plugins-sidebar/"},
+          { text: "Offset Correction", link: "/neon-player/gaze-offset-correction/"},
+          { text: "Events", link: "/neon-player/events"},
+        ],
       },
       {
         text: "Plugins",
         items: [
-          {
-            text: "Visualization Plugins",
-            link: "/neon-player/visualization-plugins/",
-          },
-          {
-            text: "Fixations & Saccades",
-            link: "/neon-player/fixations-and-saccades/",
-          },
-          {
-            text: "Blinks",
-            link: "/neon-player/blinks/",
-          },
-          {
-            text: "Surface Tracking",
-            link: "/neon-player/surface-tracking/",
-          },
-        
-          {
-            text: "IMU",
-            link: "/neon-player/imu/",
-          },
-          {
-            text: "Eyestate",
-            link: "/neon-player/eyestate/",
-          },
-          {
-            text: "Gaze Offset Correction",
-            link: "/neon-player/gaze-offset-correction/"
-          },
-          {
-            text: "Events",
-            link: "/neon-player/events/"
-          },
-          {
-            text: "Gaze Data",
-            link: "/neon-player/gaze-data/",
-          },
-          {
-            text: "World Video Exporter",
-            link: "/neon-player/world-video-exporter/",
-          },
+          {text: "Plugins / Streams", link: "/neon-player/plugins/"},
+          {text: "Marker Mapper", link: "/neon-player/marker-mapper/"},
+          {text: "Plugin API", link: "/neon-player/plugin-api/"},
         ],
       },
       {
-        text: "Plugin API",
-        link: "/neon-player/plugin-api/",
+        text: "Visualizations", 
+        items:[{ text: "General", link: "/neon-player/visualizations/" }]
+      },
+      { text: "Shortcuts", link: "/neon-player/shortcuts/"},
+      {
+        text: "Troubleshooting",
+        link: "/neon-player/troubleshooting/",
       },
     ],
     "/neon-xr/": [
