@@ -1,11 +1,12 @@
 # World Video Exporter
-The `World Video Exporter` Plugin is loaded by default.
 
-The export saves the world video as shown in Neon Player, including all currently active visualizations 
-(see [Visualization Plugins](/neon-player/visualization-plugins/)). 
+The `Video Exporter` Plugin is loaded by default.
 
+The export saves the world video as shown in Neon Player, including all currently active visualizations, and is triggered by clicking the "Export" button. You can also export or copy the current frame to the clipboard.
 
-![Export](./np-export.webp)
+![Export](./np-export.webp) # TODO: replace with newer image
 
 ## Export Format
-The World Video Exporter saves the world video file, together with [numpy](https://numpy.org/devdocs/reference/generated/numpy.lib.format.html) and csv files containing timestamps corresponding to each frame. See this [tutorial on how to extract individual frame images from the world video](https://github.com/pupil-labs/pupil-tutorials/blob/master/09_frame_identification.ipynb). 
+
+The World Video Exporter saves the world video file (world.mp4), together with a csv files containing timestamps corresponding to each frame.
+TODO: Currently, world timestamps are not there
