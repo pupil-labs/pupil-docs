@@ -2,18 +2,20 @@
 
 ![Timeline vew](./timeline1.webp)
 
-- **Export window**: Control the playback of the video with the play/pause button (or spacebar on your keyboard). Drag the playhead (vertical line) to the desired point in time.
-- **Trimming**: Drag the rounded rectangles at either end of the `Export window` timeline to set beginning and ending trim markers. The trim section markers specify the section of the video/data to export.
-- **Frame Stepping**: With the arrow keys on your keyboard, you can jump through the recording in steps of 5 seconds. Alternatively, if you hold Shift while pressing the arrow keys, you advance one frame at a time.
-- **Playback Speed**: To change the playback speed, use the dropdown menu on the right side of the timeline to change playback from `-2x` to `2x`.
+- **Export window**: Control video playback using the **Play/Pause** button or the `Spacebar` on your keyboard. To navigate to a specific point in time, drag the vertical playhead along the timeline.
+- **Trimming**: Drag the rounded handles at either end of the timeline to set your beginning and ending trim markers. These markers define the specific section of video and data that will be included in your export.
+- **Frame Stepping**: Use the Arrow Keys to jump through the recording in 5-second increments. To advance or retreat one frame at a time for precise inspection, hold Shift while pressing the arrow keys.
+- **Playback Speed**: To change the playback speed, use the dropdown menu on the right side of the timeline. Speeds can be toggled between `-2x` (reverse) to `2x` (fast-forward).
 
 ## Data Tracks
 
 ![Timeline view with more tracks](./timeline2.webp)
 
-You can add data tracks to the timeline from plugins that support this feature, they will show under the `Export window` and they are alphabetically ordered. For example, the `Eyestate` plugin allows you to add tracks for pupil diameter, eyelid aperture or optical axis data. You can hover over the track to see the value at a given time, or click on it to add a marker with the current value to the timeline. This allows you to visualize how the data changes over time and in relation to other events in the recording.
+You can add data tracks to the timeline from plugins that support this feature. These tracks appear directly beneath the Export window and are organized in alphabetical order.
 
-These can display the data as a line plot, dots or broken lines, depending on the plugin's implementation.
+For instance, the Eyestate plugin enables you to add tracks for pupil diameter, eyelid aperture, or optical axis data. This allows you to visualize how specific metrics change over time and in relation to other events in the recording.
+
+Interaction is straightforward: you can hover your cursor over a track to see the exact value at a given time, or click on it to place a marker with that value onto the timeline. Depending on how the specific plugin is implemented, data may be displayed as a line plot, a series of dots, or broken lines.
 
 ::: danger NOTE
 The timeline does not currently support tooltips to show data at that time.

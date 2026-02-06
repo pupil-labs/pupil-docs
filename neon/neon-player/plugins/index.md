@@ -1,4 +1,12 @@
-# Plugins / Streams
+# Plugins
+
+Neon Player uses a plugin architecture to add functionality, all data streams are implemented using this structure and each can be activated or deactivated on demand in the sidebar.
+
+Different plugins have different configurable options depending on their functionality.
+
+## Installed Plugins
+
+These are the plugins that are installed by default. Most of them load the corresponding data stream, add a track in the timeline, and export the data in .csv format. Some of them also provide visualizations in the video player.
 
 | Plugin             | Description                                                                                                                                                                                                                         |
 | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

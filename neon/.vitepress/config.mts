@@ -212,25 +212,25 @@ let theme_config_additions = {
       {
         text: "General",
         items: [
-          { text: "First Steps", link: "/neon-player/first-steps/" },
+          { text: "Getting Started", link: "/neon-player/first-steps/" },
           { text: "Neon Player Interface", link: "/neon-player/interface/" },
           { text: "Playback & Timeline", link: "/neon-player/playback-timeline/"},
-          { text: "Sidebar", link: "/neon-player/plugins-sidebar/"},
-          { text: "Offset Correction", link: "/neon-player/gaze-offset-correction/"},
-          { text: "Events", link: "/neon-player/events"},
         ],
       },
       {
         text: "Plugins",
         items: [
-          {text: "Plugins / Streams", link: "/neon-player/plugins/"},
+          {text: "Plugins System", link: "/neon-player/plugins/"},
+          { text: "Exports", link: "/neon-player/exports/"},
+          { text: "Offset Correction", link: "/neon-player/gaze-offset-correction/"},
+          { text: "Events", link: "/neon-player/events"},
           {text: "Marker Mapper", link: "/neon-player/marker-mapper/"},
-          {text: "Plugin API", link: "/neon-player/plugin-api/"},
+          {text: "Visualizations", link: "/neon-player/visualizations/" },
         ],
       },
       {
-        text: "Visualizations", 
-        items:[{ text: "General", link: "/neon-player/visualizations/" }]
+        text: "Developer",
+        items:[{text: "Plugin API", link: "/neon-player/plugin-api/"}]
       },
       { text: "Shortcuts", link: "/neon-player/shortcuts/"},
       {
