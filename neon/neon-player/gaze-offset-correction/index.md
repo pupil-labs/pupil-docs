@@ -7,4 +7,6 @@ To use this feature, navigate to the 'Gaze Data' plugin and drag the sliders unt
 
 Offset corrected gaze will subsequently be used by any plugins that leverage gaze data, such as Fixations, and Surface Tracker.
 
-![Gaze offset correction screen in Neon Player](./np-gaze-offset.webp)
+<video width="100%" controls>
+  <source src="./np-gaze-offset.mp4" type="video/mp4">
+</video>

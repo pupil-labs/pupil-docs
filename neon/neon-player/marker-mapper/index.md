@@ -1,9 +1,10 @@
-# Surface Tracking
-<!-- TODO: Coordinates differ from marker mapper, top-left/ botom-left origin -->
+# Marker Mapper
 
 You can use this plugin to detect markers in the recording, define surfaces, edit surfaces, and create and export visualizations of gaze data within the defined surfaces.
 
-![Offline surface tracker](./offline-srf-tracker-new.webp)
+<video width="100%" controls>
+  <source src="./np_marker_mapper.mp4" type="video/mp4">
+</video>
 
 ## Setup
 
@@ -13,23 +14,30 @@ Ensure that your recording contains AprilTag Markers, like the ones you would us
 
 Here is an example workflow for using the `Surface Tracking` plugin to generate heatmap visualizations and export surface data reports:
 
-  + **Load the Surface Tracking Plugin**: Open your recording in Neon Player and navigate to the Plugins section in the right-hand panel. Click `Add/Remove` and enable `Surface Tracking`. 
-  + **Add a Surface**: If no surfaces exist yet, you can create one, by clicking on the `+ Add surface` button when the markers you want to use are visible.
-  + **Define Surface Properties**: Once the surface is created, configure it in the `Surface Tracking` panel:
-    - **Name**: Assign a meaningful name (e.g. screen, worksheet, poster). This name will be used in visualizations and exported reports.
-    - **Verify Surface Detection**: To visually confirm that the surface is being tracked correctly, you can enable `Draw marker IDs` and/or `Draw names` to overlay marker information on the scene video.
-    
-      The detected surface outline should remain stable even when the participant or camera moves. Scrub through the timeline to ensure the surface is detected consistently throughout the recording.
-    - **Visualize Gaze on the Surface**: With a surface selected, you can click `Edit` to drag the corners and adjust the surface as needed. Additionally, you can enable `Show heatmap` to overlay a gaze heatmap on the surface. From there, you can adjust: 
-      - the `Heatmap smoothness` to control spatial smoothing,
-      - the `Heatmap alpha` to change transparency, 
-      - the `Heatmap color` to choose a color map that best fits your visualization needs. 
+- **Load the Surface Tracking Plugin**: Open your recording in Neon Player and navigate to the Plugins section in the right-hand panel. Click `Add/Remove` and enable `Surface Tracking`.
+- **Add a Surface**: If no surfaces exist yet, you can create one, by clicking on the `+ Add surface` button when the markers you want to use are visible.
 
-    These settings only affect visualization and do not alter the underlying data. You can also click `View Surface` to switch from the scene view to a direct, front-facing view of the surface.
+- **Define Surface Properties**: Once the surface is created, configure it in the `Surface Tracking` panel:
+  - **Name**: Assign a meaningful name (e.g. screen, worksheet, poster). This name will be used in visualizations and exported reports.
+  - **Verify Surface Detection**: To visually confirm that the surface is being tracked correctly, you can enable `Draw marker IDs` and/or `Draw names` to overlay marker information on the scene video.
+
+    The detected surface outline should remain stable even when the participant or camera moves. Scrub through the timeline to ensure the surface is detected consistently throughout the recording.
+
+<video width="100%" controls>
+  <source src="./np_marker_mapper_edit_surface.mp4" type="video/mp4">
+</video>
+
+- **Visualize Gaze on the Surface**: With a surface selected, you can click `Edit` to drag the corners and adjust the surface as needed. Additionally, you can enable `Show heatmap` to overlay a gaze heatmap on the surface. From there, you can adjust:
+  - the `Heatmap smoothness` to control spatial smoothing,
+  - the `Heatmap alpha` to change transparency,
+  - the `Heatmap color` to choose a color map that best fits your visualization needs.
+
+These settings only affect visualization and do not alter the underlying data. You can also click `View Surface` to switch from the scene view to a direct, front-facing view of the surface.
 
 ## Timeline View
 
 In the timeline view:
+
 1. `Marker visibility` provides a quick visual indication of how many markers are detected in each video frame. The track is color-coded using the Viridis colormap, where darker colors indicate fewer detected markers and brighter colors indicate more detected markers. This helps identify time segments where surfaces are well supported by visible markers versus segments where detection may be unreliable.
 
 2. `Surface Gaze: <surface name>` highlights, in blue, the segments of the recording where gaze is mapped onto the detected surface.
@@ -39,11 +47,12 @@ In the timeline view:
 ![Timeline view](./timeline.webp)
 
 ## Export Format
+
 Once you're satisfied with the surface tracking and visualization, you can click on `Export` within the surface panel to generate surface-based gaze and fixation data. The following files will be exported.
 
-### gaze_positions_on_surface_<*surface_name*>.csv
+### gaze*positions_on_surface*<_surface_name_>.csv
 
-This file contains all the mapped gaze data from all sections. 
+This file contains all the mapped gaze data from all sections.
 
 | Field                                       | Description                                                                                                                                      |
 | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -52,7 +61,7 @@ This file contains all the mapped gaze data from all sections.
 | **gaze position on surface x [normalized]** | Float value representing the x-coordinate of the mapped gaze point in surface coordinates. If the surface was not localized this value is empty. |
 | **gaze position on surface y [normalized]** | Same as gaze position on surface x [normalized] but for y-coordinate.                                                                            |
 
-### fixations_on_surface_<*surface_name*>.csv
+### fixations*on_surface*<_surface_name_>.csv
 
 This file contains fixation events detected in the gaze data stream and mapped to the surface.
 
@@ -66,4 +75,4 @@ This file contains fixation events detected in the gaze data stream and mapped t
 | **fixation x [normalized]**        | Float value representing the x-coordinate of the fixation in surface coordinates. This position is the average of all mapped gaze samples within the fixation. |
 | **fixation y [normalized]**        | Same as "fixation x [normalized]" but for the y-coordinate.                                                                                                    |
 
-If `Show heatmap` is selected, a heatmap in `.png` file will be also exported. 
+If `Show heatmap` is selected, a heatmap in `.png` file will be also exported.

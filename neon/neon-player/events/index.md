@@ -15,4 +15,8 @@ You can create multiple event types, each with its own shortcut, to label record
 
 In the timeline, you can also right-click on an existing event to "seek" the video to that timestamp, making it easy to review specific moments in the recording or to delete events you no longer need.
 
+<video width="100%" controls>
+  <source src="./events.mp4" type="video/mp4">
+</video>
+
 You can also import existing events from a CSV file using the `Import CSV` option. This is useful for bringing in annotations generated externally, such as task logs or behavioral markers. Imported events are placed directly on the timeline and appear alongside any events added manually in Neon Player.

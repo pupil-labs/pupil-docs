@@ -1,6 +1,6 @@
 # Neon Player Interface
 
-![Neon Player Callout](./pp-callout_np6.webp)
+![Neon Player Callout](./np-callout.webp)
 
 Neon Player's interface consists of three main sections, that are resizable and can be un-docked to separate windows:
 
