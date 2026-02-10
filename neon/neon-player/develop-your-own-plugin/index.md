@@ -4,7 +4,7 @@ For the plugin development process, we recommend to run [Neon Player from source
 
 ## Language
 
-Neon Player is written in `Python 3.11`. At its core, Neon Player is built on top of the [Neon Recording API](../recording-api/) and features a user interface based on [PyQt](https://doc.qt.io/qtforpython-6/).
+Neon Player is written in `Python 3.11`. At its core, Neon Player is built on top of the [Neon Recording API](../../recording-api/) and features a user interface based on [PyQt](https://doc.qt.io/qtforpython-6/).
 
 ## Plugin API
 
