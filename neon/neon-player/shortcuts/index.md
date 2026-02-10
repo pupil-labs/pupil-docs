@@ -9,7 +9,3 @@
 | `s`               | Jump to next fixation                |
 
 <sup>1</sup> Hold `<shift>` to move one frame at a time
-
-::: danger TODO
-Add all, there are more like open rec, or global settings. Aim is to mimic Cloud shortcuts where possible.
-:::

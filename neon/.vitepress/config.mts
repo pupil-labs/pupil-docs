@@ -224,7 +224,7 @@ let theme_config_additions = {
           { text: "Exports", link: "/neon-player/exports/"},
           { text: "Offset Correction", link: "/neon-player/gaze-offset-correction/"},
           { text: "Events", link: "/neon-player/events"},
-          {text: "Marker Mapper", link: "/neon-player/marker-mapper/"},
+          {text: "Surface Tracker", link: "/neon-player/surface-tracker/"},
           {text: "Visualizations", link: "/neon-player/visualizations/" },
           {text: "Settings", link: "/neon-player/settings/"},
         ],

@@ -9,7 +9,7 @@ import DownloadLinks from '@components/DownloadLinks.vue'
 <download-links
   src="https://api.github.com/repos/pupil-labs/neon-player/releases/latest"
   text="Download Neon Player"
-  icon="../neon-player.svg"
+  icon="./neon-player.svg"
 />
 
 ::: info
@@ -22,9 +22,9 @@ To load blinks or fixations & saccades in recordings made prior to `v2.9.0-prod`
 
 To load a recording, you first need to have it on your computer. You can obtain a recording in two ways:
 
-1. Direct transfer from Neon Companion Device – For detailed instructions, refer to [this guide](/data-collection/transfer-recordings-via-usb/).
+- **Direct transfer from Neon Companion Device**: For detailed instructions, refer to [this guide](/data-collection/transfer-recordings-via-usb/).
 
-2. Download from [Pupil Cloud](/pupil-cloud/) – Right-click on a recording in Pupil Cloud, select **Download**, and ensure you choose the **"Native Recording Data"** format.
+- **Download from [Pupil Cloud](/pupil-cloud/)**: Right-click on a recording in Pupil Cloud, select **Download**, and ensure you choose the **"Native Recording Data"** format.
 
 Once you have the recording, open Neon Player, and drag-and-drop the folder into the application window, or click on "_Choose a recording folder_", navigate to the desired folder and "Open" it.
 
@@ -35,7 +35,7 @@ Once you have the recording, open Neon Player, and drag-and-drop the folder into
 ![Drag and drop recording folder](./pp-start.webp)
 
 ::: info
-Recordings exported directly from the Companion Device will be in their native format and capture the raw recording 
+Recordings exported directly from the Companion Device will be in their native format and capture the raw recording
 environment. This means they will only include the data streams enabled and sampling rate at the time of recording.
 Please refer to [the local transfer guide](/data-collection/transfer-recordings-via-usb/) for more details.
 :::

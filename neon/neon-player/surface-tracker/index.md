@@ -1,14 +1,14 @@
-# Marker Mapper
+# Surface Tracker
 
 You can use this plugin to detect markers in the recording, define surfaces, edit surfaces, and create and export visualizations of gaze data within the defined surfaces.
 
 <video width="100%" controls>
-  <source src="./np_marker_mapper.mp4" type="video/mp4">
+  <source src="./np_surface_tracker.mp4" type="video/mp4">
 </video>
 
 ## Setup
 
-Ensure that your recording contains AprilTag Markers, like the ones you would use with the [Marker Mapper](./../../pupil-cloud/enrichments/marker-mapper/#setup).
+Ensure that your recording contains AprilTag Markers, like the ones you would use with the [Surface Tracker](./../../pupil-cloud/enrichments/marker-mapper/#setup).
 
 ## Workflow
 
@@ -24,7 +24,7 @@ Here is an example workflow for using the `Surface Tracking` plugin to generate 
     The detected surface outline should remain stable even when the participant or camera moves. Scrub through the timeline to ensure the surface is detected consistently throughout the recording.
 
 <video width="100%" controls>
-  <source src="./np_marker_mapper_edit_surface.mp4" type="video/mp4">
+  <source src="./np_surface_tracker_edit_surface.mp4" type="video/mp4">
 </video>
 
 - **Visualize Gaze on the Surface**: With a surface selected, you can click `Edit` to drag the corners and adjust the surface as needed. Additionally, you can enable `Show heatmap` to overlay a gaze heatmap on the surface. From there, you can adjust:
@@ -50,7 +50,7 @@ In the timeline view:
 
 Once you're satisfied with the surface tracking and visualization, you can click on `Export` within the surface panel to generate surface-based gaze and fixation data. The following files will be exported.
 
-### gaze*positions_on_surface*<_surface_name_>.csv
+### gaze*positions_on_surface<\_surface_name*>.csv
 
 This file contains all the mapped gaze data from all sections.
 
@@ -61,7 +61,7 @@ This file contains all the mapped gaze data from all sections.
 | **gaze position on surface x [normalized]** | Float value representing the x-coordinate of the mapped gaze point in surface coordinates. If the surface was not localized this value is empty. |
 | **gaze position on surface y [normalized]** | Same as gaze position on surface x [normalized] but for y-coordinate.                                                                            |
 
-### fixations*on_surface*<_surface_name_>.csv
+### fixations*on_surface<\_surface_name*>.csv
 
 This file contains fixation events detected in the gaze data stream and mapped to the surface.
 

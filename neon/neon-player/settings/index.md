@@ -13,12 +13,12 @@ Inside this folder, you will find:
 └── settings.json
 ```
 
-## Logs
+## Neon Player Log
 
 This folder contains a log file (`neon_player.log`) created by Neon Player. These can be useful for debugging purposes and are overwritten on each start of Neon Player.
 
 If reporting an issue, please attach the latest log file.
 
-## Settings
+## Settings File
 
 This file (`settings.json`) contains user settings for Neon Player and which plugins are enabled or disabled by default. Rather than editing this file directly, it is recommended to use the Global Settings dialog in Neon Player to change these values.

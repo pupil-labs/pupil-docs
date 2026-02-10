@@ -15,8 +15,4 @@ You can add data tracks to the timeline from plugins that support this feature. 
 
 For instance, the Eyestate plugin enables you to add tracks for pupil diameter, eyelid aperture, or optical axis data. This allows you to visualize how specific metrics change over time and in relation to other events in the recording.
 
-Interaction is straightforward: you can hover your cursor over a track to see the exact value at a given time, or click on it to place a marker with that value onto the timeline. Depending on how the specific plugin is implemented, data may be displayed as a line plot, a series of dots, or broken lines.
-
-::: danger NOTE
-The timeline does not currently support tooltips to show data at that time.
-:::
+Depending on how the specific plugin is implemented, data may be displayed as a line plot, a series of dots, or broken lines.

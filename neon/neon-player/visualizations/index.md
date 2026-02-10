@@ -1,4 +1,4 @@
-# Basic Visualizations
+# Visualizations
 
 Some plugins have the capability to overlay additional visualizations on top of the scene camera video. These plugins can have different ways to customize the appearance.
 
