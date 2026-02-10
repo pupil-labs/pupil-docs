@@ -15,7 +15,7 @@ Inside this folder, you will find:
 
 ## Neon Player Log
 
-This folder contains a log file (`neon_player.log`) created by Neon Player. These can be useful for debugging purposes and are overwritten on each start of Neon Player.
+This folder contains a log file (`neon_player.log`) created by Neon Player. This can be useful for debugging purposes and is overwritten on each start of Neon Player.
 
 If reporting an issue, please attach the latest log file.
 

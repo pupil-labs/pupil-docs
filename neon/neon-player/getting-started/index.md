@@ -22,9 +22,9 @@ To load blinks or fixations & saccades in recordings made prior to `v2.9.0-prod`
 
 To load a recording, you first need to have it on your computer. You can obtain a recording in two ways:
 
-- **Direct transfer from Neon Companion Device**: For detailed instructions, refer to [this guide](/data-collection/transfer-recordings-via-usb/).
+- **Direct transfer from Neon Companion Device:** For detailed instructions, refer to [this guide](/data-collection/transfer-recordings-via-usb/).
 
-- **Download from [Pupil Cloud](/pupil-cloud/)**: Right-click on a recording in Pupil Cloud, select **Download**, and ensure you choose the **"Native Recording Data"** format.
+- **Download from [Pupil Cloud](/pupil-cloud/):** Right-click on a recording in Pupil Cloud, select **Download**, and ensure you choose the **"Native Recording Data"** format.
 
 Once you have the recording, open Neon Player, and drag-and-drop the folder into the application window, or click on "_Choose a recording folder_", navigate to the desired folder and "Open" it.
 

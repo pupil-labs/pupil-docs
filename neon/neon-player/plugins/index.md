@@ -1,27 +1,29 @@
 # Plugins
 
-Neon Player uses a plugin architecture to add functionality, all data streams are implemented using this structure and each can be activated or deactivated on demand in the sidebar.
+Neon Player uses a plugin architecture to add functionality. All data streams are implemented using this scheme, 
+and each can be added or removed on demand in the sidebar.
 
 Different plugins have different configurable options depending on their functionality.
 
 ## Installed Plugins
 
-These are the plugins that are installed by default. Most of them load the corresponding data stream, add a track in the timeline, and export the data in .csv format. Some of them also provide visualizations in the video player.
+These plugins are installed by default. Most of them load the corresponding data stream, add a track in 
+the timeline, and export data in .csv format. Some of them also generate visualizations in the video player.
 
 ---
 
-| Plugins        | Description                                                                                                                                                                                                                         |
-| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Audio          | When loaded, audio will become available and it will display the audio waveform in the timeline.                                                                                                                                    |
-| Blinks         | Adds blink events to the timeline, and exports them in .csv format. Blinks are detected based on the eye state stream, so they will only be present if the eye state stream is loaded in the recording.                             |
-| Events         | See [Events](../events/).                                                                                                                                                                                                           |
-| Export All     | Allows you to export all data from all enabled plugins together.                                                                                                                                                                    |
-| Eye Overlay    | Adds an eyes overlay to the video player, it can be dragged around and resized in the video player. You can also modify it's opacity, or add a border around and change it's appearance.                                            |
-| Eye State      | Allows you to add a track in the timeline with the different [eye state](../../data-collection/data-streams/#_3d-eye-poses) data, and also exports it in .csv format.                                                               |
-| Fixations      | Adds fixation events to the timeline, and exports them in .csv format, it will also generate the saccades.csv file.                                                                                                                 |
-| Gaze Data      | This plugin handles gaze offset correction, and exports gaze data. It is active by default and also provides a way to create visualizations of the gaze data in the video player.                                                   |
-| IMU            | When loaded, it will display the IMU data in the timeline.                                                                                                                                                                          |
-| Scene Renderer | This plugin loads the scene camera and allows you to modify the brightness and contrast of the world video, as well as allow you to show the frame index at the bottom left of the video. You can remove it to visualize gaze only. |
-| Video Exporter | Allows you to export or copy a current frame with all the visualizations in the video player as an image, or to export a video of the current scene with all the visualizations.                                                    |
+| Plugins              | Description                                                                                                                                                                                             |
+|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Audio                | Enables audio playback and displays a waveform in the timeline.                                                                                                                                         |
+| Blinks               | Adds blink events to the timeline and exports them in `.csv` format. Requires the [eye state](../../data-collection/data-streams/#_3d-eye-poses) data stream to be present in the raw native recording. |
+| Events               | Manages recording events. (See the [Events](../events/) section for details).                                                                                                                           |
+| Export All           | Exports data from all enabled plugins simultaneously.                                                                                                                                                   |
+| Eye Overlay          | Adds a draggable, resizable eye overlay to the video player. Includes options to customize opacity, borders, and appearance.                                                                            |
+| Eye State            | Adds tracks to the timeline displaying [eye state](../../data-collection/data-streams/#_3d-eye-poses) data and exports them in `.csv` format.                                                           |
+| Fixations & Saccades | Adds [fixation and saccade](../../data-collection/data-streams/#fixations-saccades) events to the timeline and exports them in `.csv` format.                                                           |
+| Gaze Data            | Handles gaze offset correction and exports [gaze](../../data-collection/data-streams/#gaze) data. It also renders gaze visualizations in the video player.                                              |
+| IMU                  | Displays IMU (Inertial Measurement Unit) data in the timeline and exports in `.csv` format.                                                                                                             |
+| Scene Renderer       | Loads the scene video. Allows adjustments to brightness and contrast, displays the frame index, or can be disabled to visualize gaze only.                                                              |
+| Video Exporter       | Exports or copies the current frame (as an image) or scene (as a video) with all active visualizations applied.                                                                                         |
 
 ---

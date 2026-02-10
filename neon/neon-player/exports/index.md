@@ -1,14 +1,13 @@
 # Exports
 
-You can export data for every plugin individually, or you can use the `Export All` plugin to export all data together.
+Data can be exported individually for specific plugins or collectively using the `Export All` plugin.
 
-You can press the export icon symbol, which prompts you to select a location to save the data.
+To begin, click an Export icon and select a destination for the data:
+- **Individual Export:** The relevant `.csv` files are saved directly to the selected location.
+- **Export All:** A new folder is created named with the current timestamp. All active plugins with export capabilities will save their data into this folder.
 
-- If exporting from an individual plugin, relevant CSV file's will be saved to the selected location.
+You can continue working in Neon Player while the export runs in the background.
 
-- If exporting from the `Export All` plugin, it will create a new folder with the title of the current timestamp. All loaded plugins with export capabilities will initiate the export process and save their data to this folder.
-
-During the export, you can continue to work with Neon Player.
 
 ::: info
 The exported data follows [Data Format](../../data-collection/data-format/) with some minor adjustments.

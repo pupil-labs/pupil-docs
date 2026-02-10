@@ -1,6 +1,6 @@
 # Development
 
-For the plugin development process, we recommend to [run from source](https://github.com/pupil-labs/neon-player).
+For the plugin development process, we recommend to run [Neon Player from source](https://github.com/pupil-labs/neon-player).
 
 ## Language
 
@@ -8,7 +8,7 @@ Neon Player is written in `Python 3.11`. At its core, Neon Player is built on to
 
 ## Plugin API
 
-You can extend Neon Player's functionality through plugins. They are typically managed within the application's main process which communicates with the plugins via callbacks (see below). These are defined in the root [`Plugin` class](https://github.com/pupil-labs/neon-player/blob/master/pupil_src/shared_modules/plugin.py).
+Plugins are managed within the application's main process which communicates with plugins via callbacks (see below). These are defined in the root [`Plugin` class](https://github.com/pupil-labs/neon-player/blob/master/pupil_src/shared_modules/plugin.py).
 In order to create a new plugin, one has to inherit from this class and overwrite them as desired.
 
 ```py
@@ -18,4 +18,4 @@ class MyCustomPlugin(Plugin):
     pass
 ```
 
-Have a look at [Neon Player's API documentation](https://github.com/pupil-labs/neon-player-beta?tab=readme-ov-file) for more details on the available callbacks and how to use them.
+Check out [Neon Player's API documentation](https://github.com/pupil-labs/neon-player-beta?tab=readme-ov-file) for more details on the available callbacks and how to use them.

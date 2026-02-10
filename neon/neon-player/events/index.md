@@ -1,14 +1,14 @@
 # Events
 
-The Events plugin lets you add timestamped annotations to your recordings directly in Neon Player. This is useful for marking important moments such as condition start, user actions, or experimental events.
+The Events plugin lets you add timestamped annotations to your recordings. This is useful for marking important moments such as condition start, user actions, or experimental events.
 
 Events created during recording, either via the Neon Monitor app or the Real-Time API, are automatically loaded and displayed when you open the recording in Neon Player.
 
-Adding and using events
+**Adding and using events:**
 
-- Open Events in the right-hand panel and click `+Add event type`
+- Open Events in the right-hand panel and click `+ Add event type`
 - Give the event a name and optionally assign a keyboard shortcut
-- During playback, right click over the timeline or press the shortcut to add an event at the current timestamp
+- During playback, right-click over the timeline or press the shortcut to add an event at the current timestamp
 - Events appear immediately on the timeline, aligned with the recording
 
 You can create multiple event types, each with its own shortcut, to label recordings efficiently.

@@ -8,17 +8,17 @@ You can use this plugin to detect markers in the recording, define surfaces, edi
 
 ## Setup
 
-Ensure that your recording contains AprilTag Markers, like the ones you would use with the [Surface Tracker](./../../pupil-cloud/enrichments/marker-mapper/#setup).
+Ensure that your recording contains AprilTag Markers, like the ones you would use with the [Marker Mapper](./../../pupil-cloud/enrichments/marker-mapper/#setup).
 
 ## Workflow
 
-Here is an example workflow for using the `Surface Tracking` plugin to generate heatmap visualizations and export surface data reports:
+Here is an example workflow for using the `Surface Tracking` plugin to generate heatmap visualizations and export surface-mapped data:
 
 - **Load the Surface Tracking Plugin**: Open your recording in Neon Player and navigate to the Plugins section in the right-hand panel. Click `Add/Remove` and enable `Surface Tracking`.
 - **Add a Surface**: If no surfaces exist yet, you can create one, by clicking on the `+ Add surface` button when the markers you want to use are visible.
 
 - **Define Surface Properties**: Once the surface is created, configure it in the `Surface Tracking` panel:
-  - **Name**: Assign a meaningful name (e.g. screen, worksheet, poster). This name will be used in visualizations and exported reports.
+  - **Name**: Assign a meaningful name (e.g. screen, worksheet, poster). This name will be used in visualizations and exports.
   - **Verify Surface Detection**: To visually confirm that the surface is being tracked correctly, you can enable `Draw marker IDs` and/or `Draw names` to overlay marker information on the scene video.
 
     The detected surface outline should remain stable even when the participant or camera moves. Scrub through the timeline to ensure the surface is detected consistently throughout the recording.
