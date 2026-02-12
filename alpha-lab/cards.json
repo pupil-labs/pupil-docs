@@ -255,5 +255,16 @@
     "image": "/alpha-lab/sam2.webp",
     "category": "Data Processing & Workflows",
     "filters": ["Neon", "Pupil Cloud", "Offline Processing", "AI/Deep Learning", "AOI Mapping"]
+  },
+  {
+    "title": "Capture Neon's Motion",
+    "details": "Localize Neon in Motion Capture coordinate systems.",
+    "link": {
+      "text": "View",
+      "href": "/alpha-lab/mocap/"
+    },
+    "image": "/alpha-lab/sam2.webp",
+    "category": "Eye Tracking in Physical Spaces",
+    "filters": ["Neon", "Offline Processing", "Multimodal Data"]
   }
 ]
