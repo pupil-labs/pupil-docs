@@ -1,11 +1,15 @@
 # Auto Image Mapper
 
 The Auto Image Mapper (AIM) enrichment that detects where a target image appears within a scene video recording. It requires no setup or interaction other than a single user-uploaded reference image. It is robust to real-world variations in lighting, rotation, scale, and occlusions.
-<!-- insert video -->
+
+<video width="100%" controls>
+  <source src="./aim-docs-lowres.mp4" type="video/mp4">
+</video>
 
 ## Setup 
 - **Upload a Reference Image:** Upload the image of the surface you want to track; scans and original 2D artwork (for example, printed material) work
 - Run the enrichment
+
 
 :::tip
 A good surface image is flat (not angled) and cropped to the edges that you want to track. 
