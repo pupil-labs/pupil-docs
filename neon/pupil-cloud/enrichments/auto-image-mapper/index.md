@@ -1,6 +1,6 @@
 # Auto Image Mapper
 
-The Auto Image Mapper (AIM) enrichment that detects where a target image appears within a scene video recording. It requires no setup or interaction other than a single user-uploaded reference image. It is robust to real-world variations in lighting, rotation, scale, and occlusions.
+The Auto Image Mapper (AIM) enrichment detects where a target image appears within a scene video recording. It requires no setup or interaction other than a single user-uploaded reference image. It is robust to real-world variations in lighting, rotation, scale, and occlusions.
 
 <video width="100%" controls>
   <source src="./aim-docs-lowres.mp4" type="video/mp4">
@@ -46,7 +46,7 @@ After the enrichment is successfully run, the recording will show a bounding box
 
 
 :::tip
-If you find localization detection errors or fixations mis-mapped, then make use of [the Mapping Correction tool](/pupil-cloud/enrichments/mapping-correction/) or exclude sections with [events](/data-collection/events/).
+If you find localization detection errors or fixations mis-mapped, then make use of [the Mapping Correction tool](/pupil-cloud/enrichments/mapping-correction/) or exclude sections with [Events](/data-collection/events/).
 :::
 
 ## Export Format
