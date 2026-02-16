@@ -38,7 +38,7 @@ To visualize your AOI heatmap:
 
 ![View AOI heatmap](./View_AOI_heatmap.png)
 
-Within the AOI Heatmap view, users can specify the recordings to be included, the metric to be displayed, and which AOIs should be incorporated into the visualization.
+Within the AOI Heatmap view, users can specify the recordings to be included, the metric to be displayed, and which AOIs should be incorporated into the visualization. In the recording drop-down selector, you can view the fixation count for each recording. This provides a clearer understanding of exactly what data is contributing to the visualization.
 
 <Youtube src="Rrb6OKmTCOs"/>
 
