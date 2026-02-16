@@ -20,7 +20,7 @@ From there, you will enter the AOI editing view and you are ready to start drawi
 
 AOIs can be associated with one or more labels. Labels provide a flexible way to classify AOIs and enable aggregation of gaze metrics across multiple AOI instances and across one or more enrichments within a project.
 
-Right click the label to quickly access the label menu. Multi select AOIs with `shift` or `ctrl` (`cmd` for mac) and assign labels to multiple AOIs at once.
+Right click the label to quickly access the label menu. Multi select AOIs with `shift` or `ctrl` (`cmd` for MacOS) and assign labels to multiple AOIs at once.
 
 Labels exist in the Project scope. To manage Labels, right click an AOI and select ‘Manage Labels’ in the menu.
 
@@ -49,10 +49,30 @@ Within the AOI Heatmap view, users can specify the recordings to be included, th
 
 In the AOI Heatmap view, you can download:
 - The final visualization displaying the metric of your interest in `.png` format.
+
 - `aoi_fixations.csv`: This file contains fixation events mapped on each area of interest.
-<!-- todo insert table -->
+
+| Field                                | Description                                                                                      |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| **label id**                         | Unique identifier of the corresponding AOI label.                                                |
+| **aoi label**                        | Label of the corresponding AOI.                                                                  |
+| **section id**                       | Unique identifier of the corresponding section.                                                  |
+| **recording id**                     | Unique identifier of the recording this sample belongs to.                                       |
+| **fixation id**                      | Identifier of fixation within the section. The counter starts at the beginning of the recording. |
+| **fixation&nbsp;duration&nbsp;[ms]** | Duration of the fixation in milliseconds.                                                        |
+
 - `aoi_metrics.csv`: This file contains standard fixation metrics on AOIs.
-<!-- todo insert table -->
+
+| Field                                               | Description                                                                                                              |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| **label id**                                        | Unique identifier of the corresponding AOI label.                                                                        |
+| **recording id**                                    | Unique identifier of the recording this sample belongs to.                                                               |
+| **recording name**                                  | Unique identifier of the corresponding AOI label.                                                                        |
+| **aoi label**                                       | Label of the corresponding AOI.                                                                                          |
+| **average&nbsp;fixation&nbsp;duration&nbsp;[ms]**   | Average fixation duration for the corresponding area of interest in milliseconds.                                        |
+| **total fixations**                                 | Total number of fixations for the corresponding area of interest in milliseconds.                                        |
+| **time&nbsp;to&nbsp;first&nbsp;fixation&nbsp;[ms]** | Average time in milliseconds until the corresponding area of interest gets fixated on for the first time in a recording. |
+| **total&nbsp;fixation&nbsp;duration&nbsp;[ms]**     | Total fixation duration for the corresponding area of interest in milliseconds.                                          |
 
 Through the **`Downloads`** tab, you can download the AOI-related files as part of the enrichment folder. Note, that the following CSV files will be empty if no AOIs are defined for a specific enrichment.
 
@@ -78,7 +98,7 @@ This file contains standard fixation metrics on AOIs.
 | **label id**                                        | Unique identifier of the corresponding AOI label.                                                                        |
 | **recording id**                                    | Unique identifier of the recording this sample belongs to.                                                               |
 | **recording name**                                  | Name of the recording this sample belongs to.                                                                            |
-| **label name**                                      | Label of the corresponding AOI.                                                                                          |
+| **aoi label**                                       | Label of the corresponding AOI.                                                                                          |
 | **average&nbsp;fixation&nbsp;duration&nbsp;[ms]**   | Average fixation duration for the corresponding area of interest in milliseconds.                                        |
 | **total fixations**                                 | Total number of fixations for the corresponding area of interest in milliseconds.                                        |
 | **time&nbsp;to&nbsp;first&nbsp;fixation&nbsp;[ms]** | Average time in milliseconds until the corresponding area of interest gets fixated on for the first time in a recording. |
