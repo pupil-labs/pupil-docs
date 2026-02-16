@@ -12,7 +12,7 @@ The face detection algorithm used under the hood for this enrichment is [RetinaF
 
 ## Validate the Mapping
 
-After the enrichment is successfully run, the recording timeline contains visualizations that indicate when faces were detected.
+After the enrichment is successfully run, the recording timeline contains visualizations that indicate when faces were detected. You can also check how much of each recording is localized (in percentage) in the recording drop-down selector.
 
 <video width="100%" controls>
   <source src="./validate_facemapper.mp4" type="video/mp4">

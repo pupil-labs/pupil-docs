@@ -29,7 +29,7 @@ The following configuration options are available for customizing the scanpath v
 - **Show Scanpath** — Draws lines connecting consecutive fixations to visualize the scanpath.
 - **Circle Opacity** — Use the opacity bar to adjust the transparency of the fixation circles.
 
-Additionally, within the **Scanpath** view, you can select which recordings to include, allowing you to create visualizations for a single recording or combine multiple recordings in one overview.
+Additionally, within the **Scanpath** view, you can select which recordings to include, allowing you to create visualizations for a single recording or combine multiple recordings in one overview. In the recording drop-down selector, you can view the fixation count for each recording. This provides a clearer understanding of exactly what data is contributing to the visualization.
 
 ::: tip
 Only fixations mapped _within_ the reference image or surface are displayed in the scanpath. Fixations located _outside_ 
