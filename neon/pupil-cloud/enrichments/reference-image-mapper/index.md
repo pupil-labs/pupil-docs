@@ -13,7 +13,7 @@ A heatmap of gaze data mapped onto the reference image can be generated, and map
 As described in the setup video, you will need two things in addition to your eye tracking recording(s) to produce a Reference Image Mapper enrichment:
 
 1. A reference image
-2. A scanning video of the object/feature(s) taken with the scene camera
+2. A scanning video of the object/feature(s) taken with the scene camera. The selected scanning recording will be automatically assigned the label `Scanning Recording`. This label appears in recording lists across an entire project, making it easier to spot, exclude, or manage scanning recordings in long lists. 
 
 :::tip
 **Reference Image**<br/>
