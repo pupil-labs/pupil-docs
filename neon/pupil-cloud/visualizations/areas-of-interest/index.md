@@ -40,7 +40,10 @@ To visualize your AOI heatmap:
 
 Within the AOI Heatmap view, users can specify the recordings to be included, the metric to be displayed, and which AOIs should be incorporated into the visualization. In the recording drop-down selector, you can view the fixation count for each recording. This provides a clearer understanding of exactly what data is contributing to the visualization.
 
-<Youtube src="Rrb6OKmTCOs"/>
+<!-- <Youtube src="Rrb6OKmTCOs"/> -->
+<video width="100%" controls>
+  <source src="./aoi_metrics_reduced.mp4" type="video/mp4">
+</video>
 
 ## Export Format
 
