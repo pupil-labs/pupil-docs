@@ -36,3 +36,13 @@ The output of the Heatmap Visualization is two image files: one image with just 
     ```
 
 ::::
+
+## Export Format
+
+Within the Heatmap view, you can download:
+- the final visualization in `.png` format
+- the heatmap overlay in `.png` format
+- `aoi_fixations.csv`: This file contains fixation events mapped on each area of interest.
+<!-- todo aoi fixations table -->
+- `aoi_metrics.csv`: This file contains standard fixation metrics on AOIs.
+<!-- todo aoi metrics table -->
