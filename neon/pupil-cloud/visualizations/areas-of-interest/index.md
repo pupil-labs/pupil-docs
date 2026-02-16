@@ -49,9 +49,9 @@ Within the AOI Heatmap view, users can specify the recordings to be included, th
 
 In the AOI Heatmap view, you can download:
 - The final visualization displaying the metric of your interest in `.png` format.
-- aoi_fixations.csv: This file contains fixation events mapped on each area of interest.
+- `aoi_fixations.csv`: This file contains fixation events mapped on each area of interest.
 <!-- todo insert table -->
-- aoi_metrics.csv: This file contains standard fixation metrics on AOIs.
+- `aoi_metrics.csv`: This file contains standard fixation metrics on AOIs.
 <!-- todo insert table -->
 
 Through the **`Downloads`** tab, you can download the AOI-related files as part of the enrichment folder. Note, that the following CSV files will be empty if no AOIs are defined for a specific enrichment.
