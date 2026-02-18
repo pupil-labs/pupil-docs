@@ -48,6 +48,7 @@ Within the AOI Heatmap view, users can specify the recordings to be included, th
 ## Export Format
 
 In the AOI Heatmap view and the Downloads view, you can download:
+
 - The final visualization displaying the metric of your interest in `.png` format.
 
 - `aoi_fixations.csv`: This file contains fixation events mapped on each area of interest.
