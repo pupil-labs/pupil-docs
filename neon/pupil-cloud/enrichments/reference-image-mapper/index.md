@@ -13,7 +13,7 @@ A heatmap of gaze data mapped onto the reference image can be generated, and map
 As described in the setup video, you will need two things in addition to your eye tracking recording(s) to produce a Reference Image Mapper enrichment:
 
 1. A reference image
-2. A scanning video of the object/feature(s) taken with the scene camera
+2. A scanning video of the object/feature(s) taken with the scene camera. The selected scanning recording will be automatically assigned the label `Scanning Recording`. This label appears in recording lists across an entire project, making it easier to spot, exclude, or manage scanning recordings in long lists. 
 
 :::tip
 **Reference Image**<br/>
@@ -127,18 +127,19 @@ What works and what doesn’t?
 Why not try replicating the above examples? Or even try it with your own use cases! If you haven’t already, we recommend you check out the [Cloud Getting Started Guide](/pupil-cloud/), which covers the basics of working with enrichments.
 :::
 
-## Validate the Gaze Mapping
+## Validate the Mapping
 
 <video width="100%" controls>
   <source src="./validate_rim.mp4" type="video/mp4">
 </video>
+
+After the enrichment is successfully run, the recording timeline contains visualizations that indicate when the reference image was localized, and when gaze was on the reference image. You can also check how much of each recording is localized (in percentage) in the recording drop-down selector.
 
 To check if gaze has been mapped successfully, use the side-by-side view:
 
 1. Select a recording.
 2. Select the Reference Image Mapper Enrichment.
 3. Select the Scene / Reference Image View.
-<!-- 4. If you want to visualize and evaluate the 3D model generated (white dots), just turn on the Point Cloud toggle! Not in the new cloud UI (to be deleted if no toggle is added)-->
 
 Now when you play back the recording you can see where gaze is mapped to on your reference image for validation.
 

@@ -65,7 +65,7 @@ You can select the image to be used in Marker Mapper visualizations. You can eit
 
 ## Validate the Mapping
 
-After the enrichment is successfully run, the recording timeline contains visualizations that indicate when surface was localized, and when gaze was on the surface.
+After the enrichment is successfully run, the recording timeline contains visualizations that indicate when surface was localized, and when gaze was on the surface. You can also check how much of each recording is localized (in percentage) in the recording drop-down selector.
 
 <video width="100%" controls>
   <source src="./mm_enrichment_viz.mp4" type="video/mp4">
