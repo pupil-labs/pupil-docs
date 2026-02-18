@@ -172,6 +172,10 @@ let theme_config_additions = {
         items: [
           { text: "Overview", link: "/pupil-cloud/enrichments/" },
           {
+            text: "Auto Image Mapper",
+            link: "/pupil-cloud/enrichments/auto-image-mapper/",
+          },
+          {
             text: "Reference Image Mapper",
             link: "/pupil-cloud/enrichments/reference-image-mapper/",
           },
