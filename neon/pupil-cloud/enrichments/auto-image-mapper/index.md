@@ -88,4 +88,4 @@ This file contains fixation events detected in the gaze data stream and mapped t
 
 ### Reference Image
 
-The reference image that was used for defining the enrichment. The file is named `plane_image.jpeg|png`.
+The reference image that was used for defining the enrichment. The file is named `reference_image.jpeg|png`.
