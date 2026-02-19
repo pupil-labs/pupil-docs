@@ -121,3 +121,11 @@ This file contains the surface locations in the scene images for all sections.
 | **tr x/y [px]**         | x or y coordinate respectively of the **t**op **r**ight corner. Empty in case the surface could not be localized. Added in version 2 of this enrichment.                             |
 | **br x/y [px]**         | x or y coordinate respectively of the **b**ottom **r**ight corner. Empty in case the surface could not be localized. Added in version 2 of this enrichment.                          |
 | **bl x/y [px]**         | x or y coordinate respectively of the **b**ottom **l**eft corner. Empty in case the surface could not be localized. Added in version 2 of this enrichment.                           |
+
+### sections.csv
+
+The enrichment is calculated based on sections defined by a start and end event. The `sections.csv` file contains the start and end timestamps of all sections that were used for the enrichment calculation, along with the corresponding section and recording IDs.
+
+### AOI Metrics
+
+If AOIs are defined for the enrichment, the download would also contain the AOI metrics in `.csv` format, as reported in the [AOI Metrics](../../areas-of-interest/index.md#exporting-aoi-metrics).
