@@ -28,11 +28,11 @@ tags: [Neon, Pupil Invisible, Offline Processing, Real-Time Analysis]
 
 ## Multiperson Eye Tracking
 
-Social connection happens in the blink of an eye, often literally. To capture the lightning-fast dynamics of mutual gaze and shared attention, researchers have moved from one-person neuroscience to a rich "multi-person" perspective.
+Social connection happens in the blink of an eye, often literally. To capture the lightning-fast dynamics of mutual gaze and shared attention, researchers have moved from one-person neuroscience to a rich "multi-person" perspective, we have seen it at [Neurolive](https://pupil-labs.com/blog/neurolive-project) or more recently at MacMaster University project [SocialEyes](https://pupil-labs.com/blog/socialeyes).
 
-However, capturing these interactions introduces a challenge: Temporal alignment. Whether you’re analyzing mutual gaze during a conversation, team coordination in sports, or collaborative problem-solving, you need to align datasets from multiple participants. A saccade, for example, takes just 30 to 100 milliseconds, and if your streams are off by even half a second, you might not just miss the moment, but rewrite the cause and effect of interaction.
+However, capturing these interactions introduces a new challenge: Temporal alignment. Whether you’re analyzing mutual gaze during a conversation, team coordination in sports, or collaborative problem-solving, you need to align datasets from multiple participants. A saccade, for example, usually takes between 30 to 100 milliseconds, and if your streams are off by even half a second, you might not just miss the moment, but rewrite the cause-effect of an interaction.
 
-Historically, independent cameras were aligned using shared sound or visual cues, like a cinema clapperboard. This guide shows how to generate that "clap" digitally, introducing a tool called pl-deck, designed to orchestrate, monitor, and synchronize all your eye trackers simultaneously.
+Historically, independent cameras were aligned using shared sound or visual cues, like a cinema clapperboard. This guide shows how to generate that "clap" digitally, introducing a tool called pl-realtime-tui, designed to orchestrate, monitor, and synchronize all your eye trackers simultaneously.
 
 ## The Challenge
 
@@ -44,15 +44,15 @@ To obtain millisecond precision and eliminate drift, we need to generate shared 
 
 Pupil Labs’ Realtime API offers a mechanism for this called [Time Echo](https://pupil-labs.github.io/pl-realtime-api/dev/api/async/?h=echo#time-echo-protocol). Conceptually similar to the Precision Time Protocol (PTP), it allows an external computer to [estimate the time difference](https://pupil-labs.github.io/pl-realtime-api/dev/methods/simple/others/#time-offset-estimation) (offset) between its own clock and the clock of every Neon device on the network.
 
-By calculating this offset (θ) and correcting for network round-trip time, the API can trigger a signal to a connected device, instructing it to write an [event timestamped relative to the client's (computer) clock](https://pupil-labs.github.io/pl-realtime-api/dev/methods/simple/remote-control/#with-manual-clock-offset-correction). When you import your data into your analysis pipeline, these events serve as the perfect alignment keys.
+By calculating this offset (θ) and removing any network latency, the API can trigger a signal to a connected device, instructing it to write an [event timestamped relative to the client's (computer) clock](https://pupil-labs.github.io/pl-realtime-api/dev/methods/simple/remote-control/#with-manual-clock-offset-correction). When you import your data into your analysis pipeline, these events serve as the perfect alignment keys.
 
 ::: tip
 Neon and Pupil Invisible use timestamps in nanoseconds from the [UNIX epoch](/28e9d188973c80029c2fecc673c6c74a?pvs=25). In other words, it reports the time in nanoseconds elapsed from 00:00:00 UTC on 1 January 1970. A common standard to report date and times.
 :::
 
-## The Solution: pl-deck
+## The Solution: pl-realtime-tui
 
-The Realtime API has always allowed users to [obtain clock offsets](https://pupil-labs.github.io/pl-realtime-api/dev/methods/simple/others/#time-offset-estimation) and [send event annotations](https://pupil-labs.github.io/pl-realtime-api/dev/methods/simple/remote-control/#with-manual-clock-offset-correction) manually. However, doing this for multiple devices simultaneously used to require custom scripts.
+The Realtime API has always allowed users to [obtain clock offsets](https://pupil-labs.github.io/pl-realtime-api/dev/methods/simple/others/#time-offset-estimation) and [send event annotations](https://pupil-labs.github.io/pl-realtime-api/dev/methods/simple/remote-control/#with-manual-clock-offset-correction) manually. However, doing this for multiple devices simultaneously used to require custom scripts or developing a custom application.
 
 ::: details See How To Do So Programmatically
 
@@ -158,22 +158,24 @@ if __name__ == "__main__":
 
 :::
 
-![pl-deck interface](./pl-deck-interface.svg)
+To make this process more accessible, we developed pl-realtime-tui, a lightweight command-line tool that allows you to discover all Neon devices on your local network, calculate their clock offsets, and send synchronized events to all of them simultaneously. It also provides a real-time monitoring interface to keep track of the status of each device and its connection.
+
+![pl-realtime-tui interface](./pl-realtime-tui-interface.svg)
 
 ## How to Use It
 
-If you have the [uv](https://github.com/astral-sh/uv) Python tool installed, you can try it immediately without a manual setup:
+If you have [Astral UV](https://github.com/astral-sh/uv)'s Python tool installed, you can try it immediately without a manual setup:
 
 ```sh [uv]
-uvx ...
+uvx pupil-labs-realtime-tui
 ```
 
 ```sh [uv]
-uv tool install ...
-pl-deck
+uv tool install pupil-labs-realtime-tui
+pl-realtime-tui
 ```
 
-Once launched, the control deck allows you to:
+Once launched, the control realtime-tui allows you to:
 
 1. **Discover:** Automatically find all Neon devices on your local network.
 2. **Sync:** Calculate the $\theta$ offset for every participant.
@@ -214,9 +216,13 @@ for time, rec1_pupil, rec2_pupil in combined_data:
 
 :::
 
+::: tip
+Do you want to generate a video like the one at the beginning of this article, showing synchronized gaze data from multiple participants and pupil size? Try `pl-realtime-tui render` or `pl-realtime-tui render --help` for more options.
+:::
+
 ## Benefits
 
-By sending synchronized events to all your eye-tracking devices, either using this tool or by other means, you generate datasets that are kind of born aligned, removing the need to find a common ground. Each dataset will contain event annotations that correspond to the exact same physical moment in time across all participants enabling you to compute metrics like mutual gaze, gaze recurrence (when subjects look at the same region at given time), or pupillary synchrony (a cross-correlation of pupil size, a somatic marker of shared cognitive/emotional states).
+By sending synchronized events to all your eye-tracking devices, either using this tool or by other means, you generate datasets that are kind of born aligned, removing the need to find a common ground posthoc. Each dataset will contain event annotations that correspond to the exact same physical moment in time across all participants enabling you to compute metrics like mutual gaze, gaze recurrence (when subjects look at the same region at given time), or pupillary synchrony (a cross-correlation of pupil size, a somatic marker of shared cognitive/emotional states).
 
 ::: tip
 💡 Need assistance in implementing your own multiperson workflow? Reach out to us by email or visit our Support Page for dedicated support options.
