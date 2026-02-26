@@ -15,6 +15,8 @@ Using a fully charged Motorola Edge 40 Pro device you get around 4 hours of cont
 Make sure to update the Neon Companion app on a regular basis. The latest version will always be available on the
 [Play Store](https://play.google.com/store/apps/details?id=com.pupillabs.neoncomp).
 
+If your setup requires a legacy version of the app, you can download previous releases [here](https://drive.google.com/drive/folders/1KLs779z2yZnu6yGST6BL_CyRAdop1VsT).
+
 ### Android OS
 
 We ship each Companion Device with a specific Android Version, carefully tested to ensure robustness and stability.
