@@ -171,46 +171,25 @@ let theme_config_additions = {
         text: "Enrichments",
         items: [
           { text: "Overview", link: "/pupil-cloud/enrichments/" },
-          {
-            text: "Auto Image Mapper",
-            link: "/pupil-cloud/enrichments/auto-image-mapper/",
-          },
-          {
-            text: "Reference Image Mapper",
-            link: "/pupil-cloud/enrichments/reference-image-mapper/",
-          },
-          {
-            text: "Marker Mapper",
-            link: "/pupil-cloud/enrichments/marker-mapper/",
-          },
-          {
-            text: "Face Mapper",
-            link: "/pupil-cloud/enrichments/face-mapper/",
-          },
-          {
-            text: "Manual Mapper",
-            link: "/pupil-cloud/enrichments/manual-mapper/",
-          },
+          { text: "Auto Image Mapper", link: "/pupil-cloud/enrichments/auto-image-mapper/" },
+          { text: "Face Mapper", link: "/pupil-cloud/enrichments/face-mapper/" },
+          { text: "Marker Mapper", link: "/pupil-cloud/enrichments/marker-mapper/" },
+          { text: "Manual Mapper", link: "/pupil-cloud/enrichments/manual-mapper/"},
+          { text: "Reference Image Mapper", link: "/pupil-cloud/enrichments/reference-image-mapper/" },
+          { text: "Mapping Correction", link: "/pupil-cloud/enrichments/mapping-correction/" },
         ],
       },
-      { text: "Mapping Correction", link: "/pupil-cloud/enrichments/mapping-correction/" },
+      {
+          text: "Areas of Interest (AOIs)", link: "/pupil-cloud/areas-of-interest/",
+      },
       {
         text: "Visualizations",
         items: [
           { text: "Heatmap", link: "/pupil-cloud/visualizations/heatmap/" },
-          {
-            text: "Areas of Interest (AOIs)",
-            link: "/pupil-cloud/visualizations/areas-of-interest/",
-          },
-          {
-            text: "Bar Chart",
-            link: "/pupil-cloud/visualizations/bar-chart/",
-          },
+          { text: "AOI Heatmap", link: "/pupil-cloud/visualizations/aoi-heatmap/" },
           { text: "Scanpath", link: "/pupil-cloud/visualizations/scanpath/" },
-          {
-            text: "Video Renderer",
-            link: "/pupil-cloud/visualizations/video-renderer/",
-          },
+          { text: "Bar Chart", link: "/pupil-cloud/visualizations/bar-chart/" },
+          { text: "Video Renderer", link: "/pupil-cloud/visualizations/video-renderer/" },
         ],
       },
       { text: "Troubleshooting", link: "/pupil-cloud/troubleshooting/" },
