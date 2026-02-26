@@ -21,46 +21,53 @@ After the enrichment is successfully run, the recording timeline contains visual
 ## Export Format
 
 ### face_positions.csv
+
 This file contains all the individual face detections.
 
-| Field | Description | 
-| -------- | -------- | 
-| **section id** | Unique identifier of the corresponding section.     |
-| **recording id** | Unique identifier of the recording this sample belongs to.     |
-| **timestamp [ns]** | UTC timestamp in nanoseconds of the corresponding world camera frame timestamp. If multiple faces have been detected in the same scene video frame, each face is reported in a separate row with the same timestamp.     |
-| **p1 x [px]** | x-coordinate of the starting point of the bounding box rectangle.     |
-| **p1 y [px]** | y-coordinate of the starting point of the bounding box rectangle.     |
-| **p2 x [px]** | x-coordinate of the ending point of the bounding box rectangle.     |
-| **p2 y [px]** | y-coordinate of the ending point of the bounding box rectangle.     |
-| **eye left x [px]** | X coordinate of the left eye in image coordinates in pixels.	|	
-| **eye left y [px]** | Y coordinate of the left eye in image coordinates in pixels.	|
-|	**eye right x [px]** | X coordinate of the right eye in image coordinates in pixels.	|
-| **eye right y [px]** | Y coordinate of the right eye in image coordinates in pixels.	|
-| **nose x [px]** | X coordinate of the nose in image coordinates in pixels. |
-|	**nose y [px]** | Y coordinate of the nose in image coordinates in pixels. | 
-|	**mouth left x [px]** | X coordinate of the left mouth corner in image coordinates in pixels. |
-|	**mouth left y [px]** | Y coordinate of the left mouth corner in image coordinates in pixels. |
-|	**mouth&nbsp;right&nbsp;x&nbsp;[px]** | X coordinate of the right mouth corner in image coordinates in pixels. |
-|	**mouth&nbsp;right&nbsp;y&nbsp;[px]** | Y coordinate of the right mouth corner in image coordinates in pixels. |
+| Field                                 | Description                                                                                                                                                                                                          |
+| ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **section id**                        | Unique identifier of the corresponding section.                                                                                                                                                                      |
+| **recording id**                      | Unique identifier of the recording this sample belongs to.                                                                                                                                                           |
+| **timestamp [ns]**                    | UTC timestamp in nanoseconds of the corresponding world camera frame timestamp. If multiple faces have been detected in the same scene video frame, each face is reported in a separate row with the same timestamp. |
+| **p1 x [px]**                         | x-coordinate of the starting point of the bounding box rectangle.                                                                                                                                                    |
+| **p1 y [px]**                         | y-coordinate of the starting point of the bounding box rectangle.                                                                                                                                                    |
+| **p2 x [px]**                         | x-coordinate of the ending point of the bounding box rectangle.                                                                                                                                                      |
+| **p2 y [px]**                         | y-coordinate of the ending point of the bounding box rectangle.                                                                                                                                                      |
+| **eye left x [px]**                   | X coordinate of the left eye in image coordinates in pixels.                                                                                                                                                         |
+| **eye left y [px]**                   | Y coordinate of the left eye in image coordinates in pixels.                                                                                                                                                         |
+| **eye right x [px]**                  | X coordinate of the right eye in image coordinates in pixels.                                                                                                                                                        |
+| **eye right y [px]**                  | Y coordinate of the right eye in image coordinates in pixels.                                                                                                                                                        |
+| **nose x [px]**                       | X coordinate of the nose in image coordinates in pixels.                                                                                                                                                             |
+| **nose y [px]**                       | Y coordinate of the nose in image coordinates in pixels.                                                                                                                                                             |
+| **mouth left x [px]**                 | X coordinate of the left mouth corner in image coordinates in pixels.                                                                                                                                                |
+| **mouth left y [px]**                 | Y coordinate of the left mouth corner in image coordinates in pixels.                                                                                                                                                |
+| **mouth&nbsp;right&nbsp;x&nbsp;[px]** | X coordinate of the right mouth corner in image coordinates in pixels.                                                                                                                                               |
+| **mouth&nbsp;right&nbsp;y&nbsp;[px]** | Y coordinate of the right mouth corner in image coordinates in pixels.                                                                                                                                               |
 
 ### gaze_on_face.csv
+
 This file indicates which gaze samples are on faces (within the bounding box of detected faces).
 
-| Field | Description | 
-| -------- | -------- | 
-| **section id** | Unique identifier of the corresponding section.     |
-| **recording id** | Unique identifier of the recording this sample belongs to.     |
-| **timestamp&nbsp;[ns]** | UTC timestamp in nanoseconds of the sample. Equal to the timestamp of the corresponding gaze sample.     |
-| **gaze on face** | Boolean indicating whether the gaze point is on a face.     |
+| Field                   | Description                                                                                          |
+| ----------------------- | ---------------------------------------------------------------------------------------------------- |
+| **section id**          | Unique identifier of the corresponding section.                                                      |
+| **recording id**        | Unique identifier of the recording this sample belongs to.                                           |
+| **timestamp&nbsp;[ns]** | UTC timestamp in nanoseconds of the sample. Equal to the timestamp of the corresponding gaze sample. |
+| **gaze on face**        | Boolean indicating whether the gaze point is on a face.                                              |
 
 ### fixations_on_face.csv
+
 This file indicates which fixations are on faces (within the bounding box of detected faces).
 
-| Field                                 | Description | 
-| --------                              | -------- |
-| **section id**                        | Unique identifier of the corresponding section.     |
-| **recording id**                      | Unique identifier of the recording this sample belongs to.     |
-| **fixation id**                       | Identifier of the fixation. The counter starts at the beginning of the recording.     |
-| **start&nbsp;timestamp&nbsp;[ns]**              | UTC timestamp in nanoseconds of the start of the fixation.     |
-| **end&nbsp;timestamp&nbsp;[ns]**                | UTC timestamp in nanoseconds of the end of the fixation.     |
-| **fixation&nbsp;on&nbsp;face**                  | Boolean indicating whether the fixation is on a face.     |
+| Field                              | Description                                                                       |
+| ---------------------------------- | --------------------------------------------------------------------------------- |
+| **section id**                     | Unique identifier of the corresponding section.                                   |
+| **recording id**                   | Unique identifier of the recording this sample belongs to.                        |
+| **fixation id**                    | Identifier of the fixation. The counter starts at the beginning of the recording. |
+| **start&nbsp;timestamp&nbsp;[ns]** | UTC timestamp in nanoseconds of the start of the fixation.                        |
+| **end&nbsp;timestamp&nbsp;[ns]**   | UTC timestamp in nanoseconds of the end of the fixation.                          |
+| **fixation&nbsp;on&nbsp;face**     | Boolean indicating whether the fixation is on a face.                             |
+
+### sections.csv
+
+The enrichment is calculated based on sections defined by a start and end event. The `sections.csv` file contains the start and end timestamps of all sections that were used for the enrichment calculation, along with the corresponding section and recording IDs.

@@ -18,11 +18,11 @@ Data from all enrichments will be included by default. The following configurati
 - **Enrichment Data**: Select enrichments that you want to include in the visualization (all enrichments are included by default)
 - **X axis**: Select AOI labels to show on the x axis
 - **Y axis**: Select the metric to show on the y axis - metrics are aggregated from all AOIs with the same label
-    - total fixation duration [ms]
-    - average fixation duration [ms]
-    - time to first fixation [ms]
-    - wearer reach
-    - fixation count
+  - total fixation duration [ms]
+  - average fixation duration [ms]
+  - time to first fixation [ms]
+  - wearer reach
+  - fixation count
 
 Additionally, use your mouse or trackpad to zoom and pan within the Bar Chart.
 

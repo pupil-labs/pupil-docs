@@ -44,8 +44,7 @@ realities of naturalistic, real-world interactions in sports, classrooms, clinic
 which works well for static objects and environments. However, in many real-world applications such as sports, shopper
 research, surgical workflows, and everyday interactions, objects and people that you want to track are constantly in motion.
 
-Our [existing Alpha Lab tutorial](https://docs.pupil-labs.com/alpha-lab/map-onto-anything/) using detectors like YOLO can track moving categories, but this approach is limited
-to the predefined classes available within that model. As a result, researchers have often had to choose between
+Our [existing Alpha Lab tutorial](../map-onto-anything/) using detectors like YOLO can track moving categories, but this approach is limited to the predefined classes available within that model. As a result, researchers have often had to choose between
 manually annotating videos, relying on static AOIs, or restricting their analysis to broad category labels.
 
 This workflow uses SAM2 segmentation to introduce user-defined, click-based AOIs that can be

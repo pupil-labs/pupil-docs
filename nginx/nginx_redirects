@@ -49,3 +49,4 @@
         rewrite ^/neon/real-time-api/track-your-experiment-in-matlab/?$ https://github.com/pupil-labs/pl-neon-matlab/blob/main/track-your-experiment-progress-using-events.md permanent;
         rewrite ^/(neon|invisible)/pupil-cloud/tutorials/?$ /$1/pupil-cloud/ permanent;
         rewrite ^/(neon|invisible)/pupil-cloud/add-ons/?$ /$1/pupil-cloud/plans/ permanent;
+        rewrite ^/(neon|invisible)/pupil-cloud/visualisations/areas-of-interest/?$ /$1/pupil-cloud/areas-of-interest/ permanent;
