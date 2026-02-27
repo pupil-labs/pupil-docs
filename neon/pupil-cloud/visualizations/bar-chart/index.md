@@ -1,6 +1,6 @@
 # Bar Chart
 
-Use the Bar Chart to visualize gaze metrics for each [AOI label]. The output from any enrichment in your [Project](../../projects/) with AOI labels can be used as input for the Bar Chart visualization. This enables comparison _across_ multiple and varied Enrichments.
+Use the Bar Chart to visualize gaze metrics for each [AOI label](/pupil-cloud/areas-of-interest/). The output from any enrichment in your [Project](https://docs.pupil-labs.com/neon/pupil-cloud/projects/) with AOI labels can be used as input for the Bar Chart visualization. This enables comparison *across* multiple and varied Enrichments.
 
 <!-- todo insert video and update links above -->
 
