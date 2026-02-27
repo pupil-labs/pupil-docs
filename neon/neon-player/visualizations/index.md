@@ -49,7 +49,7 @@ You can set the following parameters within the Fixations plugin:
 | Parameter                | Description                                                                                                            |
 | :----------------------- | :--------------------------------------------------------------------------------------------------------------------- |
 | **Use offset**           | If enabled, fixation points are rendered using the gaze offset. If disabled, raw fixations positions are used.         |
-| **Ajust for optic flow** | If enabled, fixation points are rendered with optic flow adjustment, reducing the impact of scene motion on fixations. |
+| **Adjust for optic flow** | If enabled, fixation points are rendered with optic flow adjustment, reducing the impact of scene motion on fixations. |
 | **Color**                | Select the fixation circle color and opacity.                                                                          |
 | **Base radius**          | Scaling factor for fixation circle size based on fixation duration.                                                    |
 | **Stroke width**         | The thickness or width of the stoke in pixels.                                                                         |
