@@ -214,30 +214,30 @@ let theme_config_additions = {
         items: [
           { text: "Getting Started", link: "/neon-player/getting-started/" },
           { text: "Neon Player Interface", link: "/neon-player/interface/" },
-          { text: "Playback & Timeline", link: "/neon-player/playback-timeline/"},
+          { text: "Playback & Timeline", link: "/neon-player/playback-timeline/" },
         ],
       },
       {
         text: "Plugins",
         items: [
-          {text: "Overview", link: "/neon-player/plugins/"},
-          { text: "Exports", link: "/neon-player/exports/"},
-          { text: "Offset Correction", link: "/neon-player/gaze-offset-correction/"},
-          { text: "Events", link: "/neon-player/events"},
-          {text: "Surface Tracker", link: "/neon-player/surface-tracker/"},
-          {text: "Visualizations", link: "/neon-player/visualizations/" },
-          {text: "Settings", link: "/neon-player/settings/"},
+          { text: "Overview", link: "/neon-player/plugins/" },
+          { text: "Exports", link: "/neon-player/exports/" },
+          { text: "Offset Correction", link: "/neon-player/gaze-offset-correction/" },
+          { text: "Events", link: "/neon-player/events/" },
+          { text: "Surface Tracker", link: "/neon-player/surface-tracker/" },
+          { text: "Visualizations", link: "/neon-player/visualizations/" },
+          { text: "Settings", link: "/neon-player/settings/" },
         ],
       },
       {
         text: "Developer",
-        items:[
-          {text: "Install a Plugin", link: "/neon-player/plugin-api/"},
-          {text: "Create Your Own Plugin", link: "/neon-player/develop-your-own-plugin/"},
-          {text: "Headless Mode", link: "/neon-player/headless-mode/"}
+        items: [
+          { text: "Install a Plugin", link: "/neon-player/plugin-api/" },
+          { text: "Create Your Own Plugin", link: "/neon-player/develop-your-own-plugin/" },
+          { text: "Headless Mode", link: "/neon-player/headless-mode/" }
         ]
       },
-      { text: "Shortcuts", link: "/neon-player/shortcuts/"},
+      { text: "Shortcuts", link: "/neon-player/shortcuts/" },
       {
         text: "Troubleshooting",
         link: "/neon-player/troubleshooting/",
