@@ -129,6 +129,7 @@ let theme_config_additions = {
             link: "/data-collection/lab-streaming-layer/",
           },
           { text: "PsychoPy", link: "/data-collection/psychopy/" },
+          { text: "Using a VPN", link: "/data-collection/using-a-vpn/" },
         ],
       },
       {
