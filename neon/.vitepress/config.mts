@@ -195,62 +195,39 @@ let theme_config_additions = {
       { text: "Troubleshooting", link: "/pupil-cloud/troubleshooting/" },
     ],
     "/neon-player/": [
+      { text: "Overview", link: "/neon-player/" },
       {
-        text: "Overview",
-        link: "/neon-player/",
+        text: "General",
+        items: [
+          { text: "Getting Started", link: "/neon-player/getting-started/" },
+          { text: "Neon Player Interface", link: "/neon-player/interface/" },
+          { text: "Playback & Timeline", link: "/neon-player/playback-timeline/" },
+        ],
       },
       {
         text: "Plugins",
         items: [
-          {
-            text: "Visualization Plugins",
-            link: "/neon-player/visualization-plugins/",
-          },
-          {
-            text: "Fixations & Saccades",
-            link: "/neon-player/fixations-and-saccades/",
-          },
-          {
-            text: "Blinks",
-            link: "/neon-player/blinks/",
-          },
-          {
-            text: "Surface Tracker",
-            link: "/neon-player/surface-tracker/",
-          },
-          {
-            text: "Head Pose Tracker",
-            link: "/neon-player/head-pose-tracker/",
-          },
-          {
-            text: "IMU Timeline",
-            link: "/neon-player/imu-timeline/",
-          },
-          {
-            text: "Eye State Timeline",
-            link: "/neon-player/eye-state-timeline/",
-          },
-          {
-            text: "Gaze Offset Correction",
-            link: "/neon-player/gaze-offset-correction/"
-          },
-          {
-            text: "Annotation Player",
-            link: "/neon-player/annotation-player/"
-          },
-          {
-            text: "Raw Data Exporter",
-            link: "/neon-player/raw-data-exporter/",
-          },
-          {
-            text: "World Video Exporter",
-            link: "/neon-player/world-video-exporter/",
-          },
+          { text: "Overview", link: "/neon-player/plugins/" },
+          { text: "Exports", link: "/neon-player/exports/" },
+          { text: "Offset Correction", link: "/neon-player/gaze-offset-correction/" },
+          { text: "Events", link: "/neon-player/events/" },
+          { text: "Surface Tracker", link: "/neon-player/surface-tracker/" },
+          { text: "Visualizations", link: "/neon-player/visualizations/" },
+          { text: "Settings", link: "/neon-player/settings/" },
         ],
       },
       {
-        text: "Plugin API",
-        link: "/neon-player/plugin-api/",
+        text: "Developer",
+        items: [
+          { text: "Install a Plugin", link: "/neon-player/plugin-api/" },
+          { text: "Create Your Own Plugin", link: "/neon-player/develop-your-own-plugin/" },
+          { text: "Headless Mode", link: "/neon-player/headless-mode/" }
+        ]
+      },
+      { text: "Shortcuts", link: "/neon-player/shortcuts/" },
+      {
+        text: "Troubleshooting",
+        link: "/neon-player/troubleshooting/",
       },
     ],
     "/neon-xr/": [
