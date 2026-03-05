@@ -1,10 +1,14 @@
 # Using a VPN for Remote Data Collection
 
-When conducting research, data collection may involve participants who are off-site, in non-accessible locations, or geographically distant. A Virtual Private Network (VPN) can be used to securely extend the reach of the Realtime API or Monitor App over the internet.
+In some research scenarios, participants may be located off-site, in restricted environments, or geographically distant from the researcher. Thus, one can not rely on devices being connected to the same local network.
+
+A Virtual Private Network (VPN) can help overcome this limitation by securely extending the reach of the Realtime API or Monitor App over the internet, allowing devices in different locations to communicate as if they were on the same network.
 
 ## How it works?
 
-Rather than routing traffic through a central server like traditional VPNs, modern device-to-device VPNs also permit the creation of a secure mesh network. By connecting both a computer and a Companion Device to this mesh network, the devices establish a direct, peer-to-peer connection. This creates a virtual local network, allowing the devices to communicate securely and seamlessly as though they were connected to the same physical Wi-Fi router, despite their actual geographic locations.
+Instead of routing all traffic through a central server like traditional VPNs, some modern VPN solutions allow devices to connect directly to each other through a secure mesh network. By joining both the host computer and the Companion Device to the same mesh network, the devices establish an encrypted peer-to-peer connection.
+
+This effectively creates a virtual local network. As a result, the devices can communicate securely and seamlessly, just as they would if they were connected to the same physical Wi-Fi router, even when they are located in different places.
 
 ![Using a VPN](./vpn.webp)
 

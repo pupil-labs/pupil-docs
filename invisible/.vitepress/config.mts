@@ -88,7 +88,6 @@ let theme_config_additions = {
             text: "Lab Streaming Layer",
             link: "/data-collection/lab-streaming-layer/",
           },
-          { text: 'Using a VPN', link: '/data-collection/using-a-vpn/' },
         ],
       },
       {
@@ -106,6 +105,7 @@ let theme_config_additions = {
             text: "Offset Correction",
             link: "/data-collection/offset-correction/",
           },
+          { text: "Using a VPN", link: "/data-collection/using-a-vpn/" },
         ],
       },
       {
