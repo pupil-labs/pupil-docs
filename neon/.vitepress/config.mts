@@ -146,6 +146,7 @@ let theme_config_additions = {
             text: "Calibrating the IMU",
             link: "/data-collection/calibrating-the-imu/",
           },
+          { text: "Using a VPN", link: "/data-collection/using-a-vpn/" },
         ],
       },
       {
