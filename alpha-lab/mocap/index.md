@@ -65,7 +65,7 @@ Here are the key stages for getting started. Detailed instructions for each step
 
 1. **Prepare Your Environment:** Set up your motion capture space according to your experimental requirements.
 2. **Create the Calibration Target:** Ideally, prepare this in advance. Print four AprilTag markers at a known size and affix reflective markers precisely to their corners. It is crucial to arrange them in a square or rectangular layout. (You can use physical printed tags or even display them digitally on a monitor.)
-3. **Record the Calibration Pose:** Have the participant wear Neon. Position the calibration target approximately 0.7 m away and near head height so that it occupies a large portion of the visual field. Record for about 15–20 seconds while the participant gazes at the various markers on the board to collect gaze samples. Ensure the motion capture cameras can clearly see all IR markers on both the frame and the target throughout.
+3. **Record the Calibration Pose:** Have the participant wear Neon. Position the calibration target approximately 0.7 m away from their head so that it occupies a large portion of the visual field. Record for about 15–20 seconds while the participant gazes at the board. Ensure the motion capture cameras can clearly see all IR markers on both the frame and the target throughout.
 4. **Collect Participant Data:** Once calibration data is collected, you are ready to record the trials for this participant.
 5. **Process the Data:** After collecting your calibration and trial data, import everything into our Python tool.
 
