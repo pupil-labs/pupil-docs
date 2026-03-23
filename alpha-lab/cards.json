@@ -254,7 +254,7 @@
     },
     "image": "/alpha-lab/sam2.webp",
     "category": "Data Processing & Workflows",
-    "filters": ["Neon", "Pupil Cloud", "Offline Processing", "AI/Deep Learning", "AOI Mapping"]
+    "filters": ["Neon", "Pupil Invisible", "Pupil Cloud", "Offline Processing", "AI/Deep Learning", "AOI Mapping"]
   },
   {
     "title": "Motion Capture Integration with Neon",
