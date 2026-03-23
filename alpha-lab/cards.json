@@ -257,13 +257,13 @@
     "filters": ["Neon", "Pupil Cloud", "Offline Processing", "AI/Deep Learning", "AOI Mapping"]
   },
   {
-    "title": "Capture Neon's Motion",
-    "details": "Localize Neon in Motion Capture coordinate systems.",
+    "title": "Motion Capture Integration with Neon",
+    "details": "Spatially integrate Neon’s 3D gaze data with any marker-based motion capture system. Learn how to map gaze directly into your mocap environment using a simple, one-time calibration step.",
     "link": {
       "text": "View",
       "href": "/alpha-lab/mocap/"
     },
-    "image": "/alpha-lab/sam2.webp",
+    "image": "/alpha-lab/mocap.webp",
     "category": "Eye Tracking in Physical Spaces",
     "filters": ["Neon", "Offline Processing", "Multimodal Data"]
   }

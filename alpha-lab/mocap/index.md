@@ -1,6 +1,6 @@
 ---
-title: "Capture Neon's Motion"
-description: "Localize Neon in Motion Capture coordinate systems."
+title: "Motion Capture Integration with Neon"
+description: "Spatially integrate Neon’s 3D gaze data with any marker-based motion capture system. Learn how to map gaze directly into your mocap environment using a simple, one-time calibration step."
 permalink: /alpha-lab/mocap/
 layout: AlphaArticleLayout
 sidebar: false
