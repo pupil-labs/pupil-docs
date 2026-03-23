@@ -20,6 +20,8 @@ meta:
 tags: [Neon, Offline Processing, Multimodal Data]
 ---
 
+<Youtube src="elss6N3BNAI"/>
+
 ::: tip
 Ever wanted to see exactly where your subject is looking within your 3D motion capture environment? This guide breaks down the principles of integrating Neon's gaze data with motion capture systems.
 :::
