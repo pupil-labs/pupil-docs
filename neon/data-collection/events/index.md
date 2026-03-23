@@ -8,5 +8,9 @@ In [Pupil Cloud](/pupil-cloud/), events can also be used in the definition of [e
 ## Creating Events
 **At recording time**, you can use the [Monitor App](/data-collection/monitor-app/) to create events manually. Alternatively, you can use the [real-time API](/real-time-api/) to create events programmatically. See for example [this guide](https://pupil-labs.github.io/pl-realtime-api/dev/cookbook/track-your-experiment-progress-using-events/) on using the real-time API to automatically track progress of an experiment.
 
+::: tip 
+When sending events in real time via the real-time API or the Monitor App, Neon assigns the timestamp based on the time of arrival by default. If you are synchronizing Neon with external systems (e.g., EEG or stimulus software), it is recommended to use the API's manual clock offset correction for improved temporal alignment. See details [here](https://pupil-labs.github.io/pl-realtime-api/dev/methods/simple/remote-control/#with-manual-clock-offset-correction).
+:::
+
 **Post hoc** you can add events to recordings in [Pupil Cloud](/pupil-cloud/).
 

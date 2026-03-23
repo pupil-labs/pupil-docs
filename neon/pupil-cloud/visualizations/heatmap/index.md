@@ -1,6 +1,6 @@
 # Heatmap
 
-The output of the [Reference Image Mapper](/pupil-cloud/enrichments/reference-image-mapper/), [Marker Mapper](/pupil-cloud/enrichments/marker-mapper/), and [Manual Mapper](/pupil-cloud/enrichments/manual-mapper/) enrichments can be visualized as a traditional heatmap. This shows you which parts of your reference image or surface were fixated more often by an observer.
+The output of the [Auto Image Mapper](/pupil-cloud/enrichments/auto-image-mapper/), [Reference Image Mapper](/pupil-cloud/enrichments/reference-image-mapper/), [Marker Mapper](/pupil-cloud/enrichments/marker-mapper/), and [Manual Mapper](/pupil-cloud/enrichments/manual-mapper/) enrichments can be visualized as a traditional heatmap. This shows you which parts of your reference image or surface were fixated more often by an observer.
 
 For example, below and to the left is a view of a kitchen that was used as a reference image. On the right, you can see the output of the Heatmap Visualization for a recording that was made while the observer was preparing ingredients.
 
@@ -36,3 +36,10 @@ The output of the Heatmap Visualization is two image files: one image with just 
     ```
 
 ::::
+
+## Export Format
+
+Within the Heatmap view, you can download:
+- The final visualization in `.png` format
+- The heatmap overlay in `.png` format
+

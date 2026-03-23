@@ -41,5 +41,12 @@ On **macOS**, you need the <a href="https://www.android.com/filetransfer/" alt="
 :::
 
 :::tip
-Recordings transferred locally will only contain gaze data that was generated in real-time. On the OnePlus 8 the framerate of real-time gaze can drop to **~120 Hz**. On the One Plus 10/Moto Edge 40 Pro/Samsung Galaxy S25 the framerate is ~200 Hz unless its reduced in the settings. Recordings uploaded to Pupil Cloud are always densified to 200 Hz.
+Recordings transferred locally will only contain data streams generated in real-time. For example, Fixations & Saccades,
+and Eye State measurements (3D Eye Poses, Pupil Diameters etc.) can be enabled/disabled in the Neon Companion app settings.
+
+The real-time gaze rate will also be preserved. On the OnePlus 8, the framerate of real-time gaze can drop to **~120 Hz**. 
+On the One Plus 10/Moto Edge 40 Pro/Samsung Galaxy S25 the framerate is ~200 Hz unless manually reduced in the settings. 
+
+Recordings uploaded to Pupil Cloud are always densified to 200 Hz and will have all real-time data streams computed regardless
+of the settings in the Neon Companion app.
 :::

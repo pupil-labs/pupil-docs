@@ -17,7 +17,15 @@ meta:
     content: "720"
   - property: og:image
     content: "https://i.ytimg.com/vi/cuvWqVOAc5M/maxresdefault.jpg"
-tags: [Neon, Pupil Invisible, Pupil Cloud, Offline Processing, AI / Deep Learning, Multimodal Data]
+tags:
+  [
+    Neon,
+    Pupil Invisible,
+    Pupil Cloud,
+    Offline Processing,
+    AI / Deep Learning,
+    Multimodal Data,
+  ]
 ---
 
 <Youtube src="YvtlsLHaxu8"/>
@@ -33,7 +41,7 @@ Eye tracking analysis often focuses on visual data, whereby researchers identify
 This method might be particularly useful in experiments where speech plays a crucial role. For example, if your research involves extended speech interactions, you may want to automatically tag key words and phrases, and subsequently correlate them with gaze patterns and fixation behavior. Or you could use this approach to speed up your testing workflow, by marking the beginning and end of trials using a specific keyword or phrase, e.g. 'trial one begin', making your experiment easier to run in practice.
 
 ::: info
-For a similar tool showcasing how AI can detect actions—such as reaching for an object—and automatically generate corresponding annotations in Pupil Cloud recordings using scene recognition, refer to our [GPT Alpha Lab guide](https://docs.pupil-labs.com/alpha-lab/event-automation-gpt/).
+For a similar tool showcasing how AI can detect actions—such as reaching for an object—and automatically generate corresponding annotations in Pupil Cloud recordings using scene recognition, refer to our [GPT Alpha Lab guide](../event-automation-gpt/).
 :::
 
 ## Enhancing Eye Tracking Analysis With Audio Context
