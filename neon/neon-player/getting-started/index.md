@@ -28,11 +28,14 @@ To load a recording, you first need to have it on your computer. You can obtain 
 
 Once you have the recording, open Neon Player, and drag-and-drop the folder into the application window, or click on "_Choose a recording folder_", navigate to the desired folder and "Open" it.
 
+
+<video controls muted loop>
+  <source src="./GettingStarted.mp4" type="video/mp4">
+</video>
+
 ::: tip
 **You don't have Neon yet?** [Download a sample recording here](https://drive.google.com/file/d/1bicOLzmJLzDegNq7qByctsFjmTJgCWPZ/view?usp=sharing "Download sample recording to use in Neon Player").
 :::
-
-![Drag and drop recording folder](./pp-start.webp)
 
 ::: info
 Recordings exported directly from the Companion Device will be in their native format and capture the raw recording
