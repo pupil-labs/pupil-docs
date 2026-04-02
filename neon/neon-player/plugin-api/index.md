@@ -1,6 +1,6 @@
 # Plugins
 
-Plugins are distributed as Python files that are loaded and executed at runtime. To be recognized as such, they need to be installed in the [correct place](#adding-a-plugin) and implement the [Plugin API](#develop-your-own-plugin).
+Plugins are distributed as Python files that are loaded and executed at runtime. To be recognized as such, they need to be installed in the [correct place](#adding-a-plugin) and implement the [Plugin API](../develop-your-own-plugin/).
 
 The usage of plugins has multiple advantages:
 
