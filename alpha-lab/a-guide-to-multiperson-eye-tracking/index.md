@@ -20,7 +20,7 @@ meta:
 tags: [Neon, Pupil Invisible, Offline Processing, Real-Time Analysis]
 ---
 
-<Youtube src=""/>
+<!-- <Youtube src=""/> -->
 
 ::: tip
 🎬 3, 2, 1… Action! Learn how to control multiple devices simultaneously and send synchronized event markers to align data for multiperson studies.
@@ -47,7 +47,7 @@ Pupil Labs’ Realtime API offers a mechanism for this called [Time Echo](https:
 By calculating this offset (θ) and removing any network latency, the API can trigger a signal to a connected device, instructing it to write an [event timestamped relative to the client's (computer) clock](https://pupil-labs.github.io/pl-realtime-api/dev/methods/simple/remote-control/#with-manual-clock-offset-correction). When you import your data into your analysis pipeline, these events serve as the perfect alignment keys.
 
 ::: tip
-Neon and Pupil Invisible use timestamps in nanoseconds from the [UNIX epoch](/28e9d188973c80029c2fecc673c6c74a?pvs=25). In other words, it reports the time in nanoseconds elapsed from 00:00:00 UTC on 1 January 1970. A common standard to report date and times.
+Neon and Pupil Invisible use timestamps in nanoseconds from the [UNIX epoch](https://en.wikipedia.org/wiki/Unix_time). In other words, it reports the time in nanoseconds elapsed from 00:00:00 UTC on 1 January 1970. A common standard to report date and times.
 :::
 
 ## The Solution: pl-realtime-tui
@@ -169,6 +169,7 @@ If you have [Astral UV](https://github.com/astral-sh/uv)'s Python tool installed
 ```sh [uv]
 uvx pupil-labs-realtime-tui
 ```
+or if you plan to use it regularly, you can install it as a tool:
 
 ```sh [uv]
 uv tool install pupil-labs-realtime-tui
