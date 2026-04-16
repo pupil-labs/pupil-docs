@@ -28,20 +28,20 @@ tags: [Neon, Pupil Invisible, Offline Processing, Real-Time Analysis]
 
 ## Multiperson Eye Tracking
 
-Social connection often happens in the blink of an eye, literally. To capture the fast dynamics of mutual gaze and shared 
-attention, researchers have moved from one-person neuroscience to rich "multi-person" perspectives. With the advent of 
-portable eye trackers like Neon, it’s now possible to capture gaze behavior from multiple participants concurrently 
-in real-world settings.
+Social connection often happens in the blink of an eye. To capture the fast dynamics of mutual gaze and shared attention, 
+researchers are shifting from single-person neuroscience to rich, multi-person perspectives. With portable eye trackers 
+like Neon, capturing concurrent gaze behavior in the real world is now a reality. There is a rapidly growing interest in 
+this kind of multi-person tracking, highlighted by landmark initiatives like the [Neurolive](https://pupil-labs.com/blog/neurolive-project) 
+and [SocialEyes](https://pupil-labs.com/blog/socialeyes) projects exploring collective attention in live, dynamic 
+environments.
 
-However, capturing these interactions introduces a new challenge: Temporal alignment. Whether you’re analyzing mutual gaze 
-during a conversation, team coordination in sports, or collaborative problem-solving, aligning datasets from 
-multiple participants can be a strict requirement. A saccade, for example, usually takes between 30 to 100 milliseconds, 
-and if your streams are off by even half a second, you might not just miss the moment, but rewrite the cause-effect of an 
-interaction.
+Yet, whether you're analyzing a two-person dialogue or recording a multi-person sporting event, one fundamental challenge 
+remains: temporal alignment. A saccade takes just 30 to 100 milliseconds. If your streams are off by even half a second, 
+you don't just miss the moment, you rewrite the cause-and-effect of the interaction.
 
-Historically, independent cameras were aligned using shared sound or visual cues, like a cinema clapperboard. This guide shows 
-how to generate that "clap" digitally, introducing a tool called [pl-realtime-tui](https://github.com/pupil-labs/pl-realtime-tui), 
-designed to orchestrate, monitor, and synchronize all your eye trackers simultaneously.
+Historically, independent cameras used shared sound or visual cues, like a cinema clapperboard, to sync up. This guide 
+shows how to generate that "clap" digitally using [pl-realtime-tui](https://github.com/pupil-labs/pl-realtime-tui): a tool designed to orchestrate, monitor, and synchronize 
+multiple eye trackers simultaneously.
 
 ## The Challenge of Synchronization
 
@@ -252,19 +252,14 @@ Do you want to generate a video like the one at the beginning of this article, s
 multiple participants and pupil size? Try `pl-realtime-tui render` or `pl-realtime-tui render --help` for more options.
 :::
 
-## Related Work
-Running synchronized multi-person eye-tracking studies is still a relatively new frontier, but it’s already being explored 
-in some notable research domains.
-
-[Neurolive Project:](https://pupil-labs.com/blog/neurolive-project) Employed a setup with an impressive ensemble of up 
-to 20 Pupil Invisible glasses and ANT Neuro mobile EEG headsets operating concurrently. This was a new benchmark in 
-the field at the time. They used our Real-time API and built their own TUI to operate it.
-
-[SocialEyes Project:](https://pupil-labs.com/blog/socialeyes) Scales mobile eye-tracking to over 30 simultaneous 
-participants in live settings, achieving temporal synchronization, high-throughput streaming, and homography 
-to map individual egocentric gaze onto a shared coordinate space. It automates the analysis of collective attention during 
-events like concerts, with a dedicated TUI for remote troubleshooting. You can read more about their project on the 
-[SocialEyes GitHub Repository](https://github.com/beatlab-mcmaster/SocialEyes).
+## Taking it to the Next Level
+While `pl-realtime-tui` provides a great foundation for orchestrating and synchronizing streams, some research 
+domains require even more specialized infrastructure. If your ambitions scale to massive live events and you need 
+advanced features like high-throughput streaming, mapping individual egocentric gaze onto a shared coordinate space, 
+or automating collective attention analysis, we highly recommend checking out the 
+[SocialEyes GitHub Repository](https://github.com/beatlab-mcmaster/SocialEyes). It is a 
+powerhouse, open-source tool built by the community specifically to tackle the extreme ends of large-scale, multi-person 
+tracking, with [one study](https://pupil-labs.com/blog/socialeyes) recording over 30 participants simultaneously in a live concert setting!
 
 ::: tip
 💡 Need assistance in implementing your own multiperson workflow? Feel free to reach out to us via email at 
