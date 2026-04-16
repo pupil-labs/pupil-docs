@@ -188,7 +188,7 @@ interface to keep track of the status of each device and its connection.
 If you have [Astral UV](https://github.com/astral-sh/uv)'s Python tool installed, you can try it immediately without a manual setup:
 
 ```sh [uv]
-uvx pupil-labs-realtime-tui
+uvx --from pupil-labs-realtime-tui pl-realtime-tui
 ```
 or if you plan to use it regularly, you can install it as a tool:
 
