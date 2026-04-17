@@ -26,7 +26,7 @@ tags: [Neon, Pupil Invisible, Offline Processing, Real-Time Analysis]
 🎬 3, 2, 1… Action! Learn how to control multiple devices simultaneously and send synchronized event markers to align data for multiperson studies.
 :::
 
-## Multiperson Eye Tracking
+## Multi-person Eye Tracking
 
 Social connection often happens in the blink of an eye. To capture the fast dynamics of mutual gaze and shared attention, 
 researchers are shifting from single-person neuroscience to rich, multi-person perspectives. With portable eye trackers 
