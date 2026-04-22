@@ -1,5 +1,5 @@
 # Using a USB Hub
-The capabilities of the Companion device can be extended by connecting it to a USB-C hub. You can still connect Neon to the Companion device through the hub. For this to work, the hub needs to provide a USB-C port that supports data transfer (some USB-C ports only support power delivery!). 
+The capabilities of the Companion device can be extended by connecting it to a USB-C hub. You can still connect Neon to the Companion device through the hub. For this to work, the hub needs to provide a USB-C port that supports data transfer (some USB-C ports only support power delivery!).
 
 
 Most importantly using a hub allows you to:
@@ -7,7 +7,7 @@ Most importantly using a hub allows you to:
 - **Connect an ethernet cable**: if the hub has an ethernet socket, you can connect the phone to the internet with it. This can be useful to increase the upload speed of recordings to Pupil Cloud or to transfer real-time data with very low latency.
 
 ::: tip
-Not all USB-C hubs are compatible with Android and sometimes compatibility is difficult to check in advance! We have tested for example [this](https://www.amazon.de/dp/B08CKXNJZS/) hub successfully, which supports both power delivery and ethernet.
+Not all USB-C hubs are compatible with Android and sometimes compatibility is difficult to check in advance! We have tested for example [this hub](https://www.amazon.de/dp/B08CKXNJZS/) and [this hub](https://www.amazon.de/dp/B0CF4Y8FVR) successfully, both of which support power delivery and ethernet.
 
 Note that the original OnePlus charger is not compatible with regular hubs (including the linked one) because it uses non-standard power delivery. Other regular USB chargers should work though.
 :::
