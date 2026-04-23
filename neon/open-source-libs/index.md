@@ -1,10 +1,9 @@
 # Open-Source Libraries
-Pupil Labs in mainting a number of open-source tools and libraries [on GitHub](https://github.com/pupil-labs) to support the Neon ecosystem. These range from the well-known Neon Player software and Real-Time API clients to lower-level libraries handling and processing eye-tracking data.
+Pupil Labs maintains a number of open-source tools and libraries [on GitHub](https://github.com/pupil-labs) to support the Neon ecosystem. These range from the well-known Neon Player software and Real-Time API clients to lower-level libraries handling and processing eye tracking data.
 
-In addition to these actively maintained projects, we have also published a number of experimental open-source tools in the [AlphaLab](https://docs.pupil-labs.com/alpha-lab).
+In addition to these actively maintained projects, we have also published a number of experimental open-source tools in the [Alpha Lab](https://docs.pupil-labs.com/alpha-lab).
 
 The following is a list of the most important projects roughly ordered from low-level libs to high-level applications.
-
 
 ## pl-camera
 [pl-camera](https://pupil-labs.github.io/pl-camera/latest/) allows using camera intrinsic values to perform various tasks related to camera projection, including undistorting images and points. It's a wrapper around OpenCV's camera model functionality, with a more intuitive API and a few hacks for improved computational efficiency.
