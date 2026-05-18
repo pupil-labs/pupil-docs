@@ -1,5 +1,5 @@
 ---
-title: "A Guide to Multi-Person Eye Tracking"
+title: "A Guide to Multiperson Eye Tracking"
 description: ""
 permalink: /alpha-lab/a-guide-to-multiperson-eye-tracking/
 layout: AlphaArticleLayout
@@ -26,51 +26,41 @@ tags: [Neon, Pupil Invisible, Offline Processing, Real-Time Analysis]
 🎬 3, 2, 1… Action! Learn how to control multiple devices simultaneously and send synchronized event markers to align data for multiperson studies.
 :::
 
-## Multi-person Eye Tracking
+## Multiperson Eye Tracking
 
 Social connection often happens in the blink of an eye. To capture the fast dynamics of mutual gaze and shared attention, 
-researchers are shifting from single-person neuroscience to rich, multi-person perspectives. With portable eye trackers 
-like Neon, capturing concurrent gaze behavior in the real world is now a reality. There is a rapidly growing interest in 
-this kind of multi-person tracking, highlighted by landmark initiatives like the [Neurolive](https://pupil-labs.com/blog/neurolive-project) 
-and [SocialEyes](https://pupil-labs.com/blog/socialeyes) projects exploring collective attention in live, dynamic 
-environments.
+researchers are shifting from single-person neuroscience to rich, multiperson perspectives. With portable eye trackers 
+like Neon, capturing concurrent gaze behavior in the real world is now a reality. For example, landmark initiatives like 
+the [Neurolive](https://pupil-labs.com/blog/neurolive-project) and [SocialEyes](https://pupil-labs.com/blog/socialeyes) projects are exploring collective attention in live, dynamic environments.
 
-Yet, whether you're analyzing a two-person dialogue or recording a multi-person sporting event, one fundamental challenge 
-remains: temporal alignment. A saccade takes just 30 to 100 milliseconds. If your streams are off by even half a second, 
-you don't just miss the moment, you rewrite the cause-and-effect of the interaction.
-
-Historically, independent cameras used shared sound or visual cues, like a cinema clapperboard, to sync up. This guide 
-shows how to generate that "clap" digitally using [pl-realtime-tui](https://github.com/pupil-labs/pl-realtime-tui): a tool designed to orchestrate, monitor, and synchronize 
-multiple eye trackers simultaneously.
+When analyzing eye tracking data from multiple devices, temporal alignment is critically important. A saccade takes just 
+30 to 100 milliseconds. If your streams are off by even half a second, you don't just miss the moment, you rewrite the 
+cause-and-effect of the interaction.
 
 ## The Challenge of Synchronization
 
 To understand the challenge, one must look at the hardware architecture. Neon and Pupil Invisible are standalone devices. 
 They don't require an external computer, and each operates its own internal clock.
 
-It’s possible to sync independent clocks via Network Time Protocol (NTP) - see [Achieve Super-Precise Time Sync](https://docs.pupil-labs.com/neon/data-collection/time-synchronization/), 
-and this is sufficient for many use cases. However, analyzing high-speed interactions may require precision of <10 ms. 
-Moreover, even perfectly synced clocks experience drift over time (e.g., up to 1 second over 24 hours).
+It’s possible to sync independent clocks via Network Time Protocol (NTP), see [Achieve Super-Precise Time Sync](https://docs.pupil-labs.com/neon/data-collection/time-synchronization/), and 
+this is sufficient for many use cases. However, analyzing high-speed interactions may require precision of <10 ms. 
+Moreover, even perfectly synced clocks experience drift over time - up to 1 second over 24 hours. To get millisecond 
+precision and remove drift, we need alternative approaches.
 
-To get millisecond precision and remove drift, we need to generate shared anchor points, or digital equivalents of a 
-cinema clapperboard, that exist in the data streams of all devices simultaneously.
+[SocialEyes](https://dl.acm.org/doi/10.1145/3706598.3713910) demonstrated a terminal-based workflow for synchronizing 30 devices at CHI 2025. The system uses an NTP 
+clock-filter algorithm and UDP packet exchanges to estimate offsets. These offsets are processed via RANSAC to create an 
+outlier-robust linear mapping, aligning individual device timestamps to a central reference.
 
-Pupil Labs’ Realtime API offers a mechanism for this called [Time Echo](https://pupil-labs.github.io/pl-realtime-api/dev/api/async/?h=echo#time-echo-protocol). Conceptually similar to the Precision Time 
-Protocol (PTP), it allows an external computer to [estimate the time difference](https://pupil-labs.github.io/pl-realtime-api/dev/methods/simple/others/#time-offset-estimation) (offset) between its own clock and 
-the clock of every Neon device on a local network.
+The Neurolive project used a terminal-based "event pulse" approach, where a signal was sent over a network to multiple 
+Invisible devices. Historically, independent cameras used shared sound or visual cues, like a cinema clapperboard, to 
+sync up. This digital approach serves as a modern "clap”. However, to the best of our knowledge, their method wasn’t 
+published for general use.
 
-By calculating this offset (θ) and removing any network latency, the API can trigger a signal to a connected device, 
-instructing it to write an [event timestamped relative to the client's (computer) clock](https://pupil-labs.github.io/pl-realtime-api/dev/methods/simple/remote-control/#with-manual-clock-offset-correction). When you import the recordings 
-into your analysis pipeline, these events serve as alignment keys.
-
-::: tip
-Neon and Pupil Invisible use timestamps in nanoseconds from the [UNIX epoch](https://en.wikipedia.org/wiki/Unix_time). In other words, it reports the time in nanoseconds elapsed from 00:00:00 UTC on 1 January 1970. A common standard to report date and times.
-:::
-
-## The Solution: pl-realtime-tui
-
-The Realtime API has always allowed users to [obtain clock offsets](https://pupil-labs.github.io/pl-realtime-api/dev/methods/simple/others/#time-offset-estimation) and [send event annotations](https://pupil-labs.github.io/pl-realtime-api/dev/methods/simple/remote-control/#with-manual-clock-offset-correction) manually. 
-However, doing this for multiple devices simultaneously used to require custom scripts or developing a custom application.
+Here we build on this latter concept for Neon. Specifically, Pupil Labs’ Realtime API offers a mechanism called [Time Echo](https://pupil-labs.github.io/pl-realtime-api/dev/api/async/?h=echo#time-echo-protocol). 
+Conceptually similar to the Network Time Protocol (NTP), it allows an external computer to [estimate the time difference](https://pupil-labs.github.io/pl-realtime-api/dev/methods/simple/others/#time-offset-estimation) 
+(offset) between its own clock and the clock of every Neon device on a local network. By calculating this offset and 
+removing network latency, the API triggers a signal to a connected device, instructing it to write an offset-corrected 
+event. When you import these recordings into your analysis pipeline, these events serve as alignment keys.
 
 ::: details See How To Do So Programmatically
 
@@ -176,10 +166,12 @@ if __name__ == "__main__":
 
 :::
 
-To make this process more accessible, we developed [pl-realtime-tui](https://github.com/pupil-labs/pl-realtime-tui), a 
-lightweight command-line tool that allows you to discover all Neon devices on your local network, calculate their 
-clock offsets, and send synchronized events to all of them simultaneously. It also provides a real-time monitoring 
-interface to keep track of the status of each device and its connection.
+::: tip
+Neon and Pupil Invisible use timestamps in nanoseconds from the [UNIX epoch](https://en.wikipedia.org/wiki/Unix_time). In other words, it reports the time in nanoseconds elapsed from 00:00:00 UTC on 1 January 1970. A common standard to report date and times.
+:::
+
+To make this process more accessible, we built a digital tool called [pl-realtime-tui](https://github.com/pupil-labs/pl-realtime-tui): a lightweight way to orchestrate, monitor, and synchronize 
+multiple eye trackers simultaneously.
 
 ![pl-realtime-tui interface](./pl-realtime-tui-interface.svg)
 
@@ -258,7 +250,7 @@ domains require even more specialized infrastructure. If your ambitions scale to
 advanced features like high-throughput streaming, mapping individual egocentric gaze onto a shared coordinate space, 
 or automating collective attention analysis, we highly recommend checking out the 
 [SocialEyes GitHub Repository](https://github.com/beatlab-mcmaster/SocialEyes). It is a 
-powerhouse, open-source tool built by the community specifically to tackle the extreme ends of large-scale, multi-person 
+powerhouse, open-source tool built by the community specifically to tackle the extreme ends of large-scale, multiperson 
 tracking, with [one study](https://pupil-labs.com/blog/socialeyes) recording over 30 participants simultaneously in a live concert setting!
 
 ::: tip
