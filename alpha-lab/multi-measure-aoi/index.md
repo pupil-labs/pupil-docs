@@ -32,7 +32,7 @@ While capturing what a person is looking at is fascinating in itself, sometimes 
 
 ## Bridging the Gap Between Metrics and Comparison
 
-Pupil Cloud provides a robust pipeline for analyzing gaze data in dynamic environments. Using enrichments like the Auto-Image Mapper, you can map fixations onto a static reference image, define Areas of Interest (AOIs), and group them using Labels. Cloud also offers excellent built-in visualizations, such as AOI Heatmaps and bar charts, which allow you to quickly quantify engagement for specific areas.
+Pupil Cloud provides a robust pipeline for analyzing gaze data in dynamic environments. Using enrichments like the Auto-Image Mapper, you can map fixations onto a static reference image, define Areas of Interest (AOIs), and group them using [Labels](https://docs.pupil-labs.com/neon/pupil-cloud/areas-of-interest/#areas-of-interest-aois). Cloud also offers excellent built-in visualizations, such as AOI Heatmaps and [bar charts](https://docs.pupil-labs.com/neon/pupil-cloud/visualizations/bar-chart/), which allow you to quickly quantify engagement for specific areas.
 
 For example, if you run three Auto-Image Mapper enrichments across three different store locations, Cloud allows you to generate detailed bar charts for each individual location to see how much attention a specific product attracted, or aggregate the data across all locations. To view the broader trends across all stores, you can simply export these charts or view them side-by-side.
 
@@ -48,7 +48,7 @@ This tool was designed to make comparison between different measures, conditions
 
 ## Steps to Recreate
 ::: tip
-All you have to do is prepare a project folder to which you have assigned the appropriate recordings, run your enrichments, and define your AOIs. The tool will take all enrichments available under this project folder, so make sure to only keep the enrichments that you want to include in the visualizations.
+All you have to do is prepare a [project folder](https://docs.pupil-labs.com/neon/pupil-cloud/projects/#projects) to which you have assigned the appropriate recordings, run your enrichments, and define your AOIs. The tool will take all enrichments available under this project folder, so make sure to only keep the enrichments that you want to include in the visualizations.
 :::
 
 Simply run the Google Colab cell to start the tool, then copy your Project URL and a developer token that you can obtain from your account settings into the respective fields to get started. You can also download the code and run it locally. 
