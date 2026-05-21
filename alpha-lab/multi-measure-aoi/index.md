@@ -69,25 +69,30 @@ Though very flexible, the tool is generally intended for three different workflo
 
 1. **Event-based comparisons:** For comparing different trials or conditions within a single, continuous recording. Differentiate the trials using events, then run separate enrichments for each segment using those specific start and end events.
 
-::: info
-**Example:** A basketball player makes five free-throw attempts in one recording. Demarcate each throw with events (e.g., "Throw 1 start", "Throw 1 end"). You would then create five separate RIM enrichments, one for each throw.
-::: 
+
+   > **Example:** A basketball player makes five free-throw attempts in one recording. Demarcate each throw with events (e.g., "Throw 1 start", "Throw 1 end"). You would then create five separate RIM enrichments, one for each throw.
+
 
 2. **Session-based comparisons:** Measurements involve multiple recordings, either from the same participant over time or between different groups (e.g., patients vs. controls). All recordings can be processed in a single enrichment, with group or session data stored in the wearer profile. 
 
-::: info
-**Example 1 (Repeated Measures):** You want to track an air traffic controller’s progress across training intervals. You can create a new wearer profile or a separate enrichment for each session.
 
-**Example 2 (Group Comparisons):** You want to compare beginners vs. experts in chess. Label their group association directly in the wearer profile (e.g., "Beginner 1," "Expert 3").
-:::
+    >**Example 1 (Repeated Measures):** You want to track an air traffic controller’s progress across training intervals. You can create a new wearer profile or a separate enrichment for each session.
+
+    >**Example 2 (Group Comparisons):** You want to compare beginners vs. experts in chess. Label their group association directly in the wearer profile (e.g., "Beginner 1," "Expert 3").
+
 
 3. **Comparisons across different environments:** To analyze how metrics for a specific Area of Interest (AOI) change across different contexts, use separate RIM enrichments and reference images for each environment. To aggregate this data, you use the same AOI labels across enrichments. You can switch between the different reference images and see the selected AOIs. Using AOI labels you can also easily group them in different ways.
 
-::: info
-**Example:** You may want to know how a product stands out in different showroom designs. These each require their own enrichments. In each, assign the product the corresponding labels across the different enrichments. 
-:::
 
-![pl-mm-aoi-tool-overview](./pl-mm-aoi-tool-overview.webp)
+    > **Example:** You may want to know how a product stands out in different showroom designs. These each require their own enrichments. In each, assign the product the corresponding labels across the different enrichments. 
+
+
+<img 
+  src="./pl-mm-aoi-tool-overview.webp" 
+  alt="pl-mm-aoi-tool-overview" 
+  style="max-width: 400px;"
+>
+<font size="2">An example of the tool showing gaze behavior over repeated basketball shots.</font>
 
 # An eye for change
 
