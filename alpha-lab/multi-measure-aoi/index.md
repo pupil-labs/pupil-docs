@@ -87,11 +87,8 @@ Though very flexible, the tool is generally intended for three different workflo
     > **Example:** You may want to know how a product stands out in different showroom designs. These each require their own enrichments. In each, assign the product the corresponding labels across the different enrichments. 
 
 
-<img 
-  src="./pl-mm-aoi-tool-overview.webp" 
-  alt="pl-mm-aoi-tool-overview" 
-  style="max-width: 400px;"
->
+<img src="./pl-mm-aoi-tool-overview.webp" alt="pl-mm-aoi-tool-overview" style="max-width: 400px;">
+
 <font size="2">An example of the tool showing gaze behavior over repeated basketball shots.</font>
 
 # An eye for change
