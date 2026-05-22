@@ -1,5 +1,5 @@
 ---
-title: "Multi-Measure AOIs"
+title: "Explore AOI Data Across Measurements"
 description: ""
 permalink: /alpha-lab/multi-measure-aoi/
 layout: AlphaArticleLayout
@@ -20,7 +20,7 @@ meta:
 tags: [Neon, Pupil Cloud, AOI Mapping, Metric Extraction]
 ---
 
-<Youtube src="E0ZHOs8Be38"/>
+<Youtube src="-cEUJZOBNLQ"/>
 
 ::: tip
 Visualize your AOI data over time, conditions, participant groups, or even different contexts. Simply paste your project folder URL to load your enrichments and explore!
@@ -28,11 +28,14 @@ Visualize your AOI data over time, conditions, participant groups, or even diffe
 
 ## See the Bigger Picture
 
-While capturing what a person is looking at is fascinating in itself, sometimes we are more interested in how our gaze changes over time or how it differs between people. For example, how do our fixations change as we become experts at a task, or how do patients differ from controls. Or maybe you want to know how long it takes shoppers to discover your product when it is placed in a fridge, as opposed to a shelf. We’ve built an interactive tool that leverages our Pupil Cloud API to allow you to take a deep dive into your enriched data by plotting AOI metrics across different measurement points. No coding required!
+While capturing what a person is looking at is fascinating in itself, sometimes we are more interested in how our gaze 
+changes over time or how it differs between people. For example, how do our fixations change as we become experts at a task, 
+or how do patients differ from controls. Or maybe you want to know how long it takes shoppers to discover your product 
+when it is placed on a different shelf. We’ve built an interactive tool that leverages our Pupil Cloud API to allow you to take a deep dive into your enriched data by plotting AOI metrics across different measurement points. No coding required!
 
 ## Bridging the Gap Between Metrics and Comparison
 
-Pupil Cloud provides a robust pipeline for analyzing gaze data in dynamic environments. Using enrichments like the Auto-Image Mapper, you can map fixations onto a static reference image, define Areas of Interest (AOIs), and group them using [Labels](https://docs.pupil-labs.com/neon/pupil-cloud/areas-of-interest/#areas-of-interest-aois). Cloud also offers excellent built-in visualizations, such as AOI Heatmaps and [bar charts](https://docs.pupil-labs.com/neon/pupil-cloud/visualizations/bar-chart/), which allow you to quickly quantify engagement for specific areas.
+Pupil Cloud provides a robust pipeline for analyzing gaze data in dynamic environments. Using enrichments like the [Auto-Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/auto-image-mapper/#auto-image-mapper), you can map fixations onto a static reference image, define Areas of Interest (AOIs), and group them using [Labels](https://docs.pupil-labs.com/neon/pupil-cloud/areas-of-interest/#areas-of-interest-aois). Cloud also offers excellent built-in visualizations, such as AOI Heatmaps and [bar charts](https://docs.pupil-labs.com/neon/pupil-cloud/visualizations/bar-chart/), which allow you to quickly quantify engagement for specific areas.
 
 For example, if you run three Auto-Image Mapper enrichments across three different store locations, Cloud allows you to generate detailed bar charts for each individual location to see how much attention a specific product attracted, or aggregate the data across all locations. To view the broader trends across all stores, you can simply export these charts or view them side-by-side.
 
@@ -42,16 +45,13 @@ This tool leverages the Pupil Cloud API to automatically retrieve and pool data 
 
 Whether you are comparing product discovery times across different store layouts or tracking expert versus novice behaviors across multiple trials, this approach allows you to rapidly spot trends visually.
 
-## A New, Faster Workflow
-
-This tool was designed to make comparison between different measures, conditions, and recording sessions effortless. Drawing data directly from your Pupil Cloud project, you can load multiple datasets and visualize them in a customizable chart. It’s fully interactive, allowing you to explore your data to spot patterns and gain the comparative insights that matter most. 
-
 ## Steps to Recreate
+
+Simply run the Google Colab cell to start the tool, then copy your Project URL and a developer token that you can obtain from your account settings into the respective fields to get started. You can also download the code and run it locally. 
+
 ::: tip
 All you have to do is prepare a [project folder](https://docs.pupil-labs.com/neon/pupil-cloud/projects/#projects) to which you have assigned the appropriate recordings, run your enrichments, and define your AOIs. The tool will take all enrichments available under this project folder, so make sure to only keep the enrichments that you want to include in the visualizations.
 :::
-
-Simply run the Google Colab cell to start the tool, then copy your Project URL and a developer token that you can obtain from your account settings into the respective fields to get started. You can also download the code and run it locally. 
 
 <div class="mb-4" style="display:flex;justify-content:center;">
  <a
@@ -84,16 +84,17 @@ Though very flexible, the tool is generally intended for three different workflo
 3. **Comparisons across different environments:** To analyze how metrics for a specific Area of Interest (AOI) change across different contexts, use separate RIM enrichments and reference images for each environment. To aggregate this data, you use the same AOI labels across enrichments. You can switch between the different reference images and see the selected AOIs. Using AOI labels you can also easily group them in different ways.
 
 
-    > **Example:** You may want to know how a product stands out in different showroom designs. These each require their own enrichments. In each, assign the product the corresponding labels across the different enrichments. 
+    > **Example:** You may want to know how a product stands out in different showroom designs. These each require their own enrichments. In each, assign the product the corresponding labels across the different enrichments.
 
-
-<img src="./pl-mm-aoi-tool-overview.webp" alt="pl-mm-aoi-tool-overview" style="max-width: 400px;">
-
-<font size="2">An example of the tool showing gaze behavior over repeated basketball shots.</font>
-
-# An eye for change
-
+## An eye for change
 After you have loaded your data by copying the project URL and assigned the data segments to your different measurements, the interactive reference image appears. Here, your AOIs are highlighted in purple. Clicking on these will immediately generate a visualization of how the metric of choice changes over time. Below you see an example of basketball players making three attempts at a free throw, and their average fixation duration on the backboard.
+
+<figure style="display: block; margin: 2rem auto; text-align: center;">
+  <img src="./pl-mm-aoi-tool-overview.webp" alt="PL-MM-AOI tool overview" style="width: 70%; max-width: 800px; display: inline-block;">
+  <figcaption style="font-style: italic; font-size: 0.9em; color: #555; margin-top: 0.6rem; padding: 0 10px;">
+    Overview of the tool interface and main controls; data show gaze behavior over repeated basketball shots.
+  </figcaption>
+</figure>
 
 ::: tip
 Do you need assistance setting up your project to run this tool? Reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), on our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for formal support options.
