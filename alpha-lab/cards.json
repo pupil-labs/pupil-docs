@@ -405,5 +405,21 @@
       "Pupil Invisible",
       "Real-Time Analysis"
     ]
+  },
+  {
+    "title": "Explore AOI Data Across Measurements",
+    "details": "Use this interactive tool to explore your how your AOI metrics change over time, between conditions, wearer groups, or even in different contexts.",
+    "link": {
+      "text": "View",
+      "href": "/alpha-lab/multi-measure-aoi/"
+    },
+    "image": "/alpha-lab/pl-multi-meas-aoi.webp",
+    "category": "Data Prßocessing & Workflows",
+    "filters": [
+      "Neon", 
+      "Pupil Cloud", 
+      "AOI Mapping", 
+      "Metric Extraction"
+    ]
   }
 ]
