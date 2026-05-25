@@ -14,6 +14,8 @@ Check the video below to see how it's done!
 
 Always remove the Neon module from the frame before removing or replacing lenses. Attempting to swap lenses while the module is installed may damage the Neon module.
 
-This precaution applies to all frames except frames specifically designed for lens swapping, such as _I Can See Clearly Now_ and _I Can Track Clearly Now_.
+This precaution applies to all frames except those specifically designed for lens swapping, such as _I Can See Clearly Now_ and _I Can Track Clearly Now_.
 
-Note: damage resulting from lens changes performed while the Neon module is installed is not covered under warranty.
+::: warning
+Damage caused by changing lenses while the Neon module is installed is not covered under warranty.
+:::
