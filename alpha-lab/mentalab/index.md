@@ -19,7 +19,7 @@ A big challenge associated with multimodal recording is synchronization. When ca
 
 For instance, Neon timestamps are generated from its own internal clock, while Mentalab Explore Pro timestamps EEG data on its host PC. Because these clocks operate independently, they might not be in sync to start with, and can drift apart over time. To analyze these signals together, you need a reliable way to align them. This is where Lab Streaming Layer (LSL) comes in.
 
-This tutorial uses Neon and Mentalab Explore Pro EEG as a concrete example to explain how multimodal synchronization with LSL works in practice and how you can achieve millisecond-precision alignment in your own research.
+This tutorial uses [Neon](https://pupil-labs.com/products/neon) and [Mentalab](https://mentalab.com/) Explore Pro EEG as a concrete example to explain how multimodal synchronization with LSL works in practice and how you can achieve millisecond-precision alignment in your own research.
 
 ## Setup
 
@@ -29,7 +29,11 @@ You will need:
 - Mentalab Explore Pro EEG connected to a PC running the Explore Desktop software
 - LSL Lab Recorder installed on the same computer
 
-All devices must be on the same local network (typically the same Wi-Fi). This is essential because LSL relies on the network to exchange timing information and estimate clock offsets.
+All devices must be on the same local network (typically the same Wi-Fi). This is essential because LSL relies on the network to exchange timing information and estimate clock offsets. 
+
+:::tip
+For sub-ms synchronization accuracy between LSL and Mentalab Explore Pro, use the Mentalab Explore Pro in combination with Mentalab Hypersync.
+:::
 
 ### Enable Neon Streaming
 
