@@ -421,5 +421,20 @@
       "AOI Mapping", 
       "Metric Extraction"
     ]
+  },
+  {
+    "title": "Use Neon with Mentalab Explore Pro EEG",
+    "details": "Use Neon alongside Mentalab EGG. Record Neon and Mentalab data into a single, synchronized file. Run a practical multimodal experiment using both systems.",
+    "link": {
+      "text": "View",
+      "href": "/alpha-lab/mentalab/"
+    },
+    "image": "/alpha-lab/mentalab/over-shoulder.webp",
+    "category": "Data Processing & Workflows",
+    "filters": [
+      "Neon",
+      "Offline Processing",
+      "Multimodal Data"
+    ]
   }
 ]
