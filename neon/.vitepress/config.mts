@@ -252,6 +252,9 @@ let config_additions = {
   title: "Neon",
   titleTemplate: "Neon - :title - Pupil Labs Docs",
   description: "Documentation of Neon eye tracker and ecosystem.",
+  sitemap: {
+    hostname: 'https://docs.pupil-labs.com/neon/'
+  },
   vite: {
     resolve: {
       alias: [

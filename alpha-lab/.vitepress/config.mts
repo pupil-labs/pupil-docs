@@ -97,6 +97,9 @@ let config_additions = {
       md.use(groupIconMdPlugin);
     },
   },
+  sitemap: {
+    hostname: 'https://docs.pupil-labs.com/alpha-lab/'
+  },
   vite: {
     resolve: {
       alias: [
