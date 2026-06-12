@@ -176,6 +176,9 @@ let config_additions = {
   titleTemplate: "Invisible - :title - Pupil Labs Docs",
   description:
     "Documentation of the Pupil Invisible eye tracker and ecosystem.",
+  sitemap: {
+    hostname: 'https://docs.pupil-labs.com/invisible/'
+  },
   vite: {
     resolve: {
       alias: [

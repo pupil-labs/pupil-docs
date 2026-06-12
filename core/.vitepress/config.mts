@@ -1,8 +1,7 @@
 import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vitepress";
 
-import { config as default_config } from "./../../default_config.mts";
-import { theme_config as default_theme_config } from "./../../default_config.mts";
+import { config as default_config, theme_config as default_theme_config } from "./../../default_config.mts";
 
 const softwareOtherSideBar = [
   {
@@ -86,6 +85,9 @@ let config_additions = {
   title: "Core",
   titleTemplate: "Core - :title - Pupil Labs Docs",
   description: "Documentation of Pupil Core eye tracker and ecosystem.",
+  sitemap: {
+    hostname: 'https://docs.pupil-labs.com/core/'
+  },
   vite: {
     resolve: {
       alias: [
