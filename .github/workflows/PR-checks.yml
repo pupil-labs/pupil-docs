@@ -30,7 +30,15 @@ jobs:
           cache: "pnpm"
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --frozen-lockfile --filter ./${{ matrix.component }}
+
+      - name: Cache VitePress
+        uses: actions/cache@v4
+        with:
+          path: ./${{ matrix.component }}/.vitepress/cache
+          key: ${{ runner.os }}-vitepress-${{ matrix.component }}-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-vitepress-${{ matrix.component }}-
 
       - name: Make build
         working-directory: ./${{ matrix.component }}
