@@ -64,8 +64,8 @@ For the EEG streams, we only need to select the `Explore_<device_id>_ExG`. Marke
 
 ::: details Want to know more about how LSL works?
 A typical LSL setup comprises a recording computer running ‘LSL Lab Recorder’, and one or more experiment devices (e.g. Neon and Mentalab EEG) streaming data over the LSL network to the recording computer. In this context, LSL doesn’t sync Neon and Mentalab EEG clocks directly to each other. Instead, each device keeps its own time, and the host computer acts as a reference. LSL calculates the time differences (clock offset) between the devices and the reference, and then both data streams can be adjusted onto the same unified timeline:
-- **The Reference:** Lab Recorder acts as the central timekeeper
-- **Independent Offsets:** LSL measures network latency to estimate how far "ahead" or "behind" each device is compared to the reference, rather than trying to force the devices’ clocks to match in real-time.
+- **The Reference:** Lab Recorder acts as the central timekeeper.
+- **Independent Offsets:** LSL accounts for network latency and measures clock offsets to estimate how far "ahead" or "behind" each device is compared to the reference, rather than trying to force the devices’ clocks to match in real-time.
 - **The Recording:** Lab Recorder saves the raw data, the original timestamps, and these offset estimates into a single `.xdf` file.
 - **The Reconstruction:** Synchronization is reconstructed post-hoc. Tools like `pyxdf` apply the stored offsets to map all data onto a single, unified timeline.
 :::
@@ -101,8 +101,6 @@ As the participant completes the task, Lab Recorder is silently doing the heavy 
 ### Analysis
 
 Once the `.xdf` file is loaded into an analysis environment (like MNE-Python or MATLAB), the clock offsets are applied automatically. Because the markers, EEG, and pupil data now share a reference timeline, you can precisely epoch the data:
-
-*Example: "Show me the EEG voltage and pupil diameter from -200ms to +800ms relative to the 'Active Tone' marker."*
 
 ![Figure 1](./figure1.webp){width=800px style="display:block;margin:0 auto;"}
 ***Figure 1.** Time-series visualization of synchronized multimodal data. The plot displays the first 40 seconds of the task, integrating preprocessed midline EEG channels (Fz, FCz, Cz, CPz) with left and right pupil diameter from the Neon eye tracker. Vertical dashed markers indicate time-aligned experimental events.*{.image-caption}
