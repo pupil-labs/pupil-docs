@@ -6,7 +6,7 @@ Pupil Labs products are being used in various areas of academic research and hun
 
 If you are using **Neon** in your own research, please cite the following paper in your publications!
 
-[_Neon Accuracy Test Report_ ](https://doi.org/10.5281/zenodo.10420388)
+[_Neon Accuracy Test Report_ ](https://zenodo.org/records/18504792)
 
 > BibTeX Style Citation
 
