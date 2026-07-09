@@ -24,6 +24,7 @@ the timeline, and export data in .csv format. Some of them also generate visuali
 | Gaze Data            | Handles gaze offset correction and exports [gaze](../../data-collection/data-streams/#gaze) data. It also renders gaze visualizations in the video player.                                              |
 | IMU                  | Displays IMU (Inertial Measurement Unit) data in the timeline and exports in `.csv` format.                                                                                                             |
 | Scene Renderer       | Loads the scene video. Allows adjustments to brightness and contrast, displays the frame index, or can be disabled to visualize gaze only.                                                              |
+| Surface Tracker      | Detects AprilTag markers in the scene video, allowing to define surfaces and map the fixation and gaze data within the defined surfaces. Generates heatmap visualization.                                         |
 | Video Exporter       | Exports or copies the current frame (as an image) or scene (as a video) with all active visualizations applied.                                                                                         |
 
 ---
