@@ -13,7 +13,7 @@ Events created during recording, either via the Neon Monitor app or the Real-Tim
 
 You can create multiple event types, each with its own shortcut, to label recordings efficiently.
 
-In the timeline, you can also right-click on an existing event to "seek" the video to that timestamp, making it easy to review specific moments in the recording or to delete events you no longer need.
+In the timeline, you can also right-click on an existing event to "seek" the video to that timestamp, making it easy to review specific moments in the recording or to delete events you no longer need. Right-clicking an event also allows setting the event timestamp as the start or the end of the export window.
 
 <video width="100%" controls>
   <source src="./events.mp4" type="video/mp4">
