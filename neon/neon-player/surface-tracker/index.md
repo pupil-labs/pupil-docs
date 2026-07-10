@@ -42,7 +42,7 @@ In the timeline view:
 
 2. `Surface Gaze: <surface name>` highlights, in blue, the segments of the recording where gaze is mapped onto the detected surface.
 
-3. `Surface: <surface name>`indicates the portions of the recording in which the surface is successfully detected.
+3. `Surface: <surface name>` indicates the portions of the recording in which the surface is successfully detected.
 
 ![Timeline view](./timeline.webp)
 
@@ -50,7 +50,7 @@ In the timeline view:
 
 Once you're satisfied with the surface tracking and visualization, you can click on `Export` within the surface panel to generate surface-based gaze and fixation data. The following files will be exported.
 
-### gaze*positions_on_surface<\_surface_name*>.csv
+### gaze\_positions\_on\_surface\_<*surface_name*>.csv
 
 This file contains all the mapped gaze data from all sections.
 
@@ -61,7 +61,7 @@ This file contains all the mapped gaze data from all sections.
 | **gaze position on surface x [normalized]** | Float value representing the x-coordinate of the mapped gaze point in surface coordinates. If the surface was not localized this value is empty. |
 | **gaze position on surface y [normalized]** | Same as gaze position on surface x [normalized] but for y-coordinate.                                                                            |
 
-### fixations*on_surface<\_surface_name*>.csv
+### fixations\_on\_surface\_<*surface_name*>.csv
 
 This file contains fixation events detected in the gaze data stream and mapped to the surface.
 
@@ -74,5 +74,3 @@ This file contains fixation events detected in the gaze data stream and mapped t
 | **fixation detected on surface**   | Boolean indicating whether the fixation was inside or outside of the surface.                                                                                  |
 | **fixation x [normalized]**        | Float value representing the x-coordinate of the fixation in surface coordinates. This position is the average of all mapped gaze samples within the fixation. |
 | **fixation y [normalized]**        | Same as "fixation x [normalized]" but for the y-coordinate.                                                                                                    |
-
-If `Show heatmap` is selected, a heatmap in `.png` file will be also exported.
