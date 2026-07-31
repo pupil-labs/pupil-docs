@@ -23,4 +23,4 @@ In the AOI Heatmap view and the Downloads view, you can download:
 
 - The final visualization displaying the metric of your interest in `.png` format.
 
-The download would also contain the AOI metrics in `.csv` format, as reported in the [AOI Metrics CSV](../../areas-of-interest/index.md#exporting-aoi-metrics).
+The download also contains AOI metrics in `.csv` format, as reported in the [AOI Metrics CSV](../../areas-of-interest/index.md#exporting-aoi-metrics).

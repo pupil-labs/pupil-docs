@@ -2,7 +2,7 @@
 
 The AOI Editor allows you to draw areas of interest (AOIs) on top of the reference image or surface. You can draw anything from simple polygons to multiple disconnected shapes. This tool is available for use after an [Auto Image Mapper](/pupil-cloud/enrichments/auto-image-mapper/), a [Reference Image Mapper](/pupil-cloud/enrichments/reference-image-mapper/), a [Marker Mapper](/pupil-cloud/enrichments/marker-mapper/), or a [Manual Mapper](/pupil-cloud/enrichments/manual-mapper/) enrichment is completed.
 
-### Setup - AOI Editing and Drawing
+## Setup: AOI Editing and Drawing
 
 Upon completion of the enrichment, access the main view of the enrichment by navigating to the **`Enrichments`** tab and selecting **`Edit`** next to **`Areas of Interest`**.
 
@@ -14,7 +14,7 @@ From there, you will enter the AOI editing view and you are ready to start drawi
   <source src="./aoi_drawing_and_editing_lowres.mp4" type="video/mp4">
 </video>
 
-### AOI Labels
+## AOI Labels
 
 AOIs can be associated with one or more labels. Labels provide a flexible way to classify AOIs and enable aggregation of gaze metrics across multiple AOI instances and across one or more enrichments within a project.
 
