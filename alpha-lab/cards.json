@@ -408,7 +408,7 @@
   },
   {
     "title": "Explore AOI Data Across Measurements",
-    "details": "Use this interactive tool to explore your how your AOI metrics change over time, between conditions, wearer groups, or even in different contexts.",
+    "details": "Use this interactive tool to explore how your AOI metrics change over time, between conditions, wearer groups, or even in different contexts.",
     "link": {
       "text": "View",
       "href": "/alpha-lab/multi-measure-aoi/"
