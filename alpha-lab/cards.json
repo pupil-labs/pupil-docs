@@ -436,5 +436,20 @@
       "Offline Processing",
       "Multimodal Data"
     ]
+  },
+  {
+    "title": "Depth Estimation with Neon Data",
+    "details": "Use this Neon Player plugin to combine gaze data with depth maps and run your depth estimation pipelines on your Neon recordings.",
+    "link": {
+      "text": "View",
+      "href": "/alpha-lab/depth-estimation/"
+    },
+    "image": "/alpha-lab/depth-estimation/depth_estimation.webp",
+    "category": "Eye Tracking in Physical Spaces",
+    "filters": [
+      "Neon",
+      "Offline Processing",
+      "AI/Deep Learning"
+    ]
   }
 ]
