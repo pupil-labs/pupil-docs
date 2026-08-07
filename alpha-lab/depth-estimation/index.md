@@ -50,9 +50,9 @@ For this tutorial, we are using the Depth Anything V3 models, and specifically t
 
 ## How to Use It
 
-- Download the Depth Estimation Plugin and place it in your Neon Player `plugins` directory.    
+- Download the Depth Estimation Plugin from [this Github repository](https://github.com/pupil-labs/depth-estimation-plugin) and place it in your Neon Player `plugins` directory.    
 - Open Neon Player and load your chosen recording.
-- In the plugin panel, enable the Depth Estimation plugin
+- In the plugin panel, enable the Depth Estimation plugin.
 - Select your desired AI model (e.g., DA3Metric-Large for absolute distance, or DA3-Small/Base for lightweight relative depth).
 - Click *Run Depth Estimation* and let the background job process the video frames.
 - Click *Export* to select your export folder and retrieve your data.
