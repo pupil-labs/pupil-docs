@@ -79,6 +79,10 @@ More importantly, when a specified word is detected, an event will automatically
 - Use audio-detected events to section your recordings for use with enrichments.
 - Inspect annotated events for further analysis, such as correlating spoken instructions or key speech/phrases with participant gaze patterns
 
+::: tip NEWS
+Now there is a [Neon Player plugin](https://github.com/pupil-labs/neon-player-plugins#transcribepy) that allows you to run the transcription and event detection directly in Neon Player, without the need for Google Colab. The plugin also allows you to create events around any detected word or phrase.
+:::
+
 ::: tip
 Looking for help with automating event annotation from audio data using the Cloud API, or curious about how audio data can enhance your Neon recordings? Feel free to reach out to us via email at [info@pupil-labs.com](mailto:info@pupil-labs.com), our [Discord server](https://pupil-labs.com/chat/), or visit our [Support Page](https://pupil-labs.com/products/support/) for formal support options.
 :::

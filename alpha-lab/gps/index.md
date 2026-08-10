@@ -62,6 +62,10 @@ Once you've made your recording, you can now load the GPS data and corresponding
 
 Taken together, the GPS app and visualization tool expand the capabilities of a standard Neon bundle, with the visualization tool providing a user interface that simplifies post-hoc review of Neon + GPS recordings. The tools add a new data stream to your studies of human behaviour and can be used with other GPS devices, if you prefer.
 
+::: tip NEWS
+Now there is a [Neon Player plugin](https://github.com/pupil-labs/neon-player-plugins#gpspy) that allows you to load GPS data directly into Neon Player, and visualize it on a map alongside your Neon recordings. The plugin also allows you to jump to the corresponding timestamp in the recording by clicking on the map.
+:::
+
 Feel free to share your fun & inspiring routes in the #[show-and-tell](https://discord.com/channels/285728493612957698/1238043619999617125) channel on our Discord server!
 
 ::: tip
