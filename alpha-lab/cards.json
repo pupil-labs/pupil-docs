@@ -436,5 +436,20 @@
       "Offline Processing",
       "Multimodal Data"
     ]
+  },
+  {
+    "title": "Depth Estimation with Neon",
+    "details": "Turn standard scene video into 3D gaze data using AI depth estimation in Neon Player. Visualize gaze depth heatmaps in your recordings and export frame-by-frame distance metrics!",
+    "link": {
+      "text": "View",
+      "href": "/alpha-lab/depth-estimation/"
+    },
+    "image": "/alpha-lab/depth-estimation/depth_estimation.webp",
+    "category": "Eye Tracking in Physical Spaces",
+    "filters": [
+      "Neon",
+      "Offline Processing",
+      "AI/Deep Learning"
+    ]
   }
 ]
