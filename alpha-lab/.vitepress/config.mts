@@ -35,7 +35,7 @@ let theme_config_additions = {
         },
         { text: "Gaze with NeRFs", link: "/nerfs/" },
         { text: "Map Gaze in a Room", link: "/multiple-rim/" },
-        { text: "Depth Estimation with Neon Data", link: "/depth-estimation/" },
+        { text: "Depth Estimation with Neon", link: "/depth-estimation/" },
       ],
     },
     {
