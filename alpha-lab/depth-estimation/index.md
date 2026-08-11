@@ -49,7 +49,7 @@ For this guide, we are using the Depth Anything V3 models, specifically the opti
 
 ## How to Use It
 
-- Download the Depth Estimation Plugin from [this Github repository](https://github.com/pupil-labs/depth-estimation-plugin) and place it in your Neon Player `plugins` directory.    
+- Download the Depth Estimation Plugin from [this Github repository](https://github.com/pupil-labs/npp-depth-estimation) and place it in your Neon Player `plugins` directory.    
 - Open Neon Player and load your chosen recording.
 - In the plugin panel, enable the Depth Estimation plugin.
 - Select your desired AI model (e.g., DA3Metric-Large for absolute distance, or DA3-Small/Base for lightweight relative depth).
