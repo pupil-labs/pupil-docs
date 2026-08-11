@@ -4,183 +4,67 @@ on:
   workflow_dispatch: # this makes the action manual
 
 jobs:
-  neon:
-    name: Build Neon
+  build:
+    name: 📦 ${{ matrix.component }} build
     runs-on: ubuntu-latest
-
+    strategy:
+      fail-fast: false
+      matrix:
+        component: [neon, invisible, core, alpha-lab, landing-page]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.6
 
       - name: Use Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: "pnpm"
 
       - name: Install dependencies
-        working-directory: ./neon
-        run: npm install
+        run: pnpm install --frozen-lockfile --filter ./${{ matrix.component }}
 
-      # Copy node modules to provide dependencies for shared components in root folder
-      - name: Copy node_modules
-        shell: bash
-        run: |
-          cp -r neon/node_modules .
-          ls -la
+      - name: Cache VitePress
+        uses: actions/cache@v4
+        with:
+          path: ./${{ matrix.component }}/.vitepress/cache
+          key: ${{ runner.os }}-vitepress-${{ matrix.component }}-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-vitepress-${{ matrix.component }}-
 
       - name: Make build
-        working-directory: ./neon
-        run: npm run docs:build
+        working-directory: ./${{ matrix.component }}
+        run: pnpm run docs:build
 
       - name: Upload
         uses: actions/upload-artifact@v4
         with:
-          name: neon
-          path: neon/.vitepress/dist
+          name: ${{ matrix.component }}
+          path: ${{ matrix.component }}/.vitepress/dist
 
-  invisible:
-    name: Build Invisible
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Use Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 22
-
-      - name: Install dependencies
-        working-directory: ./invisible
-        run: npm install
-
-      # Copy node modules to provide dependencies for shared components in root folder
-      - name: Copy node_modules
-        shell: bash
+      - name: Get built HTML files
+        id: html-files
         run: |
-          cp -r invisible/node_modules .
-          ls -la
-
-      - name: Make build
-        working-directory: ./invisible
-        run: npm run docs:build
-
-      - name: Upload
-        uses: actions/upload-artifact@v4
-        with:
-          name: invisible
-          path: invisible/.vitepress/dist
-
-  core:
-    name: Build Core
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Use Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 22
-
-      - name: Install dependencies
-        working-directory: ./core
-        run: npm install
-
-      # Copy node modules to provide dependencies for shared components in root folder
-      - name: Copy node_modules
-        shell: bash
-        run: |
-          cp -r core/node_modules .
-          ls -la
-
-      - name: Make build
-        working-directory: ./core
-        run: npm run docs:build
-
-      - name: Upload
-        uses: actions/upload-artifact@v4
-        with:
-          name: core
-          path: core/.vitepress/dist
-
-  alpha-lab:
-    name: Build Alpha Lab
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Use Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 22
-
-      - name: Install dependencies
-        working-directory: ./alpha-lab
-        run: npm install
-
-      # Copy node modules to provide dependencies for shared components in root folder
-      - name: Copy node_modules
-        shell: bash
-        run: |
-          cp -r alpha-lab/node_modules .
-          ls -la
-
-      - name: Make build
-        working-directory: ./alpha-lab
-        run: npm run docs:build
-
-      - name: Upload
-        uses: actions/upload-artifact@v4
-        with:
-          name: alpha-lab
-          path: alpha-lab/.vitepress/dist
-
-  landing-page:
-    name: Upload landing page
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Use Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 22
-
-      - name: Install dependencies
-        working-directory: ./landing-page
-        run: npm install
-
-      # Copy node modules to provide dependencies for shared components in root folder
-      - name: Copy node_modules
-        shell: bash
-        run: |
-          cp -r landing-page/node_modules .
-          ls -la
-
-      - name: Make build
-        working-directory: ./landing-page
-        run: npm run docs:build
-
-      - name: Upload
-        uses: actions/upload-artifact@v4
-        with:
-          name: landing-page
-          path: landing-page/.vitepress/dist
+          html_files=$(find ./${{ matrix.component }}/.vitepress/dist -name '*.html')
+          html_files="${html_files//$'\n'/ }"
+          html_files="${html_files//$'\r'/ }"
+          echo "all_html_files=${html_files}" >> $GITHUB_ENV
 
   debugging-info:
-    name: Upload debugging info
+    name: Upload Debugging Info
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+
       - name: Write commit SHA to gitcommit.txt
         shell: bash
-        run: |
-          echo $GITHUB_SHA > gitcommit.txt
+        run: echo $GITHUB_SHA > gitcommit.txt
 
-      - name: Gitcommit - upload
+      - name: Upload Git Commit Info
         uses: actions/upload-artifact@v4
         with:
           name: gitcommit
@@ -192,10 +76,10 @@ jobs:
     environment:
       name: staging
       url: https://docs-staging.pupil-labs.com
-    needs: [neon, invisible, core, landing-page, alpha-lab, debugging-info]
+    needs: [build, debugging-info]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Get size of files
         shell: bash

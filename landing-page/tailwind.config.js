@@ -4,6 +4,7 @@ module.exports = {
     "./**/*.md",
     "./.vitepress/theme/**/*.{vue,js,ts}",
     "../components/**/*.vue",
+    '!./node_modules/**',
   ],
   theme: {
     extend: {
