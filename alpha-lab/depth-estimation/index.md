@@ -1,5 +1,5 @@
 ---
-title: "Depth Estimation with Neon Data"
+title: "Depth Estimation with Neon"
 description: ""
 permalink: /alpha-lab/depth-estimation/
 layout: AlphaArticleLayout
@@ -23,30 +23,29 @@ tags: [Neon, Offline Processing, AI / Deep Learning]
 <Youtube src="UjvK3wFQJHM"/>
 
 :::tip
-Where does a batter look to judge the speed of a pitch? How close does a car need to be before a driver focuses on its brake lights? Does a surgeon's focal distance shift just before an incision? Eye tracking usually lives in a flat, 2D world, but human behavior doesn't. By pulling depth data straight out of standard video, you can finally map visual attention in true 3D space.
+When a driver shifts focus from their dashboard to a street sign, eye tracking shows what they fixated on, but not how 
+far away the target was. By applying depth estimation models to Neon scene video, you can automatically turn X, Y gaze 
+into Z distance metrics, unlocking depth data for every fixation and mapping visual attention in true 3D space!
 :::
 
-## The Challenge of Measuring Distance
+## Why Depth Estimation Matters
+Understanding where a subject is looking is only part of the story. Knowing the distance to the object that's looked at is important for 
+many types of behavioral research. For example, measuring gaze depth is highly relevant when evaluating driver reaction 
+times to road hazards, studying visual accommodation in ergonomics, or analyzing how people navigate complex spaces. 
 
-Understanding where a subject is looking is only part of the story; knowing the distance to that object is necessary for many types of behavioral research. For example, measuring gaze depth is highly relevant when evaluating driver reaction times to road hazards, studying visual accommodation in ergonomics, or analyzing how people navigate complex spaces. 
+This tool adds depth estimation directly to Neon Player, allowing researchers to extract the real-world distance of gazed 
+objects without needing any additional or specialized hardware.
 
-This tool adds depth estimation directly to Neon Player, allowing researchers to extract the real-world distance of gazed objects without needing any additional or specialized hardware.
+## From 2D Scene Video to Metric Depth
 
-## Extracting Distance from 2D Video
+Neon provides highly accurate gaze data overlaid on standard 2D scene video. However, calculating distance from a flat image is challenging, traditionally requiring complex setups like physical markers, motion capture systems, or dedicated depth cameras.
 
-Neon provides highly accurate gaze data overlaid on a standard 2D scene video. However, calculating the distance to an object from a flat 2D image is technically difficult. Traditionally, calculating the distance to a gazed object required complex environmental setups, physical markers, or cumbersome depth cameras.
+This plugin attempts to solve the problem purely in software using monocular depth estimation. It leverages state-of-the-art neural networks to generate a depth map for each scene video frame, then reads the depth value at the exact X, Y coordinates of the wearer's gaze. With several model sizes available, researchers can easily prioritize either faster processing times or metric depth output depending on their project needs.
 
-This plugin handles this through software using monocular depth estimation. It uses neural networks to generate a depth map for each frame of the scene video, and then reads the depth value at the exact X,Y coordinate of the user's gaze. The plugin includes several different model sizes to choose from. This allows researchers to prioritize either faster processing times or metric depth output, depending on their specific project needs.
+Until recently, most open-source depth estimation models could only provide *relative* depth, such as determining that one object is closer than another without providing an actual measurement. The release of models like Depth Anything V3 (specifically the DA3Metric-Large model) changes this by enabling zero-shot *metric* depth estimation from a single RGB camera, outputting real-world distances natively. 
 
-## Introducing the Depth Estimation Neon Player Plugin
+For this guide, we are using the Depth Anything V3 models, specifically the optimized implementation provided by the [Awesome Depth Anything 3](https://github.com/Aedelon/awesome-depth-anything-3) repository.
 
-Why now? 
-
-Until recently, most open-source depth estimation AI could only provide *relative* depth (e.g., determining that a chair is closer than a wall, but not the actual distance).
-
-The recent release of models like Depth Anything V3 (specifically the DA3Metric-Large model) changes this. It allows for zero-shot *metric* depth estimation from a single RGB camera, outputting accurate real-world measurements natively.
-
-For this tutorial, we are using the Depth Anything V3 models, and specifically the optimized implementation provided by the [Awesome Depth Anything 3](https://github.com/Aedelon/awesome-depth-anything-3) repository.
 
 ## How to Use It
 
@@ -57,7 +56,7 @@ For this tutorial, we are using the Depth Anything V3 models, and specifically t
 - Click *Run Depth Estimation* and let the background job process the video frames.
 - Click *Export* to select your export folder and retrieve your data.
 
-## Exported Data
+## Accessing your Depth Estimation Results
 
 After the background job finishes, the plugin generates a depth map overlaid on the scene camera footage in the Neon Player window, along with a set of files ready for export and analysis:
 
