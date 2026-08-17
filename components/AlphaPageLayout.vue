@@ -38,6 +38,7 @@
     "Neon",
     "Pupil Invisible",
     "Pupil Cloud",
+    "Neon Player Plugin",
     "Real-Time Analysis",
     "Offline Processing",
     "AI/Deep Learning",

@@ -303,6 +303,7 @@
       "Neon",
       "Pupil Invisible",
       "Pupil Cloud",
+      "Neon Player Plugin",
       "Offline Processing",
       "AI/Deep Learning",
       "Multimodal Data"
@@ -320,6 +321,7 @@
     "filters": [
       "Neon",
       "Pupil Cloud",
+      "Neon Player Plugin",
       "Offline Processing",
       "3D Reconstruction",
       "Multimodal Data"
@@ -448,6 +450,7 @@
     "category": "Eye Tracking in Physical Spaces",
     "filters": [
       "Neon",
+      "Neon Player Plugin",
       "Offline Processing",
       "AI/Deep Learning"
     ]
