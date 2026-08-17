@@ -28,3 +28,10 @@ the timeline, and export data in .csv format. Some of them also generate visuali
 | Video Exporter       | Exports or copies the current frame (as an image) or scene (as a video) with all active visualizations applied.                                                                                         |
 
 ---
+
+## Adding Features through Plugins
+You can add any custom features you can imagine to Neon Player through plugins. Check out the [Plugin API](../plugin-api/) section to learn how to install custom/3rd party plugins or develop your own.
+
+::: tip Neon Player Plugins Repository
+This [repository](https://github.com/pupil-labs/neon-player-plugins) contains a curated collection of plugins developed by the community and us to extend the functionality of Neon Player. Have a look at it to find plugins that might be useful for your workflow, or submit your own plugin to share it with the community.
+:::

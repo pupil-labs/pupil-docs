@@ -22,3 +22,7 @@ If the plugin requires any additional dependencies, you will be prompted, and th
 Neon Player bundles [Astral's UV Python package manager](https://docs.astral.sh/uv/) which makes installation of dependencies not only faster and safer, but also a lot simpler for 3rd party plugins, as they can now declare their dependencies as inline script metadata using [PEP 723](https://packaging.python.org/en/latest/specifications/inline-script-metadata/#inline-script-metadata).
 
 Which is automatically picked up by Neon Player and installed into the `site-packages` folder located inside the `plugins` folder once Neon Player is started and the user has accepted the installation of said dependencies.
+
+## Contributing a Plugin
+
+If you have developed a plugin that you would like to share with the community, please submit it to the [Neon Player Plugins GitHub repository](https://github.com/pupil-labs/neon-player-plugins).
