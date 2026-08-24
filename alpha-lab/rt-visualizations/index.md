@@ -63,7 +63,7 @@ applications, prototype a new gaze-contingent system, and more!
 ## Steps to recreate
 
 Load up your Python environment, connect Neon, and follow the steps in [the Github
-repository’s instructions](https://github.com/pupil-labs/realtime_viz_alpha_lab/).
+repository’s instructions](https://github.com/pupil-labs/real-time-visualizations).
 
 ## What You'll Learn to Build
 
