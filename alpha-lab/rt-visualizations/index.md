@@ -42,8 +42,8 @@ numbers into a clear, intuitive understanding of behaviour.
 
 The benefits of live visualisation go beyond simple data inspection. For example,
 visualising 3D eye poses can be crucial for monitoring patients in clinical
-applications. In high-intensity scenarios, like professional sports or race car driving,
-plotting pupil size and eyelid aperture in real time can provide vital insights into a
+applications. In high-intensity scenarios, like performing surgery or long-distance
+trucking, plotting eyelid aperture in real time can provide vital insights into a
 wearer's state.
 
 This is where our guide comes in. It shows how to build these visualisations and run
@@ -79,7 +79,7 @@ types of visualisations:
   orientation in space, rendered using the real-time IMU data stream.
 
 These examples are more than just demos; they are well-commented, modular starting
-points for your own projects in driver monitoring, clinical testing, sports science, and
+points for your own projects in monitoring, clinical testing, sports science, and
 beyond.
 
 Feel free to use the code as a base for your own investigations and share what you come
