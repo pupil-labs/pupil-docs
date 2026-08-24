@@ -263,7 +263,8 @@
     "details": "Automatically annotate important activities and events in your Pupil Cloud recordings with GPT-4o.",
     "link": {
       "text": "View",
-      "href": "/alpha-lab/event-automation-gpt/"
+      "href": "/alpha-lab/event-annotation.webp",
+      "category": "Behavior Detection & Annotation"
     },
     "image": "/alpha-lab/event-annotation.webp",
     "category": "Behavior Detection & Annotation",
@@ -348,7 +349,7 @@
       "href": "/alpha-lab/map-onto-anything/"
     },
     "image": "/alpha-lab/map-gaze-anything.webp",
-    "category": "Data Processing & Workflows",
+    "category": "Real Time & Interactive",
     "filters": [
       "Neon",
       "Pupil Cloud",
@@ -416,9 +417,9 @@
     "image": "/alpha-lab/pl-multi-meas-aoi.webp",
     "category": "Data Processing & Workflows",
     "filters": [
-      "Neon", 
-      "Pupil Cloud", 
-      "AOI Mapping", 
+      "Neon",
+      "Pupil Cloud",
+      "AOI Mapping",
       "Metric Extraction"
     ]
   },
@@ -450,6 +451,20 @@
       "Neon",
       "Offline Processing",
       "AI/Deep Learning"
+    ]
+  },
+  {
+    "title": "Real-time Visualizations",
+    "details": "See what Neon is measuring by building real-time 2D and 3D visualisations of its data streams. Gain an intuitive feel for live metrics and learn how to integrate real-time data into your own custom applications.",
+    "link": {
+      "text": "View",
+      "href": "/alpha-lab/rt-visualizations/"
+    },
+    "image": "",
+    "category": "Real Time & Interactive",
+    "filters": [
+      "Neon",
+      "Real-Time Analysis"
     ]
   }
 ]
