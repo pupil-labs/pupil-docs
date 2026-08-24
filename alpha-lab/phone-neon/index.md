@@ -1,7 +1,9 @@
 ---
-title: Uncover gaze behaviour on phone screens with Neon
+title: "Uncover Gaze Behaviour on Phones"
 description: "Evaluate Neon's accuracy on phone screens"
 permalink: /alpha-lab/phone-neon
+layout: AlphaArticleLayout
+sidebar: false
 meta:
   - name: twitter:card
     content: player
@@ -15,16 +17,8 @@ meta:
     content: "720"
   - property: og:image
     content: "https://i.ytimg.com/vi/gp5O1uskDME/maxresdefault.jpg"
-tags: [Neon, Cloud]
+tags: [Neon, Pupil Invisible, Pupil Cloud, Offline Processing, AOI Mapping]
 ---
-
-<script setup>
-import TagLinks from '@components/TagLinks.vue'
-</script>
-
-# Uncover Gaze Behaviour on Phones
-
-<TagLinks :tags="$frontmatter.tags" />
 
 <Youtube src="gp5O1uskDME"/>
 

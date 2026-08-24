@@ -1,25 +1,25 @@
 # Gaze Mode
-You can configure Neon to generate binocular or monocular gaze data by changing the `Gaze Mode` in the Neon Companion app 
-settings.
+Neon produces three gaze signals in every session: `Binocular`, `Monocular Left`, and `Monocular Right`. 
 
-In `Binocular` mode, gaze data is generated using images from both the left and right eyes. This is the default setting 
-and is recommended for most users.
+`Binocular` gaze is generated using images from both the left and right eyes. `Monocular` gaze is generated using images 
+from a single eye only (left or right).
 
-Some specialist applications, like ophthalmic testing, require gaze data to be generated from just one eye. This can 
-be achieved by switching to a `Monocular` gaze mode. `Monocular Left` generates gaze data using only images of the left 
-eye, while `Monocular Right` uses only images of the right eye.
+These signals are computed in parallel, stored in the recording, and streamed live through the Real-Time API. 
 
-## Changing Gaze Modes
-You can switch between gaze modes in the Neon Companion app settings. 
+In other words, you always capture the complete set of gaze signals, no configuration required, and they can be easily
+exported, e.g. via Pupil Cloud, to .csv files for offline analysis.
 
-:::info
-After selecting a new gaze mode, be sure to unplug and re-plug the Neon device.
-:::
+The `Gaze Mode` setting in the Neon Companion app selects which of these signals is treated as the **primary** gaze signal. 
+The primary signal is used for real-time fixation & saccade detection, and it is the signal Pupil Cloud uses for 
+post-processing, enrichments, visualizations, and derived metrics.
 
-## Considerations When Switching to Monocular Gaze
+### Choosing a primary signal
+`Binocular` is the default and recommended option for most users. If one eye is closed or obstructed, the system handles 
+this gracefully and automatically uses `Monocular` input when needed.
 
-- If a monocular gaze mode is selected, no binocular gaze signal will be generated. This means all downstream data, including fixations and enrichment data, will be based on monocular gaze data.
+Some specialist applications, such as ophthalmic testing, require gaze to be driven by a single eye. In that case, select 
+`Monocular Left` or `Monocular Right`. While `Binocular` mode’s automatic fallback works well for complete closure or 
+obstruction, selecting a `Monocular` primary signal is recommended if you need to be certain gaze is coming from one eye.
 
-- [Eye State](/data-collection/data-streams/#_3d-eye-states) and [Pupillometry](/data-collection/data-streams/#pupil-diameters) are unaffected by the gaze mode configuration and will always be generated using images from **both** eyes.
-
-- If a monocular gaze mode is selected, Pupil Cloud will **not** re-process a recording to obtain a 200 Hz signal. Instead, Pupil Cloud will use the real-time signal, which may be lower than 200 Hz depending on which Companion device was used, and which gaze rate was selected in the Neon Companion app settings.
+### What this does not affect
+Eye State and Pupillometry are unaffected by the `Gaze Mode` selection and will always be generated using images from both eyes.

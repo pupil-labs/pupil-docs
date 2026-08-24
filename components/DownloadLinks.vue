@@ -36,11 +36,12 @@ export default {
       .then((response) => response.json())
       .then((data) => {
         data.assets.forEach((asset) => {
-          if (asset.browser_download_url.includes("windows")) {
+          const url = asset.browser_download_url.toLowerCase();
+          if (/windows|\.exe/.test(url)) {
             this.urlWindows = asset.browser_download_url;
-          } else if (asset.browser_download_url.includes("linux")) {
+          } else if (/linux|\.deb/.test(url)) {
             this.urlLinux = asset.browser_download_url;
-          } else if (asset.browser_download_url.includes("macos")) {
+          } else if (/macos|\.dmg/.test(url)) {
             this.urlMac = asset.browser_download_url;
           }
         });

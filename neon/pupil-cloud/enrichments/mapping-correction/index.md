@@ -2,12 +2,12 @@
 
 <Youtube src="WcCwCVo1_lg"/>
 
-Using the Mapping Correction, you can correct errors in the results of the [**Reference Image Mapper**](/pupil-cloud/enrichments/reference-image-mapper/) and [**Marker Mapper**](/pupil-cloud/enrichments/marker-mapper/), which may have happened due to e.g. motion blur or occlusions.
+Using the Mapping Correction, you can correct errors in the results of the [**Reference Image Mapper**](/pupil-cloud/enrichments/reference-image-mapper/), [**Auto Image Mapper**](/pupil-cloud/enrichments/auto-image-mapper/), and [**Marker Mapper**](/pupil-cloud/enrichments/marker-mapper/), which may have happened due to e.g. motion blur or occlusions.
 It allows you to add missing fixations and adjust the locations of mapped fixations.
 
 ## Setup
 
-- **Enrich:** First, run your Reference Image Mapper or Manual Mapper Enrichment, if not already done.
+- **Enrich:** First, run your Auto Image Mapper, Reference Image Mapper, or Marker Mapper Enrichment, if not already done.
 - **Correct:** After the Enrichment has completed, open it and validate the mapping results. If you need to make corrections, click `Edit` next to Mapping Correction to start the interface.
   - Initially, all fixations are in their default mapped state; i.e., the result of the Enrichment’s automatic mapping process.
   - You can `Skip to next` or `previous` fixation with the corresponding buttons. Similarly, you can click on the Recording Timeline to navigate fixations.
@@ -34,5 +34,6 @@ Use the <kbd>A</kbd> and <kbd>S</kbd> keyboard shortcuts to move back and fort
 
 Once you are done with Mapping Correction, then the output of the Enrichment is automatically updated and can be downloaded. Please refer to each Enrichment’s respective Export Format Documentation:
 
+- [Auto Image Mapper Export Format](/pupil-cloud/enrichments/auto-image-mapper/#export-format)
 - [Reference Image Mapper Export Format](/pupil-cloud/enrichments/reference-image-mapper/#export-format)
 - [Marker Mapper Export Format](/pupil-cloud/enrichments/marker-mapper/#export-format)

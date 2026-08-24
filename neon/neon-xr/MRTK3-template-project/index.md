@@ -14,7 +14,7 @@ If you just want to try out the demo scenes included in the template project in 
 
 You can download the Pico 4 APK at this link:
 
-- [Pico 4 - MRTK3 Template Project](https://drive.google.com/file/d/1WaJxx6wgQNKFfpGUAPKxbOfHZ49kXJgW/view?usp=sharing)
+- [Pico 4 - MRTK3 Template Project](https://drive.google.com/file/d/1U-pJ1UOgt1Ra4pVThApKnXuOHqwD7YKN/view?usp=drive_link)
 
 To install it, simply open the link in the headset's browser, download the file and open it.
 

@@ -1,0 +1,37 @@
+# Plugins
+
+Neon Player uses a plugin architecture to add functionality. All data streams are implemented using this scheme, 
+and each can be added or removed on demand in the sidebar.
+
+Different plugins have different configurable options depending on their functionality.
+
+## Installed Plugins
+
+These plugins are installed by default. Most of them load the corresponding data stream, add a track in 
+the timeline, and export data in .csv format. Some of them also generate visualizations in the video player.
+
+---
+
+| Plugins              | Description                                                                                                                                                                                             |
+|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Audio                | Enables audio playback and displays a waveform in the timeline.                                                                                                                                         |
+| Blinks               | Adds blink events to the timeline and exports them in `.csv` format. Requires the [eye state](../../data-collection/data-streams/#_3d-eye-poses) data stream to be present in the raw native recording. |
+| Events               | Manages recording events. (See the [Events](../events/) section for details).                                                                                                                           |
+| Export All           | Exports data from all enabled plugins simultaneously.                                                                                                                                                   |
+| Eye Overlay          | Adds a draggable, resizable eye overlay to the video player. Includes options to customize opacity, borders, and appearance.                                                                            |
+| Eye State            | Adds tracks to the timeline displaying [eye state](../../data-collection/data-streams/#_3d-eye-poses) data and exports them in `.csv` format.                                                           |
+| Fixations & Saccades | Adds [fixation and saccade](../../data-collection/data-streams/#fixations-saccades) events to the timeline and exports them in `.csv` format.                                                           |
+| Gaze Data            | Handles gaze offset correction and exports [gaze](../../data-collection/data-streams/#gaze) data. It also renders gaze visualizations in the video player.                                              |
+| IMU                  | Displays IMU (Inertial Measurement Unit) data in the timeline and exports in `.csv` format.                                                                                                             |
+| Scene Renderer       | Loads the scene video. Allows adjustments to brightness and contrast, displays the frame index, or can be disabled to visualize gaze only.                                                              |
+| Surface Tracker      | Detects AprilTag markers in the scene video, allowing to define surfaces and map the fixation and gaze data within the defined surfaces. Generates heatmap visualization.                                         |
+| Video Exporter       | Exports or copies the current frame (as an image) or scene (as a video) with all active visualizations applied.                                                                                         |
+
+---
+
+## Adding Features through Plugins
+You can add any custom features you can imagine to Neon Player through plugins. Check out the [Plugin API](../plugin-api/) section to learn how to install custom/3rd party plugins or develop your own.
+
+::: tip Neon Player Plugins Repository
+This [repository](https://github.com/pupil-labs/neon-player-plugins) contains a curated collection of plugins developed by the community and us to extend the functionality of Neon Player. Have a look at it to find plugins that might be useful for your workflow, or submit your own plugin to share it with the community.
+:::

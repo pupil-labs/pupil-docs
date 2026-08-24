@@ -29,6 +29,10 @@ If you need more markers or higher resolution please see [here](https://github.c
 Note that the markers require a white border around them to be robustly detected. In our experience, this border should be at least equal to the width of the smallest white square or rectangle shown in the marker. Therefore, please make sure to include a sufficient border when displaying or printing them.
 :::
 
+::: tip
+If presenting the markers on a digital display (tablet, monitor or through PsychoPy), you may need to tweak the display brightness, and Neon's exposure settings, to improve marker detection. Typically, dimming the screen helps avoid overexposure and improves marker visibility.
+:::
+
 ## Selecting Markers in the Cloud
 
 <video width="100%" controls>
@@ -61,7 +65,7 @@ You can select the image to be used in Marker Mapper visualizations. You can eit
 
 ## Validate the Mapping
 
-After the enrichment is successfully run, the recording timeline contains visualizations that indicate when surface was localized, and when gaze was on the surface.
+After the enrichment is successfully run, the recording timeline contains visualizations that indicate when surface was localized, and when gaze was on the surface. You can also check how much of each recording is localized (in percentage) in the recording drop-down selector.
 
 <video width="100%" controls>
   <source src="./mm_enrichment_viz.mp4" type="video/mp4">
@@ -117,3 +121,11 @@ This file contains the surface locations in the scene images for all sections.
 | **tr x/y [px]**         | x or y coordinate respectively of the **t**op **r**ight corner. Empty in case the surface could not be localized. Added in version 2 of this enrichment.                             |
 | **br x/y [px]**         | x or y coordinate respectively of the **b**ottom **r**ight corner. Empty in case the surface could not be localized. Added in version 2 of this enrichment.                          |
 | **bl x/y [px]**         | x or y coordinate respectively of the **b**ottom **l**eft corner. Empty in case the surface could not be localized. Added in version 2 of this enrichment.                           |
+
+### sections.csv
+
+The enrichment is calculated based on sections defined by a start and end event. The `sections.csv` file contains the start and end timestamps of all sections that were used for the enrichment calculation, along with the corresponding section and recording IDs.
+
+### AOI Metrics
+
+If AOIs are defined for the enrichment, the download would also contain the AOI metrics in `.csv` format, as reported in the [AOI Metrics](../../areas-of-interest/index.md#exporting-aoi-metrics).

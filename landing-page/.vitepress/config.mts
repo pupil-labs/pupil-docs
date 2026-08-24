@@ -69,6 +69,9 @@ const config_additions = {
     `,
     ],
   ],
+  sitemap: {
+    hostname: 'https://docs.pupil-labs.com/'
+  },
   vite: {
     resolve: {
       alias: [

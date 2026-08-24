@@ -348,7 +348,11 @@
       "href": "/alpha-lab/map-onto-anything/"
     },
     "image": "/alpha-lab/map-gaze-anything.webp",
+<<<<<<< HEAD
     "category": "Real Time & Interactive",
+=======
+    "category": "Data Processing & Workflows",
+>>>>>>> origin/master
     "filters": [
       "Neon",
       "Pupil Cloud",
@@ -416,9 +420,15 @@
     "image": "/alpha-lab/pl-multi-meas-aoi.webp",
     "category": "Data Processing & Workflows",
     "filters": [
+<<<<<<< HEAD
       "Neon",
       "Pupil Cloud",
       "AOI Mapping",
+=======
+      "Neon", 
+      "Pupil Cloud", 
+      "AOI Mapping", 
+>>>>>>> origin/master
       "Metric Extraction"
     ]
   },
@@ -451,6 +461,7 @@
       "Offline Processing",
       "AI/Deep Learning"
     ]
+<<<<<<< HEAD
   },
     {
     "title": "Real-time Visualizations",
@@ -465,5 +476,7 @@
       "Neon",
       "Real-Time Analysis"
     ]
+=======
+>>>>>>> origin/master
   }
 ]

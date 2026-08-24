@@ -38,6 +38,12 @@ The gaze and eye-state stream follows the recommendations of the [xdf Gaze Meta 
 
 The event stream contains the name of each generated event as a string.
 
+::: tip 
+When sending events via the real-time API or the Monitor App, Neon assigns the event timestamp based on the time of arrival by default. This timestamp can be then published in the Neon Events LSL stream.
+
+If you are synchronizing Neon with external systems (e.g., EEG or stimulus software), we recommend using the API's manual clock offset correction to improve temporal alignment between clocks. See details [here](https://pupil-labs.github.io/pl-realtime-api/dev/methods/simple/remote-control/#with-manual-clock-offset-correction).
+:::
+
 ## Connection problems?
 
 If your devices are on the same network but you have trouble connecting, it is likely due to a firewall or other network configuration issue. LSL requires the following network connections:

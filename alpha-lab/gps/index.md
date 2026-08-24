@@ -2,6 +2,8 @@
 title: "Where did I see that? Eye Tracking & GPS"
 description: "Use a GPS, like the one in Neon's Companion Device, to record synchronized location, eye, and head movement data. Visualize it on a map and click to jump there in your recording!"
 permalink: /alpha-lab/gps/
+layout: AlphaArticleLayout
+sidebar: false
 meta:
   - name: twitter:card
     content: summary
@@ -15,16 +17,8 @@ meta:
     content: "720"
   - property: og:image
     content: "https://i.ytimg.com/vi/nt_zNSBMJWI/maxresdefault.jpg"
-tags: [Neon, Cloud]
+tags: [Neon, Pupil Cloud, Offline Processing, 3D Reconstruction, Multimodal Data]
 ---
-
-<script setup>
-import TagLinks from '@components/TagLinks.vue'
-</script>
-
-# Where did I see that? Eye Tracking & GPS
-
-<TagLinks :tags="$frontmatter.tags" />
 
 <Youtube src="Yjos2JzpD-I"/>
 
@@ -67,6 +61,10 @@ This is the same format that is used by the GPS app.
 Once you've made your recording, you can now load the GPS data and corresponding Neon recording into the visualization tool. Just follow the steps at [the Github repository](https://github.com/pupil-labs/gps-alpha-lab).
 
 Taken together, the GPS app and visualization tool expand the capabilities of a standard Neon bundle, with the visualization tool providing a user interface that simplifies post-hoc review of Neon + GPS recordings. The tools add a new data stream to your studies of human behaviour and can be used with other GPS devices, if you prefer.
+
+::: tip NEWS
+Now there is a [Neon Player plugin](https://github.com/pupil-labs/neon-player-plugins#gpspy) that allows you to load GPS data directly into Neon Player, and visualize it on a map alongside your Neon recordings. The plugin also allows you to jump to the corresponding timestamp in the recording by clicking on the map.
+:::
 
 Feel free to share your fun & inspiring routes in the #[show-and-tell](https://discord.com/channels/285728493612957698/1238043619999617125) channel on our Discord server!
 

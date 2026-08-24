@@ -88,7 +88,6 @@ let theme_config_additions = {
             text: "Lab Streaming Layer",
             link: "/data-collection/lab-streaming-layer/",
           },
-          // { text: 'PsychoPy', link: '/data-collection/psychopy/' },
         ],
       },
       {
@@ -106,6 +105,7 @@ let theme_config_additions = {
             text: "Offset Correction",
             link: "/data-collection/offset-correction/",
           },
+          { text: "Using a VPN", link: "/data-collection/using-a-vpn/" },
         ],
       },
       {
@@ -121,51 +121,38 @@ let theme_config_additions = {
         items: [
           { text: "Projects", link: "/pupil-cloud/projects/" },
           { text: "Workspaces", link: "/pupil-cloud/workspaces/" },
+          { text: "Playback & Timeline", link: "/pupil-cloud/playback-timeline/" },
           { text: "Offset Correction", link: "/pupil-cloud/offset-correction/" },
-          { text: "Add-ons", link: "/pupil-cloud/add-ons/" },
+          { text: "Events", link: "/pupil-cloud/events" },
+          { text: "Cloud Plans", link: "/pupil-cloud/plans/" },
         ],
       },
       {
         text: "Enrichments",
         items: [
           { text: "Overview", link: "/pupil-cloud/enrichments/" },
-          {
-            text: "Reference Image Mapper",
-            link: "/pupil-cloud/enrichments/reference-image-mapper/",
-          },
-          {
-            text: "Marker Mapper",
-            link: "/pupil-cloud/enrichments/marker-mapper/",
-          },
-          {
-            text: "Mapping Correction",
-            link: "/pupil-cloud/enrichments/mapping-correction/",
-          },
-          {
-            text: "Face Mapper",
-            link: "/pupil-cloud/enrichments/face-mapper/",
-          },
-          {
-            text: "Manual Mapper",
-            link: "/pupil-cloud/enrichments/manual-mapper/",
-          },
+          { text: "Auto Image Mapper", link: "/pupil-cloud/enrichments/auto-image-mapper/" },
+          { text: "Face Mapper", link: "/pupil-cloud/enrichments/face-mapper/" },
+          { text: "Marker Mapper", link: "/pupil-cloud/enrichments/marker-mapper/" },
+          { text: "Manual Mapper", link: "/pupil-cloud/enrichments/manual-mapper/"},
+          { text: "Reference Image Mapper", link: "/pupil-cloud/enrichments/reference-image-mapper/" },
+          { text: "Mapping Correction", link: "/pupil-cloud/enrichments/mapping-correction/" },
         ],
+      },
+      {
+          text: "Areas of Interest (AOIs)", link: "/pupil-cloud/areas-of-interest/",
       },
       {
         text: "Visualizations",
         items: [
           { text: "Heatmap", link: "/pupil-cloud/visualizations/heatmap/" },
-          {
-            text: "Areas of Interest (AOIs)",
-            link: "/pupil-cloud/visualizations/areas-of-interest/",
-          },
+          { text: "AOI Heatmap", link: "/pupil-cloud/visualizations/aoi-heatmap/" },
           { text: "Scanpath", link: "/pupil-cloud/visualizations/scanpath/" },
-          {
-            text: "Video Renderer",
-            link: "/pupil-cloud/visualizations/video-renderer/",
-          },
+          { text: "Bar Chart", link: "/pupil-cloud/visualizations/bar-chart/" },
+          { text: "Video Renderer", link: "/pupil-cloud/visualizations/video-renderer/" },
         ],
       },
+      { text: "Troubleshooting", link: "/pupil-cloud/troubleshooting/" },
     ],
     "/real-time-api/": [
       {
@@ -189,6 +176,9 @@ let config_additions = {
   titleTemplate: "Invisible - :title - Pupil Labs Docs",
   description:
     "Documentation of the Pupil Invisible eye tracker and ecosystem.",
+  sitemap: {
+    hostname: 'https://docs.pupil-labs.com/invisible/'
+  },
   vite: {
     resolve: {
       alias: [

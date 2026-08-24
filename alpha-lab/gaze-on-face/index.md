@@ -2,6 +2,8 @@
 title: "Map Gaze Onto Facial Landmarks"
 description: "Map gaze onto facial landmarks using Pupil Cloud’s Face Mapper exported data."
 permalink: /alpha-lab/gaze-on-face/
+layout: AlphaArticleLayout
+sidebar: false
 meta:
   - name: twitter:card
     content: summary
@@ -15,16 +17,8 @@ meta:
     content: "720"
   - property: og:image
     content: "https://i.ytimg.com/vi/nt_zNSBMJWI/maxresdefault.jpg"
-tags: [Neon, Cloud]
+tags: [Neon, Pupil Invisible, Pupil Cloud, Offline Processing, AOI Mapping]
 ---
-
-<script setup>
-import TagLinks from '@components/TagLinks.vue'
-</script>
-
-# Map Gaze Onto Facial Landmarks
-
-<TagLinks :tags="$frontmatter.tags" />
 
 <Youtube src="vEshPxgWs3E"/>
 

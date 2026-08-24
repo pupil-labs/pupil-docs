@@ -35,6 +35,7 @@
     classes.value = {
       "has-sidebar": hasSidebar.value,
       top: frontmatter.value.layout === "home" && y.value === 0,
+      "no-sticky": frontmatter.value.layout === "AlphaPageLayout",
     };
   });
 </script>
@@ -143,6 +144,10 @@
       border-bottom-color: var(--vp-c-gutter);
       background-color: var(--vp-nav-bg-color);
     }
+  }
+
+  .VPNavBar.no-sticky {
+    position: relative !important;
   }
 
   .container {

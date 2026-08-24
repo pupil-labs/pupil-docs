@@ -26,12 +26,15 @@ let theme_config_additions = {
       link: "/neon-player/",
       activeMatch: "/neon-player/",
     },
-    {
-      text: "Real-Time API",
-      link: "/real-time-api/",
-      activeMatch: "/real-time-api/",
-    },
     { text: "Neon XR", link: "/neon-xr/", activeMatch: "/neon-xr/" },
+    {
+      text: "Developer",
+      items: [
+        { text: "Real-Time API", link: "/real-time-api/" },
+        { text: "Recording API", link: "/recording-api/" },
+        { text: "Open-Source Libs", link: "/open-source-libs/" },
+      ],
+    },
   ],
 
   sidebar: {
@@ -47,6 +50,7 @@ let theme_config_additions = {
             text: "Cleaning & Disinfecting",
             link: "/hardware/clean-and-disinfect/",
           },
+          { text: "Serial Number", link: "/hardware/serial-number/" },
         ],
       },
       {
@@ -142,6 +146,7 @@ let theme_config_additions = {
             text: "Calibrating the IMU",
             link: "/data-collection/calibrating-the-imu/",
           },
+          { text: "Using a VPN", link: "/data-collection/using-a-vpn/" },
         ],
       },
       {
@@ -157,112 +162,73 @@ let theme_config_additions = {
         items: [
           { text: "Projects", link: "/pupil-cloud/projects/" },
           { text: "Workspaces", link: "/pupil-cloud/workspaces/" },
+          { text: "Playback & Timeline", link: "/pupil-cloud/playback-timeline/" },
           { text: "Offset Correction", link: "/pupil-cloud/offset-correction/" },
-          { text: "Add-ons", link: "/pupil-cloud/add-ons/" },
+          { text: "Events", link: "/pupil-cloud/events" },
+          { text: "Cloud Plans", link: "/pupil-cloud/plans/" },
         ],
       },
       {
         text: "Enrichments",
         items: [
           { text: "Overview", link: "/pupil-cloud/enrichments/" },
-          {
-            text: "Reference Image Mapper",
-            link: "/pupil-cloud/enrichments/reference-image-mapper/",
-          },
-          {
-            text: "Marker Mapper",
-            link: "/pupil-cloud/enrichments/marker-mapper/",
-          },
-          {
-            text: "Face Mapper",
-            link: "/pupil-cloud/enrichments/face-mapper/",
-          },
-          {
-            text: "Manual Mapper",
-            link: "/pupil-cloud/enrichments/manual-mapper/",
-          },
+          { text: "Auto Image Mapper", link: "/pupil-cloud/enrichments/auto-image-mapper/" },
+          { text: "Face Mapper", link: "/pupil-cloud/enrichments/face-mapper/" },
+          { text: "Marker Mapper", link: "/pupil-cloud/enrichments/marker-mapper/" },
+          { text: "Manual Mapper", link: "/pupil-cloud/enrichments/manual-mapper/"},
+          { text: "Reference Image Mapper", link: "/pupil-cloud/enrichments/reference-image-mapper/" },
+          { text: "Mapping Correction", link: "/pupil-cloud/enrichments/mapping-correction/" },
         ],
       },
-      { text: "Mapping Correction", link: "/pupil-cloud/enrichments/mapping-correction/" },
+      {
+          text: "Areas of Interest (AOIs)", link: "/pupil-cloud/areas-of-interest/",
+      },
       {
         text: "Visualizations",
         items: [
           { text: "Heatmap", link: "/pupil-cloud/visualizations/heatmap/" },
-          {
-            text: "Areas of Interest (AOIs)",
-            link: "/pupil-cloud/visualizations/areas-of-interest/",
-          },
+          { text: "AOI Heatmap", link: "/pupil-cloud/visualizations/aoi-heatmap/" },
           { text: "Scanpath", link: "/pupil-cloud/visualizations/scanpath/" },
-          {
-            text: "Video Renderer",
-            link: "/pupil-cloud/visualizations/video-renderer/",
-          },
+          { text: "Bar Chart", link: "/pupil-cloud/visualizations/bar-chart/" },
+          { text: "Video Renderer", link: "/pupil-cloud/visualizations/video-renderer/" },
         ],
       },
       { text: "Troubleshooting", link: "/pupil-cloud/troubleshooting/" },
     ],
     "/neon-player/": [
+      { text: "Overview", link: "/neon-player/" },
       {
-        text: "Overview",
-        link: "/neon-player/",
+        text: "General",
+        items: [
+          { text: "Getting Started", link: "/neon-player/getting-started/" },
+          { text: "Neon Player Interface", link: "/neon-player/interface/" },
+          { text: "Playback & Timeline", link: "/neon-player/playback-timeline/" },
+        ],
       },
       {
         text: "Plugins",
         items: [
-          {
-            text: "Visualization Plugins",
-            link: "/neon-player/visualization-plugins/",
-          },
-          {
-            text: "Fixations & Saccades",
-            link: "/neon-player/fixations-and-saccades/",
-          },
-          {
-            text: "Blinks",
-            link: "/neon-player/blinks/",
-          },
-          {
-            text: "Surface Tracker",
-            link: "/neon-player/surface-tracker/",
-          },
-          {
-            text: "Head Pose Tracker",
-            link: "/neon-player/head-pose-tracker/",
-          },
-          {
-            text: "IMU Timeline",
-            link: "/neon-player/imu-timeline/",
-          },
-          {
-            text: "Eye State Timeline",
-            link: "/neon-player/eye-state-timeline/",
-          },
-          {
-            text: "Gaze Offset Correction",
-            link: "/neon-player/gaze-offset-correction/"
-          },
-          {
-            text: "Annotation Player",
-            link: "/neon-player/annotation-player/"
-          },
-          {
-            text: "Raw Data Exporter",
-            link: "/neon-player/raw-data-exporter/",
-          },
-          {
-            text: "World Video Exporter",
-            link: "/neon-player/world-video-exporter/",
-          },
+          { text: "Overview", link: "/neon-player/plugins/" },
+          { text: "Exports", link: "/neon-player/exports/" },
+          { text: "Offset Correction", link: "/neon-player/gaze-offset-correction/" },
+          { text: "Events", link: "/neon-player/events/" },
+          { text: "Surface Tracker", link: "/neon-player/surface-tracker/" },
+          { text: "Visualizations", link: "/neon-player/visualizations/" },
+          { text: "Settings", link: "/neon-player/settings/" },
         ],
       },
       {
-        text: "Plugin API",
-        link: "/neon-player/plugin-api/",
+        text: "Developer",
+        items: [
+          { text: "Install a Plugin", link: "/neon-player/plugin-api/" },
+          { text: "Create Your Own Plugin", link: "/neon-player/develop-your-own-plugin/" },
+          { text: "Headless Mode", link: "/neon-player/headless-mode/" }
+        ]
       },
-    ],
-    "/real-time-api/": [
+      { text: "Shortcuts", link: "/neon-player/shortcuts/" },
       {
-        items: [{ text: "Overview", link: "/real-time-api/" }],
+        text: "Troubleshooting",
+        link: "/neon-player/troubleshooting/",
       },
     ],
     "/neon-xr/": [
@@ -286,6 +252,9 @@ let config_additions = {
   title: "Neon",
   titleTemplate: "Neon - :title - Pupil Labs Docs",
   description: "Documentation of Neon eye tracker and ecosystem.",
+  sitemap: {
+    hostname: 'https://docs.pupil-labs.com/neon/'
+  },
   vite: {
     resolve: {
       alias: [

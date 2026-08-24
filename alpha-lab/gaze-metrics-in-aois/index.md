@@ -2,6 +2,8 @@
 title: "Automate AOI Masking in Pupil Cloud"
 description: "Discover how to get the most from our AOI tool by automatically segmenting and drawing masks using natural language."
 permalink: /alpha-lab/gaze-metrics-in-aois/
+layout: AlphaArticleLayout
+sidebar: false
 meta:
   - name: twitter:card
     content: player
@@ -15,16 +17,8 @@ meta:
     content: "720"
   - property: og:image
     content: "https://i.ytimg.com/vi/dL07qObhuKY/maxresdefault.jpg"
-tags: [Cloud]
+tags: [Neon, Pupil Invisible, Pupil Cloud, Offline Processing, AI / Deep Learning, AOI Mapping]
 ---
-
-<script setup>
-import TagLinks from '@components/TagLinks.vue'
-</script>
-
-# Automate AOI Masking in Pupil Cloud
-
-<TagLinks :tags="$frontmatter.tags" />
 
 <Youtube src="dL07qObhuKY"/>
 
@@ -32,7 +26,7 @@ import TagLinks from '@components/TagLinks.vue'
 Are you tired of manually drawing masks for your areas of interest? Fully automate the process using the Pupil Cloud API!
 :::
 
-Pupil Cloud's [Areas Of Interest tool](https://docs.pupil-labs.com/neon/pupil-cloud/visualizations/areas-of-interest/) allows you to segment AOIs within a reference image or surface, as part of our [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/) and [Marker Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/marker-mapper/) enrichments. This facilitates the computation of metrics, such as fixation count and total fixation duration within each AOI, that can provide insights into how participants visually engaged with their environment.
+Pupil Cloud's [Areas Of Interest tool](https://docs.pupil-labs.com/neon/pupil-cloud/areas-of-interest/) allows you to segment AOIs within a reference image or surface, as part of our [Reference Image Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/reference-image-mapper/) and [Marker Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/marker-mapper/) enrichments. This facilitates the computation of metrics, such as fixation count and total fixation duration within each AOI, that can provide insights into how participants visually engaged with their environment.
 
 Drawing AOI masks in Cloud is a manual process where the user can outline AOIs freehand or generate polygons (with straight lines), allowing detailed shapes of the AOIs to be drawn within the image. That said, it can be time-consuming depending on the number of AOIs to be drawn, and potentially prone to human error.
 
