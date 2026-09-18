@@ -30,7 +30,8 @@ The currently supported Android versions are as follows:
 - On **Moto X40 Pro**: Android 13, 14, and 15 (global ROM required)
 - On **Samsung Galaxy S25, S25+ and S25 Ultra**: Android 15 and 16
 - On **Samsung Galaxy Tab S9** (experimental device)
-
+- On **Poco F8 Pro**: Android 16
+    
 :::danger
 We recommend that you don't allow Android system updates on your device that are not listed above. Some Android versions have issues with accessing USB devices, rendering them incompatible with Neon.
 :::
