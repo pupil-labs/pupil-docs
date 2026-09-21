@@ -26,24 +26,24 @@ import TagLinks from '@components/TagLinks.vue'
 
 <TagLinks :tags="$frontmatter.tags" />
 
-<Youtube src="Yjos2JzpD-I"/>
+<Youtube src="Y2Gu2_6TM7w"/>
 
 ::: tip
-Raw data streams can feel abstract. What if you could bring them to life? This guide provides a Python framework to visualize everything from 3D eye models to dynamic data plots, turning numbers into intuitive visuals.
+Raw data streams can feel abstract. What if you could bring them to life? This guide shows you how to visualize everything from 3D eye models to dynamic data plots, turning numbers into intuitive visuals.
 :::
 
 ## From Data Streams to Intuitive Insights
 
-Neon provides a rich collection of real-time data, including eye poses, pupil diameter,
+Neon provides a rich collection of real-time data, including 3D eye poses, pupil diameter,
 blinks, and IMU readings. While this raw data is powerful, seeing it as a stream of
 numbers in a console can make it difficult to grasp what's truly happening. The "aha!"
 moment often comes when you can see the data in visualisations, transforming abstract
 numbers into a clear, intuitive understanding of behaviour.
 
 The benefits of live visualisation go beyond simple data inspection. For example,
-visualising 3D eye poses can be crucial for monitoring patients in clinical
+visualising 3D eye poses can be important for monitoring patients in clinical
 applications. In high-intensity scenarios, like performing surgery or long-distance
-trucking, plotting eyelid aperture in real time can provide vital insights into a
+trucking, plotting eyelid aperture in real time can provide insights into a
 wearer's state.
 
 This is where our guide comes in. It shows how to build these visualisations and run
@@ -52,8 +52,8 @@ intuitively, but also for building with it.
 
 ## Understanding in the moment
 
-Neon’s Real-time API is designed to make it easy to stream data to a computer. If one
-wants to visualize this data, though, it requires planning how to best represent it.
+Neon’s Real-time API is designed to make it easy to stream data to a computer. If you
+want to visualize this data, though, it requires planning how to best represent it.
 This Alpha Lab guide addresses that need directly. It shows how to build real-time
 visualisations using Python and PyQtGraph, an approach performant enough to handle live
 3D visualisations, yet simple enough for those new to coding. It’s designed for when you
@@ -70,7 +70,7 @@ repository’s instructions](https://github.com/pupil-labs/real-time-visualizati
 This guide provides the foundation and hands-on examples for creating three distinct
 types of visualisations:
 
-- **3D Eye Pose Visualisation:** Render a 3D model of each eyeball directly beneath the
+- **3D Eye Pose:** Render a 3D model of each eyeball next to the
   corresponding eye video. This visualisation includes the pose of the eye model, its
   optical axis vector, and a dynamic representation of the eyelid opening.
 - **Dynamic 2D Data Plots:** Generate real-time, scrolling plots for any of Neon's
