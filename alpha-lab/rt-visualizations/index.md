@@ -50,7 +50,7 @@ This is where our guide comes in. It shows how to build these visualisations and
 them in real-time, providing a foundation not just for seeing your data more
 intuitively, but also for building with it.
 
-## Understanding in the moment
+## Understanding in the Moment
 
 Neon’s Real-time API is designed to make it easy to stream data to a computer. If you
 want to visualize this data, though, it requires planning how to best represent it.
@@ -60,7 +60,7 @@ visualisations using Python and PyQtGraph, an approach performant enough to hand
 want to monitor data live during an experiment, create interactive bio-feedback
 applications, prototype a new gaze-contingent system, and more!
 
-## Steps to recreate
+## Steps to Recreate
 
 Load up your Python environment, connect Neon, and follow the steps in [the Github
 repository’s instructions](https://github.com/pupil-labs/real-time-visualizations).
