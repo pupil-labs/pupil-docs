@@ -81,7 +81,7 @@ If 200 Hz real-time data is essential, consider upgrading to a newer [Companion 
 During blinks the eye is briefly covered by the eyelids, which serves the purpose of spreading tears across the cornea.
 The blink rate and blink duration are also correlated with cognitive processes, which makes them interesting physiological signals.
 
-The blink detection is derived from the eye openness signal, if eye state is disabled on the device this stream will only be available in Cloud.
+The blink detection is derived from the eye openness signal, if eye state is disabled on the device this stream will only be available in Cloud. You can find an algorithm description [here](https://docs.google.com/document/d/1xtF9KrsfkDFOCTAXhyX2qewwQhQlZtHfdxL7JeVOVNg/export?format=pdf).
 
 ## Audio
 
