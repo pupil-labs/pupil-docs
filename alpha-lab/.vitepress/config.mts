@@ -21,6 +21,7 @@ let theme_config_additions = {
         { text: "AOI Masking", link: "/gaze-metrics-in-aois/" },
         { text: "AI Vision Assistant", link: "/gpt4-eyes/" },
         { text: "Dynamic AOI Tracking with SAM2", link: "/dynamic-aoi-sam2/" },
+        { text: "Scene Captioning", link: "/scene-captioning"}
       ],
     },
     {

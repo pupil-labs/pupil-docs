@@ -466,5 +466,20 @@
       "Neon",
       "Real-Time Analysis"
     ]
+  },
+  {
+    "title": "Scene Captioning",
+    "details": "Turn the scene video content into searchable context, locally.",
+    "link": {
+      "text": "View",
+      "href": "/alpha-lab/scene-captioning/"
+    },
+    "image": "/alpha-lab/neon-player-visual-context.webp",
+    "category": "Data Processing & Workflows",
+    "filters": [
+      "Neon",
+      "Offline Processing",
+      "AI/Deep Learning"
+    ]
   }
 ]
