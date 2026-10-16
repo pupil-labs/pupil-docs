@@ -4,17 +4,17 @@ description: "See what Neon is measuring by visualizing its data streams in real
 permalink: /alpha-lab/rt-visualizations/
 meta:
   - name: twitter:card
-    content: summary
+    content: player
   - name: twitter:image
-    content: "https://i.ytimg.com/vi/nt_zNSBMJWI/maxresdefault.jpg"
+    content: "https://i.ytimg.com/vi/Y2Gu2_6TM7w/maxresdefault.jpg"
   - name: twitter:player
-    content: "https://www.youtube.com/embed/jag9EQB7840"
+    content: "https://www.youtube.com/embed/Y2Gu2_6TM7w"
   - name: twitter:width
     content: "1280"
   - name: twitter:height
     content: "720"
   - property: og:image
-    content: "https://i.ytimg.com/vi/nt_zNSBMJWI/maxresdefault.jpg"
+    content: "https://i.ytimg.com/vi/Y2Gu2_6TM7w/maxresdefault.jpg"
 tags: [Neon]
 ---
 
