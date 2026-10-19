@@ -7,7 +7,7 @@ sidebar: false
 tags: [Neon, Offline Processing, Multimodal Data]
 ---
 
-<Youtube src="mMOvOm2Nhro"/>
+<Youtube src="vuyCdvdYh7o"/>
 
 :::tip
 Put neural activity back into context: fuse wearable eye tracking with mobile EEG to inspect brain activity frame-by-frame against the participant's actual point of view.
@@ -22,7 +22,7 @@ In this Alpha Lab guide, you'll see how to record Neon gaze and ANT Neuro eegoâ„
 The setup combined [Neon glasses](https://pupil-labs.com/products/neon) and their Companion Device with an [ANT Neuro waveguard net](https://www.ant-neuro.com/products/waveguard-net), [eego24â„¢ amplifier](https://www.ant-neuro.com/products/eego-24), and a commercially available smartphone with the eego remote app installed.
 
 ![Figure 1](./equipment.webp)
-***Equipment.** Neon glasses and Companion Device beside the ANT Neuro eego24, waveguard net and smartphone with eego remote app installed.*{.image-caption}
+***Equipment.** Neon glasses and Companion Device beside the ANT Neuro eego24, waveguard net, and smartphone with eego remote app installed.*{.image-caption}
 
 In the lab, the participant wore both systems while working at a laptop. The same wearable combination allowed us to continue recording as the participant moved outdoors.
 
