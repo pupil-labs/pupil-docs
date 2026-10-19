@@ -22,7 +22,7 @@ The shared event is used to synchronize the XDF timestamps with Neon timestamps.
 Neon Player uses the following XDF stream metadata:
 
 - Streams with `channel_format` set to `string` are treated as marker streams. Other stream formats are treated as data streams.
-- The stream name and type shown in Neon Player areis read from the stream header’s `name` and `type` fields, respectively.
+- The stream name and type shown in Neon Player are read from the stream header’s `name` and `type` fields, respectively.
 - Channel names are read from `desc > channels > channel > label`. If channel labels are unavailable, Neon Player assigns fallback names such as `Ch1`, `Ch2`, and `Ch3`.
 
 ## Workflow
