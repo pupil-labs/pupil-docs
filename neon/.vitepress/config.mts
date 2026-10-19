@@ -213,6 +213,7 @@ let theme_config_additions = {
           { text: "Offset Correction", link: "/neon-player/gaze-offset-correction/" },
           { text: "Events", link: "/neon-player/events/" },
           { text: "Surface Tracker", link: "/neon-player/surface-tracker/" },
+          { text: "XDF Stream", link: "/neon-player/xdf-stream/" },
           { text: "Visualizations", link: "/neon-player/visualizations/" },
           { text: "Settings", link: "/neon-player/settings/" },
         ],
