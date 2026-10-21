@@ -55,6 +55,16 @@ You can set the following parameters within the Fixations plugin:
 | **Stroke width**         | The thickness or width of the stoke in pixels.                                                                         |
 | **Font size**            | Sets the font size of the fixation ID labels.                                                                          |
 
+Additionally, you can visualize a scanpath that traces the viewer's history, displaying up to 7 previous fixations from within the last 60 seconds.
+
+![Scanpath Visualization](./viz-fix-sp.webp)
+
+| Parameter                | Description                                                                                                            |
+| :----------------------- | :--------------------------------------------------------------------------------------------------------------------- |
+| **Plot line**           | If enabled, draws a connecting line between consecutive fixations to visualize the movement path of the eye.       |
+| **Line color** | Sets the color and opacity of the lines connecting the fixations. |
+| **Circle color** | Sets the color and opacity of the fixation circles. |
+
 ## Eye Overlay
 
 You can also visualize the eye videos on top of the scene camera video using the `Eye Overlay` plugin. You can resize and drag the eye overlay to position it anywhere on the video player, allowing you to customize the layout of your visualizations.
