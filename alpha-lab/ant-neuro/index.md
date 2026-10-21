@@ -1,5 +1,5 @@
 ---
-title: "Use Neon With ANT Neuro EEG in the Lab and Outdoors"
+title: "Use Neon With ANT Neuro EEG"
 description: ""
 permalink: /alpha-lab/ant-neuro/
 layout: AlphaArticleLayout
@@ -10,12 +10,12 @@ tags: [Neon, Offline Processing, Multimodal Data]
 <Youtube src="vuyCdvdYh7o"/>
 
 :::tip
-Put neural activity back into context: fuse wearable eye tracking with mobile EEG to inspect brain activity frame-by-frame against the participant's actual point of view.
+Put neural activity in context: sync wearable eye tracking with mobile EEG to inspect brain activity frame-by-frame against the participant's actual point of view.
 :::
 
 What changes when a participant can leave the lab without leaving the experiment behind? Combining eye tracking and EEG lets you examine where someone looks alongside their brain activity, whether they are completing a screen-based task or moving through a real-world environment.
 
-In this Alpha Lab guide, you'll see how to record Neon gaze and ANT Neuro eego™ EEG together with Lab Streaming Layer (LSL) and LabRecorder. You'll then see how we brought the EEG into Neon Player, using a custom plugin to review it alongside the participant's scene video, gaze, and events. The same workflow can be adapted to studies in the lab or on the move.
+In this Alpha Lab guide, you'll see how to record Neon gaze and ANT Neuro eego™ EEG together with Lab Streaming Layer (LSL) and LabRecorder. You'll then see how we brought the EEG into Neon Player, using a new plugin to review it alongside the participant's scene video, gaze, and events. The same workflow can be adapted to studies in the lab or on the move.
 
 ## The Equipment
 
