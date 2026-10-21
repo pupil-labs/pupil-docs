@@ -26,7 +26,7 @@ the timeline, and export data in .csv format. Some of them also generate visuali
 | Scene Renderer       | Loads the scene video. Allows adjustments to brightness and contrast, displays the frame index, or can be disabled to visualize gaze only.                                                              |
 | Surface Tracker      | Detects AprilTag markers in the scene video, allowing to define surfaces and map the fixation and gaze data within the defined surfaces. Generates heatmap visualization.                                         |
 | Video Exporter       | Exports or copies the current frame (as an image) or scene (as a video) with all active visualizations applied.                                                                                         |
-
+| XDF Stream       | Aligns external XDF data using shared event markers, visualizes channels in the timeline, and exports the aligned data in `.csv` format.                                                               |
 ---
 
 ## Adding Features through Plugins
