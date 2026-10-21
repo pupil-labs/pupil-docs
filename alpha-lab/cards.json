@@ -468,8 +468,8 @@
     ]
   },
   {
-    "title": "Use Neon With ANT Neuro EEG in the Lab and Outdoors",
-    "details": "Fuse Neon eye tracking with ANT Neuro EEG across screen-based and outdoor tasks, and inspect the synchronized data directly in Neon Player.",
+    "title": "Use Neon With ANT Neuro EEG",
+    "details": "Fuse Neon eye tracking with ANT Neuro EEG across screen-based and outdoor tasks. Inspect the synchronized data in Neon Player.",
     "link": {
       "text": "View",
       "href": "/alpha-lab/ant-neuro/"
