@@ -47,7 +47,7 @@ This workflow produces two useful recordings: the native Neon recording, includi
 
 ## Load The Data in Neon Player
 
-To inspect the recorded data, we opened the native Neon recording in [Neon Player](https://docs.pupil-labs.com/neon/neon-player/) and loaded the XDF file using our **XDF Stream plugin** (available in version 6.1.0 and later). The plugin allows you to select EEG channels and plot their traces directly alongside the scene video, gaze overlay, and shared events, all unified on a single timeline.
+To inspect the recorded data, we opened the native Neon recording in [Neon Player](https://docs.pupil-labs.com/neon/neon-player/) and loaded the XDF file using our [XDF Stream plugin](https://docs.pupil-labs.com/neon/neon-player/xdf-stream/) (available in version 6.1.0 and later). The plugin allows you to select EEG channels and plot their traces directly alongside the scene video, gaze overlay, and shared events, all unified on a single timeline.
 
 For this demo, we used the Neon event stream and a shared synchronization event to align the XDF data with the Neon recording. In the outdoor example, the EEG channels appear below the video, so we can move through the recording and inspect brain activity alongside what the participant saw.
 
