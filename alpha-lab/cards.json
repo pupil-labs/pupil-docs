@@ -263,8 +263,7 @@
     "details": "Automatically annotate important activities and events in your Pupil Cloud recordings with GPT-4o.",
     "link": {
       "text": "View",
-      "href": "/alpha-lab/event-annotation.webp",
-      "category": "Behavior Detection & Annotation"
+      "href": "/alpha-lab/event-automation-gpt/"
     },
     "image": "/alpha-lab/event-annotation.webp",
     "category": "Behavior Detection & Annotation",
