@@ -7,5 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@vueuse/core": "^14.3.0",
+    "vitepress": "^1.6.4",
+    "vue": "^3.5.38"
+  },
+  "devDependencies": {
+    "express": "^5.2.1"
+  }
 }
