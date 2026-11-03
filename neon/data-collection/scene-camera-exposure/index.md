@@ -19,7 +19,7 @@ Looking for how to set camera controls programmatically through the API? Have a 
 
 ## Manual Exposure Mode
 
-Allows you to set the exposure time between 5 ms and 1 s. The values displayed on the slider are expressed in units of 100 µs, similar to the format accepted by UVC. Thus, a value of 50 corresponds to an exposure time of 5 ms.
+Allows you to set the exposure time between 5 ms and 1000 ms. The values displayed on the slider are expressed in units of 100 µs. Thus, a value of 50 corresponds to an exposure time of 5 ms.
 
 ::: tip
 Exposure duration is inversely related to camera frame rate. Exposure values above 33 ms (330 units) will reduce the scene camera rate below 30fps.
