@@ -27,7 +27,7 @@ When using PsychoPy with Neon, you can save eyetracking data in PsychoPy's hdf5 
 ### Experiment Settings
 
 - Open your experiment and open the experiment settings (gear ⚙️ icon in the toolbar)
-- Go to the "Eyetracking" tab and select "Pupil Labs (Neon)" as your eyetracking device
+- Go to the "Eyetracking" tab and select "Pupil Labs Neon (iohub)" as your eyetracking device
 - Modify the IP address and port if necessary
 
 ### Components
