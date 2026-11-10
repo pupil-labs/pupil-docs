@@ -40,7 +40,7 @@ Neon is compatible with LSL and you can learn more about how to use Neon with LS
 
 [Pupil Cloud](/pupil-cloud/) is our web-based storage and analysis platform located at [cloud.pupil-labs.com](https://cloud.pupil-labs.com/). It makes it easy to store all your data securely in one place and offers a variety of options for data analysis and visualization.
 
-Pupil Cloud is the recommended tool for processing your Neon recordings and if you enable uploads in the Neon Companion app all recordings can be uploaded automatically.
+Pupil Cloud is the recommended tool for processing your Neon recordings. By default, recordings can be uploaded automatically from the Neon Companion app. Alternatively, you can disable automatic uploads and manually select which recordings you'd like to upload to Pupil Cloud.
 
 ![Pupil Cloud](./pupil_cloud.webp)
 
