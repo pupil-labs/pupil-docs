@@ -32,6 +32,12 @@ No, you can create as many workspaces as you want!
 
 No, currently this is not possible.
 
+**Can I control which recordings are uploaded to my workspace?**
+
+Yes! You can choose which recordings are uploaded to your Pupil Cloud workspace. By disabling automatic uploads in the Neon Companion app settings, you can manually select and upload only the recordings you wish to make available in your workspace.
+
+Recordings that are not uploaded remain stored locally on your Companion device.
+
 **Can the ownership of a workspace be transferred?**
 
 This is not currently possible in the app. Please make a request if this is needed via email to `info@pupil-labs.com`.

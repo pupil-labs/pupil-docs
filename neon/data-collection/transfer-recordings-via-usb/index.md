@@ -37,7 +37,7 @@ to the Neon Companion app from your backup location (including Pupil Cloud, a la
 This means that if you delete the recordings prior to uploading them to Pupil Cloud, they cannot be uploaded at a later date.
 
 ::: tip
-On **macOS**, you need the <a href="https://www.android.com/filetransfer/" alt="Android File Transfer website">Android File Transfer</a> to browse and transfer files between your Mac computer and your Android device.
+On **macOS**, you can use <a href="https://www.android.com/filetransfer/" alt="Android File Transfer website">Android File Transfer</a> or <a href="https://github.com/ganeshrvel/openmtp" alt="OpenMTP website">OpenMTP</a> to browse and transfer files between your Mac computer and your Android device.
 :::
 
 :::tip
