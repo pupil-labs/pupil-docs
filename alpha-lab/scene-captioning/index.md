@@ -54,7 +54,7 @@ This becomes interesting when you know **what** you are looking for, but not **w
 
 ## The Plugin
 
-We built a [Neon Player plugin](https://github.com/pupil-labs/npp-visual-context) to experiment with this workflow locally. It uses Qwen3-VL and offers three model sizes: **Fast (2B)**, **Balanced (4B)**, and **Quality (8B)**. On Apple Silicon, quantized versions run locally using MLX, while other systems can use a transformers backend with a suitable CUDA GPU.
+We built a [Neon Player plugin](https://github.com/pupil-labs/npp-visual-context) to experiment with this workflow locally. It uses Liquid AI LMF3-2B-VL or Qwen3-VL in three model sizes: **Fast (2B)**, **Balanced (4B)**, and **Quality (8B)**. On Apple Silicon, quantized versions run locally using MLX, while other systems can use a transformers backend with a suitable CUDA GPU.
 
 Once generated, the captions appear over the scene video as you play the recording. You can also open the complete timestamped list or export it as CSV. The captioning prompt is editable too, so you can move from general scene descriptions toward something more specific to the question you are investigating.
 
@@ -82,7 +82,7 @@ The **Visual Context Plugin** adds a locally generated textual layer to scene vi
 
 You can keep the descriptions broad or change the prompt to focus the model on something relevant to your experiment. The sampling interval can also be adjusted depending on whether you want finer temporal coverage or faster processing, and visually similar frames can be skipped to avoid repeatedly describing a scene that has barely changed.
 
-On Apple Silicon, `Fast (2B)` and Balanced `(4B)` are practical places to start. Larger models need more memory and take longer to process each frame, so there is a trade-off between model size and how quickly you can get through a recording.
+On Apple Silicon, `Liquid_2B`, `Fast (2B)` and Balanced `(4B)` are practical places to start. Larger models need more memory and take longer to process each frame, so there is a trade-off between model size and how quickly you can get through a recording.
 
 Most importantly, these captions should not be treated as ground-truth annotations. Vision-language models can miss details, misidentify objects, or occasionally describe something that is not actually there. The useful role here is to help you **search, navigate, and explore** a recording. If a generated description becomes part of your analysis, check the corresponding moment against the original scene video.
 
