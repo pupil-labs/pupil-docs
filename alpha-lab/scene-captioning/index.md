@@ -1,6 +1,8 @@
 ---
 title: "Scene Captioning"
 description: "Turn scene video content into searchable context, locally."
+layout: AlphaArticleLayout
+sidebar: false
 permalink: /alpha-lab/scene-captioning/
 meta:
   - name: twitter:card
@@ -17,14 +19,6 @@ meta:
     content: "https://i.ytimg.com/vi/WlDoIWm_EHU/maxresdefault.jpg"
 tags: [Neon]
 ---
-
-<script setup>
-import TagLinks from '@components/TagLinks.vue'
-</script>
-
-# Scene Captioning
-
-<TagLinks :tags="$frontmatter.tags" />
 
 <Youtube src="WlDoIWm_EHU"/>
 
