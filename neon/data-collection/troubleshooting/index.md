@@ -51,7 +51,3 @@ If you upgraded to **Android 12** and want to roll back, follow these steps:
 1. Enter the phone's pin
 1. Wait until the system update has been installed successfully
 1. Tap `Reboot`
-
-## The Scene Camera and Eye Cameras Are Not Being Recorded or Recognized in the Neon Companion App!
-
-Make sure you use the included black USB-C to USB-C connector cable rather than a third-party cable. Third-party USB cables vary widely in their quality and can lead to loss of connection.
