@@ -2,6 +2,8 @@
 title: "Real-time Visualizations"
 description: "See what Neon is measuring by visualizing its data streams in real-time. Gain deeper insights & an intuitive feel for wearable eyetracking."
 permalink: /alpha-lab/rt-visualizations/
+layout: AlphaArticleLayout
+sidebar: false
 meta:
   - name: twitter:card
     content: player
@@ -17,14 +19,6 @@ meta:
     content: "https://i.ytimg.com/vi/Y2Gu2_6TM7w/maxresdefault.jpg"
 tags: [Neon]
 ---
-
-<script setup>
-import TagLinks from '@components/TagLinks.vue'
-</script>
-
-# Real-time Visualizations
-
-<TagLinks :tags="$frontmatter.tags" />
 
 <Youtube src="Y2Gu2_6TM7w"/>
 
