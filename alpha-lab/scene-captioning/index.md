@@ -62,6 +62,8 @@ One of the more useful things to try is turning those descriptions into **events
 
 The resulting events behave like other Neon Player events, which means the model’s descriptions can become a starting point for existing event-based workflows rather than remaining a separate set of AI-generated text.
 
+We've also added a Model Context Protocol (MCP) server that lets you explore your recordings using your favourite AI harness, such as Claude Code, Codex, Antigravity, or Cursor. By giving an LLM access to the generated captions alongside other recording data streams, you can ask questions about what happened in a recording and explore the data through natural language.
+
 ![Neon Player Plugin](./neon-player-visual-context.webp)
 
 ## Steps to Recreate
