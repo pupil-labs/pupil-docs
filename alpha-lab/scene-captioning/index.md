@@ -6,15 +6,15 @@ meta:
   - name: twitter:card
     content: player
   - name: twitter:image
-    content: "https://i.ytimg.com/vi/Y2Gu2_6TM7w/maxresdefault.jpg"
+    content: "https://i.ytimg.com/vi/WlDoIWm_EHU/maxresdefault.jpg"
   - name: twitter:player
-    content: "https://www.youtube.com/embed/Y2Gu2_6TM7w"
+    content: "https://www.youtube.com/embed/WlDoIWm_EHU"
   - name: twitter:width
     content: "1280"
   - name: twitter:height
     content: "720"
   - property: og:image
-    content: "https://i.ytimg.com/vi/Y2Gu2_6TM7w/maxresdefault.jpg"
+    content: "https://i.ytimg.com/vi/WlDoIWm_EHU/maxresdefault.jpg"
 tags: [Neon]
 ---
 
@@ -26,7 +26,7 @@ import TagLinks from '@components/TagLinks.vue'
 
 <TagLinks :tags="$frontmatter.tags" />
 
-<Youtube src="Y2Gu2_6TM7w"/>
+<Youtube src="WlDoIWm_EHU"/>
 
 ::: tip
 Turn scene video into searchable context, locally. Visual Context automatically describes what is visible in a Neon recording, creating timestamped captions that can be reviewed, exported, or turned into events. Everything runs on your own machine, with no cloud processing, API key, or video upload.
