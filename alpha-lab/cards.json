@@ -483,7 +483,7 @@
   },
   {
     "title": "Scene Captioning",
-    "details": "Turn the scene video content into searchable context, locally.",
+    "details": "Search your recordings by what happened: Turn scene video content into searchable context, locally.",
     "link": {
       "text": "View",
       "href": "/alpha-lab/scene-captioning/"

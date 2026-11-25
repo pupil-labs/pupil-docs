@@ -76,7 +76,7 @@ The resulting events behave like other Neon Player events, which means the model
 
 The first run also downloads the selected model, so it takes a little longer to get started. Captioning itself is not instant either: processing time depends on your hardware, model, recording length, and how frequently frames are sampled. Results are cached, though, so once a recording has been processed you do not need to generate the same captions every time you open it.
 
-## What You'll Learn to Build
+## Searchable Scene Descriptions in Neon Player
 
 The **Visual Context Plugin** adds a locally generated textual layer to scene video. It produces timestamped descriptions that you can see during playback, browse as a list, search for words or phrases, turn into Neon Player events, or export as CSV.
 
