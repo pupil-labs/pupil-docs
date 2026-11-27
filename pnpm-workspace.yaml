@@ -1,0 +1,8 @@
+packages:
+  - "landing-page"
+  - "neon"
+  - "core"
+  - "invisible"
+  - "alpha-lab"
+allowBuilds:
+  esbuild: true
